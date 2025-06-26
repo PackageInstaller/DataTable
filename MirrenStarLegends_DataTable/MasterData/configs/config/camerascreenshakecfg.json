@@ -1,0 +1,273 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -8941949017732367608
+  },
+  "m_Name": "camerascreenshakecfg",
+  "cameraScreenAnimationInfos": [
+    {
+      "id": 2911247,
+      "startSpeedChangeCurve": {
+        "m_Curve": [
+          {
+            "time": -0.00062942505,
+            "value": 0.10296631,
+            "inSlope": 0.8964694,
+            "outSlope": 0.8964694,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 1.0,
+            "value": 1.0,
+            "inSlope": 0.8964694,
+            "outSlope": 0.8964694,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 0
+      },
+      "endSpeedChangeCurve": {
+        "m_Curve": [
+          {
+            "time": -0.0001962483,
+            "value": 1.0000226,
+            "inSlope": -0.8760836,
+            "outSlope": -0.8760836,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 0.9975102,
+            "value": 0.12594841,
+            "inSlope": -0.8760836,
+            "outSlope": -0.8760836,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 0
+      },
+      "moveSpeed": 20.0,
+      "cameraShakeOffsets": [
+        {
+          "delayTime": 0.62,
+          "offsetTargets": [
+            {
+              "x": 0.0,
+              "y": -1.0,
+              "z": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": 1.0,
+              "z": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": -1.0,
+              "z": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": 1.0,
+              "z": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": -1.0,
+              "z": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": 1.0,
+              "z": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": -1.0,
+              "z": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": 1.0,
+              "z": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": -1.0,
+              "z": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": 1.0,
+              "z": 0.0
+            }
+          ]
+        },
+        {
+          "delayTime": 0.2,
+          "offsetTargets": [
+            {
+              "x": 0.0,
+              "y": -1.0,
+              "z": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": 1.0,
+              "z": 0.0
+            }
+          ]
+        },
+        {
+          "delayTime": 0.18,
+          "offsetTargets": [
+            {
+              "x": 0.0,
+              "y": -1.0,
+              "z": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": 1.0,
+              "z": 0.0
+            }
+          ]
+        },
+        {
+          "delayTime": 0.0,
+          "offsetTargets": []
+        },
+        {
+          "delayTime": 0.0,
+          "offsetTargets": []
+        }
+      ]
+    },
+    {
+      "id": 2911062,
+      "startSpeedChangeCurve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 1.0,
+            "outSlope": 1.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.0
+          },
+          {
+            "time": 1.0,
+            "value": 1.0,
+            "inSlope": 1.0,
+            "outSlope": 1.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 0
+      },
+      "endSpeedChangeCurve": {
+        "m_Curve": [
+          {
+            "time": -0.0001962483,
+            "value": 1.0000226,
+            "inSlope": -0.8760836,
+            "outSlope": -0.8760836,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 0.9975102,
+            "value": 0.12594841,
+            "inSlope": -0.8760836,
+            "outSlope": -0.8760836,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 0
+      },
+      "moveSpeed": 40.0,
+      "cameraShakeOffsets": []
+    },
+    {
+      "id": 2911085,
+      "startSpeedChangeCurve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 1.0,
+            "outSlope": 1.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.0
+          },
+          {
+            "time": 1.0,
+            "value": 1.0,
+            "inSlope": 1.0,
+            "outSlope": 1.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 0
+      },
+      "endSpeedChangeCurve": {
+        "m_Curve": [
+          {
+            "time": -0.0001962483,
+            "value": 1.0000226,
+            "inSlope": -0.8760836,
+            "outSlope": -0.8760836,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 0.9975102,
+            "value": 0.12594841,
+            "inSlope": -0.8760836,
+            "outSlope": -0.8760836,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 0
+      },
+      "moveSpeed": 40.0,
+      "cameraShakeOffsets": []
+    }
+  ]
+}

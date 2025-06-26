@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatList>
+	<Stat id="nail_2" name="球体炸弹" explain="在手中制作闪电属性的球体，并进行物理攻击引发瞬间爆炸。^n其威力是魔力的250%^n属于爆炸型攻击。对付块头大的敌人时，以较低的威力造成多次伤害。"/>
+	<Stat id="skyAttack" name="大地破坏" explain="高高跳起并强力击打地面进行范围攻击。其威力是力量的250%。"/>
+	<Stat id="normalAttack" name="刺击" explain="用锐爪狠狠地刺伤对方，同时将吸收对手的生命力来恢复自身体力。其威力是力量的320%。(最大恢复量为摩卡莫莉最高体力的7%)"/>
+	<Stat id="attack" name="锐爪攻击" explain="进行物理攻击。很快能轮到下一回合。"/>
+	<Stat id="nail" name="魔力锐爪" explain="在锐爪注入魔力，强化锐爪攻击。"/>
+	<Stat id="magic" name="魔法" explain="进行强力的魔法阵攻击。^n是所有攻击方式中，需等待最久，才能再次使用。"/>
+	<Stat id="doubleAttack" name="连击" explain="向对方连发五次物理攻击。"/>
+	<Stat id="verticalAttack" name="高速下降" explain="不受对手位置限制，可瞬间移动到敌人头上，用指甲进行强力的攻击。其威力与力量和魔力成正比。"/>
+	<Stat id="gatherPower" name="蓄力" explain="在无防备状态蓄力两次后，下一回合攻击时力量会大幅增加。而后每轮到自己回合时，力量效果会减半。"/>
+	<Stat id="speedAttack" name="超速攻击" explain="连续瞬移到目标对象的附近并进行多次快速攻击，属于最高等级的攻击技术。其威力与力量和魔力成正比。"/>
+	<Stat id="nail_1" name="锐爪强化" explain="用魔力强化锐爪来提升力量的威力，并把物理攻击的属性转换为闪电属性（魔法属性）。"/>
+	<Stat id="-" name="-" explain="-"/>
+	<Stat id="nail_3" name="闪电盾" explain="向周围散发电击能量，遭到攻击时伤害减少10%，并把自己所遭受的伤害加倍返还给对方。"/>
+	<Stat id="nail_4" name="速度强化" explain="消耗最大法力的40%+3000法力，将敏捷提高四倍。每轮到自己回合时，其效果会逐渐消失。"/>
+	<Stat id="nail_5" name="释放能量" explain="消耗20%体力和30%法力，炸飞附近的敌人。释放出的魔力会以最大体力的150% + 最大法力的200% + 魔力的200%威力引起爆炸。"/>
+	<Stat id="nail_6" name="魔力发射" explain="聚集少量的闪电能量劈向对方，也可以攻击到远距离的敌人。其威力是魔力的250%。"/>
+	<Stat id="recoverMP_1" name="冥想" explain="以无防备状态进入一次冥想，冥想后法力恢复40%。"/>
+	<Stat id="recoverMP_2" name="深入冥想" explain="以无防备状态进入两次冥想。冥想后可恢复全部法力，且魔力效果会加倍一次。"/>
+	<Stat id="goldenShield" name="阿噶莫的盾" explain="一定比例吸收对手的攻击后，在下一次攻击时将以几倍攻击返还给对方。"/>
+	<Stat id="goldenSword" name="阿噶莫的剑" explain="针对一个目标进行猛烈地攻击。"/>
+	<Stat id="goldenSpear" name="阿噶莫的枪" explain="发射强烈的冲击波，对沿途的敌人造成爆炸性伤害。"/>
+	<Stat id="goldenEye" name="阿噶莫的眼睛" explain="对阿噶莫眼睛所见到的所有敌人，造成极大的伤害。"/>
+	<Stat id="attack" name="锐爪攻击" explain="进行物理攻击。"/>
+	<Stat id="nail" name="魔力锐爪" explain="对于物理攻击赋予多种效果。"/>
+	<Stat id="item" name="道具" explain="使用战斗中所需的道具，比如恢复药等"/>
+	<Stat id="defence" name="防御" explain="采取防御或恢复姿势。"/>
+	<Stat id="summon" name="召唤部下" explain="召唤部下，并让部下参与战斗。"/>
+	<Stat id="marienaFire_gather" name="火花收集" explain="借助摩卡莫莉的魔力来收集火花。最多可收集四次。"/>
+	<Stat id="marienaFire_shoot" name="火花发射" explain="向对方发射收集的火花。"/>
+	<Stat id="marienaHeal" name="玛丽安娜的治愈" explain="让摩卡莫莉恢复30%体力。"/>
+	<Stat id="noaHealHP" name="小精灵的治愈" explain="让摩卡莫莉恢复50%体力。"/>
+	<Stat id="noaHealMP" name="小精灵的祈愿" explain="诺亚进入集中精神的状态后，在下一回合让摩卡莫莉恢复100%法力。"/>
+	<Stat id="normalMagic" name="魔力爆发" explain="在敌人身体上，爆炸无属性的魔力球，造成伤害。"/>
+	<Stat id="fireCircle7" name="七球压缩陨石魔法阵" explain="召唤强大的火焰陨石，来攻击对手。施展者的等待时间会增加三倍。"/>
+	<Stat id="akar" name="伊卡尔维特" explain="用尽所有魔力攻击对手。施展者没有下一轮。"/>
+	<Stat id="iceCircle5" name="五柱冰雨魔法阵" explain="召唤锋利的冰块来攻击敌人。受到攻击的敌人，进入下一回合的等待时间会延长两倍。施展者的等待时间再延长40%。"/>
+	<Stat id="nukeCollabo" name="召唤努克作战" explain="魔力觉醒指数达到一定程度后，召唤努克对敌人进行强力的物理攻击。其威力与力量和敏捷成正比。"/>
+	<Stat id="nukeCollabo2" name="召唤努克作战2" explain="魔力觉醒指数接近于最大值时，召唤努克对敌人进行强力的物理攻击。其威力与力量和敏捷成正比。"/>
+</StatList>

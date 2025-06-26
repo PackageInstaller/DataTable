@@ -1,0 +1,3 @@
+local Config = {Id=1028,Name="哈斯塔",AbDir="SsUnit/028_HaSiTa",NewRes=1,HandleBones={"Bone001"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.843344,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10281,TotalFrames=360,OnHit=0,OnCutIn=0,OnDamage={210,224,250},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10282,TotalFrames=500,OnHit=0,OnCutIn=0,OnDamage={300,320,340,360,380},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10283,TotalFrames=1500,OnHit=0,OnCutIn=0,OnDamage={1100},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=2,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

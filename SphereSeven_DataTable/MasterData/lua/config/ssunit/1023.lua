@@ -1,0 +1,3 @@
+local Config = {Id=1023,Name="卡洛斯",AbDir="SsUnit/023_KaLuoSi",NewRes=1,HandleBones={"Bone001"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.6632,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10231,TotalFrames=115,OnHit=0,OnCutIn=0,OnDamage={50,65,80,95},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10232,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={65},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10233,TotalFrames=600,OnHit=0,OnCutIn=0,OnDamage={330,350,370,390,410,430,450},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

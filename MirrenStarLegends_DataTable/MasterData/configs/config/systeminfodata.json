@@ -1,0 +1,48 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -5806392458504907526
+  },
+  "m_Name": "systeminfodata",
+  "qualityDefine": [
+    {
+      "processorFrequency": 1500,
+      "processorCount": 2,
+      "systemMemorySize": 2.0,
+      "graphicsMemorySize": 0.5,
+      "graphicsShaderLevel": 20,
+      "graphicsMultiThreaded": 0,
+      "supportsShadows": 0,
+      "supportsInstancing": 0,
+      "supports32bitsIndexBuffer": 0
+    },
+    {
+      "processorFrequency": 2000,
+      "processorCount": 4,
+      "systemMemorySize": 4.0,
+      "graphicsMemorySize": 1.0,
+      "graphicsShaderLevel": 20,
+      "graphicsMultiThreaded": 0,
+      "supportsShadows": 0,
+      "supportsInstancing": 0,
+      "supports32bitsIndexBuffer": 0
+    },
+    {
+      "processorFrequency": 2500,
+      "processorCount": 8,
+      "systemMemorySize": 6.0,
+      "graphicsMemorySize": 2.0,
+      "graphicsShaderLevel": 30,
+      "graphicsMultiThreaded": 1,
+      "supportsShadows": 1,
+      "supportsInstancing": 1,
+      "supports32bitsIndexBuffer": 1
+    }
+  ],
+  "deviceModelWhiteItems": []
+}

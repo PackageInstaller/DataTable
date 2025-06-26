@@ -1,0 +1,3 @@
+local Config = {Id=1108,Name="修格斯",AbDir="SsUnit/106_XiuGeSi",NewRes=0,HandleBones={""},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.8,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={-3,0,0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1126,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={18,30,42,54,67,84},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=1127,TotalFrames=290,OnHit=0,OnCutIn=0,OnDamage={182,202,222,242},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=1128,TotalFrames=470,OnHit=0,OnCutIn=0,OnDamage={67,91,129,139,152,169,189,224,258},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

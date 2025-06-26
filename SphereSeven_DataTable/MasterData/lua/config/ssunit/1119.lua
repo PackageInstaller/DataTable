@@ -1,0 +1,3 @@
+local Config = {Id=1119,Name="狮星界圣裁官",AbDir="SsUnit/116_LionStarJusticar",NewRes=0,HandleBones={"Bone001"},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.95,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1088,TotalFrames=60,OnHit=0,OnCutIn=0,OnDamage={30},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1089,TotalFrames=65,OnHit=0,OnCutIn=0,OnDamage={30},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

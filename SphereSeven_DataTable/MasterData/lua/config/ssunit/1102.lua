@@ -1,0 +1,3 @@
+local Config = {Id=1102,Name="狮星界弩兵",AbDir="SsUnit/102_LionStarCrossbowman",NewRes=0,HandleBones={""},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.905,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1084,TotalFrames=60,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={21,26,32}},Skl01={Name="Skl01",SkillEfxId=1085,TotalFrames=95,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={50,57,65}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

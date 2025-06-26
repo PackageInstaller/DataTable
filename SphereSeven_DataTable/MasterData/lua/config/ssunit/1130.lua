@@ -1,0 +1,3 @@
+local Config = {Id=1130,Name="兽鬼 成熟型",AbDir="SsUnit/130_ShouGuiChengShu",NewRes=0,HandleBones={""},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2047,TotalFrames=80,OnHit=0,OnCutIn=0,OnDamage={22,42},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2048,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={39},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=2049,TotalFrames=170,OnHit=0,OnCutIn=0,OnDamage={32,36,43,49,55,61,67,73,79,75,107},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

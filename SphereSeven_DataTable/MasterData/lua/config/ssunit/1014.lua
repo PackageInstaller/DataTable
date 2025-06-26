@@ -1,0 +1,3 @@
+local Config = {Id=1014,Name="太公望",AbDir="SsUnit/014_TaiGongWang",NewRes=1,HandleBones={"Bone031"},UnitScale =1.44,CloseAtkOffset={1.5,0,-0.2},HitPosOffset={0,1.836,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10141,TotalFrames=160,OnHit=0,OnCutIn=0,OnDamage={27},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10142,TotalFrames=220,OnHit=0,OnCutIn=0,OnDamage={113},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10143,TotalFrames=500,OnHit=0,OnCutIn=0,OnDamage={95,123,148,159,165,171,177,183},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=8,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

@@ -1,0 +1,23 @@
+return {
+	[1001] = {
+		Id = 1001,
+		Batch1 = "{{row=1,id=1104,num=3},{row=2,id=1105,num=2}}",
+		Batch2 = "{}",
+		Batch3 = "{}",
+		Level = 60,
+		Star = 3,
+		JadePearl = 0,
+		BattleArrayKind = 7,
+		BattleArrayLevel = 0,
+		FormatIntens = 2,
+		FirstPassRewards = "{{type = 4,num = 200}}",
+		ConditionRewards = "{{cond=1}}",
+		DropRateRewards = "{}",
+		EnergyExpend = 0,
+		SupportCard = "{}",
+		Bgm = "二章boss战斗曲",
+		FieldOfView = 0,
+		Remark = "",
+		SectionFace = "",
+	},
+}

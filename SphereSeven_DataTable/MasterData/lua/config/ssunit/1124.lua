@@ -1,0 +1,3 @@
+local Config = {Id=1124,Name="狮星界十字军",AbDir="SsUnit/124_ShiXingJieShiZiJun",NewRes=0,HandleBones={"Bone012"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2024,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={44},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2025,TotalFrames=200,OnHit=0,OnCutIn=0,OnDamage={72,82,92,102,112,113},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

@@ -1,0 +1,3 @@
+local Config = {Id=1002,Name="唐太宗",AbDir="SsUnit/002_TangTaiZong",NewRes=1,HandleBones={"Bone001","Bone202"},UnitScale =1.44,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.8144,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10021,TotalFrames=110,OnHit=0,OnCutIn=0,OnDamage={20,28,50,55,60,65,70,73},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10022,TotalFrames=240,OnHit=0,OnCutIn=0,OnDamage={66,125,135},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10023,TotalFrames=450,OnHit=0,OnCutIn=0,OnDamage={123,126,132,134,140,142,147,150,155,158,163,166,171,291},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

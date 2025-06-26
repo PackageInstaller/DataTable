@@ -1,0 +1,725 @@
+<ItemList>
+  <Item infoTextID="0" infoText="어느 층으로 이동할까요?" />
+  <Item infoTextID="1" infoText="#name:KingsLobby" />
+  <Item infoTextID="2" infoText="#name:WitchRoom" />
+  <Item infoTextID="3" infoText="#name:TrainingRoom" />
+  <Item infoTextID="4" infoText="아무것도 하지 않는다." />
+  <Item infoTextID="5" infoText="[#answer] 선택" />
+  <Item infoTextID="6" infoText="드래곤의 둥지" />
+  <Item infoTextID="7" infoText="팻 창고" />
+  <Item infoTextID="8" infoText="지하방-" />
+  <Item infoTextID="9" infoText="지하방-" />
+  <Item infoTextID="10" infoText="지하방-" />
+  <Item infoTextID="11" infoText="잠을 잘까요?" />
+  <Item infoTextID="12" infoText="잠을 잔다." />
+  <Item infoTextID="13" infoText="격투연습:신체능력을 종합적으로 향상시키는 수련. HP, 힘, 민첩이 골고루 오르며 격투레벨이 오르면 새로운 손톱기술을 익힌다." />
+  <Item infoTextID="14" infoText="달리기:HP 상승에 집중하는 체력훈련. 약간의 민첩 상승효과가 있다. 체력레벨이 오를수록 방어 후 회복하는 HP가 많아진다." />
+  <Item infoTextID="15" infoText="근력운동:힘과 방어 위주의 훈련. 커다란 바위를 소환하여 근력운동을 실시한다. 근력레벨이 오를수록 피해 감소가 % 단위로 높아진다." />
+  <Item infoTextID="16" infoText="마법연습:마력과 MP를 고르게 올리는 수련. 빠르게 마력을 발사한다. 마법레벨이 오르면 새로운 마력손톱 기술을 익힌다." />
+  <Item infoTextID="17" infoText="명상:수액 위에서 명상을 하며 마력 구체화를 연습한다. 수련 후에는 최대 MP가 크게 상승하며 마력도 약간 상승한다. 정신레벨이 오르면 마법 사용시 소모되는 MP가 크게 감소한다." />
+  <Item infoTextID="18" infoText="마력방출:마력을 한계까지 뿜어내어 마력이 크게 상승한다. MP도 약간 상승한다. 마력레벨이 오르면 마법진을 그리는 마법의 위력이 크게 상승하며 마지막 단계에서는 새로운 마법기술을 익힌다." />
+  <Item infoTextID="19" infoText="| 수련효율 |" />
+  <Item infoTextID="20" infoText="기대효과" />
+  <Item infoTextID="21" infoText="HP" />
+  <Item infoTextID="22" infoText="MP" />
+  <Item infoTextID="23" infoText="마력" />
+  <Item infoTextID="24" infoText="힘" />
+  <Item infoTextID="25" infoText="방어" />
+  <Item infoTextID="26" infoText="민첩" />
+  <Item infoTextID="27" infoText="수련효율이 100%에 가까울수록 수련 성과가 높아집니다. 수련효율은 수련할 때마다 현저히 낮아지기 때문에 현재 마녀에게 가장 필요한 수련부터 수행하는 것을 추천합니다. 수련효율이 20% 미만이 되면 수련을 진행할 수 없으며, 전투 등 외부활동으로 인해 시간이 흘러가면 수련효율이 점점 회복됩니다." />
+  <Item infoTextID="28" infoText="#tag" />
+  <Item infoTextID="29" infoText="#type 상승" />
+  <Item infoTextID="30" infoText="#type 상승 보너스" />
+  <Item infoTextID="31" infoText="격투레벨" />
+  <Item infoTextID="32" infoText="체력레벨" />
+  <Item infoTextID="33" infoText="근력레벨" />
+  <Item infoTextID="34" infoText="마법레벨" />
+  <Item infoTextID="35" infoText="정신레벨" />
+  <Item infoTextID="36" infoText="마력레벨" />
+  <Item infoTextID="37" infoText="-" />
+  <Item infoTextID="38" infoText="-" />
+  <Item infoTextID="39" infoText="-" />
+  <Item infoTextID="40" infoText="공격 대상을 선택하세요." />
+  <Item infoTextID="41" infoText="손톱강화:손톱에 번개의 힘을 담아 손톱공격의 기본 위력이 125%로 증가한다." />
+  <Item infoTextID="42" infoText="구체폭탄:폭발하는 전기 에너지 구체를 손에 머금고 있다가 공격할 때 한 번 폭발시켜 주변의 상대들에게 마력의 220% 만큼 피해를 준다." />
+  <Item infoTextID="43" infoText="전도:공격할 때마다 전격 에너지가 전도되어 모든 상대에게 피해를 가한다. 마력만큼의 피해량을 시작으로 피해가 다른 상대에게 전도될수록 피해량이 감소된다. 전도가 진행될수록 소모되는 MP가 증가하며, MP가 부족하면 전도가 멈춘다." />
+  <Item infoTextID="44" infoText="신체강화:HP와 MP를 40% 소모하여 전격에너지를 신체에 두른다. 행동시 방어력을 제외한 모든 능력은 50% 상승하며 다음 행동에선 신체강화 효과가 절반만큼 감소된다. 신체강화 효과는 세 번째 행동에서 사라진다." />
+  <Item infoTextID="45" infoText="-" />
+  <Item infoTextID="46" infoText="-" />
+  <Item infoTextID="47" infoText="-" />
+  <Item infoTextID="48" infoText="-" />
+  <Item infoTextID="49" infoText="3연속 공격:상대를 빠르게 세 번(힘의 80~100% 만큼의 피해량) 공격한다." />
+  <Item infoTextID="50" infoText="점핑:높게 뛰어올라 상대를 찍어누른다. 선택된 상대에게 힘의 200% 만큼 피해를 가하며 주변 적에겐 100% 만큼의 피해를 가한다. 이 순간 발생하는 다른 공격효과는 20% 만큼 증폭된다." />
+  <Item infoTextID="51" infoText="7연속 공격:상대를 빠르게 일곱 번(힘의 60%~80% 만큼의 피해량) 공격한다." />
+  <Item infoTextID="52" infoText="대쉬:상대 앞으로 아주 빠르게 이동하여 힘과 마력에 비례하는 치명타를 가한다." />
+  <Item infoTextID="53" infoText="-" />
+  <Item infoTextID="54" infoText="-" />
+  <Item infoTextID="55" infoText="-" />
+  <Item infoTextID="56" infoText="-" />
+  <Item infoTextID="57" infoText="이미 부여한 효과입니다!" />
+  <Item infoTextID="58" infoText="다음 행동까지 민첩이 #power% 만큼 줄어듭니다." />
+  <Item infoTextID="59" infoText="-" />
+  <Item infoTextID="60" infoText="#name을 손에 머금었습니다." />
+  <Item infoTextID="61" infoText="-" />
+  <Item infoTextID="62" infoText="-" />
+  <Item infoTextID="63" infoText="-" />
+  <Item infoTextID="64" infoText="-" />
+  <Item infoTextID="65" infoText="-" />
+  <Item infoTextID="66" infoText="-" />
+  <Item infoTextID="67" infoText="#name:TopHillFly" />
+  <Item infoTextID="68" infoText="MP가 부족합니다." />
+  <Item infoTextID="69" infoText="마력각성@자신의 턴이 아닐 때 모카모리 공격버튼을 누르면 나타나는 안내문구" />
+  <Item infoTextID="70" infoText="기술을 사용할 준비가 되었습니다. - [#skill]" />
+  <Item infoTextID="71" infoText="[#skillName] 아직 준비되지 않았습니다." />
+  <Item infoTextID="72" infoText="손톱공격" />
+  <Item infoTextID="73" infoText="마력손톱" />
+  <Item infoTextID="74" infoText="도구 전체" />
+  <Item infoTextID="75" infoText="자주 사용하는 도구" />
+  <Item infoTextID="76" infoText="{  발견되는 장소@좌측 { 특수문자는 그대로 사용해주세요" />
+  <Item infoTextID="77" infoText="자주 쓰는 도구로 설정되었습니다." />
+  <Item infoTextID="78" infoText="자주 쓰는 도구에서 제외되었습니다." />
+  <Item infoTextID="79" infoText="소모성 도구" />
+  <Item infoTextID="80" infoText="특별도구" />
+  <Item infoTextID="81" infoText="장비" />
+  <Item infoTextID="82" infoText="마법진" />
+  <Item infoTextID="83" infoText="[#kind]" />
+  <Item infoTextID="84" infoText="이미 선택한 종류의 도구들이 나열되어 있습니다.@도구 상자에서 도구 종류를 선택할 때 나타나는 메세지" />
+  <Item infoTextID="85" infoText="표시 가능한 [#kind] 목록이 없습니다.@도구 상자에서 도구 종류를 선택할 때 나타나는 메세지" />
+  <Item infoTextID="86" infoText="도구 제작하기@도구제작 메뉴의 타이틀" />
+  <Item infoTextID="87" infoText="제작시작@도구 제작 메뉴에서 도구 제작을 시작하는 버튼 텍스트. 메뉴버튼이 한글 기준으로 6글자까지 적당하므로 번역이 너무 길면 줄바꿈하여 2줄까지 가능." />
+  <Item infoTextID="88" infoText="사용하기@도구 상자에서 도구 사용하기 버튼 텍스트. 메뉴버튼이 한글 기준으로 6글자까지 적당하므로 번역이 너무 길면 줄바꿈하여 2줄까지 가능." />
+  <Item infoTextID="89" infoText="제작에 필요한 재료가 부족합니다!" />
+  <Item infoTextID="90" infoText="확인@안내 메세지 창을 닫는 버튼의 텍스트" />
+  <Item infoTextID="91" infoText="마법 조합하기" />
+  <Item infoTextID="92" infoText="주력슬롯  |  마법효과 20% 증폭" />
+  <Item infoTextID="93" infoText="일반슬롯  |  마법효과 10% 증폭, 소모MP 10% 절약" />
+  <Item infoTextID="94" infoText="보조슬롯  |  소모MP 20% 절약" />
+  <Item infoTextID="95" infoText="장착하기@마법슬롯에 마법진을 장착" />
+  <Item infoTextID="96" infoText="현재 슬롯에 장착된 마력 매개체가 없습니다." />
+  <Item infoTextID="97" infoText="현재 슬롯을 비웠습니다." />
+  <Item infoTextID="98" infoText="우르파 대륙 지도" />
+  <Item infoTextID="99" infoText="확인된 지역들@세계지도 화면의 메뉴 이름" />
+  <Item infoTextID="100" infoText="파견된 부하들을 표시합니다." />
+  <Item infoTextID="101" infoText="파견된 부하들을 표시하지 않습니다." />
+  <Item infoTextID="102" infoText="&lt; #name &gt;^n^n현 위치 : #area^n찾는 아이템 : #itemName^n진행률 : #percent%@진행률(속도)의 진행률은 아이템이 완료되기까지 진행된 백분율" />
+  <Item infoTextID="103" infoText="발견된 아이템 :" />
+  <Item infoTextID="104" infoText="정보 없음" />
+  <Item infoTextID="105" infoText="파견중인 부하가 없음" />
+  <Item infoTextID="106" infoText="지역정보를 표시합니다." />
+  <Item infoTextID="107" infoText="지역정보를 숨깁니다." />
+  <Item infoTextID="108" infoText="부하 파견하기" />
+  <Item infoTextID="109" infoText="조사할 아이템 선택하기" />
+  <Item infoTextID="110" infoText="현재 파견 가능한 부하가 없습니다." />
+  <Item infoTextID="111" infoText="#place에 부하(#who)를 파견했습니다." />
+  <Item infoTextID="112" infoText="확인되지 않은 지역에는 부하를 파견할 수 없습니다." />
+  <Item infoTextID="113" infoText="모카모리는 아가모의 가호를 받습니다. 전투에 들어가면 모카모리의 기본능력이 #power%로 상승합니다.@힘, 마력, 민첩성 등 모든 스탯을 통틀어 '능력'이라고 표현함" />
+  <Item infoTextID="114" infoText="마녀는 샘을 향하여 마력흡수를 시작했다." />
+  <Item infoTextID="115" infoText="마녀는 샘을 천천히 살펴본다." />
+  <Item infoTextID="116" infoText="획득하기" />
+  <Item infoTextID="117" infoText="공격력" />
+  <Item infoTextID="118" infoText="마법저항@마법공격을 막아내는 % (예: 마법저항력 30 -&gt; 마법공격의 30% 데미지를 무시)" />
+  <Item infoTextID="119" infoText="물리내성@물리공격을 막아내는 % (예: 물리내성 30% -&gt; 물리공격의 30% 데미지를 무시)" />
+  <Item infoTextID="120" infoText="피하기" />
+  <Item infoTextID="121" infoText="전투하기" />
+  <Item infoTextID="122" infoText="어디로 순간이동을 할까요?" />
+  <Item infoTextID="123" infoText="{ 부하 소환하기 }" />
+  <Item infoTextID="124" infoText="소환시작" />
+  <Item infoTextID="125" infoText="MP가 부족합니다!" />
+  <Item infoTextID="126" infoText="&lt;소환에 필요한 MP&gt;" />
+  <Item infoTextID="127" infoText="전체 MP의 #num%" />
+  <Item infoTextID="128" infoText="#power만큼의 피해 감소!" />
+  <Item infoTextID="129" infoText="모카모리의 차례가 오면 마력각성을 사용할 수 있습니다.@자신의 턴이 아닐 때 모카모리 공격버튼을 누르면 나타나는 안내문구" />
+  <Item infoTextID="130" infoText="이미 마력각성을 사용하고 있습니다." />
+  <Item infoTextID="131" infoText="거대한 힘이 모카모리를 지배합니다." />
+  <Item infoTextID="132" infoText="마법" />
+  <Item infoTextID="133" infoText="총 피해량@마법을 쓸 때 메뉴에서 마법진들의 종합적인 공격력을 표현할 때 사용" />
+  <Item infoTextID="134" infoText="소모MP" />
+  <Item infoTextID="135" infoText="최대 MP의 #power%" />
+  <Item infoTextID="136" infoText="방어에 집중합니다." />
+  <Item infoTextID="137" infoText="방어 후 HP가 #power만큼 회복되었습니다!" />
+  <Item infoTextID="138" infoText="전투 중에는 사용할 수 없는 도구입니다." />
+  <Item infoTextID="139" infoText="도구가 없습니다.@아이템 사용 버튼을 눌렀을 때 아이템이 없을 때 나타나느 말" />
+  <Item infoTextID="140" infoText="이미 HP가 가득 차 있습니다." />
+  <Item infoTextID="141" infoText="HP가 #power만큼 회복되었습니다!" />
+  <Item infoTextID="142" infoText="MP가 #power만큼 회복되었습니다!" />
+  <Item infoTextID="143" infoText="최대 HP가 #power만큼 상승했습니다!" />
+  <Item infoTextID="144" infoText="최대 MP가 #power만큼 상승했습니다!" />
+  <Item infoTextID="145" infoText="마력이 #power만큼 상승했습니다!" />
+  <Item infoTextID="146" infoText="힘이 #power만큼 상승했습니다!" />
+  <Item infoTextID="147" infoText="민첩이 #power만큼 상승했습니다!" />
+  <Item infoTextID="148" infoText="방어가 #power만큼 상승했습니다!" />
+  <Item infoTextID="149" infoText="이미 MP가 가득 차 있습니다." />
+  <Item infoTextID="150" infoText="선택된 도구가 없습니다." />
+  <Item infoTextID="151" infoText="&lt;총 피해량&gt;^n@한 차례 동안 적에게 가한 데미지의 총 합" />
+  <Item infoTextID="152" infoText="이 마법 슬롯은 비어있습니다." />
+  <Item infoTextID="153" infoText="현재 이 방법으로는 상대를 공격할 수 없습니다.@일반공격으로 하늘에 있는 적이나 장애물 너머에 있는 적에게 공격을 시도할 경우" />
+  <Item infoTextID="154" infoText="병사들은 지친 모카모리를 이상한 듯이 보고있다.@모카모리가 지친 모습을 처음 보는 병사들" />
+  <Item infoTextID="155" infoText="방어 후 MP가 #power만큼 회복되었습니다!" />
+  <Item infoTextID="156" infoText="&lt; 영혼석 마력 모으기 &gt;" />
+  <Item infoTextID="157" infoText="무엇을 하시겠습니까?" />
+  <Item infoTextID="158" infoText="영혼석 강화" />
+  <Item infoTextID="159" infoText="영혼석 #power단계" />
+  <Item infoTextID="160" infoText="마력각성" />
+  <Item infoTextID="161" infoText="모카모리의 능력은 전투시에 영혼석의 힘으로 #power%만큼 상승합니다.@영혼 석 강화 안내 메세지" />
+  <Item infoTextID="162" infoText="완료@영혼 석 강화 후 닫는 버튼" />
+  <Item infoTextID="163" infoText="영혼석을 채우기 위한 마력이 아직 부족합니다. (#power)" />
+  <Item infoTextID="164" infoText="파견 정보가 없습니다." />
+  <Item infoTextID="165" infoText="부하가 파견을 마쳤습니다. [#name]" />
+  <Item infoTextID="166" infoText="-" />
+  <Item infoTextID="167" infoText="느림@파견보냈을 때 부하가 아이템을 찾아오는 속도" />
+  <Item infoTextID="168" infoText="보통" />
+  <Item infoTextID="169" infoText="빠름@파견보냈을 때 부하가 아이템을 찾아오는 속도" />
+  <Item infoTextID="170" infoText="왕의 방으로 순간이동 하시겠습니까?" />
+  <Item infoTextID="171" infoText="이동한다." />
+  <Item infoTextID="172" infoText="그만둔다." />
+  <Item infoTextID="173" infoText="영혼석 제 #num단계" />
+  <Item infoTextID="174" infoText="영혼석을 다음 단계로 강화하기까지 마력을^n#percent%( #num )만큼 모았습니다.@영혼석 단계 설명입니다. #percent%( #num ) 부분은 읽기 용이하도록 한국어처럼 바로 앞부분에 줄바꿈 태그 ^n을 붙여주세요." />
+  <Item infoTextID="175" infoText="기본능력" />
+  <Item infoTextID="176" infoText="전투능력" />
+  <Item infoTextID="177" infoText="제작도감" />
+  <Item infoTextID="178" infoText="정보가 없습니다.@어떤 아이템에 대한 얻을 수 있는 지역을 나열할 때 정보가 없는 경우" />
+  <Item infoTextID="179" infoText="부하 정보" />
+  <Item infoTextID="180" infoText="적 정보" />
+  <Item infoTextID="181" infoText="물리방어" />
+  <Item infoTextID="182" infoText="마법방어" />
+  <Item infoTextID="183" infoText="주 마법진" />
+  <Item infoTextID="184" infoText="보조 마법진" />
+  <Item infoTextID="185" infoText="마력 매개체" />
+  <Item infoTextID="186" infoText="현재 조합한 마법진이 없습니다. 왕의 방에서 마법진 조합을 시도해 보세요. 조합된 마법진들은 전투시 강력한 효과를 발휘합니다." />
+  <Item infoTextID="187" infoText="장착된 마법진이 없습니다." />
+  <Item infoTextID="188" infoText="게임설정" />
+  <Item infoTextID="189" infoText="배경음악" />
+  <Item infoTextID="190" infoText="사운드 효과" />
+  <Item infoTextID="191" infoText="터치이동" />
+  <Item infoTextID="192" infoText="가상 조이스틱 이동" />
+  <Item infoTextID="193" infoText="타이틀 화면으로" />
+  <Item infoTextID="194" infoText="타이틀 화면으로 돌아가시겠습니까?" />
+  <Item infoTextID="195" infoText="타이틀 화면으로" />
+  <Item infoTextID="196" infoText="플레이 시간 #time" />
+  <Item infoTextID="197" infoText="마법재료" />
+  <Item infoTextID="198" infoText="마리애나가 힘을 모으기 시작합니다." />
+  <Item infoTextID="199" infoText="병사를 모카모리의 성으로 이동시켰습니다." />
+  <Item infoTextID="200" infoText="하얀 바위산의 반대편에 뛰어내릴 수 있습니다." />
+  <Item infoTextID="201" infoText="뛰어내린다." />
+  <Item infoTextID="202" infoText="그만둔다." />
+  <Item infoTextID="203" infoText="모카모리는 하얀바위 나뭇잎을 물에 떨어트렸다." />
+  <Item infoTextID="204" infoText="지금은 사용할 수 없습니다." />
+  <Item infoTextID="205" infoText="산의 반대편으로 넘어갈까요?" />
+  <Item infoTextID="206" infoText="넘어간다." />
+  <Item infoTextID="207" infoText="영혼석의 힘을 모두 끌어와 일반능력이 #power%만큼 상승하였습니다.@힘, 마력, 민첩성 등 모든 스탯을 통틀어 '능력'이라고 표현함" />
+  <Item infoTextID="208" infoText="이미 마력각성을 사용한 상태입니다." />
+  <Item infoTextID="209" infoText="아직 준비되지 않았습니다!@아직 마력각성이 완전히 충전되지 않았을 때" />
+  <Item infoTextID="210" infoText="일기장 기록하기" />
+  <Item infoTextID="211" infoText="일기장 불러오기" />
+  <Item infoTextID="212" infoText="비어있는 기록입니다." />
+  <Item infoTextID="213" infoText="#num번째 줄에 현재를 기록하시겠습니까?" />
+  <Item infoTextID="214" infoText="기록한다.@현재를 일기장에 기록하겠냐는 질문에 대한 선택지" />
+  <Item infoTextID="215" infoText="취소했습니다.@저장이나 불러오기를 취소했을 때 뜨는 안내문구" />
+  <Item infoTextID="216" infoText="기록완료@일기장 제목 입력 후 완료하는 버튼 이름" />
+  <Item infoTextID="217" infoText="취소" />
+  <Item infoTextID="218" infoText="제목을 입력하세요. (선택사항)" />
+  <Item infoTextID="219" infoText="#num번째 줄에 기록을 완료했습니다." />
+  <Item infoTextID="220" infoText="#num번째 기록을 불러오겠습니까?^n저장하지 않은 기록은 보존되지 않습니다.@여기 ^n은 자율적으로..." />
+  <Item infoTextID="221" infoText="불러온다." />
+  <Item infoTextID="222" infoText="#num번째 기록을 불러옵니다." />
+  <Item infoTextID="223" infoText="#num번째 기록을 지우시겠습니까? 지운 기록은 복구되지 않습니다." />
+  <Item infoTextID="224" infoText="지운다." />
+  <Item infoTextID="225" infoText="#num번째 기록을 지웠습니다." />
+  <Item infoTextID="226" infoText="일기장 제목에는 특수문자를 입력할 수 없습니다." />
+  <Item infoTextID="227" infoText="일기장에 가까이 가면 일기장을 열 수 있는 버튼이 나타납니다. 일기장을 열면 현재 시간을 기록할 수 있으며 저장한 시간을 다시 불러올 수 있습니다. 일기장을 열어보세요." />
+  <Item infoTextID="228" infoText="상단의 좌측 버튼을 누르면 '일기장 기록하기' 상태로, 우측 버튼을 누르면 '일기장 불러오기' 상태로 전환됩니다. '일기장 기록하기' 상태에서는 현재 시간을 저장할 수 있으며, '일기장 불러오기' 상태에서는 저장한 기록을 불러올 수 있습니다." />
+  <Item infoTextID="229" infoText="숙면을 취합니다." />
+  <Item infoTextID="230" infoText="숙면으로 HP와 MP가 모두 회복되었습니다!" />
+  <Item infoTextID="231" infoText="모카모리는 도구 수집을 위해 특정 지역에 부하를 파견시킬 수 있습니다." />
+  <Item infoTextID="232" infoText="파견된 부하는 일정시간 동안 파견된 지역에서 도구를 수집하며 모카모리의 수고를 덜어줍니다." />
+  <Item infoTextID="233" infoText="파견되지 않은 부하는 로비에 남아 모카모리의 소환을 기다립니다. 전투시 소환된 부하는 그 부하의 특성에 따라 모카모리의 전투를 도와줍니다." />
+  <Item infoTextID="234" infoText="-" />
+  <Item infoTextID="235" infoText="우측 하단의 필드메뉴 버튼을 눌러보세요." />
+  <Item infoTextID="236" infoText="드래그로 지도를 움직여서 푸른색으로 표시된 푸르토 숲 동쪽을 찾아보세요." />
+  <Item infoTextID="237" infoText="[부하 파견하기] 버튼을 눌러 파견할 부하를 선택하세요." />
+  <Item infoTextID="238" infoText="슈크리나를 선택해 보세요." />
+  <Item infoTextID="239" infoText="슈크리나가 찾아올 마법재료는 [푸른 고슴도치의 가시] 입니다." />
+  <Item infoTextID="240" infoText="기존에 저장된 일기장 기록이 있기 때문에 일기장 안내를 생략합니다." />
+  <Item infoTextID="241" infoText="첫 번째 줄에 현재를 기록해 보겠습니다." />
+  <Item infoTextID="242" infoText="슈크리나는 모카모리의 지시로 [푸르토 숲 동쪽]으로 갔습니다." />
+  <Item infoTextID="243" infoText="방으로 가서 순간이동 마법진을 이용해 보세요." />
+  <Item infoTextID="244" infoText="방 중앙의 마법진 위에 서면 순간이동 마법을 사용할 수 있습니다." />
+  <Item infoTextID="245" infoText="이미 소환된 부하입니다." />
+  <Item infoTextID="246" infoText="소환 가능한 위치가 없습니다!" />
+  <Item infoTextID="247" infoText="다음 차례까지 돌아오는 속도가 #power%로 감소했습니다." />
+  <Item infoTextID="248" infoText="기존 보유 개수@아이템 만들기 후 결과창 정보, 아이템을 만들기 전 해당 아이템을 보유한 개수" />
+  <Item infoTextID="249" infoText="새로 만든 개수@아이템 만들기 후 결과창 정보, 이전 개수를 제외하고 순수하게 새로 만든 아이템 개수" />
+  <Item infoTextID="250" infoText="자주 쓰는 도구로 설정하기" />
+  <Item infoTextID="251" infoText="귀환마법을 사용하면 빠르게 방으로 갈 수 있습니다." />
+  <Item infoTextID="252" infoText="먼저 제작할 대상을 선택합니다.@최초 마법제작 튜토리얼 안내문" />
+  <Item infoTextID="253" infoText="제작을 시작하는 버튼을 누릅니다.@마법제작 시작하는 안내문구" />
+  <Item infoTextID="254" infoText="먼저 마력 매개체를 선택하기 위해 가운데 슬롯을 선택합니다." />
+  <Item infoTextID="255" infoText="우측에 나타난 마력 매개체를 장착합니다." />
+  <Item infoTextID="256" infoText="마력 매개체에 속성을 부여하기 위해 속성 슬롯을 선택합니다." />
+  <Item infoTextID="257" infoText="속성 슬롯에는 주 속성, 보조 속성 이렇게 두 가지가 있습니다. 속성을 결정하는 버튼은 마력 매개체 버튼 아래에 있는 두 버튼입니다." />
+  <Item infoTextID="258" infoText="먼저 주 속성에 방금 제작한 1기 전격 마법진을 장착하겠습니다." />
+  <Item infoTextID="259" infoText="우측에 나타난 1기 전격 마법진을 선택합니다." />
+  <Item infoTextID="260" infoText="모카모리는 방에서 의자를 타고 이동합니다. 의자에 나타난 느낌표 버튼을 눌러보세요." />
+  <Item infoTextID="261" infoText="로비 중앙에 갔을 때 나타나는 느낌표 버튼을 눌러보세요." />
+  <Item infoTextID="262" infoText="모카모리는 손톱을 이용하여 상대를 공격합니다." />
+  <Item infoTextID="263" infoText="적이 여러명일 경우 한번에 여러명을 공격할 수 있는 [대지부수기]를 시도해 보세요." />
+  <Item infoTextID="264" infoText="-" />
+  <Item infoTextID="265" infoText="-" />
+  <Item infoTextID="266" infoText="-" />
+  <Item infoTextID="267" infoText="-" />
+  <Item infoTextID="268" infoText="-" />
+  <Item infoTextID="269" infoText="-" />
+  <Item infoTextID="270" infoText="단일 적에게는 [손톱 찌르기]가 효과적입니다." />
+  <Item infoTextID="271" infoText="덩치가 큰 적에게 폭발형 공격을 사용하면 훨씬 더 많은 피해를 입힐 수 있습니다." />
+  <Item infoTextID="272" infoText="-" />
+  <Item infoTextID="273" infoText="하나의 적에게는 [손톱 찌르기]가 효과적입니다." />
+  <Item infoTextID="274" infoText="상대의 체력막대 밑에 있는 파란막대가 가득 차면 상대는 행동을 개시합니다." />
+  <Item infoTextID="275" infoText="방어에 집중하면 모카모리가 받는 피해가 상당히 감소하고 다음 차례가 올 때 약간의 HP와 MP가 회복합니다." />
+  <Item infoTextID="276" infoText="공격을 크게 받을 수록, MP를 많이 소모할 수록 우측 하단의 마력각성 지수가 올라갑니다." />
+  <Item infoTextID="277" infoText="마력각성 지수가 가득 차면 모카모리는 강력한 무기를 사용할 수 있습니다." />
+  <Item infoTextID="278" infoText="마력각성 지수를 채우기 위해 MP를 소모해 보세요." />
+  <Item infoTextID="279" infoText="마력각성 지수가 가득 찼습니다. 마력각성 버튼을 눌러 모카모리의 무기들을 소환해 보세요." />
+  <Item infoTextID="280" infoText="공격을 계속 시도해 보세요." />
+  <Item infoTextID="281" infoText="TIP@튜토리얼 창 제목" />
+  <Item infoTextID="282" infoText="부하를 소환해 보세요." />
+  <Item infoTextID="283" infoText="지면을 터치하면 모카모리가 이동합니다." />
+  <Item infoTextID="284" infoText="마법진을 그리는 마법은 소모되는 MP가 크고 사용 후 다음 차례가 늦게 돌아오는 편입니다. 대신 위력이 매우 강력하며 다른 방식의 공격과 연계하기에 유리한 효과를 얻을 수 있습니다." />
+  <Item infoTextID="285" infoText="전격마법에 당한 적은 전격속성 공격에 약해집니다. 이 때 전격속성의 공격을 적에게 가하면 더 많은 피해를 적에게 줄 수 있습니다." />
+  <Item infoTextID="286" infoText="다시 나타나기까지 #percent%" />
+  <Item infoTextID="287" infoText="반짝이는 물체에 가까이 가면 도구를 획득할 수 있습니다." />
+  <Item infoTextID="288" infoText="독에 중독되었습니다." />
+  <Item infoTextID="289" infoText="중독피해 #power" />
+  <Item infoTextID="290" infoText="모카모리가 독에 중독되면 차례가 올 때마다 중독피해를 입습니다. 이 중독피해는 공격을 당할수록 피해량이 누적되어 올라가며 모든 방어효과를 무시합니다. 중독피해는 전투가 끝나면 사라집니다." />
+  <Item infoTextID="291" infoText="마법합성으로 HP 회복제를 만들 수 있습니다. 합성한 HP 회복제는 %단위로 체력을 회복해주기 때문에 전투 중 매우 유용합니다." />
+  <Item infoTextID="292" infoText="특히 HP 회복제를 담을 빈 병은 필수 재료입니다. 빈 병은 마을 도구상에게서 얻을 수 있습니다. 마을로 가려면 로비에서 밖으로 나가보세요." />
+  <Item infoTextID="293" infoText="로비 중앙에 있는 영혼석 아래에 서면 영혼석을 업그레이드 할 수 있습니다." />
+  <Item infoTextID="294" infoText="수련효율이 20% 미만이 되면 수련을 시작할 수 없습니다. 수련효율은 시간이 지나면 회복됩니다." />
+  <Item infoTextID="295" infoText="다음 차례를 기다리는 시간이 상당히 증가했습니다!" />
+  <Item infoTextID="296" infoText="전투용 회복약을 만들기 위한 필수 재료인 [빈 병]은 푸르토 마을의 도구상에게서 얻을 수 있습니다." />
+  <Item infoTextID="297" infoText="푸르토 마을은 로비에서 밖으로 나가면 갈 수 있습니다." />
+  <Item infoTextID="298" infoText="현재 장소가 순간이동 목록에 추가되었습니다." />
+  <Item infoTextID="299" infoText="전투용 회복약은 % 단위로 회복을 시켜주기 때문에 플레이 후반까지 유용합니다. 전투용 회복약은 [왕의 방]에서 마법진을 제작한 방법과 똑같이 마법합성을 통해 제작할 수 있습니다." />
+  <Item infoTextID="300" infoText="상인과 거래하기" />
+  <Item infoTextID="301" infoText="구매하기" />
+  <Item infoTextID="302" infoText="판매하기" />
+  <Item infoTextID="303" infoText="가격 :" />
+  <Item infoTextID="304" infoText="보유개수 :" />
+  <Item infoTextID="305" infoText="#num개" />
+  <Item infoTextID="306" infoText="구매 개수 :" />
+  <Item infoTextID="307" infoText="최소 1개 이상 거래할 수 있습니다." />
+  <Item infoTextID="308" infoText="한 번에 최대 100개까지 거래할 수 있습니다." />
+  <Item infoTextID="309" infoText="판매할 개수 :" />
+  <Item infoTextID="310" infoText="#count골드로 구매할까요?" />
+  <Item infoTextID="311" infoText="#count골드에 판매할까요?" />
+  <Item infoTextID="312" infoText="골드가 부족합니다!" />
+  <Item infoTextID="313" infoText="구매 완료!" />
+  <Item infoTextID="314" infoText="판매 완료!" />
+  <Item infoTextID="315" infoText="팔 수 없는 물건입니다!" />
+  <Item infoTextID="316" infoText="현재 개수가 판매할 수 있는 최대 개수입니다." />
+  <Item infoTextID="317" infoText="예@보편적인 질문 창에서 사용 가능한 OK 버튼" />
+  <Item infoTextID="318" infoText="아니오@보편적인 질문 창에서 사용 가능한 NO 버튼" />
+  <Item infoTextID="319" infoText="누크를 타면 도보로는 갈 수 없는 지역을 갈 수 있습니다." />
+  <Item infoTextID="320" infoText="필드메뉴 버튼의 우르파 대륙 지도를 열고 이동할 지역을 선택해 주세요." />
+  <Item infoTextID="321" infoText="하얀바위산 지역을 찾아보세요." />
+  <Item infoTextID="322" infoText="[#name] 지역으로 이동하시겠습니까?" />
+  <Item infoTextID="323" infoText="-" />
+  <Item infoTextID="324" infoText="MP가 #power만큼 감소했습니다." />
+  <Item infoTextID="325" infoText="모카모리는 한참 동안 멍하니 있었다." />
+  <Item infoTextID="326" infoText="아낙네 레이나는 모카모리가 물고 있던 반지를 빼앗아갔다." />
+  <Item infoTextID="327" infoText="상대를 공격할 방법이 없습니다." />
+  <Item infoTextID="328" infoText="에단이 [열매 숲]으로 파견을 나갔습니다." />
+  <Item infoTextID="329" infoText="특별임무를 수행중인 부하는 파견이나 소환을 할 수 없습니다." />
+  <Item infoTextID="330" infoText="현재는 마력을 사용할 수 없습니다." />
+  <Item infoTextID="331" infoText="중독이 더 심해졌습니다." />
+  <Item infoTextID="332" infoText="모카모리는 포에르타의 조각을 하얀바위산의 심장에 내리쳤다." />
+  <Item infoTextID="333" infoText="하얀바위 골렘이 #power%만큼 전진했습니다." />
+  <Item infoTextID="334" infoText="모카모리는 포에르타에게 하얀바위산의 심장을 건네주었다.@한글오타 교정" />
+  <Item infoTextID="335" infoText="포에르타는 하얀바위산의 심장을 자신의 몸에 넣었다." />
+  <Item infoTextID="336" infoText="현재 이 상대는 공격할 수 없습니다." />
+  <Item infoTextID="337" infoText="지금은 부하를 소환할 수 없습니다." />
+  <Item infoTextID="338" infoText="모카모리는 비문에 적힌 글씨를 천천히 읽어보았다." />
+  <Item infoTextID="339" infoText="앞으로 #num차례 동안 힘을 모읍니다." />
+  <Item infoTextID="340" infoText="행동까지 #num차례 남았습니다." />
+  <Item infoTextID="341" infoText="다음에 시도하는 물리공격에서 힘의 효과가 #power%만큼 적용됩니다." />
+  <Item infoTextID="342" infoText="손톱을 강화하여 물리공격시 힘의 영향이 #power%가 되었습니다." />
+  <Item infoTextID="343" infoText="HP가 부족합니다." />
+  <Item infoTextID="344" infoText="에너지를 힘껏 방출합니다." />
+  <Item infoTextID="345" infoText="민첩이 일시적으로 대폭 상승했습니다." />
+  <Item infoTextID="346" infoText="#kind 단계가 올랐습니다!@kind는 infoText 31~36번 텍스트가 들어갑니다. 예시 . 방어레벨 단계가 올랐습니다" />
+  <Item infoTextID="347" infoText="새로운 마력손톱 기술을 익혔습니다!" />
+  <Item infoTextID="348" infoText="새로운 손톱공격 기술을 익혔습니다." />
+  <Item infoTextID="349" infoText="#num단계 효과@게임에선 infoText 31~36번과 합성하여 사용됩니다. 예시 . 방어레벨 2단계 효과   격투레벨 4단계 효과" />
+  <Item infoTextID="350" infoText="-방어사용 후 종료까지 공격을 당하지 않았을 경우 HP회복 #power%^n-공격을 당하면 회복 효과가 절반으로 감소" />
+  <Item infoTextID="351" infoText="항시 피해 감소율 #power%" />
+  <Item infoTextID="352" infoText="마법 사용시 소모MP 감소 #power%" />
+  <Item infoTextID="353" infoText="방어 후 MP회복 #power%" />
+  <Item infoTextID="354" infoText="마법진을 그리는 마법 사용시 마법위력 증폭 #power%" />
+  <Item infoTextID="355" infoText="방어에 집중할 때 피해감소 #power%@136번 인포 텍스트의 '방어에 집중' 용어를 맞춰주세요." />
+  <Item infoTextID="356" infoText="방어와 회복" />
+  <Item infoTextID="357" infoText="#num차례 동안 명상을 시작합니다." />
+  <Item infoTextID="358" infoText="명상이 끝나고 MP가 #power만큼 회복되었습니다." />
+  <Item infoTextID="359" infoText="수련시작" />
+  <Item infoTextID="360" infoText="단계별 효과@31~36번 텍스트 다음에 나타나 합성되어 사용됩니다. 예 . 정신레벨 단계별 효과" />
+  <Item infoTextID="361" infoText="1단계" />
+  <Item infoTextID="362" infoText="2단계" />
+  <Item infoTextID="363" infoText="3단계" />
+  <Item infoTextID="364" infoText="4단계" />
+  <Item infoTextID="365" infoText="5단계" />
+  <Item infoTextID="366" infoText="6단계" />
+  <Item infoTextID="367" infoText="7단계" />
+  <Item infoTextID="368" infoText="8단계" />
+  <Item infoTextID="369" infoText="9단계" />
+  <Item infoTextID="370" infoText="다음 단계까지^n#power% 수련함@각 수련별 수련레벨 경험치 달성률" />
+  <Item infoTextID="371" infoText="수련 효율이 높은 상태에서 수련을 실시할수록 다음 단계로 빠르게 진입합니다." />
+  <Item infoTextID="372" infoText="이미 모카모리는 아지트 안에 있습니다.@마녀의 방이나 로비에서 귀환마법을 쓰려고 시도하는 경우" />
+  <Item infoTextID="373" infoText="모카모리가 제작한 회복약은 %단위로 HP를 회복시켜 주기 때문에 플레이 후반에도 유용합니다." />
+  <Item infoTextID="374" infoText="큰 전투 전에는 HP와 MP가 충분히 회복되어 있는지 확인해 보세요." />
+  <Item infoTextID="375" infoText="그리고 마지막 수련 시점으로부터 충분한 시간이 지나면 수련효율이 올라갑니다. 수련효율을 확인하고 수련을 시도해 보세요." />
+  <Item infoTextID="376" infoText="현재 수련효율은 #power%입니다." />
+  <Item infoTextID="377" infoText="바론의 보호" />
+  <Item infoTextID="378" infoText="현재 수련효율 :" />
+  <Item infoTextID="379" infoText="차례를 기다리는 시간이 초기화되었습니다.@특정 공격으로 인해 주인공의 전투 차례가 다시 처음부터 계산, 차례가 오는 시간이 늦어지게 됐다는 뜻" />
+  <Item infoTextID="380" infoText="크고 불안정안 마력의 움직임이 감지됩니다.@어둠의 용사가 자폭할 때 경고메세지" />
+  <Item infoTextID="381" infoText="끈적이는 진흙으로 인해 행동이 느려졌습니다." />
+  <Item infoTextID="382" infoText="뗏목에 탑승하시겠습니까?" />
+  <Item infoTextID="383" infoText="탑승한다." />
+  <Item infoTextID="384" infoText="그만둔다." />
+  <Item infoTextID="385" infoText="뗏목에서 내리겠습니까?" />
+  <Item infoTextID="386" infoText="뗏목에서 내린다." />
+  <Item infoTextID="387" infoText="내리지 않는다." />
+  <Item infoTextID="388" infoText="아르카스의 능력이 증폭되었습니다.@상대-&gt;아르카스로 변경" />
+  <Item infoTextID="389" infoText="모카모리는 메테오닉스의 핵을 기름웅덩이로 던졌다." />
+  <Item infoTextID="390" infoText="상대가 받은 피해를 모두 반사시켰습니다.@거울 모카모리를 상대할 때 거울 모카모리를 공격하면 진짜 모카모리도 피해를 입는다. 반사라는 표현을 씀." />
+  <Item infoTextID="391" infoText="새로운 마력 매개체인 [샤를리의 창]을 얻었습니다! 새로운 마력 매개체는 기본 매개체인 마력구체보다 훨씬 강력합니다." />
+  <Item infoTextID="392" infoText="노바의 운석이 실시간으로 다가옵니다." />
+  <Item infoTextID="393" infoText="노바의 운석이 대폭발을 시작합니다." />
+  <Item infoTextID="394" infoText="드래곤이 #power만큼 힘을 모으기 시작합니다.^n모카모리는 방어결계를 만들 수 있습니다." />
+  <Item infoTextID="395" infoText="방어에 사용할 HP" />
+  <Item infoTextID="396" infoText="방어에 사용할 MP" />
+  <Item infoTextID="397" infoText="감소될 피해량" />
+  <Item infoTextID="398" infoText="더 이상 HP를 더 할당할 수 없습니다." />
+  <Item infoTextID="399" infoText="더 이상 MP를 더 할당할 수 없습니다." />
+  <Item infoTextID="400" infoText="방어결계를 만든다." />
+  <Item infoTextID="401" infoText="방어결계를 만들지 않는다." />
+  <Item infoTextID="402" infoText="방어결계를 만들기 위한 HP 또는 MP를 할당해 주세요." />
+  <Item infoTextID="403" infoText="병사는 리브로에게 에단의 편지를 건네주었다." />
+  <Item infoTextID="404" infoText="모카모리는 리브로에게서 에단의 편지를 빼앗았다." />
+  <Item infoTextID="405" infoText="[절대방어 결계]^n받은 피해를 흡수하여 MP를 #power만큼 회복했습니다." />
+  <Item infoTextID="406" infoText="이미 사용중인 기술입니다." />
+  <Item infoTextID="407" infoText="마력각성이 해제되었습니다." />
+  <Item infoTextID="408" infoText="절대방어 결계를 형성합니다." />
+  <Item infoTextID="409" infoText="절대방어 결계가 사라졌습니다." />
+  <Item infoTextID="410" infoText="전투에서 패배하였습니다." />
+  <Item infoTextID="411" infoText="타이틀 화면으로 돌아간다." />
+  <Item infoTextID="412" infoText="자동저장 시점을 불러온다." />
+  <Item infoTextID="413" infoText="제작할 도구를 선택해주세요." />
+  <Item infoTextID="414" infoText="비어있는 정보입니다." />
+  <Item infoTextID="415" infoText="파견중인 부하는 소환할 수 없습니다." />
+  <Item infoTextID="416" infoText="파견중" />
+  <Item infoTextID="417" infoText="-" />
+  <Item infoTextID="418" infoText="수련을 시도해 보세요!@수련효율이 100%가 되면 나타나는 안내문구. 말풍선으로 표현하기 때문에 마침표 있는 문장으로 표현하되 가급적 짧게 번역해주세요." />
+  <Item infoTextID="419" infoText="로비에서 영혼석을 강화시켜 보세요!" />
+  <Item infoTextID="420" infoText="누크를 타고 이동하시겠습니까?" />
+  <Item infoTextID="421" infoText="이동한다." />
+  <Item infoTextID="422" infoText="그만둔다." />
+  <Item infoTextID="423" infoText="누크를 타고 이동할 지역을 선택해주세요." />
+  <Item infoTextID="424" infoText="[현 위치]" />
+  <Item infoTextID="425" infoText="주 마법진과 보조 마법진의 속성이 같을 수 없습니다." />
+  <Item infoTextID="426" infoText="캠핑을 시작합니다." />
+  <Item infoTextID="427" infoText="여기서는 캠핑을 할 수 없습니다." />
+  <Item infoTextID="428" infoText="최근에 얻은 도구" />
+  <Item infoTextID="429" infoText="캠핑으로 모든 HP와 MP가 회복되었습니다!" />
+  <Item infoTextID="430" infoText="마법진은 자주 사용하는 도구로 지정할 수 없습니다." />
+  <Item infoTextID="431" infoText="모카모리는 거대한 봉인석을 자세히 살펴본다." />
+  <Item infoTextID="432" infoText="기본능력은 100%로 표기됩니다. 기본능력 버튼을 누르면 전투능력 정보로 교체됩니다." />
+  <Item infoTextID="433" infoText="[#name] 착용중@#name은 옷" />
+  <Item infoTextID="434" infoText="[#name] 장비중@#name은 검이나 장비, 펜던트 등" />
+  <Item infoTextID="435" infoText="이미 착용중인 장비입니다." />
+  <Item infoTextID="436" infoText="[#name] 장비 착용 완료@#name은 검이나 장비, 펜던트 등" />
+  <Item infoTextID="437" infoText="현재 착용중인 보조장비가 없습니다.@#name은 의상과 무기를 제외한 기타 장비들. 펜던트 등 악세서리" />
+  <Item infoTextID="438" infoText="능력치 설명" />
+  <Item infoTextID="439" infoText="HP는 생명을 의미합니다. HP가 0이 되면 전투가 불가능해지며 게임오버가 됩니다. 도구나 수련을 통해 HP를 상승시킬 수 있습니다." />
+  <Item infoTextID="440" infoText="MP는 정신력을 의미합니다. MP가 높을수록 마법을 많이 사용할 수 있습니다. 도구나 수련을 통해 MP를 상승시킬 수 있습니다." />
+  <Item infoTextID="441" infoText="마력은 마법의 위력을 의미합니다. 마력이 높을수록 마법의 위력이 높아지며 도구나 수련을 통해 마력을 상승시킬 수 있습니다." />
+  <Item infoTextID="442" infoText="힘이 높을수록 물리공격의 위력이 높아집니다. 도구나 수련 중 근력운동을 통해 힘을 상승시킬 수 있습니다." />
+  <Item infoTextID="443" infoText="방어가 높을수록 전투 중 받는 피해가 감소합니다. 기본적으로 방어 수치만큼 피해량이 감소하며 수련을 통해 방어레벨이 높아지면 %단위로 피해량이 감소합니다." />
+  <Item infoTextID="444" infoText="민첩이 높아지면 전투 중 모카모리의 차례가 빨리 돌아옵니다. 전투에 들어갔을 때 영혼석으로 인해 상승하는 민첩 수치는 다른 능력치보다 상대적으로 적습니다." />
+  <Item infoTextID="445" infoText="항해를 시작할까요?^n10,000골드가 필요합니다." />
+  <Item infoTextID="446" infoText="항해를 시작한다." />
+  <Item infoTextID="447" infoText="그만둔다." />
+  <Item infoTextID="448" infoText="골드가 부족합니다." />
+  <Item infoTextID="449" infoText="목적지를 선택해주세요." />
+  <Item infoTextID="450" infoText="#name:AcientLand_1" />
+  <Item infoTextID="451" infoText="#name:AcientLand_2" />
+  <Item infoTextID="452" infoText="#name:AcientLand_3" />
+  <Item infoTextID="453" infoText="#name:AcientLand_enter" />
+  <Item infoTextID="454" infoText="#name:Village_Rubid" />
+  <Item infoTextID="455" infoText="정체를 알 수 없는 생명체가 모카모리의 HP를 흡수하기 시작합니다." />
+  <Item infoTextID="456" infoText="중복하여 제작할 수 없는 대상입니다.@옷이나 칼 등 중복하여 만들 수 없는 아이템에 나타는 안내" />
+  <Item infoTextID="457" infoText="더 이상 부하를 소환할 수 없습니다." />
+  <Item infoTextID="458" infoText="상대의 공격력이 #power%만큼 상승했습니다." />
+  <Item infoTextID="459" infoText="모카모리가 마력을 개방했습니다." />
+  <Item infoTextID="460" infoText="이미 제작도감에 추가된 마법도감입니다." />
+  <Item infoTextID="461" infoText="새로운 레시피가 제작도감에 추가되었습니다!" />
+  <Item infoTextID="462" infoText="골드" />
+  <Item infoTextID="463" infoText="이 도구를 어떻게 사용할까요?" />
+  <Item infoTextID="464" infoText="흔들어본다." />
+  <Item infoTextID="465" infoText="부러뜨린다." />
+  <Item infoTextID="466" infoText="마력사용을 #power%만큼 방해하는 저주에 걸렸습니다." />
+  <Item infoTextID="467" infoText="힘 사용을 #power%만큼 방해하는 저주에 걸렸습니다." />
+  <Item infoTextID="468" infoText="저주로 인해 MP가 감소했습니다." />
+  <Item infoTextID="469" infoText="이미 착용중인 의상입니다." />
+  <Item infoTextID="470" infoText="입어보기" />
+  <Item infoTextID="471" infoText="의상을 갈아입었습니다." />
+  <Item infoTextID="472" infoText="무기를 교체했습니다." />
+  <Item infoTextID="473" infoText="이미 장비하고 있는 무기입니다." />
+  <Item infoTextID="474" infoText="현재 위치@지도상에서 사용" />
+  <Item infoTextID="475" infoText="[#name]^n파견하여 획득할 수 있는 목록에 추가되었습니다." />
+  <Item infoTextID="476" infoText="한 지역에 파견할 수 있는 부하는 최대 3명까지 가능합니다." />
+  <Item infoTextID="477" infoText="마력각성을 유지할 수 있는 시간이 #num차례로 상승했습니다." />
+  <Item infoTextID="478" infoText="파견 가능한 지역" />
+  <Item infoTextID="479" infoText="부하가 파견된 지역" />
+  <Item infoTextID="480" infoText="하늘이동 지역" />
+  <Item infoTextID="481" infoText="새로운 의상 레시피가 제작도감에 추가되었습니다!" />
+  <Item infoTextID="482" infoText="#count개의 붉은 보석으로 구매할까요?" />
+  <Item infoTextID="483" infoText="#count개의 붉은 보석에 판매할까요?" />
+  <Item infoTextID="484" infoText="붉은 보석이 부족합니다!" />
+  <Item infoTextID="485" infoText="전투 중 한 번만 사용할 수 있는 도구입니다." />
+  <Item infoTextID="486" infoText="의상을 갈아입습니다." />
+  <Item infoTextID="487" infoText="의상을 갈아입기 위해서는 현재 MP가 1,000 이상 남아있어야 합니다." />
+  <Item infoTextID="488" infoText="추가로 장비한 손톱이 없습니다.@손톱류 무기들. 기본 무기는 아가모의 손톱, 여기에 보조손톱을 더 끼는 형태" />
+  <Item infoTextID="489" infoText="[#name] 사용할 수 있는 무기가 없기 때문에 차례를 넘깁니다." />
+  <Item infoTextID="490" infoText="모카모리가 전투에 들어가면 아가모의 가호로 인해 기본능력이 몇 배로 상승합니다. 현재는 전투시 기본능력이 200%만큼 능력이 상승하며 영혼석을 강화하면 이 수치가 상승합니다." />
+  <Item infoTextID="491" infoText="더 이상 모카모리의 부하가 아닙니다." />
+  <Item infoTextID="492" infoText="사망한 부하입니다." />
+  <Item infoTextID="493" infoText="아가모의 부활의식" />
+  <Item infoTextID="494" infoText="결계를 해제하고 상대와 전투를 시작할까요?@결계로 봉인한 엑시드록스와 전투하기 직전 안내메세지." />
+  <Item infoTextID="495" infoText="전투를 시작한다." />
+  <Item infoTextID="496" infoText="그만둔다." />
+  <Item infoTextID="497" infoText="새로운 무기 재련법을 획득했습니다." />
+  <Item infoTextID="498" infoText="명성이 #num만큼 상승했습니다." />
+  <Item infoTextID="499" infoText="명성이 #num만큼 감소했습니다." />
+  <Item infoTextID="500" infoText="재료 수집가를 구해줄까요?" />
+  <Item infoTextID="501" infoText="무시한다." />
+  <Item infoTextID="502" infoText="구해준다." />
+  <Item infoTextID="503" infoText="협상을 한다." />
+  <Item infoTextID="504" infoText="도구상을 도울까요?" />
+  <Item infoTextID="505" infoText="어떻게 반응할까요?" />
+  <Item infoTextID="506" infoText="에단과 저스티스를 공격한다." />
+  <Item infoTextID="507" infoText="참아준다." />
+  <Item infoTextID="508" infoText="에단과 저스티스가 서로 싸우도록 명령한다." />
+  <Item infoTextID="509" infoText="-" />
+  <Item infoTextID="510" infoText="슈가 할머니를 도울까요?" />
+  <Item infoTextID="511" infoText="돕는다." />
+  <Item infoTextID="512" infoText="돕지 않는다." />
+  <Item infoTextID="513" infoText="모카모리는 할머니에게 안경을 건네주었다." />
+  <Item infoTextID="514" infoText="에단이 현재 전투에 협조하지 않습니다." />
+  <Item infoTextID="515" infoText="#name의 전투능력이 향상되었습니다!" />
+  <Item infoTextID="516" infoText="수상한 스위치가 있습니다. 스위치를 누를까요?" />
+  <Item infoTextID="517" infoText="스위치를 누른다." />
+  <Item infoTextID="518" infoText="그만둔다." />
+  <Item infoTextID="519" infoText="슈크리나가 울고 있습니다." />
+  <Item infoTextID="520" infoText="위로한다." />
+  <Item infoTextID="521" infoText="따끔하게 말한다." />
+  <Item infoTextID="522" infoText="리뮤라가 캣닙을 원하는 것 같습니다." />
+  <Item infoTextID="523" infoText="캣닙을 리뮤라에게 준다." />
+  <Item infoTextID="524" infoText="무시한다." />
+  <Item infoTextID="525" infoText="모카모리는 캣닙을 꺼내들었다." />
+  <Item infoTextID="526" infoText="테레노드의 도전을 받아줄까요?" />
+  <Item infoTextID="527" infoText="도전을 받는다." />
+  <Item infoTextID="528" infoText="그만둔다." />
+  <Item infoTextID="529" infoText="[#name]^n대상을 소환하기까지 3차례 남았습니다." />
+  <Item infoTextID="530" infoText="이미 소환중인 대상이 있습니다." />
+  <Item infoTextID="531" infoText="이 램브래곤을 어떻게 할까요?" />
+  <Item infoTextID="532" infoText="해치운다." />
+  <Item infoTextID="533" infoText="놓아주되 대가를 요구한다." />
+  <Item infoTextID="534" infoText="밖에서는 텐트를 통해 캠핑을 할 수 있습니다. 캠핑 후에는 HP와 MP가 모두 회복되며 현재 시간을 일기장에 저장할 수 있습니다. 텐트는 푸르토 마을 상인이 판매합니다." />
+  <Item infoTextID="535" infoText="노아가 정신을 집중하기 시작합니다." />
+  <Item infoTextID="536" infoText="노아가 모카모리의 MP를 완전히 회복시켰습니다." />
+  <Item infoTextID="537" infoText="아슬아슬하고 이상하게 쌓아올린 작은 돌탑이 있다.@거의 쓰러질 것 같이, 특이하게 쌓아올린 돌을 봤을 때 나오는 안내멘트. 우리스에 대한 복선 역할의 안내문. 에단 형이 돌을 이상하게 쌓는 취미가 있다는 대사가 있음" />
+  <Item infoTextID="538" infoText="잠을 자고 있는 드래곤을 깨울까요?" />
+  <Item infoTextID="539" infoText="깨운다." />
+  <Item infoTextID="540" infoText="그만둔다." />
+  <Item infoTextID="541" infoText="등반이 가능한 암벽이 앞에 있습니다." />
+  <Item infoTextID="542" infoText="올라간다." />
+  <Item infoTextID="543" infoText="그만둔다." />
+  <Item infoTextID="544" infoText="루나타 촌장의 부탁에 어떻게 반응할까요?" />
+  <Item infoTextID="545" infoText="그냥 붉은 보석을 빼앗는다." />
+  <Item infoTextID="546" infoText="무르가브를 퇴치하러 간다." />
+  <Item infoTextID="547" infoText="모카모리는 촌장에게서 붉은 보석을 강제로 빼앗았다." />
+  <Item infoTextID="548" infoText="공방주인에게 어떻게 반응할까요?" />
+  <Item infoTextID="549" infoText="화염석은 내가 가져간다." />
+  <Item infoTextID="550" infoText="어서 돌아가." />
+  <Item infoTextID="551" infoText="맛있는 열매를 얻었습니다. 어떻게 반응할까요?" />
+  <Item infoTextID="552" infoText="더 내놔." />
+  <Item infoTextID="553" infoText="맛있게 먹는다." />
+  <Item infoTextID="554" infoText="모카모리는 은화를 꺼내들었다." />
+  <Item infoTextID="555" infoText="은화가 짤랑거리는 소리가 울리기 시작한다." />
+  <Item infoTextID="556" infoText="아르카스는 석상 안에서 노아의 목걸이를 찾았다." />
+  <Item infoTextID="557" infoText="아르카스는 노아의 목걸이를 요정의 웅덩이로 던졌다." />
+  <Item infoTextID="558" infoText="바위 틈 사이로 수상한 공간이 보입니다. 들어가 볼까요?" />
+  <Item infoTextID="559" infoText="들어간다." />
+  <Item infoTextID="560" infoText="그만둔다." />
+  <Item infoTextID="561" infoText="용사들에게 어떻게 반응할까요?" />
+  <Item infoTextID="562" infoText="모두 때려 눕힌다." />
+  <Item infoTextID="563" infoText="보내준다." />
+  <Item infoTextID="564" infoText="데니에게 마력을 돌려줄까요?" />
+  <Item infoTextID="565" infoText="마력을 돌려준다." />
+  <Item infoTextID="566" infoText="무시한다." />
+  <Item infoTextID="567" infoText="데니에게 마력을 돌려주었습니다." />
+  <Item infoTextID="568" infoText="행인을 도와줄까요?" />
+  <Item infoTextID="569" infoText="도와준다." />
+  <Item infoTextID="570" infoText="그냥 지나간다." />
+  <Item infoTextID="571" infoText="광산 아래에 거대한 공간이 보입니다. 내려가 볼까요?" />
+  <Item infoTextID="572" infoText="내려간다." />
+  <Item infoTextID="573" infoText="그만둔다." />
+  <Item infoTextID="574" infoText="광산 윗층으로 올라갈까요?" />
+  <Item infoTextID="575" infoText="올라간다." />
+  <Item infoTextID="576" infoText="그만둔다." />
+  <Item infoTextID="577" infoText="광산벌레들을 퇴치해 줄까요?" />
+  <Item infoTextID="578" infoText="퇴치한다." />
+  <Item infoTextID="579" infoText="거절한다." />
+  <Item infoTextID="580" infoText="파견취소" />
+  <Item infoTextID="581" infoText="파견을 취소하시겠습니까?" />
+  <Item infoTextID="582" infoText="파견을 취소했습니다." />
+  <Item infoTextID="583" infoText="위치가 파악되지 않는 지역입니다.@지도에서 위치가 파악되지 않는 지역 정보를 보려고 했을 때" />
+  <Item infoTextID="584" infoText="명성" />
+  <Item infoTextID="585" infoText="선택지에서 선한 일을 선택하면 명성이 높아지고 그렇지 않으면 명성이 낮아집니다. 명성은 엔딩에 영향을 미칩니다.@특정 몬스터를 이겼을 때 붙는 칭호" />
+  <Item infoTextID="586" infoText="작은 왕 모카모리@스탯창의 모카모리 일반 칭호" />
+  <Item infoTextID="587" infoText="위험한 왕 모카모리@명성이 낮을 때 모카모리 칭호" />
+  <Item infoTextID="588" infoText="무서운 왕 모카모리@명성이 최악일 때 모카모리 칭호" />
+  <Item infoTextID="589" infoText="친근한 왕 모카모리@명성이 높을 때 모카모리 칭호" />
+  <Item infoTextID="590" infoText="선한 왕 모카모리@명성이 최상일 때 모카모리 칭호" />
+  <Item infoTextID="591" infoText="최강의 왕 모카모리@특정 몬스터를 이겼을 때 붙는 칭호" />
+  <Item infoTextID="592" infoText="[#itemID] #num개 획득" />
+  <Item infoTextID="593" infoText="이미 착용중인 특수장비입니다." />
+  <Item infoTextID="594" infoText="[#itemName] 특수장비를 착용했습니다." />
+  <Item infoTextID="595" infoText="새로운 이야기" />
+  <Item infoTextID="596" infoText="일기장 읽기" />
+  <Item infoTextID="597" infoText="이어하기" />
+  <Item infoTextID="598" infoText="마녀의 샘4" />
+  <Item infoTextID="599" infoText="일기장이 비어있습니다." />
+  <Item infoTextID="600" infoText="최근에 자동 저장된 기록이 없습니다." />
+  <Item infoTextID="601" infoText="최근에 자동 저장된 기록을 불러옵니다." />
+  <Item infoTextID="602" infoText="새로운 이야기를 시작합니다." />
+  <Item infoTextID="603" infoText="착용중" />
+  <Item infoTextID="604" infoText="지금은 소환할 수 없는 부하입니다." />
+  <Item infoTextID="605" infoText="빠른사냥 모드@약한 적들은 전투에 도입하지 않고 마주치는 즉시 제압하여 아이템을 얻는다." />
+  <Item infoTextID="606" infoText="레시피 추가됨" />
+  <Item infoTextID="607" infoText="나열할 도구종류를 선택해주세요." />
+  <Item infoTextID="608" infoText="회복" />
+  <Item infoTextID="609" infoText="능력상승" />
+  <Item infoTextID="610" infoText="무기" />
+  <Item infoTextID="611" infoText="악세사리" />
+  <Item infoTextID="612" infoText="마법책" />
+  <Item infoTextID="613" infoText="드레스" />
+  <Item infoTextID="614" infoText="미니맵을 사용할 수 없는 지역입니다." />
+  <Item infoTextID="615" infoText="[빠른사냥 모드]^n상대의 HP가 모카모리의 마력이나 힘보다 낮을 경우 모카모리는 전투에 도입하지 않고 즉시 대상을 사냥하여 도구를 획득합니다. 빠른사냥 모드는 설정창에서 해제하거나 다시 활성시킬 수 있습니다. 단, 특정 이벤트에서는 빠른사냥 모드가 실행되지 않습니다." />
+  <Item infoTextID="616" infoText="상대의 생명력을 흡수하여 HP를 #power만큼 회복했습니다." />
+  <Item infoTextID="617" infoText="빙결효과로 상대의 행동을 #power% 느리게 만들었습니다." />
+  <Item infoTextID="618" infoText="상대에게 화상을 입혔습니다." />
+  <Item infoTextID="619" infoText="상대가 전격 속성의 공격에 취약해졌습니다." />
+  <Item infoTextID="620" infoText="상대가 빙결효과에 내성이 있습니다." />
+  <Item infoTextID="621" infoText="화염마법이 상대에게 걸린 빙결효과를 제거했습니다." />
+  <Item infoTextID="622" infoText="빙결마법이 상대에게 걸린 화염효과를 제거했습니다." />
+  <Item infoTextID="623" infoText="상대가 화상효과에 내성이 있습니다." />
+  <Item infoTextID="624" infoText="상대가 받은 피해를 모카모리에게 되돌려 주었습니다." />
+  <Item infoTextID="625" infoText="이 곳에서 우르파 대륙의 지도를 열면 하늘이동이 가능합니다." />
+  <Item infoTextID="626" infoText="영혼석에 마력을 #power만큼 흡수시켰습니다." />
+  <Item infoTextID="627" infoText="착용해제" />
+  <Item infoTextID="628" infoText="착용을 해제했습니다." />
+  <Item infoTextID="629" infoText="모카모리가 전격 공격에 취약해졌습니다." />
+  <Item infoTextID="630" infoText="모카모리가 화상을 입었습니다." />
+  <Item infoTextID="631" infoText="모카모리가 상대의 빙결속성 공격으로 인해 느려졌습니다." />
+  <Item infoTextID="632" infoText="이미 전투에 참여중인 대상입니다." />
+  <Item infoTextID="633" infoText="뗏목 탑승 중에는 도구를 다룰 수 없습니다.@도구사용 불가, 장비해제 불가 등 모든 의미 포함" />
+  <Item infoTextID="634" infoText="방에서 의상을 교체하려면 옷방을 이용해주세요." />
+  <Item infoTextID="635" infoText="북쪽" />
+  <Item infoTextID="636" infoText="동쪽" />
+  <Item infoTextID="637" infoText="남쪽" />
+  <Item infoTextID="638" infoText="서쪽" />
+  <Item infoTextID="639" infoText="어떤 선택을 할까요?" />
+  <Item infoTextID="640" infoText="리브로의 음식을 먹고 에단과의 약속을 취소한다." />
+  <Item infoTextID="641" infoText="에단과 함께 수정굴로 향한다." />
+  <Item infoTextID="642" infoText="이 차례에는 모카모리의 행운이 좋습니다.@이 차례에서 크리티컬 데미지가 뜰 때 안내메세지" />
+  <Item infoTextID="643" infoText="넘어가지 않는다." />
+  <Item infoTextID="644" infoText="아주 많이 기다려야 함@몬스터 리젠시간 안내문구. 286번 다음에 붙여서 쓰임. 예시 '다시 나타나기까지 아주 많이 기다려야 함)" />
+  <Item infoTextID="645" infoText="많이 기다려야 함" />
+  <Item infoTextID="646" infoText="조금 기다려야 함" />
+  <Item infoTextID="647" infoText="곧 다시 나타남" />
+  <Item infoTextID="648" infoText="에디스가 현재 전투에 협조하지 않습니다." />
+  <Item infoTextID="649" infoText="현재시간이 자동으로 저장되었습니다." />
+  <Item infoTextID="650" infoText="수집된 삽화가 아직 없습니다." />
+  <Item infoTextID="651" infoText="클라우드 백업을 이용하려면 #name 로그인이 필요합니다. #name 로그인을 시도할까요?@클라우드 백업, 내려받기 등 클라우드 접근시 로그인이 되지 않았을 때 나오는 문구. #name은 구글플레이 또는 애플 게임센터" />
+  <Item infoTextID="652" infoText="구글 플레이" />
+  <Item infoTextID="653" infoText="게임센터@애플용" />
+  <Item infoTextID="654" infoText="전격마법에 당한 상대는 전격 속성의 공격에 취약해집니다. 이 때 모카모리가 같은 전격 속성의 마법을 사용하거나 전격 속성을 입힌 손톱을 사용하면 평소보다 훨씬 큰 피해를 상대에게 줄 수 있습니다." />
+  <Item infoTextID="655" infoText="화염마법에 당한 상대는 화상을 입게 되며 화상효과에 걸린 적은 공격을 당할 때마다 추가 피해를 입게 됩니다. 화상에 걸린 적에게는 한 차례에 여러번 공격하는 기술이 훨씬 유리합니다. 단, 화상효과는 빙결마법에 사라집니다." />
+  <Item infoTextID="656" infoText="빙결마법에 걸린 적은 민첩이 크게 낮아져 아군이 행동할 수 있는 차례가 많이 돌아오게 됩니다. 단, 빙결효과는 화염마법에 사라집니다." />
+  <Item infoTextID="657" infoText="전격마법" />
+  <Item infoTextID="658" infoText="화염마법" />
+  <Item infoTextID="659" infoText="빙결마법" />
+  <Item infoTextID="660" infoText="마법의 속성에 관하여" />
+  <Item infoTextID="661" infoText="마법진의 종류" />
+  <Item infoTextID="662" infoText="마력 매개체는 마법의 모양과, 공격방식, 그리고 기본적인 위력 등 마법이 가진 고유의 특성을 결정합니다." />
+  <Item infoTextID="663" infoText="주 마법진은 마력 매개체의 위력을 증폭시키며 마력 매개체에 특정한 속성을 부여하여 전투에 유리한 효과를 만들 수 있습니다." />
+  <Item infoTextID="664" infoText="보조 마법진은 주 마법진과 동일한 기능을 하지만 주 마법진보다 위력은 다소 낮습니다. 단, 한 슬롯에서 보조 마법진과 주 마법진은 서로 같은 속성으로 이룰 수 없습니다." />
+  <Item infoTextID="665" infoText="아가모의 무기 소환" />
+  <Item infoTextID="666" infoText="전투 중 마력각성 수치가 가득 찼을 때 모카모리는 마력각성을 시도할 수 있다. 모카모리가  마력각성을 한 직후에는 HP와 MP가 회복되며 아가모의 무기를 소환하여 강력한 기술을 사용할 수 있게 된다. 단, 마력각성을 유지할 수 있는 시간은 매우 짧다.@마력각성 설명" />
+  <Item infoTextID="667" infoText="마력각성과 손톱공격" />
+  <Item infoTextID="668" infoText="전투 중 마력각성 수치가 오를수록 손톱공격의 위력이 최대 2.5배까지 증가합니다. 전투가 후반으로 갈수록 손톱공격의 위력은 매우 강력해집니다.@무기소환에 대한 설명" />
+  <Item infoTextID="669" infoText="일반공격과 폭발형 공격^n^n일반공격은 한 명의 적에게 한 번의 피해만 입힐 수 있으며, 폭발형 공격은 폭발 범위 안에 있는 모든 적들에게 피해를 입힐 수 있습니다. 덩치가 큰 적이 폭발형 공격을 받게 될 경우 폭발의 범위 작용으로 인해 여러번 타격을 받게 됩니다." />
+  <Item infoTextID="670" infoText="클라우드에 저장할 일기장 데이터가 기기에 없습니다." />
+  <Item infoTextID="671" infoText="클라우드에 모든 일기장 기록을 저장하였습니다. 일기장 기록이 지워져도 현재 로그인된 계정으로 다시 일기장 기록을 불러올 수 있습니다." />
+  <Item infoTextID="672" infoText="클라우드에 저장된 일기장 기록이 없습니다." />
+  <Item infoTextID="673" infoText="클라우드의 일기장 기록을 기기에 모두 저장하였습니다." />
+  <Item infoTextID="674" infoText="클라우드에서 일기장 기록을 읽어오지 못했습니다." />
+  <Item infoTextID="675" infoText="클라우드에 일기장 기록을 백업하지 못했습니다." />
+  <Item infoTextID="676" infoText="클라우드 일기장" />
+  <Item infoTextID="677" infoText="클라우드에 현재 일기장을 백업" />
+  <Item infoTextID="678" infoText="클라우드에 백업된 일기장 내려받기" />
+  <Item infoTextID="679" infoText="로그인에 실패했습니다." />
+  <Item infoTextID="680" infoText="클라우드에 현재 일기장 기록들을 백업할까요? 최근에 자동저장된 시점까지 백업됩니다." />
+  <Item infoTextID="681" infoText="클라우드에 저장된 일기장 기록들을 불러올까요? 불러온 기록들은 현재 일기장 기록 위에 덮어씌우게 됩니다." />
+  <Item infoTextID="682" infoText="부하들의 파견 시간이 줄어들었습니다." />
+  <Item infoTextID="683" infoText="재료 수집가들이 도와줄 파견된 부하가 없습니다." />
+  <Item infoTextID="684" infoText="재료 수집가들의 휴식이 필요합니다. 다시 사용 가능까지 #power%" />
+  <Item infoTextID="685" infoText="베테랑 재료 수집가들의 휴식이 필요합니다. 다시 사용 가능까지 #power%" />
+  <Item infoTextID="686" infoText="아직 사용할 수 없습니다.@튜토리얼 전에 열 수 없는 메뉴들 안내" />
+  <Item infoTextID="687" infoText="자동 저장된 기록" />
+  <Item infoTextID="688" infoText="소환하려는 대상과 전투 중인 상대가 같습니다.@예를 들면 테레노드와 싸울 때 테레노드 소환으로 공격하려고 하면 블락함" />
+  <Item infoTextID="689" infoText="제1 장^n작은 왕 모카모리" />
+  <Item infoTextID="690" infoText="제2 장^n유대의 씨앗" />
+  <Item infoTextID="691" infoText="제3 장^n위험한 침입자" />
+  <Item infoTextID="692" infoText="제4 장^n꿈의 세계" />
+  <Item infoTextID="693" infoText="제5 장^n유대의 열매" />
+  <Item infoTextID="694" infoText="엔딩 후 컨텐츠인 첫 번째 DLC는 2020년 상반기에 무료로 1회 업데이트 될 예정입니다. 많은 기대 바랍니다!" />
+  <Item infoTextID="695" infoText="일기장을 닫으면 타이틀 화면으로 이동합니다." />
+  <Item infoTextID="696" infoText="반각성 상태로 진입하여 손톱기술 중 '누크 콜라보레이션'이 일시적으로 추가되었습니다." />
+  <Item infoTextID="697" infoText="버튼을 위로 밀면 버튼에 대한 설명이 나타납니다." />
+  <Item infoTextID="698" infoText="화면을 터치하면 수련을 진행하는 속도가 빨라집니다." />
+  <Item infoTextID="699" infoText="도구를 사용해서 한 번에 상승시킬 수 있는 수치의 최대한도는 #power입니다." />
+  <Item infoTextID="700" infoText="마력 매개체인 샤를리의 창이 강화되었습니다." />
+  <Item infoTextID="701" infoText="마력 매개체인 미라크의 활이 강화되었습니다." />
+  <Item infoTextID="702" infoText="마력 매개체인 노바의 운석이 강화되었습니다." />
+  <Item infoTextID="703" infoText="마력 매개체인 루나타의 검이 강화되었습니다." />
+  <Item infoTextID="704" infoText="그림자의 세계로 들어가시겠습니까?" />
+  <Item infoTextID="705" infoText="보르레의 기운이 #area 근처에서 느껴집니다." />
+  <Item infoTextID="706" infoText="보르레의 기운이 푸르토 언덕에서 느껴집니다." />
+  <Item infoTextID="707" infoText="엑시드록스가 소환을 거부합니다." />
+  <Item infoTextID="708" infoText="문어의 섬으로 출발하시겠습니까?" />
+  <Item infoTextID="709" infoText="루비드 마을로 돌아가시겠습니까?" />
+  <Item infoTextID="710" infoText="가이아 제네시스를 다시 소환하려면 #num차례 후에 소환을 시도하세요." />
+  <Item infoTextID="711" infoText="전투 중에만 사용 가능한 도구입니다." />
+  <Item infoTextID="712" infoText="[기적의 구슬]마법을 완전히 방어했습니다." />
+  <Item infoTextID="713" infoText="테레노드가 소환을 거부합니다." />
+  <Item infoTextID="714" infoText="언어변경을 위해 게임을 다시 시작합니다." />
+  <Item infoTextID="715" infoText="가나다@언어설정 버튼 글자. 영어의 경우 대문자 ABC로. 각 언어별 대표글자 표기. (최대3자)" />
+  <Item infoTextID="716" infoText="영혼석 단계가 상승했습니다!^n전투 시 모카모리의 능력이 더 강해집니다.^n#powerOld% -&gt; #powerNew%" />
+  <Item infoTextID="717" infoText="전투 직후 영혼석의 마력이 충분히 모이면 영혼석은 자동으로 강화되며, 이 때 모카모리의 HP와 MP는 모두 회복됩니다." />
+  <Item infoTextID="718" infoText="게임 재시작" />
+  <Item infoTextID="719" infoText="영혼석 단계가 상승했습니다!" />
+  <Item infoTextID="720" infoText="망토를 착용했습니다." />
+  <Item infoTextID="721" infoText="망토를 해제했습니다." />
+  <Item infoTextID="722" infoText="마지막까지 마녀의샘4를 플레이해주셔서 감사합니다!^n자동으로 타이틀 화면으로 돌아갑니다." />
+</ItemList>

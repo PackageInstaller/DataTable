@@ -1,0 +1,19 @@
+module("maze.MazeHeroVo", Class.impl())
+
+function setData(self, cusData)
+    -- 战员id
+    self.heroId = cusData.hero_id
+    -- 怪物Id(怪物表id)
+    self.monsterId = cusData.mon_id
+    -- 战员类型
+    self.sourceType = cusData.type
+    -- 当前血量
+    self.nowHp = cusData.hp_now
+    -- 最大血量
+    self.maxHp = cusData.hp_max
+end
+
+return _M
+ 
+--[[ 替换语言包自动生成，请勿修改！
+]]

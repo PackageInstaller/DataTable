@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ItemList>
+	<Item infoTextID="0" infoText="Move to which floor?"/>
+	<Item infoTextID="1" infoText="#name:KingsLobby"/>
+	<Item infoTextID="2" infoText="#name:WitchRoom"/>
+	<Item infoTextID="3" infoText="#name:TrainingRoom"/>
+	<Item infoTextID="4" infoText="Do nothing"/>
+	<Item infoTextID="5" infoText="Select [#answer]"/>
+	<Item infoTextID="6" infoText="Dragon's Nest"/>
+	<Item infoTextID="7" infoText="Pet Storage"/>
+	<Item infoTextID="8" infoText="Basement-"/>
+	<Item infoTextID="9" infoText="Basement-"/>
+	<Item infoTextID="10" infoText="Basement-"/>
+	<Item infoTextID="11" infoText="Do you want to sleep?"/>
+	<Item infoTextID="12" infoText="Sleep"/>
+	<Item infoTextID="13" infoText="Fight Training: Training to raise overall physical abilities. HP, STR and AGI increase evenly, and you can also learn new talon skills when your fight level increases."/>
+	<Item infoTextID="14" infoText="Running: Stamina training for HP increase. It also increases some AGI. HP recovered after defense is increased as the stamina level increases."/>
+	<Item infoTextID="15" infoText="Muscle Training: Training for strength and defense. Summons a large boulder to train muscles. Damage reduction percent increases as the muscle level increases."/>
+	<Item infoTextID="16" infoText="Magic Training: Increases MAG and MP evenly. Fires magic power quickly. You can learn new magic power talon skills when your magic level increases."/>
+	<Item infoTextID="17" infoText="Meditation: Meditate on top of the sap to train magic power actualization. MP increases greatly after training, and some MAG increases as well. MP consumed for casting magic greatly decreases as the mind level increases."/>
+	<Item infoTextID="18" infoText="Magic Power Release: Release magic power to your limit to greatly increase MAG. MP also increases slightly. Magical strength of drawing magic circles greatly increases as the magic power level increases, and you can learn new magic skills at the last stage."/>
+	<Item infoTextID="19" infoText="| Training Efficiency |"/>
+	<Item infoTextID="20" infoText="Expectation"/>
+	<Item infoTextID="21" infoText="HP"/>
+	<Item infoTextID="22" infoText="MP"/>
+	<Item infoTextID="23" infoText="MAG"/>
+	<Item infoTextID="24" infoText="STR"/>
+	<Item infoTextID="25" infoText="DEF"/>
+	<Item infoTextID="26" infoText="AGI"/>
+	<Item infoTextID="27" infoText="Training performance increases as training efficiency approaches 100%. Training efficiency decreases greatly each time you train, so we recommend training what is currently more important to the Witch first. Training cannot progress when the training efficiency is 20% or less, but it will slowly recover as time passes through external activities such as combat."/>
+	<Item infoTextID="28" infoText="#tag"/>
+	<Item infoTextID="29" infoText="#type increase"/>
+	<Item infoTextID="30" infoText="#type increase bonus"/>
+	<Item infoTextID="31" infoText="Fight level"/>
+	<Item infoTextID="32" infoText="Stamina level"/>
+	<Item infoTextID="33" infoText="Muscle level"/>
+	<Item infoTextID="34" infoText="Magic level"/>
+	<Item infoTextID="35" infoText="Mind level"/>
+	<Item infoTextID="36" infoText="Magic power level"/>
+	<Item infoTextID="37" infoText="-"/>
+	<Item infoTextID="38" infoText="-"/>
+	<Item infoTextID="39" infoText="-"/>
+	<Item infoTextID="40" infoText="Select a target to attack."/>
+	<Item infoTextID="41" infoText="Talon Upgrade: Basic talon attack power increases to 125% as your talons are imbued with the power of lightning."/>
+	<Item infoTextID="42" infoText="Sphere Bomb: Channels an explosive electric energy sphere in your hand, then explode it at once to deal 220% MAG damage to nearby targets."/>
+	<Item infoTextID="43" infoText="Conduction: Conducts electrical energy with each attack to deal damage to all targets. The damage begins equal to MAG, then decreases as it conducts to another target. As conduction progresses its MP cost increases, and it will stop when you lack enough MP,"/>
+	<Item infoTextID="44" infoText="Body Upgrade: Consumes 40% of HP and MP to cloak your body with electrical energy. All abilities except DEF increase by 50% when in action, and the Body Upgrade effect decreases by half on the next action. The effect of Body Upgrade ceases on the third turn."/>
+	<Item infoTextID="45" infoText="-"/>
+	<Item infoTextID="46" infoText="-"/>
+	<Item infoTextID="47" infoText="-"/>
+	<Item infoTextID="48" infoText="-"/>
+	<Item infoTextID="49" infoText="3-Attack: Attacks a target quickly three times (for 80-100% damage)."/>
+	<Item infoTextID="50" infoText="Jump: Jumps up high to crush down a target. Deals 200% STR damage to the selected target, and deals 100% STR damage to nearby targets. Other attack effects that occur in the instant are increased by 20%."/>
+	<Item infoTextID="51" infoText="7-Attack: Attacks a target quickly seven times (for 60-80% damage)."/>
+	<Item infoTextID="52" infoText="Dash: Quickly moves towards a target and deals critical damage in proportion to STR and MAG."/>
+	<Item infoTextID="53" infoText="-"/>
+	<Item infoTextID="54" infoText="-"/>
+	<Item infoTextID="55" infoText="-"/>
+	<Item infoTextID="56" infoText="-"/>
+	<Item infoTextID="57" infoText="This effect has already been bestowed!"/>
+	<Item infoTextID="58" infoText="AGI decreases by #power% until the next action."/>
+	<Item infoTextID="59" infoText="-"/>
+	<Item infoTextID="60" infoText="#name channeled in hand."/>
+	<Item infoTextID="61" infoText="-"/>
+	<Item infoTextID="62" infoText="-"/>
+	<Item infoTextID="63" infoText="-"/>
+	<Item infoTextID="64" infoText="-"/>
+	<Item infoTextID="65" infoText="-"/>
+	<Item infoTextID="66" infoText="-"/>
+	<Item infoTextID="67" infoText="#name:TopHillFly"/>
+	<Item infoTextID="68" infoText="Not enough MP."/>
+	<Item infoTextID="69" infoText="Magic Power Awakening"/>
+	<Item infoTextID="70" infoText="Ready to use skill. - [#skill]"/>
+	<Item infoTextID="71" infoText="[#skillName] is not ready yet."/>
+	<Item infoTextID="72" infoText="Talon Attack"/>
+	<Item infoTextID="73" infoText="Magic Talon"/>
+	<Item infoTextID="74" infoText="All Tools"/>
+	<Item infoTextID="75" infoText="Favorite Tool"/>
+	<Item infoTextID="76" infoText="{ Found at"/>
+	<Item infoTextID="77" infoText="Set as the favorite tool."/>
+	<Item infoTextID="78" infoText="Excluded as the favorite tool."/>
+	<Item infoTextID="79" infoText="Consumable Tool"/>
+	<Item infoTextID="80" infoText="Special Tool"/>
+	<Item infoTextID="81" infoText="Equipment"/>
+	<Item infoTextID="82" infoText="Magic Circle"/>
+	<Item infoTextID="83" infoText="[#kind]"/>
+	<Item infoTextID="84" infoText="The selected tools are already listed."/>
+	<Item infoTextID="85" infoText="No displayable [#kind] category."/>
+	<Item infoTextID="86" infoText="Craft Tool"/>
+	<Item infoTextID="87" infoText="Craft Now"/>
+	<Item infoTextID="88" infoText="Use"/>
+	<Item infoTextID="89" infoText="Not enough ingredients for crafting!"/>
+	<Item infoTextID="90" infoText="OK"/>
+	<Item infoTextID="91" infoText="Combine Magic"/>
+	<Item infoTextID="92" infoText="Main Slot | Magic effect +20%"/>
+	<Item infoTextID="93" infoText="Secondary Slot | Magic effect +10%, MP cost -10%"/>
+	<Item infoTextID="94" infoText="Supportive Slot | MP cost -20%"/>
+	<Item infoTextID="95" infoText="Equip"/>
+	<Item infoTextID="96" infoText="No magic power medium currently equipped."/>
+	<Item infoTextID="97" infoText="Slot currently emptied."/>
+	<Item infoTextID="98" infoText="Ürphean Continent Map"/>
+	<Item infoTextID="99" infoText="Discovered Regions"/>
+	<Item infoTextID="100" infoText="Display dispatched minions."/>
+	<Item infoTextID="101" infoText="Do not display dispatched minions."/>
+	<Item infoTextID="102" infoText="&lt; #name &gt;^n^nCurrent location: #area^nSearched item: #itemName^nProgress: #percent%"/>
+	<Item infoTextID="103" infoText="Found item:"/>
+	<Item infoTextID="104" infoText="No info"/>
+	<Item infoTextID="105" infoText="No minions dispatched"/>
+	<Item infoTextID="106" infoText="Display region info."/>
+	<Item infoTextID="107" infoText="Hide region info."/>
+	<Item infoTextID="108" infoText="Dispatch minions"/>
+	<Item infoTextID="109" infoText="Select item to investigate"/>
+	<Item infoTextID="110" infoText="No minions to dispatch currently."/>
+	<Item infoTextID="111" infoText="Dispatched minion (#who) to #place."/>
+	<Item infoTextID="112" infoText="Cannot dispatch minions to an undiscovered region."/>
+	<Item infoTextID="113" infoText="Moccamori is blessed by Agamo. Moccamori's base abilities increase to #power% when in combat."/>
+	<Item infoTextID="114" infoText="The Witch began to absorb magic power of the spring."/>
+	<Item infoTextID="115" infoText="The Witch slowly investigates the spring."/>
+	<Item infoTextID="116" infoText="Obtain"/>
+	<Item infoTextID="117" infoText="ATK"/>
+	<Item infoTextID="118" infoText="Magic RES"/>
+	<Item infoTextID="119" infoText="Phys RES"/>
+	<Item infoTextID="120" infoText="Dodge"/>
+	<Item infoTextID="121" infoText="Battle"/>
+	<Item infoTextID="122" infoText="Teleport to where?"/>
+	<Item infoTextID="123" infoText="{ Summon Minion }"/>
+	<Item infoTextID="124" infoText="Begin Summon"/>
+	<Item infoTextID="125" infoText="Not enough MP!"/>
+	<Item infoTextID="126" infoText="&lt;MP needed for summon&gt;"/>
+	<Item infoTextID="127" infoText="#num% of total MP"/>
+	<Item infoTextID="128" infoText="#power damage reduction!"/>
+	<Item infoTextID="129" infoText="Moccamori can use Magic Power Awakening when it is her turn."/>
+	<Item infoTextID="130" infoText="Already using Magic Power Awakening."/>
+	<Item infoTextID="131" infoText="Great power engulfs Moccamori."/>
+	<Item infoTextID="132" infoText="Magic"/>
+	<Item infoTextID="133" infoText="Total damage"/>
+	<Item infoTextID="134" infoText="MP cost"/>
+	<Item infoTextID="135" infoText="#power% of max MP"/>
+	<Item infoTextID="136" infoText="Focus on defense."/>
+	<Item infoTextID="137" infoText="HP recovered by #power after defense!"/>
+	<Item infoTextID="138" infoText="Cannot use this tool during battle."/>
+	<Item infoTextID="139" infoText="No tools available."/>
+	<Item infoTextID="140" infoText="HP is already full."/>
+	<Item infoTextID="141" infoText="HP recovered by #power!"/>
+	<Item infoTextID="142" infoText="MP recovered by #power!"/>
+	<Item infoTextID="143" infoText="Max HP increased by #power!"/>
+	<Item infoTextID="144" infoText="Max MP increased by #power!"/>
+	<Item infoTextID="145" infoText="MAG increased by #power!"/>
+	<Item infoTextID="146" infoText="STR increased by #power!"/>
+	<Item infoTextID="147" infoText="AGI increased by #power!"/>
+	<Item infoTextID="148" infoText="DEF increased by #power!"/>
+	<Item infoTextID="149" infoText="MP is already full."/>
+	<Item infoTextID="150" infoText="No tools selected."/>
+	<Item infoTextID="151" infoText="&lt;Total damage&gt;^n"/>
+	<Item infoTextID="152" infoText="This magic slot is empty."/>
+	<Item infoTextID="153" infoText="Cannot attack the target currently with this method."/>
+	<Item infoTextID="154" infoText="The soldiers were looking at Moccamori with a surprised look."/>
+	<Item infoTextID="155" infoText="MP recovered by #power after defense!"/>
+	<Item infoTextID="156" infoText="&lt; Gathering Magic Power of Soul Stone &gt;"/>
+	<Item infoTextID="157" infoText="What do you want to do?"/>
+	<Item infoTextID="158" infoText="Upgrade Soul Stone"/>
+	<Item infoTextID="159" infoText="Soul Stone step #power"/>
+	<Item infoTextID="160" infoText="Magic Power Awakening"/>
+	<Item infoTextID="161" infoText="Moccamori's ability increases by #power% by the power of the Soul Stone."/>
+	<Item infoTextID="162" infoText="Complete"/>
+	<Item infoTextID="163" infoText="Not enough magic power to fill the Soul Stone. (#power)"/>
+	<Item infoTextID="164" infoText="No dispatch info."/>
+	<Item infoTextID="165" infoText="Minion has completed a dispatch. [#name]"/>
+	<Item infoTextID="166" infoText="-"/>
+	<Item infoTextID="167" infoText="Slow"/>
+	<Item infoTextID="168" infoText="Normal"/>
+	<Item infoTextID="169" infoText="Fast"/>
+	<Item infoTextID="170" infoText="Go to the Royal Chamber?"/>
+	<Item infoTextID="171" infoText="Go"/>
+	<Item infoTextID="172" infoText="Do not go"/>
+	<Item infoTextID="173" infoText="Soul Stone step #num"/>
+	<Item infoTextID="174" infoText="#percent%( #num ) magic power gathered^nfor upgrading the Soul Stone to the next step."/>
+	<Item infoTextID="175" infoText="Basic Ability"/>
+	<Item infoTextID="176" infoText="Combat Ability"/>
+	<Item infoTextID="177" infoText="Crafting Index"/>
+	<Item infoTextID="178" infoText="No information."/>
+	<Item infoTextID="179" infoText="Minion info"/>
+	<Item infoTextID="180" infoText="Enemy info"/>
+	<Item infoTextID="181" infoText="Phys DEF"/>
+	<Item infoTextID="182" infoText="Magic DEF"/>
+	<Item infoTextID="183" infoText="Main Magic Circle"/>
+	<Item infoTextID="184" infoText="Supportive Magic Circle"/>
+	<Item infoTextID="185" infoText="Magic Power Medium"/>
+	<Item infoTextID="186" infoText="No magic circles currently combined. Try a magic circle combination in the Royal Chamber. Combined magic circles can affect battles with great power."/>
+	<Item infoTextID="187" infoText="No magic circle equipped."/>
+	<Item infoTextID="188" infoText="Settings"/>
+	<Item infoTextID="189" infoText="BGM"/>
+	<Item infoTextID="190" infoText="Sound FX"/>
+	<Item infoTextID="191" infoText="Tap move"/>
+	<Item infoTextID="192" infoText="Move with Virtual Joystick"/>
+	<Item infoTextID="193" infoText="To title screen"/>
+	<Item infoTextID="194" infoText="Do you want to return to the title screen?"/>
+	<Item infoTextID="195" infoText="To title screen"/>
+	<Item infoTextID="196" infoText="Play time #time"/>
+	<Item infoTextID="197" infoText="Magic ingredient"/>
+	<Item infoTextID="198" infoText="Mariena beings to channel power."/>
+	<Item infoTextID="199" infoText="The soldiers have been moved to Moccamori's castle."/>
+	<Item infoTextID="200" infoText="You can jump down from the other side of White Rock Mountain."/>
+	<Item infoTextID="201" infoText="Jump down"/>
+	<Item infoTextID="202" infoText="Cancel"/>
+	<Item infoTextID="203" infoText="Moccamori dropped a White Rock Leaf into the water."/>
+	<Item infoTextID="204" infoText="Cannot use now."/>
+	<Item infoTextID="205" infoText="Go over to the other side of the mountain?"/>
+	<Item infoTextID="206" infoText="Go over"/>
+	<Item infoTextID="207" infoText="Normal abilities increased by #power% after gathering the all power of the Soul Stone."/>
+	<Item infoTextID="208" infoText="Magic Power Awakening already used."/>
+	<Item infoTextID="209" infoText="Not ready yet."/>
+	<Item infoTextID="210" infoText="Record diary"/>
+	<Item infoTextID="211" infoText="Load diary"/>
+	<Item infoTextID="212" infoText="Record is empty."/>
+	<Item infoTextID="213" infoText="Record the present on line #num?"/>
+	<Item infoTextID="214" infoText="Record"/>
+	<Item infoTextID="215" infoText="Canceled."/>
+	<Item infoTextID="216" infoText="Record complete"/>
+	<Item infoTextID="217" infoText="Cancel"/>
+	<Item infoTextID="218" infoText="Enter a title. (Optional)"/>
+	<Item infoTextID="219" infoText="Record completed on line #num."/>
+	<Item infoTextID="220" infoText="Load the record on line #num?^nUnsaved records are not stored."/>
+	<Item infoTextID="221" infoText="Load"/>
+	<Item infoTextID="222" infoText="Loading record on line #num."/>
+	<Item infoTextID="223" infoText="Delete record on line #num? Deleted records cannot be restored."/>
+	<Item infoTextID="224" infoText="Delete"/>
+	<Item infoTextID="225" infoText="Deleted record on line #num."/>
+	<Item infoTextID="226" infoText="Cannot enter special characters in diary titles."/>
+	<Item infoTextID="227" infoText="A button to open the diary will appear when you approach the diary. Open the diary to record the current time and load it later. Try opening your diary."/>
+	<Item infoTextID="228" infoText="Press the upper left button to go to 'Record diary' and the right button to go to 'Load diary'. 'Record diary' can save the current time, and 'Load diary' can load a saved record."/>
+	<Item infoTextID="229" infoText="Sleep soundly."/>
+	<Item infoTextID="230" infoText="All HP and MP recovered by sound sleep!"/>
+	<Item infoTextID="231" infoText="Moccamori can dispatch minions to specific regions for gathering tools."/>
+	<Item infoTextID="232" infoText="Dispatched minions will gather tools at the dispatched region for a limited time, and save Moccamori time and effort."/>
+	<Item infoTextID="233" infoText="Undispatched minions await Moccamori's summon in the lobby. minions summoned during battle will help Moccamori in battle depending on its characteristics."/>
+	<Item infoTextID="234" infoText="-"/>
+	<Item infoTextID="235" infoText="Press the field menu button on the lower right."/>
+	<Item infoTextID="236" infoText="Drag the map togo the Eastern Pruto Forest displayed in blue."/>
+	<Item infoTextID="237" infoText="Press the [Dispatch minion] to select a minion to dispatch."/>
+	<Item infoTextID="238" infoText="Select Shukrina."/>
+	<Item infoTextID="239" infoText="The magic ingredient Shukrina must gather is [Blue Hedgehog Spine]."/>
+	<Item infoTextID="240" infoText="Skipping diary guide because there is a previously saved diary record."/>
+	<Item infoTextID="241" infoText="Let's try to record the current game on the first line."/>
+	<Item infoTextID="242" infoText="Shukrina left for [Eastern Pruto Forest] by Moccamori's order."/>
+	<Item infoTextID="243" infoText="Go to your room and use the teleport magic circle."/>
+	<Item infoTextID="244" infoText="Stand on the magic circle on the middle of the room to use the teleport magic circle."/>
+	<Item infoTextID="245" infoText="This minion has already been summoned."/>
+	<Item infoTextID="246" infoText="No suitable place for summon!"/>
+	<Item infoTextID="247" infoText="Speed of the next turn decreased by #power%."/>
+	<Item infoTextID="248" infoText="Prev. owned"/>
+	<Item infoTextID="249" infoText="Newly made"/>
+	<Item infoTextID="250" infoText="Set as favorite tool"/>
+	<Item infoTextID="251" infoText="Use the return spell to access the room quickly."/>
+	<Item infoTextID="252" infoText="First, select a target to craft."/>
+	<Item infoTextID="253" infoText="Press the button to begin craft."/>
+	<Item infoTextID="254" infoText="First, to select a magic power medium, select the middle slot."/>
+	<Item infoTextID="255" infoText="Equip the magic power medium displayed on the right."/>
+	<Item infoTextID="256" infoText="Select a type slot to bestow type to the magic power medium."/>
+	<Item infoTextID="257" infoText="Type slots consist of main type and supportive type. The two buttons to decide a type are the button below the magic power medium button."/>
+	<Item infoTextID="258" infoText="First, let's equip the tier 1 electric magic circle you just crafted on the main slot."/>
+	<Item infoTextID="259" infoText="Select the tier 1 electric magic circle displayed on the right."/>
+	<Item infoTextID="260" infoText="Moccamori moves around rooms on a chair. Press the exclamation mark that appeared on the chair."/>
+	<Item infoTextID="261" infoText="Press the exclamation button that appears when you go to the center of the lobby."/>
+	<Item infoTextID="262" infoText="Moccamori uses her talons to attack targets."/>
+	<Item infoTextID="263" infoText="If there are multiple targets, try using [Earth Smash] that can attack several at once."/>
+	<Item infoTextID="264" infoText="-"/>
+	<Item infoTextID="265" infoText="-"/>
+	<Item infoTextID="266" infoText="-"/>
+	<Item infoTextID="267" infoText="-"/>
+	<Item infoTextID="268" infoText="-"/>
+	<Item infoTextID="269" infoText="-"/>
+	<Item infoTextID="270" infoText="[Talon Strike] is effective against single targets."/>
+	<Item infoTextID="271" infoText="Use blast attacks on large targets to deal greater damage."/>
+	<Item infoTextID="272" infoText="-"/>
+	<Item infoTextID="273" infoText="[Talon Strike] is effective against single targets."/>
+	<Item infoTextID="274" infoText="The opponent will take action when the blue bar under its health bar is full."/>
+	<Item infoTextID="275" infoText="Focusing on defense will greatly reduce the damage Moccamori receives, and recover some HP and MP for the next turn."/>
+	<Item infoTextID="276" infoText="The Magic Power Awakening stat increases in proportion to the damage received and the MP spent."/>
+	<Item infoTextID="277" infoText="When the Magic Power Awakening stat is full, Moccamori can use powerful weapons."/>
+	<Item infoTextID="278" infoText="Spend MP to fill the Magic Power Awakening stat."/>
+	<Item infoTextID="279" infoText="Your Magic Power Awakening stat is full. Press the Magic Power Awakening button to summon Moccamori's weapons."/>
+	<Item infoTextID="280" infoText="Try to press on the attack."/>
+	<Item infoTextID="281" infoText="Tip"/>
+	<Item infoTextID="282" infoText="Summon a minion."/>
+	<Item infoTextID="283" infoText="Tap the ground to move Moccamori."/>
+	<Item infoTextID="284" infoText="The magic for drawing magic circles costs much MP and takes longer for the next turn to come. However, its power is immense and can result in advantageous effects by linking it with other types of attacks."/>
+	<Item infoTextID="285" infoText="Enemies hit by lightning magic are weakened. Attack an enemy with another lightning type attack to deal more damage."/>
+	<Item infoTextID="286" infoText="#percent% till respawn"/>
+	<Item infoTextID="287" infoText="Obtain tools by approaching sparkling objects."/>
+	<Item infoTextID="288" infoText="You have been poisoned."/>
+	<Item infoTextID="289" infoText="Poison damage #power"/>
+	<Item infoTextID="290" infoText="Moccamori will receive poison damage at each of her turns when she is poisoned. The poison damage will stack with more attacks, and ignores all defensive effects. Poison damage disappears after battle."/>
+	<Item infoTextID="291" infoText="Magic Fusion can create HP potions. Crafted HP potions are incredibly useful in battle, as they recover HP by percentage."/>
+	<Item infoTextID="292" infoText="It is essential to have an empty bottle to fill with HP potion. You can get empty bottles at the town tool merchant. Go outside of the lobby to travel to town."/>
+	<Item infoTextID="293" infoText="You can upgrade the Soul Stone by standing beneath the Soul Stone in the lobby center."/>
+	<Item infoTextID="294" infoText="You cannot initiate training when the training efficiency drops below 20%. Training efficiency recovers with time."/>
+	<Item infoTextID="295" infoText="The time to wait for the next turn has increased significantly."/>
+	<Item infoTextID="296" infoText="To craft a recovery potion for battle, you must obtain an [Empty Bottle] from the tool merchant in Pruto Village."/>
+	<Item infoTextID="297" infoText="You can go to Pruto Village by exiting the lobby."/>
+	<Item infoTextID="298" infoText="The current location has been added to the teleport list."/>
+	<Item infoTextID="299" infoText="Battle health potions recover health by percentage, making them useful till the latter part of the game. Battle health potions can be crafted in the [Royal Chamber], just like creating magic circles through magic fusion."/>
+	<Item infoTextID="300" infoText="Trade with merchant"/>
+	<Item infoTextID="301" infoText="Purchase"/>
+	<Item infoTextID="302" infoText="Sell"/>
+	<Item infoTextID="303" infoText="Price :"/>
+	<Item infoTextID="304" infoText="Owned:"/>
+	<Item infoTextID="305" infoText="#num"/>
+	<Item infoTextID="306" infoText="Purchase Quantity :"/>
+	<Item infoTextID="307" infoText="Trade at least one item."/>
+	<Item infoTextID="308" infoText="You can trade up to 100 items at once."/>
+	<Item infoTextID="309" infoText="Sell amount:"/>
+	<Item infoTextID="310" infoText="Purchase with #count gold?"/>
+	<Item infoTextID="311" infoText="Sell with #count gold?"/>
+	<Item infoTextID="312" infoText="Not enough Gold!"/>
+	<Item infoTextID="313" infoText="Purchase Complete!"/>
+	<Item infoTextID="314" infoText="Sale Complete!"/>
+	<Item infoTextID="315" infoText="This cannot be sold!"/>
+	<Item infoTextID="316" infoText="The current amount is the maximum for selling."/>
+	<Item infoTextID="317" infoText="Yes"/>
+	<Item infoTextID="318" infoText="No"/>
+	<Item infoTextID="319" infoText="Ride Nuuk to travel to regions inaccessible by road."/>
+	<Item infoTextID="320" infoText="Open the Ürphean Continent Map to select a region to travel to."/>
+	<Item infoTextID="321" infoText="Look for the White Rock Mountain region."/>
+	<Item infoTextID="322" infoText="Travel to [#name] region?"/>
+	<Item infoTextID="323" infoText="-"/>
+	<Item infoTextID="324" infoText="MP decreased by #power."/>
+	<Item infoTextID="325" infoText="Moccamori stood blankly for a while."/>
+	<Item infoTextID="326" infoText="Housewife Reina took away the ring Moccamori had in her beak."/>
+	<Item infoTextID="327" infoText="You have no way to attack the opponent."/>
+	<Item infoTextID="328" infoText="Ethan has been dispatched to [Fruit Forest]."/>
+	<Item infoTextID="329" infoText="Minions who are on special missions cannot be dispatched or summoned."/>
+	<Item infoTextID="330" infoText="You cannot use magic power for now."/>
+	<Item infoTextID="331" infoText="Poisoning has become worse."/>
+	<Item infoTextID="332" infoText="Moccamori struck down Poerta's fragment on the Heart of White Rock Mountain."/>
+	<Item infoTextID="333" infoText="The White Rock Golem advanced by#power%."/>
+	<Item infoTextID="334" infoText="Moccamori gave Poerta the Heart of White Rock Mountain."/>
+	<Item infoTextID="335" infoText="Poerta inserted the Heart of White Rock Mountain into his body."/>
+	<Item infoTextID="336" infoText="You cannot attack this opponent for now."/>
+	<Item infoTextID="337" infoText="You cannot summon a minion for now."/>
+	<Item infoTextID="338" infoText="Moccamori slowly read the words written on the inscription."/>
+	<Item infoTextID="339" infoText="You will channel power for the next #num turns."/>
+	<Item infoTextID="340" infoText="#num turns left until your action."/>
+	<Item infoTextID="341" infoText="STR effect will be applied #power% for the next physical attack."/>
+	<Item infoTextID="342" infoText="STR effect is now #power% because of upgraded talons."/>
+	<Item infoTextID="343" infoText="Not enough HP."/>
+	<Item infoTextID="344" infoText="Unleashes energy to the fullest."/>
+	<Item infoTextID="345" infoText="AGI drastically boosted temporarily."/>
+	<Item infoTextID="346" infoText="#kind level has increased!"/>
+	<Item infoTextID="347" infoText="You have learned a new magic talon skill!"/>
+	<Item infoTextID="348" infoText="You have learned a new talon attack skill."/>
+	<Item infoTextID="349" infoText="Level #num effect"/>
+	<Item infoTextID="350" infoText="-HP recovery #power% when not attacked after using defense until it ended^n-Recovery effect decreased by half when attacked."/>
+	<Item infoTextID="351" infoText="Constant damage reduction rate #power%"/>
+	<Item infoTextID="352" infoText="MP decrease #power% for magic use"/>
+	<Item infoTextID="353" infoText="MP recovery #power% after defense"/>
+	<Item infoTextID="354" infoText="Magic power strength boost #power% when using magic to draw magic circle"/>
+	<Item infoTextID="355" infoText="Damage reduction #power% when focusing on defense"/>
+	<Item infoTextID="356" infoText="Defense and recovery"/>
+	<Item infoTextID="357" infoText="Meditate for #num turns."/>
+	<Item infoTextID="358" infoText="MP recovered by #power after meditation."/>
+	<Item infoTextID="359" infoText="Begin training"/>
+	<Item infoTextID="360" infoText="Effect per level"/>
+	<Item infoTextID="361" infoText="Level 1"/>
+	<Item infoTextID="362" infoText="Level 2"/>
+	<Item infoTextID="363" infoText="Level 3"/>
+	<Item infoTextID="364" infoText="Level 4"/>
+	<Item infoTextID="365" infoText="Level 5"/>
+	<Item infoTextID="366" infoText="Level 6"/>
+	<Item infoTextID="367" infoText="Level 7"/>
+	<Item infoTextID="368" infoText="Level 8"/>
+	<Item infoTextID="369" infoText="Level 9"/>
+	<Item infoTextID="370" infoText="#power% trained^nuntil next level"/>
+	<Item infoTextID="371" infoText="Training done at high training efficiency will raise to the next level more quickly."/>
+	<Item infoTextID="372" infoText="Moccamori is already in her hideout."/>
+	<Item infoTextID="373" infoText="As Moccamori's health potions recover HP by percentage, they are useful even at the latter stages of the game."/>
+	<Item infoTextID="374" infoText="Check your HP and MP before a huge fight."/>
+	<Item infoTextID="375" infoText="Training efficiency will increase when sufficient time has passed since the last training. Try to train after checking the training efficiency."/>
+	<Item infoTextID="376" infoText="Your current training efficiency is #power%."/>
+	<Item infoTextID="377" infoText="Varon's Protection"/>
+	<Item infoTextID="378" infoText="Current training efficiency:"/>
+	<Item infoTextID="379" infoText="Time for turn wait has been reset."/>
+	<Item infoTextID="380" infoText="You can sense powerful yet unstable movement of magic power."/>
+	<Item infoTextID="381" infoText="The sticky mud has slowed your actions."/>
+	<Item infoTextID="382" infoText="Do you want to ride the raft?"/>
+	<Item infoTextID="383" infoText="Ride"/>
+	<Item infoTextID="384" infoText="Do not ride"/>
+	<Item infoTextID="385" infoText="Get off the raft?"/>
+	<Item infoTextID="386" infoText="Get off"/>
+	<Item infoTextID="387" infoText="Stay"/>
+	<Item infoTextID="388" infoText="Arkas' stats have been boosted."/>
+	<Item infoTextID="389" infoText="Moccamori threw Meteornix's Core into an oil puddle."/>
+	<Item infoTextID="390" infoText="Deflected all damage received by the opponent."/>
+	<Item infoTextID="391" infoText="You have obtained a new magic power medium, [Charlie's Spear]! A new magic power medium is much more powerful than the basic medium, Magic Power Sphere."/>
+	<Item infoTextID="392" infoText="Nova's Meteor is approaching in real-time."/>
+	<Item infoTextID="393" infoText="Nova's Meteor is undergoing a huge explosion."/>
+	<Item infoTextID="394" infoText="The dragon is channeling #power power.^nMoccamori can create a defense barrier."/>
+	<Item infoTextID="395" infoText="HP to use for defense"/>
+	<Item infoTextID="396" infoText="MP to use for defense"/>
+	<Item infoTextID="397" infoText="Damage reduction"/>
+	<Item infoTextID="398" infoText="Cannot allocate more HP."/>
+	<Item infoTextID="399" infoText="Cannot allocate more MP."/>
+	<Item infoTextID="400" infoText="Create a defense barrier"/>
+	<Item infoTextID="401" infoText="Do not create a defense barrier"/>
+	<Item infoTextID="402" infoText="Allocate HP or MP to create a defense barrier."/>
+	<Item infoTextID="403" infoText="The soldier handed over Ethan's letter to Libro."/>
+	<Item infoTextID="404" infoText="Moccamori took Ethan's letter from Libro."/>
+	<Item infoTextID="405" infoText="[True Defense Barrier]^nAbsorbed damage to recover MP equal to #power."/>
+	<Item infoTextID="406" infoText="This skill is already in use."/>
+	<Item infoTextID="407" infoText="Magic Power Awakening has been disabled."/>
+	<Item infoTextID="408" infoText="Creating True Defense Barrier."/>
+	<Item infoTextID="409" infoText="True Defense Barrier is gone."/>
+	<Item infoTextID="410" infoText="You have lost the battle."/>
+	<Item infoTextID="411" infoText="Return to the title screen"/>
+	<Item infoTextID="412" infoText="Load an autosave point"/>
+	<Item infoTextID="413" infoText="Select a tool to craft."/>
+	<Item infoTextID="414" infoText="This information is empty."/>
+	<Item infoTextID="415" infoText="A dispatched minion cannot be summoned."/>
+	<Item infoTextID="416" infoText="Dispatching…"/>
+	<Item infoTextID="417" infoText="-"/>
+	<Item infoTextID="418" infoText="Try training!"/>
+	<Item infoTextID="419" infoText="Upgrade the Soul Stone in the lobby!"/>
+	<Item infoTextID="420" infoText="Travel by riding Nuuk?"/>
+	<Item infoTextID="421" infoText="Travel"/>
+	<Item infoTextID="422" infoText="Cancel"/>
+	<Item infoTextID="423" infoText="Select a region to travel on Nuuk."/>
+	<Item infoTextID="424" infoText="[Current location]"/>
+	<Item infoTextID="425" infoText="The main and supportive magic circles cannot have the same type."/>
+	<Item infoTextID="426" infoText="Being camping."/>
+	<Item infoTextID="427" infoText="You cannot camp here."/>
+	<Item infoTextID="428" infoText="Recently obtained tool"/>
+	<Item infoTextID="429" infoText="All HP and MP recovered by camping!"/>
+	<Item infoTextID="430" infoText="A magic circle cannot be designated as a favorite tool."/>
+	<Item infoTextID="431" infoText="Moccamori looked at the large seal stone in detail."/>
+	<Item infoTextID="432" infoText="Basic abilities are displayed as 100%. Press the basic ability button to switch to combat ability info."/>
+	<Item infoTextID="433" infoText="[#name] worn"/>
+	<Item infoTextID="434" infoText="[#name] equipped"/>
+	<Item infoTextID="435" infoText="Already equipped this equipment."/>
+	<Item infoTextID="436" infoText="[#name] equip complete"/>
+	<Item infoTextID="437" infoText="You have no supportive equipment equipped."/>
+	<Item infoTextID="438" infoText="Stat description"/>
+	<Item infoTextID="439" infoText="HP is your health. When HP becomes 0, you cannot fight and the game will be over. You can increase HP with tools or by training."/>
+	<Item infoTextID="440" infoText="MP is your mental power. Higher MP enables more magic use. You can increase MP with tools or by training."/>
+	<Item infoTextID="441" infoText="MAG is the strength of your magic. Higher MAG leads to greater magical strength, which can be increased with tools or by training."/>
+	<Item infoTextID="442" infoText="Higher STR enables greater physical damage. You can increase STR with tools or by training."/>
+	<Item infoTextID="443" infoText="Higher DEF reduces damage received in battle. Basically, damage is reduced depending on the DEF stat, and is reduced in percentages with higher defense levels."/>
+	<Item infoTextID="444" infoText="Higher AGI enables Moccamori's turn to come faster. In battle, the AGI boost due to Soul Stone is not as high as the other stats."/>
+	<Item infoTextID="445" infoText="Begin sailing?^nYou need 10,000 gold"/>
+	<Item infoTextID="446" infoText="Begin sailing"/>
+	<Item infoTextID="447" infoText="Cancel"/>
+	<Item infoTextID="448" infoText="Not enough Gold."/>
+	<Item infoTextID="449" infoText="Select a destination."/>
+	<Item infoTextID="450" infoText="#name:AcientLand_1"/>
+	<Item infoTextID="451" infoText="#name:AcientLand_2"/>
+	<Item infoTextID="452" infoText="#name:AcientLand_3"/>
+	<Item infoTextID="453" infoText="#name:AcientLand_enter"/>
+	<Item infoTextID="454" infoText="#name:Village_Rubid"/>
+	<Item infoTextID="455" infoText="An unknown creature beings to absorb Moccamori's HP."/>
+	<Item infoTextID="456" infoText="This target cannot be duplicated for crafting."/>
+	<Item infoTextID="457" infoText="You cannot summon more minions."/>
+	<Item infoTextID="458" infoText="The opponent's ATK increases by #power%."/>
+	<Item infoTextID="459" infoText="Moccamori has unleashed magic power."/>
+	<Item infoTextID="460" infoText="This magic index has already been added to the crafting index."/>
+	<Item infoTextID="461" infoText="A new recipe has been added to the crafting index!"/>
+	<Item infoTextID="462" infoText="Gold"/>
+	<Item infoTextID="463" infoText="How do you want to use this tool?"/>
+	<Item infoTextID="464" infoText="Shake it"/>
+	<Item infoTextID="465" infoText="Break it"/>
+	<Item infoTextID="466" infoText="You have been bestowed a curse that inhibits MAG use by #power%."/>
+	<Item infoTextID="467" infoText="You have been bestowed a curse that inhibits STR use by #power%."/>
+	<Item infoTextID="468" infoText="MP decreased due to curse."/>
+	<Item infoTextID="469" infoText="You are already wearing these clothes."/>
+	<Item infoTextID="470" infoText="Wear"/>
+	<Item infoTextID="471" infoText="Clothes worn."/>
+	<Item infoTextID="472" infoText="Weapon switched."/>
+	<Item infoTextID="473" infoText="You are already equipped with this weapon."/>
+	<Item infoTextID="474" infoText="Current location"/>
+	<Item infoTextID="475" infoText="[#name]^nAdded to the list for dispatch &amp; obtain."/>
+	<Item infoTextID="476" infoText="You can dispatch up to 3 minions to a region."/>
+	<Item infoTextID="477" infoText="Magic Power Awakening duration has been increased to @num turns."/>
+	<Item infoTextID="478" infoText="Dispatchable region"/>
+	<Item infoTextID="479" infoText="Region with minion"/>
+	<Item infoTextID="480" infoText="Sky travel region"/>
+	<Item infoTextID="481" infoText="A new clothes recipe has been added to the crafting index."/>
+	<Item infoTextID="482" infoText="Purchase with #count Red Gems?"/>
+	<Item infoTextID="483" infoText="Sell for #count Red Gems?"/>
+	<Item infoTextID="484" infoText="Not enough Red Gems!"/>
+	<Item infoTextID="485" infoText="This tool can only be used once per battle."/>
+	<Item infoTextID="486" infoText="Switches clothes."/>
+	<Item infoTextID="487" infoText="You need 1,000 or higher MP remaining to wear the clothes."/>
+	<Item infoTextID="488" infoText="You have no additionally equipped talons."/>
+	<Item infoTextID="489" infoText="[#name] Skips turn due to lack of weapon touse."/>
+	<Item infoTextID="490" infoText="When Moccamori enters battle, her basic stats increase many times due to Agamo's blessing. Currently, basic stats increase by 200% in battle, and this will increase more when you upgrade the Soul Stone."/>
+	<Item infoTextID="491" infoText="No longer Moccamori's minion."/>
+	<Item infoTextID="492" infoText="This minion is deceased."/>
+	<Item infoTextID="493" infoText="Agamo's Revival Ritual"/>
+	<Item infoTextID="494" infoText="Disable the barrier and begin battle with the opponent?"/>
+	<Item infoTextID="495" infoText="Begin battle"/>
+	<Item infoTextID="496" infoText="Cancel"/>
+	<Item infoTextID="497" infoText="You have learned a new weapon crafting method."/>
+	<Item infoTextID="498" infoText="Reputation increased by #num."/>
+	<Item infoTextID="499" infoText="Reputation decreased by #num."/>
+	<Item infoTextID="500" infoText="Help ingredient collector?"/>
+	<Item infoTextID="501" infoText="Ignore"/>
+	<Item infoTextID="502" infoText="Help"/>
+	<Item infoTextID="503" infoText="Negotiate"/>
+	<Item infoTextID="504" infoText="Help the tool merchant?"/>
+	<Item infoTextID="505" infoText="How do you want to respond?"/>
+	<Item infoTextID="506" infoText="Attack Ethan and Justice"/>
+	<Item infoTextID="507" infoText="Restrain yourself"/>
+	<Item infoTextID="508" infoText="Order Ethan and Justice to fight each other"/>
+	<Item infoTextID="509" infoText="-"/>
+	<Item infoTextID="510" infoText="Help Grandma Sugar?"/>
+	<Item infoTextID="511" infoText="Help"/>
+	<Item infoTextID="512" infoText="Do not help"/>
+	<Item infoTextID="513" infoText="Moccamori handed over glasses to the grandmother."/>
+	<Item infoTextID="514" infoText="Ethan is not cooperating for the battle."/>
+	<Item infoTextID="515" infoText="#name's combat ability has improved!"/>
+	<Item infoTextID="516" infoText="There is a strange switch. Press the switch?"/>
+	<Item infoTextID="517" infoText="Press the switch"/>
+	<Item infoTextID="518" infoText="Cancel"/>
+	<Item infoTextID="519" infoText="Shukrina is crying."/>
+	<Item infoTextID="520" infoText="Comfort her"/>
+	<Item infoTextID="521" infoText="Scold her harshly"/>
+	<Item infoTextID="522" infoText="Limura seems to want catnip."/>
+	<Item infoTextID="523" infoText="Give catnip to Limura"/>
+	<Item infoTextID="524" infoText="Ignore"/>
+	<Item infoTextID="525" infoText="Moccamori took out some catnip."/>
+	<Item infoTextID="526" infoText="Accept Terrenord's challenge?"/>
+	<Item infoTextID="527" infoText="Accept the challenge"/>
+	<Item infoTextID="528" infoText="Cancel"/>
+	<Item infoTextID="529" infoText="[#name]^n3 turns left until you can summon the target."/>
+	<Item infoTextID="530" infoText="There is already a target undergoing summoning."/>
+	<Item infoTextID="531" infoText="What will you do with this Lambragon?"/>
+	<Item infoTextID="532" infoText="Kill it"/>
+	<Item infoTextID="533" infoText="Demand a price for its freedom"/>
+	<Item infoTextID="534" infoText="You can camp outside using a tent. All HP and MP are restored after camping, and you can record the current time on your diary. The tent is sold by the Pruto Village merchant."/>
+	<Item infoTextID="535" infoText="Noa begins to concentrate."/>
+	<Item infoTextID="536" infoText="Noa fully restores Moccamori's MP."/>
+	<Item infoTextID="537" infoText="There is a small cairn is barely standing in a strange fashion."/>
+	<Item infoTextID="538" infoText="Awaken the sleeping dragon?"/>
+	<Item infoTextID="539" infoText="Awaken it"/>
+	<Item infoTextID="540" infoText="Cancel"/>
+	<Item infoTextID="541" infoText="A climbable rock lies ahead."/>
+	<Item infoTextID="542" infoText="Climb"/>
+	<Item infoTextID="543" infoText="Cancel"/>
+	<Item infoTextID="544" infoText="How will you respond to the request of Lunata Chief?"/>
+	<Item infoTextID="545" infoText="Just take the Red Gem"/>
+	<Item infoTextID="546" infoText="Go to defeat Murgav"/>
+	<Item infoTextID="547" infoText="Moccamori forcibly took the Red Gem from the chief."/>
+	<Item infoTextID="548" infoText="How will you respond to the workshop owner?"/>
+	<Item infoTextID="549" infoText="I will take the Flame Stone"/>
+	<Item infoTextID="550" infoText="Go back"/>
+	<Item infoTextID="551" infoText="You have obtained a tasty fruit. How will you respond?"/>
+	<Item infoTextID="552" infoText="Give me more"/>
+	<Item infoTextID="553" infoText="Savor it"/>
+	<Item infoTextID="554" infoText="Moccamori took out silver coins."/>
+	<Item infoTextID="555" infoText="The sound of the silver coins being to jingle."/>
+	<Item infoTextID="556" infoText="Arkas found Noa's necklace inside the statue."/>
+	<Item infoTextID="557" infoText="Arkas threw Noa's necklace into the fairy's pool."/>
+	<Item infoTextID="558" infoText="You can see a strange space between the rocks. Do you want to enter?"/>
+	<Item infoTextID="559" infoText="Enter"/>
+	<Item infoTextID="560" infoText="Cancel"/>
+	<Item infoTextID="561" infoText="How will you respond to the warriors?"/>
+	<Item infoTextID="562" infoText="Defeat them all"/>
+	<Item infoTextID="563" infoText="Let them go"/>
+	<Item infoTextID="564" infoText="Return spell power to Denny?"/>
+	<Item infoTextID="565" infoText="Return the magic power"/>
+	<Item infoTextID="566" infoText="Ignore"/>
+	<Item infoTextID="567" infoText="You have returned magic power to Denny."/>
+	<Item infoTextID="568" infoText="Help the traveler?"/>
+	<Item infoTextID="569" infoText="Help"/>
+	<Item infoTextID="570" infoText="Pass by"/>
+	<Item infoTextID="571" infoText="You see a large space under the mine. Do you want to go down?"/>
+	<Item infoTextID="572" infoText="Go down"/>
+	<Item infoTextID="573" infoText="Cancel"/>
+	<Item infoTextID="574" infoText="Go up to the upper mine floor?"/>
+	<Item infoTextID="575" infoText="Go up"/>
+	<Item infoTextID="576" infoText="Cancel"/>
+	<Item infoTextID="577" infoText="Defeat the mine bugs?"/>
+	<Item infoTextID="578" infoText="Defeat them"/>
+	<Item infoTextID="579" infoText="Refuse"/>
+	<Item infoTextID="580" infoText="Cancel dispatch"/>
+	<Item infoTextID="581" infoText="Cancel the dispatch?"/>
+	<Item infoTextID="582" infoText="Dispatch canceled."/>
+	<Item infoTextID="583" infoText="This region's location cannot be recognized."/>
+	<Item infoTextID="584" infoText="Reputation"/>
+	<Item infoTextID="585" infoText="Choosing good deeds from the selection increases your reputation, and not doing so decreases it. Reputation affects the ending."/>
+	<Item infoTextID="586" infoText="Little Queen Moccamori"/>
+	<Item infoTextID="587" infoText="Dangerous Queen Moccamori"/>
+	<Item infoTextID="588" infoText="Terrible Queen Moccamori"/>
+	<Item infoTextID="589" infoText="Kind Queen Moccamori"/>
+	<Item infoTextID="590" infoText="Good Queen Moccamori"/>
+	<Item infoTextID="591" infoText="Greatest Queen Moccamori"/>
+	<Item infoTextID="592" infoText="Obtained #num [#itemID]"/>
+	<Item infoTextID="593" infoText="You're already equipped with this special equipment."/>
+	<Item infoTextID="594" infoText="Equipping special equipment [#itemName]."/>
+	<Item infoTextID="595" infoText="New story"/>
+	<Item infoTextID="596" infoText="Read diary"/>
+	<Item infoTextID="597" infoText="Continue"/>
+	<Item infoTextID="598" infoText="WitchSpring4"/>
+	<Item infoTextID="599" infoText="The diary is empty."/>
+	<Item infoTextID="600" infoText="No new records auto-saved recently."/>
+	<Item infoTextID="601" infoText="Loading the recently auto-saved record."/>
+	<Item infoTextID="602" infoText="Beginning a new story."/>
+	<Item infoTextID="603" infoText="Equipped"/>
+	<Item infoTextID="604" infoText="You cannot summon this minion now."/>
+	<Item infoTextID="605" infoText="Quick hunt mode"/>
+	<Item infoTextID="606" infoText="Recipe added"/>
+	<Item infoTextID="607" infoText="Select the tool to display."/>
+	<Item infoTextID="608" infoText="Recover"/>
+	<Item infoTextID="609" infoText="Ability boost"/>
+	<Item infoTextID="610" infoText="Weapon"/>
+	<Item infoTextID="611" infoText="Accessory"/>
+	<Item infoTextID="612" infoText="Magic book"/>
+	<Item infoTextID="613" infoText="Dress"/>
+	<Item infoTextID="614" infoText="You cannot use the minimap in this region."/>
+	<Item infoTextID="615" infoText="[Quick hunt mode]^nWhen the opponent's HP is lower than Moccamori's MAG or STR, Moccamori will instantly hunt down the opponent and obtain tools without entering battle. The quick hunt mode can be disabled or enabled in the settings window. However, the quick hunt mode may not be available in certain events."/>
+	<Item infoTextID="616" infoText="Absorbed the opponent's life force to recover #power HP."/>
+	<Item infoTextID="617" infoText="Slowed down the opponent's actions by #power% with the freeze effect."/>
+	<Item infoTextID="618" infoText="Inflicted burn on the opponent."/>
+	<Item infoTextID="619" infoText="The opponent is now weak against electric type attacks."/>
+	<Item infoTextID="620" infoText="The opponent has resistance against freeze effects."/>
+	<Item infoTextID="621" infoText="Fire magic has removed the freeze effect on the opponent."/>
+	<Item infoTextID="622" infoText="Ice magic has removed the burn effect on the opponent."/>
+	<Item infoTextID="623" infoText="The opponent has resistance against burn effects."/>
+	<Item infoTextID="624" infoText="The damage received by the opponent has been reflected towards Moccamori."/>
+	<Item infoTextID="625" infoText="Open the map of Ürphea here to enable sky travel."/>
+	<Item infoTextID="626" infoText="Fed the Soul Stone with #power magic power."/>
+	<Item infoTextID="627" infoText="Unequip"/>
+	<Item infoTextID="628" infoText="Unequipped."/>
+	<Item infoTextID="629" infoText="Moccamori has become weak against electric attacks."/>
+	<Item infoTextID="630" infoText="Moccamori has received burn."/>
+	<Item infoTextID="631" infoText="Moccamori has been slowed down by the opponent's ice type attack."/>
+	<Item infoTextID="632" infoText="This target is already in battle."/>
+	<Item infoTextID="633" infoText="You cannot access tools and equipment while on the raft."/>
+	<Item infoTextID="634" infoText="继续"/>
+	<Item infoTextID="635" infoText="North"/>
+	<Item infoTextID="636" infoText="East"/>
+	<Item infoTextID="637" infoText="South"/>
+	<Item infoTextID="638" infoText="West"/>
+	<Item infoTextID="639" infoText="Choose which one?"/>
+	<Item infoTextID="640" infoText="Eat Libro's food and cancel the meeting with Ethan."/>
+	<Item infoTextID="641" infoText="Head to the Crystal Cave with Ethan."/>
+	<Item infoTextID="642" infoText="Moccamori is lucky this turn."/>
+	<Item infoTextID="643" infoText="Do not cross over"/>
+	<Item infoTextID="644" infoText="Must wait a very long time."/>
+	<Item infoTextID="645" infoText="Must wait a long time."/>
+	<Item infoTextID="646" infoText="Must wait a while."/>
+	<Item infoTextID="647" infoText="Appears soon."/>
+	<Item infoTextID="648" infoText="Edis will not cooperate in the current battle."/>
+	<Item infoTextID="649" infoText="Current time saved automatically."/>
+	<Item infoTextID="650" infoText="No illustrations collected yet."/>
+	<Item infoTextID="651" infoText="#name login is required for cloud backup. Would you like to login to #name?"/>
+	<Item infoTextID="652" infoText="Google Play"/>
+	<Item infoTextID="653" infoText="Game Center"/>
+	<Item infoTextID="654" infoText="Opponents hit with lightning magic become vulnerable to lightning type attacks. When Moccamori uses similar lightning magic or talons imbued with lightning type, she can deal much greater damage than normal."/>
+	<Item infoTextID="655" infoText="Opponents hit with fire magic receive burns, which deal extra damage to the enemy that is attacked. Enemies with burns are vulnerable to multiple attacks in a single turn. However, burn effects are negated by ice magic."/>
+	<Item infoTextID="656" infoText="Ice magic greatly decreases an enemy's AGI, enabling more actions to come to allies. However, freeze effects are negated by fire magic."/>
+	<Item infoTextID="657" infoText="Lightning magic"/>
+	<Item infoTextID="658" infoText="Fire magic"/>
+	<Item infoTextID="659" infoText="Ice magic"/>
+	<Item infoTextID="660" infoText="About magic types"/>
+	<Item infoTextID="661" infoText="Types of magic circles"/>
+	<Item infoTextID="662" infoText="Magic mediums determine the characteristics of magic, such as its shape, attack method and basic power."/>
+	<Item infoTextID="663" infoText="The main magic circle usually enhances the power of the magic medium and bestows certain type to the medium to create advantageous effects in battle."/>
+	<Item infoTextID="664" infoText="The supportive magic circle functions similarly to the main magic circle, but has lesser power. However, the supportive and main magic circles in a single slot cannot consist of identical types."/>
+	<Item infoTextID="665" infoText="Summoning Agamo's weapons"/>
+	<Item infoTextID="666" infoText="When the magic power awakening stat is full during battle, Moccamori can attempt to awaken her magic power. When Moccamori awakens her magic power, she can summon all the Agamo weapons to sue powerful skills. HP and MP are recovered right after a magic power awakening, which can only be maintained for a short time."/>
+	<Item infoTextID="667" infoText="Magic power awakening and talon attacks"/>
+	<Item infoTextID="668" infoText="When the magic power awakening stat increases during battle, talon attack power increases up to 2.5 times. Talon attack power greatly increases as the battle progresses."/>
+	<Item infoTextID="669" infoText="Normal attack and explosive attack^n^nNormal attacks can damage a single enemy per attack, and explosive attacks can damage all enemies within the explosion area. Large enemies will be hit multiple times by the explosions when receiving explosive attacks."/>
+	<Item infoTextID="670" infoText="There are no Diary records in the device to back up to the Cloud."/>
+	<Item infoTextID="671" infoText="Successfully saved all the records from Diary to the Cloud. If records get discarded, you can bring up again with the current account."/>
+	<Item infoTextID="672" infoText="There are no Diary records stored in the Cloud."/>
+	<Item infoTextID="673" infoText="Successfully saved the record from Diary to the Cloud."/>
+	<Item infoTextID="674" infoText="Failed to load the Diary record from the Cloud."/>
+	<Item infoTextID="675" infoText="Failed to back up the record from Diary."/>
+	<Item infoTextID="676" infoText="The Cloud Dairy"/>
+	<Item infoTextID="677" infoText="Back up Diary to the Cloud"/>
+	<Item infoTextID="678" infoText="Download the backup Diary from the Cloud"/>
+	<Item infoTextID="679" infoText="Failed to log-in."/>
+	<Item infoTextID="680" infoText="Back up the current Diary record to the Cloud? The process would be til the latest auto-saved point."/>
+	<Item infoTextID="681" infoText="Load the Diary record from the Cloud? Loaded records will overwrite the current Diary record."/>
+	<Item infoTextID="682" infoText="Minions' dispatch time has been decreased."/>
+	<Item infoTextID="683" infoText="There are no dispatched minions that item collectors to help."/>
+	<Item infoTextID="684" infoText="Item Collectors need rest. Until the reuse #power%"/>
+	<Item infoTextID="685" infoText="Veteran Item Collectors need rest. Until the reuse #power%"/>
+	<Item infoTextID="686" infoText="Cannot open."/>
+	<Item infoTextID="687" infoText="Autosaved record"/>
+	<Item infoTextID="688" infoText="Cannot summon the opponent in the current battle."/>
+	<Item infoTextID="689" infoText="Chapter 1.^nLittle Queen Moccamori"/>
+	<Item infoTextID="690" infoText="Chapter 2.^nSeeds of Bonding"/>
+	<Item infoTextID="691" infoText="Chapter 3.^nA Perilous Intruder"/>
+	<Item infoTextID="692" infoText="Chapter 4.^nDreamland"/>
+	<Item infoTextID="693" infoText="Chapter 5.^nFruits of Bonding"/>
+	<Item infoTextID="694" infoText="After the ending content, DLC will be updated once more in the first half of 2020 for free. Please look forward to it!"/>
+	<Item infoTextID="695" infoText="Close the Diary to go to the title screen."/>
+	<Item infoTextID="696" infoText="Entered half-awakened state, and 'Nuuk Collaboration' has been temporarily added to the talon skills."/>
+	<Item infoTextID="697" infoText="Drag up buttons to check their descriptions."/>
+	<Item infoTextID="698" infoText="Tap the screen to fast forward the training."/>
+	<Item infoTextID="699" infoText="The maximum limit of increasing stats by consuming items in once is #power."/>
+	<Item infoTextID="700" infoText="Magic medium - Charlie's Spear has been upgraded."/>
+	<Item infoTextID="701" infoText="Magic medium - Mirac's Arrow has been upgraded."/>
+	<Item infoTextID="702" infoText="Magic medium - Nova's Meteorite has been upgraded."/>
+	<Item infoTextID="703" infoText="Magic medium - Lunata's Sword has been upgraded."/>
+	<Item infoTextID="704" infoText="Head to Shadow World?"/>
+	<Item infoTextID="705" infoText="Can sense Boule's power from #area."/>
+	<Item infoTextID="706" infoText="Can sense Boule's power from Pruto Hill."/>
+	<Item infoTextID="707" infoText="Exceedrox refused to be summoned."/>
+	<Item infoTextID="708" infoText="Go to Octopus Island?"/>
+	<Item infoTextID="709" infoText="Return to Rubid Village?"/>
+	<Item infoTextID="710" infoText="To summon Gaia Genesis again, you must retry after #num turns."/>
+	<Item infoTextID="711" infoText="This tool can only be used in battle."/>
+	<Item infoTextID="712" infoText="[Orb of Miracles] completely defended against magic."/>
+	<Item infoTextID="713" infoText="Terrenord refuses the summon."/>
+	<Item infoTextID="714" infoText="Restarting the game to change language."/>
+	<Item infoTextID="715" infoText="ABC"/>
+	<Item infoTextID="716" infoText="The Soul Stone's level has increased!^nMoccamori's abilities in battle have become stronger.^nn#powerOld% -&gt; #powerNew%"/>
+	<Item infoTextID="717" infoText="With sufficient magic power collected after a battle, the Soul Stone will be automatically upgraded, and will fully heal Moccamori's HP and MP."/>
+	<Item infoTextID="718" infoText="Restart Game"/>
+	<Item infoTextID="719" infoText="Soul Stone level up!"/>
+	<Item infoTextID="720" infoText="Wear Mantles"/>
+	<Item infoTextID="721" infoText="Take off Mantles"/>
+  <Item infoTextID="722" infoText="Thanks for your playing through to the end!^nTap the screen to go to the title screen."/>
+</ItemList>

@@ -1,0 +1,3 @@
+local Config = {Id=1026,Name="罗伊格",AbDir="SsUnit/026_LuoYiGe",NewRes=1,HandleBones={"Bone032","Bip001 R Hand","Bip001 R Hand"},UnitScale =1.44,CloseAtkOffset={2.22,0,-0.2},HitPosOffset={0,1.62,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10261,TotalFrames=80,OnHit=0,OnCutIn=0,OnDamage={6,18,36,53},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10262,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={66},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10263,TotalFrames=630,OnHit=0,OnCutIn=0,OnDamage={410,441,600,610,620},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=2,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

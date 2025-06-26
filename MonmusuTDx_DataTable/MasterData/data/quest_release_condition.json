@@ -1,0 +1,42 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -4667961614091955731
+  },
+  "m_Name": "quest_release_condition",
+  "table": [
+    {
+      "releaseConditionData": [
+        {
+          "id": 1,
+          "condition_id": 1,
+          "check_type": 1,
+          "check_values": [
+            6,
+            8,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "releaseConditionData": [
+        {
+          "id": 2,
+          "condition_id": 2,
+          "check_type": 1,
+          "check_values": [
+            6,
+            22,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

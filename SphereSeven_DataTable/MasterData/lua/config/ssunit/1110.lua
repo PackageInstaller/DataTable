@@ -1,0 +1,3 @@
+local Config = {Id=1110,Name="龙星界弓兵",AbDir="SsUnit/108_DragonStarBowman",NewRes=0,HandleBones={""},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.95,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1105,TotalFrames=55,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={39}},Skl01={Name="Skl01",SkillEfxId=1106,TotalFrames=95,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={44}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

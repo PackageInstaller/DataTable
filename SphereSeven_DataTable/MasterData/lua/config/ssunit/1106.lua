@@ -1,0 +1,3 @@
+local Config = {Id=1106,Name="狰狞兽化人男",AbDir="SsUnit/1051_TerribleOrcMan",NewRes=0,HandleBones={"Bip001 Spine1"},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.055,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1096,TotalFrames=70,OnHit=0,OnCutIn=0,OnDamage={21,40},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1097,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={42,77},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=1098,TotalFrames=110,OnHit=0,OnCutIn=0,OnDamage={71},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

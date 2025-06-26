@@ -1,0 +1,3 @@
+local Config = {Id=1001,Name="曹操",AbDir="SsUnit/001_CaoCao",NewRes=1,HandleBones={"wuqi_bone"},UnitScale =1.44,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.6848,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10011,TotalFrames=140,OnHit=0,OnCutIn=0,OnDamage={15,28,41,56,71},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10012,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={50},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10013,TotalFrames=770,OnHit=0,OnCutIn=0,OnDamage={465,485,505,525,545,565,585},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

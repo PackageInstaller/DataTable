@@ -1,0 +1,3 @@
+local Config = {Id=1021,Name="狮心王",AbDir="SsUnit/021_ShiXinWang",NewRes=1,HandleBones={"jian 01","dun 01"},UnitScale =1.44,CloseAtkOffset={2.1,0,-0.2},HitPosOffset={0,1.944,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10211,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={23,34,76},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10212,TotalFrames=210,OnHit=0,OnCutIn=0,OnDamage={144},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10213,TotalFrames=650,OnHit=0,OnCutIn=0,OnDamage={400,415,430,445,460},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

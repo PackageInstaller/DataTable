@@ -1,0 +1,3 @@
+local Config = {Id=1114,Name="石像怪",AbDir="SsUnit/111_StoneGargoyle",NewRes=0,HandleBones={""},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.1,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1114,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={39},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1115,TotalFrames=140,OnHit=0,OnCutIn=0,OnDamage={90},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

@@ -1,0 +1,3 @@
+local Config = {Id=1016,Name="俾斯麦",AbDir="SsUnit/016_BiSiMai",NewRes=1,HandleBones={"Bone001","Bone083"},UnitScale =1.44,CloseAtkOffset={4,0,-0.2},HitPosOffset={0,1.9008,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10161,TotalFrames=150,OnHit=0,OnCutIn=0,OnDamage={},OnMissile={22,36,45}},Skl01={Name="Skl01",SkillEfxId=10162,TotalFrames=300,OnHit=0,OnCutIn=0,OnDamage={90},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10163,TotalFrames=900,OnHit=0,OnCutIn=0,OnDamage={438,448,458,478,498,518,538,548,568,588,598,610,620,640},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=6,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

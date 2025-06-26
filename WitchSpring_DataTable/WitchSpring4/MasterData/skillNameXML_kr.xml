@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatList>
+	<Stat id="nail_2" name="구체폭탄" explain="손 안에 전격 속성의 구체를 만들어 물리공격을 하는 순간 폭파시킨다.^n위력은 마력의 250%^n폭발형 공격으로 덩치가 큰 적에게는 약간 낮은 위력으로 여러 차례 피해를 입힌다."/>
+	<Stat id="skyAttack" name="대지 부수기" explain="높게 점프하여 바닥을 강하게 내리쳐 범위공격을 시도한다. 위력은 힘의 250%"/>
+	<Stat id="normalAttack" name="찌르기" explain="선택된 상대를 날카롭게 찌르는 동시에 상대의 생명력을 흡수하여 자신의 HP를 회복시킨다. 위력은 힘의 320% (회복량은 모카모리 최대 HP의 7%까지 가능)"/>
+	<Stat id="attack" name="손톱공격" explain="물리공격을 시도한다. 다음 차례가 빨리 돌아오는 편이다."/>
+	<Stat id="nail" name="마력손톱" explain="손톱에 마력을 심어 손톱공격을 강화시킨다."/>
+	<Stat id="magic" name="마법" explain="강력한 위력을 가진 마법진 공격을 시도한다.^n공격방법 중 다음 차례가 가장 늦게 돌아오는 편이다."/>
+	<Stat id="doubleAttack" name="연속공격" explain="상대를 빠르게 5번 공격하는 물리공격."/>
+	<Stat id="verticalAttack" name="고속하강" explain="공격대상 위치의 제한 없이 선택된 대상의 머리 위로 순간이동하여 강하게 손톱을 내리친다. 위력은 힘과 마력에 비례한다."/>
+	<Stat id="gatherPower" name="힘 모으기" explain="2차례 동안 무방비 상태로 힘을 모으면 다음 차례에서 시도하는 공격에서 힘의 영향이 크게 증가된다. 이 힘의 영향은 다음 차례가 올 때마다 절반씩 감소한다."/>
+	<Stat id="speedAttack" name="초속공격" explain="지정한 적 근처로 연속으로 순간이동하며 아주 빠른 속도로 여러 번 상대를 공격하는 최고레벨 공격기술. 위력은 힘과 마력에 비례한다."/>
+	<Stat id="nail_1" name="손톱강화" explain="손톱을 마력으로 강화하여 힘의 위력을 증폭시키고 물리공격의 속성을 전격속성(마법속성)으로 전환시킨다."/>
+	<Stat id="-" name="-" explain="-"/>
+	<Stat id="nail_3" name="전격방패" explain="주변에 전기에너지를 둘러 공격을 받을 때 피해를 10% 감소시키고 자신이 받는 피해를 상대에게 두 배로 되돌려준다."/>
+	<Stat id="nail_4" name="속도강화" explain="최대 MP의 40% + 3000만큼 MP를 소모하여 민첩을 4배로 끌어올린다. 차례가 올 때마다 효과는 점점 사라진다."/>
+	<Stat id="nail_5" name="에너지 방출" explain="HP 20%, MP 30%를 소모하여 주변의 적들을 날려버린다. 방출된 마력은 최대 HP의 150% + 최대 MP의 200% + 마력의 200%의 위력으로 폭발한다."/>
+	<Stat id="nail_6" name="마력쏘기" explain="작은 전격 에너지를 모아 상대에게 쏘는 기본적인 마력기술. 마력의 250% 만큼의 위력을 가지며 먼 거리에 있는 적을 공격할 수 있다."/>
+	<Stat id="recoverMP_1" name="명상" explain="무방비 상태로 한 차례 명상에 잠긴다. 명상 후에는 MP가 40%만큼 회복된다."/>
+	<Stat id="recoverMP_2" name="깊은 명상" explain="무방비 상태로 두 차례 명상에 잠긴다. 명상 후에는 MP가 완전히 회복되며 한 차례 동안 마력이 2배로 증폭된다."/>
+	<Stat id="goldenShield" name="아가모의 방패" explain="상대의 공격을 상당한 비율로 흡수하여 다음 공격에서 몇 배로 돌려준다."/>
+	<Stat id="goldenSword" name="아가모의 검" explain="하나의 대상에게 강한 일격을 날린다."/>
+	<Stat id="goldenSpear" name="아가모의 창" explain="강한 충격파를 날려 충격파가 지나가는 경로의 모든 적들에게 폭발형 피해를 입힌다."/>
+	<Stat id="goldenEye" name="아가모의 눈" explain="아가모의 눈이 보는 모든 적들에게 강력한 피해를 입힌다."/>
+	<Stat id="attack" name="손톱공격" explain="물리공격을 상대에게 가한다."/>
+	<Stat id="nail" name="마력손톱" explain="물리공격에 여러 공격효과를 부여한다."/>
+	<Stat id="item" name="도구" explain="회복약 등 전투에 필요한 도구를 사용한다."/>
+	<Stat id="defence" name="방어" explain="방어 또는 회복자세를 취한다."/>
+	<Stat id="summon" name="부하소환" explain="부하를 소환하여 전투에 참여시킨다."/>
+	<Stat id="marienaFire_gather" name="불꽃 모으기" explain="모카모리의 마력을 빌려 불꽃을 모은다. 최대 4회까지 모을 수 있다."/>
+	<Stat id="marienaFire_shoot" name="불꽃 쏘기" explain="모은 불꽃을 상대에게 날린다."/>
+	<Stat id="marienaHeal" name="마리애나의 치유" explain="모카모리의 HP를 30% 회복시켜준다."/>
+	<Stat id="noaHealHP" name="요정의 치유" explain="모카모리의 HP를 50% 회복시켜준다."/>
+	<Stat id="noaHealMP" name="요정의 기원" explain="노아가 한 차례 정신을 집중한 후 다음 차례에서 모카모리의 MP를 100% 회복시켜준다."/>
+	<Stat id="normalMagic" name="마력폭발" explain="속성 없는 마력 덩어리를 상대의 몸속에서 폭발시켜 피해를 준다."/>
+	<Stat id="fireCircle7" name="7구 운석 압축 마법진" explain="강력한 화염 운석을 소환하여 상대를 공격한다. 시전자의 대기시간은 3배로 길어진다."/>
+	<Stat id="akar" name="에카르 베르테르" explain="모든 마력을 전소시켜 상대를 공격한다. 시전자의 다음 차례는 돌아오지 않는다."/>
+	<Stat id="iceCircle5" name="5주 빙우 마법진" explain="날카로운 얼음을 소환하여 적을 공격한다. 공격을 당한 상대는 다음 차례가 올 때까지 대기시간이 2배로 길어진다. 시전자의 대기시간은 40% 더 길어진다."/>
+	<Stat id="nukeCollabo" name="누크 콜라보레이션" explain="마력각성 수치가 일정 구간에 다다르면 누크를 소환하여 강력한 물리공격을 시도한다. 위력은 힘과 민첩에 비례한다."/>
+	<Stat id="nukeCollabo2" name="누크 콜라보레이션2" explain="마력각성 수치가 최대에 가까워지면 쓸 수 있는 기술. 누크를 소환하여 강력한 물리공격을 시도한다. 위력은 힘과 민첩에 비례한다."/>
+</StatList>

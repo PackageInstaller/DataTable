@@ -1,0 +1,3 @@
+local Config = {Id=1120,Name="龙星界枪兵",AbDir="SsUnit/104_DragonStarPikemen",NewRes=0,HandleBones={"Bone001"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,2.1168,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1177,TotalFrames=95,OnHit=0,OnCutIn=0,OnDamage={31,45},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=1178,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={26,45,50,59},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=1179,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={52},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

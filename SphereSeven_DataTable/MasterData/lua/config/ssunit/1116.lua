@@ -1,0 +1,3 @@
+local Config = {Id=1116,Name="利维坦",AbDir="SsUnit/113_Leviathan",Prefab="113_Leviathan",HitSound="",AtkSound="",Skl1Sound="",Skl2Sound="",Skl3Sound="",HandleBones={""},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.8,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1118,TotalFrames=155,OnHit=0,OnCutIn=0,OnDamage={34},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1119,TotalFrames=190,OnHit=0,OnCutIn=0,OnDamage={68},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

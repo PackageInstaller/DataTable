@@ -1,0 +1,3 @@
+local Config = {Id=1137,Name="马加锡亚",AbDir="SsUnit/137_MaJiaXiYa",NewRes=0,HandleBones={"Bip001 Head"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2074,TotalFrames=95,OnHit=0,OnCutIn=0,OnDamage={30,55},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2075,TotalFrames=220,OnHit=0,OnCutIn=0,OnDamage={100,110,120,130,140,150,160,170,180,190,200},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=2076,TotalFrames=200,OnHit=0,OnCutIn=0,OnDamage={84,94,104,114,124,134,144,154,164,174,184},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Contents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Content>
+		<enabled>true</enabled>
+		<id>m#innc3f</id>
+		<bookPos>0</bookPos>
+		<pos>0</pos>
+		<type>dmgf</type>
+		<power>25</power>
+		<spPower>0.1</spPower>
+		<needMp>5</needMp>
+		<needItem>rock-a+1,fireDust-a+1,blueDust-a+1,leaf-a+2</needItem>
+		<sprite>magic_1</sprite>
+		<sound>fire_1</sound>
+		<shakeTime>1</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1</circleSize>
+		<needCost>250</needCost>
+		<name_kr>3구 화염 중심문양</name_kr>
+		<explain_kr>수직으로 화염을 내뿜는 화염마법. 기본데미지 #power + 마력의 110% 추가피해</explain_kr>
+		<name_en>3 Circle Flame Pattern (Center)</name_en>
+		<explain_en>Flame magic that spouts vertically. Basic damage #power + 110% additional damage of SP</explain_en>
+		<name_jp>3球火炎中心文様</name_jp>
+		<explain_jp>垂直に火炎を吹き出す火炎魔法。基本ダメージ#power +魔力の110％追加ダメージ</explain_jp>
+		<name_cn>三球火焰中心魔法阵</name_cn>
+		<explain_cn>垂直迸发火焰的火焰魔法。基础伤害 #power + 魔力110%的额外伤害</explain_cn>
+		<name_tw>三球火焰中心魔法陣</name_tw>
+		<explain_tw>垂直迸發火焰的火焰魔法。基礎傷害 #power + 魔力110%的額外傷害</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#midc3k</id>
+		<bookPos>1-1</bookPos>
+		<pos>1</pos>
+		<type>amp</type>
+		<power>0.1</power>
+		<spPower>0</spPower>
+		<needMp>5</needMp>
+		<needItem>rock-a+1,fireDust-a+3,pearl-a+3,blackStone-a+2</needItem>
+		<sprite>-</sprite>
+		<sound>-</sound>
+		<shakeTime>-</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1</circleSize>
+		<needCost>250</needCost>
+		<name_kr>증폭 중부문양(하)</name_kr>
+		<explain_kr>마법효과 #power 증폭</explain_kr>
+		<name_en>Amplifying Pattern Lv.1 (Mid)</name_en>
+		<explain_en>Amplify Center Pattern's Damage #power</explain_en>
+		<name_jp>増幅中部文様(下)</name_jp>
+		<explain_jp>魔法の効果#power増幅</explain_jp>
+		<name_cn>增幅中部魔法阵（下）</name_cn>
+		<explain_cn>魔法效果增幅 #power</explain_cn>
+		<name_tw>增幅中部魔法陣（下）</name_tw>
+		<explain_tw>魔法效果增幅 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#utlc3k</id>
+		<bookPos>1-2</bookPos>
+		<pos>2</pos>
+		<type>saveMp</type>
+		<power>0.1</power>
+		<spPower>0</spPower>
+		<needMp>0</needMp>
+		<needItem>rock-a+1,pearl-a+4,blueDust-a+2</needItem>
+		<sprite>-</sprite>
+		<sound>-</sound>
+		<shakeTime>-</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1</circleSize>
+		<needCost>250</needCost>
+		<name_kr>정신력 집중 외부문양(하)</name_kr>
+		<explain_kr>소모마나 #power 감소</explain_kr>
+		<name_en>Concentrating Pattern Lv.1 (Outside)</name_en>
+		<explain_en>Save MP #power</explain_en>
+		<name_jp>精神集中外部文様(下)</name_jp>
+		<explain_jp>消費マナ#power減少</explain_jp>
+		<name_cn>凝神外部魔法阵（下）</name_cn>
+		<explain_cn>消耗法力减少 #power</explain_cn>
+		<name_tw>凝神外部魔法陣（下）</name_tw>
+		<explain_tw>消耗法力減少 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#mnc</id>
+		<bookPos>0</bookPos>
+		<pos>0</pos>
+		<type>sprit</type>
+		<power>5</power>
+		<spPower>0</spPower>
+		<needMp>5</needMp>
+		<needItem>-</needItem>
+		<sprite>magic_mindControl</sprite>
+		<sound>warp_1</sound>
+		<shakeTime>1</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1.1</circleSize>
+		<needCost>500</needCost>
+		<name_kr>정신지배 중심문양</name_kr>
+		<explain_kr>몬스터를 마지막 타격으로 잡을 시 정신지배 가능</explain_kr>
+		<name_en>Mind Control Pattern (Center)</name_en>
+		<explain_en>When you kill the monster by the last attack, You can Mental-Rule.</explain_en>
+		<name_jp>精神支配中心文様</name_jp>
+		<explain_jp>モンスターを最後の打撃で捕まえる時の精神支配可能</explain_jp>
+		<name_cn>精神支配中心魔法阵</name_cn>
+		<explain_cn>用最后一击捕获怪兽时，可使用精神支配。</explain_cn>
+		<name_tw>精神支配中心魔法陣</name_tw>
+		<explain_tw>用最後一擊捕獲怪獸時，可使用精神支配。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#innc4f</id>
+		<bookPos>1-3</bookPos>
+		<pos>0</pos>
+		<type>dmgf</type>
+		<power>50</power>
+		<spPower>0.3</spPower>
+		<needMp>17</needMp>
+		<needItem>rock-a+1,fireDust-a+3,leaf-a+4,redStone-a+1</needItem>
+		<sprite>magic_2</sprite>
+		<sound>explosion_1</sound>
+		<shakeTime>2</shakeTime>
+		<putTime>1</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1.2</circleSize>
+		<needCost>2000</needCost>
+		<name_kr>4구 화염석기둥 문양</name_kr>
+		<explain_kr>화염과 함께 땅 속 깊숙한 곳의 암석까지 끌어올리는 화염마법. 기본피해 #power + 마력의 130% 추가피해</explain_kr>
+		<name_en>4 Circle Flame Pillar Pattern (Center)</name_en>
+		<explain_en>Flame magic pulling up the rocks deep in the earth with fire. Basic damage #power + 130% additional damage of SP</explain_en>
+		<name_jp>4球火炎石柱文様</name_jp>
+		<explain_jp>火炎と一緒に土の奥の岩石まで引き上げる火炎魔法。基本ダメージ#power +魔力の130％追加ダメージ</explain_jp>
+		<name_cn>四球火焰石魔法阵</name_cn>
+		<explain_cn>把地下深处的岩石与火焰一同拉上来的火焰魔法。基础伤害 #power + 魔力130%的额外伤害</explain_cn>
+		<name_tw>四球火焰石魔法陣</name_tw>
+		<explain_tw>把地下深處的岩石與火焰一同拉上來的火焰魔法。基礎傷害 #power + 魔力130%的額外傷害</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#innc5f</id>
+		<bookPos>1-4</bookPos>
+		<pos>0</pos>
+		<type>dmgf</type>
+		<power>90</power>
+		<spPower>0.5</spPower>
+		<needMp>35</needMp>
+		<needItem>rock-a+2,fireDust-b+3,redStone-a+2,mStone-a+1</needItem>
+		<sprite>magic_3</sprite>
+		<sound>powerUp</sound>
+		<shakeTime>2.5</shakeTime>
+		<putTime>0.2</putTime>
+		<damageTime>1.2</damageTime>
+		<circleSize>1.5</circleSize>
+		<needCost>8000</needCost>
+		<name_kr>5구 지점폭발 문양</name_kr>
+		<explain_kr>대상의 여러 지점에서 폭발을 일으키는 화염마법. 기본피해 #power + 마력의 150% 추가피해</explain_kr>
+		<name_en>5 Circle Explosion Pattern (Center)</name_en>
+		<explain_en>Flame magic explosing in the number of branches.  Basic damage #power + 150% additional damage of SP</explain_en>
+		<name_jp>5球地点爆発文様</name_jp>
+		<explain_jp>対象の複数のポイントで爆発を起こす火炎魔法。基本ダメージ#power +魔力の150％追加ダメージ</explain_jp>
+		<name_cn>五球地点爆炸魔法阵</name_cn>
+		<explain_cn>在多个地点引发爆炸的火焰魔法。基础伤害 #power + 魔力130%的额外伤害</explain_cn>
+		<name_tw>五球地點爆炸魔法陣</name_tw>
+		<explain_tw>在多個地點引發爆炸的火焰魔法。基礎傷害 #power + 魔力130%的額外傷害</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#innc6f</id>
+		<bookPos>1-5</bookPos>
+		<pos>0</pos>
+		<type>dmgf</type>
+		<power>185</power>
+		<spPower>0.7</spPower>
+		<needMp>60</needMp>
+		<needItem>rock-b+1,redStone-a+3,redStone-b+1,mStone-a+2</needItem>
+		<sprite>magic_4</sprite>
+		<sound>explosion_1</sound>
+		<shakeTime>0.4</shakeTime>
+		<putTime>1</putTime>
+		<damageTime>3</damageTime>
+		<circleSize>1.8</circleSize>
+		<needCost>15000</needCost>
+		<name_kr>6구 운석소환 문양</name_kr>
+		<explain_kr>거대운석을 소환하여 찍어내리는 강력한 화염마법. 기본피해 #power + 마력의 170% 추가피해</explain_kr>
+		<name_en>6 Circle Meteo Pattern (Center)</name_en>
+		<explain_en>Powerful flame magic that calls a giant meteorite and takes down. Basic damage #power + 170% additional damage of SP</explain_en>
+		<name_jp>6球隕石召喚文様</name_jp>
+		<explain_jp>巨大隕石を召喚する強力な火炎魔法。基本ダメージ#power +魔力の170％追加ダメージ</explain_jp>
+		<name_cn>六球召唤陨石魔法阵</name_cn>
+		<explain_cn>召唤巨大陨石从上空下坠的强力火焰魔法。基础伤害 #power + 魔力170%的额外伤害</explain_cn>
+		<name_tw>六球召喚隕石魔法陣</name_tw>
+		<explain_tw>召喚巨大隕石從上空下墜的強力火焰魔法。基礎傷害 #power + 魔力170%的額外傷害</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#innc7f</id>
+		<bookPos>1-6</bookPos>
+		<pos>0</pos>
+		<type>dmgf</type>
+		<power>380</power>
+		<spPower>1</spPower>
+		<needMp>125</needMp>
+		<needItem>rock-b+1,redStone-c+2,mStone-a+3</needItem>
+		<sprite>magic_5</sprite>
+		<sound>explosion_3</sound>
+		<shakeTime>2</shakeTime>
+		<putTime>1</putTime>
+		<damageTime>3</damageTime>
+		<circleSize>2.2</circleSize>
+		<needCost>35000</needCost>
+		<name_kr>7구 운석압축 폭발 문양</name_kr>
+		<explain_kr>7개의 운석이 한 지점에 뭉쳐 대폭발을 일으키는 최고레벨 마법. 기본피해 #power + 마력의 200% 추가피해</explain_kr>
+		<name_en>7 Circle Meteo Compressing Pattern (Center)</name_en>
+		<explain_en>The highest Flame magic making seven meteorite unite in one point and cause the explosion. Basic damage #power + 200% additional damage of SP</explain_en>
+		<name_jp>7球隕石圧縮爆発文様</name_jp>
+		<explain_jp>7つの隕石が一点で集まって大爆発を起こす最高レベル魔法。基本ダメージ#power +魔力の200％追加ダメージ</explain_jp>
+		<name_cn>七球压缩陨石爆炸魔法阵</name_cn>
+		<explain_cn>七个陨石聚集同一处后引发巨型爆炸的最高级魔法。基础伤害 #power + 魔力200%的额外伤害</explain_cn>
+		<name_tw>七球壓縮隕石爆炸魔法陣</name_tw>
+		<explain_tw>七個隕石聚集同一處後引發巨型爆炸的最高級魔法。基礎傷害 #power + 魔力200%的額外傷害</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#midc4k</id>
+		<bookPos>1-1</bookPos>
+		<pos>1</pos>
+		<type>amp</type>
+		<power>0.2</power>
+		<spPower>0</spPower>
+		<needMp>7</needMp>
+		<needItem>rock-a+1,fireDust-a+3,pearl-b+3,crab-b+1</needItem>
+		<sprite>-</sprite>
+		<sound>-</sound>
+		<shakeTime>-</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1</circleSize>
+		<needCost>500</needCost>
+		<name_kr>증폭 중부문양(중)</name_kr>
+		<explain_kr>마법효과 #power 증폭</explain_kr>
+		<name_en>Amplifying Pattern Lv.2 (Mid)</name_en>
+		<explain_en>Amplify Center Pattern's Damage #power</explain_en>
+		<name_jp>増幅中部文様(中)</name_jp>
+		<explain_jp>魔法効果#power増幅</explain_jp>
+		<name_cn>增幅中部魔法阵（中）</name_cn>
+		<explain_cn>魔法效果增幅 #power</explain_cn>
+		<name_tw>增幅中部魔法陣（中）</name_tw>
+		<explain_tw>魔法效果增幅 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#utlc4k</id>
+		<bookPos>1-2</bookPos>
+		<pos>2</pos>
+		<type>saveMp</type>
+		<power>0.2</power>
+		<spPower>0</spPower>
+		<needMp>0</needMp>
+		<needItem>rock-a+1,pearl-b+1,blueDust-a+2,crab-b+3</needItem>
+		<sprite>-</sprite>
+		<sound>-</sound>
+		<shakeTime>-</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1</circleSize>
+		<needCost>500</needCost>
+		<name_kr>정신력 집중 외부문양(중)</name_kr>
+		<explain_kr>소모마나 #power 감소</explain_kr>
+		<name_en>Concentrating Pattern Lv.2 (Outside)</name_en>
+		<explain_en>Save MP #power</explain_en>
+		<name_jp>精神集中外部文様(中)</name_jp>
+		<explain_jp>消費マナ#power減少</explain_jp>
+		<name_cn>凝神外部魔法阵（中）</name_cn>
+		<explain_cn>消耗法力减少 #power</explain_cn>
+		<name_tw>凝神外部魔法陣（中）</name_tw>
+		<explain_tw>消耗法力減少 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#midc5k</id>
+		<bookPos>1-1</bookPos>
+		<pos>1</pos>
+		<type>amp</type>
+		<power>0.3</power>
+		<spPower>0</spPower>
+		<needMp>10</needMp>
+		<needItem>rock-a+1,fireDust-b+3,blackStone-a+2,mStone-a+1</needItem>
+		<sprite>-</sprite>
+		<sound>-</sound>
+		<shakeTime>-</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1</circleSize>
+		<needCost>500</needCost>
+		<name_kr>증폭 중부문양(상)</name_kr>
+		<explain_kr>마법효과 #power 증폭</explain_kr>
+		<name_en>Amplifying Pattern Lv.3 (Mid)</name_en>
+		<explain_en>Amplify Center Pattern's Damage #power</explain_en>
+		<name_jp>増幅中部文様(上)</name_jp>
+		<explain_jp>魔法効果#power増幅</explain_jp>
+		<name_cn>增幅中部魔法阵（上）</name_cn>
+		<explain_cn>魔法效果增幅 #power</explain_cn>
+		<name_tw>增幅中部魔法陣（上）</name_tw>
+		<explain_tw>魔法效果增幅 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#utlc5k</id>
+		<bookPos>1-2</bookPos>
+		<pos>2</pos>
+		<type>saveMp</type>
+		<power>0.3</power>
+		<spPower>0</spPower>
+		<needMp>0</needMp>
+		<needItem>rock-a+1,pearl-c+2,blueDust-b+2,crab-b+2</needItem>
+		<sprite>-</sprite>
+		<sound>-</sound>
+		<shakeTime>-</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1</circleSize>
+		<needCost>500</needCost>
+		<name_kr>정신력 집중 외부문양(상)</name_kr>
+		<explain_kr>소모마나 #power 감소</explain_kr>
+		<name_en>Concentrating Pattern Lv.3 (Outside)</name_en>
+		<explain_en>Save MP #power</explain_en>
+		<name_jp>精神集中外部文様(上)</name_jp>
+		<explain_jp>消費マナ#power減少</explain_jp>
+		<name_cn>凝神外部魔法阵（上）</name_cn>
+		<explain_cn>消耗法力减少 #power</explain_cn>
+		<name_tw>凝神外部魔法陣（上）</name_tw>
+		<explain_tw>消耗法力減少 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#innc6d</id>
+		<bookPos>0</bookPos>
+		<pos>0</pos>
+		<type>dmgf</type>
+		<power>200</power>
+		<spPower>0.5</spPower>
+		<needMp>70</needMp>
+		<needItem>-</needItem>
+		<sprite>magic_temar</sprite>
+		<sound>explosion_2</sound>
+		<shakeTime>1</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0.3</damageTime>
+		<circleSize>2.3</circleSize>
+		<needCost>25000</needCost>
+		<name_kr>테마르 소환 표식</name_kr>
+		<explain_kr>테마르를 소환하여 공격한다. 기본데미지 200 + 마력의 150% 추가피해</explain_kr>
+		<name_en>Temar Summon Sign (Center)</name_en>
+		<explain_en>Summon Temar and attack. Basic damage 200 + 150% additional damage of SP</explain_en>
+		<name_jp>テマル召喚魔方陣</name_jp>
+		<explain_jp>テマルを召喚して攻撃する。基本ダメージ200 +馬力の150％追加ダメージ</explain_jp>
+		<name_cn>泰玛召唤标式</name_cn>
+		<explain_cn>召唤泰玛进行攻击。基础伤害 200 + 魔力150%的额外伤害</explain_cn>
+		<name_tw>泰瑪召喚標式</name_tw>
+		<explain_tw>召喚泰瑪進行攻擊。基礎傷害 200 + 魔力150%的額外傷害</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#midc6k</id>
+		<bookPos>1-1</bookPos>
+		<pos>1</pos>
+		<type>amp</type>
+		<power>0.5</power>
+		<spPower>0</spPower>
+		<needMp>15</needMp>
+		<needItem>rock-a+1,fireDust-b+1,mStone-a+5</needItem>
+		<sprite>-</sprite>
+		<sound>-</sound>
+		<shakeTime>-</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1</circleSize>
+		<needCost>500</needCost>
+		<name_kr>증폭 중부문양(최상)</name_kr>
+		<explain_kr>마법효과 #power 증폭</explain_kr>
+		<name_en>Amplifying Pattern Lv.4 (Mid)</name_en>
+		<explain_en>Amplify Center Pattern's Damage #power</explain_en>
+		<name_jp>増幅中部文様(最高)</name_jp>
+		<explain_jp>魔法効果#power増幅</explain_jp>
+		<name_cn>增幅中部魔法阵（特）</name_cn>
+		<explain_cn>魔法效果增幅 #power</explain_cn>
+		<name_tw>增幅中部魔法陣（特）</name_tw>
+		<explain_tw>魔法效果增幅 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#utlc6k</id>
+		<bookPos>1-2</bookPos>
+		<pos>2</pos>
+		<type>saveMp</type>
+		<power>0.5</power>
+		<spPower>0</spPower>
+		<needMp>0</needMp>
+		<needItem>rock-b+1,pearl-c+2,blueDust-b+2,crab-b+4</needItem>
+		<sprite>-</sprite>
+		<sound>-</sound>
+		<shakeTime>-</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1</circleSize>
+		<needCost>500</needCost>
+		<name_kr>정신력 집중 외부문양(최상)</name_kr>
+		<explain_kr>소모마나 #power 감소</explain_kr>
+		<name_en>Concentrating Pattern Lv.4 (Outside)</name_en>
+		<explain_en>Save MP #power</explain_en>
+		<name_jp>精神集中外部文様(最高)</name_jp>
+		<explain_jp>消費マナ#power減少</explain_jp>
+		<name_cn>凝神外部魔法阵（特）</name_cn>
+		<explain_cn>消耗法力减少 #power</explain_cn>
+		<name_tw>凝神外部魔法陣（特）</name_tw>
+		<explain_tw>消耗法力減少 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#innc3i</id>
+		<bookPos>0</bookPos>
+		<pos>0</pos>
+		<type>dmgi</type>
+		<power>40</power>
+		<spPower>0.3</spPower>
+		<needMp>15</needMp>
+		<needItem>rock-a+1,tooth-a+3,ice-a+2</needItem>
+		<sprite>magic_ice_1</sprite>
+		<sound>ice_1</sound>
+		<shakeTime>1</shakeTime>
+		<putTime>0.7</putTime>
+		<damageTime>0</damageTime>
+		<circleSize>1</circleSize>
+		<needCost>2000</needCost>
+		<name_kr>3주 빙결 중심문양</name_kr>
+		<explain_kr>3개의 얼음기둥이 솟아오르는 마법. 기본데미지 #power + 마력의 130% 추가피해</explain_kr>
+		<name_en>3 Pillars Freeze Pattern (Center)</name_en>
+		<explain_en>Rise Three Frozen pillar. Basic damage #power + 130% additional damage of SP</explain_en>
+		<name_jp>3柱氷結中心文様</name_jp>
+		<explain_jp>3つの氷の柱が立ち上がる魔法。基本ダメージ#power +魔力の130％追加ダメージ</explain_jp>
+		<name_cn>三柱冰柱魔法阵</name_cn>
+		<explain_cn>升起三柱冰柱的魔法。基础伤害 #power + 魔力130%的额外伤害</explain_cn>
+		<name_tw>三柱冰柱魔法陣</name_tw>
+		<explain_tw>升起三柱冰柱的魔法。基礎傷害 #power + 魔力130%的額外傷害</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>m#innc6t</id>
+		<bookPos>0</bookPos>
+		<pos>0</pos>
+		<type>dmgt</type>
+		<power>460</power>
+		<spPower>2</spPower>
+		<needMp>200</needMp>
+		<needItem>rock-b+1,lighting-a+1</needItem>
+		<sprite>magic_thunder_1</sprite>
+		<sound>thunder_1</sound>
+		<shakeTime>1</shakeTime>
+		<putTime>2</putTime>
+		<damageTime>0.5</damageTime>
+		<circleSize>2.4</circleSize>
+		<needCost>45000</needCost>
+		<name_kr>썬더스톰</name_kr>
+		<explain_kr>강력한 낙뢰를 떨어뜨리는 전격마법. 기본 데미지 #power + 마력의 300% 추가피해</explain_kr>
+		<name_en>Thunderstrom (Center)</name_en>
+		<explain_en>Electronic magic stroking the strong thunder.  Basic damage #power + 300% additional damage of SP</explain_en>
+		<name_jp>サンダーストーム</name_jp>
+		<explain_jp>3つの氷の柱が立ち上がる魔法。基本ダメージ#power +魔力の130％追加ダメージ</explain_jp>
+		<name_cn>雷暴</name_cn>
+		<explain_cn>召唤强大雷电在指定位置上空下坠的电击魔法。基础伤害 #power + 魔力300%的额外伤害</explain_cn>
+		<name_tw>雷暴</name_tw>
+		<explain_tw>召喚強大雷電在指定位置上空下墜的電擊魔法。基礎傷害 #power + 魔力300%的額外傷害</explain_tw>
+	</Content>
+</Contents>

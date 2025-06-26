@@ -1,0 +1,77 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
+-- Command line: -se UTF8 luacode/protocols/def/protocol/activity/sspringredpacketactivity.lua 
+
+-- params : ...
+-- function num : 0 , upvalues : _ENV
+local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local SSpringRedPacketActivity = dataclass("SSpringRedPacketActivity", require("framework.net.protocol"))
+SSpringRedPacketActivity.ProtocolType = 2586
+SSpringRedPacketActivity.MaxSize = 65535
+SSpringRedPacketActivity.state = 0
+SSpringRedPacketActivity.day = 0
+SSpringRedPacketActivity.Ctor = function(self, client)
+  -- function num : 0_0 , upvalues : SSpringRedPacketActivity
+  ((SSpringRedPacketActivity.super).Ctor)(self, client)
+  self.redPacketState = {}
+end
+
+SSpringRedPacketActivity.Marshal = function(self, buffer)
+  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions, _ENV
+  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.state) then
+    return false
+  end
+  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, (table.nums)(self.redPacketState)) then
+    return false
+  end
+  for key,value in pairs(self.redPacketState) do
+    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC26) then
+      return false
+    end
+    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC26) then
+      return false
+    end
+  end
+  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.day) then
+    return false
+  end
+  return true
+end
+
+SSpringRedPacketActivity.Unmarshal = function(self, buffer)
+  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+  local ret = true
+  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  if not ret then
+    return ret
+  end
+  local length, key, value = 0, nil, nil
+  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  if not ret then
+    return ret
+  end
+  for i = 1, length do
+    key = nil
+    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    if not ret then
+      return ret
+    end
+    -- DECOMPILER ERROR at PC37: Overwrote pending register: R5 in 'AssignReg'
+
+    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    if not ret then
+      return ret
+    end
+    -- DECOMPILER ERROR at PC43: Confused about usage of register: R10 in 'UnsetPending'
+
+    ;
+    (self.redPacketState)[key] = value
+  end
+  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  if not ret then
+    return ret
+  end
+  return ret
+end
+
+return SSpringRedPacketActivity
+

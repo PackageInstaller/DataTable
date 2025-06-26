@@ -1,0 +1,3 @@
+local Config = {Id=1109,Name="龙星界步兵",AbDir="SsUnit/107_DragonStarFootman",NewRes=0,HandleBones={"Bone002"},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.025,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1102,TotalFrames=50,OnHit=0,OnCutIn=0,OnDamage={20},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1103,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={32,52,70},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=1104,TotalFrames=85,OnHit=0,OnCutIn=0,OnDamage={32},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

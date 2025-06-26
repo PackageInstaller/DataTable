@@ -1,0 +1,3 @@
+local Config = {Id=1030,Name="威廉·范·奥伦治",AbDir="SsUnit/030_WeiLian",NewRes=1,HandleBones={"Dummy002","Dummy001"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.944,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10301,TotalFrames=90,OnHit=0,OnCutIn=0,OnDamage={58},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10302,TotalFrames=140,OnHit=0,OnCutIn=0,OnDamage={63,73,83,93,103,113},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10303,TotalFrames=460,OnHit=0,OnCutIn=0,OnDamage={420},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=3,OnCutIn=0,OnDamage={},OnMissile={}},}}
+ return Config

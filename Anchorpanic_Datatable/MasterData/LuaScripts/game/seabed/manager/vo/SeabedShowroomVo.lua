@@ -1,0 +1,13 @@
+
+module("seabed.SeabedShowroomVo", Class.impl())
+
+function parseData(self,id,data)
+    self.id = id 
+    self.icon = data.icon
+    self.title = data.title
+    self.des = data.des
+    self.storyId = data.story_id
+    self.reward = data.reward
+end
+
+return _M

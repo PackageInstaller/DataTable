@@ -1,0 +1,294 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 3451397205605873465
+  },
+  "m_Name": "bingo_data",
+  "table": [
+    {
+      "id": 1,
+      "name": "初回ビンゴキャンペーン",
+      "box_message": "初回ビンゴキャンペーン報酬",
+      "price_category": "ticket",
+      "price_name": "bingo_lotteryticket221107",
+      "price": 1,
+      "dupli_category": "point",
+      "dupli_name": "duplicate221107",
+      "dupli_point": 8,
+      "table_id": 100001,
+      "button_resources": "Button1",
+      "title_logo_resources": "Bingo_Event_Logo1",
+      "bg_resources": "Event1_Bg",
+      "resource_id": 60016,
+      "start_dt": "2022/01/01 0:00:00",
+      "end_dt": "2022/11/21 10:29:59",
+      "rewards": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "item",
+            "m_walletName": "item.unit_skin.54_1",
+            "m_count": 1
+          }
+        ]
+      },
+      "my_page_btn": 1
+    },
+    {
+      "id": 2,
+      "name": "ビンゴキャンペーン_230320",
+      "box_message": "ビンゴキャンペーン報酬",
+      "price_category": "ticket",
+      "price_name": "bingo_lotteryticket221107",
+      "price": 1,
+      "dupli_category": "point",
+      "dupli_name": "duplicate221107",
+      "dupli_point": 5,
+      "table_id": 100002,
+      "button_resources": "Button1",
+      "title_logo_resources": "Bingo_Event_Logo2",
+      "bg_resources": "Event1_Bg",
+      "resource_id": 10084,
+      "start_dt": "1023/03/20 11:00:00",
+      "end_dt": "2023/04/03 10:29:59",
+      "rewards": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "unit",
+            "m_walletName": "84",
+            "m_count": 1
+          }
+        ]
+      },
+      "my_page_btn": 1
+    },
+    {
+      "id": 3,
+      "name": "ビンゴキャンペーン_230515",
+      "box_message": "ビンゴキャンペーン報酬",
+      "price_category": "ticket",
+      "price_name": "bingo_lotteryticket221107",
+      "price": 1,
+      "dupli_category": "point",
+      "dupli_name": "duplicate221107",
+      "dupli_point": 5,
+      "table_id": 100003,
+      "button_resources": "Button1",
+      "title_logo_resources": "Bingo_Event_Logo3",
+      "bg_resources": "Event1_Bg",
+      "resource_id": 10166,
+      "start_dt": "1023/05/15 11:00:00",
+      "end_dt": "2023/05/29 10:29:59",
+      "rewards": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "unit",
+            "m_walletName": "166",
+            "m_count": 1
+          }
+        ]
+      },
+      "my_page_btn": 1
+    },
+    {
+      "id": 4,
+      "name": "ビンゴキャンペーン_230814",
+      "box_message": "ビンゴキャンペーン報酬",
+      "price_category": "ticket",
+      "price_name": "bingo_lotteryticket221107",
+      "price": 1,
+      "dupli_category": "point",
+      "dupli_name": "duplicate221107",
+      "dupli_point": 5,
+      "table_id": 100004,
+      "button_resources": "Button1",
+      "title_logo_resources": "Bingo_Event_Logo4",
+      "bg_resources": "Event1_Bg",
+      "resource_id": 10156,
+      "start_dt": "1023/08/14 11:00:00",
+      "end_dt": "2023/08/28 10:29:59",
+      "rewards": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "unit",
+            "m_walletName": "156",
+            "m_count": 1
+          }
+        ]
+      },
+      "my_page_btn": 1
+    },
+    {
+      "id": 5,
+      "name": "妖怪ビンゴキャンペーン_231218",
+      "box_message": "妖怪ビンゴキャンペーン報酬",
+      "price_category": "ticket",
+      "price_name": "bingo_lotteryticket231218",
+      "price": 1,
+      "dupli_category": "point",
+      "dupli_name": "duplicate221218",
+      "dupli_point": 5,
+      "table_id": 100005,
+      "button_resources": "Button1",
+      "title_logo_resources": "Bingo_Event_Logo5",
+      "bg_resources": "Event1_Bg",
+      "resource_id": 10200,
+      "start_dt": "1023/12/18 11:00:00",
+      "end_dt": "2023/12/31 23:59:59",
+      "rewards": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "unit",
+            "m_walletName": "200",
+            "m_count": 1
+          }
+        ]
+      },
+      "my_page_btn": 0
+    },
+    {
+      "id": 6,
+      "name": "ビンゴキャンペーン_231225",
+      "box_message": "ビンゴキャンペーン報酬",
+      "price_category": "ticket",
+      "price_name": "bingo_lotteryticket221107",
+      "price": 1,
+      "dupli_category": "point",
+      "dupli_name": "duplicate221107",
+      "dupli_point": 5,
+      "table_id": 100006,
+      "button_resources": "Button1",
+      "title_logo_resources": "Bingo_Event_Logo6",
+      "bg_resources": "Event1_Bg",
+      "resource_id": 10159,
+      "start_dt": "1023/12/25 11:00:00",
+      "end_dt": "2024/04/20 10:29:59",
+      "rewards": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "unit",
+            "m_walletName": "159",
+            "m_count": 1
+          }
+        ]
+      },
+      "my_page_btn": 1
+    },
+    {
+      "id": 7,
+      "name": "ビンゴキャンペーン_240729",
+      "box_message": "ビンゴキャンペーン報酬",
+      "price_category": "ticket",
+      "price_name": "bingo_lotteryticket221107",
+      "price": 1,
+      "dupli_category": "point",
+      "dupli_name": "duplicate221107",
+      "dupli_point": 5,
+      "table_id": 100007,
+      "button_resources": "Button1",
+      "title_logo_resources": "Bingo_Event_Logo7",
+      "bg_resources": "Event1_Bg",
+      "resource_id": 60044,
+      "start_dt": "1024/07/29 11:00:00",
+      "end_dt": "2024/08/13 10:29:59",
+      "rewards": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "item",
+            "m_walletName": "item.unit_skin.171_1",
+            "m_count": 1
+          }
+        ]
+      },
+      "my_page_btn": 1
+    },
+    {
+      "id": 8,
+      "name": "ビンゴキャンペーン_240826",
+      "box_message": "ビンゴキャンペーン報酬",
+      "price_category": "ticket",
+      "price_name": "bingo_lotteryticket221107",
+      "price": 1,
+      "dupli_category": "point",
+      "dupli_name": "duplicate221107",
+      "dupli_point": 5,
+      "table_id": 100008,
+      "button_resources": "Button1",
+      "title_logo_resources": "Bingo_Event_Logo8",
+      "bg_resources": "Event1_Bg",
+      "resource_id": 10197,
+      "start_dt": "1024/08/26 11:00:00",
+      "end_dt": "2024/09/09 10:29:59",
+      "rewards": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "unit",
+            "m_walletName": "197",
+            "m_count": 1
+          }
+        ]
+      },
+      "my_page_btn": 1
+    },
+    {
+      "id": 9,
+      "name": "ビンゴキャンペーン_250512",
+      "box_message": "ビンゴキャンペーン報酬",
+      "price_category": "ticket",
+      "price_name": "bingo_lotteryticket221107",
+      "price": 1,
+      "dupli_category": "point",
+      "dupli_name": "duplicate221107",
+      "dupli_point": 5,
+      "table_id": 100009,
+      "button_resources": "Button1",
+      "title_logo_resources": "Bingo_Event_Logo9",
+      "bg_resources": "Event1_Bg",
+      "resource_id": 60051,
+      "start_dt": "1025/05/12 11:00:00",
+      "end_dt": "2025/05/26 10:29:59",
+      "rewards": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "item",
+            "m_walletName": "item.unit_skin.46_3",
+            "m_count": 1
+          }
+        ]
+      },
+      "my_page_btn": 1
+    },
+    {
+      "id": 10,
+      "name": "ビンゴキャンペーン_250609",
+      "box_message": "ビンゴキャンペーン報酬",
+      "price_category": "ticket",
+      "price_name": "bingo_lotteryticket221107",
+      "price": 1,
+      "dupli_category": "point",
+      "dupli_name": "duplicate221107",
+      "dupli_point": 5,
+      "table_id": 100010,
+      "button_resources": "Button1",
+      "title_logo_resources": "Bingo_Event_Logo10",
+      "bg_resources": "Event1_Bg",
+      "resource_id": 10349,
+      "start_dt": "1025/06/09 11:00:00",
+      "end_dt": "2025/06/23 10:29:59",
+      "rewards": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "unit",
+            "m_walletName": "349",
+            "m_count": 1
+          }
+        ]
+      },
+      "my_page_btn": 1
+    }
+  ]
+}

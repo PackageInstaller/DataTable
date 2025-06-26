@@ -1,0 +1,3 @@
+local Config = {Id=1103,Name="狮星界骑士",AbDir="SsUnit/103_LionStarKnight",NewRes=0,HandleBones={""},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.355,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1086,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={57},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1087,TotalFrames=160,OnHit=0,OnCutIn=0,OnDamage={53,69,90},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

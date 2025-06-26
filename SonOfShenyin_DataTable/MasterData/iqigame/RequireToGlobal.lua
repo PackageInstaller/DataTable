@@ -1,0 +1,2 @@
+﻿-- chunkname: @IQIGame\\RequireToGlobal.lua
+

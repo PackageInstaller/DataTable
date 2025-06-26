@@ -1,0 +1,23 @@
+return {
+	[1001] = {
+		Id = 1001,
+		Name = "プロローグ",
+		Desc = "",
+		ChapterId = 1,
+		NextSectionId = 0,
+		LevelTitle = "チュートリアル",
+		LevelStory = "",
+		SubTitle = "第一章",
+		StoryScript = "1001",
+		LevelId = 10001,
+		SceneId = 9,
+		StoryId = "1",
+		IconId = 1028,
+		IconStage = 1,
+		FirstDropId = "",
+		FirstPerfectDropId = "",
+		NormalDropId = "",
+		ExtraDropId = "",
+		Power = 0,
+	},
+}

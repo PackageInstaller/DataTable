@@ -1,0 +1,3 @@
+local Config = {Id=1121,Name="龙星界御林军",AbDir="SsUnit/105_DragonStarArmy",NewRes=0,HandleBones={"Bone001","Bone028"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,2.3544,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1180,TotalFrames=140,OnHit=0,OnCutIn=0,OnDamage={16,39,71},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=1181,TotalFrames=110,OnHit=0,OnCutIn=0,OnDamage={31},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=1182,TotalFrames=90,OnHit=0,OnCutIn=0,OnDamage={12},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

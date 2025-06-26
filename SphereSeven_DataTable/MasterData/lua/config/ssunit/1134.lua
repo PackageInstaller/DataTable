@@ -1,0 +1,3 @@
+local Config = {Id=1134,Name="刻耳柏洛斯",AbDir="SsUnit/134_KeErBoLuoSi",NewRes=0,HandleBones={"Bip001 Head","Bone003","Bone013"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0,22.4,-37.29},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2063,TotalFrames=110,OnHit=0,OnCutIn=0,OnDamage={29,40,50,60},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2064,TotalFrames=150,OnHit=0,OnCutIn=0,OnDamage={57},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=2065,TotalFrames=220,OnHit=0,OnCutIn=0,OnDamage={77,87,97,107,117,127},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

@@ -1,0 +1,3 @@
+local Config = {Id=1112,Name="高级深潜者",AbDir="SsUnit/117_SeniorDeepDiver",NewRes=0,HandleBones={""},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.1,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1109,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={33,43,62},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1110,TotalFrames=115,OnHit=0,OnCutIn=0,OnDamage={57},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=1111,TotalFrames=85,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={30}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

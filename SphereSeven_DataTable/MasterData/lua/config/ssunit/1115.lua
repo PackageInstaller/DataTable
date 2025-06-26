@@ -1,0 +1,3 @@
+local Config = {Id=1115,Name="魔狼",AbDir="SsUnit/112_DevilWolf",NewRes=0,HandleBones={"Bip001 Head"},UnitScale =0,CloseAtkOffset={3.5,0,-0.2},HitPosOffset={0,1.65,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1116,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={38,56,63,75},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1117,TotalFrames=140,OnHit=0,OnCutIn=0,OnDamage={115},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

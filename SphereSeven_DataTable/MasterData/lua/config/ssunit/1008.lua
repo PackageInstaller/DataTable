@@ -1,0 +1,3 @@
+local Config = {Id=1008,Name="拿破仑",AbDir="SsUnit/008_NaPoLun",NewRes=1,HandleBones={"Bone077","Bone078"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.836,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10081,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={17,23,34,48},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10082,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={16,28,35,51},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10083,TotalFrames=510,OnHit=0,OnCutIn=0,OnDamage={420},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

@@ -1,0 +1,3 @@
+local Config = {Id=1024,Name="刘彻",AbDir="SsUnit/024_LiuChe",NewRes=1,HandleBones={"Bone382"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10241,TotalFrames=150,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={70}},Skl01={Name="Skl01",SkillEfxId=10242,TotalFrames=354,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={120}},Skl02={Name="Skl02",SkillEfxId=10243,TotalFrames=760,OnHit=0,OnCutIn=0,OnDamage={442,538,548,558,568,583},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=7,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

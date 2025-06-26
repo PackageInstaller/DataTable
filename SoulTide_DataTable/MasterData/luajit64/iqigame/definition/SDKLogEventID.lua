@@ -1,0 +1,40 @@
+﻿-- chunkname: @IQIGame\\Definition\\SDKLogEventID.lua
+
+SDKLogEventID = {
+	page_do = "20020",
+	service_state = "20004",
+	create_order = "20011",
+	game_first_page = "20013",
+	role_login = "20007",
+	create_role = "20006",
+	change_show_girl = "40023",
+	sdk_login = "20003",
+	ChargeInfo = "20015",
+	after_sdk_login_page = "20014",
+	into_game = "20009",
+	open_game = "20001",
+	user_guide = "20012",
+	userInfo = "20008",
+	update_game = "20002",
+	wait_state = "20005",
+	award_button_click = "20010"
+}
+SDKLogEventIDName = {
+	["20002"] = "update_game",
+	["20005"] = "wait_state",
+	["20015"] = "ChargeInfo",
+	["20020"] = "page_do",
+	["20003"] = "sdk_login",
+	["20008"] = "userInfo",
+	["20011"] = "create_order",
+	["40023"] = "change_show_girl",
+	["20012"] = "user_guide",
+	["20001"] = "open_game",
+	["20004"] = "service_state",
+	["20007"] = "role_login",
+	["20014"] = "after_sdk_login_page",
+	["20013"] = "game_first_page",
+	["20006"] = "create_role",
+	["20009"] = "into_game",
+	["20010"] = "award_button_click"
+}

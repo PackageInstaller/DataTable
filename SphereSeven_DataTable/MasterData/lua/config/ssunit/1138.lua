@@ -1,0 +1,3 @@
+local Config = {Id=1138,Name="水晶石像怪",AbDir="SsUnit/138_ShuiJingSXG",NewRes=0,HandleBones={""},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2078,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={30},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2079,TotalFrames=140,OnHit=0,OnCutIn=0,OnDamage={48},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

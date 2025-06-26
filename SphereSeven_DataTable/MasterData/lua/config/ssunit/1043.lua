@@ -1,0 +1,3 @@
+local Config = {Id=1043,Name="吕洞宾",AbDir="SsUnit/043_LvDongBin",NewRes=1,HandleBones={"Bip003","Bip001 R Finger0"},UnitScale =1.44,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.0304,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10431,TotalFrames=180,OnHit=0,OnCutIn=0,OnDamage={35},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10432,TotalFrames=240,OnHit=0,OnCutIn=0,OnDamage={103},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10433,TotalFrames=625,OnHit=0,OnCutIn=0,OnDamage={154,300,340,355,360,377,390,525,535,545},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=2,OnCutIn=0,OnDamage={},OnMissile={}},}}
+ return Config

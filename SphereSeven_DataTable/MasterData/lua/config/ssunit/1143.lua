@@ -1,0 +1,3 @@
+local Config = {Id=1143,Name="树妖",AbDir="SsUnit/143_ShuYao",NewRes=0,HandleBones={""},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2096,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={28,50},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2097,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={40},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=2098,TotalFrames=150,OnHit=0,OnCutIn=0,OnDamage={49},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

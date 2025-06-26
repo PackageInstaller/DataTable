@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatList>
+	<Stat id="nail_2" name="球体爆弾" explain="手のひらの中で電撃属性の球体を作り、物理攻撃をすると同時に爆破させる。^n威力は魔力の250%^n爆発型の攻撃で、体の大きな敵には少し低めの威力で数回ダメージを与える。"/>
+	<Stat id="skyAttack" name="地面強打" explain="高く飛び上がり、地面を強く叩きつけて範囲攻撃を行う。威力は力の250%"/>
+	<Stat id="normalAttack" name="突き刺し" explain="選択した相手に武器を突き刺すと同時に、相手の生命力を吸収することで自分のHPを回復する。威力は力の320%（回復量はモカモリの最大HPの7%まで）"/>
+	<Stat id="attack" name="爪攻撃" explain="物理攻撃をする。次のターンが戻って来る速度が速い方。"/>
+	<Stat id="nail" name="魔力爪" explain="爪に魔力を流し、爪攻撃を強化する。"/>
+	<Stat id="magic" name="魔法" explain="強力な威力の魔法陣攻撃をする。^n攻撃方法の中でも、ターンが戻ってくる速度がもっとも遅い方。"/>
+	<Stat id="doubleAttack" name="連続攻撃" explain="相手を素早く5回攻撃する物理攻撃。"/>
+	<Stat id="verticalAttack" name="高速下降" explain="攻撃対象の位置に制限されることなく、選択した対象の頭の上に空間移動して爪攻撃をする。威力は力と魔力に比例する。"/>
+	<Stat id="gatherPower" name="力溜め" explain="3ターンの間、無防備状態で力を溜める。その次のターンで攻撃をすると、力の影響が大きく増加する。増加した力の影響は、ターンが来る度に半分ずつ減少する。"/>
+	<Stat id="speedAttack" name="秒速攻撃" explain="指定した敵の近くに連続で空間移動し、非常に速いスピードで数回相手を攻撃する最高レベルの攻撃スキル。威力は力と魔力に比例する。"/>
+	<Stat id="nail_1" name="爪強化" explain="爪を魔力で強化し、力の威力を増幅させる。また、物理攻撃の属性を電撃属性（魔法属性）に変える。"/>
+	<Stat id="-" name="-" explain="-"/>
+	<Stat id="nail_3" name="電撃シールド" explain="自分の周りに電気エネルギーでシールドを作り、ダメージを10%減少させる。また、被ダメージを2倍にして相手に返す。"/>
+	<Stat id="nail_4" name="速度強化" explain="最大MPの40% + 3000分のMPを消費し、素早さを4倍に引き上げる。ターンが来るたびに効果が徐々に減少する。"/>
+	<Stat id="nail_5" name="エネルギー放出" explain="HP 20%、MP 30%を消費して周りの敵を一瞬で飛ばす。放出された魔力は最大HPの150% + 最大MPの200% + 魔力の200%の威力で爆発する。"/>
+	<Stat id="nail_6" name="魔力発射" explain="小さな電撃エネルギーを集め、相手に発射する基本的な魔力スキル。魔力の250%分の威力があり、遠くにいる敵を攻撃できる。"/>
+	<Stat id="recoverMP_1" name="瞑想" explain="無防備状態で1ターンの間、瞑想に入る。瞑想後は、MPが40%回復される。"/>
+	<Stat id="recoverMP_2" name="深い瞑想" explain="無防備状態で2ターンの間、瞑想に入る。瞑想後はMPが完全に回復され、1ターンの間、魔力が2倍に増幅する。"/>
+	<Stat id="goldenShield" name="アガモの盾" explain="相手の攻撃を相当な割合で吸収し、次の攻撃で数倍にして返す。"/>
+	<Stat id="goldenSword" name="アガモの剣" explain="1体の対象に強き一撃を与える。"/>
+	<Stat id="goldenSpear" name="アガモの槍" explain="強いショックウェーブを飛ばし、ショックウェーブの通る経路にいる敵全員に爆発型ダメージを与える。"/>
+	<Stat id="goldenEye" name="アガモの眼" explain="アガモの眼が見る敵全員に強力なダメージを与える。"/>
+	<Stat id="attack" name="爪攻撃" explain="物理攻撃を相手に与える。"/>
+	<Stat id="nail" name="魔力爪" explain="物理攻撃に色んな効果を与える。"/>
+	<Stat id="item" name="道具" explain="回復薬など、戦闘に必要な道具を使う。"/>
+	<Stat id="defence" name="防御" explain="防御または回復の態勢に入る。"/>
+	<Stat id="summon" name="部下召喚" explain="部下を召喚し、戦闘に参加させる。"/>
+	<Stat id="marienaFire_gather" name="魔法集中" explain="モカモリから借りた魔力で、火炎魔法をためてさらに威力を増加させる。最大4ターンまでためることが可能。"/>
+	<Stat id="marienaFire_shoot" name="火炎球" explain="集めた火炎を球体にし、相手に飛ばす。"/>
+	<Stat id="marienaHeal" name="マリアンナの治癒" explain="モカモリのHPを30%回復させる。"/>
+	<Stat id="noaHealHP" name="妖精の治癒" explain="モカモリのHPを50%回復させる。"/>
+	<Stat id="noaHealMP" name="妖精の祈り" explain="1ターンの間、精神を集中したノアが次のターンでモカモリのMPを100%回復させる。"/>
+	<Stat id="normalMagic" name="魔力爆発" explain="無属性の魔力の塊を、相手の体の中で爆発させてダメージを与える。"/>
+	<Stat id="fireCircle7" name="七球隕石群の魔法陣" explain="強い火炎の隕石群を召喚し、相手を攻撃する。使用すると次のターンが来るまでの時間が3倍に増える。"/>
+	<Stat id="akar" name="エカールヴェルテル" explain="すべての魔力エネルギーを燃やし、相手を攻撃する。使用すると、その戦闘では次のターンが来なくなる。"/>
+	<Stat id="iceCircle5" name="五柱氷雨の魔法陣" explain="鋭い氷を召喚して敵を攻撃する。攻撃された相手は、次のターンが来るまでの時間が2倍に増える。使用すると、ターンが戻る速度が40%に増加する。"/>
+	<Stat id="nukeCollabo" name="ヌークコラボレーション" explain="魔力覚醒ゲージが一定値に達すると、ヌークを召喚して強力な物理攻撃をする。攻撃の威力は力と素早さに比例する。"/>
+	<Stat id="nukeCollabo2" name="ヌークコラボレーション2" explain="魔力覚醒ゲージが最大に達すると使用可能なスキル。ヌークを召喚して強力な物理攻撃をする。攻撃の威力は力と素早さに比例する。"/>
+</StatList>

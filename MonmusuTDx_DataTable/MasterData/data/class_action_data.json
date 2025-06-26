@@ -1,0 +1,2390 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -8120287720786322448
+  },
+  "m_Name": "class_action_data",
+  "table": [
+    {
+      "id": 1,
+      "name": "ファイアーバースト",
+      "text": "即座にコストが[0,0,0]回復する\r\nその後[duration]秒、攻撃力[MAG,1,0]倍に上昇、\r\n敵3体に遠距離魔法攻撃を行う",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1005,
+          "param": [
+            {
+              "num": [
+                11
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 6,
+          "param": [
+            {
+              "num": [
+                40
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                80
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 38,
+          "param": [
+            {
+              "num": [
+                180
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 72,
+          "param": [
+            {
+              "num": [
+                2
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 49,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 69,
+          "param": [
+            {
+              "num": [
+                10032
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 30,
+      "addPoint": 2,
+      "durationTime": 450
+    },
+    {
+      "id": 11035,
+      "name": "ベルセルク_バーサーク",
+      "text": "敵への与ダメージ1.5倍、ただし敵からの被ダメージ1.2倍\r\nスタン耐性+50",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1009,
+          "param": [
+            {
+              "num": [
+                150
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 1010,
+          "param": [
+            {
+              "num": [
+                120
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 400,
+          "param": [
+            {
+              "num": [
+                50
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 10,
+      "durationTime": 600
+    },
+    {
+      "id": 12015,
+      "name": "バスティオン_プロテクション",
+      "text": "敵からの物理魔法ダメージ60%減少",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1010,
+          "param": [
+            {
+              "num": [
+                40
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": [
+            {
+              "type": 7,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        },
+        {
+          "talentId": 1010,
+          "param": [
+            {
+              "num": [
+                40
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": [
+            {
+              "type": 8,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ]
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 0,
+      "durationTime": 450
+    },
+    {
+      "id": 12025,
+      "name": "デモリッシュ_ハイタフネス",
+      "text": "最大HPが1.5倍に上昇\r\nHPが1秒ごとに最大HPの5％回復",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1,
+          "param": [
+            {
+              "num": [
+                50
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 65,
+          "param": [
+            {
+              "num": [
+                5
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 0,
+      "durationTime": 450
+    },
+    {
+      "id": 12031,
+      "name": "大太刀クラス1",
+      "text": "貫通ミサイルになり遠距離攻撃化",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 40,
+          "param": [
+            {
+              "num": [
+                250
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 69,
+          "param": [
+            {
+              "num": [
+                10191
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 8,
+      "durationTime": 450
+    },
+    {
+      "id": 12032,
+      "name": "大太刀クラス2",
+      "text": "貫通ミサイルになり遠距離攻撃化",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 40,
+          "param": [
+            {
+              "num": [
+                250
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 69,
+          "param": [
+            {
+              "num": [
+                10191
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 10,
+      "durationTime": 450
+    },
+    {
+      "id": 12033,
+      "name": "大太刀クラス3",
+      "text": "貫通ミサイルになり遠距離攻撃化",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 40,
+          "param": [
+            {
+              "num": [
+                250
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 69,
+          "param": [
+            {
+              "num": [
+                10191
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 10,
+      "durationTime": 600
+    },
+    {
+      "id": 12034,
+      "name": "大太刀クラス4",
+      "text": "貫通ミサイルになり遠距離攻撃化、移動速度30％",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 40,
+          "param": [
+            {
+              "num": [
+                250
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 69,
+          "param": [
+            {
+              "num": [
+                10191
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 21,
+          "param": [
+            {
+              "num": [
+                50
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 10,
+      "durationTime": 600
+    },
+    {
+      "id": 12035,
+      "name": "大太刀クラス5",
+      "text": "貫通ミサイルになり遠距離攻撃化、移動速度30％",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 40,
+          "param": [
+            {
+              "num": [
+                250
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 69,
+          "param": [
+            {
+              "num": [
+                10191
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 21,
+          "param": [
+            {
+              "num": [
+                50
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 10,
+      "durationTime": 600
+    },
+    {
+      "id": 14031,
+      "name": "人形クラス１_カースドテリトリー",
+      "text": "呪いを付与\r\n※呪いの付与はアビリティシート\r\n　呪いの効果は呪いテーブルシート",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1088,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 6,
+      "durationTime": 30
+    },
+    {
+      "id": 14032,
+      "name": "人形クラス２_カースドテリトリー",
+      "text": "呪いを付与\r\n※呪いの付与はアビリティシート\r\n　呪いの効果は呪いテーブルシート",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1088,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 7,
+      "durationTime": 30
+    },
+    {
+      "id": 14033,
+      "name": "人形クラス３_カースドテリトリー",
+      "text": "呪いを付与\r\n※呪いの付与はアビリティシート\r\n　呪いの効果は呪いテーブルシート",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1088,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 7,
+      "durationTime": 30
+    },
+    {
+      "id": 14034,
+      "name": "人形クラス４_カースドテリトリー",
+      "text": "呪いを付与\r\n※呪いの付与はアビリティシート\r\n　呪いの効果は呪いテーブルシート",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1088,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 8,
+      "durationTime": 30
+    },
+    {
+      "id": 14035,
+      "name": "人形クラス５_カースドテリトリー",
+      "text": "呪いを付与\r\n※呪いの付与はアビリティシート\r\n　呪いの効果は呪いテーブルシート",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1088,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            },
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 8,
+      "durationTime": 30
+    },
+    {
+      "id": 13015,
+      "name": "サジタリウス_クリティカルスナイピング",
+      "text": "射程とクリティカル率増加",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 38,
+          "param": [
+            {
+              "num": [
+                100
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 80,
+          "param": [
+            {
+              "num": [
+                30
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 8,
+      "durationTime": 600
+    },
+    {
+      "id": 14025,
+      "name": "ディザスター_マジックバンプ",
+      "text": "射程とクリティカル率増加",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 38,
+          "param": [
+            {
+              "num": [
+                80
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 504,
+          "param": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 1,
+      "maxPoint": 100,
+      "addPoint": 8,
+      "durationTime": 600
+    },
+    {
+      "id": 16041,
+      "name": "鞭クラス１_テラーペイン",
+      "text": "発動時射程内の全敵に攻撃\r\n高確率で恐怖を付与",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                "!"
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 15,
+              "num": [
+                0
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                6
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 15,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 35,
+          "param": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 49,
+          "param": [
+            {
+              "num": [
+                -1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 3,
+      "maxPoint": 100,
+      "addPoint": 2,
+      "durationTime": 300
+    },
+    {
+      "id": 16042,
+      "name": "鞭クラス2_テラーペイン",
+      "text": "発動時射程内の全敵に攻撃\r\n高確率で恐怖を付与",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                "!"
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 15,
+              "num": [
+                0
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                6
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 15,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 35,
+          "param": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 49,
+          "param": [
+            {
+              "num": [
+                -1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 3,
+      "maxPoint": 100,
+      "addPoint": 2,
+      "durationTime": 300
+    },
+    {
+      "id": 16043,
+      "name": "鞭クラス3_テラーペイン",
+      "text": "発動時射程内の全敵に攻撃\r\n高確率で恐怖を付与",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                "!"
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 15,
+              "num": [
+                0
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                6
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 15,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 35,
+          "param": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 49,
+          "param": [
+            {
+              "num": [
+                -1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 3,
+      "maxPoint": 100,
+      "addPoint": 3,
+      "durationTime": 300
+    },
+    {
+      "id": 16044,
+      "name": "鞭クラス4_テラーペイン",
+      "text": "発動時射程内の全敵に攻撃\r\n高確率で恐怖を付与",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                "!"
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 15,
+              "num": [
+                0
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                6
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 15,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 35,
+          "param": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 49,
+          "param": [
+            {
+              "num": [
+                -1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 3,
+      "maxPoint": 100,
+      "addPoint": 3,
+      "durationTime": 300
+    },
+    {
+      "id": 16045,
+      "name": "鞭クラス5_テラーペイン",
+      "text": "発動時射程内の全敵に攻撃\r\n高確率で恐怖を付与",
+      "maxLevel": 1,
+      "minCoolTime": 0,
+      "maxCoolTime": 0,
+      "minDurationTime": 0,
+      "maxDurationTime": 0,
+      "minCost": 0,
+      "maxCost": 0,
+      "talentList": [
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                "!"
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 15,
+              "num": [
+                0
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 1102,
+          "param": [
+            {
+              "num": [
+                6
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [
+            {
+              "type": 15,
+              "num": [
+                1
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            },
+            {
+              "type": 1008,
+              "num": [
+                316
+              ],
+              "option": [
+                ""
+              ],
+              "target": 1,
+              "targetNum": []
+            }
+          ],
+          "activeData": []
+        },
+        {
+          "talentId": 35,
+          "param": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 49,
+          "param": [
+            {
+              "num": [
+                -1
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        },
+        {
+          "talentId": 71,
+          "param": [
+            {
+              "num": [
+                3
+              ]
+            }
+          ],
+          "maxParam": [
+            {
+              "num": [
+                0
+              ]
+            }
+          ],
+          "addMaxParam": [],
+          "timing": 1,
+          "range": 1,
+          "triggerData": [],
+          "activeData": []
+        }
+      ],
+      "isInvalidAutoSkill": 0,
+      "recipeId": 0,
+      "overChargeSkillId": 0,
+      "add_max_level": 0,
+      "pointUpActionType": 3,
+      "maxPoint": 100,
+      "addPoint": 3,
+      "durationTime": 300
+    }
+  ]
+}

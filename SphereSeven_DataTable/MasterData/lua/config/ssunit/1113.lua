@@ -1,0 +1,3 @@
+local Config = {Id=1113,Name="骷髅兵",AbDir="SsUnit/110_Skeleton",NewRes=0,HandleBones={"Bip001 Spine1"},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.025,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1112,TotalFrames=95,OnHit=0,OnCutIn=0,OnDamage={30},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1113,TotalFrames=165,OnHit=0,OnCutIn=0,OnDamage={118},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

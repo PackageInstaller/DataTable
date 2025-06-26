@@ -1,0 +1,619 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -4820323015077323038
+  },
+  "m_Name": "sugoroku_data",
+  "table": [
+    {
+      "stage_id": 10000,
+      "name": "すごろく場 (テストマップ)",
+      "text": "ステージ1説明",
+      "detail_text": "ステージ1詳細文",
+      "my_page_btn": 0,
+      "need_stage_id": 0,
+      "box_message": "すごろく場 (テストマップ)の報酬",
+      "recommend_level1": 15,
+      "recommend_level2": 30,
+      "recommend_level3": 50,
+      "consumption_category": "quest_key",
+      "consumption_name": "normal",
+      "consumption_num": 1,
+      "start_dice_count": 10,
+      "shortest_cell_num": 30,
+      "map_id": 10000,
+      "bonus_map_id": 10001,
+      "bonus_dice_add": 5,
+      "start_date": "2999/01/01 0:00:00",
+      "end_date": "2999/11/21 10:29:59",
+      "close_date": "2999/12/21 10:29:59",
+      "init_items": [
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_1",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_2",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_3",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_4",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_5",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_6",
+          "m_count": 2
+        }
+      ]
+    },
+    {
+      "stage_id": 10001,
+      "name": "すごろく場 (2)",
+      "text": "ステージ2説明",
+      "detail_text": "ステージ2詳細文",
+      "my_page_btn": 0,
+      "need_stage_id": 10000,
+      "box_message": "すごろく場 (2)の報酬",
+      "recommend_level1": 15,
+      "recommend_level2": 30,
+      "recommend_level3": 50,
+      "consumption_category": "quest_key",
+      "consumption_name": "normal",
+      "consumption_num": 1,
+      "start_dice_count": 10,
+      "shortest_cell_num": 30,
+      "map_id": 10000,
+      "bonus_map_id": 10001,
+      "bonus_dice_add": 3,
+      "start_date": "2999/01/01 0:00:00",
+      "end_date": "2999/11/21 10:29:59",
+      "close_date": "2999/12/21 10:29:59",
+      "init_items": [
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_1",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_2",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_3",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_4",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_5",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_6",
+          "m_count": 2
+        }
+      ]
+    },
+    {
+      "stage_id": 10002,
+      "name": "妖怪島巡り（簡単）",
+      "text": "すごろく場 (簡単)説明",
+      "detail_text": "最短マス数：30\r\n開始時の所持サイコロ数：10\r\nイカサマアイテム：各3個ずつ",
+      "my_page_btn": 1,
+      "need_stage_id": 0,
+      "box_message": "妖怪島巡り（簡単）の報酬",
+      "recommend_level1": 15,
+      "recommend_level2": 30,
+      "recommend_level3": 50,
+      "consumption_category": "event",
+      "consumption_name": "pt_sugoroku2312111",
+      "consumption_num": 1,
+      "start_dice_count": 10,
+      "shortest_cell_num": 30,
+      "map_id": 10002,
+      "bonus_map_id": 10003,
+      "bonus_dice_add": 6,
+      "start_date": "1023/12/18 00:00:00",
+      "end_date": "2023/12/31 10:29:59",
+      "close_date": "2024/01/10 10:29:59",
+      "init_items": [
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_1",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_2",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_3",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_4",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_5",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_6",
+          "m_count": 3
+        }
+      ]
+    },
+    {
+      "stage_id": 10003,
+      "name": "妖怪島巡り（普通）",
+      "text": "すごろく場 (普通)説明",
+      "detail_text": "最短マス数：40\r\n開始時の所持サイコロ数：12\r\nイカサマアイテム：各2個ずつ",
+      "my_page_btn": 1,
+      "need_stage_id": 0,
+      "box_message": "妖怪島巡り（普通）の報酬",
+      "recommend_level1": 15,
+      "recommend_level2": 30,
+      "recommend_level3": 50,
+      "consumption_category": "event",
+      "consumption_name": "pt_sugoroku2312111",
+      "consumption_num": 1,
+      "start_dice_count": 12,
+      "shortest_cell_num": 40,
+      "map_id": 10004,
+      "bonus_map_id": 10005,
+      "bonus_dice_add": 5,
+      "start_date": "1023/12/18 00:00:00",
+      "end_date": "2023/12/31 10:29:59",
+      "close_date": "2024/01/10 10:29:59",
+      "init_items": [
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_1",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_2",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_3",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_4",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_5",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_6",
+          "m_count": 2
+        }
+      ]
+    },
+    {
+      "stage_id": 10004,
+      "name": "妖怪島巡り（難しい）",
+      "text": "すごろく場 (難しい)説明",
+      "detail_text": "最短マス数：50\r\n開始時の所持サイコロ数：15\r\nイカサマアイテム：各1個ずつ\r\n<font=\"FOT-NewRodinProN-EB SDF\" material=\"FOT-NewRodinProN-EB SDF_01\"><color=#88ffff>ボス撃破でサブスキルを獲得！（初回限定）</color></font>",
+      "my_page_btn": 1,
+      "need_stage_id": 0,
+      "box_message": "妖怪島巡り（難しい）の報酬",
+      "recommend_level1": 15,
+      "recommend_level2": 30,
+      "recommend_level3": 50,
+      "consumption_category": "event",
+      "consumption_name": "pt_sugoroku2312111",
+      "consumption_num": 1,
+      "start_dice_count": 15,
+      "shortest_cell_num": 50,
+      "map_id": 10006,
+      "bonus_map_id": 10007,
+      "bonus_dice_add": 4,
+      "start_date": "1023/12/25 00:00:00",
+      "end_date": "2023/12/31 10:29:59",
+      "close_date": "2024/01/10 10:29:59",
+      "init_items": [
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_1",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_2",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_3",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_4",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_5",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_6",
+          "m_count": 1
+        }
+      ]
+    },
+    {
+      "stage_id": 10005,
+      "name": "ゲシュペンス島巡り（簡単）",
+      "text": "すごろく場 (簡単)説明",
+      "detail_text": "最短マス数：31\r\n開始時の所持サイコロ数：10\r\nイカサマアイテム：各3個ずつ",
+      "my_page_btn": 1,
+      "need_stage_id": 0,
+      "box_message": "ゲシュペンス島巡り（簡単）の報酬",
+      "recommend_level1": 15,
+      "recommend_level2": 30,
+      "recommend_level3": 50,
+      "consumption_category": "event",
+      "consumption_name": "pt_sugoroku240729",
+      "consumption_num": 1,
+      "start_dice_count": 10,
+      "shortest_cell_num": 31,
+      "map_id": 10008,
+      "bonus_map_id": 10009,
+      "bonus_dice_add": 6,
+      "start_date": "1023/07/29 12:00:00",
+      "end_date": "2024/8/13 10:29:59",
+      "close_date": "2024/8/19 10:29:59",
+      "init_items": [
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_1",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_2",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_3",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_4",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_5",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_6",
+          "m_count": 3
+        }
+      ]
+    },
+    {
+      "stage_id": 10006,
+      "name": "ゲシュペンス島巡り（普通）",
+      "text": "すごろく場 (普通)説明",
+      "detail_text": "最短マス数：43\r\n開始時の所持サイコロ数：12\r\nイカサマアイテム：各2個ずつ",
+      "my_page_btn": 1,
+      "need_stage_id": 0,
+      "box_message": "ゲシュペンス島巡り（普通）の報酬",
+      "recommend_level1": 15,
+      "recommend_level2": 30,
+      "recommend_level3": 50,
+      "consumption_category": "event",
+      "consumption_name": "pt_sugoroku240729",
+      "consumption_num": 1,
+      "start_dice_count": 12,
+      "shortest_cell_num": 43,
+      "map_id": 10010,
+      "bonus_map_id": 10011,
+      "bonus_dice_add": 5,
+      "start_date": "1023/07/29 12:00:00",
+      "end_date": "2024/8/13 10:29:59",
+      "close_date": "2024/8/19 10:29:59",
+      "init_items": [
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_1",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_2",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_3",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_4",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_5",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_6",
+          "m_count": 2
+        }
+      ]
+    },
+    {
+      "stage_id": 10007,
+      "name": "ゲシュペンス島巡り（難しい）",
+      "text": "すごろく場 (難しい)説明",
+      "detail_text": "最短マス数：50\r\n開始時の所持サイコロ数：15\r\nイカサマアイテム：各1個ずつ\r\n<font=\"FOT-NewRodinProN-EB SDF\" material=\"FOT-NewRodinProN-EB SDF_01\"><color=#88ffff>ボス撃破でサブスキルを獲得！（初回限定）</color></font>",
+      "my_page_btn": 1,
+      "need_stage_id": 0,
+      "box_message": "ゲシュペンス島巡り（難しい）の報酬",
+      "recommend_level1": 15,
+      "recommend_level2": 30,
+      "recommend_level3": 50,
+      "consumption_category": "event",
+      "consumption_name": "pt_sugoroku240729",
+      "consumption_num": 1,
+      "start_dice_count": 15,
+      "shortest_cell_num": 50,
+      "map_id": 10012,
+      "bonus_map_id": 10013,
+      "bonus_dice_add": 4,
+      "start_date": "1023/07/29 12:00:00",
+      "end_date": "2024/8/13 10:29:59",
+      "close_date": "2024/8/19 10:29:59",
+      "init_items": [
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_1",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_2",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_3",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_4",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_5",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_6",
+          "m_count": 1
+        }
+      ]
+    },
+    {
+      "stage_id": 10008,
+      "name": "ゲシュペンス島巡り（簡単）",
+      "text": "すごろく場 (簡単)説明",
+      "detail_text": "最短マス数：31\r\n開始時の所持サイコロ数：10\r\nイカサマアイテム：各3個ずつ",
+      "my_page_btn": 1,
+      "need_stage_id": 0,
+      "box_message": "ゲシュペンス島巡り（簡単）の報酬",
+      "recommend_level1": 15,
+      "recommend_level2": 30,
+      "recommend_level3": 50,
+      "consumption_category": "event",
+      "consumption_name": "pt_sugoroku241230",
+      "consumption_num": 1,
+      "start_dice_count": 10,
+      "shortest_cell_num": 31,
+      "map_id": 10014,
+      "bonus_map_id": 10015,
+      "bonus_dice_add": 6,
+      "start_date": "1024/12/30 12:00:00",
+      "end_date": "2025/1/14 10:29:59",
+      "close_date": "2025/1/20 10:29:59",
+      "init_items": [
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_1",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_2",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_3",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_4",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_5",
+          "m_count": 3
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_6",
+          "m_count": 3
+        }
+      ]
+    },
+    {
+      "stage_id": 10009,
+      "name": "ゲシュペンス島巡り（普通）",
+      "text": "すごろく場 (普通)説明",
+      "detail_text": "最短マス数：43\r\n開始時の所持サイコロ数：12\r\nイカサマアイテム：各2個ずつ",
+      "my_page_btn": 1,
+      "need_stage_id": 0,
+      "box_message": "ゲシュペンス島巡り（普通）の報酬",
+      "recommend_level1": 15,
+      "recommend_level2": 30,
+      "recommend_level3": 50,
+      "consumption_category": "event",
+      "consumption_name": "pt_sugoroku241230",
+      "consumption_num": 1,
+      "start_dice_count": 12,
+      "shortest_cell_num": 43,
+      "map_id": 10016,
+      "bonus_map_id": 10017,
+      "bonus_dice_add": 5,
+      "start_date": "1024/12/30 12:00:00",
+      "end_date": "2025/1/14 10:29:59",
+      "close_date": "2025/1/20 10:29:59",
+      "init_items": [
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_1",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_2",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_3",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_4",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_5",
+          "m_count": 2
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_6",
+          "m_count": 2
+        }
+      ]
+    },
+    {
+      "stage_id": 10010,
+      "name": "ゲシュペンス島巡り（難しい）",
+      "text": "すごろく場 (難しい)説明",
+      "detail_text": "最短マス数：50\r\n開始時の所持サイコロ数：15\r\nイカサマアイテム：各1個ずつ\r\n<font=\"FOT-NewRodinProN-EB SDF\" material=\"FOT-NewRodinProN-EB SDF_01\"><color=#88ffff>ボス撃破でサブスキルを獲得！（初回限定）</color></font>",
+      "my_page_btn": 1,
+      "need_stage_id": 0,
+      "box_message": "ゲシュペンス島巡り（難しい）の報酬",
+      "recommend_level1": 15,
+      "recommend_level2": 30,
+      "recommend_level3": 50,
+      "consumption_category": "event",
+      "consumption_name": "pt_sugoroku241230",
+      "consumption_num": 1,
+      "start_dice_count": 15,
+      "shortest_cell_num": 50,
+      "map_id": 10018,
+      "bonus_map_id": 10019,
+      "bonus_dice_add": 4,
+      "start_date": "1024/12/30 12:00:00",
+      "end_date": "2025/1/14 10:29:59",
+      "close_date": "2025/1/20 10:29:59",
+      "init_items": [
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_1",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_2",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_3",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_4",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_5",
+          "m_count": 1
+        },
+        {
+          "m_walletCategory": "sugoroku",
+          "m_walletName": "fix_dice_6",
+          "m_count": 1
+        }
+      ]
+    }
+  ]
+}

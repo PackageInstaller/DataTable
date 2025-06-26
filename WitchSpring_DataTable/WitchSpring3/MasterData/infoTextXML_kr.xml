@@ -1,0 +1,673 @@
+<ItemList>
+  <Item infoTextID="0" infoText="-" />
+  <Item infoTextID="1" infoText="&lt;팔굽혀펴기&gt;^n기초 근력운동. 힘이 3%, 방어가 1% 상승하는 효과가 있다." />
+  <Item infoTextID="2" infoText="&lt;주먹치기&gt;^n육체의 기초 순발력과 근력을 단련하는 운동. 힘 2%와 민첩 1%가 상승한다." />
+  <Item infoTextID="3" infoText="&lt;달리기&gt;^n기초 체력 운동으로서 체력이 3% 상승하는 효과가 있다." />
+  <Item infoTextID="4" infoText="&lt;검술단련&gt;^n체력이 1%, 민첩이 2% 상승하며, 특정 체력이나 검술레벨을 넘어서면 새로운 검술을 연마할 수 있다." />
+  <Item infoTextID="5" infoText="&lt;마법연구&gt;^n책을 보며 마법연구를 한다. 공부 후에는 마력이 1%, 마나가 2% 상승한다. 가끔 새로운 마법 레시피 획득 가능." />
+  <Item infoTextID="6" infoText="&lt;제작연구&gt;^n마법 제작법을 연구한다. 연구 후에는 마나가 3% 상승한다. 가끔 새로운 도구 레시피 획득 가능." />
+  <Item infoTextID="7" infoText="&lt;마력 구체화&gt;^n마력을 특정 형태와 농도로 구체화하는 수련을 한다. 수련 후에는 마력이 2%, 마나가 1% 상승한다." />
+  <Item infoTextID="8" infoText="&lt;마력 분출&gt;^n마력을 오랜 시간 동안 지칠 때까지 분출하는 연습을 한다. 연습 후에는 마력이 1%, 마나가 1%, 체력이 1% 상승한다." />
+  <Item infoTextID="9" infoText="#num일차" />
+  <Item infoTextID="10" infoText="수련 일정 짜기" />
+  <Item infoTextID="11" infoText="시작하기" />
+  <Item infoTextID="12" infoText="수련시작 - " />
+  <Item infoTextID="13" infoText="체력" />
+  <Item infoTextID="14" infoText="마나" />
+  <Item infoTextID="15" infoText="마력" />
+  <Item infoTextID="16" infoText="힘" />
+  <Item infoTextID="17" infoText="민첩" />
+  <Item infoTextID="18" infoText="방어" />
+  <Item infoTextID="19" infoText="-" />
+  <Item infoTextID="20" infoText="-" />
+  <Item infoTextID="21" infoText="수련 중... [#name]" />
+  <Item infoTextID="22" infoText="수련 완료!" />
+  <Item infoTextID="23" infoText="팔굽혀펴기" />
+  <Item infoTextID="24" infoText="주먹치기" />
+  <Item infoTextID="25" infoText="달리기" />
+  <Item infoTextID="26" infoText="검술단련" />
+  <Item infoTextID="27" infoText="마법책 공부" />
+  <Item infoTextID="28" infoText="제작연구" />
+  <Item infoTextID="29" infoText="마력 구체화 연습" />
+  <Item infoTextID="30" infoText="마력 지속화 연습" />
+  <Item infoTextID="31" infoText="집 밖으로 나가시겠습니까?" />
+  <Item infoTextID="32" infoText="예" />
+  <Item infoTextID="33" infoText="아니오" />
+  <Item infoTextID="34" infoText="잠을 잘까요?" />
+  <Item infoTextID="35" infoText="훈련 일정을 모두 채워주세요!" />
+  <Item infoTextID="36" infoText="확인" />
+  <Item infoTextID="37" infoText="아이템 보관함" />
+  <Item infoTextID="38" infoText="자주 사용하는 아이템" />
+  <Item infoTextID="39" infoText="아이템" />
+  <Item infoTextID="40" infoText="소지한 아이템이 없습니다." />
+  <Item infoTextID="41" infoText="자주 사용하는 아이템으로 설정한 목록이 없습니다." />
+  <Item infoTextID="42" infoText="아이템을 누르면 바로 사용하기" />
+  <Item infoTextID="43" infoText="사용" />
+  <Item infoTextID="44" infoText="현재 체력" />
+  <Item infoTextID="45" infoText="현재 마나" />
+  <Item infoTextID="46" infoText="자주 사용하는 아이템으로 설정" />
+  <Item infoTextID="47" infoText="마법도감에 새로운 화염마법 레시피가 추가되었습니다!" />
+  <Item infoTextID="48" infoText="마법도감에 새로운 전격마법 레시피가 추가되었습니다!" />
+  <Item infoTextID="49" infoText="마법도감에 새로운 빙결마법 레시피가 추가되었습니다!" />
+  <Item infoTextID="50" infoText="마법도감에 새로운 아이템 레시피가 추가되었습니다!" />
+  <Item infoTextID="51" infoText="이미 추가된 마법도감입니다." />
+  <Item infoTextID="52" infoText="의상을 갈아입습니다." />
+  <Item infoTextID="53" infoText="현재 입고 있는 의상입니다." />
+  <Item infoTextID="54" infoText="여기서는 캠핑을 할 수 없습니다." />
+  <Item infoTextID="55" infoText="무기를 교체했습니다." />
+  <Item infoTextID="56" infoText="이미 사용중인 장비입니다." />
+  <Item infoTextID="57" infoText="체력이 이미 가득 차 있습니다." />
+  <Item infoTextID="58" infoText="체력이 #power 만큼 회복되었습니다." />
+  <Item infoTextID="59" infoText="마나가 이미 가득 차 있습니다." />
+  <Item infoTextID="60" infoText="마나가 #power만큼 회복되었습니다." />
+  <Item infoTextID="61" infoText="최대 체력이 #power만큼 감소했습니다." />
+  <Item infoTextID="62" infoText="최대마나가 #power만큼 감소했습니다." />
+  <Item infoTextID="63" infoText="최대 체력이 #power만큼 상승했습니다!" />
+  <Item infoTextID="64" infoText="마력이 #power만큼 상승했습니다!" />
+  <Item infoTextID="65" infoText="최대 마나가 #power만큼 상승했습니다!" />
+  <Item infoTextID="66" infoText="힘이 #power만큼 상승했습니다!" />
+  <Item infoTextID="67" infoText="방어가 #power만큼 상승했습니다!" />
+  <Item infoTextID="68" infoText="민첩이 #power만큼 상승했습니다!" />
+  <Item infoTextID="69" infoText="현재 사용할 수 없는 아이템입니다!" />
+  <Item infoTextID="70" infoText="자주 사용하는 아이템에서 제외했습니다." />
+  <Item infoTextID="71" infoText="자주 사용하는 아이템으로 설정했습니다." />
+  <Item infoTextID="72" infoText="자주 사용하는 아이템 목록은 최대 5개까지 설정 가능합니다." />
+  <Item infoTextID="73" infoText="소지 개수 : #num" />
+  <Item infoTextID="74" infoText="아이템이 없습니다!" />
+  <Item infoTextID="75" infoText="마법 항아리" />
+  <Item infoTextID="76" infoText="만들 개수 : " />
+  <Item infoTextID="77" infoText="마법도감" />
+  <Item infoTextID="78" infoText="중복으로 만들 수 없는 대상입니다!" />
+  <Item infoTextID="79" infoText="마법재료가 부족합니다!" />
+  <Item infoTextID="80" infoText="&lt;획득가능지역&gt;" />
+  <Item infoTextID="81" infoText="도구" />
+  <Item infoTextID="82" infoText="특별도구" />
+  <Item infoTextID="83" infoText="주 마법진" />
+  <Item infoTextID="84" infoText="보조 마법진" />
+  <Item infoTextID="85" infoText="보조 마법진" />
+  <Item infoTextID="86" infoText="제작시작" />
+  <Item infoTextID="87" infoText="알려지지 않음" />
+  <Item infoTextID="88" infoText="한 번에 최대 9개까지 제작할 수 있습니다." />
+  <Item infoTextID="89" infoText="제작 가능한 레시피가 없습니다. 레시피를 수집해 보세요!" />
+  <Item infoTextID="90" infoText="집으로 들어갈까요?" />
+  <Item infoTextID="91" infoText="외출" />
+  <Item infoTextID="92" infoText="마법 항아리" />
+  <Item infoTextID="93" infoText="마법책" />
+  <Item infoTextID="94" infoText="슬립쿠션" />
+  <Item infoTextID="95" infoText="보관함" />
+  <Item infoTextID="96" infoText="위협이 느껴집니다. 전투를 시작할까요?" />
+  <Item infoTextID="97" infoText="물리방어" />
+  <Item infoTextID="98" infoText="마법방어" />
+  <Item infoTextID="99" infoText="화염" />
+  <Item infoTextID="100" infoText="전격" />
+  <Item infoTextID="101" infoText="빙결" />
+  <Item infoTextID="102" infoText="무속성 공격" />
+  <Item infoTextID="103" infoText="치유" />
+  <Item infoTextID="104" infoText="암흑" />
+  <Item infoTextID="105" infoText="사용할 마법 아이콘을 가운데 슬롯으로 끌어주세요!" />
+  <Item infoTextID="106" infoText="피해량 : " />
+  <Item infoTextID="107" infoText="치유량 : " />
+  <Item infoTextID="108" infoText="마나가 부족합니다!" />
+  <Item infoTextID="109" infoText="소모마나 : " />
+  <Item infoTextID="110" infoText="대상을 선택해주세요!" />
+  <Item infoTextID="111" infoText="대상 선택을 취소했습니다." />
+  <Item infoTextID="112" infoText="주 마법진(△)부터 장착해 주세요!" />
+  <Item infoTextID="113" infoText="마법효과 증폭+10%" />
+  <Item infoTextID="114" infoText="마법효과 증폭 5%^n소모마나 감소 7%" />
+  <Item infoTextID="115" infoText="소모마나 감소 15%" />
+  <Item infoTextID="116" infoText="주력슬롯" />
+  <Item infoTextID="117" infoText="일반슬롯" />
+  <Item infoTextID="118" infoText="보조슬롯" />
+  <Item infoTextID="119" infoText="현재는 사용할 수 없는 마법입니다!" />
+  <Item infoTextID="120" infoText="가운데 슬롯을 누르면 마법을 사용할 수 있습니다." />
+  <Item infoTextID="121" infoText="마법진 조합하기" />
+  <Item infoTextID="122" infoText="현재 슬롯은 비어있습니다." />
+  <Item infoTextID="123" infoText="보조" />
+  <Item infoTextID="124" infoText="기타" />
+  <Item infoTextID="125" infoText="인형창고" />
+  <Item infoTextID="126" infoText="인형창고로 내려갈까요?" />
+  <Item infoTextID="127" infoText="인형 깨우기" />
+  <Item infoTextID="128" infoText="필요한 생명력 : " />
+  <Item infoTextID="129" infoText="인형 깨우기" />
+  <Item infoTextID="130" infoText="영혼석의 생명력이 부족합니다." />
+  <Item infoTextID="131" infoText="인형을 깨우기 성공!" />
+  <Item infoTextID="132" infoText="생명력 추가 주입" />
+  <Item infoTextID="133" infoText="위로 올라갈까요?" />
+  <Item infoTextID="134" infoText="사다리" />
+  <Item infoTextID="135" infoText="깨어난 인형이 없습니다." />
+  <Item infoTextID="136" infoText="인형 목록" />
+  <Item infoTextID="137" infoText="인형 소환" />
+  <Item infoTextID="138" infoText="이 인형은 전투 중에만 소환할 수 있습니다." />
+  <Item infoTextID="139" infoText="파란 범위 내에서 인형을 소환할 위치를 눌러주세요!" />
+  <Item infoTextID="140" infoText="이미 사용중인 인형입니다." />
+  <Item infoTextID="141" infoText="해당 위치에는 인형을 소환할 수 없습니다." />
+  <Item infoTextID="142" infoText="주인과 위치가 겹칩니다!" />
+  <Item infoTextID="143" infoText="물리방어" />
+  <Item infoTextID="144" infoText="마법방어" />
+  <Item infoTextID="145" infoText="효과음 켜짐" />
+  <Item infoTextID="146" infoText="효과음 꺼짐" />
+  <Item infoTextID="147" infoText="게임설정" />
+  <Item infoTextID="148" infoText="배경음악 켜짐" />
+  <Item infoTextID="149" infoText="배경음악 꺼짐" />
+  <Item infoTextID="150" infoText="전투도감" />
+  <Item infoTextID="151" infoText="새로운^n시작" />
+  <Item infoTextID="152" infoText="문을 터치하면 집 밖으로 나갈 수 있습니다." />
+  <Item infoTextID="153" infoText="지형을 터치하면 마녀가 움직입니다.^n이동 방법은 옵션에서 변경할 수 있습니다." />
+  <Item infoTextID="154" infoText="지팡이 아이콘을 눌러 마법을 사용할 수 있습니다." />
+  <Item infoTextID="155" infoText="마지막 타격은 검술공격으로 시도해 보세요!" />
+  <Item infoTextID="156" infoText="영혼석에 생명력을 가득 채웠습니다." />
+  <Item infoTextID="157" infoText="영혼석 채우기 +#power" />
+  <Item infoTextID="158" infoText="사다리를 이용해 인형창고로 내려가 보세요." />
+  <Item infoTextID="159" infoText="&lt;인형 소환&gt;^n^n전투 메뉴에 '인형' 버튼이 추가되었습니다. 깨운 인형은 전투시에 소환하여 사용할 수 있으며, 차례를 소모하지 않습니다. 단, 인형은 한 차례에 하나씩, 최대 3개까지 소환할 수 있습니다." />
+  <Item infoTextID="160" infoText="멧돼지에게 접근해 보세요." />
+  <Item infoTextID="161" infoText="언덕 위에 있는 마물에게 접근해 보세요!" />
+  <Item infoTextID="162" infoText="새 마법진을 제작하려면 마법 항아리를 눌러보세요." />
+  <Item infoTextID="163" infoText="이 창에서는 마법진을 조합할 수 있습니다." />
+  <Item infoTextID="164" infoText="마법진에는 '주 마법진'과 '보조 마법진'이 있습니다." />
+  <Item infoTextID="165" infoText="방금 제작한 '하급 증폭 마법진'은 '보조 마법진'에 해당됩니다." />
+  <Item infoTextID="166" infoText="'보조 마법진'를 눌러서 방금 제작한 '하급 증폭 마법진'을 찾아보세요." />
+  <Item infoTextID="167" infoText="증폭 마법진을 가운데 슬롯으로 끌어 옮겨보세요!" />
+  <Item infoTextID="168" infoText="&lt;잠자기&gt;^n^n잠자기로 체력과 마나를 완전히 회복할 수 있습니다. 자고 일어나면 회복한 체력과 마나에 비례하여 최대 체력과 마나가 상승합니다. 필드에서 사용할 수 있는 침낭도 같은 효과를 가집니다." />
+  <Item infoTextID="169" infoText="쿠션을 누르면 잠을 잘 수 있습니다." />
+  <Item infoTextID="170" infoText="인형을 소환합니다." />
+  <Item infoTextID="171" infoText="전투하기" />
+  <Item infoTextID="172" infoText="피하기" />
+  <Item infoTextID="173" infoText="서쪽 안개숲에 있는 골렘에게 도전해 보세요!" />
+  <Item infoTextID="174" infoText="수련을 하기 위해 집 중앙을 터치해 주세요." />
+  <Item infoTextID="175" infoText="5일 단위로 마녀를 계획적으로 수련시킬 수 있습니다." />
+  <Item infoTextID="176" infoText="아래에는 수련 아이콘들이 있습니다.^n각 아이콘을 누르면 아이콘 위에 수련에 대한 설명과 효과가 나타납니다." />
+  <Item infoTextID="177" infoText="수련할 아이콘들을 끌어 일차 슬롯에 넣으면 수련일정을 만들 수 있습니다." />
+  <Item infoTextID="178" infoText="총 5개의 일차 슬롯이 있으며, 이 일차 슬롯들을 모두 채워야 수련을 시작할 수 있습니다." />
+  <Item infoTextID="179" infoText="'검술단련'을 최소한 한 번 이상 수련일정에 넣어서 수련을 시작해 보세요." />
+  <Item infoTextID="180" infoText="-" />
+  <Item infoTextID="181" infoText="소지한 아이템을 확인하고 싶을 땐 보관함을 이용하세요." />
+  <Item infoTextID="182" infoText="이제 마물을 잡으러 나가 볼까요?" />
+  <Item infoTextID="183" infoText="현재 능력치" />
+  <Item infoTextID="184" infoText="수련 후 능력치" />
+  <Item infoTextID="185" infoText="마녀의 샘 베타 테스트를 종료합니다.^n타이틀 화면으로 이동하려면 화면을 터치해 주세요." />
+  <Item infoTextID="186" infoText="&lt;전투성향&gt;^n마법을 많이 사용하면 마법공격이 강해지고 검술을 많이 사용하면 검술공격이 강해집니다. 한 성향으로 완전히 치우쳤을 때 최대 18%까지 추가 공격효과를 얻을 수 있습니다." />
+  <Item infoTextID="187" infoText="일정시간 후에 이 자리에서 싸운 적이 다시 나타납니다.^n[#power %]" />
+  <Item infoTextID="188" infoText="채집 아이템이 다시 생성되고 있습니다.^n[#power %] " />
+  <Item infoTextID="189" infoText="가운데 슬롯을 초기화시켰습니다." />
+  <Item infoTextID="190" infoText="#slot을 초기화시켰습니다." />
+  <Item infoTextID="191" infoText="멧돼지의 흔적을 찾아보세요!" />
+  <Item infoTextID="192" infoText="시간^n읽어오기" />
+  <Item infoTextID="193" infoText="이어하기" />
+  <Item infoTextID="194" infoText="마녀의 발자취를 표시합니다." />
+  <Item infoTextID="195" infoText="타이틀 화면으로" />
+  <Item infoTextID="196" infoText="마녀일지" />
+  <Item infoTextID="197" infoText="표시할 목표가 없습니다." />
+  <Item infoTextID="198" infoText="마녀일지에 새 글이 기록되었습니다." />
+  <Item infoTextID="199" infoText="새 아이템이 보관함에 추가되었습니다." />
+  <Item infoTextID="200" infoText="전투도감에 새로운 정보가 기록되었습니다." />
+  <Item infoTextID="201" infoText="오늘은 일지를 쓴 지 #day일째 되는 날. " />
+  <Item infoTextID="202" infoText="#day일 차" />
+  <Item infoTextID="203" infoText="#days일이 흘렀습니다." />
+  <Item infoTextID="204" infoText="새로운 목표" />
+  <Item infoTextID="205" infoText="목표 달성" />
+  <Item infoTextID="206" infoText="새로운 목표를 달성하면 수련을 할 수 있는 기회가 추가됩니다." />
+  <Item infoTextID="207" infoText="마녀의 발자취를 생략합니다." />
+  <Item infoTextID="208" infoText="목표를 표시합니다." />
+  <Item infoTextID="209" infoText="목표를 생략합니다." />
+  <Item infoTextID="210" infoText="마녀일지 보기" />
+  <Item infoTextID="211" infoText="시간 기록하기/읽어오기" />
+  <Item infoTextID="212" infoText="시간 기록하기" />
+  <Item infoTextID="213" infoText="시간 읽어오기" />
+  <Item infoTextID="214" infoText="비어 있는 줄" />
+  <Item infoTextID="215" infoText="빈 줄입니다!" />
+  <Item infoTextID="216" infoText="#num번 줄에는 이미 기록이 있습니다. 이전 기록을 지우고 현재 시간을 기록할까요? 이전 기록은 보존되지 않습니다." />
+  <Item infoTextID="217" infoText="#num번 줄의 기록을 읽어올까요? 저장되지 않은 내용은 사라집니다." />
+  <Item infoTextID="218" infoText="#num번 줄의 기록을 지울까요? 지워진 기록은 복구되지 않습니다." />
+  <Item infoTextID="219" infoText="#num번 줄에 현재 시간을 기록했습니다!" />
+  <Item infoTextID="220" infoText="#num번 줄의 기록을 지웠습니다." />
+  <Item infoTextID="221" infoText="플레이 시간 : #times" />
+  <Item infoTextID="222" infoText="제1 장^n인형마녀" />
+  <Item infoTextID="223" infoText="제2 장^n생명을 주는 마녀" />
+  <Item infoTextID="224" infoText="제3 장^n쫓기는 구원자" />
+  <Item infoTextID="225" infoText="제4 장^n어두운 길" />
+  <Item infoTextID="226" infoText="제5 장^n길 잃은 마녀" />
+  <Item infoTextID="227" infoText="제4 장^n세 가지 그릇" />
+  <Item infoTextID="228" infoText="제5 장^n마지막 잔" />
+  <Item infoTextID="229" infoText="제8 장" />
+  <Item infoTextID="230" infoText="제9 장" />
+  <Item infoTextID="231" infoText="제10 장" />
+  <Item infoTextID="232" infoText="제11 장" />
+  <Item infoTextID="233" infoText="제12 장" />
+  <Item infoTextID="234" infoText="저장될 제목을 입력합니다.^n(최대 30글자, 선택사항)" />
+  <Item infoTextID="235" infoText="취소" />
+  <Item infoTextID="236" infoText="제목에는 특수문자가 제한됩니다!" />
+  <Item infoTextID="237" infoText="제목은 최대 30글자까지 쓸 수 있습니다!" />
+  <Item infoTextID="238" infoText="시간을 불러오고 있습니다." />
+  <Item infoTextID="239" infoText="안쪽에 있는 구멍으로 들어가겠습니까?" />
+  <Item infoTextID="240" infoText="구멍에 들어가본다." />
+  <Item infoTextID="241" infoText="구멍에 들어가지 않는다." />
+  <Item infoTextID="242" infoText="마녀일지에 새로운 목표가 추가되었습니다. 목표를 달성할 때마다 수련을 다시 시작할 수 있습니다." />
+  <Item infoTextID="243" infoText="인형을 되찾았습니다." />
+  <Item infoTextID="244" infoText="목표를 달성하여 수련 가능 횟수가 1회 증가했습니다." />
+  <Item infoTextID="245" infoText="최근에 자동 저장된 기록을 불러옵니다." />
+  <Item infoTextID="246" infoText="현재 시간이 자동 저장되었습니다." />
+  <Item infoTextID="247" infoText="최근에 자동 저장한 기록이 없습니다!" />
+  <Item infoTextID="248" infoText="수련목록" />
+  <Item infoTextID="249" infoText="*인형의 레벨이 최고치에 도달했습니다." />
+  <Item infoTextID="250" infoText="-" />
+  <Item infoTextID="251" infoText="필드 메뉴" />
+  <Item infoTextID="252" infoText="소환 시 전체 마나의^n#need% 필요" />
+  <Item infoTextID="253" infoText="인형을 소환하기 위해서는 전체 마나의 #need가 필요합니다!" />
+  <Item infoTextID="254" infoText="방금 얻은 마법재료로 집에서 새 마법진을 만들어 보세요!" />
+  <Item infoTextID="255" infoText="수련 #num회 가능" />
+  <Item infoTextID="256" infoText="마법의 속성^n^n화염, 전격, 빙결, 무속성의 마법이 존재합니다. 화염 마법의 마나 소모량과 데미지는 모든 속성 중 평균에 속합니다. 추가 효과로, 마법을 시전한 적에게 불길을 남겨 지속적인 데미지를 줄 수 있습니다. 전격 마법은 상대적으로 다른 속성의 마법보다 마나가 더 필요하지만 가장 강력한 데미지를 줄 수 있습니다. 추가 효과로 적에게 데미지를 누적시켜서, 누적된 데미지가 일정량을 넘기면 적을 기절시킬 수 있습니다. 빙결마법은 상대적으로 소모 마나가 적고 적의 행동을 둔화시킬 수 있습니다." />
+  <Item infoTextID="257" infoText="마법진의 종류^n^n마법진은 크게 주 마법진과 보조 마법진이 있으며 이 두 마법진 끼리는 서로 조합할 수 있습니다. 주 마법진은 마법의 종류를 결정하고, 보조 마법진 중 증폭 마법진은 마법 효과를 증폭시키며 정신집중 마법진은 소모 마나량을 감소시킵니다." />
+  <Item infoTextID="258" infoText="마법에 대하여" />
+  <Item infoTextID="259" infoText="공격 성향^n^n전투 시 검술보다 마법을 많이 사용할수록 숙련도가 올라가 기본 마법 데미지에 추가 데미지가 더해집니다. 반대로 마법공격 보다 검술공격을 많이 하면 검술공격에 추가 데미지가 더해집니다. 공격 성향은 캐릭터 능력창에서 확인할 수 있습니다." />
+  <Item infoTextID="260" infoText="마법성향 효과 #power%" />
+  <Item infoTextID="261" infoText="검술성향 효과 #power%" />
+  <Item infoTextID="262" infoText="멧돼지의 체력이 낮습니다. 간단하게 한 번만 휘둘러 볼까요?" />
+  <Item infoTextID="263" infoText="-" />
+  <Item infoTextID="264" infoText="체력 #power 소모" />
+  <Item infoTextID="265" infoText="검술공격을 위한 현재 체력이 부족합니다!" />
+  <Item infoTextID="266" infoText="검술" />
+  <Item infoTextID="267" infoText="마법의 검술보조^n^n불길에 휩싸인 적은 자신의 활동 차례가 올 때마다, 또는 공격을 당할 때마다 화상 데미지를 입습니다. 이 때 검술의 연속공격은 적에게 많은 누적 데미지를 입힐 수 있습니다.^n전격 효과로 기절한 적은 방어력이 0이 됩니다. 이 때 검술의 연속공격은 적에게 치명적인 피해를 줄 수 있습니다.^n빙결된 적은 행동이 둔화됩니다. 이 때, 다른 속성의 공격마법으로 추가 공격효과를 입히거나, 또는 검술공격을 수차례 시도할 수 있습니다." />
+  <Item infoTextID="268" infoText="그리고 마녀일지를 통해 새로운 목표나 달성한 목표를 확인할 수 있습니다." />
+  <Item infoTextID="269" infoText="새로운 적을 만나면 전투도감에 해당 적에 대한 정보가 추가됩니다." />
+  <Item infoTextID="270" infoText="수련 가능횟수 #num회 추가" />
+  <Item infoTextID="271" infoText="집 주변이 뭔가 허전합니다!" />
+  <Item infoTextID="272" infoText="도마뱀 무리가 보입니다. 어떻게 할까요?" />
+  <Item infoTextID="273" infoText="접근한다." />
+  <Item infoTextID="274" infoText="피한다." />
+  <Item infoTextID="275" infoText="공격할 대상을 선택해 주세요!" />
+  <Item infoTextID="276" infoText="마법을 사용할 대상을 선택해 주세요!" />
+  <Item infoTextID="277" infoText="마녀라는 정체를 숨기기 위해 마법을 사용하지 않습니다!" />
+  <Item infoTextID="278" infoText="생명을 가진 적을 쓰러트릴 때마다 마녀는 적에게서 생명력을 채취합니다. 채취한 생명력은 영혼석을 충전시키고, 마녀의 체력을 회복시킵니다." />
+  <Item infoTextID="279" infoText="아래로 내려갈 수 있는 밧줄이 설치되어 있습니다. 밧줄을 타고 내려갈까요?" />
+  <Item infoTextID="280" infoText="밧줄을 타고 내려간다." />
+  <Item infoTextID="281" infoText="내려가지 않는다." />
+  <Item infoTextID="282" infoText="할머니로부터 영혼석 개량 레시피를 받았습니다!" />
+  <Item infoTextID="283" infoText="영혼석이 생명력을 흡수할 수 있는 최대 용량이 #power으로 상승했습니다." />
+  <Item infoTextID="284" infoText="리아트 마을의 마차꾼을 도와줄까요?" />
+  <Item infoTextID="285" infoText="마차꾼을 돕는다." />
+  <Item infoTextID="286" infoText="무시한다." />
+  <Item infoTextID="287" infoText="성벽 밑 구멍으로 들어갈까요?" />
+  <Item infoTextID="288" infoText="구멍으로 들어간다." />
+  <Item infoTextID="289" infoText="들어가지 않는다." />
+  <Item infoTextID="290" infoText="#armedak$^n[검술력 주력 + 마법력 보조 무기]" />
+  <Item infoTextID="291" infoText="어떤 선물을 택하시겠습니까?" />
+  <Item infoTextID="292" infoText="#wand_levgato$^n[마법력 집중 무기]" />
+  <Item infoTextID="293" infoText="#dominique$^n[검술력 집중 무기]" />
+  <Item infoTextID="294" infoText="애드의 방에서 가보방으로 이어지는 비밀통로를 찾아보세요." />
+  <Item infoTextID="295" infoText="애드리안이 은신처를 궁금해 합니다." />
+  <Item infoTextID="296" infoText="우리 집은 안개숲 중앙에 있어." />
+  <Item infoTextID="297" infoText="가르쳐 줄 수 없어." />
+  <Item infoTextID="298" infoText="애드리안과 바로 동행할까요?" />
+  <Item infoTextID="299" infoText="바로 애드리안을 따라간다." />
+  <Item infoTextID="300" infoText="정비 후 애드리안의 집을 직접 방문한다." />
+  <Item infoTextID="301" infoText="마력이 일시적으로 #power만큼 상승합니다!" />
+  <Item infoTextID="302" infoText="힘이 일시적으로 #power만큼 상승합니다!" />
+  <Item infoTextID="303" infoText="생명력 추가주입 완료!" />
+  <Item infoTextID="304" infoText="행동" />
+  <Item infoTextID="305" infoText="대기" />
+  <Item infoTextID="306" infoText="체력이 부족합니다!" />
+  <Item infoTextID="307" infoText="아직 연마하지 못한 검술입니다. 수련목록 중 검술단련을 통해 연마할 수 있습니다. 최대체력이 #power 이상일 때 연마 가능합니다." />
+  <Item infoTextID="308" infoText="[ 새로운 검술 연마 ]^n^n#num연속 공격" />
+  <Item infoTextID="309" infoText="지금은 도망갈 수 없습니다!" />
+  <Item infoTextID="312" infoText="자동저장 시점 불러오기" />
+  <Item infoTextID="314" infoText="전투에서 패배했습니다!" />
+  <Item infoTextID="315" infoText="수호동물이 길목을 막고 있습니다." />
+  <Item infoTextID="316" infoText="수호동물과 싸운다." />
+  <Item infoTextID="317" infoText="되돌아간다." />
+  <Item infoTextID="318" infoText="난 애드를 믿어." />
+  <Item infoTextID="319" infoText="이제 인간은 믿지 않아." />
+  <Item infoTextID="320" infoText="어떤 길을 택하겠습니까?" />
+  <Item infoTextID="321" infoText="마력검술" />
+  <Item infoTextID="322" infoText="필요마나 : #power" />
+  <Item infoTextID="323" infoText="아직 연마하지 못한 마력검술입니다. 수련목록 중 마법연구를 통해 연마할 수 있습니다. 마력이 #power 이상일 때 연마 가능합니다." />
+  <Item infoTextID="324" infoText="검술레벨이 최고(7연속 공격)에 달하고 마력이 #power 이상일 때 수련목록 중 마법책 공부를 통해 연마할 수 있습니다." />
+  <Item infoTextID="325" infoText="#num회 동안 흡수검날 효과가 지속됩니다." />
+  <Item infoTextID="326" infoText="흡수검날 효과가 사라졌습니다." />
+  <Item infoTextID="327" infoText="#num회 동안 마력검날 효과가 지속됩니다." />
+  <Item infoTextID="328" infoText="마력검날 효과가 사라졌습니다." />
+  <Item infoTextID="329" infoText="#num회 동안 마력구체 효과가 지속됩니다." />
+  <Item infoTextID="330" infoText="마력구체 효과가 사라졌습니다." />
+  <Item infoTextID="331" infoText="#num타에 걸쳐 마력의 흔적 효과가 지속됩니다." />
+  <Item infoTextID="332" infoText="마력의 흔적 효과가 사라졌습니다." />
+  <Item infoTextID="333" infoText="마력검날 효과 #num회 남음" />
+  <Item infoTextID="334" infoText="흡수검날 효과 #num회 남음" />
+  <Item infoTextID="335" infoText="마력구체 효과 #num회 남음" />
+  <Item infoTextID="336" infoText="마력의 흔적 효과 #num타 남음" />
+  <Item infoTextID="337" infoText="[새로운 마력검술 연마]" />
+  <Item infoTextID="338" infoText="* 마력검날^n검날에 마력을 부여하여 기본 공격을 강화시킬 뿐만 아니라 먼 거리에 있는 적들도 함께 벨 수 있다." />
+  <Item infoTextID="339" infoText="* 흡수검날^n검술로 상대에게 준 피해량에 비례한 체력을 흡수할 수 있다." />
+  <Item infoTextID="340" infoText="* 마력구체^n검날을 휘두른 후에 상대에게 마력에 비례하는 피해를 주는 구체를 생성한다." />
+  <Item infoTextID="341" infoText="* 마력의 흔적^n직전에 사용한 공격마법을 재현하여 이전 마법의 절반의 피해량에 해당하는 마력폭발을 적에게 일으킨다. 피해량은 첫 번째 검날이 가장 강하며 검날을 휘두를 수록 점차 감소한다." />
+  <Item infoTextID="342" infoText="* 검술형 에카르 베르테르^n아르메다크 전용 마력검술. 모든 체력과 마나를 사용하여 상대를 쓰러트린다. 위력은 현재 체력과 마나에 비례한다." />
+  <Item infoTextID="343" infoText="마력검술 #step단계" />
+  <Item infoTextID="344" infoText="검술 #step단계" />
+  <Item infoTextID="345" infoText="마법연구 #step단계" />
+  <Item infoTextID="346" infoText="제작연구 #step단계" />
+  <Item infoTextID="347" infoText="#weapon 사용중" />
+  <Item infoTextID="348" infoText="최고" />
+  <Item infoTextID="349" infoText="마력검술 미연마" />
+  <Item infoTextID="350" infoText="&lt;마법연구&gt;^n^n마력이 특정 수치 이상이면 수련목록 중 마법연구를 통해 연구단계를 올릴 수 있습니다. 단계가 오를 때마다 새로운 마법 레시피를 획득할 수 있으며, 전투를 시작할 때 두르는 마력방패가 더 강해집니다.^n(현재 #num단계 / 최대 7단계)" />
+  <Item infoTextID="351" infoText="&lt;검술&gt;^n^n최대체력이 특정 수치 이상이면 수련목록 중 검술단련을 통해 검술단계를 올릴 수 있습니다. 검술단계가 오를 때마다 최대 연속공격 횟수가 상승합니다.^n(현재 #num단계 / 최대 7단계)" />
+  <Item infoTextID="352" infoText="&lt;마력검술&gt;^n^n무기에 마력을 입혀 공격하는 기술입니다. 더 강한 검술공격과 함께 여러명의 적을 공격할 수도 있습니다. 마력이 특정 수치 이상이면 수련목록 중 마력구체화를 통해 획득 가능합니다.^n(현재 #num단계 / 최대 4단계)" />
+  <Item infoTextID="353" infoText="&lt;제작연구&gt;^n^n평균 능력치가 특정 수치 이상이면 수련목록 중 제작연구를 통해 단계를 올릴 수 있습니다. 단계가 올라갈 때마다 새로운 도구 레시피를 획득할 수 있습니다.^n(현재 #num단계 / 최대 7단계)" />
+  <Item infoTextID="354" infoText="#step단계" />
+  <Item infoTextID="355" infoText="획득조건 : " />
+  <Item infoTextID="356" infoText="없음" />
+  <Item infoTextID="357" infoText="마력 40 이상" />
+  <Item infoTextID="358" infoText="마력 #power 이상" />
+  <Item infoTextID="359" infoText="최대체력 #power 이상" />
+  <Item infoTextID="360" infoText="마력 120 이상" />
+  <Item infoTextID="361" infoText="마력 160이상, 마나 300 이상" />
+  <Item infoTextID="362" infoText="마력 220 이상, 마나 600 이상" />
+  <Item infoTextID="363" infoText="마력의 #power%" />
+  <Item infoTextID="364" infoText="총 소모되는 마나의 #power% 감소" />
+  <Item infoTextID="365" infoText="효과 : " />
+  <Item infoTextID="366" infoText="총 마법효과 #power%로 증폭" />
+  <Item infoTextID="367" infoText="한 번 공격으로 무기를 #num번 휘둘러 적에게 피해를 입힌다." />
+  <Item infoTextID="368" infoText="마력 #power 이상 및^n검술 최고단계(7단계) 달성" />
+  <Item infoTextID="369" infoText="새로운 마법진 레시피 획득!" />
+  <Item infoTextID="370" infoText="너무 멀어서 검이 닿지 않습니다." />
+  <Item infoTextID="371" infoText="힘 #power% 상승" />
+  <Item infoTextID="372" infoText="마력 #power% 상승" />
+  <Item infoTextID="373" infoText="방어력 #power% 상승" />
+  <Item infoTextID="374" infoText="민첩 #power% 상승" />
+  <Item infoTextID="375" infoText="라라의 응원" />
+  <Item infoTextID="376" infoText="일기장" />
+  <Item infoTextID="377" infoText="방어가 일시적으로 #power 만큼 상승합니다!" />
+  <Item infoTextID="378" infoText="민첩이 일시적으로 #power 만큼 상승합니다!" />
+  <Item infoTextID="379" infoText="지하 깊은 곳에서 강한 한기가 올라오고 있습니다." />
+  <Item infoTextID="380" infoText="내려가 본다." />
+  <Item infoTextID="381" infoText="내려가지 않는다." />
+  <Item infoTextID="382" infoText="어디로 순간이동 하시겠습니까?" />
+  <Item infoTextID="383" infoText="공간이동 마법진을 통해 다른 지역으로 순간이동이 가능합니다." />
+  <Item infoTextID="384" infoText="골드" />
+  <Item infoTextID="385" infoText="필요한 재료" />
+  <Item infoTextID="386" infoText="모든 능력치 평균 #power이상" />
+  <Item infoTextID="387" infoText="능력치 평균" />
+  <Item infoTextID="388" infoText="새로운 도구 레시피 획득!" />
+  <Item infoTextID="389" infoText="난 잘 모르겠어." />
+  <Item infoTextID="390" infoText="할머니가 준 열쇠를 사용할까요?" />
+  <Item infoTextID="391" infoText="열쇠를 사용하여 문을 열고 들어간다." />
+  <Item infoTextID="392" infoText="사용하지 않는다." />
+  <Item infoTextID="393" infoText="지하실 문" />
+  <Item infoTextID="394" infoText="영혼석에 생명력을 700만큼 모아오세요. 인간의 경우 일반적으로 마물보다 생명력을 더 많이 흡수할 수 있습니다." />
+  <Item infoTextID="395" infoText="붉은 영혼석과 푸른 영혼석 레시피를 획득했습니다." />
+  <Item infoTextID="396" infoText="벨리타를 어떻게 할까요?" />
+  <Item infoTextID="397" infoText="영혼을 먹는다." />
+  <Item infoTextID="398" infoText="놓아준다." />
+  <Item infoTextID="399" infoText="영혼의 파편 #num개 수집" />
+  <Item infoTextID="400" infoText="영혼석에 저장된 생명력이 없습니다." />
+  <Item infoTextID="401" infoText="영혼석으로 체력과 마나를 #power만큼씩 회복했습니다!" />
+  <Item infoTextID="402" infoText="&lt;영혼석 사용하기&gt;^n^n영혼석은 레벨2부터 전투 중에 사용할 수 있습니다. 전투 중 영혼석을 사용하면 영혼석에 저장한 생명력을 모두 사용하여 소지자의 체력과 마나를 사용된 생명력 만큼 회복시킵니다." />
+  <Item infoTextID="403" infoText="행동을 선택하세요." />
+  <Item infoTextID="404" infoText="물에 들어가본다." />
+  <Item infoTextID="405" infoText="들어가지 않는다." />
+  <Item infoTextID="406" infoText="새 인형을 소환할 수 있게 되었습니다." />
+  <Item infoTextID="407" infoText="모든 능력이 #power%만큼 상승했습니다." />
+  <Item infoTextID="408" infoText="인형은 전투 중에 최대 3개까지 소환할 수 있습니다." />
+  <Item infoTextID="409" infoText="새 장소가 마법진 이동목록에 추가되었습니다." />
+  <Item infoTextID="410" infoText="낡은 레브가토의 지팡이가 단련되었습니다." />
+  <Item infoTextID="411" infoText="새로운 마법 획득!" />
+  <Item infoTextID="412" infoText="쥬디스는 요하네스에게 장부를 넘겼다." />
+  <Item infoTextID="413" infoText="슈베트 성을 칠 준비가 되었나요?" />
+  <Item infoTextID="414" infoText="지금 출발한다." />
+  <Item infoTextID="415" infoText="조금 더 준비한다." />
+  <Item infoTextID="416" infoText="요하네스는 모네트에게 드래곤의 둥지를 넘겨주었다." />
+  <Item infoTextID="417" infoText="마녀에게 일어나는 주요 사건들은 모두 마녀일지에 기록됩니다." />
+  <Item infoTextID="418" infoText="이야기와 목표 등^n이 기록들은 마녀가 앞으로 나아갈 길에 대한 힌트가 됩니다." />
+  <Item infoTextID="419" infoText="반짝이는 곳으로 가서 아이템을 수집해 보세요." />
+  <Item infoTextID="420" infoText="화살표를 향해 서쪽 숲으로 이동해 보세요." />
+  <Item infoTextID="421" infoText="&lt;아이템 수집&gt;^n^n필드에 있는 반짝이는 곳에 가면 아이템을 수집할 수 있습니다. 수집한 아이템은 생존에 도움을 줍니다. 직접 사용하거나 아이템끼리 합성하여 새로운 아이템을 만들 수 있습니다." />
+  <Item infoTextID="422" infoText="좌측 상단의 필드메뉴 버튼을 누르면 필드메뉴가 펼쳐집니다." />
+  <Item infoTextID="423" infoText="필드메뉴 버튼 중 집 모양 아이콘을 누르면 마녀가 귀환마법을 사용합니다." />
+  <Item infoTextID="424" infoText="&lt;집으로 빠르게 돌아가기&gt;" />
+  <Item infoTextID="425" infoText="&lt;영혼석의 생명력 흡수 기능&gt;" />
+  <Item infoTextID="426" infoText="필드메뉴 버튼" />
+  <Item infoTextID="427" infoText="귀환마법 버튼" />
+  <Item infoTextID="428" infoText="현재 영혼석에는 50의 생명력이 채워져 있습니다." />
+  <Item infoTextID="429" infoText="이 인형을 깨우기 위해 필요한 생명력은 50입니다." />
+  <Item infoTextID="430" infoText="인형을 깨워보세요!" />
+  <Item infoTextID="431" infoText="마법항아리에서는 마법재료를 이용하여 새로운 아이템이나 마법을 만들어 낼 수 있습니다." />
+  <Item infoTextID="432" infoText="만들어야 할 '하급 증폭 마법진'은 '보조 마법진'에 해당됩니다." />
+  <Item infoTextID="433" infoText="'보조 마법진' 버튼을 눌러보세요." />
+  <Item infoTextID="434" infoText="&lt;마법 조합&gt;^n^n한 슬롯에 장착하는 마법진의 종류는 크게 '주 마법진'과 '보조 마법진'으로 나뉩니다. ^n^n'주 마법진'은 마법의 종류를 결정하며,^n'보조 마법진'은 주 마법진을 강화시켜 줍니다.^n^n'보조 마법진'에는 '주 마법진'의 위력을 강화시켜주는 '증폭 마법진'과 소모되는 마나를 감소시켜주는 '정신집중 마법진'이 있습니다." />
+  <Item infoTextID="435" infoText="주 마법진" />
+  <Item infoTextID="436" infoText="증폭 마법진" />
+  <Item infoTextID="437" infoText="정신집중 마법진" />
+  <Item infoTextID="438" infoText="마법이 강화되었습니다!" />
+  <Item infoTextID="439" infoText="&lt;연속 공격의 사용&gt;^n수련으로 새로운 연속공격 기술을 단련했습니다. 연속공격은 화염마법을 사용한 적에게 가하면 화상효과로 인해 더 많은 피해를 줄 수 있습니다." />
+  <Item infoTextID="440" infoText="일기장을 통해 현재 시간을 기록하거나 불러올 수 있습니다." />
+  <Item infoTextID="441" infoText="'시간 기록하기'를 누르면 시간을 기록할 수 있으며 바탕이 붉게 표시됩니다." />
+  <Item infoTextID="442" infoText="'시간 읽어오기'를 누르면 시간을 불러올 수 있으며 바탕이 푸르게 표시됩니다." />
+  <Item infoTextID="443" infoText="연속공격을 시도하면 적에게 더 많은 피해를 줄 수 있습니다." />
+  <Item infoTextID="444" infoText="연속공격은 화염마법과 함께 사용하면 적에게 추가피해를 줄 수 있습니다." />
+  <Item infoTextID="445" infoText="먼저 화염 마법을 사용해 보세요." />
+  <Item infoTextID="446" infoText="2회 연속공격을 시도해 보세요.^n약간의 체력이 필요하지만 에밀리아가 회복해 줄 거예요." />
+  <Item infoTextID="447" infoText="지금 연속공격을 시도하면,^n화상효과와 함께 적에게 더 많은 피해를 줄 수 있습니다." />
+  <Item infoTextID="448" infoText="목표" />
+  <Item infoTextID="449" infoText="&lt;아이템 사용 후 차례를 기다리는 시간&gt;^n^n전투 중 아이템 사용은 다른 행동들(공격, 마법 등)보다 상대적으로 가벼운 행동입니다. 따라서 아이템을 사용한 후에는 다른 행동들보다 차례가 빠르게 돌아옵니다." />
+  <Item infoTextID="450" infoText="마법도감 보기^n^n필드메뉴를 열면 마법도감을 볼 수 있습니다. 필드에서도 제작에 필요한 아이템을 수시로 확인 가능합니다." />
+  <Item infoTextID="451" infoText="마법도감 버튼" />
+  <Item infoTextID="452" infoText="방어 +#power" />
+  <Item infoTextID="453" infoText="체력회복 능력 +#power" />
+  <Item infoTextID="454" infoText="방어 해제" />
+  <Item infoTextID="455" infoText="체력회복 +#power" />
+  <Item infoTextID="456" infoText="마나회복 +#power" />
+  <Item infoTextID="457" infoText="마나회복 능력 +#power" />
+  <Item infoTextID="458" infoText="&lt;방어&gt;^n^n수련 중 '팔굽혀펴기'를 통해 방어를 향상시킬 수 있습니다. 방어하기를 시작하면 다음 차례가 돌아오기까지 방어자세를 취합니다. 이 동안에는 방어력이 상승하고 아이템 없이도 체력과 마나가 회복됩니다. 방어 단계가 높을수록 방어하기 이후 차례가 빨리 돌아옵니다.^n(현재 #num단계 / 최대 7단계)" />
+  <Item infoTextID="459" infoText="&lt; 방어 #num단계 &gt;^n^n연마조건 : 방어 #power 이상" />
+  <Item infoTextID="460" infoText="^n[다음 차례가 오기 전까지 효과]^n-방어 #power% 상승 ^n-체력과 마나 #rPower% 회복" />
+  <Item infoTextID="461" infoText="방어 #step단계" />
+  <Item infoTextID="462" infoText="방어 #step단계 달성" />
+  <Item infoTextID="463" infoText="&lt;방어하기&gt;^n^n전투 중 '방어하기' 행동을 새로 연마했습니다.  방어하기를 하면 아이템 없이도 체력과 마나를 회복할 수 있으며, 단계가 높을수록 방어력과 회복률, 그리고 차례가 돌아오는 속도가 더 상승합니다." />
+  <Item infoTextID="464" infoText="#num번 줄의 기록을 읽어올까요?" />
+  <Item infoTextID="465" infoText="전투 성과" />
+  <Item infoTextID="466" infoText="이미 보유한 마법진입니다. 이미 만들어진 마법진은 여러 슬롯에 다시 사용할 수 있습니다." />
+  <Item infoTextID="467" infoText="상인과 거래하기" />
+  <Item infoTextID="468" infoText="구매하기" />
+  <Item infoTextID="469" infoText="판매하기" />
+  <Item infoTextID="470" infoText="가격 : " />
+  <Item infoTextID="471" infoText="보유개수 : " />
+  <Item infoTextID="472" infoText="#num개" />
+  <Item infoTextID="473" infoText="구매 개수 : " />
+  <Item infoTextID="474" infoText="최소 1개 이상 거래할 수 있습니다." />
+  <Item infoTextID="475" infoText="한 번에 최대 100까지 거래할 수 있습니다." />
+  <Item infoTextID="476" infoText="판매할 개수 : " />
+  <Item infoTextID="477" infoText="#count의 골드로 물건을 구매할까요?" />
+  <Item infoTextID="478" infoText="#count 골드에 물건을 상인에게 판매할까요?" />
+  <Item infoTextID="479" infoText="골드가 부족합니다!" />
+  <Item infoTextID="480" infoText="구매 완료!" />
+  <Item infoTextID="481" infoText="판매 완료!" />
+  <Item infoTextID="482" infoText="팔 수 없는 물건입니다!" />
+  <Item infoTextID="483" infoText="현재 개수가 판매할 수 있는 최대 개수입니다." />
+  <Item infoTextID="484" infoText="상인과 무엇을 하시겠습니까?" />
+  <Item infoTextID="485" infoText="말을 건다." />
+  <Item infoTextID="486" infoText="물건을 거래한다." />
+  <Item infoTextID="487" infoText="아무것도 하지 않는다." />
+  <Item infoTextID="488" infoText="인형탑승 - 민첩 #power% 상승" />
+  <Item infoTextID="489" infoText="인형탑승 - 방어 #power% 상승" />
+  <Item infoTextID="490" infoText="인형탑승 - 힘 #power% 상승" />
+  <Item infoTextID="491" infoText="새 인형이 인형의 방에 추가되었습니다." />
+  <Item infoTextID="492" infoText="&lt;인형 탑승하기&gt;^n^n탑승 가능한 인형은 필드에서도 사용할 수 있습니다. 필드에서는 이동속도에 영향을 주고 전투시에는 민첩에 영향을 줍니다." />
+  <Item infoTextID="493" infoText="&lt; 제#num 장 과제 달성 &gt;" />
+  <Item infoTextID="494" infoText="이번 장의 새로운 과제" />
+  <Item infoTextID="495" infoText="이번 장의 과제 달성 완료" />
+  <Item infoTextID="496" infoText="기간만료 과제" />
+  <Item infoTextID="497" infoText="마법의 속성을 결정하는 주 마법진" />
+  <Item infoTextID="498" infoText="주 마법진을 강화시켜주는 보조 마법진" />
+  <Item infoTextID="499" infoText="시간이 지나 수련횟수가 1회 추가되었습니다!" />
+  <Item infoTextID="500" infoText="수련 횟수는 새로운 목표나 과제를 달성했을 때 뿐만 아니라 게임 시간이 어느 정도 흘러가면 수련횟수가 1회씩 추가됩니다.^n(수련횟수 추가까지 시간이 #num% 흐름)" />
+  <Item infoTextID="501" infoText="에이션트 드래곤의 발톱을 자르엘에게 줄까요?" />
+  <Item infoTextID="502" infoText="준다." />
+  <Item infoTextID="503" infoText="주지 않는다." />
+  <Item infoTextID="504" infoText="또는 탐험을 하거나 전투를 하게 되면 시간이 흘러가는데 일정 시간이 지날 때마다 수련횟수가 1회씩 추가됩니다." />
+  <Item infoTextID="505" infoText="수련횟수가 1회 채워지기까지 걸리는 시간은 필드메뉴를 열면 확인할 수 있습니다." />
+  <Item infoTextID="506" infoText="획득한 정보" />
+  <Item infoTextID="507" infoText="아직 획득하지 못한 정보입니다." />
+  <Item infoTextID="508" infoText="아직 획득한 정보가 없습니다." />
+  <Item infoTextID="509" infoText="현재 장착한 무기가 강화되었습니다." />
+  <Item infoTextID="510" infoText="암흑단 퇴치 의뢰를 수락하겠습니까?" />
+  <Item infoTextID="511" infoText="수락한다." />
+  <Item infoTextID="512" infoText="수락하지 않는다." />
+  <Item infoTextID="513" infoText="암흑단과의 전투에 돌입할까요?" />
+  <Item infoTextID="514" infoText="전투를 시작한다." />
+  <Item infoTextID="515" infoText="도망간다." />
+  <Item infoTextID="516" infoText="쥬디스와 '붉은 보석'을 거래하시겠습니까?" />
+  <Item infoTextID="517" infoText="거래한다." />
+  <Item infoTextID="518" infoText="거래하지 않는다." />
+  <Item infoTextID="519" infoText="데르카르 대륙 지도" />
+  <Item infoTextID="520" infoText="서쪽:안개숲^n북쪽:슈베트 마을^n동쪽:슈베트 용병캠프^n남쪽:리아트 마을" />
+  <Item infoTextID="521" infoText="서쪽:슈베트 산" />
+  <Item infoTextID="522" infoText="동쪽:슈베트 동부 용병캠프" />
+  <Item infoTextID="523" infoText="남쪽:데르카르도^n북쪽:슈베로드" />
+  <Item infoTextID="524" infoText="서남쪽" />
+  <Item infoTextID="525" infoText="북쪽:리아트마을^n동쪽:모렐신전^n서남쪽:지브마을" />
+  <Item infoTextID="526" infoText="서쪽:지브마을^n북동쪽:리아트마을" />
+  <Item infoTextID="527" infoText="남쪽:레브가토의 샘^n북쪽:슈베트마을" />
+  <Item infoTextID="528" infoText="왼쪽 길:슈베트 성 입구^n오른쪽 길:슈베트 마을 입구, 드래곤테일" />
+  <Item infoTextID="529" infoText="북쪽:슈베트 성, 슈베트 마을^n서쪽:드래곤 벨리^n동쪽:슈베트 용병캠프, 칼다리아^n남쪽:레브가토의 샘" />
+  <Item infoTextID="530" infoText="슈베트 마을 입구^n드래곤 테일" />
+  <Item infoTextID="531" infoText="서쪽:슈베트 마을 입구 동부^n남쪽:리아트리드" />
+  <Item infoTextID="532" infoText="북쪽:슈베로드^n남쪽:데르카르도" />
+  <Item infoTextID="533" infoText="모렐의 샘 입구" />
+  <Item infoTextID="534" infoText="북쪽:리아트리드^n서쪽:리아트 용병캠프^n남쪽:리아트 사막, 지브마을" />
+  <Item infoTextID="535" infoText="북쪽:리아트리드^n남쪽:리아트 사막, 지브마을" />
+  <Item infoTextID="536" infoText="북쪽:데르카르 협곡" />
+  <Item infoTextID="537" infoText="남쪽:부두^n서쪽:마리의 샘" />
+  <Item infoTextID="538" infoText="마리의 샘, 마리의 숲 입구" />
+  <Item infoTextID="539" infoText="북쪽:데르카르 협곡, 슈베트 마을^n서쪽:마리의 샘^n동쪽:지브마을" />
+  <Item infoTextID="540" infoText="서쪽:데르카르도, 마리의 샘^n동쪽:리아트 사막" />
+  <Item infoTextID="541" infoText="서쪽:데르카르도, 마리의 샘, 부두" />
+  <Item infoTextID="542" infoText="동쪽:와디럼^n남쪽:리아트 마을" />
+  <Item infoTextID="543" infoText="광산으로 숨어 들어간 도적들을 잡아올까요?" />
+  <Item infoTextID="544" infoText="도적들을 잡으러 간다." />
+  <Item infoTextID="545" infoText="무시한다." />
+  <Item infoTextID="546" infoText="돌무더기 사이를 올라가시겠습니까?" />
+  <Item infoTextID="547" infoText="올라간다." />
+  <Item infoTextID="548" infoText="그만둔다." />
+  <Item infoTextID="549" infoText="확인된 지역들" />
+  <Item infoTextID="550" infoText="탑승해제" />
+  <Item infoTextID="551" infoText="인형탑승을 해제했습니다!" />
+  <Item infoTextID="552" infoText="마력방패 - 피해량 #power% 감소" />
+  <Item infoTextID="553" infoText="* 일격필살^n자르엘 슈베타 전용 검술. 전투 중 무방비 상태로 힘을 모은 후 거친 검기를 가지고 적에게 돌진한다. 이 기술의 위력은 오로지 힘에만 의존한다." />
+  <Item infoTextID="554" infoText="일격을 위해 #num차례 동안 집중합니다." />
+  <Item infoTextID="555" infoText="앞으로 #num차례 후 행동을 개시합니다." />
+  <Item infoTextID="556" infoText="마력의 흔적이 없습니다. 마법을 먼저 사용하세요." />
+  <Item infoTextID="557" infoText="이미 시전한 마력검술입니다!" />
+  <Item infoTextID="558" infoText="&lt;공간이동 마법진&gt;^n^n파란 마법진이 있는 지역끼리는 마녀가 공간이동을 할 수 있습니다. 이 마법진에 가까이 가면 현재 지역이 이동목록에 추가됩니다." />
+  <Item infoTextID="559" infoText="&lt;빙결마법&gt;^n^n빙결마법은 화염마법보다 공격력은 다소 낮지만 마나 소모가 매우 낮습니다. 추가 효과로는 상대를 얼려서 민첩을 떨어트림으로써 마녀의 차례가 더 빨리 오게 할 수 있습니다.^n또한 마법시전 후 생성되는 마력방패의 효과는 모든 속성의 마법 중 가장 뛰어납니다." />
+  <Item infoTextID="560" infoText="&lt;전격마법&gt;^n^n전격마법은 모든 속성 중 가장 강력한 위력을 자랑하며, 시전한 대상이 전격마법으로 인한 피해량이 일정량 이상 누적되면 대상이 기절하게 됩니다.^n단, 전격마법은 한 전투 내에서 쓸수록 시전에 필요한 마나가 크게 증가하며, 모든 속성 마법 중 전격마법의 마력방패 효과가 가장 낮습니다." />
+  <Item infoTextID="561" infoText="#num번에 저장된 수련목록을 불러왔습니다." />
+  <Item infoTextID="562" infoText="수련등록 기능이 해제됐습니다." />
+  <Item infoTextID="563" infoText="수련목록 ##num" />
+  <Item infoTextID="564" infoText="&lt;수련목록 등록하기&gt;^n^n왼쪽의 수련목록 버튼을 누르면 미리 저장한 수련목록을 불러올 수 있습니다. 이 버튼이 눌러진 상태에서 수련을 배치하면, 배치된 수련목록들이 이 버튼에 자동으로 저장됩니다. 이 상태를 해제하려면 해당 수련목록 버튼을 다시 누르면 됩니다.^n^n이 기능을 사용하면 다음 수련 시 빠르게 수련을 진행할 수 있습니다." />
+  <Item infoTextID="565" infoText="(범위 : #num명)" />
+  <Item infoTextID="566" infoText="&lt;사냥으로 민첩 올리기&gt;^n^n필드에 돌아다니는 빠른 동물을 사냥하면 민첩이 오르기도 합니다. 단, 동물마다 상승시킬 수 있는 민첩의 수치에는 한계가 있습니다." />
+  <Item infoTextID="567" infoText="새로운 목표" />
+  <Item infoTextID="568" infoText="목표 달성" />
+  <Item infoTextID="569" infoText="모두 판매한 아이템입니다." />
+  <Item infoTextID="570" infoText="보조장비를 교체했습니다." />
+  <Item infoTextID="571" infoText="이미 사용중인 보조장비입니다." />
+  <Item infoTextID="572" infoText="* 유니르^n대지의 에너지를 모아 마나 없이 사용하는 공격마법. 시간이 지날수록 모으는 에너지는 크게 증가하며, 최대 세 차례까지 에너지를 모을 수 있다." />
+  <Item infoTextID="573" infoText="대지의 에너지를 모으기 시작합니다." />
+  <Item infoTextID="574" infoText="유니르를 시전하여 에너지를 #power만큼 모았습니다. 에너지를 계속 모을까요?" />
+  <Item infoTextID="575" infoText="#power만큼의 에너지를 모은 유니르 구체를 발사합니다." />
+  <Item infoTextID="576" infoText="영혼의 진격이 #num회 남았습니다." />
+  <Item infoTextID="577" infoText="뮬레트의 비늘을 상인에게 주겠습니까?" />
+  <Item infoTextID="578" infoText="준다." />
+  <Item infoTextID="579" infoText="주지 않는다." />
+  <Item infoTextID="580" infoText="죽어있는 사막여우를 어떻게 할까요?" />
+  <Item infoTextID="581" infoText="가져간다." />
+  <Item infoTextID="582" infoText="가져가지 않는다." />
+  <Item infoTextID="583" infoText="죽어 있는 아기 사막여우를 집으로 보냈습니다." />
+  <Item infoTextID="584" infoText="브레드가 목말라 합니다." />
+  <Item infoTextID="585" infoText="샘물을 준다." />
+  <Item infoTextID="586" infoText="방치한다." />
+  <Item infoTextID="587" infoText="실종된 남편을 찾아달라고 의뢰합니다." />
+  <Item infoTextID="588" infoText="실종자를 찾으러 간다." />
+  <Item infoTextID="589" infoText="무시한다." />
+  <Item infoTextID="590" infoText="이동 방법을 화면 터치로 설정했습니다." />
+  <Item infoTextID="591" infoText="이동 방법을 가상 조이스틱으로 설정했습니다." />
+  <Item infoTextID="592" infoText="화면터치로 이동하기" />
+  <Item infoTextID="593" infoText="가상 조이스틱으로 이동하기" />
+  <Item infoTextID="594" infoText="게임 플레이로 일러스트를 수집하면^n수집한 일러스트가 이 창에 나타납니다." />
+  <Item infoTextID="595" infoText="장비를 착용하기에 능력이 부족합니다." />
+  <Item infoTextID="596" infoText="여기에서는 인형을 소환할 수 없습니다!" />
+  <Item infoTextID="597" infoText="전체" />
+  <Item infoTextID="598" infoText="장비" />
+  <Item infoTextID="599" infoText="소모품" />
+  <Item infoTextID="600" infoText="기타" />
+  <Item infoTextID="601" infoText="일기장 백업" />
+  <Item infoTextID="602" infoText="구글 플레이 게임 서비스에 로그인 되어 있지 않습니다. 로그인 할까요?" />
+  <Item infoTextID="603" infoText="로그인" />
+  <Item infoTextID="604" infoText="로그아웃" />
+  <Item infoTextID="605" infoText="현재 로그인 되어 있지 않습니다." />
+  <Item infoTextID="606" infoText="구글 플레이 게임 서비스에서 로그아웃 했습니다." />
+  <Item infoTextID="607" infoText="로그아웃에 실패했습니다. 다시 시도해 주세요!" />
+  <Item infoTextID="608" infoText="구글 플레이 게임 서비스에 로그인했습니다." />
+  <Item infoTextID="609" infoText="현재 기기에 저장된 일기장 기록이 모두 초기화 되고 클라우드에 백업된 일기장 기록들이 기기에 새로 저장됩니다. 이 작업은 취소되지 않습니다. 계속 진행할까요?" />
+  <Item infoTextID="610" infoText="클라우드에 백업할 일기장 기록이 없습니다." />
+  <Item infoTextID="611" infoText="잠시만 기다려 주세요...!" />
+  <Item infoTextID="612" infoText="로그인에 실패했습니다. 다시 시도해 주세요!" />
+  <Item infoTextID="613" infoText="업적" />
+  <Item infoTextID="614" infoText="클라우드로 일기장 백업하기" />
+  <Item infoTextID="615" infoText="클라우드에서 일기장 읽어오기" />
+  <Item infoTextID="616" infoText="클라우드에 저장된 일기장 기록이 없습니다." />
+  <Item infoTextID="617" infoText="클라우드에 일기장을 성공적으로 백업했습니다." />
+  <Item infoTextID="618" infoText="클라우드에 저장된 일기장을 불러왔습니다. 게임을 재시작합니다." />
+  <Item infoTextID="619" infoText="클라우드에 저장된 일기장을 읽어오는데 실패했습니다. 다시 시도해 주세요!" />
+  <Item infoTextID="620" infoText="에이션트 드래곤이 경고합니다." />
+  <Item infoTextID="621" infoText="도망간다." />
+  <Item infoTextID="622" infoText="말을 더 걸어본다." />
+  <Item infoTextID="623" infoText="최소 #power이상" />
+  <Item infoTextID="624" infoText="마력의 #power% + 현재 체력과 마나에 비례" />
+  <Item infoTextID="625" infoText="언어변경을 위해 게임을 재시작합니다." />
+  <Item infoTextID="626" infoText="타이틀 화면으로 이동할까요?" />
+  <Item infoTextID="627" infoText="게임을 종료할까요?" />
+  <Item infoTextID="628" infoText="새 이야기를 시작할까요?" />
+  <Item infoTextID="629" infoText="탑승에 의한 피해량 감소 #power%" />
+  <Item infoTextID="630" infoText="탑승에 의한 방어력 +#power" />
+  <Item infoTextID="631" infoText="일기장 백업에 실패했습니다. 다시 시도해 주세요!" />
+  <Item infoTextID="632" infoText="&lt; 과제의 달성 &gt;^n^n과제가 추가된 장까지 과제를 달성하면 시간이 더 빨리 흘러가게 되며 추가 수련횟수를 빠르게 획득할 수 있습니다." />
+  <Item infoTextID="633" infoText="#num% 시간 경과" />
+  <Item infoTextID="634" infoText="다음 차례에 인형을 소환할 수 있습니다." />
+  <Item infoTextID="635" infoText="'헥터의 전투주머니'를 착용했습니다." />
+  <Item infoTextID="636" infoText="다음 차례에 도구를 사용할 수 있습니다." />
+  <Item infoTextID="637" infoText="바로 다음 행동을 시작할 수 있습니다." />
+  <Item infoTextID="638" infoText="&lt;보조장비 착용&gt;^n^n무기 외 보조장비를 착용하여 전투 보조효과를 얻을 수 있습니다. 소지품 상자의 '장비' 에서 확인할 수 있습니다." />
+  <Item infoTextID="639" infoText="마법의 속성" />
+  <Item infoTextID="640" infoText="슬롯의 배치" />
+  <Item infoTextID="641" infoText="&lt;화염마법&gt;^n^n화염마법의 공격력은 모든 속성 중 평균에 가깝습니다. 화염마법에 당한 적은 화상 효과가 남게 되어 자신의 차례가 돌아올 때나 공격을 당할 때마다 추가적인 화염 피해를 입게 됩니다. 추가적인 화염 피해의 위력은 시전자의 마력에 비례합니다." />
+  <Item infoTextID="642" infoText="&lt;마력방패&gt;^n^n전투에 돌입하는 즉시, 또는 마법을 사용할 때마다 피해량을 감소시켜 주는 빛나는 구체가 생성되며 공격을 당하거나 차례가 올 때마다 효과가 감소합니다. 마력방패의 효과는 마법연구 레벨이 높을수록, 높은 단계의 마법을 사용할수록  강력해집니다." />
+  <Item infoTextID="643" infoText="마력방패" />
+  <Item infoTextID="644" infoText="애드를 만나기 위해 슈베트 산으로 가야 합니다." />
+  <Item infoTextID="645" infoText="엔딩 일러스트를 본 이후의 세이브파일이 존재해야 합니다." />
+  <Item infoTextID="646" infoText="조이스틱을 끌어서 위치를 조정해 보세요!" />
+  <Item infoTextID="647" infoText="의상을 교체합니다." />
+  <Item infoTextID="648" infoText="이미 착용중인 의상입니다." />
+  <Item infoTextID="649" infoText="여기서는 의상을 갈아입을 수 없습니다." />
+  <Item infoTextID="650" infoText="쥬디스를 따라 마닐 섬으로 갈까요?" />
+  <Item infoTextID="651" infoText="마닐 섬으로 출발한다." />
+  <Item infoTextID="652" infoText="출발하지 않는다." />
+  <Item infoTextID="653" infoText="앞의 인형에게 생명력을 주입할까요?" />
+  <Item infoTextID="654" infoText="주입한다." />
+  <Item infoTextID="655" infoText="주입하지 않는다." />
+  <Item infoTextID="656" infoText="할머니가 남긴 편지가 있습니다. 읽어보시겠습니까?" />
+  <Item infoTextID="657" infoText="할머니의 편지를 읽을까요?" />
+  <Item infoTextID="658" infoText="읽는다." />
+  <Item infoTextID="659" infoText="읽지 않는다." />
+  <Item infoTextID="660" infoText="마법을 사용하지 않습니다." />
+  <Item infoTextID="661" infoText="인내의 시련에 도전할까요?" />
+  <Item infoTextID="662" infoText="도전한다." />
+  <Item infoTextID="663" infoText="도전하지 않는다." />
+  <Item infoTextID="664" infoText="슈베트성 지하감옥으로 이동할까요?" />
+  <Item infoTextID="665" infoText="이동한다." />
+  <Item infoTextID="666" infoText="이동하지 않는다." />
+  <Item infoTextID="667" infoText="폐쇄된 지하실험실로 이동할까요?" />
+  <Item infoTextID="668" infoText="무기장인에게 금빛 레어메탈을 넘길까요?" />
+  <Item infoTextID="669" infoText="넘긴다." />
+  <Item infoTextID="670" infoText="무시한다." />
+  <Item infoTextID="671" infoText="*더블크로체^n채력의 15%를 소모하여 빠른 속도로 검기를 16번 날린다. 피네라메를 착용한 상태에서 시전 가능하다." />
+  <Item infoTextID="672" infoText="지금부터는 '엔딩 후 이어하기' 모드입니다." />
+  <Item infoTextID="673" infoText="무료로 1회 업데이트되는 추가 컨텐츠 모드이며, 엔딩 이후의 소소한 후일담과 추가의상 및 아이템, 보스 컨텐츠를 즐길 수 있습니다." />
+</ItemList>

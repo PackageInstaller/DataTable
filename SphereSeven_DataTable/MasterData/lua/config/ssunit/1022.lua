@@ -1,0 +1,3 @@
+local Config = {Id=1022,Name="腓特烈",AbDir="SsUnit/022_FeiTeLie",NewRes=1,HandleBones={"Bone001","Bone002"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.5768,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10221,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={65,75,85,95,105},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10222,TotalFrames=180,OnHit=0,OnCutIn=0,OnDamage={65,75,85,95,105},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10223,TotalFrames=350,OnHit=0,OnCutIn=0,OnDamage={180,195,210,225,240,255,310},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

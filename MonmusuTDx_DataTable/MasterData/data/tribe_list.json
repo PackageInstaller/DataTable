@@ -1,0 +1,2828 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -3081351098594772044
+  },
+  "m_Name": "tribe_list",
+  "table": [
+    {
+      "id": 0,
+      "tribe": "不明",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 1,
+      "tribe": "ケンタウロス",
+      "ability": 1,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 3,
+      "tribe": "ハーピー",
+      "ability": 3,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 4,
+      "tribe": "ゴブリン",
+      "ability": 4,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 5,
+      "tribe": "シルフ",
+      "ability": 5,
+      "awakedBonusText": "風属性モンスター娘の攻撃+2％"
+    },
+    {
+      "id": 6,
+      "tribe": "スライム",
+      "ability": 6,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 7,
+      "tribe": "マーメイド",
+      "ability": 7,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 8,
+      "tribe": "ウンディーネ",
+      "ability": 8,
+      "awakedBonusText": "水属性モンスター娘の攻撃+2％"
+    },
+    {
+      "id": 10,
+      "tribe": "サラマンダー",
+      "ability": 10,
+      "awakedBonusText": "火属性モンスター娘の攻撃+2％"
+    },
+    {
+      "id": 11,
+      "tribe": "オーク",
+      "ability": 11,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 12,
+      "tribe": "ノーム",
+      "ability": 12,
+      "awakedBonusText": "地属性モンスター娘の攻撃+2％"
+    },
+    {
+      "id": 13,
+      "tribe": "マタンゴ",
+      "ability": 13,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 14,
+      "tribe": "アラクネ",
+      "ability": 14,
+      "awakedBonusText": "範囲内の蜘蛛糸効果+3％"
+    },
+    {
+      "id": 15,
+      "tribe": "クーシー",
+      "ability": 15,
+      "awakedBonusText": "移動速度+0.5倍"
+    },
+    {
+      "id": 16,
+      "tribe": "ミノタウロス",
+      "ability": 16,
+      "awakedBonusText": "ダンジョン内での攻撃力+0.1倍"
+    },
+    {
+      "id": 17,
+      "tribe": "ダークエルフ",
+      "ability": 17,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 19,
+      "tribe": "ダークエルフ",
+      "ability": 19,
+      "awakedBonusText": "攻撃力+4%"
+    },
+    {
+      "id": 20,
+      "tribe": "フェアリー",
+      "ability": 20,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 21,
+      "tribe": "サキュバス",
+      "ability": 21,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 22,
+      "tribe": "ペガサス",
+      "ability": 22,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 23,
+      "tribe": "カッパードラゴン",
+      "ability": 23,
+      "awakedBonusText": "スタン中の敵に対する与ダメージ+0.1倍"
+    },
+    {
+      "id": 24,
+      "tribe": "ゴースト",
+      "ability": 24,
+      "awakedBonusText": "背面から与えるダメージ+0.3倍"
+    },
+    {
+      "id": 25,
+      "tribe": "インキュバス",
+      "ability": 25,
+      "awakedBonusText": "女性に対する与ダメージ+0.2倍"
+    },
+    {
+      "id": 26,
+      "tribe": "デュラハン",
+      "ability": 26,
+      "awakedBonusText": "HP低下時に攻撃力+25％"
+    },
+    {
+      "id": 27,
+      "tribe": "ケルベロス",
+      "ability": 27,
+      "awakedBonusText": "敵3体同時攻撃の確率+10％"
+    },
+    {
+      "id": 28,
+      "tribe": "メデューサ",
+      "ability": 28,
+      "awakedBonusText": "攻撃時の毒が猛毒に変化"
+    },
+    {
+      "id": 29,
+      "tribe": "ミミック",
+      "ability": 29,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 30,
+      "tribe": "ワーペンギン",
+      "ability": 30,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 31,
+      "tribe": "ローパー",
+      "ability": 31,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 32,
+      "tribe": "ゴブリン",
+      "ability": 32,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 33,
+      "tribe": "ガーゴイル",
+      "ability": 33,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 34,
+      "tribe": "ドライアド",
+      "ability": 34,
+      "awakedBonusText": "毒、石化状態無効の持続時間+2秒"
+    },
+    {
+      "id": 35,
+      "tribe": "コカトリス",
+      "ability": 35,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 36,
+      "tribe": "ケットシー",
+      "ability": 36,
+      "awakedBonusText": "通常時の回避率+5%"
+    },
+    {
+      "id": 37,
+      "tribe": "クィーンビー",
+      "ability": 37,
+      "awakedBonusText": "最大HP+5%"
+    },
+    {
+      "id": 38,
+      "tribe": "クラーケン",
+      "ability": 38,
+      "awakedBonusText": "タコ足トークンの攻撃力+10％"
+    },
+    {
+      "id": 39,
+      "tribe": "ハイオーク",
+      "ability": 39,
+      "awakedBonusText": "ガーディアン系のHP増加+2％"
+    },
+    {
+      "id": 40,
+      "tribe": "マンティコア",
+      "ability": 40,
+      "awakedBonusText": "人間に対しての攻撃力増加+0.1倍"
+    },
+    {
+      "id": 41,
+      "tribe": "ジャイアント",
+      "ability": 41,
+      "awakedBonusText": "最大HP+6%"
+    },
+    {
+      "id": 42,
+      "tribe": "ユニコーン",
+      "ability": 42,
+      "awakedBonusText": "攻撃力+4%"
+    },
+    {
+      "id": 43,
+      "tribe": "ザラタン",
+      "ability": 43,
+      "awakedBonusText": "スキル時攻撃力アップの最大回数+1回"
+    },
+    {
+      "id": 44,
+      "tribe": "キマイラ",
+      "ability": 44,
+      "awakedBonusText": "ウォリアー系のHP増加+3％"
+    },
+    {
+      "id": 46,
+      "tribe": "カーバンクル",
+      "ability": 46,
+      "awakedBonusText": "配置時のバリア効果+50％"
+    },
+    {
+      "id": 47,
+      "tribe": "ラミア",
+      "ability": 47,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 49,
+      "tribe": "フェニックス",
+      "ability": 49,
+      "awakedBonusText": "範囲内への継続ダメージ+1％"
+    },
+    {
+      "id": 50,
+      "tribe": "オルトロス",
+      "ability": 50,
+      "awakedBonusText": "敵2体同時攻撃の確率+7％"
+    },
+    {
+      "id": 51,
+      "tribe": "グリフォン",
+      "ability": 51,
+      "awakedBonusText": "2体同時攻撃の確率+10％"
+    },
+    {
+      "id": 52,
+      "tribe": "ジャックランタン",
+      "ability": 52,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 53,
+      "tribe": "ジャックフロスト",
+      "ability": 53,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 54,
+      "tribe": "セイレーン",
+      "ability": 54,
+      "awakedBonusText": "配置時の回復効果+50％"
+    },
+    {
+      "id": 55,
+      "tribe": "マミー",
+      "ability": 55,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 56,
+      "tribe": "ゾンビ",
+      "ability": 56,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 57,
+      "tribe": "リザードマン",
+      "ability": 57,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 58,
+      "tribe": "ヘルハウンド",
+      "ability": 58,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 59,
+      "tribe": "インプ",
+      "ability": 59,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60,
+      "tribe": "コボルト",
+      "ability": 60,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 61,
+      "tribe": "レッドドラゴン",
+      "ability": 61,
+      "awakedBonusText": "クラス特性発動後次の攻撃で与えるダメージが+0.1倍"
+    },
+    {
+      "id": 62,
+      "tribe": "ジンニーヤ",
+      "ability": 62,
+      "awakedBonusText": "攻撃力+4%"
+    },
+    {
+      "id": 63,
+      "tribe": "ターロス",
+      "ability": 63,
+      "awakedBonusText": "ブロック中の攻撃力アップ+10％"
+    },
+    {
+      "id": 64,
+      "tribe": "ヘカトンケイル",
+      "ability": 64,
+      "awakedBonusText": "地上の敵に対する与ダメージ+0.1倍"
+    },
+    {
+      "id": 65,
+      "tribe": "カトブレパス",
+      "ability": 65,
+      "awakedBonusText": "毒状態の敵に対する与ダメージ+0.1倍"
+    },
+    {
+      "id": 66,
+      "tribe": "サンダーバード",
+      "ability": 66,
+      "awakedBonusText": "クリティカルダメージ+30%"
+    },
+    {
+      "id": 67,
+      "tribe": "バジリスク",
+      "ability": 67,
+      "awakedBonusText": "毒のダメージ上昇量+7％"
+    },
+    {
+      "id": 68,
+      "tribe": "アラクネ",
+      "ability": 68,
+      "awakedBonusText": "範囲内の蜘蛛糸効果+5％"
+    },
+    {
+      "id": 69,
+      "tribe": "エキドナ",
+      "ability": 69,
+      "awakedBonusText": "全モンスター娘のHP強化+3％"
+    },
+    {
+      "id": 70,
+      "tribe": "ヴァンパイア",
+      "ability": 70,
+      "awakedBonusText": "スキル時攻撃力アップの最大回数+1回"
+    },
+    {
+      "id": 71,
+      "tribe": "マンドレイク",
+      "ability": 71,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 72,
+      "tribe": "ウィルオウィスプ",
+      "ability": 72,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 73,
+      "tribe": "サハギン",
+      "ability": 73,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 74,
+      "tribe": "ワータイガー",
+      "ability": 74,
+      "awakedBonusText": "攻撃力+4%"
+    },
+    {
+      "id": 75,
+      "tribe": "シルバードラゴン",
+      "ability": 75,
+      "awakedBonusText": "範囲内の味方の毒、石化耐性+5％"
+    },
+    {
+      "id": 76,
+      "tribe": "ヒポグリフ",
+      "ability": 76,
+      "awakedBonusText": "最大HP+6%"
+    },
+    {
+      "id": 78,
+      "tribe": "アルミラージ",
+      "ability": 78,
+      "awakedBonusText": "回避率+5%"
+    },
+    {
+      "id": 79,
+      "tribe": "フロストジャイアント",
+      "ability": 79,
+      "awakedBonusText": "最大HP+10%"
+    },
+    {
+      "id": 80,
+      "tribe": "フロストサラマンダー",
+      "ability": 80,
+      "awakedBonusText": "水属性モンスター娘の攻撃物理防御+1％"
+    },
+    {
+      "id": 81,
+      "tribe": "マーナガルム",
+      "ability": 81,
+      "awakedBonusText": "射程+10"
+    },
+    {
+      "id": 82,
+      "tribe": "ゴールドドラゴン",
+      "ability": 82,
+      "awakedBonusText": "物理防御力と魔法防御力+5％"
+    },
+    {
+      "id": 86,
+      "tribe": "ワーベア",
+      "ability": 86,
+      "awakedBonusText": "最大HP+5％、攻撃力+3％"
+    },
+    {
+      "id": 87,
+      "tribe": "シャイターン",
+      "ability": 87,
+      "awakedBonusText": "攻撃力+7％"
+    },
+    {
+      "id": 88,
+      "tribe": "オークロード",
+      "ability": 88,
+      "awakedBonusText": "移動中の速度+0.5倍"
+    },
+    {
+      "id": 89,
+      "tribe": "スキュラ",
+      "ability": 89,
+      "awakedBonusText": "1秒毎のHP回復量+1％"
+    },
+    {
+      "id": 90,
+      "tribe": "トレント",
+      "ability": 90,
+      "awakedBonusText": "攻撃力+7％"
+    },
+    {
+      "id": 91,
+      "tribe": "ワイバーン",
+      "ability": 91,
+      "awakedBonusText": "移動速度+0.5倍"
+    },
+    {
+      "id": 92,
+      "tribe": "ワーラット",
+      "ability": 92,
+      "awakedBonusText": "範囲内への継続ダメージ+1％"
+    },
+    {
+      "id": 93,
+      "tribe": "フェニックス",
+      "ability": 93,
+      "awakedBonusText": "復活後のスキル威力+0.1倍"
+    },
+    {
+      "id": 94,
+      "tribe": "ケルベロス",
+      "ability": 94,
+      "awakedBonusText": "3連射確率+10％"
+    },
+    {
+      "id": 95,
+      "tribe": "アンドロスフィンクス",
+      "ability": 95,
+      "awakedBonusText": "火属性モンスター娘の攻撃+3％"
+    },
+    {
+      "id": 98,
+      "tribe": "スフィンクス",
+      "ability": 98,
+      "awakedBonusText": "人間に対しての攻撃力増加+0.1倍"
+    },
+    {
+      "id": 97,
+      "tribe": "ヒュドラ",
+      "ability": 97,
+      "awakedBonusText": "毒状態の敵に対する与ダメージ+0.1倍"
+    },
+    {
+      "id": 100,
+      "tribe": "デーモン",
+      "ability": 100,
+      "awakedBonusText": "攻撃力+5%"
+    },
+    {
+      "id": 104,
+      "tribe": "バンシー",
+      "ability": 104,
+      "awakedBonusText": "再出撃時間短縮効果+5%"
+    },
+    {
+      "id": 99,
+      "tribe": "バイコーン",
+      "ability": 99,
+      "awakedBonusText": "射程+7"
+    },
+    {
+      "id": 113,
+      "tribe": "アルプ",
+      "ability": 113,
+      "awakedBonusText": "女性敵攻撃時のHP吸収量+1％"
+    },
+    {
+      "id": 106,
+      "tribe": "アクアドラゴン",
+      "ability": 106,
+      "awakedBonusText": "敵ブロック時の攻撃力上昇量+5％"
+    },
+    {
+      "id": 103,
+      "tribe": "ネメアレオ",
+      "ability": 103,
+      "awakedBonusText": "ダメージ反射+7％"
+    },
+    {
+      "id": 123,
+      "tribe": "ハルピュイア",
+      "ability": 123,
+      "awakedBonusText": "配置中味方の移動速度+5"
+    },
+    {
+      "id": 111,
+      "tribe": "ディーナ・シー",
+      "ability": 111,
+      "awakedBonusText": "トークン配置中の攻撃力上昇+5％"
+    },
+    {
+      "id": 112,
+      "tribe": "ミスリルゴーレム",
+      "ability": 112,
+      "awakedBonusText": "防御力に対する攻撃力増加量+12％"
+    },
+    {
+      "id": 116,
+      "tribe": "カリュブディス",
+      "ability": 116,
+      "awakedBonusText": "水属性モンスター娘の攻撃+3％"
+    },
+    {
+      "id": 126,
+      "tribe": "スプリガン",
+      "ability": 126,
+      "awakedBonusText": "コスト-2"
+    },
+    {
+      "id": 85,
+      "tribe": "ブラックドラゴン",
+      "ability": 85,
+      "awakedBonusText": "攻撃力+7％"
+    },
+    {
+      "id": 77,
+      "tribe": "雪女",
+      "ability": 77,
+      "awakedBonusText": "吹雪効果時間+2秒"
+    },
+    {
+      "id": 119,
+      "tribe": "アルラウネ",
+      "ability": 119,
+      "awakedBonusText": "毒耐性減少効果+10％"
+    },
+    {
+      "id": 137,
+      "tribe": "エキドナ",
+      "ability": 137,
+      "awakedBonusText": "味方の攻撃力増加量+5%"
+    },
+    {
+      "id": 134,
+      "tribe": "マーナガルム",
+      "ability": 134,
+      "awakedBonusText": "光属性モンスター娘の最大HP+2％"
+    },
+    {
+      "id": 107,
+      "tribe": "リッチ",
+      "ability": 107,
+      "awakedBonusText": "トークン付与時の攻撃力上昇+3%"
+    },
+    {
+      "id": 138,
+      "tribe": "デカイオー",
+      "ability": 138,
+      "awakedBonusText": "最大HP+10%"
+    },
+    {
+      "id": 139,
+      "tribe": "大悪魔召喚士",
+      "ability": 139,
+      "awakedBonusText": "敵の攻撃力減少効果+3%"
+    },
+    {
+      "id": 115,
+      "tribe": "レッドキャップ",
+      "ability": 115,
+      "awakedBonusText": "与ダメージ+0.03倍"
+    },
+    {
+      "id": 145,
+      "tribe": "サンダーバード",
+      "ability": 145,
+      "awakedBonusText": "移動中のダメージ量+5％"
+    },
+    {
+      "id": 143,
+      "tribe": "デュラハン",
+      "ability": 143,
+      "awakedBonusText": "攻撃時の敵攻撃力減少+3"
+    },
+    {
+      "id": 127,
+      "tribe": "ジン",
+      "ability": 127,
+      "awakedBonusText": "風属性モンスター娘のHP、攻撃+3％"
+    },
+    {
+      "id": 120,
+      "tribe": "バフォメット",
+      "ability": 120,
+      "awakedBonusText": "与ダメージ+0.1倍"
+    },
+    {
+      "id": 83,
+      "tribe": "ヴァンパイア",
+      "ability": 83,
+      "awakedBonusText": "配置、移動後の攻撃力+7％"
+    },
+    {
+      "id": 101,
+      "tribe": "アイアンゴーレム",
+      "ability": 101,
+      "awakedBonusText": "防御力に対する攻撃力増加量+15％"
+    },
+    {
+      "id": 121,
+      "tribe": "コボルト",
+      "ability": 121,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 96,
+      "tribe": "イエティ",
+      "ability": 96,
+      "awakedBonusText": "回避率+5%"
+    },
+    {
+      "id": 136,
+      "tribe": "イフリート",
+      "ability": 136,
+      "awakedBonusText": "火属性モンスター娘のHP、攻撃+3％"
+    },
+    {
+      "id": 150,
+      "tribe": "不明",
+      "ability": 150,
+      "awakedBonusText": "攻撃力+7%"
+    },
+    {
+      "id": 149,
+      "tribe": "竜人",
+      "ability": 149,
+      "awakedBonusText": "攻撃力と物理防御力+4%"
+    },
+    {
+      "id": 152,
+      "tribe": "クィーンスライム",
+      "ability": 152,
+      "awakedBonusText": "物理ダメージ減少量+10%"
+    },
+    {
+      "id": 148,
+      "tribe": "妖狐",
+      "ability": 148,
+      "awakedBonusText": "範囲内の味方の物理防御力上昇量+10%"
+    },
+    {
+      "id": 146,
+      "tribe": "クィーンサキュバス",
+      "ability": 146,
+      "awakedBonusText": "5連続攻撃の発生確率+12%"
+    },
+    {
+      "id": 141,
+      "tribe": "スライム",
+      "ability": 141,
+      "awakedBonusText": "物理ダメージ減少量+7%"
+    },
+    {
+      "id": 151,
+      "tribe": "インプ",
+      "ability": 151,
+      "awakedBonusText": "ダメージ反射+5％"
+    },
+    {
+      "id": 140,
+      "tribe": "妖狐",
+      "ability": 140,
+      "awakedBonusText": "クリティカル率+5%"
+    },
+    {
+      "id": 132,
+      "tribe": "ドヴェルグ",
+      "ability": 132,
+      "awakedBonusText": "範囲内のトークンの攻撃力上昇量+10%"
+    },
+    {
+      "id": 158,
+      "tribe": "ワイアーム",
+      "ability": 158,
+      "awakedBonusText": "再出撃時間短縮+10%"
+    },
+    {
+      "id": 84,
+      "tribe": "トロール",
+      "ability": 84,
+      "awakedBonusText": "攻撃力+4%"
+    },
+    {
+      "id": 164,
+      "tribe": "メデューサ",
+      "ability": 164,
+      "awakedBonusText": "石化中の敵に対する与ダメージ+0.2倍"
+    },
+    {
+      "id": 165,
+      "tribe": "ジャイアント",
+      "ability": 165,
+      "awakedBonusText": "移動速度+0.5倍"
+    },
+    {
+      "id": 161,
+      "tribe": "マミーキング",
+      "ability": 161,
+      "awakedBonusText": "死亡時に敵に与えるダメージ+150%"
+    },
+    {
+      "id": 114,
+      "tribe": "ヒッポカムポス",
+      "ability": 114,
+      "awakedBonusText": "移動速度+0.5倍"
+    },
+    {
+      "id": 147,
+      "tribe": "サンドワーム",
+      "ability": 147,
+      "awakedBonusText": "攻撃力+7%"
+    },
+    {
+      "id": 125,
+      "tribe": "マリード",
+      "ability": 125,
+      "awakedBonusText": "水属性モンスター娘のHP、攻撃+3％"
+    },
+    {
+      "id": 177,
+      "tribe": "サンダーペガサス",
+      "ability": 177,
+      "awakedBonusText": "攻撃時の追加ダメージ+15％"
+    },
+    {
+      "id": 178,
+      "tribe": "ポイズンスライム",
+      "ability": 178,
+      "awakedBonusText": "毒状態になった時の攻撃力上昇量+3%"
+    },
+    {
+      "id": 166,
+      "tribe": "ホムンクルス",
+      "ability": 166,
+      "awakedBonusText": "トークンの生存時間+15秒"
+    },
+    {
+      "id": 144,
+      "tribe": "ポルターガイスト",
+      "ability": 144,
+      "awakedBonusText": "回避率+5%"
+    },
+    {
+      "id": 173,
+      "tribe": "ドラゴンゾンビ",
+      "ability": 173,
+      "awakedBonusText": "敵の物理攻撃被ダメージ+8%"
+    },
+    {
+      "id": 176,
+      "tribe": "レッドドラゴン",
+      "ability": 176,
+      "awakedBonusText": "竜炎のダメージ+12%"
+    },
+    {
+      "id": 170,
+      "tribe": "ワイト",
+      "ability": 170,
+      "awakedBonusText": "トークンの回復量+200"
+    },
+    {
+      "id": 183,
+      "tribe": "鳥人",
+      "ability": 183,
+      "awakedBonusText": "移動中に敵に与えるダメージ+0.2倍"
+    },
+    {
+      "id": 184,
+      "tribe": "ダークエルフ",
+      "ability": 184,
+      "awakedBonusText": "防御無視確率+12%"
+    },
+    {
+      "id": 182,
+      "tribe": "カッツォ",
+      "ability": 182,
+      "awakedBonusText": "最大HP+30%"
+    },
+    {
+      "id": 109,
+      "tribe": "フレッシュゴーレム",
+      "ability": 109,
+      "awakedBonusText": "最大HP+10%"
+    },
+    {
+      "id": 108,
+      "tribe": "ファイアジャイアント",
+      "ability": 108,
+      "awakedBonusText": "配置時の魔法ダメージ+0.5倍"
+    },
+    {
+      "id": 117,
+      "tribe": "大蛸",
+      "ability": 117,
+      "awakedBonusText": "1秒毎のHP回復量+1％"
+    },
+    {
+      "id": 124,
+      "tribe": "河童",
+      "ability": 124,
+      "awakedBonusText": "最大HP+10%"
+    },
+    {
+      "id": 187,
+      "tribe": "一反木綿",
+      "ability": 187,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 128,
+      "tribe": "烏天狗",
+      "ability": 128,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 160,
+      "tribe": "塗壁",
+      "ability": 160,
+      "awakedBonusText": "物理ダメージ減少量+8%"
+    },
+    {
+      "id": 135,
+      "tribe": "鬼",
+      "ability": 135,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 190,
+      "tribe": "川熊",
+      "ability": 190,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 142,
+      "tribe": "不知火",
+      "ability": 142,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 189,
+      "tribe": "鉄鼠",
+      "ability": 189,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 185,
+      "tribe": "座敷童",
+      "ability": 185,
+      "awakedBonusText": "味方のクリティカル確率+7%"
+    },
+    {
+      "id": 191,
+      "tribe": "脛こすり",
+      "ability": 191,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 174,
+      "tribe": "土蜘蛛",
+      "ability": 174,
+      "awakedBonusText": "背面から与えるダメージ+0.5倍"
+    },
+    {
+      "id": 157,
+      "tribe": "木の葉天狗",
+      "ability": 157,
+      "awakedBonusText": "攻撃速度+10"
+    },
+    {
+      "id": 155,
+      "tribe": "鎌鼬",
+      "ability": 155,
+      "awakedBonusText": "移動速度+0.5倍"
+    },
+    {
+      "id": 168,
+      "tribe": "化け狐",
+      "ability": 168,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 162,
+      "tribe": "化け狸",
+      "ability": 162,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 129,
+      "tribe": "猫又",
+      "ability": 129,
+      "awakedBonusText": "敵に与えるダメージ+20"
+    },
+    {
+      "id": 192,
+      "tribe": "ろくろ首",
+      "ability": 192,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 188,
+      "tribe": "槌の子",
+      "ability": 188,
+      "awakedBonusText": "移動速度+0.5倍"
+    },
+    {
+      "id": 198,
+      "tribe": "ワーペンギン",
+      "ability": 198,
+      "awakedBonusText": "移動速度+0.5倍"
+    },
+    {
+      "id": 196,
+      "tribe": "ハイオーク",
+      "ability": 196,
+      "awakedBonusText": "現在HPに対する攻撃力増加量+3％"
+    },
+    {
+      "id": 175,
+      "tribe": "クラーケン",
+      "ability": 175,
+      "awakedBonusText": "防御力減少量+3"
+    },
+    {
+      "id": 131,
+      "tribe": "ドラゴニュート",
+      "ability": 131,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 133,
+      "tribe": "スケルトン",
+      "ability": 133,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 179,
+      "tribe": "ゴブリンキング",
+      "ability": 179,
+      "awakedBonusText": "トークン所持数+4"
+    },
+    {
+      "id": 156,
+      "tribe": "グレムリン",
+      "ability": 156,
+      "awakedBonusText": "移動速度+0.5倍"
+    },
+    {
+      "id": 193,
+      "tribe": "ビショップフィッシュ",
+      "ability": 193,
+      "awakedBonusText": "魔法ダメージ減少量+10%"
+    },
+    {
+      "id": 169,
+      "tribe": "ドッペルゲンガー",
+      "ability": 169,
+      "awakedBonusText": "変身ステータス+20%"
+    },
+    {
+      "id": 154,
+      "tribe": "ジャバウォック",
+      "ability": 154,
+      "awakedBonusText": "移動中の与ダメージ+0.5倍"
+    },
+    {
+      "id": 163,
+      "tribe": "バンダースナッチ",
+      "ability": 163,
+      "awakedBonusText": "移動不可状態の持続時間+0.3秒"
+    },
+    {
+      "id": 206,
+      "tribe": "ハーピー",
+      "ability": 206,
+      "awakedBonusText": "回避率+5%"
+    },
+    {
+      "id": 202,
+      "tribe": "シルバードラゴン",
+      "ability": 202,
+      "awakedBonusText": "攻撃時の速度上昇効果+5%"
+    },
+    {
+      "id": 203,
+      "tribe": "カトブレパス",
+      "ability": 203,
+      "awakedBonusText": "範囲内の味方の攻撃力増加量+10％"
+    },
+    {
+      "id": 211,
+      "tribe": "ゴースト",
+      "ability": 211,
+      "awakedBonusText": "スタン状態の敵に与えるダメージ+0.2倍"
+    },
+    {
+      "id": 204,
+      "tribe": "シャドウエルフ",
+      "ability": 204,
+      "awakedBonusText": "闇属性マス配置中の攻撃力+10%"
+    },
+    {
+      "id": 105,
+      "tribe": "船幽霊",
+      "ability": 105,
+      "awakedBonusText": "種族特性の移動不可状態の持続時間+1秒"
+    },
+    {
+      "id": 210,
+      "tribe": "ナベリウス",
+      "ability": 210,
+      "awakedBonusText": "与ダメージ減少量が10％緩和"
+    },
+    {
+      "id": 218,
+      "tribe": "ガーデンノーム",
+      "ability": 218,
+      "awakedBonusText": "全モンスター娘のHP、攻撃+4％"
+    },
+    {
+      "id": 209,
+      "tribe": "ファイアドレイク",
+      "ability": 209,
+      "awakedBonusText": "範囲内への継続ダメージ+5％"
+    },
+    {
+      "id": 199,
+      "tribe": "ハロウィンキマイラ",
+      "ability": 199,
+      "awakedBonusText": "ソーサラー系の攻撃力+3％"
+    },
+    {
+      "id": 102,
+      "tribe": "ワーウルフ",
+      "ability": 102,
+      "awakedBonusText": "攻撃時のHP回復量+1％"
+    },
+    {
+      "id": 226,
+      "tribe": "リッチ",
+      "ability": 226,
+      "awakedBonusText": "即死効果が発動するHP+5%\r\n（ボスは+2％）"
+    },
+    {
+      "id": 205,
+      "tribe": "レイス",
+      "ability": 205,
+      "awakedBonusText": "攻撃力減少値に対する攻撃力増加+0.5倍"
+    },
+    {
+      "id": 118,
+      "tribe": "ストーンゴーレム",
+      "ability": 118,
+      "awakedBonusText": "防御力+20％"
+    },
+    {
+      "id": 224,
+      "tribe": "アンドロスフィンクス",
+      "ability": 224,
+      "awakedBonusText": "編成時火属性モンスター娘の最大HP+3%"
+    },
+    {
+      "id": 225,
+      "tribe": "カリュブディス",
+      "ability": 225,
+      "awakedBonusText": "凍結状態の敵への与ダメージ+0.3倍"
+    },
+    {
+      "id": 217,
+      "tribe": "ヒポグリフ",
+      "ability": 217,
+      "awakedBonusText": "全モンスター娘のクリティカル率とクリティカル率上限+5％"
+    },
+    {
+      "id": 219,
+      "tribe": "ワーベア",
+      "ability": 219,
+      "awakedBonusText": "種族特性の移動速度減少効果を+5%"
+    },
+    {
+      "id": 172,
+      "tribe": "大鬼",
+      "ability": 172,
+      "awakedBonusText": "攻撃力の上昇最大数+10回"
+    },
+    {
+      "id": 208,
+      "tribe": "雷神",
+      "ability": 208,
+      "awakedBonusText": "攻撃速度の上昇最大数+2回"
+    },
+    {
+      "id": 110,
+      "tribe": "牛鬼",
+      "ability": 110,
+      "awakedBonusText": "スタン中の敵に対する与ダメージ+0.2倍"
+    },
+    {
+      "id": 207,
+      "tribe": "風神",
+      "ability": 207,
+      "awakedBonusText": "攻撃時の味方の移動速度+15"
+    },
+    {
+      "id": 232,
+      "tribe": "一つ目小僧",
+      "ability": 232,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 201,
+      "tribe": "つらら女",
+      "ability": 201,
+      "awakedBonusText": "水属性マス配置中の与ダメージ+0.1倍"
+    },
+    {
+      "id": 171,
+      "tribe": "白面金毛九尾の狐",
+      "ability": 171,
+      "awakedBonusText": "妖怪1体毎の味方の攻撃力上昇量+40"
+    },
+    {
+      "id": 222,
+      "tribe": "飯綱",
+      "ability": 222,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 200,
+      "tribe": "朧車",
+      "ability": 200,
+      "awakedBonusText": "移動速度+0.7倍"
+    },
+    {
+      "id": 159,
+      "tribe": "オピオタウロス",
+      "ability": 159,
+      "awakedBonusText": "配置時のバリア効果+10％"
+    },
+    {
+      "id": 221,
+      "tribe": "リザードマン(晴着)",
+      "ability": 221,
+      "awakedBonusText": "最大HP+10％"
+    },
+    {
+      "id": 237,
+      "tribe": "アクアドラゴン(晴着)",
+      "ability": 237,
+      "awakedBonusText": "編成時水属性モンスター娘の攻撃力+5％"
+    },
+    {
+      "id": 228,
+      "tribe": "ゴールドドラゴン(晴着)",
+      "ability": 228,
+      "awakedBonusText": "編成時ドラゴンの攻撃力+4%"
+    },
+    {
+      "id": 229,
+      "tribe": "バジリスク(晴着)",
+      "ability": 229,
+      "awakedBonusText": "毒か石化状態の敵への与ダメージ+0.1倍"
+    },
+    {
+      "id": 153,
+      "tribe": "ピュラリス",
+      "ability": 153,
+      "awakedBonusText": "火属性モンスター娘のHP、攻撃+1%"
+    },
+    {
+      "id": 195,
+      "tribe": "アークエンジェル",
+      "ability": 195,
+      "awakedBonusText": "光属性モンスター娘の攻撃、魔法防御+3％"
+    },
+    {
+      "id": 212,
+      "tribe": "アークデーモン",
+      "ability": 212,
+      "awakedBonusText": "闇属性モンスター娘の攻撃+4％"
+    },
+    {
+      "id": 122,
+      "tribe": "マモン",
+      "ability": 122,
+      "awakedBonusText": "コスト回復に必要な撃破数-1"
+    },
+    {
+      "id": 236,
+      "tribe": "スライム(バレンタイン)",
+      "ability": 236,
+      "awakedBonusText": "物理ダメージ減少量+5%"
+    },
+    {
+      "id": 234,
+      "tribe": "ヴァンパイア(バレンタイン)",
+      "ability": 234,
+      "awakedBonusText": "敵の魔防減少量+5"
+    },
+    {
+      "id": 235,
+      "tribe": "アイアンゴーレム(バレンタイン)",
+      "ability": 235,
+      "awakedBonusText": "物理ダメージ減少量+10%"
+    },
+    {
+      "id": 239,
+      "tribe": "フェニックス(アイドル)",
+      "ability": 239,
+      "awakedBonusText": "編成時全モンスター娘の攻撃力+2％"
+    },
+    {
+      "id": 238,
+      "tribe": "機械(アージェ)",
+      "ability": 238,
+      "awakedBonusText": "攻撃時の攻撃力減少-10%"
+    },
+    {
+      "id": 249,
+      "tribe": "エンキ神殿",
+      "ability": 249,
+      "awakedBonusText": "敵ブロック時の攻撃物防上昇量+5％"
+    },
+    {
+      "id": 248,
+      "tribe": "アルプ＆インキュバス(アイドル)",
+      "ability": 248,
+      "awakedBonusText": "味方近接のスキル再使用時間-2秒"
+    },
+    {
+      "id": 253,
+      "tribe": "アプサラス",
+      "ability": 253,
+      "awakedBonusText": "1秒毎のHP回復量+1％"
+    },
+    {
+      "id": 252,
+      "tribe": "エンプーサ",
+      "ability": 252,
+      "awakedBonusText": "被ダメージ減少効果+10%"
+    },
+    {
+      "id": 250,
+      "tribe": "ビヨンデッタ",
+      "ability": 250,
+      "awakedBonusText": "敵への攻撃力減少効果の参照量+15%"
+    },
+    {
+      "id": 251,
+      "tribe": "飛縁魔",
+      "ability": 251,
+      "awakedBonusText": "持続ダメージの攻撃力参照量+20％"
+    },
+    {
+      "id": 230,
+      "tribe": "ロックバード",
+      "ability": 230,
+      "awakedBonusText": "最大HP+10%"
+    },
+    {
+      "id": 220,
+      "tribe": "ラードーン",
+      "ability": 220,
+      "awakedBonusText": "範囲内の味方の攻撃力上昇値+10％"
+    },
+    {
+      "id": 242,
+      "tribe": "ロイド",
+      "ability": 242,
+      "awakedBonusText": "非ブロック中の攻撃力+10%\r\nブロック中の物理・魔法防御力+10%"
+    },
+    {
+      "id": 243,
+      "tribe": "女神",
+      "ability": 243,
+      "awakedBonusText": "味方回復効果の参照量+1%"
+    },
+    {
+      "id": 244,
+      "tribe": "天使",
+      "ability": 244,
+      "awakedBonusText": "味方への攻撃力上昇効果の参照値+10％"
+    },
+    {
+      "id": 245,
+      "tribe": "妖魔",
+      "ability": 245,
+      "awakedBonusText": "攻撃力+4%"
+    },
+    {
+      "id": 246,
+      "tribe": "ヴァンパイア娘",
+      "ability": 246,
+      "awakedBonusText": "敵攻撃時の攻撃力減少値+1%"
+    },
+    {
+      "id": 266,
+      "tribe": "川熊",
+      "ability": 266,
+      "awakedBonusText": "スタン状態の敵に与えるダメージ+0.1倍"
+    },
+    {
+      "id": 263,
+      "tribe": "カーバンクル",
+      "ability": 263,
+      "awakedBonusText": "バリアの攻撃力参照値+40%"
+    },
+    {
+      "id": 265,
+      "tribe": "リッチ",
+      "ability": 265,
+      "awakedBonusText": "毒状態の敵の移動速度減少効果+8%"
+    },
+    {
+      "id": 264,
+      "tribe": "猫又",
+      "ability": 264,
+      "awakedBonusText": "妖怪のステータス上昇+30"
+    },
+    {
+      "id": 257,
+      "tribe": "ベヒモス",
+      "ability": 257,
+      "awakedBonusText": "最大HP+10%"
+    },
+    {
+      "id": 254,
+      "tribe": "パズズ",
+      "ability": 254,
+      "awakedBonusText": "スキル待機時間短縮+2秒"
+    },
+    {
+      "id": 259,
+      "tribe": "ブラスドラゴン",
+      "ability": 259,
+      "awakedBonusText": "攻撃力減少量が10％緩和"
+    },
+    {
+      "id": 255,
+      "tribe": "リリス",
+      "ability": 255,
+      "awakedBonusText": "敵への魔法防御力減少効果の参照量+15％"
+    },
+    {
+      "id": 258,
+      "tribe": "ゴルゴーン",
+      "ability": 258,
+      "awakedBonusText": "毒か石化状態の敵への与ダメージ+0.25倍"
+    },
+    {
+      "id": 275,
+      "tribe": "ジャヒー",
+      "ability": 275,
+      "awakedBonusText": "魔力の蓄積１段階ごとの攻撃力+10%"
+    },
+    {
+      "id": 282,
+      "tribe": "ペガサス",
+      "ability": 282,
+      "awakedBonusText": "範囲内の味方の攻撃速度+5%"
+    },
+    {
+      "id": 279,
+      "tribe": "イフリート",
+      "ability": 279,
+      "awakedBonusText": "火属性モンスター娘の攻撃+4%"
+    },
+    {
+      "id": 280,
+      "tribe": "レイス",
+      "ability": 280,
+      "awakedBonusText": "攻撃力減少値に対する攻撃力増加+1倍"
+    },
+    {
+      "id": 281,
+      "tribe": "ジン",
+      "ability": 281,
+      "awakedBonusText": "風属性モンスター娘の攻撃+4%"
+    },
+    {
+      "id": 167,
+      "tribe": "ドヴェルグ",
+      "ability": 167,
+      "awakedBonusText": "攻撃力減少量が10%緩和"
+    },
+    {
+      "id": 267,
+      "tribe": "リトルグレイ",
+      "ability": 267,
+      "awakedBonusText": "編成時エイリアンの最大HP+3％"
+    },
+    {
+      "id": 268,
+      "tribe": "リトルグレイ",
+      "ability": 268,
+      "awakedBonusText": "背面から与えるダメージ+0.3倍"
+    },
+    {
+      "id": 214,
+      "tribe": "ベルフェゴール",
+      "ability": 214,
+      "awakedBonusText": "敵への攻撃速度減少効果時間+3秒"
+    },
+    {
+      "id": 247,
+      "tribe": "牛頭鬼",
+      "ability": 247,
+      "awakedBonusText": "ブロックしている敵の攻撃力減少値+4%"
+    },
+    {
+      "id": 231,
+      "tribe": "鵺",
+      "ability": 231,
+      "awakedBonusText": "スタン・毒状態の敵への与ダメージ+0.2倍"
+    },
+    {
+      "id": 223,
+      "tribe": "鬼熊",
+      "ability": 223,
+      "awakedBonusText": "攻撃力+3%"
+    },
+    {
+      "id": 180,
+      "tribe": "蛇骨婆",
+      "ability": 180,
+      "awakedBonusText": "クリティカル率+4%"
+    },
+    {
+      "id": 290,
+      "tribe": "幽霊",
+      "ability": 290,
+      "awakedBonusText": "妖怪のクリティカル率+2%"
+    },
+    {
+      "id": 233,
+      "tribe": "枕返し",
+      "ability": 233,
+      "awakedBonusText": "背面攻撃時与ダメージ増加+0.6倍"
+    },
+    {
+      "id": 289,
+      "tribe": "清姫",
+      "ability": 289,
+      "awakedBonusText": "継続ダメージの攻撃力参照値+2%"
+    },
+    {
+      "id": 273,
+      "tribe": "ドヴェルグ",
+      "ability": 273,
+      "awakedBonusText": "クリティカルダメージ+20%"
+    },
+    {
+      "id": 277,
+      "tribe": "ミュルミドーンクィーン",
+      "ability": 277,
+      "awakedBonusText": "地属性マス配置中の味方の物理防御力+5％"
+    },
+    {
+      "id": 288,
+      "tribe": "ゾンビ",
+      "ability": 288,
+      "awakedBonusText": "体力減少時のHP上昇最大値+10％"
+    },
+    {
+      "id": 271,
+      "tribe": "フロストサラマンダー",
+      "ability": 271,
+      "awakedBonusText": "水属性モンスター娘の攻撃、物防+2%"
+    },
+    {
+      "id": 272,
+      "tribe": "ポルターガイスト",
+      "ability": 272,
+      "awakedBonusText": "攻撃力+8%"
+    },
+    {
+      "id": 287,
+      "tribe": "フロストジャイアント",
+      "ability": 287,
+      "awakedBonusText": "最大HP+10％"
+    },
+    {
+      "id": 240,
+      "tribe": "ピクシー",
+      "ability": 240,
+      "awakedBonusText": "回避率+10％"
+    },
+    {
+      "id": 276,
+      "tribe": "オベロン",
+      "ability": 276,
+      "awakedBonusText": "妖精の最大HP、攻撃力+3％"
+    },
+    {
+      "id": 241,
+      "tribe": "ティターニア",
+      "ability": 241,
+      "awakedBonusText": "妖精の攻撃力+4％"
+    },
+    {
+      "id": 130,
+      "tribe": "ワーボア",
+      "ability": 130,
+      "awakedBonusText": "移動中に敵に与えるダメージ+0.2倍"
+    },
+    {
+      "id": 292,
+      "tribe": "ワーマンモス",
+      "ability": 292,
+      "awakedBonusText": "最大HP、攻撃力+5％"
+    },
+    {
+      "id": 291,
+      "tribe": "ファロルーチェ",
+      "ability": 291,
+      "awakedBonusText": "全モンスター娘のHPと魔法防御力+4％"
+    },
+    {
+      "id": 296,
+      "tribe": "ワードラゴン",
+      "ability": 296,
+      "awakedBonusText": "クリティカル率と上限+5%"
+    },
+    {
+      "id": 197,
+      "tribe": "ペリュトン",
+      "ability": 197,
+      "awakedBonusText": "回避率+10%"
+    },
+    {
+      "id": 269,
+      "tribe": "リトルグリーンマン娘",
+      "ability": 269,
+      "awakedBonusText": "エイリアンの最大HPと攻撃力+2％"
+    },
+    {
+      "id": 270,
+      "tribe": "リトルグリーンマン娘",
+      "ability": 270,
+      "awakedBonusText": "攻撃後の待ち時間を更に短縮"
+    },
+    {
+      "id": 299,
+      "tribe": "ファフニール娘",
+      "ability": 299,
+      "awakedBonusText": "範囲内の敵スタン時間+5%"
+    },
+    {
+      "id": 274,
+      "tribe": "チェシャキャット娘",
+      "ability": 274,
+      "awakedBonusText": "攻撃時の暗闇発生確率が上昇"
+    },
+    {
+      "id": 256,
+      "tribe": "ハンプティダンプティ娘",
+      "ability": 256,
+      "awakedBonusText": "敵3体同時攻撃の確率+10％"
+    },
+    {
+      "id": 300,
+      "tribe": "ホワイトラビット娘",
+      "ability": 300,
+      "awakedBonusText": "光属性モンスター娘の最大HPと攻撃+3％"
+    },
+    {
+      "id": 302,
+      "tribe": "ヴォーパルビースト娘",
+      "ability": 302,
+      "awakedBonusText": "撃破時の攻撃力増加+5％"
+    },
+    {
+      "id": 297,
+      "tribe": "天使",
+      "ability": 297,
+      "awakedBonusText": "範囲内敵への継続ダメージ+4%"
+    },
+    {
+      "id": 303,
+      "tribe": "Ｇデカイオー",
+      "ability": 303,
+      "awakedBonusText": "攻撃力+10％"
+    },
+    {
+      "id": 304,
+      "tribe": "ドラゴンゾンビ(ハロウィン)",
+      "ability": 304,
+      "awakedBonusText": "範囲内敵への継続ダメージ+10%"
+    },
+    {
+      "id": 213,
+      "tribe": "大天狗",
+      "ability": 213,
+      "awakedBonusText": "風マス配置時のACTゲージ獲得+1％"
+    },
+    {
+      "id": 301,
+      "tribe": "ニーズホッグ",
+      "ability": 301,
+      "awakedBonusText": "全モンスター娘の攻撃力+2％"
+    },
+    {
+      "id": 315,
+      "tribe": "レヴィアタン",
+      "ability": 315,
+      "awakedBonusText": "全モンスター娘の攻撃力+3%"
+    },
+    {
+      "id": 260,
+      "tribe": "ワキヤン・タンカ",
+      "ability": 260,
+      "awakedBonusText": "敵スタン時間+8％"
+    },
+    {
+      "id": 261,
+      "tribe": "アトラク＝ナクア",
+      "ability": 261,
+      "awakedBonusText": "飛行敵への与ダメージ+0.2倍"
+    },
+    {
+      "id": 262,
+      "tribe": "シェイプシフター",
+      "ability": 262,
+      "awakedBonusText": "最大HP+30％"
+    },
+    {
+      "id": 305,
+      "tribe": "チュパカブラ",
+      "ability": 305,
+      "awakedBonusText": "撃破時の攻撃力増加+20%"
+    },
+    {
+      "id": 298,
+      "tribe": "フラットウッズ・モンスター",
+      "ability": 298,
+      "awakedBonusText": "配置時の魔法ダメージ+0.5倍"
+    },
+    {
+      "id": 283,
+      "tribe": "石猿",
+      "ability": 283,
+      "awakedBonusText": "ブロックしている敵の数によるステータス上昇効果+10％"
+    },
+    {
+      "id": 293,
+      "tribe": "白蛇精",
+      "ability": 293,
+      "awakedBonusText": "スキル発動時マス変化の対象が範囲内の地属性の味方がいるマスに強化"
+    },
+    {
+      "id": 313,
+      "tribe": "白虎",
+      "ability": 313,
+      "awakedBonusText": "光属性が８体以上編成されている時\r\n全モンスター娘の味方のHPと攻撃力+2％"
+    },
+    {
+      "id": 278,
+      "tribe": "キョンシー",
+      "ability": 278,
+      "awakedBonusText": "復活時のダメージ+30％"
+    },
+    {
+      "id": 308,
+      "tribe": "朱雀",
+      "ability": 308,
+      "awakedBonusText": "火属性が８体以上編成されている時\r\n全モンスター娘の味方の攻撃力+3％"
+    },
+    {
+      "id": 309,
+      "tribe": "橋姫",
+      "ability": 309,
+      "awakedBonusText": "範囲内敵の攻撃速度を更に減少"
+    },
+    {
+      "id": 286,
+      "tribe": "火鼠",
+      "ability": 286,
+      "awakedBonusText": "回避率+10％"
+    },
+    {
+      "id": 312,
+      "tribe": "聖飾のローパー娘",
+      "ability": 312,
+      "awakedBonusText": "攻撃時の移動速度減少+3％"
+    },
+    {
+      "id": 310,
+      "tribe": "聖霊鈴ワイト娘",
+      "ability": 310,
+      "awakedBonusText": "トークンのダメージ1.2倍"
+    },
+    {
+      "id": 311,
+      "tribe": "聖煌のリッチ娘",
+      "ability": 311,
+      "awakedBonusText": "トークンの効果量+4％"
+    },
+    {
+      "id": 320,
+      "tribe": "正月フェアリー",
+      "ability": 320,
+      "awakedBonusText": "回避率+10％"
+    },
+    {
+      "id": 318,
+      "tribe": "正月バイコーン",
+      "ability": 318,
+      "awakedBonusText": "編成時闇属性モンスター娘の攻撃力+3％"
+    },
+    {
+      "id": 319,
+      "tribe": "正月ダークエルフ",
+      "ability": 319,
+      "awakedBonusText": "攻撃時の暗闇発生確率が上昇"
+    },
+    {
+      "id": 317,
+      "tribe": "正月九尾",
+      "ability": 317,
+      "awakedBonusText": "配置されている妖怪1体につき自身の攻撃力+3%"
+    },
+    {
+      "id": 295,
+      "tribe": "デーモンロード娘",
+      "ability": 295,
+      "awakedBonusText": "編成時、悪魔の攻撃力+2％"
+    },
+    {
+      "id": 307,
+      "tribe": "麒麟娘",
+      "ability": 307,
+      "awakedBonusText": "地属性が8体以上編成されている時\r\n全モンスター娘のHP、攻撃力+2%"
+    },
+    {
+      "id": 215,
+      "tribe": "ベルゼブブ娘",
+      "ability": 215,
+      "awakedBonusText": "編成時、悪魔の攻撃力+3％"
+    },
+    {
+      "id": 322,
+      "tribe": "アスモデウス娘",
+      "ability": 322,
+      "awakedBonusText": "編成時、悪魔の攻撃力+3％"
+    },
+    {
+      "id": 323,
+      "tribe": "甘護のマタンゴ娘",
+      "ability": 323,
+      "awakedBonusText": "被弾時の移動速度と攻撃速度を更に減少"
+    },
+    {
+      "id": 324,
+      "tribe": "甘装のホムンクルス娘",
+      "ability": 324,
+      "awakedBonusText": "最大HP+5%、出撃コスト-1"
+    },
+    {
+      "id": 325,
+      "tribe": "甘菓泡ロックバード娘",
+      "ability": 325,
+      "awakedBonusText": "ブロック中の敵が受けるスタン時間+10％"
+    },
+    {
+      "id": 326,
+      "tribe": "蘭華のジャイアント娘(kumasanコラボ)",
+      "ability": 326,
+      "awakedBonusText": "最大HPと攻撃力+5%、出撃コスト-1"
+    },
+    {
+      "id": 327,
+      "tribe": "煌射手アークエンジェル娘(kumasanコラボ)",
+      "ability": 327,
+      "awakedBonusText": "編成時火属性の攻撃力+2％"
+    },
+    {
+      "id": 328,
+      "tribe": "オンシジューム(kumasanコラボ)",
+      "ability": 328,
+      "awakedBonusText": "配置時、移動速度の20％分攻撃力が増加"
+    },
+    {
+      "id": 329,
+      "tribe": "アナ(kumasanコラボ)",
+      "ability": 329,
+      "awakedBonusText": "クリティカル率、クリティカル率上限+5％"
+    },
+    {
+      "id": 330,
+      "tribe": "プリンシパリティ娘",
+      "ability": 330,
+      "awakedBonusText": "射程内の味方の暗闇/スタン/石化/凍結の耐性+5"
+    },
+    {
+      "id": 181,
+      "tribe": "ウコバク娘",
+      "ability": 181,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 227,
+      "tribe": "さとり娘",
+      "ability": 227,
+      "awakedBonusText": "回避率+5％"
+    },
+    {
+      "id": 216,
+      "tribe": "ヴォジャノーイ娘",
+      "ability": 216,
+      "awakedBonusText": "天候：雨状態の時、与えるダメージが1.3倍"
+    },
+    {
+      "id": 337,
+      "tribe": "シームルグ娘",
+      "ability": 337,
+      "awakedBonusText": "再出撃時間短縮効果+20%"
+    },
+    {
+      "id": 339,
+      "tribe": "モスマン娘",
+      "ability": 339,
+      "awakedBonusText": "配置時、移動速度の+20%分攻撃力が増加"
+    },
+    {
+      "id": 306,
+      "tribe": "ムーンラビット娘",
+      "ability": 306,
+      "awakedBonusText": "光属性マス配置時のボーナス効果が3倍"
+    },
+    {
+      "id": 338,
+      "tribe": "リトルグリーンマンプリンセス娘",
+      "ability": 338,
+      "awakedBonusText": "編成時、味方のエイリアン/闇属性モンスター娘それぞれの攻撃力+2％"
+    },
+    {
+      "id": 341,
+      "tribe": "ラージノーズグレイ娘",
+      "ability": 341,
+      "awakedBonusText": "編成時、味方のエイリアン/光属性モンスター娘それぞれの攻撃力+2％"
+    },
+    {
+      "id": 332,
+      "tribe": "購買のマモン娘",
+      "ability": 332,
+      "awakedBonusText": "トークンの攻撃力増加+5％"
+    },
+    {
+      "id": 333,
+      "tribe": "奏響のマンドレイク娘",
+      "ability": 333,
+      "awakedBonusText": "物理防御力上昇の攻撃力参照値+10％"
+    },
+    {
+      "id": 334,
+      "tribe": "蔵書のアプサラス娘",
+      "ability": 334,
+      "awakedBonusText": "トークン所持数増加の時間-2秒"
+    },
+    {
+      "id": 335,
+      "tribe": "呪剣のファフニール娘",
+      "ability": 335,
+      "awakedBonusText": "ブロック中の敵が受ける魔法ダメージ＋0.05倍"
+    },
+    {
+      "id": 316,
+      "tribe": "ガン・ケン娘",
+      "ability": 316,
+      "awakedBonusText": "HP低下時に攻撃力+25％"
+    },
+    {
+      "id": 321,
+      "tribe": "フロストドレイク娘",
+      "ability": 321,
+      "awakedBonusText": "凍結状態の敵への与えるダメージ+0.1倍"
+    },
+    {
+      "id": 342,
+      "tribe": "デスワーム娘",
+      "ability": 342,
+      "awakedBonusText": "射程+20"
+    },
+    {
+      "id": 348,
+      "tribe": "カーバンクルドラゴン娘",
+      "ability": 348,
+      "awakedBonusText": "編成時、味方のドラゴン/光属性モンスター娘それぞれの攻撃力+2％"
+    },
+    {
+      "id": 336,
+      "tribe": "シーエルフ娘",
+      "ability": 336,
+      "awakedBonusText": "防御無視確率+5%"
+    },
+    {
+      "id": 354,
+      "tribe": "クロム",
+      "ability": 354,
+      "awakedBonusText": "状態異常回復効果に石化追加"
+    },
+    {
+      "id": 355,
+      "tribe": "エミリ",
+      "ability": 355,
+      "awakedBonusText": "攻撃力減少参照値+3％"
+    },
+    {
+      "id": 356,
+      "tribe": "ウィッチ",
+      "ability": 356,
+      "awakedBonusText": "スタン状態の敵への与えるダメージ+0.2倍"
+    },
+    {
+      "id": 357,
+      "tribe": "ルクレツィア",
+      "ability": 357,
+      "awakedBonusText": "クリティカル率と上限+5%"
+    },
+    {
+      "id": 340,
+      "tribe": "アースドラゴン娘",
+      "ability": 340,
+      "awakedBonusText": "最大HP+20％、ブロック数+1"
+    },
+    {
+      "id": 349,
+      "tribe": "鳴嫁のコカトリス娘",
+      "ability": 349,
+      "awakedBonusText": "石化状態の敵に与えるダメージ+0.2倍"
+    },
+    {
+      "id": 284,
+      "tribe": "紅孩児娘",
+      "ability": 284,
+      "awakedBonusText": "攻撃力+5％"
+    },
+    {
+      "id": 285,
+      "tribe": "姑獲鳥娘",
+      "ability": 285,
+      "awakedBonusText": "編成時、闇属性モンスター娘の最大HPと攻撃+1％"
+    },
+    {
+      "id": 344,
+      "tribe": "玄武娘",
+      "ability": 344,
+      "awakedBonusText": "水属性が8体以上編成されている時全モンスター娘の攻撃力と物理防御力+2％上昇"
+    },
+    {
+      "id": 345,
+      "tribe": "青龍娘",
+      "ability": 345,
+      "awakedBonusText": "風属性が8体以上編成されている時全モンスター娘の攻撃力+3％上昇"
+    },
+    {
+      "id": 314,
+      "tribe": "金角大王娘",
+      "ability": 314,
+      "awakedBonusText": "ブロック中の敵の攻撃力を20%減少させる"
+    },
+    {
+      "id": 331,
+      "tribe": "銀角大王娘",
+      "ability": 331,
+      "awakedBonusText": "ジンリェ配置時、与えるダメージが+0.1倍"
+    },
+    {
+      "id": 50001,
+      "tribe": "ゴブリントークン",
+      "ability": 50001,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50002,
+      "tribe": "ハイオークトークン",
+      "ability": 50002,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50003,
+      "tribe": "マタンゴトークン",
+      "ability": 50003,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50004,
+      "tribe": "ゴーストトークン",
+      "ability": 50004,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50005,
+      "tribe": "ビートークン",
+      "ability": 50005,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50006,
+      "tribe": "触手トークン",
+      "ability": 50006,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50007,
+      "tribe": "ホルスタイン",
+      "ability": 50007,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50008,
+      "tribe": "異世界戦士",
+      "ability": 50008,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50009,
+      "tribe": "アルミラージトークン",
+      "ability": 50009,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50010,
+      "tribe": "マーナガルムトークン",
+      "ability": 50010,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50011,
+      "tribe": "スキュラトークン",
+      "ability": 50011,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50012,
+      "tribe": "悪魔のギロチン",
+      "ability": 50012,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50013,
+      "tribe": "ボーンスタチュー",
+      "ability": 50013,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50014,
+      "tribe": "ゲイザーヘッド",
+      "ability": 50014,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50015,
+      "tribe": "バナナの皮",
+      "ability": 50015,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50016,
+      "tribe": "リザードマン娘",
+      "ability": 50016,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50017,
+      "tribe": "グリーンスライムトークン",
+      "ability": 50017,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50018,
+      "tribe": "妖精騎士",
+      "ability": 50018,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50019,
+      "tribe": "熱血オークトークン",
+      "ability": 50019,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50020,
+      "tribe": "妖精騎士(潜在コンプ)",
+      "ability": 50020,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50022,
+      "tribe": "ブラックホール",
+      "ability": 50022,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50023,
+      "tribe": "妖花",
+      "ability": 50023,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50024,
+      "tribe": "ネクロソウル",
+      "ability": 50024,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50025,
+      "tribe": "ネクロソウル(潜在コンプ)",
+      "ability": 50025,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50026,
+      "tribe": "聖なる幻狼",
+      "ability": 50026,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50027,
+      "tribe": "ウインドエレメンタル",
+      "ability": 50027,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50028,
+      "tribe": "コボルトフレンズ",
+      "ability": 50028,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50032,
+      "tribe": "悪魔のギロチン",
+      "ability": 50012,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50034,
+      "tribe": "ホムンクルス",
+      "ability": 50034,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50035,
+      "tribe": "エナジーソウル",
+      "ability": 50035,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50036,
+      "tribe": "エナジーソウル(潜在コンプ)",
+      "ability": 50036,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50037,
+      "tribe": "ユージェントークン",
+      "ability": 50037,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50038,
+      "tribe": "大蛸トークン",
+      "ability": 50038,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50039,
+      "tribe": "鉄鼠トークン",
+      "ability": 50039,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50040,
+      "tribe": "触手(水鉄砲）",
+      "ability": 50040,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50041,
+      "tribe": "フーフースタチュー",
+      "ability": 50041,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50042,
+      "tribe": "テンタクルスポット",
+      "ability": 50042,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50043,
+      "tribe": "カティナ",
+      "ability": 50043,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50044,
+      "tribe": "リンデンハート",
+      "ability": 50044,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50045,
+      "tribe": "ゴブリン部隊",
+      "ability": 50045,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50046,
+      "tribe": "獣鋏",
+      "ability": 50046,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50047,
+      "tribe": "メデューサ(原種)",
+      "ability": 50047,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50049,
+      "tribe": "獣鋏",
+      "ability": 50049,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50050,
+      "tribe": "メデューサ(原種)",
+      "ability": 50050,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50051,
+      "tribe": "楽団ノーム",
+      "ability": 50051,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50048,
+      "tribe": "運動会ゴーストトークン",
+      "ability": 50048,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50052,
+      "tribe": "獣鋏",
+      "ability": 50052,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50053,
+      "tribe": "飯綱分身",
+      "ability": 50053,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50054,
+      "tribe": "ケルベロス（原種）",
+      "ability": 50054,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50055,
+      "tribe": "ヒカリゴケ",
+      "ability": 50055,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50056,
+      "tribe": "御買得品",
+      "ability": 50056,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50057,
+      "tribe": "自信に満ちた女勇者",
+      "ability": 50057,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50058,
+      "tribe": "二丁使いの女海賊",
+      "ability": 50058,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50059,
+      "tribe": "獣鋏",
+      "ability": 50059,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50060,
+      "tribe": "お菓子ゴーレム",
+      "ability": 50060,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50061,
+      "tribe": "レスポンス",
+      "ability": 50061,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50062,
+      "tribe": "防衛魔動騎",
+      "ability": 50062,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50063,
+      "tribe": "ビッグM",
+      "ability": 50063,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50064,
+      "tribe": "水精",
+      "ability": 50064,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50065,
+      "tribe": "看板サキュバス娘",
+      "ability": 50065,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50066,
+      "tribe": "看板インキュバス娘",
+      "ability": 50066,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50067,
+      "tribe": "デカクロミ",
+      "ability": 50067,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50068,
+      "tribe": "神秘の果実",
+      "ability": 50068,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50069,
+      "tribe": "助手霊魂",
+      "ability": 50069,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50070,
+      "tribe": "ミノタウロス原種",
+      "ability": 50070,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50071,
+      "tribe": "リトルグレイ戦士",
+      "ability": 50071,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50072,
+      "tribe": "改造リザードマン娘",
+      "ability": 50072,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50073,
+      "tribe": "偵察ドローン",
+      "ability": 50073,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50074,
+      "tribe": "働きアリ",
+      "ability": 50074,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50075,
+      "tribe": "パンジー",
+      "ability": 50075,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50076,
+      "tribe": "パンジー",
+      "ability": 50076,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50077,
+      "tribe": "痺れキノコ",
+      "ability": 50077,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50078,
+      "tribe": "改造ローパー娘",
+      "ability": 50078,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50079,
+      "tribe": "リトルグリーンマン",
+      "ability": 50079,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50081,
+      "tribe": "ターロス原種",
+      "ability": 50081,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50082,
+      "tribe": "高性能バリスタ",
+      "ability": 50082,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50083,
+      "tribe": "フォーカスマーカー",
+      "ability": 50083,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50085,
+      "tribe": "改造オーク",
+      "ability": 50085,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50086,
+      "tribe": "ビビ神像",
+      "ability": 50086,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50087,
+      "tribe": "テンタクリスマスポット",
+      "ability": 50087,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50088,
+      "tribe": "グロウソウル",
+      "ability": 50088,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50089,
+      "tribe": "リッチクッキー",
+      "ability": 50089,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50090,
+      "tribe": "リッチクッキー",
+      "ability": 50090,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50091,
+      "tribe": "リッチクッキー",
+      "ability": 50091,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50092,
+      "tribe": "リッチクッキー",
+      "ability": 50092,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50093,
+      "tribe": "おみくじ2025",
+      "ability": 50093,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50094,
+      "tribe": "おみくじ2025",
+      "ability": 50093,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50095,
+      "tribe": "執事トークン",
+      "ability": 50095,
+      "awakedBonusText": ""
+    },
+    {
+      "id": 50096,
+      "tribe": "チョコバリスタ",
+      "ability": 50096,
+      "awakedBonusText": ""
+    },
+    {
+      "id": 50097,
+      "tribe": "カミラ",
+      "ability": 50097,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50098,
+      "tribe": "メイジー",
+      "ability": 50098,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50099,
+      "tribe": "エロイーズ",
+      "ability": 50099,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50101,
+      "tribe": "ハイオーク(投石)",
+      "ability": 50101,
+      "awakedBonusText": ""
+    },
+    {
+      "id": 50102,
+      "tribe": "ロヴィリスカエル",
+      "ability": 50102,
+      "awakedBonusText": ""
+    },
+    {
+      "id": 50103,
+      "tribe": "フーフースタチュー",
+      "ability": 50103,
+      "awakedBonusText": ""
+    },
+    {
+      "id": 50104,
+      "tribe": "グレイクローン",
+      "ability": 50104,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50105,
+      "tribe": "改造ハーピー",
+      "ability": 50105,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50106,
+      "tribe": "ランタン",
+      "ability": 50106,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50107,
+      "tribe": "購買部食品",
+      "ability": 50107,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50108,
+      "tribe": "図書水精",
+      "ability": 50108,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50109,
+      "tribe": "購買部食品(覚醒)",
+      "ability": 50109,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50110,
+      "tribe": "イタズラ精霊",
+      "ability": 50110,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50111,
+      "tribe": "バナナの皮",
+      "ability": 50111,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50112,
+      "tribe": "少し大きなバナナの皮",
+      "ability": 50112,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50113,
+      "tribe": "大きなバナナの皮",
+      "ability": 50113,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50114,
+      "tribe": "海のオーブ",
+      "ability": 50114,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50115,
+      "tribe": "デュラハン原種",
+      "ability": 50115,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 50116,
+      "tribe": "ぼろいビビ神像",
+      "ability": 50116,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60000,
+      "tribe": "人間",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60001,
+      "tribe": "魔物",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60002,
+      "tribe": "モンスター娘",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60003,
+      "tribe": "竜",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60004,
+      "tribe": "水棲",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60005,
+      "tribe": "獣人",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60006,
+      "tribe": "インセクト",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60007,
+      "tribe": "悪魔",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60008,
+      "tribe": "不定",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60009,
+      "tribe": "不死",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60010,
+      "tribe": "鳥",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60011,
+      "tribe": "兵器",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60012,
+      "tribe": "亜人",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60013,
+      "tribe": "精霊",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60014,
+      "tribe": "エルフ",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60015,
+      "tribe": "プルラルクルス",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60016,
+      "tribe": "妖怪",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    },
+    {
+      "id": 60017,
+      "tribe": "天使",
+      "ability": 0,
+      "awakedBonusText": "ボーナスなし"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+local Config = {Id=1045,Name="旱魃",AbDir="SsUnit/045_HanBa",NewRes=1,HandleBones={"Bip001 Head","Bip001 R Finger0","Bip001 Head"},UnitScale =1.44,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.0304,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10451,TotalFrames=160,OnHit=0,OnCutIn=0,OnDamage={47,57,67,77,87,97,107},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10452,TotalFrames=220,OnHit=0,OnCutIn=0,OnDamage={50,70,90,110,130,150},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10453,TotalFrames=850,OnHit=0,OnCutIn=0,OnDamage={315,380,445,720},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=2,OnCutIn=0,OnDamage={},OnMissile={}},}}
+ return Config

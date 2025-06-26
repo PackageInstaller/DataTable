@@ -1,0 +1,3 @@
+local Config = {Id=1104,Name="兽化人男",AbDir="SsUnit/1041_OrcMan",NewRes=0,HandleBones={""},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.95,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1090,TotalFrames=55,OnHit=0,OnCutIn=0,OnDamage={23},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1091,TotalFrames=135,OnHit=0,OnCutIn=0,OnDamage={10,22,46,91},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=1092,TotalFrames=95,OnHit=0,OnCutIn=0,OnDamage={22},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

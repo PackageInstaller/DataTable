@@ -1,0 +1,3 @@
+local Config = {Id=1034,Name="浮士德",AbDir="SsUnit/034_FuShiDe",NewRes=1,HandleBones={"Bone039"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.8792,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10341,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={100}},Skl01={Name="Skl01",SkillEfxId=10342,TotalFrames=200,OnHit=0,OnCutIn=0,OnDamage={104,154},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10343,TotalFrames=940,OnHit=0,OnCutIn=0,OnDamage={428,443,458,473,488,503,518},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=2,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

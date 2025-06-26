@@ -1,0 +1,3 @@
+local Config = {Id=1005,Name="朱棣",AbDir="SsUnit/005_ZhuDi",NewRes=1,HandleBones={"Bone086"},UnitScale =1.44,CloseAtkOffset={2.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10051,TotalFrames=80,OnHit=0,OnCutIn=0,OnDamage={32},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10052,TotalFrames=150,OnHit=0,OnCutIn=0,OnDamage={105},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10053,TotalFrames=570,OnHit=0,OnCutIn=0,OnDamage={400,414,426,436,446,456,466,486,508},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=10,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

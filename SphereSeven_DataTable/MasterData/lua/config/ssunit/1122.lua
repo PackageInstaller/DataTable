@@ -1,0 +1,3 @@
+local Config = {Id=1122,Name="虚空魔裔",AbDir="SsUnit/118_XuKongMoYi",NewRes=0,HandleBones={""},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,2.1816,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1183,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={26,46,70},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=1184,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={50,60,70,80,90,100},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

@@ -1,0 +1,181 @@
+-- -- module("StandOut3DHandler", Class.impl())
+
+-- local StandOutVO = Class.class('StandOutVO')
+-- function StandOutVO:ctor(goes, standOutTime, srcLayerTag, standoutLayerTag)
+--     self.m_goes = goes
+--     self.m_standOutTime = standOutTime
+--     self.m_srcLayerTag = srcLayerTag
+--     -- for _,go in ipairs(self.m_goes) do
+--     -- 	go.layer = standoutLayerTag
+--     -- end
+--     --以下为临时处理方法, 为性能考虑应由外部保存对应go并传入处理
+--     for _, go in ipairs(self.m_goes) do
+--         if not gs.GoUtil.IsGoNull(go) then
+--             local rends = go:GetComponentsInChildren(ty.Renderer)
+--             if rends then
+--                 local len = rends.Length - 1
+--                 for i = 0, len do
+--                     rends[i].gameObject.layer = standoutLayerTag
+--                 end
+--             end
+--         end
+--     end
+-- end
+
+-- function StandOutVO:off()
+--     -- for _,go in ipairs(self.m_goes) do
+--     -- 	go.layer = self.m_srcLayerTag
+--     -- end
+--     --以下为临时处理方法, 为性能考虑应由外部保存对应go并传入处理
+--     for _, go in ipairs(self.m_goes) do
+--         if not gs.GoUtil.IsGoNull(go) then
+--             local rends = go:GetComponentsInChildren(ty.Renderer)
+--             if rends then
+--                 local len = rends.Length - 1
+--                 for i = 0, len do
+--                     rends[i].gameObject.layer = self.m_srcLayerTag
+--                 end
+--             end
+--         end
+--     end
+--     self.m_goes = nil
+-- end
+
+-- function StandOutVO:offGO(go)
+--     -- for i,tmpGO in ipairs(self.m_goes) do
+--     -- 	if tmpGO==go then
+--     -- 		go.layer = self.m_srcLayerTag
+
+--     -- 		table.remove(self.m_goes, i)
+--     -- 		if table.empty(self.m_goes) then
+--     -- 			return true
+--     -- 		end
+--     -- 		return false
+--     -- 	end
+--     -- end
+
+--     --以下为临时处理方法, 为性能考虑应由外部保存对应go并传入处理
+--     for i, tmpGO in ipairs(self.m_goes) do
+--         if not gs.GoUtil.IsGoNull(tmpGO) and tmpGO == go then
+--             local rends = go:GetComponentsInChildren(ty.Renderer)
+--             if rends then
+--                 local len = rends.Length - 1
+--                 for i = 0, len do
+--                     rends[i].gameObject.layer = self.m_srcLayerTag
+--                 end
+--             end
+--             table.remove(self.m_goes, i)
+--             if table.empty(self.m_goes) then
+--                 return true
+--             end
+--             return false
+--         end
+--     end
+--     return false
+-- end
+
+-- local StandOut3DHandler = Class.class('StandOut3DHandler')
+-- -- module("StandOut3DHandler", Class.impl())
+-- function StandOut3DHandler:ctor()
+--     -- self.m_standOutGO = gs.CameraMgr:GetStandOutCamera().gameObject
+--     self.m_standOutLayerTag = 11
+--     self.m_isStandOuting = false
+--     self.m_standOutVOs = {}
+--     self.m_loopSn = 0
+-- end
+-- --设置突显的摄像机GO
+-- function StandOut3DHandler:setStandOutCameraGO(go)
+--     self.m_standOutGO = go
+-- end
+-- --设置突显层
+-- function StandOut3DHandler:setStandOutLayer(tag)
+--     self.m_standOutLayerTag = tag
+-- end
+-- --[[
+-- @todo: 对指定物品进行突显
+-- @param: goes 进行突显的对象
+-- @param: standOutTime 突显持续时间
+-- @param: srcLayerTag 突显前的所在层 (可以不传, 默认为0)
+-- --]]
+-- function StandOut3DHandler:standOut(goes, standOutTime, srcLayerTag, isHasTime)
+--     if goes == nil then
+--         return
+--     end
+
+--     if self.m_isStandOuting == false then
+--         self.m_isStandOuting = true
+--         self.m_standOutGO:SetActive(true)
+--         local function _loopCall()
+--             local total = #self.m_standOutVOs
+--             local cnt = total
+--             for i = total, 1, -1 do
+--                 local vo = self.m_standOutVOs[i]
+--                 vo.m_standOutTime = vo.m_standOutTime - 1
+--                 if vo.m_standOutTime <= 0 and isHasTime then
+--                     vo:off()
+--                     table.remove(self.m_standOutVOs, i)
+--                     cnt = cnt - 1
+--                 end
+--                 --print("_loopCall m_standOutTime ", vo.m_standOutTime, total, cnt)
+--             end
+--             if cnt <= 0 then
+--                 self:standOutOffALL()
+--             end
+--         end
+--         LoopManager:removeTimerByIndex(self.m_loopSn)
+--         self.m_loopSn = LoopManager:addTimer(1, 0, self, _loopCall)
+--     end
+--     srcLayerTag = srcLayerTag or 0
+--     isHasTime = isHasTime == nil and true or isHasTime
+--     if type(goes) == 'table' then
+--         table.insert(self.m_standOutVOs, StandOutVO.new(goes, standOutTime, srcLayerTag, self.m_standOutLayerTag))
+--     else
+--         table.insert(self.m_standOutVOs, StandOutVO.new({goes}, standOutTime, srcLayerTag, self.m_standOutLayerTag))
+--     end
+--     gs.CameraMgr:StandOut2SceneTrans()
+-- end
+
+-- --中途中断突显的对象
+-- function StandOut3DHandler:standOutOff(goes)
+--     if type(goes) == 'table' then
+-- 		local total = #self.m_standOutVOs
+-- 		for i = total, 1, -1 do
+-- 			local vo = self.m_standOutVOs[i]
+-- 			for j, go in ipairs(goes) do
+--                 if vo:offGO(go) then
+-- 					table.remove(self.m_standOutVOs, i)
+-- 					table.remove(goes, j)
+--                     break
+--                 end
+--             end
+--         end
+--     else
+--         local total = #self.m_standOutVOs
+--         for i = total, 1, -1 do
+--             local vo = self.m_standOutVOs[i]
+--             if vo:offGO(goes) then
+--                 table.remove(self.m_standOutVOs, i)
+--                 return
+--             end
+--         end
+--     end
+-- end
+
+-- -- 关闭全部突显
+-- function StandOut3DHandler:standOutOffALL()
+--     if self.m_isStandOuting == true then
+--         self.m_standOutGO:SetActive(false)
+--         for _, vo in ipairs(self.m_standOutVOs) do
+--             vo:off()
+--         end
+--         self.m_standOutVOs = {}
+--         self.m_isStandOuting = false
+--         LoopManager:removeTimerByIndex(self.m_loopSn)
+--         self.m_loopSn = 0
+--     end
+-- end
+
+-- return StandOut3DHandler
+ 
+--[[ 替换语言包自动生成，请勿修改！
+]]

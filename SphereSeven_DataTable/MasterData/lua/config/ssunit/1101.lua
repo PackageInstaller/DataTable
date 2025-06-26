@@ -1,0 +1,3 @@
+local Config = {Id=1101,Name="狮星界步兵",AbDir="SsUnit/101_LionStarFootman",NewRes=0,HandleBones={""},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.1,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1081,TotalFrames=50,OnHit=0,OnCutIn=0,OnDamage={15},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1082,TotalFrames=85,OnHit=0,OnCutIn=0,OnDamage={43},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=1083,TotalFrames=60,OnHit=0,OnCutIn=0,OnDamage={30},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config
