@@ -1,0 +1,43 @@
+﻿-- chunkname: @IQIGame\\Module\\Login\\ProcedureReset.lua
+
+ProcedureReset = {}
+
+function ProcedureReset.ResetAndGoToLogin()
+	LoginModule.NeedReconnect = false
+
+	NetCommController.Clear()
+	LuaCodeInterface.ClearAllNetwork()
+	LuaCodeInterface.StopAllCSharpTimer(false)
+	LuaCodeInterface.CleanEventSystem()
+	Initialization.ShutdownBase()
+	MazeModule.Shutdown(true)
+	HomeLandLuaModule.Shutdown()
+	GuideModule.Shutdown()
+	WeatherModule.Shutdown()
+	PassCheckModule.Shutdown()
+	WeatherBGMModule.Shutdown()
+	MainCityBattleModule.Instance:Shutdown()
+	CreateRoleModule.Shutdown()
+	FondleModule.Shutdown()
+	DialogModule.Shutdown()
+	PurchaseTipModule.Shutdown()
+	PushMessageModule.Shutdown()
+	RpgMazeModule.Shutdown()
+	ChallengeWorldBossModule.Shutdown()
+	ActiveOperationEventModule.Shutdown()
+	DailyDupModule.Shutdown()
+	ActiveModule.Shutdown()
+	ActiveWelcomeBackModule.Shutdown()
+	GirlModule.Shutdown()
+	FishingModule.Shutdown()
+	RefundsGiftPackModule.Shutdown()
+	GuildModule.Shutdown()
+	JewelryModule.Shutdown()
+	CelebrationGiftModule.Shutdown()
+	MazeChallengeBonusModule.Shutdown()
+	CommandChallengeModule.Shutdown()
+	GameEntry.LuaEvent:UnsubscribeAll()
+	Initialization.InitBase()
+	UIModule.ForceRelease()
+	SceneManager.ChangeScene(SceneID.Login)
+end

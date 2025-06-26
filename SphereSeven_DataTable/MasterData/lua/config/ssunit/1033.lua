@@ -1,0 +1,3 @@
+local Config = {Id=1033,Name="关羽",AbDir="SsUnit/033_GuanYu",NewRes=1,HandleBones={"Bip001 Prop1"},UnitScale =1.44,CloseAtkOffset={3.07,0,-0.2},HitPosOffset={0,1.944,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10331,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={15,30,48,59,62,66,99},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10332,TotalFrames=200,OnHit=0,OnCutIn=0,OnDamage={117},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10333,TotalFrames=900,OnHit=0,OnCutIn=0,OnDamage={650},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=4,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

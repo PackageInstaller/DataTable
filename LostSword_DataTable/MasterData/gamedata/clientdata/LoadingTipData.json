@@ -1,0 +1,325 @@
+[
+    {
+        "Key": "LobbyScene",
+        "List": [
+            {
+                "Text": {
+                    "Korea": "장비를 분해하면 빛나는 가루를 얻을 수 있습니다.",
+                    "English": "Dismantling equipment yields Fairy Powder.",
+                    "ChineseCh": "分解装备可获得光辉粉尘。",
+                    "ChineseTh": "分解裝備時，可獲得閃耀粉末。",
+                    "Japanese": "装備を分解すると輝く粉を獲得できます"
+                }
+            },
+            {
+                "Text": {
+                    "Korea": "일부 재화를 분해하면 골드를 얻을 수 있습니다.",
+                    "English": "You can obtain gold by dismantling certain currencies.",
+                    "ChineseCh": "分解部分资源可获得金币。",
+                    "ChineseTh": "分解部分財貨時，可獲得金幣。",
+                    "Japanese": "一部のアイテムは分解するとゴールドを獲得できます"
+                }
+            },
+            {
+                "Text": {
+                    "Korea": "로비에선 손님을 원하는 캐릭터로 교체할 수 있습니다.",
+                    "English": "You can replace the guest with the character you want in the lobby.",
+                    "ChineseCh": "在大厅里，您可以更换您喜欢的看板角色。",
+                    "ChineseTh": "可在大廳將客人替換成想要的角色。",
+                    "Japanese": "ロビーではお客さんを好きなキャラクターに変更できます"
+                }
+            },
+            {
+                "Text": {
+                    "Korea": "캐릭터와 대화를 하거나 선물을 주고 호감도를 올릴 수 있습니다.",
+                    "English": "Talk to characters or give them gifts to increase Affection.",
+                    "ChineseCh": "您可以和角色对话或者赠送礼物来提升好感度。",
+                    "ChineseTh": "可透過與角色對話或送禮物來提升好感度。",
+                    "Japanese": "キャラクターと会話したりプレゼントを渡すと好感度が上がります"
+                }
+            }
+        ]
+    },
+    {
+        "Key": "BattleScene",
+        "List": [
+            {
+                "ZoneType": "Raid",
+                "Text": {
+                    "Korea": "레이드 코인으로 교환소의 상품을 살 수 있습니다.",
+                    "English": "You can purchase items from the Exchange Shop with Raid Coins.",
+                    "ChineseCh": "可用突袭币购买交易所的商品。",
+                    "ChineseTh": "可用突襲幣購買交換所的商品。",
+                    "Japanese": "レイドコインで交換所の商品を購入できます"
+                }
+            },
+            {
+                "ZoneType": "Maze",
+                "Text": {
+                    "Korea": "미궁에서 얻은 유물을 분해하여 골드를 얻을 수 있습니다.",
+                    "English": "You can obtain gold by dismantling Relics obtained from the Labyrinth.",
+                    "ChineseCh": "分解迷宫获得的遗物可获得金币。",
+                    "ChineseTh": "分解在迷宮裡獲得的遺物時，可獲得金幣。",
+                    "Japanese": "迷宮で手に入れた遺物を分解するとゴールドを獲得できます"
+                }
+            },
+            {
+                "ZoneType": "O_Tower",
+                "Text": {
+                    "Korea": "우세 속성 캐릭터로 편성 시 전투를 수월하게 할 수 있습니다.",
+                    "English": "Forming a team with characters of the dominant element makes battles easier.",
+                    "ChineseCh": "编入属性相克的角色可以轻松战斗。",
+                    "ChineseTh": "使用優勢屬性角色進行編列時，可更輕鬆地進行戰鬥。",
+                    "Japanese": "相性がいいキャラクターを編成するとバトルをよりスムーズに進められます"
+                }
+            },
+            {
+                "ZoneType": "Pvp",
+                "Text": {
+                    "Korea": "해당 등급 최고점에 도달하면 승급전을 통해 다음 등급으로 갈 수 있습니다.",
+                    "English": "When you reach the highest point of the respective grade, you can advance to the next grade through a promotion match.",
+                    "ChineseCh": "到达该等级最高分后可通过晋级赛晋升下一等级。",
+                    "ChineseTh": "達到該級別的最高分數時，可透過升級戰前往下一個級別。",
+                    "Japanese": "一定ランクで最高スコアを達成すると昇格戦を通してランクアップできます"
+                }
+            },
+            {
+                "ZoneType": "Party",
+                "Text": {
+                    "Korea": "파티 레이드는 레디를 하지 않아도 일정 시간 후 시작 됩니다.",
+                    "English": "Party Raids will start after a certain time without needing to be ready.",
+                    "ChineseCh": "小队突袭无需准备，一定时间后自动开始。",
+                    "ChineseTh": "即使不進行準備，組隊突襲也會在一定時間後開始。",
+                    "Japanese": "パーティーレイドはREADYをしなくても一定時間が経つとスタートします"
+                }
+            },
+            {
+                "ZoneType": "Cornwall",
+                "Text": {
+                    "Korea": "심연은 모험보다 많은 경험치와 재화를 얻을 수 있습니다.",
+                    "English": "Abyss provides more EXP and currency than adventures.",
+                    "ChineseCh": "深渊比冒险能获得更多经验值和资源。",
+                    "ChineseTh": "在深淵有機會獲得比冒險更多的經驗值與財貨。",
+                    "Japanese": "深淵では冒険に比べて多くの経験値とアイテムを獲得できます"
+                }
+            },
+            {
+                "ZoneType": "Stone",
+                "Text": {
+                    "Korea": "스톤헨지는 모험보다 많은 경험치와 재화를 얻을 수 있습니다.",
+                    "English": "Stonehenge offers more EXP and currency than adventures.",
+                    "ChineseCh": "巨石阵比冒险能获得更多经验值和资源。",
+                    "ChineseTh": "在巨石陣有機會獲得比冒險更多經驗值與財貨。",
+                    "Japanese": "ストーンヘンジでは冒険に比べて多くの経験値とアイテムを獲得できます"
+                }
+            },
+            {
+                "ZoneType": "Gold",
+                "Text": {
+                    "Korea": "황금 고블린은 대미지 점수에 비례하여 골드를 줍니다.",
+                    "English": "Gold Goblins provide gold in proportion to damage scores.",
+                    "ChineseCh": "金色哥布林会按伤害分数比例给予金币。",
+                    "ChineseTh": "黃金哥布林會依傷害分數比例，給予金幣。",
+                    "Japanese": "ゴールドゴブリンに与えたダメージに応じてゴールドを獲得できます"
+                }
+            },
+            {
+                "ZoneType": "Zone",
+                "Text": {
+                    "Korea": "화염 속성은 자연 속성에 강합니다.",
+                    "English": "Fire is strong against Nature.",
+                    "ChineseCh": "火焰属性克制自然属性。",
+                    "ChineseTh": "火焰屬性剋自然屬性。",
+                    "Japanese": "火炎属性は緑属性に強いです"
+                }
+            },
+            {
+                "ZoneType": "Zone",
+                "Text": {
+                    "Korea": "자연 속성은 광휘 속성에 강합니다.",
+                    "English": "Nature is strong against Radiance.",
+                    "ChineseCh": "自然属性克制光明属性。",
+                    "ChineseTh": "自然屬性剋光輝屬性。",
+                    "Japanese": "緑属性は光輝属性に強いです"
+                }
+            },
+            {
+                "ZoneType": "Zone",
+                "Text": {
+                    "Korea": "광휘 속성은 혼돈 속성에 강합니다.",
+                    "English": "Radiance is strong against Chaos.",
+                    "ChineseCh": "光明属性克制混沌属性。",
+                    "ChineseTh": "光輝屬性剋混沌屬性。",
+                    "Japanese": "光輝属性は混沌属性に強いです"
+                }
+            },
+            {
+                "ZoneType": "Zone",
+                "Text": {
+                    "Korea": "혼돈 속성은 전격 속성에 강합니다.",
+                    "English": "Chaos is strong against Electric.",
+                    "ChineseCh": "混沌属性克制雷电属性。",
+                    "ChineseTh": "混沌屬性剋雷電屬性。",
+                    "Japanese": "混沌属性は電撃輝属性に強いです"
+                }
+            },
+            {
+                "ZoneType": "Zone",
+                "Text": {
+                    "Korea": "전격 속성은 빙결 속성에 강합니다.",
+                    "English": "Electric is strong against Frost.",
+                    "ChineseCh": "雷电属性克制冰冻属性。",
+                    "ChineseTh": "雷電屬性剋冰凍屬性。",
+                    "Japanese": "電撃属性は氷結輝属性に強いです"
+                }
+            },
+            {
+                "ZoneType": "Zone",
+                "Text": {
+                    "Korea": "빙결 속성은 화염 속성에 강합니다.",
+                    "English": "Frost is strong against Fire.",
+                    "ChineseCh": "寒冰属性克制火焰属性。",
+                    "ChineseTh": "冰凍屬性剋火焰屬性。",
+                    "Japanese": "氷結属性は火炎輝属性に強いです"
+                }
+            },
+            {
+                "ZoneType": "Maze",
+                "Text": {
+                    "Korea": "미궁에선 다양한 보상과 전설 장비를 획득할 수 있습니다.",
+                    "English": "Explore the Labyrinth to earn various rewards and legendary equipment.",
+                    "ChineseCh": "在迷宫中可以获得各种奖励和传说装备。",
+                    "ChineseTh": "可於迷宮獲得各式各樣的獎勵與傳說裝備。",
+                    "Japanese": "迷宮では多様な報酬やレジェンダリー装備を獲得できます"
+                }
+            },
+            {
+                "ZoneType": "Maze",
+                "Text": {
+                    "Korea": "미궁에서 전투 승리 시 난이도별로 점수를 획득할 수 있습니다.",
+                    "English": "Win battles in the Labyrinth to earn points based on difficulty.",
+                    "ChineseCh": "在迷宫中战斗胜利时，可以根据难度获得分数。",
+                    "ChineseTh": "在迷宮戰鬥獲勝時，可根據難度獲得分數。",
+                    "Japanese": "迷宮で戦闘に勝利すると難易度に応じてスコアが獲得できます"
+                }
+            },
+            {
+                "ZoneType": "Stone",
+                "Text": {
+                    "Korea": "스톤헨지에서 보스 소환권을 사용하면 보스를 즉시 소환할 수 있습니다.",
+                    "English": "Use a Boss Summon Ticket at Stonehenge to summon a boss instantly.",
+                    "ChineseCh": "在巨石阵使用领主召唤券可以立即召唤领主。",
+                    "ChineseTh": "在巨石陣使用首領召喚券時，可立刻召喚首領。",
+                    "Japanese": "ストーンヘンジでボス召喚券を使用するとボスをすぐに召喚できます"
+                }
+            },
+            {
+                "ZoneType": "Stone",
+                "Text": {
+                    "Korea": "스톤헨지의 부족한 시간은 황금 나침반으로 충전할 수 있습니다.",
+                    "English": "Recharge missing time in Stonehenge with a Golden Compass.",
+                    "ChineseCh": "巨石阵的剩余时间可以用黄金指南针补充。",
+                    "ChineseTh": "巨石陣不足的時間可透過黃金羅盤進行補充。",
+                    "Japanese": "ストーンヘンジの時間が足りない場合は、黄金の羅針盤でチャージできます"
+                }
+            },
+            {
+                "ZoneType": "Stone",
+                "Text": {
+                    "Korea": "메뉴의 절전 모드로 좀 더 편한 방치를 할 수 있습니다.",
+                    "English": "Enable Power Saving Mode in the menu for more convenient idle play.",
+                    "ChineseCh": "使用菜单中的省电模式，挂机更轻松。",
+                    "ChineseTh": "透過選單的省電模式可更輕鬆地掛機。",
+                    "Japanese": "メニューで省電力モードを設定すると、より安定した放置ゲームが楽しめます"
+                }
+            }
+        ]
+    },
+    {
+        "Key": "TownScene",
+        "List": [
+            {
+                "Text": {
+                    "Korea": "대장간을 건설하면 버프를 받을 수 있습니다.",
+                    "English": "Building a smithy allows you to receive buffs.",
+                    "ChineseCh": "建设铁匠铺可获得增益。",
+                    "ChineseTh": "建造鐵匠鋪時，可獲得增益效果。",
+                    "Japanese": "鍛冶屋を建設するとバフを獲得できます"
+                }
+            },
+            {
+                "Text": {
+                    "Korea": "아지트를 건설하면 버프를 받을 수 있습니다.",
+                    "English": "Building a Base allows you to receive buffs.",
+                    "ChineseCh": "建设据点可获得增益。",
+                    "ChineseTh": "建造基地時，可獲得增益效果。",
+                    "Japanese": "アジトを建設するとバフを獲得できます"
+                }
+            },
+            {
+                "Text": {
+                    "Korea": "닭을 잡으면 닭고기나 계란 등을 얻을 수 있습니다.",
+                    "English": "You can obtain chicken meat or eggs by catching chickens.",
+                    "ChineseCh": "捕获鸡可获得鸡肉和鸡蛋等。",
+                    "ChineseTh": "抓到雞時，可獲得雞肉或雞蛋。",
+                    "Japanese": "鶏を捕まえると鶏肉や卵などを獲得できます"
+                }
+            },
+            {
+                "Text": {
+                    "Korea": "닭을 잡으면 낮은 확률로 황금 달걀을 얻을 수 있습니다.",
+                    "English": "You can obtain a golden egg with a low probability by catching chickens.",
+                    "ChineseCh": "捕获鸡有低概率获得金蛋。",
+                    "ChineseTh": "抓到雞時，有低機率可獲得金雞蛋。",
+                    "Japanese": "鶏を捕まえると低い確率で黄金の卵などを獲得できます"
+                }
+            },
+            {
+                "Text": {
+                    "Korea": "닭을 잡으면 나오는 식재료로 요리를 제작할 수 있습니다.",
+                    "English": "You can use ingredients obtained from catching chickens to craft dishes.",
+                    "ChineseCh": "用捕获鸡获得的食材可以制作料理。",
+                    "ChineseTh": "可利用抓到雞獲得的食材製作料理。",
+                    "Japanese": "鶏を捕まえて獲得した食材で料理を作ることができます"
+                }
+            },
+            {
+                "Text": {
+                    "Korea": "마을을 돌아다니는 캐릭터에게 말을 걸 수 있습니다.",
+                    "English": "Talk to characters roaming around town.",
+                    "ChineseCh": "可以和在村庄里走动的角色对话。",
+                    "ChineseTh": "可跟在村莊裡徘徊的角色進行對話。",
+                    "Japanese": "村のキャラクターに声をかけられます"
+                }
+            }
+        ]
+    },
+    {
+        "Key": "CharacterTestScene",
+        "List": [
+            {
+                "Text": {
+                    "Korea": "캐릭터 체험 시에는 스킬 쿨타임이 없습니다.",
+                    "English": "There is no skill cooldown during character trials.",
+                    "ChineseCh": "体验角色时技能无冷却时间。",
+                    "ChineseTh": "體驗角色時，技能沒有冷卻時間。",
+                    "Japanese": "キャラクター体験ではスキルにクールタイムがありません"
+                }
+            }
+        ]
+    },
+    {
+        "Key": "IntroScene",
+        "List": [
+            {
+                "Text": {
+                    "Korea": "자리를 오래 비우면 인트로 화면으로 이동합니다.",
+                    "English": "If left idle for too long, you will be returned to the intro screen.",
+                    "ChineseCh": "长时间无操作时，将返回标题画面。",
+                    "ChineseTh": "閒置過久時將前往開始畫面。",
+                    "Japanese": "長時間操作しないと、イントロ画面に戻ります"
+                }
+            }
+        ]
+    }
+]

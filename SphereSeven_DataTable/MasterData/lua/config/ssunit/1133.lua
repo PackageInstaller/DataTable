@@ -1,0 +1,3 @@
+local Config = {Id=1133,Name="天使",AbDir="SsUnit/133_TianShi",NewRes=0,HandleBones={"Bone046"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2059,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={28,51},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2060,TotalFrames=140,OnHit=0,OnCutIn=0,OnDamage={69},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=2061,TotalFrames=180,OnHit=0,OnCutIn=0,OnDamage={100},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

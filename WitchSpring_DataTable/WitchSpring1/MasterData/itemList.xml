@@ -1,0 +1,1903 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Contents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Content>
+		<enabled>true</enabled>
+		<id>mon1-a</id>
+		<area>Field_forest_3</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>멧돼지 어금니</name_kr>
+		<explain_kr>멧돼지 대장에게서 얻을 수 있는 어금니</explain_kr>
+		<name_en>Molar Tooth of Wild Pig</name_en>
+		<explain_en>Gaining molar tooth from the wild pig boss</explain_en>
+		<name_jp>イノシシの歯</name_jp>
+		<explain_jp>イノシシ大腸から得られる歯</explain_jp>
+		<name_cn>野猪大牙</name_cn>
+		<explain_cn>野猪王身上的大牙</explain_cn>
+		<name_tw>野豬大牙</name_tw>
+		<explain_tw>野豬王身上的大牙</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>mon1-b</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>멧돼지 발톱</name_kr>
+		<explain_kr>멧돼지 대장에게서 얻을 수 있는 발톱</explain_kr>
+		<name_en>Claw of Wild Pig</name_en>
+		<explain_en>Gaining claw from the wild pig boss</explain_en>
+		<name_jp>イノシシの爪</name_jp>
+		<explain_jp>イノシシ大腸から得られる爪</explain_jp>
+		<name_cn>野猪之爪</name_cn>
+		<explain_cn>野猪王身上的爪子</explain_cn>
+		<name_tw>野豬之爪</name_tw>
+		<explain_tw>野豬王身上的爪子</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>mon1-c</id>
+		<area>Field_forest_3</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>portion_hp,igr</type>
+		<needItem>-</needItem>
+		<power>10</power>
+		<name_kr>멧돼지 고기</name_kr>
+		<explain_kr>체력을 약간 회복시켜주는 작은 고기덩어리, 체력회복 #power</explain_kr>
+		<name_en>Wild Pig Meat</name_en>
+		<explain_en>Recovering little strength from wild pig meat, Recover HP #power</explain_en>
+		<name_jp>イノシシの肉</name_jp>
+		<explain_jp>体力を​​少し回復させる小さな肉、体力回復#power</explain_jp>
+		<name_cn>野猪肉</name_cn>
+		<explain_cn>恢复少量体力的小肉块，体力恢复 #power</explain_cn>
+		<name_tw>野豬肉</name_tw>
+		<explain_tw>恢復少量體力的小肉塊，體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>mon1-d</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>멧돼지 가죽</name_kr>
+		<explain_kr>마법재료</explain_kr>
+		<name_en>Skin of Wild Pig</name_en>
+		<explain_en>Magical material</explain_en>
+		<name_jp>イノシシ皮</name_jp>
+		<explain_jp>魔法材料</explain_jp>
+		<name_cn>野猪皮</name_cn>
+		<explain_cn>魔法材料</explain_cn>
+		<name_tw>野豬皮</name_tw>
+		<explain_tw>魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>for1-a</id>
+		<area>Field_forest_3</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>portion_hp,igr</type>
+		<needItem>-</needItem>
+		<power>20</power>
+		<name_kr>빨간딸기</name_kr>
+		<explain_kr>잘 익은 딸기, 체력회복 #power</explain_kr>
+		<name_en>Red Strawberry</name_en>
+		<explain_en>Riped strawberry, Recover HP  #power</explain_en>
+		<name_jp>赤いイチゴ</name_jp>
+		<explain_jp>熟したイチゴ、体力回復#power</explain_jp>
+		<name_cn>红色草莓</name_cn>
+		<explain_cn>熟透的草莓，体力恢复 #power</explain_cn>
+		<name_tw>紅色草莓</name_tw>
+		<explain_tw>熟透的草莓，體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>for1-b</id>
+		<area>Field_forest_1</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>portion_mp,igr</type>
+		<needItem>-</needItem>
+		<power>10</power>
+		<name_kr>나무 수액</name_kr>
+		<explain_kr>나무수액이 고인 나무조각, 마나회복 #power</explain_kr>
+		<name_en>Tree Sap</name_en>
+		<explain_en>Tree sap stagnant in a piece of wood, Recover MP #power</explain_en>
+		<name_jp>木の樹液</name_jp>
+		<explain_jp>木の樹液がたまっている木のかけら、マナ回復#power</explain_jp>
+		<name_cn>树汁</name_cn>
+		<explain_cn>积满树汁的木片，法力恢复 #power</explain_cn>
+		<name_tw>樹汁</name_tw>
+		<explain_tw>積滿樹汁的木片，法力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>hpPortion-a</id>
+		<area>notKnown</area>
+		<bookPos>1-1</bookPos>
+		<cost>50</cost>
+		<type>portion_hp</type>
+		<needItem>pudding-a+1,for1-b+1</needItem>
+		<power>30</power>
+		<name_kr>딸기맛 체력포션</name_kr>
+		<explain_kr>딸기맛 나는 달달한 체력회복 주스, 체력회복 #power</explain_kr>
+		<name_en>Strawberry HP Portion</name_en>
+		<explain_en>Sweet strawberry flavored juice recovering HP #power</explain_en>
+		<name_jp>イチゴ味の体力ポーション</name_jp>
+		<explain_jp>イチゴ味がする甘い体力回復ジュース、体力回復#power</explain_jp>
+		<name_cn>草莓味体力药水</name_cn>
+		<explain_cn>香甜草莓味的体力恢复果汁，体力恢复 #power</explain_cn>
+		<name_tw>草莓味體力藥水</name_tw>
+		<explain_tw>香甜草莓味的體力恢復果汁，體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>mpPortion-a</id>
+		<area>notKnown</area>
+		<bookPos>1-2</bookPos>
+		<cost>50</cost>
+		<type>portion_mp</type>
+		<needItem>pudding-b+1,for1-b+1</needItem>
+		<power>30</power>
+		<name_kr>포도맛 마나포션</name_kr>
+		<explain_kr>포도맛 나는 마나회복 주스, 마나회복 #power</explain_kr>
+		<name_en>Grape MP Portion</name_en>
+		<explain_en>Grape flavored juice recovering MP #power</explain_en>
+		<name_jp>ブドウ味マナポーション</name_jp>
+		<explain_jp>ブドウの味がするマナ回復ジュース、マナ回復#power</explain_jp>
+		<name_cn>葡萄味法力药水</name_cn>
+		<explain_cn>葡萄味的法力恢复果汁，法力恢复 #power</explain_cn>
+		<name_tw>葡萄味法力藥水</name_tw>
+		<explain_tw>葡萄味的法力恢復果汁，法力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>false</enabled>
+		<id>magicBook_1</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>-</cost>
+		<type>book</type>
+		<needItem>-</needItem>
+		<power>-</power>
+		<name_kr>마법입문 도감</name_kr>
+		<explain_kr>입문자용 마법 합성 도감</explain_kr>
+		<name_en>Magic Encyclopedia-Basic</name_en>
+		<explain_en>Basic magic encyclopedia synthesizing magic</explain_en>
+		<name_jp>魔法入門図鑑</name_jp>
+		<explain_jp>入門者用魔法合成図鑑</explain_jp>
+		<name_cn>魔法入门图鉴</name_cn>
+		<explain_cn>新手用魔法合成图鉴</explain_cn>
+		<name_tw>魔法入門圖鑒</name_tw>
+		<explain_tw>新手用魔法合成圖鑑</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>rock-a</id>
+		<area>Cave_golem_1</area>
+		<bookPos>-</bookPos>
+		<cost>100</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>마법석판</name_kr>
+		<explain_kr>바위골렘에게서 떨어진 마력이 깃든 석판. 마법진을 새기기 좋게 넓쩍하다.</explain_kr>
+		<name_en>Magic Slab-Stone</name_en>
+		<explain_en>Dropped spell-powered slab of stone by the Rocky Golem. Wide to write a magic</explain_en>
+		<name_jp>魔法石板</name_jp>
+		<explain_jp>岩ゴーレムの破片。魔力が入っている。魔方陣を刻む事ができる</explain_jp>
+		<name_cn>魔法石板</name_cn>
+		<explain_cn>从岩石石人身上掉落的蕴含魔力的石板。很宽大，适合画魔法阵。</explain_cn>
+		<name_tw>魔法石板</name_tw>
+		<explain_tw>從岩石石人身上掉落的蘊含魔力的石板。很寬大，適合畫魔法陣。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>fireDust-a</id>
+		<area>Cave_golem_1</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>유황가루</name_kr>
+		<explain_kr>화염마법을 구성하기 좋은 마법재료</explain_kr>
+		<name_en>Sulphur Powder</name_en>
+		<explain_en>Good magic material to construct flame magic</explain_en>
+		<name_jp>硫黄の粉</name_jp>
+		<explain_jp>火炎魔法を構成するに良い魔法材料</explain_jp>
+		<name_cn>硫磺粉</name_cn>
+		<explain_cn>可制作火焰魔法的上好魔法材料</explain_cn>
+		<name_tw>硫磺粉</name_tw>
+		<explain_tw>可製作火焰魔法的上好魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>blueDust-a</id>
+		<area>Field_forest_1</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>푸른 모래가루</name_kr>
+		<explain_kr>마력을 부여하면 빛나는 신기한 모래가루</explain_kr>
+		<name_en>Blue Sand Particle</name_en>
+		<explain_en>Amazing sand particle that shines when spell-powered</explain_en>
+		<name_jp>青い砂</name_jp>
+		<explain_jp>魔力を入れると光る不思議な砂</explain_jp>
+		<name_cn>蓝色沙子</name_cn>
+		<explain_cn>赋予魔力时，会闪闪发光的神奇的沙子</explain_cn>
+		<name_tw>藍色沙子</name_tw>
+		<explain_tw>賦予魔力時，會閃閃發光的神奇的沙子</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pudding-a</id>
+		<area>Cave_pudding_1</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>portion_hp,igr</type>
+		<needItem>-</needItem>
+		<power>10</power>
+		<name_kr>딸기맛 푸딩</name_kr>
+		<explain_kr>딸기맛 푸딩, 체력회복 #power</explain_kr>
+		<name_en>Strawberry Pudding</name_en>
+		<explain_en>Strawberry flavor Pudding, Recover HP #power</explain_en>
+		<name_jp>イチゴ味のプリン</name_jp>
+		<explain_jp>イチゴ味のプリン、体力回復#power</explain_jp>
+		<name_cn>草莓味布丁</name_cn>
+		<explain_cn>草莓味布丁，体力恢复 #power</explain_cn>
+		<name_tw>草莓味布丁</name_tw>
+		<explain_tw>草莓味布丁，體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pudding-b</id>
+		<area>Cave_pudding_1</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>portion_mp,igr</type>
+		<needItem>-</needItem>
+		<power>10</power>
+		<name_kr>포도맛 푸딩</name_kr>
+		<explain_kr>포도맛 푸딩, 마나회복 #power</explain_kr>
+		<name_en>Grape Pudding</name_en>
+		<explain_en>Grape flavor Pudding, Recover MP #power</explain_en>
+		<name_jp>イチゴ味のプリン</name_jp>
+		<explain_jp>ブドウ味のプリン、マナ回復#power</explain_jp>
+		<name_cn>葡萄味布丁</name_cn>
+		<explain_cn>葡萄味布丁，法力恢复 #power</explain_cn>
+		<name_tw>葡萄味布丁</name_tw>
+		<explain_tw>葡萄味布丁，法力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pudding-c</id>
+		<area>Cave_pudding_1</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>portion_hp,igr</type>
+		<needItem>-</needItem>
+		<power>30</power>
+		<name_kr>민트맛 푸딩</name_kr>
+		<explain_kr>민트맛 푸딩, 체력회복 #power</explain_kr>
+		<name_en>Mint Pudding</name_en>
+		<explain_en>Mint flavor Pudding, Recover HP #power</explain_en>
+		<name_jp>ミント味のプリン</name_jp>
+		<explain_jp>ミント味のプリン、体力回復#power</explain_jp>
+		<name_cn>薄荷味布丁</name_cn>
+		<explain_cn>薄荷味布丁，体力恢复 #power</explain_cn>
+		<name_tw>薄荷味布丁</name_tw>
+		<explain_tw>薄荷味布丁，體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pudding-d</id>
+		<area>Cave_pudding_1</area>
+		<bookPos>-</bookPos>
+		<cost>100</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>끈적한 검은푸딩</name_kr>
+		<explain_kr>먹을 수 없는 끈적끈적한 푸딩. 모아서 끈끈이폭탄을 만들 수 있다.</explain_kr>
+		<name_en>Sticky Black Pudding</name_en>
+		<explain_en>Inedible gluey pudding. Able to make Gluey Bomb.</explain_en>
+		<name_jp>ねばねば黒いプリン</name_jp>
+		<explain_jp>食べれないねばねばしたプリン。集めてねばねば爆弾を作ることができる。</explain_jp>
+		<name_cn>黏糊糊的黑布丁</name_cn>
+		<explain_cn>不能食用的黏糊糊的布丁。收集后可做成黏胶炸弹。</explain_cn>
+		<name_tw>黏糊糊的黑布丁</name_tw>
+		<explain_tw>不能食用的黏糊糊的布丁。收集後可做成黏膠炸彈。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>jellyBomb</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>150</cost>
+		<type>agilityDown+7</type>
+		<needItem>pudding-d+2</needItem>
+		<power>0</power>
+		<name_kr>끈끈이폭탄</name_kr>
+		<explain_kr>7턴 동안 상대의 행동을 둔화시킨다.</explain_kr>
+		<name_en>Gluey Bomb</name_en>
+		<explain_en>Slow down opponent 7 times.</explain_en>
+		<name_jp>ねばねば爆弾</name_jp>
+		<explain_jp>7ターンの間、相手の行動を鈍化させる。</explain_jp>
+		<name_cn>黏胶炸弹</name_cn>
+		<explain_cn>将使对方的行动减速7个回合。</explain_cn>
+		<name_tw>黏膠炸彈</name_tw>
+		<explain_tw>將使對方的行動減速7個回合。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>leaf-a</id>
+		<area>Field_forest_1</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>바싹마른 나뭇잎</name_kr>
+		<explain_kr>썩기 직전 말라 비틀어져 타기 좋은 나뭇잎</explain_kr>
+		<name_en>Dried Leaf</name_en>
+		<explain_en>Dried out and hard leaf that's easy to burn</explain_en>
+		<name_jp>パサパサの葉っぱ</name_jp>
+		<explain_jp>パサパサで燃えやすい葉っぱ</explain_jp>
+		<name_cn>干燥的叶子</name_cn>
+		<explain_cn>可以迅速燃燒的乾燥樹葉.</explain_cn>
+		<name_tw>乾燥的葉子</name_tw>
+		<explain_tw>可以迅速燃燒的乾燥樹葉.</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pudding-king</id>
+		<area>Cave_pudding_1</area>
+		<bookPos>-</bookPos>
+		<cost>200</cost>
+		<type>portion_hp,igr</type>
+		<needItem>-</needItem>
+		<power>60</power>
+		<name_kr>킹푸딩</name_kr>
+		<explain_kr>맛은 그럭저럭, 양이 굉장히 많은 대왕푸딩, 체력회복 #power</explain_kr>
+		<name_en>King Pudding</name_en>
+		<explain_en>Taste not bad, Huge quantity of pudding, Recover HP #power</explain_en>
+		<name_jp>キングプリン</name_jp>
+		<explain_jp>味はまあまあ、量がとても多く大王プリン、体力回復#power</explain_jp>
+		<name_cn>布丁国王</name_cn>
+		<explain_cn>味道一般，但量非常多的巨大布丁，体力恢复 #power</explain_cn>
+		<name_tw>布丁國王</name_tw>
+		<explain_tw>味道一般，但量非常多的巨大布丁，體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pearl-a</id>
+		<area>Field_forest_1</area>
+		<bookPos>-</bookPos>
+		<cost>100</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>하얀진주</name_kr>
+		<explain_kr>아직 덜 여물었지만 마법재료로는 적당한 하얀 진주</explain_kr>
+		<name_en>White Pearl</name_en>
+		<explain_en>White pearl not yet riped but proper in magic material</explain_en>
+		<name_jp>白いパール</name_jp>
+		<explain_jp>まだ熟してないけど、魔法材料としては適切なホワイトパール</explain_jp>
+		<name_cn>白色珍珠</name_cn>
+		<explain_cn>虽然还没成熟，但可用于魔法材料的白色珍珠。</explain_cn>
+		<name_tw>白色珍珠</name_tw>
+		<explain_tw>雖然還沒成熟，但可用於魔法材料的白色珍珠。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pudding-queen</id>
+		<area>Cave_pudding_1</area>
+		<bookPos>-</bookPos>
+		<cost>200</cost>
+		<type>portion_mp,igr</type>
+		<needItem>-</needItem>
+		<power>50</power>
+		<name_kr>퀸푸딩</name_kr>
+		<explain_kr>아주 달달한 여왕푸딩, 마나회복 #power</explain_kr>
+		<name_en>Queen Pudding</name_en>
+		<explain_en>Very sweet queen pudding, Recover MP #power</explain_en>
+		<name_jp>クィーンプリン</name_jp>
+		<explain_jp>すごく甘い女王プリン、マナ回復#power</explain_jp>
+		<name_cn>布丁皇后</name_cn>
+		<explain_cn>非常甜的布丁皇后，法力恢复 #power</explain_cn>
+		<name_tw>布丁皇后</name_tw>
+		<explain_tw>非常甜的布丁皇后，法力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>blackStone-a</id>
+		<area>Cave_golem_1</area>
+		<bookPos>-</bookPos>
+		<cost>100</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>검은돌</name_kr>
+		<explain_kr>마법합성에 사용되는 검은색 돌</explain_kr>
+		<name_en>Black Stone</name_en>
+		<explain_en>Black stone used in synthesizing magic</explain_en>
+		<name_jp>黒い石</name_jp>
+		<explain_jp>魔法合成に使用される黒の石</explain_jp>
+		<name_cn>黑石</name_cn>
+		<explain_cn>用于魔法合成的黑石。</explain_cn>
+		<name_tw>黑石</name_tw>
+		<explain_tw>用於魔法合成的黑石。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>tent-m</id>
+		<area>merchant</area>
+		<bookPos>-</bookPos>
+		<cost>500</cost>
+		<type>tent-m</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>마법텐트</name_kr>
+		<explain_kr>텐트에 부여된 마력으로 숙면이 잘되는 텐트. 캠핑 후에는 피로회복 및 체력과 마력, 모두 회복. 일기장 기록 가능 (외출 시 따로 가방에 넣지 않아도 사용 가능)</explain_kr>
+		<name_en>Magic Tent</name_en>
+		<explain_en>Causing deep sleep. Recover HP and MP, and Able to record in diary (Don't have to put in the bag)</explain_en>
+		<name_jp>魔法テント</name_jp>
+		<explain_jp>テントに付与された魔力で熟眠にいいテント。キャンプの後は疲労回復や体力と魔力、すべて回復。日記帳に記録可能（外出時別にカバンに入れなくても使用可能）</explain_jp>
+		<name_cn>魔法帐篷</name_cn>
+		<explain_cn>因赋予帐篷的魔法，可安然入睡的帐篷。野营后可具有恢复疲劳功能，体力、法力均可恢复。可记录日记本 (外出时，不用放到背包也能使用)</explain_cn>
+		<name_tw>魔法帳篷</name_tw>
+		<explain_tw>因賦予帳篷的魔法，可安然入睡的帳篷。野營後可具有恢復疲勞功能，體力、法力均可恢復。可記錄日記本 (外出時，不用放到背包也能使用)</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>tent-n</id>
+		<area>merchant</area>
+		<bookPos>-</bookPos>
+		<cost>400</cost>
+		<type>tent-n</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>일반텐트</name_kr>
+		<explain_kr>일반적인 천 텐트. 캠핑 후엔 체력과 마나가 최대치의 절반만큼 회복. 일기장 기록 가능 (외출 시 따로 가방에 넣지 않아도 사용 가능)</explain_kr>
+		<name_en>Normal Tent</name_en>
+		<explain_en>Normal cloth tent. Recover half of maximum HP and MP after camping. Able to record in diary (Don't have to put in the bag)</explain_en>
+		<name_jp>一般テント</name_jp>
+		<explain_jp>テントに付与された魔力で熟眠にいいテント。キャンプの後は疲労回復や体力と魔力、すべて回復。日記帳に記録可能（外出時別にカバンに入れなくても使用可能）</explain_jp>
+		<name_cn>普通帐篷</name_cn>
+		<explain_cn>普通的布帐篷。野营后体力和法力恢复最大值的一半。可记录日记本 (外出时，不用放到背包也能使用)</explain_cn>
+		<name_tw>普通帳篷</name_tw>
+		<explain_tw>普通的布帳篷。野營後體力和法力恢復最大值的一半。可記錄日記本 (外出時，不用放到背包也能使用)</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>key-1</id>
+		<area>Castle_1_1</area>
+		<bookPos>-</bookPos>
+		<cost>0</cost>
+		<type>key-1,pocket</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>낡은 열쇠</name_kr>
+		<explain_kr>아루아 신전에 있는 책상에서 발견한 열쇠</explain_kr>
+		<name_en>Old Key</name_en>
+		<explain_en>Key discovered on Arua temple desk</explain_en>
+		<name_jp>古い鍵</name_jp>
+		<explain_jp>アルア神殿の机から発見された鍵</explain_jp>
+		<name_cn>旧钥匙</name_cn>
+		<explain_cn>在阿鲁阿神殿的桌子上发现的钥匙</explain_cn>
+		<name_tw>舊鑰匙</name_tw>
+		<explain_tw>在阿魯阿神殿的桌子上發現的鑰匙</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>creich-leg</id>
+		<area>merchant</area>
+		<bookPos>-</bookPos>
+		<cost>1200</cost>
+		<type>statUp-hp</type>
+		<needItem>-</needItem>
+		<power>12</power>
+		<name_kr>크레이츠 뿌리</name_kr>
+		<explain_kr>켄츠산 중턱에서만 자라는 희귀한 나무의 뿌리의 일부. 먹으면 최대체력 #power 상승</explain_kr>
+		<name_en>Kreytes Root</name_en>
+		<explain_en>Root that grows just in the middle of Kentz mountain. Maximum HP +#power</explain_en>
+		<name_jp>クレイツの根</name_jp>
+		<explain_jp>ケンツ山の中腹で育つ珍しい木の根の一部。食べると最大体力#power上昇</explain_jp>
+		<name_cn>克雷茨根</name_cn>
+		<explain_cn>生长在肯特山中的稀有树的树根。食用后，最大体力提升 #power</explain_cn>
+		<name_tw>克雷茨根</name_tw>
+		<explain_tw>生長在肯特山中的稀有樹的樹根。食用後，最大體力提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>creich-water</id>
+		<area>merchant</area>
+		<bookPos>-</bookPos>
+		<cost>1200</cost>
+		<type>statUp-mp</type>
+		<needItem>-</needItem>
+		<power>12</power>
+		<name_kr>크레이츠 수액</name_kr>
+		<explain_kr>켄츠산 중턱에서만 자라는 희귀한 나무에서 추출한 수액. 먹으면 최대마나 #power 상승</explain_kr>
+		<name_en>Kreytes tree Sap</name_en>
+		<explain_en>Tree sap that grows just in the middle of Kentz mountain. Maximum MP +#power</explain_en>
+		<name_jp>クレイツの樹液</name_jp>
+		<explain_jp>ケンツ山 の中腹のみ育つ珍しい木から抽出した樹液。飲むと最大マナ#power上昇</explain_jp>
+		<name_cn>克雷茨树汁</name_cn>
+		<explain_cn>生长在肯特山中的稀有树上流出的树汁。食用后，最大法力提升 #power</explain_cn>
+		<name_tw>克雷茨樹汁</name_tw>
+		<explain_tw>生長在肯特山中的稀有樹上流出的樹汁。食用後，最大法力提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>creich-leaf</id>
+		<area>merchant</area>
+		<bookPos>-</bookPos>
+		<cost>1200</cost>
+		<type>statUp-spellPoint</type>
+		<needItem>-</needItem>
+		<power>6</power>
+		<name_kr>크레이츠 나뭇잎</name_kr>
+		<explain_kr>켄츠산 중턱에서만 자라는 희귀한 나무의 잎. 먹으면 최대마력 #power 상승</explain_kr>
+		<name_en>Kreytes Leaf</name_en>
+		<explain_en>Rare leaf that grows just in the middle of Kentz mountain. Maximum spell power +#power</explain_en>
+		<name_jp>クレイツの葉っぱ</name_jp>
+		<explain_jp>ケンツ山 の中腹のみ育つ珍しい木の葉っぱ。食べると最大魔力#power上昇</explain_jp>
+		<name_cn>克雷茨树叶</name_cn>
+		<explain_cn>生长在肯特山中的稀有树叶。食用后，最大魔力提升 #power</explain_cn>
+		<name_tw>克雷茨樹葉</name_tw>
+		<explain_tw>生長在肯特山中的稀有樹葉。食用後，最大魔力提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>jBread-a</id>
+		<area>merchant</area>
+		<bookPos>-</bookPos>
+		<cost>300</cost>
+		<type>portion_hp</type>
+		<needItem>-</needItem>
+		<power>250</power>
+		<name_kr>진저브레드</name_kr>
+		<explain_kr>체력을 엄청나게 회복시켜주는 쿠키, 체력회복 #power</explain_kr>
+		<name_en>Ginger Bread</name_en>
+		<explain_en>Cookie that recovers HP in highest. Recover HP #power</explain_en>
+		<name_jp>ジンジャーブレッド</name_jp>
+		<explain_jp>体力を​​ものすごく回復させるクッキー、体力回復#power</explain_jp>
+		<name_cn>姜饼</name_cn>
+		<explain_cn>恢复海量体力的饼干，体力恢复 #power</explain_cn>
+		<name_tw>薑餅</name_tw>
+		<explain_tw>恢復海量體力的餅乾，體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>loyalJelly-a</id>
+		<area>merchant</area>
+		<bookPos>-</bookPos>
+		<cost>300</cost>
+		<type>portion_mp</type>
+		<needItem>-</needItem>
+		<power>300</power>
+		<name_kr>로얄젤리</name_kr>
+		<explain_kr>마나를 엄청나게 회복시켜주는 젤리, 마나회복 #power</explain_kr>
+		<name_en>Loyal Jelly</name_en>
+		<explain_en>Jelly that recovers MP highest. Recover MP #power</explain_en>
+		<name_jp>ロイヤルゼリー</name_jp>
+		<explain_jp>マナを​​ものすごく回復させるゼリー、マナ回復#power</explain_jp>
+		<name_cn>高级果冻</name_cn>
+		<explain_cn>恢复海量法力的果冻，体力恢复 #power</explain_cn>
+		<name_tw>高級果凍</name_tw>
+		<explain_tw>恢復海量法力的果凍，體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>bagPocket-a</id>
+		<area>merchant</area>
+		<bookPos>-</bookPos>
+		<cost>100</cost>
+		<type>bagPocket-a</type>
+		<needItem>-</needItem>
+		<power>1</power>
+		<name_kr>가방 확장도구</name_kr>
+		<explain_kr>사용하면 가방 저장공간이 하나 추가된다.</explain_kr>
+		<name_en>Bag Pocket</name_en>
+		<explain_en>The bag space adds one block when using.</explain_en>
+		<name_jp>カバン拡張ツール</name_jp>
+		<explain_jp>使用すると、バッグの保存スペースが一つ追加される。</explain_jp>
+		<name_cn>背包扩充道具</name_cn>
+		<explain_cn>使用后，提升一个背包空间。</explain_cn>
+		<name_tw>背包擴充道具</name_tw>
+		<explain_tw>使用後，提升一個背包空間。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>rabit-a</id>
+		<area>Cave_rabit_1</area>
+		<bookPos>-</bookPos>
+		<cost>150</cost>
+		<type>portion_hp,igr</type>
+		<needItem>-</needItem>
+		<power>40</power>
+		<name_kr>토끼간</name_kr>
+		<explain_kr>고급영양재료에 속하는 토끼간. 자라 꼬리와 합성하기에 궁합이 좋다. 먹으면 체력 #power 회복</explain_kr>
+		<name_en>Rabbit Liver</name_en>
+		<explain_en>Highly nutritious rabbit liver. Combining with terrapin tail is the best. HP #power recovers when eaten.</explain_en>
+		<name_jp>ウサギの肝</name_jp>
+		<explain_jp>高級栄養材料に属するウサギの肝臓。鯉の尾と合成するのに相性がいい。食べると体力#power回復</explain_jp>
+		<name_cn>兔肝</name_cn>
+		<explain_cn>属于高级营养材料的兔肝。与鳖尾合成时效果最佳。食用后，体力恢复 #power</explain_cn>
+		<name_tw>兔肝</name_tw>
+		<explain_tw>屬於高級營養材料的兔肝。與鱉尾合成時效果最佳。食用後，體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>rabit-b</id>
+		<area>Field_island_1</area>
+		<bookPos>-</bookPos>
+		<cost>70</cost>
+		<type>portion_hp,igr</type>
+		<needItem>-</needItem>
+		<power>20</power>
+		<name_kr>토끼고기</name_kr>
+		<explain_kr>냄새는 좀 나지만 맛좋은 고기. 체력 #power 회복</explain_kr>
+		<name_en>Rabbit Meat</name_en>
+		<explain_en>Good taste although smell is bad. Recovers HP #power when eaten.</explain_en>
+		<name_jp>ウサギの肉</name_jp>
+		<explain_jp>臭いはするけどおいしい肉。体力#power回復</explain_jp>
+		<name_cn>兔肉</name_cn>
+		<explain_cn>有点腥味，但比较好吃的肉。体力恢复 #power</explain_cn>
+		<name_tw>兔肉</name_tw>
+		<explain_tw>有點腥味，但比較好吃的肉。體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>rabit-c</id>
+		<area>Field_island_1</area>
+		<bookPos>-</bookPos>
+		<cost>10</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>토끼똥</name_kr>
+		<explain_kr>배변이 잘 안돼 몸에서 며칠간 숙성된 굳은 배설물. 마법재료로 사용.</explain_kr>
+		<name_en>Rabbit Poop</name_en>
+		<explain_en>Not good in defecation, Hardened excreta riped for so long. Used in magical ingredient.</explain_en>
+		<name_jp>ウサギのフン</name_jp>
+		<explain_jp>ウサギの体の中で数日間熟成された固いフン。魔法材料として使用。</explain_jp>
+		<name_cn>兔便</name_cn>
+		<explain_cn>因排便不畅在体内发酵的排泄物。使用于魔法材料。</explain_cn>
+		<name_tw>兔便</name_tw>
+		<explain_tw>因排便不暢在體內發酵的排泄物。使用於魔法材料。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>tang-a</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>700</cost>
+		<type>statUp-hp</type>
+		<needItem>rabit-a+2,rabit-b+1,rabit-c+3,for1-b+1</needItem>
+		<power>12</power>
+		<name_kr>영양탕</name_kr>
+		<explain_kr>토끼간으로 만들어진 보양탕. 먹으면 최대 체력 #power 상승.</explain_kr>
+		<name_en>Nutrition Soup</name_en>
+		<explain_en>Nutritious soup made of rabbit liver. Maximum HP #power rises when eaten.</explain_en>
+		<name_jp>ウサギの糞</name_jp>
+		<explain_jp>ウサギ肝臓で作られた栄養スープ。食べると最大体力#power上昇。</explain_jp>
+		<name_cn>营养汤</name_cn>
+		<explain_cn>用兔肝烹饪的保养汤。食用后，最大体力提升 #power</explain_cn>
+		<name_tw>營養湯</name_tw>
+		<explain_tw>用兔肝烹飪的保養湯。食用後，最大體力提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>rabit-d</id>
+		<area>Cave_rabit_1</area>
+		<bookPos>-</bookPos>
+		<cost>20</cost>
+		<type>portion_mp</type>
+		<needItem>-</needItem>
+		<power>15</power>
+		<name_kr>홍당무</name_kr>
+		<explain_kr>달달한 홍당무, 마나 #power 회복</explain_kr>
+		<name_en>Orange Carrot</name_en>
+		<explain_en>Sweet carrot, Recovers MP #power</explain_en>
+		<name_jp>にんじん</name_jp>
+		<explain_jp>甘いにんじん、マナ#power回復</explain_jp>
+		<name_cn>胡萝卜</name_cn>
+		<explain_cn>甜甜的胡萝卜，法力恢复 #power</explain_cn>
+		<name_tw>胡蘿蔔</name_tw>
+		<explain_tw>甜甜的胡蘿蔔，法力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>crab-a</id>
+		<area>Field_island_1</area>
+		<bookPos>-</bookPos>
+		<cost>300</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>빅크랩의 등껍질</name_kr>
+		<explain_kr>방어구 제작에 사용되는 재료</explain_kr>
+		<name_en>Big Crab Shell</name_en>
+		<explain_en>Material used in producing defense.</explain_en>
+		<name_jp>ビッグタラバガニのから</name_jp>
+		<explain_jp>防具製作に使用される材料</explain_jp>
+		<name_cn>巨蟹之壳</name_cn>
+		<explain_cn>用于制作防具的材料</explain_cn>
+		<name_tw>巨蟹之殼</name_tw>
+		<explain_tw>用於製作防具的材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>mStone-a</id>
+		<area>Cave_golem_3</area>
+		<bookPos>-</bookPos>
+		<cost>1000</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>검은 마력의돌</name_kr>
+		<explain_kr>힘에 대한 욕망이 클수록 격렬하게 반응하는 마력 덩어리 돌. 교황성에서는 발견되면 정화처리를 위해 즉시 교황성에 반납하라고 말한다.</explain_kr>
+		<name_en>Evil-Stone</name_en>
+		<explain_en>Spell-power stone vigorously reacting when desire of power is high. Have to return for purfication when it's discovered in pope's palace.</explain_en>
+		<name_jp>黒い魔力の石</name_jp>
+		<explain_jp>力への欲望が大きいほど激しく反応する魔力の固まり。祭司は、一般人の使用を禁止し、見つけた人は浄化処理のために祭司の城へ送るようにと言っている。</explain_jp>
+		<name_cn>黑暗魔力之石</name_cn>
+		<explain_cn>对力量的欲望越强反应越激烈的魔力之石。教皇城说，发现石头时立即还给教皇城，以便净化。</explain_cn>
+		<name_tw>黑暗魔力之石</name_tw>
+		<explain_tw>對力量的欲望越強反應越激烈的魔力之石。教皇城說，發現石頭時立即還給教皇城，以便淨化。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>rarak-a</id>
+		<area>Field_forest_9</area>
+		<bookPos>-</bookPos>
+		<cost>50</cost>
+		<type>portion_hp</type>
+		<needItem>-</needItem>
+		<power>20</power>
+		<name_kr>라라크열매</name_kr>
+		<explain_kr>라라크나무에서 매일 열리는 열매로서 유일하게 마을 공물에서 제외된 과일이다. 먹으면 체력 #power 회복</explain_kr>
+		<name_en>Lalaque Berry</name_en>
+		<explain_en>Berry which bears in Lalaque tree and the only exempt tribute in village. Recover HP #power when eaten.</explain_en>
+		<name_jp>ララクの実</name_jp>
+		<explain_jp>ララクの木の果実として 村で唯一にみつき物から除かれた果物である。食べると体力#power回復</explain_jp>
+		<name_cn>拉拉克果实</name_cn>
+		<explain_cn>在拉拉克树上每天结果的果实，也是唯一不是贡品的水果。食用后，体力恢复 #power</explain_cn>
+		<name_tw>拉拉克果實</name_tw>
+		<explain_tw>在拉拉克樹上每天結果的果實，也是唯一不是貢品的水果。食用後，體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>equip-0-a</id>
+		<area>Castle_1_1</area>
+		<bookPos>-</bookPos>
+		<cost>50000</cost>
+		<type>equip-0-a</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>아루아의 지팡이</name_kr>
+		<explain_kr>아루아가 쓰던 마력지팡이. 착용하면 공격마법 사용시 특정 확률로 크리티컬(총 피해량의 200%) 효과가 일어난다.</explain_kr>
+		<name_en>Arua Wand</name_en>
+		<explain_en>Wand which Arua used.  When putting on and using attack-magic, particular probability(Total Damage 200%) critical effect rises.</explain_en>
+		<name_jp>アルアの杖</name_jp>
+		<explain_jp>アルアが使っていた魔力の杖。着用すると、攻撃魔法使用時、特定の確率でクリティカル（総ダメージの200％）の効果がある。</explain_jp>
+		<name_cn>阿鲁阿之杖</name_cn>
+		<explain_cn>阿鲁阿使用的魔力拐杖。装备后使用攻击魔法时，以特定几率发动暴击效果。（总伤害量的200%）</explain_cn>
+		<name_tw>阿魯阿之杖</name_tw>
+		<explain_tw>阿魯阿使用的魔力拐杖。裝備後使用攻擊魔法時，以特定機率發動暴擊效果。（總傷害量的200%）</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>equip-1-a</id>
+		<area>Castle_2_1</area>
+		<bookPos>-</bookPos>
+		<cost>50000</cost>
+		<type>equip-1-a</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>에임하드의 신발</name_kr>
+		<explain_kr>에임하드가 사용하던 마력이 부여된 신발. 신으면 일정 확률로 적의 공격을 완벽하게 회피시켜주는 기적이 일어난다.</explain_kr>
+		<name_en>Aimhard Shoes</name_en>
+		<explain_en>Shoes which Aimhard used. When putting on, regular probability, Can defense an opponent attack perfectly by miracle.</explain_en>
+		<name_jp>エイムハードの靴</name_jp>
+		<explain_jp>エイムハードが使用していた魔力の靴。履けば一定の確率で敵の攻撃を完全に回避させてくれる奇跡が起こる。</explain_jp>
+		<name_cn>埃因哈德的鞋子</name_cn>
+		<explain_cn>埃因哈德使用的被赋予魔力的鞋子。装备后，以一定几率完全闪避敌人攻击。</explain_cn>
+		<name_tw>埃因哈德的鞋子</name_tw>
+		<explain_tw>埃因哈德使用的被賦予魔力的鞋子。裝備後，以一定機率完全閃避敵人攻擊。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>equip-2-a</id>
+		<area>Castle_3_1</area>
+		<bookPos>-</bookPos>
+		<cost>50000</cost>
+		<type>equip-2-a</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>엘리시온의 로브</name_kr>
+		<explain_kr>엘리시온의 마력이 부여된 로브. 전투 중 위급 상황에서 한 번 체력의 절반을 회복시켜준다.</explain_kr>
+		<name_en>Eliycion Robe</name_en>
+		<explain_en>Robe which gets Eliycion's spell-power.  Recovers half of HP in emergency of battling.</explain_en>
+		<name_jp>エリシオンのローブ</name_jp>
+		<explain_jp>エリシオンの魔力のローブ。戦闘中、危急状況で一度だけ体力の半分を回復させる。</explain_jp>
+		<name_cn>埃丽斯韵的长袍</name_cn>
+		<explain_cn>被赋予埃丽斯韵魔力的长袍。战斗中处于危机状况时，可一次性恢复一半的体力。</explain_cn>
+		<name_tw>埃麗斯韻的長袍</name_tw>
+		<explain_tw>被賦予埃麗斯韻魔力的長袍。戰鬥中處於危機狀況時，可一次性恢復一半的體力。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>equip-3-a</id>
+		<area>Castle_4_1</area>
+		<bookPos>-</bookPos>
+		<cost>50000</cost>
+		<type>equip-3-a</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>듀락의 장갑</name_kr>
+		<explain_kr>듀락이 사용하던 장갑. 물리 공격시 특정 확률로 기본 공격력의 300% 크리티컬 효과 발동.</explain_kr>
+		<name_en>Durok Glove</name_en>
+		<explain_en>Glove which Durok used. When physical attack, 300% of normal attack critical effect rises.</explain_en>
+		<name_jp>デュラックの手袋</name_jp>
+		<explain_jp>デュロックが使用していた手袋。物理攻撃時、特定の確率で基本攻撃力の300％クリティカル効果発動。</explain_jp>
+		<name_cn>杜蕾的手套</name_cn>
+		<explain_cn>杜蕾使用的手套。物理攻击时，以特定几率发动暴击效果。（基础攻击力300%）</explain_cn>
+		<name_tw>杜蕾的手套</name_tw>
+		<explain_tw>杜蕾使用的手套。物理攻擊時，以特定機率發動暴擊效果。（基礎攻擊力300%）</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>equip-4-a</id>
+		<area>Castle_5_2</area>
+		<bookPos>-</bookPos>
+		<cost>50000</cost>
+		<type>equip-4-a</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>아라무트의 모자</name_kr>
+		<explain_kr>아라무트의 마력이 깃든 모자. 아루아의 지팡이와 함께 착용하면 마법 크리티컬 효과가 훨씬 상승한다.</explain_kr>
+		<name_en>Aramute Hat</name_en>
+		<explain_en>Aramutes's spell power hat. When used with Arua's wand, the magic critical effect rises up to 300%.</explain_en>
+		<name_jp>アラムートの帽子</name_jp>
+		<explain_jp>アラムートの魔力の帽子。アルアの杖と一緒に着用すると魔法クリティカル効果がはるかに上昇する。</explain_jp>
+		<name_cn>阿拉姆特的帽子</name_cn>
+		<explain_cn>蕴含阿拉姆特魔力的帽子。与阿鲁阿之杖一同装备时，大幅提升魔法暴击效果。</explain_cn>
+		<name_tw>阿拉姆特的帽子</name_tw>
+		<explain_tw>蘊含阿拉姆特魔力的帽子。與阿魯阿之杖一同裝備時，大幅提升魔法暴擊效果。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>false</enabled>
+		<id>magicBook_2</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>0</cost>
+		<type>book</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>마법도감 초급</name_kr>
+		<explain_kr>초급자용 마법합성 도감</explain_kr>
+		<name_en>Magic Encyclopedia-Beginner</name_en>
+		<explain_en>Magic Encyclopedia for beginner</explain_en>
+		<name_jp>魔法図鑑初級</name_jp>
+		<explain_jp>初心者用魔法合成図鑑</explain_jp>
+		<name_cn>初级魔法图鉴</name_cn>
+		<explain_cn>初级魔法合成图鉴</explain_cn>
+		<name_tw>初級魔法圖鑒</name_tw>
+		<explain_tw>初級魔法合成圖鑑</explain_tw>
+	</Content>
+	<Content>
+		<enabled>false</enabled>
+		<id>magicBook_3</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>0</cost>
+		<type>book</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>마법도감 중급</name_kr>
+		<explain_kr>중급자용 마법합성 도감</explain_kr>
+		<name_en>Magic Encyclopedia-Intermediate</name_en>
+		<explain_en>Magic Encyclopedia for intermediate</explain_en>
+		<name_jp>魔法図鑑中級</name_jp>
+		<explain_jp>中級者用魔法合成図鑑</explain_jp>
+		<name_cn>中级魔法图鉴</name_cn>
+		<explain_cn>中级魔法合成图鉴</explain_cn>
+		<name_tw>中級魔法圖鑒</name_tw>
+		<explain_tw>中級魔法合成圖鑑</explain_tw>
+	</Content>
+	<Content>
+		<enabled>false</enabled>
+		<id>magicBook_4</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>0</cost>
+		<type>book</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>마법도감 상급</name_kr>
+		<explain_kr>상급자용 마법합성 도감</explain_kr>
+		<name_en>Magic Encyclopedia-Advanced</name_en>
+		<explain_en>Magic Encyclopedia for advanced</explain_en>
+		<name_jp>魔法図鑑上級</name_jp>
+		<explain_jp>上級者用魔法合成図鑑</explain_jp>
+		<name_cn>高级魔法图鉴</name_cn>
+		<explain_cn>高级魔法合成图鉴</explain_cn>
+		<name_tw>高級魔法圖鑒</name_tw>
+		<explain_tw>高級魔法合成圖鑑</explain_tw>
+	</Content>
+	<Content>
+		<enabled>false</enabled>
+		<id>magicBook_5</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>0</cost>
+		<type>book</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>마법도감 최상급</name_kr>
+		<explain_kr>최상급 마법사를 위한 도감</explain_kr>
+		<name_en>Magic Encyclopedia-Top</name_en>
+		<explain_en>Magic Encyclopedia for upper-advanced magician</explain_en>
+		<name_jp>魔法図鑑最上級</name_jp>
+		<explain_jp>最上級者用魔法合成図鑑</explain_jp>
+		<name_cn>最高级魔法图鉴</name_cn>
+		<explain_cn>专为最高级魔法师的图鉴</explain_cn>
+		<name_tw>最高級魔法圖鑒</name_tw>
+		<explain_tw>專為最高級魔法師的圖鑑</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>redStone-a</id>
+		<area>Cave_golem_1</area>
+		<bookPos>-</bookPos>
+		<cost>0</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>붉은 돌</name_kr>
+		<explain_kr>불의 기운을 담고 있는 돌</explain_kr>
+		<name_en>Red Stone</name_en>
+		<explain_en>Stone containing fire energy</explain_en>
+		<name_jp>赤い石</name_jp>
+		<explain_jp>火のエネルギーを持っている石</explain_jp>
+		<name_cn>红石</name_cn>
+		<explain_cn>蕴含火之气息的石头</explain_cn>
+		<name_tw>紅石</name_tw>
+		<explain_tw>蘊含火之氣息的石頭</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>redStone-b</id>
+		<area>Cave_golem_2</area>
+		<bookPos>-</bookPos>
+		<cost>0</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>라바스톤</name_kr>
+		<explain_kr>강력한 붉은 기운이 감도는 돌</explain_kr>
+		<name_en>Lava Stone</name_en>
+		<explain_en>Stone of high-powered fire energy</explain_en>
+		<name_jp>ラバーストーン</name_jp>
+		<explain_jp>強力な赤いオーラが漂う石</explain_jp>
+		<name_cn>熔岩石</name_cn>
+		<explain_cn>充满炎热气息的石头</explain_cn>
+		<name_tw>熔岩石</name_tw>
+		<explain_tw>充滿炎熱氣息的石頭</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>redStone-c</id>
+		<area>Cave_golem_2</area>
+		<bookPos>-</bookPos>
+		<cost>0</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>라바스테인스톤</name_kr>
+		<explain_kr>강력한 마력이 응축되어 계속해서 뜨겁게 달아오르는 돌</explain_kr>
+		<name_en>Lavastein Stone</name_en>
+		<explain_en>Continuously heated up stone because of condensed powerful spell-power</explain_en>
+		<name_jp>ラバーステインストーン</name_jp>
+		<explain_jp>強力な魔力が凝縮されて石。常に燃えている。</explain_jp>
+		<name_cn>拉巴斯特因燃烧之石</name_cn>
+		<explain_cn>凝聚强力的魔力，持续烧热的石头</explain_cn>
+		<name_tw>拉巴斯特因燃燒之石</name_tw>
+		<explain_tw>凝聚強力的魔力，持續燒熱的石頭</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pearl-b</id>
+		<area>Field_island_1</area>
+		<bookPos>-</bookPos>
+		<cost>250</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>푸른진주</name_kr>
+		<explain_kr>아루아 섬에서 흔한 푸른빛 진주</explain_kr>
+		<name_en>Blue Pearl</name_en>
+		<explain_en>Blue pearl common in Arua island.</explain_en>
+		<name_jp>青いパール</name_jp>
+		<explain_jp>アルア島によくある青いパール</explain_jp>
+		<name_cn>蓝色珍珠</name_cn>
+		<explain_cn>在阿鲁阿岛随处可见的蓝色珍珠</explain_cn>
+		<name_tw>藍色珍珠</name_tw>
+		<explain_tw>在阿魯阿島隨處可見的藍色珍珠</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pearl-c</id>
+		<area>Cave_golem_3</area>
+		<bookPos>-</bookPos>
+		<cost>400</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>붉은진주</name_kr>
+		<explain_kr>골렘굴 깊숙한 곳에서 가끔씩 발견되는 붉은진주</explain_kr>
+		<name_en>Red Pearl</name_en>
+		<explain_en>Red pearl discovered sometimes in deep area of Golem cave</explain_en>
+		<name_jp>赤いパール</name_jp>
+		<explain_jp>ゴーレムの洞窟の奥でたまに発見される赤いパール</explain_jp>
+		<name_cn>红色珍珠</name_cn>
+		<explain_cn>在石人洞深处能偶尔发现的红色珍珠</explain_cn>
+		<name_tw>紅色珍珠</name_tw>
+		<explain_tw>在石人洞深處能偶爾發現的紅色珍珠</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>crab-b</id>
+		<area>Field_island_1</area>
+		<bookPos>-</bookPos>
+		<cost>600</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>블루크랩의 등껍질</name_kr>
+		<explain_kr>마법재료</explain_kr>
+		<name_en>Blue Crab Shell</name_en>
+		<explain_en>Magical material</explain_en>
+		<name_jp>ブルーカニのから</name_jp>
+		<explain_jp>魔法材料</explain_jp>
+		<name_cn>蓝蟹之壳</name_cn>
+		<explain_cn>魔法材料</explain_cn>
+		<name_tw>藍蟹之殼</name_tw>
+		<explain_tw>魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>blackLion-a</id>
+		<area>Field_forest_4</area>
+		<bookPos>-</bookPos>
+		<cost>1000</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>블랙라이언의 이빨</name_kr>
+		<explain_kr>마법재료</explain_kr>
+		<name_en>Black Lion Teeth</name_en>
+		<explain_en>Magical material</explain_en>
+		<name_jp>ブラックライアンの歯</name_jp>
+		<explain_jp>魔法材料</explain_jp>
+		<name_cn>黑狮子的牙齿</name_cn>
+		<explain_cn>魔法材料</explain_cn>
+		<name_tw>黑獅子的牙齒</name_tw>
+		<explain_tw>魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>blueDust-b</id>
+		<area>Field_island_1</area>
+		<bookPos>-</bookPos>
+		<cost>350</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>빛나는 푸른 모래가루</name_kr>
+		<explain_kr>스스로 푸른빛을 내는 신기한 모래가루</explain_kr>
+		<name_en>Lighting Blue Sand Particle</name_en>
+		<explain_en>Amazing sand particles shining blue by itself</explain_en>
+		<name_jp>光る青い砂</name_jp>
+		<explain_jp>自ら青い光を出す不思議な砂</explain_jp>
+		<name_cn>圣光蓝色沙子</name_cn>
+		<explain_cn>散发蓝光的神奇沙子</explain_cn>
+		<name_tw>聖光藍色沙子</name_tw>
+		<explain_tw>散發藍光的神奇沙子</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>fireDust-b</id>
+		<area>Cave_golem_2</area>
+		<bookPos>-</bookPos>
+		<cost>150</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>진한 유황가루</name_kr>
+		<explain_kr>진한 유황가루, 강력한 화염마법을 구성하기 좋다</explain_kr>
+		<name_en>Thick Sulphur Powder</name_en>
+		<explain_en>Dark sulphur powder, Good to consist powerful flame magic.</explain_en>
+		<name_jp>濃い硫黄の粉</name_jp>
+		<explain_jp>自ら青い光を出す不思議な砂</explain_jp>
+		<name_cn>浓浓的硫磺粉</name_cn>
+		<explain_cn>浓浓的硫磺粉，可制作强力的火焰魔法。</explain_cn>
+		<name_tw>濃濃的硫磺粉</name_tw>
+		<explain_tw>濃濃的硫磺粉，可製作強力的火焰魔法。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>lionHair-a</id>
+		<area>Field_forest_4</area>
+		<bookPos>-</bookPos>
+		<cost>100</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>금빛 사자털</name_kr>
+		<explain_kr>마법재료</explain_kr>
+		<name_en>Gold Lion Hair</name_en>
+		<explain_en>Magical material</explain_en>
+		<name_jp>金色のライオンの毛</name_jp>
+		<explain_jp>魔法材料</explain_jp>
+		<name_cn>黄金狮子毛</name_cn>
+		<explain_cn>魔法材料</explain_cn>
+		<name_tw>黃金獅子毛</name_tw>
+		<explain_tw>魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>creich-leg-a</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>1800</cost>
+		<type>statUp-hp</type>
+		<needItem>creich-leg+1,tang-a+1,for1-b+1</needItem>
+		<power>35</power>
+		<name_kr>크라레이츠 뿌리</name_kr>
+		<explain_kr>마법합성으로 효과를 극대화시킨 크레이츠 뿌리. 먹으면 최대체력 #power 상승</explain_kr>
+		<name_en>Klarates Root</name_en>
+		<explain_en>Kreytz root highly effect upgraded by magical synthesize. Maximum HP #power rises when eaten.</explain_en>
+		<name_jp>クラレイツの根</name_jp>
+		<explain_jp>魔法合成で効果を極大化させたクレイツの根。食べると最大体力#power上昇</explain_jp>
+		<name_cn>克莱斯特树根</name_cn>
+		<explain_cn>以魔法合成极度强化效果的克莱斯特树根，食用后最大体力提升 #power</explain_cn>
+		<name_tw>克萊斯特樹根</name_tw>
+		<explain_tw>以魔法合成極度強化效果的克萊斯特樹根，食用後最大體力提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>creich-water-a</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>1800</cost>
+		<type>statUp-mp</type>
+		<needItem>creich-water+1,tang-a+1,for1-b+1</needItem>
+		<power>35</power>
+		<name_kr>크라레이츠 수액</name_kr>
+		<explain_kr>효과를 극대화시킨 크레이츠 나무수액. 먹으면 최대마나 #power 상승</explain_kr>
+		<name_en>Klarates Tree Sap</name_en>
+		<explain_en>Kreytz tree sap maximizing effect. Maximum MP #power rises when eaten.</explain_en>
+		<name_jp>クラレイツの樹液</name_jp>
+		<explain_jp>効果を極大化させたクレイツの木の樹液。飲むと最大マナ#power上昇</explain_jp>
+		<name_cn>克莱斯特树汁</name_cn>
+		<explain_cn>极度强化效果的克莱斯特树汁，食用后最大法力提升 #power</explain_cn>
+		<name_tw>克萊斯特樹汁</name_tw>
+		<explain_tw>極度強化效果的克萊斯特樹汁，食用後最大法力提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>creich-leaf-a</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>1800</cost>
+		<type>statUp-spellPoint</type>
+		<needItem>creich-leaf+1,tang-a+1,for1-b+1</needItem>
+		<power>15</power>
+		<name_kr>크라레이츠 잎</name_kr>
+		<explain_kr>마법합성으로 업그레이드시킨 크레이츠 나뭇잎. 먹으면 최대마력 #power 상승</explain_kr>
+		<name_en>Klarates Leaf</name_en>
+		<explain_en>Kreytz leaf upgraded by magical synthesize. Maximum spell-power #power rises when eaten.</explain_en>
+		<name_jp>クラレイツの葉っぱ</name_jp>
+		<explain_jp>魔法合成でアップグレードさせたクレイツのジ葉っぱ。食べると最大馬力#power上昇</explain_jp>
+		<name_cn>克莱斯特树叶</name_cn>
+		<explain_cn>以魔法合成强化效果的克莱斯特树叶，食用后最大魔力提升 #power</explain_cn>
+		<name_tw>克萊斯特樹葉</name_tw>
+		<explain_tw>以魔法合成強化效果的克萊斯特樹葉，食用後最大魔力提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>tang-b</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>700</cost>
+		<type>statUp-power</type>
+		<needItem>rabit-a+2,turtle-a+2,water-a+1</needItem>
+		<power>8</power>
+		<name_kr>용봉탕</name_kr>
+		<explain_kr>먹으면 힘이 솟아오르는 멋진 탕약. 힘 #power 상승</explain_kr>
+		<name_en>Green Soup</name_en>
+		<explain_en>Amazing decoction that rises energy when eaten. Strength #power rises.</explain_en>
+		<name_jp>鯉スープ</name_jp>
+		<explain_jp>食べると力が上がる素敵なスープ。力#power上昇</explain_jp>
+		<name_cn>龙凤汤</name_cn>
+		<explain_cn>食用后力气大增的汤药。力量提升 #power</explain_cn>
+		<name_tw>龍鳳湯</name_tw>
+		<explain_tw>食用後力氣大增的湯藥。力量提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>turtle-a</id>
+		<area>Field_forest_1</area>
+		<bookPos>-</bookPos>
+		<cost>100</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>거북이 등껍질</name_kr>
+		<explain_kr>마법재료</explain_kr>
+		<name_en>Turtle Shell</name_en>
+		<explain_en>Magical material</explain_en>
+		<name_jp>亀のこうら</name_jp>
+		<explain_jp>魔法材料</explain_jp>
+		<name_cn>龟壳</name_cn>
+		<explain_cn>魔法材料</explain_cn>
+		<name_tw>龜殼</name_tw>
+		<explain_tw>魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pudding-kq</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>500</cost>
+		<type>portion_hp,portion_mp</type>
+		<needItem>pudding-king+1,pudding-queen+1</needItem>
+		<power>80</power>
+		<name_kr>푸르딩</name_kr>
+		<explain_kr>민트맛과 딸기맛이 어우러진 마법 푸딩요리. 체력회복 #power, 마나회복 #power</explain_kr>
+		<name_en>Pudding</name_en>
+		<explain_en>Mint flavor and Strawberry flavor mixed in Pudding dish. Recover HP, MP #power.</explain_en>
+		<name_jp>プルリン</name_jp>
+		<explain_jp>ミント味とイチゴ味が調和した魔法プリン料理。体力回復#power、マナ回復#power</explain_jp>
+		<name_cn>布丁</name_cn>
+		<explain_cn>混合薄荷味和草莓味的魔法布丁料理。体力恢复 #power, 法力恢复 #power</explain_cn>
+		<name_tw>布丁</name_tw>
+		<explain_tw>混合薄荷味和草莓味的魔法布丁料理。體力恢復 #power, 法力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>water-a</id>
+		<area>Field_forest_4</area>
+		<bookPos>0</bookPos>
+		<cost>100</cost>
+		<type>portion_mp</type>
+		<needItem>-</needItem>
+		<power>35</power>
+		<name_kr>바위틈 샘물</name_kr>
+		<explain_kr>사자들의 평원 중앙에 있는 바위 틈 사이에서 나온 생수. 마나회복 #power</explain_kr>
+		<name_en>Spring Water Out of Rock</name_en>
+		<explain_en>Water coming up from the rock in lion's plain land. Reccover MP #power.</explain_en>
+		<name_jp>岩の露</name_jp>
+		<explain_jp>ライオンの平原の中央にある岩の空き間から出てきたミネラルウォーター。マナ回復#power</explain_jp>
+		<name_cn>石缝泉水</name_cn>
+		<explain_cn>从狮子平原中央的石头缝里流出的水，法力恢复 #power</explain_cn>
+		<name_tw>石縫泉水</name_tw>
+		<explain_tw>從獅子平原中央的石頭縫裡流出的水，法力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pigMeat-a</id>
+		<area>notKnown</area>
+		<bookPos>0</bookPos>
+		<cost>150</cost>
+		<type>portion_hp</type>
+		<needItem>mon1-c+2,for1-b+1</needItem>
+		<power>125</power>
+		<name_kr>멧돼지고기요리</name_kr>
+		<explain_kr>멧돼지고기의 맛과 영양을 모두 압축시킨 고기. 먹으면 체력회복 #power</explain_kr>
+		<name_en>Wild Pork Meat Dish</name_en>
+		<explain_en>Condensed meat having taste and nutrition of wild pig. Recover HP #power when eaten.</explain_en>
+		<name_jp>イノシシ肉料理</name_jp>
+		<explain_jp>イノシシ肉の味と栄養をすべて圧縮させた肉。食べると体力回復#power</explain_jp>
+		<name_cn>野猪肉料理</name_cn>
+		<explain_cn>野猪肉的美味和营养浓缩一体的肉。食用后 体力恢复 #power</explain_cn>
+		<name_tw>野豬肉料理</name_tw>
+		<explain_tw>野豬肉的美味和營養濃縮一體的肉。食用後 體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>strb-a</id>
+		<area>notKnown</area>
+		<bookPos>0</bookPos>
+		<cost>120</cost>
+		<type>portion_hp</type>
+		<needItem>for1-a+3</needItem>
+		<power>80</power>
+		<name_kr>슈퍼딸기</name_kr>
+		<explain_kr>딸기 3개의 맛을 하나로 느낄 수 있는 아주 달달한 딸기. 체력회복 #power</explain_kr>
+		<name_en>Super Strawberry</name_en>
+		<explain_en>Very sweet strawberry having 3 tastes at once. Recover HP #power.</explain_en>
+		<name_jp>スーパーイチゴ</name_jp>
+		<explain_jp>イチゴ3つの味をひとつで感じられる非常に甘いイチゴ。体力回復#power</explain_jp>
+		<name_cn>超级草莓</name_cn>
+		<explain_cn>可用一个草莓尝到三个草莓味的甜草莓，体力恢复 #power</explain_cn>
+		<name_tw>超級草莓</name_tw>
+		<explain_tw>可用一個草莓嘗到三個草莓味的甜草莓，體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>wing-a</id>
+		<area>Field_westForest_1</area>
+		<bookPos>0</bookPos>
+		<cost>60</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>못생긴 새의 깃털</name_kr>
+		<explain_kr>마법재료</explain_kr>
+		<name_en>Ugly Bird Feather</name_en>
+		<explain_en>Magical material</explain_en>
+		<name_jp>ブサイク鳥の羽</name_jp>
+		<explain_jp>魔法材料</explain_jp>
+		<name_cn>丑鸟羽毛</name_cn>
+		<explain_cn>魔法材料</explain_cn>
+		<name_tw>醜鳥羽毛</name_tw>
+		<explain_tw>魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>wing-b</id>
+		<area>Field_westForest_1</area>
+		<bookPos>0</bookPos>
+		<cost>60</cost>
+		<type>igr</type>
+		<needItem>wing-a+3</needItem>
+		<power>0</power>
+		<name_kr>크고 못생긴 새의 깃털</name_kr>
+		<explain_kr>마법재료</explain_kr>
+		<name_en>Big Ugly Bird Feather</name_en>
+		<explain_en>Magical material</explain_en>
+		<name_jp>大きくてブサイク鳥の羽</name_jp>
+		<explain_jp>魔法材料</explain_jp>
+		<name_cn>大丑鸟羽毛</name_cn>
+		<explain_cn>魔法材料</explain_cn>
+		<name_tw>大醜鳥羽毛</name_tw>
+		<explain_tw>魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>rock-b</id>
+		<area>Cave_ice_1,Cave_golem_3</area>
+		<bookPos>-</bookPos>
+		<cost>500</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>상급 마법석판</name_kr>
+		<explain_kr>일반 마법석판보다 더 강한 마력을 담을 수 있는 석판</explain_kr>
+		<name_en>Advanced Slab Stone</name_en>
+		<explain_en>Slab of stone containing more powerful spell-power than general magic slab of stone</explain_en>
+		<name_jp>上級魔法石板</name_jp>
+		<explain_jp>通常の魔法石板よりも強い魔力を入れることができる石板</explain_jp>
+		<name_cn>高级魔法石板</name_cn>
+		<explain_cn>比一般的魔法石板可承载更强力魔法的石板</explain_cn>
+		<name_tw>高級魔法石板</name_tw>
+		<explain_tw>比一般的魔法石板可承載更強力魔法的石板</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>nar-a</id>
+		<area>Field_westForest_1</area>
+		<bookPos>-</bookPos>
+		<cost>2000</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>나르에르의 비늘</name_kr>
+		<explain_kr>엘리시온 평원 호수괴물 나르에르의 비늘. 최고급 마법재료</explain_kr>
+		<name_en>Narer Scale</name_en>
+		<explain_en>Lake moster of Eliycion plain Narer's scale. Best magical material.</explain_en>
+		<name_jp>ナルエルの鱗</name_jp>
+		<explain_jp>エリシオン平原にある湖に住むモンスターのナルエルの鱗。最高級の魔法材料</explain_jp>
+		<name_cn>纳尔的鳞片</name_cn>
+		<explain_cn>埃丽斯韵平原湖怪纳尔的鳞片。最高级魔法材料</explain_cn>
+		<name_tw>納爾的鱗片</name_tw>
+		<explain_tw>埃麗斯韻平原湖怪納爾的鱗片。最高級魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>nar-b</id>
+		<area>Field_westForest_1</area>
+		<bookPos>-</bookPos>
+		<cost>2000</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>나르에르의 살점</name_kr>
+		<explain_kr>엘리시온 평원 호수괴물 나르에르의 살점. 최고급 마법재료</explain_kr>
+		<name_en>Narer Flesh</name_en>
+		<explain_en>Lake moster of Eliycion plain Narer's flesh. Best magical material.</explain_en>
+		<name_jp>ナルエルの肉</name_jp>
+		<explain_jp>エリシオン平原にある湖に住むモンスターのナルエルの肉。最高級の魔法材料</explain_jp>
+		<name_cn>纳尔的肉</name_cn>
+		<explain_cn>埃丽斯韵平原湖怪纳尔的肉。最高级魔法材料</explain_cn>
+		<name_tw>納爾的肉</name_tw>
+		<explain_tw>埃麗斯韻平原湖怪納爾的肉。最高級魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>nar-c</id>
+		<area>Field_westForest_1</area>
+		<bookPos>-</bookPos>
+		<cost>2000</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>나르에르의 혀</name_kr>
+		<explain_kr>엘리시온 평원 호수괴물 나르에르의 혀. 최고급 마법재료</explain_kr>
+		<name_en>Narer Tongue</name_en>
+		<explain_en>Lake moster of Eliycion plain Narer's tongue. Best magical material.</explain_en>
+		<name_jp>ナルエルの舌</name_jp>
+		<explain_jp>エリシオン平原にある湖に住むモンスターのナルエルの舌。最高級の魔法材料</explain_jp>
+		<name_cn>纳尔的舌头</name_cn>
+		<explain_cn>埃丽斯韵平原湖怪纳尔的舌头。最高级魔法材料</explain_cn>
+		<name_tw>納爾的舌頭</name_tw>
+		<explain_tw>埃麗斯韻平原湖怪納爾的舌頭。最高級魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>tang-c</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>5000</cost>
+		<type>statUp-spellPoint</type>
+		<needItem>tang-b+1,nar-a+1</needItem>
+		<power>24</power>
+		<name_kr>나르에르 마력탕</name_kr>
+		<explain_kr>나르에르 비늘을 먹을 수 있게 합성한 탕. 최대마력 #power 상승</explain_kr>
+		<name_en>Narer Spell-Power Soup</name_en>
+		<explain_en>Hodgepodge soup that could eat scale. Maximum spell power #power rises.</explain_en>
+		<name_jp>ナルエルの魔力スープ</name_jp>
+		<explain_jp>ナルエルの鱗を食べられるように合成したスープ。最大馬力#power上昇</explain_jp>
+		<name_cn>纳尔的魔力汤</name_cn>
+		<explain_cn>可吃到纳尔鳞片的合成汤。最大魔力提升 #power</explain_cn>
+		<name_tw>納爾的魔力湯</name_tw>
+		<explain_tw>可吃到納爾鱗片的合成湯。最大魔力提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>tang-d</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>5000</cost>
+		<type>statUp-hp</type>
+		<needItem>tang-b+1,nar-b+1</needItem>
+		<power>53</power>
+		<name_kr>나르에르 체력탕</name_kr>
+		<explain_kr>나르에르 살점을 먹을 수 있게 합성한 탕. 최대체력 #power 상승</explain_kr>
+		<name_en>Narer HP soup</name_en>
+		<explain_en>Hodgepodge soup that could eat flesh. Maximim HP #power rises.</explain_en>
+		<name_jp>ナルエルの体力スープ</name_jp>
+		<explain_jp>ナルエルの肉を食べられるように合成したスープ。最大体力#power上昇</explain_jp>
+		<name_cn>纳尔的体力汤</name_cn>
+		<explain_cn>可吃到纳尔肉的合成汤。最大体力提升 #power</explain_cn>
+		<name_tw>納爾的體力湯</name_tw>
+		<explain_tw>可吃到納爾肉的合成湯。最大體力提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>tang-e</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>5000</cost>
+		<type>statUp-mp</type>
+		<needItem>tang-b+1,nar-c+1</needItem>
+		<power>53</power>
+		<name_kr>나르에르 마나탕</name_kr>
+		<explain_kr>나르에르의 혀를 먹을 수 있게 합성한 탕. 최대마나 #power 상승</explain_kr>
+		<name_en>Narer MP soup</name_en>
+		<explain_en>Hodgepodge soup that could eat tongue. Maximum MP #power rises.</explain_en>
+		<name_jp>ナルエルのマナスープ</name_jp>
+		<explain_jp>ナルエルの舌を食べられるように合成したスープ。最大マナ#power上昇</explain_jp>
+		<name_cn>纳尔的法力汤</name_cn>
+		<explain_cn>可吃到纳尔舌头的合成汤。最大法力提升 #power</explain_cn>
+		<name_tw>納爾的法力湯</name_tw>
+		<explain_tw>可吃到納爾舌頭的合成湯。最大法力提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>wing-c</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>1500</cost>
+		<type>statUp-agility</type>
+		<needItem>wing-b+1,wing-a+2</needItem>
+		<power>3</power>
+		<name_kr>빠름빠름 깃털</name_kr>
+		<explain_kr>사용하면 민첩이 #power만큼 상승한다.(영구효과)</explain_kr>
+		<name_en>Fast-Fast-Feather</name_en>
+		<explain_en>Agility #power rises as it used. (Endless effect)</explain_en>
+		<name_jp>ビュンビュン羽</name_jp>
+		<explain_jp>使用すると、敏捷性が#powerほど上昇する。（永久効果）</explain_jp>
+		<name_cn>极速羽毛</name_cn>
+		<explain_cn>使用后，敏捷提升 #power。（永久）</explain_cn>
+		<name_tw>極速羽毛</name_tw>
+		<explain_tw>使用後，敏捷提升 #power。（永久）</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>wing-d</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>5000</cost>
+		<type>statUp-agility</type>
+		<needItem>wing-c+2</needItem>
+		<power>10</power>
+		<name_kr>엄청 빠름빠름 깃털</name_kr>
+		<explain_kr>사용하면 민첩이 #power만큼 상승한다.(영구효과)</explain_kr>
+		<name_en>Ultra-Fast-Fast-Feather</name_en>
+		<explain_en>Agility #power rises as it used.(Endless effect)</explain_en>
+		<name_jp>超ビュンビュン羽</name_jp>
+		<explain_jp>使用すると、敏捷性が#powerほど上昇する。（永久効果）</explain_jp>
+		<name_cn>超极速羽毛</name_cn>
+		<explain_cn>使用后，敏捷提升 #power。（永久）</explain_cn>
+		<name_tw>超極速羽毛</name_tw>
+		<explain_tw>使用後，敏捷提升 #power。（永久）</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>tang-f</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>6000</cost>
+		<type>statUp-power</type>
+		<needItem>blackLion-a+1,tang-b+1</needItem>
+		<power>56</power>
+		<name_kr>사자탕</name_kr>
+		<explain_kr>블랙라이언의 힘이 솟아오르는 탕. 힘 #power 상승</explain_kr>
+		<name_en>Lion Soup</name_en>
+		<explain_en>Soup rising Black Lion power. Strength #power rises</explain_en>
+		<name_jp>ライオンスープ</name_jp>
+		<explain_jp>ブラックライアンの力を得られるスープ。力#power上昇</explain_jp>
+		<name_cn>狮子汤</name_cn>
+		<explain_cn>能感到黑暗狮子之力的汤。力量提升 #power</explain_cn>
+		<name_tw>獅子湯</name_tw>
+		<explain_tw>能感到黑暗獅子之力的湯。力量提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>tooth-a</id>
+		<area>Field_northForest_1</area>
+		<bookPos>-</bookPos>
+		<cost>250</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>얼음발톱</name_kr>
+		<explain_kr>설인에게서 나온 발톱. 마법재료</explain_kr>
+		<name_en>Ice Toenail</name_en>
+		<explain_en>Toenail coming out from snow man. Magical material</explain_en>
+		<name_jp>氷つめ</name_jp>
+		<explain_jp>雪人から出てきた爪。魔法材料</explain_jp>
+		<name_cn>冰爪</name_cn>
+		<explain_cn>雪人身上的冰爪，魔法材料</explain_cn>
+		<name_tw>冰爪</name_tw>
+		<explain_tw>雪人身上的冰爪，魔法材料</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>key-2</id>
+		<area>Castle_5_2</area>
+		<bookPos>-</bookPos>
+		<cost>0</cost>
+		<type>key-2,pocket</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>감옥 열쇠</name_kr>
+		<explain_kr>교황성 지하 감옥에서 발견된 열쇠</explain_kr>
+		<name_en>Jail key</name_en>
+		<explain_en>A key discovered from underground jail of Pope's palace</explain_en>
+		<name_jp>監獄の鍵</name_jp>
+		<explain_jp>祭司の城の地下監獄で発見された鍵</explain_jp>
+		<name_cn>监狱钥匙</name_cn>
+		<explain_cn>在教皇城地下监狱发现的钥匙</explain_cn>
+		<name_tw>監獄鑰匙</name_tw>
+		<explain_tw>在教皇城地下監獄發現的鑰匙</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>magicBook_6</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>0</cost>
+		<type>book</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>루나의 마법도감</name_kr>
+		<explain_kr>루나가 준 빙결마법 도감</explain_kr>
+		<name_en>Luna's Ice Magic Book</name_en>
+		<explain_en>Book of ice-magic given by Luna</explain_en>
+		<name_jp>ルーナの魔法図鑑</name_jp>
+		<explain_jp>祭司の城の地下監獄で発見された鍵</explain_jp>
+		<name_cn>露娜的魔法图鉴</name_cn>
+		<explain_cn>露娜给的冰洁魔法图鉴</explain_cn>
+		<name_tw>露娜的魔法圖鑒</name_tw>
+		<explain_tw>露娜給的冰潔魔法圖鑑</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>ice-a</id>
+		<area>Cave_ice_1</area>
+		<bookPos>-</bookPos>
+		<cost>350</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>영롱한 얼음</name_kr>
+		<explain_kr>녹지 않는 신기한 얼음</explain_kr>
+		<name_en>Bright ice</name_en>
+		<explain_en>Non-melt amazing ice</explain_en>
+		<name_jp>きらめく氷</name_jp>
+		<explain_jp>溶けない不思議な氷</explain_jp>
+		<name_cn>闪耀冰晶</name_cn>
+		<explain_cn>不融的神奇冰块</explain_cn>
+		<name_tw>閃耀冰晶</name_tw>
+		<explain_tw>不融的神奇冰塊</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>scice-a</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>3000</cost>
+		<type>statUp-def</type>
+		<needItem>ice-b+1,ice-a+3,tooth-a+3</needItem>
+		<power>9</power>
+		<name_kr>마력빙결체</name_kr>
+		<explain_kr>마력을 담은 얼음조각. 사용하면 방어가 #power만큼 상승한다.(영구효과)</explain_kr>
+		<name_en>Ice-Crystal</name_en>
+		<explain_en>Ice Crystal containing spell power. Defense #power rises when using. (Endless effect)</explain_en>
+		<name_jp>魔力氷結体</name_jp>
+		<explain_jp>魔力を込めた氷のかけら。使用すると、防御が#powerほど上昇する。（永久効果）</explain_jp>
+		<name_cn>魔力冰晶</name_cn>
+		<explain_cn>蕴含魔力的冰块。使用后，防御提升 #power。（永久）</explain_cn>
+		<name_tw>魔力冰晶</name_tw>
+		<explain_tw>蘊含魔力的冰塊。使用後，防禦提升 #power。（永久）</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>ice-b</id>
+		<area>Cave_ice_1</area>
+		<bookPos>-</bookPos>
+		<cost>600</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>얼음심장</name_kr>
+		<explain_kr>설노인의 심장</explain_kr>
+		<name_en>Ice Heart</name_en>
+		<explain_en>Old snow man's heart</explain_en>
+		<name_jp>氷の心臓</name_jp>
+		<explain_jp>雪老人の心臓</explain_jp>
+		<name_cn>冰心</name_cn>
+		<explain_cn>冰雪老人的心脏</explain_cn>
+		<name_tw>冰心</name_tw>
+		<explain_tw>冰雪老人的心臟</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>zircon-a</id>
+		<area>Field_dragonVelly</area>
+		<bookPos>-</bookPos>
+		<cost>10000</cost>
+		<type>statUp-hp</type>
+		<needItem>-</needItem>
+		<power>70</power>
+		<name_kr>지르코니아의 알</name_kr>
+		<explain_kr>지르코니아의 알. 마법합성으로 부화 가능하며 먹으면 체력이 #power 상승한다.</explain_kr>
+		<name_en>Jirconia Dragon's Egg</name_en>
+		<explain_en>Jirconia's egg.  Able to incubate by magic-synthesis and strength #power rises when eating</explain_en>
+		<name_jp>ジルコニアの卵</name_jp>
+		<explain_jp>ジルコニアの卵。魔法合成で孵化ができる。食べると体力が#power上昇する。</explain_jp>
+		<name_cn>基尔克尼亚龙蛋</name_cn>
+		<explain_cn>基尔克尼亚龙蛋，可通过魔法合成孵化。食用后，体力提升 #power</explain_cn>
+		<name_tw>基爾克尼亞龍蛋</name_tw>
+		<explain_tw>基爾克尼亞龍蛋，可透過魔法合成孵化。食用後，體力提升 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pat_warrior_51</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>12000</cost>
+		<type>pat</type>
+		<needItem>zircon-a+1,zircon-b+1</needItem>
+		<power>0</power>
+		<name_kr>지르코니아 주니어</name_kr>
+		<explain_kr>지르코니아의 새끼. 탑승하면 공격력 85, 방어력이 30 상승한다. 전투 시 사용하면 마나 30을 소모하여 적에게 마력과 공격력에 비례한 피해를 입힌다.</explain_kr>
+		<name_en>Jirconia Junior</name_en>
+		<explain_en>Jirconia's baby. Strength 85 and Defense 30 rise when riding.  Consumes 30 MP and give the Damage in proportion to spell power and Strength when used in battle.</explain_en>
+		<name_jp>ジルコニアジュニア</name_jp>
+		<explain_jp>ジルコニアの子。乗ると攻撃力が85、防御力が30上昇する。戦闘時に使用するとマナ30を消費して敵に魔力と攻撃力に比例したダメージを与える。</explain_jp>
+		<name_cn>基尔克尼亚幼崽</name_cn>
+		<explain_cn>基尔克尼亚幼崽，坐骑时攻击力提升85，防御力提升30。战斗时使用的话，消耗30法力对敌人造成与魔力和攻击力成正比的伤害。</explain_cn>
+		<name_tw>基爾克尼亞幼崽</name_tw>
+		<explain_tw>基爾克尼亞幼崽，坐騎時攻擊力提升85，防禦力提升30。戰鬥時使用的話，消耗30法力對敵人造成與魔力和攻擊力成正比的傷害。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>zircon-b</id>
+		<area>Field_dragonVelly</area>
+		<bookPos>-</bookPos>
+		<cost>1000</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>지르코니아석</name_kr>
+		<explain_kr>지르코니아가 먹는 돌</explain_kr>
+		<name_en>Jirconia Stone</name_en>
+		<explain_en>Stone which Jirconia eats</explain_en>
+		<name_jp>ジルコニアの石</name_jp>
+		<explain_jp>ジルコニアが食べる石</explain_jp>
+		<name_cn>基尔克尼亚石头</name_cn>
+		<explain_cn>基尔克尼亚吃的石头</explain_cn>
+		<name_tw>基爾克尼亞石頭</name_tw>
+		<explain_tw>基爾克尼亞吃的石頭</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>lighting-a</id>
+		<area>Field_dragonVelly</area>
+		<bookPos>-</bookPos>
+		<cost>25000</cost>
+		<type>igr</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>라이트닝의 뿔</name_kr>
+		<explain_kr>라이트닝을 해치우면 나오는 뿔. 매우 강력한 마력이 담겨 있는 마법합성 재료.</explain_kr>
+		<name_en>Lightening Dragon's Horn</name_en>
+		<explain_en>A horn got when knock Lighting dragon down. Very powerful magic-synthesis material.</explain_en>
+		<name_jp>ライトニングの角</name_jp>
+		<explain_jp>ライトニングを倒せば出てくる角。非常に強力な魔力が込められている魔法の合成材料。</explain_jp>
+		<name_cn>雷龙之角</name_cn>
+		<explain_cn>击退雷龙时可获得的角。蕴含强力魔力的魔法合成材料。</explain_cn>
+		<name_tw>雷龍之角</name_tw>
+		<explain_tw>擊退雷龍時可獲得的角。蘊含強力魔力的魔法合成材料。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>false</enabled>
+		<id>magicBook_7</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>0</cost>
+		<type>book</type>
+		<needItem>-</needItem>
+		<power>0</power>
+		<name_kr>낡은 마법도감</name_kr>
+		<explain_kr>굉장히 오래되어 보이는 낡은 마법도감</explain_kr>
+		<name_en>Old Magic Encyclopedia</name_en>
+		<explain_en>Looking very old Encyclopedia of magic</explain_en>
+		<name_jp>古い魔法図鑑</name_jp>
+		<explain_jp>とても古く見える古い魔法図鑑</explain_jp>
+		<name_cn>陈旧魔法图鉴</name_cn>
+		<explain_cn>看起来非常陈旧的魔法图鉴</explain_cn>
+		<name_tw>陳舊魔法圖鑒</name_tw>
+		<explain_tw>看起來非常陳舊的魔法圖鑑</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pudding-super</id>
+		<area>Cave_pudding_1</area>
+		<bookPos>-</bookPos>
+		<cost>600</cost>
+		<type>portion_hp,portion_mp</type>
+		<needItem>-</needItem>
+		<power>60</power>
+		<name_kr>무지개 푸르딩</name_kr>
+		<explain_kr>온갖 푸딩의 맛과 효능을 갖춘 푸딩. 마나와 체력 #power씩 회복.</explain_kr>
+		<name_en>Rainbow Pudding</name_en>
+		<explain_en>Having all taste and effects of pudding. Recover #power of HP, MP.</explain_en>
+		<name_jp>虹色のプルリン</name_jp>
+		<explain_jp>色んな種類のプリンの味と効能を備えたプリン。マナとスタミナが#powerずつ回復。</explain_jp>
+		<name_cn>彩虹布丁</name_cn>
+		<explain_cn>凝聚所有布丁的美味和功效的布丁。法力和体力恢复 #power</explain_cn>
+		<name_tw>彩虹布丁</name_tw>
+		<explain_tw>凝聚所有布丁的美味和功效的布丁。法力和體力恢復 #power</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pearl-red</id>
+		<area>Cave_golem_2</area>
+		<bookPos>-</bookPos>
+		<cost>3000</cost>
+		<type>statUp-spellPoint</type>
+		<needItem>-</needItem>
+		<power>35</power>
+		<name_kr>붉은색 정령구슬</name_kr>
+		<explain_kr>불의 정령 블래스트에게서 나온 구슬. 사용하면 마력이 #power 상승하며 정령구슬끼리 합성 가능.</explain_kr>
+		<name_en>Red Spirit Marble</name_en>
+		<explain_en>Marble given by Flame Soul Blast. Spell #power rises up when used and can synthesize with soul marble.</explain_en>
+		<name_jp>赤い精霊の玉</name_jp>
+		<explain_jp>火の精霊ブラストからの玉。使用すると、馬力が#power上昇し精霊の玉同士の合成が可能。</explain_jp>
+		<name_cn>红精灵球</name_cn>
+		<explain_cn>从火精灵布莱斯特身上取出的红色精灵球。使用后，魔力提升#power。精灵球之间可以相互合成。</explain_cn>
+		<name_tw>紅精靈球</name_tw>
+		<explain_tw>從火精靈布萊斯特身上取出的紅色精靈球。使用後，魔力提升#power。精靈球之間可以相互合成。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pearl-green</id>
+		<area>Field_forest_1</area>
+		<bookPos>-</bookPos>
+		<cost>3000</cost>
+		<type>statUp-hp</type>
+		<needItem>-</needItem>
+		<power>50</power>
+		<name_kr>녹색 정령구슬</name_kr>
+		<explain_kr>숲의 정령 발트에게서 나온 구슬. 사용하면 체력이 #power 상승하며 정령구슬끼리 합성 가능.</explain_kr>
+		<name_en>Green Spirit Marble</name_en>
+		<explain_en>Marble given by Forest Soul Balt. HP #power rises up when used and can synthesize with soul marble.</explain_en>
+		<name_jp>緑精霊の玉</name_jp>
+		<explain_jp>森の精霊バルトからの玉。使用すると、体力が#power 上昇し精霊の玉同士の合成が可能。</explain_jp>
+		<name_cn>绿精灵球</name_cn>
+		<explain_cn>从丛林精灵巴尔特身上取出的绿色精灵球。使用后，体力提升#power。精灵球之间可以相互合成。</explain_cn>
+		<name_tw>綠精靈球</name_tw>
+		<explain_tw>從叢林精靈巴爾特身上取出的綠色精靈球。使用後，體力提升#power。精靈球之間可以相互合成。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pearl-blue</id>
+		<area>Cave_ice_1</area>
+		<bookPos>-</bookPos>
+		<cost>3000</cost>
+		<type>statUp-def</type>
+		<needItem>-</needItem>
+		<power>25</power>
+		<name_kr>푸른색 정령구슬</name_kr>
+		<explain_kr>빙산의 정령 아리스에게서 나온 구슬. 사용하면 방어가 #power 상승하며 정령구슬끼리 합성 가능.</explain_kr>
+		<name_en>Blue Soul Marble</name_en>
+		<explain_en>Marble given by Iceberg soul Airis. Defense #power rises up when used and can synthesize wth soul marble.</explain_en>
+		<name_jp>青い精霊の玉</name_jp>
+		<explain_jp>氷山の精霊アリスからの玉。使用すると、防御が#power 上昇し精霊の玉同士の合成が可能。</explain_jp>
+		<name_cn>蓝精灵球</name_cn>
+		<explain_cn>从冰山精灵阿里斯身上取出的蓝色精灵球。使用后，防御提升#power。精灵球之间可以相互合成。</explain_cn>
+		<name_tw>藍精靈球</name_tw>
+		<explain_tw>從冰山精靈阿里斯身上取出的藍色精靈球。使用後，防禦提升#power。精靈球之間可以相互合成。</explain_tw>
+	</Content>
+	<Content>
+		<enabled>true</enabled>
+		<id>pearl-spirit</id>
+		<area>notKnown</area>
+		<bookPos>-</bookPos>
+		<cost>20000</cost>
+		<type>allStatUp-percent</type>
+		<needItem>pearl-red+1,pearl-green+1,pearl-blue+1</needItem>
+		<power>20</power>
+		<name_kr>맑은 정령석</name_kr>
+		<explain_kr>정령구슬의 합성으로 만들어진 신비한 기운이 깃든 돌. 사용하면 모든 능력치가 #power%씩 상승하고 정령의 기운으로 감싸이며, 전투 시 정령의 기운이 공격을 도와준다.</explain_kr>
+		<name_en>Pure Spirit Stone</name_en>
+		<explain_en>Amazing stone synthesized with soul marbles. Maximum HP, MP, Def, Str, Agt #power rises up, can be covered by spirit energy and when battling the soul energy helps.</explain_en>
+		<name_jp>清い精霊石</name_jp>
+		<explain_jp>精霊の玉の合成で作られた神秘的なオーラが込められた石。使用すると、すべての能力値が＃power％ずつ上昇し、戦闘時、精霊のオーラに包まれ攻撃力を高める事ができる。</explain_jp>
+		<name_cn>明亮精灵石</name_cn>
+		<explain_cn>通过合成精灵球制作出的蕴含神秘气息的石头。使用后，所有能力值提升 #power%，并周围围绕着精灵气息，战斗时精灵气息可助你攻击。</explain_cn>
+		<name_tw>明亮精靈石</name_tw>
+		<explain_tw>透過合成精靈球製作出的蘊含神秘氣息的石頭。使用後，所有能力值提升 #power%，並周圍圍繞著精靈氣息，戰鬥時精靈氣息可助你攻擊。</explain_tw>
+	</Content>
+</Contents>

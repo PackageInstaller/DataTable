@@ -1,0 +1,432 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 6447847120107572174
+  },
+  "m_Name": "tutorial_message_data",
+  "table": [
+    {
+      "id": 1,
+      "msg_key": "GAME_TUTORIAL_10000_ENEMY_ENCOUNT",
+      "face_id": 0,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 2,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 2,
+      "msg_key": "GAME_TUTORIAL_10000_ENEMY_LOOK",
+      "face_id": 2,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 3,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 440.0,
+        "y": -37.0,
+        "width": 162.0,
+        "height": 139.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 3,
+      "msg_key": "GAME_TUTORIAL_10000_CORE_LOOK",
+      "face_id": 0,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 0,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": -650.0,
+        "y": -125.0,
+        "width": 128.0,
+        "height": 113.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 4,
+      "msg_key": "GAME_TUTORIAL_10000_SUMMON_ORC_BEFORE",
+      "face_id": 4,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 5,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 5,
+      "msg_key": "GAME_TUTORIAL_10000_SUMMON_ORC_INSTRUCTION",
+      "face_id": 1,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 6,
+      "wait_event": "SUMMON_UNIT",
+      "instruct_anim": "Quest_10000_Summon1",
+      "CoverMask1": {
+        "x": -510.0,
+        "y": -347.0,
+        "width": 100.0,
+        "height": 80.0
+      },
+      "CoverMask2": {
+        "x": -164.0,
+        "y": -112.0,
+        "width": 101.0,
+        "height": 200.0
+      }
+    },
+    {
+      "id": 6,
+      "msg_key": "GAME_TUTORIAL_10000_SUMMON_ORC_OK",
+      "face_id": 0,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 7,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 7,
+      "msg_key": "GAME_TUTORIAL_10000_SORTIE_COST_LOOK",
+      "face_id": 4,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 0,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": -636.0,
+        "y": -255.0,
+        "width": 202.0,
+        "height": 85.0
+      },
+      "CoverMask2": {
+        "x": -617.0,
+        "y": -352.0,
+        "width": 86.0,
+        "height": 9.0
+      }
+    },
+    {
+      "id": 8,
+      "msg_key": "GAME_TUTORIAL_10000_EX_SKILL_READY",
+      "face_id": 4,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 0,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 9,
+      "msg_key": "GAME_TUTORIAL_10000_EX_SKILL_EXPLANATION",
+      "face_id": 1,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 0,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 10,
+      "msg_key": "GAME_TUTORIAL_10000_SUMMON_PEGASUS_BEFORE",
+      "face_id": 0,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 11,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 11,
+      "msg_key": "GAME_TUTORIAL_10000_SUMMON_PEGASUS_INSTRUCTION",
+      "face_id": 1,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 12,
+      "wait_event": "SUMMON_UNIT",
+      "instruct_anim": "Quest_10000_Summon2",
+      "CoverMask1": {
+        "x": -627.0,
+        "y": -347.0,
+        "width": 100.0,
+        "height": 80.0
+      },
+      "CoverMask2": {
+        "x": -73.0,
+        "y": -255.0,
+        "width": 103.0,
+        "height": 200.0
+      }
+    },
+    {
+      "id": 12,
+      "msg_key": "GAME_TUTORIAL_10000_SUMMON_PEGASUS_OK",
+      "face_id": 4,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 0,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 13,
+      "msg_key": "GAME_TUTORIAL_10001_SUMMON_TYPE_1",
+      "face_id": 0,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 14,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 14,
+      "msg_key": "GAME_TUTORIAL_10001_SUMMON_TYPE_2",
+      "face_id": 1,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 15,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 15,
+      "msg_key": "GAME_TUTORIAL_10001_SUMMON_TYPE_3",
+      "face_id": 0,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 16,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 16,
+      "msg_key": "GAME_TUTORIAL_10001_SUMMON_TYPE_4",
+      "face_id": 4,
+      "pos_x": 0,
+      "pos_y": 0,
+      "next_id": 0,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 17,
+      "msg_key": "GAME_TUTORIAL_10004_ATTRIBUTE_1",
+      "face_id": 4,
+      "pos_x": 0,
+      "pos_y": -150,
+      "next_id": 18,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 18,
+      "msg_key": "GAME_TUTORIAL_10004_ATTRIBUTE_2",
+      "face_id": 0,
+      "pos_x": 0,
+      "pos_y": -150,
+      "next_id": 19,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": -210.0,
+        "y": -70.0,
+        "width": 420.0,
+        "height": 300.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "id": 19,
+      "msg_key": "GAME_TUTORIAL_10004_ATTRIBUTE_3",
+      "face_id": 1,
+      "pos_x": 0,
+      "pos_y": -150,
+      "next_id": 0,
+      "wait_event": "",
+      "instruct_anim": "",
+      "CoverMask1": {
+        "x": -210.0,
+        "y": -70.0,
+        "width": 420.0,
+        "height": 300.0
+      },
+      "CoverMask2": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    }
+  ]
+}

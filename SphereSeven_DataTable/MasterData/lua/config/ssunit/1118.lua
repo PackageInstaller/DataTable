@@ -1,0 +1,3 @@
+local Config = {Id=1118,Name="黑龙",AbDir="SsUnit/115_BlackDragon",NewRes=0,HandleBones={"Bip001 Head"},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={1.72,1.8,-0.6},Position={2,0,0},CenterOffset={0,32.1,-56.6},CameraFollowYParam =4.95,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1123,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={36,56,76,90,100},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1124,TotalFrames=260,OnHit=0,OnCutIn=0,OnDamage={60,80,100,120,140,160,180},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=1125,TotalFrames=441,OnHit=0,OnCutIn=0,OnDamage={67,77,87,97,107,117,127},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

@@ -1,0 +1,554 @@
+-- module('AudioGoPlayer', Class.impl())
+
+-- function ctor(self)
+--     local audioRootGO = gs.GameObject.Find("[AUDIO_GO]")
+--     if not audioRootGO then
+--         audioRootGO = gs.GameObject("[AUDIO_GO]")
+--     end
+--     gs.GoUtil.DontDestroyOnLoad(audioRootGO)
+--     self.m_audioRoot = audioRootGO.transform
+--     audioRootGO:SetActive(true)
+    
+--     self.m_timeScaleAudioGos = {}
+--     self.m_audioGos = {}
+--     self.m_musicData = nil
+--     self.m_playingMusic = true
+-- end
+
+-- function close( self )
+--     self:stopAll()
+--     if self.m_audioRoot then
+--         gs.GameObject.Destroy(self.m_audioRoot.gameObject)
+--         self.m_audioRoot = nil
+--     end
+-- end
+-- -- 停止所有音效对象
+-- function stopAll(self)
+--     if self.m_audioGos then
+--         for sn,audioData in pairs(self.m_audioGos) do
+--             SnMgr:disposeSn(sn)
+--             gs.GameObject.Destroy(audioData[1])
+--         end
+--     end
+--     self.m_audioGos = {}
+--     self:stopAllFight()
+-- end
+-- -- 停止所有战斗音效对象
+-- function stopAllFight(self)
+--     if self.m_timeScaleAudioGos then
+--         for sn,audioData in pairs(self.m_timeScaleAudioGos) do
+--             SnMgr:disposeSn(sn)
+--             gs.GameObject.Destroy(audioData[1])
+--         end
+--     end
+--     self.m_timeScaleAudioGos = {}
+-- end
+-- -- 播放背景音乐对象
+-- function playMusic(self, path)
+--     if self:isPlayingMusic(path) then 
+--         -- self:startMusic()
+--         return
+--     end
+--     local audioGo = gs.GOPoolMgr:Get(path)
+--     if audioGo and not gs.GoUtil.IsGoNull(audioGo) then
+--         local volume = self:getMusicVolume()
+--         local aSource = audioGo:GetComponent(ty.AudioSource)
+--         if not aSource or not aSource.clip or aSource.clip.length<=0 then
+--             gs.GameObject.Destroy(audioGo)
+--             return
+--         end
+--         if self.m_musicData then
+--             self.m_musicData[3].pitch = 1
+--             self.m_musicData[1]:SetActive(false)
+--             gs.GOPoolMgr:Recover(self.m_musicData[1], self.m_musicData[2])
+--         end
+
+--         gs.TransQuick:SetParentOrg01(audioGo, self.m_audioRoot)
+--         aSource.volume = volume
+--         aSource.loop = true
+--         audioGo:SetActive(true)
+--         self.m_musicData = {audioGo, path, aSource, aSource.clip.length}
+
+--         RateLooper:removeTimerByIndex(self.m_checkTimeSn)
+--         self.m_checkTimeSn = nil
+--         self:_stopTempMusic()
+--     end
+-- end
+
+-- -- 播放一次背景音乐对象
+-- -- isFinishPlay 决定音乐播放完后，是否继续播放原有的音乐
+-- function playMusicOne(self, path, isFinishPlay)
+--     local audioGo = gs.GOPoolMgr:Get(path)
+--     if audioGo and not gs.GoUtil.IsGoNull(audioGo) then
+--         local volume = self:getMusicVolume()
+--         local aSource = audioGo:GetComponent(ty.AudioSource)
+--         if not aSource or not aSource.clip or aSource.clip.length<=0 then
+--             gs.GameObject.Destroy(audioGo)
+--             return
+--         end
+
+--         if self.m_musicData then
+--             self.m_musicData[3].pitch = 1
+--             self.m_musicData[1]:SetActive(false)
+--             -- gs.GOPoolMgr:Recover(self.m_musicData[1], self.m_musicData[2])
+--         end
+
+--         if self.m_tmpMusicData then
+--             self.m_tmpMusicData[3].pitch = 1
+--             self.m_tmpMusicData[1]:SetActive(false)
+--             gs.GOPoolMgr:Recover(self.m_tmpMusicData[1], self.m_tmpMusicData[2])
+--         end
+
+--         gs.TransQuick:SetParentOrg01(audioGo, self.m_audioRoot)
+--         aSource.volume = volume
+--         aSource.loop = false
+--         audioGo:SetActive(true)
+--         self.m_tmpMusicPastTime = 0
+--         self.m_tmpMusicData = {audioGo, path, aSource, aSource.clip.length, isFinishPlay}
+--         if self.m_checkTempMusicTimeSn==nil then
+--             self.m_checkTempMusicTimeSn = RateLooper:addTimer(0.1,0, self, self._checkTempMusicState)
+--         end
+--     end
+-- end
+
+-- function _stopTempMusic(self)
+--     if self.m_tmpMusicData and self.m_tmpMusicData[1] and not gs.GoUtil.IsGoNull(self.m_tmpMusicData[1]) then
+--         self.m_tmpMusicData[3].pitch = 1
+--         self.m_tmpMusicData[1]:SetActive(false)
+--         gs.GOPoolMgr:Recover(self.m_tmpMusicData[1], self.m_tmpMusicData[2])
+--         self.m_tmpMusicData = nil
+--         RateLooper:removeTimerByIndex(self.m_checkTempMusicTimeSn)
+--         self.m_checkTempMusicTimeSn = nil
+--     end
+-- end
+
+-- function _checkTempMusicState(self)
+--     if self.m_playingMusic and self.m_tmpMusicData then -- and ((self.m_tmpMusicPastTime+0.1)>self.m_tmpMusicData[4] or self.m_tmpMusicData[3].isPlaying==true) then
+--         self.m_tmpMusicPastTime = self.m_tmpMusicPastTime+0.1 --RateLooper:getDeltaTime()
+--         if self.m_tmpMusicPastTime>self.m_tmpMusicData[4] then
+--             self.m_tmpMusicPastTime = 0
+--             local isFinishPlay = self.m_tmpMusicData[5]
+--             self:_stopTempMusic()
+--             if isFinishPlay==true and self.m_musicData and self.m_musicData[1] and not gs.GoUtil.IsGoNull(self.m_musicData[1]) then
+--                 self.m_musicData[3].pitch = 1
+--                 self.m_musicData[1]:SetActive(true)
+--             end
+--         end
+--     end
+-- end
+
+-- -- 播放背景音乐列表
+-- function playMusic01(self, paths, type, idx)
+--     if table.empty(paths) then return false end
+
+--     self.m_playMusicPaths = paths
+--     self.m_playMusicType = type
+--     if self.m_playMusicType==1 then
+--         if not idx or idx>#paths then
+--             idx = 1
+--         end
+--     else
+--         if (idx~=nil and #paths>1) then
+--             local keys = table.keys(paths)
+--             table.sort(keys)
+--             table.remove(keys, idx)
+--             if #keys>1 then
+--                 local tmpIdx = math.random(1, #keys)
+--                 idx = keys[tmpIdx]
+--             else
+--                 idx = keys[1]
+--             end
+--             -- while true do
+--             --     local tmpIdx = math.random(1, #paths)
+--             --     if tmpIdx~=idx then
+--             --         idx = tmpIdx
+--             --         break
+--             --     end
+--             -- end
+--         else
+--             idx = math.random(1, #paths)
+--         end
+--     end
+--     self.m_playMusicPathIdx = idx
+    
+--     local path = paths[idx]
+--     -- if self:isPlayingMusic(path) then return end
+--     local audioGo = gs.GOPoolMgr:Get(path)
+--     if audioGo and not gs.GoUtil.IsGoNull(audioGo) then
+--         local volume = self:getMusicVolume()
+--         local aSource = audioGo:GetComponent(ty.AudioSource)
+--         if not aSource or not aSource.clip or aSource.clip.length<=0 then
+--             gs.GameObject.Destroy(audioGo)
+--             table.remove(paths[idx])
+--             return self:playMusic01(self.m_playMusicPaths, self.m_playMusicType, self.m_playMusicPathIdx)
+--         end
+--         if self.m_musicData and self.m_musicData[1] and not gs.GoUtil.IsGoNull(self.m_musicData[1]) then
+--             self.m_musicData[3].pitch = 1
+--             self.m_musicData[1]:SetActive(false)
+--             gs.GOPoolMgr:Recover(self.m_musicData[1], self.m_musicData[2])
+--         end
+
+--         gs.TransQuick:SetParentOrg01(audioGo, self.m_audioRoot)
+--         aSource.volume = volume
+--         audioGo:SetActive(true)
+--         self.m_musicPastTime = 0
+--         local totalTime = aSource.clip.length
+--         self.m_musicData = {audioGo, path, aSource, totalTime}
+--         self:addCheckTimeSn()
+--         self:_stopTempMusic()
+--         -- print("playMusic01=======", path)
+--         return true
+--     end
+-- end
+
+-- --添加这条背景音乐播放的计时器
+-- function addCheckTimeSn(self)
+--     if self.m_checkTimeSn==nil then
+--         self.m_checkTimeSn = RateLooper:addTimer(0.1,0, self, self._checkMusicState)
+--     end
+-- end
+
+-- function removeCheckTimeSn(self)
+--     RateLooper:removeTimerByIndex(self.m_checkTimeSn)
+--     self.m_checkTimeSn = nil
+-- end
+
+-- function getMusicVolume(self)
+--     if self.m_playingMusic then
+--         return Audio:getMusicVolume()
+--     end
+--     return 0
+-- end
+
+-- function tryPlayCacheMusicList(self)
+--     return self:playMusic01(self.m_playMusicPaths, self.m_playMusicType, self.m_playMusicPathIdx)
+-- end
+
+-- function _checkMusicState(self)
+--     if self.m_playingMusic and self.m_musicData then -- and ((self.m_musicPastTime+0.1)>self.m_musicData[4] or self.m_musicData[3].isPlaying==true) then
+--         self.m_musicPastTime = self.m_musicPastTime+0.1--RateLooper:getDeltaTime()
+--         if self.m_musicPastTime>self.m_musicData[4] then
+--             self.m_musicPastTime = 0
+--             self:playMusic01(self.m_playMusicPaths, self.m_playMusicType, self.m_playMusicPathIdx)
+--         end
+--     end
+-- end
+
+-- -- 停止背景音乐对象
+-- function stopMusic(self)
+--     self.m_playingMusic = false
+--     if self.m_tmpMusicData and self.m_tmpMusicData[1] and not gs.GoUtil.IsGoNull(self.m_tmpMusicData[1]) then
+--         self.m_tmpMusicData[3].pitch = 1
+--         self.m_tmpMusicData[1]:SetActive(false)
+--     end
+--     if self.m_musicData and self.m_musicData[1] and not gs.GoUtil.IsGoNull(self.m_musicData[1]) then
+--         self.m_musicData[3].pitch = 1
+--         self.m_musicData[1]:SetActive(false)
+--     end
+   
+--     self:removeCheckTimeSn()
+-- end
+-- -- 停止后再次播放背景音乐对象
+-- function startMusic(self)
+--     self.m_playingMusic = true
+--     if self.m_tmpMusicData and self.m_tmpMusicData[1] and not gs.GoUtil.IsGoNull(self.m_tmpMusicData[1]) then
+--         self.m_tmpMusicData[3].pitch = 1
+--         self.m_tmpMusicData[3].volume = Audio:getMusicVolume()
+--         self.m_tmpMusicData[1]:SetActive(true)
+--         return
+--     end
+--     if self.m_musicData and self.m_musicData[1] and not gs.GoUtil.IsGoNull(self.m_musicData[1]) then
+--         self.m_musicData[3].pitch = 1
+--         self.m_musicData[3].volume = Audio:getMusicVolume()
+--         -- self.m_musicData[3].Play(0)
+--         self.m_musicData[1]:SetActive(true)
+--     end
+    
+-- end
+-- -- 判断是否在播放背景音乐对象
+-- function isPlayingMusic(self, path)
+--     if self.m_musicData then
+--         if self.m_musicData[2]==path then
+--             return true
+--         end
+--     end
+-- end
+-- -- 设置背景音乐对象音量
+-- function setMusicVolume(self, volume)
+--     if self.m_musicData then
+--         self.m_musicData[3].volume = volume
+--     end
+--     if self.m_tmpMusicData then
+--         self.m_tmpMusicData[3].volume = volume
+--     end
+-- end
+
+-- --背景音乐过度暂停
+-- function pauseMusicByFade(self,time)
+--     if self.m_FadePauseMusicTwenn then
+--         self.m_FadePauseMusicTwenn:Kill()
+--         self.m_FadePauseMusicTwenn = nil
+--     end
+
+--     if self.m_FadeMusicTween then
+--         self.m_FadeMusicTween:Kill()
+--         self.m_FadeMusicTween = nil
+--     end
+
+--     if self.m_musicData then
+--         self.m_FadePauseMusicTwenn = gs.DoTweenUtil.DoTweenFadeFloat(self.m_musicData[3].volume,0,time,function (val)
+--             self.m_musicData[3].volume = val
+--         end,function ()
+--             gs.UnityEngineUtil.PauseAudio(self.m_musicData[3])
+--             self:removeCheckTimeSn()
+--         end)
+--     end
+--     if self.m_tmpMusicData then
+--         self.m_FadePauseMusicTwenn = gs.DoTweenUtil.DoTweenFadeFloat(self.m_tmpMusicData[3].volume,0,time,function (val)
+--             self.m_tmpMusicData[3].volume = val
+--         end,function ()
+--             gs.UnityEngineUtil.PauseAudio(self.m_tmpMusicData[3])
+--             self:removeCheckTimeSn()
+--         end)
+--     end
+-- end
+
+-- --背景音乐淡入恢复播放
+-- function resumeMusicByFade(self,time)
+--     self:addCheckTimeSn()
+
+--     if self.m_FadePauseMusicTwenn then
+--         self.m_FadePauseMusicTwenn:Kill()
+--         self.m_FadePauseMusicTwenn = nil
+--     end
+
+--     if self.m_FadeMusicTween then
+--         self.m_FadeMusicTween:Kill()
+--         self.m_FadeMusicTween = nil
+--     end
+
+--     local curVolume = Audio:getMusicVolume()
+--     if self.m_musicData then
+--         gs.UnityEngineUtil.UnPauseAudio(self.m_musicData[3])
+--         self.m_FadeMusicTween = gs.DoTweenUtil.DoTweenFadeFloat(self.m_musicData[3].volume,curVolume,time,function (val)
+--             self.m_musicData[3].volume = val
+--         end)
+--     end
+--     if self.m_tmpMusicData then
+--         gs.UnityEngineUtil.UnPauseAudio(self.m_tmpMusicData[3])
+--         self.m_FadeMusicTween = gs.DoTweenUtil.DoTweenFadeFloat(self.m_tmpMusicData[3].volume,curVolume,time,function (val)
+--             self.m_tmpMusicData[3].volume = val
+--         end)
+--     end
+-- end
+
+-- -- 继续播放音频
+-- function resumeAudioData(self, audioData)
+--     if audioData and audioData[3] and not gs.GoUtil.IsCompNull(audioData[3]) then
+--         gs.UnityEngineUtil.UnPauseAudio(audioData[3])
+--     end
+-- end
+
+-- -- 暂停播放音频
+-- function pauseAudioData(self, audioData)
+--     if audioData and audioData[3] and not gs.GoUtil.IsCompNull(audioData[3]) then
+--          gs.UnityEngineUtil.PauseAudio(audioData[3])
+--     end
+-- end
+
+-- -- 获取当前音乐播放路径
+-- function getPlayingMusicPath(self)
+--     if self.m_musicData then
+--         return self.m_musicData[2]
+--     end
+-- end
+
+-- --[[ 播放音效对象 
+-- beNeedStopData:是否需要返回用于停止音效的数据, 不用的话, 只返回bool 标志成功与否 默认否
+-- beLoop: 是循环播放 默认否
+-- finishCall: 结束回调, 非循环时有效
+-- ]]
+-- function playAudio(self, path, beNeedStopData, beLoop, finishCall)
+--     local volume = Audio:getEffectVolume()
+--     if(volume <= 0)then
+--         if finishCall then finishCall(path) end
+--         return
+--     end
+--     local audioData = nil
+--     local function _delayCall()
+--         self:stopAudio(audioData)
+--         if finishCall then finishCall(path) end
+--     end
+--     audioData = self:_loadAudioGo(path, volume, beLoop, nil, nil, _delayCall)
+--     if audioData then
+--         self.m_audioGos[audioData[4]] = audioData
+--         if beNeedStopData then
+--             return audioData
+--         end
+--         return true
+--     end
+--     if finishCall then finishCall(path) end
+--     return false
+-- end
+
+-- function playAudioCV(self, path, beNeedStopData, beLoop, finishCall)
+--     local volume = Audio:getCvVolume()
+--     if(volume <= 0)then
+--         if finishCall then finishCall(path) end
+--         return
+--     end
+--     local audioData = nil
+--     local function _delayCall()
+--         self:stopAudio(audioData)
+--         if finishCall then finishCall(path) end
+--     end
+--     audioData = self:_loadAudioGo(path, volume, beLoop, nil, nil, _delayCall)
+--     if audioData then
+--         self.m_audioGos[audioData[4]] = audioData
+--         if beNeedStopData then
+--             return audioData
+--         end
+--         return true
+--     end
+--     if finishCall then finishCall(path) end
+--     return false
+-- end
+
+-- -- 停止指定的音效对象
+-- function stopAudio(self, audioData)
+--     if not audioData then return end
+--     self:_stopAuidiGo(audioData, self.m_audioGos)
+-- end
+-- --[[  播放战斗音效对象
+-- beNeedStopData:是否需要返回用于停止音效的数据, 不用的话, 只返回bool 标志成功与否 默认否
+-- beLoop: 是循环播放 默认否
+-- finishCall: 结束回调, 非循环时有效
+-- ]]
+-- function playFightAudio(self, path, beNeedStopData, beLoop, wpos, finishCall)
+--     if fight.FightManager.m_gmOpenAudio==true then return end
+
+--     local volume = Audio:getEffectVolume()
+--     if(volume <= 0)then
+--         if finishCall then finishCall(path) end
+--         return
+--     end
+--     local audioData = nil
+--     local function _delayCall()
+--         self:stopFightAudio(audioData)
+--         if finishCall then finishCall(path) end
+--     end
+--     audioData = self:_loadAudioGo(path, volume, beLoop, wpos, nil, _delayCall)
+--     if audioData then
+--         audioData[3].pitch = fight.FightManager:getTimeScale()
+--         self.m_timeScaleAudioGos[audioData[4]] = audioData
+--         if beNeedStopData then
+--             return audioData
+--         end
+--         return true
+--     end
+--     if finishCall then finishCall(path) end
+--     return false
+-- end
+
+-- function playFightAudio02(self, path, beNeedStopData, beLoop, parentTrans, finishCall)
+--     if fight.FightManager.m_gmOpenAudio==true then return end
+
+--     local volume = Audio:getEffectVolume()
+--     if(volume <= 0)then
+--         if finishCall then finishCall(path) end
+--         return
+--     end
+--     local audioData = nil
+--     local function _delayCall()
+--         self:stopFightAudio(audioData)
+--         if finishCall then finishCall(path) end
+--     end
+--     audioData = self:_loadAudioGo(path, volume, beLoop, nil, parentTrans, _delayCall)
+--     if audioData then
+--         audioData[3].pitch = fight.FightManager:getTimeScale()
+--         self.m_timeScaleAudioGos[audioData[4]] = audioData
+--         if beNeedStopData then
+--             return audioData
+--         end
+--         return true
+--     end
+--     if finishCall then finishCall(path) end
+--     return false
+-- end
+
+-- -- 停止指定的战斗音效对象
+-- function stopFightAudio(self, audioData)
+--     if not audioData then return end
+--     self:_stopAuidiGo(audioData, self.m_timeScaleAudioGos)
+-- end
+
+-- -- 对所有战斗音效对象进行timeScale处理
+-- function timeScaleFightAudio(self, timeScale)
+--     for sn,audioData in pairs(self.m_timeScaleAudioGos) do
+--         if not gs.GoUtil.IsGoNull(audioData[1]) and audioData[3] then
+--             audioData[3].pitch = timeScale
+--         end
+--     end
+-- end
+
+-- function _loadAudioGo(self, path, volume, beLoop, wpos, parentTrans, removeCall)
+--     if not path or path=="" then 
+--         logWarn("play audio path is nil ")
+--         return
+--     end
+--     local audioGo = gs.GOPoolMgr:Get(path)
+--     if audioGo and not gs.GoUtil.IsGoNull(audioGo) then
+--         local aSource = audioGo:GetComponent(ty.AudioSource)
+--         if not aSource or not aSource.clip or aSource.clip.length<=0 then
+--             gs.GameObject.Destroy(audioGo)
+--             if removeCall then removeCall() end
+--             return
+--         end
+--         if parentTrans and not gs.GoUtil.IsTransNull(parentTrans) then
+--             gs.TransQuick:SetParentOrg01(audioGo, parentTrans)
+--         else
+--             gs.TransQuick:SetParentOrg01(audioGo, self.m_audioRoot)
+--             if wpos then
+--                 gs.TransQuick:Pos(audioGo.transform, wpos)
+--             end
+--         end
+--         aSource.volume = volume
+--         audioGo:SetActive(true)
+--         local timeoutId = nil
+--         if beLoop then
+--             aSource.loop = beLoop
+--         else
+--             if removeCall then
+--                 timeoutId = RateLooperUnScale:setTimeout(aSource.clip.length+0.5, self, removeCall)
+--             end
+--         end
+--         local sn = SnMgr:getSn()
+--         return {audioGo, path, aSource, sn, removeCall, timeoutId}
+--     end
+-- end
+
+-- function _stopAuidiGo(self, audioData, dict)
+--     local sn = audioData[4]
+--     if sn then
+--         local audioData = dict[sn]
+--         if audioData then
+--             dict[sn] = nil
+--             SnMgr:disposeSn(sn)
+--             if not gs.GoUtil.IsGoNull(audioData[1]) then
+--                 audioData[1]:SetActive(false)
+--                 audioData[3].pitch = 1
+--                 if audioData[5] then
+--                     audioData[5](audioData[2])
+--                     RateLooperUnScale:clearTimeout(audioData[6])
+--                 end
+--                 gs.GOPoolMgr:Recover(audioData[1], audioData[2])
+--             end
+--         end
+--     end
+-- end
+
+
+-- return _M
+ 
+-- --[[ 替换语言包自动生成，请勿修改！
+-- ]]

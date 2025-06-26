@@ -1,0 +1,4991 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1635969706812237566
+  },
+  "m_Name": "hdjq_yidengxing_end_anpusha",
+  "version": "",
+  "author": "",
+  "description": "",
+  "globalUserScript": "",
+  "emphasisSettings": [
+    {
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "bold": 0,
+      "italic": 0,
+      "underline": 0
+    },
+    {
+      "color": {
+        "r": 1.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "bold": 0,
+      "italic": 0,
+      "underline": 0
+    },
+    {
+      "color": {
+        "r": 0.0,
+        "g": 1.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "bold": 0,
+      "italic": 0,
+      "underline": 0
+    },
+    {
+      "color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "bold": 0,
+      "italic": 0,
+      "underline": 0
+    }
+  ],
+  "actors": [
+    {
+      "id": 1,
+      "fields": [
+        {
+          "title": "Name",
+          "value": "【选项】",
+          "type": 0,
+          "typeString": ""
+        },
+        {
+          "title": "Pictures",
+          "value": "[]",
+          "type": 3,
+          "typeString": "CustomFieldType_Files"
+        },
+        {
+          "title": "Description",
+          "value": "",
+          "type": 0,
+          "typeString": ""
+        },
+        {
+          "title": "IsPlayer",
+          "value": "TRUE",
+          "type": 2,
+          "typeString": "CustomFieldType_Boolean"
+        }
+      ],
+      "portrait": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "spritePortrait": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "alternatePortraits": [],
+      "spritePortraits": []
+    },
+    {
+      "id": 2,
+      "fields": [
+        {
+          "title": "Name",
+          "value": "旁白",
+          "type": 0,
+          "typeString": ""
+        },
+        {
+          "title": "Pictures",
+          "value": "[]",
+          "type": 3,
+          "typeString": "CustomFieldType_Files"
+        },
+        {
+          "title": "Description",
+          "value": "",
+          "type": 0,
+          "typeString": ""
+        },
+        {
+          "title": "IsPlayer",
+          "value": "FALSE",
+          "type": 2,
+          "typeString": "CustomFieldType_Boolean"
+        }
+      ],
+      "portrait": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "spritePortrait": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "alternatePortraits": [],
+      "spritePortraits": []
+    },
+    {
+      "id": 3,
+      "fields": [
+        {
+          "title": "Name",
+          "value": "侍主",
+          "type": 0,
+          "typeString": ""
+        },
+        {
+          "title": "Pictures",
+          "value": "[]",
+          "type": 3,
+          "typeString": "CustomFieldType_Files"
+        },
+        {
+          "title": "Description",
+          "value": "侍主",
+          "type": 0,
+          "typeString": ""
+        },
+        {
+          "title": "IsPlayer",
+          "value": "FALSE",
+          "type": 2,
+          "typeString": "CustomFieldType_Boolean"
+        }
+      ],
+      "portrait": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "spritePortrait": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "alternatePortraits": [],
+      "spritePortraits": []
+    },
+    {
+      "id": 4,
+      "fields": [
+        {
+          "title": "Name",
+          "value": "安普莎",
+          "type": 0,
+          "typeString": ""
+        },
+        {
+          "title": "Pictures",
+          "value": "[]",
+          "type": 3,
+          "typeString": "CustomFieldType_Files"
+        },
+        {
+          "title": "Description",
+          "value": "",
+          "type": 0,
+          "typeString": ""
+        },
+        {
+          "title": "IsPlayer",
+          "value": "FALSE",
+          "type": 2,
+          "typeString": "CustomFieldType_Boolean"
+        },
+        {
+          "title": "modelName",
+          "value": "anpusha",
+          "type": 0,
+          "typeString": ""
+        }
+      ],
+      "portrait": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "spritePortrait": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "alternatePortraits": [],
+      "spritePortraits": []
+    }
+  ],
+  "items": [],
+  "locations": [],
+  "variables": [
+    {
+      "id": 1,
+      "fields": [
+        {
+          "title": "Name",
+          "value": "Alert",
+          "type": 0,
+          "typeString": ""
+        },
+        {
+          "title": "Initial Value",
+          "value": "",
+          "type": 0,
+          "typeString": ""
+        },
+        {
+          "title": "Description",
+          "value": "",
+          "type": 0,
+          "typeString": ""
+        }
+      ]
+    }
+  ],
+  "conversations": [
+    {
+      "id": 1,
+      "fields": [
+        {
+          "title": "Title",
+          "value": "hdjq_yidengxing_end_anpusha",
+          "type": 0,
+          "typeString": "CustomFieldType_Text"
+        },
+        {
+          "title": "Pictures",
+          "value": "[]",
+          "type": 3,
+          "typeString": "CustomFieldType_Files"
+        },
+        {
+          "title": "Description",
+          "value": "人偶得到了她的玫瑰花，还是人偶成为了他的玫瑰花？",
+          "type": 0,
+          "typeString": "CustomFieldType_Text"
+        },
+        {
+          "title": "Actor",
+          "value": "3",
+          "type": 5,
+          "typeString": "CustomFieldType_Actor"
+        },
+        {
+          "title": "Conversant",
+          "value": "1",
+          "type": 5,
+          "typeString": "CustomFieldType_Actor"
+        },
+        {
+          "title": "Tip",
+          "value": "人偶的玫瑰",
+          "type": 0,
+          "typeString": "CustomFieldType_Text"
+        }
+      ],
+      "overrideSettings": {
+        "useOverrides": 0,
+        "overrideSubtitleSettings": 0,
+        "showNPCSubtitlesDuringLine": 1,
+        "showNPCSubtitlesWithResponses": 1,
+        "showPCSubtitlesDuringLine": 0,
+        "skipPCSubtitleAfterResponseMenu": 0,
+        "subtitleCharsPerSecond": 30.0,
+        "minSubtitleSeconds": 2.0,
+        "continueButton": 0,
+        "overrideSequenceSettings": 0,
+        "defaultSequence": "",
+        "defaultPlayerSequence": "",
+        "defaultResponseMenuSequence": "",
+        "overrideInputSettings": 0,
+        "alwaysForceResponseMenu": 1,
+        "includeInvalidEntries": 0,
+        "responseTimeout": 0.0,
+        "cancelSubtitle": {
+          "key": 27,
+          "buttonName": ""
+        },
+        "cancelConversation": {
+          "key": 27,
+          "buttonName": ""
+        }
+      },
+      "nodeColor": "",
+      "dialogueEntries": [
+        {
+          "id": 0,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "START",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Sequence",
+              "value": "None()",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 0,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 1,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.5821,
+            "y": 151.7612,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 1,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ChangeBgm,bgm_JuQing_xingkongzhixia,StoryUI);\nSendMessage(ChangeBg,ui_bg_sbzttdyw,StoryBg);\r\nFade(in,2);\r\nContinue()@3;\nSendMessage(ChangeActorSpineAnimation,stand,安普莎);\nSendMessage(DoMoveTo,0|-500|0.1|-1|-1,安普莎);",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 1,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 2,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.7112,
+            "y": 198.68106,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 2,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "夜雾逐渐浓郁，星星点点的亮光在夜雾里浮现，装点着寂静的夜晚。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 2,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 3,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 446.7185,
+            "y": 252.8976,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 3,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "我忽然在想，如果等待的结果并不是那两人之一，那会是谁？在今夜，似乎一切皆有可能。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 3,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 4,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 446.7185,
+            "y": 302.8976,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 4,
+          "fields": [
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "1",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "[panel=1]none",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(DoMoveTo,0|200|1.5|-1|-1,安普莎);\nSendMessage(ShowFadeIn,1.5,安普莎);\nSendMessage(PlayEnvironmentalSound,Footstep_Armor_loop,StoryUI); \r\nSendMessage(StopEnvironmentalSound,,StoryUI)@1.5;\r\nSendMessage(ChangeActorSpineAnimation,renzhen;true;1,安普莎);\nContinue()@1.5;",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 4,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 5,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 690.0,
+            "y": 338.0,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 5,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "下面传来利刃嵌入碎石的声音。不多时，人偶的利爪牢牢扣住边缘。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeOut,,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 5,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 6,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 446.7185,
+            "y": 352.8976,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 6,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "安普莎？",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 6,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 7,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 446.7185,
+            "y": 402.8976,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 7,
+          "fields": [
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "[panel=1]none",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\nSendMessage(DoScale,1.05|1|-1|-1,安普莎);\nSendMessage(DoMoveTo,0|-50|0.2|0.1|0.2,安普莎)@1.3;\nContinue()@2;",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 7,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 8,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 698.7185,
+            "y": 429.8976,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 8,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "我伸出手，人偶愣了一下，用力将手臂伸了出来。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeOut,,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 8,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 9,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.7185,
+            "y": 453.8684,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 9,
+          "fields": [
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "[panel=1]none",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\nSendMessage(DoMoveTo,0|300|1|-0.1|-0.2,安普莎);\nContinue()@1.5;",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 9,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 10,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 698.0,
+            "y": 488.0,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 10,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "我攥住她的手，把她拉了上来。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeOut,,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 10,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 11,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 446.7185,
+            "y": 502.8976,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 11,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "她的衣服破了不少，头发也有几处烧焦的痕迹。身上的刺断了不少，右腿的连接处僵着，应该是坏掉了。",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 11,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 12,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 446.7185,
+            "y": 552.8976,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 12,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "察觉到我的目光，她侧了侧身子。",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 12,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 13,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 446.7185,
+            "y": 602.8976,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 13,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "……还真是狼狈。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,dongyao;true;1,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,talk1;true;2;0.8,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 13,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 14,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.6315,
+            "y": 652.8976,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 14,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "1",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "向她道歉",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 14,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 15,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 446.7185,
+            "y": 751.9268,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 15,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "抱歉，安普莎。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeOut,,安普莎);\r\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 15,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 16,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 446.7185,
+            "y": 802.8976,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 16,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "我没想到你伤得这么重。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 16,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 17,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 446.8053,
+            "y": 865.941,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 17,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "想和我约会的话，随时都可以……不用这么拼的。",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 17,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 18,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 446.7185,
+            "y": 952.8976,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 18,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "抱、抱歉？",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,dongyao;true;1,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,talk1;true;2;0.5,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 18,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 19,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.7751,
+            "y": 1001.834,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 19,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "安普莎愣在原地。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeOut,,安普莎);\r\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 19,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 20,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.6546,
+            "y": 1052.898,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 20,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "怎么了？",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 20,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 21,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 442.649,
+            "y": 1101.834,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 21,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "……",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,renzhen;true;1,安普莎);\r\n\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 21,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 22,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.5908,
+            "y": 1152.322,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 22,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "从没人对人偶道过歉呢。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,renzhen;true;1,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,talk1;true;2;0.8,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 22,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 23,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.6217,
+            "y": 1204.992,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 23,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "这也是爱的一种吗，侍主大人？",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,kaixin;true;1,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,talk1;true;2;1,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 23,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 24,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.5908,
+            "y": 1253.961,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 24,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "您现在也是在爱我吗？",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,renzhen;true;1,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,talk1;true;2;0.8,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 24,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 25,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.5908,
+            "y": 1303.961,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 25,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "我不知道该怎么回答她，只是用力地握着她的手，试图让她感受到什么。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeOut,,安普莎);\r\n\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 25,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 26,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.5908,
+            "y": 1353.961,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 26,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "她抬起手，看着两只十指相扣的手。",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 26,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 27,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 443.5269,
+            "y": 1403.961,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 27,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "我的手很硬，很锋利，有可能割破您。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,renzhen;true;1,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,talk1;true;2;1.2,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 27,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 28,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.5617,
+            "y": 1453.961,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 28,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "您不怕疼吗？",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,renzhen;true;1,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,talk1;true;2;0.5,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 28,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 29,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.5908,
+            "y": 1503.961,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 29,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "我突然明白该如何告诉她了。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeOut,,安普莎);\r\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 29,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 30,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.5908,
+            "y": 1553.961,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 30,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "我用指尖触碰着她肩头断掉的刺。",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 30,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 31,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.5908,
+            "y": 1603.961,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 31,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "这里断掉的时候，我会感到痛。",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": ""
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 31,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 32,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.5908,
+            "y": 1653.142,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 32,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "这就是爱，安普莎。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 32,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 33,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.5908,
+            "y": 1702.322,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 33,
+          "fields": [
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "[panel=1]none",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(PlayCrossFade,ui_bg_sbzttd|1.5|0,StoryBg);\nContinue()@2.5;",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 33,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 34,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 655.0,
+            "y": 1720.0,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 34,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "遥远的星划过天空，短暂地照亮了她的脸。人偶抬起头，安静地看着。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 34,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 35,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 441.5038,
+            "y": 1752.961,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 35,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "我看过流星。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,renzhen;true;1,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,talk1;true;2;0.5,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 35,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 36,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.5908,
+            "y": 1802.898,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 36,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "但是……为什么……",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,renzhen;true;1,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,talk1;true;2;0.8,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 36,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 37,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.799,
+            "y": 1849.66,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 37,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "4",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "这次会感觉这么、奇怪？",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,renzhen;true;1,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,talk1;true;2;0.9,安普莎);\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 37,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 38,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 444.799,
+            "y": 1899.66,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 38,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "她怔怔地看着我，流星在她的眼中倒映着，顺着眼角，留下一行清澈的水迹。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeOut,,安普莎);\r\n\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 38,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 39,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.6546,
+            "y": 1946.515,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 39,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "因为我爱你，安普莎。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 39,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 40,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.6546,
+            "y": 1994.427,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 40,
+          "fields": [
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "[panel=1]none",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(DoScale,1.15|1|-1|-1,安普莎);\nSendMessage(DoScale,1.15|1.15|1,StoryBg);\nSendMessage(ImageFadeIn,,安普莎);\r\nSendMessage(ChangeActorSpineAnimation,kaixin;true;1,安普莎)@1;\r\n\nContinue()@1.5;",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 40,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 41,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 683.6546,
+            "y": 2021.427,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 41,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "我帮她擦掉脸上的泪痕。她的脸像夜一样凉，但那道泪痕却是温热的。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(ImageFadeIn,,安普莎);\r\nDelay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 41,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 42,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.6546,
+            "y": 2046.515,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 42,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "3",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "因为你也爱我。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 42,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 43,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.6546,
+            "y": 2096.515,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 43,
+          "fields": [
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "1",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "[panel=1]none",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SendMessage(PlayCrossFade,ui_bg_sbzttdyw|1|0,StoryBg);\n\nSendMessage(PlayCrossFade,ui_bg_sbzttd0|1|0,StoryBg)@1.5;\nContinue()@3;",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 43,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 44,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 695.1852,
+            "y": 2117.5847,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 44,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "我们就这样拥抱着，直到流星黯淡，夜色微明。",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "Delay({{end}});",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [
+            {
+              "originConversationID": 1,
+              "originDialogueID": 44,
+              "destinationConversationID": 1,
+              "destinationDialogueID": 45,
+              "isConnector": 0,
+              "priority": 2
+            }
+          ],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.6546,
+            "y": 2146.515,
+            "width": 160.0,
+            "height": 30.0
+          }
+        },
+        {
+          "id": 45,
+          "fields": [
+            {
+              "title": "Actor",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Conversant",
+              "value": "2",
+              "type": 5,
+              "typeString": "CustomFieldType_Actor"
+            },
+            {
+              "title": "Title",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Menu Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Dialogue Text",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Sequence",
+              "value": "SetContinueMode(false);\nFade(stay,1);\nSetContinueMode(true)@1.4;\nContinue()@1.4;",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Pictures",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Description",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Parenthetical",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            },
+            {
+              "title": "Audio Files",
+              "value": "[]",
+              "type": 3,
+              "typeString": "CustomFieldType_Files"
+            },
+            {
+              "title": "Video File",
+              "value": "",
+              "type": 0,
+              "typeString": "CustomFieldType_Text"
+            }
+          ],
+          "conversationID": 1,
+          "isRoot": 0,
+          "isGroup": 0,
+          "nodeColor": "",
+          "delaySimStatus": 0,
+          "falseConditionAction": "Block",
+          "conditionPriority": 2,
+          "outgoingLinks": [],
+          "conditionsString": "",
+          "userScript": "",
+          "onExecute": {
+            "m_PersistentCalls": {
+              "m_Calls": []
+            }
+          },
+          "canvasRect": {
+            "x": 445.6546,
+            "y": 2196.515,
+            "width": 160.0,
+            "height": 30.0
+          }
+        }
+      ],
+      "canvasScrollPosition": {
+        "x": 310.5918,
+        "y": 160.62996
+      },
+      "canvasZoom": 1.2699999
+    }
+  ],
+  "syncInfo": {
+    "syncActors": 0,
+    "syncItems": 0,
+    "syncLocations": 0,
+    "syncVariables": 0,
+    "syncActorsDatabase": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "syncItemsDatabase": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "syncLocationsDatabase": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "syncVariablesDatabase": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "templateJson": ""
+}

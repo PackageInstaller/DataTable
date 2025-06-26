@@ -1,0 +1,982 @@
+{
+    "DoNotUseThis": [
+        {
+            "Index": 16,
+            "NodeType": 1,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeBattleInfo, Assembly-CSharp",
+                "BattleType": 1,
+                "ZoneIndexList": {
+                    "1": 426,
+                    "2": 427,
+                    "3": 428,
+                    "4": 429
+                }
+            }
+        },
+        {
+            "Index": 55,
+            "NodeType": 1,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeBattleInfo, Assembly-CSharp",
+                "BattleType": 1,
+                "ZoneIndexList": {
+                    "1": 870,
+                    "2": 871,
+                    "3": 872,
+                    "4": 873
+                }
+            }
+        },
+        {
+            "Index": 56,
+            "NodeType": 1,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeBattleInfo, Assembly-CSharp",
+                "BattleType": 1,
+                "ZoneIndexList": {
+                    "1": 874,
+                    "2": 875,
+                    "3": 876,
+                    "4": 877
+                }
+            }
+        },
+        {
+            "Index": 57,
+            "NodeType": 1,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeBattleInfo, Assembly-CSharp",
+                "BattleType": 1,
+                "ZoneIndexList": {
+                    "1": 878,
+                    "2": 879,
+                    "3": 880,
+                    "4": 881
+                }
+            }
+        },
+        {
+            "Index": 12,
+            "NodeType": 1,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeBattleInfo, Assembly-CSharp",
+                "BattleType": 2,
+                "ZoneIndexList": {
+                    "1": 410,
+                    "2": 411,
+                    "3": 412,
+                    "4": 413
+                }
+            }
+        },
+        {
+            "Index": 13,
+            "NodeType": 1,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeBattleInfo, Assembly-CSharp",
+                "BattleType": 2,
+                "ZoneIndexList": {
+                    "1": 414,
+                    "2": 415,
+                    "3": 416,
+                    "4": 417
+                }
+            }
+        },
+        {
+            "Index": 17,
+            "NodeType": 1,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeBattleInfo, Assembly-CSharp",
+                "BattleType": 2,
+                "ZoneIndexList": {
+                    "1": 430,
+                    "2": 431,
+                    "3": 432,
+                    "4": 433
+                }
+            }
+        },
+        {
+            "Index": 18,
+            "NodeType": 1,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeBattleInfo, Assembly-CSharp",
+                "BattleType": 2,
+                "ZoneIndexList": {
+                    "1": 434,
+                    "2": 435,
+                    "3": 436,
+                    "4": 437
+                }
+            }
+        },
+        {
+            "Index": 14,
+            "NodeType": 1,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeBattleInfo, Assembly-CSharp",
+                "BattleType": 3,
+                "ZoneIndexList": {
+                    "1": 418,
+                    "2": 419,
+                    "3": 420,
+                    "4": 421
+                }
+            }
+        },
+        {
+            "Index": 15,
+            "NodeType": 1,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeBattleInfo, Assembly-CSharp",
+                "BattleType": 4,
+                "ZoneIndexList": {
+                    "1": 422,
+                    "2": 423,
+                    "3": 424,
+                    "4": 425
+                }
+            }
+        },
+        {
+            "Index": 4,
+            "NodeType": 2
+        },
+        {
+            "Index": 5,
+            "NodeType": 3,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeHealInfo, Assembly-CSharp",
+                "BuffList": [
+                    55
+                ]
+            }
+        },
+        {
+            "Index": 6,
+            "NodeType": 3,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeHealInfo, Assembly-CSharp",
+                "BuffList": [
+                    58
+                ]
+            }
+        },
+        {
+            "Index": 9,
+            "NodeType": 4,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeRebirthInfo, Assembly-CSharp",
+                "BuffList": [
+                    69
+                ]
+            }
+        },
+        {
+            "Index": 2,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 1,
+                "BuffList": {
+                    "1": [
+                        27,
+                        32
+                    ],
+                    "2": [
+                        50
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 7,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 2,
+                "BuffList": {
+                    "1": [
+                        48,
+                        64,
+                        102
+                    ],
+                    "2": [
+                        56,
+                        55
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 19,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 3,
+                "BuffList": {
+                    "1": [
+                        22,
+                        33
+                    ],
+                    "2": [
+                        55,
+                        28
+                    ],
+                    "3": [
+                        75,
+                        80,
+                        94,
+                        81,
+                        96
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 20,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 4,
+                "BuffList": {
+                    "1": [
+                        33,
+                        34,
+                        35
+                    ],
+                    "2": [
+                        51,
+                        50
+                    ],
+                    "3": [
+                        80,
+                        81,
+                        98
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 21,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 5,
+                "BuffList": {
+                    "1": [
+                        64,
+                        100,
+                        102,
+                        103
+                    ],
+                    "2": [
+                        51
+                    ],
+                    "3": [
+                        53
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 22,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 6,
+                "BuffList": {
+                    "1": [
+                        56,
+                        33,
+                        35,
+                        37
+                    ],
+                    "2": [
+                        34
+                    ],
+                    "3": [
+                        38,
+                        39,
+                        40
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 23,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 7,
+                "BuffList": {
+                    "1": [
+                        64,
+                        65,
+                        64,
+                        64,
+                        102,
+                        100,
+                        103
+                    ],
+                    "2": [
+                        50
+                    ],
+                    "3": [
+                        33
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 24,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 8,
+                "BuffList": {
+                    "1": [
+                        80,
+                        93,
+                        94,
+                        95,
+                        81,
+                        96,
+                        97
+                    ],
+                    "2": [],
+                    "3": [
+                        90,
+                        64
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 25,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 9,
+                "BuffList": {
+                    "1": [
+                        75,
+                        96,
+                        97,
+                        81
+                    ],
+                    "2": []
+                }
+            }
+        },
+        {
+            "Index": 26,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 10,
+                "BuffList": {
+                    "1": [
+                        50,
+                        49,
+                        48,
+                        51
+                    ],
+                    "2": [
+                        52,
+                        87,
+                        103
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 29,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 13,
+                "BuffList": {
+                    "1": [
+                        25,
+                        30,
+                        24,
+                        29,
+                        82
+                    ],
+                    "2": [],
+                    "3": [
+                        50,
+                        48,
+                        75,
+                        98,
+                        49,
+                        90
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 30,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 14,
+                "BuffList": {
+                    "1": [
+                        43,
+                        38,
+                        39,
+                        44,
+                        45,
+                        40
+                    ],
+                    "2": [],
+                    "3": [
+                        75
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 31,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 15,
+                "BuffList": {
+                    "1": [
+                        50,
+                        51,
+                        102
+                    ],
+                    "2": []
+                }
+            }
+        },
+        {
+            "Index": 32,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 16,
+                "BuffList": {
+                    "1": [
+                        24,
+                        38
+                    ],
+                    "2": [
+                        48,
+                        51,
+                        102
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 33,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 17,
+                "BuffList": {
+                    "1": [
+                        54,
+                        55,
+                        56,
+                        58
+                    ],
+                    "2": [
+                        75,
+                        80,
+                        92,
+                        94,
+                        95,
+                        81,
+                        96,
+                        97,
+                        98
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 34,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 18,
+                "BuffList": {
+                    "1": [
+                        63,
+                        69
+                    ],
+                    "2": [
+                        64,
+                        102
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 35,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 19,
+                "BuffList": {
+                    "1": [
+                        64,
+                        65,
+                        102,
+                        103
+                    ],
+                    "2": [
+                        50,
+                        89,
+                        51,
+                        87,
+                        90
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 36,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 20,
+                "BuffList": {
+                    "1": [
+                        22,
+                        28
+                    ],
+                    "2": [
+                        33,
+                        35,
+                        37
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 37,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 21,
+                "BuffList": {
+                    "1": [
+                        69,
+                        70,
+                        71,
+                        64,
+                        64,
+                        65
+                    ],
+                    "2": [],
+                    "3": [
+                        50,
+                        48,
+                        90
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 38,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 22,
+                "BuffList": {
+                    "1": [
+                        33,
+                        34
+                    ],
+                    "2": [
+                        50
+                    ],
+                    "3": [
+                        75,
+                        92,
+                        80,
+                        94,
+                        81
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 39,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 23,
+                "BuffList": {
+                    "1": [
+                        25,
+                        30,
+                        27,
+                        47,
+                        45,
+                        83,
+                        82,
+                        42
+                    ],
+                    "2": []
+                }
+            }
+        },
+        {
+            "Index": 40,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 24,
+                "BuffList": {
+                    "1": [
+                        105,
+                        107,
+                        65,
+                        103
+                    ],
+                    "2": []
+                }
+            }
+        },
+        {
+            "Index": 41,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 25,
+                "BuffList": {
+                    "1": [
+                        35,
+                        37,
+                        33
+                    ],
+                    "2": [
+                        50,
+                        48,
+                        90,
+                        87,
+                        49,
+                        51
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 42,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 26,
+                "BuffList": {
+                    "1": [
+                        54,
+                        56,
+                        58
+                    ],
+                    "2": [
+                        78,
+                        99
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 43,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 27,
+                "BuffList": {
+                    "1": [
+                        48,
+                        49,
+                        22,
+                        25,
+                        51,
+                        30,
+                        43,
+                        44,
+                        53
+                    ],
+                    "2": []
+                }
+            }
+        },
+        {
+            "Index": 44,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 28,
+                "BuffList": {
+                    "1": [
+                        51,
+                        50
+                    ],
+                    "2": [
+                        103
+                    ],
+                    "3": [
+                        64
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 45,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 29,
+                "BuffList": {
+                    "1": [
+                        48,
+                        87
+                    ],
+                    "2": [
+                        50,
+                        87
+                    ],
+                    "3": []
+                }
+            }
+        },
+        {
+            "Index": 46,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 30,
+                "BuffList": {
+                    "1": [
+                        52,
+                        87,
+                        100,
+                        102
+                    ],
+                    "2": [
+                        33,
+                        34
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 47,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 31,
+                "BuffList": {
+                    "1": [
+                        38,
+                        39,
+                        40,
+                        76
+                    ],
+                    "2": []
+                }
+            }
+        },
+        {
+            "Index": 48,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 32,
+                "BuffList": {
+                    "1": [
+                        64,
+                        65
+                    ],
+                    "2": [
+                        45,
+                        47,
+                        83
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 49,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 33,
+                "BuffList": {
+                    "1": [],
+                    "2": [
+                        64,
+                        102
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 50,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 34,
+                "BuffList": {
+                    "1": [
+                        25,
+                        35,
+                        90,
+                        87,
+                        50,
+                        51,
+                        103
+                    ],
+                    "2": []
+                }
+            }
+        },
+        {
+            "Index": 51,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 35,
+                "BuffList": {
+                    "1": [
+                        45,
+                        38,
+                        45,
+                        47,
+                        27,
+                        82
+                    ],
+                    "2": []
+                }
+            }
+        },
+        {
+            "Index": 52,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 36,
+                "BuffList": {
+                    "1": [
+                        69,
+                        70
+                    ],
+                    "2": [
+                        55,
+                        56
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 53,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 37,
+                "BuffList": {
+                    "1": [
+                        69
+                    ],
+                    "2": []
+                }
+            }
+        },
+        {
+            "Index": 54,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 38,
+                "BuffList": {
+                    "1": [
+                        56
+                    ],
+                    "2": [
+                        58,
+                        35,
+                        37,
+                        33
+                    ],
+                    "3": [
+                        74
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 58,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 39,
+                "BuffList": {
+                    "1": [],
+                    "2": [
+                        138
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 59,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 40,
+                "BuffList": {
+                    "1": [
+                        139
+                    ],
+                    "2": [
+                        140
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 60,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 41,
+                "BuffList": {
+                    "1": [
+                        143
+                    ],
+                    "2": [
+                        92
+                    ]
+                }
+            }
+        },
+        {
+            "Index": 61,
+            "NodeType": 5,
+            "NodeInfo": {
+                "$type": "GameDesignData.MazeNodeTalkInfo, Assembly-CSharp",
+                "TalkIndex": 42,
+                "BuffList": {
+                    "1": [
+                        142
+                    ],
+                    "2": [
+                        141
+                    ]
+                }
+            }
+        }
+    ],
+    "hash": "K7S/MXwQURcFFHeB8XQjGz8+cghIxbXMxCMFF/+WwxA="
+}

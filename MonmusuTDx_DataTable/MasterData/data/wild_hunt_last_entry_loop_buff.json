@@ -1,0 +1,60 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -4865915360507517356
+  },
+  "m_Name": "wild_hunt_last_entry_loop_buff",
+  "table": [
+    {
+      "secretCategoryId": 1,
+      "loop": 1,
+      "text": "敵のHP・攻撃力・物理魔法防御力が増加！",
+      "buffList": [
+        {
+          "buffType": 1,
+          "buffParam": 100
+        },
+        {
+          "buffType": 6,
+          "buffParam": 20
+        },
+        {
+          "buffType": 11,
+          "buffParam": 20
+        },
+        {
+          "buffType": 16,
+          "buffParam": 20
+        }
+      ]
+    },
+    {
+      "secretCategoryId": 2,
+      "loop": 1,
+      "text": "敵のHP・攻撃力・物理魔法防御力が増加！",
+      "buffList": [
+        {
+          "buffType": 1,
+          "buffParam": 100
+        },
+        {
+          "buffType": 6,
+          "buffParam": 20
+        },
+        {
+          "buffType": 11,
+          "buffParam": 20
+        },
+        {
+          "buffType": 16,
+          "buffParam": 20
+        }
+      ]
+    }
+  ]
+}

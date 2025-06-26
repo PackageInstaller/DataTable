@@ -1,0 +1,5602 @@
+[
+    {
+        "Key": "Str",
+        "Text": {
+            "Korea": "Str",
+            "English": "Strength",
+            "ChineseCh": "力量",
+            "ChineseTh": "Str",
+            "Japanese": "力"
+        }
+    },
+    {
+        "Key": "StrPer",
+        "Text": {
+            "Korea": "StrPer",
+            "ChineseTh": "StrPer"
+        }
+    },
+    {
+        "Key": "StrFinPer",
+        "Text": {
+            "Korea": "StrFinPer",
+            "ChineseTh": "StrFinPer"
+        }
+    },
+    {
+        "Key": "StrPerM",
+        "Text": {
+            "Korea": "StrPerM",
+            "ChineseTh": "StrPerM"
+        }
+    },
+    {
+        "Key": "StrFinPerM",
+        "Text": {
+            "Korea": "StrFinPerM",
+            "ChineseTh": "StrFinPerM"
+        }
+    },
+    {
+        "Key": "Dex",
+        "Text": {
+            "Korea": "Dex",
+            "English": "Dexterity",
+            "ChineseCh": "技巧",
+            "ChineseTh": "Dex",
+            "Japanese": "手際"
+        }
+    },
+    {
+        "Key": "DexPer",
+        "Text": {
+            "Korea": "DexPer",
+            "ChineseTh": "DexPer"
+        }
+    },
+    {
+        "Key": "DexFinPer",
+        "Text": {
+            "Korea": "DexFinPer",
+            "ChineseTh": "DexFinPer"
+        }
+    },
+    {
+        "Key": "DexPerM",
+        "Text": {
+            "Korea": "DexPerM",
+            "ChineseTh": "DexPerM"
+        }
+    },
+    {
+        "Key": "DexFinPerM",
+        "Text": {
+            "Korea": "DexFinPerM",
+            "ChineseTh": "DexFinPerM"
+        }
+    },
+    {
+        "Key": "Int",
+        "Text": {
+            "Korea": "Int",
+            "English": "Intellect",
+            "ChineseCh": "智力",
+            "ChineseTh": "Int",
+            "Japanese": "知力"
+        }
+    },
+    {
+        "Key": "IntPer",
+        "Text": {
+            "Korea": "IntPer",
+            "ChineseTh": "IntPer"
+        }
+    },
+    {
+        "Key": "IntFinPer",
+        "Text": {
+            "Korea": "IntFinPer",
+            "ChineseTh": "IntFinPer"
+        }
+    },
+    {
+        "Key": "IntPerM",
+        "Text": {
+            "Korea": "IntPerM",
+            "ChineseTh": "IntPerM"
+        }
+    },
+    {
+        "Key": "IntFinPerM",
+        "Text": {
+            "Korea": "IntFinPerM",
+            "ChineseTh": "IntFinPerM"
+        }
+    },
+    {
+        "Key": "Con",
+        "Text": {
+            "Korea": "Con",
+            "English": "Health",
+            "ChineseCh": "体魄",
+            "ChineseTh": "Con",
+            "Japanese": "健康"
+        }
+    },
+    {
+        "Key": "ConPer",
+        "Text": {
+            "Korea": "ConPer",
+            "ChineseTh": "ConPer"
+        }
+    },
+    {
+        "Key": "ConFinPer",
+        "Text": {
+            "Korea": "ConFinPer",
+            "ChineseTh": "ConFinPer"
+        }
+    },
+    {
+        "Key": "ConPerM",
+        "Text": {
+            "Korea": "ConPerM",
+            "ChineseTh": "ConPerM"
+        }
+    },
+    {
+        "Key": "ConFinPerM",
+        "Text": {
+            "Korea": "ConFinPerM",
+            "ChineseTh": "ConFinPerM"
+        }
+    },
+    {
+        "Key": "Hp",
+        "Text": {
+            "Korea": "생명력",
+            "English": "HP",
+            "ChineseCh": "生命值",
+            "ChineseTh": "生命力",
+            "Japanese": "生命力"
+        }
+    },
+    {
+        "Key": "HpPer",
+        "Text": {
+            "Korea": "생명력 증가",
+            "English": "Increase HP",
+            "ChineseCh": "生命值提升",
+            "ChineseTh": "生命力增加",
+            "Japanese": "生命力アップ"
+        }
+    },
+    {
+        "Key": "HpFinPer",
+        "Text": {
+            "Korea": "HpFinPer",
+            "ChineseTh": "HpFinPer"
+        }
+    },
+    {
+        "Key": "HpPerM",
+        "Text": {
+            "Korea": "생명력 감소",
+            "English": "Reduce HP",
+            "ChineseCh": "生命值降低",
+            "ChineseTh": "生命力減少",
+            "Japanese": "生命力ダウン"
+        }
+    },
+    {
+        "Key": "HpFinPerM",
+        "Text": {
+            "Korea": "HpFinPerM",
+            "ChineseTh": "HpFinPerM"
+        }
+    },
+    {
+        "Key": "Atk",
+        "Text": {
+            "Korea": "공격력",
+            "English": "Attack",
+            "ChineseCh": "攻击力",
+            "ChineseTh": "攻擊力",
+            "Japanese": "攻撃力"
+        }
+    },
+    {
+        "Key": "AtkPer",
+        "Text": {
+            "Korea": "공격력 증가",
+            "English": "Attack +",
+            "ChineseCh": "攻击力提升",
+            "ChineseTh": "攻擊力增加",
+            "Japanese": "攻撃力アップ"
+        }
+    },
+    {
+        "Key": "AtkFinPer",
+        "Text": {
+            "Korea": "AtkFinPer",
+            "ChineseTh": "AtkFinPer"
+        }
+    },
+    {
+        "Key": "AtkPerM",
+        "Text": {
+            "Korea": "공격력 감소",
+            "English": "Attack -",
+            "ChineseCh": "攻击力降低",
+            "ChineseTh": "攻擊力減少",
+            "Japanese": "攻撃力ダウン"
+        }
+    },
+    {
+        "Key": "AtkFinPerM",
+        "Text": {
+            "Korea": "AtkFinPerM",
+            "ChineseTh": "AtkFinPerM"
+        }
+    },
+    {
+        "Key": "Def",
+        "Text": {
+            "Korea": "방어력",
+            "English": "Defense",
+            "ChineseCh": "防御力",
+            "ChineseTh": "防禦力",
+            "Japanese": "防御力"
+        }
+    },
+    {
+        "Key": "DefPer",
+        "Text": {
+            "Korea": "방어력 증가",
+            "English": "Defense +",
+            "ChineseCh": "防御力提升",
+            "ChineseTh": "防禦力增加",
+            "Japanese": "防御力アップ"
+        }
+    },
+    {
+        "Key": "DefFinPer",
+        "Text": {
+            "Korea": "DefFinPer",
+            "ChineseTh": "DefFinPer"
+        }
+    },
+    {
+        "Key": "DefPerM",
+        "Text": {
+            "Korea": "방어력 감소",
+            "English": "Defense -",
+            "ChineseCh": "防御力降低",
+            "ChineseTh": "防禦力減少",
+            "Japanese": "防御力ダウン"
+        }
+    },
+    {
+        "Key": "DefFinPerM",
+        "Text": {
+            "Korea": "DefFinPerM",
+            "ChineseTh": "DefFinPerM"
+        }
+    },
+    {
+        "Key": "Cri",
+        "Text": {
+            "Korea": "Cri",
+            "ChineseTh": "Cri"
+        }
+    },
+    {
+        "Key": "CriPer",
+        "Text": {
+            "Korea": "CriPer",
+            "ChineseTh": "CriPer"
+        }
+    },
+    {
+        "Key": "CriFinPer",
+        "Text": {
+            "Korea": "치명타 확률 증가",
+            "English": "Critical Hit Chance +",
+            "ChineseCh": "暴击率提升",
+            "ChineseTh": "暴擊率增加",
+            "Japanese": "クリティカル率アップ"
+        }
+    },
+    {
+        "Key": "CriPerM",
+        "Text": {
+            "Korea": "CriPerM",
+            "ChineseTh": "CriPerM"
+        }
+    },
+    {
+        "Key": "CriFinPerM",
+        "Text": {
+            "Korea": "치명타 확률 감소",
+            "English": "Critical Hit Chance Reduction",
+            "ChineseCh": "暴击率降低",
+            "ChineseTh": "暴擊率減少",
+            "Japanese": "クリティカル率ダウン"
+        }
+    },
+    {
+        "Key": "Crr",
+        "Text": {
+            "Korea": "Crr",
+            "ChineseTh": "Crr"
+        }
+    },
+    {
+        "Key": "CrrPer",
+        "Text": {
+            "Korea": "CrrPer",
+            "ChineseTh": "CrrPer"
+        }
+    },
+    {
+        "Key": "CrrFinPer",
+        "Text": {
+            "Korea": "치명타 저항 확률 증가",
+            "English": "Critical Resistance +",
+            "ChineseCh": "暴击抵抗率提升",
+            "ChineseTh": "暴擊抵抗率增加",
+            "Japanese": "クリティカル抵抗率アップ"
+        }
+    },
+    {
+        "Key": "CrrPerM",
+        "Text": {
+            "Korea": "CrrPerM",
+            "ChineseTh": "CrrPerM"
+        }
+    },
+    {
+        "Key": "CrrFinPerM",
+        "Text": {
+            "Korea": "치명타 저항 확률 감소",
+            "English": "Critical Resistance Reduction",
+            "ChineseCh": "暴击抵抗率降低",
+            "ChineseTh": "暴擊抵抗率減少",
+            "Japanese": "クリティカル抵抗率ダウン"
+        }
+    },
+    {
+        "Key": "Crd",
+        "Text": {
+            "Korea": "Crd",
+            "ChineseTh": "Crd"
+        }
+    },
+    {
+        "Key": "CrdPer",
+        "Text": {
+            "Korea": "CrdPer",
+            "ChineseTh": "CrdPer"
+        }
+    },
+    {
+        "Key": "CrdFinPer",
+        "Text": {
+            "Korea": "치명타 피해 증가",
+            "English": "Critical Damage Increase",
+            "ChineseCh": "暴击伤害提升",
+            "ChineseTh": "暴擊傷害增加",
+            "Japanese": "クリティカルダメージアップ"
+        }
+    },
+    {
+        "Key": "CrdPerM",
+        "Text": {
+            "Korea": "CrdPerM",
+            "ChineseTh": "CrdPerM"
+        }
+    },
+    {
+        "Key": "CrdFinPerM",
+        "Text": {
+            "Korea": "치명타 피해 감소",
+            "English": "Critical Damage Reduction",
+            "ChineseCh": "暴击伤害降低",
+            "ChineseTh": "暴擊傷害傷害減少",
+            "Japanese": "クリティカルダメージダウン"
+        }
+    },
+    {
+        "Key": "Hit",
+        "Text": {
+            "Korea": "Hit",
+            "English": "Accuracy",
+            "ChineseCh": "命中",
+            "ChineseTh": "Hit",
+            "Japanese": "命中"
+        }
+    },
+    {
+        "Key": "HitPer",
+        "Text": {
+            "Korea": "HitPer",
+            "ChineseTh": "HitPer"
+        }
+    },
+    {
+        "Key": "HitFinPer",
+        "Text": {
+            "Korea": "명중률 증가",
+            "English": "Accuracy Increase",
+            "ChineseCh": "命中提升",
+            "ChineseTh": "命中率增加",
+            "Japanese": "命中率アップ"
+        }
+    },
+    {
+        "Key": "Avo",
+        "Text": {
+            "Korea": "Avo",
+            "English": "Evasion",
+            "ChineseCh": "闪避",
+            "ChineseTh": "Avo",
+            "Japanese": "回避"
+        }
+    },
+    {
+        "Key": "AvoPer",
+        "Text": {
+            "Korea": "AvoPer",
+            "ChineseTh": "AvoPer"
+        }
+    },
+    {
+        "Key": "AvoFinPer",
+        "Text": {
+            "Korea": "회피율 증가",
+            "English": "Evasion Increase",
+            "ChineseCh": "闪避率提升",
+            "ChineseTh": "閃避率增加",
+            "Japanese": "回避率アップ"
+        }
+    },
+    {
+        "Key": "AvoPerM",
+        "Text": {
+            "Korea": "AvoPerM",
+            "ChineseTh": "AvoPerM"
+        }
+    },
+    {
+        "Key": "AvoFinPerM",
+        "Text": {
+            "Korea": "AvoFinPerM",
+            "ChineseTh": "AvoFinPerM"
+        }
+    },
+    {
+        "Key": "Pie",
+        "Text": {
+            "Korea": "Pie",
+            "ChineseTh": "Pie"
+        }
+    },
+    {
+        "Key": "PiePer",
+        "Text": {
+            "Korea": "PiePer",
+            "ChineseTh": "PiePer"
+        }
+    },
+    {
+        "Key": "PieFinPer",
+        "Text": {
+            "Korea": "PieFinPer",
+            "ChineseTh": "PieFinPer"
+        }
+    },
+    {
+        "Key": "PiePerM",
+        "Text": {
+            "Korea": "PiePerM",
+            "ChineseTh": "PiePerM"
+        }
+    },
+    {
+        "Key": "PieFinPerM",
+        "Text": {
+            "Korea": "PieFinPerM",
+            "ChineseTh": "PieFinPerM"
+        }
+    },
+    {
+        "Key": "PieR",
+        "Text": {
+            "Korea": "PieR",
+            "ChineseTh": "PieR"
+        }
+    },
+    {
+        "Key": "PieRPer",
+        "Text": {
+            "Korea": "PieRPer",
+            "ChineseTh": "PieRPer"
+        }
+    },
+    {
+        "Key": "PieRFinPer",
+        "Text": {
+            "Korea": "PieRFinPer",
+            "ChineseTh": "PieRFinPer"
+        }
+    },
+    {
+        "Key": "PieRPerM",
+        "Text": {
+            "Korea": "PieRPerM",
+            "ChineseTh": "PieRPerM"
+        }
+    },
+    {
+        "Key": "PieRFinPerM",
+        "Text": {
+            "Korea": "PieRFinPerM",
+            "ChineseTh": "PieRFinPerM"
+        }
+    },
+    {
+        "Key": "Block",
+        "Text": {
+            "Korea": "Block",
+            "ChineseTh": "Block"
+        }
+    },
+    {
+        "Key": "BlockPer",
+        "Text": {
+            "Korea": "BlockPer",
+            "English": "Block Increase",
+            "ChineseCh": "格挡提升",
+            "ChineseTh": "BlockPer",
+            "Japanese": "ブロックアップ"
+        }
+    },
+    {
+        "Key": "BlockFinPer",
+        "Text": {
+            "Korea": "막기 확률 증가",
+            "English": "Block Chance +",
+            "ChineseCh": "格挡率提升",
+            "ChineseTh": "格擋率增加",
+            "Japanese": "ブロック率アップ"
+        }
+    },
+    {
+        "Key": "BlockPerM",
+        "Text": {
+            "Korea": "BlockPerM",
+            "English": "Block Reduction",
+            "ChineseCh": "格挡降低",
+            "ChineseTh": "BlockPerM",
+            "Japanese": "ブロックダウン"
+        }
+    },
+    {
+        "Key": "BlockFinPerM",
+        "Text": {
+            "Korea": "막기 확률 감소",
+            "English": "Block Chance Reduction",
+            "ChineseCh": "格挡率降低",
+            "ChineseTh": "格擋率減少",
+            "Japanese": "ブロック率ダウン"
+        }
+    },
+    {
+        "Key": "Red",
+        "Text": {
+            "Korea": "Red",
+            "ChineseTh": "Red"
+        }
+    },
+    {
+        "Key": "RedPer",
+        "Text": {
+            "Korea": "RedPer",
+            "ChineseTh": "RedPer"
+        }
+    },
+    {
+        "Key": "RedFinPer",
+        "Text": {
+            "Korea": "피해 감소",
+            "English": "Damage Reduction",
+            "ChineseCh": "伤害减免",
+            "ChineseTh": "傷害減少",
+            "Japanese": "ダメージ軽減"
+        }
+    },
+    {
+        "Key": "RedPerM",
+        "Text": {
+            "Korea": "RedPerM",
+            "ChineseTh": "RedPerM"
+        }
+    },
+    {
+        "Key": "RedFinPerM",
+        "Text": {
+            "Korea": "RedFinPerM",
+            "ChineseTh": "RedFinPerM"
+        }
+    },
+    {
+        "Key": "RedR",
+        "Text": {
+            "Korea": "RedR",
+            "ChineseTh": "RedR"
+        }
+    },
+    {
+        "Key": "RedRPer",
+        "Text": {
+            "Korea": "RedRPer",
+            "ChineseTh": "RedRPer"
+        }
+    },
+    {
+        "Key": "RedRFinPer",
+        "Text": {
+            "Korea": "피해 감소 무시",
+            "English": "Ignore Damage Reduction",
+            "ChineseCh": "无视伤害减免",
+            "ChineseTh": "傷害減少無視",
+            "Japanese": "ダメージ軽減無視"
+        }
+    },
+    {
+        "Key": "RedRPerM",
+        "Text": {
+            "Korea": "RedRPerM",
+            "ChineseTh": "RedRPerM"
+        }
+    },
+    {
+        "Key": "RedRFinPerM",
+        "Text": {
+            "Korea": "RedRFinPerM",
+            "ChineseTh": "RedRFinPerM"
+        }
+    },
+    {
+        "Key": "StateH",
+        "Text": {
+            "Korea": "StateH",
+            "ChineseTh": "StateH"
+        }
+    },
+    {
+        "Key": "StateHPer",
+        "Text": {
+            "Korea": "StateHPer",
+            "ChineseTh": "StateHPer"
+        }
+    },
+    {
+        "Key": "StateHFinPer",
+        "Text": {
+            "Korea": "상태 이상 명중 증가",
+            "English": "Status Effect Accuracy Increase",
+            "ChineseCh": "状态异常命中提升",
+            "ChineseTh": "狀態異常命中增加",
+            "Japanese": "状態異常命中アップ"
+        }
+    },
+    {
+        "Key": "StateHPerM",
+        "Text": {
+            "Korea": "StateHPerM",
+            "ChineseTh": "StateHPerM"
+        }
+    },
+    {
+        "Key": "StateHFinPerM",
+        "Text": {
+            "Korea": "상태 이상 명중 감소",
+            "English": "Status Effect Accuracy Reduction",
+            "ChineseCh": "状态异常命中降低",
+            "ChineseTh": "狀態異常命中減少",
+            "Japanese": "状態異常命中ダウン"
+        }
+    },
+    {
+        "Key": "StateHBurn",
+        "Text": {
+            "Korea": "StateHBurn",
+            "ChineseTh": "StateHBurn"
+        }
+    },
+    {
+        "Key": "StateHBurnPer",
+        "Text": {
+            "Korea": "StateHBurnPer",
+            "ChineseTh": "StateHBurnPer"
+        }
+    },
+    {
+        "Key": "StateHBurnFinPer",
+        "Text": {
+            "Korea": "화상 명중 증가",
+            "English": "Burn Accuracy Increase",
+            "ChineseCh": "灼烧命中提升",
+            "ChineseTh": "灼傷命中增加",
+            "Japanese": "やけど命中アップ"
+        }
+    },
+    {
+        "Key": "StateHBurnPerM",
+        "Text": {
+            "Korea": "StateHBurnPerM",
+            "ChineseTh": "StateHBurnPerM"
+        }
+    },
+    {
+        "Key": "StateHBurnFinPerM",
+        "Text": {
+            "Korea": "화상 명중 감소",
+            "English": "Burn Accuracy Reduction",
+            "ChineseCh": "灼烧命中降低",
+            "ChineseTh": "灼傷命中減少",
+            "Japanese": "やけど命中ダウン"
+        }
+    },
+    {
+        "Key": "StateHRestrict",
+        "Text": {
+            "Korea": "StateHRestrict",
+            "ChineseTh": "StateHRestrict"
+        }
+    },
+    {
+        "Key": "StateHRestrictPer",
+        "Text": {
+            "Korea": "StateHRestrictPer",
+            "ChineseTh": "StateHRestrictPer"
+        }
+    },
+    {
+        "Key": "StateHRestrictFinPer",
+        "Text": {
+            "Korea": "속박 명중 증가",
+            "English": "Root Accuracy Increase",
+            "ChineseCh": "束缚命中提升",
+            "ChineseTh": "束縛命中增加",
+            "Japanese": "拘束命中アップ"
+        }
+    },
+    {
+        "Key": "StateHRestrictPerM",
+        "Text": {
+            "Korea": "StateHRestrictPerM",
+            "ChineseTh": "StateHRestrictPerM"
+        }
+    },
+    {
+        "Key": "StateHRestrictFinPerM",
+        "Text": {
+            "Korea": "속박 명중 감소",
+            "English": "Root Accuracy Reduction",
+            "ChineseCh": "束缚命中降低",
+            "ChineseTh": "束縛命中減少",
+            "Japanese": "拘束命中ダウン"
+        }
+    },
+    {
+        "Key": "StateHIce",
+        "Text": {
+            "Korea": "StateHIce",
+            "ChineseTh": "StateHIce"
+        }
+    },
+    {
+        "Key": "StateHIcePer",
+        "Text": {
+            "Korea": "StateHIcePer",
+            "ChineseTh": "StateHIcePer"
+        }
+    },
+    {
+        "Key": "StateHIceFinPer",
+        "Text": {
+            "Korea": "빙결 명중 증가",
+            "English": "Freeze Accuracy Increase",
+            "ChineseCh": "冰冻命中提升",
+            "ChineseTh": "冰凍命中增加",
+            "Japanese": "氷結命中アップ"
+        }
+    },
+    {
+        "Key": "StateHIcePerM",
+        "Text": {
+            "Korea": "StateHIcePerM",
+            "ChineseTh": "StateHIcePerM"
+        }
+    },
+    {
+        "Key": "StateHIceFinPerM",
+        "Text": {
+            "Korea": "빙결 명중 감소",
+            "English": "Freeze Accuracy Reduction",
+            "ChineseCh": "冰冻命中降低",
+            "ChineseTh": "冰凍命中減少",
+            "Japanese": "氷結命中ダウン"
+        }
+    },
+    {
+        "Key": "StateHElectric",
+        "Text": {
+            "Korea": "StateHElectric",
+            "ChineseTh": "StateHElectric"
+        }
+    },
+    {
+        "Key": "StateHElectricPer",
+        "Text": {
+            "Korea": "StateHElectricPer",
+            "ChineseTh": "StateHElectricPer"
+        }
+    },
+    {
+        "Key": "StateHElectricFinPer",
+        "Text": {
+            "Korea": "감전 명중 증가",
+            "English": "Shock Accuracy Increase",
+            "ChineseCh": "触电命中提升",
+            "ChineseTh": "觸電命中增加",
+            "Japanese": "感電命中アップ"
+        }
+    },
+    {
+        "Key": "StateHElectricPerM",
+        "Text": {
+            "Korea": "StateHElectricPerM",
+            "ChineseTh": "StateHElectricPerM"
+        }
+    },
+    {
+        "Key": "StateHElectricFinPerM",
+        "Text": {
+            "Korea": "감전 명중 감소",
+            "English": "Shock Accuracy Reduction",
+            "ChineseCh": "触电命中降低",
+            "ChineseTh": "觸電命中減少",
+            "Japanese": "感電命中ダウン"
+        }
+    },
+    {
+        "Key": "StateHFear",
+        "Text": {
+            "Korea": "StateHFear",
+            "ChineseTh": "StateHFear"
+        }
+    },
+    {
+        "Key": "StateHFearPer",
+        "Text": {
+            "Korea": "StateHFearPer",
+            "ChineseTh": "StateHFearPer"
+        }
+    },
+    {
+        "Key": "StateHFearFinPer",
+        "Text": {
+            "Korea": "공포 명중 증가",
+            "English": "Fear Accuracy Increase",
+            "ChineseCh": "恐怖命中提升",
+            "ChineseTh": "恐怖命中增加",
+            "Japanese": "恐怖命中アップ"
+        }
+    },
+    {
+        "Key": "StateHFearPerM",
+        "Text": {
+            "Korea": "StateHFearPerM",
+            "ChineseTh": "StateHFearPerM"
+        }
+    },
+    {
+        "Key": "StateHFearFinPerM",
+        "Text": {
+            "Korea": "공포 명중 감소",
+            "English": "Fear Accuracy Reduction",
+            "ChineseCh": "恐怖命中降低",
+            "ChineseTh": "恐怖命中減少",
+            "Japanese": "恐怖命中ダウン"
+        }
+    },
+    {
+        "Key": "StateHStun",
+        "Text": {
+            "Korea": "StateHStun",
+            "ChineseTh": "StateHStun"
+        }
+    },
+    {
+        "Key": "StateHStunPer",
+        "Text": {
+            "Korea": "StateHStunPer",
+            "ChineseTh": "StateHStunPer"
+        }
+    },
+    {
+        "Key": "StateHStunFinPer",
+        "Text": {
+            "Korea": "기절 명중 증가",
+            "English": "Stun Accuracy Increase",
+            "ChineseCh": "昏厥命中提升",
+            "ChineseTh": "眩暈命中增加",
+            "Japanese": "スタン命中アップ"
+        }
+    },
+    {
+        "Key": "StateHStunPerM",
+        "Text": {
+            "Korea": "StateHStunPerM",
+            "ChineseTh": "StateHStunPerM"
+        }
+    },
+    {
+        "Key": "StateHStunFinPerM",
+        "Text": {
+            "Korea": "기절 명중 감소",
+            "English": "Stun Accuracy Reduction",
+            "ChineseCh": "昏厥命中降低",
+            "ChineseTh": "眩暈命中減少",
+            "Japanese": "スタン命中ダウン"
+        }
+    },
+    {
+        "Key": "StateHBleed",
+        "Text": {
+            "Korea": "StateHBleed",
+            "ChineseTh": "StateHBleed"
+        }
+    },
+    {
+        "Key": "StateHBleedPer",
+        "Text": {
+            "Korea": "StateHBleedPer",
+            "ChineseTh": "StateHBleedPer"
+        }
+    },
+    {
+        "Key": "StateHBleedFinPer",
+        "Text": {
+            "Korea": "출혈 명중 증가",
+            "English": "Bleed Accuracy Increase",
+            "ChineseCh": "出血命中提升",
+            "ChineseTh": "出血命中增加",
+            "Japanese": "出血命中アップ"
+        }
+    },
+    {
+        "Key": "StateHBleedPerM",
+        "Text": {
+            "Korea": "StateHBleedPerM",
+            "ChineseTh": "StateHBleedPerM"
+        }
+    },
+    {
+        "Key": "StateHBleedFinPerM",
+        "Text": {
+            "Korea": "출혈 명중 감소",
+            "English": "Bleed Accuracy Reduction",
+            "ChineseCh": "出血命中降低",
+            "ChineseTh": "出血命中減少",
+            "Japanese": "出血命中ダウン"
+        }
+    },
+    {
+        "Key": "StateHCurse",
+        "Text": {
+            "Korea": "StateHCurse",
+            "ChineseTh": "StateHCurse"
+        }
+    },
+    {
+        "Key": "StateHCursePer",
+        "Text": {
+            "Korea": "StateHCursePer",
+            "ChineseTh": "StateHCursePer"
+        }
+    },
+    {
+        "Key": "StateHCurseFinPer",
+        "Text": {
+            "Korea": "저주 명중 증가",
+            "English": "Curse Accuracy Increase",
+            "ChineseCh": "诅咒命中提升",
+            "ChineseTh": "詛咒命中增加",
+            "Japanese": "呪い命中アップ"
+        }
+    },
+    {
+        "Key": "StateHCursePerM",
+        "Text": {
+            "Korea": "StateHCursePerM",
+            "ChineseTh": "StateHCursePerM"
+        }
+    },
+    {
+        "Key": "StateHCurseFinPerM",
+        "Text": {
+            "Korea": "저주 명중 감소",
+            "English": "Curse Accuracy Reduction",
+            "ChineseCh": "诅咒命中降低",
+            "ChineseTh": "詛咒命中減少",
+            "Japanese": "呪い命中ダウン"
+        }
+    },
+    {
+        "Key": "StateHPoison",
+        "Text": {
+            "Korea": "StateHPoison",
+            "ChineseTh": "StateHPoison"
+        }
+    },
+    {
+        "Key": "StateHPoisonPer",
+        "Text": {
+            "Korea": "StateHPoisonPer",
+            "ChineseTh": "StateHPoisonPer"
+        }
+    },
+    {
+        "Key": "StateHPoisonFinPer",
+        "Text": {
+            "Korea": "중독 명중 증가",
+            "English": "Poison Accuracy Increase",
+            "ChineseCh": "中毒命中提升",
+            "ChineseTh": "中毒命中增加",
+            "Japanese": "中毒命中アップ"
+        }
+    },
+    {
+        "Key": "StateHPoisonPerM",
+        "Text": {
+            "Korea": "StateHPoisonPerM",
+            "ChineseTh": "StateHPoisonPerM"
+        }
+    },
+    {
+        "Key": "StateHPoisonFinPerM",
+        "Text": {
+            "Korea": "중독 명중 감소",
+            "English": "Poison Accuracy Reduction",
+            "ChineseCh": "中毒命中降低",
+            "ChineseTh": "中毒命中減少",
+            "Japanese": "中毒命中ダウン"
+        }
+    },
+    {
+        "Key": "StateHStone",
+        "Text": {
+            "Korea": "StateHStone",
+            "ChineseTh": "StateHStone"
+        }
+    },
+    {
+        "Key": "StateHStonePer",
+        "Text": {
+            "Korea": "StateHStonePer",
+            "ChineseTh": "StateHStonePer"
+        }
+    },
+    {
+        "Key": "StateHStoneFinPer",
+        "Text": {
+            "Korea": "석화 명중 증가",
+            "English": "Petrify Accuracy Increase",
+            "ChineseCh": "石化命中提升",
+            "ChineseTh": "石化命中增加",
+            "Japanese": "石化命中アップ"
+        }
+    },
+    {
+        "Key": "StateHStonePerM",
+        "Text": {
+            "Korea": "StateHStonePerM",
+            "ChineseTh": "StateHStonePerM"
+        }
+    },
+    {
+        "Key": "StateHStoneFinPerM",
+        "Text": {
+            "Korea": "석화 명중 감소",
+            "English": "Petrify Accuracy Reduction",
+            "ChineseCh": "石化命中降低",
+            "ChineseTh": "石化命中減少",
+            "Japanese": "石化命中ダウン"
+        }
+    },
+    {
+        "Key": "StateR",
+        "Text": {
+            "Korea": "StateR",
+            "ChineseTh": "StateR"
+        }
+    },
+    {
+        "Key": "StateRPer",
+        "Text": {
+            "Korea": "StateRPer",
+            "ChineseTh": "StateRPer"
+        }
+    },
+    {
+        "Key": "StateRFinPer",
+        "Text": {
+            "Korea": "상태 이상 저항 증가",
+            "English": "Status Effect Resistance Increase",
+            "ChineseCh": "状态异常抵抗提升",
+            "ChineseTh": "狀態異常抵抗增加",
+            "Japanese": "状態異常抵抗アップ"
+        }
+    },
+    {
+        "Key": "StateRPerM",
+        "Text": {
+            "Korea": "StateRPerM",
+            "ChineseTh": "StateRPerM"
+        }
+    },
+    {
+        "Key": "StateRFinPerM",
+        "Text": {
+            "Korea": "상태 이상 저항 감소",
+            "English": "Status Effect Resistance Reduction",
+            "ChineseCh": "状态异常抵抗降低",
+            "ChineseTh": "狀態異常抵抗減少",
+            "Japanese": "状態異常抵抗ダウン"
+        }
+    },
+    {
+        "Key": "StateRBurn",
+        "Text": {
+            "Korea": "StateRBurn",
+            "ChineseTh": "StateRBurn"
+        }
+    },
+    {
+        "Key": "StateRBurnPer",
+        "Text": {
+            "Korea": "StateRBurnPer",
+            "ChineseTh": "StateRBurnPer"
+        }
+    },
+    {
+        "Key": "StateRBurnFinPer",
+        "Text": {
+            "Korea": "화상 저항 증가",
+            "English": "Burn Resistance Increase",
+            "ChineseCh": "灼烧抵抗提升",
+            "ChineseTh": "灼傷抵抗增加",
+            "Japanese": "やけど抵抗アップ"
+        }
+    },
+    {
+        "Key": "StateRBurnPerM",
+        "Text": {
+            "Korea": "StateRBurnPerM",
+            "ChineseTh": "StateRBurnPerM"
+        }
+    },
+    {
+        "Key": "StateRBurnFinPerM",
+        "Text": {
+            "Korea": "화상 저항 감소",
+            "English": "Burn Resistance Reduction",
+            "ChineseCh": "灼烧抵抗降低",
+            "ChineseTh": "灼傷抵抗減少",
+            "Japanese": "やけど抵抗ダウン"
+        }
+    },
+    {
+        "Key": "StateRRestrict",
+        "Text": {
+            "Korea": "StateRRestrict",
+            "ChineseTh": "StateRRestrict"
+        }
+    },
+    {
+        "Key": "StateRRestrictPer",
+        "Text": {
+            "Korea": "StateRRestrictPer",
+            "ChineseTh": "StateRRestrictPer"
+        }
+    },
+    {
+        "Key": "StateRRestrictFinPer",
+        "Text": {
+            "Korea": "속박 저항 증가",
+            "English": "Root Resistance Increase",
+            "ChineseCh": "束缚抵抗提升",
+            "ChineseTh": "束縛抵抗增加",
+            "Japanese": "拘束抵抗アップ"
+        }
+    },
+    {
+        "Key": "StateRRestrictPerM",
+        "Text": {
+            "Korea": "StateRRestrictPerM",
+            "ChineseTh": "StateRRestrictPerM"
+        }
+    },
+    {
+        "Key": "StateRRestrictFinPerM",
+        "Text": {
+            "Korea": "속박 저항 감소",
+            "English": "Root Resistance Reduction",
+            "ChineseCh": "束缚抵抗降低",
+            "ChineseTh": "束縛抵抗減少",
+            "Japanese": "拘束抵抗ダウン"
+        }
+    },
+    {
+        "Key": "StateRIce",
+        "Text": {
+            "Korea": "StateRIce",
+            "ChineseTh": "StateRIce"
+        }
+    },
+    {
+        "Key": "StateRIcePer",
+        "Text": {
+            "Korea": "StateRIcePer",
+            "ChineseTh": "StateRIcePer"
+        }
+    },
+    {
+        "Key": "StateRIceFinPer",
+        "Text": {
+            "Korea": "빙결 저항 증가",
+            "English": "Frozen Resistance Increase",
+            "ChineseCh": "冰冻抵抗提升",
+            "ChineseTh": "冰凍抵抗增加",
+            "Japanese": "氷結抵抗アップ"
+        }
+    },
+    {
+        "Key": "StateRIcePerM",
+        "Text": {
+            "Korea": "StateRIcePerM",
+            "ChineseTh": "StateRIcePerM"
+        }
+    },
+    {
+        "Key": "StateRIceFinPerM",
+        "Text": {
+            "Korea": "빙결 저항 감소",
+            "English": "Frozen Resistance Reduction",
+            "ChineseCh": "冰冻抵抗降低",
+            "ChineseTh": "冰凍抵抗減少",
+            "Japanese": "氷結抵抗ダウン"
+        }
+    },
+    {
+        "Key": "StateRElectric",
+        "Text": {
+            "Korea": "StateRElectric",
+            "ChineseTh": "StateRElectric"
+        }
+    },
+    {
+        "Key": "StateRElectricPer",
+        "Text": {
+            "Korea": "StateRElectricPer",
+            "ChineseTh": "StateRElectricPer"
+        }
+    },
+    {
+        "Key": "StateRElectricFinPer",
+        "Text": {
+            "Korea": "감전 저항 증가",
+            "English": "Shock Resistance Increase",
+            "ChineseCh": "触电抵抗提升",
+            "ChineseTh": "觸電抵抗增加",
+            "Japanese": "感電抵抗アップ"
+        }
+    },
+    {
+        "Key": "StateRElectricPerM",
+        "Text": {
+            "Korea": "StateRElectricPerM",
+            "ChineseTh": "StateRElectricPerM"
+        }
+    },
+    {
+        "Key": "StateRElectricFinPerM",
+        "Text": {
+            "Korea": "감전 저항 감소",
+            "English": "Shock Resistance Reduction",
+            "ChineseCh": "触电抵抗降低",
+            "ChineseTh": "觸電抵抗減少",
+            "Japanese": "感電抵抗ダウン"
+        }
+    },
+    {
+        "Key": "StateRFear",
+        "Text": {
+            "Korea": "StateRFear",
+            "ChineseTh": "StateRFear"
+        }
+    },
+    {
+        "Key": "StateRFearPer",
+        "Text": {
+            "Korea": "StateRFearPer",
+            "ChineseTh": "StateRFearPer"
+        }
+    },
+    {
+        "Key": "StateRFearFinPer",
+        "Text": {
+            "Korea": "공포 저항 증가",
+            "English": "Fear Resistance Increase",
+            "ChineseCh": "恐怖抵抗提升",
+            "ChineseTh": "恐怖抵抗增加",
+            "Japanese": "恐怖抵抗アップ"
+        }
+    },
+    {
+        "Key": "StateRFearPerM",
+        "Text": {
+            "Korea": "StateRFearPerM",
+            "ChineseTh": "StateRFearPerM"
+        }
+    },
+    {
+        "Key": "StateRFearFinPerM",
+        "Text": {
+            "Korea": "공포 저항 감소",
+            "English": "Fear Resistance Reduction",
+            "ChineseCh": "恐怖抵抗降低",
+            "ChineseTh": "恐怖抵抗減少",
+            "Japanese": "恐怖抵抗ダウン"
+        }
+    },
+    {
+        "Key": "StateRStun",
+        "Text": {
+            "Korea": "StateRStun",
+            "ChineseTh": "StateRStun"
+        }
+    },
+    {
+        "Key": "StateRStunPer",
+        "Text": {
+            "Korea": "StateRStunPer",
+            "ChineseTh": "StateRStunPer"
+        }
+    },
+    {
+        "Key": "StateRStunFinPer",
+        "Text": {
+            "Korea": "기절 저항 증가",
+            "English": "Stun Resistance Increase",
+            "ChineseCh": "昏厥抵抗提升",
+            "ChineseTh": "眩暈抵抗增加",
+            "Japanese": "スタン抵抗アップ"
+        }
+    },
+    {
+        "Key": "StateRStunPerM",
+        "Text": {
+            "Korea": "StateRStunPerM",
+            "ChineseTh": "StateRStunPerM"
+        }
+    },
+    {
+        "Key": "StateRStunFinPerM",
+        "Text": {
+            "Korea": "기절 저항 감소",
+            "English": "Stun Resistance Reduction",
+            "ChineseCh": "昏厥抵抗降低",
+            "ChineseTh": "眩暈抵抗減少",
+            "Japanese": "スタン抵抗ダウン"
+        }
+    },
+    {
+        "Key": "StateRBleed",
+        "Text": {
+            "Korea": "StateRBleed",
+            "ChineseTh": "StateRBleed"
+        }
+    },
+    {
+        "Key": "StateRBleedPer",
+        "Text": {
+            "Korea": "StateRBleedPer",
+            "ChineseTh": "StateRBleedPer"
+        }
+    },
+    {
+        "Key": "StateRBleedFinPer",
+        "Text": {
+            "Korea": "출혈 저항 증가",
+            "English": "Bleed Resistance Increase",
+            "ChineseCh": "出血抵抗提升",
+            "ChineseTh": "出血抵抗增加",
+            "Japanese": "出血抵抗アップ"
+        }
+    },
+    {
+        "Key": "StateRBleedPerM",
+        "Text": {
+            "Korea": "StateRBleedPerM",
+            "ChineseTh": "StateRBleedPerM"
+        }
+    },
+    {
+        "Key": "StateRBleedFinPerM",
+        "Text": {
+            "Korea": "출혈 저항 감소",
+            "English": "Bleed Resistance Reduction",
+            "ChineseCh": "出血抵抗降低",
+            "ChineseTh": "出血抵抗減少",
+            "Japanese": "出血抵抗ダウン"
+        }
+    },
+    {
+        "Key": "StateRCurse",
+        "Text": {
+            "Korea": "StateRCurse",
+            "ChineseTh": "StateRCurse"
+        }
+    },
+    {
+        "Key": "StateRCursePer",
+        "Text": {
+            "Korea": "StateRCursePer",
+            "ChineseTh": "StateRCursePer"
+        }
+    },
+    {
+        "Key": "StateRCurseFinPer",
+        "Text": {
+            "Korea": "저주 저항 증가",
+            "English": "Curse Resistance Increase",
+            "ChineseCh": "诅咒抵抗提升",
+            "ChineseTh": "詛咒抵抗增加",
+            "Japanese": "呪い抵抗アップ"
+        }
+    },
+    {
+        "Key": "StateRCursePerM",
+        "Text": {
+            "Korea": "StateRCursePerM",
+            "ChineseTh": "StateRCursePerM"
+        }
+    },
+    {
+        "Key": "StateRCurseFinPerM",
+        "Text": {
+            "Korea": "저주 저항 감소",
+            "English": "Curse Resistance Reduction",
+            "ChineseCh": "诅咒抵抗降低",
+            "ChineseTh": "詛咒抵抗減少",
+            "Japanese": "呪い抵抗ダウン"
+        }
+    },
+    {
+        "Key": "StateRPoison",
+        "Text": {
+            "Korea": "StateRPoison",
+            "ChineseTh": "StateRPoison"
+        }
+    },
+    {
+        "Key": "StateRPoisonPer",
+        "Text": {
+            "Korea": "StateRPoisonPer",
+            "ChineseTh": "StateRPoisonPer"
+        }
+    },
+    {
+        "Key": "StateRPoisonFinPer",
+        "Text": {
+            "Korea": "중독 저항 증가",
+            "English": "Poison Resistance Increase",
+            "ChineseCh": "中毒抵抗提升",
+            "ChineseTh": "中毒抵抗增加",
+            "Japanese": "中毒抵抗アップ"
+        }
+    },
+    {
+        "Key": "StateRPoisonPerM",
+        "Text": {
+            "Korea": "StateRPoisonPerM",
+            "ChineseTh": "StateRPoisonPerM"
+        }
+    },
+    {
+        "Key": "StateRPoisonFinPerM",
+        "Text": {
+            "Korea": "중독 저항 감소",
+            "English": "Poison Resistance Reduction",
+            "ChineseCh": "中毒抵抗降低",
+            "ChineseTh": "中毒抵抗減少",
+            "Japanese": "中毒抵抗ダウン"
+        }
+    },
+    {
+        "Key": "StateRStone",
+        "Text": {
+            "Korea": "StateRStone",
+            "ChineseTh": "StateRStone"
+        }
+    },
+    {
+        "Key": "StateRStonePer",
+        "Text": {
+            "Korea": "StateRStonePer",
+            "ChineseTh": "StateRStonePer"
+        }
+    },
+    {
+        "Key": "StateRStoneFinPer",
+        "Text": {
+            "Korea": "석화 저항 증가",
+            "English": "Petrify Resistance Increase",
+            "ChineseCh": "石化抵抗提升",
+            "ChineseTh": "石化抵抗增加",
+            "Japanese": "石化抵抗アップ"
+        }
+    },
+    {
+        "Key": "StateRStonePerM",
+        "Text": {
+            "Korea": "StateRStonePerM",
+            "ChineseTh": "StateRStonePerM"
+        }
+    },
+    {
+        "Key": "StateRStoneFinPerM",
+        "Text": {
+            "Korea": "석화 저항 감소",
+            "English": "Petrify Resistance Reduction",
+            "ChineseCh": "石化抵抗降低",
+            "ChineseTh": "石化抵抗減少",
+            "Japanese": "石化抵抗ダウン"
+        }
+    },
+    {
+        "Key": "AtkSpeed",
+        "Text": {
+            "Korea": "AtkSpeed",
+            "ChineseTh": "AtkSpeed"
+        }
+    },
+    {
+        "Key": "AtkSpeedPer",
+        "Text": {
+            "Korea": "AtkSpeedPer",
+            "ChineseTh": "AtkSpeedPer"
+        }
+    },
+    {
+        "Key": "AtkSpeedFinPer",
+        "Text": {
+            "Korea": "공격 속도 증가",
+            "English": "Attack Speed Increase",
+            "ChineseCh": "攻击速度提升",
+            "ChineseTh": "攻擊速度增加",
+            "Japanese": "攻撃速度アップ"
+        }
+    },
+    {
+        "Key": "AtkSpeedPerM",
+        "Text": {
+            "Korea": "AtkSpeedPerM",
+            "ChineseTh": "AtkSpeedPerM"
+        }
+    },
+    {
+        "Key": "AtkSpeedFinPerM",
+        "Text": {
+            "Korea": "공격 속도 감소",
+            "English": "Attack Speed Reduction",
+            "ChineseCh": "攻击速度降低",
+            "ChineseTh": "攻擊速度減少",
+            "Japanese": "攻撃速度ダウン"
+        }
+    },
+    {
+        "Key": "Move",
+        "Text": {
+            "Korea": "이동 속도",
+            "English": "Movement Speed",
+            "ChineseCh": "移速",
+            "ChineseTh": "移動速度",
+            "Japanese": "移動速度"
+        }
+    },
+    {
+        "Key": "MovePer",
+        "Text": {
+            "Korea": "MovePer",
+            "ChineseTh": "MovePer"
+        }
+    },
+    {
+        "Key": "MoveFinPer",
+        "Text": {
+            "Korea": "MoveFinPer",
+            "ChineseTh": "MoveFinPer"
+        }
+    },
+    {
+        "Key": "MovePerM",
+        "Text": {
+            "Korea": "MovePerM",
+            "ChineseTh": "MovePerM"
+        }
+    },
+    {
+        "Key": "MoveFinPerM",
+        "Text": {
+            "Korea": "MoveFinPerM",
+            "ChineseTh": "MoveFinPerM"
+        }
+    },
+    {
+        "Key": "Range",
+        "Text": {
+            "Korea": "사정 거리",
+            "English": "Range",
+            "ChineseCh": "射程",
+            "ChineseTh": "射程",
+            "Japanese": "射程距離"
+        }
+    },
+    {
+        "Key": "RangePer",
+        "Text": {
+            "Korea": "RangePer",
+            "ChineseTh": "RangePer"
+        }
+    },
+    {
+        "Key": "RangeFinPer",
+        "Text": {
+            "Korea": "RangeFinPer",
+            "ChineseTh": "RangeFinPer"
+        }
+    },
+    {
+        "Key": "RangePerM",
+        "Text": {
+            "Korea": "RangePerM",
+            "ChineseTh": "RangePerM"
+        }
+    },
+    {
+        "Key": "RangeFinPerM",
+        "Text": {
+            "Korea": "RangeFinPerM",
+            "ChineseTh": "RangeFinPerM"
+        }
+    },
+    {
+        "Key": "Mp",
+        "Text": {
+            "Korea": "Mp",
+            "English": "Mana",
+            "ChineseCh": "灵力",
+            "ChineseTh": "Mp",
+            "Japanese": "マナ"
+        }
+    },
+    {
+        "Key": "MpPer",
+        "Text": {
+            "Korea": "MpPer",
+            "English": "Mana Increase",
+            "ChineseCh": "灵力提升",
+            "ChineseTh": "MpPer",
+            "Japanese": "マナアップ"
+        }
+    },
+    {
+        "Key": "MpFinPer",
+        "Text": {
+            "Korea": "MpFinPer",
+            "ChineseTh": "MpFinPer"
+        }
+    },
+    {
+        "Key": "MpPerM",
+        "Text": {
+            "Korea": "MpPerM",
+            "English": "Mana Reduction",
+            "ChineseCh": "灵力降低",
+            "ChineseTh": "MpPerM",
+            "Japanese": "マナダウン"
+        }
+    },
+    {
+        "Key": "MpFinPerM",
+        "Text": {
+            "Korea": "MpFinPerM",
+            "ChineseTh": "MpFinPerM"
+        }
+    },
+    {
+        "Key": "CoolTimeReduce",
+        "Text": {
+            "Korea": "CoolTimeReduce",
+            "ChineseTh": "CoolTimeReduce"
+        }
+    },
+    {
+        "Key": "CoolTimeReducePer",
+        "Text": {
+            "Korea": "CoolTimeReducePer",
+            "ChineseTh": "CoolTimeReducePer"
+        }
+    },
+    {
+        "Key": "CoolTimeReducePerM",
+        "Text": {
+            "Korea": "CoolTimeReducePerM",
+            "ChineseTh": "CoolTimeReducePerM"
+        }
+    },
+    {
+        "Key": "HpRecovery",
+        "Text": {
+            "Korea": "생명력 회복",
+            "English": "HP Recovery",
+            "ChineseCh": "生命值恢复",
+            "ChineseTh": "生命力恢復",
+            "Japanese": "生命力回復"
+        }
+    },
+    {
+        "Key": "HpRecoveryPer",
+        "Text": {
+            "Korea": "HpRecoveryPer",
+            "ChineseTh": "HpRecoveryPer"
+        }
+    },
+    {
+        "Key": "HpRecoveryFinPer",
+        "Text": {
+            "Korea": "HpRecoveryFinPer",
+            "ChineseTh": "HpRecoveryFinPer"
+        }
+    },
+    {
+        "Key": "HpRecoveryPerM",
+        "Text": {
+            "Korea": "HpRecoveryPerM",
+            "ChineseTh": "HpRecoveryPerM"
+        }
+    },
+    {
+        "Key": "HpRecoveryFinPerM",
+        "Text": {
+            "Korea": "HpRecoveryFinPerM",
+            "ChineseTh": "HpRecoveryFinPerM"
+        }
+    },
+    {
+        "Key": "ReviveCool",
+        "Text": {
+            "Korea": "ReviveCool",
+            "English": "Auto-Revive Time Reduction",
+            "ChineseCh": "自动复活时间缩减",
+            "ChineseTh": "ReviveCool",
+            "Japanese": "自動復活時間短縮"
+        }
+    },
+    {
+        "Key": "ReviveCoolPer",
+        "Text": {
+            "Korea": "ReviveCoolPer",
+            "ChineseTh": "ReviveCoolPer"
+        }
+    },
+    {
+        "Key": "ReviveCoolFinPer",
+        "Text": {
+            "Korea": "ReviveCoolFinPer",
+            "ChineseTh": "ReviveCoolFinPer"
+        }
+    },
+    {
+        "Key": "ReviveCoolPerM",
+        "Text": {
+            "Korea": "ReviveCoolPerM",
+            "ChineseTh": "ReviveCoolPerM"
+        }
+    },
+    {
+        "Key": "ReviveCoolFinPerM",
+        "Text": {
+            "Korea": "ReviveCoolFinPerM",
+            "ChineseTh": "ReviveCoolFinPerM"
+        }
+    },
+    {
+        "Key": "AddDamage",
+        "Text": {
+            "Korea": "AddDamage",
+            "ChineseTh": "AddDamage"
+        }
+    },
+    {
+        "Key": "AddDamagePer",
+        "Text": {
+            "Korea": "AddDamagePer",
+            "ChineseTh": "AddDamagePer"
+        }
+    },
+    {
+        "Key": "AddDamageFinPer",
+        "Text": {
+            "Korea": "추가 피해",
+            "English": "Additional Damage",
+            "ChineseCh": "额外伤害",
+            "ChineseTh": "額外傷害",
+            "Japanese": "追加ダメージ"
+        }
+    },
+    {
+        "Key": "AddDamagePerM",
+        "Text": {
+            "Korea": "AddDamagePerM",
+            "ChineseTh": "AddDamagePerM"
+        }
+    },
+    {
+        "Key": "AddDamageFinPerM",
+        "Text": {
+            "Korea": "AddDamageFinPerM",
+            "English": "Ignore Damage Immunity Reduction",
+            "ChineseCh": "无视免疫伤害减弱",
+            "ChineseTh": "AddDamageFinPerM",
+            "Japanese": "ダメージ耐性無視ダウン"
+        }
+    },
+    {
+        "Key": "ReduceDamage",
+        "Text": {
+            "Korea": "ReduceDamage",
+            "ChineseTh": "ReduceDamage"
+        }
+    },
+    {
+        "Key": "ReduceDamagePer",
+        "Text": {
+            "Korea": "ReduceDamage",
+            "ChineseTh": "ReduceDamage"
+        }
+    },
+    {
+        "Key": "ReduceDamageFinPer",
+        "Text": {
+            "Korea": "ReduceDamageFinPer",
+            "ChineseTh": "ReduceDamageFinPer"
+        }
+    },
+    {
+        "Key": "ReduceDamagePerM",
+        "Text": {
+            "Korea": "ReduceDamagePerM",
+            "ChineseTh": "ReduceDamagePerM"
+        }
+    },
+    {
+        "Key": "ReduceDamageFinPerM",
+        "Text": {
+            "Korea": "ReduceDamageFinPerM",
+            "ChineseTh": "ReduceDamageFinPerM"
+        }
+    },
+    {
+        "Key": "AddDamaged",
+        "Text": {
+            "Korea": "AddDamaged",
+            "ChineseTh": "AddDamaged"
+        }
+    },
+    {
+        "Key": "AddDamagedPer",
+        "Text": {
+            "Korea": "AddDamagedPer",
+            "ChineseTh": "AddDamagedPer"
+        }
+    },
+    {
+        "Key": "AddDamagedFinPer",
+        "Text": {
+            "Korea": "AddDamagedFinPer",
+            "ChineseTh": "AddDamagedFinPer"
+        }
+    },
+    {
+        "Key": "AddDamagedPerM",
+        "Text": {
+            "Korea": "AddDamagedPerM",
+            "ChineseTh": "AddDamagedPerM"
+        }
+    },
+    {
+        "Key": "AddDamagedFinPerM",
+        "Text": {
+            "Korea": "AddDamagedFinPerM",
+            "ChineseTh": "AddDamagedFinPerM"
+        }
+    },
+    {
+        "Key": "ReduceDamaged",
+        "Text": {
+            "Korea": "ReduceDamaged",
+            "ChineseTh": "ReduceDamaged"
+        }
+    },
+    {
+        "Key": "ReduceDamagedPer",
+        "Text": {
+            "Korea": "ReduceDamagedPer",
+            "ChineseTh": "ReduceDamagedPer"
+        }
+    },
+    {
+        "Key": "ReduceDamagedFinPer",
+        "Text": {
+            "Korea": "피해 면역 증가",
+            "English": "Damage Immunity Increase",
+            "ChineseCh": "免疫伤害提升",
+            "ChineseTh": "傷害免疫增加",
+            "Japanese": "ダメージ耐性アップ"
+        }
+    },
+    {
+        "Key": "ReduceDamagedPerM",
+        "Text": {
+            "Korea": "ReduceDamagedPerM",
+            "ChineseTh": "ReduceDamagedPerM"
+        }
+    },
+    {
+        "Key": "ReduceDamagedFinPerM",
+        "Text": {
+            "Korea": "ReduceDamagedFinPerM",
+            "English": "Damage Immunity Reduction",
+            "ChineseCh": "免疫伤害降低",
+            "ChineseTh": "ReduceDamagedFinPerM",
+            "Japanese": "ダメージ耐性ダウン"
+        }
+    },
+    {
+        "Key": "AddHeal",
+        "Text": {
+            "Korea": "AddHeal",
+            "English": "Heal",
+            "ChineseCh": "治愈",
+            "ChineseTh": "AddHeal",
+            "Japanese": "回復"
+        }
+    },
+    {
+        "Key": "AddHealPer",
+        "Text": {
+            "Korea": "AddHealPer",
+            "ChineseTh": "AddHealPer"
+        }
+    },
+    {
+        "Key": "AddHealFinPer",
+        "Text": {
+            "Korea": "치유량 증가",
+            "English": "Healing +",
+            "ChineseCh": "治愈量提升",
+            "ChineseTh": "治癒量增加",
+            "Japanese": "回復量アップ"
+        }
+    },
+    {
+        "Key": "AddHealPerM",
+        "Text": {
+            "Korea": "AddHealPerM",
+            "ChineseTh": "AddHealPerM"
+        }
+    },
+    {
+        "Key": "AddHealFinPerM",
+        "Text": {
+            "Korea": "AddHealFinPerM",
+            "ChineseTh": "AddHealFinPerM"
+        }
+    },
+    {
+        "Key": "ReduceHeal",
+        "Text": {
+            "Korea": "ReduceHeal",
+            "ChineseTh": "ReduceHeal"
+        }
+    },
+    {
+        "Key": "ReduceHealPer",
+        "Text": {
+            "Korea": "ReduceHealPer",
+            "ChineseTh": "ReduceHealPer"
+        }
+    },
+    {
+        "Key": "ReduceHealFinPer",
+        "Text": {
+            "Korea": "치유량 감소",
+            "English": "Healing Reduction",
+            "ChineseCh": "治愈量降低",
+            "ChineseTh": "治癒量減少",
+            "Japanese": "回復量ダウン"
+        }
+    },
+    {
+        "Key": "ReduceHealPerM",
+        "Text": {
+            "Korea": "ReduceHealPerM",
+            "ChineseTh": "ReduceHealPerM"
+        }
+    },
+    {
+        "Key": "ReduceHealFinPerM",
+        "Text": {
+            "Korea": "ReduceHealFinPerM",
+            "ChineseTh": "ReduceHealFinPerM"
+        }
+    },
+    {
+        "Key": "AddHealed",
+        "Text": {
+            "Korea": "AddHealed",
+            "English": "Healing Received",
+            "ChineseCh": "获得治愈",
+            "ChineseTh": "AddHealed",
+            "Japanese": "被回復量"
+        }
+    },
+    {
+        "Key": "AddHealedPer",
+        "Text": {
+            "Korea": "AddHealedPer",
+            "ChineseTh": "AddHealedPer"
+        }
+    },
+    {
+        "Key": "AddHealedFinPer",
+        "Text": {
+            "Korea": "받는 치유 증가",
+            "English": "Healing Received +",
+            "ChineseCh": "获得治愈提升",
+            "ChineseTh": "獲得的治癒增加",
+            "Japanese": "被回復量アップ"
+        }
+    },
+    {
+        "Key": "AddHealedPerM",
+        "Text": {
+            "Korea": "AddHealedPerM",
+            "ChineseTh": "AddHealedPerM"
+        }
+    },
+    {
+        "Key": "AddHealedFinPerM",
+        "Text": {
+            "Korea": "AddHealedFinPerM",
+            "ChineseTh": "AddHealedFinPerM"
+        }
+    },
+    {
+        "Key": "ReduceHealed",
+        "Text": {
+            "Korea": "ReduceHealed",
+            "ChineseTh": "ReduceHealed"
+        }
+    },
+    {
+        "Key": "ReduceHealedPer",
+        "Text": {
+            "Korea": "ReduceHealedPer",
+            "ChineseTh": "ReduceHealedPer"
+        }
+    },
+    {
+        "Key": "ReduceHealedFinPer",
+        "Text": {
+            "Korea": "받는 치유 감소",
+            "English": "Healing Received Reduction",
+            "ChineseCh": "获得治愈降低",
+            "ChineseTh": "獲得的治癒減少",
+            "Japanese": "被回復量ダウン"
+        }
+    },
+    {
+        "Key": "ReduceHealedPerM",
+        "Text": {
+            "Korea": "ReduceHealedPerM",
+            "ChineseTh": "ReduceHealedPerM"
+        }
+    },
+    {
+        "Key": "ReduceHealedFinPerM",
+        "Text": {
+            "Korea": "ReduceHealedFinPerM",
+            "ChineseTh": "ReduceHealedFinPerM"
+        }
+    },
+    {
+        "Key": "AddExp",
+        "Text": {
+            "Korea": "AddExp",
+            "ChineseTh": "AddExp"
+        }
+    },
+    {
+        "Key": "AddExpPer",
+        "Text": {
+            "Korea": "AddExpPer",
+            "ChineseTh": "AddExpPer"
+        }
+    },
+    {
+        "Key": "AddExpFinPer",
+        "Text": {
+            "Korea": "경험치 획득량 증가",
+            "English": "XP Gain +",
+            "ChineseCh": "经验值获取量提升",
+            "ChineseTh": "經驗值獲得量增加",
+            "Japanese": "経験値獲得量アップ"
+        }
+    },
+    {
+        "Key": "AddExpPerM",
+        "Text": {
+            "Korea": "AddExpPerM",
+            "ChineseTh": "AddExpPerM"
+        }
+    },
+    {
+        "Key": "AddExpFinPerM",
+        "Text": {
+            "Korea": "경험치 획득량 감소",
+            "English": "XP Gain Reduction",
+            "ChineseCh": "经验值获取量降低",
+            "ChineseTh": "經驗值獲得量減少",
+            "Japanese": "経験値獲得量ダウン"
+        }
+    },
+    {
+        "Key": "AddGold",
+        "Text": {
+            "Korea": "AddGold",
+            "ChineseTh": "AddGold"
+        }
+    },
+    {
+        "Key": "AddGoldPer",
+        "Text": {
+            "Korea": "AddGoldPer",
+            "ChineseTh": "AddGoldPer"
+        }
+    },
+    {
+        "Key": "AddGoldFinPer",
+        "Text": {
+            "Korea": "골드 획득량 증가",
+            "English": "Gold Gain Increase",
+            "ChineseCh": "金币获取量提升",
+            "ChineseTh": "金幣獲得量增加",
+            "Japanese": "ゴールド獲得量アップ"
+        }
+    },
+    {
+        "Key": "AddGoldPerM",
+        "Text": {
+            "Korea": "AddGoldPerM",
+            "ChineseTh": "AddGoldPerM"
+        }
+    },
+    {
+        "Key": "AddGoldFinPerM",
+        "Text": {
+            "Korea": "골드 획득량 감소",
+            "English": "Gold Gain Reduction",
+            "ChineseCh": "金币获取量降低",
+            "ChineseTh": "金幣獲得量減少",
+            "Japanese": "ゴールド獲得量ダウン"
+        }
+    },
+    {
+        "Key": "AddEquipSlot",
+        "Text": {
+            "Korea": "장비 슬롯 추가",
+            "English": "Add Equipment Slot",
+            "ChineseCh": "增加装备槽位",
+            "ChineseTh": "裝備欄位增加",
+            "Japanese": "装備スロット追加"
+        }
+    },
+    {
+        "Key": "AddEquipSlotPer",
+        "Text": {
+            "Korea": "AddEquipSlotPer",
+            "ChineseTh": "AddEquipSlotPer"
+        }
+    },
+    {
+        "Key": "AddEquipSlotFinPer",
+        "Text": {
+            "Korea": "AddEquipSlotFinPer",
+            "ChineseTh": "AddEquipSlotFinPer"
+        }
+    },
+    {
+        "Key": "AddEquipSlotPerM",
+        "Text": {
+            "Korea": "AddEquipSlotPerM",
+            "ChineseTh": "AddEquipSlotPerM"
+        }
+    },
+    {
+        "Key": "AddEquipSlotFinPerM",
+        "Text": {
+            "Korea": "AddEquipSlotFinPerM",
+            "ChineseTh": "AddEquipSlotFinPerM"
+        }
+    },
+    {
+        "Key": "StrExplain",
+        "Text": {
+            "Korea": "StrExplain",
+            "English": "Melee Attack and Melee Accuracy are increased.",
+            "ChineseCh": "提升近战攻击力与近战命中。",
+            "ChineseTh": "StrExplain",
+            "Japanese": "近距離攻撃力と近距離命中がアップする"
+        }
+    },
+    {
+        "Key": "DexExplain",
+        "Text": {
+            "Korea": "DexExplain",
+            "English": "Ranged Attack and Ranged Accuracy are increased.",
+            "ChineseCh": "提升远程攻击力与远程命中。",
+            "ChineseTh": "DexExplain",
+            "Japanese": "遠距離攻撃力と遠距離命中がアップする"
+        }
+    },
+    {
+        "Key": "IntExplain",
+        "Text": {
+            "Korea": "IntExplain",
+            "English": "Magic Attack and Magic Accuracy are increased.",
+            "ChineseCh": "提升魔法攻击力与魔法命中。",
+            "ChineseTh": "IntExplain",
+            "Japanese": "魔法攻撃力と魔法命中がアップする"
+        }
+    },
+    {
+        "Key": "ChaExplain",
+        "Text": {
+            "Korea": "ChaExplain",
+            "English": "Expedition efficiency is increased.",
+            "ChineseCh": "提升探查效率。",
+            "ChineseTh": "ChaExplain",
+            "Japanese": "探査効率がアップする"
+        }
+    },
+    {
+        "Key": "ChaPerExplain",
+        "Text": {
+            "Korea": "ChaPerExplain",
+            "English": "Expedition efficiency is increased.",
+            "ChineseCh": "提升探查效率。",
+            "ChineseTh": "ChaPerExplain",
+            "Japanese": "探査効率がアップする"
+        }
+    },
+    {
+        "Key": "ChaFinPerExplain",
+        "Text": {
+            "Korea": "ChaFinPerExplain",
+            "English": "Expedition efficiency is increased.",
+            "ChineseCh": "提升探查效率。",
+            "ChineseTh": "ChaFinPerExplain",
+            "Japanese": "探査効率がアップする"
+        }
+    },
+    {
+        "Key": "HpExplain",
+        "Text": {
+            "Korea": "최대 생명력을 나타냅니다.\n0이 되면 전투불능이 됩니다.",
+            "English": "The maximum HP of a Character.\nIf it drops to 0, they will be unable to fight.",
+            "ChineseCh": "生命值上限。\n降至0时将无法战斗。",
+            "ChineseTh": "顯示最大生命力。\n數值降為0時，將無法戰鬥。",
+            "Japanese": "最大生命力を表示します\n0になると、戦闘不能になります"
+        }
+    },
+    {
+        "Key": "HpPerExplain",
+        "Text": {
+            "Korea": "생명력이 해당 수치 만큼 추가로 증폭됩니다.",
+            "English": "HP is additionally increased by the specified amount.",
+            "ChineseCh": "将额外提升等同于该数值的生命值。",
+            "ChineseTh": "額外增加該數值的生命力。",
+            "Japanese": "生命力が一定の数値だけ追加で増加します"
+        }
+    },
+    {
+        "Key": "CriFinPerExplain",
+        "Text": {
+            "Korea": "치명타 확률 만큼 치명타가 발생합니다.\n적군의 치명타 저항 확률에 영향을 받아 감소합니다.",
+            "English": "The rate of landing critical hits is based on the Critical Hit Chance.\nIt is affected and reduced by the enemy's Critical Hit Resistance stat.",
+            "ChineseCh": "根据暴击率触发暴击。\n会受到敌方暴击抵抗率的影响而降低。",
+            "ChineseTh": "將根據暴擊率產生暴擊。\n會受到敵軍暴擊抵抗率影響而減少。",
+            "Japanese": "クリティカル率に応じてクリティカルヒットが発生します\n敵軍のクリティカル抵抗率に影響を受けて減少します"
+        }
+    },
+    {
+        "Key": "CrrFinPerExplain",
+        "Text": {
+            "Korea": "적군의 치명타 확률을 상쇄합니다.",
+            "English": "It offsets the enemy's Critical Hit Chance stat.",
+            "ChineseCh": "抵消敌方暴击率。",
+            "ChineseTh": "抵消敵軍的暴擊率。",
+            "Japanese": "敵軍のクリティカル率を相殺します"
+        }
+    },
+    {
+        "Key": "CrdFinPerExplain",
+        "Text": {
+            "Korea": "치명타의 대미지 증폭률을 나타냅니다.",
+            "English": "Indicates the damage amplification rate of critical hits.",
+            "ChineseCh": "暴击伤害的增幅比率。",
+            "ChineseTh": "代表暴擊傷害的增幅率。",
+            "Japanese": "クリティカルヒットのダメージ増幅率を表示します"
+        }
+    },
+    {
+        "Key": "HitFinPerExplain",
+        "Text": {
+            "Korea": "적의 회피율을 상쇄합니다.",
+            "English": "It offsets the enemy’s Evasion stat.",
+            "ChineseCh": "抵消敌方闪避率。",
+            "ChineseTh": "抵消敵人的閃避率。",
+            "Japanese": "敵の回避率を相殺します"
+        }
+    },
+    {
+        "Key": "AvoFinPerExplain",
+        "Text": {
+            "Korea": "공격을 회피할 수 있는 확률을 나타냅니다.",
+            "English": "Indicates the chance of evading an enemy’s attack.",
+            "ChineseCh": "闪避攻击的概率。",
+            "ChineseTh": "代表可閃避攻擊的機率。",
+            "Japanese": "攻撃を回避できる確率を表示します"
+        }
+    },
+    {
+        "Key": "RedRFinPerExplain",
+        "Text": {
+            "Korea": "적군의 피해 감소 수치를 깎습니다.\n피해 감소 수치가 높은 성문에 유리한 스탯입니다.",
+            "English": "Reduces the enemy's Damage Reduction value.\nThis stat is particularly valuable for the Castle Gate, which has high Damage Reduction.",
+            "ChineseCh": "降低敌方的伤害减免数值。\n该属性值对于拥有高伤害减免数值的城门占据优势。",
+            "ChineseTh": "降低敵軍傷害減少數值。\n對傷害減少數值較高的城門是相當有利的能力。",
+            "Japanese": "敵軍のダメージ軽減数値を減少させます\nダメージ軽減数値の高い城門に有利なステータスです"
+        }
+    },
+    {
+        "Key": "StateHFinPerExplain",
+        "Text": {
+            "Korea": "모든 상태 이상을 명중시킬 수 있는 확률이 증가합니다.\n다른 상태 이상 명중 확률에 합산됩니다.",
+            "English": "The chance to inflict all status effects is increased.\nThis chance is cumulative with the accuracy of inflicting other status effects.",
+            "ChineseCh": "提升全部状态异常的命中率。\n可与其他状态异常命中率叠加。",
+            "ChineseTh": "增加所有狀態異常的命中機率。\n將與其他狀態異常命中率加總。",
+            "Japanese": "全ての状態異常を命中させる確率がアップします\n他の状態異常命中率に合算されます"
+        }
+    },
+    {
+        "Key": "StateRFinPerExplain",
+        "Text": {
+            "Korea": "모든 상태 이상에 저항할 수 있는 확률이 증가합니다.\n다른 상태 이상 저항 확률에 합산됩니다.",
+            "English": "The chance to resist all status effects is increased.\nThis chance is cumulative with resistance against other status effects.",
+            "ChineseCh": "提升全部对于状态异常的抵抗率。\n可与其他状态异常抵抗率叠加。",
+            "ChineseTh": "增加抵抗所有狀態異常的機率。\n將與其他狀態異常抵抗率加總。",
+            "Japanese": "全ての状態異常に抵抗できる確率がアップします\n他の状態異常抵抗率に合算されます"
+        }
+    },
+    {
+        "Key": "StateHBurnFinPerExplain",
+        "Text": {
+            "Korea": "화상 효과를 명중시킬 수 있는 확률이 증가합니다.",
+            "English": "The chance to inflict burn is increased.",
+            "ChineseCh": "提升灼烧效果的命中率。",
+            "ChineseTh": "增加灼傷效果的命中機率。",
+            "Japanese": "やけど効果を命中させる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateRBurnFinPerExplain",
+        "Text": {
+            "Korea": "화상 효과에 저항할 확률이 증가합니다.",
+            "English": "The chance to resist burn is increased.",
+            "ChineseCh": "提升对于灼烧效果的抵抗率。",
+            "ChineseTh": "增加抵抗灼傷效果的機率。",
+            "Japanese": "やけど効果に抵抗できる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateHRestrictFinPerExplain",
+        "Text": {
+            "Korea": "속박 효과를 명중시킬 수 있는 확률이 증가합니다.",
+            "English": "The chance to inflict root is increased.",
+            "ChineseCh": "提升束缚效果的命中率。",
+            "ChineseTh": "增加束縛效果的命中機率。",
+            "Japanese": "拘束効果を命中させる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateRRestrictFinPerExplain",
+        "Text": {
+            "Korea": "속박 효과에 저항할 확률이 증가합니다.",
+            "English": "The chance to resist being rooted is increased.",
+            "ChineseCh": "提升对于束缚效果的抵抗率。",
+            "ChineseTh": "增加抵抗束縛效果的機率。",
+            "Japanese": "拘束効果に抵抗できる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateHIceFinPerExplain",
+        "Text": {
+            "Korea": "빙결 효과를 명중시킬 수 있는 확률이 증가합니다.",
+            "English": "The chance to inflict freeze is increased.",
+            "ChineseCh": "提升冰冻效果的命中率。",
+            "ChineseTh": "增加冰凍效果的命中機率。",
+            "Japanese": "氷結効果を命中させる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateRIceFinPerExplain",
+        "Text": {
+            "Korea": "빙결 효과에 저항할 확률이 증가합니다.",
+            "English": "The chance to resist being frozen is increased.",
+            "ChineseCh": "提升对于冰冻效果的抵抗率。",
+            "ChineseTh": "增加抵抗冰凍效果的機率。",
+            "Japanese": "氷結効果に抵抗できる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateHElectricFinPerExplain",
+        "Text": {
+            "Korea": "감전 효과를 명중시킬 수 있는 확률이 증가합니다.",
+            "English": "The chance to inflict shock is increased.",
+            "ChineseCh": "提升触电效果的命中率。",
+            "ChineseTh": "增加觸電效果的命中機率。",
+            "Japanese": "感電効果を命中させる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateRElectricFinPerExplain",
+        "Text": {
+            "Korea": "감전 효과에 저항할 확률이 증가합니다.",
+            "English": "The chance to resist shock is increased.",
+            "ChineseCh": "提升对于触电效果的抵抗率。",
+            "ChineseTh": "增加抵抗觸電效果的機率。",
+            "Japanese": "感電効果に抵抗できる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateHFearFinPerExplain",
+        "Text": {
+            "Korea": "공포 효과를 명중시킬 수 있는 확률이 증가합니다.",
+            "English": "The chance to inflict fear is increased.",
+            "ChineseCh": "提升恐怖效果的命中率。",
+            "ChineseTh": "增加恐怖效果的命中機率。",
+            "Japanese": "恐怖効果を命中させる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateRFearFinPerExplain",
+        "Text": {
+            "Korea": "공포 효과에 저항할 확률이 증가합니다.",
+            "English": "The chance to resist fear is increased.",
+            "ChineseCh": "提升对于恐怖效果的抵抗率。",
+            "ChineseTh": "增加抵抗恐怖效果的機率。",
+            "Japanese": "恐怖効果に抵抗できる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateHStunFinPerExplain",
+        "Text": {
+            "Korea": "기절 효과를 명중시킬 수 있는 확률이 증가합니다.",
+            "English": "The chance to inflict stun is increased.",
+            "ChineseCh": "提升昏厥效果的命中率。",
+            "ChineseTh": "增加眩暈效果的命中機率。",
+            "Japanese": "スタン効果を命中させる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateRStunFinPerExplain",
+        "Text": {
+            "Korea": "기절 효과에 저항할 확률이 증가합니다.",
+            "English": "The chance to resist being stunned is increased.",
+            "ChineseCh": "提升对于昏厥效果的抵抗率。",
+            "ChineseTh": "增加抵抗眩暈效果的機率。",
+            "Japanese": "スタン効果に抵抗できる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateHBleedFinPerExplain",
+        "Text": {
+            "Korea": "출혈 효과를 명중시킬 수 있는 확률이 증가합니다.",
+            "English": "The chance to inflict bleed is increased.",
+            "ChineseCh": "提升出血效果的命中率。",
+            "ChineseTh": "增加出血效果的命中機率。",
+            "Japanese": "出血効果を命中させる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateRBleedFinPerExplain",
+        "Text": {
+            "Korea": "출혈 효과에 저항할 확률이 증가합니다.",
+            "English": "The chance to resist bleed is increased.",
+            "ChineseCh": "提升对于出血效果的抵抗率。",
+            "ChineseTh": "增加抵抗出血效果的機率。",
+            "Japanese": "出血効果に抵抗できる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateHCurseFinPerExplain",
+        "Text": {
+            "Korea": "저주 효과를 명중시킬 수 있는 확률이 증가합니다.",
+            "English": "The chance to inflict curse is increased.",
+            "ChineseCh": "提升诅咒效果的命中率。",
+            "ChineseTh": "增加詛咒效果的命中機率。",
+            "Japanese": "呪い効果を命中させる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateRCurseFinPerExplain",
+        "Text": {
+            "Korea": "저주 효과에 저항할 확률이 증가합니다.",
+            "English": "The chance to resist curse is increased.",
+            "ChineseCh": "提升对于诅咒效果的抵抗率。",
+            "ChineseTh": "增加抵抗詛咒效果的機率。",
+            "Japanese": "呪い効果に抵抗できる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateHPoisonFinPerExplain",
+        "Text": {
+            "Korea": "중독 효과를 명중시킬 수 있는 확률이 증가합니다.",
+            "English": "The chance to inflict poison is increased.",
+            "ChineseCh": "提升中毒效果的命中率。",
+            "ChineseTh": "增加中毒效果的命中機率。",
+            "Japanese": "中毒効果を命中させる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateRPoisonFinPerExplain",
+        "Text": {
+            "Korea": "중독 효과에 저항할 확률이 증가합니다.",
+            "English": "The chance to resist being poisoned is increased.",
+            "ChineseCh": "提升对于中毒效果的抵抗率。",
+            "ChineseTh": "增加抵抗中毒效果的機率。",
+            "Japanese": "中毒効果に抵抗できる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateHStoneFinPerExplain",
+        "Text": {
+            "Korea": "석화 효과를 명중시킬 수 있는 확률이 증가합니다.",
+            "English": "The chance to inflict petrify is increased",
+            "ChineseCh": "提升石化效果的命中率。",
+            "ChineseTh": "增加石化效果的命中機率。",
+            "Japanese": "石化効果を命中させる確率がアップします"
+        }
+    },
+    {
+        "Key": "StateRStoneFinPerExplain",
+        "Text": {
+            "Korea": "석화 효과에 저항할 확률이 증가합니다.",
+            "English": "The chance to resist being petrified is increased.",
+            "ChineseCh": "提升对于石化效果的抵抗率。",
+            "ChineseTh": "增加抵抗石化效果的機率。",
+            "Japanese": "石化効果に抵抗できる確率がアップします"
+        }
+    },
+    {
+        "Key": "AtkSpeedFinPerExplain",
+        "Text": {
+            "Korea": "공격 속도가 증가합니다.",
+            "English": "Attack Speed is increased.",
+            "ChineseCh": "提升攻击速度。",
+            "ChineseTh": "增加攻擊速度。",
+            "Japanese": "攻撃速度がアップします"
+        }
+    },
+    {
+        "Key": "AddEquipSlotExplain",
+        "Text": {
+            "Korea": "인벤의 장비 슬롯의 최대 개수가 증가합니다.",
+            "English": "The inventory’s maximum number of Equipment Slots is increased.",
+            "ChineseCh": "扩充背包中装备槽位的数量上限。",
+            "ChineseTh": "增加背包內裝備欄位的數量上限。",
+            "Japanese": "インベントリの装備スロット数の上限が拡張されます"
+        }
+    },
+    {
+        "Key": "HpRecoveryExplain",
+        "Text": {
+            "Korea": "매초 마다 해당 수치 만큼 생명력을 회복합니다.",
+            "English": "Recover HP by the specified amount every second.",
+            "ChineseCh": "每秒恢复相当于该数值的生命值。",
+            "ChineseTh": "每秒恢復相應數值的生命力。",
+            "Japanese": "毎秒一定の生命力を回復します"
+        }
+    },
+    {
+        "Key": "ReviveCoolExplain",
+        "Text": {
+            "Korea": "자동 부활의 쿨타임이 감소 됩니다.",
+            "English": "The cooldown of auto-revive is reduced.",
+            "ChineseCh": "自动复活冷却时间缩减。",
+            "ChineseTh": "減少自動復活的冷卻時間。",
+            "Japanese": "自動復活のクールタイムが短縮されます"
+        }
+    },
+    {
+        "Key": "AddDamageExplain",
+        "Text": {
+            "Korea": "나의 최종 피해 수치에 이 스탯의 수치만큼 더해집니다.",
+            "English": "This stat's value is added to your final damage output.",
+            "ChineseCh": "在我的最终伤害中增加相当于该属性值的数值。",
+            "ChineseTh": "在自身的最終傷害中增加該能力的數值。",
+            "Japanese": "自分の最終ダメージ数値にこのステータスの数値分だけ追加されます"
+        }
+    },
+    {
+        "Key": "AddDamageFinPerExplain",
+        "Text": {
+            "Korea": "최종 대미지가 추가 피해의 수치만큼 증폭됩니다.",
+            "English": "The final damage output is increased by the amount of additional damage.",
+            "ChineseCh": "最终伤害根据额外伤害的数值增加。",
+            "ChineseTh": "最終傷害將根據額外傷害的數值增加。",
+            "Japanese": "最終ダメージが追加ダメージの数値分だけ増加します"
+        }
+    },
+    {
+        "Key": "ReduceDamagedExplain",
+        "Text": {
+            "Korea": "이 스탯의 수치만큼 내가 받는 최종 피해의 수치가 감소합니다.",
+            "English": "This stat reduces the value of the final damage output you receive.",
+            "ChineseCh": "在自身承受的最终伤害中减少该属性值的数值。",
+            "ChineseTh": "根據該能力的數值減少自身所受的最終傷害數值。",
+            "Japanese": "このステータスの数値分だけ自分が受ける最終ダメージの数値が減少します"
+        }
+    },
+    {
+        "Key": "ReduceDamagedFinPerExplain",
+        "Text": {
+            "Korea": "내가 받는 최종 피해를 감소 시킵니다. 이 스탯은 최종 {0} 이상 적용되지 않습니다.",
+            "English": "Reduces the final damage output you receive. This stat cannot exceed {0}.",
+            "ChineseCh": "降低自身承受的最终伤害。该属性值在最终伤害高于{0}时不再生效。",
+            "ChineseTh": "減少自身所受的最終傷害。該能力在最後{0}以上不會套用。",
+            "Japanese": "自分の被ダメージを軽減させます。このステータスは、最終的に{0}以上は適用されません"
+        }
+    },
+    {
+        "Key": "AddHealExplain",
+        "Text": {
+            "Korea": "힐러의 회복력에 영향을 끼칩니다.\n마법 공격력 및 마법 공격력 증가에 영향을 받지 않는 독립 스탯입니다.",
+            "English": "Affects healer's recovery rate.\nAn independent stat that is not affected by Magic ATK or Magic ATK increase.",
+            "ChineseCh": "影响灵医的治疗能力。\n 不受魔法攻击力及魔法攻击力提升属性值影响的独立属性值。",
+            "ChineseTh": "影響補師的恢復力。\n不受魔法攻擊力及魔法攻擊力增加影響的獨立能力。",
+            "Japanese": "ヒーラーは回復力に影響を及ぼします\n魔法攻撃力や魔法攻撃力アップに影響されない独立したステータスです"
+        }
+    },
+    {
+        "Key": "AddHealedFinPerExplain",
+        "Text": {
+            "Korea": "받는 치유량의 최종 값이 증가합니다.\n힐러에게 받을 치유량이 100이고 받는 치유 증가가 50%라면, 150이 치유됩니다.",
+            "English": "The final amount of healing received is increased.\nIf the initial heal from a healer is 100, and the ‘Healing Received Increase’ stat is at 50%, the final amount of healing received will be 150.",
+            "ChineseCh": "提升最终获得的治愈量数值。\n若从灵医处获得的治疗量为100，且获得治愈提升50%，则治愈150。",
+            "ChineseTh": "增加最終受到的治癒量數值。\n若補師的治癒量為100、獲得的治癒增加為50%，則實際治癒將為150。",
+            "Japanese": "被回復量の最終値がアップします\nヒーラーの回復量が100で回復アップが50％の場合、150を回復します"
+        }
+    },
+    {
+        "Key": "ReduceHealedExplain",
+        "Text": {
+            "Korea": "치유주문으로 치유 받는 양이 감소합니다. 시전자의 치유감소와 더해지며, 시전자의 치유증가, 받는 자의 받는 치유증가와 상쇄됩니다. 최종 계산된 값은 0 이하로 떨어지지 않습니다.",
+            "English": "The amount of healing received from healing spells is reduced. It is cumulative with the caster’s ‘Healing Reduction’ and countered by the caster's ‘Healing Increase,’ as well as the recipient's ‘Healing Received Increase.’ The final calculated value cannot drop below zero.",
+            "ChineseCh": "降低治愈咒术的治愈量。可与施法者的治愈降低叠加，并与施法者的治愈提升、接收者的治疗提升相抵消。最终计算值不会低于0。",
+            "ChineseTh": "減少治癒咒語獲得的治癒量。可與施展者的治癒減少效果疊加，施展者的治癒增加將與受到接受者獲得的治癒增加抵消，最終計算值不會低於0。",
+            "Japanese": "回復呪文による回復量が減少します。詠唱者の回復ダウン効果と重複し、詠唱者の回復アップと対象の被回復アップ効果に相殺されます。最終計算値は0以下には下がりません"
+        }
+    },
+    {
+        "Key": "ReduceHealedPerExplain",
+        "Text": {
+            "Korea": "치유주문으로 치유 받는 양이 감소합니다. 시전자의 치유감소와 더해지며, 시전자의 치유증가, 받는 자의 받는 치유증가와 상쇄됩니다. 최종 계산된 값은 0 이하로 떨어지지 않습니다.",
+            "English": "The amount of healing received from healing spells is reduced. It is cumulative with the caster’s ‘Healing Reduction’ and countered by the caster's ‘Healing Increase,’ as well as the recipient's ‘Healing Received Increase.’ The final calculated value cannot drop below zero.",
+            "ChineseCh": "降低治愈咒术的治愈量。可与施法者的治愈降低叠加，并与施法者的治愈提升、接收者的治疗提升相抵消。最终计算值不会低于0。",
+            "ChineseTh": "減少治癒咒語獲得的治癒量。可與施展者的治癒減少效果疊加，被施展者的治癒增加和受治癒者的獲得的治癒增加抵消，最終計算值不會低於0。",
+            "Japanese": "回復呪文による回復量が減少します。詠唱者の回復ダウン効果と重複し、詠唱者の回復アップと対象の被回復アップ効果に相殺されます。最終計算値は0以下には下がりません"
+        }
+    },
+    {
+        "Key": "ReduceHealedFinPerExplain",
+        "Text": {
+            "Korea": "치유주문으로 치유 받는 양이 감소합니다. 시전자의 치유감소와 더해지며, 시전자의 치유증가, 받는 자의 받는 치유증가와 상쇄됩니다. 최종 계산된 값은 0 이하로 떨어지지 않습니다.",
+            "English": "The amount of healing received from healing spells is reduced. It is cumulative with the caster’s ‘Healing Reduction’ and countered by the caster's ‘Healing Increase,’ as well as the recipient's ‘Healing Received Increase.’ The final calculated value cannot drop below zero.",
+            "ChineseCh": "降低治愈咒术的治愈量。可与施法者的治愈降低叠加，并与施法者的治愈提升、接收者的治疗提升相抵消。最终计算值不会低于0。",
+            "ChineseTh": "減少治癒咒語獲得的治癒量。可與施展者的治癒減少效果疊加，被施展者的治癒增加和受治癒者的獲得的治癒增加抵消，最終計算值不會低於0。",
+            "Japanese": "回復呪文による回復量が減少します。詠唱者の回復ダウン効果と重複し、詠唱者の回復アップと対象の被回復アップ効果に相殺されます。最終計算値は0以下には下がりません"
+        }
+    },
+    {
+        "Key": "AddExpExplain",
+        "Text": {
+            "Korea": "적을 처치하여 얻는 경험치를 추가로 획득 합니다.",
+            "English": "Acquire additional XP when defeating enemies.",
+            "ChineseCh": "击杀敌方时获得额外经验值。",
+            "ChineseTh": "擊敗敵人時，額外獲得經驗值。",
+            "Japanese": "敵を倒すと手に入る経験値を追加で獲得します"
+        }
+    },
+    {
+        "Key": "AddExpPerExplain",
+        "Text": {
+            "Korea": "적을 처치하여 얻는 경험치를 추가로 획득 합니다.",
+            "English": "Acquire additional XP when defeating enemies.",
+            "ChineseCh": "击杀敌方时获得额外经验值。",
+            "ChineseTh": "擊敗敵人時，額外獲得經驗值。",
+            "Japanese": "敵を倒すと手に入る経験値を追加で獲得します"
+        }
+    },
+    {
+        "Key": "AddExpFinPerExplain",
+        "Text": {
+            "Korea": "적을 처치하여 얻는 경험치를 추가로 획득 합니다.",
+            "English": "Acquire additional XP when defeating enemies.",
+            "ChineseCh": "击杀敌方时获得额外经验值。",
+            "ChineseTh": "擊敗敵人時，額外獲得經驗值。",
+            "Japanese": "敵を倒すと手に入る経験値を追加で獲得します"
+        }
+    },
+    {
+        "Key": "AddGoldExplain",
+        "Text": {
+            "Korea": "적을 처치하여 얻는 골드를 추가로 획득 합니다.",
+            "English": "Acquire additional Gold when defeating enemies.",
+            "ChineseCh": "击杀敌方时获得额外金币。",
+            "ChineseTh": "擊敗敵人時，額外獲得金幣。",
+            "Japanese": "敵を倒すと手に入るゴールドを追加で獲得します"
+        }
+    },
+    {
+        "Key": "AddGoldPerExplain",
+        "Text": {
+            "Korea": "적을 처치하여 얻는 골드를 추가로 획득 합니다.",
+            "English": "Acquire additional Gold when defeating enemies.",
+            "ChineseCh": "击杀敌方时获得额外金币。",
+            "ChineseTh": "擊敗敵人時，額外獲得金幣。",
+            "Japanese": "敵を倒すと手に入るゴールドを追加で獲得します"
+        }
+    },
+    {
+        "Key": "AddGoldFinPerExplain",
+        "Text": {
+            "Korea": "적을 처치하여 얻는 골드를 추가로 획득 합니다.",
+            "English": "Acquire additional Gold when defeating enemies.",
+            "ChineseCh": "击杀敌方时获得额外金币。",
+            "ChineseTh": "擊敗敵人時，額外獲得金幣。",
+            "Japanese": "敵を倒すと手に入るゴールドを追加で獲得します"
+        }
+    },
+    {
+        "Key": "TransValue",
+        "Text": {
+            "Korea": "동렙 기준 : {0:F2}% 적용",
+            "English": "Same Level: Apply {0:F2}%",
+            "ChineseCh": "同等级：适用{0:F2}%",
+            "ChineseTh": "同等級：套用{0:F2}%",
+            "Japanese": "同レベル基準：{0:F2}%適用"
+        }
+    },
+    {
+        "Key": "TransTargetValue",
+        "Text": {
+            "Korea": "상대 레벨 {0} : {1:F2}% 적용",
+            "English": "Enemy Level {0}: Apply {1:F2}%",
+            "ChineseCh": "对手等级{0}：适用{1:F2}%",
+            "ChineseTh": "對手等級{0}：套用{1:F2}%",
+            "Japanese": "相手のレベル{0}：{1:F2}%適用"
+        }
+    },
+    {
+        "Key": "MasteryTargetValue",
+        "Text": {
+            "Korea": "상대 숙련과 {0} 차이 : {1:F2}% 보정",
+            "English": "{0} difference in opponent's Mastery: {1:F2}% adjustment",
+            "ChineseCh": "与对手精通相差{0}：修正{1:F2}%",
+            "ChineseTh": "與對手的熟練相差{0}：修正{1:F2}%",
+            "Japanese": "相手の熟練度と{0}の差：{1:F2}%補正"
+        }
+    },
+    {
+        "Key": "StatZoneType",
+        "Text": {
+            "Korea": "{0} ",
+            "English": "{0}",
+            "ChineseCh": "{0}",
+            "ChineseTh": "{0} ",
+            "Japanese": "{0}"
+        }
+    },
+    {
+        "Key": "StatAttack"
+    },
+    {
+        "Key": "StatDefense"
+    },
+    {
+        "Key": "Attribute.Earth",
+        "Text": {
+            "Korea": "땅 속성",
+            "English": "Earth Element",
+            "ChineseCh": "坤属性",
+            "ChineseTh": "地屬性",
+            "Japanese": "土属性"
+        }
+    },
+    {
+        "Key": "Attribute.Fire",
+        "Text": {
+            "Korea": "불 속성",
+            "English": "Fire Element",
+            "ChineseCh": "炽属性",
+            "ChineseTh": "火屬性",
+            "Japanese": "炎属性"
+        }
+    },
+    {
+        "Key": "Attribute.Water",
+        "Text": {
+            "Korea": "물 속성",
+            "English": "Water Element",
+            "ChineseCh": "渊属性",
+            "ChineseTh": "水屬性",
+            "Japanese": "水属性"
+        }
+    },
+    {
+        "Key": "Attribute.Wind",
+        "Text": {
+            "Korea": "바람 속성",
+            "English": "Wind Element",
+            "ChineseCh": "巽属性",
+            "ChineseTh": "風屬性",
+            "Japanese": "風属性"
+        }
+    },
+    {
+        "Key": "Attribute.Balance",
+        "Text": {
+            "Korea": "조화 속성",
+            "English": "Harmony Element",
+            "ChineseCh": "顺属性",
+            "ChineseTh": "和諧屬性",
+            "Japanese": "秩序属性"
+        }
+    },
+    {
+        "Key": "Attribute.Chaos",
+        "Text": {
+            "Korea": "혼돈 속성",
+            "English": "Chaos Element",
+            "ChineseCh": "混沌属性",
+            "ChineseTh": "混沌屬性",
+            "Japanese": "混沌属性"
+        }
+    },
+    {
+        "Key": "Gender.Man",
+        "Text": {
+            "Korea": "남성",
+            "English": "Male",
+            "ChineseCh": "男性",
+            "ChineseTh": "男性",
+            "Japanese": "男性"
+        }
+    },
+    {
+        "Key": "Gender.Woman",
+        "Text": {
+            "Korea": "여성",
+            "English": "Female",
+            "ChineseCh": "女性",
+            "ChineseTh": "女性",
+            "Japanese": "女性"
+        }
+    },
+    {
+        "Key": "CurrHp",
+        "Text": {
+            "Korea": "현재 생명력",
+            "English": "Current HP",
+            "ChineseCh": "当前生命值",
+            "ChineseTh": "目前生命力",
+            "Japanese": "現在の生命力"
+        }
+    },
+    {
+        "Key": "Unit",
+        "Text": {
+            "Korea": "캐릭터",
+            "English": "Character",
+            "ChineseCh": "角色",
+            "ChineseTh": "角色",
+            "Japanese": "キャラクター"
+        }
+    },
+    {
+        "Key": "Target",
+        "Text": {
+            "Korea": "대상",
+            "English": "Target",
+            "ChineseCh": "目标单位",
+            "ChineseTh": "目標",
+            "Japanese": "対象"
+        }
+    },
+    {
+        "Key": "SkillTarget",
+        "Text": {
+            "Korea": "스킬 대상과 동일",
+            "English": "Same as the Target of the Skill",
+            "ChineseCh": "与技能目标单位相同",
+            "ChineseTh": "與技能目標相同",
+            "Japanese": "スキル対象と同じ"
+        }
+    },
+    {
+        "Key": "Self",
+        "Text": {
+            "Korea": "자신",
+            "English": "Self",
+            "ChineseCh": "自身",
+            "ChineseTh": "自身",
+            "Japanese": "自分"
+        }
+    },
+    {
+        "Key": "Enemy",
+        "Text": {
+            "Korea": "적군",
+            "English": "Enemy",
+            "ChineseCh": "敌方",
+            "ChineseTh": "敵軍",
+            "Japanese": "敵軍"
+        }
+    },
+    {
+        "Key": "Friendly",
+        "Text": {
+            "Korea": "아군",
+            "English": "Ally",
+            "ChineseCh": "我方",
+            "ChineseTh": "我軍",
+            "Japanese": "味方"
+        }
+    },
+    {
+        "Key": "CastingTime",
+        "Text": {
+            "Korea": "시전시간 : {0}초",
+            "English": "Casting Time: {0} second(s)",
+            "ChineseCh": "施法时间：{0}秒",
+            "ChineseTh": "施展時間：{0}秒",
+            "Japanese": "詠唱時間：{0}秒"
+        }
+    },
+    {
+        "Key": "SkillType",
+        "Text": {
+            "Korea": "기술 유형 : {0}",
+            "English": "Skill Type: {0}",
+            "ChineseCh": "技能类型：{0}",
+            "ChineseTh": "技能類型：{0}",
+            "Japanese": "技のタイプ：{0}"
+        }
+    },
+    {
+        "Key": "Active",
+        "Text": {
+            "Korea": "액티브",
+            "English": "Active",
+            "ChineseCh": "主动",
+            "ChineseTh": "主動",
+            "Japanese": "アクティブ"
+        }
+    },
+    {
+        "Key": "Passive",
+        "Text": {
+            "Korea": "패시브",
+            "English": "Passive",
+            "ChineseCh": "被动",
+            "ChineseTh": "被動",
+            "Japanese": "パッシブ"
+        }
+    },
+    {
+        "Key": "Second",
+        "Text": {
+            "Korea": "초",
+            "English": "Second(s)",
+            "ChineseCh": "秒",
+            "ChineseTh": "秒",
+            "Japanese": "秒"
+        }
+    },
+    {
+        "Key": "NumApplyEffect",
+        "Text": {
+            "Korea": "[{0}번째 효과 : {1}]",
+            "English": "[Effect {0}: {1}]",
+            "ChineseCh": "[第{0}效果：{1}]",
+            "ChineseTh": "[效果{0}：{1}]",
+            "Japanese": "[{0}番目効果：{1}]"
+        }
+    },
+    {
+        "Key": "ApplyEffect",
+        "Text": {
+            "Korea": "[효과 : {0}]",
+            "English": "[Effect: {0}]",
+            "ChineseCh": "[效果：{0}]",
+            "ChineseTh": "[效果：{0}]",
+            "Japanese": "[効果：{0}]"
+        }
+    },
+    {
+        "Key": "DamageValue",
+        "Text": {
+            "Korea": "피해량",
+            "English": "Damage Dealt",
+            "ChineseCh": "伤害量",
+            "ChineseTh": "傷害量",
+            "Japanese": "ダメージ量"
+        }
+    },
+    {
+        "Key": "HealValue",
+        "Text": {
+            "Korea": "회복량",
+            "English": "Recovery Amount",
+            "ChineseCh": "恢复量",
+            "ChineseTh": "恢復量",
+            "Japanese": "回復量"
+        }
+    },
+    {
+        "Key": "NoDamage",
+        "Text": {
+            "Korea": "피해 정보가 없습니다.",
+            "English": "No damage data.",
+            "ChineseCh": "暂无伤害信息。",
+            "ChineseTh": "沒有傷害資訊。",
+            "Japanese": "ダメージ情報がありません"
+        }
+    },
+    {
+        "Key": "DamageExplain",
+        "Text": {
+            "Korea": "{0}의 {1}% 피해",
+            "English": "Inflict damage equal to {1}% of {0}",
+            "ChineseCh": "造成{0}{1}%的伤害",
+            "ChineseTh": "造成{0}的{1}%傷害",
+            "Japanese": "{0}の{1}%ダメージ"
+        }
+    },
+    {
+        "Key": "HealExplain",
+        "Text": {
+            "Korea": "{0}의 {1}% 회복",
+            "English": "Recover {1}% of {0}",
+            "ChineseCh": "获得{0}{1}%的恢复",
+            "ChineseTh": "恢復{0}的{1}%",
+            "Japanese": "{0}の{1}%回復"
+        }
+    },
+    {
+        "Key": "DetailTargetTitle",
+        "Text": {
+            "Korea": "세부 대상",
+            "English": "Target Details",
+            "ChineseCh": "具体目标单位",
+            "ChineseTh": "詳細目標",
+            "Japanese": "詳細対象"
+        }
+    },
+    {
+        "Key": "ApplyCondition",
+        "Text": {
+            "Korea": "발동 조건",
+            "English": "Activation Condition",
+            "ChineseCh": "触发条件",
+            "ChineseTh": "發動條件",
+            "Japanese": "発動条件"
+        }
+    },
+    {
+        "Key": "CoolTime",
+        "Text": {
+            "Korea": "[쿨타임]",
+            "English": "[Cooldown]",
+            "ChineseCh": "[冷却时间]",
+            "ChineseTh": "[冷卻時間]",
+            "Japanese": "[クールタイム]"
+        }
+    },
+    {
+        "Key": "OriginType",
+        "Text": {
+            "Korea": "대상 : {0}",
+            "English": "Target: {0}",
+            "ChineseCh": "目标单位：{0}",
+            "ChineseTh": "目標：{0}",
+            "Japanese": "対象：{0}"
+        }
+    },
+    {
+        "Key": "OneTarget",
+        "Text": {
+            "Korea": "적군 1명",
+            "English": "1 Enemy",
+            "ChineseCh": "1名敌人",
+            "ChineseTh": "敵軍1個",
+            "Japanese": "敵軍1人"
+        }
+    },
+    {
+        "Key": "OriginType.Target",
+        "Text": {
+            "Korea": "목표",
+            "English": "Objective",
+            "ChineseCh": "目标",
+            "ChineseTh": "目標",
+            "Japanese": "ターゲット"
+        }
+    },
+    {
+        "Key": "OriginType.Self",
+        "Text": {
+            "Korea": "자신",
+            "English": "Self",
+            "ChineseCh": "自身",
+            "ChineseTh": "自身",
+            "Japanese": "自分"
+        }
+    },
+    {
+        "Key": "ForwardAllRadius",
+        "Text": {
+            "Korea": "전방의",
+            "English": "Forward",
+            "ChineseCh": "前方的",
+            "ChineseTh": "前方的",
+            "Japanese": "前方の"
+        }
+    },
+    {
+        "Key": "ForwardRadius",
+        "Text": {
+            "Korea": "전방 {0}M 이내의",
+            "English": "Within {0}M ahead",
+            "ChineseCh": "前方{0}米以内的",
+            "ChineseTh": "前方{0}公尺內的",
+            "Japanese": "前方{0}M以内の"
+        }
+    },
+    {
+        "Key": "TargetAllRadius",
+        "Text": {
+            "Korea": "주변의",
+            "English": "Radius",
+            "ChineseCh": "周围的",
+            "ChineseTh": "周圍的",
+            "Japanese": "周辺の"
+        }
+    },
+    {
+        "Key": "TargetRadius",
+        "Text": {
+            "Korea": "주변 {0}M 이내의",
+            "English": "Within a {0}M radius",
+            "ChineseCh": "周围{0}米以内的",
+            "ChineseTh": "周圍{0}公尺內的",
+            "Japanese": "周辺{0}M以内の"
+        }
+    },
+    {
+        "Key": "TargetType.All",
+        "Text": {
+            "Korea": "모든 대상",
+            "English": "All Targets",
+            "ChineseCh": "所有目标单位",
+            "ChineseTh": "所有目標",
+            "Japanese": "全対象"
+        }
+    },
+    {
+        "Key": "TargetType.AllExceptMe",
+        "Text": {
+            "Korea": "시전자를 제외한 모든 대상",
+            "English": "All Targets Excluding the Caster",
+            "ChineseCh": "除施法者以外的所有目标单位",
+            "ChineseTh": "施展者以外的所有目標",
+            "Japanese": "詠唱者を除く全対象"
+        }
+    },
+    {
+        "Key": "TargetType.Enemy",
+        "Text": {
+            "Korea": "모든 적군",
+            "English": "All Enemies",
+            "ChineseCh": "所有敌方",
+            "ChineseTh": "所有敵軍",
+            "Japanese": "全敵軍"
+        }
+    },
+    {
+        "Key": "TargetType.Friendly",
+        "Text": {
+            "Korea": "모든 아군",
+            "English": "All Allies",
+            "ChineseCh": "所有我方",
+            "ChineseTh": "所有我軍",
+            "Japanese": "全味方"
+        }
+    },
+    {
+        "Key": "TargetType.FriendlyExceptMe",
+        "Text": {
+            "Korea": "시전자를 제외한 모든 아군",
+            "English": "All Allies Excluding the Caster",
+            "ChineseCh": "除施法者以外的所有我方",
+            "ChineseTh": "施展者以外的所有我軍",
+            "Japanese": "詠唱者を除く全味方"
+        }
+    },
+    {
+        "Key": "JobTargetType",
+        "Text": {
+            "Korea": "중 {0} 직업",
+            "English": "{0} Class",
+            "ChineseCh": "中的{0}职业",
+            "ChineseTh": "中{0}職業",
+            "Japanese": "のうち{0}職業"
+        }
+    },
+    {
+        "Key": "TargetTypeNum",
+        "Text": {
+            "Korea": "중 {0} 명",
+            "English": "{0} Targets",
+            "ChineseCh": "中的{0}名",
+            "ChineseTh": "中{0}個",
+            "Japanese": "のうち{0}人"
+        }
+    },
+    {
+        "Key": "DetailTarget",
+        "Text": {
+            "Korea": "목표 세부 항목 : {0}",
+            "English": "Detailed Targeting Category: {0}",
+            "ChineseCh": "目标详情：{0}",
+            "ChineseTh": "目標詳細項目：{0}",
+            "Japanese": "ターゲット詳細項目：{0}"
+        }
+    },
+    {
+        "Key": "DetailTarget.FarDistance",
+        "Text": {
+            "Korea": "거리가 먼 대상",
+            "English": "Distant Target",
+            "ChineseCh": "距离远的目标单位",
+            "ChineseTh": "距離遠的目標",
+            "Japanese": "距離が遠い対象"
+        }
+    },
+    {
+        "Key": "DetailTarget.HighstAttack",
+        "Text": {
+            "Korea": "공격력이 높은 대상",
+            "English": "Target With High Attack",
+            "ChineseCh": "攻击力高的目标单位",
+            "ChineseTh": "攻擊力高的目標",
+            "Japanese": "攻撃力が高い対象"
+        }
+    },
+    {
+        "Key": "DetailTarget.HighstSp",
+        "Text": {
+            "Korea": "마나가 높은 대상",
+            "English": "Target With High Mana",
+            "ChineseCh": "灵力高的目标单位",
+            "ChineseTh": "瑪那高的目標",
+            "Japanese": "マナが高い対象"
+        }
+    },
+    {
+        "Key": "DetailTarget.LowestHp",
+        "Text": {
+            "Korea": "생명력이 적은 대상",
+            "English": "Target With Low HP",
+            "ChineseCh": "生命值高的目标单位",
+            "ChineseTh": "生命力低的目標",
+            "Japanese": "生命力が低い対象"
+        }
+    },
+    {
+        "Key": "DetailTarget.None",
+        "Text": {
+            "Korea": "거리가 가까운 대상",
+            "English": "Close Target",
+            "ChineseCh": "距离近的目标单位",
+            "ChineseTh": "距離近的目標",
+            "Japanese": "距離が近い対象"
+        }
+    },
+    {
+        "Key": "DetailTarget.OneMoreBuff",
+        "Text": {
+            "Korea": "한개이상의 이로운 효과가 걸린 대상",
+            "English": "Target with 1 or More Beneficial Effects",
+            "ChineseCh": "带有一个以上增益效果的目标单位",
+            "ChineseTh": "帶有一項以上增益效果的目標",
+            "Japanese": "1個以上のバフ効果がある対象"
+        }
+    },
+    {
+        "Key": "DetailTarget.OneMoreDebuff",
+        "Text": {
+            "Korea": "한개이상의 해로운 효과가 걸린 대상",
+            "English": "Target with 1 or More Harmful Effects",
+            "ChineseCh": "带有一个以上减益效果的目标单位",
+            "ChineseTh": "帶有一項以上減益效果的目標",
+            "Japanese": "1個以上のデバフ効果がある対象"
+        }
+    },
+    {
+        "Key": "DetailTarget.Random",
+        "Text": {
+            "Korea": "무작위 대상",
+            "English": "Random Target",
+            "ChineseCh": "随机目标单位",
+            "ChineseTh": "隨機目標",
+            "Japanese": "ランダムな対象"
+        }
+    },
+    {
+        "Key": "DetailTarget.SkillDebuff",
+        "Text": {
+            "Korea": "{0} 주문에 걸려 있는 대상",
+            "English": "Target Under the {0} Spell",
+            "ChineseCh": "附带{0}咒术的目标单位",
+            "ChineseTh": "被施予{0}咒語的目標",
+            "Japanese": "{0}呪文にかかっている対象"
+        }
+    },
+    {
+        "Key": "DetailTarget.WorstDebuff",
+        "Text": {
+            "Korea": "가장 해로운 효과가 많이 걸린 대상",
+            "English": "Target with the Most Harmful Effects",
+            "ChineseCh": "附带减益效果最多的目标单位",
+            "ChineseTh": "被施予最多減益效果的目標",
+            "Japanese": "最も多くのデバフ効果がある対象"
+        }
+    },
+    {
+        "Key": "DetailTarget.ZeroDebuff",
+        "Text": {
+            "Korea": "해로운 효과가 없는 대상",
+            "English": "Target with No Harmful Effects",
+            "ChineseCh": "未附带任何减益效果的目标单位",
+            "ChineseTh": "沒有減益效果的目標",
+            "Japanese": "デバフ効果がない対象"
+        }
+    },
+    {
+        "Key": "SkillDefault",
+        "Text": {
+            "Korea": "알 수 없는 주문",
+            "English": "Unknown Spell",
+            "ChineseCh": "未知咒术",
+            "ChineseTh": "未知的咒語",
+            "Japanese": "不明の呪文"
+        }
+    },
+    {
+        "Key": "TriggerEventNo",
+        "Text": {
+            "Korea": "없음",
+            "ChineseCh": "无",
+            "ChineseTh": "無",
+            "Japanese": "なし"
+        }
+    },
+    {
+        "Key": "TriggerEvent",
+        "Text": {
+            "Korea": "누군가 {0}",
+            "English": "Someone {0}",
+            "ChineseCh": "任何人{0}",
+            "ChineseTh": "某人{0}",
+            "Japanese": "誰か{0}"
+        }
+    },
+    {
+        "Key": "TriggerEventMyMsg",
+        "Text": {
+            "Korea": "자신이 {0}",
+            "English": "Self {0}",
+            "ChineseCh": "自身{0}",
+            "ChineseTh": "自身{0}",
+            "Japanese": "自分が{0}"
+        }
+    },
+    {
+        "Key": "TriggerSkillList",
+        "Text": {
+            "Korea": "[다음 기술을 시전 중일때 효과 발동]",
+            "English": "[Effect is triggered when the following Skill is being cast.]",
+            "ChineseCh": "[以下技能施法时触发效果]",
+            "ChineseTh": "[施展以下技能時效果發動]",
+            "Japanese": "[次の技を詠唱中に効果発動]"
+        }
+    },
+    {
+        "Key": "DetailTrigger",
+        "Text": {
+            "Korea": "세부 발동 조건",
+            "English": "Detailed Activation Condition",
+            "ChineseCh": "具体触发条件",
+            "ChineseTh": "詳細發動條件",
+            "Japanese": "詳細発動条件"
+        }
+    },
+    {
+        "Key": "TriggerAroundUnit",
+        "Text": {
+            "Korea": "주변 {0}M 이내에 {1}이 {2}명 {3}일때 발동",
+            "English": "Activates when there are {2} or {3} {1} in a {0}M radius.",
+            "ChineseCh": "周围{0}米内存在{2}名{3}{1}时触发",
+            "ChineseTh": "周圍{0}公尺內有{2}名{1}{3}時發動",
+            "Japanese": "周辺{0}M以内の{1}が{2}人{3}の時に発動"
+        }
+    },
+    {
+        "Key": "TriggerAroundUnitHp",
+        "Text": {
+            "Korea": "주변 {0}M 이내에 생명력이 {1}% {2}인 {3}이 {4}명 {5}일때 발동",
+            "English": "Activates when there are {4} or {5} {3} with {1}% or {2} HP within a {0}M radius.",
+            "ChineseCh": "周围{0}米内存在{4}名{5}生命值{1}%{2}的{3}时触发",
+            "ChineseTh": "周圍{0}公尺內有{4}名生命力{1}%{2}的{3}{5}時發動",
+            "Japanese": "周辺{0}M以内の生命力が{1}%{2}の{3}が{4}人{5}の時に発動"
+        }
+    },
+    {
+        "Key": "TriggerCheckBuff",
+        "Text": {
+            "Korea": "{0}에게 {1}이 {2}개 {3}일때 발동",
+            "English": "Activates when there are {2} or {3} {1} on {0}.",
+            "ChineseCh": "{0}身上存在{2}个{3}{1}时触发",
+            "ChineseTh": "當{0}身上有{2}個{3}{1}時發動",
+            "Japanese": "{0}の{1}が{2}個{3}の時に発動"
+        }
+    },
+    {
+        "Key": "TriggerCheckBuffSkill",
+        "Text": {
+            "Korea": "{0}에게 {1} 다음 기술 중 한 개의 주문이 걸려있으면 발동. ({2})",
+            "English": "Activates when there is one of the following spells inflicted on {0} {1}. ({2})",
+            "ChineseCh": "{0}身上存在{1}以下技能中的任意咒术时触发。({2})",
+            "ChineseTh": "當{0}被施予{1}以下技能中任一咒語時發動。({2})",
+            "Japanese": "{0}に{1}次の技のうち1個の呪文がかかっていると発動({2})"
+        }
+    },
+    {
+        "Key": "TriggerCheckBuffOwner",
+        "Text": {
+            "Korea": "내가 시전한",
+            "English": "by the caster",
+            "ChineseCh": "我释放的",
+            "ChineseTh": "我施展的",
+            "Japanese": "自分が詠唱した"
+        }
+    },
+    {
+        "Key": "TriggerCheckDead",
+        "Text": {
+            "Korea": "{0}중 죽은 용병이 있으면 발동",
+            "English": "Activates when there is a slain mercenary among the {0}.",
+            "ChineseCh": "{0}中存在阵亡的佣兵时触发",
+            "ChineseTh": "當{0}中有死亡的傭兵時發動",
+            "Japanese": "{0}のうち死んだ傭兵がいると発動"
+        }
+    },
+    {
+        "Key": "TriggerCheckHp",
+        "Text": {
+            "Korea": "현재 생명력이 {0}{1} {2} 일 때 발동",
+            "English": "Activates when the current HP is at {0}{1} or {2}.",
+            "ChineseCh": "当前生命值在{0}{1}{2}时触发",
+            "ChineseTh": "當目前生命力為{0}{1}{2}時發動",
+            "Japanese": "現在の生命力が{0}{1}{2}の時に発動"
+        }
+    },
+    {
+        "Key": "TriggerCheckHpEnemy",
+        "Text": {
+            "Korea": "적군 중 현재 생명력이 {0}{1} {2} 인 인원이 있으면 발동",
+            "English": "Activates when there is an enemy with {0}{1} HP or {2}.",
+            "ChineseCh": "敌方之中存在当前生命值在{0}{1}{2}的单位时触发",
+            "ChineseTh": "當敵軍中有生命力為{0}{1}{2}的成員時發動",
+            "Japanese": "敵軍のうち現在の生命力が{0}{1}{2}の対象がいると発動"
+        }
+    },
+    {
+        "Key": "TriggerCheckHpFriendly",
+        "Text": {
+            "Korea": "아군 중 현재 생명력이 {0}{1} {2} 인 인원이 있으면 발동",
+            "English": "Activates when there is an ally with {0}{1} HP or {2}.",
+            "ChineseCh": "我方之中存在当前生命值在{0}{1}{2}的单位时触发",
+            "ChineseTh": "當我軍中有生命力為{0}{1}{2}的成員時發動",
+            "Japanese": "味方のうち現在の生命力が{0}{1}{2}の対象がいると発動"
+        }
+    },
+    {
+        "Key": "TriggerCheckStat",
+        "Text": {
+            "Korea": "대상의 {0} 수치가 내 {1} 수치 {2} 일때  발동",
+            "English": "Activates when the target’s {0} is {2} than the caster’s {1}.",
+            "ChineseCh": "目标单位的{0}数值在我的{1}数值{2}时触发",
+            "ChineseTh": "當目標的{0}數值為我的{1}數值{2}時發動",
+            "Japanese": "対象の{0}数値が自分の{1}数値{2}の時に発動"
+        }
+    },
+    {
+        "Key": "TriggerTeamBuff",
+        "Text": {
+            "Korea": "{0}중  {1}이 {2}개 {3}일때 발동",
+            "English": "Triggered when there are {2} of {1} among {0}.",
+            "ChineseCh": "当{0}中{1}有{2}个{3}时触发",
+            "ChineseTh": "當{0}中有{2}個{1}{3}時發動",
+            "Japanese": "{0}中{1}が{2}個{3}の時に発動"
+        }
+    },
+    {
+        "Key": "TriggerTeamHp",
+        "Text": {
+            "Korea": "{0}중 {1} 수치가 {2}{3} {4} 인 대상이 있을 때 발동",
+            "English": "Triggered when there is a target with {1} value of {2}{3} {4} among {0}.",
+            "ChineseCh": "当{0}中存在{1}数值为{2}{3}{4}的目标单位时触发",
+            "ChineseTh": "當{0}中有{1}數值為{2}{3}{4}的目標時發動",
+            "Japanese": "{0}中{1}数値が{2}{3}{4}の対象がいる時に発動"
+        }
+    },
+    {
+        "Key": "TriggerStats",
+        "Text": {
+            "Korea": "대상 영웅의 능력치가 조건에 맞으면 발동",
+            "English": "Activates when the target hero’s stats meet the conditions.",
+            "ChineseCh": "目标英雄的能力值满足条件时触发",
+            "ChineseTh": "當目標英雄的能力值符合條件時發動",
+            "Japanese": "対象英雄の能力値が条件に合うと発動"
+        }
+    },
+    {
+        "Key": "TriggerDefault",
+        "Text": {
+            "Korea": "자세한 정보를 표기할 수 없습니다.",
+            "English": "There are no details.",
+            "ChineseCh": "无法显示详情。",
+            "ChineseTh": "無法顯示詳細資訊。",
+            "Japanese": "詳細の情報を表示できません"
+        }
+    },
+    {
+        "Key": "ActorAccumMarkBuff",
+        "Text": {
+            "Korea": "발동 시 횟수가 중첩되고, {0}회가 되면 주문이 발동됩니다.",
+            "English": "Stack(s) are gained upon activation. Spell is activated at {0} stack(s).",
+            "ChineseCh": "触发时次数叠加，达到{0}次后咒术生效。",
+            "ChineseTh": "發動時將疊加次數，達到{0}次後將發動咒語。",
+            "Japanese": "発動時、回数が重複し、{0}回になると呪文が発動されます"
+        }
+    },
+    {
+        "Key": "ActorAccumMarkDamage",
+        "Text": {
+            "Korea": "발동 시 횟수가 중첩되고, {0}회가 되면 대상의 {1}을 {2}만큼 소진시킵니다.",
+            "English": "When triggered, the count stacks, and at {0} times, it depletes the target's {1} by {2}.",
+            "ChineseCh": "触发时叠加次数，达到{0}次时消耗目标单位{1}{2}点",
+            "ChineseTh": "發動時將疊加次數，達到{0}次後將消耗目標的{1}{2}。",
+            "Japanese": "発動時、回数が重複し、{0}回になると対象の{1}を{2}消耗します"
+        }
+    },
+    {
+        "Key": "ActorAccumMarkHeal",
+        "Text": {
+            "Korea": "발동 시 횟수가 중첩되고, {0}회가 되면 대상의 {1}을 {2}만큼 회복시킵니다.",
+            "English": "When triggered, the count stacks, and at {0} times, it restores the target's {1} by {2}.",
+            "ChineseCh": "触发时叠加次数，达到{0}次时恢复目标单位{1}{2}点",
+            "ChineseTh": "發動時將疊加次數，達到{0}次後將恢復目標的{1}{2}。",
+            "Japanese": "発動時、回数が重複し、{0}回になると対象の{1}を{2}回復します"
+        }
+    },
+    {
+        "Key": "ActorAddAction",
+        "Text": {
+            "Korea": "최대 {0}회, 추가 행동을 합니다.",
+            "English": "Can perform additional actions, up to {0} time(s).",
+            "ChineseCh": "最多{0}次，额外行动。",
+            "ChineseTh": "最多{0}次，產生額外行動。",
+            "Japanese": "最大{0}回、追加行動を起こします"
+        }
+    },
+    {
+        "Key": "ActorAddAttackCount",
+        "Text": {
+            "Korea": "기본 공격의 대상이 {0}명 추가 됩니다.",
+            "English": "The basic attack’s number of targets is increased by {0}.",
+            "ChineseCh": "普攻的目标单位额外增加{0}名。",
+            "ChineseTh": "新增{0}個基本攻擊的目標。",
+            "Japanese": "基本攻撃の対象を{0}人追加します"
+        }
+    },
+    {
+        "Key": "ActorAddBuff",
+        "Text": {
+            "Korea": "다음 효과가 있는 주문을 겁니다.",
+            "English": "Apply a spell of the following effect.",
+            "ChineseCh": "施加带有以下效果的咒术。",
+            "ChineseTh": "施予具以下效果的咒語。",
+            "Japanese": "次の効果がある呪文をかけます"
+        }
+    },
+    {
+        "Key": "ActorAddLevel",
+        "Text": {
+            "Korea": "레벨이 {0} 증가합니다.",
+            "English": "Level is increased by {0}.",
+            "ChineseCh": "等级提升{0}级。",
+            "ChineseTh": "等級增加{0}。",
+            "Japanese": "レベルが{0}アップします"
+        }
+    },
+    {
+        "Key": "ActorAddLevelEnemy",
+        "Text": {
+            "Korea": "가장 레벨이 높은 적보다 레벨이 낮을시 레벨이 적과 같아집니다.",
+            "English": "When the level is lower than that of the enemy with the highest level, it becomes equal to the enemy’s level.",
+            "ChineseCh": "若等级低于等级最高的敌方，则等级提升至与该敌方齐平。",
+            "ChineseTh": "若等級比最高等級的敵人低時，將增加至與敵人同等級。",
+            "Japanese": "一番レベルが高い敵よりレベルが低い時、敵と同レベルになります"
+        }
+    },
+    {
+        "Key": "ActorAddStatByHp",
+        "Text": {
+            "Korea": "줄어든 생명력 대비 {0} 능력치가 {1}% 변경됩니다.",
+            "English": "The {0} stat is increased or decreased by {1}% based on missing HP.",
+            "ChineseCh": "根据损失的生命值比例，{0}能力值变更{1}%。",
+            "ChineseTh": "{0}能力值將根據損失的生命力比例變更為{1}%。",
+            "Japanese": "減少した生命力に比例して{0}能力値が{1}%変更します"
+        }
+    },
+    {
+        "Key": "ActorAddTarget",
+        "Text": {
+            "Korea": "기본 공격이 {0}명을 추가로 공격합니다.",
+            "English": "Basic attack targets and attacks {0} additional targets.",
+            "ChineseCh": "普攻额外攻击{0}名敌人。",
+            "ChineseTh": "基本攻擊將額外攻擊{0}名目標。",
+            "Japanese": "基本攻撃が{0}人を追加で攻撃します"
+        }
+    },
+    {
+        "Key": "ActorAuroraAddBuff",
+        "Text": {
+            "Korea": "대상에게 다음 주문을 겁니다. 시전자가 죽으면 주문은 사라집니다.",
+            "English": "Apply the following spell to the target. The spell dissipates upon the caster's death.",
+            "ChineseCh": "对目标单位施加以下咒术。施法者阵亡时咒术效果消失。",
+            "ChineseTh": "對目標施予以下咒語，施展者死亡時咒語則會消失。",
+            "Japanese": "対象に次の呪文をかけます。詠唱者が死亡すると、呪文は消滅します"
+        }
+    },
+    {
+        "Key": "ActorChangeAggro",
+        "Text": {
+            "Korea": "대상에 대한 위협 수준을 변경합니다. ({0})",
+            "English": "Alter the target’s threat level. ({0})",
+            "ChineseCh": "变更对目标单位的威胁度。({0})",
+            "ChineseTh": "變更對目標的威脅程度。({0}",
+            "Japanese": "対象への脅威度を変更します({0})"
+        }
+    },
+    {
+        "Key": "ActorChangeAddAggro",
+        "Text": {
+            "Korea": "대상에 대한 위협 수준을 {0} 증가시킵니다.",
+            "English": "Increase the target’s threat level by {0}.",
+            "ChineseCh": "对目标单位的威胁度提升{0}。",
+            "ChineseTh": "對目標的威脅程度增加{0}。",
+            "Japanese": "対象への脅威度を{0}アップさせます"
+        }
+    },
+    {
+        "Key": "ActorChangeSubAggro",
+        "Text": {
+            "Korea": "대상에 대한 위협 수준을 {0} 감소시킵니다.",
+            "English": "Reduce the target’s threat level by {0}.",
+            "ChineseCh": "对目标单位的威胁度降低{0}。",
+            "ChineseTh": "對目標的威脅程度減少{0}。",
+            "Japanese": "対象への脅威度を{0}ダウンさせます"
+        }
+    },
+    {
+        "Key": "ActorChangeReset",
+        "Text": {
+            "Korea": "대상에 대한 위협 수준을 초기화합니다.",
+            "English": "Reset the target’s threat level.",
+            "ChineseCh": "重置对目标单位的威胁度。",
+            "ChineseTh": "重置對目標的威脅程度。",
+            "Japanese": "対象への脅威度をリセットします"
+        }
+    },
+    {
+        "Key": "ActorChangeAggroTarget",
+        "Text": {
+            "Korea": "나에 대한 대상의 위협 수준을 변경시킵니다. ({0})",
+            "English": "Alter the target’s threat level towards the caster. ({0})",
+            "ChineseCh": "变更目标单位对我的威胁度。({0})",
+            "ChineseTh": "變更目標對我的威脅程度。({0})",
+            "Japanese": "自分への対象の脅威度を変更させます({0})"
+        }
+    },
+    {
+        "Key": "ActorChangeAddAggroTarget",
+        "Text": {
+            "Korea": "나에 대한 대상의 위협 수준을 {0} 증가시킵니다.",
+            "English": "Increase the target’s threat level towards the caster by {0}.",
+            "ChineseCh": "目标单位对我的威胁度提升{0}。",
+            "ChineseTh": "目標對我的威脅程度增加{0}。",
+            "Japanese": "自分への対象の脅威度を{0}アップさせます"
+        }
+    },
+    {
+        "Key": "ActorChangeSubAggroTarget",
+        "Text": {
+            "Korea": "나에 대한 대상의 위협 수준을 {0} 감소시킵니다.",
+            "English": "Reduce the target’s threat level towards the caster by {0}.",
+            "ChineseCh": "目标单位对我的威胁度降低{0}。",
+            "ChineseTh": "目標對我的威脅程度減少{0}。",
+            "Japanese": "自分への対象の脅威度を{0}ダウンさせます"
+        }
+    },
+    {
+        "Key": "ActorChangeResetTarget",
+        "Text": {
+            "Korea": "나에 대한 대상의 위협 수준을 초기화시킵니다.",
+            "English": "Reset the target’s threat level towards the caster.",
+            "ChineseCh": "重置目标单位对我的威胁度。",
+            "ChineseTh": "重置目標對我的威脅程度。",
+            "Japanese": "自分への対象の脅威度をリセットさせます"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeAll",
+        "Text": {
+            "Korea": "모든 기술의 남아 있는 재사용 시간을 {0}초로 변경합니다.",
+            "English": "Alter the remaining cooldown of all skills to {0} second(s).",
+            "ChineseCh": "将所有技能的冷却时间变更为{0}秒。",
+            "ChineseTh": "所有技能的剩餘冷卻時間變更為{0}秒。",
+            "Japanese": "全技の残りクールタイムを{0}秒に変更します"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeAddAll",
+        "Text": {
+            "Korea": "모든 기술의 남아 있는 재사용 시간을 {0}초 증가시킵니다.",
+            "English": "Increase the remaining cooldown of all skills by {0} second(s).",
+            "ChineseCh": "所有技能的冷却时间延长{0}秒。",
+            "ChineseTh": "所有技能的剩餘冷卻時間增加{0}秒。",
+            "Japanese": "全技の残りクールタイムを{0}秒延長します"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeSubAll",
+        "Text": {
+            "Korea": "모든 기술의 남아 있는 재사용 시간을 {0}초 감소시킵니다.",
+            "English": "Reduce the remaining cooldown of all skills by {0} second(s).",
+            "ChineseCh": "所有技能的冷却时间缩减{0}秒。",
+            "ChineseTh": "所有技能的剩餘冷卻時間減少{0}秒。",
+            "Japanese": "全技の残りクールタイムを{0}秒短縮します"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeActive",
+        "Text": {
+            "Korea": "액티브 스킬의 남아 있는 재사용 시간을 {0} 초로 변경합니다.",
+            "English": "Alter the remaining cooldown of the active skill to {0} second(s).",
+            "ChineseCh": "将主动技能的冷却时间变更为{0}秒。",
+            "ChineseTh": "主動技能的剩餘冷卻時間變更為{0}秒。",
+            "Japanese": "アクティブスキルの残りクールタイムを{0}秒に変更します"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeAddActive",
+        "Text": {
+            "Korea": "액티브 스킬의 남아 있는 재사용 시간을 {0}초 증가시킵니다.",
+            "English": "Increase the remaining cooldown of the active skill by {0} second(s).",
+            "ChineseCh": "主动技能的冷却时间延长{0}秒。",
+            "ChineseTh": "主動技能的剩餘冷卻時間增加{0}秒。",
+            "Japanese": "アクティブスキルの残りクールタイムを{0}秒延長します"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeSubActive",
+        "Text": {
+            "Korea": "액티브 스킬의 남아 있는 재사용 시간을 {0}초 감소시킵니다.",
+            "English": "Reduce the remaining cooldown of the active skill by {0} second(s).",
+            "ChineseCh": "主动技能的冷却时间缩减{0}秒。",
+            "ChineseTh": "主動技能的剩餘冷卻時間減少{0}秒。",
+            "Japanese": "アクティブスキルの残りクールタイムを{0}秒短縮します"
+        }
+    },
+    {
+        "Key": "ActorChangeKeepTimeBuffAdd",
+        "Text": {
+            "Korea": "걸려 있는 {0}중 무작위로 선택된 {1} 개의 남은 시간을 {2}초만큼 증가시킵니다.",
+            "English": "Increase the remaining time of {1} random {0} in effect by {2} second(s).",
+            "ChineseCh": "附带的随机{1}个{0}的剩余持续时间延长{2}秒。",
+            "ChineseTh": "隨機選擇{1}個被施予的{0}增加其剩餘時間{2}秒。",
+            "Japanese": "かかっている{0}のうち、ランダムに選択された{1}個の残り時間を{2}秒延長します"
+        }
+    },
+    {
+        "Key": "ActorChangeKeepTimeBuffSub",
+        "Text": {
+            "Korea": "걸려 있는 {0}중 무작위로 선택된 {1} 개의 남은 시간을 {2}초만큼 감소시킵니다.",
+            "English": "Reduce the remaining time of {1} random {0} in effect by {2} second(s).",
+            "ChineseCh": "附带的随机{1}个{0}的剩余持续时间缩减{2}秒。",
+            "ChineseTh": "隨機選擇{1}個被施予的{0}減少其剩餘時間{2}秒。",
+            "Japanese": "かかっている{0}のうち、ランダムに選択された{1}個の残り時間を{2}秒短縮します"
+        }
+    },
+    {
+        "Key": "ActorChangeKeepTimeBuffAllAdd",
+        "Text": {
+            "Korea": "걸려 있는 모든 {0}의 남은 시간을 {1}초만큼 증가시킵니다.",
+            "English": "Increase the remaining time of all {0} in effect by {1} second(s).",
+            "ChineseCh": "附带的所有{0}的剩余持续时间延长{1}秒。",
+            "ChineseTh": "被施予的所有{0}剩餘時間增加{1}秒。",
+            "Japanese": "かかっている全{0}の残り時間を{1}秒延長します"
+        }
+    },
+    {
+        "Key": "ActorChangeKeepTimeBuffAllSub",
+        "Text": {
+            "Korea": "걸려 있는 모든 {0}의 남은 시간을 {1}초만큼 감소시킵니다.",
+            "English": "Reduce the remaining time of all {0} in effect by {1} second(s).",
+            "ChineseCh": "附带的所有{0}的剩余持续时间缩减{1}秒。",
+            "ChineseTh": "被施予的所有{0}剩餘時間減少{1}秒。",
+            "Japanese": "かかっている全{0}の残り時間を{1}秒短縮します"
+        }
+    },
+    {
+        "Key": "ActorCheckBuffState",
+        "Text": {
+            "Korea": "{0}에 걸린 대상에게 공격 시 {1}% 피해 증가",
+            "English": "Damage is increased by {1}% when attacking a target affected by {0}.",
+            "ChineseCh": "攻击被施加{0}的目标单位时，伤害提升{1}%",
+            "ChineseTh": "攻擊處於{0}狀態的目標時，傷害增加{1}%。",
+            "Japanese": "{0}にかかった対象に攻撃時、{1}%ダメージアップ"
+        }
+    },
+    {
+        "Key": "ActorCheckBuffStateBuffInfo",
+        "Text": {
+            "Korea": "{0}에게 {1}% 확률로 다음 효과를 겁니다.",
+            "English": "Apply the following effect to {0} at a {1}% chance.",
+            "ChineseCh": "以{1}%的概率对{0}施加以下效果。",
+            "ChineseTh": "以{1}%機率賦予{0}以下效果。",
+            "Japanese": "{0}に{1}%の確率で次の効果を与えます"
+        }
+    },
+    {
+        "Key": "ActorCheckDeadBuff",
+        "Text": {
+            "Korea": "죽음에 이르는 공격을 당하면 죽지 않고, 다음 주문이 발동됩니다.",
+            "English": "When receiving fatal damage, instead of dying, the following spell is cast.",
+            "ChineseCh": "承受致命攻击时免于阵亡，并触发以下咒术。",
+            "ChineseTh": "當受到致死攻擊時不會死亡，並發動以下咒語。",
+            "Japanese": "死に至る攻撃を受けると、死亡せずに次の呪文が発動されます"
+        }
+    },
+    {
+        "Key": "ActorCheckEntry",
+        "Text": {
+            "Korea": "다음 용병이 출전 시 {0}만큼 자신의 능력치가 증가됩니다.",
+            "English": "When the following mercenary is deployed, increase caster’s Attribute by {0}.",
+            "ChineseCh": "以下佣兵出战时，提升自身相当于{0}的能力值。",
+            "ChineseTh": "以下傭兵出戰時，自身的能力值增加{0}。",
+            "Japanese": "次の傭兵が出場時、{0}ほど自分の能力値がアップします"
+        }
+    },
+    {
+        "Key": "ActorCheckEntryPerNum",
+        "Text": {
+            "Korea": "명수에 비례",
+            "English": "Proportional to the number of mercenaries.",
+            "ChineseCh": "与人数成正比",
+            "ChineseTh": "依人數比例",
+            "Japanese": "人数に比例"
+        }
+    },
+    {
+        "Key": "ActorCheckEntryAll",
+        "Text": {
+            "Korea": "다음 용병이 출전 시 {0}만큼 자신과 해당하는 용병 모두 능력치가 증가됩니다.",
+            "English": "When the following mercenary is deployed, increase caster’s and the affected mercenaries’ Attribute by {0}.",
+            "ChineseCh": "以下佣兵出战时，提升自身与佣兵相当于{0}的所有能力值。",
+            "ChineseTh": "以下傭兵出戰時，自身與相應傭兵的所有能力值增加{0}。",
+            "Japanese": "次の傭兵が出場時、{0}ほど自分と対象の傭兵全員の能力値がアップします"
+        }
+    },
+    {
+        "Key": "ActorCheckEntryTarget",
+        "Text": {
+            "Korea": "다음 용병이 출전 시 {0}만큼 해당하는 용병 모두 능력치가 증가됩니다.",
+            "English": "When the following mercenary is deployed, increase the affected mercenaries’ Attribute by {0}.",
+            "ChineseCh": "以下佣兵出战时，提升该佣兵相当于{0}的所有能力值。",
+            "ChineseTh": "以下傭兵出戰時，相應傭兵的所有能力值增加{0}。",
+            "Japanese": "次の傭兵が出場時、{0}ほど対象の傭兵全員の能力値がアップします"
+        }
+    },
+    {
+        "Key": "ActorCheckElemental",
+        "Text": {
+            "Korea": "{0}속성에게 공격 시 {1}% 피해 {2}, {3}속성에게 피격 시 {4}% 피해 {5}",
+            "English": "Damage is increased by {1}% when attacking an enemy of {0} element, and damage received is reduced by {3}% when attacked by enemies of {2} element.",
+            "ChineseCh": "对{0}属性造成的攻击伤害提升{1}%{2}，受到{3}属性的攻击伤害减免{4}%{5}",
+            "ChineseTh": "攻擊{0}屬性時，傷害{2}{1}%、受到{3}屬性攻擊時傷害{5}{4}%。",
+            "Japanese": "{0}属性に攻撃時、{1}%ダメージアップ、{2}属性から被撃時、{3}%ダメージ軽減"
+        }
+    },
+    {
+        "Key": "ActorCheckElementalChaos",
+        "Text": {
+            "Korea": "모든 속성에게 공격 시 {0}% 피해 증가",
+            "English": "Damage is increased by {0}% when attacking all elements.",
+            "ChineseCh": "对所有属性造成的攻击伤害提升{0}%",
+            "ChineseTh": "攻擊所有屬性時，傷害增加{0}%。",
+            "Japanese": "全属性に攻撃時、{0}%ダメージアップ"
+        }
+    },
+    {
+        "Key": "ActorCheckElementalBalance",
+        "Text": {
+            "Korea": "모든 속성에게 피격 시 {0}% 피해 감소",
+            "English": "Damage received is reduced by {0}% when attacked by all elements.",
+            "ChineseCh": "受到所有属性的攻击伤害减免{0}%",
+            "ChineseTh": "受到所有屬性攻擊時，傷害減少{0}%。",
+            "Japanese": "全属性から被撃時、{0}%ダメージ軽減"
+        }
+    },
+    {
+        "Key": "ActorCheckJob",
+        "Text": {
+            "Korea": "{0} 직업을 공격 시 {1}% 피해 증가, {2} 직업에게 피격 시 {3}% 피해감소",
+            "English": "Damage is increased by {1}% when attacking an enemy of {0} class, and damage received is reduced by {3}% when attacked by enemies of {2} class.",
+            "ChineseCh": "对{0}职业造成的攻击伤害提升{1}%，受到{2}职业的攻击伤害减免{3}%",
+            "ChineseTh": "攻擊{0}職業時，傷害增加{1}%；受到{2}職業攻擊時傷害減少{3}%。",
+            "Japanese": "{0}職業を攻撃時、{1}%ダメージアップ、{2}職業から被撃時、{3}%ダメージ軽減"
+        }
+    },
+    {
+        "Key": "ActorHeal",
+        "Text": {
+            "Korea": "{0}만큼 {1}을 회복합니다.",
+            "English": "Recover {1} by {0}.",
+            "ChineseCh": "恢复相当于{0}的{1}。",
+            "ChineseTh": "恢復{0}的{1}。",
+            "Japanese": "{0}ほど{1}を回復します"
+        }
+    },
+    {
+        "Key": "ActorImmuneKnockback",
+        "Text": {
+            "Korea": "기본 공격 넉백에 면역이 됩니다.",
+            "English": "Become immune to knockbacks from basic attacks.",
+            "ChineseCh": "免疫普攻的击退效果。",
+            "ChineseTh": "對基本攻擊的擊退免疫。",
+            "Japanese": "基本攻撃ノックバックに耐性がつきます"
+        }
+    },
+    {
+        "Key": "ActorImmuneSpecialKnockback",
+        "Text": {
+            "Korea": "스킬 공격 넉백에 면역이 됩니다.",
+            "English": "Become immune to knockbacks from skills.",
+            "ChineseCh": "免疫技能攻击的击退效果。",
+            "ChineseTh": "對技能攻擊的擊退免疫。",
+            "Japanese": "スキル攻撃ノックバックに耐性がつきます"
+        }
+    },
+    {
+        "Key": "ActorImmuneAllKonckback",
+        "Text": {
+            "Korea": "넉백에 면역이 됩니다.",
+            "English": "Become immune to knockbacks.",
+            "ChineseCh": "免疫击退效果。",
+            "ChineseTh": "對擊退免疫。",
+            "Japanese": "ノックバックに耐性がつきます"
+        }
+    },
+    {
+        "Key": "ActorInvincibleBySummon",
+        "Text": {
+            "Korea": "소환수가 다 죽기 전까지 피해를 받지 않습니다.",
+            "English": "Does not take any damage until all summons are slain.",
+            "ChineseCh": "在召唤兽全体阵亡前免疫伤害。",
+            "ChineseTh": "在召喚獸全部死亡前不會受到傷害。",
+            "Japanese": "召喚獣が全て死亡するまで、ダメージを受けません"
+        }
+    },
+    {
+        "Key": "ActorNoDead",
+        "Text": {
+            "Korea": "죽음에 이르는 공격을 당하면, 죽지 않고 살아납니다.",
+            "English": "Prevents death when receiving fatal damage.",
+            "ChineseCh": "承受致命攻击时免于阵亡。",
+            "ChineseTh": "當受到致死攻擊時不會死亡，並存活下來。",
+            "Japanese": "死に至る攻撃を受けると、死亡せずに復活します"
+        }
+    },
+    {
+        "Key": "ActorRecoveryByDamage",
+        "Text": {
+            "Korea": "입힌 피해량의 {0}%만큼 생명력을 회복합니다.",
+            "English": "Recover HP equal to {0}% of damage inflicted.",
+            "ChineseCh": "恢复相当于承伤量{0}%的生命值。",
+            "ChineseTh": "恢復造成傷害量{0}%的生命力。",
+            "Japanese": "受けたダメージ量の{0}%ほど生命力を回復します"
+        }
+    },
+    {
+        "Key": "ActorReduceDamagedAll",
+        "Text": {
+            "Korea": "모든 피해를 {0}% {1} 시킵니다.",
+            "English": "Reduce all damage by {0}%.",
+            "ChineseCh": "全部伤害降低{0}%。",
+            "ChineseTh": "所有傷害{1}{0}%。",
+            "Japanese": "全ダメージを{0}%軽減します"
+        }
+    },
+    {
+        "Key": "ActorReduceDamagedElement",
+        "Text": {
+            "Korea": "{0} 속성 영웅이 주는 피해를 {1}% {2} 시킵니다.",
+            "English": "Reduce damage of {0} heroes by {1}%.",
+            "ChineseCh": "{0}属性英雄造成的伤害降低{1}%。",
+            "ChineseTh": "{0}屬性英雄造成的傷害{2}{1}%。",
+            "Japanese": "{0}属性の英雄が与えるダメージを{1}%軽減します"
+        }
+    },
+    {
+        "Key": "ActorReduceDamaged",
+        "Text": {
+            "Korea": "{0}를 {1}% {2} 시킵니다.",
+            "English": "Reduce {0} by {1}%.",
+            "ChineseCh": "降低{1}%{0}。",
+            "ChineseTh": "{2}{0}{1}%。",
+            "Japanese": "{0}を{1}%軽減させます"
+        }
+    },
+    {
+        "Key": "ActorReflectionDamage",
+        "Text": {
+            "Korea": "받은 피해의 {0}%를 반사합니다.",
+            "English": "Reflect {0}% of damage received.",
+            "ChineseCh": "反弹承伤的{0}%。",
+            "ChineseTh": "反射{0}%受到的傷害。",
+            "Japanese": "受けたダメージの{0}%反射します"
+        }
+    },
+    {
+        "Key": "ActorRemoveBuff",
+        "Text": {
+            "Korea": "걸려 있는 {0}중 무작위로 선택된 {1}개를 제거합니다.",
+            "English": "Remove {1} random {0} in effect.",
+            "ChineseCh": "移除附带的{0}中随机{1}个效果。",
+            "ChineseTh": "隨機選擇移除{1}個被施予的{0}。",
+            "Japanese": "かかっている{0}のうち、ランダムに選択された{1}個を解除します"
+        }
+    },
+    {
+        "Key": "ActorRemoveBuffAll",
+        "Text": {
+            "Korea": "걸려 있는 {0} 모두를 제거합니다.",
+            "English": "Remove all {0} in effect.",
+            "ChineseCh": "移除附带的全部{0}。",
+            "ChineseTh": "移除所有受到的{0}。",
+            "Japanese": "かかっている{0}全てを解除します"
+        }
+    },
+    {
+        "Key": "ActorResistBuffState",
+        "Text": {
+            "Korea": "{0}% 확률로 {1} 상태를 저항합니다.",
+            "English": "Resist {1} at a {0}% chance.",
+            "ChineseCh": "以{0}%的概率抵抗{1}状态。",
+            "ChineseTh": "以{0}%機率抵抗{1}狀態。",
+            "Japanese": "{0}%の確率で{1}状態に抵抗します"
+        }
+    },
+    {
+        "Key": "ActorImmuneBuffState",
+        "Text": {
+            "Korea": "{0} 상태에 면역입니다.",
+            "English": "Immune to {0}.",
+            "ChineseCh": "免疫{0}状态。",
+            "ChineseTh": "對{0}狀態免疫。",
+            "Japanese": "{0}状態に耐性がついています"
+        }
+    },
+    {
+        "Key": "ActorImmuneAllBuffState",
+        "Text": {
+            "Korea": "모든 상태 이상에 면역입니다.",
+            "English": "Immune to all status effects.",
+            "ChineseCh": "免疫所有状态异常。",
+            "ChineseTh": "對所有狀態異常免疫。",
+            "Japanese": "全状態異常に耐性がついています"
+        }
+    },
+    {
+        "Key": "ActorRevive",
+        "Text": {
+            "Korea": "가장 나중에 죽은 아군을 {0}%의 생명력을 가진 채 부활시킵니다.",
+            "English": "Revive the most recently slain ally with {0}% HP.",
+            "ChineseCh": "复活最后阵亡的我方队友，并恢复{0}%的生命值。",
+            "ChineseTh": "使最後死亡的我軍以生命力{0}%的狀態復活。",
+            "Japanese": "一番最後に死んだ味方を{0}%の生命力を付与して復活させます"
+        }
+    },
+    {
+        "Key": "ActorReviveTime",
+        "Text": {
+            "Korea": "가장 나중에 죽은 아군을 {0}%의 생명력을 가진 채 부활시킵니다. {1}초동안 유지 후 다시 죽습니다.",
+            "English": "Revive the most recently slain ally with {0}% HP. The revived ally will die after {1} second(s).",
+            "ChineseCh": "复活最后阵亡的我方队友，并恢复{0}%的生命值。该单位复活{1}秒后将再次阵亡。",
+            "ChineseTh": "使最後死亡的我軍以生命力{0}%的狀態復活，並在維持{1}秒後再次死亡。",
+            "Japanese": "一番最後に死んだ味方を{0}%の生命力を付与して復活させます。{1}秒間持続した後、また死亡します"
+        }
+    },
+    {
+        "Key": "ActorSummonTime",
+        "Text": {
+            "Korea": "{0}초동안 유지되는 소환자와 동일한 레벨의 {1}을/를 소환합니다. 소환물은 {2}%의 생명력을 가집니다.",
+            "English": "Summon a {1} with the same level as the summoner for {0} second(s). The summon’s HP is equal to {2}% of the summoner’s HP.",
+            "ChineseCh": "召唤与召唤者等级相同的{1}，持续{0}秒。召唤物拥有召唤者{2}%的生命值。",
+            "ChineseTh": "召喚持續{0}秒與召喚者同樣等級的{1}。獲得召喚物品{2}%的生命力。",
+            "Japanese": "{0}秒間持続する召喚者と同レベルの{1}を召喚します。召喚物は{2}%の生命力を持ちます"
+        }
+    },
+    {
+        "Key": "ActorSummonHealthTime",
+        "Text": {
+            "Korea": "{0}초동안 유지되는 소환자와 동일한 레벨의 {1}을/를 소환합니다.",
+            "English": "Summon a {1} with the same level as the summoner for {0} second(s).",
+            "ChineseCh": "召唤与召唤者等级相同的{1}，持续{0}秒。",
+            "ChineseTh": "召喚持續{0}秒與召喚者同樣等級的{1}。",
+            "Japanese": "{0}秒間持続する召喚者と同レベルの{1}を召喚します"
+        }
+    },
+    {
+        "Key": "ActorUseBuffDamage",
+        "Text": {
+            "Korea": "{0} 기술로 쌓은 주문을 모두 사용하여 개당 {1}만큼 추가 피해를 줍니다.",
+            "English": "Deals additional damage of {1} per spell by using all spells stacked from {0} skill.",
+            "ChineseCh": "消耗通过{0}技能累计的全部咒术，每个咒术将造成相当于{1}的额外伤害。",
+            "ChineseTh": "使用{0}技能累積的所有咒語後，每個造成{1}的額外傷害。",
+            "Japanese": "{0}スキルでたまった呪文を全て使用し、1つあたり{1}ほどの追加ダメージを与えます"
+        }
+    },
+    {
+        "Key": "ActorUseBuffAddStat",
+        "Text": {
+            "Korea": "{0} 기술로 쌓은 주문을 모두 사용하여 개당 {1}만큼 {2}초 동안 증가시킵니다.",
+            "English": "Increases by {1} for {2} seconds per spell by using all spells stacked from {0} skill.",
+            "ChineseCh": "消耗通过{0}技能累计的全部咒术，每个咒术将提升相当于{1}，持续{2}秒。",
+            "ChineseTh": "使用{0}技能累積的所有咒語後，{2}秒期間每個增加{1}。",
+            "Japanese": "{0}スキルでたまった呪文を全て使用し、1つあたり{1}ほど{2}秒間アップします"
+        }
+    },
+    {
+        "Key": "ActorUseBuffSubStat",
+        "Text": {
+            "Korea": "{0} 기술로 쌓은 주문을 모두 사용하여 개당 {1}만큼 {2}초 동안 감소시킵니다.",
+            "English": "Decreases by {1} for {2} seconds per spell by using all spells stacked from {0} skill.",
+            "ChineseCh": "消耗通过{0}技能累计的全部咒术，每个咒术将降低相当于{1}，持续{2}秒。",
+            "ChineseTh": "使用{0}技能累積的所有咒語後，{2}秒期間每個減少{1}。",
+            "Japanese": "{0}スキルでたまった呪文を全て使用し、1つあたり{1}ほど{2}秒間軽減します"
+        }
+    },
+    {
+        "Key": "ActorDefault",
+        "Text": {
+            "Korea": "자세한 정보를 표기할 수 없습니다.",
+            "English": "There are no details.",
+            "ChineseCh": "无法显示详情。",
+            "ChineseTh": "無法顯示詳細資訊。",
+            "Japanese": "詳細の情報を表示できません"
+        }
+    },
+    {
+        "Key": "BuffAddDamage",
+        "Text": {
+            "Korea": "피해를 줄시 {0}%의 피해를 추가로 줍니다.",
+            "English": "Inflict {0}% additional damage when dealing damage.",
+            "ChineseCh": "造成伤害时，额外造成{0}%的伤害。",
+            "ChineseTh": "造成傷害時，額外造成{0}%傷害。",
+            "Japanese": "ダメージを与える時、{0}%のダメージを追加で与えます"
+        }
+    },
+    {
+        "Key": "BuffAddDamaged",
+        "Text": {
+            "Korea": "피해를 받을시 {0}%의 피해를 추가로 받습니다.",
+            "English": "Receive {0}% additional damage when receiving damage.",
+            "ChineseCh": "受到伤害时，额外承担{0}%的伤害。",
+            "ChineseTh": "受到傷害時，額外受到{0}%傷害。",
+            "Japanese": "ダメージを受ける時、{0}%のダメージを追加で受けます"
+        }
+    },
+    {
+        "Key": "BuffAddTarget",
+        "Text": {
+            "Korea": "{0}을 추가로 공격합니다.",
+            "English": "Additionally attack {0}.",
+            "ChineseCh": "额外攻击{0}。",
+            "ChineseTh": "額外攻擊{0}。",
+            "Japanese": "{0}を追加で攻撃します"
+        }
+    },
+    {
+        "Key": "BuffAroundDamage",
+        "Text": {
+            "Korea": "{0}, 다음 대상에 지속 피해를 줍니다.",
+            "English": "{0}, deals continuous damage to the next target.",
+            "ChineseCh": "{0}，对下一个目标单位造成持续伤害。",
+            "ChineseTh": "{0}，對以下目標造成持續傷害。",
+            "Japanese": "{0}、次の対象に連続ダメージを与えます"
+        }
+    },
+    {
+        "Key": "BuffAttackTagStun",
+        "Text": {
+            "Korea": "공격 시 {0}% 확률로 {1}초간 행동불능에 걸립니다.",
+            "English": "When attacking, there is a {0}% chance to become restrained for {1} second(s).",
+            "ChineseCh": "攻击时，以{0}%的概率施加行动受限效果，持续{1}秒。",
+            "ChineseTh": "攻擊時，以{0}%機率在{1}秒期間陷入無法行動的狀態。",
+            "Japanese": "攻撃時、{0}%の確率で{1}秒間、行動不能になります"
+        }
+    },
+    {
+        "Key": "BuffBuffStateAddDamaged",
+        "Text": {
+            "Korea": "{0}상태일때 {1}의 피해를 추가로 {2}회 더 받습니다.",
+            "English": "When in the {0} state, receive {1} damage {2} more time(s).",
+            "ChineseCh": "处于{0}状态时，额外承受{2}次{1}的伤害。",
+            "ChineseTh": "處於{0}狀態時，額外受到{2}次{1}的傷害。",
+            "Japanese": "{0}状態の時、{1}のダメージを追加で{2}回受けます"
+        }
+    },
+    {
+        "Key": "BuffBlind",
+        "Text": {
+            "Korea": "공격대상을 맞출 수 없습니다.",
+            "English": "Unable to land attacks on the target.",
+            "ChineseCh": "无法锁定攻击目标单位。",
+            "ChineseTh": "無法鎖定攻擊的目標。",
+            "Japanese": "攻撃対象を当てることができません"
+        }
+    },
+    {
+        "Key": "BuffCharming",
+        "Text": {
+            "Korea": "시전자와 같은 편이 됩니다.",
+            "English": "Become allied with the caster.",
+            "ChineseCh": "成为与施法者相同阵营。",
+            "ChineseTh": "變為與施展者同一陣營。",
+            "Japanese": "詠唱者の味方になります"
+        }
+    },
+    {
+        "Key": "BuffCheckBuffState",
+        "Text": {
+            "Korea": "{0}에 걸린 대상을 공격시 {1}%의 추가 피해.",
+            "English": "Inflict {1}% additional damage to targets with {0}.",
+            "ChineseCh": "攻击附带{0}的目标单位时，造成{1}%的额外伤害。",
+            "ChineseTh": "攻擊陷入{0}效果的目標時，造成{1}%額外傷害。",
+            "Japanese": "{0}にかかった対象を攻撃時、{1}%の追加ダメージ"
+        }
+    },
+    {
+        "Key": "BuffCritical",
+        "Text": {
+            "Korea": "모든 공격이 치명타로 들어갑니다.",
+            "English": "All attacks become critical hits.",
+            "ChineseCh": "攻击100%暴击。",
+            "ChineseTh": "所有攻擊轉變為暴擊。",
+            "Japanese": "全ての攻撃にクリティカルヒットが発生します"
+        }
+    },
+    {
+        "Key": "BuffDotDamage",
+        "Text": {
+            "Korea": "{0}, {1} 만큼 피해를 받습니다.",
+            "English": "{0}, takes {1} damage.",
+            "ChineseCh": "{0}，承受相当于{1}的伤害。",
+            "ChineseTh": "{0}，受到{1}傷害。",
+            "Japanese": "{0}、{1}ほどダメージを受けます"
+        }
+    },
+    {
+        "Key": "BuffDotDamageNoMsg",
+        "Text": {
+            "Korea": "{0}초 마다 {1} 만큼 피해를 받습니다.",
+            "English": "Receive {1} damage every {0} second(s).",
+            "ChineseCh": "每{0}秒承受相当于{1}的伤害。",
+            "ChineseTh": "每{0}秒受到{1}的傷害。",
+            "Japanese": "{0}秒ごとに{1}ほどダメージを受けます"
+        }
+    },
+    {
+        "Key": "BuffDotHeal",
+        "Text": {
+            "Korea": "{0}, {1} 만큼 생명력을 회복 합니다.",
+            "English": "{0}, restores {1} HP.",
+            "ChineseCh": "{0}，恢复相当于{1}的生命值。",
+            "ChineseTh": "{0}，恢復{1}生命力。",
+            "Japanese": "{0}、{1}ほど生命力を回復します"
+        }
+    },
+    {
+        "Key": "BuffDotHealNoMsg",
+        "Text": {
+            "Korea": "{0}초마다 {1} 만큼 생명력을 회복 합니다.",
+            "English": "Recover HP equal to {1} every {0} second(s).",
+            "ChineseCh": "每{0}秒恢复相当于{1}的生命值。",
+            "ChineseTh": "每{0}秒恢復{1}生命力。",
+            "Japanese": "{0}秒ごとに{1}ほど生命力を回復します"
+        }
+    },
+    {
+        "Key": "BuffFear",
+        "Text": {
+            "Korea": "피아의 구분이 없어집니다.",
+            "English": "The distinction between allies and enemies disappears.",
+            "ChineseCh": "无视敌友关系。",
+            "ChineseTh": "不分敵友。",
+            "Japanese": "敵と味方の区別がつかなくなります"
+        }
+    },
+    {
+        "Key": "BuffGuard",
+        "Text": {
+            "Korea": "대상 대신 시전자가 피해를 받습니다.",
+            "English": "The caster takes damage in place of the target.",
+            "ChineseCh": "施法者代替目标单位承受伤害。",
+            "ChineseTh": "施展者代替目標受到傷害。",
+            "Japanese": "対象の代わりに詠唱者がダメージを受けます"
+        }
+    },
+    {
+        "Key": "BuffHealLink",
+        "Text": {
+            "Korea": "치유주문을 시전하면, 연결된 대상도 {0}만큼 치유 받습니다.\\n주문 대상과 연결 대상이 같으면 효과가 없습니다.",
+            "English": "When casting a healing spell, the connected target is also healed by {0}.\\nHas no effect if the spell is cast on the connected target.",
+            "ChineseCh": "释放治愈咒术时，相连的单位也将获得相当于{0}的治愈。\\n如果咒术目标单位与相连目标单位相同，则该效果不生效。",
+            "ChineseTh": "施展治癒咒語時，連結的目標也會受到{0}的治癒。\\n若咒語目標與連結目標相同則無效。",
+            "Japanese": "回復呪文を詠唱時、リンクした対象も{0}ほど回復します。\\n呪文対象とリンク対象が同じ場合は効果が発動しません"
+        }
+    },
+    {
+        "Key": "BuffIgnoreDefense",
+        "Text": {
+            "Korea": "상대의 방어를 무시한 피해를 줍니다.",
+            "English": "Deal damage that ignores the target’s Defense.",
+            "ChineseCh": "无视对手的防御造成伤害。",
+            "ChineseTh": "造成無視對手防禦的傷害。",
+            "Japanese": "相手の防御を無視したダメージを与えます"
+        }
+    },
+    {
+        "Key": "BuffImmuneDamage",
+        "Text": {
+            "Korea": "{0}회의 피해에 면역이 됩니다.",
+            "English": "Become immune to damage from {0} hit(s).",
+            "ChineseCh": "免疫{0}次伤害。",
+            "ChineseTh": "對{0}次傷害免疫。",
+            "Japanese": "{0}回のダメージに耐性がつきます"
+        }
+    },
+    {
+        "Key": "BuffImmuneDamageNoLimit",
+        "Text": {
+            "Korea": "피해에 면역이 됩니다.",
+            "English": "Become immune to damage.",
+            "ChineseCh": "免疫伤害。",
+            "ChineseTh": "對傷害免疫。",
+            "Japanese": "ダメージに耐性がつきます"
+        }
+    },
+    {
+        "Key": "BuffImmuneHealed",
+        "Text": {
+            "Korea": "치유 주문의 효과가 없습니다.",
+            "English": "Healing spells have no effect.",
+            "ChineseCh": "治愈咒术无效。",
+            "ChineseTh": "治癒咒語無效。",
+            "Japanese": "回復呪文の効果がありません"
+        }
+    },
+    {
+        "Key": "BuffImmuneMagic",
+        "Text": {
+            "Korea": "저항 가능한 해로운 주문에 면역이 됩니다.",
+            "English": "Become immune to harmful spells that can be resisted.",
+            "ChineseCh": "免疫可被抵抗的减益咒术。",
+            "ChineseTh": "對可抵抗的減益法術免疫。",
+            "Japanese": "抵抗可能なデバフ呪文に耐性がつきます"
+        }
+    },
+    {
+        "Key": "BuffImmuneProvocation",
+        "Text": {
+            "Korea": "도발에 면역이 됩니다.",
+            "English": "Become immune to taunts.",
+            "ChineseCh": "免疫嘲讽",
+            "ChineseTh": "對挑釁免疫。",
+            "Japanese": "挑発に耐性がつきます"
+        }
+    },
+    {
+        "Key": "BuffImmuneStun",
+        "Text": {
+            "Korea": "행동 불능에 면역이 됩니다.",
+            "English": "Become immune to restraint.",
+            "ChineseCh": "免疫行动受限",
+            "ChineseTh": "對無法行動免疫。",
+            "Japanese": "行動不能に耐性がつきます"
+        }
+    },
+    {
+        "Key": "BuffLimitAttack",
+        "Text": {
+            "Korea": "기본 공격을 할 수 없습니다.",
+            "English": "Cannot perform basic attacks.",
+            "ChineseCh": "无法进行普通攻击。",
+            "ChineseTh": "無法進行基本攻擊。",
+            "Japanese": "基本攻撃ができません"
+        }
+    },
+    {
+        "Key": "BuffLimitMove",
+        "Text": {
+            "Korea": "이동 할 수 없습니다.",
+            "English": "Cannot move.",
+            "ChineseCh": "无法移动",
+            "ChineseTh": "無法移動。",
+            "Japanese": "移動できません"
+        }
+    },
+    {
+        "Key": "BuffNoTarget",
+        "Text": {
+            "Korea": "직접 목표가 되지 않는 주문에 걸립니다.",
+            "English": "Casts a spell that prevents the affected target from being directly targeted.",
+            "ChineseCh": "被施予不会成为直接目标的咒术。",
+            "ChineseTh": "被施予不成為直接目標的咒語。",
+            "Japanese": "直接ターゲットにならない呪文にかかります"
+        }
+    },
+    {
+        "Key": "BuffPathFinding",
+        "Text": {
+            "Korea": "이동 제약이 사라지는 주문에 걸립니다.",
+            "English": "Casts a spell that removes movement restrictions.",
+            "ChineseCh": "被施予移除移动限制的咒术。",
+            "ChineseTh": "被施予解除移動限制的咒語。",
+            "Japanese": "移動制限がなくなる呪文にかかります"
+        }
+    },
+    {
+        "Key": "BuffProvocation",
+        "Text": {
+            "Korea": "제어권을 잃고, 시전자를 우선으로 공격하게 만듭니다.",
+            "English": "Loses control and prioritizes attacking the caster.",
+            "ChineseCh": "失去控制权，并优先攻击施法者。",
+            "ChineseTh": "失去控制權，優先攻擊施法者。",
+            "Japanese": "制御不能になり、詠唱者を優先して攻撃させます"
+        }
+    },
+    {
+        "Key": "BuffReflectionDamage",
+        "Text": {
+            "Korea": "받은 피해의 {0}%를 반사하는 주문에 걸립니다.",
+            "English": "Casts a spell that reflects {0}% of damage received.",
+            "ChineseCh": "被施予反弹{0}%承伤的咒术。",
+            "ChineseTh": "被施予反射{0}%受到的傷害的咒語。",
+            "Japanese": "受けたダメージの{0}%を反射する呪文にかかります"
+        }
+    },
+    {
+        "Key": "BuffRestraint",
+        "Text": {
+            "Korea": "행동 할수 없는 주문에 걸립니다.",
+            "English": "Casts a spell that prevents actions.",
+            "ChineseCh": "被施予无法行动的咒术。",
+            "ChineseTh": "被施予無法行動的咒語。",
+            "Japanese": "行動できない呪文にかかります"
+        }
+    },
+    {
+        "Key": "BuffShield",
+        "Text": {
+            "Korea": "{0} 만큼 피해를 막아주는 보호막을 생성합니다.",
+            "English": "Create a shield that blocks damage equal to {0}.",
+            "ChineseCh": "生成可吸收相当于{0}伤害的护盾。",
+            "ChineseTh": "生成阻擋{0}傷害的防護罩。",
+            "Japanese": "{0}ほどダメージを遮断するシールドを生成します"
+        }
+    },
+    {
+        "Key": "BuffSeal",
+        "Text": {
+            "Korea": "스킬을 사용할 수 없습니다.",
+            "English": "Affected target cannot use skills.",
+            "ChineseCh": "无法使用技能。",
+            "ChineseTh": "無法使用技能。",
+            "Japanese": "スキルを使用できません"
+        }
+    },
+    {
+        "Key": "BuffSilence",
+        "Text": {
+            "Korea": "궁극기 및 액티브 스킬을 사용할 수 없습니다.",
+            "English": "Ultimate and active skills cannot be used.",
+            "ChineseCh": "无法使用终极技能及主动技能。",
+            "ChineseTh": "無法使用終極技及主動技能。",
+            "Japanese": "必殺技やスキルを使用できません"
+        }
+    },
+    {
+        "Key": "BuffSleep",
+        "Text": {
+            "Korea": "잠을 재워 행동하지 못하게 합니다. 피해를 받으면 깨어납니다.",
+            "English": "Prevents the target from taking actions by putting them to sleep. The target wakes up upon taking damage.",
+            "ChineseCh": "进入睡眠状态，无法行动。受到伤害时苏醒。",
+            "ChineseTh": "陷入沉睡狀態無法行動，受到傷害時將甦醒。",
+            "Japanese": "眠らせて行動不能にします。ダメージを受けると目覚めます"
+        }
+    },
+    {
+        "Key": "BuffStateStun",
+        "Text": {
+            "Korea": "어떤 행동도 할 수 없습니다.",
+            "English": "Cannot take any actions.",
+            "ChineseCh": "无法进行任何行动。",
+            "ChineseTh": "無法採取任何行動。",
+            "Japanese": "どんな行動もできません"
+        }
+    },
+    {
+        "Key": "BuffStun",
+        "Text": {
+            "Korea": "어떤 행동도 할 수 없습니다.",
+            "English": "Cannot take any actions.",
+            "ChineseCh": "无法进行任何行动。",
+            "ChineseTh": "無法採取任何行動。",
+            "Japanese": "どんな行動もできません"
+        }
+    },
+    {
+        "Key": "BuffTimeBomb",
+        "Text": {
+            "Korea": "{0}, 폭탄은 사라질 때 대상에 피해를 줍니다.",
+            "English": "{0}, bombs deal damage to the target when they disappear.",
+            "ChineseCh": "{0}，炸弹消失时，对目标单位造成伤害。",
+            "ChineseTh": "{0}，炸彈消失時對目標造成傷害。",
+            "Japanese": "{0}、爆弾は消える際にダメージを与えます"
+        }
+    },
+    {
+        "Key": "BuffVanishMana",
+        "Text": {
+            "Korea": "마나를 {0}{1}만큼 소진시키는 주문에 걸립니다.",
+            "English": "Casts a spell that depletes {0}{1} mana.",
+            "ChineseCh": "被施予咒术，消耗相当于{0}{1}的灵力。",
+            "ChineseTh": "被施予消耗{0}{1}瑪那的咒語。",
+            "Japanese": "マナを{0}{1}ほど消耗させる呪文にかかります"
+        }
+    },
+    {
+        "Key": "BuffDefault",
+        "Text": {
+            "Korea": "자세한 정보를 표기할 수 없습니다.",
+            "English": "There are no details.",
+            "ChineseCh": "无法显示详情。",
+            "ChineseTh": "無法顯示詳細資訊。",
+            "Japanese": "詳細の情報を表示できません"
+        }
+    },
+    {
+        "Key": "ApplyChance",
+        "Text": {
+            "Korea": "발동 확률",
+            "English": "Activation Rate",
+            "ChineseCh": "触发概率",
+            "ChineseTh": "發動機率",
+            "Japanese": "発動率"
+        }
+    },
+    {
+        "Key": "KeepTime",
+        "Text": {
+            "Korea": "지속 시간",
+            "English": "Duration",
+            "ChineseCh": "持续时间",
+            "ChineseTh": "持續時間",
+            "Japanese": "持続時間"
+        }
+    },
+    {
+        "Key": "ApplyTarget",
+        "Text": {
+            "Korea": "대상",
+            "English": "Target",
+            "ChineseCh": "目标单位",
+            "ChineseTh": "目標",
+            "Japanese": "対象"
+        }
+    },
+    {
+        "Key": "ApplyTargetEtc",
+        "Text": {
+            "Korea": "대상 : 주변 {0} 이내의 {1} 중 {2}명",
+            "English": "Target: {2} among {1} within {0} nearby.",
+            "ChineseCh": "目标单位：周围{0}以内的{2}名{1}",
+            "ChineseTh": "目標：周圍{0}內{1}中的{2}名",
+            "Japanese": "対象：周辺{0}以内の{1}中{2}名"
+        }
+    },
+    {
+        "Key": "ApplyTargetEtcRadiusZero",
+        "Text": {
+            "Korea": "대상 : {0} 중 {1}명",
+            "English": "Target: {1} among {0}",
+            "ChineseCh": "目标单位：{1}名{0}",
+            "ChineseTh": "目標：{0}中的{1}名",
+            "Japanese": "対象：{0}中{1}名"
+        }
+    },
+    {
+        "Key": "ApplyTargetEtcAll",
+        "Text": {
+            "Korea": "대상 : 주변 {0} 이내의 {1}",
+            "English": "Target: {1} within {0} nearby",
+            "ChineseCh": "目标单位：周围{0}以内的{1}",
+            "ChineseTh": "目標：周圍{0}內的{1}",
+            "Japanese": "対象：周辺{0}以内の{1}"
+        }
+    },
+    {
+        "Key": "ApplyTargetEtcAllRadiusZero",
+        "Text": {
+            "Korea": "대상 : {0}",
+            "English": "Target: {0}",
+            "ChineseCh": "目标单位：{0}",
+            "ChineseTh": "目標：{0}",
+            "Japanese": "対象：{0}"
+        }
+    },
+    {
+        "Key": "BuffAttribure",
+        "Text": {
+            "Korea": "주문 속성 : ",
+            "English": "Spell Element:",
+            "ChineseCh": "咒术属性：",
+            "ChineseTh": "咒語屬性： ",
+            "Japanese": "呪文属性："
+        }
+    },
+    {
+        "Key": "NoResist",
+        "Text": {
+            "Korea": "저항 불가",
+            "English": "Cannot be resisted.",
+            "ChineseCh": "无法抵抗",
+            "ChineseTh": "無法抵抗",
+            "Japanese": "抵抗不可"
+        }
+    },
+    {
+        "Key": "NoPurification",
+        "Text": {
+            "Korea": "해제 불가",
+            "English": "Cannot be removed.",
+            "ChineseCh": "无法解除",
+            "ChineseTh": "無法解除",
+            "Japanese": "解除不可"
+        }
+    },
+    {
+        "Key": "Duplicate",
+        "Text": {
+            "Korea": "시전자가 같더라도 중복 적용",
+            "English": "Effects stack, even if cast by the same caster.",
+            "ChineseCh": "即使施法者相同，也可以叠加",
+            "ChineseTh": "即便是同樣的施展者也可重複套用",
+            "Japanese": "詠唱者が同じでも重複適用"
+        }
+    },
+    {
+        "Key": "CheckCaster",
+        "Text": {
+            "Korea": "시전자가 다르면 중복 적용",
+            "English": "Effects stack, if cast by different casters.",
+            "ChineseCh": "不同施法者可叠加",
+            "ChineseTh": "在施展者不同時，可重複套用",
+            "Japanese": "詠唱者が異なると重複適用"
+        }
+    },
+    {
+        "Key": "Owner",
+        "Text": {
+            "Korea": "자신",
+            "English": "Self",
+            "ChineseCh": "自身",
+            "ChineseTh": "自身",
+            "Japanese": "自分"
+        }
+    },
+    {
+        "Key": "Defender",
+        "Text": {
+            "Korea": "대상의",
+            "English": "Target’s",
+            "ChineseCh": "目标单位的",
+            "ChineseTh": "目標",
+            "Japanese": "対象の"
+        }
+    },
+    {
+        "Key": "Caster",
+        "Text": {
+            "Korea": "시전자의",
+            "English": "Caster’s",
+            "ChineseCh": "施法者的",
+            "ChineseTh": "施展者",
+            "Japanese": "詠唱者の"
+        }
+    },
+    {
+        "Key": "GoodBuff",
+        "Text": {
+            "Korea": "이로운 주문",
+            "English": "Beneficial Spell(s)",
+            "ChineseCh": "增益咒术",
+            "ChineseTh": "增益咒語",
+            "Japanese": "バフ"
+        }
+    },
+    {
+        "Key": "BadBuff",
+        "Text": {
+            "Korea": "해로운 주문",
+            "English": "Harmful Spell(s)",
+            "ChineseCh": "减益咒术",
+            "ChineseTh": "減益咒語",
+            "Japanese": "デバフ"
+        }
+    },
+    {
+        "Key": "Over",
+        "Text": {
+            "Korea": "이상",
+            "English": "More",
+            "ChineseCh": "以上",
+            "ChineseTh": "以上",
+            "Japanese": "以上"
+        }
+    },
+    {
+        "Key": "Lower",
+        "Text": {
+            "Korea": "이하",
+            "English": "Less",
+            "ChineseCh": "以下",
+            "ChineseTh": "以下",
+            "Japanese": "以下"
+        }
+    },
+    {
+        "Key": "Miss",
+        "Text": {
+            "Korea": "빗맞춤",
+            "English": "Miss",
+            "ChineseCh": "未命中",
+            "ChineseTh": "擊偏",
+            "Japanese": "外す"
+        }
+    },
+    {
+        "Key": "MazeBuffType.AllRebirth",
+        "Text": {
+            "Korea": "죽은 모든 아군을 부활시킵니다.",
+            "English": "Revive all the fallen allies.",
+            "ChineseCh": "复活所有已阵亡的我军。",
+            "ChineseTh": "復活所有死亡的我軍。",
+            "Japanese": "死んだ味方を全て復活させます"
+        }
+    },
+    {
+        "Key": "MazeBuffType.AllHeal",
+        "Text": {
+            "Korea": "살아 있는 모든 아군의 체력을 {0}% 회복시킵니다.",
+            "English": "Recover HP of all surviving allies by {0}%.",
+            "ChineseCh": "恢复所有存活我军{0}%的生命值。",
+            "ChineseTh": "恢復所有倖存我軍的{0}%生命力。",
+            "Japanese": "生きている味方全員のHPを{0}％回復させます"
+        }
+    },
+    {
+        "Key": "MazeBuffType.Kill",
+        "Text": {
+            "Korea": "살아 있는 아군 중 무작위로 {0}명이 사망합니다.",
+            "English": "Among the surviving allies, {0} will fall randomly.",
+            "ChineseCh": "随机使{0}名存活的我军阵亡。",
+            "ChineseTh": "隨機使{0}名倖存的我軍死亡。",
+            "Japanese": "生きている味方からランダムで{0}人が死亡します"
+        }
+    },
+    {
+        "Key": "MazeBuffType.Rebirth",
+        "Text": {
+            "Korea": "죽은 아군 중 무작위로 {0}명을 부활시킵니다.",
+            "English": "Revive {0} random allies.",
+            "ChineseCh": "随机复活{0}名已阵亡的我军。",
+            "ChineseTh": "隨機復活{0}名死亡的我軍。",
+            "Japanese": "死んだ味方からランダムで{0}人が復活します"
+        }
+    },
+    {
+        "Key": "PvpPriority",
+        "Text": {
+            "Korea": "선공",
+            "English": "Priority",
+            "ChineseCh": "先攻",
+            "ChineseTh": "先攻",
+            "Japanese": "先攻"
+        }
+    },
+    {
+        "Key": "PvpPriorityPer",
+        "Text": {
+            "Korea": "PvpPriorityPer",
+            "English": "Priority",
+            "ChineseCh": "先攻",
+            "ChineseTh": "PvpPriorityPer",
+            "Japanese": "先攻"
+        }
+    },
+    {
+        "Key": "PvpPriorityPerExplain",
+        "Text": {
+            "Korea": "PvpPriorityPerExplain",
+            "English": "When the ally and the enemy use skills with the same cooldown in Colosseum, the character with higher Priority will attack first.",
+            "ChineseCh": "在竞技场中，当我军和敌军同时使用冷却时间相同的技能时，先攻值更高的角色会先释放技能。",
+            "ChineseTh": "PvpPriorityPerExplain",
+            "Japanese": "コロッセウムで味方と敵軍が同じクールタイムのスキルを同時に使った場合、先攻値が高いキャラクターが先にスキルを使います"
+        }
+    },
+    {
+        "Key": "PvpPriorityFinPer",
+        "Text": {
+            "Korea": "PvpPriorityFinPer",
+            "English": "Priority",
+            "ChineseCh": "先攻",
+            "ChineseTh": "PvpPriorityFinPer",
+            "Japanese": "先攻"
+        }
+    },
+    {
+        "Key": "PvpPriorityFinPerExplain",
+        "Text": {
+            "Korea": "PvpPriorityFinPerExplain",
+            "English": "When the ally and the enemy use skills with the same cooldown in Colosseum, the character with higher Priority will attack first.",
+            "ChineseCh": "在竞技场中，当我军和敌军同时使用冷却时间相同的技能时，先攻值更高的角色会先释放技能。",
+            "ChineseTh": "PvpPriorityFinPerExplain",
+            "Japanese": "コロッセウムで味方と敵軍が同じクールタイムのスキルを同時に使った場合、先攻値が高いキャラクターが先にスキルを使います"
+        }
+    },
+    {
+        "Key": "PvpPriorityExplain",
+        "Text": {
+            "Korea": "콜로세움에서 쿨타임이 동일한 스킬을 아군과 적군이 동시에 쓸 경우, 선공 수치가 더 높은 캐릭터가 먼저 스킬을 씁니다.",
+            "English": "When the ally and the enemy use skills with the same cooldown in Colosseum, the character with higher Priority will attack first.",
+            "ChineseCh": "在竞技场中，当我军和敌军同时使用冷却时间相同的技能时，先攻值更高的角色会先释放技能。",
+            "ChineseTh": "在競技場中，當敵我雙方同時使用冷卻時間相同的技能時，先攻值較高的角色會先發動技能。",
+            "Japanese": "コロッセウムで味方と敵軍が同じクールタイムのスキルを同時に使った場合、先攻値が高いキャラクターが先にスキルを使います"
+        }
+    },
+    {
+        "Key": "BuffChangeModel",
+        "Text": {
+            "Korea": "전투에 특화된 모습으로 변신합니다.",
+            "English": "Transform into a figure specialized for battles.",
+            "ChineseCh": "变身为适合战斗的形态。",
+            "ChineseTh": "戰鬥時，變身為特化狀態。",
+            "Japanese": "戦闘モードに変身します"
+        }
+    },
+    {
+        "Key": "BuffEndSkill",
+        "Text": {
+            "Korea": "효과 종료시 발동",
+            "English": "Activates upon end of the effect",
+            "ChineseCh": "效果结束时触发",
+            "ChineseTh": "效果結束時發動",
+            "Japanese": "効果が切れると発動"
+        }
+    },
+    {
+        "Key": "ActorAddEnemyTeamBuff",
+        "Text": {
+            "Korea": "디버프 부여",
+            "English": "Apply Debuff",
+            "ChineseCh": "施加减益",
+            "ChineseTh": "賦予減益",
+            "Japanese": "デバフ付与"
+        }
+    },
+    {
+        "Key": "Decrease",
+        "Text": {
+            "Korea": "감소",
+            "English": "Reduction",
+            "ChineseCh": "降低",
+            "ChineseTh": "減少",
+            "Japanese": "ダウン"
+        }
+    },
+    {
+        "Key": "Increase",
+        "Text": {
+            "Korea": "증가",
+            "English": "Increase",
+            "ChineseCh": "提升",
+            "ChineseTh": "增加",
+            "Japanese": "アップ"
+        }
+    },
+    {
+        "Key": "ActorCheckAccumBuff",
+        "Text": {
+            "Korea": "대상에게 걸린 버프의 중첩 횟수 당 {0}%의 피해가 증가합니다.",
+            "English": "Damage increases by {0}% for each stack of buffs applied to the target.",
+            "ChineseCh": "目标单位身上的增益效果每层提升{0}%伤害",
+            "ChineseTh": "目標身上的增益效果每次疊加增加{0}%傷害",
+            "Japanese": "対象がかかったバフの重複回数につきダメージが{0}％アップする"
+        }
+    },
+    {
+        "Key": "ActorCheckAccumBuffByGood",
+        "Text": {
+            "Korea": "대상에게 걸린 이로운 버프의 중첩 횟수 당 {0}%의 피해가 증가합니다.",
+            "English": "Damage increases by {0}% for each stack of beneficial buffs applied to the target.",
+            "ChineseCh": "目标单位身上的有利增益效果每层提升{0}%伤害",
+            "ChineseTh": "目標身上的正面增益效果每次疊加增加{0}%傷害。",
+            "Japanese": "対象がかかった有利なバフの重複回数につきダメージが{0}％アップする"
+        }
+    },
+    {
+        "Key": "ActorCheckAccumBuffByBad",
+        "Text": {
+            "Korea": "대상에게 걸린 해로운 버프의 중첩 횟수 당 {0}%의 피해가 증가합니다.",
+            "English": "Damage increases by {0}% for each stack of harmful buffs applied to the target.",
+            "ChineseCh": "目标单位身上的不利增益效果每层提升{0}%伤害",
+            "ChineseTh": "目標身上的負面增益效果每次疊加增加{0}%傷害。",
+            "Japanese": "対象がかかった有利なバフの重複回数につきダメージが{0}％アップする"
+        }
+    },
+    {
+        "Key": "Weather",
+        "Text": {
+            "Korea": "다음 날씨일 때 적용 : {0}",
+            "English": "Applies when the weather is: {0}",
+            "ChineseCh": "在下列天气时生效：{0}",
+            "ChineseTh": "於下列天氣時套用：{0}",
+            "Japanese": "次の天気で発動：{0}"
+        }
+    },
+    {
+        "Key": "BuffImmuneDamageStun",
+        "Text": {
+            "Korea": "{0}회의 피해에 면역이 됩니다. 버프가 사라지기 전에 모든 횟수가 차감되면 {1}초간 스턴에 걸립니다.",
+            "English": "Grants immunity to {0} instances of damage. If all instances are consumed before the buff expires, you will be stunned for {1} seconds.",
+            "ChineseCh": "可免疫{0}次伤害，若在增益期间内受到同等次数的攻击，则会陷入眩晕，持续{1}秒。",
+            "ChineseTh": "可免疫{0}次傷害，若在增益消失前耗盡所有次數，則會在{1}秒期間陷入衝暈。",
+            "Japanese": "{0}回のダメージに耐性がつきます。バフが消える前に全ての回数を使い切ると{1}秒間スタン状態になります"
+        }
+    },
+    {
+        "Key": "BuffImmuneState",
+        "Text": {
+            "Korea": "상태이상에 면역이 됩니다.",
+            "English": "Become immune to status effects.",
+            "ChineseCh": "免疫所有状态异常。",
+            "ChineseTh": "對狀態異常免疫。",
+            "Japanese": "状態異常に対する耐性がつきます"
+        }
+    },
+    {
+        "Key": "ActorEquipmentMastery",
+        "Text": {
+            "Korea": "장비 메인 옵션의 효율이 {0}% 증가합니다.\n아이템 레벨 {1} 이하의 장비에만 적용됩니다.",
+            "English": "The potency of the Equipment Main Stats is increased by {0}%.\nApplies only to equipment with item level {1} or lower.",
+            "ChineseCh": "装备的核心词条效率增加{0}%。\n仅适用于道具等级{1}以下的装备。",
+            "ChineseTh": "裝備的主功能效率增加{0}%。\n只會套用於道具等級{1}以下的裝備。",
+            "Japanese": "装備のメインオプション効率が{0}%アップします\nアイテムレベル{1}以下の装備に適用されます"
+        }
+    },
+    {
+        "Key": "ActorEquipmentMasteryMinus",
+        "Text": {
+            "Korea": "장비 메인 옵션의 효율이 {0}% 감소합니다.\n아이템 레벨 {1} 이하의 장비에만 적용됩니다.",
+            "English": "The potency of the Equipment Main Stats is decreased by {0}%.\nApplies only to equipment with item level {1} or lower.",
+            "ChineseCh": "装备的核心词条效率减少{0}%。\n仅适用于道具等级{1}以下的装备。",
+            "ChineseTh": "裝備的主功能效率減少{0}%。\n只會套用於道具等級{1}以下的裝備。",
+            "Japanese": "装備のメインオプション効率が{0}%ダウンします\nアイテムレベル{1}以下の装備に適用されます"
+        }
+    },
+    {
+        "Key": "BuffElectric",
+        "Text": {
+            "Korea": "대상에게 감전을 겁니다. 감전에 걸린 대상은 받은 피해의 {0}% 피해를 추가로 받습니다.",
+            "English": "Inflicts shock on the target. Targets affected by shock take an additional {0}% damage based on the attacker's ATK when hit.",
+            "ChineseCh": "使目标陷入触电状态。触电状态下的目标将额外承受{0}%的伤害。",
+            "ChineseTh": "賦予目標觸電。受到觸電的目標將額外獲得受到的傷害{0}%的傷害。",
+            "Japanese": "対象に感電を与えます。感電状態の対象はダメージを受ける際に、攻撃者の攻撃力の{0}％分のダメージを追加で受けます"
+        }
+    },
+    {
+        "Key": "RedFinPerExplain",
+        "Text": {
+            "Korea": "피해 감소 수치 만큼 받는 피해가 감소합니다. 이 스탯은 최종 {0} 이상 적용되지 않습니다.",
+            "English": "Damage received is reduced by the amount of Damage Reduction. This stat cannot exceed {0}.",
+            "ChineseCh": "降低相当于伤害减免数值的伤害。该属性值最高生效{0}%。",
+            "ChineseTh": "受到的傷害減少至傷害減少數值。該能力在最後{0}以上不會套用。",
+            "Japanese": "ダメージ軽減数値だけ被ダメージが軽減します。このステータスは、最終的に{0}以上は適用されません"
+        }
+    },
+    {
+        "Key": "ActorDevideDamage",
+        "Text": {
+            "Korea": "받은 피해를 최대 체력이 가장 높은 아군(자신은 제외) 중 1인에게 {0}%의 피해를 나눠줍니다.",
+            "English": "Distributes {0}% of the damage received to one of the allies (excluding yourself) with the highest current HP.",
+            "ChineseCh": "分摊受到的伤害，将{0}%的伤害分摊给队伍中 (不包括自身) 生命值上限最高的友方单位。",
+            "ChineseTh": "分享受到的傷害{0}%給最大體力最高的我軍(自己除外)中的一人。",
+            "Japanese": "受けたダメージの{0}%を現在HPが最も高い味方(自分を除く)1人に分配します"
+        }
+    },
+    {
+        "Key": "MazeBuffType.AllDamage",
+        "Text": {
+            "Korea": "살아 있는 모든 아군의 체력을 {0}% 깎습니다.",
+            "English": "Reduces HP of all surviving allies by {0}%.",
+            "ChineseCh": "削减所有存活的我方单位{0}%的生命值。",
+            "ChineseTh": "減少所有倖存我軍的{0}%生命力。",
+            "Japanese": "生きている味方全員のHPが{0}％減少します"
+        }
+    },
+    {
+        "Key": "BuffAccumStatTitle",
+        "Text": {
+            "Korea": "1중첩당",
+            "English": "Per stack:",
+            "ChineseCh": "每次叠加",
+            "ChineseTh": "每1疊加",
+            "Japanese": "1重複当たり"
+        }
+    },
+    {
+        "Key": "BuffAccumStatAdd",
+        "Text": {
+            "Korea": "{0} 증가",
+            "English": "Increases by {0}",
+            "ChineseCh": "{0}增加",
+            "ChineseTh": "增加{0}",
+            "Japanese": "{0}アップ"
+        }
+    },
+    {
+        "Key": "BuffAccumStatSub",
+        "Text": {
+            "Korea": "{0} 감소",
+            "English": "Decreases by {0}",
+            "ChineseCh": "{0}减少",
+            "ChineseTh": "減少{0}",
+            "Japanese": "{0}ダウン"
+        }
+    },
+    {
+        "Key": "BuffAccumMax",
+        "Text": {
+            "Korea": "(최대 {0}중첩)",
+            "English": "(Max {0} stacks)",
+            "ChineseCh": "(最多叠加{0}层)",
+            "ChineseTh": "(最多{0}疊加)",
+            "Japanese": "(最大{0}重複)"
+        }
+    },
+    {
+        "Key": "DefExplain2",
+        "Text": {
+            "Korea": "에게 피해를 받을때의 방어율을 나타냅니다.\n내 방어율 = 내 방어력 / (적의 공격력 + 내 방어력)\n방어율은 적에게 받은 대미지에서 방어율 만큼 대미지를 차감하여 받게됩니다.",
+            "English": "The Defense Ratio of a Character.\nYour Defense Ratio is equal to [Your Defense Stat/(Enemy’s Attack Stat + Your Defense Stat)].\nDefense Ratio reduces the damage received from enemies by the specified percentage.",
+            "ChineseCh": "显示受到攻击时的防御效果。\n自身防御率=自身防御力 / (敌方攻击力+自身防御力)\n防御率越高，受到的伤害减免比例越高。",
+            "ChineseTh": "受到傷害時，顯示防禦率。\n我的防禦率=我的防禦力/(敵人的攻擊力+我的防禦力)\n防禦率會抵消敵人造成的傷害，抵消量等同於防禦率的數值。",
+            "Japanese": "にダメージを受ける際の防御率を表示します\n自分の防御率＝自分の防御力／(敵の攻撃力＋自分の防御力)\n防御率は敵から受けたダメージから防御率の分だけダメージを差し引いた後に適用されます"
+        }
+    },
+    {
+        "Key": "ActorImmuneStun",
+        "Text": {
+            "Korea": "행동 불가에 면역이 됩니다.",
+            "English": "Become immune to incapacitation.",
+            "ChineseCh": "免疫【昏厥】效果。",
+            "ChineseTh": "對無法行動免疫。",
+            "Japanese": "行動不能に耐性がつきます"
+        }
+    },
+    {
+        "Key": "ActorResistStun",
+        "Text": {
+            "Korea": "{0}%확률로 행동 불가 스킬에 저항합니다.",
+            "English": "Resists incapacitation skills with a {0}% chance.",
+            "ChineseCh": "有{0}%的概率抵抗【昏厥】技能。",
+            "ChineseTh": "以{0}%機率抵抗無法行動技能。",
+            "Japanese": "{0}％の確率で行動不能スキルに抵抗します"
+        }
+    },
+    {
+        "Key": "ActorDamage",
+        "Text": {
+            "Korea": "{0}만큼 추가 타격을 {1}회 줍니다.",
+            "English": "Deals an additional hit equal to {0} {1} time(s).",
+            "ChineseCh": "额外追加{1}次，每次{0}点打击伤害。",
+            "ChineseTh": "造成{1}次{0}的額外打擊。",
+            "Japanese": "{0}の追加ダメージを{1}回与えます"
+        }
+    },
+    {
+        "Key": "ActorDamageTarget",
+        "Text": {
+            "Korea": "대상이 {0}일시, {1}만큼 추가 타격을 {2}회 줍니다.",
+            "English": "When the target is {0}, deals additional hit equal to {1} {2} time(s).",
+            "ChineseCh": "目标为{0}时，额外追加{2}次，每次{1}点打击伤害。",
+            "ChineseTh": "當目標{0}時，造成{2}次{1}的額外打擊。",
+            "Japanese": "対象が{0}の場合、{1}の追加ダメージを{2}回与えます"
+        }
+    },
+    {
+        "Key": "ActorAccumMaxDamage",
+        "Text": {
+            "Korea": "대상에게 징표를 누적시켜 {0}회 이상이 되면 {1} {2}%만큼 추가 타격을 줍니다.",
+            "English": "Accumulates a mark on the target, and if it reaches {0} or more, deals an additional hit equal to {1} by {2}%.",
+            "ChineseCh": "对目标叠加【印记】达到{0}层时，将发动{1}次{2}%的追击伤害。",
+            "ChineseTh": "使目標累積印記{0}次以上時，造成{1}{2}%的額外打擊。",
+            "Japanese": "対象にマークを重複させて{0}回以上になると{1}の{2}％の追加ダメージを与えます"
+        }
+    },
+    {
+        "Key": "AtkPerExplain",
+        "Text": {
+            "Korea": "공격력이 해당 수치 만큼 추가로 증폭됩니다. 이 값은 감소될 때 최대 50%까지만 감소됩니다.",
+            "English": "ATK is additionally increased by the specified amount. This value decreases by up to 50% when reduced.",
+            "ChineseCh": "攻击力将额外提升指定数值。该数值降低时，最多降低至50%。",
+            "ChineseTh": "額外增加該數值的攻擊力。該數值減少時，最多減少至50%。",
+            "Japanese": "攻撃力が一定の数値だけ追加で増加します。この数値は減少することがあっても、50%を下回ることはありません"
+        }
+    },
+    {
+        "Key": "DefPerExplain",
+        "Text": {
+            "Korea": "방어력이 해당 수치 만큼 추가로 증폭됩니다. 이 값은 감소될 때 최대 50%까지만 감소됩니다.",
+            "English": "DEF is additionally increased by the specified amount. This value decreases by up to 50% when reduced.",
+            "ChineseCh": "防御力将额外提升指定数值。该数值降低时，最多降低至50%。",
+            "ChineseTh": "額外增加該數值的防禦力。該數值減少時，最多減少至50%。",
+            "Japanese": "防御力が一定の数値だけ追加で増加します。この数値は減少することがあっても、50%を下回ることはありません"
+        }
+    },
+    {
+        "Key": "ActorSummon",
+        "Text": {
+            "Korea": "소환자와 동일한 레벨의 {0}을/를 소환합니다. 소환물은 {1}%의 생명력을 가집니다.",
+            "English": "Summons a {0} with the same level as the summoner. The summon has {1}% of its HP.",
+            "ChineseCh": "召唤与召唤者等级【{0}】相同的召唤兽。召唤兽继承召唤者{1}%的生命值。",
+            "ChineseTh": "召喚與召喚者同樣等級{0}的。獲得召喚物品{1}%的生命力。",
+            "Japanese": "召喚者と同レベルの{1}を召喚します。召喚されたものは{1}％のHPを持ちます"
+        }
+    },
+    {
+        "Key": "ActorSummonHealth",
+        "Text": {
+            "Korea": "소환자와 동일한 레벨의 {0}을/를 소환합니다.",
+            "English": "Summons a {0} with the same level as the summoner.",
+            "ChineseCh": "召唤与召唤者等级【{0}】相同的召唤兽。",
+            "ChineseTh": "召喚與召喚者同樣等級的{0}。",
+            "Japanese": "召喚者と同レベルの{1}を召喚します"
+        }
+    },
+    {
+        "Key": "AtkExplain",
+        "Text": {
+            "Korea": "적에게 피해를 줍니다. \n공격력이 강할수록 상대의 방어율이 낮아집니다.\n이 값은 감소될 때 최대 50%까지만 감소됩니다.",
+            "English": "Inflicts damage to the enemy.\nAs the Attack stat increases, it further lowers the enemy’s Defense Ratio.",
+            "ChineseCh": "对敌人造成伤害。\n攻击力越高，对手的防御率则越低。",
+            "ChineseTh": "對敵人造成傷害。\n攻擊力越高，對手的防禦率越低。\n該數值減少時，最多減少至50%。",
+            "Japanese": "敵にダメージを与えます\n攻撃力が高いほど相手の防御率が低くなります"
+        }
+    },
+    {
+        "Key": "DefExplain",
+        "Text": {
+            "Korea": "방어율을 나타냅니다.\n내 방어율 = 내 방어력 / (적의 공격력 + 내 방어력)\n방어율은 적에게 받은 대미지에서 방어율 만큼 대미지를 차감하여 받게됩니다.\n이 값은 감소될 때 최대 50%까지만 감소됩니다.",
+            "English": "The Defense Ratio of a Character.\nYour Defense Ratio is equal to [Your Defense Stat/(Enemy’s Attack Stat + Your Defense Stat)].\nDefense Ratio reduces the damage received from enemies by the specified percentage.",
+            "ChineseCh": "防御率。\n自身防御率计算方法：自身防御力/(敌方攻击力+自身防御力)\n防御率是指在敌方施加给我的伤害中减免的伤害量。",
+            "ChineseTh": "代表防禦率。\n我的防禦率=我的防禦力/(敵人的攻擊力+我的防禦力)\n防禦率會抵消敵人造成的傷害，抵消量等同於防禦率的數值。\n該數值減少時，最多減少至50%。",
+            "Japanese": "防御率を表示します\n自分の防御率＝自分の防御力／(敵の攻撃力＋自分の防御力)\n防御率は敵から受けたダメージから防御率の分だけダメージを差し引いた後に適用されます"
+        }
+    },
+    {
+        "Key": "BlockFinPerExplain",
+        "Text": {
+            "Korea": "적의 공격을 막을 수 있는 확률입니다.\n막기가 발동되면 적의 공격력 수치가 절반으로 적용됩니다.\n치명타 공격은 막을 수 없습니다.",
+            "English": "The chance to block an enemy’s attack.\nOn a successful block, the enemy’s Attack value is halved.\nCritical hits cannot be blocked.",
+            "ChineseCh": "格挡敌人攻击的概率。\n成功格挡时，受到的敌方攻击力减半。\n无法格挡暴击攻击。",
+            "ChineseTh": "可格擋敵人攻擊的機率。\n格擋發動時，套用敵人一半的攻擊力。\n無法格擋暴擊攻擊。",
+            "Japanese": "敵の攻撃を防ぐ確率です。\nブロックが発動すると、敵の攻撃力の数値が半分になります。\nクリティカルヒットは防げません。"
+        }
+    },
+    {
+        "Key": "BuffChangeSkillTitle",
+        "Text": {
+            "Korea": "스킬 피해 증가",
+            "English": "Skill Damage Increase",
+            "ChineseCh": "技能伤害提升",
+            "ChineseTh": "技能傷害增加",
+            "Japanese": "スキルダメージアップ"
+        }
+    },
+    {
+        "Key": "BuffChangeSkillTitleDec",
+        "Text": {
+            "Korea": "스킬 피해 감소",
+            "English": "Skill Damage Reduce",
+            "ChineseCh": "技能伤害减少",
+            "ChineseTh": "技能傷害減少",
+            "Japanese": "スキルダメージアダウン"
+        }
+    },
+    {
+        "Key": "BuffChangeSkill",
+        "Text": {
+            "Korea": "{0} 스킬의 최종 피해가 {1}% 증가합니다.",
+            "English": "Damage of {0} is increased by {1}%.",
+            "ChineseCh": "{0}技能的伤害提升{1}%。",
+            "ChineseTh": "{0}的技能最終傷害增加{1}%。",
+            "Japanese": "{0}スキルダメージが{1}%アップする。"
+        }
+    },
+    {
+        "Key": "BuffChangeSkillAll",
+        "Text": {
+            "Korea": "모든 스킬의 최종 피해가 {0}% 증가합니다.",
+            "English": "Damage of all Skills is increased by {0}%.",
+            "ChineseCh": "所有技能的伤害提升{0}%。",
+            "ChineseTh": "所有技能的最終傷害增加{0}%。",
+            "Japanese": "全スキルのダメージが{0}%アップする。"
+        }
+    },
+    {
+        "Key": "BuffChangeSkillDec",
+        "Text": {
+            "Korea": "{0} 스킬의 최종 피해가 {1}% 감소합니다.",
+            "English": "Damage of {0} is Reduce by {1}%.",
+            "ChineseCh": "{0}技能的伤害减少{1}%。",
+            "ChineseTh": "{0}的技能最終傷害減少{1}%。",
+            "Japanese": "{0}スキルダウン{1}%アップする。"
+        }
+    },
+    {
+        "Key": "BuffChangeSkillAllDec",
+        "Text": {
+            "Korea": "모든 스킬의 최종 피해가 {0}% 감소합니다.",
+            "English": "Damage of all Skills is Reduce by {0}%.",
+            "ChineseCh": "所有技能的伤减少升{0}%。",
+            "ChineseTh": "所有技能的最終傷害減少{0}%。",
+            "Japanese": "全スキルのダメーダウン{0}%アップする。"
+        }
+    },
+    {
+        "Key": "ActorCheckMyBuffStateAdd",
+        "Text": {
+            "Korea": "나에게 상태이상({0})이 걸리면 받는 피해가 {1}%증가 됩니다.",
+            "English": "Damage is increased by {1}% when attacking a target affected by {0}.",
+            "ChineseCh": "攻击被施加{0}的目标单位时，伤害提升{1}%",
+            "ChineseTh": "我受到狀態異常({0})攻擊時，受到的傷害增加{1}%。",
+            "Japanese": "{0}にかかった対象に攻撃時、{1}%ダメージアップ"
+        }
+    },
+    {
+        "Key": "DivinePower",
+        "Text": {
+            "Korea": "DivinePower",
+            "ChineseTh": "DivinePower"
+        }
+    },
+    {
+        "Key": "DivinePowerPer",
+        "Text": {
+            "Korea": "신성력",
+            "English": "Divine Power",
+            "ChineseCh": "神力",
+            "ChineseTh": "神聖力",
+            "Japanese": "聖力"
+        }
+    },
+    {
+        "Key": "DivinePowerFinPer",
+        "Text": {
+            "Korea": "DivinePowerFinPer",
+            "ChineseTh": "DivinePowerFinPer"
+        }
+    },
+    {
+        "Key": "DivinePowerPerM",
+        "Text": {
+            "Korea": "신성력 감소",
+            "English": "Divine Power Reduce",
+            "ChineseCh": "神力减少",
+            "ChineseTh": "神聖力減少",
+            "Japanese": "聖力ダウン"
+        }
+    },
+    {
+        "Key": "DivinePowerFinPerM",
+        "Text": {
+            "Korea": "DivinePowerFinPerM",
+            "ChineseTh": "DivinePowerFinPerM"
+        }
+    },
+    {
+        "Key": "DivinePowerExplain",
+        "Text": {
+            "Korea": "별의 윤회에서 [공격력 / 방어력 / 생명력] 이 고정값으로 증가합니다.",
+            "English": "[Attack/Defense/HP] increase in fixed value within Star Reincarnation.",
+            "ChineseCh": "在星辰轮回中，【攻击力/防御力/生命值】以固定数值提升。",
+            "ChineseTh": "在星辰輪迴中增加固定數值的[攻擊力/防禦力/生命力]。",
+            "Japanese": "星の輪廻では[攻撃力 / 防御力 / 生命力]が固定値でアップする。"
+        }
+    },
+    {
+        "Key": "DivinePowerPerExplain",
+        "Text": {
+            "Korea": "별의 윤회에서 [공격력 / 방어력 / 생명력] 이 %으로 증가합니다.",
+            "English": "[Attack/Defense/HP] increased by {0}% value within Star Reincarnation.",
+            "ChineseCh": "在星辰轮回中，【攻击力/防御力/生命值】以%数值提升。",
+            "ChineseTh": "在星辰輪迴中增加[攻擊力/防禦力/生命力]%。",
+            "Japanese": "星の輪廻では[攻撃力 / 防御力 / 生命力]が%でアップする。"
+        }
+    },
+    {
+        "Key": "ActorCountEnemy",
+        "Text": {
+            "Korea": "대상이 {0}명 이상이면 대상당 {1}%의 추가피해를 줍니다.",
+            "English": "If there are {0} or more targets, inflict {1}% additional damage.",
+            "ChineseCh": "当目标单位达到{0}名或以上时，对每个目标单位额外造成{1}%的伤害。",
+            "ChineseTh": "目標超過{0}人時，對每個目標造成{1}%的傷害。",
+            "Japanese": "対象が{0}人以上の場合、1人につき{1}%の追加ダメージを与える。"
+        }
+    },
+    {
+        "Key": "ActorCountEnemyFix",
+        "Text": {
+            "Korea": "대상이 {0}명 이상이면 {1}%의 추가피해를 줍니다.",
+            "English": "If there are {0} or more targets, {1}% additional damage.",
+            "ChineseCh": "当目标单位达到{0}名或以上时，造成{1}%的额外伤害。",
+            "ChineseTh": "目標超過{0}人時，造成{1}%的傷害。",
+            "Japanese": "対象が{0}人以上の場合、{1}%の追加ダメージを与える。"
+        }
+    },
+    {
+        "Key": "BuffChangeStance",
+        "Text": {
+            "Korea": "스킬이 전환됩니다.",
+            "English": "Skill will change.",
+            "ChineseCh": "技能切换。",
+            "ChineseTh": "技能已轉換。",
+            "Japanese": "スキルが切り替わります。"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeUltimate",
+        "Text": {
+            "Korea": "궁극기의 남아 있는 재사용 시간을 {0} 초로 변경합니다.",
+            "English": "Sets the remaining cooldown of the Ultimate to {0}s.",
+            "ChineseCh": "将终极技能的剩余冷却时间更改为{0}秒。",
+            "ChineseTh": "終極技的剩餘冷卻時間變更為{0}秒。",
+            "Japanese": "必殺技の残りクールタイムを{0}秒に変更します"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeAddUltimate",
+        "Text": {
+            "Korea": "궁극기의 남아 있는 재사용 시간을 {0}초 증가시킵니다.",
+            "English": "Increases the remaining cooldown of the Ultimate by {0}s.",
+            "ChineseCh": "将终极技能的剩余冷却时间增加为{0}秒。",
+            "ChineseTh": "終極技的剩餘冷卻時間增加{0}秒。",
+            "Japanese": "必殺技の残りクールタイムを{0}秒にアップします"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeSubUltimate",
+        "Text": {
+            "Korea": "궁극기의 남아 있는 재사용 시간을 {0}초 감소시킵니다.",
+            "English": "Reduces the remaining cooldown of the Ultimate by {0}s.",
+            "ChineseCh": "将终极技能的剩余冷却时间减少为{0}秒。",
+            "ChineseTh": "終極技的剩餘冷卻時間減少{0}秒。",
+            "Japanese": "必殺技の残りクールタイムを{0}秒にダウンします"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeUA",
+        "Text": {
+            "Korea": "궁극기와 액티브 스킬의 남아 있는 재사용 시간을 {0} 초로 변경합니다.",
+            "English": "Sets the remaining cooldown of the Ultimate and Active Skill to {0}s.",
+            "ChineseCh": "将终极技能和主动技能的剩余冷却时间更改为{0}秒。",
+            "ChineseTh": "終極技和主動技能的剩餘冷卻時間減少{0}秒。",
+            "Japanese": "必殺技とアクティブスキルの残りクールタイムを{0}秒に変更します"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeAddUA",
+        "Text": {
+            "Korea": "궁극기와 액티브 스킬의 남아 있는 재사용 시간을 {0}초 증가시킵니다.",
+            "English": "Increases the remaining cooldown of the Ultimate and Active Skill by {0}s.",
+            "ChineseCh": "将终极技能和主动技能的剩余冷却时间增加为{0}秒。",
+            "ChineseTh": "終極技和主動技能的剩餘冷卻時間減少{0}秒。",
+            "Japanese": "必殺技とアクティブスキルの残りクールタイムを{0}秒にアップします"
+        }
+    },
+    {
+        "Key": "ActorChangeCoolTimeSubUA",
+        "Text": {
+            "Korea": "궁극기와 액티브 스킬의 남아 있는 재사용 시간을 {0}초 감소시킵니다.",
+            "English": "Reduces the remaining cooldown of the Ultimate and Active Skill by {0}s.",
+            "ChineseCh": "将终极技能和主动技能的剩余冷却时间减少为{0}秒。",
+            "ChineseTh": "終極技和主動技能的剩餘冷卻時間減少{0}秒。",
+            "Japanese": "必殺技とアクティブスキルの残りクールタイムを{0}秒にダウンします"
+        }
+    },
+    {
+        "Key": "CoolTimeReduceFinPerM",
+        "Text": {
+            "Korea": "궁극기 쿨타임 감소",
+            "English": "Ultimate Cooldown Reduction",
+            "ChineseCh": "终极技能冷却时间缩减",
+            "ChineseTh": "終極技冷卻時間減少",
+            "Japanese": "必殺技クールタイム短縮"
+        }
+    },
+    {
+        "Key": "CoolTimeReduceFinPer",
+        "Text": {
+            "Korea": "궁극기 쿨타임 증가",
+            "English": "Ultimate Cooldown Increase",
+            "ChineseCh": "终极技能冷却时间增加",
+            "ChineseTh": "終極技冷卻時間增加",
+            "Japanese": "必殺技クールタイム延長"
+        }
+    },
+    {
+        "Key": "ElementTargetType",
+        "Text": {
+            "Korea": "중 {0} 속성",
+            "English": "{0} Attribute",
+            "ChineseCh": "中{0}属性",
+            "ChineseTh": "中{0}屬性",
+            "Japanese": "中{0}属性"
+        }
+    },
+    {
+        "Key": "PositionTargetType",
+        "Text": {
+            "Korea": "중 {0} 속성",
+            "English": "{0} Attribute",
+            "ChineseCh": "中{0}属性",
+            "ChineseTh": "中{0}屬性",
+            "Japanese": "中{0}属性"
+        }
+    },
+    {
+        "Key": "ActorEquipmentMasteryAll",
+        "Text": {
+            "Korea": "장비 메인 옵션의 효율이 {0}% 증가합니다.",
+            "English": "Increases the effectiveness of the main equipment stats by {0}%.",
+            "ChineseCh": "装备核心词条的效率提升{0}%。",
+            "ChineseTh": "裝備的主功能效率增加{0}%。",
+            "Japanese": "装備のメインオプション効率が{0}%アップします"
+        }
+    },
+    {
+        "Key": "ActorEquipmentMasteryMinusAll",
+        "Text": {
+            "Korea": "장비 메인 옵션의 효율이 {0}% 감소합니다.",
+            "English": "Reduces the effectiveness of the main equipment stats by {0}%.",
+            "ChineseCh": "装备核心词条的效率减少{0}%。",
+            "ChineseTh": "裝備的主功能效率減少{0}%。",
+            "Japanese": "装備のメインオプション効率が{0}%ダウンします"
+        }
+    },
+    {
+        "Key": "ActorCheckMyBuffStateSub",
+        "Text": {
+            "Korea": "나에게 상태이상({0})이 걸리면 받는 피해가 {1}%감소 합니다.",
+            "English": "When afflicted with {0}, damage taken is reduced by {1}%.",
+            "ChineseCh": "当我方陷入状态异常({0})时，受到的伤害降低{1}%。",
+            "ChineseTh": "我受到狀態異常({0})攻擊時，受到的傷害減少{1}%。",
+            "Japanese": "自分に状態異常({0})が付与されている間、被ダメージが{1}%ダウンします"
+        }
+    },
+    {
+        "Key": "BuffAccumMaxDamageStun",
+        "Text": {
+            "Korea": "모든 횟수가 차감되면 {0}초간 {1}에 걸립니다."
+        }
+    }
+]

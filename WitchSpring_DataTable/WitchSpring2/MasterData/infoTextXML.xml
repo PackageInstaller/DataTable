@@ -1,0 +1,498 @@
+<ItemList>
+  <Item infoTextID="0" infoText="공격 대상을 터치해주세요." />
+  <Item infoTextID="1" infoText="주력 슬롯" />
+  <Item infoTextID="2" infoText="일반 슬롯" />
+  <Item infoTextID="3" infoText="보조 슬롯" />
+  <Item infoTextID="4" infoText="공격력" />
+  <Item infoTextID="5" infoText="속성" />
+  <Item infoTextID="6" infoText="소모마나" />
+  <Item infoTextID="7" infoText="화염" />
+  <Item infoTextID="8" infoText="빙결" />
+  <Item infoTextID="9" infoText="전격" />
+  <Item infoTextID="13" infoText="마나가 부족합니다!" />
+  <Item infoTextID="14" infoText="날카로운 얼음기둥을 소환하는 마법. 강력하지만 소모마나가 크다." />
+  <Item infoTextID="15" infoText="아이템/마법 합성하기" />
+  <Item infoTextID="16" infoText="합성 가능한 목록" />
+  <Item infoTextID="17" infoText="합성 가능한 목록이 없습니다.nn마법 레시피를 수집해 보세요~!" />
+  <Item infoTextID="18" infoText="합성할 개수 : " />
+  <Item infoTextID="19" infoText="합성하기" />
+  <Item infoTextID="20" infoText="마법진 조합하기" />
+  <Item infoTextID="21" infoText="초기화" />
+  <Item infoTextID="22" infoText="가지고 있는 증폭 마법진이 없습니다." />
+  <Item infoTextID="23" infoText="가지고 있는 정신집중 마법진이 없습니다." />
+  <Item infoTextID="24" infoText="중앙 마법진 목록" />
+  <Item infoTextID="25" infoText="증폭 마법진 목록" />
+  <Item infoTextID="26" infoText="정신집중 마법진 목록" />
+  <Item infoTextID="27" infoText="주력슬롯" />
+  <Item infoTextID="28" infoText="일반슬롯" />
+  <Item infoTextID="29" infoText="보조슬롯" />
+  <Item infoTextID="30" infoText="확인" />
+  <Item infoTextID="31" infoText="선택된 마법진은 이미 #slot에서 사용중입니다." />
+  <Item infoTextID="32" infoText="빈 슬롯" />
+  <Item infoTextID="33" infoText="현재 슬롯에 장착된 마법문양이 없습니다. 아래 마법문양을 선택해서 마법을 슬롯에 장착해 주세요." />
+  <Item infoTextID="34" infoText="&lt;color=&quot;#cccc&quot;&gt;" />
+  <Item infoTextID="35" infoText="합성을 위한 마법재료가 부족해요!" />
+  <Item infoTextID="36" infoText="한 번에 최대 9개까지만 합성할 수 있어요!" />
+  <Item infoTextID="37" infoText="잠을 잘까요?" />
+  <Item infoTextID="38" infoText="예" />
+  <Item infoTextID="39" infoText="아니오" />
+  <Item infoTextID="40" infoText="자주 쓰는 소지품" />
+  <Item infoTextID="41" infoText="모든 소지품" />
+  <Item infoTextID="42" infoText="소지품 목록" />
+  <Item infoTextID="43" infoText="바로사용 모드" />
+  <Item infoTextID="44" infoText="가지고 있는 소지품이 없습니다!" />
+  <Item infoTextID="45" infoText="자주 쓰는 소지품으로 설정된 목록이 없습니다." />
+  <Item infoTextID="46" infoText="사용" />
+  <Item infoTextID="47" infoText="자주 사용하는 소지품 목록에서 해제됐어요!" />
+  <Item infoTextID="48" infoText="소지 개수 : #num" />
+  <Item infoTextID="49" infoText="자주 쓰는 소지품 목록으로 설정 완료!" />
+  <Item infoTextID="50" infoText="아래 문을 터치해서 아지트 밖으로 나가보세요!" />
+  <Item infoTextID="51" infoText="밖으로 나갈까요?" />
+  <Item infoTextID="52" infoText="뭔가를 발견했습니다. 자세히 살펴볼까요?" />
+  <Item infoTextID="53" infoText="수영을 할까요? 체력이 기본적으로 최대 체력의 3%(최소3,최대50)가 상승하며, 최대 체력의 40%가 필요합니다." />
+  <Item infoTextID="54" infoText="나무치기를 하면 민첩이 1, 힘이 1, 체력이 2만큼 상승하며, 최대 체력의 40%가 필요합니다. 나무치기를 할까요?" />
+  <Item infoTextID="55" infoText="보관함을 열어서 방금 만든 루아렛을 먹어보세요!" />
+  <Item infoTextID="56" infoText="밖으로 나가면 운동을 할 수 있습니다." />
+  <Item infoTextID="57" infoText="집으로 돌아가서 침대를 눌러보세요!" />
+  <Item infoTextID="58" infoText="위협이 느껴집니다. 상대와 전투를 시작할까요?" />
+  <Item infoTextID="59" infoText="마법재료를 모아 3구 화염기둥 마법진을 합성해 보세요!" />
+  <Item infoTextID="60" infoText="마법진 제작에 필요한 재료는 마법항아리를 눌러 확인할 수 있습니다." />
+  <Item infoTextID="61" infoText="새 애완동물을 사용합니다." />
+  <Item infoTextID="62" infoText="바다에서 탑승 가능한 애완동물을 선택해 주세요!" />
+  <Item infoTextID="63" infoText="새 애완동물을 얻었습니다! 지금 사용할까요?" />
+  <Item infoTextID="64" infoText="현재는 사용할 수 없는 마법입니다!" />
+  <Item infoTextID="65" infoText="위협이 느껴집니다! 하지만 수영 중일 때는 전투를 할 수 없습니다!" />
+  <Item infoTextID="66" infoText="사용 중이던 애완동물은 켄츠산 서남쪽으로 보냈습니다!" />
+  <Item infoTextID="67" infoText="순간이동 할 장소를 선택해 주세요." />
+  <Item infoTextID="68" infoText="이동하지 않음" />
+  <Item infoTextID="69" infoText="제1 장n루나의 홀로서기" />
+  <Item infoTextID="70" infoText="제2 장n상처받은 마녀" />
+  <Item infoTextID="71" infoText="제3 장n얼음마녀" />
+  <Item infoTextID="72" infoText="제4 장n엔카운터" />
+  <Item infoTextID="73" infoText="제5 장n루나의 친구들" />
+  <Item infoTextID="74" infoText="마력이 상승했습니다!" />
+  <Item infoTextID="75" infoText="히스토리" />
+  <Item infoTextID="76" infoText="도마뱀은 이제 보기만 해도 토나올 것 같아!nn오늘은 토끼.. 토끼고기가 먹고 싶어!nn밖에서 토끼고기 하나랑 루아잎 두 개만 모으면 요리를 할 수 있겠어!" />
+  <Item infoTextID="77" infoText="집 내부의 우측 하단에 있는 문 모양을 터치하면 집 밖으로 나갈 수 있습니다." />
+  <Item infoTextID="78" infoText="마법항아리를 터치하면 모은 재료로 새 아이템을 합성할 수 있습니다." />
+  <Item infoTextID="79" infoText="집 안에서 보관함을 터치하면 보유한 아이템을 사용할 수 있습니다." />
+  <Item infoTextID="80" infoText="집 근처에서 특정 구조물을 터치하면 수련을 할 수 있습니다." />
+  <Item infoTextID="81" infoText="집에서 침대를 터치하면 잘 수 있습니다. 잠을 잔 후엔 체력과 마나가 모두 회복됩니다." />
+  <Item infoTextID="82" infoText="마법합성에 필요한 재료 목록은 마법항아리를 터치하거나, 필드에서는 메뉴를 호출하여 확인할 수 있습니다." />
+  <Item infoTextID="83" infoText="체력이 부족합니다!" />
+  <Item infoTextID="84" infoText="최대 체력이 #power만큼 올랐습니다!" />
+  <Item infoTextID="85" infoText="마력이 #power만큼 상승했습니다!" />
+  <Item infoTextID="86" infoText="최대 마나가 #power만큼 올랐습니다!" />
+  <Item infoTextID="87" infoText="힘이 #power만큼 상승했습니다!" />
+  <Item infoTextID="88" infoText="방어가 #power만큼 상승했습니다!" />
+  <Item infoTextID="89" infoText="민첩이 #power만큼 상승했습니다!" />
+  <Item infoTextID="90" infoText="토끼고기 하나, 루아잎 두 장을 모아와서 루아렛으로 합성해 보세요!nn합성재료는 항아리를 누르면 다시 확인할 수 있습니다." />
+  <Item infoTextID="91" infoText="현재 표시할 수 있는 정보가 없습니다. 우측 상단 옵션 버튼을 확인해 주세요!" />
+  <Item infoTextID="92" infoText="달이 가장 밝은 날 켄츠산 정상에서 미셸과 만나기로 약속했어. 예전에 그닥 친한 건 아니었지만 이럴 때일 수록 서로 더 의지하는 게 좋을 것 같아!" />
+  <Item infoTextID="93" infoText="필드에서 메뉴를 호출하거나 집으로 가면 화면에 시계가 나타납니다. 시계가 9시 방향을 가리킬 때 잠을 자거나 장소를 이동하면 달이 가장 밝은 밤이 되며, 루나가 더 강해집니다." />
+  <Item infoTextID="94" infoText="체력" />
+  <Item infoTextID="95" infoText="마나" />
+  <Item infoTextID="96" infoText="마력" />
+  <Item infoTextID="97" infoText="힘" />
+  <Item infoTextID="98" infoText="민첩" />
+  <Item infoTextID="99" infoText="방어" />
+  <Item infoTextID="100" infoText="루나의 상태" />
+  <Item infoTextID="101" infoText="마법도감" />
+  <Item infoTextID="102" infoText="마법방어" />
+  <Item infoTextID="103" infoText="물리방어" />
+  <Item infoTextID="104" infoText="전투도감" />
+  <Item infoTextID="105" infoText="전투 관련 정보가 없습니다. 전투를 하면 정보가 업데이트 됩니다!" />
+  <Item infoTextID="106" infoText="마법석판 1개, 유황가루 3개, 마른 나뭇잎 두 장을 모아 기초 화염 마법진을 합성해 보세요! 필요한 재료의 정보는 항아리를 터치하거나, 밖에서는 마법도감을 열어 확인할 수 있습니다." />
+  <Item infoTextID="107" infoText="루아렛 합성 성공! 합성한 아이템은 루나의 성장에 큰 도움이 돼요~!" />
+  <Item infoTextID="108" infoText="골드 획득!" />
+  <Item infoTextID="109" infoText="골드" />
+  <Item infoTextID="110" infoText="비어 있는 슬롯입니다!" />
+  <Item infoTextID="111" infoText="아루아님의 샘이 반응한 걸 보면 아직 샘이 완전히 오염된 게 아니야! 샘은 분명 신들의 힘에 의해 움직인다고 들었어." />
+  <Item infoTextID="112" infoText="이 정보를 꼭 미셸에게 전해 줘야지! 미셸도 샘이 반응했다는 소식을 들으면 기뻐할 거야!" />
+  <Item infoTextID="113" infoText="체력이 #power만큼 회복됐어요!" />
+  <Item infoTextID="114" infoText="마나가 #power만큼 회복됐어요!" />
+  <Item infoTextID="115" infoText="체력이 이미 가득 차 있어요!" />
+  <Item infoTextID="116" infoText="마나가 이미 가득 차 있어요!" />
+  <Item infoTextID="117" infoText="아이템이 없습니다!" />
+  <Item infoTextID="118" infoText="&lt;획득가능지역&gt;" />
+  <Item infoTextID="119" infoText="현재 사용 가능한 아이템이 아닙니다!" />
+  <Item infoTextID="120" infoText="현재 가지고 있는 애완동물이 없습니다." />
+  <Item infoTextID="121" infoText="애완동물 목록" />
+  <Item infoTextID="122" infoText="선택" />
+  <Item infoTextID="123" infoText="닫기" />
+  <Item infoTextID="124" infoText="이미 선택한 애완동물입니다!" />
+  <Item infoTextID="125" infoText="애완동물을 소환했습니다!" />
+  <Item infoTextID="126" infoText="주력슬롯의 마법진은 마법효과가 20% 증폭됩니다.nn일반슬롯의 마법진은 마법효과가 10% 증폭되며 소모마나는 10% 감소합니다.nn보조슬롯의 마법진은 소모마나가 20% 감소합니다." />
+  <Item infoTextID="127" infoText=" 증폭됨" />
+  <Item infoTextID="128" infoText="장착" />
+  <Item infoTextID="129" infoText="체력회복" />
+  <Item infoTextID="130" infoText="치유량 : " />
+  <Item infoTextID="131" infoText="공격력 : " />
+  <Item infoTextID="132" infoText="일반 공격마법" />
+  <Item infoTextID="133" infoText="마법효과 증폭" />
+  <Item infoTextID="134" infoText="효과:" />
+  <Item infoTextID="135" infoText="소모마나 감소" />
+  <Item infoTextID="136" infoText="해제" />
+  <Item infoTextID="137" infoText="중앙 마법진은 슬롯에서 가장 나중에 해제 가능합니다. 우측 초기화 버튼을 누르거나 다른 마법진을 먼저 해제해 주세요!" />
+  <Item infoTextID="138" infoText="바위치기를 할까요? 힘이 2, 방어가 1 상승하며 최대 체력의 40%가 필요합니다." />
+  <Item infoTextID="139" infoText="푸쉬업을 할까요? 힘이 2 상승하며 최대 체력의 20%가 필요합니다." />
+  <Item infoTextID="140" infoText="지붕명상을 시작할까요?  마력이 1, 마나가 3 만큼 상승하며 최대 체력의 20%가 소모됩니다." />
+  <Item infoTextID="141" infoText="마법연습을 시작할까요? 마력이 2, 마나가 최대 마나의 1%(최소3, 최대50) 만큼 상승하며 최대 마나의 40%가 필요합니다." />
+  <Item infoTextID="142" infoText="폭포명상을 시작할까요? 마력이 1, 마나가 최소 3 이상, 최대 마나의 5%(최소 3, 최대 50)가 상승하며 최대 체력의 50%가 필요합니다." />
+  <Item infoTextID="143" infoText="마력 반영 : " />
+  <Item infoTextID="144" infoText="마법도감 창을 닫고 밖으로 나가 마법재료를 수집해 보세요!" />
+  <Item infoTextID="145" infoText="달이 가장 밝게 빛나는 시간이 다가왔습니다.nn하룻밤을 자면 달이 가장 밝은 밤이 됩니다.nn이 때 루나의 마력은 30% 추가 효과를 얻습니다." />
+  <Item infoTextID="146" infoText="에임하드님 신전은 동쪽에 있어. 일단 남쪽으로 설원을 빠져나가야 갈 수 있는데... 에임하드 신전은 바벨리아 왕국이랑 머니까 용사들이 없을 지도?" />
+  <Item infoTextID="147" infoText="달이 가장 밝게 빛나는 밤입니다. 루나의 마력은 30% 추가 효과를 얻습니다." />
+  <Item infoTextID="148" infoText="절벽에 매달린 인간을 구할까요?" />
+  <Item infoTextID="149" infoText="살려 줬는데 자꾸 왜 이러는 거야?" />
+  <Item infoTextID="150" infoText="골드를 내 놔. 목숨만은 살려줄게." />
+  <Item infoTextID="151" infoText="그만 좀 해. 아무 짓도 안 할 거라니까?" />
+  <Item infoTextID="152" infoText="저 인간들 지금 위험한가 보지?" />
+  <Item infoTextID="153" infoText="구해주면 뭐라도 보답하지 않을까?" />
+  <Item infoTextID="154" infoText="인간은 은혜를 몰라. 그리고 귀찮은 건 싫어!" />
+  <Item infoTextID="155" infoText="로빈을 어떻게 할까요?" />
+  <Item infoTextID="156" infoText="당장 달려가 후려친다." />
+  <Item infoTextID="157" infoText="체념하고 집으로 간다." />
+  <Item infoTextID="158" infoText="루나는 파이베리에게 기초 빙결마법을 알려주었습니다." />
+  <Item infoTextID="159" infoText="마녀의 샘2" />
+  <Item infoTextID="160" infoText="새로운 이야기" />
+  <Item infoTextID="161" infoText="일기장 읽기" />
+  <Item infoTextID="162" infoText="이어하기" />
+  <Item infoTextID="163" infoText="일기장 기록하기" />
+  <Item infoTextID="164" infoText="제1 장n루나의 홀로서기" />
+  <Item infoTextID="165" infoText="제2 장n상처받은 마녀" />
+  <Item infoTextID="166" infoText="제3 장n얼어붙은 심장" />
+  <Item infoTextID="167" infoText="제4 장n검은마녀" />
+  <Item infoTextID="168" infoText="제5 장n루나의 친구들" />
+  <Item infoTextID="169" infoText="빈 줄" />
+  <Item infoTextID="170" infoText="해당 줄은 비어있어서 불러올 수 없습니다." />
+  <Item infoTextID="171" infoText="#num번 줄의 기록을 지울까요?" />
+  <Item infoTextID="172" infoText="#num번 줄에 현재를 기록할까요?" />
+  <Item infoTextID="173" infoText="#num번 줄에 현재를 기록했습니다!" />
+  <Item infoTextID="174" infoText="일기장으로 할 일을 선택해 주세요!" />
+  <Item infoTextID="175" infoText="현재를 기록" />
+  <Item infoTextID="176" infoText="읽어오기" />
+  <Item infoTextID="177" infoText="플레이 시간:" />
+  <Item infoTextID="178" infoText="장소:" />
+  <Item infoTextID="179" infoText="#num번 줄의 기록을 불러올까요?" />
+  <Item infoTextID="180" infoText="상인과의 거래" />
+  <Item infoTextID="181" infoText="구입" />
+  <Item infoTextID="182" infoText="소지품 처분" />
+  <Item infoTextID="183" infoText="다음 물건을 구입하시겠습니까?nnnn&lt;#itemName&gt;" />
+  <Item infoTextID="184" infoText="팔기" />
+  <Item infoTextID="185" infoText="골드 가격 : " />
+  <Item infoTextID="186" infoText="구입 개수 : #num, 총 골드 가격 : #gold" />
+  <Item infoTextID="187" infoText="취소" />
+  <Item infoTextID="188" infoText="물건을 구매했습니다!" />
+  <Item infoTextID="189" infoText="가지고 있는 골드가 부족합니다!" />
+  <Item infoTextID="190" infoText="상인과 어떤 거래를 하시겠습니까?" />
+  <Item infoTextID="191" infoText="물건을 구입한다." />
+  <Item infoTextID="192" infoText="소지품을 판다." />
+  <Item infoTextID="193" infoText="다음 소지품을 팔겠습니까?nnnn&lt;#itemName&gt;" />
+  <Item infoTextID="194" infoText="판매 개수 : #num, 총 골드 가격 : #gold" />
+  <Item infoTextID="195" infoText="팔기" />
+  <Item infoTextID="196" infoText="판매를 완료했습니다!" />
+  <Item infoTextID="197" infoText="소지 개수 : #num" />
+  <Item infoTextID="198" infoText="위기에 빠진 상인을 도울까요?" />
+  <Item infoTextID="199" infoText="도적들을 해치운다." />
+  <Item infoTextID="200" infoText="도적들이 사라질 때까지 기다린다." />
+  <Item infoTextID="201" infoText="이제부터 전투 시 특정 순간마다 난쟁이 대포의 지원사격을 받게 됩니다." />
+  <Item infoTextID="202" infoText="켄츠산 도인에게 무술을 배우겠습니까?" />
+  <Item infoTextID="203" infoText="무기를 교체했습니다!" />
+  <Item infoTextID="204" infoText="지하수로로 내려가겠습니까?" />
+  <Item infoTextID="205" infoText="한 번 성을 나가면 밤에만 다시 올 수 있습니다. 다시 성으로 돌아올 땐 캔츠산 서남쪽 연못길을 따라오면 됩니다. 집으로 워프를 시작할까요?" />
+  <Item infoTextID="206" infoText="가상 조이스틱 이동" />
+  <Item infoTextID="207" infoText="필드터치 이동" />
+  <Item infoTextID="208" infoText="이동모드를 가상 조이스틱으로 설정했습니다!" />
+  <Item infoTextID="209" infoText="이동모드를 필드터치로 설정했습니다!" />
+  <Item infoTextID="210" infoText="필드를 터치하면 루나가 이동합니다. 옵션을 통해 가상 조이스틱으로도 이동할 수 있습니다." />
+  <Item infoTextID="211" infoText="자동저장된 최근 시간을 불러옵니다." />
+  <Item infoTextID="212" infoText="게임 설정" />
+  <Item infoTextID="213" infoText="배경음악 켜짐" />
+  <Item infoTextID="214" infoText="배경음악 꺼짐" />
+  <Item infoTextID="215" infoText="효과음 켜짐" />
+  <Item infoTextID="216" infoText="효과음 꺼짐" />
+  <Item infoTextID="217" infoText="배경음악을 켰습니다." />
+  <Item infoTextID="218" infoText="배경음악을 껐습니다." />
+  <Item infoTextID="219" infoText="효과음을 켰습니다." />
+  <Item infoTextID="220" infoText="효과음을 껐습니다." />
+  <Item infoTextID="221" infoText="물길을 따라 마을로 갈까요? 현재 낮이면 밤까지 기다렸다가 가게 됩니다." />
+  <Item infoTextID="222" infoText="여기서는 침낭을 사용할 수 없습니다!" />
+  <Item infoTextID="223" infoText="타이틀 화면으로 갈까요? 저장하지 않은 데이터는 사라집니다!" />
+  <Item infoTextID="224" infoText="타이틀 화면으로" />
+  <Item infoTextID="225" infoText="새로운 마법합성 레시피를 획득했습니다!" />
+  <Item infoTextID="226" infoText="판매 가능한 소지품이 아닙니다!" />
+  <Item infoTextID="227" infoText="도구" />
+  <Item infoTextID="228" infoText="화염마법" />
+  <Item infoTextID="229" infoText="전격마법" />
+  <Item infoTextID="230" infoText="빙결마법" />
+  <Item infoTextID="231" infoText="보조마법" />
+  <Item infoTextID="232" infoText="체력과 마나가 모두 회복되었습니다!" />
+  <Item infoTextID="233" infoText="마법도감에 새로운 화염마법 레시피가 추가되었습니다!" />
+  <Item infoTextID="234" infoText="마법도감에 새로운 전격마법 레시피가 추가되었습니다!" />
+  <Item infoTextID="235" infoText="마법도감에 새로운 빙결마법 레시피가 추가되었습니다!" />
+  <Item infoTextID="236" infoText="마법도감에 새로운 도구제작 레시피가 추가되었습니다!" />
+  <Item infoTextID="237" infoText="마법도감에 새로운 도구 레시피가 추가되었습니다!" />
+  <Item infoTextID="238" infoText="이제 필드를 마음껏 돌아다녀 보세요!" />
+  <Item infoTextID="239" infoText="여기 아지트는 마을이랑 가까워서 숨어만 살면 언젠가 잡힐 거야. 위험하지만 그래도 밖을 돌아다니면서 강해져야 나중에 용사들을 만나도 생존할 수 있어!" />
+  <Item infoTextID="240" infoText="현재는 도망칠 수 없습니다!" />
+  <Item infoTextID="241" infoText="타이틀 화면으로" />
+  <Item infoTextID="242" infoText="자동저장 시점에서 재시작" />
+  <Item infoTextID="243" infoText="전투에서 패배했습니다! 시간을 되돌릴까요?" />
+  <Item infoTextID="244" infoText="달이 가장 빛나는 밤이 되었습니다. 루나의 마법공격이 30% 강화됩니다." />
+  <Item infoTextID="245" infoText="날이 밝았습니다!" />
+  <Item infoTextID="246" infoText="아직 샘이 회복됐는지 확인되지 않은 샘은 아루아님 샘이랑 듀락님 샘이야. 분명 둘 중 한곳에 아라무트님이 계실 거야!" />
+  <Item infoTextID="247" infoText="방금 잡은 애완동물을 켄츠산 서남쪽으로 전송했습니다!" />
+  <Item infoTextID="248" infoText="아루아님 섬으로 출발! 켄츠동굴 서쪽에 좁은 통로가 있는데 어렸을 땐 자주 드나들었는데... 지금은 갈 수 있을까?" />
+  <Item infoTextID="249" infoText="듀락님 신전은 바위언덕 동쪽으로 쭉 올라가면 나올 거야. 용사들이 없었으면 좋겠는데..." />
+  <Item infoTextID="250" infoText="선택한 애완동물은 수영을 할 수 없습니다!" />
+  <Item infoTextID="251" infoText="이미 사용 중인 장비입니다!" />
+  <Item infoTextID="252" infoText="마녀의 샘2 데모버전을 플레이 해주셔서 감사합니다!nn확인을 누르시면 타이틀 화면으로 이동합니다!" />
+  <Item infoTextID="253" infoText="이제부터 전투 후 상승하는 능력치가 두 배로 증가합니다!" />
+  <Item infoTextID="254" infoText="이미 추가된 마법도감입니다!" />
+  <Item infoTextID="255" infoText="가지고 있는 정화된 마력의 돌을 난쟁이에게 줄까요?" />
+  <Item infoTextID="256" infoText="가디언이 애완동물 목록에 추가되었습니다!" />
+  <Item infoTextID="257" infoText="난쟁이족 대포 지원!" />
+  <Item infoTextID="258" infoText="수련 속도 보통" />
+  <Item infoTextID="259" infoText="수련 속도 빠름" />
+  <Item infoTextID="260" infoText="수련 이벤트 속도를 2배속으로 빨리 진행합니다." />
+  <Item infoTextID="261" infoText="수련 이벤트 속도를 원래대로 진행합니다." />
+  <Item infoTextID="262" infoText="이제부터 전투 시 특정 순간마다 난쟁이족의 대포 지원을 받을 수 있습니다. 난쟁이대포는 전투시간이 지속될수록 배로 강해집니다." />
+  <Item infoTextID="263" infoText="이제 아라무트님을 만나러 가 볼까? 달이 가장 밝게 빛나는 밤에 켄츠산 정상에서 뵙기로 했어. 감시 때문에 활동이 제한된다고 하시던데 이번에 나오실 수 있을까...?" />
+  <Item infoTextID="264" infoText="애완동물 목록에 블랙조가 추가되었습니다!" />
+  <Item infoTextID="265" infoText="이제부터 블랙조를 애완동물로 소환할 수 있습니다. 단, 블랙조는 파이베리의 시중을 들기 때문에 소환이 제한되는 경우가 있습니다." />
+  <Item infoTextID="266" infoText="현재는 블랙조를 소환할 수 없습니다!" />
+  <Item infoTextID="267" infoText="파이베리의 호출로 블랙조가 사라졌습니다." />
+  <Item infoTextID="268" infoText="인간들이 검은 마력의 돌로 누크 변종을 만들었나 봐. 이 변종이 누크들을 공격한다는데... 내가 도와줘야 겠어!" />
+  <Item infoTextID="269" infoText="변종 퇴치 완료! 블랙조 말로는 언젠가 이 누크들이 도움을 줄거라는데...?" />
+  <Item infoTextID="270" infoText="위기에 빠진 인간들을 도울까요?" />
+  <Item infoTextID="271" infoText="교황이 정말 나쁜 놈이었어. 근데 국왕도 신족들을 좋아했다니... 이건 정말 의외인 걸? 인간이라고 다 똑같은 건 아니었나봐." />
+  <Item infoTextID="272" infoText="어둠의 상회는 암거래 전문인 것 같아. 왕궁일원증을 용사에게서 뺏어 오라는데...?" />
+  <Item infoTextID="273" infoText="붉은 수염과의 첫 거래 완료! 뭐.. 나쁘지 않은 걸?" />
+  <Item infoTextID="274" infoText="붉은 수염이 크라레이츠 잎을 구해오라고 하네? 이거 크라레이츠를 잡는 게 좋을까 아님 크레이츠 잎들을 합성하는게 좋을까...?" />
+  <Item infoTextID="275" infoText="블리츠라는 전기물고기의 알을 구해오기로 했어. 알에서 뿜어져 나오는 전기에너지는 희귀한 동력원이라고 하던데... 블리츠는 서쪽 해안에서 잡을 수 있어!" />
+  <Item infoTextID="276" infoText="블리츠의 알주머니 거래 완료! 잡느라고 옷 다 젖었어...!" />
+  <Item infoTextID="277" infoText="검은 마력의 돌을 구해오라고 하는데... 그러려면 신전 근처에 돌아다니는 어둠의 용사를 잡아야 해. 아마 엘리시온님 신전이나 에임하드님 신전 근처에 있을 거야." />
+  <Item infoTextID="278" infoText="천사의 눈을 난쟁이들에게 주었습니다." />
+  <Item infoTextID="279" infoText="검은 마력의 돌 의뢰 완료!" />
+  <Item infoTextID="280" infoText="얼어붙은 검은 마력의 돌? 과거 얼음동굴에서 한창 채굴을 많이 했다고 하는데 얼음동굴에서 구할 수 있을 거야." />
+  <Item infoTextID="281" infoText="얼어붙은 검은 마력의 돌 의뢰 완료!" />
+  <Item infoTextID="282" infoText="네시의 빛나는 네 개의 눈은 엄청 비싼 보석 재료야. 얻으려면 서쪽 해안에서 고생 좀 해야겠는 걸? 하아... 근데 이거 마을상점에 팔아도 최소 이 만 골드는 받을 수 있는데... 쳇!" />
+  <Item infoTextID="283" infoText="네시의 빛나는 네 개의 눈 의뢰 완료!" />
+  <Item infoTextID="284" infoText="켄츠스톤은 생명력이 넘치는 돌이야. 이걸로 누가 치료의자를 만들 것 같다고 하네? 아마 그 거대한 켄츠에게 도전하는 건 내가 최초일지도...? 켄츠는 켄츠산 정상에 있어." />
+  <Item infoTextID="285" infoText="켄츠스톤 의뢰 완료!" />
+  <Item infoTextID="286" infoText="커다란 검은 마력의 돌을 가진 암흑골렘은 엘리시온 평원의 붉은 바위산 골렘굴에 있어. 근데 이 돌은 구하는 녀석들의 정체는 도대체 뭐지?" />
+  <Item infoTextID="287" infoText="커다란 검은 마력의 돌 의뢰 완료!" />
+  <Item infoTextID="288" infoText="이번에도 골드는 두둑하네! 얼음거인! 기다려!" />
+  <Item infoTextID="289" infoText="얼음거인의 머리 의뢰 완료!" />
+  <Item infoTextID="290" infoText="드래곤이랑 맞대결을 하라니... 내가 무슨 병기인 줄 알아! 우우.. 그래도 골드는 넉넉히 챙겨주니까 눈 딱 감고 가겠어. 지르코니아 드래곤은 드래곤벨리에 살고 있다고 들었는데..." />
+  <Item infoTextID="291" infoText="지르코니아 드래곤의 알 의뢰 완료.. 아.. 사기당했어... 짜증나...!!" />
+  <Item infoTextID="292" infoText="라이트닝 드래곤...? 이놈들이 해도 해도 너무하네! 골드도 사기친 주제에 이런 부탁까지!" />
+  <Item infoTextID="293" infoText="라이트닝 드래곤의 뿔 의뢰 완료! 골드도 두둑히 완료!" />
+  <Item infoTextID="294" infoText="다신 어둠의 상회랑 거래 안 할 거야! 끝까지 속이려 들고... 흥!" />
+  <Item infoTextID="295" infoText="명성이 #power만큼 상승했습니다!" />
+  <Item infoTextID="296" infoText="명성이 #power만큼 하락했습니다!" />
+  <Item infoTextID="297" infoText="명성" />
+  <Item infoTextID="298" infoText="새로운 치유마법 레시피가 추가되었습니다!" />
+  <Item infoTextID="299" infoText="라라크마을 주민에게 들개 퇴치 의뢰를 받았어. 아마 들개들이 라라크나무 주변을 서성이는 것 같아. 빠르게 처리하고 파이베리를 보러 가야지." />
+  <Item infoTextID="300" infoText="들개퇴치 완료! 이제 파이베리를 만나러 가자! 상인의 길 남쪽에 있는 검은 마녀의 숲 어딘가에 있을 거야." />
+  <Item infoTextID="301" infoText="판다쿰과 대련할까요? 판다쿰을 쓰러뜨리면 모든 기본 능력치가 5%씩 상승합니다. 참고로 판다쿰은 쓰러뜨릴 수록 다음 번엔 더 강력해집니다." />
+  <Item infoTextID="302" infoText="얼음동굴에 봉인되어 있는 얼음마녀를 깨워달라고 쿰 사부에게 부탁받았어. 거기엔 얼음 정령이 지키고 있다고 하던데..." />
+  <Item infoTextID="303" infoText="판다쿰으로부터 '마력 재활용'을 전수받았습니다. 이제부터는 공격마법으로 사용한 마력을 일반공격을 할 때 재활용 할 수 있습니다. 일반공격 시에는 바로 직전에 사용했던 마법 파워의 50%만큼의 피해를 줄 수 있습니다. 사용 효과는 점점 줄어들며 연속공격 시 효과가 좋습니다." />
+  <Item infoTextID="304" infoText="일기장 제목은 최소 한 글자 이상 입력해주세요!" />
+  <Item infoTextID="305" infoText="일기장 제목에는 특수문자 사용이 제한됩니다." />
+  <Item infoTextID="306" infoText="일기장 제목은 최대 24글자까지 가능합니다!" />
+  <Item infoTextID="307" infoText="애완동물-체력이 낮은 적 우선 공격" />
+  <Item infoTextID="308" infoText="애완동물-체력이 높은 적 우선 공격" />
+  <Item infoTextID="309" infoText="애완동물이 체력이 가장 낮은 적을 우선 공격하도록 설정했습니다." />
+  <Item infoTextID="310" infoText="애완동물이 체력이 가장 높은 적을 우선 공격하도록 설정했습니다." />
+  <Item infoTextID="311" infoText="검은 고양이에게 미트볼을 주었습니다." />
+  <Item infoTextID="312" infoText="아라무트님께 엄마에 대해 정말 많은 얘기를 들었어. 그래서인지 엄마를 처음 만났을 때 익숙했고... 나랑 닮은 모습이 은근히 귀엽고 편했어. 엄마가 빨리 스스로 봉인을 풀고 나오셨으면...!" />
+  <Item infoTextID="313" infoText="무슨 일이지, 마녀? 거래라도 하시게?" />
+  <Item infoTextID="314" infoText="최고레벨의 화염, 전격, 보조마법과 맑은 정령석 레시피가 추가되었습니다!" />
+  <Item infoTextID="315" infoText="현재 장소 : " />
+  <Item infoTextID="316" infoText="할퀴기" />
+  <Item infoTextID="317" infoText="얼음비" />
+  <Item infoTextID="318" infoText="오버힐" />
+  <Item infoTextID="319" infoText="힐링힐링링" />
+  <Item infoTextID="320" infoText="주인보호" />
+  <Item infoTextID="321" infoText="굳건한 의지" />
+  <Item infoTextID="322" infoText="각성" />
+  <Item infoTextID="323" infoText="거대화" />
+  <Item infoTextID="324" infoText="묵직한 펀치" />
+  <Item infoTextID="325" infoText="매운 불꽃꽃" />
+  <Item infoTextID="326" infoText="치유" />
+  <Item infoTextID="327" infoText="보호막" />
+  <Item infoTextID="328" infoText="누적 보호막" />
+  <Item infoTextID="329" infoText="강하게 물어뜯기" />
+  <Item infoTextID="330" infoText="민첩한 공격" />
+  <Item infoTextID="331" infoText="흡혈" />
+  <Item infoTextID="332" infoText="4구 화염석" />
+  <Item infoTextID="333" infoText="5구 지점폭발" />
+  <Item infoTextID="334" infoText="7구 운석 압축" />
+  <Item infoTextID="335" infoText="nn마법효과 20% 증폭" />
+  <Item infoTextID="336" infoText="nn마법효과 10% 증폭, 소모마나 10% 감소" />
+  <Item infoTextID="337" infoText="nn소모마나 20% 감소" />
+  <Item infoTextID="338" infoText="다음 달이 가장 밝은 날에 미셸과 또 만나기로 했어. 좀 별로인 애지만 그래도 의지는 되는 것 같아." />
+  <Item infoTextID="339" infoText="잠자기" />
+  <Item infoTextID="340" infoText="순간이동" />
+  <Item infoTextID="341" infoText="외출하기" />
+  <Item infoTextID="342" infoText="아이템 보관함" />
+  <Item infoTextID="343" infoText="달이 가장 밝은 날 밤에 로빈을 만나기로 했어. 아무래도 달빛의 힘을 받아야 도망가기도 수월하니까.... 만나면 엘리시온님 신전으로 가는 길 좀 부탁해야지!" />
+  <Item infoTextID="344" infoText="엘리시온님 신전은 서쪽에 있어. 바벨리로드를 거쳐서 가야 해서 너무 위험하지만... 잘 숨어가면 되지 않을까?" />
+  <Item infoTextID="345" infoText="로빈... 여렸을 때부터 그렇게 용사가 되고 싶다더니 진짜 용사가 됐어! 못 본 사이에 키도 많이 컸어. 좀 멋있어 졌... 아니야. 그래봤자 약골이겠지. 내가 지켜주려면 달빛이 힘을 주는 달밤에 만나야 겠어. 조만간 근무장소가 바벨리로드로 고정된다던데 곧 다시 만날 수 있겠지?" />
+  <Item infoTextID="346" infoText="아, 로빈을 만나서 깜빡할 뻔했네. 에임하드님 신전으로! (너무 반가웠나...?)" />
+  <Item infoTextID="347" infoText="몸통 박치기" />
+  <Item infoTextID="348" infoText="북쪽:설원 , 서쪽:바벨리로드nn동쪽:상인의 길,라라크마을,에임하드 신전" />
+  <Item infoTextID="349" infoText="서쪽:바벨리로드" />
+  <Item infoTextID="350" infoText="동쪽:상인의 길" />
+  <Item infoTextID="351" infoText="북쪽:바벨리아 마을,  남쪽:엘리시온 언덕nn동쪽:멧돼지 평원" />
+  <Item infoTextID="352" infoText="북쪽:에임하드 신전nn서쪽:바벨리로드, 동쪽:라라크마을" />
+  <Item infoTextID="353" infoText="&lt;라라크숲&gt;nn동쪽:라라크마을" />
+  <Item infoTextID="354" infoText="&lt;절대 접근금지&gt;nn나이트메어 봉인지역" />
+  <Item infoTextID="355" infoText="라라크마을" />
+  <Item infoTextID="356" infoText="서쪽:라라크다리nn남쪽:라라크 열매 채집가능 지역" />
+  <Item infoTextID="357" infoText="월석에 마력이 가득 담겼습니다! 다음 물리/마법 공격효과는 2배가 됩니다." />
+  <Item infoTextID="358" infoText="파이베리는 황금갑옷 입은 용사에 대해 알고 있지 않을까? 검은 마녀의 숲에 살고 있다고...?" />
+  <Item infoTextID="359" infoText="'블루'가 애완동물 목록에 추가되었습니다!" />
+  <Item infoTextID="360" infoText="신성한 기운" />
+  <Item infoTextID="361" infoText="성장의 검" />
+  <Item infoTextID="362" infoText="저스티스의 검을 정화하는 방법이 레시피로 추가되었습니다!" />
+  <Item infoTextID="363" infoText="&lt;#slot&gt;nn사용중" />
+  <Item infoTextID="364" infoText="아슬란이 애완동물 목록에 추가되었습니다!" />
+  <Item infoTextID="365" infoText="마력공격" />
+  <Item infoTextID="366" infoText="크고 강한 이빨" />
+  <Item infoTextID="367" infoText="루카가 루나의 애완동물이 되었습니다!" />
+  <Item infoTextID="368" infoText="같이 골렘을 잡자고? 흥, 내가 그렇게 한가해 보이나? 흥, 갈 것 같아? 흥, 흐응..." />
+  <Item infoTextID="369" infoText="다음 달이 가장 밝은 날 밤에 로빈이 엘리시온 신전으로 갈 수 있도록 준비한다고 했어. 용사 친구가 있는게 이렇게 좋을 줄이야...!" />
+  <Item infoTextID="370" infoText="알려지지 않음" />
+  <Item infoTextID="371" infoText="동굴표시" />
+  <Item infoTextID="372" infoText="일반지역 표시" />
+  <Item infoTextID="373" infoText="신전표시" />
+  <Item infoTextID="374" infoText="단단한 머리 박치기" />
+  <Item infoTextID="375" infoText="행동을 취소했습니다." />
+  <Item infoTextID="376" infoText="무기제련 도감을 참고하여 새로운 무기 레시피를 추가했습니다!" />
+  <Item infoTextID="377" infoText="불타는 심장의 마지막 타격 데미지가 30% 상승했습니다!" />
+  <Item infoTextID="378" infoText="최고레벨 빙결마법과 진월석 지팡이 레시피가 추가되었습니다!" />
+  <Item infoTextID="379" infoText="제목입력(옵션)" />
+  <Item infoTextID="380" infoText="화염마법 합성 완료! 성장했어!" />
+  <Item infoTextID="381" infoText="애완동물 해제하기" />
+  <Item infoTextID="382" infoText="로빈... 넌 내 인생 최악의 인간이야. 가만두지 않을 거야.... 그리고 엘리시온님 신전으로 바로 갈 거야. 용사들 따위 다 쳐부술 거야...!! 지도에 보면 엘리시온님 신전은 바벨리로드 바로 아래에 있어." />
+  <Item infoTextID="383" infoText="마법/전투 가이드" />
+  <Item infoTextID="384" infoText="[ 월석충전 ]nnnn루나가 마법을 사용할 때마다 월석 마력이 충전됩니다. 월석이 끝까지 충전되면 밝게 빛나면서 다음 물리/마법 공격은 무조건 두 배가 되며, 공격 이후에는 충전이 초기화됩니다. 충전량은 소비한 마나가 최대 마나량에 가까울수록 더 커집니다." />
+  <Item infoTextID="385" infoText="[ 달빛마녀 ]nnnn루나가 지닌 월석은 달밤에 더 많은 빛을 내게 됩니다. 달이 가장 밝은 날 밤에는 시계가 9시 방향을 가리키며, 루나는 밝게 빛나는 월석의 도움을 받아 마법효과를 30% 증폭시킬 수 있습니다." />
+  <Item infoTextID="386" infoText="[ 마법슬롯 ]nnnn마법을 장착할 수 있는 슬롯은 총 세 가지가 있습니다. 첫 번째 슬롯인 주력슬롯은 마법효과가 20% 증폭됩니다.nn두 번째 슬롯인 일반슬롯은 마법효과가 10% 증폭되고 소모마나가 10% 감소합니다.nn마지막으로 보조슬롯은 소모마나가 20% 감소합니다." />
+  <Item infoTextID="387" infoText="[ 슬롯조합 ]nnnn마법진에는 크게 세가지 종류가 있습니다. 가장 중심이 되는 중앙 마법진은 마법의 종류와 속성, 기본 파워를 결정합니다.nn 중앙 마법진을 감싸는 증폭 마법진은 장착하면 소모마나가 약간 증가하지만 중앙 마법진의 마법 효과를 증폭시킵니다.nn마지막으로 가장 바깥쪽에 장착되는 정신집중 마법진은 전체 마나 소모량을 줄여줍니다." />
+  <Item infoTextID="388" infoText="[ 속성효과 ]nnnn마법을 사용하면 마법 효과가 적 체력 게이지에 표시됩니다. %는 마법효과의 파워를, 녹색 숫자는 남은 적용 횟수를 의미합니다. 화염 마법은 사용한 자리에 불길을 남겨 적에게 지속적으로 피해를 줍니다. 불길의 피해량은 마력에 비례합니다. 전격 마법은 마나 소모량과 데미지가 가장 높으며 사용한 자리에 전기장을 남겨 적의 물리/마법 방어력을 모두 떨어뜨립니다. 빙결마법은 데미지는 다소 낮지만 마나소모가 가장 적으며 사용한 자리에 빙결효과를 남겨 적의 민첩을 떨어뜨립니다. " />
+  <Item infoTextID="389" infoText="샘이 하나 둘씩 계속 회복되고 있어. 분명 누군가가 회복시키고 있는 게 분명해...! 혹시 아까 본 황금색 갑옷을 입은 용사.... 아라무트님이 아닐까? 바벨리로드 로드쪽으로 갔어!" />
+  <Item infoTextID="390" infoText="황금색 갑옷을 입은 용사... 어떻게 좀 알 수 있는 방법이 없을까?" />
+  <Item infoTextID="391" infoText="로그인" />
+  <Item infoTextID="392" infoText="로그아웃" />
+  <Item infoTextID="393" infoText="구글 플레이 게임 서비스에서 로그아웃했습니다!" />
+  <Item infoTextID="394" infoText="로그아웃에 실패했습니다. 다시 시도해주세요!" />
+  <Item infoTextID="395" infoText="업적" />
+  <Item infoTextID="396" infoText="일기장 백업" />
+  <Item infoTextID="397" infoText="구글 플레이 게임 서비스에 로그인했습니다!" />
+  <Item infoTextID="398" infoText="구글 플레이 서비스에 로그인되어 있지 않습니다. 로그인 할까요?" />
+  <Item infoTextID="399" infoText="일기장 클라우드 백업에 실패했습니다. 다시 시도해 주세요!" />
+  <Item infoTextID="400" infoText="일기장 클라우드 백업이 완료되었습니다!" />
+  <Item infoTextID="401" infoText="클라우드 백업 파일 읽기에 실패했습니다. 다시 시도해 주세요!" />
+  <Item infoTextID="402" infoText="현재 일기장을 클라우드로 백업하기" />
+  <Item infoTextID="403" infoText="클라우드의 일기장을 읽어오기" />
+  <Item infoTextID="404" infoText="일기장을 클라우드에서 읽어왔습니다!" />
+  <Item infoTextID="405" infoText="해당 계정으로 클라우드에 저장된 일기장이 없습니다!" />
+  <Item infoTextID="406" infoText="애완동물의 정신지배를 잠시 풀었습니다.nn필드메뉴를 통해 언제든지 애완동물을 다시 사용할 수 있습니다." />
+  <Item infoTextID="407" infoText="&lt; 최대 연속공격 횟수 &gt;nn이 횟수가 2이상이면, 턴이 올 때마다 물리공격시 무기를 휘두르는 횟수가 최대 연속공격 횟수까지 증가합니다. 최대 연속공격 횟수는 특정 퀘스트를 통해 상승시킬 수 있으며 6이 최대치입니다. 현재 최대 연속공격 횟수는 #num입니다." />
+  <Item infoTextID="408" infoText="현재 사용중인 애완동물이 없습니다!" />
+  <Item infoTextID="409" infoText="&lt; 마력 재활용 &gt;nn마법공격 후 물리공격을 시도하면, 직전에 사용한 마법 피해량의 약 절반 만큼을 물리공격에 추가로 반영합니다." />
+  <Item infoTextID="410" infoText="(특정 퀘스트를 통해 익힐 수 있습니다.)" />
+  <Item infoTextID="411" infoText="&lt; 포격 지원 &gt;nn초대형 몬스터와 전투할 경우 일정 시간마다 난쟁이족의 강력한 포격 지원을 받을 수 있습니다. 포격 피해량은 턴이 갈수록 증가합니다." />
+  <Item infoTextID="412" infoText="&lt;달이 가장 밝은 날 밤&gt;nn달이 가장 밝은 날 밤이 되면 월석 또한 가장 밝게 빛납니다.nn이 때 루나의 모든 마법공격 위력은 30% 증가합니다." />
+  <Item infoTextID="413" infoText="(현재 활성화 됨)" />
+  <Item infoTextID="414" infoText="필드메뉴 버튼" />
+  <Item infoTextID="415" infoText="집가기 버튼" />
+  <Item infoTextID="416" infoText="&lt; 아이템 사용하기 &gt;nn토끼고기는 켄츠산에서 늘 얻을 수 있는 체력회복 아이템입니다. 체력이 떨어지면 필드메뉴에 있는 도구 아이콘을 눌러 토끼고기를 사용해 보세요. 체력을 회복할 수 있습니다!" />
+  <Item infoTextID="417" infoText="&lt; 마법재료 확인하기 &gt;nn모아야 할 마법재료가 생각나지 않을 때 필드메뉴에 있는 마법도감 아이콘을 누르면 합성에 필요한 재료들을 확인할 수 있습니다!" />
+  <Item infoTextID="418" infoText="&lt; 애완동물 소환/보내기 &gt;nn애완동물은 필드에서 언제든지 해제가 가능합니다. 물론 언제든지 다시 소환할 수 있습니다. 필드메뉴의 애완동물 버튼을 자주 활용해 보세요!" />
+  <Item infoTextID="419" infoText="잠시만 기다려 주세요...!" />
+  <Item infoTextID="420" infoText="해당 슬롯에는 중앙 마법진이 없습니다. 중앙 마법진부터 장착해주세요!" />
+  <Item infoTextID="421" infoText="마법효과 증폭(#power%)" />
+  <Item infoTextID="422" infoText="소모마나 감소(#power%)" />
+  <Item infoTextID="423" infoText="크라레이츠잎 의뢰 완료!" />
+  <Item infoTextID="424" infoText="멀리서 묵직한 진동이 느껴졌습니다." />
+  <Item infoTextID="425" infoText="아라무트님..! 제가 힘이 될게요! 켄츠산 정상에서 다시 만날때 까지 엄청 수련할 거예요!" />
+  <Item infoTextID="426" infoText="나도 모르게 좋아해 버렸어! 부끄러워! 우우....!!" />
+  <Item infoTextID="427" infoText="현재 기기에 저장된 일기장 내용이 없습니다." />
+  <Item infoTextID="428" infoText="일기장 클라우드 백업" />
+  <Item infoTextID="429" infoText="현재 기기에 있는 일기장 파일들은 모두 초기화되고 클라우드에 백업된 일기장 파일로 대체됩니다. 이 작업은 취소되지 않습니다. 계속 진행할까요?" />
+  <Item infoTextID="430" infoText="맘 독하게 먹어야 하는데 파이베리 때문에 요즘 느슨해 진 것 같아. 아라무트님을 다시 만날 때까지 마력을 키워야겠어. 오랜만에 켄츠산으로 가 볼까? (오랜만에 아지트도 볼 겸...)" />
+  <Item infoTextID="431" infoText="로빈이 많이 피곤해 보였어. 달리는 나뭇잎을 구해다 주면 좋을 것 같지만 난 여자친구가 아니니까 신경 꺼도 되겠지? 바벨리아 북쪽 언덕에서 구할 수 있지만 분명 귀찮을 거야!" />
+  <Item infoTextID="432" infoText="날 잡으려고... 그나마 추억으로 남아 있던 아지트까지 온 거야? 그렇게까지 용사로 인정받고 싶었어? 정말 넌 그런 놈이었어!?" />
+  <Item infoTextID="433" infoText="달리는 나뭇잎을 얻었어! 이야아아아아~~~~!!" />
+  <Item infoTextID="434" infoText="구글 계정으로 로그인되지 않았습니다! 네트워크 상태를 확인해주세요!" />
+  <Item infoTextID="435" infoText="쥬드!! 어떻게 아라무트님의 신관이었던 네가 이럴 수 있어!? 게다가 신족들을 모두 마녀로 몰다니!!" />
+  <Item infoTextID="436" infoText="로빈을..... 로빈을 이렇게 만들다니...........  절대 용서 못해...... 절대!!! 교황.....!! 그리고 쥬드!!!" />
+  <Item infoTextID="437" infoText="집으로 순간이동한 후에는 켄츠산 아지트 앞에 있는 물길을 통해 다시 감옥으로 돌아올 수 있습니다. 단, 집으로 워프한 후 다시 감옥으로 돌아오면 또 다시 집으로 워프할 수 있는 기회는 없습니다." />
+  <Item infoTextID="438" infoText="로빈을 공격한다." />
+  <Item infoTextID="439" infoText="아무것도 하지 않는다." />
+  <Item infoTextID="440" infoText="어떤 선택을 하시겠습니까?" />
+  <Item infoTextID="441" infoText="게임을 종료할까요?" />
+  <Item infoTextID="442" infoText="현재 로그인 되어 있지 않습니다." />
+  <Item infoTextID="443" infoText="마녀의 샘2는 유료게임입니다. 이 게임의 모든 저작권은 키위웍스에 있으며 본사의 허락 없이 무단 복제/배포/전송 또는 불법다운로드의 행위는 일절 허락되지 않습니다." />
+  <Item infoTextID="444" infoText="이를 어기고 불법 복제/배포/전송 또는 불법다운로드의 행위를 할 경우&#xD;&#xA;미성년자라도 형사처벌 절차를 밟게 되며, 이와 함께 민사 소송을 진행하여 손해배상 청구를 합니다. 성인의 경우 형사처벌 절차를 진행하여 무거운 법적 처벌을 받게 됩니다. 저작권법상 5년 이하의 징역 또는 5천만원 이하의 벌금형에 처해집니다." />
+  <Item infoTextID="445" infoText="스토리형 싱글 RPG는 국내에서는 불법배포/다운로드로 인해 이제는 거의 나오지 않는, 정말 어렵게 만들어지고 있는 멸종 위기에 처한 장르입니다. 상업성만을 추구한 양산형 게임이 아닌, 작품성을 추구하는 게임이 지속적으로 만들어질 수 있도록 유저 분들의 정품 플레이와 많은 응원 부탁드립니다." />
+  <Item infoTextID="446" infoText="상기 내용을 확인했습니다." />
+  <Item infoTextID="447" infoText="상기 내용을 확인했습니다." />
+  <Item infoTextID="448" infoText="정품 플레이를 하겠습니다." />
+  <Item infoTextID="449" infoText="마녀의 샘2 저작권 관련 내용에 동의하셨습니다." />
+  <Item infoTextID="450" infoText="불법 배포/복제금지 내용에 동의하셨습니다." />
+  <Item infoTextID="451" infoText="감사합니다!nn게임에 변함없는 애정과 정성 담은 모습 꾸준히 보여드리겠습니다!" />
+  <Item infoTextID="452" infoText="루나는 기본적으로 마법공격에 특화되어 있습니다.nn먼저 마법으로 용사를 공격해 볼까요?" />
+  <Item infoTextID="453" infoText="채력이 가장 낮은 적부터 공격해 보겠습니다!" />
+  <Item infoTextID="454" infoText="잘 하셨어요! 같은 방법으로 나머지 용사를 공격해 보세요!" />
+  <Item infoTextID="455" infoText="마법사용으로 인해 월석이 가득 충전됐습니다. 모든 공격이 두 배가 됩니다! 마지막은 물리공격으로 마무리지어 볼까요?" />
+  <Item infoTextID="456" infoText="최대체력이 #power만큼 감소했습니다!" />
+  <Item infoTextID="457" infoText="최대마나가 #power만큼 감소했습니다!" />
+  <Item infoTextID="458" infoText="치유력" />
+  <Item infoTextID="459" infoText="노란 고양이에게 작은 생선을 주었습니다!" />
+  <Item infoTextID="460" infoText="하얀 고양이가 강아지풀을 좋아합니다!" />
+  <Item infoTextID="461" infoText="로그인이 되어 있습니다." />
+  <Item infoTextID="462" infoText="구글 플레이 서비스에 로그인되어 있지 않습니다. 업적을 달성하려면 로그인이 필요합니다." />
+  <Item infoTextID="463" infoText="라이센스 확인을 위해 구글 계정으로의 로그인이 필요합니다.nn구글 계정으로 로그인할까요?" />
+  <Item infoTextID="464" infoText="라이센스 인증에 실패했습니다. 플레이 스토어에서 마녀의 샘2를 구매한 계정이 맞는지 확인 부탁드리며, 구매한 계정이 확실하다면 플레이 스토어 앱 정보에서 '캐시비우기' 후 게임을 다시 실행해주시기 바랍니다." />
+  <Item infoTextID="465" infoText="자동 저장된 최근 시점이 없습니다!" />
+  <Item infoTextID="466" infoText="이벤트 구간입니다. 이 장소에서는 애완동물을 교체할 수 없습니다." />
+  <Item infoTextID="467" infoText="이미 보유한 애완동물입니다!" />
+  <Item infoTextID="468" infoText="자주 쓰는 아이템 목록은 최대 5개까지 설정 가능해요!" />
+  <Item infoTextID="469" infoText="업적 업데이트" />
+  <Item infoTextID="470" infoText="체력은 활동에 가장 기본이 되는 능력치입니다. 체력을 소모하여 수련을 할 수 있으며, 전투 시 체력이 0이 되면 전투불능이 됩니다." />
+  <Item infoTextID="471" infoText="마나는 마법을 사용할 수 있는 정신 에너지를 의미합니다. 마법을 사용할 때마다 일정량의 마나가 소모됩니다." />
+  <Item infoTextID="472" infoText="마력은 마법의 파워를 의미합니다. 마력이 높을수록 공격마법 또는 회복마법의 수치가 상승합니다." />
+  <Item infoTextID="473" infoText="물리공격의 피해량은 힘에 비례합니다. 무기에 따라 물리공격 피해량에 반영되는 힘의 효과가 증가되기도 합니다." />
+  <Item infoTextID="474" infoText="민첩은 행동력을 의미합니다. 민첩이 높을수록 전투 시 턴이 빨리 돌아오거나 적에게 물리공격을 명중시킬 확률이 높아집니다. 단, 마법공격 명중 확률은 민첩의 영향을 받지 않습니다." />
+  <Item infoTextID="475" infoText="방어가 높을수록 받는 피해량이 감소합니다." />
+  <Item infoTextID="476" infoText="명성은 루나에 대한 인간들의 호감을 의미합니다. 높을 수록 엔딩에 변화를 줍니다." />
+  <Item infoTextID="477" infoText="일기장 기록을 참고하여 달성 업적 업데이트를 완료했습니다. 미 반영된 업적이 있으면 재시도 부탁드립니다:) 로빈과 미셸 업적의 경우 일기장에 저장하지 않고 게임을 지운 후 재설치 한 경우 업데이트에 반영되지 않습니다." />
+  <Item infoTextID="478" infoText="&lt;중요한 순간엔 꼭 저장을!&gt;nnnn집 안에서는 하단 UI 가운데에 있는 일기장 버튼을 누르면 현재 시간을 저장하거나 다른 시간을 불러올 수 있습니다. 밖에서는 침낭을 이용해 저장이 가능합니다." />
+  <Item infoTextID="479" infoText="일기장에 이미 프롤로그를 본 기록이 있습니다. 프롤로그를 생략할까요?" />
+  <Item infoTextID="480" infoText="HP" />
+  <Item infoTextID="481" infoText="MP" />
+  <Item infoTextID="482" infoText="프롤로그를 생략하고 새 이야기를 시작합니다." />
+  <Item infoTextID="483" infoText=" : BGM" />
+  <Item infoTextID="484" infoText="&lt; 루나의 앨범 &gt;" />
+  <Item infoTextID="485" infoText="현재 루나의 앨범에 담긴 삽화가 없습니다.nn게임을 진행하다 보면 삽화가 이 앨범에 수집됩니다." />
+  <Item infoTextID="486" infoText="의상을 갈아입습니다." />
+  <Item infoTextID="487" infoText="이미 착용하고 있는 의상입니다!" />
+  <Item infoTextID="488" infoText="새 마법 레시피가 추가되었습니다!" />
+  <Item infoTextID="489" infoText="일반마법" />
+  <Item infoTextID="490" infoText="외부 저장소에 대한 접근 권한을 거부하여 게임을 실행시킬 수 없습니다.nn설정 -&gt; WitchSpring2 앱 정보에서 저장소 권한을 허가해 주세요." />
+  <Item infoTextID="491" infoText="언어변경을 위해서는 게임을 재시작해야 합니다. 게임을 재시작할까요?"/>
+  <Item infoTextID="492" infoText="저장버튼"/>
+  <Item infoTextID="493" infoText="정보"/>
+  <Item infoTextID="494" infoText="퀘스트"/>
+  <Item infoTextID="495" infoText="진행정보"/>
+  <Item infoTextID="496" infoText="퀘스트 성공!"/>
+  <Item infoTextID="497" infoText="Be sure to turn on iCloud in Game Center Settings!"/>
+  <Item infoTextID="498" infoText="To access the Game Center, please sign in from the Game Center in your device settings!"/>
+</ItemList>

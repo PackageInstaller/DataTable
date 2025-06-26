@@ -1,0 +1,3 @@
+local Config = {Id=1006,Name="乾隆",AbDir="SsUnit/006_QianLong",NewRes=1,HandleBones={"Bone038"},UnitScale =1.44,CloseAtkOffset={1.5,0,-0.2},HitPosOffset={0,1.8792,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10061,TotalFrames=115,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={73}},Skl01={Name="Skl01",SkillEfxId=10062,TotalFrames=180,OnHit=0,OnCutIn=0,OnDamage={65,77,87,97,107},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10063,TotalFrames=430,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={358,378,398,420}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

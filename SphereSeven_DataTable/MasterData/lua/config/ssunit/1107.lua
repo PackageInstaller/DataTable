@@ -1,0 +1,3 @@
+local Config = {Id=1107,Name="狰狞兽化人女",AbDir="SsUnit/1052_TerribleOrcWoman",NewRes=0,HandleBones={"Bip001 Spine1"},UnitScale =0,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.1,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1099,TotalFrames=60,OnHit=0,OnCutIn=0,OnDamage={13,21,29},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1100,TotalFrames=155,OnHit=0,OnCutIn=0,OnDamage={40,80,86,92,108},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=1101,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={72},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

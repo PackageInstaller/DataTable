@@ -1,0 +1,74 @@
+{
+    "DoNotUseThis": [
+        {
+            "SeasonIndex": 1,
+            "OddNodeChanceList": [
+                {
+                    "Val": 55.0,
+                    "NodeType": "Battle"
+                },
+                {
+                    "Val": 20.0,
+                    "NodeType": "Card"
+                },
+                {
+                    "Val": 5.0,
+                    "NodeType": "Heal"
+                },
+                {
+                    "Val": 5.0,
+                    "NodeType": "Rebirth"
+                },
+                {
+                    "Val": 15.0,
+                    "NodeType": "Talk"
+                }
+            ],
+            "EvenNodeChanceList": [
+                {
+                    "Val": 25.0,
+                    "NodeType": "Card"
+                },
+                {
+                    "Val": 15.0,
+                    "NodeType": "Talk"
+                },
+                {
+                    "Val": 60.0,
+                    "NodeType": "Battle"
+                }
+            ],
+            "CardChanceList": [
+                {
+                    "Val": 15.0,
+                    "Rank": "Legend"
+                },
+                {
+                    "Val": 35.0,
+                    "Rank": "Hero"
+                },
+                {
+                    "Val": 50.0,
+                    "Rank": "Basic"
+                }
+            ],
+            "OddBattleChanceList": [
+                {
+                    "Val": 80.0,
+                    "BattleType": "Monster"
+                },
+                {
+                    "Val": 20.0,
+                    "BattleType": "Chest"
+                }
+            ],
+            "EvenBattleChanceList": [
+                {
+                    "Val": 100.0,
+                    "BattleType": "Minotauros"
+                }
+            ]
+        }
+    ],
+    "hash": "oX+cW7YG/+4u5GmwLzhr9DKh5emBHPJwCUTPyZvMjSg="
+}

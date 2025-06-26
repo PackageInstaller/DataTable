@@ -1,0 +1,3 @@
+local Config = {Id=1027,Name="扎尔",AbDir="SsUnit/027_ZhaEr",NewRes=1,HandleBones={"Dummy001","Bip001 R Hand"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.6632,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10271,TotalFrames=105,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={87}},Skl01={Name="Skl01",SkillEfxId=10272,TotalFrames=210,OnHit=0,OnCutIn=0,OnDamage={138},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=10273,TotalFrames=600,OnHit=0,OnCutIn=0,OnDamage={420,430,440,450,460},OnMissile={250}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=2,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

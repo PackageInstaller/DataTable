@@ -1,0 +1,3 @@
+local Config = {Id=1123,Name="虚空魔眼",AbDir="SsUnit/119_XuKongMoYan",NewRes=0,HandleBones={"Bone001"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1185,TotalFrames=40,OnHit=0,OnCutIn=0,OnDamage={},OnMissile={15}},Skl01={Name="Skl01",SkillEfxId=1186,TotalFrames=90,OnHit=0,OnCutIn=0,OnDamage={35,45,55},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

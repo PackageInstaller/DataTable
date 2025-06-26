@@ -1,0 +1,31 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
+-- Command line: -se UTF8 luacode/data/battledata/npcshapeanimationdata/mon_base_boss08shdow03.lua 
+
+-- params : ...
+-- function num : 0 , upvalues : _ENV
+return {
+Move = {endEventFrames = 1}
+, 
+Attack = {endEventFrames = 27}
+, 
+Magic = {endEventFrames = 52}
+, 
+Magic2 = {endEventFrames = 68}
+, 
+Attack2 = {endEventFrames = 60}
+, 
+Magic3 = {endEventFrames = 22}
+, 
+Magic4 = {endEventFrames = 63}
+, 
+LogicBattleEnd = {endEventFrames = 53}
+, 
+DeadDisappear = {endEventFrames = 105}
+, 
+Magic5 = {endEventFrames = 154}
+, 
+LogicBattleEnd = {endEventFrames = 53}
+, 
+DeadDisappear = {endEventFrames = 105}
+}
+

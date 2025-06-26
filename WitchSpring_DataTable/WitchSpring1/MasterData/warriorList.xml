@@ -1,0 +1,1475 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Contents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Content>
+		<id>warrior_0</id>
+		<hp>50</hp>
+		<def>0</def>
+		<power>2</power>
+		<agility>5</agility>
+		<outSound>pig_1</outSound>
+		<talkNum>11</talkNum>
+		<pat>ridingPat,usingBattle</pat>
+		<imageID>pat_warrior_0</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>멧돼지 주니어</name_kr>
+		<explain_kr>타고 다닐 수 있는 크기의 멧돼지. 전투시 사용하면 민첩성이 높아져서 공격차례가 더 빨리 돌아온다.</explain_kr>
+		<name_en>Wild Pig Junior</name_en>
+		<explain_en>Ridable well sized wild pig.  When using, quickness rises and attacking turn comes fast in the combat.</explain_en>
+		<name_jp>イノシシジュニア</name_jp>
+		<explain_jp>乗れるくらい大きさのイノシシ。戦闘時に使用すると敏捷性が高まり、攻撃ターンがより早く帰ってくる。</explain_jp>
+		<name_cn>小野猪</name_cn>
+		<explain_cn>可当坐骑的野猪。战斗中使用时，可提高敏捷，会很快获得攻击顺序。</explain_cn>
+		<name_tw>小野豬</name_tw>
+		<explain_tw>可當坐騎的野豬。戰鬥中使用時，可提高敏捷，會很快獲得攻擊順序。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_1</id>
+		<hp>83</hp>
+		<def>1</def>
+		<power>13</power>
+		<agility>5</agility>
+		<outSound>wrShout_1</outSound>
+		<talkNum>13</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_1</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>알프레도</name_kr>
+		<explain_kr>자존심만 넘치는 많이 모자란 용사. 자신의 존재감을 마을에 입증하기 위해 늘 마녀사냥을 다니며, 자신이 본 마녀는 자신이 잡기 위해 그 누구에게도 알리지 않는다.</explain_kr>
+		<name_en>Alfredo</name_en>
+		<explain_en>High pride but incapable. Always witch-hunt to get recognized from village. Doesn't share where the witch is.</explain_en>
+		<name_jp>アルフレド</name_jp>
+		<explain_jp>へたれ勇者。自分の存在感を見せるためにいつも魔女狩りに出る。自分が見た魔女は自分が捕まえるために、誰にも言わない。</explain_jp>
+		<name_cn>阿尔弗雷德</name_cn>
+		<explain_cn>只有自信没有能力的勇士。为了证明自身的存在感，一直到处去狩猎魔女，并为了独自立功，自己看到的魔女从不告诉别人。</explain_cn>
+		<name_tw>阿爾弗雷德</name_tw>
+		<explain_tw>只有自信沒有能力的勇士。為了證明自身的存在感，一直到處去狩獵魔女，並為了獨自立功，自己看到的魔女從不告訴別人。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_2</id>
+		<hp>50</hp>
+		<def>0</def>
+		<power>2</power>
+		<agility>20</agility>
+		<outSound>-</outSound>
+		<talkNum>43</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_2</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>블랙조</name_kr>
+		<explain_kr>말을 할 수 있는 까만 새. 매우 빨라서 민첩이 낮으면 때리기가 어렵다.</explain_kr>
+		<name_en>Black Joe</name_en>
+		<explain_en>Talkable black bird. So fast to hit.</explain_en>
+		<name_jp>ブラックジョー</name_jp>
+		<explain_jp>話せる黒い鳥。非常に速くて敏捷性が低いと捕まえられない。</explain_jp>
+		<name_cn>布莱克乔伊</name_cn>
+		<explain_cn>会讲话的黑鸟。速度特别快，故敏捷低的话，无法抓获。</explain_cn>
+		<name_tw>布萊克喬伊</name_tw>
+		<explain_tw>會講話的黑鳥。速度特別快，故敏捷低的話，無法抓獲。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_3</id>
+		<hp>120</hp>
+		<def>0</def>
+		<power>20</power>
+		<agility>10</agility>
+		<outSound>-</outSound>
+		<talkNum>59</talkNum>
+		<pat>pat,autoBattle</pat>
+		<imageID>pat_warrior_3</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>아슬란</name_kr>
+		<explain_kr>아루아 신전의 수호동물. 주인이 적을 공격할 때마다 적에게 주인의 힘과 마력을 합한 피해를 준다. 정신지배 마법으로는 애완동물 불가.</explain_kr>
+		<name_en>Aslan</name_en>
+		<explain_en>Arua's guardian animal in the temple.  Unites the power with the master whenever master attacks enemy. Hard to be a pet and can't control by Mental-rule magic.</explain_en>
+		<name_jp>アスラン</name_jp>
+		<explain_jp>アルア神殿の守護動物。主人が敵を攻撃するたびに、敵に、主人の力と魔力を合わせたダメージを与える。精神支配魔法ではペット不可。</explain_jp>
+		<name_cn>阿斯兰</name_cn>
+		<explain_cn>阿鲁阿神殿的守护动物。每当主人攻击敌人时，对敌人造成合并主人的力量和魔力的伤害。未具备人格，故无法用宠物来使唤。</explain_cn>
+		<name_tw>阿斯蘭</name_tw>
+		<explain_tw>阿魯阿神殿的守護動物。每當主人攻擊敵人時，對敵人造成合併主人的力量和魔力的傷害。未具備人格，故無法用寵物來使喚。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_4</id>
+		<hp>150</hp>
+		<def>0</def>
+		<power>5</power>
+		<agility>5</agility>
+		<outSound>-</outSound>
+		<talkNum>13</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_4</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>푸딩킹</name_kr>
+		<explain_kr>푸딩굴의 보스. 쓰러뜨리면 살려달라고 뭔가를 주는 비굴한 왕. 단, 습도가 딱인 푸딩굴을 벗어나면 말라죽기 때문에 애완동물로는 불가.</explain_kr>
+		<name_en>Pudding King</name_en>
+		<explain_en>Chief of Pudding cave. Show a servile attitude and give something whenever knocks down. Only could live inside humid cave and improper to be a pet because it dries up outside the cave.</explain_en>
+		<name_jp>プリンキング</name_jp>
+		<explain_jp>プリンの洞窟のボス。倒すと助けを求めながら何かを渡す卑屈な王。ただし、湿度が高いプリンの洞窟から離れると死ぬのでペット不可。</explain_jp>
+		<name_cn>布丁国王</name_cn>
+		<explain_cn>布丁洞之王。击倒的话，为了生存用东西来贿赂的卑微的王。但一离开洞窟就会枯死，故无法用于宠物。</explain_cn>
+		<name_tw>布丁國王</name_tw>
+		<explain_tw>布丁洞之王。擊倒的話，為了生存用東西來賄賂的卑微的王。但一離開洞窟就會枯死，故無法用於寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_5</id>
+		<hp>100</hp>
+		<def>0</def>
+		<power>5</power>
+		<agility>15</agility>
+		<outSound>-</outSound>
+		<talkNum>88</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_5</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>푸딩퀸</name_kr>
+		<explain_kr>푸딩킹의 아내. 푸딩킹과 같이 굴 밖에선 금방 말라죽기 때문에 애완동물로는 부적합.</explain_kr>
+		<name_en>Pudding Queen</name_en>
+		<explain_en>Wife of Pudding King. Improper to be a pet because it dries up outside the cave.</explain_en>
+		<name_jp>プリンクィーン</name_jp>
+		<explain_jp>プリンキングの妻。プリンキングのように洞窟の外ではすぐ死ぬのでペット不可。</explain_jp>
+		<name_cn>布丁皇后</name_cn>
+		<explain_cn>布丁国王的老婆。跟布丁国王一样，一离开洞窟就会枯死，故无法用于宠物。</explain_cn>
+		<name_tw>布丁皇后</name_tw>
+		<explain_tw>布丁國王的老婆。跟布丁國王一樣，一離開洞窟就會枯死，故無法用於寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_6</id>
+		<hp>90</hp>
+		<def>0</def>
+		<power>10</power>
+		<agility>7</agility>
+		<outSound>-</outSound>
+		<talkNum>92</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_6</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>검은푸딩</name_kr>
+		<explain_kr>먹을 수 없을 정도로 까맣게 오염된 위험한 푸딩. 그리고 다른 미니푸딩과는 다르게 공격적이다. 애완동물로는 너무 지저분함.</explain_kr>
+		<name_en>Black Pudding</name_en>
+		<explain_en>Contaminated black and inedible pudding. Very aggressive and dirty to be a pet.</explain_en>
+		<name_jp>黒いプリン</name_jp>
+		<explain_jp>食べられないほど黒く汚染された危険なプリン。そして、他のミニプリンとは違って攻撃的である。ペットにするには汚すぎる。</explain_jp>
+		<name_cn>黑布丁</name_cn>
+		<explain_cn>被污染而无法食用的漆黑的危险布丁。跟其他迷你布丁不同，具有攻击性。太脏，无法用于宠物。</explain_cn>
+		<name_tw>黑布丁</name_tw>
+		<explain_tw>被污染而無法食用的漆黑的危險布丁。跟其他迷你布丁不同，具有攻擊性。太髒，無法用於寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_7</id>
+		<hp>250</hp>
+		<def>5</def>
+		<power>12</power>
+		<agility>10</agility>
+		<outSound>-</outSound>
+		<talkNum>95</talkNum>
+		<pat>pat,noneBattle</pat>
+		<imageID>pat_warrior_7</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>불량토끼</name_kr>
+		<explain_kr>토끼굴을 통과하는 여행자들에게 돈을 뜯는 불량토끼. 애완동물로 만들면 골드 획득시 20% 추가획득. 전투능력은 따로 없다.</explain_kr>
+		<name_en>Wild Rabbit</name_en>
+		<explain_en>Extort money from travelers who passes rabbit cave. When making as a pet, could acquire 20% additional gain whenever obtains gold. Doesn't have combat capability.</explain_en>
+		<name_jp>不良ウサギ</name_jp>
+		<explain_jp>ウサギの巣を通る旅行者にお金をもらう不良ウサギ。ペットにすると、ゴールド獲得の時、20％の追加獲得。戦闘能力はない。</explain_jp>
+		<name_cn>不良小兔</name_cn>
+		<explain_cn>从路过兔子洞的旅行者身上敲诈钱财的不良小兔。用作宠物时，可获得20%的额外金币。无战斗能力。</explain_cn>
+		<name_tw>不良小兔</name_tw>
+		<explain_tw>從路過兔子洞的旅行者身上敲詐錢財的不良小兔。用作寵物時，可獲得20%的額外金幣。無戰鬥能力。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_8</id>
+		<hp>300</hp>
+		<def>10</def>
+		<power>10</power>
+		<agility>8</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_8</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>바위골렘</name_kr>
+		<explain_kr>과거 인간이 바위를 병기로 만들기 위해 인격을 부여하려 했으나 통제가 되지 않아 실패했다. 움직이지만 인격이 존재하지 않아 정신지배로 애완동물  만들기는 불가.</explain_kr>
+		<name_en>Rocky Golem</name_en>
+		<explain_en>In the past, humans wanted to put character in the rock to make as a weapon but failed by out of control. It can move but improper to be a pet because mental is out of control.</explain_en>
+		<name_jp>岩のゴーレム</name_jp>
+		<explain_jp>過去の人間が石を武器にするために人格を与えようとしたが、コントロールができなくて失敗した。動かないが人格が存在しないため、精神支配ではペットにできない。</explain_jp>
+		<name_cn>岩石石人</name_cn>
+		<explain_cn>过去人类为了用石头打造兵器，而欲赋予人格，但因无法控制而以失败告终。虽然可以动，但因未具备人格，故无法用宠物来使唤。</explain_cn>
+		<name_tw>岩石石人</name_tw>
+		<explain_tw>過去人類為了用石頭打造兵器，而欲賦予人格，但因無法控制而以失敗告終。雖然可以動，但因未具備人格，故無法用寵物來使喚。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_9</id>
+		<hp>250</hp>
+		<def>70</def>
+		<power>30</power>
+		<agility>9</agility>
+		<outSound>-</outSound>
+		<talkNum>250</talkNum>
+		<pat>pat,usingBattle</pat>
+		<imageID>pat_warrior_9</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>라이팅벨</name_kr>
+		<explain_kr>에임하드 신전의 수호 정령, 전투 중 사용하면 마나 30%를 소모하여 3번까지 주인 마력의 50%만큼 피해를 흡수하는 방어막을 형성한다. 평소에는 길을 밝혀주어 어두운 길도 다닐 수 있게  해준다.</explain_kr>
+		<name_en>Lightingbell</name_en>
+		<explain_en>Guarding spirt in Aimhard's temple. When using in the battle, it uses 30% of MP which constructs defense and lessens 50% damage for 3 times. Lights the dark path.</explain_en>
+		<name_jp>ライティングベル</name_jp>
+		<explain_jp>エイムハード神殿の守護精霊、戦闘中に使用するとマナ30％を消費して3回までのホストの馬力の50％ほどダメージを吸収するシールドを形成する。普段は道を明るくしてくれる。</explain_jp>
+		<name_cn>照明钟</name_cn>
+		<explain_cn>埃因哈德神殿守护精灵。战斗中使用时，消耗30%魔力，可形成吸收等同于主人魔力50%的屏障3次。平时照亮着马路，漆黑的路也可自由行走。</explain_cn>
+		<name_tw>照明鐘</name_tw>
+		<explain_tw>埃因哈德神殿守護精靈。戰鬥中使用時，消耗30%魔力，可形成吸收等同於主人魔力50%的屏障3次。平時照亮著馬路，漆黑的路也可自由行走。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_10</id>
+		<hp>400</hp>
+		<def>10</def>
+		<power>42</power>
+		<agility>12</agility>
+		<outSound>-</outSound>
+		<talkNum>176</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_10</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>저스티스</name_kr>
+		<explain_kr>정의감 넘치는 젊고 강한 용사. 과거 신족과의 전쟁 중 아버지를 잃은 아픔이 있어 마녀를 경멸한다.</explain_kr>
+		<name_en>Justice</name_en>
+		<explain_en>Full of justice, young and strong warrior. Dad died in the holy-tribe war in the past, so contempts the witch.</explain_en>
+		<name_jp>ジャスティス</name_jp>
+		<explain_jp>正義感あふれる若くて強い勇者。過去神族との戦争の中で父を失った痛みがあり、魔女を軽蔑する。</explain_jp>
+		<name_cn>贾斯蒂斯</name_cn>
+		<explain_cn>充满正义感的年轻又强力的勇士。过去在神族之战中有丧父之痛，故蔑视魔女。</explain_cn>
+		<name_tw>賈斯蒂斯</name_tw>
+		<explain_tw>充滿正義感的年輕又強力的勇士。過去在神族之戰中有喪父之痛，故蔑視魔女。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_11</id>
+		<hp>280</hp>
+		<def>5</def>
+		<power>17</power>
+		<agility>10</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_11</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>빅크랩</name_kr>
+		<explain_kr>아루아 섬 해변에 사는 엄청 커다란 게. 해변에서만 살 수 있어서 애완동물로는 불가.</explain_kr>
+		<name_en>Big Crab</name_en>
+		<explain_en>Biggest crab in Arua island beach. Improper to be a pet because it could only live in the beach.</explain_en>
+		<name_jp>ビッグタラバガニ</name_jp>
+		<explain_jp>アルア島の砂浜に住んでいる非常に大きいカニ。砂浜だけで住めるのでペット不可。</explain_jp>
+		<name_cn>巨蟹</name_cn>
+		<explain_cn>栖息在阿鲁阿岛屿海边的巨大无比的蟹。只能在海边生活，所以无法当成宠物。</explain_cn>
+		<name_tw>巨蟹</name_tw>
+		<explain_tw>棲息在阿魯阿島嶼海邊的巨大無比的蟹。只能在海邊生活，所以無法當成寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_12</id>
+		<hp>100</hp>
+		<def>2</def>
+		<power>10</power>
+		<agility>5</agility>
+		<outSound>wrShout_1</outSound>
+		<talkNum>13</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_1</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>다시 만난 알프레도</name_kr>
+		<explain_kr>푸딩굴에서 수련중인 알프레도. 자신의 존재감을 마을에 입증하기 위해 늘 마녀사냥을 다니며, 자신이 본 마녀는 자신이 잡기 위해 그 누구에게도 알리지 않는다.</explain_kr>
+		<name_en>Re-met Alfredo</name_en>
+		<explain_en>Alfredo training in the Pudding cave. Always witch-hunt to get recognized from village. Doesn't share where the witch is.</explain_en>
+		<name_jp>また出会ったアルフレド</name_jp>
+		<explain_jp>プリンの洞窟で修練中のアルフレド。へたれ勇者。自分の存在感を見せるためにいつも魔女狩りに出る。自分が見た魔女は自分が捕まえるために、誰にも言わない。</explain_jp>
+		<name_cn>再遇到的阿尔弗雷德</name_cn>
+		<explain_cn>在布丁洞修炼中的阿尔弗雷德。为了证明自身的存在感，一直到处去狩猎魔女，并为了独自立功，自己看到的魔女从不告诉别人。</explain_cn>
+		<name_tw>再遇到的阿爾弗雷德</name_tw>
+		<explain_tw>在布丁洞修煉中的阿爾弗雷德。為了證明自身的存在感，一直到處去狩獵魔女，並為了獨自立功，自己看到的魔女從不告訴別人。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_13</id>
+		<hp>125</hp>
+		<def>3</def>
+		<power>11</power>
+		<agility>7</agility>
+		<outSound>wrShout_1</outSound>
+		<talkNum>13</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_1</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>또 다시 만난 알프레도</name_kr>
+		<explain_kr>수련으로 약간 더 강해진 알프레도. 자신의 존재감을 마을에 입증하기 위해 늘 마녀사냥을 다니며, 자신이 본 마녀는 자신이 잡기 위해 그 누구에게도 알리지 않는다.</explain_kr>
+		<name_en>Re-re-met Alfredo</name_en>
+		<explain_en>Became a little strong by training. Always witch-hunt to get recognized from village. Doesn't share where the witch is.</explain_en>
+		<name_jp>またまた出会ったアルフレド</name_jp>
+		<explain_jp>修練で少し強くなったアルフレド。へたれ勇者。自分の存在感を見せるためにいつも魔女狩りに出る。自分が見た魔女は自分が捕まえるために、誰にも言わない。</explain_jp>
+		<name_cn>再次相遇的阿尔弗雷德</name_cn>
+		<explain_cn>通过修炼稍微变强的阿尔弗雷德。为了证明自身的存在感，一直到处去狩猎魔女，并为了独自立功，自己看到的魔女从不告诉别人。</explain_cn>
+		<name_tw>再次相遇的阿爾弗雷德</name_tw>
+		<explain_tw>透過修煉稍微變強的阿爾弗雷德。為了證明自身的存在感，一直到處去狩獵魔女，並為了獨自立功，自己看到的魔女從不告訴別人。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_14</id>
+		<hp>400</hp>
+		<def>5</def>
+		<power>36</power>
+		<agility>10</agility>
+		<outSound>pig_1</outSound>
+		<talkNum>11</talkNum>
+		<pat>ridingPat,usingBattle</pat>
+		<imageID>pat_warrior_14</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>멧돼지 대장</name_kr>
+		<explain_kr>단단한 이빨을 가진 멧돼지 대장. 타고 다닐 수 있으며 전투시 사용하면 적에게 돌진한다. 돌진 피해는 기본 피해 50에 주인의 공격력 및 현재체력에 비례한 피해가 더해지며 체력이 20% 소모된다.</explain_kr>
+		<name_en>Wild Pig Boss</name_en>
+		<explain_en>Boss of wild pig which has hard teeth. Ridable and dash to the enemy when battling.  Uses 20 HP and fundamentally harm 50 damage adding master's strength and now HP.</explain_en>
+		<name_jp>イノシシ大腸</name_jp>
+		<explain_jp>固い歯を持つイノシシ大腸。乗る事ができて、戦闘中に使用すると、敵に突進する。突進ダメージは基本ダメージ50にマスターの攻撃力と現在の体力に比例したダメージを与える。そして体力が20％消費される。</explain_jp>
+		<name_cn>野猪王</name_cn>
+		<explain_cn>具有坚硬牙齿的野猪王。可当作坐骑，战斗中使用时，可冲向敌人。冲锋伤害为基础伤害50加主人的攻击力及当前体力成正比的伤害，体力消耗20%。</explain_cn>
+		<name_tw>野豬王</name_tw>
+		<explain_tw>具有堅硬牙齒的野豬王。可當作坐騎，戰鬥中使用時，可衝向敵人。衝鋒傷害為基礎傷害50加主人的攻擊力及當前體力成正比的傷害，體力消耗20%。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_15</id>
+		<hp>170</hp>
+		<def>3</def>
+		<power>18</power>
+		<agility>9</agility>
+		<outSound>wrShout_1</outSound>
+		<talkNum>13</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_1</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>계속 만나게 되는 알프레도</name_kr>
+		<explain_kr>그동안 파이베리와의 대련으로 더 강해진 알프레도. 자신의 존재감을 마을에 입증하기 위해 늘 마녀사냥을 다니며, 자신이 본 마녀는 자신이 잡기 위해 그 누구에게도 알리지 않는다.</explain_kr>
+		<name_en>Endless-meeting-Alfredo</name_en>
+		<explain_en>Got much stronger by fighting with Pieberry. Always witch-hunt to get recognized from village. Doesn't share where the witch is.</explain_en>
+		<name_jp>続けて出会うアルフレド</name_jp>
+		<explain_jp>今までのパイベリーとの大連でより強くなったアルフレド。自分の存在感を村に見せるためにいつも魔女狩りをする。自分が見た魔女は、自分がつかむために、誰にも言わない。</explain_jp>
+		<name_cn>持续相遇的阿尔弗雷德</name_cn>
+		<explain_cn>通过与派莓的对练变得更强的阿尔弗雷德。为了证明自身的存在感，一直到处去狩猎魔女，并为了独自立功，自己看到的魔女从不告诉别人。</explain_cn>
+		<name_tw>持續相遇的阿爾弗雷德</name_tw>
+		<explain_tw>透過與派莓的對練變得更強的阿爾弗雷德。為了證明自身的存在感，一直到處去狩獵魔女，並為了獨自立功，自己看到的魔女從不告訴別人。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_16</id>
+		<hp>500</hp>
+		<def>25</def>
+		<power>55</power>
+		<agility>20</agility>
+		<outSound>-</outSound>
+		<talkNum>176</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_10</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>저스티스</name_kr>
+		<explain_kr>정의감 넘치는 젊고 강한 용사. 이전 파이베리와의 전투 후 더 강해졌다. 과거 신족과의 전쟁 중 아버지를 잃은 아픔이 있어 마녀를 경멸한다.</explain_kr>
+		<name_en>Justice</name_en>
+		<explain_en>Full of justice, young and strong warrior. Got much stronger by battling with Pieberry. Dad died in the holy-tribe war in the past, so contempts the witch.</explain_en>
+		<name_jp>ジャスティス</name_jp>
+		<explain_jp>正義感あふれる若くて強い勇者。以前パイベリーとの戦いの後、より強くなった。 過去神族との戦争の中で父を失った痛みがあり、魔女を軽蔑する。</explain_jp>
+		<name_cn>贾斯蒂斯</name_cn>
+		<explain_cn>充满正义感的年轻又强力的勇士。过去跟派莓战斗之后，变得更强。过去在神族之战中有丧父之痛，故蔑视魔女。</explain_cn>
+		<name_tw>賈斯蒂斯</name_tw>
+		<explain_tw>充滿正義感的年輕又強力的勇士。過去跟派莓戰鬥之後，變得更強。過去在神族之戰中有喪父之痛，故蔑視魔女。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_17</id>
+		<hp>200</hp>
+		<def>0</def>
+		<power>25</power>
+		<agility>20</agility>
+		<outSound>pig_1</outSound>
+		<talkNum>11</talkNum>
+		<pat>no</pat>
+		<imageID>pat_warrior_0</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>야생멧돼지</name_kr>
+		<explain_kr>길들이기 힘든 야생멧돼지. 멧돼지주니어보다 거칠어서 타고다니기 힘들다. 애완용 불가.</explain_kr>
+		<name_en>Violent Wild Pig</name_en>
+		<explain_en>Hard to train. Violent and hard to ride than the wild pig junior. Improper to be a pet.</explain_en>
+		<name_jp>野生イノシシ</name_jp>
+		<explain_jp>飼いならしずらい野生のイノシシ。イノシシジュニアより荒くて乗りにくい。ペット不可。</explain_jp>
+		<name_cn>野猪</name_cn>
+		<explain_cn>难以驯养的野猪。比野猪幼崽粗暴，故无法用作坐骑。无法当成宠物。</explain_cn>
+		<name_tw>野豬</name_tw>
+		<explain_tw>難以馴養的野豬。比野豬幼崽粗暴，故無法用作坐騎。無法當成寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_18</id>
+		<hp>400</hp>
+		<def>0</def>
+		<power>65</power>
+		<agility>10</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_18</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>어둠의 용사</name_kr>
+		<explain_kr>과거 힘만을 추구하다가 사악한 마력에 지배당한 용사. 신전 지하에 봉인해두었지만, 신전 샘이 오염된 이후로는 일부가 봉인에서 풀려 돌아다닌다.  정신지배 불가.</explain_kr>
+		<name_en>Dark warrior</name_en>
+		<explain_en>Warrior who desperately wanted power but got controlled by wicked spell power. At first he was covered in the underground, but after spring got contaminated, the cover got unsealed so he walked around. Improper to rule mental.</explain_en>
+		<name_jp>闇の勇者</name_jp>
+		<explain_jp>過去、力だけを追求して邪悪な魔力に支配された勇者。神殿の地下に封印しておくたが、神殿の泉が汚染された以降はその一部が封印から解放されて動き回る。精神支配不可。</explain_jp>
+		<name_cn>黑暗勇士</name_cn>
+		<explain_cn>过去只追逐着力量，被邪恶魔力支配的勇士。虽然被封印至神殿地下，但神泉被污染后，有些被解除封印并转来转去。无法支配精神。</explain_cn>
+		<name_tw>黑暗勇士</name_tw>
+		<explain_tw>過去只追逐著力量，被邪惡魔力支配的勇士。雖然被封印至神殿地下，但神泉被污染後，有些被解除封印並轉來轉去。無法支配精神。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_19</id>
+		<hp>300</hp>
+		<def>10</def>
+		<power>33</power>
+		<agility>8</agility>
+		<outSound>-</outSound>
+		<talkNum>217</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_19</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>일반용사</name_kr>
+		<explain_kr>라라크 마을의 용사. 마을 근처를 돌아다니며 야생동물이나 괴물들로부터 사람들을 보호하는 임무를 수행한다. 마녀사냥은 기본.</explain_kr>
+		<name_en>Warrior</name_en>
+		<explain_en>Warrior of Lalaque village. Look around the village to protect humans from wild animals and monsters. Witch-hunt as well.</explain_en>
+		<name_jp>一般勇者</name_jp>
+		<explain_jp>ララクの村の勇者。村の近くを歩き回りながら、野生動物やモンスターから人々を保護する任務がある。魔女狩りは基本。</explain_jp>
+		<name_cn>一般勇士</name_cn>
+		<explain_cn>拉拉克村庄的勇士。在村庄附近走来走去，并执行从野生动物或怪物的攻击保护人类的任务。当然也包括魔女狩猎。</explain_cn>
+		<name_tw>一般勇士</name_tw>
+		<explain_tw>拉拉克村莊的勇士。在村莊附近走來走去，並執行從野生動物或怪物的攻擊保護人類的任務。當然也包括魔女狩獵。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_21</id>
+		<hp>620</hp>
+		<def>15</def>
+		<power>45</power>
+		<agility>12</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_21</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>라바</name_kr>
+		<explain_kr>단단하고 강력한 화염주먹으로 공격한다. 인격이 존재하지 않아 정신지배로 애완동물 만들기는 불가능.</explain_kr>
+		<name_en>Lava</name_en>
+		<explain_en>Attack with hard and powerful flame-punch. Improper to be a pet because it doesn't have character and hard to rule mental.</explain_en>
+		<name_jp>ラバー</name_jp>
+		<explain_jp>堅くて強力な火炎拳で攻撃する。人格が存在しないため、精神支配でペット不可。</explain_jp>
+		<name_cn>熔岩石人</name_cn>
+		<explain_cn>利用又坚硬又强力的火焰拳进行攻击。未具备人格，故无法当宠物来使唤。</explain_cn>
+		<name_tw>熔岩石人</name_tw>
+		<explain_tw>利用又堅硬又強力的火焰拳進行攻擊。未具備人格，故無法當寵物來使喚。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_22</id>
+		<hp>1900</hp>
+		<def>100</def>
+		<power>125</power>
+		<agility>10</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_22</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>라바스테인</name_kr>
+		<explain_kr>아주 크고 강한 화염골렘. 인격이 존재하지 않아 정신지배로 애완동물 만들기는 불가능.</explain_kr>
+		<name_en>Lavastein</name_en>
+		<explain_en>Very big and powerful flame-Golem. Improper to be a pet because it doesn't have character and hard to rule mental.</explain_en>
+		<name_jp>ラバーステイン</name_jp>
+		<explain_jp>非常に大きくて強い火炎ゴーレム。人格が存在しないため、精神支配でペット不可。</explain_jp>
+		<name_cn>拉巴斯特因</name_cn>
+		<explain_cn>又大又强的火焰石人。未具备人格，故无法当宠物来使唤。</explain_cn>
+		<name_tw>拉巴斯特因</name_tw>
+		<explain_tw>又大又強的火焰石人。未具備人格，故無法當寵物來使喚。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_23</id>
+		<hp>80</hp>
+		<def>8</def>
+		<power>12</power>
+		<agility>5</agility>
+		<outSound>-</outSound>
+		<talkNum>222</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_23</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>미니골렘</name_kr>
+		<explain_kr>약간의 인격이 부여된 작은 골렘. 통제가 가능할 듯 하지만 한 번 부숴지면 마력이 떠나가서 다시 움직이지 못한다. 고로 애완동물은 불가.</explain_kr>
+		<name_en>Mini Golem</name_en>
+		<explain_en>Mini Golem that contains a little personality. Looks controllable but once damaged, all the spell-power disappears so it's unmovable. So improper to be a pet.</explain_en>
+		<name_jp>ミニゴーレム</name_jp>
+		<explain_jp>少しの人格が付与された小さなゴーレム。コントロールができるようだが、一度壊れると魔力が飛んでいくので、２度と動けられない。ペット不可。</explain_jp>
+		<name_cn>迷你石人</name_cn>
+		<explain_cn>被赋予稍许人格的小石人。看似无法控制，但一旦被击碎，魔力就会飞散，无法再移动。无法当成宠物。</explain_cn>
+		<name_tw>迷你石人</name_tw>
+		<explain_tw>被賦予稍許人格的小石人。看似無法控制，但一旦被擊碎，魔力就會飛散，無法再移動。無法當成寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_24</id>
+		<hp>80</hp>
+		<def>8</def>
+		<power>15</power>
+		<agility>6</agility>
+		<outSound>-</outSound>
+		<talkNum>222</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_24</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>레드골렘 미니</name_kr>
+		<explain_kr>미니골렘보다 공격이 약간 더 매운 작은 골렘. 머리에선 불꽃이 솟아오른다. 애완동물 불가.</explain_kr>
+		<name_en>Red Golem mini</name_en>
+		<explain_en>Smaller than the mini Golem. Have much powerful attack than the small golem. Flame sparks from the head. Improper to be a pet.</explain_en>
+		<name_jp>レッドゴーレムミニ</name_jp>
+		<explain_jp>ミニゴーレムより攻撃が少し高い小さいゴーレム。頭では炎が立ち上がる。ペット不可。</explain_jp>
+		<name_cn>迷你红石人</name_cn>
+		<explain_cn>比迷你石人攻击更辣的小石人。从头上燃起火花。无法当成宠物。</explain_cn>
+		<name_tw>迷你紅石人</name_tw>
+		<explain_tw>比迷你石人攻擊更辣的小石人。從頭上燃起火花。無法當成寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_25</id>
+		<hp>250</hp>
+		<def>2</def>
+		<power>35</power>
+		<agility>10</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_25</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>블루크랩</name_kr>
+		<explain_kr>아루아 섬에서 서식하는 푸른색 게. 덩치는 빅크랩보다 작지만 공격은 훨씬 더 날카롭다. 해변에서만 살 수 있어서 애완동물로는 불가.</explain_kr>
+		<name_en>Blue Crab</name_en>
+		<explain_en>Blue Crab living in Arua island. Smaller size than the Big Crab but more offensive. Can only live in beach so improper to be a pet.</explain_en>
+		<name_jp>青いカニ</name_jp>
+		<explain_jp>アルア島に生息する青色のカニ。体はビッグタラバガニより小さいが、攻撃ははるかに鋭い。砂浜だけに住めるので、ペット不可。</explain_jp>
+		<name_cn>蓝蟹</name_cn>
+		<explain_cn>栖息在阿鲁阿岛屿的蓝色蟹。虽然块头比巨蟹小，但攻击更加犀利。只能在海边生活，所以无法用于宠物。</explain_cn>
+		<name_tw>藍蟹</name_tw>
+		<explain_tw>棲息在阿魯阿島嶼的藍色蟹。雖然塊頭比巨蟹小，但攻擊更加犀利。只能在海邊生活，所以無法用於寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_26</id>
+		<hp>650</hp>
+		<def>2</def>
+		<power>55</power>
+		<agility>17</agility>
+		<outSound>-</outSound>
+		<talkNum>240</talkNum>
+		<pat>pat,autoBattle</pat>
+		<imageID>pat_warrior_26</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>블랙라이언</name_kr>
+		<explain_kr>빠르고 강한 외톨이 검은사자. 애완동물로 만들면 주인이 적을 공격한 후 적에게 주인의 공격력+50의 피해를, 적이 공격하고 난 후에는 주인 공격력 만큼의 피해를 입힌다.</explain_kr>
+		<name_en>Black Lion</name_en>
+		<explain_en>Very fast and strong but lonely black lion. When being a pet, when the master attacks the opponents, it additionally gives +50 damage, and when opponents attacks it gets harm same as the master attack.</explain_en>
+		<name_jp>ブラックライアン</name_jp>
+		<explain_jp>早くて強い一人ぼっちのブラックライオン。ペットにすると、マスターが敵を攻撃した後、敵にマスターの攻撃力の+50のダメージを、敵が攻撃した後は、マスターのの攻撃力分のダメージを与える。</explain_jp>
+		<name_cn>黑狮子</name_cn>
+		<explain_cn>强又快的孤独的黑狮子。做宠物的话，主人攻击敌人后，对敌人造成主人攻击力+50的伤害，被敌人攻击后给敌人造成等同于主人攻击力的伤害。</explain_cn>
+		<name_tw>黑獅子</name_tw>
+		<explain_tw>強又快的孤獨的黑獅子。做寵物的話，主人攻擊敵人後，對敵人造成主人攻擊力+50的傷害，被敵人攻擊後給敵人造成等同於主人攻擊力的傷害。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_27</id>
+		<hp>100</hp>
+		<def>0</def>
+		<power>7</power>
+		<agility>25</agility>
+		<outSound>-</outSound>
+		<talkNum>257</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_27</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>못생긴새</name_kr>
+		<explain_kr>기억의 언덕 평원에 살고있는 동글동글한 새. 특별한 능력도 없고 블랙조도 있어서 애완동물로 만들진 않는다.</explain_kr>
+		<name_en>Ugly Bird</name_en>
+		<explain_en>Chubby bird living in Memory plain hill. Doesn't have special capability and as Black Joe exists, it doesn't make as a pet.</explain_en>
+		<name_jp>ブサイク鳥</name_jp>
+		<explain_jp>記憶の丘の平原に住んでいる丸い鳥。特に能力もなく、ブラックジョーもいるのでペットにはしない。</explain_jp>
+		<name_cn>丑鸟</name_cn>
+		<explain_cn>栖息在记忆之丘平原的肥胖鸟。无特别能力，但因为有布莱克乔伊，所以没用作宠物。</explain_cn>
+		<name_tw>醜鳥</name_tw>
+		<explain_tw>棲息在記憶之丘平原的篷胖鳥。無特別能力，但因為有布萊克喬伊，所以沒用作寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_28</id>
+		<hp>500</hp>
+		<def>0</def>
+		<power>35</power>
+		<agility>20</agility>
+		<outSound>-</outSound>
+		<talkNum>257</talkNum>
+		<pat>pat</pat>
+		<imageID>pat_warrior_28</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>크고 못생긴 새</name_kr>
+		<explain_kr>못생긴 새들의 대장. 애완동물로는 가능하지만 특별한 능력은 없다.</explain_kr>
+		<name_en>Big Ugly Bird</name_en>
+		<explain_en>Boss of ugly birds. Can be a pet but doesn't have special ability.</explain_en>
+		<name_jp>大きいブサイク鳥</name_jp>
+		<explain_jp>ブサイク鳥の隊長。ペットには可能だが、特に能力はない。</explain_jp>
+		<name_cn>大丑鸟</name_cn>
+		<explain_cn>丑鸟之王。可当成宠物，但无特别能力。</explain_cn>
+		<name_tw>大醜鳥</name_tw>
+		<explain_tw>醜鳥之王。可當成寵物，但無特別能力。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_30</id>
+		<hp>900</hp>
+		<def>40</def>
+		<power>70</power>
+		<agility>16</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_30</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>왕궁 최고용사 크라운</name_kr>
+		<explain_kr>왕궁의 모든 용사들을 지휘하는 왕궁 최고용사. 크라운에 대해 알려진 정보는 별로 없다.</explain_kr>
+		<name_en>Palace Best Warrior Crown</name_en>
+		<explain_en>The best warrior of palace that leads all the warriors. Doesn't have much information of Crown.</explain_en>
+		<name_jp>王宮の最高勇者クラウン</name_jp>
+		<explain_jp>王宮のすべての勇者を指揮する王宮の最高勇者。クラウンについて知られている情報は、あまりない。</explain_jp>
+		<name_cn>王宫最高勇士克拉云</name_cn>
+		<explain_cn>指挥所有王宫勇士的王宫最高勇士。对克拉云的情报不太多。</explain_cn>
+		<name_tw>王宮最高勇士克拉雲</name_tw>
+		<explain_tw>指揮所有王宮勇士的王宮最高勇士。對克拉雲的情報不太多。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_32</id>
+		<hp>1400</hp>
+		<def>30</def>
+		<power>92</power>
+		<agility>5</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_32</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>암흑골렘</name_kr>
+		<explain_kr>인간들이 만들어낸 첫 골렘. 검은 마력의 돌을 너무 많이 써서 통제는 물론 봉인조차 하지 못했다. 인간들이 어찌할 수 없자 신족 엘리시온이 서쪽 골렘굴로 워프시켰다. 애완동물 불가.</explain_kr>
+		<name_en>Dark Golem</name_en>
+		<explain_en>First Golem which human made. Can't seal it because used so much evil-stones. As it was out of control, Eliycion put away in the west golem cave. Improper to be a pet.</explain_en>
+		<name_jp>暗黒ゴーレム</name_jp>
+		<explain_jp>人間が作り出した最初のゴーレム。黒い魔力の石を使いすぎて、コントロールはおろか、封印さえできなかった。人間がどうしようもなくなってから、神族のエリシオンが西のゴーレムの洞窟にワープさせた。ペット不可。</explain_jp>
+		<name_cn>黑暗石人</name_cn>
+		<explain_cn>人类制作出的第一个石人。因使用了过多的黑暗魔力之石，不仅无法控制，连封印也被失败。因人类对这个石人束手无策，神族埃丽斯韵把石人跳转至西部石人洞。无法用于宠物。</explain_cn>
+		<name_tw>黑暗石人</name_tw>
+		<explain_tw>人類製作出的第一個石人。因使用了過多的黑暗魔力之石，不僅無法控制，連封印也被失敗。因人類對這個石人束手無策，神族埃麗斯韻把石人跳轉至西部石人洞。無法用於寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_33</id>
+		<hp>600</hp>
+		<def>45</def>
+		<power>35</power>
+		<agility>12</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_33</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>큰바위골렘</name_kr>
+		<explain_kr>단단한 바위로 이루어진 골렘. 상급 마법석판을 얻을 수 있다. 애완동물 불가.</explain_kr>
+		<name_en>Big Rocky Golem</name_en>
+		<explain_en>Consist of hard rock golem. Can obtain magic advanced slab of stone. Improper to be a pet.</explain_en>
+		<name_jp>大きい岩ゴーレム</name_jp>
+		<explain_jp>堅い石で構成されゴーレム。上級魔法石板を得ることができる。ペット不可。</explain_jp>
+		<name_cn>大岩石石人</name_cn>
+		<explain_cn>由坚硬的石头组成的石人。可获得高级魔法石板。无法当成宠物。</explain_cn>
+		<name_tw>大岩石石人</name_tw>
+		<explain_tw>由堅硬的石頭組成的石人。可獲得高級魔法石板。無法當成寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_34</id>
+		<hp>300</hp>
+		<def>0</def>
+		<power>30</power>
+		<agility>15</agility>
+		<outSound>-</outSound>
+		<talkNum>278</talkNum>
+		<pat>pat,autoBattle</pat>
+		<imageID>pat_warrior_34</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>그레미</name_kr>
+		<explain_kr>인간들이 신족과의 전쟁 중 전투보조용으로 쓰기 위해 만든 작은 골렘. 유일하게 통제가능한 골렘이다. 데리고 다니면 기본 방어력이 50% 높아지고 매 턴마다 주인의 체력을 조금씩 회복시켜준다.</explain_kr>
+		<name_en>Grammy</name_en>
+		<explain_en>A small golem which humans used as a battle-assistance in holy-tribe battle. The only controllable Golem. Defense rises up to 50% and recovers master's HP little bit in every turn.</explain_en>
+		<name_jp>グレミー</name_jp>
+		<explain_jp>人間が神族との戦争中、戦闘補助用に使うために作った小さいゴーレム。唯一にコントロールができるゴーレムである。連れて行くと基本防御力が50％高くなって、ターンごとにマスターの体力を少しずつ回復させる。</explain_jp>
+		<name_cn>格莱米</name_cn>
+		<explain_cn>为了在人类和神族的战争中用于助战的武器制成的小石人。是唯一可支配的石人。随行的话，防御力提升50%，每回合可恢复主人的少量体力。</explain_cn>
+		<name_tw>格萊米</name_tw>
+		<explain_tw>為了在人類和神族的戰爭中用於助戰的武器製成的小石人。是唯一可支配的石人。隨行的話，防禦力提升50%，每回合可恢復主人的少量體力。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_35</id>
+		<hp>1600</hp>
+		<def>50</def>
+		<power>74</power>
+		<agility>9</agility>
+		<outSound>-</outSound>
+		<talkNum>280</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_35</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>나르에르</name_kr>
+		<explain_kr>엘리시온의 평원 호수에 사는 괴물. 작은 호수 안에서만 살고 있지만 건드리면 굉장히 위험한 동물. 정신지배는 통하지 않는다.</explain_kr>
+		<name_en>Narer</name_en>
+		<explain_en>Monster living in Eliycion plain lake. Although living in a small lake, very dangerous to approach. Mind-Control not available.</explain_en>
+		<name_jp>ナルエル</name_jp>
+		<explain_jp>エリシオンの平原の湖に住んでいるモンスター。小さい湖の中に暮らしているだけだが、触るととても危険な動物。精神支配は通じない。</explain_jp>
+		<name_cn>纳尔</name_cn>
+		<explain_cn>栖息在埃丽斯韵平原湖中的怪物。虽然生活在小湖里，但招惹的话非常危险的动物。无法进行精神支配。</explain_cn>
+		<name_tw>納爾</name_tw>
+		<explain_tw>棲息在埃麗斯韻平原湖中的怪物。雖然生活在小湖裡，但招惹的話非常危險的動物。無法進行精神支配。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_36</id>
+		<hp>550</hp>
+		<def>20</def>
+		<power>50</power>
+		<agility>12</agility>
+		<outSound>-</outSound>
+		<talkNum>280</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_36</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>설인</name_kr>
+		<explain_kr>북쪽 설원에 사는 햐안괴물. 보이는대로 먹어치우고 공격하는데, 심지어는 동족끼리도 공격한다. 일반적인 동물들보다 지적인 부분이 모두 떨어져 정신지배로 컨트롤하는 것은 불가능하다.</explain_kr>
+		<name_en>Snow Man</name_en>
+		<explain_en>White moster living in north snow field. Eats everything that is seen, and attacks fellows. Unavailable to control mental because of disability.</explain_en>
+		<name_jp>雪人</name_jp>
+		<explain_jp>北の雪原に住んでいる白いモンスター。見えるものは全部食べたり攻撃する。同族同士も攻撃する。一般的な動物よりも知能が低いので精神支配でコントロールすることは不可能である。</explain_jp>
+		<name_cn>雪人</name_cn>
+		<explain_cn>栖息在雪原的白色怪物。看到什么就会又吃又攻击，甚至连同族也攻击。因智能比一般动物低落，所以无法支配精神。</explain_cn>
+		<name_tw>雪人</name_tw>
+		<explain_tw>棲息在雪原的白色怪物。看到什麼就會又吃又攻擊，甚至連同族也攻擊。因智能比一般動物低落，所以無法支配精神。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_37</id>
+		<hp>700</hp>
+		<def>0</def>
+		<power>60</power>
+		<agility>15</agility>
+		<outSound>-</outSound>
+		<talkNum>283</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_37</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>판다 쿰</name_kr>
+		<explain_kr>설원에서 수련중인 팬더. 파이베리와 기꺼이 대결해 준다. 맞으면 방어력이, 때리면 공격력이, 마법을 쓰면 마력이 오른다.  인간과 같은 수준의 자아를 갖고 있어서 정신지배는 불가.</explain_kr>
+		<name_en>Panda Kum</name_en>
+		<explain_en>Training in the snow field. Fights with Pieberry anytime. Defense rises when punched, attack rises when striking power, spell power rises when using magics. Have the same identity as a human so Mind-Control is not available.</explain_en>
+		<name_jp>パンダクム</name_jp>
+		<explain_jp>雪原で修練中のパンダ。パイベリーと喜んで対決してくれる。打たれると防御力が、攻撃すると攻撃力が、魔法を使うと魔力が上がる。人間と同じレベルの自我を持っているので、精神支配は不可。</explain_jp>
+		<name_cn>熊猫库姆</name_cn>
+		<explain_cn>在雪原修炼中的熊猫。经常为派莓成为修炼对象。被打的时提升防御力，攻击时提升攻击力，使用魔法时提升魔力。具有等同于人类的自我，无法支配精神。</explain_cn>
+		<name_tw>熊貓庫姆</name_tw>
+		<explain_tw>在雪原修煉中的熊貓。經常為派莓成為修煉對象。被打的時提升防禦力，攻擊時提升攻擊力，使用魔法時提升魔力。具有等同於人類的自我，無法支配精神。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_38</id>
+		<hp>175</hp>
+		<def>35</def>
+		<power>80</power>
+		<agility>20</agility>
+		<outSound>-</outSound>
+		<talkNum>286</talkNum>
+		<pat>magic,ice,0.7,2</pat>
+		<imageID>warrior_38</imageID>
+		<magicID>magic_ice_1,ice_1</magicID>
+		<magicCircle>m#innc3i,basic_1,basic_2</magicCircle>
+		<name_kr>달빛마녀 루나</name_kr>
+		<explain_kr>설원에 숨어사는 마녀. 전쟁 이전에 인간과 신족 사이에서 태어난 마녀이며, 전쟁이 시작될 때 마을에서 도망쳤다.</explain_kr>
+		<name_en>Moonlight Witch Luna</name_en>
+		<explain_en>A witch hiding in snow field. Borned between a human and holy-tribe. She ran away from the village when war began.</explain_en>
+		<name_jp>月光の魔女ルーナ</name_jp>
+		<explain_jp>雪原に隠れて住んでいる魔女。戦争前に、人間と神族の間で生まれた魔女であり、戦争が始まったとき、村から逃げた。</explain_jp>
+		<name_cn>月光魔女露娜</name_cn>
+		<explain_cn>隐遁在雪原的魔女。战争以前在人类和神族之间出生的魔女，战争开始后从村庄逃了出来。</explain_cn>
+		<name_tw>月光魔女露娜</name_tw>
+		<explain_tw>隱遁在雪原的魔女。戰爭以前在人類和神族之間出生的魔女，戰爭開始後從村莊逃了出來。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_39</id>
+		<hp>650</hp>
+		<def>60</def>
+		<power>60</power>
+		<agility>16</agility>
+		<outSound>-</outSound>
+		<talkNum>280</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_39</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>검은설인</name_kr>
+		<explain_kr>검은 마력의 돌을 집어먹은 설인. 일반 설인보다 강하다. 애완동물 불가.</explain_kr>
+		<name_en>Black Snow Man</name_en>
+		<explain_en>Black snow man who eats Evil-Stones. Stronger than snow man. Improper to be a pet</explain_en>
+		<name_jp>黒い雪人</name_jp>
+		<explain_jp>黒い魔力の石を食った雪人。一般の雪人より強い。ペット不可。</explain_jp>
+		<name_cn>黑暗雪人</name_cn>
+		<explain_cn>吞噬黑暗魔力之石的雪人。比一般雪人强。无法当成宠物。</explain_cn>
+		<name_tw>黑暗雪人</name_tw>
+		<explain_tw>吞噬黑暗魔力之石的雪人。比一般雪人強。無法當成寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_40</id>
+		<hp>800</hp>
+		<def>45</def>
+		<power>100</power>
+		<agility>10</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>magic,ice,0.7,2</pat>
+		<imageID>warrior_40</imageID>
+		<magicID>magic_ice_1,ice_1</magicID>
+		<magicCircle>m#innc3f,basic_1,basic_2</magicCircle>
+		<name_kr>빅핸드 아이스골렘</name_kr>
+		<explain_kr>얼음동굴에 사는 무시무시하게 큰 골렘. 속은 바위이며 겉은 얼음갑옷으로 둘러쌓여 있다. 애완동물 불가.</explain_kr>
+		<name_en>Bighand Ice Golem</name_en>
+		<explain_en>Huge Golem living in the ice cave. Surrounded as Ice-armor, and filled in as a rock. Improper to be a pet</explain_en>
+		<name_jp>ビッグハンドアイスゴーレム</name_jp>
+		<explain_jp>氷の洞窟に住んでいる巨大ゴーレム。中身は岩であり、外は氷の鎧に囲まれている。ペット不可。</explain_jp>
+		<name_cn>巨型冰石人</name_cn>
+		<explain_cn>住在冰洞的巨大无比的巨型石人。内部由石头构成，其外部由冰甲围住。无法用于宠物。</explain_cn>
+		<name_tw>巨型冰石人</name_tw>
+		<explain_tw>住在冰洞的巨大無比的巨型石人。內部由石頭構成，其外部由冰甲圍住。無法用於寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_41</id>
+		<hp>2200</hp>
+		<def>50</def>
+		<power>175</power>
+		<agility>8</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>magic,fire,2,4.5</pat>
+		<imageID>warrior_41</imageID>
+		<magicID>magic_temar,fire_1</magicID>
+		<magicCircle>m#innc6d,basic_1,basic_2</magicCircle>
+		<name_kr>테마르</name_kr>
+		<explain_kr>듀락신전의 수호동물. 수호동물 중에서 가장 강하다.</explain_kr>
+		<name_en>Temar</name_en>
+		<explain_en>Guardian animal of Durok temple. Strongest among all guardian animal.</explain_en>
+		<name_jp>テマル</name_jp>
+		<explain_jp>デュラック神殿の守護動物。守護動物の中で最も強い。</explain_jp>
+		<name_cn>泰玛</name_cn>
+		<explain_cn>杜蕾神殿的守护动物。守护动物当中的最强者。</explain_cn>
+		<name_tw>泰瑪</name_tw>
+		<explain_tw>杜蕾神殿的守護動物。守護動物當中的最強者。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_42</id>
+		<hp>700</hp>
+		<def>30</def>
+		<power>65</power>
+		<agility>20</agility>
+		<outSound>-</outSound>
+		<talkNum>217</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_42</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>왕궁용사</name_kr>
+		<explain_kr>왕궁에서 파견된 용사. 일반용사보다 훨씬 강하다.</explain_kr>
+		<name_en>Palace Warrior</name_en>
+		<explain_en>Dispatched warrior from palace. Much stronger than normal warriors</explain_en>
+		<name_jp>王宮勇者</name_jp>
+		<explain_jp>王宮から派遣された勇者。一般勇者よりもはるかに強い。</explain_jp>
+		<name_cn>王宫勇士</name_cn>
+		<explain_cn>王宫派遣的勇士，比一般勇士强很多。</explain_cn>
+		<name_tw>王宮勇士</name_tw>
+		<explain_tw>王宮派遣的勇士，比一般勇士強很多。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_43</id>
+		<hp>800</hp>
+		<def>20</def>
+		<power>70</power>
+		<agility>17</agility>
+		<outSound>-</outSound>
+		<talkNum>292</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_43</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>감옥 경비대장</name_kr>
+		<explain_kr>교황성 지하감옥을 지키는 문지기 대장</explain_kr>
+		<name_en>Guarding Jail Boss</name_en>
+		<explain_en>Boss of guarding underground jail of Pope's palace.</explain_en>
+		<name_jp>監獄の警備隊長</name_jp>
+		<explain_jp>祭司の城の地下監獄を守る門番隊長</explain_jp>
+		<name_cn>监狱警卫</name_cn>
+		<explain_cn>看守教皇成地下监狱的警卫队长。</explain_cn>
+		<name_tw>監獄警衛</name_tw>
+		<explain_tw>看守教皇成地下監獄的警衛隊長。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_44</id>
+		<hp>2200</hp>
+		<def>30</def>
+		<power>165</power>
+		<agility>12</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>magic,holy,0.7,2</pat>
+		<imageID>warrior_44</imageID>
+		<magicID>magic_holyLight,warp_1</magicID>
+		<magicCircle>m#innc4h,basic_1,basic_2</magicCircle>
+		<name_kr>교황</name_kr>
+		<explain_kr>아라무트 샘의 힘을 사용할 수 있는 유일한 인간.</explain_kr>
+		<name_en>Pope</name_en>
+		<explain_en>Only human who could use Aramute spring power</explain_en>
+		<name_jp>祭司</name_jp>
+		<explain_jp>アラムートの泉の力を使用できる唯一の​​人間。</explain_jp>
+		<name_cn>教皇</name_cn>
+		<explain_cn>能使用阿拉姆特之泉的唯一的人类。</explain_cn>
+		<name_tw>教皇</name_tw>
+		<explain_tw>能使用阿拉姆特之泉的唯一的人類。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_31</id>
+		<hp>1000</hp>
+		<def>0</def>
+		<power>50</power>
+		<agility>15</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>magic,fire,2,2</pat>
+		<imageID>warrior_31</imageID>
+		<magicID>magic,punch_1</magicID>
+		<magicCircle>basic_0,basic_1,basic_2</magicCircle>
+		<name_kr>아크</name_kr>
+		<explain_kr>봉인 풀린 블랙조. 엘리시온의 수호동물이다.</explain_kr>
+		<name_en>Ark</name_en>
+		<explain_en>Uncovered Black Joe. Guardian animal of Eliycion</explain_en>
+		<name_jp>アーク</name_jp>
+		<explain_jp>封印が解かれたブラックジョー。エリシオンの守護動物である。</explain_jp>
+		<name_cn>阿克</name_cn>
+		<explain_cn>被解开封印的布莱克乔伊，是埃丽斯韵的守护动物。</explain_cn>
+		<name_tw>阿克</name_tw>
+		<explain_tw>被解開封印的布萊克喬伊，是埃麗斯韻的守護動物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_46</id>
+		<hp>3200</hp>
+		<def>80</def>
+		<power>100</power>
+		<agility>10</agility>
+		<outSound>dragon_1</outSound>
+		<talkNum>311</talkNum>
+		<pat>magic,fire,0.5,0.7</pat>
+		<imageID>warrior_46</imageID>
+		<magicID>magic,explosion_2</magicID>
+		<magicCircle>basic_0,basic_1,basic_2</magicCircle>
+		<name_kr>지르코니아</name_kr>
+		<explain_kr>온 몸이 돌처럼 단단한 드래곤. 매우 강한 방어력과 체력을 가지고 있다. 애완동물 불가.</explain_kr>
+		<name_en>Jirkonia</name_en>
+		<explain_en>A dragon hardened like a rock. Contains strong defese and HP. Improper to be a pet.</explain_en>
+		<name_jp>ジルコニア</name_jp>
+		<explain_jp>全身が石のように固いドラゴン。非常に強い防御力と体力を持っている。ペット不可。</explain_jp>
+		<name_cn>基尔克尼亚</name_cn>
+		<explain_cn>全身像石头一样坚硬的龙。具有强力的防御力和体力。无法当成宠物。</explain_cn>
+		<name_tw>基爾克尼亞</name_tw>
+		<explain_tw>全身像石頭一樣堅硬的龍。具有強力的防禦力和體力。無法當成寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_47</id>
+		<hp>650</hp>
+		<def>10</def>
+		<power>45</power>
+		<agility>50</agility>
+		<outSound>-</outSound>
+		<talkNum>312</talkNum>
+		<pat>magic,fire,0.3,0.7,pat,shooter</pat>
+		<imageID>pat_warrior_47</imageID>
+		<magicID>fireBall_1,explosion_1</magicID>
+		<magicCircle>basic_0,basic_1,basic_2</magicCircle>
+		<name_kr>티아리스</name_kr>
+		<explain_kr>드래곤 중 가장 작지만 무시할 수 없는 힘을 가진 드래곤. 애완동물로 만들면 매 턴마다 주인 마력의 최소 100%에서 최대 300%까지 적에게 랜덤 피해를 입힌다.</explain_kr>
+		<name_en>Tiaeia</name_en>
+		<explain_en>A dragon that is very small but powerful. When using as a pet, it gives master spell power of minimum 100% to maximum 300% of damage randomly to the opponents in each turn.</explain_en>
+		<name_jp>ティアレス</name_jp>
+		<explain_jp>ドラゴンの中で最も小さいが無視できない力を持っているドラゴン。ペットにすると、各タ​​ーンごとにマスターの魔力の少なくとも100％から最大300％まで敵にランダムダメージを与える。</explain_jp>
+		<name_cn>焰龙</name_cn>
+		<explain_cn>龙族中长得最小，但具有强力力量。作为宠物时，每回合对敌人造成主人魔力100%~300%的随机伤害。</explain_cn>
+		<name_tw>焰龍</name_tw>
+		<explain_tw>龍族中長得最小，但具有強力力量。作為寵物時，每回合對敵人造成主人魔力100%~300%的隨機傷害。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_48</id>
+		<hp>900</hp>
+		<def>10</def>
+		<power>60</power>
+		<agility>25</agility>
+		<outSound>-</outSound>
+		<talkNum>303</talkNum>
+		<pat>pat,autoBattle</pat>
+		<imageID>pat_warrior_48</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>하얀늑대</name_kr>
+		<explain_kr>얼음동굴에 깊숙한 곳에 사는 늑대. 애완동물로 만들면 전투시 매 턴마다 적에게 180의 피해를 입힌다.</explain_kr>
+		<name_en>White Wolf</name_en>
+		<explain_en>A wolf which lives deep in ice cave. When used as a pet, it damage 180 to opponents each turn in battle.</explain_en>
+		<name_jp>白いオオカミ</name_jp>
+		<explain_jp>氷の洞窟に奥に住んでいるオオカミ。ペットにすると、戦闘時、各ターンごとに敵に180のダメージを与える。</explain_jp>
+		<name_cn>白狼</name_cn>
+		<explain_cn>住在冰洞深处的狼。作为宠物战斗时，每回合对敌人造成180的伤害。</explain_cn>
+		<name_tw>白狼</name_tw>
+		<explain_tw>住在冰洞深處的狼。作為寵物戰鬥時，每回合對敵人造成180的傷害。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_49</id>
+		<hp>700</hp>
+		<def>0</def>
+		<power>55</power>
+		<agility>60</agility>
+		<outSound>-</outSound>
+		<talkNum>311</talkNum>
+		<pat>ridingPat</pat>
+		<imageID>pat_warrior_49</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>루카</name_kr>
+		<explain_kr>날지 못하는 드래곤이지만 뛰는 속도는 애완동물 중 가장 빠르다. 민첩이 높아서 웬만한 공격은 모두 피한다. 전투시 함께하면 민첩이 두 배 지속적으로 향상된다.</explain_kr>
+		<name_en>Luca</name_en>
+		<explain_en>Couldn't fly but very speedy in running among all the pets. Can avoid most of the attacks by it's speed. The Agility twicely-highs up continuously in battle.</explain_en>
+		<name_jp>ルカ</name_jp>
+		<explain_jp>飛べないドラゴンだが、走る速度はペットの中で最も速い。敏捷性が高く、大抵の攻撃はすべて避ける。戦闘時、一緒にすると敏捷性が2倍に上がる。</explain_jp>
+		<name_cn>卢卡</name_cn>
+		<explain_cn>虽然飞不了，但跑的速度在宠物当中最快的龙。具有较高的敏捷，所以可以躲过大部分的攻击。一起战斗时，敏捷可提升至两倍。</explain_cn>
+		<name_tw>盧卡</name_tw>
+		<explain_tw>雖然飛不了，但跑的速度在寵物當中最快的龍。具有較高的敏捷，所以可以躲過大部分的攻擊。一起戰鬥時，敏捷可提升至兩倍。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_50</id>
+		<hp>1200</hp>
+		<def>20</def>
+		<power>80</power>
+		<agility>17</agility>
+		<outSound>-</outSound>
+		<talkNum>313</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_50</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>설노인</name_kr>
+		<explain_kr>얼음동굴에 너무 오래 살아서 심장까지 얼어붙은 설인. 애완동물 불가.</explain_kr>
+		<name_en>Snow Old Man</name_en>
+		<explain_en>Ice old man who lived so long in the ice cave that heart have freezed. Improper to be a pet.</explain_en>
+		<name_jp>雪老人</name_jp>
+		<explain_jp>氷の洞窟にあまりにも長く暮らして心臓まで凍ってしまった雪人。ペット不可。</explain_jp>
+		<name_cn>冰雪老人</name_cn>
+		<explain_cn>因在冰洞生活时间太长，连心脏都被冻住的雪人。无法当成宠物。</explain_cn>
+		<name_tw>冰雪老人</name_tw>
+		<explain_tw>因在冰洞生活時間太長，連心臟都被凍住的雪人。無法當成寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_51</id>
+		<hp>1000</hp>
+		<def>30</def>
+		<power>85</power>
+		<agility>5</agility>
+		<outSound>-</outSound>
+		<talkNum>312</talkNum>
+		<pat>ridingPat,usingBattle</pat>
+		<imageID>pat_warrior_51</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>지르코니아 주니어</name_kr>
+		<explain_kr>지르코니아의 새끼. 탑승하면 공격력 85, 방어력이 30 상승한다. 전투 시 사용하면 마나 30을 소모하여 적에게 마력과 공격력에 비례한 피해를 입힌다.</explain_kr>
+		<name_en>Jirkonia Junior</name_en>
+		<explain_en>Jirconia's baby. 85 attack, 30 defense rise when riding. Uses 30 MP in battle and give the damage in proportion to  strength and SP to the opponents.</explain_en>
+		<name_jp>ジルコニアジュニア</name_jp>
+		<explain_jp>ジルコニアの子。乗ると攻撃力85、防御力が30上昇する。戦闘時に使用するとマナ30を消費して敵に魔力と攻撃力に比例したダメージを与える。</explain_jp>
+		<name_cn>基尔克尼亚幼崽</name_cn>
+		<explain_cn>基尔克尼亚幼崽。若当坐骑，可提升攻击力85和防御力30。战斗时使用的话，可消耗30法力对敌人造成与魔力和攻击力成正比的伤害。</explain_cn>
+		<name_tw>基爾克尼亞幼崽</name_tw>
+		<explain_tw>基爾克尼亞幼崽。若當坐騎，可提升攻擊力85和防禦力30。戰鬥時使用的話，可消耗30法力對敵人造成與魔力和攻擊力成正比的傷害。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_52</id>
+		<hp>300</hp>
+		<def>0</def>
+		<power>45</power>
+		<agility>30</agility>
+		<outSound>-</outSound>
+		<talkNum>315</talkNum>
+		<pat>magic,ice,0.7,2,pat,autoBattle</pat>
+		<imageID>pat_warrior_52</imageID>
+		<magicID>magic_ice_1,ice_1</magicID>
+		<magicCircle>m#innc3i,basic_1,basic_2</magicCircle>
+		<name_kr>네코미스</name_kr>
+		<explain_kr>달 빛 아래에 있는걸 좋아하는 신비한 고양이. 함께 있으면 주인의 마력을 20% 올려주며 주인의 턴마다 랜덤 행동을 한다.</explain_kr>
+		<name_en>Necomis</name_en>
+		<explain_en>Amazing cat liking to stay below the moon light. Rises 20% of master's SP when being together, and acts randomly in master's turn.</explain_en>
+		<name_jp>ネコミス</name_jp>
+		<explain_jp>月の光の下にあるのが好きな神秘的な猫。一緒にいるとマスターの魔力を20％上げ、マスターのターンごとにランダム行動をする。</explain_jp>
+		<name_cn>神秘猫咪</name_cn>
+		<explain_cn>在月光下散发隐隐光芒的神秘猫咪。与其在一起可提升主人的20%的魔力，并每到主人的回合将会随机行动。</explain_cn>
+		<name_tw>神秘貓咪</name_tw>
+		<explain_tw>在月光下散發隱隱光芒的神秘貓咪。與其在一起可提升主人的20%的魔力，並每到主人的回合將會隨機行動。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_53</id>
+		<hp>6800</hp>
+		<def>80</def>
+		<power>450</power>
+		<agility>15</agility>
+		<outSound>dragon_1</outSound>
+		<talkNum>311</talkNum>
+		<pat>magic,thunder,1,3</pat>
+		<imageID>warrior_53</imageID>
+		<magicID>magic_thunder_1,thunder_1</magicID>
+		<magicCircle>m#innc6t,basic_1,basic_2</magicCircle>
+		<name_kr>라이트닝</name_kr>
+		<explain_kr>전격 속성의 공격을 하는 드래곤. 드래곤의 공격 중 가장 강하다. 애완동물 불가.</explain_kr>
+		<name_en>Lightening</name_en>
+		<explain_en>A dragon doing air blitze attack. Powerful in attack among all the dragons. Improper to be a pet.</explain_en>
+		<name_jp>ライトニング</name_jp>
+		<explain_jp>戦闘的な攻撃をするドラゴン。ドラゴンの攻撃の中で最も強い。ペット不可。</explain_jp>
+		<name_cn>雷龙</name_cn>
+		<explain_cn>可进行闪电属性攻击的龙。龙的攻击中最强。无法当成宠物。</explain_cn>
+		<name_tw>雷龍</name_tw>
+		<explain_tw>可進行閃電屬性攻擊的龍。龍的攻擊中最強。無法當成寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_54</id>
+		<hp>800</hp>
+		<def>0</def>
+		<power>62</power>
+		<agility>16</agility>
+		<outSound>-</outSound>
+		<talkNum>334</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_54</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>무지개 푸딩</name_kr>
+		<explain_kr>파이베리에게 푸딩킹이 당한 이후 푸딩 부하들끼리 합체했다. 더 강력하게 맛이 좋아졌다. 애완동물 불가</explain_kr>
+		<name_en>Rainbow Pudding</name_en>
+		<explain_en>Pudding subordinates united after Pudding King suffered by Pieberry. Got better taste. Improper to be a pet.</explain_en>
+		<name_jp>虹色プリン</name_jp>
+		<explain_jp>パイベリーにプリンキングがやられた後、プリンの部下たちが合体し、 味がより強力によくなった。ペット不可</explain_jp>
+		<name_cn>彩虹布丁</name_cn>
+		<explain_cn>派莓被布丁国王攻击后，布丁部下们一起合体了。变得更美味。无法当成宠物。</explain_cn>
+		<name_tw>彩虹布丁</name_tw>
+		<explain_tw>派莓被布丁國王攻擊後，布丁部下們一起合體了。變得更美味。無法當成寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_55</id>
+		<hp>1200</hp>
+		<def>20</def>
+		<power>115</power>
+		<agility>6</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_55</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>발트</name_kr>
+		<explain_kr>검은 마녀의 숲 속에 사는 숲의 정령. 접근하면 깨어나 공격하며 이 때문에 용사들이 검은 마녀의 숲에 잘 내려오지 않는다 . 애완동물 불가.</explain_kr>
+		<name_en>Balt</name_en>
+		<explain_en>Forest soul who lives in black witch forest. It wakes up when approach, so the warriors doesn't goes to the forest.  Improper to be a pet.</explain_en>
+		<name_jp>バルト</name_jp>
+		<explain_jp>黒い魔女の森住んでいる森の精霊。接近すると目が覚めて攻撃し、そのため、勇者たちが黒い魔女の森に近づけられない。ペット不可。</explain_jp>
+		<name_cn>巴尔特</name_cn>
+		<explain_cn>住在黑暗魔女丛林的丛林精灵。感知有人靠近时，将醒来后进行攻击。因此勇士们很少到黑暗魔女丛林。无法用于宠物。</explain_cn>
+		<name_tw>巴爾特</name_tw>
+		<explain_tw>住在黑暗魔女叢林的叢林精靈。感知有人靠近時，將醒來後進行攻擊。因此勇士們很少到黑暗魔女叢林。無法用於寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_56</id>
+		<hp>3600</hp>
+		<def>30</def>
+		<power>380</power>
+		<agility>12</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>fire</pat>
+		<imageID>warrior_56</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>블래스트</name_kr>
+		<explain_kr>골렘굴 깊숙한 곳 용암에 사는 불의 정령. 정령 중 가장 강한 공격력을 가지고 있다. 애완동물 불가.</explain_kr>
+		<name_en>Blast</name_en>
+		<explain_en>Flaming soul who lives deep in lava golem cave. Have the strongest attack among all the spirits. Improper to be a pet.</explain_en>
+		<name_jp>ブラスト</name_jp>
+		<explain_jp>ゴーレムの洞窟の奥の溶岩に住んでいる火の精霊。精霊の中で最も強い攻撃力を持っている。ペット不可。</explain_jp>
+		<name_cn>布莱斯特</name_cn>
+		<explain_cn>住在石人洞深处的火精灵。是攻击力最强的精灵。无法用于宠物。</explain_cn>
+		<name_tw>布萊斯特</name_tw>
+		<explain_tw>住在石人洞深處的火精靈。是攻擊力最強的精靈。無法用於寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_57</id>
+		<hp>4500</hp>
+		<def>150</def>
+		<power>185</power>
+		<agility>12</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_57</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>아리스</name_kr>
+		<explain_kr>얼음 동굴에 사는 빙산의 정령. 정령 중 가장 높은 방어력을 가지고 있다. 애완동물 불가.</explain_kr>
+		<name_en>Aris</name_en>
+		<explain_en>Iceberg soul who lives in ice cave. Have the highest defense among all the spirits. Improper to be a pet.</explain_en>
+		<name_jp>アリス</name_jp>
+		<explain_jp>氷の洞窟に住んでいる氷山の精霊。精霊の中で最も高い防御力を持っている。ペット不可。</explain_jp>
+		<name_cn>阿里斯</name_cn>
+		<explain_cn>住在冰冻的冰山精灵。是防御力最强的精灵。无法当成宠物。</explain_cn>
+		<name_tw>阿裏斯</name_tw>
+		<explain_tw>住在冰凍的冰山精靈。是防禦力最強的精靈。無法當成寵物。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_58</id>
+		<hp>3500</hp>
+		<def>40</def>
+		<power>162</power>
+		<agility>25</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_30</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>왕궁 최고용사 크라운</name_kr>
+		<explain_kr>왕궁용사 중 최고용사. 크라운에 대해 알려진 정보는 별로 없다.</explain_kr>
+		<name_en>Palace best warrior Crown</name_en>
+		<explain_en>The best warrior of palace warrior. Doesn't have much imformation of Crown.</explain_en>
+		<name_jp>王宮の最高勇者クラウン</name_jp>
+		<explain_jp>王宮勇者の中で最高の勇者。クラウンについて知られている情報はあまりない。</explain_jp>
+		<name_cn>王宫最高勇士克拉云</name_cn>
+		<explain_cn>王宫勇士中最高勇士。对克拉云的情报不太多。</explain_cn>
+		<name_tw>王宮最高勇士克拉雲</name_tw>
+		<explain_tw>王宮勇士中最高勇士。對克拉雲的情報不太多。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_59</id>
+		<hp>300</hp>
+		<def>10</def>
+		<power>33</power>
+		<agility>14</agility>
+		<outSound>-</outSound>
+		<talkNum>217</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_19</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>일반용사</name_kr>
+		<explain_kr>발트가 사라지자 검은 마녀의 숲을 조사하러 온 라라크 마을의 용사</explain_kr>
+		<name_en>Warrior</name_en>
+		<explain_en>Lalaque warrior who came to investigate black witch forest after Balt vanished.</explain_en>
+		<name_jp>一般勇者</name_jp>
+		<explain_jp>バルトが消えると、黒い魔女の森を調査しに来たララクの村の勇者</explain_jp>
+		<name_cn>一般勇士</name_cn>
+		<explain_cn>巴尔特失踪后，到黑暗魔女丛林来调查的拉拉克村庄的勇士。</explain_cn>
+		<name_tw>一般勇士</name_tw>
+		<explain_tw>巴爾特失蹤後，到黑暗魔女叢林來調查的拉拉克村莊的勇士。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_60</id>
+		<hp>8400</hp>
+		<def>220</def>
+		<power>200</power>
+		<agility>45</agility>
+		<outSound>-</outSound>
+		<talkNum>370</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_60</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>나이트메어</name_kr>
+		<explain_kr>검은 마력의 돌 흡수에 한 번 성공하자 계속해서 흡수하다가 괴물이 되어버린 과거 전설의 용사.</explain_kr>
+		<name_en>Nightmare</name_en>
+		<explain_en>Legend of warrior who succeeded in Evil-Stone absorption but became a monster of not stopping.</explain_en>
+		<name_jp>ナイトメア</name_jp>
+		<explain_jp>黒い魔力の石の吸収に一度成功してから引き続き吸収して、モンスターになってしまった過去伝説の勇者。</explain_jp>
+		<name_cn>纳特梅尔</name_cn>
+		<explain_cn>首次成功吸收黑暗魔力之石后，继续吸收变成怪物的过去传说的勇士。</explain_cn>
+		<name_tw>納特梅爾</name_tw>
+		<explain_tw>首次成功吸收黑暗魔力之石後，繼續吸收變成怪物的過去傳說的勇士。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_61</id>
+		<hp>30</hp>
+		<def>0</def>
+		<power>0</power>
+		<agility>10</agility>
+		<outSound>-</outSound>
+		<talkNum>390</talkNum>
+		<pat>pat,autoBattle</pat>
+		<imageID>pat_warrior_61</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>골드키위</name_kr>
+		<explain_kr>어미를 잃은 골드키위 새끼. 애완동물로 사용하면 전투 시 플레이어 턴 후에는 마나회복을, 적의 공격 후에는 체력회복을 시켜준다.</explain_kr>
+		<name_en>Gold Kiwi</name_en>
+		<explain_en>Gold kiwi baby which lost mother. When using as a pet, recovers MP after the play's turn and recover HP after getting attack in battle.</explain_en>
+		<name_jp>ゴールドキーウィ.</name_jp>
+		<explain_jp>母から離れたゴールドキーウィの子。ペットにすると、戦闘時にプレイヤーのターンの後にはマナ回復を、敵の攻撃後には体力回復をさせる。</explain_jp>
+		<name_cn>黄金几维鸟</name_cn>
+		<explain_cn>失去母亲的黄金几维雏鸟。作为宠物战斗时，玩家回合以后恢复法力，敌人的攻击后恢复体力。</explain_cn>
+		<name_tw>黃金幾維鳥</name_tw>
+		<explain_tw>失去母親的黃金幾維雛鳥。作為寵物戰鬥時，玩家回合以後恢復法力，敵人的攻擊後恢復體力。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_62</id>
+		<hp>2800</hp>
+		<def>150</def>
+		<power>180</power>
+		<agility>30</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_18</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>어둠의 용사</name_kr>
+		<explain_kr>과거 교황이 전쟁을 위해 준비한 어둠의 용사. 검은 마력의 원석 근처라서 다른 지역의 어둠의 용사보다 훨씬 강력하다.</explain_kr>
+		<name_en>Dark warrior</name_en>
+		<explain_en>Dark warrior which the pope prepared for the war in the past. By staying near the evil-stone he is the strongest among all the dark warriors.</explain_en>
+		<name_jp>闇の勇者</name_jp>
+		<explain_jp>過去祭司が戦争のために準備した闇の勇者。黒い魔力の原石に近い所にいるので他の地域の闇の戦士よりもはるかに強力である。</explain_jp>
+		<name_cn>黑暗勇士</name_cn>
+		<explain_cn>过去教皇为了战争而准备的黑暗勇士。因在黑暗魔力之石的原石附近诞生，所以比其他地区的勇士更强力。</explain_cn>
+		<name_tw>黑暗勇士</name_tw>
+		<explain_tw>過去教皇為了戰爭而準備的黑暗勇士。因在黑暗魔力之石的原石附近誕生，所以比其他地區的勇士更強力。</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_63</id>
+		<hp>15000</hp>
+		<def>350</def>
+		<power>200</power>
+		<agility>35</agility>
+		<outSound>dragon_1</outSound>
+		<talkNum>280</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_63</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>베루크</name_kr>
+		<explain_kr>어둠의 용사가 검은 마력의 원석에 오랜 기간 노출되어 변이된 괴물</explain_kr>
+		<name_en>Veruke</name_en>
+		<explain_en>Became a monster of exposing in Evil-Stone for so long.</explain_en>
+		<name_jp>ベルク</name_jp>
+		<explain_jp>闇の勇者が黒い魔力の原石に長い時間露出されて、変異したモンスター</explain_jp>
+		<name_cn>贝鲁克</name_cn>
+		<explain_cn>长时间被曝光于黑暗魔力之石从而突变成怪物的黑暗勇士</explain_cn>
+		<name_tw>貝魯克</name_tw>
+		<explain_tw>長時間被曝光於黑暗魔力之石從而突變成怪物的黑暗勇士</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_64</id>
+		<hp>27000</hp>
+		<def>200</def>
+		<power>240</power>
+		<agility>40</agility>
+		<outSound>-</outSound>
+		<talkNum>99</talkNum>
+		<pat>no</pat>
+		<imageID>warrior_64</imageID>
+		<magicID>-</magicID>
+		<magicCircle>-</magicCircle>
+		<name_kr>리비아</name_kr>
+		<explain_kr>교황에 대한 충성심으로 검은 마력의 돌 실험해 지원했지만 실패한 듯 하여 폐광에 버려진 왕궁용사</explain_kr>
+		<name_en>Rivia</name_en>
+		<explain_en>The palace warrior who volunteered Evil-Stone-Experiment towards pope's loyalty but thrown away in abandoned mine for failure.</explain_en>
+		<name_jp>リビア</name_jp>
+		<explain_jp>祭司に対する忠誠心で黒い魔力の石の実験に支援したが、失敗したようで、廃鉱に捨てられた王宮勇者</explain_jp>
+		<name_cn>利比亚</name_cn>
+		<explain_cn>因对教皇的忠诚自愿加入了黑暗魔力之石的实验，但一有失败的迹象就被遗弃在废矿的王宫勇士</explain_cn>
+		<name_tw>利比亞</name_tw>
+		<explain_tw>因對教皇的忠誠自願加入了黑暗魔力之石的實驗，但一有失敗的跡象就被遺棄在廢礦的王宮勇士</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_65</id>
+		<hp>7000</hp>
+		<def>0</def>
+		<power>180</power>
+		<agility>35</agility>
+		<outSound>evil_1</outSound>
+		<talkNum>99</talkNum>
+		<pat>magic,fire,2,2,reflector1</pat>
+		<imageID>warrior_65</imageID>
+		<magicID>magic_evil,evil_1</magicID>
+		<magicCircle>basic_0,basic_1,basic_2</magicCircle>
+		<name_kr>케이트</name_kr>
+		<explain_kr>인간들의 증오와 분노가 모여 형상화된 악령</explain_kr>
+		<name_en>Kate</name_en>
+		<explain_en>The evil spirit shaped by humans hatred and anger</explain_en>
+		<name_jp>ケイト</name_jp>
+		<explain_jp>人間の憎悪と怒りが集まって形象化された悪霊</explain_jp>
+		<name_cn>凯特</name_cn>
+		<explain_cn>由人类的憎恶与愤怒幻化成的恶灵</explain_cn>
+		<name_tw>凱特</name_tw>
+		<explain_tw>由人類的憎惡與憤怒幻化成的惡靈</explain_tw>
+	</Content>
+	<Content>
+		<id>warrior_66</id>
+		<hp>1</hp>
+		<def>0</def>
+		<power>0</power>
+		<agility>5</agility>
+		<outSound>-</outSound>
+		<talkNum>392</talkNum>
+		<pat>reflector2,newPattern</pat>
+		<imageID>warrior_66</imageID>
+		<magicID>magic_5,explosion_1</magicID>
+		<magicCircle>m#innc7f,m#midc3k,basic_2</magicCircle>
+		<name_kr>파이베리</name_kr>
+		<explain_kr>파이베리를 투영한 실체</explain_kr>
+		<name_en>Pieberry</name_en>
+		<explain_en>Projection of the real Pieberry</explain_en>
+		<name_jp>パイベリー</name_jp>
+		<explain_jp>パイベリーを投影した実体</explain_jp>
+		<name_cn>派莓</name_cn>
+		<explain_cn>投影派莓的实体</explain_cn>
+		<name_tw>派莓</name_tw>
+		<explain_tw>投影派莓的實體</explain_tw>
+	</Content>
+</Contents>

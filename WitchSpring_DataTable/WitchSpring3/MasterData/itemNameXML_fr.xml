@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatList>
+	<Stat id="waterLeaf" name="Feuille brumeuse" explain="Une feuille humide de la Forêt brumeuse. Restaure #power PM."/>
+	<Stat id="waterLeaf2" name="Tas de feuilles brumeuses" explain="Un tas de feuilles brumeuses bouillies. Restaure #power PM."/>
+	<Stat id="redMarble" name="Perle de salamandre rouge" explain="Une perle d'énergie de feu."/>
+	<Stat id="rock-a" name="Dalle magique" explain="Une dalle contenant de l'énergie magique. Idéale pour graver les cercles magiques."/>
+	<Stat id="rock-b" name="Dalle magique améliorée" explain="Une dalle qui émet une grande puissance magique. Vous pouvez graver un puissant sort sur sa surface."/>
+	<Stat id="rock-c" name="Dalle magique suprême" explain="Une dalle de magie puissante. Utilisée pour créer des sorts de haut niveau."/>
+	<Stat id="dampFruit" name="Baie brumeuse" explain="Un petit fruit tombé de l'arbre brumeux. C'est la nourriture préférée des sorcières. Restaure #power PV."/>
+	<Stat id="dampFruit2" name="Baie brumeuse rouge" explain="Un gros fruit sucré fabriqué avec les fruits de l'arbre brumeux. Confère +#power PV max."/>
+	<Stat id="yellowDust" name="Poudre de pierre jaune étincelante" explain="Une poudre humide contenant un peu de magie. Elle génère une petite explosion quand on lui injecte de la magie."/>
+	<Stat id="dampSeed" name="Graine de demp" explain="Une graine de Dempest. Elle contient une grande énergie vitale. Confère +#power PV max."/>
+	<Stat id="lizardTail" name="Queue de lézard" explain="Un ingrédient magique. Elle est comestible, mais il n'est pas recommandé de la manger. Restaure quelques PM."/>
+	<Stat id="bigLizardTail" name="Grande queue de lézard" explain="La grande queue d'un lézard adulte. Restaure #power PV et PM."/>
+	<Stat id="toadstool" name="Champignon empoisonné" explain="Un ingrédient magique. À ne consommer sous aucun prétexte."/>
+	<Stat id="tentWhite" name="Sac de couchage lapin" explain="Un sac de couchage magique qui permet de camper à l'extérieur. Dormir à l'intérieur régénère tous les PV/PM et augmente les PV/PM max selon le montant de PV/PM régénérés. Permet également de sauvegarder la progression."/>
+	<Stat id="cotton" name="Fleur de coton" explain="Une campanule qui produit du coton."/>
+	<Stat id="cloth" name="Morceau de tissu" explain="Un morceau de tissu. La sorcière peut en créer un par jour. Jusqu'à 30 morceaux peuvent être stockés à la fois."/>
+	<Stat id="dampMarble" name="Perle de brouillard" explain="Une perle obtenue sur le corps du Crapaud de brouillard. Contient une petite quantité de magie."/>
+	<Stat id="soulStone" name="Pierre d'âme" explain="Une pierre capable d'absorber l'énergie vitale. Elle peut contenir jusqu'à #power points d'énergie vitale."/>
+	<Stat id="driedLeaf" name="Feuilles séchées" explain="Des feuilles séchées près d'un feu de camp."/>
+	<Stat id="portion_red" name="Potion rouge" explain="Une potion rouge très amère. Confère +#power FOR."/>
+	<Stat id="portion_brown" name="Potion marron" explain="Un concentré liquide de queue de lézard. Confère +#power MAG."/>
+	<Stat id="water" name="Eau de source" explain="De l'eau de source obtenue dans la fontaine de l'habitat des sangliers."/>
+	<Stat id="soulStone2" name="Pierre d'âme nv. 2" explain="Une pierre capable d'absorber l'énergie vitale. Utilisée en combat, elle permet de récupérer des PV et PM selon la quantité d'énergie vitale stockée à l'intérieur sans passer de tour. Elle peut contenir jusqu'à #power points d'énergie vitale."/>
+	<Stat id="darkStone" name="Pierre de magie noire" explain="Une pierre contenant une puissante énergie maléfique. Si un humain la touche, il perdra la raison et tentera de détruire tout ce qui l'entoure. Elle peut être utilisée après purification."/>
+	<Stat id="soulStone3" name="Pierre d'âme nv. 3" explain="Une pierre capable d'absorber l'énergie vitale. En combat, elle permet de récupérer des PV et PM sans passer de tour. Si la pierre d'âme est entièrement remplie d'énergie vitale, elle permet de récupérer automatiquement vos PV et PM si vos PV tombent à 0. Elle peut contenir jusqu'à #power points d'énergie vitale."/>
+	<Stat id="soulStone4" name="Pierre d'âme nv. 4" explain="#id=soulStone3"/>
+	<Stat id="soulStone5" name="Pierre d'âme nv. 5" explain="#id=soulStone3"/>
+	<Stat id="bigDarkStone" name="Grande pierre de magie noire" explain="Plusieurs pierres de magie noire combinées."/>
+	<Stat id="dampWater" name="Fontaine de la Forêt brumeuse" explain="Une fontaine aux pouvoirs de purification. Restaure #power PM."/>
+	<Stat id="armedak" name="Armedak, l'épée sacrée" explain="Cette épée a été trouvée dans le temple de Morell. On dit qu'autrefois, elle a reçu la bénédiction de Revgato durant la cérémonie de la fontaine. Équipez-la pour recevoir +18 % d'ATQ physique et +10 % d'effets magiques."/>
+	<Stat id="wand_levgato" name="Ancien bâton de Revgato" explain="Un bâton qui appartenait à l'ancien dieu Revgato. Équipez-le pour recevoir +32 % d'ATQ magique et infliger des dégâts supplémentaires à 2 ennemis non ciblés. Cependant, l'ATQ physique est réduite de 20 %."/>
+	<Stat id="dominique" name="Shubetha, la lame acérée" explain="Une puissante épée ancestrale transmise de génération en génération au sein de la famille royale de Shubeth. Équipez-la pour recevoir +24 % d'ATQ physique."/>
+	<Stat id="zarell" name="Za'rrel" explain="Une épée tranchante fabriquée dans la forge de Shubeth. Elle est utilisée par les guerriers de rang intermédiaire ou supérieur. Équipez-la pour recevoir +#power d'ATQ physique."/>
+	<Stat id="kunzarell" name="Ra Za'rrel" explain="Une épée destinée aux meilleurs guerriers de Shubeth. Équipez-la pour recevoir +#power d'ATQ physique de base."/>
+	<Stat id="lazarell" name="Khan Za'rrel achevée" explain="Une épée à la puissance inégalée, forgée avec la griffe d'un Ancien dragon par le meilleur forgeron de Shubeth. Équipez-la pour recevoir +#power d'ATQ physique de base."/>
+	<Stat id="woodSpirit" name="Morceau de bois des esprits" explain="Un morceau de bois contenant une grande énergie vitale. Confère +#power PV."/>
+	<Stat id="stimulus_str" name="Stimulant musculaire" explain="Un médicament qui augmente temporairement la force musculaire. Une fois consommé, 10 % des PV sont convertis pour obtenir 10 + #power % de FOR pour la durée du combat."/>
+	<Stat id="stimulus_sp" name="Stimulant magique" explain="Un médicament qui stimule les capacités sensorielles et augmente temporairement la force mentale. Une fois consommé, 10 % des PV sont convertis pour obtenir 10 + #power % de MAG."/>
+	<Stat id="snailFresh1" name="Viande de limace calcifiée" explain="La chair d'une limace qui s'est calcifiée au moment de sa mort. Restaure #power PV."/>
+	<Stat id="snailFresh2" name="Viande de limace caoutchouteuse" explain="La chair d'une limace qui s'est raffermie pendant le combat. Confère +#power PV max."/>
+	<Stat id="snailFresh3" name="Viande de limace fraîche" explain="La chair fraîche d'une limace, aussi tendre que lorsqu'elle était en vie. Confère +#power PV max."/>
+	<Stat id="smallSnailFresh" name="Petite viande de limace" explain="Restaure #power PV."/>
+	<Stat id="mineBread" name="Pain des travailleurs" explain="Le pain des travailleurs de la mine de Lehert. Restaure #power PV et PM."/>
+	<Stat id="wand_1" name="Bâton de dryade" explain="Un bâton fabriqué avec les branches d'un arbre de dryade. Il est particulièrement pointu et résistant, il peut donc être utilisé en tant qu'épée. Équipez-le pour recevoir +5 % d'ATQ physique et magique."/>
+	<Stat id="smallSoulStone" name="Petite pierre d'âme" explain="Une pierre d'âme préparée pour Adrian. Malgré sa taille, elle est assez puissante pour donner vie à un être humain."/>
+	<Stat id="lectbeeSting" name="Dard de Rectabeille" explain="Un dard obtenu sur le corps de Rectabeille. Il contient un peu d'électricité."/>
+	<Stat id="magicIce" name="Dalle de glace scintillante" explain="Un bloc de glace contenant un peu de magie, ce qui l'empêche de fondre."/>
+	<Stat id="defenceIce" name="Glaçon magique" explain="Un glaçon rempli de magie. Confère +#power DÉF."/>
+	<Stat id="coldStone" name="Pierre froide" explain="Une pierre gelée obtenue dans la Grotte de glace."/>
+	<Stat id="iceSting" name="Bras de Schwitz" explain="Un bras obtenu sur le corps de Schwitz."/>
+	<Stat id="iceStings" name="Épine de glace" explain="Une épine gelée fabriquée à partir des morceaux du corps de Schwitz. Confère +#power MAG."/>
+	<Stat id="crevasseBeard" name="Main de Crevasse" explain="La grande main de Crevasse. Elle peut être utilisée en tant qu'ingrédient magique. Confère +#power MAG et DÉF."/>
+	<Stat id="iceSnailCover" name="Coquille d'escargot de glace" explain="Une coquille très dure d'un escargot de glace."/>
+	<Stat id="iceSnailFresh" name="Viande d'escargot de glace" explain="La chair d'un escargot de glace. Elle est aussi rigide que si elle était congelée. Confère +#power PV et PM max."/>
+	<Stat id="warriorSword" name="Épée de guerrier" explain="Une épée courte bon marché. Équipez-la pour obtenir +#power ATQ physique."/>
+	<Stat id="spChecker" name="Détecteur de magie" explain="Un appareil capable de détecter l'énergie magique. Il a été fabriqué avec une petite quantité de pierres de magie noire. Sa distribution a été interdite en raison des dangers potentiels, mais la Compagnie noire continue de les vendre aux guerriers en secret."/>
+	<Stat id="darpSpChecker" name="Détecteur de magie contaminé" explain="Un détecteur de magie brisé qui émet des particules d'énergie maléfique. Si un humain le garde trop longtemps, il sera consommé par la rage."/>
+	<Stat id="smallSpStone" name="Petite pierre magique purifiée" explain="Une pierre magique obtenue en purifiant une petite pierre de magie noire. Confère +#power MAG."/>
+	<Stat id="smallSpStone2" name="Petite pierre magique extra-purifiée" explain="Une pierre magique obtenue en purifiant une petite pierre de magie noire à plusieurs reprises. Confère +#power % MAG."/>
+	<Stat id="fireStone" name="Corne de Rochelave" explain="Une corne dure de Rochelave, qui contient de l'énergie thermique."/>
+	<Stat id="lavalordHeart" name="Cœur du Seigneur de lave" explain="Le noyau du Seigneur de lave. Il contient une énorme quantité d'énergie magique. Confère +#power MAG."/>
+	<Stat id="magicBasalt" name="Basalte magique" explain="Une pierre qui contient une bonne quantité d'énergie magique. Confère +#power MAG."/>
+	<Stat id="molefCover" name="Coquille de bébé Molef" explain="Coquille en acier de bébé Molef"/>
+	<Stat id="molefCover2" name="Coquille de Molef" explain="Coquille en acier de mère Molef"/>
+	<Stat id="snailtang" name="Soupe d'escargots" explain="Une soupe d'escargots, très bonne pour la santé. Confère +#power PV max."/>
+	<Stat id="tailtang" name="Soupe de lézard" explain="Une soupe avec plusieurs ingrédients, dont une queue de lézard. Confère +#power PM max."/>
+	<Stat id="sctang" name="Soupe de scorpion" explain="Une soupe de scorpion, garantie sans venin. À consommer pour obtenir +#power FOR et DÉF."/>
+	<Stat id="sctail" name="Queue de scorpion" explain="La queue venimeuse d'un scorpion du désert. À ne consommer sous aucun prétexte."/>
+	<Stat id="portion_def" name="Potion violette" explain="Une potion violette qui rend votre corps dur comme l'acier. Confère +#power DÉF."/>
+	<Stat id="miniBoarMeat" name="Petite viande de sanglier" explain="La chair tendre d'un jeune sanglier. Restaure #power PV."/>
+	<Stat id="underKey" name="Clé de la salle fermée" explain="Une clé permettant d'ouvrir la porte verrouillée de la Chambre des marionnettes."/>
+	<Stat id="soulStone6" name="Pierre d'âme rouge" explain="La forme évoluée d'une pierre d'âme de sorcière, améliorée avec des âmes humaines. Elle possède une forte tendance à absorber l'énergie vitale, ce qui double l'absorption d'énergie vitale en combat. Elle permet aussi de récupérer vos PV et PM en combat. Si votre pierre d'âme est remplie d'énergie vitale et que vous tombez au combat, l'énergie vitale qu'elle contient sera consommée pour régénérer automatiquement vos PV et PM. Elle peut contenir jusqu'à #power points d'énergie vitale."/>
+	<Stat id="soul" name="Débris d'âme" explain="Un fragment d'âme qui apparaît lorsque l'énergie vitale d'un humain est absorbée. Plus son désir, son obsession et sa cupidité sont profonds, plus il y aura de débris. Restaure #power PV et PM."/>
+	<Stat id="blueSoulStone" name="Pierre d'âme bleue" explain="Une pierre fabriquée en utilisant des débris d'âme pour forger une pierre de magie noire. Une fois absorbée, la MAG augmente de #power et la FOR augmente de #power."/>
+	<Stat id="wand_levgato2" name="Bâton de Revgato" explain="Le bâton de Revgato, restauré avec la puissance de son maître. Il augmente les effets magiques de 55 % et restaure les PV selon les PM utilisés."/>
+	<Stat id="batWing" name="Morceau d'aile de chauve-souris" explain="Un morceau d'aile de chauve-souris géante."/>
+	<Stat id="acientHorn" name="Griffe noire de l'Ancien dragon" explain="La grande griffe de l'Ancien dragon."/>
+	<Stat id="batWingSoup" name="Soupe d'aile de chauve-souris" explain="Une soupe noire aussi épaisse que dégoûtante. Confère +#power AGI."/>
+	<Stat id="basaltStone" name="Pierre de basalte" explain="Une pierre infusée avec la puissance du Golem de basalte. Confère +#power FOR."/>
+	<Stat id="strongStone" name="Pierre de force" explain="Une pierre qui accroît la force en utilisant des ingrédients spéciaux. Confère +#power FOR."/>
+	<Stat id="raibina" name="Rabina" explain="Une plante qui confère une grande énergie vitale. Confère +#power PV max."/>
+	<Stat id="agtCapsule" name="Pilule de légèreté" explain="Confère +#power AGI."/>
+	<Stat id="raibina2" name="Rabina bleue" explain="Une variante de la plante de Rabina. Confère +#power PM."/>
+	<Stat id="rainbowMarble" name="Bille arc-en-ciel" explain="Une bille qui contient plusieurs sources d'énergie. Absorbez sa puissance pour recevoir +#power à toutes vos statistiques."/>
+	<Stat id="spiritCrystal" name="Cristal scintillant" explain="Un cristal d'énergie qui siphonne l'énergie des monstres. Absorbez sa puissance pour recevoir +#power % à toutes vos statistiques."/>
+	<Stat id="lightningHorn" name="Corne de Dragon de foudre" explain="La corne gigantesque d'un Dragon de foudre."/>
+	<Stat id="blueFlower" name="Fleur bleue" explain="Une fleur rare qui pousse au sommet du Mont Shubeth. Elle émet une lueur bleue. Préparez un thé avec ses feuilles pour recevoir +#power % à toutes vos statistiques."/>
+	<Stat id="desertWormHeadSting" name="Épine de Ver du désert" explain="Une épine dure provenant de la tête d'un Ver du désert."/>
+	<Stat id="bigScTail" name="Queue de Scorpion géant du désert" explain="La queue immense d'un Scorpion géant du désert."/>
+	<Stat id="lectrhinoHorn" name="Corne de Luminocéros" explain="Une corne géante qui a accumulé une grande quantité d'énergie électrique au fil des années."/>
+	<Stat id="creichLeaf" name="Feuille de Kreytes" explain="Les feuilles d'une herbe rare du continent de Vavelian. Confère +#power MAG."/>
+	<Stat id="creichRoot" name="Racine de Kreytes" explain="Les feuilles séchées d'une herbe rare du continent de Vavelian. Confère +#power PV."/>
+	<Stat id="creichWater" name="Jus de Kreytes" explain="Le jus d'une herbe rare du continent de Vavelian. Confère +#power PM."/>
+	<Stat id="oldKanZarell" name="Khan Za'rrel inachevée" explain="Une superbe épée fabriquée par un maître forgeron de Shubeth oriental. Équipez-la pour obtenir +#power ATQ physique."/>
+	<Stat id="dominique2" name="Za'rrel Shubetha" explain="L'épée Shubetha, améliorée par le fabricant d'armes Za'rrel. Équipez-la pour recevoir +50 % d'ATQ physique."/>
+	<Stat id="redGem" name="Gemme rouge" explain="Une gemme précieuse généralement utilisée pour décorer les ornements royaux. Elle est difficile à vendre, car on ne les trouve qu'à l'intérieur du palais royal."/>
+	<Stat id="redMask" name="Masque rouge" explain="Un masque décoré d'un motif rouge qui prouve votre appartenance au groupe des Assassins rouges."/>
+	<Stat id="rareMetal" name="Métal rare" explain="Un métal rare et difficile à travailler. Il possède des propriétés électriques et peut être utilisé pour améliorer les armes."/>
+	<Stat id="wand_2" name="Bâton de dryade amélioré" explain="Un bâton qui a été durci en utilisant des matériaux solides. Son attaque physique a également été améliorée. Équipez-le pour recevoir +10 % d'ATQ magique et +30 % d'AGI."/>
+	<Stat id="sandarmor" name="Armure Grâce des sables" explain="Cette armure est recouverte d'une fine couche de sable magique qui protège son porteur. Confère +#power % DÉF."/>
+	<Stat id="spStoneFinal" name="Grande pierre de magie" explain="Une pierre qui stimule fortement l'énergie magique dormante. Absorbez sa puissance pour recevoir +#power % PM/MAG."/>
+	<Stat id="electricSting" name="Dard électrique" explain="Ce dard stimule les réflexes et confère un bonus d'AGI. Confère +#power % AGI."/>
+	<Stat id="wand_3" name="Bâton de dryade rouge" explain="Un bâton de dryade infusée avec l'énergie du feu. +20 % ATQ magique, +15 % ATQ physique, +40 % AGI. Les dégâts des sorts de feu augmentent de 30 % et appliquent un effet de brûlure sur l'ennemi en utilisant des attaques physiques."/>
+	<Stat id="wand_4" name="Bâton de dryade bleue" explain="Un bâton de dryade infusé avec l'énergie de glace. +20 % ATQ magique, +10 % ATQ physique, +40 % AGI. Les dégâts des sorts de glace augmentent de 30 % et appliquent un effet de gel sur l'ennemi."/>
+	<Stat id="spiritArm" name="Brindille des esprits" explain="Une brindille des esprits de la Forêt brumeuse."/>
+	<Stat id="holyLeaf" name="Feuille brumeuse scintillante" explain="Cette feuille est imbibée avec la puissance de la Forêt brumeuse et restaure #power % des PM."/>
+	<Stat id="smogBall" name="Bombe de renard du désert" explain="Une bombe fumigène qui contient un gaz émis par les renards du désert. Les Vers du désert le détestent."/>
+	<Stat id="dotori" name="Gland" explain="Le gland d'un écureuil. Restaure #power PM."/>
+	<Stat id="dotori2" name="Gland léger" explain="Ce gland rend votre corps léger et augmente votre AGI de #power."/>
+	<Stat id="pendantLiat" name="Ancien collier de Lehert" explain="Une relique qui appartenait au chef de l'ancien Lehert. Équipez-la pour récupérer 15 % de PM à chaque tour."/>
+	<Stat id="soulButton" name="Bouton de petite pierre d'âme" explain="En combat, vous récupérez 5 PV et 15 PM par tour."/>
+	<Stat id="muletCover" name="Coquille dure de Mullet" explain="Il est très difficile de transpercer la coquille d'un Mullet, car elle est particulièrement résistante."/>
+	<Stat id="windPendant" name="Pendentif des vents" explain="Équipez-le pour recevoir +50 AGI."/>
+	<Stat id="firePendant" name="Pendentif des flammes" explain="Équipez-le pour doubler l'efficacité des ATQ physiques et magiques si vos PV sont inférieurs à 30 %."/>
+	<Stat id="defPendant" name="Pendentif de patience" explain="Ce pendentif calme votre esprit durant les moments difficiles. Équipez-le pour réduire les dégâts subis selon vos PV restants."/>
+	<Stat id="levgatoPendant" name="Bénédiction de Revgato" explain="Un pendentif offert à Raymond par Revgato quand il est devenu le vice-commandant de l'unité des animaux gardiens. Équipez-le pour récupérer 10 % de PV à chaque tour."/>
+	<Stat id="addPendant" name="Épaulette de courage" explain="Une épaulette reçue par Adrian de la part de l'Association des explorateurs. Équipez-la pour prendre le premier tour à chaque combat et obtenir un Bouclier magique qui vous rend plus efficace."/>
+	<Stat id="wand_philia" name="Bâton de Filia" explain="Le bâton utilisé par Filia. Équipez-le pour recevoir +30 % d'effets magiques. De plus, une vigne empêchera 1 attaque fatale de vous toucher."/>
+	<Stat id="ballgreenString" name="Épine de Bouleverte" explain="Une épine vénéneuse provenant du bras de Bouleverte. Faites attention à ne pas vous piquer."/>
+	<Stat id="ghostWood" name="Sculpture en bois shezarien" explain="Une sculpture fabriquée avec un morceau de bois des esprits de la Forêt brumeuse. On peut la trouver dans toutes les maisons shezariennes. En la portant, vous pouvez appeler une âme shezarienne durant le combat pour étourdir tous les ennemis. (Jusqu'à 2 fois)"/>
+	<Stat id="lamp" name="Lampe d'explorateur" explain="Un outil qui permet d'illuminer votre chemin. On dirait qu'Adrian l'a perdue dans la Grotte brumeuse."/>
+	<Stat id="liatArmor" name="Armure de mailles légère" explain="Une armure de mailles fines conçue pour être aussi légère que possible. Équipez-la pour recevoir +30 % DÉF (base + 10). Votre AGI diminue de 20 %."/>
+	<Stat id="muletArmor" name="Manteau d'écailles de Mullet" explain="Une armure protectrice fabriquée à partir d'écailles de Mullet. Elle est très légère et offre une grande capacité défensive. Équipez-la pour recevoir +60 % DÉF (base + 30)."/>
+	<Stat id="nanaDragonMeat" name="Viande du dragon" explain="La chair tendre d'un dragon. Son odeur unique est très forte. Restaure #power PV. Les Dragons Maegrik, qui vivent dans la Vallée du dragon, en raffolent."/>
+	<Stat id="silverPendant" name="Pendentif en argent" explain="Un pendentif en argent trouvé dans le temple de Morell. Il stimule la croissance des divinités. Équipez-le pour doubler les résultats des combats."/>
+	<Stat id="magricCover" name="Écaille de Dragon Maegrik enflammée" explain="L'écaille d'un Jeune dragon Maegrik. Il n'a pas encore atteint sa taille adulte, cette écaille peut donc être traitée car elle n'est pas totalement durcie."/>
+	<Stat id="magricEgg" name="Œuf de Maegrik" explain="Une pierre qui représente le point d'origine d'un Dragon Maegrik. Elle émet une puissante énergie magique."/>
+	<Stat id="magricBlade" name="Lame de Maegrik" explain="Une épée pouvant faire exploser sa cible à l'impact. Pour contrôler l'épée, son porteur doit avoir au moins 300 MAG. Si cette condition est remplie, son porteur peut utiliser la puissance explosive infinie de l'épée pour ravager ses ennemis. Équipez-la pour recevoir +15 % d'ATQ physique de base. Votre ATQ augmente de 4 % à chaque tour."/>
+	<Stat id="hectorPocket" name="Sac de combat d'Hector" explain="Un sac de combat utilisé par Hector quand il était un soldat. Une fois équipé, vous pouvez utiliser les outils en combat sans passer votre tour."/>
+	<Stat id="hectorSword" name="Épée du capitaine" explain="L'épée utilisée par Hector quand il était capitaine. Équipez-la pour obtenir +#power d'ATQ physique."/>
+	<Stat id="airuddy_3" name="Petite robe blanche" explain="La robe portée par Eirudy lors de sa naissance. En la portant, Eirudy retrouvera temporairement son apparence d'origine."/>
+	<Stat id="airuddy_4" name="Pinerame" explain="La robe de cérémonie portée par Sofia durant les tournois."/>
+	<Stat id="wand_eileen" name="Bâton épineux d'Eileen" explain="Un bâton couvert d'épines qui accroit la puissance de son porteur en échange de la douleur qu'il lui inflige. Équipez-le avant un combat pour recevoir un grand bonus à la fin du combat."/>
+	<Stat id="airuddy_5" name="Lalafan" explain="Une robe décontractée offerte par Adrian à Eirudy. Elle a été fabriquée et importée du village de Lalaque, sur le continent de Vavelia."/>
+	<Stat id="wand_philia2" name="Bâton aride de Filia" explain="Ce bâton lance une malédiction sur l'ennemi. La malédiction accumule 10 % de dégâts à chaque tour et inflige ces dégâts au tour de l'ennemi."/>
+	<Stat id="esteras" name="Épée longue d'Esteras" explain="Une épée longue qui accompagne la robe Pinerame. Équipez-la pour recevoir +20 % d'ATQ de base. Si vous équipez également Pinerame, vous recevrez un bonus d'AGI de 40 % et activerez la technique Pluie de lames."/>
+	<Stat id="rareMetal2" name="Métal rare doré" explain="Un métal rare trouvé dans les mines de Lehert. Peut être utilisé pour renforcer les armes."/>
+	<Stat id="zarell_gold" name="Za'rrel doré" explain="Une épée forgée à partir de Khan Za'rrel et d'un métal rare doré. Les attaques physiques infligent 900 + 140 % de votre FOR."/>
+	<Stat id="magricHorn" name="Corne de Maegrik" explain="La corne d'un Dragon Maegrik géant."/>
+	<Stat id="magricBlade2" name="Épée de Maegrik enflammée" explain="Équipez-la pour recevoir +30 % d'ATQ physique et un bonus d'ATQ physique de 6 % à chaque tour qui suit. Elle applique également un effet de brûlure qui inflige des dégâts sur la durée, et vos sorts de feu infligent 40 % de dégâts supplémentaires."/>
+	<Stat id="armedak2" name="Armedak véritable" explain="La forme finale d'Armedak, qui a évolué dans la Chambre de la patience. Équipez-la pour recevoir +25 % d'ATQ physique et +40 % d'ATQ magique."/>
+	<Stat id="levgatoRing" name="Bague de Revgato" explain="Cette bague magique était utilisée par Revgato durant les cérémonies des fontaines. Équipez-la pour augmenter vos effets magiques de 40 %."/>
+	<Stat id="airuddy_0" name="Robe de combat blanche" explain="Une robe de combat destinée à être portée pour se cacher dans les profondeurs de la Forêt brumeuse."/>
+	<Stat id="airuddy_1" name="Robe de corbeau" explain="Une robe de poupée noire confectionnée par Grand-mère."/>
+	<Stat id="airuddy_2" name="Robe de seigneur du temple" explain="Une robe offerte par Morell et destinée au futur seigneur du temple."/>
+	<Stat id="-" name="-" explain="-"/>
+	<Stat id="-" name="-" explain="-"/>
+</StatList>

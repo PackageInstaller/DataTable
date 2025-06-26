@@ -1,0 +1,11 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
+-- Command line: -se UTF8 luacode/data/battledata/npcshapedata/mon_tx_w1_36_yezifeidao_fly.lua 
+
+-- params : ...
+-- function num : 0 , upvalues : _ENV
+return {
+attackColliserOffect = {x = -56, y = -2}
+, 
+attackColliserSize = {x = 302, y = 100}
+}
+

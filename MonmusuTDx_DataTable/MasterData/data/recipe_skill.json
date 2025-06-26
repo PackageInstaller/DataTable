@@ -1,0 +1,4442 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 2089454820346607846
+  },
+  "m_Name": "recipe_skill",
+  "table": [
+    {
+      "id": 12,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Red1",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Red1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Red1",
+              "count": 8
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Red1",
+              "count": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Red1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Red1",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Red1",
+              "count": 15
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Red1",
+              "count": 20
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Red2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Red2",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Red2",
+              "count": 8
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Red3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Red2",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Red2",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Red3",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue1",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue1",
+              "count": 8
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue1",
+              "count": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue1",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue1",
+              "count": 15
+            },
+            {
+              "recipe": "item.material.Blue2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue1",
+              "count": 20
+            },
+            {
+              "recipe": "item.material.Blue2",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue2",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue2",
+              "count": 8
+            },
+            {
+              "recipe": "item.material.Blue3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue2",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue2",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Blue3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Blue3",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Green1",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Green1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Green1",
+              "count": 8
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Green1",
+              "count": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Green1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Green1",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Green1",
+              "count": 15
+            },
+            {
+              "recipe": "item.material.Green2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Green1",
+              "count": 20
+            },
+            {
+              "recipe": "item.material.Green2",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Green2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Green2",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Green2",
+              "count": 8
+            },
+            {
+              "recipe": "item.material.Green3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Green3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Green2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Green2",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Green2",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Green3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Green3",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Light1",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Light1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Light1",
+              "count": 8
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Light1",
+              "count": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Light1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Light1",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Light1",
+              "count": 15
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Light1",
+              "count": 20
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Light2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Light2",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Light2",
+              "count": 8
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Light3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Light2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Light2",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Light2",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Light3",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark1",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark1",
+              "count": 8
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark1",
+              "count": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark1",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark1",
+              "count": 15
+            },
+            {
+              "recipe": "item.material.Dark2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark1",
+              "count": 20
+            },
+            {
+              "recipe": "item.material.Dark2",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark2",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark2",
+              "count": 8
+            },
+            {
+              "recipe": "item.material.Dark3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark2",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark2",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Dark3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Dark3",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown1",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown1",
+              "count": 8
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown1",
+              "count": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown1",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown1",
+              "count": 15
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown1",
+              "count": 20
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown2",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown2",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown2",
+              "count": 8
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown2",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown2",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Brown3",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Dark1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Dark1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Dark1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Dark2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Dark2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Dark2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Dark3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Dark3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Dark3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Green1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Green1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Green1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Green2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Green2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Green2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Green3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Green3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Green3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Green1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Green1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Green1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Green2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Green2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Green2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Green3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Green3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Green3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Blue1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Blue1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Blue1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Blue2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Blue2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Blue2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Blue3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Blue3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Blue3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Dark1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Dark1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Light1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Dark1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Dark2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Dark2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Light2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Dark2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Dark3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Dark3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Light3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Dark3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Dark1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Blue1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Dark1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Blue1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Dark1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Blue1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Dark2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Blue2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Dark2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Blue2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Dark2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Blue2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Dark3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Blue3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Dark3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Blue3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Dark3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Blue3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "recipes": [
+        {
+          "level": 1,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Red1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Blue1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Blue1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Brown1",
+              "count": 10
+            },
+            {
+              "recipe": "item.material.Green1",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Green2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Red2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Blue2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom3",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Blue2",
+              "count": 5
+            },
+            {
+              "recipe": "item.material.Brown2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 30
+            },
+            {
+              "recipe": "item.material.Brown3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Green3",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 60
+            },
+            {
+              "recipe": "item.material.Green3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom4",
+              "count": 120
+            },
+            {
+              "recipe": "item.material.Red3",
+              "count": 3
+            },
+            {
+              "recipe": "item.material.Blue3",
+              "count": 1
+            },
+            {
+              "recipe": "item.material.Default1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "recipe": [
+            {
+              "recipe": "item.material.Bom2",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom3",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom4",
+              "count": 150
+            },
+            {
+              "recipe": "item.material.Bom5",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

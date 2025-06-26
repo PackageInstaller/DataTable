@@ -1,0 +1,401 @@
+﻿-- chunkname: @IQIGame\\Config\\CfgLunaBattleLineZoneTable.lua
+
+local CfgLunaBattleLineZoneTable = {
+	{
+		StationingLevel = 26030301,
+		TrainingLevel = 26030201,
+		SealedGlobalHp = 500000000,
+		SealedLevel = 26030101,
+		Id = 1,
+		ZoneIcon = "/Icon/LunaBattleLine/Luna_ZoneIcon_Seyu.png",
+		Name = getI18NValue(180149039),
+		StageName = {
+			getI18NValue(180240434),
+			getI18NValue(180240435),
+			getI18NValue(180240436),
+			getI18NValue(180240437)
+		},
+		StageDesc = {
+			getI18NValue(180240438),
+			getI18NValue(180240439),
+			getI18NValue(180240440),
+			getI18NValue(180240441)
+		},
+		DollDataGroup = {
+			11,
+			12,
+			13,
+			14,
+			15,
+			16,
+			17,
+			18,
+			19,
+			20,
+			31,
+			32,
+			33,
+			34,
+			35,
+			36,
+			37,
+			38,
+			39,
+			40,
+			41,
+			42,
+			43,
+			44,
+			45,
+			46,
+			47,
+			48,
+			49,
+			50
+		}
+	},
+	{
+		StationingLevel = 26030302,
+		TrainingLevel = 26030202,
+		SealedGlobalHp = 500000000,
+		SealedLevel = 26030102,
+		Id = 2,
+		ZoneIcon = "/Icon/LunaBattleLine/Luna_ZoneIcon_Baoshi.png",
+		Name = getI18NValue(180149040),
+		StageName = {
+			getI18NValue(180240442),
+			getI18NValue(180240443),
+			getI18NValue(180240444),
+			getI18NValue(180240445)
+		},
+		StageDesc = {
+			getI18NValue(180240446),
+			getI18NValue(180240447),
+			getI18NValue(180240448),
+			getI18NValue(180240449)
+		},
+		DollDataGroup = {
+			11,
+			12,
+			13,
+			14,
+			15,
+			16,
+			17,
+			18,
+			19,
+			20,
+			31,
+			32,
+			33,
+			34,
+			35,
+			36,
+			37,
+			38,
+			39,
+			40,
+			41,
+			42,
+			43,
+			44,
+			45,
+			46,
+			47,
+			48,
+			49,
+			50
+		}
+	},
+	{
+		StationingLevel = 26030303,
+		TrainingLevel = 26030203,
+		SealedGlobalHp = 500000000,
+		SealedLevel = 26030103,
+		Id = 3,
+		ZoneIcon = "/Icon/LunaBattleLine/Luna_ZoneIcon_Tanlan.png",
+		Name = getI18NValue(180149041),
+		StageName = {
+			getI18NValue(180240450),
+			getI18NValue(180240451),
+			getI18NValue(180240452),
+			getI18NValue(180240453)
+		},
+		StageDesc = {
+			getI18NValue(180240454),
+			getI18NValue(180240455),
+			getI18NValue(180240456),
+			getI18NValue(180240457)
+		},
+		DollDataGroup = {
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16,
+			17,
+			18,
+			19,
+			20,
+			21,
+			22,
+			23,
+			24,
+			25,
+			26,
+			27,
+			28,
+			29,
+			30
+		}
+	},
+	{
+		StationingLevel = 26030304,
+		TrainingLevel = 26030204,
+		SealedGlobalHp = 500000000,
+		SealedLevel = 26030104,
+		Id = 4,
+		ZoneIcon = "/Icon/LunaBattleLine/Luna_ZoneIcon_Landuo.png",
+		Name = getI18NValue(180149042),
+		StageName = {
+			getI18NValue(180240458),
+			getI18NValue(180240459),
+			getI18NValue(180240460),
+			getI18NValue(180240461)
+		},
+		StageDesc = {
+			getI18NValue(180240462),
+			getI18NValue(180240463),
+			getI18NValue(180240464),
+			getI18NValue(180240465)
+		},
+		DollDataGroup = {
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			41,
+			42,
+			43,
+			44,
+			45,
+			46,
+			47,
+			48,
+			49,
+			50,
+			21,
+			22,
+			23,
+			24,
+			25,
+			26,
+			27,
+			28,
+			29,
+			30
+		}
+	},
+	{
+		StationingLevel = 26030305,
+		TrainingLevel = 26030205,
+		SealedGlobalHp = 500000000,
+		SealedLevel = 26030105,
+		Id = 5,
+		ZoneIcon = "/Icon/LunaBattleLine/Luna_ZoneIcon_Fennu.png",
+		Name = getI18NValue(180149043),
+		StageName = {
+			getI18NValue(180240466),
+			getI18NValue(180240467),
+			getI18NValue(180240468),
+			getI18NValue(180240469)
+		},
+		StageDesc = {
+			getI18NValue(180240470),
+			getI18NValue(180240471),
+			getI18NValue(180240472),
+			getI18NValue(180240473)
+		},
+		DollDataGroup = {
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			31,
+			32,
+			33,
+			34,
+			35,
+			36,
+			37,
+			38,
+			39,
+			40,
+			21,
+			22,
+			23,
+			24,
+			25,
+			26,
+			27,
+			28,
+			29,
+			30
+		}
+	},
+	{
+		StationingLevel = 26030306,
+		TrainingLevel = 26030206,
+		SealedGlobalHp = 500000000,
+		SealedLevel = 26030106,
+		Id = 6,
+		ZoneIcon = "/Icon/LunaBattleLine/Luna_ZoneIcon_Jidu.png",
+		Name = getI18NValue(180149044),
+		StageName = {
+			getI18NValue(180240474),
+			getI18NValue(180240475),
+			getI18NValue(180240476),
+			getI18NValue(180240477)
+		},
+		StageDesc = {
+			getI18NValue(180240478),
+			getI18NValue(180240479),
+			getI18NValue(180240480),
+			getI18NValue(180240481)
+		},
+		DollDataGroup = {
+			11,
+			12,
+			13,
+			14,
+			15,
+			16,
+			17,
+			18,
+			19,
+			20,
+			31,
+			32,
+			33,
+			34,
+			35,
+			36,
+			37,
+			38,
+			39,
+			40,
+			41,
+			42,
+			43,
+			44,
+			45,
+			46,
+			47,
+			48,
+			49,
+			50
+		}
+	},
+	{
+		StationingLevel = 26030307,
+		TrainingLevel = 26030207,
+		SealedGlobalHp = 500000000,
+		SealedLevel = 26030107,
+		Id = 7,
+		ZoneIcon = "/Icon/LunaBattleLine/Luna_ZoneIcon_Aoman.png",
+		Name = getI18NValue(180149045),
+		StageName = {
+			getI18NValue(180240482),
+			getI18NValue(180240483),
+			getI18NValue(180240484),
+			getI18NValue(180240485)
+		},
+		StageDesc = {
+			getI18NValue(180240486),
+			getI18NValue(180240487),
+			getI18NValue(180240488),
+			getI18NValue(180240489)
+		},
+		DollDataGroup = {
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16,
+			17,
+			18,
+			19,
+			20,
+			31,
+			32,
+			33,
+			34,
+			35,
+			36,
+			37,
+			38,
+			39,
+			40
+		}
+	}
+}
+
+setmetatable(CfgLunaBattleLineZoneTable, {
+	__index = function(t, k)
+		error("config error :not find key: [" .. tostring(k) .. "] in table: " .. "[CfgLunaBattleLineZoneTable]")
+	end
+})
+
+local defaultMetaTable = {
+	__index = {
+		StationingLevel = 0,
+		Name = "",
+		SealedGlobalHp = 0,
+		TrainingLevel = 0,
+		SealedLevel = 0,
+		ZoneIcon = "",
+		StageName = {},
+		StageDesc = {},
+		DollDataGroup = {}
+	}
+}
+
+for i, data in pairs(CfgLunaBattleLineZoneTable) do
+	setmetatable(data, defaultMetaTable)
+end
+
+return CfgLunaBattleLineZoneTable

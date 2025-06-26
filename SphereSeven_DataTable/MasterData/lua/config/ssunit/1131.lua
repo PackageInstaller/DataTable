@@ -1,0 +1,3 @@
+local Config = {Id=1131,Name="兽鬼 猎杀型",AbDir="SsUnit/131_ShouGuiLieSha",NewRes=0,HandleBones={""},UnitScale =1.44,CloseAtkOffset={4.5,0,-0.2},HitPosOffset={0,1.7928,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=2051,TotalFrames=160,OnHit=0,OnCutIn=0,OnDamage={26,44,50,59,69,76,83,103},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=2052,TotalFrames=150,OnHit=0,OnCutIn=0,OnDamage={44,62},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=2053,TotalFrames=140,OnHit=0,OnCutIn=0,OnDamage={60},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

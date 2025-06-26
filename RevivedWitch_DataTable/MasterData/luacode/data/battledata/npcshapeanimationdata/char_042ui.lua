@@ -1,0 +1,29 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
+-- Command line: -se UTF8 luacode/data/battledata/npcshapeanimationdata/char_042ui.lua 
+
+-- params : ...
+-- function num : 0 , upvalues : _ENV
+return {
+Move = {endEventFrames = 1}
+, 
+AttackStart = {endEventFrames = 6}
+, 
+AttackLoop = {endEventFrames = 11}
+, 
+AttackEnd = {endEventFrames = 2}
+, 
+MagicStart = {endEventFrames = 1}
+, 
+MagicLoop = {endEventFrames = 20}
+, 
+MagicEnd = {endEventFrames = 1}
+, 
+DeadDisappear = {endEventFrames = 44}
+, 
+Special = {endEventFrames = 60}
+, 
+Attack = {endEventFrames = 22}
+, 
+Magic = {endEventFrames = 49}
+}
+

@@ -1,0 +1,3 @@
+local Config = {Id=1105,Name="兽化人女",AbDir="SsUnit/1042_OrcWoman",NewRes=0,HandleBones={""},UnitScale =1,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.77,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=1093,TotalFrames=50,OnHit=0,OnCutIn=0,OnDamage={24},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=1094,TotalFrames=135,OnHit=0,OnCutIn=0,OnDamage={5,18,42,80},OnMissile={0}},Skl02={Name="Skl02",SkillEfxId=1095,TotalFrames=100,OnHit=0,OnCutIn=0,OnDamage={22},OnMissile={0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

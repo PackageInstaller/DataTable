@@ -1,0 +1,178 @@
+return {
+	[1001] = {
+		Id = 1001,
+		Channes = {
+			1,
+			3,
+		},
+		TimeStart = {
+			2022,
+			9,
+			30,
+			4,
+		},
+		TimeEnd = {
+			2022,
+			10,
+			17,
+			4,
+		},
+		Multiplier = 2.0,
+		LevelType = 0,
+		BannerId = 1027,
+	},
+	[1002] = {
+		Id = 1002,
+		Channes = {
+			1,
+			3,
+		},
+		TimeStart = {
+			2022,
+			9,
+			30,
+			4,
+		},
+		TimeEnd = {
+			2022,
+			10,
+			3,
+			4,
+		},
+		Multiplier = 2.0,
+		LevelType = 1,
+		BannerId = 1026,
+	},
+	[1003] = {
+		Id = 1003,
+		Channes = {
+			1,
+			3,
+		},
+		TimeStart = {
+			2022,
+			9,
+			30,
+			4,
+		},
+		TimeEnd = {
+			2022,
+			10,
+			1,
+			4,
+		},
+		Multiplier = 2.0,
+		LevelType = 2,
+		BannerId = 1025,
+	},
+	[1004] = {
+		Id = 1004,
+		Channes = {
+			1,
+			3,
+		},
+		TimeStart = {
+			2022,
+			9,
+			30,
+			4,
+		},
+		TimeEnd = {
+			2022,
+			10,
+			8,
+			4,
+		},
+		Multiplier = 2.0,
+		LevelType = 3,
+		BannerId = 1028,
+	},
+	[1005] = {
+		Id = 1005,
+		Channes = {
+			1,
+			3,
+		},
+		TimeStart = {
+			2022,
+			10,
+			8,
+			4,
+		},
+		TimeEnd = {
+			2022,
+			10,
+			10,
+			4,
+		},
+		Multiplier = 2.0,
+		LevelType = 1,
+		BannerId = 1026,
+	},
+	[1006] = {
+		Id = 1006,
+		Channes = {
+			1,
+			3,
+		},
+		TimeStart = {
+			2022,
+			10,
+			15,
+			4,
+		},
+		TimeEnd = {
+			2022,
+			10,
+			17,
+			4,
+		},
+		Multiplier = 2.0,
+		LevelType = 1,
+		BannerId = 1026,
+	},
+	[1007] = {
+		Id = 1007,
+		Channes = {
+			1,
+			3,
+		},
+		TimeStart = {
+			2022,
+			10,
+			8,
+			4,
+		},
+		TimeEnd = {
+			2022,
+			10,
+			17,
+			4,
+		},
+		Multiplier = 2.0,
+		LevelType = 2,
+		BannerId = 1025,
+	},
+	[1008] = {
+		Id = 1008,
+		Channes = {
+			1,
+			3,
+		},
+		TimeStart = {
+			2022,
+			10,
+			15,
+			4,
+		},
+		TimeEnd = {
+			2022,
+			10,
+			17,
+			4,
+		},
+		Multiplier = 2.0,
+		LevelType = 3,
+		BannerId = 1028,
+	},
+}

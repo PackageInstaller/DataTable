@@ -1,0 +1,504 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5419045945095513950
+  },
+  "m_Name": "sugoroku_cell_info_data",
+  "table": [
+    {
+      "cell_category": 1,
+      "desc_group_id": 0,
+      "cell_name": "スタート",
+      "ability_cell_text": "スタートマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "",
+      "ability_id": 0
+    },
+    {
+      "cell_category": 2,
+      "desc_group_id": 0,
+      "cell_name": "ボスバトル",
+      "ability_cell_text": "ボスバトルが発生するマスです。\r\nバトルに勝利するとボーナスステージに進みます。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "ボスバトル発生！",
+      "ability_id": 1
+    },
+    {
+      "cell_category": 3,
+      "desc_group_id": 0,
+      "cell_name": "ボスバトル(普通)",
+      "ability_cell_text": "ボスバトルが発生するマスです。\r\nバトルに勝利するとボーナスステージに進みます。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "ボスバトル発生！",
+      "ability_id": 1
+    },
+    {
+      "cell_category": 10000,
+      "desc_group_id": 0,
+      "cell_name": "バトル Lv.1",
+      "ability_cell_text": "バトルが発生するマスです。\r\n推奨Lv：15 \r\n編成上限数：4\r\nユニットEXP：5000\r\nゴールドコイン：3000",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "バトル発生！",
+      "ability_id": 3
+    },
+    {
+      "cell_category": 10001,
+      "desc_group_id": 0,
+      "cell_name": "バトル Lv.2",
+      "ability_cell_text": "バトルが発生するマスです。\r\n推奨Lv：15 \r\n編成上限数：4\r\nユニットEXP：5000\r\nゴールドコイン：3000",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "バトル発生！",
+      "ability_id": 3
+    },
+    {
+      "cell_category": 10002,
+      "desc_group_id": 0,
+      "cell_name": "バトル Lv.3",
+      "ability_cell_text": "バトルが発生するマスです。\r\n推奨Lv：15 \r\n編成上限数：4\r\nユニットEXP：5000\r\nゴールドコイン：3000",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "バトル発生！",
+      "ability_id": 3
+    },
+    {
+      "cell_category": 10003,
+      "desc_group_id": 0,
+      "cell_name": "バトル",
+      "ability_cell_text": "【編成上限数4】バトルが発生するマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "バトル発生！",
+      "ability_id": 3
+    },
+    {
+      "cell_category": 10004,
+      "desc_group_id": 0,
+      "cell_name": "バトル(普通)",
+      "ability_cell_text": "【編成上限数4】バトルが発生するマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "バトル発生！",
+      "ability_id": 3
+    },
+    {
+      "cell_category": 10100,
+      "desc_group_id": 0,
+      "cell_name": "強制バトル",
+      "ability_cell_text": "強制的に停止してバトルが発生するマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "STOP！！",
+      "ability_id": 4
+    },
+    {
+      "cell_category": 20000,
+      "desc_group_id": 0,
+      "cell_name": "方向表示",
+      "ability_cell_text": "方向表示マスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "",
+      "ability_id": 2
+    },
+    {
+      "cell_category": 20100,
+      "desc_group_id": 0,
+      "cell_name": "進む +1",
+      "ability_cell_text": "1マス進むマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "{0}マス進みます！",
+      "ability_id": 5
+    },
+    {
+      "cell_category": 20101,
+      "desc_group_id": 0,
+      "cell_name": "進む +2",
+      "ability_cell_text": "2マス進むマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "{0}マス進みます！",
+      "ability_id": 5
+    },
+    {
+      "cell_category": 20102,
+      "desc_group_id": 0,
+      "cell_name": "進む +3",
+      "ability_cell_text": "3マス進むマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "{0}マス進みます！",
+      "ability_id": 5
+    },
+    {
+      "cell_category": 20200,
+      "desc_group_id": 0,
+      "cell_name": "戻る -1",
+      "ability_cell_text": "1マス戻るマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "{0}マス戻ります。",
+      "ability_id": 6
+    },
+    {
+      "cell_category": 20201,
+      "desc_group_id": 0,
+      "cell_name": "戻る -2",
+      "ability_cell_text": "2マス戻るマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "{0}マス戻ります。",
+      "ability_id": 6
+    },
+    {
+      "cell_category": 20202,
+      "desc_group_id": 0,
+      "cell_name": "戻る -3",
+      "ability_cell_text": "3マス戻るマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "{0}マス戻ります。",
+      "ability_id": 6
+    },
+    {
+      "cell_category": 20300,
+      "desc_group_id": 0,
+      "cell_name": "ワープ",
+      "ability_cell_text": "ワープマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "ワープ！",
+      "ability_id": 7
+    },
+    {
+      "cell_category": 20400,
+      "desc_group_id": 0,
+      "cell_name": "分岐マス",
+      "ability_cell_text": "分岐マスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "ルート分岐",
+      "ability_id": 0
+    },
+    {
+      "cell_category": 30000,
+      "desc_group_id": 0,
+      "cell_name": "サイコロ増加 +1",
+      "ability_cell_text": "サイコロが1個増加するマスです。",
+      "stop_cell_title_text": "サイコロGET！",
+      "stop_cell_text": "サイコロを{0}個獲得しました！",
+      "cell_toast_text": "サイコロを獲得！",
+      "ability_id": 8
+    },
+    {
+      "cell_category": 30001,
+      "desc_group_id": 0,
+      "cell_name": "サイコロ増加 +2",
+      "ability_cell_text": "サイコロが2個増加するマスです。",
+      "stop_cell_title_text": "サイコロGET！",
+      "stop_cell_text": "サイコロを{0}個獲得しました！",
+      "cell_toast_text": "サイコロを獲得！",
+      "ability_id": 8
+    },
+    {
+      "cell_category": 30002,
+      "desc_group_id": 0,
+      "cell_name": "サイコロ増加 +3",
+      "ability_cell_text": "サイコロが3個増加するマスです。",
+      "stop_cell_title_text": "サイコロGET！",
+      "stop_cell_text": "サイコロを{0}個獲得しました！",
+      "cell_toast_text": "サイコロを獲得！",
+      "ability_id": 8
+    },
+    {
+      "cell_category": 30100,
+      "desc_group_id": 0,
+      "cell_name": "サイコロ減少 -1",
+      "ability_cell_text": "サイコロが1個減少するマスです。",
+      "stop_cell_title_text": "サイコロLOST……",
+      "stop_cell_text": "サイコロを{0}個失いました……。",
+      "cell_toast_text": "サイコロを失いました。",
+      "ability_id": 9
+    },
+    {
+      "cell_category": 30101,
+      "desc_group_id": 0,
+      "cell_name": "サイコロ減少 -2",
+      "ability_cell_text": "サイコロが2個減少するマスです。",
+      "stop_cell_title_text": "サイコロLOST……",
+      "stop_cell_text": "サイコロを{0}個失いました……。",
+      "cell_toast_text": "サイコロを失いました。",
+      "ability_id": 9
+    },
+    {
+      "cell_category": 30102,
+      "desc_group_id": 0,
+      "cell_name": "サイコロ減少 -3",
+      "ability_cell_text": "サイコロが3個減少するマスです。",
+      "stop_cell_title_text": "サイコロLOST……",
+      "stop_cell_text": "サイコロを{0}個失いました……。",
+      "cell_toast_text": "サイコロを失いました。",
+      "ability_id": 9
+    },
+    {
+      "cell_category": 30200,
+      "desc_group_id": 0,
+      "cell_name": "固定報酬 Lv.1",
+      "ability_cell_text": "固定報酬 Lv.1マスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30201,
+      "desc_group_id": 0,
+      "cell_name": "固定報酬 Lv.2",
+      "ability_cell_text": "固定報酬 Lv.2マスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30202,
+      "desc_group_id": 0,
+      "cell_name": "固定報酬 Lv.3",
+      "ability_cell_text": "固定報酬 Lv.3マスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30203,
+      "desc_group_id": 0,
+      "cell_name": "固定報酬(簡単)",
+      "ability_cell_text": "各属性の小結晶のいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30204,
+      "desc_group_id": 0,
+      "cell_name": "固定報酬(簡単B)",
+      "ability_cell_text": "各属性の小結晶のいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30205,
+      "desc_group_id": 0,
+      "cell_name": "固定報酬(普通)",
+      "ability_cell_text": "各属性の中結晶のいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30206,
+      "desc_group_id": 0,
+      "cell_name": "固定報酬(普通B)",
+      "ability_cell_text": "各属性の中結晶のいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30207,
+      "desc_group_id": 0,
+      "cell_name": "茶箱(難しい)",
+      "ability_cell_text": "各属性の大結晶のいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30208,
+      "desc_group_id": 0,
+      "cell_name": "茶箱(難しいB)",
+      "ability_cell_text": "各属性の大結晶のいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30300,
+      "desc_group_id": 0,
+      "cell_name": "抽選報酬 Lv.1",
+      "ability_cell_text": "抽選報酬 Lv.1マスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30301,
+      "desc_group_id": 0,
+      "cell_name": "抽選報酬 Lv.2",
+      "ability_cell_text": "抽選報酬 Lv.2マスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30302,
+      "desc_group_id": 0,
+      "cell_name": "抽選報酬 Lv.3",
+      "ability_cell_text": "抽選報酬 Lv.3マスです。。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30303,
+      "desc_group_id": 0,
+      "cell_name": "抽選報酬(簡単)",
+      "ability_cell_text": "EXPミルクかゴールドコインの\r\nいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30304,
+      "desc_group_id": 0,
+      "cell_name": "抽選報酬(簡単B)",
+      "ability_cell_text": "EXPミルクかゴールドコインの\r\nいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30305,
+      "desc_group_id": 0,
+      "cell_name": "抽選報酬(普通)",
+      "ability_cell_text": "EXPミルクかゴールドコインの\r\nいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30306,
+      "desc_group_id": 0,
+      "cell_name": "抽選報酬(普通B)",
+      "ability_cell_text": "EXPミルクかゴールドコインの\r\nいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30307,
+      "desc_group_id": 0,
+      "cell_name": "赤箱(難しい)",
+      "ability_cell_text": "EXPミルクかゴールドコインの\r\nいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30308,
+      "desc_group_id": 0,
+      "cell_name": "赤箱(難しいB)",
+      "ability_cell_text": "EXPミルクかゴールドコインの\r\nいずれかが入手できるマスです。",
+      "stop_cell_title_text": "宝箱",
+      "stop_cell_text": "宝箱を開いて、下記アイテムを入手しました。",
+      "cell_toast_text": "宝箱を獲得！",
+      "ability_id": 10
+    },
+    {
+      "cell_category": 30400,
+      "desc_group_id": 0,
+      "cell_name": "通過アイテム入手(簡単)",
+      "ability_cell_text": "通過するとゴールドコインが入手可能です。",
+      "stop_cell_title_text": "チェックポイントボーナス",
+      "stop_cell_text": "チェックポイントに止まったので、下記アイテムを入手しました。",
+      "cell_toast_text": "チェックポイントボーナス！",
+      "ability_id": 11
+    },
+    {
+      "cell_category": 30401,
+      "desc_group_id": 0,
+      "cell_name": "通過アイテム入手(普通)",
+      "ability_cell_text": "通過するとゴールドコインが入手可能です。",
+      "stop_cell_title_text": "チェックポイントボーナス",
+      "stop_cell_text": "チェックポイントに止まったので、下記アイテムを入手しました。",
+      "cell_toast_text": "チェックポイントボーナス！",
+      "ability_id": 11
+    },
+    {
+      "cell_category": 30402,
+      "desc_group_id": 0,
+      "cell_name": "通過アイテム入手(難しい)",
+      "ability_cell_text": "通過するとゴールドコインが入手可能です。",
+      "stop_cell_title_text": "チェックポイントボーナス",
+      "stop_cell_text": "チェックポイントに止まったので、下記アイテムを入手しました。",
+      "cell_toast_text": "チェックポイントボーナス！",
+      "ability_id": 11
+    },
+    {
+      "cell_category": 30500,
+      "desc_group_id": 0,
+      "cell_name": "通過・停止アイテム入手(簡単)",
+      "ability_cell_text": "通過・停止するとゴールドコインが入手可能です。",
+      "stop_cell_title_text": "チェックポイントボーナス",
+      "stop_cell_text": "ぴったりボーナスとして、下記アイテムを入手しました。",
+      "cell_toast_text": "チェックポイントボーナス！",
+      "ability_id": 13
+    },
+    {
+      "cell_category": 30501,
+      "desc_group_id": 0,
+      "cell_name": "通過・停止アイテム入手(普通)",
+      "ability_cell_text": "通過・停止するとゴールドコインが入手可能です。",
+      "stop_cell_title_text": "チェックポイントボーナス",
+      "stop_cell_text": "ぴったりボーナスとして、下記アイテムを入手しました。",
+      "cell_toast_text": "チェックポイントボーナス！",
+      "ability_id": 13
+    },
+    {
+      "cell_category": 30502,
+      "desc_group_id": 0,
+      "cell_name": "通過・停止アイテム入手(難しい)",
+      "ability_cell_text": "通過・停止するとゴールドコインが入手可能です。",
+      "stop_cell_title_text": "チェックポイントボーナス",
+      "stop_cell_text": "ぴったりボーナスとして、下記アイテムを入手しました。",
+      "cell_toast_text": "チェックポイントボーナス！",
+      "ability_id": 13
+    },
+    {
+      "cell_category": 40000,
+      "desc_group_id": 0,
+      "cell_name": "？マス",
+      "ability_cell_text": "何かが発生するマスです。",
+      "stop_cell_title_text": "",
+      "stop_cell_text": "",
+      "cell_toast_text": "？？？？？",
+      "ability_id": 12
+    }
+  ]
+}

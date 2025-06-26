@@ -1,0 +1,3 @@
+local Config = {Id=1036,Name="卡麦尔",AbDir="SsUnit/036_KaMaiEr",NewRes=1,HandleBones={"Bip001 Pelvis","Bone021","Bone088","Bip001 Spine"},UnitScale =1.44,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,2.0304,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10361,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={20,31,41,56,64},OnMissile={}},Skl01={Name="Skl01",SkillEfxId=10362,TotalFrames=120,OnHit=0,OnCutIn=0,OnDamage={78,88,98},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10363,TotalFrames=640,OnHit=0,OnCutIn=0,OnDamage={210,230,260,276,296,316,323,349,369,389,409,429,449,466},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=2,OnCutIn=0,OnDamage={},OnMissile={}},}}
+ return Config

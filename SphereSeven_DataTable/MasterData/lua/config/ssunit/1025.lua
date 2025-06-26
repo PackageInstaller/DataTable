@@ -1,0 +1,3 @@
+local Config = {Id=1025,Name="玉藻前",AbDir="SsUnit/025_YuZaoQian",NewRes=1,HandleBones={"Bone088"},UnitScale =1.44,CloseAtkOffset={1.8,0,-0.2},HitPosOffset={0,1.5552,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10251,TotalFrames=210,OnHit=0,OnCutIn=0,OnDamage={0},OnMissile={142,145,148},OnFrame={}},Skl01={Name="Skl01",SkillEfxId=10252,TotalFrames=240,OnHit=0,OnCutIn=0,OnDamage={111},OnMissile={0},OnFrame={}},Skl02={Name="Skl02",SkillEfxId=10253,TotalFrames=770,OnHit=0,OnCutIn=0,OnDamage={},OnMissile={},OnFrame={1,0,0,0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=2,OnCutIn=0,OnDamage={0},OnMissile={0},OnFrame={}},}}
+ return Config

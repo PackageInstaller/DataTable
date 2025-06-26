@@ -1,0 +1,3 @@
+local Config = {Id=1007,Name="路易十四",AbDir="SsUnit/007_LuYiShiSi",NewRes=1,HandleBones={"Bone008"},UnitScale =1.44,CloseAtkOffset={2.2,0,-0.2},HitPosOffset={0,1.9224,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10071,TotalFrames=110,OnHit=0,OnCutIn=0,OnDamage={19,23,27,31,35,39,43,47,51,57},OnMissile={0}},Skl01={Name="Skl01",SkillEfxId=10072,TotalFrames=130,OnHit=0,OnCutIn=0,OnDamage={34,44,56,71},OnMissile={}},Skl02={Name="Skl02",SkillEfxId=10073,TotalFrames=410,OnHit=0,OnCutIn=0,OnDamage={168,175,180,189,194,199,204,310},OnMissile={}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=5,OnCutIn=0,OnDamage={0},OnMissile={0}},}}
+ return Config

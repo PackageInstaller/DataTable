@@ -1,0 +1,2864 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 985377714375690906
+  },
+  "m_Name": "item_template",
+  "table": [
+    {
+      "item_id": "item.friend_point.friend_pt1",
+      "display_name": "フレンドポイント",
+      "rarity": 17201,
+      "val_cap": 99999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "フレンドとの友情の証。交換所で様々な物と交換できる。",
+      "sort_priority": 10
+    },
+    {
+      "item_id": "item.material.Red1",
+      "display_name": "火の小結晶",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 10,
+      "salable": 1,
+      "text": "火の力を少し強化する結晶。とても綺麗なので島から持ち出そうとする密猟者が後を絶たない。育成素材クエストで入手可能。",
+      "sort_priority": 11
+    },
+    {
+      "item_id": "item.material.Red2",
+      "display_name": "火の中結晶",
+      "rarity": 21041,
+      "val_cap": 999,
+      "sale_price": 30,
+      "salable": 1,
+      "text": "火の力を強化させる結晶。ほのかな熱を発しているため、冬は布団の中に入れておくと効果的。育成素材クエストで入手可能。",
+      "sort_priority": 12
+    },
+    {
+      "item_id": "item.material.Red3",
+      "display_name": "火の大結晶",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 50,
+      "salable": 1,
+      "text": "火の力をかなり強化する結晶。強い衝撃を与えると爆発するため、投げて度胸試しをする者もいる。育成素材クエストで入手可能。",
+      "sort_priority": 13
+    },
+    {
+      "item_id": "item.material.Red4",
+      "display_name": "火の超結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 80,
+      "salable": 1,
+      "text": "火の超結晶のフレーバー",
+      "sort_priority": 14
+    },
+    {
+      "item_id": "item.material.Red5",
+      "display_name": "火の神結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 120,
+      "salable": 1,
+      "text": "火の神結晶のフレーバー",
+      "sort_priority": 15
+    },
+    {
+      "item_id": "item.material.Blue1",
+      "display_name": "水の小結晶",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 10,
+      "salable": 1,
+      "text": "水の力を少し強化する結晶。バケツにたくさん入れると飲み物を冷やすのにちょうどいい。育成素材クエストで入手可能。",
+      "sort_priority": 21
+    },
+    {
+      "item_id": "item.material.Blue2",
+      "display_name": "水の中結晶",
+      "rarity": 21041,
+      "val_cap": 999,
+      "sale_price": 30,
+      "salable": 1,
+      "text": "水の力を強化する結晶。砕いてシロップをかけて食べると美味いが、食べ過ぎるとお腹を壊す。育成素材クエストで入手可能。",
+      "sort_priority": 22
+    },
+    {
+      "item_id": "item.material.Blue3",
+      "display_name": "水の大結晶",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 50,
+      "salable": 1,
+      "text": "水の力をかなり強化する結晶。強い冷気を発しているため、熱中症予防に効果的。育成素材クエストで入手可能。",
+      "sort_priority": 23
+    },
+    {
+      "item_id": "item.material.Blue4",
+      "display_name": "水の超結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 80,
+      "salable": 1,
+      "text": "水の超結晶のフレーバー",
+      "sort_priority": 24
+    },
+    {
+      "item_id": "item.material.Blue5",
+      "display_name": "水の神結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 120,
+      "salable": 1,
+      "text": "水の神結晶のフレーバー",
+      "sort_priority": 25
+    },
+    {
+      "item_id": "item.material.Brown1",
+      "display_name": "地の小結晶",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 10,
+      "salable": 1,
+      "text": "地の力を少し強化する結晶。表面がザラザラしており、かかとケアにちょうどいい。育成素材クエストで入手可能。",
+      "sort_priority": 31
+    },
+    {
+      "item_id": "item.material.Brown2",
+      "display_name": "地の中結晶",
+      "rarity": 21041,
+      "val_cap": 999,
+      "sale_price": 30,
+      "salable": 1,
+      "text": "地の力を強化する結晶。地面に落ちていても気づかず、踏んづけてしまうとかなり痛い。育成素材クエストで入手可能。",
+      "sort_priority": 32
+    },
+    {
+      "item_id": "item.material.Brown3",
+      "display_name": "地の大結晶",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 50,
+      "salable": 1,
+      "text": "地の力をかなり強化する結晶。熱を加えると震えるため、あんなところに当てるとキモチイイ。育成素材クエストで入手可能。",
+      "sort_priority": 33
+    },
+    {
+      "item_id": "item.material.Brown4",
+      "display_name": "地の超結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 80,
+      "salable": 1,
+      "text": "地の超結晶のフレーバー",
+      "sort_priority": 34
+    },
+    {
+      "item_id": "item.material.Brown5",
+      "display_name": "地の神結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 120,
+      "salable": 1,
+      "text": "地の神結晶のフレーバー",
+      "sort_priority": 35
+    },
+    {
+      "item_id": "item.material.Green1",
+      "display_name": "風の小結晶",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 10,
+      "salable": 1,
+      "text": "風の力を少し強化する結晶。オシャレ好きのモンスター娘が砕いて装飾品にしている。育成素材クエストで入手可能。",
+      "sort_priority": 41
+    },
+    {
+      "item_id": "item.material.Green2",
+      "display_name": "風の中結晶",
+      "rarity": 21041,
+      "val_cap": 999,
+      "sale_price": 30,
+      "salable": 1,
+      "text": "風の力を強化する結晶。見た目よりとても軽く、強風で飛んでしまうこともあるので注意。育成素材クエストで入手可能。",
+      "sort_priority": 42
+    },
+    {
+      "item_id": "item.material.Green3",
+      "display_name": "風の大結晶",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 50,
+      "salable": 1,
+      "text": "風の力をかなり強化する結晶。水に浮くため、浮き輪代わりに使われることもある。育成素材クエストで入手可能。",
+      "sort_priority": 43
+    },
+    {
+      "item_id": "item.material.Green4",
+      "display_name": "風の超結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 80,
+      "salable": 1,
+      "text": "風の超結晶のフレーバー",
+      "sort_priority": 44
+    },
+    {
+      "item_id": "item.material.Green5",
+      "display_name": "風の神結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 120,
+      "salable": 1,
+      "text": "風の神結晶のフレーバー",
+      "sort_priority": 45
+    },
+    {
+      "item_id": "item.material.Light1",
+      "display_name": "光の小結晶",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 10,
+      "salable": 1,
+      "text": "光の力を少し強化する結晶。砂糖菓子と間違えてかじり、歯が欠けてしまった者もいる。育成素材クエストで入手可能。",
+      "sort_priority": 51
+    },
+    {
+      "item_id": "item.material.Light2",
+      "display_name": "光の中結晶",
+      "rarity": 21041,
+      "val_cap": 999,
+      "sale_price": 30,
+      "salable": 1,
+      "text": "光の力を強化する結晶。砕いて水と一緒に飲むと便通がよくなる。特殊なプレイの前には必須の品。育成素材クエストで入手可能。",
+      "sort_priority": 52
+    },
+    {
+      "item_id": "item.material.Light3",
+      "display_name": "光の大結晶",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 50,
+      "salable": 1,
+      "text": "光の力をかなり強化する結晶。「地上に落ちてきた星」とうたわれるほどの一級品。育成素材クエストで入手可能。",
+      "sort_priority": 53
+    },
+    {
+      "item_id": "item.material.Light4",
+      "display_name": "光の超結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 80,
+      "salable": 1,
+      "text": "光の超結晶のフレーバー",
+      "sort_priority": 54
+    },
+    {
+      "item_id": "item.material.Light5",
+      "display_name": "光の神結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 120,
+      "salable": 1,
+      "text": "光の神結晶のフレーバー",
+      "sort_priority": 55
+    },
+    {
+      "item_id": "item.material.Dark1",
+      "display_name": "闇の小結晶",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 10,
+      "salable": 1,
+      "text": "闇の力を少し強化する結晶。手にすると、なぜか厨二病くさい台詞を言いたくなる。育成素材クエストで入手可能。",
+      "sort_priority": 61
+    },
+    {
+      "item_id": "item.material.Dark2",
+      "display_name": "闇の中結晶",
+      "rarity": 21041,
+      "val_cap": 999,
+      "sale_price": 30,
+      "salable": 1,
+      "text": "闇の力を強化する結晶。料理に入れると命の危機を感じるようなオーラを発するが、旨味が増す。育成素材クエストで入手可能。",
+      "sort_priority": 62
+    },
+    {
+      "item_id": "item.material.Dark3",
+      "display_name": "闇の大結晶",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 50,
+      "salable": 1,
+      "text": "闇の力をかなり強化する結晶。憎い相手の名前を叫びながら釘を打つと、相手を呪えるらしい。育成素材クエストで入手可能。",
+      "sort_priority": 63
+    },
+    {
+      "item_id": "item.material.Dark4",
+      "display_name": "闇の超結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 80,
+      "salable": 1,
+      "text": "闇の超結晶のフレーバー",
+      "sort_priority": 64
+    },
+    {
+      "item_id": "item.material.Dark5",
+      "display_name": "闇の神結晶",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 120,
+      "salable": 1,
+      "text": "闇の神結晶のフレーバー",
+      "sort_priority": 65
+    },
+    {
+      "item_id": "item.material.Default1",
+      "display_name": "元素の結晶核",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 1200,
+      "salable": 1,
+      "text": "元素の力を増幅すると言われるキューブ。優れたモンスター娘のみが入手できると言われている。育成素材クエストで入手可能。",
+      "sort_priority": 201
+    },
+    {
+      "item_id": "item.material.Default2",
+      "display_name": "無の中素材",
+      "rarity": 21041,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "無の中素材のフレーバー",
+      "sort_priority": 202
+    },
+    {
+      "item_id": "item.material.Default3",
+      "display_name": "無の大素材",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "無の大素材のフレーバー",
+      "sort_priority": 203
+    },
+    {
+      "item_id": "item.material.Default4",
+      "display_name": "無の超素材",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "無の超素材のフレーバー",
+      "sort_priority": 204
+    },
+    {
+      "item_id": "item.material.Default5",
+      "display_name": "無の神素材",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "無の神素材のフレーバー",
+      "sort_priority": 205
+    },
+    {
+      "item_id": "item.material.Bom2",
+      "display_name": "神樹の種",
+      "rarity": 21041,
+      "val_cap": 9999,
+      "sale_price": 20,
+      "salable": 1,
+      "text": "獣神のお腹をちょっぴり満たす種。創世記から続く乾きものおつまみの定番。獣神の召喚スキルや加護スキルを強くできる。",
+      "sort_priority": 101
+    },
+    {
+      "item_id": "item.material.Bom3",
+      "display_name": "神樹の果実",
+      "rarity": 5460529,
+      "val_cap": 9999,
+      "sale_price": 30,
+      "salable": 1,
+      "text": "獣神のお腹を満たす果実。尻側が丸いものを選ぶのがコツでジャムにすると美味しい。獣神の召喚スキルや加護スキルを強くできる。",
+      "sort_priority": 102
+    },
+    {
+      "item_id": "item.material.Bom4",
+      "display_name": "神樹の豊穣枝",
+      "rarity": 1397969457,
+      "val_cap": 9999,
+      "sale_price": 40,
+      "salable": 1,
+      "text": "獣神のお腹をかなり満たす枝。高タンパク、低脂質で腹持ちが良いが、味は絶望的。獣神の召喚スキルや加護スキルを強くできる。",
+      "sort_priority": 103
+    },
+    {
+      "item_id": "item.material.Bom5",
+      "display_name": "神樹の爛漫花",
+      "rarity": 1397969457,
+      "val_cap": 9999,
+      "sale_price": 50,
+      "salable": 1,
+      "text": "獣神のお腹をとても満たす花。甘い蜜が特徴。外に植えているといつの間にかなくなっている。獣神の召喚スキルや加護スキルを強くできる。",
+      "sort_priority": 104
+    },
+    {
+      "item_id": "item.spapp.warrior_sr",
+      "display_name": "戦士の覚醒丹E",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "エピックウォリアーのモンスター娘を覚醒させる飲み薬。飲み薬なのに、ごはんのようにかっこむ者が後を絶たない。スパイシーで美味。",
+      "sort_priority": 1011
+    },
+    {
+      "item_id": "item.spapp.warrior_ssr",
+      "display_name": "戦士の覚醒丹L",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "レジェンドウォリアーのモンスター娘を覚醒させる飲み薬。飲み薬だと何度言っても、皆ガツガツ食べまくる。激辛でクセになる味。",
+      "sort_priority": 1012
+    },
+    {
+      "item_id": "item.spapp.guardian_sr",
+      "display_name": "守護の覚醒丹E",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "エピックガーディアンのモンスター娘を覚醒させる飲み薬。飲み薬なのに、壁の補修材として使う者が多い。粘着性がちょうどいいらしい。",
+      "sort_priority": 1021
+    },
+    {
+      "item_id": "item.spapp.guardian_ssr",
+      "display_name": "守護の覚醒丹L",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "レジェンドガーディアンのモンスター娘を覚醒させる飲み薬。飲み薬だと何度言っても、皆ビーズ感覚で武器をデコるのに使っている。",
+      "sort_priority": 1022
+    },
+    {
+      "item_id": "item.spapp.sniper_sr",
+      "display_name": "射手の覚醒丹E",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "エピックスナイパーのモンスター娘を覚醒させる飲み薬。飲み薬なのに、指で弾き飛ばして遊ぶ者が後を絶たない。食べ物で遊ぶな。",
+      "sort_priority": 1031
+    },
+    {
+      "item_id": "item.spapp.sniper_ssr",
+      "display_name": "射手の覚醒丹L",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "レジェンドスナイパーのモンスター娘を覚醒させる飲み薬。飲み薬だと何度言っても、皆で投げて遊んでいる。適度に重く、よく飛ぶ。",
+      "sort_priority": 1032
+    },
+    {
+      "item_id": "item.spapp.sorcerer_sr",
+      "display_name": "魔導の覚醒丹E",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "エピックソーサラーのモンスター娘を覚醒させる飲み薬。飲み薬なのに、みそ汁に溶かす者が後を絶たない。うま味が豊富。",
+      "sort_priority": 1041
+    },
+    {
+      "item_id": "item.spapp.sorcerer_ssr",
+      "display_name": "魔導の覚醒丹L",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "レジェンドソーサラーのモンスター娘を覚醒させる飲み薬。飲み薬だと何度言っても、皆これを出汁として使う。濃厚魚介風味。",
+      "sort_priority": 1042
+    },
+    {
+      "item_id": "item.spapp.healer_sr",
+      "display_name": "治癒の覚醒丹E",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "エピックヒーラーのモンスター娘を覚醒させる飲み薬。飲み薬なのに、飴のように舐める者が後を絶たない。ほんのり甘い。",
+      "sort_priority": 1051
+    },
+    {
+      "item_id": "item.spapp.healer_ssr",
+      "display_name": "治癒の覚醒丹L",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "レジェンドヒーラーのモンスター娘を覚醒させる飲み薬。飲み薬だと何度言っても、皆ペロペロ舐めまくる。とっても甘くてクリーミー。",
+      "sort_priority": 1052
+    },
+    {
+      "item_id": "item.spapp.scout_sr",
+      "display_name": "斥候の覚醒丹E",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "エピックスカウトのモンスター娘を覚醒させる飲み薬。飲み薬なのに、奥歯に仕込む者が後を絶たない。加速効果があるとかないとか。",
+      "sort_priority": 1061
+    },
+    {
+      "item_id": "item.spapp.scout_ssr",
+      "display_name": "斥候の覚醒丹L",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "レジェンドスカウトのモンスター娘を覚醒させる飲み薬。飲み薬だと何度言っても、奥歯に仕込んで自決する暗殺者ごっこに大人気。",
+      "sort_priority": 1062
+    },
+    {
+      "item_id": "item.spapp.sherman_sr",
+      "display_name": "補助の覚醒丹E",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "エピックサポーターのモンスター娘を覚醒させる飲み薬。飲み薬だが、洗濯の時に水に溶かすと、いい香りになる。部屋干しでも臭わない。",
+      "sort_priority": 1071
+    },
+    {
+      "item_id": "item.spapp.sherman_ssr",
+      "display_name": "補助の覚醒丹L",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "レジェンドサポーターのモンスター娘を覚醒させる飲み薬。飲み薬だと何度言っても、皆これを芳香剤として使う。高貴なバラの香り。",
+      "sort_priority": 1072
+    },
+    {
+      "item_id": "item.unit_skin.22_1",
+      "display_name": "スズの学生服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10001
+    },
+    {
+      "item_id": "item.unit_skin.57_1",
+      "display_name": "サウラのおでかけ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10002
+    },
+    {
+      "item_id": "item.unit_skin.30_1",
+      "display_name": "ペリリのおでかけ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10003
+    },
+    {
+      "item_id": "item.unit_skin.1_1",
+      "display_name": "エテジアの学生服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10004
+    },
+    {
+      "item_id": "item.unit_skin.6_1",
+      "display_name": "リンのバスタイム服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10005
+    },
+    {
+      "item_id": "item.unit_skin.56_1",
+      "display_name": "ロトーナのメイド服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10006
+    },
+    {
+      "item_id": "item.unit_skin.21_1",
+      "display_name": "クロミの悩殺服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10007
+    },
+    {
+      "item_id": "item.unit_skin.24_1",
+      "display_name": "アメリのパジャマ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10008
+    },
+    {
+      "item_id": "item.unit_skin.56_2",
+      "display_name": "ロトーナのナース服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10009
+    },
+    {
+      "item_id": "item.unit_skin.16_1",
+      "display_name": "シルバの飼育服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10010
+    },
+    {
+      "item_id": "item.unit_skin.32_1",
+      "display_name": "アニシラの水着服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10011
+    },
+    {
+      "item_id": "item.unit_skin.6_2",
+      "display_name": "リンの水着服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10012
+    },
+    {
+      "item_id": "item.unit_skin.26_1",
+      "display_name": "プラチナのチャイナ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10013
+    },
+    {
+      "item_id": "item.unit_skin.26_2",
+      "display_name": "プラチナの秘書服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10014
+    },
+    {
+      "item_id": "item.unit_skin.22_2",
+      "display_name": "スズの夜のパジャマ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10015
+    },
+    {
+      "item_id": "item.unit_skin.11_1",
+      "display_name": "ポデルのメイド服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10016
+    },
+    {
+      "item_id": "item.unit_skin.32_2",
+      "display_name": "アニシラの浴衣服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10017
+    },
+    {
+      "item_id": "item.unit_skin.17_1",
+      "display_name": "レティアの弓道服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10018
+    },
+    {
+      "item_id": "item.unit_skin.6_3",
+      "display_name": "リンのおハーブ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10019
+    },
+    {
+      "item_id": "item.unit_skin.69_1",
+      "display_name": "ミテラスの裸エプロン服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10020
+    },
+    {
+      "item_id": "item.unit_skin.46_1",
+      "display_name": "ルルゥのメイド服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10021
+    },
+    {
+      "item_id": "item.unit_skin.78_1",
+      "display_name": "ルナミーラのラクロス服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10022
+    },
+    {
+      "item_id": "item.unit_skin.54_1",
+      "display_name": "ティアの南国服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10023
+    },
+    {
+      "item_id": "item.unit_skin.16_2",
+      "display_name": "シルバのメイド服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10024
+    },
+    {
+      "item_id": "item.unit_skin.28_1",
+      "display_name": "ローレンの幼顔服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10025
+    },
+    {
+      "item_id": "item.unit_skin.53_1",
+      "display_name": "スゥノのおでかけ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10026
+    },
+    {
+      "item_id": "item.unit_skin.53_2",
+      "display_name": "スゥノのハッスルサンタ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10027
+    },
+    {
+      "item_id": "item.unit_skin.71_1",
+      "display_name": "ドネのサンタ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10028
+    },
+    {
+      "item_id": "item.unit_skin.24_2",
+      "display_name": "アメリのコミケ出展記念服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10029
+    },
+    {
+      "item_id": "item.unit_skin.35_1",
+      "display_name": "カリスのアッパレ晴着服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10030
+    },
+    {
+      "item_id": "item.unit_skin.40_1",
+      "display_name": "ニィルの晴着服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10031
+    },
+    {
+      "item_id": "item.unit_skin.78_2",
+      "display_name": "ルナミーラの逆バニー服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10032
+    },
+    {
+      "item_id": "item.unit_skin.12_1",
+      "display_name": "ペトラの甘々ホンメイ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10033
+    },
+    {
+      "item_id": "item.unit_skin.7_1",
+      "display_name": "オキシーのホンメイ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10034
+    },
+    {
+      "item_id": "item.unit_skin.10_1",
+      "display_name": "イグニの放課後学生服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10035
+    },
+    {
+      "item_id": "item.unit_skin.5_1",
+      "display_name": "シルフィーネの学生服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10036
+    },
+    {
+      "item_id": "item.unit_skin.15_1",
+      "display_name": "ユーシィの専用メイド服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10037
+    },
+    {
+      "item_id": "item.unit_skin.25_1",
+      "display_name": "タンタルのアイドル服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10038
+    },
+    {
+      "item_id": "item.unit_skin.68_1",
+      "display_name": "カヅネの白無垢服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10039
+    },
+    {
+      "item_id": "item.unit_skin.19_1",
+      "display_name": "ティーレの花嫁服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10040
+    },
+    {
+      "item_id": "item.unit_skin.29_1",
+      "display_name": "アスタのこたつ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10041
+    },
+    {
+      "item_id": "item.unit_skin.13_1",
+      "display_name": "シジメのおでかけ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10042
+    },
+    {
+      "item_id": "item.unit_skin.54_2",
+      "display_name": "ティアの温泉服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10043
+    },
+    {
+      "item_id": "item.unit_skin.133_1",
+      "display_name": "ペロロスの受肉服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10044
+    },
+    {
+      "item_id": "item.unit_skin.58_1",
+      "display_name": "ケィナのサバゲ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10045
+    },
+    {
+      "item_id": "item.unit_skin.50_1",
+      "display_name": "トルスの水着服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10046
+    },
+    {
+      "item_id": "item.unit_skin.14_1",
+      "display_name": "フランシの束縛女王服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10047
+    },
+    {
+      "item_id": "item.unit_skin.7_2",
+      "display_name": "オキシーの夜のパジャマ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10048
+    },
+    {
+      "item_id": "item.unit_skin.35_2",
+      "display_name": "カリスのパジャマ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10049
+    },
+    {
+      "item_id": "item.unit_skin.46_2",
+      "display_name": "ルルゥのお茶会服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10050
+    },
+    {
+      "item_id": "item.unit_skin.8_1",
+      "display_name": "プネーマの運動服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10051
+    },
+    {
+      "item_id": "item.unit_skin.59_1",
+      "display_name": "エピルのハツラツ運動服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10052
+    },
+    {
+      "item_id": "item.unit_skin.37_1",
+      "display_name": "メリッサのお菓子いただき服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10053
+    },
+    {
+      "item_id": "item.unit_skin.20_1",
+      "display_name": "ネリーのイタズラ魔女服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10054
+    },
+    {
+      "item_id": "item.unit_skin.99_1",
+      "display_name": "ヴァリナのぐいぐい乗馬服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10055
+    },
+    {
+      "item_id": "item.unit_skin.79_1",
+      "display_name": "ナルケパフネのゆきだるま服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10056
+    },
+    {
+      "item_id": "item.unit_skin.166_1",
+      "display_name": "ラプルムのウキウキサンタ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10057
+    },
+    {
+      "item_id": "item.unit_skin.23_1",
+      "display_name": "セレンの晴着服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10058
+    },
+    {
+      "item_id": "item.unit_skin.91_1",
+      "display_name": "アーラのひらひら晴着服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10059
+    },
+    {
+      "item_id": "item.unit_skin.40_2",
+      "display_name": "ニィルの特注エージェント服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10060
+    },
+    {
+      "item_id": "item.unit_skin.144_1",
+      "display_name": "マギーのホンメイ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10061
+    },
+    {
+      "item_id": "item.unit_skin.69_2",
+      "display_name": "ミテラスのなめなめホンメイ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10062
+    },
+    {
+      "item_id": "item.unit_skin.52_1",
+      "display_name": "テナのパジャマ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10063
+    },
+    {
+      "item_id": "item.unit_skin.121_1",
+      "display_name": "ペントのパジャマ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10064
+    },
+    {
+      "item_id": "item.unit_skin.185_1",
+      "display_name": "ウスコの花魁服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10065
+    },
+    {
+      "item_id": "item.unit_skin.179_1",
+      "display_name": "マシュロアのナンバーワン花魁服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10066
+    },
+    {
+      "item_id": "item.unit_skin.150_1",
+      "display_name": "アリスフィーズの幼顔服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10067
+    },
+    {
+      "item_id": "item.unit_skin.99_2",
+      "display_name": "ヴァリナのイケナイ保健医服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10068
+    },
+    {
+      "item_id": "item.unit_skin.31_1",
+      "display_name": "ネルのぐしょぐしょ学生服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10069
+    },
+    {
+      "item_id": "item.unit_skin.1_2",
+      "display_name": "エテジアの花嫁服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10070
+    },
+    {
+      "item_id": "item.unit_skin.126_1",
+      "display_name": "プリンのおまもり花嫁服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10071
+    },
+    {
+      "item_id": "item.unit_skin.70_1",
+      "display_name": "ヴィルエのバーメイド服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10072
+    },
+    {
+      "item_id": "item.unit_skin.29_2",
+      "display_name": "アスタのはらぺこメイド服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10073
+    },
+    {
+      "item_id": "item.unit_skin.171_1",
+      "display_name": "ココノハの水着服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10074
+    },
+    {
+      "item_id": "item.unit_skin.179_2",
+      "display_name": "マシュロアのイっちゃえ水着服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10075
+    },
+    {
+      "item_id": "item.unit_skin.59_2",
+      "display_name": "エピルのおでかけ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10076
+    },
+    {
+      "item_id": "item.unit_skin.72_1",
+      "display_name": "ウィウィのおでかけ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10077
+    },
+    {
+      "item_id": "item.unit_skin.13_2",
+      "display_name": "シジメの裸エプロン服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10078
+    },
+    {
+      "item_id": "item.unit_skin.25_2",
+      "display_name": "タンタルのセメセメ女王様服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10079
+    },
+    {
+      "item_id": "item.unit_skin.15_2",
+      "display_name": "ユーシィの赤ずきん服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10080
+    },
+    {
+      "item_id": "item.unit_skin.5_2",
+      "display_name": "シルフィーネの恵風の踊り子服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10081
+    },
+    {
+      "item_id": "item.unit_skin.109_1",
+      "display_name": "ランケのハロウィン服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10082
+    },
+    {
+      "item_id": "item.unit_skin.153_1",
+      "display_name": "ピューリの魔女の悪戯服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10083
+    },
+    {
+      "item_id": "item.unit_skin.30_2",
+      "display_name": "ペリリのサンタ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10084
+    },
+    {
+      "item_id": "item.unit_skin.163_1",
+      "display_name": "フォンテインの聖夜の勝負服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10085
+    },
+    {
+      "item_id": "item.unit_skin.77_1",
+      "display_name": "ニホの晴着服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10086
+    },
+    {
+      "item_id": "item.unit_skin.222_1",
+      "display_name": "イヅツの縁起マシマシ晴着服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10087
+    },
+    {
+      "item_id": "item.unit_skin.89_1",
+      "display_name": "ルキュレの教員服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10088
+    },
+    {
+      "item_id": "item.unit_skin.74_1",
+      "display_name": "ガウミィの元気いっぱい応援服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10089
+    },
+    {
+      "item_id": "item.unit_skin.65_1",
+      "display_name": "ニグリュのバレンタイン服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10090
+    },
+    {
+      "item_id": "item.unit_skin.154_1",
+      "display_name": "リデルの甘しいチョコ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10091
+    },
+    {
+      "item_id": "item.unit_skin.121_2",
+      "display_name": "ペントの大正ロマン服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10092
+    },
+    {
+      "item_id": "item.unit_skin.81_1",
+      "display_name": "マズルのひいな遊び服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10093
+    },
+    {
+      "item_id": "item.unit_skin.8_2",
+      "display_name": "プネーマの春のお散歩服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10094
+    },
+    {
+      "item_id": "item.unit_skin.83_1",
+      "display_name": "ヴェラートゥの生命繁栄服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10095
+    },
+    {
+      "item_id": "item.unit_skin.46_3",
+      "display_name": "ルルゥのきらめきステップ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10096
+    },
+    {
+      "item_id": "item.unit_skin.96_1",
+      "display_name": "エーティのしょうぶ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10097
+    },
+    {
+      "item_id": "item.unit_skin.61_1",
+      "display_name": "エリュートの爆炎シノビ服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10098
+    },
+    {
+      "item_id": "item.unit_skin.250_1",
+      "display_name": "ペッシェの染まぬ永愛ノ黒契服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10099
+    },
+    {
+      "item_id": "item.unit_skin.22_3",
+      "display_name": "スズの愛用レインコート服",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "メニューとバトルの見た目を変更するコスチューム。",
+      "sort_priority": 10100
+    },
+    {
+      "item_id": "item.material.Uwca1",
+      "display_name": "ベタベタする牙",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "握ると牙からベタベタする液体が出る。液体には価値があるらしくペッペという名で売買されている。",
+      "sort_priority": 301
+    },
+    {
+      "item_id": "item.material.Uwcb1",
+      "display_name": "金属の欠片",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "熱に弱いようで触れただけでふにゃりと曲がる加工がしやすい素材。ぐるぐるととぐろを巻かせて棒に刺して遊ぼう。",
+      "sort_priority": 302
+    },
+    {
+      "item_id": "item.material.Uwcc1",
+      "display_name": "うねうね触手",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "切れた後も時折ビクビクと動く。動くたびに、粟の花の匂いが周りに充満するためあまり所持したくない。",
+      "sort_priority": 303
+    },
+    {
+      "item_id": "item.material.Uwsra1",
+      "display_name": "魔獣の鋭牙",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "魔獣に生えていた鋭利な牙。魔獣は牙の生えかわりの頻度が高いようで、戦わずとも手に入ることもある。",
+      "sort_priority": 341
+    },
+    {
+      "item_id": "item.material.Uwsrb1",
+      "display_name": "猛牛の大角",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "装飾のついた大角。中が空洞になっているので脆く戦闘中に壊れてしまうことも……角に当たらないように攻撃したい。",
+      "sort_priority": 342
+    },
+    {
+      "item_id": "item.material.Uwsrc1",
+      "display_name": "ボリューム満点スルメ",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "強烈な臭いだが、噛み応えは抜群。満月の夜にワー系モンスター娘達がこぞって欲しがるが理由は不明。",
+      "sort_priority": 343
+    },
+    {
+      "item_id": "item.material.Uwsrd1",
+      "display_name": "睨みつける目玉",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "目玉になっても意思があるようで、乾燥に弱いのか気づいた時には容器に入ったお湯につかっている。手足は生えてない。",
+      "sort_priority": 344
+    },
+    {
+      "item_id": "item.material.Uwsre1",
+      "display_name": "赤熱超合金",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "温めることで振動し、強くなったり弱くなったりを不定期に繰り返す。濡れると振動が止まる点は工夫が必要。",
+      "sort_priority": 345
+    },
+    {
+      "item_id": "item.material.Uwsrf1",
+      "display_name": "揺らめく霊魂",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "迷える死者の魂。ほんのりと温もりがある為人肌恋しい時に重宝する。",
+      "sort_priority": 346
+    },
+    {
+      "item_id": "item.material.Uwsrg1",
+      "display_name": "赤竜の鱗",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "燃え盛るような熱を帯びた鱗。かっこいい装備が作れそう。",
+      "sort_priority": 347
+    },
+    {
+      "item_id": "item.material.Uwsrh1",
+      "display_name": "くすぶる火種",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "いまにもまた燃え始めそうな火種。火を起こす為にキャンプでは重宝されている。",
+      "sort_priority": 348
+    },
+    {
+      "item_id": "item.material.Uwsri1",
+      "display_name": "青竜の鱗",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "流線型をした冷たく固い鱗。冷気を使う装備にピッタリ。",
+      "sort_priority": 349
+    },
+    {
+      "item_id": "item.material.Uwsrj1",
+      "display_name": "巨大カニの爪",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "茹で上がった巨大なカニの爪。火が入ったことでより硬くなった。",
+      "sort_priority": 350
+    },
+    {
+      "item_id": "item.material.Uwsrk1",
+      "display_name": "粘液質な触手",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "ネバネバしたカラフルな触手。強力な粘液で物を接着できる。",
+      "sort_priority": 351
+    },
+    {
+      "item_id": "item.material.Uwsrl1",
+      "display_name": "水牛の大角",
+      "rarity": 5460529,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "鋭利な大角。角の先端は猛毒になっているので、触ると危ない。",
+      "sort_priority": 352
+    },
+    {
+      "item_id": "item.sskill_rcp.1",
+      "display_name": "HP強化 IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nHP+35％",
+      "sort_priority": 60000
+    },
+    {
+      "item_id": "item.sskill_rcp.2",
+      "display_name": "攻撃力強化 IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n攻撃力+27％",
+      "sort_priority": 60001
+    },
+    {
+      "item_id": "item.sskill_rcp.3",
+      "display_name": "物理防御強化 IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n物理防御+27％",
+      "sort_priority": 60002
+    },
+    {
+      "item_id": "item.sskill_rcp.4",
+      "display_name": "魔法防御強化 IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n魔法防御+27％",
+      "sort_priority": 60003
+    },
+    {
+      "item_id": "item.sskill_rcp.5",
+      "display_name": "ポイズンエンチャントの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n攻撃時、低確率で毒を付与\r\n毒状態の敵へ与ダメージ1.2倍",
+      "sort_priority": 50000
+    },
+    {
+      "item_id": "item.sskill_rcp.6",
+      "display_name": "ガードプロテクトの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n配置中、全味方が受ける\r\n物理ダメージ15%減少",
+      "sort_priority": 50001
+    },
+    {
+      "item_id": "item.sskill_rcp.7",
+      "display_name": "パワフルリジェネの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nHPが1秒ごとに60回復する\r\nスキル発動後10秒間回復量3倍",
+      "sort_priority": 50002
+    },
+    {
+      "item_id": "item.sskill_rcp.8",
+      "display_name": "オールレジストの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n毒、石化、スタン耐性+50",
+      "sort_priority": 50003
+    },
+    {
+      "item_id": "item.sskill_rcp.9",
+      "display_name": "アサルトチャージの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n移動中、攻撃力+120％\r\n移動速度+100",
+      "sort_priority": 50004
+    },
+    {
+      "item_id": "item.sskill_rcp.10",
+      "display_name": "MAXマッスルの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nHPが100%以上の時与ダメージ1.3倍",
+      "sort_priority": 50005
+    },
+    {
+      "item_id": "item.sskill_rcp.11",
+      "display_name": "再出撃時間短縮 IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n再出撃時間が60%減少",
+      "sort_priority": 60004
+    },
+    {
+      "item_id": "item.sskill_rcp.12",
+      "display_name": "貫通攻撃 IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n敵の防御力を27%の確率で無視する",
+      "sort_priority": 60005
+    },
+    {
+      "item_id": "item.sskill_rcp.13",
+      "display_name": "ラピッドチャージャーの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nスキル初回発動までの時間を4秒間減少\r\nスキルの再発動までの時間を4秒間減少",
+      "sort_priority": 50006
+    },
+    {
+      "item_id": "item.sskill_rcp.14",
+      "display_name": "ウィンドエクステンドの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n編成時、風属性モンスター娘の\r\nHPと攻撃力+10%",
+      "sort_priority": 50007
+    },
+    {
+      "item_id": "item.sskill_rcp.15",
+      "display_name": "決死の一撃の石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n与ダメージが1.6倍になるが、攻撃ヒット時に最大HPの割合ダメージを受ける",
+      "sort_priority": 50008
+    },
+    {
+      "item_id": "item.sskill_rcp.16",
+      "display_name": "メデューサソウルの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n石化、毒状態の敵へ与ダメージ1.3倍\r\nメデューサ(原種)をトークンとして使役可能",
+      "sort_priority": 50009
+    },
+    {
+      "item_id": "item.sskill_rcp.17",
+      "display_name": "クリティカル IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nクリティカル率+32%",
+      "sort_priority": 60006
+    },
+    {
+      "item_id": "item.sskill_rcp.18",
+      "display_name": "クリティカルダメージ強化 IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nクリティカルダメージ+50%",
+      "sort_priority": 60007
+    },
+    {
+      "item_id": "item.sskill_rcp.19",
+      "display_name": "マッスルチャレンジャーの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nHPが30%以上の時回復効果を\r\n受けられなくなるが、最大HP+60%",
+      "sort_priority": 50010
+    },
+    {
+      "item_id": "item.sskill_rcp.20",
+      "display_name": "オーバードーピングの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n出撃コスト+10になるが\r\n攻撃力、物理防御、魔法防御+30%",
+      "sort_priority": 50011
+    },
+    {
+      "item_id": "item.sskill_rcp.21",
+      "display_name": "ラッキーヒールの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nクリティカル時、全味方のHPを120回復",
+      "sort_priority": 50012
+    },
+    {
+      "item_id": "item.sskill_rcp.22",
+      "display_name": "ケルベロスソウルの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n最大HP+33％\r\nケルベロス(闇原種)をトークンとして使役可能",
+      "sort_priority": 50013
+    },
+    {
+      "item_id": "item.sskill_rcp.23",
+      "display_name": "魔法攻撃回避 IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n35％の確率で魔法攻撃を回避",
+      "sort_priority": 60008
+    },
+    {
+      "item_id": "item.sskill_rcp.24",
+      "display_name": "生命力吸収 IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n攻撃時、HPが最大値の4％回復",
+      "sort_priority": 60009
+    },
+    {
+      "item_id": "item.sskill_rcp.25",
+      "display_name": "パワードバリアの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nスキル発動時、自身のHPを25%回復し、\r\n自身に戦闘前の攻撃力の250%の\r\nバリアを付与",
+      "sort_priority": 50014
+    },
+    {
+      "item_id": "item.sskill_rcp.26",
+      "display_name": "鉄壁の守りの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n与ダメージが30％減少するが、\r\n自身が受ける物理魔法ダメージが30%減少",
+      "sort_priority": 50015
+    },
+    {
+      "item_id": "item.sskill_rcp.27",
+      "display_name": "ファイアエクステンドの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n編成時火属性モンスター娘の\r\nHPと攻撃力+10%",
+      "sort_priority": 50016
+    },
+    {
+      "item_id": "item.sskill_rcp.28",
+      "display_name": "ミノタウロスソウルの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nブロック中の敵への与ダメージ1.3倍\r\nミノタウロス（原種）をトークンとして使役可能\r\n（元々トークン所持している場合は無効）",
+      "sort_priority": 50017
+    },
+    {
+      "item_id": "item.sskill_rcp.29",
+      "display_name": "物理攻撃回避 IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n35％の確率で物理攻撃を回避",
+      "sort_priority": 60010
+    },
+    {
+      "item_id": "item.sskill_rcp.30",
+      "display_name": "攻撃待機時間短縮 IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n攻撃後の待機時間を32%短縮",
+      "sort_priority": 60011
+    },
+    {
+      "item_id": "item.sskill_rcp.31",
+      "display_name": "アサルトクリティカルの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nクリティカル発生時、攻撃力+2%\r\n(最大50回/死亡撤退時リセット)",
+      "sort_priority": 50018
+    },
+    {
+      "item_id": "item.sskill_rcp.32",
+      "display_name": "マジックプロテクトの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n配置中、全味方が受ける魔法ダメージ15%減少",
+      "sort_priority": 50019
+    },
+    {
+      "item_id": "item.sskill_rcp.33",
+      "display_name": "リカバリームーブの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n移動コスト-1\r\n物理と魔法攻撃を18％の確率で回避\r\n配置、移動完了後15秒間、\r\n1秒ごとにHPが200回復",
+      "sort_priority": 50020
+    },
+    {
+      "item_id": "item.sskill_rcp.34",
+      "display_name": "ターロスソウルの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n物理防御力と魔法防御力+22%\r\nターロス（原種）をトークンとして使役可能\r\n（元々トークン所持している場合は無効）",
+      "sort_priority": 50021
+    },
+    {
+      "item_id": "item.sskill_rcp.35",
+      "display_name": "底力(攻撃) IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nHP減少量に応じて\r\n攻撃力が上昇する（最大70%）",
+      "sort_priority": 60012
+    },
+    {
+      "item_id": "item.sskill_rcp.36",
+      "display_name": "リジェネレーション IVの石板",
+      "rarity": 17201,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nHPが1秒ごとに70回復する",
+      "sort_priority": 60013
+    },
+    {
+      "item_id": "item.sskill_rcp.37",
+      "display_name": "タクティカルマスターの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n配置中、全味方の物防・魔防+3％",
+      "sort_priority": 50022
+    },
+    {
+      "item_id": "item.sskill_rcp.38",
+      "display_name": "伸るか反るかの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nHPが100%以上の時与ダメージ1.1倍\r\nHP50％以下の時与ダメージ1.3倍",
+      "sort_priority": 50023
+    },
+    {
+      "item_id": "item.sskill_rcp.39",
+      "display_name": "スタンエンチャントの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\n攻撃した相手をスタンさせる(蓄積値：小)\r\nスタン状態の敵へ与ダメージ1.2倍",
+      "sort_priority": 50024
+    },
+    {
+      "item_id": "item.sskill_rcp.40",
+      "display_name": "デュラハンソウルの石板",
+      "rarity": 1397969457,
+      "val_cap": 999,
+      "sale_price": 0,
+      "salable": 0,
+      "text": "【作成できるサブスキルの効果】\r\nブロックしている\r\n敵1体につき攻撃力10％アップ\r\nデュラハン（原種）を\r\nトークンとして使役可能\r\n（元々トークン所持している場合は無効）",
+      "sort_priority": 50025
+    },
+    {
+      "item_id": "item.exskill_key.44-2",
+      "display_name": "[キマイラ娘]ラゴスのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 10,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、\r\nさらに周囲の敵4体に魔法攻撃を行う。",
+      "sort_priority": 20016
+    },
+    {
+      "item_id": "item.exskill_key.39-2",
+      "display_name": "[ハイオーク娘]ディフニラのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 10,
+      "salable": 0,
+      "text": "一定時間、物理防御力が上昇。オークトーク\r\nンの攻撃力が上昇。スキル使用時、同マスに\r\n熱血オークトークンを召喚し共闘する。",
+      "sort_priority": 20050
+    },
+    {
+      "item_id": "item.exskill_key.19-2",
+      "display_name": "[ダークエルフ娘]ティーレのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 10,
+      "salable": 0,
+      "text": "一定時間、攻撃力上昇、攻撃対象数増加。\r\n発動時に自身を含む範囲内の味方のHPを\r\n最大値の割合で減少させる。",
+      "sort_priority": 20040
+    },
+    {
+      "item_id": "item.exskill_key.22-2",
+      "display_name": "[ペガサス娘]スズのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 10,
+      "salable": 0,
+      "text": "一定時間、射程、攻撃速度が上昇する。\r\n攻撃した敵をわずかに後退させる。",
+      "sort_priority": 20059
+    },
+    {
+      "item_id": "item.exskill_key.30-2",
+      "display_name": "[ワーペンギン娘]ペリリのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 10,
+      "salable": 0,
+      "text": "効果時間無限。より獣のような姿に変身し\r\n最大HP、攻撃力、物理防御、射程が上昇。\r\nさらに移動時にスキルが解除されない。",
+      "sort_priority": 20073
+    },
+    {
+      "item_id": "item.exskill_key.38-2",
+      "display_name": "[クラーケン娘]オキューのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 15,
+      "salable": 0,
+      "text": "即座にコストが回復し、\r\n範囲内のマスにいる味方にトークンを\r\n召喚する。",
+      "sort_priority": 20019
+    },
+    {
+      "item_id": "item.exskill_key.63-2",
+      "display_name": "[ターロス娘]クレッタのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 20,
+      "salable": 0,
+      "text": "一定時間、攻撃力、物理防御力が上昇。\r\nさらに種族特性の継続ダメージが上昇。",
+      "sort_priority": 20042
+    },
+    {
+      "item_id": "item.exskill_key.85-2",
+      "display_name": "[ブラックドラゴン娘]マウロのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 20,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、防御無視の\r\n遠距離攻撃を2連射する。\r\nｽｷﾙ中、自身のHPが割合で徐々に減少する。",
+      "sort_priority": 20056
+    },
+    {
+      "item_id": "item.exskill_key.25-2",
+      "display_name": "[インキュバス娘]タンタルのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 20,
+      "salable": 0,
+      "text": "一定時間、攻撃力と射程が上昇し、\r\n2連射で攻撃を行うようになる。さらに\r\n女性と男性の敵の攻撃力を減少させる。",
+      "sort_priority": 20006
+    },
+    {
+      "item_id": "item.exskill_key.65-2",
+      "display_name": "[カトブレパス娘]ニグリュのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 20,
+      "salable": 0,
+      "text": "一定時間、攻撃力と射程が上昇。\r\n攻撃した敵を確率で猛毒、石化状態にする。\r\n石化状態への与ダメージが上昇する。",
+      "sort_priority": 20015
+    },
+    {
+      "item_id": "item.exskill_key.32-2",
+      "display_name": "[ゴブリン娘]アニシラのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 20,
+      "salable": 0,
+      "text": "トークンの所持数+2、全ゴブリントー\r\nクンのHP、攻撃力を大きく上昇。\r\nｽｷﾙ終了時に全ｺﾞﾌﾞﾘﾝﾄｰｸﾝを死亡させる。",
+      "sort_priority": 20025
+    },
+    {
+      "item_id": "item.exskill_key.60-2",
+      "display_name": "[コボルト娘]バウのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 20,
+      "salable": 0,
+      "text": "即座にコストが9回復する。\r\nさらに同マスに遠距離攻撃を行う\r\n友達コボルトトークンを召喚し共闘する。",
+      "sort_priority": 20027
+    },
+    {
+      "item_id": "item.exskill_key.46-2",
+      "display_name": "[カーバンクル娘]ルルゥのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 30,
+      "salable": 0,
+      "text": "一定時間、攻撃力と射程が大きく上昇する。\r\n発動時、自身を含む範囲内の味方に\r\n戦闘前の攻撃力割合分のバリアを付与する。",
+      "sort_priority": 20013
+    },
+    {
+      "item_id": "item.exskill_key.88-2",
+      "display_name": "[オークロード娘]デルボアのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 30,
+      "salable": 0,
+      "text": "一定時間、攻撃力と移動速度が上昇し\r\n物理・魔法ダメージを軽減する。\r\nこのｽｷﾙは最大5回まで使用毎に強化される。",
+      "sort_priority": 20010
+    },
+    {
+      "item_id": "item.exskill_key.78-2",
+      "display_name": "[アルミラージ娘]ルナミーラのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 30,
+      "salable": 0,
+      "text": "即座にコストが8回復する。\r\n一定時間、5連続攻撃を行うようになる。\r\n本体使用時のみトークンが増加する。",
+      "sort_priority": 20004
+    },
+    {
+      "item_id": "item.exskill_key.24-2",
+      "display_name": "[ゴースト娘]アメリのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 30,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し\r\n敵の遠距離攻撃の対象にならなくなる。\r\nさらに、トークンが増加する。",
+      "sort_priority": 20022
+    },
+    {
+      "item_id": "item.exskill_key.55-2",
+      "display_name": "[マミー娘]ミィマのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 30,
+      "salable": 0,
+      "text": "スキル発動時に自身が死亡し\r\n全ての敵へ攻撃力の割合ダメージを与える。",
+      "sort_priority": 20063
+    },
+    {
+      "item_id": "item.exskill_key.58-2",
+      "display_name": "[ヘルハウンド娘]ケィナのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 30,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、範囲攻撃をする\r\nようになるが、攻撃後の待ち時間が増加。",
+      "sort_priority": 20061
+    },
+    {
+      "item_id": "item.exskill_key.49-2",
+      "display_name": "[フェニックス娘]アテエルのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 25,
+      "salable": 0,
+      "text": "一定時間、射程上昇、回復対象数増加。\r\nさらにスキル中は再出撃時間を\r\nより短くする。",
+      "sort_priority": 20055
+    },
+    {
+      "item_id": "item.exskill_key.68-2",
+      "display_name": "[アラクネ娘]カヅネのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 25,
+      "salable": 0,
+      "text": "一定時間、射程上昇。発動時に遠距離味方の\r\nスキル準備時間を-7秒する。種族特性の蜘蛛\r\n糸効果が3倍、隠密が解除されない。",
+      "sort_priority": 20002
+    },
+    {
+      "item_id": "item.exskill_key.40-2",
+      "display_name": "[マンティコア娘]ニィルのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 40,
+      "salable": 0,
+      "text": "一定時間、射程上昇。射程内の敵5体を\r\n攻撃し、強力な継続ダメージを\r\n与える毒沼を生成する。",
+      "sort_priority": 20064
+    },
+    {
+      "item_id": "item.exskill_key.79-2",
+      "display_name": "[ﾌﾛｽﾄｼﾞｬｲｱﾝﾄ娘]ナルケパフネのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 40,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇。\r\n魔法遠距離攻撃になり、\r\n攻撃した敵の動きを1秒間停止する。",
+      "sort_priority": 20057
+    },
+    {
+      "item_id": "item.exskill_key.8-2",
+      "display_name": "[ウンディーネ娘]プネーマのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 40,
+      "salable": 0,
+      "text": "一定時間、射程と種族特性の回復量が\r\n上昇する。さらに、水属性の味方の\r\n毒、石化状態を無効化する。",
+      "sort_priority": 20009
+    },
+    {
+      "item_id": "item.exskill_key.50-2",
+      "display_name": "[オルトロス娘]トルスのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 40,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、\r\n2連射で攻撃をする。さらに、\r\n範囲内の敵2体を攻撃するようになる。",
+      "sort_priority": 20012
+    },
+    {
+      "item_id": "item.exskill_key.20-2",
+      "display_name": "[フェアリー娘]ネリーのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 40,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、\r\n魔法攻撃になる。さらに、\r\n敵の遠距離攻撃の対象にならなくなる。",
+      "sort_priority": 20054
+    },
+    {
+      "item_id": "item.exskill_key.56-2",
+      "display_name": "[ゾンビ娘]ロトーナのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 40,
+      "salable": 0,
+      "text": "一定時間、物理と魔法防御力が上昇。\r\n攻撃時に、自身の最大HPの割合分回復する。",
+      "sort_priority": 20039
+    },
+    {
+      "item_id": "item.exskill_key.94-2",
+      "display_name": "[浜辺のケルベロス娘]テルルのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 40,
+      "salable": 0,
+      "text": "一定時間、ブロック数が0となり、\r\n攻撃力と射程が上昇。さらに、\r\n範囲内敵3体に3連射で攻撃をする。",
+      "sort_priority": 20076
+    },
+    {
+      "item_id": "item.exskill_key.93-2",
+      "display_name": "[常夏のフェニックス娘]アテエルのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 40,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、\r\n周囲の全ての敵に攻撃を行う。\r\n攻撃時に、範囲内の味方のHPを攻撃力\r\n割合分回復する。",
+      "sort_priority": 20075
+    },
+    {
+      "item_id": "item.exskill_key.64-2",
+      "display_name": "[ヘカトンケイル娘]ラキオンのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 50,
+      "salable": 0,
+      "text": "一定時間、攻撃力と射程が上昇。\r\n種族特性の地上の敵への与ダメージが上昇する。",
+      "sort_priority": 20060
+    },
+    {
+      "item_id": "item.exskill_key.28-2",
+      "display_name": "[メデューサ娘]ローレンのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 50,
+      "salable": 0,
+      "text": "一定時間、攻撃力と射程が上昇。\r\n範囲内の敵3体を同時に攻撃し、\r\n確率で石化状態にする。\r\n石化状態への与ダメージが上昇する。",
+      "sort_priority": 20067
+    },
+    {
+      "item_id": "item.exskill_key.14-2",
+      "display_name": "[アラクネ娘]フランシのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 50,
+      "salable": 0,
+      "text": "一定時間、射程が上昇。ﾌﾞﾛｯｸ数が0となり、敵の遠距離攻撃の対象にならなくなる。攻撃しなくなるが範囲内の敵の攻撃と移動速度を減少させ、一定時間毎に毒状態にする。",
+      "sort_priority": 20003
+    },
+    {
+      "item_id": "item.exskill_key.100-2",
+      "display_name": "[デーモン娘]メドのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 50,
+      "salable": 0,
+      "text": "スキル発動時、1度だけ攻撃力が上昇し、\r\n短射程の遠距離範囲攻撃を行う。\r\n撃破時にスキル再使用時間が短縮される。",
+      "sort_priority": 20043
+    },
+    {
+      "item_id": "item.exskill_key.35-2",
+      "display_name": "[コカトリス娘]カリスのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 50,
+      "salable": 0,
+      "text": "一定時間、遠距離範囲魔法攻撃になり、\r\n種族特性の敵を石化させる確率が上昇する。",
+      "sort_priority": 20023
+    },
+    {
+      "item_id": "item.exskill_key.17-2",
+      "display_name": "[ダークエルフ娘]レティアのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 50,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、\r\n【ダークエルフ娘】ティーレが\r\n配置されていると、貫通攻撃になる。",
+      "sort_priority": 20041
+    },
+    {
+      "item_id": "item.exskill_key.26-2",
+      "display_name": "[デュラハン娘]プラチナのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 60,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、\r\nブロックした全ての敵を攻撃する。\r\nさらに、スキル発動中に倒した敵1体毎に\r\n攻撃力が上昇する。",
+      "sort_priority": 20044
+    },
+    {
+      "item_id": "item.exskill_key.91-2",
+      "display_name": "[ワイバーン娘]アーラのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 60,
+      "salable": 0,
+      "text": "スキル発動時に1度だけ攻撃力が上昇し、\r\n敵3体に魔法遠距離攻撃を行う。\r\nさらに、スキル発動中に攻撃した敵1体毎に\r\nCRI率、CRIダメージが上昇する。",
+      "sort_priority": 20074
+    },
+    {
+      "item_id": "item.exskill_key.23-2",
+      "display_name": "[カッパードラゴン娘]セレンのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 60,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、\r\nスタン状態にする攻撃を行う。\r\nさらに、物理攻撃を確率で回避する。",
+      "sort_priority": 20014
+    },
+    {
+      "item_id": "item.exskill_key.37-2",
+      "display_name": "[クィーンビー娘]メリッサのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 60,
+      "salable": 0,
+      "text": "一定時間、射程が上昇する。さらに、\r\n射程内の敵を確率で猛毒状態にし、味方の\r\n毒状態の敵への与ダメージが上昇する。",
+      "sort_priority": 20017
+    },
+    {
+      "item_id": "item.exskill_key.1-2",
+      "display_name": "[ケンタウロス娘]エテジアのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 60,
+      "salable": 0,
+      "text": "一定時間、ブロック数、物理と魔法防御力が\r\n上昇し、ブロックした全ての敵を攻撃する。\r\nさらに、ブロックした敵1体毎に\r\n攻撃力、物理と魔法防御力が上昇する。",
+      "sort_priority": 20021
+    },
+    {
+      "item_id": "item.exskill_key.31-2",
+      "display_name": "[ローパー娘]ネルのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 60,
+      "salable": 0,
+      "text": "一定時間、攻撃力と射程が上昇。\r\n魔法範囲攻撃になり、攻撃した敵の\r\n移動速度が10秒間減少する。",
+      "sort_priority": 20072
+    },
+    {
+      "item_id": "item.exskill_key.29-2",
+      "display_name": "[ミミック娘]アスタのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 60,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、\r\n遠距離範囲攻撃を行う。さらに、\r\n攻撃した敵を確率で猛毒、石化状態にし、\r\n2秒間物理と魔法防御力が減少する。",
+      "sort_priority": 20066
+    },
+    {
+      "item_id": "item.exskill_key.47-2",
+      "display_name": "[ラミア娘]アミラミのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 60,
+      "salable": 0,
+      "text": "一定時間、攻撃力上昇、攻撃対象数増加。\r\nさらに、範囲内の敵のHP割合分の\r\n継続ダメージを与える。\r\n火属性マスに配置中、攻撃力が上昇する。",
+      "sort_priority": 20069
+    },
+    {
+      "item_id": "item.exskill_key.95-2",
+      "display_name": "[ｱﾝﾄﾞﾛｽﾌｨﾝｸｽ娘]ラフーカのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 45,
+      "salable": 0,
+      "text": "一定時間、攻撃力と射程が上昇。\r\n攻撃行動時に射程内の味方のHPを\r\n自身のHP割合分回復する。",
+      "sort_priority": 20005
+    },
+    {
+      "item_id": "item.exskill_key.98-2",
+      "display_name": "[スフィンクス娘]ロジカのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 45,
+      "salable": 0,
+      "text": "即座にコストが15回復し、射程が上昇、\r\n射程内の敵を3秒間停止する。\r\n自身と射程内の味方の攻撃力と\r\n物理防御力が上昇する。",
+      "sort_priority": 20037
+    },
+    {
+      "item_id": "item.exskill_key.89-2",
+      "display_name": "[スキュラ娘]ルキュレのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 70,
+      "salable": 0,
+      "text": "一定時間、射程上昇、攻撃対象数増加。\r\n攻撃した敵の攻撃力が減少させる。\r\nさらに、トークンの所持数+1、\r\nトークンのHPと攻撃力が上昇する。",
+      "sort_priority": 20036
+    },
+    {
+      "item_id": "item.exskill_key.90-2",
+      "display_name": "[トレント娘]レントープのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 70,
+      "salable": 0,
+      "text": "一定時間、ブロック数、攻撃力とHPが上昇\r\nし、ブロックした敵に近距離物理攻撃を\r\n行う。さらに、攻撃時に、自身の最大HPの割合分回復する。",
+      "sort_priority": 20047
+    },
+    {
+      "item_id": "item.exskill_key.12-2",
+      "display_name": "[ノーム娘]ペトラのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 70,
+      "salable": 0,
+      "text": "一定時間、攻撃力が大きく上昇する。\r\nさらに、スタン状態にさせ、低確率で\r\n敵を吹き飛ばす遠距離範囲攻撃を行う。",
+      "sort_priority": 20049
+    },
+    {
+      "item_id": "item.exskill_key.41-2",
+      "display_name": "[ジャイアント娘]メロンのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 70,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、\r\n確率で敵を吹き飛ばす\r\n物理範囲攻撃を行う。",
+      "sort_priority": 20033
+    },
+    {
+      "item_id": "item.exskill_key.6-2",
+      "display_name": "[スライム娘]リンのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 70,
+      "salable": 0,
+      "text": "一定時間、攻撃力と射程が上昇。\r\n射程内の味方が受ける物理ダメージを\r\n軽減する。",
+      "sort_priority": 20038
+    },
+    {
+      "item_id": "item.exskill_key.4-2",
+      "display_name": "[ゴブリン娘]アニスのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 70,
+      "salable": 0,
+      "text": "一定時間、射程が上昇し、3連射で攻撃を\r\n行う。さらに、配置中のｺﾞﾌﾞﾘﾝﾄｰｸﾝ1体に\r\nつきコストとトークンの所持数が上昇。",
+      "sort_priority": 20024
+    },
+    {
+      "item_id": "item.exskill_key.83-2",
+      "display_name": "[ヴァンパイア娘]ヴェラートゥのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 55,
+      "salable": 0,
+      "text": "スキル発動時、1度だけ射程と攻撃力が上昇\r\nし、敵5体に魔法遠距離攻撃を与える。\r\nさらに、スキル発動中に攻撃した敵1体毎に\r\n自身の攻撃力が一定時間上昇する。",
+      "sort_priority": 20008
+    },
+    {
+      "item_id": "item.exskill_key.75-2",
+      "display_name": "[シルバードラゴン娘]アルギュロのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 55,
+      "salable": 0,
+      "text": "一定時間、2秒毎に範囲内の味方のHPを\r\n回復する。さらに、範囲内の味方が竜特性を\r\n持っている場合、物理と魔法防御力が上昇す\r\nる。",
+      "sort_priority": 20035
+    },
+    {
+      "item_id": "item.exskill_key.103-2",
+      "display_name": "[ネメアレオ娘]メアルスのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 80,
+      "salable": 0,
+      "text": "一定時間、攻撃を受けた際、\r\n敵の攻撃力割合分でダメージを反射し、\r\nすべてのダメージが0になる。\r\nさらに、敵の攻撃を引き付け、\r\nスタン状態にならない。",
+      "sort_priority": 20048
+    },
+    {
+      "item_id": "item.exskill_key.61-2",
+      "display_name": "[レッドドラゴン娘]エリュートのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 80,
+      "salable": 0,
+      "text": "スキル発動時、1度だけ攻撃力が上昇し、\r\n周囲の敵5体に遠距離魔法攻撃を行う。\r\nさらに、着弾地点に発動時の攻撃力割合分の持続ダメージを発生させる。",
+      "sort_priority": 20071
+    },
+    {
+      "item_id": "item.exskill_key.15-2",
+      "display_name": "[クーシー娘]ユーシィのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 80,
+      "salable": 0,
+      "text": "スキル発動時、１度だけ攻撃力が上昇し、\r\n敵5体に暗闇(中)を付与する\r\n魔法攻撃を行う。",
+      "sort_priority": 20018
+    },
+    {
+      "item_id": "item.exskill_key.34-2",
+      "display_name": "[ドライアド娘]チールのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 80,
+      "salable": 0,
+      "text": "スキル発動時、1度だけ射程が上昇し、\r\n範囲内の味方に15秒間、\r\nHPを1秒毎に回復する効果と、物理と\r\n魔法防御力が上昇する効果を付与する。",
+      "sort_priority": 20045
+    },
+    {
+      "item_id": "item.exskill_key.53-2",
+      "display_name": "[ジャックフロスト娘]スゥノのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 80,
+      "salable": 0,
+      "text": "一定時間、攻撃力上昇、攻撃対象数増加。\r\nさらに、低確率で攻撃した敵を\r\n凍結状態にする。",
+      "sort_priority": 20034
+    },
+    {
+      "item_id": "item.exskill_key.57-2",
+      "display_name": "[リザードマン娘]サウラのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 80,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇、\r\n遠距離範囲魔法攻撃を行う。\r\nさらに、自身の魔法攻撃の\r\n被ダメージを減少する。",
+      "sort_priority": 20070
+    },
+    {
+      "item_id": "item.exskill_key.147-2",
+      "display_name": "[サンドワーム娘]へディアのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 65,
+      "salable": 0,
+      "text": "スキル発動時に自身の足元に砂地獄を発生\r\nさせる。また、砂地獄の範囲内の敵に\r\n一定時間毎に、攻撃力割合分の\r\n持続ダメージを与え、物理防御力を\r\n減少させる。その後、一定時間、攻撃力が\r\n上昇し、スキル中は移動できなくなる。",
+      "sort_priority": 20032
+    },
+    {
+      "item_id": "item.exskill_key.173-2",
+      "display_name": "[ドラゴンゾンビ娘]ディフォーラのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 65,
+      "salable": 0,
+      "text": "一定時間、攻撃力が上昇し、\r\n範囲内のすべての敵の攻撃速度、防御力を\r\n低下し、確率で暗闇状態を付与する。\r\nさらに、種族特性の継続ダメージが\r\n上昇し、範囲内の敵に発生する。",
+      "sort_priority": 20046
+    },
+    {
+      "item_id": "item.exskill_key.179-2",
+      "display_name": "[ゴブリンキング娘]マシュロアのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 90,
+      "salable": 0,
+      "text": "即座にコストが回復、その後一定時間、\r\n攻撃力と射程が上昇し、配置中の\r\nゴブリン族(トークン含)の数だけ\r\n自身の攻撃力が上昇する。\r\nさらに、遠距離範囲攻撃となり、\r\n敵をスタン状態にする。",
+      "sort_priority": 20026
+    },
+    {
+      "item_id": "item.exskill_key.97-2",
+      "display_name": "[ヒュドラ娘]ユラのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 90,
+      "salable": 0,
+      "text": "一定時間、ブロック数が上昇する。\r\n攻撃力が自身のHPの割合分上昇し、\r\n毒状態の敵に攻撃する度に\r\n自身のHPの割合分回復する。\r\nさらにブロック中は追加攻撃が発生し、\r\n周囲の敵に攻撃を行う。",
+      "sort_priority": 20053
+    },
+    {
+      "item_id": "item.exskill_key.104-2",
+      "display_name": "[バンシー娘]アンセのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 90,
+      "salable": 0,
+      "text": "一定時間、射程が上昇する。\r\n範囲内の味方に、敵を攻撃で倒すごとに\r\nCRI率、CRIダメージが\r\n上昇する能力を付与する。",
+      "sort_priority": 20052
+    },
+    {
+      "item_id": "item.exskill_key.80-2",
+      "display_name": "[ﾌﾛｽﾄｻﾗﾏﾝﾀﾞｰ娘]フリスのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 90,
+      "salable": 0,
+      "text": "即座にコストが回復する。\r\nその後一定時間、攻撃力と射程が上昇し、\r\n遠距離魔法攻撃になる。さらに、\r\n攻撃した敵を一定確率で凍結させる。",
+      "sort_priority": 20058
+    },
+    {
+      "item_id": "item.exskill_key.121-2",
+      "display_name": "[コボルト娘]ペントのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 90,
+      "salable": 0,
+      "text": "一定時間、攻撃力と射程が上昇し、\r\n範囲内の敵5体を攻撃するようになる。",
+      "sort_priority": 20028
+    },
+    {
+      "item_id": "item.exskill_key.59-2",
+      "display_name": "[インプ娘]エピルのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 90,
+      "salable": 0,
+      "text": "一定時間、攻撃力と攻撃速度が上昇し、\r\n魔法攻撃になる。\r\nさらに移動時にスキルが解除されない。",
+      "sort_priority": 20007
+    },
+    {
+      "item_id": "item.exskill_key.27-2",
+      "display_name": "[ケルベロス娘]テルルのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 75,
+      "salable": 0,
+      "text": "一定時間、攻撃力と射程が上昇。\r\n攻撃速度が減少し攻撃対象数が1になるが、\r\n直進し触れた敵全てに防御力と\r\n回避効果を無視する攻撃を行う。",
+      "sort_priority": 20020
+    },
+    {
+      "item_id": "item.exskill_key.66-2",
+      "display_name": "[サンダーバード娘]ワエマワのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 75,
+      "salable": 0,
+      "text": "一定時間、射程上昇、攻撃対象数増加、\r\nCRIダメージと上限が上昇する。\r\n攻撃速度が減少するが、\r\nスキル中は攻撃が3連撃になる",
+      "sort_priority": 20031
+    },
+    {
+      "item_id": "item.exskill_key.106-2",
+      "display_name": "[アクアドラゴン娘]ロヴィリスのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 100,
+      "salable": 0,
+      "text": "スキル発動時に受ける物理、魔法ダメージ\r\nを軽減するが、ダメージ軽減効果が\r\n一定時間毎に低下する。さらに、\r\n一定時間攻撃を行わなくなるが、\r\nブロック数が上昇、毎秒自身の\r\n攻撃力割合分HPを継続回復する。",
+      "sort_priority": 20001
+    },
+    {
+      "item_id": "item.exskill_key.123-2",
+      "display_name": "[ハルピュイア娘]ハリエラのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 100,
+      "salable": 0,
+      "text": "一定時間、全ての味方が場から\r\n撤退した際の回復コストが増加し、\r\n再出撃時間が短縮される。\r\n（再出撃時間短縮は重複不可）",
+      "sort_priority": 20051
+    },
+    {
+      "item_id": "item.exskill_key.10-2",
+      "display_name": "[サラマンダー娘]イグニのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 100,
+      "salable": 0,
+      "text": "即座にコストが回復し、その後一定時間、\r\n攻撃力が上昇、攻撃した敵を確率で\r\n火傷状態にする近距離範囲攻撃を行う。",
+      "sort_priority": 20030
+    },
+    {
+      "item_id": "item.exskill_key.77-2",
+      "display_name": "[雪女娘]ニホのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 100,
+      "salable": 0,
+      "text": "スキル発動時、範囲内の敵を超確率で\r\n凍結状態にする。その後、一定時間、\r\n攻撃力が上昇し、攻撃時に\r\n低確率で凍結状態にする。",
+      "sort_priority": 20068
+    },
+    {
+      "item_id": "item.exskill_key.21-2",
+      "display_name": "[サキュバス娘]クロミのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 100,
+      "salable": 0,
+      "text": "一定時間、攻撃力と射程が上昇、\r\n攻撃対象数増加し、男性に攻撃時、\r\n相手をスタン状態にさせる。\r\nさらに、種族特性の効果が上昇する。",
+      "sort_priority": 20029
+    },
+    {
+      "item_id": "item.exskill_key.11-2",
+      "display_name": "[オーク娘]ポデルのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 100,
+      "salable": 0,
+      "text": "スキル発動時、自身に基本攻撃力割合分の\r\nバリアを付与する。さらに、同マスに\r\nオークトークン(投石)を召喚し共闘、\r\n登場時に周囲の全ての敵に攻撃力割合分の\r\n物理ダメージを与える。",
+      "sort_priority": 20011
+    },
+    {
+      "item_id": "item.exskill_key.81-2",
+      "display_name": "[マーナガルム娘]マズルのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 85,
+      "salable": 0,
+      "text": "スキル発動時に1度だけ攻撃力、与ダメー\r\nジが上昇し、 トークンの所持数が増加す\r\nる。さらに、スキル終了後に次回スキルの\r\n与ダメージ上昇量が増加する。",
+      "sort_priority": 20062
+    },
+    {
+      "item_id": "item.exskill_key.112-2",
+      "display_name": "[ミスリルゴーレム娘]ミスレナのEXスキル II",
+      "rarity": 21041,
+      "val_cap": 1,
+      "sale_price": 85,
+      "salable": 0,
+      "text": "一定時間、HPが上昇し、\r\n攻撃を行わなくなるが敵の攻撃を引き付\r\nけ、敵の攻撃力割合分のダメージを反射す\r\nる。さらに、種族特性の\r\n魔法ダメージ減少量が増加する。",
+      "sort_priority": 20065
+    }
+  ]
+}

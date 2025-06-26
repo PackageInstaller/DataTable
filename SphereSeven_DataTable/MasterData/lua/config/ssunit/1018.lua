@@ -1,0 +1,3 @@
+local Config = {Id=1018,Name="大禹",AbDir="SsUnit/018_DaYu",NewRes=1,HandleBones={"Bip002","3b_Bone166"},UnitScale =1.44,CloseAtkOffset={2,0,-0.2},HitPosOffset={0,1.9656,0},Position={0},CenterOffset={0},CameraFollowYParam =0,OnHurtCameraOffset={0},
+ animEvt={Atk={Name="Atk",SkillEfxId=10181,TotalFrames=180,OnHit=0,OnCutIn=0,OnDamage={45},OnMissile={0},OnFrame={}},Skl01={Name="Skl01",SkillEfxId=10182,TotalFrames=220,OnHit=0,OnCutIn=0,OnDamage={44},OnMissile={0},OnFrame={}},Skl02={Name="Skl02",SkillEfxId=10183,TotalFrames=700,OnHit=0,OnCutIn=0,OnDamage={},OnMissile={},OnFrame={1,0,0,0,0,0,0,0}},Hit={Name="Hit",SkillEfxId=0,TotalFrames=30,OnHit=2,OnCutIn=0,OnDamage={0},OnMissile={0},OnFrame={}},}}
+ return Config
