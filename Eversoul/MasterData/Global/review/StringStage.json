@@ -1,0 +1,2780 @@
+{
+  "json": [
+    {
+      "no": 1001,
+      "krOffset": "전투 승리 하기",
+      "enOffset": "Win battle",
+      "jaOffset": "戦闘に勝利する",
+      "zh_twOffset": "戰鬥勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1002,
+      "krOffset": "인간 종족 사용하지 않기",
+      "enOffset": "Not use Humanlike Souls",
+      "jaOffset": "人間型を使用しない",
+      "zh_twOffset": "不使用人類型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1003,
+      "krOffset": "야수 종족 사용하지 않기",
+      "enOffset": "Not use Beast Souls",
+      "jaOffset": "野獣型を使用しない",
+      "zh_twOffset": "不使用野獸型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1004,
+      "krOffset": "요정 종족 사용하지 않기",
+      "enOffset": "Not use Fairy Souls",
+      "jaOffset": "妖精型を使用しない",
+      "zh_twOffset": "不使用妖精型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1005,
+      "krOffset": "불사 종족 사용하지 않기",
+      "enOffset": "Not use Undead Souls",
+      "jaOffset": "不死型を使用しない",
+      "zh_twOffset": "不使用不死型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1006,
+      "krOffset": "천사 종족 사용하지 않기",
+      "enOffset": "Not use Angel Souls",
+      "jaOffset": "天使型を使用しない",
+      "zh_twOffset": "不使用天使型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1007,
+      "krOffset": "악마 종족 사용하지 않기",
+      "enOffset": "Not use Demon Souls",
+      "jaOffset": "悪魔型を使用しない",
+      "zh_twOffset": "不使用惡魔型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1008,
+      "krOffset": "힘 스탯 타입 사용하지 않기",
+      "enOffset": "Not use STR Souls",
+      "jaOffset": "力タイプを使用しない",
+      "zh_twOffset": "不使用力量特性",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1009,
+      "krOffset": "민첩 스탯 타입 사용하지 않기",
+      "enOffset": "Not use DEX Souls",
+      "jaOffset": "敏捷タイプを使用しない",
+      "zh_twOffset": "不使用敏捷特性",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1010,
+      "krOffset": "지능 스탯 타입 사용하지 않기",
+      "enOffset": "Not use INT Souls",
+      "jaOffset": "知能タイプを使用しない",
+      "zh_twOffset": "不使用智力特性",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1011,
+      "krOffset": "워리어 클래스 사용하지 않기",
+      "enOffset": "Not use Warrior Souls",
+      "jaOffset": "ウォーリアクラスを使用しない",
+      "zh_twOffset": "不使用戰士職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1012,
+      "krOffset": "레인저 클래스 사용하지 않기",
+      "enOffset": "Not use Ranger Souls",
+      "jaOffset": "レンジャークラスを使用しない",
+      "zh_twOffset": "不使用遊俠職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1013,
+      "krOffset": "스트라이커 클래스 사용하지 않기",
+      "enOffset": "Not use Striker Souls",
+      "jaOffset": "ストライカークラスを使用しない",
+      "zh_twOffset": "不使用鬥士職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1014,
+      "krOffset": "캐스터 클래스 사용하지 않기",
+      "enOffset": "Not use Caster Souls",
+      "jaOffset": "キャスタークラスを使用しない",
+      "zh_twOffset": "不使用魔法師職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1015,
+      "krOffset": "서포터 클래스 사용하지 않기",
+      "enOffset": "Not use Supporter Souls",
+      "jaOffset": "サポータークラスを使用しない",
+      "zh_twOffset": "不使用輔助者職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1016,
+      "krOffset": "디펜더 클래스 사용하지 않기",
+      "enOffset": "Not use Defender Souls",
+      "jaOffset": "ディフェンダークラスを使用しない",
+      "zh_twOffset": "不使用捍衛者職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1017,
+      "krOffset": "인간 종족을 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Humanlike Souls and win a battle",
+      "jaOffset": "人間型を{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個人類型並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1018,
+      "krOffset": "야수 종족을 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Beast Souls and win a battle",
+      "jaOffset": "野獣型を{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個野獸型並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1019,
+      "krOffset": "요정 종족을 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Fairy Souls and win a battle",
+      "jaOffset": "妖精型を{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個妖精型並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1020,
+      "krOffset": "불사 종족을 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Undead Souls and win a battle",
+      "jaOffset": "不死型を{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個不死型並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1021,
+      "krOffset": "천사 종족을 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Angel Souls and win a battle",
+      "jaOffset": "天使型を{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個天使型並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1022,
+      "krOffset": "악마 종족을 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Demon Souls and win a battle",
+      "jaOffset": "悪魔型を{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個惡魔型並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1023,
+      "krOffset": "힘 스탯 타입을 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more STR Souls and win a battle",
+      "jaOffset": "力タイプを{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個力量特性精靈並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1024,
+      "krOffset": "민첩 스탯 타입을 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more DEX Souls and win a battle",
+      "jaOffset": "敏捷タイプを{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個敏捷特性精靈並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1025,
+      "krOffset": "지능 스탯 타입을 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more INT Souls and win a battle",
+      "jaOffset": "知能タイプを{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個智力特性精靈並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1026,
+      "krOffset": "워리어 클래스를 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Warrior Souls and win a battle",
+      "jaOffset": "ウォーリアクラスを{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個戰士職業並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1027,
+      "krOffset": "레인저 클래스를 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Ranger Souls and win a battle",
+      "jaOffset": "レンジャークラスを{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個遊俠職業並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1028,
+      "krOffset": "스트라이커 클래스를 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Striker Souls and win a battle",
+      "jaOffset": "ストライカークラスを{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個鬥士職業並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1029,
+      "krOffset": "캐스터 클래스를 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Caster Souls and win a battle",
+      "jaOffset": "キャスタークラスを{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個魔法師職業並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1030,
+      "krOffset": "서포터 클래스를 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Supporter Souls and win a battle",
+      "jaOffset": "サポータークラスを{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個輔助者職業並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1031,
+      "krOffset": "디펜더 클래스를 {1}명 이상 배치하여 전투 승리 하기",
+      "enOffset": "Place {1} or more Defender Souls and win a battle",
+      "jaOffset": "ディフェンダークラスを{1}体以上配置し、戦闘に勝利する",
+      "zh_twOffset": "配置超過{1}個捍衛者職業並於戰鬥中取得勝利",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1032,
+      "krOffset": "기본 진형 배치를 사용하여 승리하기",
+      "enOffset": "Win using Basic formation",
+      "jaOffset": "基本陣形を使用して勝利する",
+      "zh_twOffset": "使用基本陣型獲勝",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1033,
+      "krOffset": "저격진형 배치를 사용하여 승리하기",
+      "enOffset": "Win using Ranged formation",
+      "jaOffset": "狙撃陣形を使用して勝利する",
+      "zh_twOffset": "使用狙擊陣型獲勝",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1034,
+      "krOffset": "수비 진형 배치를 사용하여 승리하기",
+      "enOffset": "Win using Defense formation",
+      "jaOffset": "守備陣形を使用して勝利する",
+      "zh_twOffset": "使用防守陣型獲勝",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1035,
+      "krOffset": "돌격 진형 배치를 사용하여 승리하기",
+      "enOffset": "Win using Assault formation",
+      "jaOffset": "突撃陣形を使用して勝利する",
+      "zh_twOffset": "使用突擊陣型獲勝",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1036,
+      "krOffset": "{0}명 이상 생존한 상태로 클리어",
+      "enOffset": "Clear with at least {0} survivors",
+      "jaOffset": "{0}体以上生存した状態でクリア",
+      "zh_twOffset": "通關時超過{0}個精靈存活",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1037,
+      "krOffset": "{0}명 이상 생존한 상태로 클리어",
+      "enOffset": "Clear with at least {0} survivors",
+      "jaOffset": "{0}体以上生存した状態でクリア",
+      "zh_twOffset": "通關時超過{0}個精靈存活",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1038,
+      "krOffset": "{0}명 이상 생존한 상태로 클리어",
+      "enOffset": "Clear with at least {0} survivors",
+      "jaOffset": "{0}体以上生存した状態でクリア",
+      "zh_twOffset": "通關時超過{0}個精靈存活",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1039,
+      "krOffset": "{0}명 이상의 적을 하나의 정령이 처치하기",
+      "enOffset": "Defeat at least {0} enemies with a single Soul",
+      "jaOffset": "精霊1人で{0}体以上の敵を倒す",
+      "zh_twOffset": "一個精靈擊殺超過{0}個敵人",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1040,
+      "krOffset": "얼티밋 스킬을 {0}회 이상 사용하지 않고 클리어하기",
+      "enOffset": "Clear while using ultimate skills less than {0} times",
+      "jaOffset": "アルティメットスキルを{0}回以上使用せずにクリアする",
+      "zh_twOffset": "不使用超過{0}次以上終極技能就通關",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 1041,
+      "krOffset": "메인 스킬을 {0}회 이상 사용하지 않고 클리어하기",
+      "enOffset": "Clear while using main skills less than {0} times",
+      "jaOffset": "アクティブスキルを{0}回以上使用せずにクリアする",
+      "zh_twOffset": "不使用超過{0}次以上主要技能就通關",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2001,
+      "krOffset": "지휘관의 능력치가 증가하고 지휘관이 살아있는 동안 지휘관을 제외한 모든 적군의 공격력이 증가하며 피해 면역 상태가 된다.",
+      "enOffset": "The commander's stats increase, the ATK of all enemies except the commander increases and they become immune to damage while the commander is alive.",
+      "jaOffset": "指揮官の能力値が増加し、指揮官が生存している間は指揮官以外のすべての敵の攻撃力が増加し、ダメージ無効になる。",
+      "zh_twOffset": "增加指揮官的能力值，指揮官存活期間，使指揮官以外的所有敵軍增加攻擊力，並處於傷害免疫狀態",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2002,
+      "krOffset": "적군이 한명 사망할때마다 나머지 적군의 마나와 체력이 회복되며, 능력치가 증가한다.",
+      "enOffset": "Each time an enemy dies, the Mana and HP of the remaining enemies recover and their stats increase.",
+      "jaOffset": "敵1体が死亡するたびに残りの敵のマナと体力が回復され、能力値が増加する。",
+      "zh_twOffset": "每當一名敵軍死亡，恢復剩餘敵軍的魔力和體力，並增加能力值",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2003,
+      "krOffset": "적군 정령들에게 물리/마법 저항과 공격력이 증가하며 피해를 흡수하는 왜곡 결계 효과가 부여된다.",
+      "enOffset": "Applies a distortion barrier to enemy Souls that increases their Physical/Magic Resistance and ATK, and absorbs damage.",
+      "jaOffset": "敵精霊に物理/魔法抵抗と攻撃力が増加しダメージを吸収する歪曲結界の効果を付与する。",
+      "zh_twOffset": "使敵軍精靈增加物理／魔法抵抗和攻擊力，並賦予吸收傷害的扭曲結界效果",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2004,
+      "krOffset": "적군 정령들에게 물리/마법 저항과 공격력이 증가하며 피해를 흡수하는 왜곡 결계 효과가 부여된다. 전열에 배치된 아군에게는 물리/마법 저항이 낮아지는 약체화 효과가 부여된다.",
+      "enOffset": "Applies a distortion barrier to enemy Souls that increases their Physical/Magic Resistance and ATK, and absorbs damage. Applies a debilitation effect to ally Souls in the front row that decreases their Physical/Magic Resistance.",
+      "jaOffset": "敵精霊に物理/魔法抵抗と攻撃力が増加しダメージを吸収する歪曲結界の効果を付与する。前列の味方には物理/魔法抵抗が下がる弱体化効果を付与する。",
+      "zh_twOffset": "使敵軍精靈增加物理／魔法抵抗和攻擊力，並賦予吸收傷害的扭曲結界效果。對前排友軍賦予降低物理／魔法抵抗的體弱化效果",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2005,
+      "krOffset": "적군 정령의 받는 피해량이 소폭 감소하고, 사망시 모든 아군에게 체력에 비례한 피해를 입힌다.",
+      "enOffset": "Slightly decreases damage received by enemy Souls, and deals damage in proportion to HP to all allies upon an enemy Soul's death.",
+      "jaOffset": "敵精霊の受けるダメージ量が少し減少し、死亡すると味方全員に体力に比例するダメージを与える。",
+      "zh_twOffset": "小幅減少敵軍精靈的所受傷害量，死亡時對所有友軍造成與體力成正比的傷害",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2006,
+      "krOffset": "적군 정령의 받는 피해량이 소폭 감소하고, 사망시 모든 아군에게 체력에 비례한 피해를 입힌다. 복수자 효과 발동시 모든 적군의 공격력과 가속이 증가한다.",
+      "enOffset": "Slightly decreases damage received by enemy Souls, and deals damage in proportion to HP to all allies upon an enemy Soul's death. Increases ATK and Speed of all enemies when the \"Avenger\" effect is activated.",
+      "jaOffset": "敵精霊の受けるダメージ量が少し減少し、死亡すると味方全員に体力に比例するダメージを与える。効果が複数発動時、敵全員の攻撃力と加速が増加する。",
+      "zh_twOffset": "小幅減少敵軍精靈的所受傷害量，死亡時對所有友軍造成與體力成正比的傷害。發動復仇者效果時，增加所有敵軍攻擊力和加速",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2007,
+      "krOffset": "르웨인의 공격력과 체력이 증가하고 <은밀한 사냥꾼> 스킬을 습득한다.",
+      "enOffset": "Increases Lewayne's ATK and HP, and obtains the \"Secretive Hunter\" skill.",
+      "jaOffset": "ルウェインの攻撃力と体力が増加し、<密かなハンター>スキルを習得する。",
+      "zh_twOffset": "增加樂溫的攻擊力和體力，並獲得＜隱密的獵人＞技能",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2008,
+      "krOffset": "리타의 공격력과 체력이 증가하고 <의지 단련> 스킬을 습득한다.",
+      "enOffset": "Increases Rita's ATK and HP, and obtains the \"Will Training\" skill.",
+      "jaOffset": "リタの攻撃力と体力が増加し、<意志の鍛錬>スキルを習得する。",
+      "zh_twOffset": "增加麗塔的攻擊力和體力，並獲得＜鍛鍊心志＞技能",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2009,
+      "krOffset": "샤링의 공격력과 체력이 증가하고 <돈이 복사가 된다고?> 스킬을 습득한다.",
+      "enOffset": "Increases Sharinne's ATK and HP, and obtains the \"Money can be copied?\" skill.",
+      "jaOffset": "シャーリンの攻撃力と体力が増加し、<お金がコピーできる？>スキルを習得する。",
+      "zh_twOffset": "增加夏琳的攻擊力和體力，並獲得＜金錢可以複製？＞技能",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2010,
+      "krOffset": "로제의 공격력과 체력이 증가하고 <성령의 힘> 스킬을 습득한다.",
+      "enOffset": "Increases Rose's ATK and HP, and obtains the \"Holy Spirit's Power\" skill.",
+      "jaOffset": "ロゼの攻撃力と体力が増加し、<聖霊の力>スキルを習得する。",
+      "zh_twOffset": "增加蘿絲的攻擊力和體力，並獲得＜聖靈的力量＞技能",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2011,
+      "krOffset": "루리, 카렌의 공격력과 체력이 증가하고 각자 <극한의 깨달음>, <행복해지는 부적> 스킬을 습득한다.",
+      "enOffset": "Increases Ruri and Karen's ATK and HP, and each obtain the \"Ultimate Enlightenment\" or \"Happiness Charm\" skill.",
+      "jaOffset": "ルリ、カレンの攻撃力と体力が増加し、それぞれ<究極の悟り>、<幸せになるお守り>スキルを習得する。",
+      "zh_twOffset": "增加魯莉、卡倫的攻擊力和體力，分別獲得＜極限領悟＞與＜變幸福的符咒＞技能",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2012,
+      "krOffset": "알리샤, 무명의 공격력과 체력이 증가하고 각자 <불과 얼음>, <영혼 강도> 스킬을 습득한다.",
+      "enOffset": "Increases Alisha and Nameless's ATK and HP, and each obtain the \"Fire and Ice\" or \"Soul Stealer\" skill.",
+      "jaOffset": "アリーシャ、ナナシの攻撃力と体力が増加し、それぞれ<火と氷>、<魂盗み>スキルを習得する。",
+      "zh_twOffset": "增加艾麗西雅、無名的攻擊力和體力，分別獲得＜火與冰＞與＜靈魂強盜＞技能",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2013,
+      "krOffset": "리타, 로제, 루리의 공격력과 체력이 증가하고 각자 <의지 단련>, <성령의 힘>, <극한의 깨달음> 스킬을 습득한다.",
+      "enOffset": "Increases Rita, Rose, and Ruri's ATK and HP, and each obtain the \"Will Training\", \"Holy Spirit's Power,\" or \"Ultimate Enlightenment\" skill.",
+      "jaOffset": "リタ、ロゼ、ルリの攻撃力と体力が増加し、それぞれ<意志の鍛錬>、<聖霊の力>、<究極の悟り>スキルを習得する。",
+      "zh_twOffset": "增加麗塔、蘿絲及魯莉的攻擊力和體力，分別獲得＜鍛鍊心志＞、＜聖靈的力量＞與＜極限領悟＞技能",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2014,
+      "krOffset": "모든 적군의 받는 최종 피해량이 90% 감소하고 받는 지속 피해량이 2500% 증가한다.",
+      "enOffset": "Decreases damage received by all enemies by 90%, and increases DoT by 2,500%.",
+      "jaOffset": "敵全員の受ける最終ダメージ量が90%減少し、受ける持続ダメージ量が2500%増加する。",
+      "zh_twOffset": "所有敵軍所受最終傷害量減少90%，並使所受持續傷害量增加2500%",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2015,
+      "krOffset": "모든 적군의 받는 최종 피해량이 90% 감소하고 받는 지속 피해량이 2500% 증가한다. 경질화 효과를 받고 있는 적군이 사망할때 모든 적군의 디버프 효과가 해제되고 공격력이 영구히 20% 증가한다.",
+      "enOffset": "Decreases damage received by all enemies by 90%, and increases DoT by 2,500%. When an enemy with a \"Hardened\" effect dies, debuffs are removed from all the enemies and their ATK permanently increases by 20%.",
+      "jaOffset": "敵全員の受ける最終ダメージ量が90%減少し、受ける持続ダメージ量が2500%増加する。硬質化効果を受けている敵が死亡すると、敵全員のデバフ効果が解除され、攻撃力が永久に20%増加する。",
+      "zh_twOffset": "所有敵軍所受最終傷害量減少90%，並使所受持續傷害量增加2500%。獲得硬質化效果的敵軍死亡時，解除所有敵軍的減益效果，並使攻擊力永久增加20%",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2016,
+      "krOffset": "루리의 분신술이 다른 정령의 분신마저 만들어내는데 성공했다. 루리의 분신(르네)의 가속이 증가한다.",
+      "enOffset": "Ruri manages to successfully clone other Souls. Increases Speed of Ruri's Renee Clone.",
+      "jaOffset": "ルリの分身の術で他の精霊の分身をも作り出すのに成功した。ルリの分身(ルネ)の加速が増加する。",
+      "zh_twOffset": "魯莉的分身術成功製造出其他精靈的分身。增加魯莉的分身（勒內）的加速",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2017,
+      "krOffset": "루리의 분신술이 다른 정령의 분신마저 만들어내는데 성공했다. 루리의 분신(린지)의 회피가 증가한다.",
+      "enOffset": "Ruri manages to successfully clone other Souls. Increases Evasion of Ruri's Linzy Clone.",
+      "jaOffset": "ルリの分身の術で他の精霊の分身をも作り出すのに成功した。ルリの分身(リンジー)の回避が増加する。",
+      "zh_twOffset": "魯莉的分身術成功製造出其他精靈的分身。增加魯莉的分身（琳賽）的迴避",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2018,
+      "krOffset": "루리의 분신술이 다른 정령의 분신마저 만들어내는데 성공했다. 루리의 분신(클레르)의 공격력이 증가한다.",
+      "enOffset": "Ruri manages to successfully clone other Souls. Increases ATK of Ruri's Claire Clone.",
+      "jaOffset": "ルリの分身の術で他の精霊の分身をも作り出すのに成功した。ルリの分身(クレール)の攻撃力が増加する。",
+      "zh_twOffset": "魯莉的分身術成功製造出其他精靈的分身。增加魯莉的分身（克萊兒）的攻擊力",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2019,
+      "krOffset": "루리의 분신술이 다른 정령의 분신마저 만들어내는데 성공했다. 루리의 분신(도라)의 공격력과 방어력이 증가한다.",
+      "enOffset": "Ruri manages to successfully clone other Souls. Increases ATK and DEF of Ruri's Dora Clone.",
+      "jaOffset": "ルリの分身の術で他の精霊の分身をも作り出すのに成功した。ルリの分身(ドーラ)の攻撃力と防御力が増加する。",
+      "zh_twOffset": "魯莉的分身術成功製造出其他精靈的分身。增加魯莉的分身（朵菈）的攻擊力與防禦力",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2020,
+      "krOffset": "쓰러뜨린줄 알았던 분신들이 합체해서 더욱 강해졌다. 루리의 분신(린지)의 공격력, 체력, 회피가 증가하고, 무아지경의 중첩이 2배로 쌓인다.",
+      "enOffset": "The seemingly defeated clones fuse together to become even stronger. Increases ATK, HP, and Evasion of Ruri's Linzy Clone, and she stacks double the \"Daze\" stacks.",
+      "jaOffset": "倒せたと思った分身たちが合体してさらに強くなった。ルリの分身(リンジー)の攻撃力と体力、回避が増加し、無我の境の重複が2倍に溜まる。",
+      "zh_twOffset": "以為已經擊倒的分身們合體後變得更加強大。增加魯莉的分身（琳賽）的攻擊力、體力、迴避，並使渾然忘我的疊加數累積為2倍",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2021,
+      "krOffset": "쓰러뜨린줄 알았던 분신들이 합체해서 더욱 강해졌다. 루리의 분신(클레르)의 공격력, 방어력, 체력이 증가하고, <망설임 없는 돌격>을 가장 먼 적에게 사용하며 사용 빈도가 높아진다.",
+      "enOffset": "The seemingly defeated clones fuse together to become even stronger. Increases ATK, DEF, and HP of Ruri's Claire Clone, and now she uses \"Unfaltering Charge\" against the furthest enemy while also using the skill more frequently.",
+      "jaOffset": "倒せたと思った分身たちが合体してさらに強くなった。ルリの分身(クレール)の攻撃力と防御力、体力が増加する。さらに<迷いなき突撃>を一番遠い敵に使用し、使用数が増える。",
+      "zh_twOffset": "以為已經擊倒的分身們合體後變得更加強大。增加魯莉的分身（克萊兒）的攻擊力、防禦力、體力，對最遙遠的敵人使用＜毫不猶豫的突擊＞，且提高使用頻率",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2022,
+      "krOffset": "쓰러뜨린줄 알았던 분신들이 합체해서 더욱 강해졌다. 루리의 분신(도라) 공격력, 방어력, 체력이 증가하고 곰경지수 스킬의 사용 빈도가 높아진다.",
+      "enOffset": "The seemingly defeated clones fuse together to become even stronger. Increases ATK, DEF, and HP of Ruri's Dora Clone, and she now uses \"Bear With Me\" more frequently.",
+      "jaOffset": "倒せたと思った分身たちが合体してさらに強くなった。ルリの分身(ドーラ)の攻撃力と防御力、体力が増加する。さらに熊鏡止水スキルの使用数が増える。",
+      "zh_twOffset": "以為已經擊倒的分身們合體後變得更加強大。增加魯莉的分身（朵菈）的攻擊力、防禦力、體力，且提高熊鏡止水技能的使用頻率",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2023,
+      "krOffset": "아군의 체력이 2초마다 8%씩 지속적으로 감소하며 마나가 800 회복된다. 메인 스킬을 사용하면 자신의 현재 체력과 남은 체력이 반전된다. 얼티밋 스킬을 사용하면 모든 아군의 체력이 반전된다.",
+      "enOffset": "Allies continuously lose 8% HP every 2 seconds and recovers 800 Mana. Inverts current HP with remaining HP when using main skills. Inverts all allies' HP if ultimate skills are used.",
+      "jaOffset": "味方の体力が2秒ごとに8%ずつ持続的に減少し、マナを800回復する。アクティブスキルを使用すると、自分の現在の体力と残りの体力が反転される。アルティメットスキルを使用すると、味方全員の体力が反転される。",
+      "zh_twOffset": "每2秒友軍的體力持續減少8%且魔力恢復800。若使用主要技能，當前自身體力與剩餘體力就會反轉。若使用終極技能，所有友軍的體力會反轉",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2024,
+      "krOffset": "아군의 체력이 2초마다 8%씩 지속적으로 감소하며 마나가 800 회복된다. 메인 스킬을 사용할 때마다 현재 체력과 남은 체력이 반전되고 감소하는 체력이 2%씩 증가한다. 얼티밋 스킬을 사용하면 모든 아군의 체력이 반전된다. 적군의 마나가 2초마다 800 회복되며, 체력이 50% 이하일 경우 적군이 메인 스킬을 사용하면 체력이 반전된다.",
+      "enOffset": "Allies continuously lose 8% HP every 2 seconds and recovers 800 Mana. Inverts current HP with remaining HP whenever main skills are used, and increases the amount of HP lost by 2%. Inverts all allies' HP if ultimate skills are used. Enemies recover 800 Mana every 2 seconds, and their HP is inverted if the enemy uses a main skill while their HP is below 50%.",
+      "jaOffset": "味方の体力が2秒ごとに8%ずつ持続的に減少し、マナを800回復する。アクティブスキルを使用たびに、現在の体力と残りの体力が反転され、減少する体力が2%ずつ増加する。アルティメットスキルを使用すると、味方全員の体力が反転される。敵のマナを2秒ごとに800回復し、体力が50%以下の場合に敵がアクティブスキルを使用すると体力が反転される。",
+      "zh_twOffset": "每2秒友軍的體力持續減少8%且魔力恢復800。每次使用主要技能時，當前體力與剩餘體力就會反轉，每減少的體力增加2%。若使用終極技能，所有友軍的體力會反轉。敵軍的魔力每2秒恢復800，若體力低於50%，則敵軍使用主要技能時，體力會反轉",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2025,
+      "krOffset": "모든 적에게 불사의 가호가 내려 체력이 소진될 때 12초간 전투 불능 상태가 되지 않고 공격력과 가속이 100% 증가하며 2초마다 최대 체력의 10%씩 지속 회복하고, 침묵 상태가 된다. 모든 아군에게는 정화의 힘이 깃들어 얼티밋 스킬을 사용할 때 모든 적의 버프 효과를 모두 제거한다.",
+      "enOffset": "Undead Protection comes down upon all enemies, preventing them from becoming incapacitated for 12 seconds when their HP is depleted while increasing their ATK and Speed by 100%, restoring their HP by 10% every 2 seconds, and silencing them. Meanwhile, all allies are given powers that remove all enemy buff effects when using ultimate skills.",
+      "jaOffset": "敵全員が不死の加護を受け、体力が0になるまで12秒間戦闘不能状態にならず、攻撃力と加速が100％増加し、2秒ごとに最大体力の10％ずつを持続回復し、沈黙状態になる。味方全員には浄化の力が宿り、アルティメットスキルを使用すると敵全員のバフ効果をすべて無効化する。",
+      "zh_twOffset": "對所有敵人降下不死庇佑，當體力耗盡時，在12秒內不會處於無法戰鬥的狀態，攻擊力和加速會增加100%，每2秒持續恢復體力上限的10%，並處於沉默狀態。所有友軍都蘊含著淨化力量，在使用終極技能時，解除所有敵人的增益效果",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2026,
+      "krOffset": "모든 적에게 불멸의 가호가 내려 체력이 소진될 때 18초간 전투 불능 상태가 되지 않고 공격력과 가속이 100% 증가하며 2초마다 최대 체력의 10%씩 지속 회복한다. 모든 아군에게는 정화의 힘이 깃들어 얼티밋 스킬을 사용할 때 모든 적의 버프 효과를 모두 제거한다.",
+      "enOffset": "Immortal Protection comes down upon all enemies, preventing them from becoming incapacitated for 18 seconds when their HP is depleted while increasing their ATK and Speed by 100% and restoring their HP by 10% every 2 seconds. Meanwhile, all allies are given powers that remove all enemy buff effects when using ultimate skills.",
+      "jaOffset": "敵全員が不滅の加護を受け、体力が0になるまで18秒間戦闘不能状態にならず、攻撃力と加速が100％増加し、2秒ごとに最大体力の10％ずつを持続回復する。味方全員には浄化の力が宿り、アルティメットスキルを使用すると敵全員のバフ効果をすべて無効化する。",
+      "zh_twOffset": "對所有敵人降下不滅庇佑，當體力耗盡時，在18秒內不會處於無法戰鬥的狀態，攻擊力和加速會增加100%，每2秒持續恢復體力上限的10%，並處於沉默狀態。所有友軍都蘊含著淨化力量，在使用終極技能時，解除所有敵人的增益效果",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2027,
+      "krOffset": "모든 적의 체력이 10배로 증가한다. 직접 피해를 입을 때마다 자신의 체력의 3%에 해당하는 추가 피해를 입는 대신 공격력이 3% 증가한다.",
+      "enOffset": "The HP of all enemies is multiplied by 10. Every time she receives damage, she receives additional damage that equals to 3% of her HP, but her ATK increases by 3%.",
+      "jaOffset": "敵全員の体力が10倍に増加する。直接ダメージを受けるたび、自分の体力の3%の追加ダメージを受ける代わりに攻撃力が3%増加する。",
+      "zh_twOffset": "所有敵軍的體力增加10倍。每次受到直接傷害時，會受到自身體力3%的額外傷害，但攻擊力增加3%",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2028,
+      "krOffset": "모든 적의 체력이 10배로 증가한다. 직접 피해를 입을 때마다 자신의 체력의 3%에 해당하는 추가 피해를 입는 대신 공격력, 가속이 3%씩 증가한다.",
+      "enOffset": "The HP of all enemies is multiplied by 10. Every time she receives damage, she receives additional damage that equals to 3% of her HP, but her ATK and Speed increase by 3%.",
+      "jaOffset": "敵全員の体力が10倍に増加する。直接ダメージを受けるたび、自分の体力の3%の追加ダメージを受ける代わりに、攻撃力と加速が3%増加する。",
+      "zh_twOffset": "所有敵軍的體力增加10倍。每次受到直接傷害時，會受到自身體力3%的額外傷害，但攻擊力和加速各增加3%",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2029,
+      "krOffset": "모든 적의 체력이 5배로 증가하고, 추가로 10초마다 공격력이 15%씩 증가한다.\r\n아군의 마나가 100%일 경우 2초마다 공격력이 50%씩 증가하며 메인 스킬을 사용하면 공격력 증가 버프는 초기화된다. 메인 스킬을 사용하지 않고 6중첩을 초과할 경우 마나를 모두 잃으며 12초간 가속이 30만큼 감소한다.",
+      "enOffset": "The HP of all enemies is multiplied by 5, and their ATK increases by 15% every 10 seconds.\r\nAllies with 100% or more Mana gain a 50% increase in ATK every 2 seconds, but using a main skill resets this buff. If this ATK increase goes beyond 6 stacks without using the main skill, that ally loses all her Mana, and her Speed decreases by 30 for 12 seconds.",
+      "jaOffset": "敵全員の体力が5倍に増加し、追加で10秒ごとに攻撃力が15%ずつ増加する。\r\n味方のマナが100%の場合、2秒ごとに攻撃力が50%ずつ増加し、メインスキルを使用すると攻撃力増加効果はリセットされる。メインスキルを使用せず6スタックを越えるとマナをすべて失い、12秒間加速が30減少する。",
+      "zh_twOffset": "所有敵軍的體力增為5倍，額外在每10秒使攻擊力增加15%。\r\n若友軍的魔力為100%，則攻擊力每2秒增加50%，使用主要技能時會重置攻擊力增益效果。不使用主要技能但超過6疊加時，會失去所有魔力，且加速在12秒內減少30",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2030,
+      "krOffset": "모든 적의 체력이 5배로 증가하고, 추가로 10초마다 공격력이 25%씩 증가한다.\r\n아군의 마나가 100%일 경우 2초마다 공격력이 50%씩 증가하며 메인 스킬을 사용하면 공격력 증가 버프는 초기화된다. 메인 스킬을 사용하지 않고 4중첩을 초과할 경우 마나를 모두 잃으며 12초간 가속이 50만큼 감소한다.",
+      "enOffset": "The HP of all enemies is multiplied by 5, and their ATK increases by 25% every 10 seconds.\r\nAllies with 100% or more Mana gain a 50% increase in ATK every 2 seconds, but using a main skill resets this buff. If this ATK increase goes beyond 4 stacks without using the main skill, that ally loses all her Mana, and her Speed decreases by 50 for 12 seconds.",
+      "jaOffset": "敵全員の体力が5倍に増加し、追加で10秒ごとに攻撃力が25%ずつ増加する。\r\n味方のマナが100%の場合、2秒ごとに攻撃力が50%ずつ増加し、メインスキルを使用すると攻撃力増加効果はリセットされる。メインスキルを使用せず4スタックを越えるとマナをすべて失い、12秒間加速が50減少する。",
+      "zh_twOffset": "所有敵軍的體力增為5倍，額外在每10秒使攻擊力增加25%。\r\n若友軍的魔力為100%，則攻擊力每2秒增加50%，使用主要技能時會重置攻擊力增益效果。不使用主要技能但超過4疊加時，會失去所有魔力，且加速在12秒內減少50",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2031,
+      "krOffset": "모든 적의 체력이 4배, 공격력이 2배로 증가한다.\r\n메인 스킬 사용 시 3초간 최대 체력의 10% 피해를 흡수하는 보호막을 생성하며 보호막 지속 시간 이후 15초간 공격력이 150% 증가하며, 얼티밋 스킬 사용 시 모든 정령의 마나를 소비하며 얼티밋 스킬을 사용한 정령의 공격력이 10초간 300% 증가한다.",
+      "enOffset": "All enemies' HP is multiplied by 4 and ATK by 2.\r\nUsing the main skill creates a shield that absorbs damage equal to 10% of max HP for 3 seconds, after which ATK is increased by 150% for 15 seconds. Using the ultimate skill consumes the Mana of all Souls, and the ult-using Soul's ATK is increased by 300% for 10 seconds.",
+      "jaOffset": "敵全員の体力が4倍、攻撃力が2倍に増加する。\r\nメインスキルを使用すると3秒間最大体力の10%ダメージを吸収するバリアを生成し、バリアの持続時間後に15秒間攻撃力が150%増加する。アルティメットスキルを使用するとすべての精霊のマナを消耗してアルティメットスキルを使用した精霊の攻撃力が10秒間300%増加する。",
+      "zh_twOffset": "所有敵軍體力增加4倍、攻擊力增加2倍。\r\n使用主要技能時生成防護罩，在3秒內吸收體力上限10%的傷害。防護罩持續時間過後，攻擊力在15秒內增加150%。使用終極技能時，消耗所有精靈的魔力，並使使用過終極技能的精靈在10秒內增加300%攻擊力。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2032,
+      "krOffset": "모든 적의 체력이 5배, 공격력이 2.5배로 증가한다.\r\n메인 스킬 사용 시 3초간 최대 체력의 15% 피해를 흡수하는 보호막을 생성하며 보호막 지속 시간 이후 15초간 공격력이 3배로 증가하며, 얼티밋 스킬 사용 시 모든 정령의 마나를 소비하며 얼티밋 스킬을 사용한 정령의 공격력이 10초간 400% 증가한다.",
+      "enOffset": "All enemies' HP is multiplied by 5 and ATK by 2.5.\r\nUsing the main skill creates a shield that absorbs damage equal to 15% of max HP for 3 seconds, after which ATK is multiplied by 3 for 15 seconds. Using the ultimate skill consumes the Mana of all Souls, and the ult-using Soul's ATK is increased by 400% for 10 seconds.",
+      "jaOffset": "敵全員の体力が5倍、攻撃力が2.5倍に増加する。\r\nメインスキルを使用すると3秒間最大体力の15%ダメージを吸収するバリアを生成し、バリアの持続時間後に15秒間攻撃力が3倍に増加する。アルティメットスキルを使用するとすべての精霊のマナを消耗してアルティメットスキルを使用した精霊の攻撃力が10秒間400%増加する。",
+      "zh_twOffset": "所有敵軍體力增加5倍、攻擊力增加2.5倍。\r\n使用主要技能時生成防護罩，在3秒內吸收體力上限15%的傷害。防護罩持續時間過後，攻擊力在15秒內增加3倍。使用終極技能時，消耗所有精靈的魔力，並使使用過終極技能的精靈在10秒內增加400%攻擊力。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2033,
+      "krOffset": "모든 적의 체력이 3배로 증가한다.\r\n적들은 메인 스킬을 사용하지 않지만 마나가 100%일 경우 공격력이 600% 증가하는 해방 효과를 얻으며, 기절 / 수면 / 속박에 의해서 행동이 제약될 경우 2초마다 3000의 마나를 잃는 구속 효과에 걸린다.(행동 제약 시간이 지속 시간이 2초 이하일 경우 마나를 잃지 않는다)",
+      "enOffset": "All enemies' HP is multiplied by 3.\r\nEnemies do not use their main skill, but they receive a Liberation effect that increases their ATK by 600% when their Mana is 100%. When they are stunned/put to sleep/bound, they receive a Restriction effect and lose 3,000 Mana every 2 seconds (if Restriction lasts less than 2 seconds, they do not lose any Mana).",
+      "jaOffset": "敵全員の体力が3倍に増加する。\r\n敵はメインスキルを使用しないが、マナが100%の場合は攻撃力が600%増加する開放効果を獲得し、気絶／睡眠／束縛によって行動が阻害される場合は2秒ごとに3000のマナを失う拘束効果を獲得する(行動阻害時間の持続時間が2秒以下の場合はマナを失わない)",
+      "zh_twOffset": "所有敵軍體力增加3倍。\r\n敵人不會使用主要技能，但當魔力為100%時，獲得攻擊力增加600%的解放效果。若因暈眩／睡眠／束縛而行動受限時，陷入每2秒失去3000魔力的桎梏效果。（行動受限的持續時間少於2秒時不會失去魔力）",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2034,
+      "krOffset": "모든 적의 체력이 4.5배로 증가하고, 마나 회복량이 30% 증가한다.\r\n적들은 메인 스킬을 사용하지 않지만 마나가 100%일 경우 공격력이 800% 증가하는 해방 효과를 얻으며, 기절 / 수면 / 속박에 의해서 행동이 제약될 경우 2초마다 3000의 마나를 잃는 구속 효과에 걸린다.(행동 제약 시간이 지속 시간이 2초 이하일 경우 마나를 잃지 않는다)",
+      "enOffset": "All enemies' HP is multiplied by 4.5, and their Mana Recovery increases by 30%.\r\nEnemies do not use their main skill, but they receive a Liberation effect that increases their ATK by 800% when their mana is 100%. When they are stunned/put to sleep/bound, they receive a Restriction effect and lose 3,000 Mana every 2 seconds (if Restriction lasts less than 2 seconds, they do not lose any Mana).",
+      "jaOffset": "敵全員の体力が4.5倍に増加し、マナ回復量が30%増加する。\r\n敵はメインスキルを使用しないが、マナが100%の場合は攻撃力が800%増加する開放効果を獲得し、気絶／睡眠／束縛によって行動が阻害される場合は2秒ごとに3000のマナを失う拘束効果を獲得する(行動阻害時間の持続時間が2秒以下の場合はマナを失わない)",
+      "zh_twOffset": "所有敵軍體力增加4.5倍，魔力恢復量增加30%。\r\n敵人不會使用主要技能，但當魔力為100%時，獲得攻擊力增加800%的解放效果。若因暈眩／睡眠／束縛而行動受限時，陷入每2秒失去3000魔力的桎梏效果。（行動受限的持續時間少於2秒時不會失去魔力）",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2035,
+      "krOffset": "모든 적의 체력이 2배, 방어력이 100% 증가하고 능력치 감소 효과가 100% 증폭되어 적용된다.\r\n(능력치: 공격력/방어력/체력/치명타 확률/치명타 위력/명중/회피/물리 저항/마법 저항/흡혈/가속)",
+      "enOffset": "All enemies' HP is doubled, their DEF is increased by 100%, and stat decrease effects are 100% amplified.\r\n(Stats: ATK/DEF/HP/Crit Rate/Crit DMG/Accuracy/Evasion/Physical Resistance/Magic Resistance/Life Steal/Speed)",
+      "jaOffset": "敵全員の体力が2倍、防御力が100%増加し、能力値減少効果が100%増加して適用される。\r\n(能力値：攻撃力/防御力/体力/クリティカル率/クリティカル威力/命中/回避/物理抵抗/魔法抵抗/吸血/加速)",
+      "zh_twOffset": "所有敵人體力變為2倍、防禦力增加100%，能力值減少效果增幅100%。\r\n（能力值：攻擊力／防禦力／體力／暴擊率／暴擊威力／命中／迴避／物理抵抗／魔法抵抗／噬血／加速）",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2036,
+      "krOffset": "모든 적의 체력이 2배, 공격력이 100%, 방어력이 150% 증가하고 능력치 감소 효과가 100% 증폭되어 적용된다.\r\n(능력치: 공격력/방어력/체력/치명타 확률/치명타 위력/명중/회피/물리 저항/마법 저항/흡혈/가속)",
+      "enOffset": "All enemies' HP is doubled, their ATK is increased by 100%, DEF is increased by 150%, and stat decrease effects are 100% amplified.\r\n(Stats: ATK/DEF/HP/Crit Rate/Crit DMG/Accuracy/Evasion/Physical Resistance/Magic Resistance/Life Steal/Speed)",
+      "jaOffset": "敵全員の体力が2倍、攻撃力が100%、防御力が150%増加し、能力値減少効果が100%増加して適用される。\r\n(能力値：攻撃力/防御力/体力/クリティカル率/クリティカル威力/命中/回避/物理抵抗/魔法抵抗/吸血/加速)",
+      "zh_twOffset": "所有敵人體力變為2倍、攻擊力增加100%、防禦力增加150%，能力值減少效果增幅100%。\r\n（能力值：攻擊力／防禦力／體力／暴擊率／暴擊威力／命中／迴避／物理抵抗／魔法抵抗／噬血／加速）",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2037,
+      "krOffset": "모든 적의 체력이 3배, 공격력이 50% 증가한다.\r\n전투 시작 시 모든 아군은<그림자를 밝히는 등불> 10중첩을 얻은 상태로 전투를 시작하고, 이 효과는 2초 마다 1중첩씩 감소하며, 메인 스킬을 사용할 때 마다 모든 아군의 <그림자를 밝히는 등불> 중첩을 5중첩 회복시키고, 한 번 메인 스킬을 사용한 정령은 <타버린 불씨> 효과를 얻어 다음 1회에 한해 중첩 수치를 회복할 수 없다. 만약 <그림자를 밝히는 등불> 중첩이 0이 될 경우 모든 아군이 즉사한다.",
+      "enOffset": "All enemies' HP is tripled, and their ATK is increased by 50%.\r\nAll allies gain 10 stacks of \"Shadow-Dispelling Lantern\" when battle begins. The stacks decrease by 1 every 2 sec. Whenever an ally uses her main skill, all allies' \"Shadow-Dispelling Lantern\" stacks are restored by 5. The Soul who has used her main skill gains the \"Extinguished Ember\" effect, which prevents her next main skill use from restoring the Lantern stacks. When the \"Shadow-Dispelling Lantern\" stacks reach 0, all allies become instantly incapacitated.",
+      "jaOffset": "敵全員の体力が3倍、攻撃力が50%増加する。\r\n戦闘開始時、味方全員は<影を明かす灯>10スタックを得た状態で戦闘を始め、この効果は2秒ごとに1スタックずつ減少し、メインスキルを使用するたび、味方全員の<影を明かす灯>効果を5スタック回復させ、1回メインスキルを使用した精霊は<燃え尽きた火種>効果を得て、次の1回に限ってスタックを回復できない。もし<影を明かす灯>効果が0スタックになると味方全員は即死する。",
+      "zh_twOffset": "所有敵人的體力增為3倍，攻擊力增加50%。\r\n戰鬥開始後，所有友軍獲得＜照亮陰影的明燈＞10疊加。該效果每2秒減少1疊加，每當使用主要技能，恢復所有友軍的＜照亮陰影的明燈＞5疊加，使用過一次主要技能的精靈獲得＜熄滅火種＞效果，僅限下1次無法恢復疊加數量。若＜照亮陰影的明燈＞疊加為0，所有友軍當場死亡。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2038,
+      "krOffset": "모든 적의 체력이 4배, 공격력이 100% 증가한다.\r\n전투 시작 시 모든 아군은<그림자를 밝히는 등불> 10중첩을 얻은 상태로 전투를 시작하고, 이 효과는 2초 마다 1중첩씩 감소하며, 메인 스킬을 사용할 때 마다 모든 아군의 <그림자를 밝히는 등불> 중첩을 5중첩 회복시키고, 한 번 메인 스킬을 사용한 정령은 <타버린 불씨> 효과를 얻어 다음 1회에 한해 중첩 수치를 회복할 수 없다. 만약 <그림자를 밝히는 등불> 중첩이 0이 될 경우 모든 아군이 즉사한다.",
+      "enOffset": "All enemies' HP is quadrupled, and their ATK is increased by 100%.\r\nAll allies gain 10 stacks of \"Shadow-Dispelling Lantern\" when battle begins. The stacks decrease by 1 every 2 sec. Whenever an ally uses her main skill, all allies' \"Shadow-Dispelling Lantern\" stacks are restored by 5. The Soul who has used her main skill gains the \"Extinguished Ember\" effect, which prevents her next main skill use from restoring the Lantern stacks. When the \"Shadow-Dispelling Lantern\" stacks reach 0, all allies become instantly incapacitated.",
+      "jaOffset": "敵全員の体力が4倍、攻撃力が100%増加する。\r\n戦闘開始時、味方全員は<影を明かす灯>10スタックを得た状態で戦闘を始め、この効果は2秒ごとに1スタックずつ減少し、メインスキルを使用するたび、味方全員の<影を明かす灯>効果を5スタック回復させ、1回メインスキルを使用した精霊は<燃え尽きた火種>効果を得て、次の1回に限ってスタックを回復できない。もし<影を明かす灯>効果が0スタックになると味方全員は即死する。",
+      "zh_twOffset": "所有敵人的體力增為4倍，攻擊力增加100%。\r\n戰鬥開始後，所有友軍獲得＜照亮陰影的明燈＞10疊加。該效果每2秒減少1疊加，每當使用主要技能，恢復所有友軍的＜照亮陰影的明燈＞5疊加，使用過一次主要技能的精靈獲得＜熄滅火種＞效果，僅限下1次無法恢復疊加數量。若＜照亮陰影的明燈＞疊加為0，所有友軍當場死亡。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2039,
+      "krOffset": "모든 적의 체력이 2배 증가한다. 전투 시작 시 전방에 배치된 모든 아군은 가하는 피해와 받는 최종 피해가 30% 증가하고, 전방에 배치된 아군 중 한 명이라도 사망 시 모든 아군이 12초 동안 매혹 상태가 된다.",
+      "enOffset": "All enemies' HP is doubled. Damage dealt and total damage received are increased by 30% for all allies in the front row when battle begins. All allies are charmed for 12 sec if a front row ally becomes incapacitated.",
+      "jaOffset": "敵全員の体力が2倍増加する。戦闘開始時に前方に配置された味方全員は与えるダメージと受ける最終ダメージが30%増加し、前方に配置された味方の1体でも倒れると、味方全員が12秒間魅了される。",
+      "zh_twOffset": "所有敵人體力增加2倍。戰鬥開始後，配置於前排的所有友軍造成傷害與所受最終傷害增加30%，前排友軍只要有一名死亡，所有友軍就會處於12秒的魅惑狀態",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2040,
+      "krOffset": "모든 적의 체력이 3배 증가한다. 전투 시작 시 전방에 배치된 모든 아군은 가하는 피해와 받는 최종 피해가 50% 증가하고, 전방에 배치된 아군 중 한 명이라도 사망 시 모든 아군이 12초 동안 매혹 상태가 된다.",
+      "enOffset": "All enemies' HP is tripled. Damage dealt and total damage received are increased by 50% for all allies in the front row when battle begins. All allies are charmed for 12 sec if a front row ally becomes incapacitated.",
+      "jaOffset": "敵全員の体力が3倍増加する。戦闘開始時に前方に配置された味方全員は与えるダメージと受ける最終ダメージが50%増加し、前方に配置された味方の1体でも倒れると、味方全員が12秒間魅了される。",
+      "zh_twOffset": "所有敵人體力增加3倍。戰鬥開始後，配置於前排的所有友軍造成傷害與所受最終傷害增加50%，前排友軍只要有一名死亡，所有友軍就會處於12秒的魅惑狀態",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2041,
+      "krOffset": "모든 적의 체력이 1.5배, 공격력이 30% 증가한다. 전투 시작 시 전열에 배치한 아군은 2초 마다 <플린의 특제 폭탄> 효과를 1중첩 부여받는다.\r\n<플린의 특제 폭탄> 효과가 10중첩이 되면 공격력의 자신 주변 3m내 모든 적과 아군에게 2000%의 피해를 입히며 폭발한다. 만약 폭발 전에 해당 정령이 사망 시 폭발은 발생하지 않는다.",
+      "enOffset": "The HP of all enemies is multiplied by 1.5, and their ATK increases by 30%. When battle begins, allies in the front row receive 1 stack of \"Flynn's Custom Bomb\" every 2 sec.\r\n\"Flynn's Custom Bomb\" detonates once it reaches 10 stacks, dealing damage equal to 2000% of ATK to the affected Soul and all enemies and allies within a 3m radius. If the affected Soul dies first, the bomb does not go off.",
+      "jaOffset": "敵全員の体力が1.5倍、攻撃力が30%増加する。戦闘開始時、前列に配置した味方は、2秒ごとに<フランの特製爆弾>の効果を1スタック付与される。\r\n<フランの特製爆弾>の効果が10スタックになると、自分の周辺3mの敵全員と味方に攻撃力の2000%のダメージを与えて爆発する。爆発の前にこの精霊が死亡すると、爆発は発生しない。",
+      "zh_twOffset": "所有敵人體力增加1.5倍、攻擊力增加30%。戰鬥開始後，配置在前排的友軍每2秒被賦予＜弗林的特製炸彈＞效果1疊加。\r\n＜弗林的特製炸彈＞效果達10疊加時，對自身周遭3m內所有敵人和友軍造成攻擊力2000%的傷害並爆炸。若該精靈在爆炸前就死亡，則不會引發爆炸",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 2042,
+      "krOffset": "모든 적의 체력이 1.5배, 공격력이 50% 증가한다. 전투 시작 시 전열에 배치한 아군은 2초 마다 <플린의 특제 폭탄> 효과를 1중첩 부여받는다.\r\n<플린의 특제 폭탄> 효과가 10중첩이 되면 공격력의 자신 주변 3m내 모든 적과 아군에게 2000%의 피해를 입히며 폭발한다. 만약 폭발 전에 해당 정령이 사망 시 폭발은 발생하지 않는다.",
+      "enOffset": "The HP of all enemies is multiplied by 1.5, and their ATK increases by 50%. When battle begins, allies in the front row receive 1 stack of \"Flynn's Custom Bomb\" every 2 sec.\r\n\"Flynn's Custom Bomb\" detonates once it reaches 10 stacks, dealing damage equal to 2000% of ATK to the affected Soul and all enemies and allies within a 3m radius. If the affected Soul dies first, the bomb does not go off.",
+      "jaOffset": "敵全員の体力が1.5倍、攻撃力が50%増加する。戦闘開始時、前列に配置した味方は、2秒ごとに<フランの特製爆弾>の効果を1スタック付与される。\r\n<フランの特製爆弾>の効果が10スタックになると、自分の周辺3mの敵全員と味方に攻撃力の2000%のダメージを与えて爆発する。爆発の前にこの精霊が死亡すると、爆発は発生しない。",
+      "zh_twOffset": "所有敵人體力增加1.5倍、攻擊力增加50%。戰鬥開始後，配置在前排的友軍每2秒被賦予＜弗林的特製炸彈＞效果1疊加。\r\n＜弗林的特製炸彈＞效果達10疊加時，對自身周遭3m內所有敵人和友軍造成攻擊力2000%的傷害並爆炸。若該精靈在爆炸前就死亡，則不會引發爆炸",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3001,
+      "krOffset": "악몽의 지휘관",
+      "enOffset": "Commander of Nightmare",
+      "jaOffset": "悪夢の指揮官",
+      "zh_twOffset": "惡夢指揮官",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3002,
+      "krOffset": "흉포한 무리",
+      "enOffset": "Brutes",
+      "jaOffset": "凶悪な群れ",
+      "zh_twOffset": "凶殘之徒",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3003,
+      "krOffset": "왜곡 결계",
+      "enOffset": "Distortion Barrier",
+      "jaOffset": "歪曲結果",
+      "zh_twOffset": "扭曲結界",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3004,
+      "krOffset": "왜곡 결계 / 약체화",
+      "enOffset": "Distortion Barrier / Debilitation",
+      "jaOffset": "歪曲結果 / 弱体化",
+      "zh_twOffset": "扭曲結界／體弱化",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3005,
+      "krOffset": "복수자",
+      "enOffset": "Avenger",
+      "jaOffset": "リベンジャー",
+      "zh_twOffset": "復仇者",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3006,
+      "krOffset": "복수자 / 복수심",
+      "enOffset": "Avenger / Vengeance",
+      "jaOffset": "リベンジャー / 復讐心",
+      "zh_twOffset": "復仇者／復仇之心",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3007,
+      "krOffset": "태생 극복",
+      "enOffset": "Overcoming Birth",
+      "jaOffset": "素性克服",
+      "zh_twOffset": "克服天性",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3008,
+      "krOffset": "태생 극복",
+      "enOffset": "Overcoming Birth",
+      "jaOffset": "素性克服",
+      "zh_twOffset": "克服天性",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3009,
+      "krOffset": "경질화",
+      "enOffset": "Hardened",
+      "jaOffset": "硬質化",
+      "zh_twOffset": "硬質化",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3010,
+      "krOffset": "경질화 / 죽음과 정화",
+      "enOffset": "Hardened / Death and Cleanse",
+      "jaOffset": "硬質化 / 死と浄化",
+      "zh_twOffset": "硬質化／死亡與淨化",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3011,
+      "krOffset": "루리의 분신술 1장 \"쿨한 주먹\"",
+      "enOffset": "Ruri's Cloning Art, Chapter 1 \"Cool Fist\"",
+      "jaOffset": "ルリの分身の術1章『クールな拳』",
+      "zh_twOffset": "魯莉分身術第1章「酷炫拳頭」",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3012,
+      "krOffset": "루리의 분신술 2장 \"황제\"",
+      "enOffset": "Ruri's Cloning Art, Chapter 2 \"Emperor\"",
+      "jaOffset": "ルリの分身の術2章『皇帝』",
+      "zh_twOffset": "魯莉分身術第2章「皇帝」",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3013,
+      "krOffset": "루리의 분신술 3장 \"5연발 미사일\"",
+      "enOffset": "Ruri's Cloning Art, Chapter 3 \"Five Missiles\"",
+      "jaOffset": "ルリの分身の術3章『5連発ミサイル』",
+      "zh_twOffset": "魯莉分身術第3章「5連發導彈」",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3014,
+      "krOffset": "루리의 분신술 4장 \"곰 다섯마리가 한집에 있어\"",
+      "enOffset": "Ruri's Cloning Art, Chapter 4 \"Five Bears Coming to Town\"",
+      "jaOffset": "ルリの分身の術4章『熊5匹が一つの家にいる』",
+      "zh_twOffset": "魯莉分身術第4章「一家五隻熊」",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3015,
+      "krOffset": "궁극 분신 합체 \"황제의 재림\"",
+      "enOffset": "Clone Fusion \"Emperor's Return\"",
+      "jaOffset": "究極の分身合体『皇帝の再臨』",
+      "zh_twOffset": "終極分身合體「皇帝再臨」",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3016,
+      "krOffset": "궁극 분신 합체 \"딱 한방만 쏘게 해줘\"",
+      "enOffset": "Clone Fusion \"Just One Shot\"",
+      "jaOffset": "究極の分身合体『一発だけ打たせてほしい』",
+      "zh_twOffset": "終極分身合體「讓我射出一發就好」",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3017,
+      "krOffset": "궁극 분신 합체 \"곰은 사람을 찢어\"",
+      "enOffset": "Clone Fusion \"Bears Tear\"",
+      "jaOffset": "究極の分身合体『クマは人を切り裂く』",
+      "zh_twOffset": "終極分身合體「熊會讓人碎屍萬段」",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3018,
+      "krOffset": "이상한 거래",
+      "enOffset": "Strange Trade",
+      "jaOffset": "おかしな取引",
+      "zh_twOffset": "奇怪的交易",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3019,
+      "krOffset": "위험한 거래 / 안전한 거래",
+      "enOffset": "Dangerous Trade / Safe Trade",
+      "jaOffset": "危険な取引 / 安全な取引",
+      "zh_twOffset": "危險的交易／安全的交易",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3020,
+      "krOffset": "불사의 가호",
+      "enOffset": "Undead Protection",
+      "jaOffset": "不死の加護",
+      "zh_twOffset": "不死庇佑",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3021,
+      "krOffset": "불멸의 가호",
+      "enOffset": "Immortal Protection",
+      "jaOffset": "不滅の加護",
+      "zh_twOffset": "不滅庇佑",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3022,
+      "krOffset": "등가교환",
+      "enOffset": "Equivalent Exchange",
+      "jaOffset": "等価交換",
+      "zh_twOffset": "等價交換",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3023,
+      "krOffset": "부등가교환",
+      "enOffset": "Unequal Exchange",
+      "jaOffset": "不等価交換",
+      "zh_twOffset": "不等價交換",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3024,
+      "krOffset": "마나 오버클럭",
+      "enOffset": "Mana Overclock",
+      "jaOffset": "マナオーバークロック",
+      "zh_twOffset": "魔力超頻",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3025,
+      "krOffset": "마나 오버 드라이브",
+      "enOffset": "Mana Overdrive",
+      "jaOffset": "マナオーバードライブ",
+      "zh_twOffset": "魔力超速",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3026,
+      "krOffset": "현명한 마나 소비",
+      "enOffset": "Prudent Mana Consumption",
+      "jaOffset": "賢いマナ消費",
+      "zh_twOffset": "明智使用魔力",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3027,
+      "krOffset": "구속과 해방",
+      "enOffset": "Restriction and Liberation",
+      "jaOffset": "拘束と解放",
+      "zh_twOffset": "桎梏與解放",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3028,
+      "krOffset": "증폭의 검",
+      "enOffset": "Blade of Amplification",
+      "jaOffset": "増幅の剣",
+      "zh_twOffset": "增幅之劍",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3029,
+      "krOffset": "어둠을 밝히는 빛",
+      "enOffset": "Darkness-Dispelling Light",
+      "jaOffset": "闇を払う光",
+      "zh_twOffset": "照亮黑暗的光",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3030,
+      "krOffset": "매혹의 유령",
+      "enOffset": "Charming Ghost",
+      "jaOffset": "魅惑のお化け",
+      "zh_twOffset": "魅惑幽靈",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3031,
+      "krOffset": "플린의 특제 폭탄!",
+      "enOffset": "Flynn's Custom Bomb!",
+      "jaOffset": "フランの特製爆弾！",
+      "zh_twOffset": "弗林的特製炸彈！",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3032,
+      "krOffset": "플린의 특제 폭탄!!",
+      "enOffset": "Flynn's Custom Bomb!!!",
+      "jaOffset": "フランの特製爆弾!!",
+      "zh_twOffset": "弗林的特製炸彈！！",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101001,
+      "krOffset": "야수 종족을 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Beast Souls",
+      "jaOffset": "野獣型を{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個野獸型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101002,
+      "krOffset": "요정 종족을 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Fairy Souls",
+      "jaOffset": "妖精型を{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個妖精型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101003,
+      "krOffset": "인간 종족을 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Humanlike Souls",
+      "jaOffset": "人間型を{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個人類型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101004,
+      "krOffset": "인간 종족을 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Humanlike Souls",
+      "jaOffset": "人間型を{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個人類型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101005,
+      "krOffset": "야수 종족을 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Beast Souls",
+      "jaOffset": "野獣型を{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個野獸型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101006,
+      "krOffset": "요정 종족을 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Fairy Souls",
+      "jaOffset": "妖精型を{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個妖精型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101007,
+      "krOffset": "불사 종족을 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Undead Souls",
+      "jaOffset": "不死型を{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個不死型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101008,
+      "krOffset": "워리어 클래스를 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Warriors",
+      "jaOffset": "ウォーリアクラスを{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個戰士職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101009,
+      "krOffset": "레인저 클래스를 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Rangers",
+      "jaOffset": "レンジャークラスを{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個遊俠職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101010,
+      "krOffset": "스트라이커 클래스를 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Strikers",
+      "jaOffset": "ストライカークラスを{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個鬥士職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101011,
+      "krOffset": "캐스터 클래스를 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Casters",
+      "jaOffset": "キャスタークラスを{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個魔法師職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101012,
+      "krOffset": "서포터 클래스를 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Supporters",
+      "jaOffset": "サポータークラスを{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個輔助者職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101013,
+      "krOffset": "디펜더 클래스를 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Defenders",
+      "jaOffset": "ディフェンダークラスを{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個捍衛者職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101014,
+      "krOffset": "힘 스탯 타입 사용하지 않기",
+      "enOffset": "Not use STR Souls",
+      "jaOffset": "力タイプを使用しない",
+      "zh_twOffset": "不使用力量特性",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101015,
+      "krOffset": "민첩 스탯 타입 사용하지 않기",
+      "enOffset": "Not use DEX Souls",
+      "jaOffset": "敏捷タイプを使用しない",
+      "zh_twOffset": "不使用敏捷特性",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101016,
+      "krOffset": "지능 스탯 타입 사용하지 않기",
+      "enOffset": "Not use INT Souls",
+      "jaOffset": "知能タイプを使用しない",
+      "zh_twOffset": "不使用智力特性",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101017,
+      "krOffset": "워리어 클래스 사용하지 않기",
+      "enOffset": "Not use Warrior Souls",
+      "jaOffset": "ウォーリアクラスを使用しない",
+      "zh_twOffset": "不使用戰士職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101018,
+      "krOffset": "레인저 클래스 사용하지 않기",
+      "enOffset": "Not use Ranger Souls",
+      "jaOffset": "レンジャークラスを使用しない",
+      "zh_twOffset": "不使用遊俠職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101019,
+      "krOffset": "스트라이커 클래스 사용하지 않기",
+      "enOffset": "Not use Striker Souls",
+      "jaOffset": "ストライカークラスを使用しない",
+      "zh_twOffset": "不使用鬥士職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101020,
+      "krOffset": "캐스터 클래스 사용하지 않기",
+      "enOffset": "Not use Caster Souls",
+      "jaOffset": "キャスタークラスを使用しない",
+      "zh_twOffset": "不使用魔法師職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101021,
+      "krOffset": "서포터 클래스 사용하지 않기",
+      "enOffset": "Not use Supporter Souls",
+      "jaOffset": "サポータークラスを使用しない",
+      "zh_twOffset": "不使用輔助者職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101022,
+      "krOffset": "디펜더 클래스 사용하지 않기",
+      "enOffset": "Not use Defender Souls",
+      "jaOffset": "ディフェンダークラスを使用しない",
+      "zh_twOffset": "不使用捍衛者職業",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101023,
+      "krOffset": "기본 진형 배치를 사용하기",
+      "enOffset": "Use the Basic formation",
+      "jaOffset": "基本陣形を使用する",
+      "zh_twOffset": "使用基本陣型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101024,
+      "krOffset": "저격 진형 배치를 사용하기",
+      "enOffset": "Use the Ranged formation",
+      "jaOffset": "狙撃陣形を使用する",
+      "zh_twOffset": "使用狙擊陣型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101025,
+      "krOffset": "수비 진형 배치를 사용하기",
+      "enOffset": "Use the Defense formation",
+      "jaOffset": "守備陣形を使用する",
+      "zh_twOffset": "使用防守陣型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101026,
+      "krOffset": "돌격 진형 배치를 사용하기",
+      "enOffset": "Use the Assault formation",
+      "jaOffset": "突撃陣形を使用する",
+      "zh_twOffset": "使用突擊陣型",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101027,
+      "krOffset": "지능 스탯 타입을 {1}명 이상 배치하기",
+      "enOffset": "Place {1} or more INT Souls",
+      "jaOffset": "知能タイプを{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個智力特性精靈",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101028,
+      "krOffset": "광역 역할 정령 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more AoE Souls",
+      "jaOffset": "広域役割の精霊を{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個廣域定位精靈",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101029,
+      "krOffset": "디버프 역할 정령 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more debuff Souls",
+      "jaOffset": "デバフ役割の精霊を{1}体以上配置する",
+      "zh_twOffset": "配置超過{1}個減益定位精靈",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 101030,
+      "krOffset": "단일 역할 정령 {1}명 이상 배치하기",
+      "enOffset": "Deploy {1} or more Single Souls",
+      "jaOffset": "",
+      "zh_twOffset": "配置超過{1}個單一定位精靈",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309610,
+      "krOffset": "이중 게이트 1",
+      "enOffset": "Dual Gate 1",
+      "jaOffset": "デュアルゲート1",
+      "zh_twOffset": "雙重傳送門1",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309620,
+      "krOffset": "이중 게이트 2",
+      "enOffset": "Dual Gate 2",
+      "jaOffset": "デュアルゲート2",
+      "zh_twOffset": "雙重傳送門2",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309630,
+      "krOffset": "이중 게이트 3",
+      "enOffset": "Dual Gate 3",
+      "jaOffset": "デュアルゲート3",
+      "zh_twOffset": "雙重傳送門3",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309640,
+      "krOffset": "이중 게이트 4",
+      "enOffset": "Dual Gate 4",
+      "jaOffset": "デュアルゲート4",
+      "zh_twOffset": "雙重傳送門4",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309650,
+      "krOffset": "이중 게이트 5",
+      "enOffset": "Dual Gate 5",
+      "jaOffset": "デュアルゲート5",
+      "zh_twOffset": "雙重傳送門5",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309660,
+      "krOffset": "이중 게이트 6",
+      "enOffset": "Dual Gate 6",
+      "jaOffset": "デュアルゲート6",
+      "zh_twOffset": "雙重傳送門6",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309670,
+      "krOffset": "이중 게이트 7",
+      "enOffset": "Dual Gate 7",
+      "jaOffset": "デュアルゲート7",
+      "zh_twOffset": "雙重傳送門7",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309680,
+      "krOffset": "이중 게이트 8",
+      "enOffset": "Dual Gate 8",
+      "jaOffset": "デュアルゲート8",
+      "zh_twOffset": "雙重傳送門8",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309690,
+      "krOffset": "이중 게이트 9",
+      "enOffset": "Dual Gate 9",
+      "jaOffset": "デュアルゲート9",
+      "zh_twOffset": "雙重傳送門9",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309700,
+      "krOffset": "이중 게이트 10",
+      "enOffset": "Dual Gate 10",
+      "jaOffset": "デュアルゲート10",
+      "zh_twOffset": "雙重傳送門10",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309710,
+      "krOffset": "이중 게이트 11",
+      "enOffset": "Dual Gate 11",
+      "jaOffset": "デュアルゲート11",
+      "zh_twOffset": "雙重傳送門11",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309720,
+      "krOffset": "이중 게이트 12",
+      "enOffset": "Dual Gate 12",
+      "jaOffset": "デュアルゲート12",
+      "zh_twOffset": "雙重傳送門12",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309730,
+      "krOffset": "이중 게이트 13",
+      "enOffset": "Dual Gate 13",
+      "jaOffset": "デュアルゲート13",
+      "zh_twOffset": "雙重傳送門13",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309740,
+      "krOffset": "이중 게이트 14",
+      "enOffset": "Dual Gate 14",
+      "jaOffset": "デュアルゲート14",
+      "zh_twOffset": "雙重傳送門14",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309750,
+      "krOffset": "이중 게이트 15",
+      "enOffset": "Dual Gate 15",
+      "jaOffset": "デュアルゲート15",
+      "zh_twOffset": "雙重傳送門15",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309760,
+      "krOffset": "이중 게이트 16",
+      "enOffset": "Dual Gate 16",
+      "jaOffset": "デュアルゲート16",
+      "zh_twOffset": "雙重傳送門16",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309770,
+      "krOffset": "이중 게이트 17",
+      "enOffset": "Dual Gate 17",
+      "jaOffset": "デュアルゲート17",
+      "zh_twOffset": "雙重傳送門17",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309780,
+      "krOffset": "이중 게이트 18",
+      "enOffset": "Dual Gate 18",
+      "jaOffset": "デュアルゲート18",
+      "zh_twOffset": "雙重傳送門18",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309790,
+      "krOffset": "이중 게이트 19",
+      "enOffset": "Dual Gate 19",
+      "jaOffset": "デュアルゲート19",
+      "zh_twOffset": "雙重傳送門19",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309800,
+      "krOffset": "이중 게이트 20",
+      "enOffset": "Dual Gate 20",
+      "jaOffset": "デュアルゲート20",
+      "zh_twOffset": "雙重傳送門20",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309810,
+      "krOffset": "이중 게이트 21",
+      "enOffset": "Dual Gate 21",
+      "jaOffset": "デュアルゲート21",
+      "zh_twOffset": "雙重傳送門21",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309820,
+      "krOffset": "이중 게이트 22",
+      "enOffset": "Dual Gate 22",
+      "jaOffset": "デュアルゲート22",
+      "zh_twOffset": "雙重傳送門22",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309830,
+      "krOffset": "이중 게이트 23",
+      "enOffset": "Dual Gate 23",
+      "jaOffset": "デュアルゲート23",
+      "zh_twOffset": "雙重傳送門23",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 309840,
+      "krOffset": "이중 게이트 24",
+      "enOffset": "Dual Gate 24",
+      "jaOffset": "デュアルゲート24",
+      "zh_twOffset": "雙重傳送門24",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 410000,
+      "krOffset": "STAGE {0}-{1}",
+      "enOffset": "STAGE {0}-{1}",
+      "jaOffset": "STAGE {0}-{1}",
+      "zh_twOffset": "STAGE{0}-{1}",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 410001,
+      "krOffset": "모의전투",
+      "enOffset": "Battle Sim",
+      "jaOffset": "模擬戦",
+      "zh_twOffset": "模擬戰鬥",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 414000,
+      "krOffset": "{0} 단계",
+      "enOffset": "Stage {0}",
+      "jaOffset": "ステージ{0}",
+      "zh_twOffset": "第{0}階段",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 414001,
+      "krOffset": "기원의 탑 {0} 층",
+      "enOffset": "Tower of Origin Floor {0}",
+      "jaOffset": "起源の塔{0}階",
+      "zh_twOffset": "起源之塔{0}樓",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 414002,
+      "krOffset": "{0} 층",
+      "enOffset": "Floor {0}",
+      "jaOffset": "{0}階",
+      "zh_twOffset": "{0}樓",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 414003,
+      "krOffset": "{0} 화",
+      "enOffset": "Episode {0}",
+      "jaOffset": "{0}話",
+      "zh_twOffset": "{0}話",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 414004,
+      "krOffset": "심층 {0} 단계",
+      "enOffset": "Depths Stage {0}",
+      "jaOffset": "深層{0}段階",
+      "zh_twOffset": "深層第{0}階段",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 414005,
+      "krOffset": "기원의 좌 {0} 층",
+      "enOffset": "Seat of Origin Floor {0}",
+      "jaOffset": "",
+      "zh_twOffset": "起源之座{0}樓",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419001,
+      "krOffset": "수정 동굴",
+      "enOffset": "Crystal Cave",
+      "jaOffset": "水晶洞窟",
+      "zh_twOffset": "水晶洞窟",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419002,
+      "krOffset": "불타는 엘나스",
+      "enOffset": "Burning Elnath",
+      "jaOffset": "燃えるエルナス",
+      "zh_twOffset": "燃燒的艾爾納斯",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419003,
+      "krOffset": "가라앉은 사원",
+      "enOffset": "Sunken Temple",
+      "jaOffset": "沈んだ寺院",
+      "zh_twOffset": "寧靜的寺院",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419004,
+      "krOffset": "송곳니 성채",
+      "enOffset": "Fang Fortress",
+      "jaOffset": "牙の城塞",
+      "zh_twOffset": "虎牙城塞",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419005,
+      "krOffset": "수도원",
+      "enOffset": "Monastery",
+      "jaOffset": "修道院",
+      "zh_twOffset": "修道院",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419006,
+      "krOffset": "검은 날개 둥지",
+      "enOffset": "Black Wing Nest",
+      "jaOffset": "黒い翼の巣",
+      "zh_twOffset": "黑翅巢穴",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419007,
+      "krOffset": "불타는 협곡",
+      "enOffset": "Burning Valley",
+      "jaOffset": "燃える峡谷",
+      "zh_twOffset": "燃燒的峽谷",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419008,
+      "krOffset": "화산 심장부",
+      "enOffset": "Heart of Volcano",
+      "jaOffset": "火山の心臓部",
+      "zh_twOffset": "火山之心",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419009,
+      "krOffset": "음산한 폐허",
+      "enOffset": "Bleak Ruins",
+      "jaOffset": "陰湿な廃墟",
+      "zh_twOffset": "陰森的廢墟",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419010,
+      "krOffset": "죽음의 사원",
+      "enOffset": "Temple of Death",
+      "jaOffset": "死の寺院",
+      "zh_twOffset": "死亡寺院",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419011,
+      "krOffset": "엘나스 탈출",
+      "enOffset": "Escape Elnath",
+      "jaOffset": "エルナス脱出",
+      "zh_twOffset": "背叛的魔女",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419012,
+      "krOffset": "아케나인 성",
+      "enOffset": "Arkenine Palace",
+      "jaOffset": "アーケナイン城",
+      "zh_twOffset": "阿肯納因守城戰",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419013,
+      "krOffset": "수정 동굴",
+      "enOffset": "Crystal Cave",
+      "jaOffset": "水晶洞窟",
+      "zh_twOffset": "水晶洞窟",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419014,
+      "krOffset": "잊혀진 영웅의 유적",
+      "enOffset": "Forgotten Ruins",
+      "jaOffset": "忘れられた英雄の遺跡",
+      "zh_twOffset": "被遺忘英雄的遺跡",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419015,
+      "krOffset": "죽음굴",
+      "enOffset": "Cave of Death",
+      "jaOffset": "死の穴",
+      "zh_twOffset": "死亡之窟",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419016,
+      "krOffset": "유물 사원",
+      "enOffset": "Temple of Artifacts",
+      "jaOffset": "遺物寺院",
+      "zh_twOffset": "遺物寺院",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419017,
+      "krOffset": "엘나스 탈환전",
+      "enOffset": "Elnath Reclamation",
+      "jaOffset": "エルナス奪還戦",
+      "zh_twOffset": "艾爾納斯奪回戰",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419018,
+      "krOffset": "기원의 탑",
+      "enOffset": "Tower of Origin",
+      "jaOffset": "起源の塔",
+      "zh_twOffset": "起源之塔",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419024,
+      "krOffset": "차원의 미궁",
+      "enOffset": "Dimensional Labyrinth",
+      "jaOffset": "次元の迷宮",
+      "zh_twOffset": "破碎的次元迷宮",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419037,
+      "krOffset": "남쪽 성벽",
+      "enOffset": "South Wall",
+      "jaOffset": "南城壁",
+      "zh_twOffset": "南側城牆",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419038,
+      "krOffset": "동쪽 성벽",
+      "enOffset": "East Wall",
+      "jaOffset": "東城壁",
+      "zh_twOffset": "東側城牆",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419039,
+      "krOffset": "중앙 성벽",
+      "enOffset": "Central Wall",
+      "jaOffset": "中央城壁",
+      "zh_twOffset": "中央城牆",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419040,
+      "krOffset": "성 중앙부",
+      "enOffset": "Palace Center",
+      "jaOffset": "城の中央部",
+      "zh_twOffset": "城堡中央",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419041,
+      "krOffset": "동굴 입구",
+      "enOffset": "Cave Entrance",
+      "jaOffset": "洞窟の入口",
+      "zh_twOffset": "洞窟入口",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419042,
+      "krOffset": "마력 잔류 구역",
+      "enOffset": "Residual Mana Area",
+      "jaOffset": "魔力残留区域",
+      "zh_twOffset": "魔力殘留區域",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419043,
+      "krOffset": "마력 밀집 구역",
+      "enOffset": "Concentrated Mana Area",
+      "jaOffset": "魔力密集区域",
+      "zh_twOffset": "魔力密集區域",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419044,
+      "krOffset": "마력 응집 구역",
+      "enOffset": "Condensed Mana Area",
+      "jaOffset": "魔力凝集区域",
+      "zh_twOffset": "魔力凝聚區域",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419045,
+      "krOffset": "힘의 회랑",
+      "enOffset": "Hall of Strength",
+      "jaOffset": "力の回廊",
+      "zh_twOffset": "力量的迴廊",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419046,
+      "krOffset": "인내의 회랑",
+      "enOffset": "Hall of Patience",
+      "jaOffset": "忍耐の回廊",
+      "zh_twOffset": "耐心的迴廊",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419047,
+      "krOffset": "지혜의 회랑",
+      "enOffset": "Hall of Wisdom",
+      "jaOffset": "知恵の回廊",
+      "zh_twOffset": "智慧的迴廊",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419048,
+      "krOffset": "증명의 제단",
+      "enOffset": "Altar of Verification",
+      "jaOffset": "証明の祭壇",
+      "zh_twOffset": "證明的祭壇",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419049,
+      "krOffset": "저승의 입구",
+      "enOffset": "Afterlife Entrance",
+      "jaOffset": "冥府の入口",
+      "zh_twOffset": "陰間入口",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419050,
+      "krOffset": "삶의 동굴",
+      "enOffset": "Cave of Life",
+      "jaOffset": "生の洞窟",
+      "zh_twOffset": "生命洞窟",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419051,
+      "krOffset": "죽음의 동굴",
+      "enOffset": "Cave of Death",
+      "jaOffset": "死の洞窟",
+      "zh_twOffset": "死亡洞窟",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419052,
+      "krOffset": "타나토스의 경계",
+      "enOffset": "Boundary of Thanatos",
+      "jaOffset": "タナトスの境界",
+      "zh_twOffset": "桑納托斯的界線",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419053,
+      "krOffset": "사원 입구",
+      "enOffset": "Temple Entrance",
+      "jaOffset": "寺院の入口",
+      "zh_twOffset": "寺院入口",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419054,
+      "krOffset": "제 1 보관실",
+      "enOffset": "Storage Room 1",
+      "jaOffset": "第1保管室",
+      "zh_twOffset": "第一保管室",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419055,
+      "krOffset": "제 2 보관실",
+      "enOffset": "Storage Room 2",
+      "jaOffset": "第2保管室",
+      "zh_twOffset": "第二保管室",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419056,
+      "krOffset": "제 3 보관실",
+      "enOffset": "Storage Room 3",
+      "jaOffset": "第3保管室",
+      "zh_twOffset": "第三保管室",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419057,
+      "krOffset": "제 4 보관실",
+      "enOffset": "Storage Room 4",
+      "jaOffset": "第4保管室",
+      "zh_twOffset": "第四保管室",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419058,
+      "krOffset": "사원 최심부",
+      "enOffset": "Temple Core",
+      "jaOffset": "寺院の最深部",
+      "zh_twOffset": "寺院最深處",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419059,
+      "krOffset": "지혜의 시험장",
+      "enOffset": "Trial Ground of Wisdom",
+      "jaOffset": "知恵の試験場",
+      "zh_twOffset": "智慧的試煉場",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419060,
+      "krOffset": "인내의 시험장",
+      "enOffset": "Trial Ground of Patience",
+      "jaOffset": "忍耐の試験場",
+      "zh_twOffset": "耐心的試煉場",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419061,
+      "krOffset": "힘의 시험장",
+      "enOffset": "Trial Ground of Power",
+      "jaOffset": "力の試験場",
+      "zh_twOffset": "力量的試煉場",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419062,
+      "krOffset": "종말을 부르는 인형",
+      "enOffset": "Doomsday Doll",
+      "jaOffset": "終末を招く人形",
+      "zh_twOffset": "末日傀儡",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419063,
+      "krOffset": "세계를 멸망시킨 마녀",
+      "enOffset": "Witch who destroyed the world",
+      "jaOffset": "世界を滅ぼした魔女",
+      "zh_twOffset": "毀滅世界的魔女",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419064,
+      "krOffset": "구원받지 못한 소녀",
+      "enOffset": "Lost Girl",
+      "jaOffset": "救われなかった少女",
+      "zh_twOffset": "無法得到救援的少女",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419065,
+      "krOffset": "광기에 물든 야수",
+      "enOffset": "MAD BEAST",
+      "jaOffset": "狂気に染まった野獣",
+      "zh_twOffset": "發狂的野獸",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419066,
+      "krOffset": "비탄의 성녀",
+      "enOffset": "Saint of Sorrow",
+      "jaOffset": "悲嘆の聖女",
+      "zh_twOffset": "悲嘆聖女",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419067,
+      "krOffset": "달토끼 술래잡기",
+      "enOffset": "Moon Rabbit Hide-And-Seek",
+      "jaOffset": "月ウサギ鬼ごっこ",
+      "zh_twOffset": "月兔鬼抓人",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419068,
+      "krOffset": "위험한 혼례",
+      "enOffset": "Dangerous Wedding",
+      "jaOffset": "危険な婚礼",
+      "zh_twOffset": "危險的婚禮",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419069,
+      "krOffset": "달빛 아래의 결투",
+      "enOffset": "Duel Beneath the Moonlight",
+      "jaOffset": "月光の下の決闘",
+      "zh_twOffset": "月光下的決鬥",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419070,
+      "krOffset": "악몽의 사냥꾼",
+      "enOffset": "Hunter of Nightmare",
+      "jaOffset": "悪夢のハンター",
+      "zh_twOffset": "惡夢的獵人",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419071,
+      "krOffset": "기원의 탑",
+      "enOffset": "Tower of Origin",
+      "jaOffset": "起源の塔",
+      "zh_twOffset": "起源之塔",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419072,
+      "krOffset": "탑 중심부",
+      "enOffset": "Center of the Tower",
+      "jaOffset": "塔の中心部",
+      "zh_twOffset": "塔中央",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419073,
+      "krOffset": "대난투! 미궁 올스타즈",
+      "enOffset": "Labyrinth All-Stars Brawl!",
+      "jaOffset": "ボス集結！迷宮オールスターズ",
+      "zh_twOffset": "大亂鬥！迷宮眾星雲集",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419074,
+      "krOffset": "썰매왕 슬레이봅 토벌!",
+      "enOffset": "Sled King Sleighbob Subjugation!",
+      "jaOffset": "ソリの王様スレイボブ討伐！",
+      "zh_twOffset": "討伐雪橇王雪怪！",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419075,
+      "krOffset": "술라우디아",
+      "enOffset": "Drunklaudia",
+      "jaOffset": "酒ラウディア",
+      "zh_twOffset": "酒勞迪婭",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419076,
+      "krOffset": "쇼콜라 퀸",
+      "enOffset": "Chocolat Queen",
+      "jaOffset": "ショコラクイーン",
+      "zh_twOffset": "巧克力甜心女王",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419077,
+      "krOffset": "그림자 없는 땅의 전투",
+      "enOffset": "The Battle of the Shadowless Lands",
+      "jaOffset": "影のない土地の戦闘",
+      "zh_twOffset": "無影之地的戰鬥",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419078,
+      "krOffset": "모르투스의 몰락",
+      "enOffset": "The Fall of Mortus",
+      "jaOffset": "モルトゥスの没落",
+      "zh_twOffset": "莫爾圖斯的沒落",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419079,
+      "krOffset": "엘나스 침공",
+      "enOffset": "Invasion of Elnath",
+      "jaOffset": "エルナス侵攻",
+      "zh_twOffset": "侵略艾爾納斯",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419080,
+      "krOffset": "VS 어둠의 학생회장",
+      "enOffset": "Vs. The Sinister Student President",
+      "jaOffset": "VS 闇の生徒会長",
+      "zh_twOffset": "VS 暗黑學生會長",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419081,
+      "krOffset": "가온 무투회",
+      "enOffset": "Gaon Martial Arts Tournament",
+      "jaOffset": "ガオン武闘会",
+      "zh_twOffset": "加溫武鬥大會",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419082,
+      "krOffset": "VS 낙원의 마녀",
+      "enOffset": "Vs. The Witch of Paradise",
+      "jaOffset": "VS 楽園の魔女",
+      "zh_twOffset": "VS 樂園魔女",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419083,
+      "krOffset": "VS 시크릿 웨딩 바니",
+      "enOffset": "Vs. Secret Wedding Bunny",
+      "jaOffset": "VS シークレットウェディングバニー",
+      "zh_twOffset": "VS 祕密婚禮兔兔",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419084,
+      "krOffset": "VS 토카",
+      "enOffset": "Vs. Tohka",
+      "jaOffset": "VS 十香",
+      "zh_twOffset": "VS 十香",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419085,
+      "krOffset": "VS 쿠루미",
+      "enOffset": "Vs. Kurumi",
+      "jaOffset": "VS 狂三",
+      "zh_twOffset": "VS 狂三",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419086,
+      "krOffset": "야토가미 토카 & 토키사키 쿠루미",
+      "enOffset": "Tohka Yatogami & Kurumi Tokisaki",
+      "jaOffset": "夜刀神十香＆時崎狂三",
+      "zh_twOffset": "夜刀神十香&時崎狂三",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419087,
+      "krOffset": "오색의 비경",
+      "enOffset": "Iridescent Scenic Instance",
+      "jaOffset": "五色の秘境",
+      "zh_twOffset": "五彩祕境",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419088,
+      "krOffset": "VS G.이브",
+      "enOffset": "Vs. G. Eve",
+      "jaOffset": "VS G.イヴ",
+      "zh_twOffset": "VS G.夏娃",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419089,
+      "krOffset": "VS 악몽의 마리오네트",
+      "enOffset": "Vs. Nightmare Marionette",
+      "jaOffset": "VS 悪夢のマリオネット",
+      "zh_twOffset": "VS 惡夢的懸絲木偶",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419090,
+      "krOffset": "VS 마물 토벌",
+      "enOffset": "Vs. Monster Subjugation",
+      "jaOffset": "VS 魔物討伐",
+      "zh_twOffset": "VS 討伐魔物",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419091,
+      "krOffset": "VS 메카이아",
+      "enOffset": "Vs. Mecha Gaia",
+      "jaOffset": "VSメカイア",
+      "zh_twOffset": "VS 機械蓋亞",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419092,
+      "krOffset": "인피니티 챌린지",
+      "enOffset": "Infinity Challenge",
+      "jaOffset": "インフィニティチャレンジ",
+      "zh_twOffset": "無限挑戰",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419093,
+      "krOffset": "VS 떡공장장 순이",
+      "enOffset": "Vs. Rice Cake Factory Chief Soonie",
+      "jaOffset": "VS モチ工場の工場長・スニ",
+      "zh_twOffset": "VS 年糕工廠廠長順伊",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419094,
+      "krOffset": "VS 심상세계의 로제",
+      "enOffset": "Vs. Rose(Imaginary World)",
+      "jaOffset": "VS 心象世界のロゼ",
+      "zh_twOffset": "VS 心理世界的蘿絲",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419095,
+      "krOffset": "심상세계의 로제",
+      "enOffset": "Rose in Her Imaginary World",
+      "jaOffset": "心象世界のロゼ",
+      "zh_twOffset": "心理世界的蘿絲",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419096,
+      "krOffset": "노심",
+      "enOffset": "Reactor Core",
+      "jaOffset": "爐心",
+      "zh_twOffset": "爐心",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419097,
+      "krOffset": "토용군 습격 저지",
+      "enOffset": "Repelling the Clay Creatures' attack",
+      "jaOffset": "土の戦士の襲撃阻止",
+      "zh_twOffset": "阻止土俑軍襲擊",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419098,
+      "krOffset": "노심굴 전투",
+      "enOffset": "Battle at the Reactor Core Cave",
+      "jaOffset": "爐心の洞窟の戦闘",
+      "zh_twOffset": "爐心窟戰鬥",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419099,
+      "krOffset": "눈의 현자",
+      "enOffset": "Sage of the Snow",
+      "jaOffset": "",
+      "zh_twOffset": "雪之賢者",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 419100,
+      "krOffset": "VS 폭주한 실베스터 조이 3세",
+      "enOffset": "Vs. Rampaging King Sylvester Joey III",
+      "jaOffset": "",
+      "zh_twOffset": "VS 暴走的席爾維斯特喬伊三世",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 440261,
+      "krOffset": "오색의 비경",
+      "enOffset": "Iridescent Scenic Instance",
+      "jaOffset": "五色の秘境",
+      "zh_twOffset": "五彩祕境",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 440262,
+      "krOffset": "오색의 비경",
+      "enOffset": "Iridescent Scenic Instance",
+      "jaOffset": "五色の秘境",
+      "zh_twOffset": "五彩祕境",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 440263,
+      "krOffset": "오색의 비경",
+      "enOffset": "Iridescent Scenic Instance",
+      "jaOffset": "五色の秘境",
+      "zh_twOffset": "五彩祕境",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 440264,
+      "krOffset": "오색의 비경",
+      "enOffset": "Iridescent Scenic Instance",
+      "jaOffset": "五色の秘境",
+      "zh_twOffset": "五彩祕境",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 440265,
+      "krOffset": "오색의 비경",
+      "enOffset": "Iridescent Scenic Instance",
+      "jaOffset": "五色の秘境",
+      "zh_twOffset": "五彩祕境",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500001,
+      "krOffset": "엘나스",
+      "enOffset": "Elnath",
+      "jaOffset": "エルナス",
+      "zh_twOffset": "艾爾納斯",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500002,
+      "krOffset": "아케나인",
+      "enOffset": "Arkenine",
+      "jaOffset": "アーケナイン",
+      "zh_twOffset": "阿肯納因",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500003,
+      "krOffset": "콜브 초원",
+      "enOffset": "Colve Meadow",
+      "jaOffset": "コルブ草原",
+      "zh_twOffset": "科爾布草原",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500004,
+      "krOffset": "다이난 호수",
+      "enOffset": "Lake Dynan",
+      "jaOffset": "ダイナン湖",
+      "zh_twOffset": "戴南湖",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500005,
+      "krOffset": "하얀 울새 숲",
+      "enOffset": "White Robin Forest",
+      "jaOffset": "ホワイトロビン森",
+      "zh_twOffset": "雪白的知更鳥林",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500006,
+      "krOffset": "베르트 산맥",
+      "enOffset": "Vert Mountains",
+      "jaOffset": "ヴェルト山脈",
+      "zh_twOffset": "貝爾特山脈",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500007,
+      "krOffset": "비노 협곡",
+      "enOffset": "Vino Valley",
+      "jaOffset": "ヴィノ峡谷",
+      "zh_twOffset": "維諾峽谷",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500008,
+      "krOffset": "렉타 황무지",
+      "enOffset": "Rechtar Wasteland",
+      "jaOffset": "レクター荒原",
+      "zh_twOffset": "雷克塔荒原",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500009,
+      "krOffset": "쿠르 사바나",
+      "enOffset": "Cur Savannah",
+      "jaOffset": "クル・サヴァナ",
+      "zh_twOffset": "庫爾·薩凡納",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500010,
+      "krOffset": "아르코 이리스",
+      "enOffset": "Arco Iris",
+      "jaOffset": "アルコ・イリス",
+      "zh_twOffset": "阿爾科伊里斯",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500011,
+      "krOffset": "모레노 사막",
+      "enOffset": "Morreno Desert",
+      "jaOffset": "モレーノ砂漠",
+      "zh_twOffset": "莫雷諾沙漠",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500012,
+      "krOffset": "라피아 정글",
+      "enOffset": "Raffia Jungle",
+      "jaOffset": "ラフィアジャングル",
+      "zh_twOffset": "拉菲亞叢林",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500013,
+      "krOffset": "반딧불이의 둥지",
+      "enOffset": "Nest of Fireflies",
+      "jaOffset": "ホタルの巣",
+      "zh_twOffset": "螢火蟲的巢穴",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500014,
+      "krOffset": "나델 고산지",
+      "enOffset": "Nadel Mountains",
+      "jaOffset": "ナデル高地",
+      "zh_twOffset": "納德高地",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500015,
+      "krOffset": "그림자 없는 땅",
+      "enOffset": "Shadowless Lands",
+      "jaOffset": "影のない土地",
+      "zh_twOffset": "無影之地",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500016,
+      "krOffset": "유령도시 모르투스",
+      "enOffset": "Ghost City Mortus",
+      "jaOffset": "幽霊都市モルトゥス",
+      "zh_twOffset": "幽靈城市莫爾圖斯",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500017,
+      "krOffset": "버려진 항구",
+      "enOffset": "Forsaken Harbor",
+      "jaOffset": "捨てられた港",
+      "zh_twOffset": "廢棄的港口",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500018,
+      "krOffset": "메티아스 호 갑판",
+      "enOffset": "Mettias Deck",
+      "jaOffset": "メティアス号の甲板",
+      "zh_twOffset": "梅蒂亞斯號甲板",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500019,
+      "krOffset": "가르디눔 대설원",
+      "enOffset": "Gardinum Snowfield",
+      "jaOffset": "ガルディヌム大雪原",
+      "zh_twOffset": "加爾迪努姆大雪原",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500020,
+      "krOffset": "루푸스 요새",
+      "enOffset": "Lupus Fortress",
+      "jaOffset": "ルプス要塞",
+      "zh_twOffset": "盧普斯要塞",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500021,
+      "krOffset": "칸델레로 얼음 산맥",
+      "enOffset": "Candellero Mountains",
+      "jaOffset": "カンデレロ氷山脈",
+      "zh_twOffset": "坎德萊羅冰山",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500022,
+      "krOffset": "코르텍스 호",
+      "enOffset": "The Cortex",
+      "jaOffset": "コルテックス号",
+      "zh_twOffset": "科爾特克斯號",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500023,
+      "krOffset": "오레올 산맥",
+      "enOffset": "Aureole Mountains",
+      "jaOffset": "オリオール山脈",
+      "zh_twOffset": "歐雷歐爾山脈",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500024,
+      "krOffset": "시조의 연안",
+      "enOffset": "Founder's Coast",
+      "jaOffset": "始祖の沿岸",
+      "zh_twOffset": "始祖沿岸",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500025,
+      "krOffset": "아페이온 해식동굴",
+      "enOffset": "Apeiron Sea Cave",
+      "jaOffset": "アペイロン海蝕洞",
+      "zh_twOffset": "亞佩伊溫海蝕洞",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500026,
+      "krOffset": "루멘 성 입구",
+      "enOffset": "Lumen Castle Entrance",
+      "jaOffset": "ルーメン城入口",
+      "zh_twOffset": "流明城入口",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500027,
+      "krOffset": "엠포리움 연구소",
+      "enOffset": "Emporium Laboratory",
+      "jaOffset": "エンポリウム研究所",
+      "zh_twOffset": "岩普利翁研究所",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500028,
+      "krOffset": "땅의 등대",
+      "enOffset": "Lighthouse of the Earth",
+      "jaOffset": "大地の灯台",
+      "zh_twOffset": "地之燈塔",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500029,
+      "krOffset": "아우렐리아 심해 유적",
+      "enOffset": "Aurelian Deep Sea Ruins",
+      "jaOffset": "アウレリア深海遺跡",
+      "zh_twOffset": "奧里利亞深海遺跡",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500030,
+      "krOffset": "밤의 도시",
+      "enOffset": "Night City",
+      "jaOffset": "夜の都市",
+      "zh_twOffset": "夜之都市",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500031,
+      "krOffset": "연옥으로 향하는 길",
+      "enOffset": "Road to Purgatory",
+      "jaOffset": "煉獄への道",
+      "zh_twOffset": "前往煉獄之路",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500032,
+      "krOffset": "별의 등대",
+      "enOffset": "The Lighthouse of the Stars",
+      "jaOffset": "星の灯台",
+      "zh_twOffset": "星之燈塔",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500033,
+      "krOffset": "별의 바다",
+      "enOffset": "Sea of Stars",
+      "jaOffset": "星の海",
+      "zh_twOffset": "星海",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 500034,
+      "krOffset": "하늘뱃길",
+      "enOffset": "Sky Fareway",
+      "jaOffset": "",
+      "zh_twOffset": "空中航道",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501001,
+      "krOffset": "화염에 휩싸인 솔레이 왕국의 도시.\r\n\r\n아름다웠던 엘나스는 갑작스레 발생한 초대형 게이트로 인해 무참히 짓밟힌다.\r\n\r\n거리에는 웃음소리 대신 포악한 마물들의 울음소리와 정령들의 비명이 울려 퍼지는 가운데,\r\n\r\n여왕 유리아는 생존을 위한 마지막 수단으로 방주의 정령과 함께 <구원자>를 소환하기 위한 의식을 치르는데…",
+      "enOffset": "The city of the Kingdom of Solrey has been engulfed in flame.\r\n\r\nThe once beautiful Elnath is mercilessly crushed by a gigantic Gate that suddenly appeared.\r\n\r\nAs shrieks of savage monsters and screams of Souls resonate through streets that were once full of laughter,\r\n\r\nQueen Yuria performs a ritual to summon the Savior for their survival with the Soul of the Ark as their last resort...",
+      "jaOffset": "火炎に包まれたソレイ王国の都市。\r\n\r\n美しさを誇っていたエルナスは、突如発生した超大型ゲートにより無残にも踏みにじられる。\r\n\r\n街から笑い声が消え、凶暴な魔物の咆哮と精霊の悲鳴が響き渡る中、\r\n\r\n女王ユリアは、生き残るための最終手段として、方舟の精霊と共に「救世主」を召喚する儀式を行うのだった…",
+      "zh_twOffset": "被火焰圍繞的蘇萊伊王國都市。\r\n\r\n美麗的艾爾納斯被突然出現的超大型傳送門無情踐踏了。\r\n\r\n街上沒有歡笑聲，反倒充斥著魔物們殘忍的哭喊聲和精靈們的悲鳴。\r\n\r\n為了活下去，女王尤里婭使出最終手段，舉行儀式召喚出方舟精靈及《救援者》…",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501002,
+      "krOffset": "솔레이 왕국, 아케나인 령의 중심이 되는 요새 도시.\r\n\r\n규모는 작으나 인근에 귀한 자원을 많이 가지고 있는 풍요로운 땅이다.\r\n\r\n솔레이 왕국을 대표하는 태양 기사단의 주둔지이기도 하여, 매우 안전하다.\r\n\r\n엘나스의 초대형 게이트 사건 이후, 평화로웠던 아케나인에도 마물의 기운이 감돌기 시작하는데…",
+      "enOffset": "A fortress city and the center of Arkenine Territory in the Kingdom of Solrey.\r\n\r\nA small but plentiful territory full of precious resources.\r\n\r\nIt is also known for its security, with the headquarters of the Order of Sun, the symbol of the Kingdom of Solrey, located within.\r\n\r\nEver since the supersize Gate incident of Elnath, the energy of the monsters began to spread throughout the peaceful Arkenine...",
+      "jaOffset": "ソレイ王国、アーケナイン領の中心となる要塞都市。\r\n\r\n規模は小さいが、近隣に貴重な資源を多く保有している豊かな土地である。\r\n\r\nソレイ王国を代表する太陽騎士団の駐屯地でもあり、極めて安全である。\r\n\r\nエルナスの超大型ゲート事件以降、平和だったアーケナインにも魔物の気配が立ち込み始めるが…",
+      "zh_twOffset": "蘇萊伊王國是阿肯納因的要塞中心都市。\r\n\r\n雖然國土面積小，但卻是有著豐富的珍稀資源的豐饒之地。\r\n\r\n這裡也是代表蘇萊伊王國的太陽騎士團的駐紮地，因此治安非常安全。\r\n\r\n在艾納斯的超大型傳送門事件後，曾恬靜安謐的阿肯納因也開始壟罩著魔物的氣息…",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501003,
+      "krOffset": "다양한 들풀과 풀꽃이 자라는 초원.\r\n\r\n아케나인과 가장 가까운 평원으로, 연한 풀이 많아 목축업에 종사하는 주민들의 터전이 되고 있다.\r\n\r\n언덕 중앙에 있는 거대한 나무가 특징으로, \r\n< 태양의 축복 >이라 불리는 이 나무는 여왕 유리아가 통치를 시작하며 심은 것으로 알려져 있다.\r\n\r\n낭만적인 풍경과 영원함을 상징하는 나무 덕분에 데이트 코스로 인기가 있다.",
+      "enOffset": "A plain where various kinds of plants and wild flowers grow.\r\n\r\nLocated closest to Arkenine, the tender grass of the area makes it a base for people who make their living through farming and ranching.\r\n\r\nThe giant tree at the center,\r\nthe Blessings of the Sun, is known to have been planted when Queen Yuria started her reign.\r\n\r\nWith the tree that represents eternity along with romantic scenery, this hill is a popular spot among lovers.",
+      "jaOffset": "様々な野草と草花が生い茂る草原。\r\n\r\nアーケナインに最も近い平原で、やわらかい草が多いため牧畜業に従事する住民にとって生活の基盤となっている。\r\n\r\n丘の中央にある巨大な木が目を引くが、\r\nこの木は「太陽の祝福」と呼ばれ、女王ユリアが統治を始める際に植えたものとして知られている。\r\n\r\nロマンチックな風景と永遠を象徴する木のおかげでデートコースとして人気がある。",
+      "zh_twOffset": "孕育各種草木及花朵的草原。\r\n\r\n是距離阿肯納因最近的平原，延綿不絕的青草，是以游牧為生的居民們生活的家園。\r\n\r\n據說山坡中央的神木是此處的特點，\r\n此神木被稱為《太陽的祝福》，是尤里婭女王開始統治時所種下的。\r\n\r\n此處因為浪漫的景致及象徵永恆的神木，是很有名的約會聖地。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501004,
+      "krOffset": "작은 나룻배와 나무로 만든 선착장이 있는 호수.\r\n\r\n영지 주변을 흐르는 강의 원천이자 수원지로,\r\n햇빛이 잘 들고 바람이 선선해 봄날 소풍 장소로도 인기가 많다.\r\n\r\n명물은 호수 주변에 사는 야생 거위 무리.\r\n\r\n서식지 주변의 안내문에는, 매우 귀여운 외모를 가졌으나 영리하고 식탐이 많다고 쓰여 있다.\r\n\r\n특히, 소풍객의 도시락을 노리는 일이 잦으니 주의할 것.",
+      "enOffset": "A lake with small boats and a wooden dock.\r\n\r\nIt is the source of water and rivers that flow around the territory,\r\nand it's also popular for spring picnics due to its sunny and moderately windy weather.\r\n\r\nVery famous for the horde of wild geese that lives around the lake.\r\n\r\nSign says: Although these geese are quite adorable, they are also very bright and gluttonous.\r\n\r\nCaution: They go after the lunch boxes of picnickers.",
+      "jaOffset": "小さな渡し舟と木造りの船着き場がある湖。\r\n\r\n領地の周辺に流れる川の水源地で、\r\n日当たりが良く涼やかな風が吹き、春の日のピクニックスポットとして人気が高い。\r\n\r\n名物は湖の周辺に暮らす野性ガチョウの群れ。\r\n\r\n生息地周辺の案内文には、とても可愛らしい外見とは裏腹に、ずる賢くて食い意地が張っていると書かれている。\r\n\r\n特に、ピクニック客の弁当を狙うことが多いため要注意。",
+      "zh_twOffset": "有著小小的渡船及木製碼頭的湖。\r\n\r\n這裡不僅是領地周邊河流的源頭也是水源地，\r\n風光明媚、微風徐徐，是很受歡迎的春日郊遊好去處。\r\n\r\n特色是生活在湖水四周的野生鵝群。\r\n\r\n棲息地附近的告示板寫著：「鵝群雖然外貌可愛，卻很聰明又很貪吃。」\r\n\r\n很常覬覦前來郊遊的人們的便當，要多加留意。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501005,
+      "krOffset": "다양한 야생 동물이 사는 영지 주변의 작은 숲.\r\n\r\n숲에 들어서면 반기듯 들리는 하얀 울새 소리가 특징이다.\r\n\r\n벌목과 채집으로 사람의 발길이 잦은 곳이라, 대부분의 동물들이 정령 친화적이다.\r\n\r\n숲의 특산품은 바로 <로빈 베리>라는 작은 열매.\r\n\r\n맛이 설탕처럼 달콤하고 향기로워 잼, 술, 과자… 무엇으로 만들어도 맛있는 마성의 과일이라고 한다.",
+      "enOffset": "A small forest near the land where various wild animals live.\r\n\r\nWhite robins chirp as if they are welcoming the visitors.\r\n\r\nMany people come and go for logging and gathering, so most animals are Soul-friendly.\r\n\r\nThe forest's specialty is the fruit called \"Robinberry\".\r\n\r\nIt is as sweet as sugar and aromatic that it can be made into jam, alcohol, snacks, and more. Some say its taste is devilishly good.",
+      "jaOffset": "様々な野生動物が暮らす領地周辺の小さな森。\r\n\r\n森に立ち入る者を歓迎するかのような白いコマドリの鳴き声が印象的。\r\n\r\n伐採と採集が盛んなため人の出入りが多く、ほとんどの動物が精霊に親しんでいる。\r\n\r\n森の特産品は「ロビンベリー」と称される小さな実。\r\n\r\n砂糖のように甘くて香りがいいためジャム、酒、お菓子…何を作っても美味しくなる魔性の果物らしい。",
+      "zh_twOffset": "在領地附近、有著各種野生動物的小樹林。\r\n\r\n進入樹林可以聽到令人心情愉悅的雪白知更鳥的鳴叫聲，是這個地區的特點。\r\n\r\n人們常到此處伐木和採集，因此人來人往，大部分的動物都和精靈很親近。\r\n\r\n這片森林的名產就是名為「羅賓莓」的小果實，\r\n\r\n味道像糖果一般香甜、香氣四溢，是一種令人著迷的水果，無論是做成果醬、飄飄飲或是餅乾…都很好吃。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501006,
+      "krOffset": "솔레이 왕국과 페이렌 연합국을 나누는 산맥.\r\n하얀 울새 숲과 이어져 있다.\r\n\r\n높지 않은 산세에도 다양한 버섯과 희귀한 약초가 자라는 고마운 지역으로, \r\n솔레이와 페이렌의 학자들이 빈번하게 출입하고 있다.\r\n\r\n하지만 게이트 현상이 심해지면서 급작스러운 안개가 발생했는데…",
+      "enOffset": "A range of mountains dividing the Kingdom of Solrey and the Fayren Union.\r\nIt is connected to the White Robin Forest.\r\n\r\nA region with moderate steepness where various mushrooms and rare herbs grow,\r\nresearchers from Solrey and Fayren frequent the place.\r\n\r\nBut ever since the Gate Incident got worse, a sudden fog covers the area...",
+      "jaOffset": "ソレイ王国とフェイレン連合国を切り分ける山脈。\r\nホワイトロビン森と繋がっている。\r\n\r\n標高があまり高くないにもかかわらず、多彩なキノコや珍しい薬草が生える理想的な地域で、\r\nソレイとフェイレンの学者たちが頻繁に訪れている。\r\n\r\nしかし、ゲート現象の激化に伴い、突如霧が立ち込み始め…",
+      "zh_twOffset": "是座分隔蘇萊伊王國和費倫聯軍的山脈，\r\n與雪白的知更鳥林相連。\r\n\r\n雖然海拔不高，但有著各種蕈菇類和珍稀草藥，是個物質豐饒的地區，\r\n蘇萊伊和費倫的學者頻繁地出入此處。\r\n\r\n但隨著傳送門現象越來越嚴重，開始出現了大霧瀰漫的情形…",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501007,
+      "krOffset": "야생 독수리 떼가 서식하는 협곡.\r\n\r\n사막에서 불어오는 모래 폭풍을 피할 수 있는 유일한 장소.\r\n이 때문에 비탈길을 통해 내려온 정령들이 잠시 머무르기도 한다.\r\n\r\n거친 비탈 사이로 보이는 거대한 새 둥지들이 매우 인상적이지만, 절대로 만져선 안 된다.\r\n\r\n이름은 포도주라는 뜻으로, 이곳이 거대한 강이었을 때 지어졌다고 한다.",
+      "enOffset": "A flight of wild eagles inhabits this valley.\r\n\r\nIt's the only place where you can avoid the sand storm from the desert.\r\nThis is why Souls that come down the slope stay here occasionally.\r\n\r\nGiant bird nests visible through the rough slopes are quite impressive, but one should never touch them.\r\n\r\nIts name means grape wine, and it is said to have been built when there was a huge river.",
+      "jaOffset": "野性のワシの群れが棲む峡谷。\r\n\r\n砂漠から吹いてくる砂嵐から逃れることのできる唯一の場所。\r\nそのため、坂道から降りてきた精霊がしばし留まることもある。\r\n\r\n険しい斜面の間に見える巨鳥の巣が極めて印象的だが決して触れてはならない。\r\n\r\n名前はブドウ酒を意味しており、ここが巨大な川だった時につけられたものらしい。",
+      "zh_twOffset": "野生禿鷹所棲息的峽谷。\r\n\r\n是唯一一個可以在沙漠中躲避沙塵暴的地方。\r\n也因此成了經過坡道下來的精靈們的歇腳處。\r\n\r\n陡坡之間的巨大鳥巢雖然令人印象深刻，但卻絕對不能觸碰，\r\n\r\n取「葡萄飄飄飲」之意而命名，據說是在這個地方還是一條巨大的河川時所建的。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501008,
+      "krOffset": "맑은 하늘 아래의 척박한 황야 지대.\r\n\r\n한때는 이를 개척하기 위한 다양한 노력이 이루어졌으나, 게이트 사태 이래로는 정령들을 찾아보기 힘든 지역이 되었다.\r\n\r\n대부분의 정령들은 오아시스 도시, <아르코 이리스>로 떠나 버렸다.\r\n\r\n이 주변의 야생 동물들이나 마물들은 늘 굶주려 있어, 지날 때에는 특별한 주의가 필요하다.",
+      "enOffset": "A barren wilderness under the clear sky.\r\n\r\nAt one point, there were many efforts to reclaim this land, but it became hard to find any Souls here ever since the Gate Incident.\r\n\r\nMost of the Souls had left for the City of Oasis, \"Arco Iris\".\r\n\r\nThe wild animals or monsters around here are always starved, so you need to be especially cautious when passing by.",
+      "jaOffset": "晴天の下に広がる険しい荒野地帯。\r\n\r\nかつては開拓のために様々な努力がなされたが、ゲート事件以降、精霊を見かけづらい地域となった。\r\n\r\nほとんどの精霊はオアシス都市\r\n「アルコ・イリス」へ去ってしまった。\r\n\r\n周辺の野生動物や魔物は常に飢えており\r\n通りかかる際には特別に注意が必要。",
+      "zh_twOffset": "晴空之下的一片荒原。\r\n\r\n雖然曾經有一段時間為了開拓此處而做出了許多努力，而後卻因為傳送門現象的緣故，現在精靈已經很少踏足這裡了。\r\n\r\n大部分的精靈都已經離開此地，去了《阿爾科伊里斯》。\r\n\r\n這附近的也動物或魔物已經飢餓難耐了好長一段時間，路過的時候務必要特別小心。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501009,
+      "krOffset": "드넓게 펼쳐진 열대 사바나 평원.\r\n\r\n멀리에는 광활하다는 표현이 어울릴 법한 지평선이 펼쳐져 있으며, 키가 큰 황색 잡초와 나무들이 듬성듬성 자라있다.\r\n\r\n비가 많이 오고 온도가 높아 다양한 동식물이 발견되지만, 물을 오래 저장하지 못하는 특징 탓에 도시 문명은 발달하지 못했다.\r\n\r\n간혹 인근 늪지대와 정글의 영향으로, 변형 된 식물들이 발견되기도 한다.",
+      "enOffset": "A vast savannah plain.\r\n\r\nAn overwhelmingly vast horizon stretches out far, with tall yellow weed and trees growing here and there.\r\n\r\nIts rainy weather and high temperature make it a perfect home for a variety of species, but no civilization developed since the place could hold no water.\r\n\r\nDue to the nearby swamp and jungle, deformed plants are sometimes found here.",
+      "jaOffset": "どこまでも広大な熱帯のサバンナ平原。\r\n\r\n彼方には広大という表現に相応しく地平線が広がっており、背の高い黄色の雑草や木々が点在している。\r\n\r\n降雨量が多く温度も高いため様々な動植物が見られるが、水を長く貯蔵できないという特徴があるため都市文明は発達していない。\r\n\r\n時おり近くの沼地帯とジャングルの影響で変形した植物が見つかることもある。",
+      "zh_twOffset": "遼闊的熱帶大草原。\r\n\r\n「廣闊無垠」這個形容詞很適合用來形容此處，有著稀稀落落的高大黃色荒草和樹木。\r\n\r\n雖然降雨量大、氣溫也高，可以在這裡發現許多動植物，但因為蓄水不易，無法發展出都市文明。\r\n\r\n受到附近的沼澤地和叢林影響，偶爾還會看到變異的植物。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501010,
+      "krOffset": "대형 오아시스를 끼고 번성한 도시.\r\n\r\n드넓은 사막에서 유일하게 남은 생명의 땅으로, 태초의 정령 이브를 따르던 사도가 세운 도시라고 한다.\r\n\r\n도시의 이름은 무지개 끝에서 발견한 보금자리라는 의미를 품고 있다.\r\n\r\n과연 이 도시를 세운 이브의 사도는 어디로 사라져버리고 만 걸까?",
+      "enOffset": "A city that prospered with a giant oasis.\r\n\r\nThe only land of life in the vast desert; it is said to be a city formed by a disciple who used to serve Eve, the primal Soul.\r\n\r\nThe name of the city harbors the meaning of being a nest found at the end of a rainbow.\r\n\r\nWhere did Eve's disciple that raised this city disappear to?",
+      "jaOffset": "大型オアシスと共に繁盛した都市。\r\n\r\n広々とした砂漠に唯一残された生命の土地であり、原初の精霊イブに従っていた使徒が建設した都市だという。\r\n\r\n都市の名は虹の果てで見出した棲み処という意味を持っている。\r\n\r\nこの都市を建てたイブの使徒は、果たしてどこへ消えてしまったのだろう？",
+      "zh_twOffset": "有著大型綠洲的繁華都市。\r\n\r\n是跟隨太古精靈——夏娃的使徒所建立的都市，也是成片的沙漠中碩果僅存的生命之地。\r\n\r\n這個都市的名字有著：「彩虹盡頭的樂園之地」的意思。\r\n\r\n建立了這個都市的夏娃的使徒，現在究竟身在何處呢？",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501011,
+      "krOffset": "뜨거운 모래바람이 부는 사막.\r\n\r\n최근 10년간 한 번도 비가 내린 적이 없는 불모의 땅이다.\r\n\r\n선인장도 말라 죽을 만큼 가혹한 기후로, 갖가지 독충까지 서식하고 있어 매우 위험하다.\r\n\r\n한 때는 태초의 정령 이브가 머물렀다는 신전이 있지만, 오랜 세월이 지나 신전의 정확한 위치는 더이상 알 수 없다고 한다.",
+      "enOffset": "A desert with hot sandy wind.\r\n\r\nA barren land that hasn't seen rain for the past ten years.\r\n\r\nIt has such severe climates that even cacti shrivel to death, and it is dangerous because of various poisonous insects.\r\n\r\nThere is a temple where the primal Soul Eve had once stayed, but the exact location has been long forgotten.",
+      "jaOffset": "熱砂が吹き荒れる砂漠。\r\n\r\nここ10年間、一度も雨が降っていない不毛の地。\r\n\r\nサボテンすら干からびるほど過酷な気候で、さまざまな毒虫まで生息しているため極めて危険である。\r\n\r\nかつては原初の精霊イブが留まっていたという神殿があるが、長い歳月が過ぎ、神殿の正確な在り処は忘れられてしまったという。",
+      "zh_twOffset": "揚起炙熱風沙的沙漠。\r\n\r\n是近十年內沒有下過雨的不毛之地。\r\n\r\n不僅嚴酷到連仙人掌都難以生存，還有著各式各樣毒蟲，非常危險。\r\n\r\n據說，曾有一座太古精靈——夏娃曾居住過的神殿，但隨著歲月流逝，已經無從得知神殿確切的位置。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501012,
+      "krOffset": "모든 것이 비상식적으로 큰 정글.\r\n모든 식물이 무성하고 크게 자라 있어 앞이 보이지 않을 정도로 우거져있다.\r\n\r\n<라플라시아의 자식>이라는 거대한 꽃봉오리가 자주 발견되는데, 꽃가루에 강력한 환각 성분이 있어 수분 철에는 특히 주의가 필요하다.\r\n\r\n일반적인 정령들은 이 정글을 피해가나,\r\n정령연합군만큼은 빠른 이동을 위해 이 길을 지날 때도 있다고 한다.",
+      "enOffset": "A jungle where everything is nonsensically large.\r\nAll the plants have grown thickly and largely that it is too dense to see far ahead.\r\n\r\nA gigantic bud called the \"Rafflesia Offspring\" is often found here, but there is a strong hallucination component in its spores so you must be cautious especially during the pollination season.\r\n\r\nSouls usually avoid this jungle,\r\nbut the Soul Alliance Army sometimes uses this path for faster movement.",
+      "jaOffset": "何もかもが非常識な大きさを持つ\r\nジャングル。\r\nあらゆる植物が巨大に生い茂っており、前が見えないほど鬱蒼としている。\r\n\r\n「ラフレシアの子」という巨大な花の蕾がよく発見されるが、その花粉には強力な幻覚成分があるため、\r\n受粉の時期は特に注意する必要がある。\r\n\r\n一般的な精霊はこのジャングルを避けて通るが、\r\n精霊連合軍だけは速く移動するために通ることがあるという。",
+      "zh_twOffset": "萬物皆為出奇巨大的叢林。\r\n所有的植物都枝繁葉茂，以至於看不到前方。\r\n\r\n很常發現名為《拉普爾拉西雅的後代》的巨大花苞，花粉中含有會造成強烈幻覺的成分，\r\n授粉季節時需要格外留意。\r\n\r\n雖然一般精靈都會避開此叢林，\r\n但精靈聯軍有時候會為了抄捷徑而穿越這裡。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501013,
+      "krOffset": "항상 어둡고 습한 늪지대.\r\n\r\n위험한 곤충과 동식물, 진창과 수렁이 섞인 지역.\r\n어디를 둘러봐도 비슷한 풍경에, 방향을 가늠할 수 없어 길을 잃기 쉽다.\r\n\r\n최근 영약의 재료라는 반디 초롱 덩굴이 자라는 것으로 알려져 세간의 관심을 받고 있다.",
+      "enOffset": "A swamp that is always dark and damp.\r\n\r\nAn area full of dangerous insects, animals and plants, mud, and bogs.\r\nThe scenery is similar wherever you look so it's hard to find directions and you can easily lose your way.\r\n\r\nIt is receiving attention from the public because the firefly lantern vine that grows here was found to be a wonder drug ingredient.",
+      "jaOffset": "いつも暗くじめじめしている沼地帯。\r\n\r\n危険な昆虫と動植物、ぬかるみと泥沼だらけの地域。\r\nどこを見渡しても同じような風景のため、方向を見失い迷ってしまいがち。\r\n\r\n最近、霊薬の材料とされるホタル火のツルが生えることが知られ、世間の注目を受けている。",
+      "zh_twOffset": "總是陰暗又潮濕的沼澤地區。\r\n\r\n混雜著危險的昆蟲、動植物和泥濘的地方。\r\n無論環顧何處都是相同的景色，無法找出方向、因此很容易迷路。\r\n\r\n最近此處因為有著被稱為「靈藥材料」的螢火藤蔓，而受世人的矚目。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501014,
+      "krOffset": "깎아지른 듯 거칠고 험준한 산악 지대.\r\n\r\n너무나도 척박한 환경으로 인해 정령들이 모두 떠나버리고 말았지만, 아주 먼 과거에는 골짜기마다 소규모의 촌락이 있었다고 한다. \r\n\r\n그들은 서로 나무판자로 만든 다리를 통해 교류하였는데, 그때 만들어진 다리가 지금까지 남아있다.\r\n\r\n위험해 보이지만, 산맥을 건너가기 위해선 이 다리를 이용하는 수밖에 없다고 한다.",
+      "enOffset": "Rough and precipitous mountains that look as if they've been carved.\r\n\r\nAll the Souls left due to its extremely barren environment, but it is said that there were small villages at every valley long ago.\r\n\r\nThey used to traverse between them using a bridge made of wooden planks, which still remains.\r\n\r\nIt looks dangerous, but it's the only way to cross the mountain range.",
+      "jaOffset": "切り立った険しく荒々しい山岳地帯。\r\n\r\nあまりにも過酷な環境のため精霊はすべて去ってしまったが、遥か昔には谷ごとに小規模の村落があったという。\r\n\r\n村落の住人は木の板で作った橋を行き交って交流した。当時建造された橋が今でも残っている。\r\n\r\n危険そうに見えるが、山脈を渡るにはこの橋を利用するしかないという。",
+      "zh_twOffset": "險峻陡峭的山區。\r\n\r\n因為環境過於貧瘠，精靈們全都離開了，但聽說在很久以前，每個山谷都有小型的村落。\r\n\r\n他們用木板製成的橋樑相互交流，當時搭建的橋樑留存至今。\r\n\r\n雖然橋樑看起來很危險，但要是想越過山脈，除了穿過這座橋樑也別無他法。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501015,
+      "krOffset": "유령 도시 근처의 황무지.\r\n\r\n이따금 들리는 까마귀 소리와, 어두컴컴한 하늘.\r\n\r\n초기에 발생한 대형 게이트로 인해 폐허가 된 나르비스 근교의 평원 지대로, 무너진 건물 곳곳에 아직까지도 마물들이 남아 돌아다니고 있다.\r\n\r\n이 잿빛 황야에선 정령들의 그림자조차 분간할 수 없다 하여 <그림자 없는 땅>이라는 이름이 붙었다.",
+      "enOffset": "Barren lands near a ghost city.\r\n\r\nThere are occasional sounds of crows in the dark sky.\r\n\r\nPlains near Narvis that is in ruins after a big Gate that appeared in the beginning. There are still monsters roaming around the fallen buildings.\r\n\r\nIt was named the \"Shadowless Lands\" because you can't even distinguish the shadows of the Souls in this gray barren land.",
+      "jaOffset": "幽霊都市付近の荒原。\r\n\r\n時々カラスの鳴き声が響き、空には暗雲が立ち込めている。\r\n\r\n初期に発生した大型ゲートにより廃墟と化したナルビス近郊の平原地帯で、未だ残っている魔物が崩れた建物のあちこちをさまよっている。\r\n\r\nこの灰色の荒野では精霊の影すら見分けることができないと言われ、「影のない土地」と名づけられた。",
+      "zh_twOffset": "幽靈城市附近的荒蕪之地。\r\n\r\n不時會傳來烏鴉的聲音，以及昏暗的天空。\r\n\r\n是那勒比斯附近的平原地區，因為早期發生的大型傳送門而變成廢墟，到處都可以看到倒塌的建築，甚至還有四處遊蕩的魔物。\r\n\r\n在這片暗無天日的荒野之中，連精靈的影子都看不到，因此被稱為《無影之地》。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501016,
+      "krOffset": "스산한 유령 도시 <모르투스>.\r\n\r\n몇백 년 전까지만 해도 무역을 통해 크게 번성했던 항구 도시였다.\r\n\r\n최초의 대규모 게이트 현상이 발생한 지역으로, 현재는 잃어버린 땅이라고도 불리고 있다.\r\n\r\n거주하던 정령은 전원 대피했다고 전해지나, 개중에는 차마 제 시간에 피하지 못해 게이트로 끌려간 정령들도 있다고 한다.\r\n\r\n그들에게는 대체 무슨 일이 있었을까….",
+      "enOffset": "A bleak ghost city, \"Mortus.\"\r\n\r\nOnce a harbor city that used to thrive through trade a few centuries ago.\r\n\r\nAn area where the first ever large-scale Gate incident happened. It is now called the Lost Lands.\r\n\r\nAll Souls that lived here are said to have evacuated, but there were also Souls that failed to evacuate and were dragged into the Gate.\r\n\r\nWhat could have happened to them...?",
+      "jaOffset": "寂寥とした幽霊都市、「モルトゥス」。\r\n\r\nしかし数百年前は、貿易で隆盛を極めた港湾都市だった。\r\n\r\n最初の大規模ゲート現象が発生した地域であり、現在は失われた土地とも呼ばれている。\r\n\r\n居住していた精霊は全員退避したと伝えられているが、中には逃げ遅れ、ゲートに引きずり込まれた精霊も存在したと伝えられている。\r\n\r\nその精霊たちの身にはどんなことがあったのだろうか…",
+      "zh_twOffset": "蕭條的幽靈都市《那勒比斯》。\r\n\r\n幾百年前曾是因貿易而變得興盛繁榮的港口都市。\r\n\r\n是最早發生大規模傳送門現象的地區，現在又被稱為「失落之地」。\r\n\r\n曾居於此處的所有精靈們都躲起來了，也有些精靈因為來不及躲避而被帶進傳送門。\r\n\r\n究竟發生過什麼事情呢…",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501017,
+      "krOffset": "한 때 트로이카에서 손에 꼽히던 항구 중 하나였던 <나르비스>.\r\n\r\n음산한 바다 안개 사이로 부서진 배와 고장 난 등대가 보이는 곳.\r\n\r\n트로이카의 중흥을 함께한 역사 깊은 선착장이지만, 지금은 제대로 된 배조차 없이 버려진 상태다.\r\n\r\n이 항구에서 칼라르 공화국으로 향하는 최단 해상 루트를 이용할 수 있다.",
+      "enOffset": "\"Narvis\", one of the most famous harbors in Troyca at one point.\r\n\r\nA place where wrecked ships and the dysfunctional lighthouse can be seen through the bleak sea mist.\r\n\r\nA historical dock that saw through Troyca's rise and fall, but it is now abandoned and there aren't even any proper boats anymore.\r\n\r\nYou can take the shortest sea route to the Republic of Chalar from this harbor.",
+      "jaOffset": "かつてトロイカ屈指の港の一つだった「ナルビス」。\r\n\r\n不気味な海霧の間から壊れた船と明かりの消えた灯台が覗く場所。\r\n\r\nトロイカと栄枯盛衰を共にした由緒ある港だが、今ではまともな船すらなく、見捨てられたままである。\r\n\r\nこの港からカラール共和国への最短ルートとなる海路を利用できる。",
+      "zh_twOffset": "曾是特羅伊卡首屈一指港口之一的《那勒比斯》。\r\n\r\n在陰森的海霧之中，可以瞭望被摧毀的船隻以及壞掉的燈塔。\r\n\r\n雖然曾為代表特羅伊卡興盛時期的悠久碼頭，但現在被廢棄到連一艘船都看不到。\r\n\r\n這個港口是通往卡拉爾共和國的海上捷徑。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501018,
+      "krOffset": "<메티아스 호>의 갑판 위.\r\n\r\n나르비스 항구 뒤편의 숨겨진 선착장에서 발견한 오래된 중형 선박.\r\n\r\n신비한 힘을 지닌 나무로 만들어진 덕에 오랜 세월이 지났음에도 불구하고 튼튼한 상태를 유지하고 있다.\r\n\r\n태풍이나 해일을 만나더라도, 운행에는 큰 지장이 없어 보인다.\r\n…엄청나게 큰 마물과 마주치기라도 하지 않는다면 말이다.",
+      "enOffset": "On the deck of the \"Mettias\".\r\n\r\nAn old heavy ship found at the hidden dock behind the Narvis harbor.\r\n\r\nThanks to it being made from a tree with mysterious powers, it remains strong even though much time has passed.\r\n\r\nIt looks like it can sail through any typhoons or tsunamis.\r\n...Unless it meets an enormous monster or something.",
+      "jaOffset": "<メティアス号>の甲板の上。\r\n\r\nナルビス港の裏側に隠されている船着き場で発見した古い中型船。\r\n\r\n神秘の力が宿る木で作られているため、古びているにもかかわらず頑強さを保っている。\r\n\r\n嵐や津波に出くわしても運航に大した支障はないと思われる。\r\n…とてつもなく大きな魔物にでも出くわさない限りは。",
+      "zh_twOffset": "《梅蒂亞斯號》的甲板上。\r\n\r\n是在隱身在那勒比斯後的港口中所發現的古老中型船隻。\r\n\r\n是由蘊含神祕之力的木材製作而成的，即便經歷的長時間的歲月，仍然堅實無比。\r\n\r\n即使遭遇颱風或海嘯，似乎也不會受到什麼影響\r\n…但要是遇到非常巨大的魔物就另當別論了。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501019,
+      "krOffset": "칼라르 공화국의 유명한 대설원 중 하나.\r\n\r\n끝도 없이 펼쳐지는 광활한 순백의 평원에는 군데군데 마물 습격을 감시하기 위한 감시탑들이 세워져 있다.\r\n\r\n가능한 이 설원을 직접 건너지 않는 걸 추천하나, 어떻게든 건너야 한다면 조심할 것.\r\n\r\n언제 발이 푹 꺼져 차가운 눈들 사이에 파묻혀버릴 지 모르니까.",
+      "enOffset": "One of the most popular and largest snowfields of the Republic of Chalar.\r\n\r\nIn the endlessly extensive candor plains, there are Watch Towers here and there to watch for monster ambushes.\r\n\r\nIt is advised never to cross the field directly, but beware if you must.\r\n\r\nYou never know when you may be buried in the cold snow.",
+      "jaOffset": "カラール共和国が誇る大雪原の一つ。\r\n\r\n果てしなく広がる純白の平原には、ところどころ魔物の襲撃を見張る監視塔が建てられている。\r\n\r\n避けて通るに越したことはない雪原だが、どうしても通るしかないなら気をつけよう。\r\n\r\n急に足場が崩れ落ち、冷たい雪の下に埋もれることになるかもしれないのだから。",
+      "zh_twOffset": "是卡拉爾共和國著名的大雪原之一。\r\n\r\n在這無邊無際的雪白平原上，隨處可見為監視魔物襲擊而建立的瞭望台。\r\n\r\n最好避免穿越這片雪原，若非得穿越，也一定要小心，\r\n\r\n因為不曉得腳什麼時候會陷進雪裡。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501020,
+      "krOffset": "극비리에 관리되고 있는, 정령연합군의 무기고.\r\n\r\n끝없는 대설원을 넘어 반짝이는 얼음들로 가득한 비경에 세워져 있다.\r\n\r\n희귀한 금속과 광석이 가득한 광산 근처에서 발견된, 옛 문명의 무기 제조 시설을 개조하여 만들어졌다고 한다.\r\n\r\n온갖 비밀과 보안 장치들이 존재하는 만큼 출입 시에는 엄중한 주의가 필요하다.\r\n\r\n…만일 마물들이 쳐들어오기라도 한다면 엄청난 수라장이 되겠지.",
+      "enOffset": "The Soul Alliance Army's armory that is managed as a top secret.\r\n\r\nIt stands among glittering ice beyond the endless snowfield.\r\n\r\nIt is said to have been built by modifying an ancient weapon manufacturing facility discovered near a mine full of precious metals and ores.\r\n\r\nSince all sorts of secrets and security devices dwell here, you need to be very cautious when entering.\r\n\r\n...There would be complete mayhem if monsters ever broke in.",
+      "jaOffset": "極秘裏に管理されている、精霊連合軍の武器庫。\r\n\r\n果てなき大雪原を越えた先、きらめく氷に満ちた秘境に建てられている。\r\n\r\n珍しい金属と鉱石が多く埋まっている鉱山の近くで発見された、旧文明の武器製造施設を改造して作ったのだという。\r\n\r\n多くの謎とセキュリティ装置がある場所のため、立ち入るには細心の注意が必要となる。\r\n\r\n…もし魔物が攻め込んでくれば、とんでもない修羅場となるだろう。",
+      "zh_twOffset": "被嚴密控管中的精靈聯軍軍火庫。\r\n\r\n矗立於無垠的大雪原後、滿是閃亮冰晶的秘境之中。\r\n\r\n據說是由珍稀的金屬和充滿礦石的礦山附近所發現的、古老文明的製造武器設施改建而成的。\r\n\r\n充斥著秘密和保安裝置，因此需要出入時要格外小心。\r\n\r\n…要是魔物入侵的話，一定會亂成一團。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501021,
+      "krOffset": "통채로 모든것이 꽁꽁 얼어붙어버린 산맥.\r\n\r\n가르디눔 대설원을 넘어, 타브리아 제국의 국경 방면으로 향하는 곳에 있다.\r\n\r\n지면과 식물, 생물, 모든 것이 한 순간에 얼어붙어버린 것처럼 완전히 꽁꽁 얼어있다.\r\n\r\n얼음은 절대 만지지 말 것. 만지는 순간 손 끝은 물론, 전신이 얼어버릴 것이다.",
+      "enOffset": "A mountain range where everything is frozen.\r\n\r\nSituated over the Gardinum Snowfield, heading toward the borders of Tabria Empire.\r\n\r\nThe surface, plants, and animals are completely frozen as though it happened in one go.\r\n\r\nNever touch the ice. Not only your fingertips, but your entire body will freeze the moment you do.",
+      "jaOffset": "すべてが丸ごと凍り付いてしまった山脈。\r\n\r\nガルディヌム大雪原を越えた先、タブリア帝国の国境方面に向かう場所にある。\r\n\r\n地面と植物、生物…そのすべてが時間を止められたかのように凍り付いている。\r\n\r\n氷には決して触れないこと。一度触れたが最後、指先はもとより全身が凍り付いてしまうはずだ。",
+      "zh_twOffset": "被凍得嚴嚴實實的山脈。\r\n\r\n位於穿過加爾迪努姆大雪原後、面向塔布里亞帝國的國境之處。\r\n\r\n彷彿地面、植物、生物、所有東西都會瞬時間被冰凍般徹底凍結了。\r\n\r\n絕對不要觸碰這裡的冰霜，一但摸了，不僅指尖，甚至連全身都會被凍僵。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501022,
+      "krOffset": "별하늘을 유유히 헤엄치는 하늘고래들이 태어나는 신비로운 호수.\r\n\r\n칼라르 국경 끝자락에 위치한 비경이다.\r\n\r\n하지만 최근에는 특정 누군가의 술수로 인해 하늘고래 대신 포악한 마물이 태어나는 듯 하는데…\r\n\r\n진입 시에는 반드시 만반의 준비를 갖추도록 하자. ",
+      "enOffset": "A mysterious lake where sky whales that swim through the starry skies are born.\r\r\n\r\r\nIt's an unexplored region located at the end of the Chalar border.\r\r\n\r\r\nRecently somebody casted a spell, causing vicious monsters to appear instead of sky whales...\r\r\n\r\r\nThose who dare enter must be prepare for the worst. ",
+      "jaOffset": "星空をのんびり泳ぐ空クジラが生まれる不思議な湖。\r\n\r\nカラール国境の果てに位置している秘境だ。\r\n\r\nしかし最近、ある者の企みで空クジラの代わりに凶暴な魔物が生まれているようだが…\r\n\r\nここに進入する時は必ずしっかり準備しておくとしよう。",
+      "zh_twOffset": "一座神祕的湖，優游於夜空的天空鯨魚便是誕生於此。\r\r\n\r\r\n位於卡拉爾共和國國境邊陲的祕境。\r\r\n\r\r\n但最近因為特定某人的計謀，產生了殘暴的魔物，而非天空鯨魚…\r\r\n\r\r\n進入前請務必做好萬全準備。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501023,
+      "krOffset": "칼라르와 타브리아를 잇는 중간 국경 지대.\r\n\r\n숲과 설원지대가 그림으로 그린 듯 나누어져 있는 신비로운 산맥.\r\n기후에 따라 초원과 설원의 면적이 조금씩 바뀐다고 한다.\r\n\r\n낮에는 산의 높은 고도로 인해 생성된 안개에 태양 빛이 번져 만들어진 빛의 띠가 눈앞을 수놓는 아름다운 광경을 볼 수 있다.\r\n모험가들은 이 기묘하고 몽환적인 현상을 요정의 장난이라고 부르기도 한다고.",
+      "enOffset": "A border area between Chalar and Tabria.\r\n\r\nMysterious mountains where forests and snowfields are clearly separated.\r\nThe size of the grasslands and that of the snowfields change depending on the climate.\r\n\r\nDuring the day, sunlight smears as it shines through the fog at high altitude, creating a beautiful band of light that almost blinds you.\r\nAdventurers call this strange, dreamy phenomenon as the play of the fairies.",
+      "jaOffset": "カラールとタブリアを繋ぐ中間国境地帯。\r\n\r\n森と雪原地帯がまるで絵に描いたように分かれている不思議な山脈。\r\n気候により草原と雪原の面積が少しずつ変わるらしい。\r\n\r\n昼は山の高い高度で生成された霧に太陽光が滲んで作られた光の帯が目の前に広がるという美しい光景を見られる。\r\n冒険者たちはこの夢のように奇妙な現象を妖精の悪戯と呼ぶらしい。",
+      "zh_twOffset": "連接卡拉爾和塔布里亞的邊境地帶。\r\n\r\n像畫一樣分隔森林和雪原地帶的神祕山脈。\r\n據說根據氣候的不同，草原和雪原的面積會產生些許變化。\r\n\r\n白天可以看到因海拔高度所產生的霧氣，由陽光灑落點綴而成的光暈美景。\r\n冒險家們把這種奇妙夢幻的現象稱為精靈的惡作劇。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501024,
+      "krOffset": "타브리아 암석 해안지대에 위치한 연안. \r\n타브리아 건국 신화의 기원이 되는 장소라 하여 '시조의 연안'이라는 이름이 붙었다.\r\n\r\n오랜 시간 동안 파도에 의해 침식된 암석이 각양각색의 바위기둥을 형성하여 인위적인 손길이 일체 닿지 않은 자연의 신비와 기상을 느낄 수 있다.\r\n\r\n수많은 바위기둥 중에서도 가장 유명한 것은 바로 검 형태를 한 바위기둥으로,\r\n타브리아의 국가 엠블럼은 이 바위기둥을 본따 만들어졌다고 한다.",
+      "enOffset": "A coast located near the rocky parts of Tabria.\r\nIt's called \"Founder's Coast\" because it's where they say Tabria was founded.\r\n\r\nWaves have crashed against the coast for ages, forming various shapes of rock pillars. It's where one can feel the mysterious power of nature, a place untouched by civilization.\r\n\r\nAmong all the rock pillars, one that resembles the shape of a sword stands out.\r\nThey say this rock pillar was the inspiration for the design of Tabria's national emblem.",
+      "jaOffset": "タブリアの岩石海岸地帯にある沿岸。\r\nタブリア建国神話の起源となる場所であり、「始祖の沿岸」と名付けられた。\r\n\r\n長い間波によって浸食された岩石が多種多様の岩柱を形成し、一切の加工が施されていない自然の神秘が感じられる。\r\n\r\n数多くの岩柱の中でも最も有名なのは剣の形をした柱であり、\r\nタブリアの国章はこの岩柱を模ったものだと言われる。",
+      "zh_twOffset": "位於塔布里亞岩石海岸地帶的沿岸。\r\n這裡曾是塔布里亞建國神話的起源地，因此被稱為「始祖沿岸」。\r\n\r\n長時間被海浪侵蝕的岩石形成了各式各樣的石柱，完全沒有人為痕跡，可以感受到大自然的神祕和氣魄。\r\n\r\n在許多石柱中，最有名的就是劍狀的石柱，\r\n塔布里亞的國家標誌就是仿造這個石柱製作的。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501025,
+      "krOffset": "시리도록 푸른 바닷물이 발끝을 적시는 해식 동굴.\r\n\r\n동굴 전체에 흐르는 풍부한 마나의 물결이 마치 별바다에 서 있는 듯한 황홀감을 선사한다.\r\n\r\n아름다운 동굴 초입과 달리 개미굴처럼 복잡한 내부 지형으로 조난 사고가 빈번히 발생한다고 한다.\r\n절대로 깊숙이 들어가지 않도록 주의할 것.",
+      "enOffset": "A sea cave within the cold blue sea.\r\r\n\r\r\nThe cave is overflowing with Mana, which gives the cave an ecstatic view that makes you feel as if you are standing on a sea of stars.\r\r\n\r\r\nUnlike the beautiful entry point into the cave, the inside is complex like an ant cave. They say many get lost inside.\r\r\nBe careful not to dive in too deep.",
+      "jaOffset": "まぶしいくらい青い海の水が足先を濡らす海蝕洞。\r\n\r\n洞窟全体に流れる豊かなマナの波が、まるで星の海に立っているような恍惚感を与えてくれる。\r\n\r\n美しい洞窟の入口とは異なり、アリの巣のように複雑な内部地形で遭難事故が頻繁に発生するという。\r\n絶対に深入りしないように注意が必要だ。",
+      "zh_twOffset": "冰冷的藍色海水會浸濕腳尖的海蝕洞。\r\r\n\r\r\n流淌在整個洞窟裡的澎湃魔力波浪，給人一種身處星海裡的朦朧感。\r\r\n\r\r\n不同於美麗的洞窟入口，內部地形像蟻穴一樣複雜，遇難事件頻發。\r\r\n注意絕對不要進入洞窟深處。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501026,
+      "krOffset": "중앙 도시에 위치한 타브리아 황성의 입구.\r\n\r\n안개와 구름을 두른 채 수천 년 동안 정상을 수호하는 성이 보인다.\r\n다리 곳곳에 설치된 첨탑은 유사시 포탑으로 활용되기도.\r\n\r\n불리는 명칭은 입구이지만, 실제 본성까지의 거리는 굉장히 멀다고 한다.",
+      "enOffset": "Entrance to the imperial palace of Tabria nestled in the central city.\r\n\r\nEnveloped in mist and clouds, this ancient fortress has stood watch over the peak for millennia.\r\nThe spires along the bridge serve as turrets if needed.\r\n\r\nWhile it is called the entrance, the actual distance to the main castle is remarkably far.",
+      "jaOffset": "中央都市に位置するタブリア皇城の入口。\r\n\r\n霧と雲をまとったまま何千年もの間、頂上を守っている城が見える。\r\n橋のあちこちに設置された尖塔は、有事の際に砲塔として活用されることもある。\r\n\r\n入口と呼ばれているが、実際の皇城までの距離はとても遠い。",
+      "zh_twOffset": "位於中央城市的塔布里亞皇城入口。\r\n\r\n可看到雲霧繚繞，守護山頂數千年的城。\r\n橋上各處設置的尖塔在非常時期還被用作炮塔。\r\n\r\n雖然被稱為入口，但據說實際到主城的距離非常遠。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501027,
+      "krOffset": "타브리아 최대 규모의 국가 연구소.\r\n마도 공학 분야 전체를 아우르는 정부출연연구기관이다.\r\n\r\n수많은 연구 분야 중에서도 특히 저명한 부문은 마도 공학에 기반한 종합적인 국방 연구로, 타브리아 군수품의 대다수를 엠포리움 연구소에서 제작하고 있다.\r\n\r\n주요 연구원의 대부분은 아카데미카의 졸업생이며, 엘리트 중의 엘리트들로 이루어져있다고 한다.",
+      "enOffset": "The largest research facility in Tabria.\r\nThis state-funded research institution encompasses the entire field of Magitechnology.\r\n\r\nAmong its numerous research areas, the Emporium Laboratory is most celebrated for its comprehensive national defense projects rooted in Magitechnology, producing the majority of Tabria's military supplies.\r\n\r\nMost of the leading researchers are Academica graduates, representing the crème de la crème of their fields.",
+      "jaOffset": "タブリア最大の国立研究所。\r\n魔導工学の分野全体を網羅する政府出資の研究機関。\r\n\r\n数多くの研究分野の中でも特に有名な部門は魔導工学に基づく総合的な国防研究で、タブリア軍需品の大多数をエンポリアム研究所で製作している。\r\n\r\n主な研究者の多くはアカデミカの卒業生であり、エリート中のエリートから構成されているという。",
+      "zh_twOffset": "塔布里亞規模最大的國家研究所。\r\n集結了所有魔導工學領域的政府研究機構。\r\n\r\n在眾多研究領域當中，特別著名的是以魔導工學為基礎的綜合國防研究，因此塔布里亞的軍用物資大多由岩普利翁研究所生產。\r\n\r\n主要研究員大部分畢業於阿卡戴米卡，由菁英中的菁英組成。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501028,
+      "krOffset": "타브리아 제국 산맥에 위치한 등대. \r\n하늘을 찌를 듯 높이 솟은 등대를 험난한 산이 둘러싸고 있다.\r\n\r\n황제가 직접 관리하는 구획이나,\r\n타브리아의 정령들에겐 그저 특이한 건축물 정도로 알려진 듯하다.\r\n\r\n대지에 박힌 등대는 마치 무언가를 봉인하는 쐐기처럼 하늘을 향해 강렬한 빛을 내뿜고 있다.\r\n지저의 깊은 곳, 그 아래에 잠들어 있는 건 대체 무엇일까…",
+      "enOffset": "A lighthouse located in the mountains of the Tabria Empire.\r\r\nEncased by treacherous peaks, this towering lighthouse rises high into the sky.\r\r\n\r\r\nWhile the area is under the direct supervision of the empress,\r\r\nthe Souls of Tabria seem to see it as just a peculiar structure.\r\r\n\r\r\nEmitting a powerful light skyward, the lighthouse stands embedded in the ground like a wedge sealing away something.\r\r\nWhat could be slumbering deep below?",
+      "jaOffset": "タブリア帝国の山脈にある灯台。\r\n天をも衝くようにそびえる灯台は険しい山に囲まれている。\r\n\r\n皇帝直々で管理される区域だが、\r\nタブリアの精霊たちにただ特殊な建築物程度で知られているらしい。\r\n\r\n大地に立つ灯台は、まるで何かを封印する楔のように天に向かって強烈な光を放っている。\r\n地底の深部、その下に眠っているものは一体…",
+      "zh_twOffset": "位於塔布里亞帝國山脈的燈塔。\r\r\n險峻的山脈環繞著高聳入雲的燈塔。\r\r\n\r\r\n是皇帝親自管理的地區，\r\r\n但對塔布里亞的精靈而言，似乎只是個特別的建築。\r\r\n\r\r\n嵌入大地的燈塔就像封印著什麼的楔子一樣，向天空射出強烈的光芒。\r\r\n到底是什麼沉睡在那地底的深處…",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501029,
+      "krOffset": "아우렐리아 도시 연맹의 바로 밑, 아득한 심해에 존재하는 유적.\r\n\r\n아치형 외벽에 새겨진 회로에서 지금은 사라진 문명의 흔적을 엿볼 수 있다.\r\n\r\n잔향마저 삼켜지는 아득한 무저갱 속,\r\n이 세계에 파란을 불러 올 존재가 잠들어 있다.",
+      "enOffset": "Submerged ruins in the depths of the sea beneath Megalopolis Aurelia.\r\n\r\nThe circuits carved on its arched outer walls reveal glimpses of a civilization long gone.\r\n\r\nWithin this profound abyss that absorbs even echoes\r\nslumbers a creature that will bring chaos to this world.",
+      "jaOffset": "アウレリア都市連盟の真下の海の底深くにある深海遺跡。\r\n\r\n精霊イブが眠っていた場所で、\r\n超人類たちが統制不可能だと判断した精霊たちを閉じ込める監禁施設「無底坑」が存在している。",
+      "zh_twOffset": "位於奧里利亞市聯盟下方，幽深大海裡的遺跡。\r\n\r\n可以從刻在弧形外壁上的線路一窺現已消失的文明痕跡。\r\n\r\n連殘響都會被吞噬的幽邃無底深淵裡，\r\n沉睡著能在這世界掀起波瀾的存在。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501030,
+      "krOffset": "타브리아 제국 지하에 광활하게 펼쳐진 지하 도시의 슬럼가.\r\n\r\n여러 이유로 지상에서 살아갈 수 없는 정령들이 모인 밤의 도시 중에서도 가장 치안이 나쁜 지역이다.\r\n\r\n붉은 공작이 거느린 밤의 일족마저도 이 곳에서 벌어나는 범죄는 따로 취급할 정도.\r\n\r\n땅 속으로 드리워진 타브리아 제국의 가장 어두운 그림자이기도 하다.",
+      "enOffset": "A vast underground slum beneath the Tabria Empire.\r\n\r\nNight City is known as the most dangerous area among the lawless havens of outcast Souls unable to live above ground for various reasons.\r\n\r\nEven the Nightbloods, ruled by the Crimson Duchess, set aside the crimes here as a special case.\r\n\r\nThis place is truly the darkest shadow lurking beneath the Tabria Empire.",
+      "jaOffset": "タブリア帝国の地下に広大に広がっている地下都市のスラム街。\r\n\r\n様々な理由で地上で生きることができなくなった精霊が集まった夜の都市の中でも最も治安が悪い地域。\r\n\r\n赤い公爵が率いる夜の一族でさえ、ここでの犯罪は別扱いするほどだ。\r\n\r\n地下に潜りこんだ、タブリア帝国の最も暗い影でもある。",
+      "zh_twOffset": "塔布里亞帝國地下廣闊無垠的地下都市貧民窟。\r\n\r\n夜之都市聚集了因各種原因無法在地面生存的精靈，而這裡是那當中治安最差的地區。\r\n\r\n即使是紅公爵率領的夜之族，也會將發生在這裡的犯罪另當別論。\r\n\r\n同時也是塔布里亞帝國籠罩在地底最黑暗的陰影。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501031,
+      "krOffset": "타브리아 제국의 가장 깊은 곳이자, 일반적인 방법으로는 도달할 수 없는 왜곡된 장소. \r\n설명할 수 없는 강력한 힘이 이 공간의 모든 질서와 법칙을 어그러뜨리고 있다.\r\n\r\n먼 옛날, 타브리아의 대제는 이곳에서 거대한 짐승을 봉인했다고 한다.\r\n\r\n「타락한 영혼의 세계를 정화하는 신성한 의식이 거행될지어니\r\n모든 영혼은 두려워 말고 기도하라…」",
+      "enOffset": "The deepest, most twisted reaches of the Tabria Empire—a place beyond the reach of ordinary paths.\r\nAn incomprehensible power permeates this place, unraveling its order and laws.\r\n\r\nIn the distant past, the Great Empress of Tabria is said to have sealed a colossal beast here.\r\n\r\n\"A sacred ritual shall be performed to cleanse the world of fallen souls.\r\nAll souls shall pray without fear.\"",
+      "jaOffset": "タブリア帝国の奥深く、一般的な方法では到達できない歪んだ場所。\r\n言葉にはできないほど強力な力が、この空間のすべての秩序と法則を乱している。\r\n\r\n遠い昔、タブリアの大帝はここで巨大な獣を封印したらしい。\r\n\r\n「堕落した魂の世界を浄化する神聖な儀式が行われる\r\nすべての魂は恐れず祈ればいい…」",
+      "zh_twOffset": "塔布里亞帝國的最深處，無法用普通方法抵達的扭曲場所。\r\n不可名狀的強大力量破壞著這空間的所有秩序和法則。\r\n\r\n據說很久以前，塔布里亞大帝在這裡封印了巨大的野獸。\r\n\r\n「將會舉行淨化墮落之魂世界的神聖儀式，\r\n所有靈魂不必害怕，祈禱吧…」",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501032,
+      "krOffset": "트로이카 왕국 해역에 위치한 등대.\r\n이 인근의 거친 해류와 풍랑은 바다의 신이 잠들어 있기 때문이라는 전설이 있다.\r\n\r\n트로이카를 건국한 만물왕이 아우렐리아와 협력하며 교류를 다지기 위해 세운 것으로 알려져 있다.\r\n바닷길을 밝히는 등대이면서도 바닷물에 녹아 있는 마나를 정제해 마력으로 가공하는 발전소의 역할 또한 겸하고 있었으나, 만물왕이 잠든 순간부터 가동을 멈추었다.\r\n\r\n그러나 가동을 멈춘 지금도 등대는 하늘을 향해 강렬한 빛을 내뿜고 있다.\r\n무수한 생명이 공존하는 바다의 중심에서, 등대는 과연 무엇을 위해 아직도 불을 밝히고 있는 것일까…",
+      "enOffset": "A lighthouse standing in the waters of the Kingdom of Troyca.\r\nLegends whisper that the fierce waves and treacherous currents here exist because the god of the sea slumbers beneath them.\r\n\r\nIt is said that the Queen of All Things, the founder of Troyca, built this lighthouse in collaboration with Aurelia to strengthen their ties.\r\nIt once refined mana from seawater into magical energy, serving as a power plant. Yet, when the Queen of All Things fell into slumber, its machinery stopped working.\r\n\r\nStill, even now, the lighthouse pierces the sky with its unwavering brilliance.\r\nIn the heart of the ever-changing sea, where countless lives intertwine, what purpose does its undying light still serve...?",
+      "jaOffset": "トロイカ王国の海域に位置している灯台。\r\nこの周りの海流や風浪が荒いのは、海神が眠っているためという伝説がある。\r\n\r\nトロイカを建国した万物王がアウレリアと協力し、交流を深めるために建てたと言われている。\r\n海道を照らす灯台でありながら、海水に溶け込んでいるマナを精製して魔力に加工する発電所の役割も兼ねていたが、万物王が眠ったときから稼働が止まっている。\r\n\r\nしかし、稼働が止まった今も灯台は空に向けて強烈な光を放っている。\r\n無数の命が共存する海の中心で、灯台はなんのためにいまだに明かりを灯しているのか…",
+      "zh_twOffset": "位於特羅伊卡王國海域的燈塔。\r\n據傳這附近的湍急海流與洶湧風浪是因為有海洋之神沉睡於此。\r\n\r\n聽說是建設特羅伊卡的萬物之王建來與奧里利亞合作交流的。\r\n它是照亮海面的燈塔，同時也兼具發電廠的作用，將融在海裡的魔力來源精煉，加工成魔力，但自從萬物之王沉睡的瞬間起就停止運轉。\r\n\r\n然而停止運轉的現在，燈塔仍朝天空發射著強光。\r\n在無數生命共存的海洋中心，燈塔究竟是為了什麼，至今仍閃爍著燈光呢…",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501033,
+      "krOffset": "트로이카 왕국, 별의 등대 인근의 바다. \r\n\r\n달빛이 비치면 그 바닷물 아래에 있는 온갖 마법 생물들이 마치 별 무리처럼 빛난다는 이유로 이런 이름이 붙여지게 되었다. \r\n\r\n하지만 그 아름다움에 비해 주변의 해류는 한없이 사납기 그지없어서, \r\n안전하게 이 구역을 건너기 위해서는 \r\n트로이카의 왕에게 대대로 전해지는 가호의 힘이 필요하다는 소문이 있다.",
+      "enOffset": "The sea near the Lighthouse of the Stars in the Kingdom of Troyca.\r\n\r\nIts name comes from the magical creatures beneath the waves, said to sparkle like stars under the moonlight.\r\n\r\nDespite its breathtaking beauty, the area is infamous for its vicious currents.\r\nLocal legend claims that one needs the blessing of protection\r\npassed down through generations of the rulers of Troyca to navigate through unharmed.",
+      "jaOffset": "トロイカ王国の星の灯台の近くにある海。\r\n\r\n月明りが差し込むと、海底にいる様々な魔法生物が星の群れのように輝くことから名付けられた。\r\n\r\nしかしその美しさに反し、周りの海流は限りなく凶暴なため、\r\n安全にこのエリアを通り抜けるには\r\nトロイカの王に代々伝わる加護の力が必要だという噂がある。",
+      "zh_twOffset": "特羅伊卡王國，星之燈塔的鄰近海域。\r\n\r\n星光灑落，海面底下的各種魔法生物有如點點星辰一般，因此有了這樣的名字。\r\n\r\n但因為相對於美妙的外表，周遭的水流無比湍急洶湧，\r\n據傳為了安全度過這個區域，\r\n特羅伊卡的王需要代代相傳的庇佑力量。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 501034,
+      "krOffset": "아우렐리아 도시 연맹으로 향하는 하늘배용 공중 항로.\r\n\r\n항로는 고정되어 있지 않고, 시시각각 변화하는 기후와 하늘배 운항 상황에 맞춰 최적의 항로를 찾아 변화한다. \r\n\r\n이 항로를 유지하기 위해서는 막대한 마나와 복잡한 술식이 필요한데, 아우렐리아는 마나 융합로를 통해 항로에 마력을 상시 공급하고 있다. 또한 복잡한 운용 술식은 아우렐리아에 다수 소속된 천사형, 악마형 정령들의 역량으로 감당하고 있다고 한다.",
+      "enOffset": "An aerial route designated for airships bound for Megalopolis Aurelia.\r\n\r\nIt constantly recalibrates itself, adjusting to changing climates and shifting airship traffic to maintain optimal conditions.\r\n\r\nMaintaining it calls for immense Mana and complex spells. Aurelia powers the route through a mana fusion reactor. The intricate operational spells are handled by the many Angel and Demon Souls of Aurelia.",
+      "jaOffset": "",
+      "zh_twOffset": "前往奧里利亞市聯盟的飛船用空中航道。\r\n\r\n沒有固定的航道，將根據時刻變換的氣候與飛船的航行狀況找出最佳航線。\r\n\r\n為維持航道，需要莫大的魔力與複雜的術式，不過奧里利亞透過魔力融合爐，固定供給航道所需的魔力。另外，奧里利亞大多為天使型、惡魔型精靈，藉由她們的能力來承擔複雜的操作術式。",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 510001,
+      "krOffset": "북부전선",
+      "enOffset": "Northern Frontline",
+      "jaOffset": "北部戦線",
+      "zh_twOffset": "北部戰線",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 510002,
+      "krOffset": "자유 타입 게이트",
+      "enOffset": "Unlimited Gate",
+      "jaOffset": "自由タイプゲート",
+      "zh_twOffset": "自由類型傳送門",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 510003,
+      "krOffset": "인간형 게이트",
+      "enOffset": "Humanlike Gate",
+      "jaOffset": "人間型ゲート",
+      "zh_twOffset": "人類型傳送門",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 510004,
+      "krOffset": "야수형 게이트",
+      "enOffset": "Beast Gate",
+      "jaOffset": "野獣型ゲート",
+      "zh_twOffset": "野獸型傳送門",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 510005,
+      "krOffset": "요정형 게이트",
+      "enOffset": "Fairy Gate",
+      "jaOffset": "妖精型ゲート",
+      "zh_twOffset": "妖精型傳送門",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 510006,
+      "krOffset": "불사형 게이트",
+      "enOffset": "Undead Gate",
+      "jaOffset": "不死型ゲート",
+      "zh_twOffset": "不死型傳送門",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 801001,
+      "krOffset": "식품 안전성 검사",
+      "enOffset": "Food Safety Insepction",
+      "jaOffset": "食品の安全性検査",
+      "zh_twOffset": "食品安全性檢查",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 801002,
+      "krOffset": "두근두근 사랑의 로직",
+      "enOffset": "Logic of Love",
+      "jaOffset": "ドキドキ愛のロジック",
+      "zh_twOffset": "噗通噗通愛情的邏輯",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 3032118,
+      "krOffset": "시련의 환영",
+      "enOffset": "Illusion of Ordeal",
+      "jaOffset": "試練の幻影",
+      "zh_twOffset": "考驗的幻影",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 8001030,
+      "krOffset": "스트라이브 시스템 - 클레르 {0}단계",
+      "enOffset": "Strive System - Claire Stage {0}",
+      "jaOffset": "",
+      "zh_twOffset": "奮戰系統—克萊兒第{0}階段",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 8001040,
+      "krOffset": "스트라이브 시스템 - 아키 {0}단계",
+      "enOffset": "Strive System - Aki Stage {0}",
+      "jaOffset": "",
+      "zh_twOffset": "奮戰系統—秋第{0}階段",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 8003110,
+      "krOffset": "스트라이브 시스템 - 나이아 {0}단계",
+      "enOffset": "Strive System - Naiah Stage {0}",
+      "jaOffset": "ストライブシステム - ナイア ステップ{0}",
+      "zh_twOffset": "奮戰系統—娜伊雅第{0}階段",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 8004100,
+      "krOffset": "스트라이브 시스템 - 페트라 {0}단계",
+      "enOffset": "Strive System - Petra Stage {0}",
+      "jaOffset": "ストライブシステム - ペトラ ステップ{0}",
+      "zh_twOffset": "奮戰系統—佩特拉第{0}階段",
+      "zh_cnOffset": ""
+    },
+    {
+      "no": 8006020,
+      "krOffset": "스트라이브 시스템 - 리젤로테 {0}단계",
+      "enOffset": "Strive System - Lizelotte Stage {0}",
+      "jaOffset": "",
+      "zh_twOffset": "奮戰系統—莉澤洛特第{0}階段",
+      "zh_cnOffset": ""
+    }
+  ]
+}
