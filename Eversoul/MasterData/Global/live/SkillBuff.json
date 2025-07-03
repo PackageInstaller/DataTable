@@ -19460,6 +19460,20 @@
       "battle_text": 23190
     },
     {
+      "no": 212633,
+      "buff_category": 2,
+      "buff_effect": 102,
+      "value": -0.25,
+      "duration": 8.0,
+      "group": 216233,
+      "overlap_limit": 1,
+      "fx_path": "none",
+      "icon_path": "Defence",
+      "name": 20152,
+      "desc": 102,
+      "battle_text": 20152
+    },
+    {
       "no": 212733,
       "buff_category": 2,
       "buff_effect": 201,
@@ -22518,20 +22532,6 @@
       "overlap_limit": 1,
       "fx_path": "none",
       "icon_path": "0"
-    },
-    {
-      "no": 216233,
-      "buff_category": 2,
-      "buff_effect": 102,
-      "value": -0.25,
-      "duration": 8.0,
-      "group": 216233,
-      "overlap_limit": 1,
-      "fx_path": "none",
-      "icon_path": "Defence",
-      "name": 20152,
-      "desc": 102,
-      "battle_text": 20152
     },
     {
       "no": 216237,
@@ -94473,15 +94473,27 @@
       "battle_text": 23912
     },
     {
-      "no": 6011141,
+      "no": 6011140,
       "buff_category": 4,
-      "buff_effect": 1603,
-      "value": 6011141.0,
-      "duration": 10.0,
-      "group": 6011141,
+      "buff_effect": 1602,
+      "value": 6011140.0,
+      "group": 6011140,
       "overlap_limit": 1,
       "fx_path": "none",
-      "icon_path": "Delayed_Dmg",
+      "icon_path": "0"
+    },
+    {
+      "no": 6011141,
+      "buff_category": 4,
+      "is_important": 1,
+      "buff_order": 3,
+      "buff_effect": 1603,
+      "value": 6011141.0,
+      "duration": 999.0,
+      "group": 6011141,
+      "overlap_limit": 3,
+      "fx_path": "none",
+      "icon_path": "BuffAmplify",
       "name": 27056,
       "desc": 27057,
       "battle_text": 27056
@@ -94489,27 +94501,38 @@
     {
       "no": 6011142,
       "buff_category": 4,
-      "buff_effect": 1604,
-      "value": 6011142.0,
-      "duration": 10.0,
-      "group": 6011141,
+      "buff_effect": 101,
+      "value": -0.5,
+      "duration": 6.0,
+      "group": 6011142,
+      "overlap_limit": 1,
+      "fx_path": "none",
+      "icon_path": "Attack",
+      "name": 27058,
+      "desc": 27059,
+      "battle_text": 27058
+    },
+    {
+      "no": 6011143,
+      "buff_category": 3,
+      "buff_effect": 1603,
+      "value": 6011143.0,
+      "duration": 999.0,
+      "group": 6011143,
       "overlap_limit": 1,
       "fx_path": "none",
       "icon_path": "0"
     },
     {
-      "no": 6011143,
-      "buff_category": 4,
-      "is_important": 1,
-      "buff_order": 3,
-      "buff_effect": 205,
-      "duration": 20.0,
-      "group": 6011143,
+      "no": 6011144,
+      "buff_category": 3,
+      "buff_effect": 1604,
+      "value": 6011144.0,
+      "duration": 999.0,
+      "group": 6011144,
       "overlap_limit": 1,
-      "fx_path": "Fx_Phares_Skill03_Chain_DeBuff_00",
-      "icon_path": "Ess_False",
-      "name": 27058,
-      "desc": 27059
+      "fx_path": "none",
+      "icon_path": "0"
     },
     {
       "no": 6011150,
@@ -94582,6 +94605,19 @@
       "icon_path": "0"
     },
     {
+      "no": 6011157,
+      "buff_category": 4,
+      "buff_effect": 1401,
+      "value": 0.5,
+      "duration": 8.0,
+      "group": 6011157,
+      "overlap_limit": 1,
+      "fx_path": "none",
+      "icon_path": "Defence",
+      "name": 27668,
+      "desc": 27247
+    },
+    {
       "no": 6011158,
       "buff_category": 3,
       "buff_effect": 1602,
@@ -94591,6 +94627,19 @@
       "overlap_limit": 1,
       "fx_path": "none",
       "icon_path": "0"
+    },
+    {
+      "no": 6011159,
+      "buff_category": 3,
+      "buff_effect": 1401,
+      "value": -0.5,
+      "duration": 999.0,
+      "group": 6011159,
+      "overlap_limit": 1,
+      "fx_path": "none",
+      "icon_path": "Defence",
+      "name": 27667,
+      "desc": 27247
     },
     {
       "no": 6011160,
