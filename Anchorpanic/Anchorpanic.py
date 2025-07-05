@@ -45,9 +45,8 @@ def decrypt_directory(directory_path):
                 decrypt_file(file_path, des_key, IV_BYTES)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="解密lua")
-    parser.add_argument("input_directory")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("i")
     args = parser.parse_args()
 
-    decrypt_directory(args.input_directory)
-    print("解密完成")
+    decrypt_directory(args.i)
