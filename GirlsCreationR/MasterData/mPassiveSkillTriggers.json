@@ -1,0 +1,572 @@
+[
+    {
+        "id": 1001,
+        "timing_bits": 1,
+        "condition_bits": 0,
+        "damage_bits": 0,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "常時"
+    },
+    {
+        "id": 1002,
+        "timing_bits": 2,
+        "condition_bits": 0,
+        "damage_bits": 0,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "バトル開始時"
+    },
+    {
+        "id": 1003,
+        "timing_bits": 3,
+        "condition_bits": 0,
+        "damage_bits": 0,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "ターン開始時"
+    },
+    {
+        "id": 1004,
+        "timing_bits": 4,
+        "condition_bits": 0,
+        "damage_bits": 0,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "ターン終了時"
+    },
+    {
+        "id": 1005,
+        "timing_bits": 5,
+        "condition_bits": 0,
+        "damage_bits": 0,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "行動開始時"
+    },
+    {
+        "id": 1006,
+        "timing_bits": 6,
+        "condition_bits": 0,
+        "damage_bits": 0,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "行動終了時"
+    },
+    {
+        "id": 1101,
+        "timing_bits": 0,
+        "condition_bits": 1,
+        "damage_bits": 0,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "待機状態時（技法、絶技を使用せずに待機した場合のみ）"
+    },
+    {
+        "id": 1102,
+        "timing_bits": 0,
+        "condition_bits": 2,
+        "damage_bits": 0,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "入魂時"
+    },
+    {
+        "id": 2001,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 1,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "ダメージを与えた時"
+    },
+    {
+        "id": 2002,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 2,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "ダメージを受けた時"
+    },
+    {
+        "id": 2003,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 3,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "通常攻撃でダメージを与えた時"
+    },
+    {
+        "id": 2004,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 4,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "通常攻撃でダメージを受けた時"
+    },
+    {
+        "id": 2005,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 5,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "技法でダメージを与えた時"
+    },
+    {
+        "id": 2006,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 6,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "技法でダメージを受けた時"
+    },
+    {
+        "id": 2007,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 7,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "絶技でダメージを与えた時"
+    },
+    {
+        "id": 2008,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 8,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "絶技でダメージを受けた時"
+    },
+    {
+        "id": 2009,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 9,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "戦闘不能時"
+    },
+    {
+        "id": 2010,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 10,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "インスピレーションスキルでダメージを与えた時"
+    },
+    {
+        "id": 2011,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 11,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "インスピレーションスキルでダメージを受けた時"
+    },
+    {
+        "id": 2100,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 500,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力5%以下になった時"
+    },
+    {
+        "id": 2101,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 1000,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力10%以下になった時"
+    },
+    {
+        "id": 2102,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 1500,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力15%以下になった時"
+    },
+    {
+        "id": 2103,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 2000,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力20%以下になった時"
+    },
+    {
+        "id": 2104,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 2500,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力25%以下になった時"
+    },
+    {
+        "id": 2105,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 3000,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力30%以下になった時"
+    },
+    {
+        "id": 2106,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 3500,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力35%以下になった時"
+    },
+    {
+        "id": 2107,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 4000,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力40%以下になった時"
+    },
+    {
+        "id": 2108,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 4500,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力45%以下になった時"
+    },
+    {
+        "id": 2109,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 5000,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力50%以下になった時"
+    },
+    {
+        "id": 2110,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 5500,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力55%以下になった時"
+    },
+    {
+        "id": 2111,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 6000,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力60%以下になった時"
+    },
+    {
+        "id": 2112,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 6500,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力65%以下になった時"
+    },
+    {
+        "id": 2113,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 7000,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力70%以下になった時"
+    },
+    {
+        "id": 2114,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 7500,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力75%以下になった時"
+    },
+    {
+        "id": 2115,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 8000,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力80%以下になった時"
+    },
+    {
+        "id": 2116,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 8500,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力85%以下になった時"
+    },
+    {
+        "id": 2117,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 9000,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力90%以下になった時"
+    },
+    {
+        "id": 2118,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 12,
+        "trigger_param": 9500,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "体力95%以下になった時"
+    },
+    {
+        "id": 3000,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 13,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "主効果その他発動時"
+    },
+    {
+        "id": 3001,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 13,
+        "trigger_param": 0,
+        "trigger_param2": "1",
+        "skill_types": "2|3",
+        "description": "主効果攻撃発動時"
+    },
+    {
+        "id": 3002,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 13,
+        "trigger_param": 0,
+        "trigger_param2": "2",
+        "skill_types": "2|3",
+        "description": "主効果回復発動時"
+    },
+    {
+        "id": 10030,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 3,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "弾き飛ばし発生時"
+    },
+    {
+        "id": 10040,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 4,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "引き寄せ発生時"
+    },
+    {
+        "id": 10070,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 7,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "自傷時"
+    },
+    {
+        "id": 10080,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 8,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "系統特攻発生時"
+    },
+    {
+        "id": 10090,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 9,
+        "trigger_param2": "1200|1300|1400|1401",
+        "skill_types": "2|3",
+        "description": "オブジェクト召喚時（技法＆絶技）"
+    },
+    {
+        "id": 10091,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 9,
+        "trigger_param2": "1200|1300|1400|1401",
+        "skill_types": "2",
+        "description": "オブジェクト召喚時（技法のみ）"
+    },
+    {
+        "id": 10100,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 10,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "フォーム付与時"
+    },
+    {
+        "id": 10110,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 11,
+        "trigger_param2": "1|2|3",
+        "skill_types": "2|3",
+        "description": "特殊効果付与時"
+    },
+    {
+        "id": 10111,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 11,
+        "trigger_param2": "1",
+        "skill_types": "2|3",
+        "description": "状態異常付与時"
+    },
+    {
+        "id": 10112,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 11,
+        "trigger_param2": "2",
+        "skill_types": "2|3",
+        "description": "補助効果付与時"
+    },
+    {
+        "id": 10113,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 11,
+        "trigger_param2": "3",
+        "skill_types": "2|3",
+        "description": "天賦付与時"
+    },
+    {
+        "id": 10120,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 12,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "弱点付与時"
+    },
+    {
+        "id": 10130,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 13,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "バフ付与時"
+    },
+    {
+        "id": 10160,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 16,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "デバフ付与時"
+    },
+    {
+        "id": 10430,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 43,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "移動攻撃発生時"
+    },
+    {
+        "id": 10560,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 15,
+        "trigger_param": 56,
+        "trigger_param2": "0",
+        "skill_types": "2|3",
+        "description": "シールド付与時"
+    }
+]
