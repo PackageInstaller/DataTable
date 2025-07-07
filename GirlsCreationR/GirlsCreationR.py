@@ -55,7 +55,7 @@ def triple_des(encrypted_data: bytes) -> Optional[str]:
     json_data = json.loads(json_text)
     return json.dumps(json_data, ensure_ascii=False, indent=4)
 
-def extract_and_decrypt_master_data(master_dmm_path: str):
+def decrypt_master(master_dmm_path: str):
     if os.path.exists(Config.MASTER_DATA_DIR):
         files_in_dir = [f for f in os.listdir(Config.MASTER_DATA_DIR) 
                         if os.path.isfile(os.path.join(Config.MASTER_DATA_DIR, f))]
@@ -219,7 +219,7 @@ class Downloader:
         
         master_dmm_path = os.path.join(Config.DOWNLOAD_DIR, "master.dmm")
         if os.path.exists(master_dmm_path):
-            extract_and_decrypt_master_data(master_dmm_path)
+            decrypt_master(master_dmm_path)
 
 if __name__ == "__main__":
     
