@@ -798,55 +798,110 @@
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Dark",
-            "SortingOrder": 8100,
-            "ShowUI": true
+            "SortingOrder": 8200,
+            "ShowUI": true,
+            "AssetList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 40
+                }
+            ]
         },
         {
             "Index": 213,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Divine",
-            "SortingOrder": 8100,
-            "ShowUI": true
+            "SortingOrder": 8200,
+            "ShowUI": true,
+            "AssetList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 40
+                }
+            ]
         },
         {
             "Index": 211,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Electric",
-            "SortingOrder": 8100,
-            "ShowUI": true
+            "SortingOrder": 8200,
+            "ShowUI": true,
+            "AssetList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 40
+                }
+            ]
         },
         {
             "Index": 207,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Fire",
-            "SortingOrder": 8100,
-            "ShowUI": true
+            "SortingOrder": 8200,
+            "ShowUI": true,
+            "AssetList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 40
+                }
+            ]
         },
         {
             "Index": 208,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Leaf",
-            "SortingOrder": 8100,
-            "ShowUI": true
+            "SortingOrder": 8200,
+            "ShowUI": true,
+            "AssetList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 40
+                }
+            ]
         },
         {
             "Index": 209,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Light",
-            "SortingOrder": 8100,
-            "ShowUI": true
+            "SortingOrder": 8200,
+            "ShowUI": true,
+            "AssetList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 40
+                }
+            ]
         },
         {
             "Index": 212,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Water",
-            "SortingOrder": 8100,
+            "SortingOrder": 8200,
+            "ShowUI": true,
+            "AssetList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 40
+                }
+            ]
+        },
+        {
+            "Index": 219,
+            "Type": 1,
+            "Prefab": "Etc",
             "ShowUI": true
         },
         {
@@ -971,6 +1026,12 @@
             "EndTime": "2025-05-30T00:00:00Z"
         },
         {
+            "Index": 216,
+            "SortingOrder": 9992,
+            "StartTime": "2025-07-10T00:00:00Z",
+            "EndTime": "2025-08-07T00:00:00Z"
+        },
+        {
             "Index": 182,
             "Type": 1,
             "Prefab": "FeCoin",
@@ -989,7 +1050,6 @@
             "Type": 1,
             "Prefab": "FeCoin",
             "SortingOrder": 9988,
-            "ShowUI": true,
             "ManyDrop": true
         },
         {
@@ -1690,6 +1750,40 @@
             "Rank": 5,
             "SortingOrder": 9999,
             "ShowUI": true
+        },
+        {
+            "Index": 217,
+            "IndexName": "ScrollD",
+            "Type": 1,
+            "SortingOrder": 6699,
+            "ShowUI": true,
+            "GroupType": 1,
+            "ApplyUseCondition": true,
+            "ConsumeInfo": {
+                "Type": 1,
+                "ConsumeConditionType": 1,
+                "Info": {
+                    "$type": "CommonLibrary.ConsumeInfo+AddBuffInfo, Assembly-CSharp",
+                    "Index": 310
+                }
+            }
+        },
+        {
+            "Index": 218,
+            "IndexName": "ScrollD",
+            "Type": 1,
+            "SortingOrder": 6699,
+            "ShowUI": true,
+            "GroupType": 1,
+            "ApplyUseCondition": true,
+            "ConsumeInfo": {
+                "Type": 1,
+                "ConsumeConditionType": 1,
+                "Info": {
+                    "$type": "CommonLibrary.ConsumeInfo+AddBuffInfo, Assembly-CSharp",
+                    "Index": 311
+                }
+            }
         },
         {
             "Index": 81,
@@ -3100,6 +3194,13 @@
             "ShowUI": true
         },
         {
+            "Index": 215,
+            "IndexName": "TicketB",
+            "Type": 1,
+            "SortingOrder": 9992,
+            "ShowUI": true
+        },
+        {
             "Index": 119,
             "IndexName": "TicketB",
             "Type": 1,
@@ -3151,5 +3252,5 @@
             "ShowUI": true
         }
     ],
-    "hash": "LqcnFCxnDIw7bYRydqz24wShqbAWsuTzgshcT0vd21A="
+    "hash": "fZk+KwlOoAjwnrQEVisQA7bAbZ4DUCoRwbe5MZtZWjo="
 }

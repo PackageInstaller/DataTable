@@ -271,6 +271,67 @@
             "UseSlideBanner": true
         },
         {
+            "Index": 22,
+            "SortOrder": 990,
+            "StartTime": "2024-07-10T00:00:00Z",
+            "EndTime": "2025-08-08T00:00:00Z",
+            "Type": 1,
+            "EventInfo": {
+                "$type": "GameDesignData.CCEventAttendanceInfo, Assembly-CSharp",
+                "RewardList": [
+                    [
+                        {
+                            "Type": 6,
+                            "Index": 44,
+                            "Num": 10
+                        }
+                    ],
+                    [
+                        {
+                            "Type": 6,
+                            "Index": 44,
+                            "Num": 10
+                        }
+                    ],
+                    [
+                        {
+                            "Type": 6,
+                            "Index": 44,
+                            "Num": 10
+                        }
+                    ],
+                    [
+                        {
+                            "Type": 6,
+                            "Index": 44,
+                            "Num": 10
+                        }
+                    ],
+                    [
+                        {
+                            "Type": 6,
+                            "Index": 44,
+                            "Num": 10
+                        }
+                    ],
+                    [
+                        {
+                            "Type": 6,
+                            "Index": 191,
+                            "Num": 3
+                        }
+                    ],
+                    [
+                        {
+                            "Type": 6,
+                            "Index": 124,
+                            "Num": 1
+                        }
+                    ]
+                ]
+            }
+        },
+        {
             "Index": 17,
             "SortOrder": 980,
             "StartTime": "2025-04-17T00:00:00Z",
@@ -886,6 +947,129 @@
             "UseSlideBanner": true
         },
         {
+            "Index": 23,
+            "SortOrder": 940,
+            "StartTime": "2024-07-10T00:00:00Z",
+            "EndTime": "2099-03-06T00:00:00Z",
+            "Type": 3,
+            "EventInfo": {
+                "$type": "GameDesignData.CCEventConditionInfo, Assembly-CSharp",
+                "ConditionList": [
+                    {
+                        "Data": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneType": 45,
+                                "Num": 15
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 211,
+                                "Num": 10
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneType": 46,
+                                "Num": 15
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 207,
+                                "Num": 10
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneType": 47,
+                                "ZoneIndex": 1101,
+                                "Num": 15
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 212,
+                                "Num": 10
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneType": 48,
+                                "ZoneIndex": 1111,
+                                "Num": 15
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 208,
+                                "Num": 10
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneType": 49,
+                                "Num": 15
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 209,
+                                "Num": 10
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneType": 51,
+                                "Num": 15
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 210,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                ],
+                "LastRewardList": [
+                    {
+                        "Type": 6,
+                        "Index": 213,
+                        "Num": 10
+                    }
+                ]
+            }
+        },
+        {
             "Index": 6,
             "SortOrder": 950,
             "StartTime": "2025-01-16T00:00:00Z",
@@ -1248,11 +1432,128 @@
             }
         },
         {
+            "Index": 21,
+            "SortOrder": 965,
+            "StartTime": "2024-07-10T00:00:00Z",
+            "EndTime": "2099-12-31T00:00:00Z",
+            "NctStartTime": "2025-09-03T00:00:00Z",
+            "NctEndTime": "2099-09-03T00:00:00Z",
+            "Type": 3,
+            "EventInfo": {
+                "$type": "GameDesignData.CCEventConditionInfo, Assembly-CSharp",
+                "ConditionList": [
+                    {
+                        "Data": {
+                            "Type": 49,
+                            "Info": {
+                                "$type": "CommonLibrary.RoundTableLevelConditionInfo, Assembly-CSharp",
+                                "Num": 225
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 300
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 49,
+                            "Info": {
+                                "$type": "CommonLibrary.RoundTableLevelConditionInfo, Assembly-CSharp",
+                                "Num": 230
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 10
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 49,
+                            "Info": {
+                                "$type": "CommonLibrary.RoundTableLevelConditionInfo, Assembly-CSharp",
+                                "Num": 235
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 49,
+                            "Info": {
+                                "$type": "CommonLibrary.RoundTableLevelConditionInfo, Assembly-CSharp",
+                                "Num": 240
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 49,
+                            "Info": {
+                                "$type": "CommonLibrary.RoundTableLevelConditionInfo, Assembly-CSharp",
+                                "Num": 245
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 20
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 49,
+                            "Info": {
+                                "$type": "CommonLibrary.RoundTableLevelConditionInfo, Assembly-CSharp",
+                                "Num": 250
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 173,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                ],
+                "LastRewardList": [
+                    {
+                        "Type": 6,
+                        "Index": 39,
+                        "Num": 10
+                    }
+                ]
+            }
+        },
+        {
             "Index": 10,
             "SortOrder": 965,
             "StartTime": "2025-02-20T00:00:00Z",
-            "EndTime": "2025-07-11T00:00:00Z",
-            "NctStartTime": "2025-09-03T00:00:00Z",
+            "EndTime": "2025-07-03T00:00:00Z",
+            "NctStartTime": "2030-09-03T00:00:00Z",
             "NctEndTime": "2099-09-03T00:00:00Z",
             "Type": 3,
             "EventInfo": {
@@ -1606,5 +1907,5 @@
             }
         }
     ],
-    "hash": "yHs8gRls3rVK0I94DuzAwf6LkAQhPcpgPbcjBC20IOg="
+    "hash": "A3q1d1Bpa4ZakILYuyCGWLqPSFdkigu3x5TB5gdxpyU="
 }

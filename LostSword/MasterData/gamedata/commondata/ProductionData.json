@@ -45,6 +45,7 @@
             "Type": 1,
             "Period": 1,
             "Quantity": 5,
+            "NctAdd": true,
             "Production": {
                 "Type": 6,
                 "Index": 37,
@@ -71,7 +72,6 @@
             "Quantity": 1,
             "ItemLevel": 150,
             "Chapter": 3,
-            "NctExcept": true,
             "Production": {
                 "Type": 4,
                 "Index": 499,
@@ -118,9 +118,110 @@
             "SortingOrder": 1000
         },
         {
+            "Index": 71,
+            "Type": 3,
+            "Quantity": 5,
+            "Production": {
+                "Type": 6,
+                "Index": 149,
+                "Num": 1
+            },
+            "MaterialList": [
+                {
+                    "Type": 6,
+                    "Index": 214,
+                    "Num": 100
+                },
+                {
+                    "Type": 6,
+                    "Index": 1,
+                    "Num": 50000
+                }
+            ],
+            "Chance": 100.0,
+            "SortingOrder": 1010
+        },
+        {
+            "Index": 72,
+            "Type": 3,
+            "Quantity": 1,
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "Production": {
+                "Type": 6,
+                "Index": 147,
+                "Num": 1
+            },
+            "MaterialList": [
+                {
+                    "Type": 6,
+                    "Index": 80,
+                    "Num": 200
+                },
+                {
+                    "Type": 6,
+                    "Index": 1,
+                    "Num": 100000
+                }
+            ],
+            "Chance": 100.0,
+            "SortingOrder": 1010
+        },
+        {
+            "Index": 73,
+            "Type": 3,
+            "Quantity": 5,
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "Production": {
+                "Type": 6,
+                "Index": 140,
+                "Num": 1
+            },
+            "MaterialList": [
+                {
+                    "Type": 6,
+                    "Index": 80,
+                    "Num": 100
+                },
+                {
+                    "Type": 6,
+                    "Index": 1,
+                    "Num": 50000
+                }
+            ],
+            "Chance": 100.0
+        },
+        {
+            "Index": 74,
+            "Type": 3,
+            "Quantity": 10,
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "Production": {
+                "Type": 6,
+                "Index": 163,
+                "Num": 1
+            },
+            "MaterialList": [
+                {
+                    "Type": 6,
+                    "Index": 80,
+                    "Num": 50
+                },
+                {
+                    "Type": 6,
+                    "Index": 1,
+                    "Num": 10000
+                }
+            ],
+            "Chance": 100.0
+        },
+        {
             "Index": 63,
             "Type": 3,
             "Quantity": 5,
+            "GlobalExcept": true,
             "Production": {
                 "Type": 6,
                 "Index": 157,
@@ -144,6 +245,7 @@
         {
             "Index": 8,
             "Type": 2,
+            "NctAdd": true,
             "Production": {
                 "Type": 6,
                 "Index": 113,
@@ -167,6 +269,7 @@
         {
             "Index": 9,
             "Type": 2,
+            "NctAdd": true,
             "Production": {
                 "Type": 6,
                 "Index": 116,
@@ -190,6 +293,7 @@
         {
             "Index": 31,
             "Type": 1,
+            "NctAdd": true,
             "Production": {
                 "Type": 6,
                 "Index": 61,
@@ -213,6 +317,7 @@
         {
             "Index": 3,
             "Type": 1,
+            "NctAdd": true,
             "Production": {
                 "Type": 6,
                 "Index": 92,
@@ -236,6 +341,7 @@
         {
             "Index": 4,
             "Type": 1,
+            "NctAdd": true,
             "Production": {
                 "Type": 6,
                 "Index": 93,
@@ -259,6 +365,7 @@
         {
             "Index": 1,
             "Type": 1,
+            "NctAdd": true,
             "Production": {
                 "Type": 6,
                 "Index": 90,
@@ -582,8 +689,135 @@
             "SortingOrder": 1200
         },
         {
+            "Index": 67,
+            "Type": 5,
+            "Production": {
+                "Type": 6,
+                "Index": 210,
+                "Num": 1
+            },
+            "MaterialList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 100
+                }
+            ],
+            "Chance": 100.0,
+            "SortingOrder": 993
+        },
+        {
+            "Index": 70,
+            "Type": 5,
+            "Production": {
+                "Type": 6,
+                "Index": 213,
+                "Num": 1
+            },
+            "MaterialList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 100
+                }
+            ],
+            "Chance": 100.0,
+            "SortingOrder": 994
+        },
+        {
+            "Index": 68,
+            "Type": 5,
+            "Production": {
+                "Type": 6,
+                "Index": 211,
+                "Num": 1
+            },
+            "MaterialList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 100
+                }
+            ],
+            "Chance": 100.0,
+            "SortingOrder": 999
+        },
+        {
+            "Index": 64,
+            "Type": 5,
+            "Production": {
+                "Type": 6,
+                "Index": 207,
+                "Num": 1
+            },
+            "MaterialList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 100
+                }
+            ],
+            "Chance": 100.0,
+            "SortingOrder": 998
+        },
+        {
+            "Index": 65,
+            "Type": 5,
+            "Production": {
+                "Type": 6,
+                "Index": 208,
+                "Num": 1
+            },
+            "MaterialList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 100
+                }
+            ],
+            "Chance": 100.0,
+            "SortingOrder": 996
+        },
+        {
+            "Index": 66,
+            "Type": 5,
+            "Production": {
+                "Type": 6,
+                "Index": 209,
+                "Num": 1
+            },
+            "MaterialList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 100
+                }
+            ],
+            "Chance": 100.0,
+            "SortingOrder": 995
+        },
+        {
+            "Index": 69,
+            "Type": 5,
+            "Production": {
+                "Type": 6,
+                "Index": 212,
+                "Num": 1
+            },
+            "MaterialList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 100
+                }
+            ],
+            "Chance": 100.0,
+            "SortingOrder": 997
+        },
+        {
             "Index": 2,
             "Type": 1,
+            "NctAdd": true,
             "Production": {
                 "Type": 6,
                 "Index": 91,
@@ -658,5 +892,5 @@
             "SortingOrder": 959
         }
     ],
-    "hash": "aLlpbMOM0ypqKjSI/KcwXWaYC7flIP8ARbGQAnD6zNM="
+    "hash": "Jyp9+/DNMZL9NcBVGQptIDRp4mg5FPagN1QmdNAizVE="
 }

@@ -150,6 +150,7 @@ class MuvLuvDownloader:
         return False
     
     def run(self):
+        self.console.print(f"Unity版本: 6000.0.37f1", style="cyan")
         if not self.get_configuration():
             self.console.print("获取配置失败", style="red")
             return
@@ -161,7 +162,6 @@ class MuvLuvDownloader:
             self.console.print("所有资产都是最新版本", style="green")
             return
         
-        self.console.print(f"Unity版本: 6000.0.37f1", style="cyan")
         self.console.print(f"开始下载 {len(all_tasks)} 个文件...", style="green")
         
         downloaded_count = 0

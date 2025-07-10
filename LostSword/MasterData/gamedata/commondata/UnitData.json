@@ -421,7 +421,7 @@
                 ]
             },
             "Gender": 2,
-            "Category1": 1,
+            "Category1": 3,
             "Species": 3,
             "DeadSound": "V_Dead_Bedivere_꺄흐윽",
             "BuffStateList": {
@@ -1618,6 +1618,23 @@
             "Height": 10
         },
         {
+            "Index": 489,
+            "UnitType": 1,
+            "Job": 3,
+            "Position": 1,
+            "Element": 7,
+            "ModelName": "Eb_Wisp_05",
+            "SkillList": {
+                "1": [
+                    525
+                ],
+                "2": [
+                    1092
+                ]
+            },
+            "Category1": 3
+        },
+        {
             "Index": 303,
             "UnitType": 1,
             "Job": 2,
@@ -1689,6 +1706,79 @@
                 ],
                 "6": [
                     307
+                ]
+            },
+            "Gender": 2,
+            "Category1": 3,
+            "Species": 3,
+            "DeadSound": "V_Dead_Elizabeth_크윽01",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "4": {
+                    "Scale": 1.0
+                },
+                "5": {
+                    "Scale": 1.0
+                },
+                "6": {
+                    "Scale": 0.799999952
+                },
+                "9": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 1.0
+                }
+            },
+            "CostumeList": {
+                "3": {
+                    "CostumeType": 3,
+                    "CutScene": true
+                }
+            },
+            "Str": 76,
+            "Dex": 32,
+            "Int": 24,
+            "Con": 62,
+            "Age": 20,
+            "MonthOfBirth": 5,
+            "DayOfBirth": 25,
+            "Height": 160,
+            "Weight": 48,
+            "ThreeSize": "B84C-W60-H89",
+            "HobbyList": [
+                4
+            ],
+            "Nationality": 2
+        },
+        {
+            "Index": 475,
+            "UnitType": 1,
+            "Job": 1,
+            "Rank": 5,
+            "Position": 1,
+            "Element": 1,
+            "ModelName": "Eb_ElizabethTT_01",
+            "SkillList": {
+                "1": [
+                    526
+                ],
+                "5": [
+                    1071
+                ],
+                "4": [
+                    1066
+                ],
+                "2": [
+                    1064
+                ],
+                "3": [
+                    1065
+                ],
+                "6": [
+                    1067
                 ]
             },
             "Gender": 2,
@@ -2140,6 +2230,23 @@
             "Height": 10
         },
         {
+            "Index": 488,
+            "UnitType": 1,
+            "Job": 3,
+            "Position": 1,
+            "Element": 2,
+            "ModelName": "Eb_Wisp_01",
+            "SkillList": {
+                "1": [
+                    114
+                ],
+                "2": [
+                    1090
+                ]
+            },
+            "Category1": 3
+        },
+        {
             "Index": 357,
             "UnitType": 1,
             "Job": 3,
@@ -2288,6 +2395,31 @@
             "Dex": 10,
             "Int": 8,
             "Con": 10
+        },
+        {
+            "Index": 479,
+            "UnitType": 1,
+            "Job": 1,
+            "Position": 1,
+            "Element": 5,
+            "ModelName": "Eb_Flameknight_01",
+            "SkillList": {
+                "1": [
+                    17
+                ],
+                "2": [
+                    1084
+                ],
+                "4": [
+                    1085
+                ],
+                "5": [
+                    1086
+                ]
+            },
+            "Gender": 1,
+            "Category1": 4,
+            "Species": 3
         },
         {
             "Index": 183,
@@ -3380,9 +3512,6 @@
                 ],
                 "4": [
                     465
-                ],
-                "2": [
-                    444
                 ]
             },
             "Category1": 3,
@@ -5968,7 +6097,7 @@
                 ]
             },
             "Gender": 1,
-            "Category1": 1,
+            "Category1": 3,
             "Species": 3,
             "Ability": 31,
             "DeadSound": "V_모드레드_죽을때",
@@ -6033,7 +6162,7 @@
                 ]
             },
             "Gender": 1,
-            "Category1": 1,
+            "Category1": 3,
             "Species": 3,
             "Ability": 31,
             "DeadSound": "V_모드레드_죽을때",
@@ -6089,6 +6218,66 @@
                 ],
                 "3": [
                     550
+                ]
+            },
+            "Gender": 2,
+            "Category1": 3,
+            "Species": 1,
+            "DeadSound": "V_3_cav5_모르가나_꼴까닥",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 0.8
+                },
+                "6": {
+                    "Scale": 0.6
+                },
+                "4": {
+                    "Scale": 0.8
+                },
+                "5": {
+                    "Scale": 1.0,
+                    "PosX": 0.2,
+                    "PosY": -0.9
+                },
+                "9": {
+                    "Scale": 1.0,
+                    "PosX": 0.2
+                }
+            },
+            "Str": 15,
+            "Dex": 15,
+            "Int": 30,
+            "Con": 15
+        },
+        {
+            "Index": 476,
+            "UnitType": 1,
+            "Job": 3,
+            "Rank": 5,
+            "Position": 3,
+            "Element": 1,
+            "ModelName": "Pc_Morgana_01",
+            "SkillList": {
+                "1": [
+                    526
+                ],
+                "3": [
+                    1073
+                ],
+                "2": [
+                    1072
+                ],
+                "4": [
+                    1074
+                ],
+                "5": [
+                    1075
+                ],
+                "6": [
+                    1076
                 ]
             },
             "Gender": 2,
@@ -6212,6 +6401,156 @@
             "HobbyList": [
                 17
             ]
+        },
+        {
+            "Index": 491,
+            "UnitType": 1,
+            "Job": 2,
+            "Rank": 5,
+            "Position": 3,
+            "Element": 1,
+            "ModelName": "Pc_Bedivere_02",
+            "SkillList": {
+                "1": [
+                    526
+                ],
+                "5": [
+                    1095
+                ],
+                "4": [
+                    1094
+                ],
+                "2": [
+                    1093
+                ]
+            },
+            "Gender": 2,
+            "Category1": 3,
+            "Species": 3,
+            "DeadSound": "V_Dead_Bedivere_꺄흐윽",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 0.9
+                },
+                "6": {
+                    "Scale": 0.68
+                },
+                "4": {
+                    "Scale": 1.0
+                },
+                "5": {
+                    "Scale": 1.0,
+                    "PosX": 0.1,
+                    "PosY": -0.5
+                },
+                "9": {
+                    "Scale": 1.0,
+                    "PosX": 0.1
+                }
+            },
+            "CostumeList": {
+                "2": {
+                    "CostumeType": 2
+                },
+                "1": {
+                    "CostumeType": 1
+                }
+            },
+            "Str": 12,
+            "Dex": 18,
+            "Int": 10,
+            "Con": 12,
+            "Age": 22,
+            "MonthOfBirth": 4,
+            "DayOfBirth": 7,
+            "Height": 165,
+            "Weight": 52,
+            "ThreeSize": "B90.5D-W60-H92",
+            "HobbyList": [
+                17
+            ],
+            "Nationality": 2
+        },
+        {
+            "Index": 477,
+            "UnitType": 1,
+            "Job": 2,
+            "Rank": 5,
+            "Position": 3,
+            "Element": 1,
+            "ModelName": "Pc_Bedivere_02",
+            "SkillList": {
+                "1": [
+                    526
+                ],
+                "2": [
+                    1077
+                ],
+                "3": [
+                    1078
+                ],
+                "4": [
+                    1079
+                ],
+                "5": [
+                    1080
+                ],
+                "6": [
+                    1081
+                ]
+            },
+            "Gender": 2,
+            "Category1": 3,
+            "Species": 3,
+            "DeadSound": "V_Dead_Bedivere_꺄흐윽",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 0.9
+                },
+                "6": {
+                    "Scale": 0.68
+                },
+                "4": {
+                    "Scale": 1.0
+                },
+                "5": {
+                    "Scale": 1.0,
+                    "PosX": 0.1,
+                    "PosY": -0.5
+                },
+                "9": {
+                    "Scale": 1.0,
+                    "PosX": 0.1
+                }
+            },
+            "CostumeList": {
+                "2": {
+                    "CostumeType": 2
+                },
+                "1": {
+                    "CostumeType": 1
+                }
+            },
+            "Str": 12,
+            "Dex": 18,
+            "Int": 10,
+            "Con": 12,
+            "Age": 22,
+            "MonthOfBirth": 4,
+            "DayOfBirth": 7,
+            "Height": 165,
+            "Weight": 52,
+            "ThreeSize": "B90.5D-W60-H92",
+            "HobbyList": [
+                17
+            ],
+            "Nationality": 2
         },
         {
             "Index": 340,
@@ -8748,6 +9087,23 @@
             "Height": 10
         },
         {
+            "Index": 490,
+            "UnitType": 1,
+            "Job": 3,
+            "Position": 1,
+            "Element": 3,
+            "ModelName": "Eb_Wisp_02",
+            "SkillList": {
+                "1": [
+                    120
+                ],
+                "2": [
+                    1091
+                ]
+            },
+            "Category1": 3
+        },
+        {
             "Index": 354,
             "UnitType": 1,
             "Job": 1,
@@ -9182,6 +9538,33 @@
             "Con": 4
         },
         {
+            "Index": 478,
+            "UnitType": 1,
+            "Job": 2,
+            "Rank": 1,
+            "Position": 3,
+            "Element": 5,
+            "ModelName": "En_BowMan_03",
+            "SkillList": {
+                "1": [
+                    17
+                ],
+                "2": [
+                    1083
+                ]
+            },
+            "Gender": 1,
+            "Category1": 3,
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                }
+            },
+            "Str": 20,
+            "Dex": 10,
+            "Int": 10
+        },
+        {
             "Index": 168,
             "UnitType": 1,
             "Job": 1,
@@ -9396,6 +9779,23 @@
             "Dex": 5,
             "Int": 5,
             "Con": 5
+        },
+        {
+            "Index": 484,
+            "UnitType": 1,
+            "Job": 3,
+            "Position": 3,
+            "Element": 6,
+            "ModelName": "Eb_Wisp_04",
+            "SkillList": {
+                "1": [
+                    22
+                ],
+                "2": [
+                    379
+                ]
+            },
+            "Category1": 3
         },
         {
             "Index": 114,
@@ -9878,6 +10278,22 @@
             "Con": 10
         },
         {
+            "Index": 483,
+            "UnitType": 1,
+            "Job": 3,
+            "Position": 3,
+            "Element": 7,
+            "ModelName": "Eb_Wisp_05",
+            "SkillList": {
+                "1": [
+                    525
+                ],
+                "2": [
+                    379
+                ]
+            }
+        },
+        {
             "Index": 205,
             "UnitType": 1,
             "Job": 1,
@@ -10040,6 +10456,23 @@
             "Dex": 10,
             "Int": 10,
             "Con": 10
+        },
+        {
+            "Index": 480,
+            "UnitType": 1,
+            "Job": 3,
+            "Position": 1,
+            "Element": 2,
+            "ModelName": "Eb_Wisp_01",
+            "SkillList": {
+                "1": [
+                    114
+                ],
+                "2": [
+                    379
+                ]
+            },
+            "Category1": 3
         },
         {
             "Index": 301,
@@ -12965,12 +13398,16 @@
         {
             "Index": 465,
             "UnitType": 1,
+            "Job": 1,
             "Position": 1,
             "Element": 5,
             "ModelName": "En_SwordMan_03",
             "SkillList": {
                 "1": [
                     17
+                ],
+                "2": [
+                    1082
                 ]
             },
             "Gender": 1,
@@ -13261,6 +13698,24 @@
             "Nationality": 9
         },
         {
+            "Index": 481,
+            "UnitType": 1,
+            "Job": 3,
+            "Rank": 1,
+            "Position": 1,
+            "Element": 3,
+            "ModelName": "Eb_Wisp_02",
+            "SkillList": {
+                "1": [
+                    120
+                ],
+                "2": [
+                    379
+                ]
+            },
+            "Category1": 3
+        },
+        {
             "Index": 353,
             "UnitType": 1,
             "Job": 1,
@@ -13354,6 +13809,23 @@
             "Con": 1
         },
         {
+            "Index": 482,
+            "UnitType": 1,
+            "Job": 3,
+            "Position": 1,
+            "Element": 4,
+            "ModelName": "Eb_Wisp_03",
+            "SkillList": {
+                "1": [
+                    126
+                ],
+                "2": [
+                    379
+                ]
+            },
+            "Category1": 3
+        },
+        {
             "Index": 92,
             "UnitType": 1,
             "Job": 1,
@@ -13426,6 +13898,11 @@
             "Index": 424,
             "UnitType": 1,
             "ModelName": "Npc_Anessa_01_Bunny"
+        },
+        {
+            "Index": 485,
+            "UnitType": 1,
+            "ModelName": "Npc_Bedivere_01_Bikini"
         },
         {
             "Index": 431,
@@ -13518,6 +13995,11 @@
             },
             "Gender": 2,
             "Category1": 2
+        },
+        {
+            "Index": 487,
+            "UnitType": 1,
+            "ModelName": "Npc_Diancecht_01_Bikini"
         },
         {
             "Index": 278,
@@ -13651,6 +14133,11 @@
             "Category1": 2,
             "Species": 3,
             "DeadSound": "V_케이_윽"
+        },
+        {
+            "Index": 486,
+            "UnitType": 1,
+            "ModelName": "Npc_Lancelot_01_Bikini"
         },
         {
             "Index": 453,
@@ -13824,6 +14311,7 @@
             "Species": 3,
             "Ability": 52,
             "DeadSound": "V_아네사_웃 좀 더",
+            "UnitPractice": 11,
             "Str": 128,
             "Dex": 48,
             "Int": 12,
@@ -13895,6 +14383,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 35,
             "Str": 14,
             "Dex": 12,
             "Int": 10,
@@ -13968,6 +14457,7 @@
                     "CostumeType": 2
                 }
             },
+            "UnitPractice": 36,
             "Str": 12,
             "Dex": 18,
             "Int": 10,
@@ -13978,6 +14468,85 @@
             "Height": 165,
             "Weight": 52,
             "ThreeSize": "B90D-W60-H92",
+            "HobbyList": [
+                17
+            ],
+            "Nationality": 2
+        },
+        {
+            "Index": 474,
+            "UnitType": 1,
+            "Job": 2,
+            "Rank": 5,
+            "Position": 2,
+            "Element": 1,
+            "ModelName": "Pc_Bedivere_02",
+            "Summon": true,
+            "SkillList": {
+                "1": [
+                    526
+                ],
+                "6": [
+                    1059
+                ],
+                "5": [
+                    1058
+                ],
+                "4": [
+                    1056,
+                    1087
+                ],
+                "3": [
+                    1057
+                ],
+                "2": [
+                    1055
+                ]
+            },
+            "Gender": 2,
+            "Category1": 1,
+            "Species": 3,
+            "Ability": 56,
+            "DeadSound": "V_Dead_Bedivere_꺄흐윽",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 0.9
+                },
+                "6": {
+                    "Scale": 0.68
+                },
+                "4": {
+                    "Scale": 1.0
+                },
+                "5": {
+                    "Scale": 1.0,
+                    "PosX": 0.1,
+                    "PosY": -0.5
+                },
+                "9": {
+                    "Scale": 1.0,
+                    "PosX": 0.1
+                }
+            },
+            "CostumeList": {
+                "1": {
+                    "CostumeType": 1
+                }
+            },
+            "UnitPractice": 25,
+            "Str": 12,
+            "Dex": 18,
+            "Int": 10,
+            "Con": 12,
+            "Age": 22,
+            "MonthOfBirth": 4,
+            "DayOfBirth": 7,
+            "Height": 165,
+            "Weight": 52,
+            "ThreeSize": "B90.5D-W60-H92",
             "HobbyList": [
                 17
             ],
@@ -14082,6 +14651,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 20,
             "Str": 78,
             "Dex": 40,
             "Int": 58,
@@ -14157,6 +14727,7 @@
                     "CostumeType": 1
                 }
             },
+            "UnitPractice": 5,
             "Str": 32,
             "Dex": 32,
             "Int": 82,
@@ -14205,6 +14776,12 @@
             "Category1": 1,
             "Ability": 55,
             "DeadSound": "V_디안_꺄악",
+            "CostumeList": {
+                "1": {
+                    "CostumeType": 1
+                }
+            },
+            "UnitPractice": 26,
             "MonthOfBirth": 9,
             "DayOfBirth": 23,
             "Height": 165,
@@ -14267,6 +14844,7 @@
                     "PosY": -0.4
                 }
             },
+            "UnitPractice": 40,
             "Str": 5,
             "Dex": 4,
             "Int": 8,
@@ -14334,6 +14912,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 42,
             "Str": 4,
             "Dex": 7,
             "Int": 3,
@@ -14411,6 +14990,7 @@
                     "Nct": true
                 }
             },
+            "UnitPractice": 3,
             "Str": 76,
             "Dex": 32,
             "Int": 24,
@@ -14543,6 +15123,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 4,
             "Str": 48,
             "Dex": 82,
             "Int": 48,
@@ -14591,6 +15172,7 @@
             "Species": 3,
             "Ability": 53,
             "DeadSound": "V_Morgause_Dead_꺄악",
+            "UnitPractice": 21,
             "Str": 9,
             "Dex": 36,
             "Int": 87,
@@ -14661,6 +15243,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 28,
             "Str": 6,
             "Dex": 12,
             "Int": 19,
@@ -14734,6 +15317,7 @@
                     "PosY": -0.5
                 }
             },
+            "UnitPractice": 31,
             "Str": 16,
             "Dex": 12,
             "Int": 10,
@@ -14898,6 +15482,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 33,
             "Str": 12,
             "Dex": 9,
             "Int": 8,
@@ -14953,6 +15538,7 @@
                     "CutScene": true
                 }
             },
+            "UnitPractice": 20,
             "Age": 20,
             "MonthOfBirth": 2,
             "DayOfBirth": 14,
@@ -15019,6 +15605,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 7,
             "Str": 82,
             "Dex": 42,
             "Int": 34,
@@ -15093,6 +15680,7 @@
                     "PosX": 0.2
                 }
             },
+            "UnitPractice": 14,
             "Str": 32,
             "Dex": 38,
             "Int": 78,
@@ -15206,6 +15794,7 @@
             "Species": 3,
             "Ability": 44,
             "DeadSound": "V_이자벨_피격음2",
+            "UnitPractice": 12,
             "Str": 32,
             "Dex": 86,
             "Int": 63,
@@ -15272,6 +15861,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 38,
             "Str": 9,
             "Dex": 7,
             "Int": 8,
@@ -15341,6 +15931,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 10,
             "Str": 36,
             "Dex": 32,
             "Int": 88,
@@ -15411,6 +16002,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 16,
             "Str": 32,
             "Dex": 84,
             "Int": 48,
@@ -15481,6 +16073,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 39,
             "Str": 3,
             "Dex": 7,
             "Int": 2,
@@ -15551,6 +16144,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 13,
             "Str": 32,
             "Dex": 40,
             "Int": 86,
@@ -15606,6 +16200,7 @@
                     "CostumeType": 4
                 }
             },
+            "UnitPractice": 3,
             "Str": 82,
             "Dex": 63,
             "Int": 43,
@@ -15672,6 +16267,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 19,
             "Str": 38,
             "Dex": 34,
             "Int": 89,
@@ -15747,8 +16343,16 @@
                 "4": {
                     "CostumeType": 4,
                     "CutScene": true
+                },
+                "1": {
+                    "CostumeType": 1
+                },
+                "5": {
+                    "CostumeType": 5,
+                    "CutScene": true
                 }
             },
+            "UnitPractice": 20,
             "Str": 31,
             "Dex": 21,
             "Int": 20,
@@ -15820,6 +16424,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 17,
             "Str": 78,
             "Dex": 34,
             "Int": 60,
@@ -15886,6 +16491,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 18,
             "Str": 32,
             "Dex": 84,
             "Int": 48,
@@ -15950,6 +16556,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 15,
             "Str": 84,
             "Dex": 42,
             "Int": 32,
@@ -16020,6 +16627,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 17,
             "Str": 82,
             "Dex": 38,
             "Int": 28,
@@ -16090,6 +16698,7 @@
                     "PosX": 0.1
                 }
             },
+            "UnitPractice": 30,
             "Str": 8,
             "Dex": 9,
             "Int": 12,
@@ -16213,6 +16822,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 24,
             "Str": 48,
             "Dex": 44,
             "Int": 128,
@@ -16278,6 +16888,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 37,
             "Str": 8,
             "Dex": 9,
             "Int": 14,
@@ -16343,6 +16954,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 15,
             "Str": 84,
             "Dex": 40,
             "Int": 34,
@@ -16387,7 +16999,7 @@
                 ]
             },
             "Gender": 1,
-            "Category1": 1,
+            "Category1": 3,
             "Species": 3,
             "Ability": 31,
             "DeadSound": "V_모드레드_죽을때",
@@ -16484,6 +17096,7 @@
                     "PosX": 0.2
                 }
             },
+            "UnitPractice": 19,
             "Str": 32,
             "Dex": 34,
             "Int": 86,
@@ -16533,6 +17146,7 @@
             "Species": 3,
             "Ability": 37,
             "DeadSound": "V_Morgause_Dead_꺄악",
+            "UnitPractice": 5,
             "Str": 9,
             "Dex": 36,
             "Int": 87,
@@ -16598,6 +17212,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 32,
             "Str": 9,
             "Dex": 9,
             "Int": 12,
@@ -16668,6 +17283,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 11,
             "Str": 76,
             "Dex": 32,
             "Int": 16,
@@ -16718,6 +17334,7 @@
             "Species": 3,
             "Ability": 43,
             "DeadSound": "V_레이첼_으윽",
+            "UnitPractice": 43,
             "Str": 3,
             "Dex": 6,
             "Int": 8,
@@ -16770,6 +17387,7 @@
             "Species": 1,
             "Ability": 41,
             "DeadSound": "V_란_윽",
+            "UnitPractice": 22,
             "Str": 128,
             "Dex": 48,
             "Int": 12,
@@ -16818,6 +17436,7 @@
             "Species": 3,
             "Ability": 46,
             "DeadSound": "V_레이첼_꺄악",
+            "UnitPractice": 29,
             "Str": 12,
             "Dex": 8,
             "Int": 9,
@@ -16891,6 +17510,7 @@
                     "PosX": 0.2
                 }
             },
+            "UnitPractice": 6,
             "Str": 18,
             "Dex": 36,
             "Int": 72,
@@ -16957,6 +17577,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 41,
             "Str": 11,
             "Dex": 8,
             "Int": 3,
@@ -17091,6 +17712,7 @@
                     "PosX": -0.1
                 }
             },
+            "UnitPractice": 34,
             "Str": 8,
             "Dex": 13,
             "Int": 8,
@@ -17213,6 +17835,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 23,
             "Str": 44,
             "Dex": 32,
             "Int": 152,
@@ -17286,6 +17909,7 @@
                     "CostumeType": 2
                 }
             },
+            "UnitPractice": 8,
             "Str": 24,
             "Dex": 88,
             "Int": 12,
@@ -17353,6 +17977,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 27,
             "Str": 13,
             "Dex": 8,
             "Int": 6,
@@ -17422,6 +18047,7 @@
                     "Scale": 1.0
                 }
             },
+            "UnitPractice": 9,
             "Str": 36,
             "Dex": 42,
             "Int": 86,
@@ -17541,6 +18167,26 @@
                 180,
                 181,
                 182
+            ]
+        },
+        {
+            "Index": 472,
+            "UnitType": 2,
+            "Rank": 5,
+            "ModelName": "Pet_Bedivere_02",
+            "Summon": true,
+            "SkillList": {
+                "4": [
+                    1053
+                ]
+            },
+            "ChoIndexList": [
+                304,
+                305,
+                306,
+                307,
+                308,
+                309
             ]
         },
         {
@@ -18424,6 +19070,26 @@
             ]
         },
         {
+            "Index": 473,
+            "UnitType": 2,
+            "Rank": 5,
+            "ModelName": "Pet_Vivien_01",
+            "Summon": true,
+            "SkillList": {
+                "4": [
+                    1054
+                ]
+            },
+            "ChoIndexList": [
+                298,
+                299,
+                300,
+                301,
+                302,
+                303
+            ]
+        },
+        {
             "Index": 212,
             "UnitType": 2,
             "Rank": 4,
@@ -18445,5 +19111,5 @@
             ]
         }
     ],
-    "hash": "e00qDhNkHMGgqw3/8hgJIMJLiRFqaVeqfuwdO8ENGTs="
+    "hash": "KOz50NJTCqn0qto0SPzZ/R6I/kZCcIhzg9qhwZ9iE1Q="
 }
