@@ -2,9 +2,9 @@ import hashlib
 import json
 import os
 import requests
+import UnityPy
 from pathlib import Path
 from typing import Dict, List, Tuple
-import UnityPy
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 import concurrent.futures
@@ -327,13 +327,13 @@ class MasterTableUpdater:
                             short_name = Path(filename).name
                             if success:
                                 success_count += 1
-                                progress.update(main_task, advance=1, description=f"✓ {short_name}")
+                                progress.update(main_task, advance=1, description=f"{short_name}")
                             else:
                                 failed_files.append(filename)
-                                progress.update(main_task, advance=1, description=f"✗ {short_name}")
+                                progress.update(main_task, advance=1, description=f"{short_name}")
                         except Exception as e:
                             failed_files.append(item["BundleName"])
-                            progress.update(main_task, advance=1, description=f"✗ {Path(item['BundleName']).name}")
+                            progress.update(main_task, advance=1, description=f"{Path(item['BundleName']).name}")
                 
                 progress.update(main_task, description="完成")
             
@@ -344,9 +344,9 @@ class MasterTableUpdater:
                 if failed_files:
                     self.console.print(f"[yellow]失败的文件 ({len(failed_files)}个):[/yellow]")
                     for failed_file in failed_files[:10]:
-                        self.console.print(f"  [red]- {failed_file}[/red]")
+                        self.console.print(f"[red]- {failed_file}[/red]")
                     if len(failed_files) > 10:
-                        self.console.print(f"  [yellow]... 还有 {len(failed_files) - 10} 个文件失败[/yellow]")
+                        self.console.print(f"[yellow]... 还有 {len(failed_files) - 10} 个文件失败[/yellow]")
             else:
                 self.console.print("[red]更新失败，没有文件被成功处理[/red]")
                 

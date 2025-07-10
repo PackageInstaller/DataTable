@@ -4,23 +4,30 @@
             "Index": 1,
             "ShopTypeInfoList": [
                 {
-                    "Type": 1
+                    "Type": 1,
+                    "NctAdd": true
                 },
                 {
-                    "Type": 2
+                    "Type": 2,
+                    "NctAdd": true
                 },
                 {
-                    "Type": 42
+                    "Type": 43,
+                    "StartTime": "2024-07-10T00:00:01Z",
+                    "EndTime": "2025-07-24T12:00:00Z",
+                    "DisplayStartTime": "2025-07-10T00:00:01Z",
+                    "DisplayEndTime": "2025-07-24T12:00:00Z"
                 },
                 {
-                    "Type": 38,
-                    "StartTime": "2025-05-23T00:00:01Z",
-                    "EndTime": "2025-07-10T23:59:59Z",
-                    "NctStartTime": "2020-01-01T00:00:01Z",
-                    "NctEndTime": "2020-01-01T23:59:59Z"
+                    "Type": 44,
+                    "StartTime": "2024-07-10T00:00:01Z",
+                    "EndTime": "2025-08-07T12:00:00Z",
+                    "DisplayStartTime": "2025-07-10T00:00:01Z",
+                    "DisplayEndTime": "2025-08-07T12:00:00Z"
                 },
                 {
-                    "Type": 18
+                    "Type": 18,
+                    "NctAdd": true
                 }
             ]
         },
@@ -28,13 +35,16 @@
             "Index": 2,
             "ShopTypeInfoList": [
                 {
-                    "Type": 22
+                    "Type": 22,
+                    "NctAdd": true
                 },
                 {
-                    "Type": 23
+                    "Type": 23,
+                    "NctAdd": true
                 },
                 {
-                    "Type": 24
+                    "Type": 24,
+                    "NctAdd": true
                 }
             ]
         },
@@ -42,22 +52,28 @@
             "Index": 3,
             "ShopTypeInfoList": [
                 {
-                    "Type": 5
+                    "Type": 5,
+                    "NctAdd": true
                 },
                 {
-                    "Type": 10
+                    "Type": 10,
+                    "NctAdd": true
                 },
                 {
-                    "Type": 11
+                    "Type": 11,
+                    "NctAdd": true
                 },
                 {
-                    "Type": 14
+                    "Type": 14,
+                    "NctAdd": true
                 },
                 {
-                    "Type": 12
+                    "Type": 12,
+                    "NctAdd": true
                 },
                 {
-                    "Type": 7
+                    "Type": 7,
+                    "NctAdd": true
                 }
             ]
         },
@@ -68,8 +84,31 @@
                     "Type": 39,
                     "StartTime": "2025-05-29T00:00:01Z",
                     "EndTime": "2025-07-10T10:30:00Z",
-                    "NctStartTime": "2020-01-01T00:00:01Z",
-                    "NctEndTime": "2020-01-01T23:59:59Z"
+                    "DisplayStartTime": "2025-05-29T00:00:01Z",
+                    "DisplayEndTime": "2025-07-10T10:30:00Z"
+                },
+                {
+                    "Type": 45,
+                    "StartTime": "2024-07-10T00:00:01Z",
+                    "EndTime": "2025-08-21T10:30:00Z",
+                    "DisplayStartTime": "2025-07-10T00:00:01Z",
+                    "DisplayEndTime": "2025-08-21T10:30:00Z"
+                },
+                {
+                    "Type": 46,
+                    "StartTime": "2024-07-10T00:00:01Z",
+                    "EndTime": "2025-08-07T10:30:00Z",
+                    "DisplayStartTime": "2025-07-10T00:00:01Z",
+                    "DisplayEndTime": "2025-08-07T10:30:00Z"
+                },
+                {
+                    "Type": 19,
+                    "GlobalExcept": true,
+                    "NctAdd": true,
+                    "NctStartTime": "2024-08-20T00:00:01Z",
+                    "NctEndTime": "2025-09-10T10:30:00Z",
+                    "NctDisplayStartTime": "2025-08-20T00:00:01Z",
+                    "NctDisplayEndTime": "2025-09-10T10:30:00Z"
                 }
             ]
         },
@@ -77,10 +116,12 @@
             "Index": 5,
             "ShopTypeInfoList": [
                 {
-                    "Type": 20
+                    "Type": 20,
+                    "NctAdd": true
                 },
                 {
-                    "Type": 21
+                    "Type": 21,
+                    "NctAdd": true
                 }
             ]
         },
@@ -88,5 +129,5 @@
             "Index": 6
         }
     ],
-    "hash": "LYxcYjiOKBIf1HAn/321TAUMXq1WZGQ0Hk1CjPc7Vzs="
+    "hash": "fzgNO7umDfuJWVg8b2jp5jND541kNi+ZoxbhuiXq22g="
 }

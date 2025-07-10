@@ -263,7 +263,7 @@
         "Key": "물",
         "Text": {
             "Korea": "빙결",
-            "English": "Frozen",
+            "English": "Freeze",
             "ChineseCh": "冰冻",
             "ChineseTh": "冰凍",
             "Japanese": "氷結"
@@ -785,7 +785,7 @@
             "Korea": "일반",
             "English": "General",
             "ChineseCh": "普通",
-            "ChineseTh": "普通",
+            "ChineseTh": "一般",
             "Japanese": "一般"
         }
     },
@@ -2122,7 +2122,7 @@
     {
         "Key": "텍스트언어",
         "Text": {
-            "Korea": "텍스트 언어",
+            "Korea": "출력 언어",
             "English": "Text Language",
             "ChineseCh": "文本语言",
             "ChineseTh": "字幕語言",
@@ -2553,7 +2553,7 @@
         "Key": "시간",
         "Text": {
             "Korea": "시간",
-            "English": "Time",
+            "English": "H",
             "ChineseCh": "小时",
             "ChineseTh": "小時",
             "Japanese": "時間"
@@ -2573,7 +2573,7 @@
         "Key": "분",
         "Text": {
             "Korea": "분",
-            "English": "M",
+            "English": "Min",
             "ChineseCh": "分",
             "ChineseTh": "分",
             "Japanese": "分"
@@ -4033,7 +4033,7 @@
         "Key": "유저매칭중",
         "Text": {
             "Korea": "유저 매칭 중…",
-            "English": "Matchmaking in Progress…",
+            "English": "Matchmaking in Progress...",
             "ChineseCh": "正在匹配玩家…",
             "ChineseTh": "配對玩家中…",
             "Japanese": "ユーザーマッチング中…"
@@ -4323,7 +4323,7 @@
         "Key": "ShopDailyLimit",
         "Text": {
             "Korea": "일일 구매 가능 횟수 : {0} / {1}",
-            "English": "Available Daily Purchases: {0}/{1}",
+            "English": "Daily Purchases: {0}/{1}",
             "ChineseCh": "每日可购买次数：{0}/{1}",
             "ChineseTh": "每日可購買次數：{0}/{1}",
             "Japanese": "デイリー購入可能な回数：{0}/{1}"
@@ -4333,7 +4333,7 @@
         "Key": "ShopWeeklyLimit",
         "Text": {
             "Korea": "주간 구매 가능 횟수 : {0} / {1}",
-            "English": "Available Weekly Purchases: {0}/{1}",
+            "English": "Weekly Purchases: {0}/{1}",
             "ChineseCh": "每周可购买次数：{0}/{1}",
             "ChineseTh": "每週可購買次數：{0}/{1}",
             "Japanese": "ウイークリー購入可能な回数：{0}/{1}"
@@ -4343,7 +4343,7 @@
         "Key": "ShopMonthlyLimit",
         "Text": {
             "Korea": "월간 구매 가능 횟수 : {0} / {1}",
-            "English": "Available Monthly Purchases: {0}/{1}",
+            "English": "Monthly Purchases: {0}/{1}",
             "ChineseCh": "每月可购买次数：{0}/{1}",
             "ChineseTh": "每月可購買次數：{0}/{1}",
             "Japanese": "マンスリー購入可能な回数：{0}/{1}"
@@ -4353,7 +4353,7 @@
         "Key": "ShopPeriodLimit",
         "Text": {
             "Korea": "기간동안 구매 가능 횟수 : {0} / {1}",
-            "English": "Available Purchases Within Timeframe: {0}/{1}",
+            "English": "Purchases Within Timeframe: {0}/{1}",
             "ChineseCh": "限定期间内可购买次数：{0}/{1}",
             "ChineseTh": "期間內可購買次數：{0}/{1}",
             "Japanese": "期間中に購入可能な回数：{0}/{1}"
@@ -4363,7 +4363,7 @@
         "Key": "ProductionNoneLimit",
         "Text": {
             "Korea": "제작 가능 횟수 : {0} / {1}",
-            "English": "Available Crafting Count: {0}/{1}",
+            "English": "Crafting Count: {0}/{1}",
             "ChineseCh": "可制作次数：{0}/{1}",
             "ChineseTh": "可製作次數：{0}/{1}",
             "Japanese": "製作可能な回数：{0}/{1}"
@@ -4373,7 +4373,7 @@
         "Key": "ProductionDailyLimit",
         "Text": {
             "Korea": "일일 제작 가능 횟수 : {0} / {1}",
-            "English": "Available Daily Crafting Count: {0}/{1}",
+            "English": "Daily Crafting: {0}/{1}",
             "ChineseCh": "每日可制作次数：{0}/{1}",
             "ChineseTh": "每日可製作次數：{0}/{1}",
             "Japanese": "デイリー製作可能な回数：{0}/{1}"
@@ -4383,7 +4383,7 @@
         "Key": "ProductionWeeklyLimit",
         "Text": {
             "Korea": "주간 제작 가능 횟수 : {0} / {1}",
-            "English": "Available Weekly Crafting Count: {0}/{1}",
+            "English": "Weekly Crafting: {0}/{1}",
             "ChineseCh": "每周可制作次数：{0}/{1}",
             "ChineseTh": "每週可製作次數：{0}/{1}",
             "Japanese": "ウイークリー製作可能な回数：{0}/{1}"
@@ -4393,7 +4393,7 @@
         "Key": "ProductionMonthlyLimit",
         "Text": {
             "Korea": "월간 제작 가능 횟수 : {0} / {1}",
-            "English": "Available Monthly Crafting Count: {0}/{1}",
+            "English": "Monthly Crafting: {0}/{1}",
             "ChineseCh": "每月可制作次数：{0}/{1}",
             "ChineseTh": "每月可製作次數：{0}/{1}",
             "Japanese": "マンスリー製作可能な回数：{0}/{1}"
@@ -4403,7 +4403,7 @@
         "Key": "ProductionPeriodLimit",
         "Text": {
             "Korea": "기간동안 제작 가능 횟수 : {0} / {1}",
-            "English": "Available Crafting Count During the Given Period: {0}/{1}",
+            "English": "Crafting During the Period: {0}/{1}",
             "ChineseCh": "限定期间内可制作次数：{0}/{1}",
             "ChineseTh": "期間可製作次數：{0}/{1}",
             "Japanese": "期間中に製作可能な回数：{0}/{1}"
@@ -5734,7 +5734,7 @@
             "Korea": "파티",
             "English": "Party",
             "ChineseCh": "队伍",
-            "ChineseTh": "隊伍",
+            "ChineseTh": "組隊",
             "Japanese": "パーティー"
         }
     },
@@ -5784,7 +5784,7 @@
             "Korea": "파티",
             "English": "Party",
             "ChineseCh": "队伍",
-            "ChineseTh": "隊伍",
+            "ChineseTh": "組隊",
             "Japanese": "パーティー"
         }
     },
@@ -5984,7 +5984,7 @@
             "Korea": "경험치 북",
             "English": "Book of Experience",
             "ChineseCh": "经验书",
-            "ChineseTh": "經驗值之書",
+            "ChineseTh": "經驗值",
             "Japanese": "経験値ブック"
         }
     },
@@ -6314,7 +6314,7 @@
             "Korea": "일반",
             "English": "General",
             "ChineseCh": "普通",
-            "ChineseTh": "普通",
+            "ChineseTh": "一般",
             "Japanese": "一般"
         }
     },
@@ -6440,7 +6440,7 @@
         "Key": "DefElement.Water",
         "Text": {
             "Korea": "빙결",
-            "English": "Frozen",
+            "English": "Freeze",
             "ChineseCh": "冰冻",
             "ChineseTh": "冰凍",
             "Japanese": "氷結"
@@ -6682,7 +6682,7 @@
             "Korea": "일반",
             "English": "General",
             "ChineseCh": "普通",
-            "ChineseTh": "普通",
+            "ChineseTh": "一般",
             "Japanese": "一般"
         }
     },
@@ -6860,7 +6860,7 @@
         "Key": "DefBuffState.Burn",
         "Text": {
             "Korea": "화상",
-            "English": "Burned",
+            "English": "Burn",
             "ChineseCh": "灼烧",
             "ChineseTh": "灼傷",
             "Japanese": "やけど"
@@ -6870,7 +6870,7 @@
         "Key": "DefBuffState.Curse",
         "Text": {
             "Korea": "저주",
-            "English": "Cursed",
+            "English": "Curse",
             "ChineseCh": "诅咒",
             "ChineseTh": "詛咒",
             "Japanese": "呪い"
@@ -6900,7 +6900,7 @@
         "Key": "DefBuffState.Ice",
         "Text": {
             "Korea": "빙결",
-            "English": "Frozen",
+            "English": "Freeze",
             "ChineseCh": "冰冻",
             "ChineseTh": "冰凍",
             "Japanese": "氷結"
@@ -6930,7 +6930,7 @@
         "Key": "DefBuffState.Stun",
         "Text": {
             "Korea": "기절",
-            "English": "Stunned",
+            "English": "Stun",
             "ChineseCh": "昏厥",
             "ChineseTh": "眩暈",
             "Japanese": "スタン"
@@ -6940,7 +6940,7 @@
         "Key": "DefBuffState.Stone",
         "Text": {
             "Korea": "석화",
-            "English": "Petrified",
+            "English": "petrify",
             "ChineseCh": "石化",
             "ChineseTh": "石化",
             "Japanese": "石化"
@@ -6950,7 +6950,7 @@
         "Key": "BuffType.AccumStat",
         "Text": {
             "Korea": "능력치 중첩",
-            "English": "Attribute Stack",
+            "English": "Stacking Effect",
             "ChineseCh": "能力值叠加",
             "ChineseTh": "能力值疊加",
             "Japanese": "能力値重複"
@@ -7070,7 +7070,7 @@
         "Key": "BuffType.CheckBuffState",
         "Text": {
             "Korea": "상태 이상 추가 피해 ({0})",
-            "English": "Additional DMG Against Foes Inflicted With Status Effects ({0})",
+            "English": "Status Effect Bonus Damage ({0})",
             "ChineseCh": "状态异常额外伤害({0})",
             "ChineseTh": "狀態異常額外傷害({0})",
             "Japanese": "状態異常追加ダメージ({0})"
@@ -7452,7 +7452,7 @@
         "Key": "SkillActorType.CheckBuffState",
         "Text": {
             "Korea": "상태 이상 추가 피해",
-            "English": "Additional DMG Against Foes Inflicted With Status Effects",
+            "English": "Status Effect Bonus Damage",
             "ChineseCh": "状态异常额外伤害",
             "ChineseTh": "狀態異常額外傷害",
             "Japanese": "状態異常追加ダメージ"
@@ -8118,7 +8118,7 @@
             "Korea": "일반",
             "English": "General",
             "ChineseCh": "普通",
-            "ChineseTh": "普通",
+            "ChineseTh": "一般",
             "Japanese": "一般"
         }
     },
@@ -9026,7 +9026,7 @@
         "Key": "GuildMenuIndex.Recommend",
         "Text": {
             "Korea": "추천 길드",
-            "English": "Recommended Guild",
+            "English": "Recommended",
             "ChineseCh": "推荐公会",
             "ChineseTh": "推薦公會",
             "Japanese": "おすすめギルド"
@@ -9086,7 +9086,7 @@
         "Key": "승인가입",
         "Text": {
             "Korea": "승인 가입",
-            "English": "Requests Only",
+            "English": "Requests\nonly",
             "ChineseCh": "审批加入",
             "ChineseTh": "允許加入",
             "Japanese": "手動承認"
@@ -9296,7 +9296,7 @@
         "Key": "출석인원",
         "Text": {
             "Korea": "출석 인원",
-            "English": "Members Checked in",
+            "English": "Active",
             "ChineseCh": "签到人员",
             "ChineseTh": "簽到人數",
             "Japanese": "出席メンバー"
@@ -9746,7 +9746,7 @@
         "Key": "최근구매",
         "Text": {
             "Korea": "최근 구매",
-            "English": "Recent Purchases",
+            "English": "Recent",
             "ChineseCh": "最近购买",
             "ChineseTh": "近期購買",
             "Japanese": "最近購入"
@@ -11446,9 +11446,9 @@
         "Text": {
             "Korea": "다음 일정",
             "English": "Next Scheduled Siege",
-            "ChineseCh": "下次攻城时间",
+            "ChineseCh": "下次时间",
             "ChineseTh": "下次時間",
-            "Japanese": "次の攻城戦のスケジュール"
+            "Japanese": "次の日程"
         }
     },
     {
@@ -11955,7 +11955,7 @@
         "Key": "대전이력",
         "Text": {
             "Korea": "대전 이력",
-            "English": "Match History",
+            "English": "History",
             "ChineseCh": "对战记录",
             "ChineseTh": "對戰紀錄",
             "Japanese": "対戦履歴"
@@ -12395,7 +12395,7 @@
         "Key": "탈퇴상단문구",
         "Text": {
             "Korea": "회원탈퇴 시 모든 데이터가 삭제되어\n서비스의 이용, 계정 복구 및 잔여 유료 재화 등의 환불이 불가합니다.",
-            "English": "Withdrawing will delete all data, and you will lose access to the service, account recovery, and refund for purchases.",
+            "English": "Deleting your account will permanently erase all data.\nYou will lose access to the service, and will no longer be eligible for account recovery.",
             "ChineseCh": "注销会员时，所有数据将被删除\n无法继续使用服务、恢复账号及退款剩余付费资源等。",
             "ChineseTh": "會員註銷後所有數據將被刪除，\n無法使用服務、恢復帳號及退還剩餘付費財貨等。",
             "Japanese": "アカウントを削除すると全てのデータが消えて\nサービスの利用、アカウント復旧、残りの有償アイテムなどの払い戻しはいたしかねます"
@@ -12405,7 +12405,7 @@
         "Key": "탈퇴설명문구",
         "Text": {
             "Korea": "정말 게임 탈퇴 하시겠습니까?\n계속하려면 아래 텍스트를 입력해주세요.",
-            "English": "Are you sure you want to delete Account? Type the text below to continue.",
+            "English": "Are you sure you want to delete your account? To confirm, please type the following text.",
             "ChineseCh": "确定要注销会员吗？\n若要继续，请输入以下文字。",
             "ChineseTh": "確定要註銷會員嗎？\n請輸入下列文字繼續。",
             "Japanese": "本当にアカウントを削除しますか？\n削除したい場合、以下のテキストを入力してください"
@@ -12435,7 +12435,7 @@
         "Key": "지금초기화",
         "Text": {
             "Korea": "지금 초기화 하겠습니다",
-            "English": "The reset will begin.",
+            "English": "Delete My Account",
             "ChineseCh": "立即重置",
             "ChineseTh": "現在進行重置",
             "Japanese": "データを初期化します"
@@ -12455,7 +12455,7 @@
         "Key": "탈퇴",
         "Text": {
             "Korea": "탈퇴",
-            "English": "Withdraw",
+            "English": "Delete Account",
             "ChineseCh": "注销",
             "ChineseTh": "註銷",
             "Japanese": "削除"
@@ -12697,7 +12697,7 @@
             "Korea": "다른 인도자와 결투하여, 콜로세움 등급과 승점을 올리는 컨텐츠입니다.\n\n등급에 따라 주간 보상을 받을 수 있으며, 시즌 종료 시 모든 등급이 노비스로 초기화 되고 우편함으로 시즌 보상을 받을 수 있습니다.\n\n방어팀을 먼저 편성한 후, 대전 상대에게 도전할 수 있습니다.\n\n대전 상대에게 도전할 때는 공격팀을 추가적으로 편성한 뒤, 결투를 할 수 있습니다.\n\n3명의 대전 상대와 모두 결투를 치르거나, 리스트 갱신을 하면 대전 상대를 바꿀 수 있습니다.\n\n콜로세움 티켓은 60분에 1장씩 충전되며, 최대 20장 충전됩니다.",
             "English": "Content where you increase Colosseum Grade and Victory Points by battling other Swordbringers.\n\nYou can receive weekly rewards based on your Grade, and the season reward will be sent to your mailbox at season end after all Grade are reset to Novice.\n\nForm your Defense Team first, to challenge your opponent.\n\nForm your Attack Team to duel with the challenged opponent.\n\nWhen you duel with all three opponents, or reset the list, you can change the opponent.\n\nColosseum Ticket recharges every 60 min, with maximum of 20.",
             "ChineseCh": "与其他引路者决斗，\n提升竞技场级别和胜点分的玩法。\n\n可根据级别获得每周奖励，\n赛季结束时所有等级重置为新手，\n并可在邮箱领取赛季奖励。\n\n先编排防守队伍，\n然后可向对手发起挑战。\n\n向对手发起挑战时，\n需额外编排进攻队伍，\n然后进行决斗。\n\n与3名对手全部决斗完毕或\n刷新列表可更换对手。\n\n竞技场票券每60分钟充能1张，\n最多充能20张",
-            "ChineseTh": "與其他引導者決鬥來提升競技場級別和勝分的遊戲戰鬥內容。\n\n根據級別可獲得每週獎勵，賽季結束時所有級別重置為初心者，並可在信箱領取賽季獎勵。\n\n編組防禦隊後，可向對手發動挑戰。\n\n向對手發動挑戰並編組攻擊隊時，可進行決鬥。\n\n完成與3名對手的決鬥或更新列表即可變換對手。\n\n競技場票券每60分鐘補充1張，最多可補充20張。",
+            "ChineseTh": "與其他引導者決鬥來提升競技場級別和勝分的遊戲戰鬥內容。\n\n根據級別可獲得每週獎勵，賽季結束時所有級別重置為初心者，並可在信箱領取賽季獎勵。\n\n編組防禦隊後，可向對手發動挑戰。\n\n向對手發動挑戰並編組攻擊隊時，可進行決鬥。\n\n完成與3名對手的決鬥或更新列表即可變換對手。\n\n競技場票券每60分鐘補充1張，最多可補充10張。",
             "Japanese": "他の導く者との決闘で\nコロッセウムのランクと勝ち点を獲得するコンテンツです。\n\nランクによってウィークリー報酬を獲得し、\nシーズンが終了すると全てのランクがノービスにリセットされ、\nポストにシーズン報酬が届きます。\n\nコロッセウムに参加するためには\nまず防御チームを編成する必要があります。\n\n対戦相手にチャレンジする際には\n攻撃チームを追加で編成すると\n決闘を挑めます。\n\n3人の対戦相手全員と決闘をしたり\nリストを更新すると対戦相手を変更できます。\n\nコロセウムチケットは60分に1枚ずつ\n最大20枚までチャージされます。"
         }
     },
@@ -12735,7 +12735,7 @@
         "Key": "상위랭킹",
         "Text": {
             "Korea": "상위 랭킹",
-            "English": "Upper Rankings",
+            "English": "Top Ranking",
             "ChineseCh": "高级排名",
             "ChineseTh": "最高排名",
             "Japanese": "上位ランキング"
@@ -12895,7 +12895,7 @@
         "Key": "무료보스리젠안내",
         "Text": {
             "Korea": "매일 0시 보스 랜덤 리젠",
-            "English": "Emersion of random boss every 0 AM",
+            "English": "Emersion of random boss every 0 AM (UTC +9)",
             "ChineseCh": "每日0点(KST)领主随机刷新",
             "ChineseTh": "每日23點(UTC+8)首領隨機重生",
             "Japanese": "毎日0時、ランダムボス登場"
@@ -13065,7 +13065,7 @@
         "Key": "약관동의",
         "Text": {
             "Korea": "약관 동의",
-            "English": "Consent to Terms",
+            "English": "Terms & Conditions",
             "ChineseCh": "同意协议",
             "ChineseTh": "同意條款",
             "Japanese": "規約に同意"
@@ -13085,7 +13085,7 @@
         "Key": "게임서비스이용약관동의",
         "Text": {
             "Korea": "[필수] 게임서비스 이용약관 동의",
-            "English": "[Required] Consent to Terms and Conditions",
+            "English": "[Required] I acknowledge that \nI have read and agree to the Terms of Service.",
             "ChineseCh": "【必需】同意游戏服务使用协议",
             "ChineseTh": "[必須]同意遊戲服務使用條款",
             "Japanese": "【必須】サービス利用規約への同意"
@@ -13095,7 +13095,7 @@
         "Key": "개인정보수집및이용동의",
         "Text": {
             "Korea": "[필수] 개인정보 수집 및 이용 동의",
-            "English": "[Required] Consent to collection and use of personal information",
+            "English": "[Required] I acknowledge that \nI have read and understood the Privacy Policy.",
             "ChineseCh": "【必需】同意收集及使用个人信息",
             "ChineseTh": "[必須]同意個人資料蒐集及使用",
             "Japanese": "【必須】個人情報収集への同意"
@@ -13105,17 +13105,17 @@
         "Key": "만14세이상",
         "Text": {
             "Korea": "[필수] 만 14세 이상입니다.",
-            "English": "[Required] I am 14 or above.",
-            "ChineseCh": "【必需】我已满14周岁",
-            "ChineseTh": "[必須]我已滿14歲",
-            "Japanese": "【必須】満14歳以上です"
+            "English": "[Required] I am 16 or above.",
+            "ChineseCh": "【必需】我已满16周岁",
+            "ChineseTh": "[必須]我已滿16歲",
+            "Japanese": "【必須】満16歳以上です"
         }
     },
     {
         "Key": "광고성푸시수신",
         "Text": {
             "Korea": "[선택] 광고성 PUSH 수신 동의",
-            "English": "[Optional] Receive push notification for ads",
+            "English": "[Optional] I agree to receive advertisements and updates \nregarding Lost Sword via in-app push notifications.",
             "ChineseCh": "【可选】同意接收广告性PUSH通知",
             "ChineseTh": "[選擇]同意接收廣告推播",
             "Japanese": "【選択】マーケティング情報に関するプッシュ通知受信への同意"
@@ -13145,7 +13145,7 @@
         "Key": "광고성푸시수신거부",
         "Text": {
             "Korea": "[EBCF63][위메이드 커넥트][-] {0}년 {1}월 {2}일 광고성 정보 수신 거부가 정상 처리되었습니다.",
-            "English": "[EBCF63][WEMADE CONNECT][-] You have declined to receive push notification for ads on {1}/{2}/{0}",
+            "English": "[EBCF63][WEMADE CONNECT][-] You have declined to receive push notification \nfor ads on {1}/{2}/{0}",
             "ChineseCh": "[EBCF63]【Wemade Connect】[-] {0}年{1}月{2}日已正常处理拒绝接收广告信息。",
             "ChineseTh": "[EBCF63][Wemade Connect][-]{0}年{1}月{2}日已成功設定拒絕接收廣告資訊。",
             "Japanese": "[EBCF63]【WEMADE CONNECT】[-]{0}年{1}月{2}日、マーケティング情報の受信を拒否しました。"
@@ -13165,7 +13165,7 @@
         "Key": "캘리포니아거주체크",
         "Text": {
             "Korea": "현재 캘리포니아 주에 거주하고 있습니까?",
-            "English": "Are you currently living in California?",
+            "English": "Are you a California resident?",
             "ChineseCh": "您目前是否居住在加利福尼亚州？",
             "ChineseTh": "你目前居住在加州嗎？",
             "Japanese": "現在、カリフォルニアに在住していますか？"
@@ -13245,7 +13245,7 @@
         "Key": "게임서비스이용약관보기",
         "Text": {
             "Korea": "이용 약관 보기",
-            "English": "Terms and Conditions",
+            "English": "Terms of Service",
             "ChineseCh": "查看用户协议",
             "ChineseTh": "查看使用條款",
             "Japanese": "利用規約を見る"
@@ -13387,7 +13387,7 @@
             "Korea": "요일 보스에게 피해를 준 순으로\n랭킹을 산정하는 시스템입니다.\n\n1회 최고 점수만이 랭킹에 기록됩니다.\n\n매일 개인 랭킹과 길드 랭킹이 정산됩니다.\n\n순위 정산 시\n우편함으로 랭킹 보상이 지급됩니다.",
             "English": "System where the users are ranked based on the damage dealt to Daily Bosses.\n\nOnly the best record will be counted.\n\nBoth individual and guild rankings adjusted every day.\n\nRanking reward is sent to mailbox after the adjustment.",
             "ChineseCh": "根据对每日领主造成的伤害\n进行排名的系统。\n\n仅记录单次最高得分。\n\n每日结算个人排名和公会排名。\n\n排名结算时\n排名奖励将发送至邮箱。",
-            "ChineseTh": "根據對每日首領造成的傷害\n計算排名的系統。\n\n只紀錄單次最高分數。\n\n每日更新個人排名和公會排名。\n\n計算名次時\n排名獎勵將發送至信箱。",
+            "ChineseTh": "根據對每日首領造成的傷害\n計算排名的系統。\n\n只紀錄單次最高分數。\n\n每日更新個人排名和公會排名。\n\n計算名次時，\n排名獎勵將發送至信箱內。",
             "Japanese": "曜日ボスに与えたダメージで\nランキングを決めるシステムです\n\n1回で達成した最高スコアがランキングに記録されます\n\n毎日個人ランキングとギルドランキングが算定されます\n\nランキングが算定されると\n報酬がポストに届きます"
         }
     },
@@ -13517,23 +13517,9 @@
             "Korea": "[E0CA70][호감도][-][EAE5D9]\n{0} / {1}\n\n[E0CA70][호감도 버프][-][EAE5D9]\n{2}\n\n[E0CA70][이벤트][-]\n마을에서 대화",
             "English": "[E0CA70][Affection][-][EAE5D9]\n{0} / {1}\n\n[E0CA70][Affection Buff][-][EAE5D9]\n{2}\n\n[E0CA70][Event][-]\nHave a conversation in the village",
             "ChineseCh": "[E0CA70]【好感度】[-][EAE5D9]\n{0} / {1}\n\n[E0CA70]【好感度增益】[-][EAE5D9]\n{2}\n\n[E0CA70]【事件】[-]\n在村庄对话",
-            "ChineseTh": "[E0CA70][好感度][-][EAE5D9]"
+            "ChineseTh": "[E0CA70][好感度][-][EAE5D9]_x000D_\n{0}/{1}_x000D_\n_x000D_\n[E0CA70][好感度增益][-][EAE5D9]_x000D_\n{2}_x000D_\n_x000D_\n[E0CA70][活動]][-]_x000D_\n在村莊對話",
+            "Japanese": "[E0CA70]【好感度】[-][EAE5D9]\n{0} / {1}\n\n[E0CA70]【好感度バフ】[-][EAE5D9]\n{2}\n\n[E0CA70]【イベント】[-]\n村で会話する"
         }
-    },
-    {
-        "Key": "{0}/{1}"
-    },
-    {
-        "Key": "[E0CA70][好感度增益][-][EAE5D9]"
-    },
-    {
-        "Key": "{2}"
-    },
-    {
-        "Key": "[E0CA70][活動]][-]"
-    },
-    {
-        "Key": "在村莊對話,[E0CA70]【好感度】[-][EAE5D9]\n{0} / {1}\n\n[E0CA70]【好感度バフ】[-][EAE5D9]\n{2}\n\n[E0CA70]【イベント】[-]\n村で会話する"
     },
     {
         "Key": "관계",
@@ -13730,9 +13716,9 @@
         "Text": {
             "Korea": "로스트 소드",
             "English": "Lost Sword",
-            "ChineseCh": "遗落圣剑",
-            "ChineseTh": "遺忘之劍",
-            "Japanese": "ロストソード"
+            "ChineseCh": "Lost Sword",
+            "ChineseTh": "Lost Sword",
+            "Japanese": "Lost Sword"
         }
     },
     {
@@ -13959,7 +13945,7 @@
         "Key": "미궁초기화도움말",
         "Text": {
             "Korea": "매주 일요일 23:50 ~ 0:20 집계 및 초기화",
-            "English": "Adjusted and reset every Sunday, at 23:50 ~ 0:10",
+            "English": "Adjusted and reset every Sunday, at 23:50 ~ 0:10 (UTC +9)",
             "ChineseCh": "每周日23:50 ~ 0:10(KST)统计并重置",
             "ChineseTh": "每週日22:50～23:20(UTC+8)進行統計與重置",
             "Japanese": "毎週日曜日23:50～00:10に集計・リセット"
@@ -14379,7 +14365,7 @@
         "Key": "결제추천문구",
         "Text": {
             "Korea": "{0}을 결제하여 구매하시겠습니까?",
-            "English": "Purchase {0}?",
+            "English": "Would you like to purchase the {0} pack to continue?",
             "ChineseCh": "是否支付{0}购买？",
             "ChineseTh": "要支付{0}進行購買嗎？",
             "Japanese": "有料商品{0}を購入しますか？"
@@ -14389,7 +14375,7 @@
         "Key": "아이템부족개수문구",
         "Text": {
             "Korea": "{0} {1}개가 부족합니다.",
-            "English": "You lack {1} {0}.",
+            "English": "You're short by {1} Leon.",
             "ChineseCh": "缺少{1}个{0}。",
             "ChineseTh": "缺少{1}個{0}。",
             "Japanese": "{0}が{1}個足りません"
@@ -14519,7 +14505,7 @@
         "Key": "소환시획득문구",
         "Text": {
             "Korea": "5성 {0} 획득까지 {1}회 남았습니다.",
-            "English": "{0} summons left until the next guaranteed acquisition.",
+            "English": "{1} {0} Summons left until guaranteed ★5 acquisition.",
             "ChineseCh": "距离必得5星{0}还剩{1}次召唤。",
             "ChineseTh": "距離獲得5星{0}還剩{1}次。",
             "Japanese": "★5{0}確定召喚まであと{1}回"
@@ -14540,7 +14526,7 @@
         "Text": {
             "Korea": "현재 공명이 가능한 상태입니다.\n정말 {0}하시겠습니까?",
             "English": "You are able to resonate.\nAre you sure you want to transcend?",
-            "ChineseCh": "当前可进行共鸣。{0}确定要进行\n吗？",
+            "ChineseCh": "当前可进行共鸣。\n{0}确定要进行吗？",
             "ChineseTh": "現在可進行共鳴。\n確定要{0}嗎？",
             "Japanese": "現在、共鳴ができる状態です\n本当に超越しますか？"
         }
@@ -14839,7 +14825,7 @@
         "Key": "SkillActorType.CheckAccumBuff",
         "Text": {
             "Korea": "중첩 버프 추가 피해",
-            "English": "Additional damage from stacked buffs",
+            "English": "Buff Exploitation",
             "ChineseCh": "叠加增益额外伤害",
             "ChineseTh": "疊加增益額外傷害",
             "Japanese": "重複バフ追加ダメージ"
@@ -15191,7 +15177,7 @@
             "Korea": "캐릭터와 대화를 통해 호감도를 올릴 수 있는 콘텐츠입니다.\n매일 정해진 횟수만큼 진행이 가능하며, 선택지에 따라 더 많은 호감도가 상승합니다.\n호감도 단계에 따라 새로운 에피소드와 추가 능력치를 획득할 수 있습니다.",
             "English": "Engage in chats with characters to increase your Affection. You can participate a limited number of times each day, and choosing specific options will boost your affection even more. As your affection level rises, you'll unlock new episodes and gain additional stats.",
             "ChineseCh": "通过与角色对话可以提升好感度的内容。\n每天有固定的对话次数，根据选择可以获得更多好感度提升。\n根据好感度等级可以获得新的剧情和额外能力值。",
-            "ChineseTh": "可以透過與角色對話來提升好感度。\n每天可進行特定次數的對話，且根據選擇可獲得更多好感度。\n根據好感度階段，可解鎖新的劇情並獲得額外能力值。",
+            "ChineseTh": "可以透過與角色對話來提升好感度。\n每天可進行特定次數的對話，且根據選擇可獲得更多好感度。\n根據好感度階段，可解鎖新的外傳並獲得額外能力值。",
             "Japanese": "キャラクターと会話して好感度を上げるコンテンツです\n毎日一定回数まで好感度を上げることができ、選択肢によって上昇する好感度が異なります\n好感度のランクによって新しいエピソードや追加能力を獲得できます"
         }
     },
@@ -15991,7 +15977,7 @@
             "Korea": "이전 에피소드를 먼저 열람해주세요.",
             "English": "Please open the previous episode first.",
             "ChineseCh": "请先阅读之前的章节。",
-            "ChineseTh": "請先觀看之前的故事。",
+            "ChineseTh": "請先觀看之前的外傳。",
             "Japanese": "前のエピソードを先に確認しましょう"
         }
     },
@@ -16038,10 +16024,10 @@
     {
         "Key": "랭킹설명",
         "Text": {
-            "Korea": "월간 랭킹은\n개인의 일일 보스 레이드 점수가 정산될 때\n월간 랭킹에 누적되는 시스템입니다.\n\n월간 랭킹은\n매달 1일 초기화 되고,\n랭킹 보상이 우편함으로 지급됩니다.",
-            "English": "The monthly ranking system is determined by combining points based on individual Boss Raid rankings and EXP gained from hunting monsters.\n\nThe monthly ranking resets on the 1st of each month, and ranking rewards are sent to the Mailbox.",
+            "Korea": "월간 랭킹은\n개인의 일일 보스 레이드 점수가 정산될 때\n월간 랭킹에 누적되는 시스템입니다.\n\n보스 레이드 일일 랭킹 500위 이내를 기록하면\n해당 월의 월간 랭킹에 등록됩니다.\n\n월간 랭킹에서 500위 밖으로 밀려나는 경우,\n퍼센트 보상을 받게 됩니다.\n\n월간 랭킹은\n매달 1일 초기화 되고,\n랭킹 보상이 우편함으로 지급됩니다.",
+            "English": "The Monthly Ranking system accumulates your points based on your daily Boss Raid scores.\n\nIf you rank within the top 500 in the Daily Boss Raid Rankings, you will be listed in that month’s Monthly Ranking.\n\nIf you fall outside the top 500 in the Monthly Rankings, you will receive a percentage-based reward instead.\n\nMonthly Rankings reset on the 1st of every month (UTC+9), and rewards are delivered via in-game mail.",
             "ChineseCh": "月度排名是\n根据个人每日领主突袭积分结算时\n累计到月度排名的系统。\n\n月度排名\n每个月1号重置，\n排名奖励会发送到邮箱。",
-            "ChineseTh": "每月排名\n在個人每日首領突襲分數結算時，\n將加總至每月排名。\n\n每月排名\n將在每個月1號重置，\n排名獎勵將透過郵件發送。",
+            "ChineseTh": "每月排名\n在個人每日首領突襲分數結算時，\n將加總至每月排名。\n\n每月排名\n將在每個月1號重置，\n排名獎勵將發送至信箱內。",
             "Japanese": "マンスリーランキングは\n個人のボスレイドランキングによるスコアと\nモンスター狩りを通して獲得した経験値の合計で\nランキングが決まるシステムです\n\nマンスリーランキングは\n毎月1日にリセットされ、\nランキング報酬がポストに届きます"
         }
     },
@@ -16103,46 +16089,6 @@
             "ChineseCh": "※ 公会页签说明\n\n「阿瓦隆」\n阿瓦隆是公会竞争玩法。\n在布里塔尼亚大陆内争夺城堡，进行分数竞争。\n\n阿瓦隆持续7天。\n阿瓦隆进行期间，每天可以攻击1次城堡来获取分数。\n7天内，根据每个城堡的累计分数，决定每个城堡的城主公会。\n城主确定后，将有7天的休整期。\n\n所有参与阿瓦隆的公会都可以获得阿瓦隆的奖励，\n根据排名发放不同的奖励。\n\n7天的休整期结束后，阿瓦隆将再次进行7天。",
             "ChineseTh": "※ 公會分頁說明\n\n「阿瓦隆」\n阿瓦隆為公會競爭的遊戲戰鬥內容。\n以布里塔尼亞大陸上的城堡為目標，進行分數競爭。\n\n阿瓦隆進行時間為7天。\n阿瓦隆開始時，各公會的成員將獲得一星期6次的挑戰資格。\n根據在7日間於各城堡累積的分數，城堡間的公會排名將有所不同。\n公會排名決定後，將進入7天的休戰期。\n\n所有參加阿瓦隆的公會皆可獲得阿瓦隆獎勵，\n並根據排名發放各名次對應的獎勵。\n\n即便在2座城堡獲得了相同的名次，也將根據城堡間的優先順序，只獲得其中1座城堡的獎勵。優先順序排序如下。\n\n卡美洛城\n神聖泰坦尼亞\n埃塞爾城\n艾爾阿伊亞城\n麥西亞城\n廷塔哲城\n\n在為期7天的休戰期結束後，將再次舉行7天的阿瓦隆。",
             "Japanese": "※ギルドタブの詳細\n\n「アヴァロン」\n\nアヴァロンはギルド間で競争するコンテンツです\nブリタニア大陸のにある複数の城を巡り、スコアで競い合います\n\nアヴァロンは7日間開催されます\nアヴァロンが開催されると毎日1回まで城を攻撃してスコアを獲得できます\n7日間、各城の累計スコアで城主ギルドが決まります\nアヴァロンは城主が決まると7日間の休止期間があります\n\nアヴァロンに参加した全てのギルドがアヴァロンの報酬を獲得します\n報酬はランキングに応じて配布されます\n\n7日間の休止期間が終了すると、また7日間アヴァロンが開催されます"
-        }
-    },
-    {
-        "Key": "Admin_Elizabeth",
-        "Text": {
-            "Korea": "CM엘리자베스",
-            "English": "CM Elizabeth",
-            "ChineseCh": "CM伊丽莎白",
-            "ChineseTh": "CM伊莉莎白",
-            "Japanese": "CMエリザベス"
-        }
-    },
-    {
-        "Key": "Admin_System",
-        "Text": {
-            "Korea": "시스템",
-            "English": "System",
-            "ChineseCh": "系统",
-            "ChineseTh": "系統",
-            "Japanese": "システム"
-        }
-    },
-    {
-        "Key": "MailTitle_Untitled",
-        "Text": {
-            "Korea": "제목없음",
-            "English": "No title",
-            "ChineseCh": "无标题",
-            "ChineseTh": "沒有標題",
-            "Japanese": "タイトルなし"
-        }
-    },
-    {
-        "Key": "MailContent_NoContent",
-        "Text": {
-            "Korea": "내용없음",
-            "English": "No content",
-            "ChineseCh": "无内容",
-            "ChineseTh": "沒有內容",
-            "Japanese": "内容なし"
         }
     },
     {
@@ -16251,18 +16197,8 @@
             "Korea": "※일반 탭 설명\n\n「보스 레이드」\n보스 레이드는 요일별로 바뀌는 보스를 상대하며\n입힌 대미지 만큼 점수를 기록하는 콘텐츠입니다.\n\n보스 레이드는 매일 3회 도전할 수 있으며,\n1회만 도전하고 소탕을 통해 스킵할 수 있습니다.\n\n보스 레이드는 매일 정산되는 \n개인 랭킹과 길드 랭킹이 존재하며,\n일간 랭킹의 점수는 월간 랭킹으로 이월되어\n매월 1일에 순위 보상을 받을 수 있습니다.\n\n보스 레이드에서 얻는 레이드 코인으로 \n귀중한 아이템들을 교환할 수 있습니다.\n\n연습 전투를 통해 횟수를 소모하지 않고\n점수 테스트를 할 수 있습니다.\n\n매일 점수 집계 기간인 23:50~00:10 까지는\n도전이 불가능합니다.\n\n\n「콜로세움」\n콜로세움은 다른 유저와의 경쟁을 통해 등급과 승점을 올리는 콘텐츠입니다.\n입장에 필요한 콜로세움 티켓은 60분에 1장씩 충전되며, 최대 20장 충전됩니다.\n\n\n「미궁」\n미궁을 탐색하며 다양한 보상을 획득할 수 있는 콘텐츠입니다.\n매주 월요일 마다 초기화됩니다.\n\n\n「오베론의 탑」\n오베론의 탑은 각 층에 위치한 보스를 쓰러뜨리며 다음 층에 도전하는 콘텐츠입니다.\n보스들은 1회성으로 한번 클리어하면 끝입니다.\n\n\n「세계수의 균열」\n세계수의 균열은 \"오베론의 탑\"을 정복하면 등장하는 탑 콘텐츠입니다.\n각 층에 위치한 보스를 쓰러뜨리며 다음 층에 도전하는 형태이며 보스들은 1회성으로 한번 클리어하면 끝입니다.\n\n\n「별의 윤회」 \n별의 윤회는 두 파티를 편성하여 각각의 \n보스를 상대하고 점수를 갱신하는 콘텐츠입니다.\n\n별의 윤회는 격주로 진행되며 기록한 점수에 맞는 보상을 획득하고\n모든 모험 지역에서 높은 점수를 갱신하여 랭킹으로 경쟁할 수 있습니다.\n\n격주로 진행되며 진행 기간동안은 몇번이든 재도전할 수 있습니다.",
             "English": "Tabs Info\n\n「Boss Raid」\n\nIn the Boss Raid, players face bosses that change daily and earn points based on the damage dealt.\n\nYou can do the Boss Raid 3 times a day and skip with “Sweeps” after completing 1 challenge.\n\nThere are individual and guild rankings that reset daily, with the daily scores carrying over to the monthly rankings. On the 1st of each month, rewards are given based on the monthly ranking.\n\nRaid coins earned from the Boss Raid can be exchanged for valuable items.\n\nYou can test your score without consuming attempts through practice battles.\n\nChallenges are unavailable during the score tally period from 23:50 to 00:10 every day.\n\n\n「Colosseum」\n\nIn the Colosseum, you compete against other players to increase your rank and points.\nThe Colosseum tickets needed for entry recharge at a rate of one per 30 minutes, with a maximum of 20 tickets stored.\n\n\n「Labyrinth」\nIn the Labyrinth, you can explore and earn various rewards.\nIt resets every Monday.\n\n\n「Oberon’s Tower」\nIn Oberon’s Tower, you defeat bosses on each floor to challenge the next.\nEach boss is a one-time challenge—once defeated, it's complete.",
             "ChineseCh": "※ 普通页签说明\n\n「单人突袭」\n领主突袭是与每周轮换的领主进行战斗，\n根据造成的伤害量来记录分数的玩法。\n\n每天可以挑战3次领主突袭，\n可以只挑战1次，然后通过扫荡来跳过。\n\n领主突袭有每日结算的\n个人排名和公会排名，\n每日排名的分数会累计到月度排名，\n每月1号可以领取排名奖励。\n\n通过领主突袭获得的突袭币\n可以兑换珍贵的道具。\n\n通过练习战斗，可以在不消耗次数的情况下\n测试伤害。\n\n每日分数结算期间(23:50~00:10)\n无法挑战。\n\n\n「竞技场」\n竞技场是通过与其他玩家竞争来提升等级和胜点分的玩法。\n进入竞技场所需的竞技场票券每60分钟补充1张，最多可补充20张。\n\n\n「迷宫」\n迷宫是可以探索并获得各种奖励的玩法。\n每周一重置。\n\n\n「奥伯龙之塔」\n奥伯龙之塔是逐层击败领主，挑战更高层的玩法。\n每层的领主都是一次性的，通关一次就结束了。",
-            "ChineseTh": "※ 一般分頁說明\n\n「首領突襲」\n為透過與每天出現的不同首領對戰，\n根據造成的傷害記錄分數的遊戲戰鬥內容。\n\n首領突襲每天可挑戰3次，\n並可在挑戰1次後直接進行掃蕩。\n\n首領突襲中分為每日計算的\n個人排名與公會排名，\n且每日排名的分數將計入每月排名中，\n可在每個月1號獲得排名獎勵。\n\n可用首領突襲獲得的突襲幣\n兌換為珍貴的道具。\n\n可透過練習戰鬥，\n在不消耗次數的情況下測試分數。\n\n在每日分數結算期間22:50~23:10(UTC+8)\n將無法進行挑戰。\n\n\n「競技場」\n為透過與其他玩家的競爭提升級別與勝分的遊戲戰鬥內容。\n用於進入的競技場票券60分鐘補充1次，最多可補充20次。\n\n\n「迷宮」\n為透過迷宮探勘獲得各種獎勵的遊戲戰鬥內容。\n於每週一重置。\n\n\n「奧伯隆之塔」\n為透過打倒各樓層首領，挑戰下一樓層首領的遊戲戰鬥內容。\n首領只會出現1次，通過後將無法重新挑戰。\n\n\n「世界樹的龜裂」\n為征服「奧伯隆之塔」後才會出現的高塔遊戲戰鬥內容。\n在打倒各樓層的首領後，可挑戰下一樓層，且每個首領只會出現1次，通過後將無法重新挑戰。\n\n\n「星辰輪迴」\n為透過編組兩支隊伍，挑戰各自的首領，\n更新分數的遊戲戰鬥內容。\n\n星辰輪迴將兩週舉行一次，根據分數得到相應的獎勵，\n並可在所有冒險地區透過刷高分數，進行排名競爭。\n\n進行時間為兩週一次，且在進行期間可不限次數重新挑戰。",
+            "ChineseTh": "※ 一般分頁說明\n\n「首領突襲」\n為透過與每天出現的不同首領對戰，\n根據造成的傷害記錄分數的遊戲戰鬥內容。\n\n首領突襲每天可挑戰3次，\n並可在挑戰1次後直接進行掃蕩。\n\n首領突襲中分為每日計算的\n個人排名與公會排名，\n且每日排名的分數將計入每月排名中，\n可在每個月1號獲得排名獎勵。\n\n可用首領突襲獲得的突襲幣\n兌換為珍貴的道具。\n\n可透過練習戰鬥，\n在不消耗次數的情況下測試分數。\n\n在每日分數結算期間22:50~23:10(UTC+8)\n將無法進行挑戰。\n\n\n「競技場」\n為透過與其他玩家的競爭提升級別與勝分的遊戲戰鬥內容。\n用於進入的競技場票券60分鐘補充1次，最多可補充10次。\n\n\n「迷宮」\n為透過迷宮探勘獲得各種獎勵的遊戲戰鬥內容。\n於每週一重置。\n\n\n「奧伯隆之塔」\n為透過打倒各樓層首領，挑戰下一樓層首領的遊戲戰鬥內容。\n首領只會出現1次，通過後將無法重新挑戰。",
             "Japanese": "※一般タブの詳細\n\n「ボスレイド」\n\nボスレイドは曜日ごとに異なるボスと戦い\n与えたダメージに応じてスコアを獲得できるコンテンツです\n\nボスレイドには毎日3回まで挑戦でき、\n1回だけクリアすると掃討機能で戦闘をスキップできます\n\nボスレイドのランキングは毎日集計され\n個人ランキングとギルドランキングがあります\nデイリーランキングのスコアはマンスリーランキングに反映され\n毎日ランキング報酬が配布されます\n\nボスレイドで獲得したレイドコインは\n希少なアイテムと交換できますす\n\n模擬戦闘では参加回数を消費せず\n達成可能なスコアをテストできます\n\nスコアが集計される毎日23:50～00:10の間は\nボスレイドに挑戦できません\n\n\n「コロッセウム」\nコロッセウムは他のプレイヤーと競い合い、ランクとスコアを上げるコンテンツです\n入場に必要なコロッセウムチケットは60分に1枚ずつチャージされ、最大20枚まで所持できます\n\n\n「迷宮」\n迷宮を探索し、様々な報酬を手に入れられるコンテンツです\n迷宮は毎週月曜日にリセットされます\n\n\n「オーベロンの塔」\nオーベロンの塔は各層のボスを倒して次の層へ進むコンテンツです\n各ボスは一度倒すと再挑戦できません"
-        }
-    },
-    {
-        "Key": "BattleUIDataIndex.DungeonExplain",
-        "Text": {
-            "Korea": "※던전 탭 설명\n\n「스톤헨지」\n스톤헨지는 정해진 시간 동안 자유롭게 던전을 플레이하여\n장비와 아이템을 파밍할 수 있는 파밍 던전입니다.\n\n매일 10분 간 입장 시간을 획득할 수 있으며,\n최대 2시간 까지 누적됩니다.\n\n황금 나침반을 통해 부족한 시간을 충전할 수 있습니다.\n\n\n「골드」\n골드 던전은 층수를 도전하여 골드를 획득하는 콘텐츠입니다.\n층을 클리어 하고 나서 소탕을 할 수 있는데,\n클리어한 층의 소탕 보상만큼 획득할 수 있습니다.\n\n골드 티켓을 이용해서 추가 소탕도 가능합니다.\n\n\n「경험치」\n경험치 던전은 층수를 도전하여 경험치 북을 획득하는 콘텐츠입니다.\n층을 클리어 하고 나서 소탕을 할 수 있는데,\n클리어한 층의 소탕 보상만큼 획득할 수 있습니다.\n\n퍼플 티켓을 이용해서 추가 소탕도 가능합니다.",
-            "English": "Dungeon Tabs Info\n\n「Stonehenge」\n\nStonehenge is a farming dungeon where you can freely play for a set period to farm equipment and items.\n\nYou can earn 10 minutes of entry time every day, with a maximum accumulation of up to 2 hours.\n\nYou can recharge any missing time using the Golden Compass.\n\n\n「Gold」\n\nIn the Gold Dungeon, you fight on a number of floors to earn gold.\nAfter clearing a floor, you can sweep it to receive rewards based on the cleared floor.\n\nAdditional sweeps can be done using Gold Tickets.\n\n\n「XP」\n\nIn the XP Dungeon, you fight on a number of floors to earn XP Books.\nAfter clearing a floor, you can sweep it to receive rewards based on the cleared floor.\n\nAdditional sweeps can be done using Purple Tickets.",
-            "ChineseCh": "※ 副本页签说明\n\n「巨石阵副本」\n巨石阵是在规定时间内自由地进行副本， \n可以刷取装备和道具的副本。 \n\n每天可以获得10分钟的入场时间， \n最多可以累积2小时。 \n\n可以通过黄金指南针来补充不足的时间。 \n\n\n「金币」\n金币副本是挑战关卡来获得金币的玩法。 \n通关后可以进行扫荡， \n可以获得与通关层数扫荡奖励相同的奖励。 \n\n使用金币券还可以进行额外扫荡。 \n\n\n「经验值」\n经验值副本是挑战关卡来获得经验书的玩法。 \n通关后可以进行扫荡， \n可以获得与通关层数扫荡奖励相同的奖励。 \n\n使用紫色门票还可以进行额外扫荡。",
-            "ChineseTh": "※ 副本分頁說明\n\n「巨石陣」\n為可在限定時間內，自由進行副本遊戲，\n獲得裝備與道具的農寶副本。\n\n每日可獲得10分鐘的使用時間，\n最多可累積2個小時。\n\n可透過黃金羅盤補充不足的時間。\n\n\n「黃金」\n為透過挑戰各樓層獲得金幣的遊戲戰鬥內容。\n可在通過樓層後進行掃蕩，\n並可獲得通過樓層的掃蕩獎勵。\n\n此外，也可利用金幣票券進行額外掃蕩。\n\n\n「經驗值」\n為透過挑戰各樓層獲得經驗值之書的遊戲戰鬥內容。\n可在通過樓層後進行掃蕩，\n並可獲得通過樓層的掃蕩獎勵。\n\n此外，也可利用紫色票券進行額外掃蕩。",
-            "Japanese": "※ダンジョンタブの詳細\n\n「ストーンヘンジ」\n\nストーンヘンジは決まった時間中間、自由にダンジョンをプレイし\n装備とアイテムを獲得するアイテムダンジョンです\n\n毎日10分の入場時間を獲得でき\n最大2時間まで時間を増やせます\n\n黄金の羅針盤で時間をチャージすることができます\n\n\n「ゴールド」\n\nゴールドダンジョンは各層に挑戦してゴールドを獲得するコンテンツです\nクリアした層は掃討することができます\n掃討するとクリアした時に獲得した分のゴールドを獲得できます\nゴールドチケットを使用すると追加掃討も可能です\n\n\n「経験値」\n\n経験値ダンジョンは各層に挑戦して経験値ブックを獲得するコンテンツです\nクリアした層は掃討することができます\n掃討するとクリアした時に獲得した分のゴールドを獲得できます\nパープルチケットを使用すると追加掃討も可能です"
         }
     },
     {
@@ -16331,7 +16267,7 @@
             "Korea": "「적 레벨」\n적군 보스의 레벨입니다.\n\n\n「레벨 보정」\n아군 파티 5인의 평균 레벨이 적군 보스의 레벨보다 낮으면\n가하는 대미지가 감소하고 받는 대미지가 증가합니다.\n\n아군 파티 5인의 평균 레벨이 적군 보스의 레벨보다 높으면\n가하는 대미지가 증가하고 받는 대미지가 감소합니다.\n\n레벨 보정은 1레벨 차이부터 증가하고\n25레벨 이상부터 최대치를 받습니다.\n\n파티 5인의 평균 레벨이기 때문에 아군을 1명만 출전시킬 경우\n나머지 네자리에 아무도 출전시키지 않으면 빈 자리만큼 평균 레벨이 내려가게 됩니다.\n\n콜로세움과 파티 레이드는 레벨 보정을 받지 않습니다.\n\n\n「하드 난이도」\n하드 난이도의 경우, \n아군이 적보다 레벨이 높을 때의 유리 보정을 받지 못합니다.\n적이 아군보다 레벨이 높으면 유리 보정을 받게 됩니다.\n\n헬 난이도, 세계수의 균열은 하드 난이도의 레벨 보정을 받습니다.\n\n\n「적 레벨이 ?인 경우」\n적 레벨이 가변일 경우, 물음표로 나오게 됩니다.\n이 때 적의 레벨은 현재 점수 혹은 상황에 따라 증가하게 됩니다.",
             "English": "「Enemy Level」\nThe level of the enemy boss.\n\n\n「Level Adjustment」\nIf the average level of the 5 allied party members is lower than the enemy boss’s level, dealt damage decreases, and received damage increases.\n\nIf the average level of the 5 allied party members is higher than the enemy boss’s level, dealt damage increases, and received damage increases.\n\nLevel adjustment starts from a 1-level difference and reaches its maximum effect at a 25-level difference.\n\nSince the adjustment is based on the average level of five party members, leaving empty slots by sending fewer members will lower the average level.\n\nColosseum and Party Raid are not affected by level adjustment.\n\n\n「Hard Mode」\nIn Hard Mode, allies do not receive the advantage of having a higher level than the enemy.\nIf the enemy's level is higher, the disadvantage adjustment applies.\n\n\n「Enemy Level Displayed as '?'」\nIf the enemy's level is variable, it will appear as a question mark. In this case, the enemy's level increases based on the current score or situation.",
             "ChineseCh": "【敌方等级】\n敌方领主的等级。\n\n\n【等级修正】\n我方队伍5人的平均等级低于敌方领主等级时，\n造成的伤害会降低，受到的伤害会增加。\n\n我方队伍5人的平均等级高于敌方领主等级时，\n造成的伤害会增加，受到的伤害也会增加。\n\n等级修正从相差1级开始增加，\n相差25级以上时达到最大值。\n\n由于是我方5人的平均等级，所以如果只出战1名我方成员，\n其他四个位置没有出战任何成员时，会根据空位数量降低平均等级。\n\n竞技场和小队突袭不受等级修正影响。\n\n\n【困难模式】\n困难模式下，\n我方等级高于敌方时，无法获得优势修正。\n敌方等级高于我方时，会获得优势修正。\n\n\n【敌方等级为？时】\n如果敌方等级是可变的，则会显示为问号。\n此时敌方等级会根据当前分数或情况增加。",
-            "ChineseTh": "「敵人等級」\n敵軍首領的等級。\n\n\n「等級修正」\n當我軍隊伍的5人平均等級低於敵軍首領的等級時，\n造成的傷害減少，受到的傷害增加。\n\n當我軍隊伍的5人平均等級高於敵軍首領的等級時，\n造成的傷害增加，受到的傷害減少。\n\n等級修正從差距1等級時開始增加，\n且差距達25等級以上時，以最大值計算。\n\n由於等級以隊伍5人的平均進行計算，因此只派出1個我軍進行戰鬥時，\n剩下的4個位置將會因空置而導致平均等級下降。\n\n競技場與組隊突襲將不受等級修正影響。\n\n\n「困難難度」\n在困難難度中，\n當我軍的等級高於敵人時，將無法獲得優勢修正。\n當敵人的等級高於我軍時，將獲得優勢修正。\n地獄難度、世界樹的龜裂將不受困難難度的等級修正影響。\n\n\n「敵人的等級為？時」\n當敵人的等級出現劇變時，將顯示為問號。\n這時敵人的等級將根據目前分數或狀況增加。",
+            "ChineseTh": "「敵人等級」\n敵軍首領的等級。\n\n\n「等級修正」\n當我軍隊伍的5人平均等級低於敵軍首領的等級時，\n造成的傷害減少，受到的傷害增加。\n\n當我軍隊伍的5人平均等級高於敵軍首領的等級時，\n造成的傷害增加，受到的傷害減少。\n\n等級修正從差距1等級時開始增加，\n且差距達25等級以上時，以最大值計算。\n\n由於等級以隊伍5人的平均進行計算，因此只派出1個我軍進行戰鬥時，\n剩下的4個位置將會因空置而導致平均等級下降。\n\n競技場與組隊突襲將不受等級修正影響。\n\n\n「困難難度」\n在困難難度中，\n當我軍的等級高於敵人時，將無法獲得優勢修正。\n當敵人的等級高於我軍時，將獲得優勢修正。\n\n\n「敵人的等級為？時」\n當敵人的等級出現劇變時，將顯示為問號。\n這時敵人的等級將根據目前分數或狀況增加。",
             "Japanese": "「敵のレベル」\n敵ボスのレベルです\n\n\n「レベル補正」\n味方パーティーメンバー5人の平均レベルが敵ボスのレベルより低い場合、\n敵に与えるダメージが減少し、受けるダメージが増加します\n\n\n味方パーティーメンバー5人の平均レベルが敵ボスのレベルより高い場合、\n敵に与えるダメージが増加し、受けるダメージが減少します\n\nレベル補正は1レベル差から増加し、\n25レベル差以上では最大値に達し、それ以上に増加しません\n\nパーティーメンバー5人の平均レベルで決定するため、味方が1人だけ出場して、\n残りの4席が空いている場合、その分だけ平均レベルが下がります\n\nコロッセウムやパーティーレイドではレベル補正は発生しません\n\n\n「ハードモード」\nハードモードでは\n味方が敵よりレベルが高くてもレベル補正は発生しません\n敵が味方よりレベルが高い場合は不利なレベル補正が発生します\n\n\n「敵のレベルが「？」となっている場合」\n敵のレベルが変わる可能性がある場合、クエスチョンマークで表示されます\nこの場合、敵のレベルは現在のスコアや戦闘状況に応じて増加する可能性があります"
         }
     },
@@ -16349,7 +16285,7 @@
         "Key": "룰렛설명",
         "Text": {
             "Korea": "※ 바니 베디의 룰렛\n - 이벤트 기간 동안 [룰렛 티켓]을 사용하여, 상품을 받아가세요.\n\n1. 룰렛 티켓 획득처\n - 매일 [룰렛 티켓]을 1개씩 지급해드립니다.\n - [상점 > 이벤트] 페이지에서 매일 1개씩 추가로 구매할 수 있습니다.\n\n2. 룰렛 보상 설명\n - [1등 : ★5 캐릭터 소환권 1개] 상품은 1회 획득 상품입니다.\n - 1등 상품 획득 시 해당 확률은 남은 기간동안 2등 상품에 확률이 더해집니다.\n \n * 1등 상품은 매달 초기화 3일전까지 획득하지 못한 경우 룰렛에서 확정 획득할 수 있습니다.\n * 룰렛 보상은 매달 초기화되며 상품이 변경될 수 있습니다.",
-            "English": "Bunny Bedi's Roulette\n- Use [Roulette Tickets] during the event period to claim rewards.\n\n1. How to Obtain Roulette Tickets\n- You will receive [1 Roulette Ticket] daily.\n- You can purchase 1 additional ticket daily from [Shop > Event] page.\n\n2. Roulette Rewards\n* [1st Prize: 5★ Character Summon Ticket x1] and [2nd Prize: Soul x100] can only be obtained once.\n* Roulette rewards reset monthly and may change.",
+            "English": "Bunny Bedi's Roulette\n- Use [Roulette Tickets] during the event period to claim rewards.\n\n1. How to Obtain Roulette Tickets\n- You will receive [Roulette Ticket x 1] daily.\n- You can also purchase 1 additional ticket per day in [Shop > Event].\n\n2. Roulette Rewards\n* The 1st Prize: [★5 Character Summon Ticket] can only be obtained once.\n* Once the 1st Prize is obtained, its chance is redistributed to the 2nd Prize for the rest of the roulette duration.\n\n*If you do not obtain the 1st Prize by three days before the monthly reset, it will be guaranteed on your next spin.\n*Roulette rewards are reset monthly and may be updated with new prizes.",
             "ChineseCh": "※ 兔女郎贝迪的轮盘\n- 活动期间，使用【轮盘券】，领取奖励吧。\n\n1. 轮盘券获得途径\n- 每日发放1张【轮盘券】。\n- 可以在【商店>活动】页面每天额外购买1张。\n\n2. 轮盘奖励说明\n*【一等奖：★5角色召唤券ｘ1】、【二等奖：灵魂ｘ100】的奖励为一次性获取奖励。\n* 轮盘奖励每月重置，奖励可能会变更。",
             "ChineseTh": "※ 兔女郎貝蒂的輪盤\n- 活動期間使用[輪盤券]獲得商品吧。\n\n1.輪盤券獲得處\n- 每日可獲得1張[輪盤券]\n- 每日可於[商店>活動]頁面額外購買1張。\n\n2.輪盤獎勵說明\n- [1等：★5角色召喚券1個]為可獲得1次的商品。\n- 獲得1等商品時，該機率將在剩餘期間加至2等商品的機率上。\n\n* 1等商品將於每個月重置，且在結束的3天前都未獲得時，將自動於輪盤保證獲得。\n* 輪盤獎勵將於每個月重置，且商品可能會有變更。",
             "Japanese": "※バニーベディのルーレット\n・イベント期間中に【ルーレットチケット】を使用して、アイテムをGETしましょう\n\n1.ルーレットチケットの獲得方法\n・毎日1枚の【ルーレットチケット】を配布します\n・【ショップ ＞ イベント】メニューから毎日1枚のチケットを追加購入できます\n2.ルーレット報酬の詳細\n※1等賞(★5キャラクター召喚券×1)と2等賞(100ソウル)はそれぞれ1回のみ獲得可能です\n※ルーレット報酬は毎月リセットされ、賞品が変更される場合があります"
@@ -16409,7 +16345,7 @@
         "Key": "강화성공시능력치증가문구2",
         "Text": {
             "Korea": "강화 시 모든 캐릭터의 능력치가 성유물의 능력치 만큼 오릅니다.",
-            "English": "Enhancing increases all characters' stats by the amount of the relic’s stats.",
+            "English": "Enhancing increases all character's stats by the amount of the relic’s stats.",
             "ChineseCh": "强化时，所有角色的能力值会提升，提升量与圣物相同。",
             "ChineseTh": "強化時，所有角色的能力值將根據聖遺物的能力值提升。",
             "Japanese": "強化すると、全キャラクターの能力値が聖遺物の能力値分だけアップします"
@@ -16739,7 +16675,7 @@
         "Key": "정산중",
         "Text": {
             "Korea": "정산 중",
-            "English": "Calculating…",
+            "English": "Calculating...",
             "ChineseCh": "结算中",
             "ChineseTh": "結算中",
             "Japanese": "集計中"
@@ -17329,7 +17265,7 @@
         "Key": "SkillActorType.CheckMyBuffState",
         "Text": {
             "Korea": "상태 이상 받는 추가 피해",
-            "English": "Additional DMG Received With Status Effects",
+            "English": "Status Effect Bonus Damage Received",
             "ChineseCh": "状态异常承受的额外伤害",
             "ChineseTh": "狀態異常受到的額外傷害",
             "Japanese": "状態異常時に受ける追加ダメージ"
@@ -17353,11 +17289,9 @@
             "Korea": "※ 미궁 랭킹 보상\n\n 순위 : 1 ~ 200 : 전설 선물 상자 1개\n 순위 : 201 ~ 500 : 영웅 선물 상자 1개\n 순위 : 501 ~ 전체 : 희귀 선물 상자 1개",
             "English": "* Labyrinth Ranking Reward\n\nRank 1 - 200: Legendary Gift Box x1\nRank 201 - 500: Heroic Gift Box x1\nRank 501 and lower: Rare Gift Box x1",
             "ChineseCh": "※ 迷宫排名奖励\n\n  排名：1 ~ 200：传说礼物箱 1个\n  排名：201 ~ 500：英雄礼物箱 1个\n  排名：501 ~ 之后所有排名：稀有礼物箱 1个",
-            "ChineseTh": "※ 迷宮獎勵\n\n\n名次：1~200：傳說禮物箱1個\n名次：201~500：英雄禮物盒1個"
+            "ChineseTh": "※ 迷宮獎勵\n\n\n名次：1~200：傳說禮物箱1個\n名次：201~500：英雄禮物盒1個_x000D_\n名次：501~全體：稀有禮物箱1個",
+            "Japanese": "※ 迷宮ランキング報酬\n\nランキング：1～200位：レジェンダリープレゼントBOX 1個\nランキング：201～500位：ヒロイックプレゼントBOX 1個\nランキング：501位～全体：ユニークプレゼントBOX 1個"
         }
-    },
-    {
-        "Key": "名次：501~全體：稀有禮物箱1個,※ 迷宮ランキング報酬\n\nランキング：1～200位：レジェンダリープレゼントBOX 1個\nランキング：201～500位：ヒロイックプレゼントBOX 1個\nランキング：501位～全体：ユニークプレゼントBOX 1個"
     },
     {
         "Key": "특성확률주의문구",
@@ -17775,7 +17709,7 @@
             "Korea": "별의 윤회 전투로 갱신한 총점으로 \n랭킹을 산정하는 시스템입니다.\n\n별의 윤회가 진행되는 주가 끝나면 랭킹이 정산되며\n\n순위 정산 시\n우편함으로 랭킹 보상이 지급됩니다.",
             "English": "This is a system that calculates rankings based on the\ntotal score updated through Star Reincarnation battles.\n\nWhen the week of the Star Reincarnation ends, the rankings are finalized,\n\nand rewards for each rank\nwill be sent to the Mailbox.",
             "ChineseCh": "该系统根据星辰轮回战斗中更新的总分数\n进行排名计算。\n\n星辰轮回进行的当周结束后，将结算排名。\n\n结算排名时，\n排名奖励将通过邮箱发放。",
-            "ChineseTh": "透過星辰輪迴戰鬥更新總分，決定排名的系統。\n\n將在星辰輪迴進行的週次結束時結算排名，\n\n且排名結算時，將發放排名獎勵至郵件內。",
+            "ChineseTh": "透過星辰輪迴戰鬥更新總分，決定排名的系統。\n\n將在星辰輪迴進行的週次結束時結算排名，\n\n且排名結算時，將發放排名獎勵至信箱內。",
             "Japanese": "星の輪廻バトルで更新された総合スコアをもとに\nランキングを算出するシステムです。\n\n星の輪廻が行われる週が終了すると、ランキングが集計され、\n\nランキング集計時に\nポストにてランキング報酬が配布されます。"
         }
     },
@@ -18443,7 +18377,7 @@
         "Key": "장비프리셋",
         "Text": {
             "Korea": "장비 프리셋",
-            "English": "Equipment Preset",
+            "English": "Gear Preset",
             "ChineseCh": "装备预设",
             "ChineseTh": "裝備預設",
             "Japanese": "装備プリセット"
@@ -18593,225 +18527,730 @@
         "Key": "편집",
         "Text": {
             "Korea": "편집",
-            "ChineseTh": "編輯"
+            "English": "Edit",
+            "ChineseCh": "编辑",
+            "ChineseTh": "編輯",
+            "Japanese": "編集"
         }
     },
     {
         "Key": "상세옵션",
         "Text": {
             "Korea": "상세 옵션",
-            "ChineseTh": "詳細效果"
+            "English": "Stat Details",
+            "ChineseCh": "详细词条",
+            "ChineseTh": "詳細效果",
+            "Japanese": "詳細オプション"
         }
     },
     {
         "Key": "카드효과",
         "Text": {
             "Korea": "카드 효과",
-            "ChineseTh": "卡片效果"
+            "English": "Card Effect",
+            "ChineseCh": "卡牌效果",
+            "ChineseTh": "卡片效果",
+            "Japanese": "カード効果"
         }
     },
     {
         "Key": "장착장비없음문구",
         "Text": {
             "Korea": "장착한 장비가 없습니다.",
-            "ChineseTh": "沒有穿戴中的裝備。"
+            "English": "No equipment equipped.",
+            "ChineseCh": "未装配任何装备。",
+            "ChineseTh": "沒有穿戴中的裝備。",
+            "Japanese": "装着している装備がありません"
         }
     },
     {
         "Key": "장착어빌리티없음문구",
         "Text": {
-            "Korea": "장착한 카드가 없습니다."
+            "Korea": "장착한 카드가 없습니다.",
+            "English": "No card equipped.",
+            "ChineseCh": "未佩戴任何卡牌。",
+            "ChineseTh": "沒有穿戴中的卡片。",
+            "Japanese": "装着しているカードがありません"
         }
     },
     {
         "Key": "스페셜룰",
         "Text": {
             "Korea": "스페셜룰",
-            "ChineseTh": "特殊規則"
+            "English": "Special Rule",
+            "ChineseCh": "特殊规则",
+            "ChineseTh": "特殊規則",
+            "Japanese": "スペシャルルール"
         }
     },
     {
         "Key": "스페셜룰1",
         "Text": {
             "Korea": "닿은 공이 한단계 성장",
-            "ChineseTh": "碰到的球成長1階段"
+            "English": "Touched ball levels up once.",
+            "ChineseCh": "接触的球成长一级",
+            "ChineseTh": "碰到的球成長1階段",
+            "Japanese": "当たったボールが一段階成長"
         }
     },
     {
         "Key": "스페셜룰2",
         "Text": {
             "Korea": "닿은 공이 한단계 퇴화",
-            "ChineseTh": "碰到的球退化1階段"
+            "English": "Touched ball levels down once.",
+            "ChineseCh": "接触的球退化一级",
+            "ChineseTh": "碰到的球退化1階段",
+            "Japanese": "当たったボールが一段階退化"
         }
     },
     {
         "Key": "스페셜룰3",
         "Text": {
             "Korea": "닿은 공이 사라질때 점수 2배",
-            "ChineseTh": "碰到的球消失時，分數2倍"
+            "English": "Earn 2x points when a touched ball disappears.",
+            "ChineseCh": "接触的球消失时分数翻倍",
+            "ChineseTh": "碰到的球消失時，分數2倍",
+            "Japanese": "当たったボールが消えるとき、スコア2倍"
         }
     },
     {
         "Key": "스페셜룰4",
         "Text": {
             "Korea": "공들을 흔들어 섞음",
-            "ChineseTh": "搖晃把球混在一起"
+            "English": "Shuffles all balls.",
+            "ChineseCh": "晃动混合所有球",
+            "ChineseTh": "搖晃把球混在一起",
+            "Japanese": "ボールを振ってシャッフル"
         }
     },
     {
         "Key": "볼리스트",
         "Text": {
             "Korea": "볼리스트",
-            "ChineseTh": "球種清單"
+            "English": "Ball List",
+            "ChineseCh": "球列表",
+            "ChineseTh": "球種清單",
+            "Japanese": "ボールリスト"
         }
     },
     {
         "Key": "점수이상달성",
         "Text": {
             "Korea": "점수 {0}점 이상 달성",
-            "ChineseTh": "分數達{0}分以上"
+            "English": "Score {0} Points or More",
+            "ChineseCh": "分数达到{0}分以上",
+            "ChineseTh": "分數達{0}分以上",
+            "Japanese": "スコア{0}点以上達成"
         }
     },
     {
         "Key": "일시정지",
         "Text": {
             "Korea": "일시 정지",
-            "ChineseTh": "暫停"
+            "English": "Pause",
+            "ChineseCh": "暂停",
+            "ChineseTh": "暫停",
+            "Japanese": "一時停止"
         }
     },
     {
         "Key": "계속하기",
         "Text": {
             "Korea": "계속하기",
-            "ChineseTh": "繼續"
+            "English": "Continue",
+            "ChineseCh": "继续",
+            "ChineseTh": "繼續",
+            "Japanese": "続ける"
         }
     },
     {
         "Key": "그만두기",
         "Text": {
             "Korea": "그만두기",
-            "ChineseTh": "結束"
+            "English": "Quit",
+            "ChineseCh": "放弃",
+            "ChineseTh": "結束",
+            "Japanese": "やめる"
         }
     },
     {
         "Key": "DefShopType.Limited_250612",
         "Text": {
-            "Korea": "반짝 특가"
+            "Korea": "반짝 특가",
+            "English": "Limited-Time Offer",
+            "ChineseCh": "闪亮特惠",
+            "ChineseTh": "閃亮特價",
+            "Japanese": "キラリ特価"
         }
     },
     {
         "Key": "UIIndex.MiniGame",
         "Text": {
-            "Korea": "미니게임"
+            "Korea": "미니게임",
+            "English": "Minigame",
+            "ChineseCh": "迷你游戏",
+            "ChineseTh": "迷你小遊戲",
+            "Japanese": "ミニゲーム"
         }
     },
     {
         "Key": "과일게임룰설명",
         "Text": {
-            "Korea": "3,000점마다 스페셜 볼이 등장합니다."
+            "Korea": "3,000점마다 스페셜 볼이 등장합니다.",
+            "English": "A Special Ball appears every 3,000 points.",
+            "ChineseCh": "每获得3,000分，会出现一个特殊球。",
+            "ChineseTh": "每達3,000分時，將會出現特殊球。",
+            "Japanese": "3,000点ごとにスペシャルボールが出現します"
         }
     },
     {
         "Key": "장비프리셋적용불가문구",
         "Text": {
-            "Korea": "해당 프리셋은 적용이 불가능합니다."
+            "Korea": "해당 프리셋은 적용이 불가능합니다.",
+            "English": "This preset cannot be applied.",
+            "ChineseCh": "该预设无法应用。",
+            "ChineseTh": "無法套用該預設值。",
+            "Japanese": "このプリセットは適用できません"
         }
     },
     {
         "Key": "미니게임",
         "Text": {
-            "Korea": "미니게임"
+            "Korea": "미니게임",
+            "English": "Minigame",
+            "ChineseCh": "迷你游戏",
+            "ChineseTh": "迷你小遊戲",
+            "Japanese": "ミニゲーム"
         }
     },
     {
         "Key": "플레이",
         "Text": {
-            "Korea": "플레이"
+            "Korea": "플레이",
+            "English": "Play",
+            "ChineseCh": "开始游戏",
+            "ChineseTh": "遊玩",
+            "Japanese": "プレイ"
         }
     },
     {
         "Key": "DefHobbyType.HatShopping",
         "Text": {
-            "Korea": "모자 쇼핑"
+            "Korea": "모자 쇼핑",
+            "English": "Hat Shopping",
+            "ChineseCh": "帽子商店",
+            "ChineseTh": "購買帽子",
+            "Japanese": "帽子ショッピング"
         }
     },
     {
         "Key": "로스트후르츠",
         "Text": {
-            "Korea": "로스트 후르츠"
+            "Korea": "로스트 후르츠",
+            "English": "Lost Fruits",
+            "ChineseCh": "失落的水果",
+            "ChineseTh": "遺忘水果",
+            "Japanese": "ロストフルーツ"
         }
     },
     {
         "Key": "로스트후르츠설명",
         "Text": {
-            "Korea": "여관에서 어쩌다 이런 일이...?"
+            "Korea": "여관에서 어쩌다 이런 일이...?",
+            "English": "How did things end up like this... at the inn?",
+            "ChineseCh": "怎么会在旅馆里发生这种事…？",
+            "ChineseTh": "旅館裡怎麼會發生這種事…？",
+            "Japanese": "宿屋で、どうしてこんなことに…？"
         }
     },
     {
         "Key": "신규응원말풍선",
         "Text": {
-            "Korea": "어서오세요. 인도자님."
+            "Korea": "어서오세요. 인도자님.",
+            "English": "Welcome, Swordbringer.",
+            "ChineseCh": "欢迎光临，引路者大人。",
+            "ChineseTh": "你好，引導者。",
+            "Japanese": "いらっしゃいませ、導く者"
         }
     },
     {
         "Key": "DefZoneType.EventDian",
         "Text": {
-            "Korea": "마녀를 위한 나라는 없다"
+            "Korea": "마녀를 위한 나라는 없다",
+            "English": "No Country for Old Witches",
+            "ChineseCh": "没有适合女巫的国家",
+            "ChineseTh": "魔女無容身之處",
+            "Japanese": "魔女のための国などない"
         }
     },
     {
         "Key": "DefZoneType.EventKobold",
         "Text": {
-            "Korea": "고블린 광산의 비보"
+            "Korea": "고블린 광산의 비보",
+            "English": "The Goblin Mine’s Hidden Treasure",
+            "ChineseCh": "哥布林矿山的秘宝",
+            "ChineseTh": "哥布林礦山祕寶",
+            "Japanese": "ゴブリン鉱山の秘宝"
         }
     },
     {
         "Key": "특성모두잠김",
         "Text": {
-            "Korea": "특성이 모두 잠겨있습니다."
+            "Korea": "특성이 모두 잠겨있습니다.",
+            "English": "All specialties are locked.",
+            "ChineseCh": "所有天赋均未激活。",
+            "ChineseTh": "特性已全部鎖定。",
+            "Japanese": "特性がすべてロックされています"
         }
     },
     {
         "Key": "특성자동개방재화바뀜",
         "Text": {
-            "Korea": "사용하는 재화가 바뀌었습니다.\n확인 후 다시 개방해주세요."
+            "Korea": "사용하는 재화가 바뀌었습니다.\n확인 후 다시 개방해주세요.",
+            "English": "The currency used has changed.\nPlease check and reroll.",
+            "ChineseCh": "使用的资源已变更。\n请确认后重新解锁。",
+            "ChineseTh": "使用的財貨已變更。\n請於確認後，重新解鎖。",
+            "Japanese": "使用する財貨が変更されました。\n確認後、再度解禁してください。"
         }
     },
     {
         "Key": "특성개방재화바뀜",
         "Text": {
-            "Korea": "사용하는 재화가 바뀌었습니다.\n계속 진행하시겠습니까?"
+            "Korea": "사용하는 재화가 바뀌었습니다.\n계속 진행하시겠습니까?",
+            "English": "The currency used has changed.\nWould you like to proceed?",
+            "ChineseCh": "使用的资源已变更。\n是否要继续进行？",
+            "ChineseTh": "使用的財貨已變更。\n要繼續進行嗎？",
+            "Japanese": "使用する財貨が変更されました。\n続行しますか？"
         }
     },
     {
         "Key": "DefShopType.Limited_250626",
         "Text": {
-            "Korea": "월하 상점"
+            "Korea": "월하 상점",
+            "English": "Moonlight Shop",
+            "ChineseCh": "月下商店",
+            "Japanese": "月下商店"
         }
     },
     {
         "Key": "DefZoneType.EventBeauty",
         "Text": {
-            "Korea": "아름다움을 위하여"
+            "Korea": "아름다움을 위하여",
+            "English": "For the Sake of Beauty",
+            "ChineseCh": "为了美丽",
+            "Japanese": "美しさのために"
         }
     },
     {
         "Key": "DefZoneType.EventRan",
         "Text": {
-            "Korea": "최고의 술을 찾아서"
+            "Korea": "최고의 술을 찾아서",
+            "English": "In Search of the Finest Brew",
+            "ChineseCh": "寻找最好的酒",
+            "Japanese": "最高のお酒を求めて"
         }
     },
     {
         "Key": "생년월일입력",
         "Text": {
             "Korea": "[필수] 생년월일을 입력해주세요.",
-            "English": "[Required] Please enter your date of birth."
+            "English": "[Required] Please enter your date of birth.",
+            "ChineseCh": "[必选] 请输入出生年月日。",
+            "Japanese": "[必須]生年月日を入力してください"
         }
     },
     {
         "Key": "전투중미니게임경고",
         "Text": {
-            "Korea": "전투 중에는 미니게임을 할 수 없습니다."
+            "Korea": "전투 중에는 미니게임을 할 수 없습니다.",
+            "English": "You cannot play minigames during battle.",
+            "ChineseCh": "战斗中无法进行迷你游戏。",
+            "Japanese": "戦闘中はミニゲームができません"
+        }
+    },
+    {
+        "Key": "DefShopType.Limited_250710",
+        "Text": {
+            "Korea": "세계수 상점",
+            "English": "World Tree Shop",
+            "ChineseCh": "世界之树商店",
+            "Japanese": "世界樹ショップ"
+        }
+    },
+    {
+        "Key": "DefShopType.Limited_HarfYear",
+        "Text": {
+            "Korea": "0.5주년 특가",
+            "English": "Grand Launch Special offer",
+            "ChineseCh": "开服纪念特惠",
+            "Japanese": "リリース記念特価"
+        }
+    },
+    {
+        "Key": "DefZoneType.Element",
+        "Text": {
+            "Korea": "전격 속성 던전",
+            "English": "Shock Dungeon",
+            "ChineseCh": "雷电属性副本",
+            "Japanese": "電撃属性ダンジョン"
+        }
+    },
+    {
+        "Key": "DefShopType.EventVacance_250710",
+        "Text": {
+            "Korea": "바캉스 코인",
+            "English": "Vacation Coin",
+            "ChineseCh": "假日币",
+            "Japanese": "バカンスコイン"
+        }
+    },
+    {
+        "Key": "DefShopType.EventHarfYear_250710",
+        "Text": {
+            "Korea": "0.5주년 상점",
+            "English": "Grand Launch Shop",
+            "ChineseCh": "开服纪念商店",
+            "Japanese": "リリース記念ショップ"
+        }
+    },
+    {
+        "Key": "DefProductionType.Element",
+        "Text": {
+            "Korea": "속성석",
+            "English": "Elemental Stone",
+            "ChineseCh": "属性石",
+            "Japanese": "属性石"
+        }
+    },
+    {
+        "Key": "DefZoneType.Element01",
+        "Text": {
+            "Korea": "화염 속성 던전",
+            "English": "Fire Dungeon",
+            "ChineseCh": "火焰属性副本",
+            "Japanese": "火炎属性ダンジョン"
+        }
+    },
+    {
+        "Key": "DefZoneType.Element02",
+        "Text": {
+            "Korea": "빙결 속성 던전",
+            "English": "Frost Dungeon",
+            "ChineseCh": "寒冰属性副本",
+            "Japanese": "氷結属性ダンジョン"
+        }
+    },
+    {
+        "Key": "DefZoneType.Element03",
+        "Text": {
+            "Korea": "자연 속성 던전",
+            "English": "Nature Dungeon",
+            "ChineseCh": "自然属性副本",
+            "Japanese": "緑属性ダンジョン"
+        }
+    },
+    {
+        "Key": "DefZoneType.Element04",
+        "Text": {
+            "Korea": "광휘 속성 던전",
+            "English": "Radiance Dungeon",
+            "ChineseCh": "光明属性副本",
+            "Japanese": "光輝属性ダンジョン"
+        }
+    },
+    {
+        "Key": "DefZoneType.Element05",
+        "Text": {
+            "Korea": "신성 속성 던전",
+            "English": "Holy Dungeon",
+            "ChineseCh": "混沌属性副本",
+            "Japanese": "聖属性ダンジョン"
+        }
+    },
+    {
+        "Key": "DefZoneType.Element06",
+        "Text": {
+            "Korea": "혼돈 속성 던전",
+            "English": "Chaos Dungeon",
+            "ChineseCh": "混沌属性副本",
+            "Japanese": "混沌属性ダンジョン"
+        }
+    },
+    {
+        "Key": "캐릭터버프",
+        "Text": {
+            "Korea": "캐릭터 버프",
+            "English": "Character Buff",
+            "ChineseCh": "角色增益",
+            "Japanese": "キャラクターバフ"
+        }
+    },
+    {
+        "Key": "NCT제재",
+        "Text": {
+            "Korea": "계정 사용이 제한되었습니다. 공식 웹사이트의 '고객 지원'을 통해 문의해 주십시오.",
+            "English": "Account access is restricted. Please contact Customer Support via the official website.",
+            "ChineseCh": "账号使用受限。请通过官网的“客服咨询”进行咨询。",
+            "ChineseTh": "您的帳號已被限制使用，請透過官網「顧客支援」進行諮詢。",
+            "Japanese": "アカウントの使用が制限されました。公式サイトの「カスタマーサポート」までお問い合わせください"
+        }
+    },
+    {
+        "Key": "계정전환",
+        "Text": {
+            "Korea": "계정 전환",
+            "English": "Switch Account",
+            "ChineseCh": "切换账号",
+            "Japanese": "アカウント切替"
+        }
+    },
+    {
+        "Key": "Gpgs로그인",
+        "Text": {
+            "Korea": "Gpgs로그인",
+            "English": "GPGS Login",
+            "ChineseCh": "登录Gpgs",
+            "Japanese": "Gpgsログイン"
+        }
+    },
+    {
+        "Key": "피씨결제에러",
+        "Text": {
+            "Korea": "현금결제 상품은 구글 스토어 로그인 후 구매가 가능합니다.",
+            "English": "Premium items can be purchased after logging in to the Google Play Store.",
+            "ChineseCh": "现金支付商品需登录谷歌商店后购买。",
+            "ChineseTh": "現金付款商品必須在登入Google商店後才可購買。",
+            "Japanese": "課金商品はGoogleストアログイン後購入できます。"
+        }
+    },
+    {
+        "Key": "수련오픈경고",
+        "Text": {
+            "Korea": "캐릭터 레벨 {0}부터\n수련을 이용할 수 있습니다.",
+            "English": "Training becomes available\nat character level {0}.",
+            "ChineseCh": "角色达到{0}级后\n即可激活修炼。",
+            "Japanese": "キャラクターレベル{0}から\n修練を利用できます。"
+        }
+    },
+    {
+        "Key": "DefZoneType.EventWtree",
+        "Text": {
+            "Korea": "세계수 수행",
+            "English": "Trials of the World Tree",
+            "ChineseCh": "世界之树修行",
+            "Japanese": "世界樹修行"
+        }
+    },
+    {
+        "Key": "DefZoneType.EventBeach",
+        "Text": {
+            "Korea": "바닷가 휴양지에서",
+            "English": "At the Seaside Resort",
+            "ChineseCh": "在海边度假村",
+            "Japanese": "海辺のリゾートで"
+        }
+    },
+    {
+        "Key": "수련활성화불가1",
+        "Text": {
+            "Korea": "이미 활성화되었습니다.",
+            "English": "Already activated.",
+            "ChineseCh": "已激活。",
+            "Japanese": "もう活性化されました。"
+        }
+    },
+    {
+        "Key": "수련활성화불가2",
+        "Text": {
+            "Korea": "활성화할 수 없습니다.",
+            "English": "Unable to activate.",
+            "ChineseCh": "无法激活。",
+            "Japanese": "活性化できません。"
+        }
+    },
+    {
+        "Key": "등록취소",
+        "Text": {
+            "Korea": "등록을 취소하였습니다.",
+            "English": "Registration has been canceled.",
+            "ChineseCh": "已取消注册。",
+            "ChineseTh": "已取消登錄。",
+            "Japanese": "登録をキャンセルしました。"
+        }
+    },
+    {
+        "Key": "결제사연결실패",
+        "Text": {
+            "Korea": "이용에 불편을 드려 죄송합니다. 결제사와의 연결이 정상 처리되지 않아 결제에 실패하였습니다. 잠시 후 다시 시도해 주세요.",
+            "English": "We apologize for the inconvenience. The connection with the payment provider failed. Please try again later.",
+            "ChineseCh": "给您带来不便深感抱歉。因未能与支付公司正常连接，支付失败。请稍后再试。",
+            "ChineseTh": "因付費時發生連線錯誤，無法正常進行付費，很抱歉造成您的不便，請稍後再重新嘗試。",
+            "Japanese": "ご不便をおかけして申し訳ございません。決済会社との接続エラーにより決済が失敗したため、しばらくしてから再度お試しください"
+        }
+    },
+    {
+        "Key": "서버정보",
+        "Text": {
+            "Korea": "서버 정보",
+            "English": "Server Info",
+            "ChineseCh": "服务器信息",
+            "Japanese": "サーバ情報"
+        }
+    },
+    {
+        "Key": "StatType.UnitPractice",
+        "Text": {
+            "Korea": "수련",
+            "English": "Training",
+            "ChineseCh": "修炼",
+            "ChineseTh": "修煉",
+            "Japanese": "修行"
+        }
+    },
+    {
+        "Key": "DefCostumeType.Additional01",
+        "Text": {
+            "Korea": "추가 코스튬",
+            "English": "Bonus Costume",
+            "ChineseCh": "追加时装",
+            "ChineseTh": "新增服裝",
+            "Japanese": "追加コスチューム"
+        }
+    },
+    {
+        "Key": "속성던전입장불가",
+        "Text": {
+            "Korea": "던전 변경 시간 중에는 입장할 수 없습니다.",
+            "English": "You cannot enter during dungeon rotation hours.",
+            "ChineseCh": "正在副本更新中，无法进入。",
+            "Japanese": "ダンジョン変更時間には入場できません"
+        }
+    },
+    {
+        "Key": "속성던전소탕불가",
+        "Text": {
+            "Korea": "던전 변경 시간 중에는 소탕할 수 없습니다.",
+            "English": "You cannot enter during dungeon rotation hours.",
+            "ChineseCh": "正在副本更新中，无法扫荡。",
+            "Japanese": "ダンジョン変更時間には掃討できません"
+        }
+    },
+    {
+        "Key": "BattleUIDataIndex.DungeonExplain",
+        "Text": {
+            "Korea": "※던전 탭 설명\n\n「스톤헨지」\n스톤헨지는 정해진 시간 동안 자유롭게 던전을 플레이하여\n장비와 아이템을 파밍할 수 있는 파밍 던전입니다.\n\n매일 10분 간 입장 시간을 획득할 수 있으며,\n최대 2시간 까지 누적됩니다.\n\n황금 나침반을 통해 부족한 시간을 충전할 수 있습니다.\n\n\n「골드」\n골드 던전은 층수를 도전하여 골드를 획득하는 콘텐츠입니다.\n층을 클리어하고 나서 소탕을 할 수 있는데,\n클리어 한 층의 소탕 보상만큼 획득할 수 있습니다.\n\n골드 티켓을 이용해서 추가 소탕도 가능합니다.\n\n\n「경험치」\n경험치 던전은 층수를 도전하여 경험치 북을 획득하는 콘텐츠입니다.\n층을 클리어하고 나서 소탕을 할 수 있는데,\n클리어 한 층의 소탕 보상만큼 획득할 수 있습니다.\n\n퍼플 티켓을 이용해서 추가 소탕도 가능합니다.\n\n\n「속성석 던전」\n요일에 따라 획득할 수 있는 속성석이 달라지는 던전입니다.\n월 - 전격의 속성석\n화 - 화염의 속성석\n수 - 빙결의 속성석\n목 - 자연의 속성석\n금 - 광휘의 속성석\n토 - 신성의 속성석\n일 - 혼돈의 속성석\n각 속성석은 수련에 필요한 재화이며 \n층을 클리어하고 나서 소탕을 할 수 있는데,\n클리어 한 층의 소탕 보상만큼 획득할 수 있습니다.\n* 속성석 던전은 해당 시간에 던전이 변경되어 입장이 안되거나 소탕이 제한 될 수 있습니다.\n  23:50 ~ 0:10 (KST)\n\n속성 던전 티켓을 이용해서 추가 소탕도 가능합니다.",
+            "English": "Dungeon Tabs Info\n \n 「Stonehenge」\n\nStonehenge is a time-based dungeon where you can freely play to acquire equipment and items.\nEarn 10 minutes of entry time daily (can be stored up to a maximum of 2 hours).\n\nYou can add more time using the Golden Compass.\n \n \n 「Gold」\n \nBattle your way through multiple floors to earn Gold.\nOnce a floor is cleared, you can sweep it for rewards.\n\nUse Gold Tickets to perform additional sweeps.\n \n \n 「Book of Experience」\n \nBattle your way through multiple floors to earn Book of Experience used for character growth.\nOnce a floor is cleared, you can sweep it for rewards.\n\nUse Purple Tickets to perform additional sweeps.\n\n\n 「Element Dungeon」\n\nThis dungeon allows you to obtain different elemental stones depending on the day of the week:\n\nMon – Shock Stone\n\nTue – Fire Stone\n\nWed – Frost Stone\n\nThu – Nature Stone\n\nFri – Radiance Stone\n\nSat – Holy Stone\n\nSun – Chaos Stone\n\nElemental Stones are a resource required for training.\nOnce a floor is cleared, you’ll be able to sweep it and receive rewards equivalent to that floor’s sweep rewards.\n\nThe Element Dungeon may be inaccessible, and sweeping may be restricted \nduring the scheduled dungeon rotation period. [23:50 ~ 00:10 (UTC+9)]\n\nYou can also use Element Dungeon Tickets to perform additional sweeps.",
+            "ChineseCh": "※ 副本页签说明\n \n 「巨石阵副本」\n 巨石阵是在规定时间内自由地进行副本， \n 可以刷取装备和道具的副本。 \n \n 每天可以获得10分钟的入场时间， \n 最多可以累积2小时。 \n \n 可以通过黄金指南针来补充不足的时间。 \n \n \n 「金币」\n 金币副本是挑战关卡来获得金币的玩法。 \n 通关后可以进行扫荡， \n 可以获得与通关层数扫荡奖励相同的奖励。 \n \n 使用金币券还可以进行额外扫荡。 \n \n \n 「经验值」\n 经验值副本是挑战关卡来获得经验书的玩法。 \n 通关后可以进行扫荡， \n 可以获得与通关层数扫荡奖励相同的奖励。 \n \n 使用紫色门票还可以进行额外扫荡。\n\n\n 「属性石副本」\n根据星期不同，可获得不同的属性石。\n周一 - 雷电属性石\n周二 - 火焰属性石\n周三 - 冰冻属性石\n周四 - 自然属性石\n周五 - 光辉属性石\n周六 - 神圣属性石\n周日 - 混沌属性石\n各属性石是修炼所需的货币，\n通关后可进行扫荡，\n可获得与通关层数扫荡奖励相同的奖励。\n* 属性石副本在该时间段内会进行副本更新，可能无法进入及扫荡。\n23:50 ~ 0:10 (UTC + 9)\n\n可使用属性副本票券进行额外扫荡。",
+            "Japanese": "※ダンジョンタブの詳細\n \n 「ストーンヘンジ」\n \n ストーンヘンジは決まった時間中間、自由にダンジョンをプレイし\n 装備とアイテムを獲得するアイテムダンジョンです\n \n 毎日10分の入場時間を獲得でき\n 最大2時間まで時間を増やせます\n \n 黄金の羅針盤で時間をチャージすることができます\n \n \n 「ゴールド」\n \n ゴールドダンジョンは各層に挑戦してゴールドを獲得するコンテンツです\n クリアした層は掃討することができます\n 掃討するとクリアした時に獲得した分のゴールドを獲得できます\n ゴールドチケットを使用すると追加掃討も可能です\n \n \n 「経験値」\n \n 経験値ダンジョンは各層に挑戦して経験値ブックを獲得するコンテンツです\n クリアした層は掃討することができます\n 掃討するとクリアした時に獲得した分のゴールドを獲得できます\n パープルチケットを使用すると追加掃討も可能です\n\n「属性石ダンジョン」\n曜日によって獲得できる属性石が変えます。\n月 - 電撃の属性石\n火 - 火炎の属性石\n水 - 氷の属性石\n木 - 緑の属性石\n金 - 光輝の属性石\n土 - 聖の属性石\n日 - 混沌の属性石\n各属性石は修練に必要な財貨で\nクリアした層は掃討することができます\n掃討するとクリアした時に獲得した分のゴールドを獲得できます\n* 属性石ダンジョンは下記時間にダンジョンが変更され、\n入場および掃討ができない場合があります。23:50 ~ 0:10 (UTC + 9)\n\n属性ダンジョンチケットを使用すると追加掃討も可能です"
+        }
+    },
+    {
+        "Key": "삭제",
+        "Text": {
+            "Korea": "삭제",
+            "English": "Delete",
+            "ChineseCh": "删除",
+            "Japanese": "削除"
+        }
+    },
+    {
+        "Key": "상점으로이동",
+        "Text": {
+            "Korea": "상점으로 이동",
+            "English": "Go to Shop",
+            "ChineseCh": "前往商店",
+            "Japanese": "ショップに移動"
+        }
+    },
+    {
+        "Key": "호감도능력치",
+        "Text": {
+            "Korea": "호감도 능력치",
+            "English": "Affection Stat",
+            "ChineseCh": "好感度能力值",
+            "Japanese": "好感度能力値"
+        }
+    },
+    {
+        "Key": "4이상확정",
+        "Text": {
+            "Korea": "4이상 확정",
+            "English": "4 or 5 Guaranteed",
+            "ChineseCh": "4以上必得",
+            "Japanese": "★4以上確定"
+        }
+    },
+    {
+        "Key": "첫클리어",
+        "Text": {
+            "Korea": "첫 클리어",
+            "English": "First Clear",
+            "ChineseCh": "首次通关",
+            "Japanese": "初クリア"
+        }
+    },
+    {
+        "Key": "최초",
+        "Text": {
+            "Korea": "최초",
+            "English": "First Time",
+            "ChineseCh": "首次",
+            "Japanese": "最初"
+        }
+    },
+    {
+        "Key": "글로벌버프",
+        "Text": {
+            "Korea": "글로벌 버프",
+            "English": "Global Buff",
+            "ChineseCh": "全域增益",
+            "Japanese": "グローバルバフ"
+        }
+    },
+    {
+        "Key": "다음일정",
+        "Text": {
+            "Korea": "다음 일정",
+            "English": "Next Scheduled Siege",
+            "ChineseCh": "下次时间",
+            "ChineseTh": "下次時間",
+            "Japanese": "次の日程"
+        }
+    },
+    {
+        "Key": "전체자동장착",
+        "Text": {
+            "Korea": "전체 자동 장착",
+            "English": "Auto-Equip",
+            "ChineseCh": "全部自动装备",
+            "Japanese": "全部自動装着"
+        }
+    },
+    {
+        "Key": "1파티",
+        "Text": {
+            "Korea": "1파티",
+            "English": "Party 1",
+            "ChineseCh": "1队伍",
+            "Japanese": "パーティー1"
+        }
+    },
+    {
+        "Key": "2파티",
+        "Text": {
+            "Korea": "2파티",
+            "English": "Party 2",
+            "ChineseCh": "2队伍",
+            "Japanese": "パーティー2"
+        }
+    },
+    {
+        "Key": "캘리포니아약관",
+        "Text": {
+            "Korea": "약관 보기",
+            "English": "View Policy",
+            "ChineseCh": "查看协议",
+            "Japanese": "約款確認"
         }
     }
 ]

@@ -864,6 +864,7 @@
             "JobList": [
                 2
             ],
+            "NoRandomOption": true,
             "OptionList": [
                 {
                     "$type": "CommonLibrary.FixOption, Assembly-CSharp",
@@ -875,30 +876,40 @@
                 {
                     "$type": "CommonLibrary.SkillOption, Assembly-CSharp",
                     "OptionType": 4,
-                    "SkillIndex": 343
+                    "SkillIndex": 1089
                 },
                 {
                     "$type": "CommonLibrary.UniqueOption, Assembly-CSharp",
                     "OptionType": 6,
                     "Stat": {
-                        "Key": 65543,
-                        "Val": 0.009999999776482582
+                        "Key": 65541,
+                        "Val": 0.30000001192092896
                     }
                 },
                 {
                     "$type": "CommonLibrary.UniqueOption, Assembly-CSharp",
                     "OptionType": 6,
                     "Stat": {
-                        "Key": 65543,
-                        "Val": 0.009999999776482582
+                        "Key": 265,
+                        "Val": 0.20000000298023224
                     }
                 },
                 {
                     "$type": "CommonLibrary.UniqueOption, Assembly-CSharp",
-                    "OptionType": 6,
+                    "OptionType": 5,
+                    "Enable": 7,
                     "Stat": {
-                        "Key": 65543,
-                        "Val": 0.009999999776482582
+                        "Key": 4398046511109,
+                        "Val": 240.0
+                    }
+                },
+                {
+                    "$type": "CommonLibrary.UniqueOption, Assembly-CSharp",
+                    "OptionType": 5,
+                    "Enable": 10,
+                    "Stat": {
+                        "Key": 270,
+                        "Val": 0.30000001192092896
                     }
                 }
             ]
@@ -9150,5 +9161,5 @@
             ]
         }
     ],
-    "hash": "bNZ3D0gj7TBTA5lYlmvnLzVP0ywDCl+di/+zuMJqdv0="
+    "hash": "slMc+0sWSmRd6BLFzVrF286EWjEeD35tWWjEeU1dzGA="
 }
