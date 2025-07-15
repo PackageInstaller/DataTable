@@ -1248,6 +1248,58 @@
         ]
     },
     {
+        "id": 15530001,
+        "rarity": 5,
+        "image_index": 3530001,
+        "ml_name": [
+            "入魂時攻撃変更・長十字",
+            ""
+        ],
+        "ml_description": [
+            "<help=empower_attack>入魂時攻撃</help>を範囲内の敵に物理ダメージ(物理<help=element>エレメント</help>)を与える<help=long cross>長十字</help>に変更",
+            ""
+        ]
+    },
+    {
+        "id": 15530002,
+        "rarity": 5,
+        "image_index": 3530002,
+        "ml_name": [
+            "入魂時攻撃変更・広十字",
+            ""
+        ],
+        "ml_description": [
+            "<help=empower_attack>入魂時攻撃</help>を範囲内の敵に物理ダメージ(物理<help=element>エレメント</help>)を与える<help=wide cross>広十字</help>に変更",
+            ""
+        ]
+    },
+    {
+        "id": 15530004,
+        "rarity": 5,
+        "image_index": 3530004,
+        "ml_name": [
+            "入魂時攻撃強化(必殺)",
+            ""
+        ],
+        "ml_description": [
+            "入魂時攻撃の必殺増加",
+            ""
+        ]
+    },
+    {
+        "id": 15530005,
+        "rarity": 5,
+        "image_index": 3530005,
+        "ml_name": [
+            "入魂時攻撃強化(防御無視)",
+            ""
+        ],
+        "ml_description": [
+            "入魂時攻撃に防御無視効果",
+            ""
+        ]
+    },
+    {
         "id": 15480002,
         "rarity": 5,
         "image_index": 3480002,
@@ -1803,6 +1855,32 @@
         ],
         "ml_description": [
             "バトル開始時、自身に不動付与/通常攻撃時、命中対象の防御[[effects_power]%]減少",
+            ""
+        ]
+    },
+    {
+        "id": 35330040,
+        "rarity": 5,
+        "image_index": 1130003,
+        "ml_name": [
+            "バトル開始時、自身に物理シールド付与/一定体力以下で自身に攻撃増加（重複可）・精神増加（重複可）・風シールド付与",
+            ""
+        ],
+        "ml_description": [
+            "バトル開始時、自身に<help=physical_shield>物理シールド</help>付与/一定体力以下で自身に攻撃[[effects_power_2]%]増加（重複可）・精神[[effects_power_3]%]増加（重複可）・<help=wind_shield>風シールド</help>付与",
+            ""
+        ]
+    },
+    {
+        "id": 35330041,
+        "rarity": 5,
+        "image_index": 1130002,
+        "ml_name": [
+            "一定体力以下で攻撃増加（重複可）・敏捷増加（重複可）・移動増加",
+            ""
+        ],
+        "ml_description": [
+            "一定体力以下で攻撃[[effects_power_1]%]増加（重複可）・敏捷[[effects_power_2]%]増加（重複可）・移動[[effects_power_3]]増加（重複可）",
             ""
         ]
     },

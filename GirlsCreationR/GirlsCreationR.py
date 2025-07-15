@@ -27,7 +27,7 @@ class Config:
     PLATFORM = 'webgl' # 还有 android, ios可选,这里就用网页端好点
     REGION = 'r18'
     INITIAL_MANIFEST_URL = f"https://www-r18.gc.dmmgames.com/manifest/{PLATFORM}/{REGION}"
-    ASSET_JSON_FILES = ["master.json", "assetbundle.json", "advvoice.json"]
+    ASSET_JSON_FILES = ["master.json"] # 这里去掉了 "assetbundle.json" "advvoice.json"，有需要可以自己加上
     DOWNLOAD_DIR = "downloads"
     MASTER_DATA_DIR = "MasterData"
     MAX_WORKERS = 32 # 线程
@@ -55,15 +55,19 @@ def triple_des(encrypted_data: bytes) -> Optional[str]:
     json_data = json.loads(json_text)
     return json.dumps(json_data, ensure_ascii=False, indent=4)
 
-def decrypt_master(master_dmm_path: str):
-    if os.path.exists(Config.MASTER_DATA_DIR):
+def decrypt_master(master_dmm_path: str, force_decrypt: bool = False):
+    if not force_decrypt and os.path.exists(Config.MASTER_DATA_DIR):
         files_in_dir = [f for f in os.listdir(Config.MASTER_DATA_DIR) 
                         if os.path.isfile(os.path.join(Config.MASTER_DATA_DIR, f))]
         if files_in_dir:
             print(f"[yellow]MasterData目录已存在 {len(files_in_dir)} 个文件，跳过解密操作[/yellow]")
             return
     
-    print(f"[cyan]开始解包和解密 {master_dmm_path}...[/cyan]")
+    if force_decrypt:
+        print(f"[cyan]检测到master.dmm已更新，强制重新解包和解密...[/cyan]")
+    else:
+        print(f"[cyan]开始解包和解密 {master_dmm_path}...[/cyan]")
+    
     os.makedirs(Config.MASTER_DATA_DIR, exist_ok=True)
 
     bundle = UnityPy.load(master_dmm_path)
@@ -101,6 +105,7 @@ class Downloader:
         self.completed_files_count = 0
         self.lock = Lock()
         self.secure_timestamp = int(time.time()) + 3600
+        self.master_dmm_downloaded = False
 
     def _get_json(self, url: str) -> dict:
         response = self.session.get(url)
@@ -135,6 +140,9 @@ class Downloader:
             
             if os.path.exists(local_path) and os.path.getsize(local_path) == server_size:
                 continue 
+            
+            if asset['n'] == 'master.dmm':
+                self.master_dmm_downloaded = True
             
             self.files_to_download.append(asset)
             self.total_download_size += server_size
@@ -219,7 +227,7 @@ class Downloader:
         
         master_dmm_path = os.path.join(Config.DOWNLOAD_DIR, "master.dmm")
         if os.path.exists(master_dmm_path):
-            decrypt_master(master_dmm_path)
+            decrypt_master(master_dmm_path, force_decrypt=self.master_dmm_downloaded)
 
 if __name__ == "__main__":
     
