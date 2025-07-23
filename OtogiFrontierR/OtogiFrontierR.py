@@ -106,7 +106,7 @@ def _process_asset(asset: str, size_map: dict[str, int], retries=5):
 
     if path_old.exists() and expected:
         local = path_old.stat().st_size
-        if abs(local - expected) <= 16: # 16B误差
+        if abs(local - expected) <= 16:
             data = path_old.read_bytes()
             if need_decrypt(data):
                 dec = decrypt_blob(data)
@@ -179,10 +179,6 @@ def download_assets(assets: list[str], size_map: dict[str, int]):
 
     line = ", ".join(f"{k}={v}" for k, v in stats.items())
     print("[+] 总结 →", line)
-    if dl_failed:
-        print(f"[!] download_failed.txt 写入 ({len(dl_failed)})")
-    if dec_failed:
-        print(f"[!] decrypt_failed.txt 写入 ({len(dec_failed)})")
 
 
 def main():
