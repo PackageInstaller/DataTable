@@ -83,7 +83,7 @@ class MuvLuvDownloader:
     def download_and_parse_master_data(self) -> bool:
         self.console.print("\n[bold]--- 开始处理主数据表 ---[/bold]", style="cyan")
         url = "https://api-prereg.muvluv-girls-garden.com/api/Home/getMasterData"
-        # 这里到时候换成自己的
+        # 这里到时候换成自己的，或者自己研究下生成换成动态生成的
         headers = {
             'User-Agent': "com.Tivadar.Best.HTTP v3.0.11.0/Unity 6000.0.37f1",
             'Accept': "application/vnd.msgpack",
@@ -91,7 +91,7 @@ class MuvLuvDownloader:
             'authorization': "Bearer",
             'authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1MDQxOSIsImF0diI6IjYyIiwibmJmIjoxNzUzMTcyNDcwLCJleHAiOjE3NTMyNTg4NzAsImlhdCI6MTc1MzE3MjQ3MCwiaXNzIjoiSXphbmFtaS5rbXMzLmNvbSIsImF1ZCI6InBwcHJlcmVnaXN0cmF0aW9uIn0.eXwpUM6HyY4S9JzBEQTaybcJQbAkPoi3tZnJHw98Q18"
         }
-        json_output_path = self.download_dir / "MasterData.json"
+        json_output_path = "MasterData.json"
         msgpack_bytes = None
 
         try:
