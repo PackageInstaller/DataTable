@@ -29,17 +29,12 @@ function active(self)
     GameDispatcher:addEventListener(EventName.HERO_LIST_INIT, self.onInitHeroListHandler, self)
     GameDispatcher:addEventListener(EventName.SET_MAIN_SCENE_GYRO, self.onGryoEnableHandler, self)
     GameDispatcher:addEventListener(EventName.MAINUI_SPINE_MODEL_CHANGE, self.onChangeDynamicPicHandler, self)
-    GameDispatcher:addEventListener(EventName.MAINUI_SPINE_DRAG_START, self.starDragSpine, self)
-    GameDispatcher:addEventListener(EventName.MAINUI_SPINE_DRAG_END, self.endDragSpine, self)
 end
 
 function deActive(self)
     GameDispatcher:removeEventListener(EventName.HERO_LIST_INIT, self.onInitHeroListHandler, self)
     GameDispatcher:removeEventListener(EventName.SET_MAIN_SCENE_GYRO, self.onGryoEnableHandler, self)
     GameDispatcher:removeEventListener(EventName.MAINUI_SPINE_MODEL_CHANGE, self.onChangeDynamicPicHandler, self)
-    GameDispatcher:removeEventListener(EventName.MAINUI_SPINE_DRAG_START, self.starDragSpine, self)
-    GameDispatcher:removeEventListener(EventName.MAINUI_SPINE_DRAG_END, self.endDragSpine, self)
-
     if self.sceneGyro then
         self.sceneGyro:removeGyro()
         self.sceneGyro = nil
@@ -123,22 +118,10 @@ function recyModel(self)
         self.m_modelView:destroy()
         self.m_modelView = nil
     end
-
-    LoopManager:removeTimerByIndex(self.mTimeSn)
-    LoopManager:removeFrame(self, self.onUpdate)
 end
 
 function updateModel(self, isChange)
     Perset3dHandler:setupShowData(MainCityConst.ROLE_MODE_MAIN, nil, nil, "")
-
-    local groupData = role.RoleManager:getHeroGroup()
-    if not groupData or table.empty(groupData) and role.RoleManager:getHeroGroupShowSpine() == 1 then
-        -- 没有保存动态立绘设置，自动改回模型
-        -- gs.Message.Show("助理助未设置，已关闭使用动态立绘")
-        gs.Message.Show(_TT(41743))
-        role.RoleManager:setHeroGroupShowSpine(0)
-    end
-
     if mainui.MainUIManager:getIsShowDynamic() == 1 and hero.HeroInteractManager:getShowBoardHeroDynamic() then
         self:updateShowSpine()
         return
@@ -157,9 +140,6 @@ function updateModel(self, isChange)
             self.m_modelView:setModeType(MainCityConst.ROLE_MODE_MAIN)
             self.m_modelView:setDynamicBoneEnable(false)
             gs.GoUtil.AddComponent(self.m_modelView:getRootGO(), ty.LightRotate)
-
-            LoopManager:removeTimerByIndex(self.mTimeSn)
-            self.mTimeSn = LoopManager:addTimer(8, 1, self, self.onTimeOver) --8秒后强进
         end
 
         if self.sceneGyro then
@@ -175,16 +155,11 @@ function updateModel(self, isChange)
     end
 end
 
-function onTimeOver(self)
-    self:__updateModelComplete()
-end
-
 function __updateModelComplete(self, isChange)
     if self.isCompleteCall then
         return
     end
     self.isCompleteCall = true
-    LoopManager:removeTimerByIndex(self.mTimeSn)
 
     self:updateModelCamera()
     if isChange then
@@ -210,10 +185,6 @@ function updateShowSpine(self)
     local modelId = hero.HeroInteractManager:getShowBoardHeroModelId()
     if not modelId then
         return
-    end
-    local blackLayer = SubLayerMgr:getLayer(gud.SPINE_BLACK)
-    if blackLayer and not gs.GoUtil.IsTransNull(blackLayer) then
-        blackLayer.gameObject:SetActive(true)
     end
 
     local onLoadSpineFinish = function(go)
@@ -277,13 +248,6 @@ function clearSpine(self)
         self.mSpineGo = nil
     end
     self.mClickTime = 0
-
-    local blackLayer = SubLayerMgr:getLayer(gud.SPINE_BLACK)
-    if blackLayer and not gs.GoUtil.IsTransNull(blackLayer) then
-        blackLayer.gameObject:SetActive(false)
-    end
-
-    LoopManager:removeFrame(self, self.onUpdate)
 end
 
 -- 切换动态立绘和模型
@@ -300,98 +264,6 @@ function onChangeDynamicPicHandler(self)
     end
 end
 
--- 开始拖拽spine准备切换
-function starDragSpine(self)
-    self.dragSpineMousePos = gs.Input.mousePosition
-    if not self.mSpineGo then
-        return
-    end
-
-    LoopManager:addFrame(1, 0, self, self.onUpdate)
-
-end
-
--- 结束拖拽spine准备切换
-function endDragSpine(self)
-    LoopManager:removeFrame(self, self.onUpdate)
-    if not self.dragSpineMousePos then
-        return
-    end
-    if self.mSpineGo then
-        gs.TransQuick:LPosX(self.mSpineGo.transform, 0)
-    end
-
-    local pos = gs.Input.mousePosition - self.dragSpineMousePos
-    if math.abs(pos.x) > 500 then
-        local state = pos.x > 0 and 1 or 2
-        mainui.MainUIManager.isDragSpine = true
-
-        local tempIndex = 1
-        local currIndex = 1
-        local currId = 0
-        local groupData = role.RoleManager:getHeroGroup()
-        local showId = role.RoleManager:getRoleVo():getShowBoardHeroId()
-        if not groupData or table.empty(groupData) then
-            return
-        end
-        -- 表里最大最小键
-        local maxIndex, minIndex = nil, nil
-        for key, v in pairs(groupData) do
-            local key = tonumber(key)
-            if maxIndex == nil or key > maxIndex then
-                maxIndex = key
-            end
-            if minIndex == nil or key < minIndex then
-                minIndex = key
-            end
-
-        end
-
-        -- 取当前的展示的key
-        for k, v in pairs(groupData) do
-            if v == showId then
-                currIndex = tonumber(k)
-                break
-            end
-        end
-
-        if state == 1 then
-            tempIndex = minIndex
-            if currIndex <= tempIndex then
-                currIndex = maxIndex + 1
-            end
-            for k, v in pairs(groupData) do
-                if tonumber(k) < currIndex and tonumber(k) >= tempIndex and v and v > 0 then
-                    tempIndex = tonumber(k)
-                    currId = v
-                end
-            end
-        end
-        if state == 2 then
-            tempIndex = maxIndex
-            if currIndex >= tempIndex then
-                currIndex = minIndex - 1
-            end
-            for k, v in pairs(groupData) do
-                if tonumber(k) > currIndex and tonumber(k) <= tempIndex and v and v > 0 then
-                    tempIndex = tonumber(k)
-                    currId = v
-                end
-            end
-        end
-        if currId > 0 and currId ~= showId then
-            GameDispatcher:dispatchEvent(EventName.REQ_CHANGE_SHOW_BOARD_HERO, { heroId = currId })
-        end
-    end
-end
-
--- 插值缓动
-function onUpdate(self)
-    local pos = gs.Input.mousePosition - self.dragSpineMousePos
-    local currX = pos.x * 0.2
-    currX = math.max(-230, math.min(currX, 230))
-    gs.TransQuick:LPosX(self.mSpineGo.transform, currX)
-end
 
 -- 开始进入主UI流程
 function startInitMainUI(self, isChange)
@@ -414,7 +286,7 @@ function startInitMainUI(self, isChange)
         end
 
     end)
-    -- mainCity.MainCityController:playMainCityMusic()
+    mainCity.MainCityController:playMainCityMusic()
     -- 通知打开战斗前的功能UI
     GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_SHOW_BEFORE_UI)
 end

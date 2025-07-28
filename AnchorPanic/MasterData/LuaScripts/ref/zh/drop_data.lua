@@ -3,194 +3,6 @@
 local drop_data=
 
 {
-	[701]={ drop_item={
-		{ id=701001, item_id=12382, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[702]={ drop_item={
-		{ id=702001, item_id=12853, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[801]={ drop_item={
-		{ id=801001, item_id=12382, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[802]={ drop_item={
-		{ id=801002, item_id=8102, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[803]={ drop_item={
-		{ id=801003, item_id=2451, item_num=60, deadline={}, drop_show=0 },
-}
-},
-	[804]={ drop_item={
-		{ id=801004, item_id=2023, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[805]={ drop_item={
-		{ id=801005, item_id=2203, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[806]={ drop_item={
-		{ id=801006, item_id=12853, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[810]={ drop_item={
-		{ id=810001, item_id=2203, item_num=6, deadline={}, drop_show=0 },
-		{ id=810002, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-		{ id=810003, item_id=11, item_num=60000, deadline={}, drop_show=0 },
-		{ id=810004, item_id=8102, item_num=20, deadline={}, drop_show=0 },
-}
-},
-	[820]={ drop_item={
-		{ id=820001, item_id=1, item_num=5000, deadline={}, drop_show=0 },
-}
-},
-	[821]={ drop_item={
-		{ id=821001, item_id=2023, item_num=2, deadline={}, drop_show=0 },
-		{ id=821002, item_id=2052, item_num=2, deadline={}, drop_show=0 },
-		{ id=821003, item_id=3, item_num=60, deadline={}, drop_show=0 },
-}
-},
-	[822]={ drop_item={
-		{ id=822001, item_id=900, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[823]={ drop_item={
-		{ id=823001, item_id=2023, item_num=2, deadline={}, drop_show=0 },
-		{ id=823002, item_id=3, item_num=60, deadline={}, drop_show=0 },
-		{ id=823003, item_id=2401, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[824]={ drop_item={
-		{ id=824001, item_id=900, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[825]={ drop_item={
-		{ id=825001, item_id=2052, item_num=3, deadline={}, drop_show=0 },
-		{ id=825002, item_id=3, item_num=180, deadline={}, drop_show=0 },
-		{ id=825003, item_id=2061, item_num=15, deadline={}, drop_show=0 },
-}
-},
-	[826]={ drop_item={
-		{ id=826001, item_id=2203, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[827]={ drop_item={
-		{ id=827001, item_id=2023, item_num=3, deadline={}, drop_show=0 },
-		{ id=827002, item_id=3, item_num=180, deadline={}, drop_show=0 },
-		{ id=827003, item_id=2203, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[828]={ drop_item={
-		{ id=828001, item_id=2203, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[829]={ drop_item={
-		{ id=829001, item_id=2023, item_num=3, deadline={}, drop_show=0 },
-		{ id=829002, item_id=2052, item_num=3, deadline={}, drop_show=0 },
-		{ id=829003, item_id=3, item_num=300, deadline={}, drop_show=0 },
-}
-},
-	[830]={ drop_item={
-		{ id=830001, item_id=2203, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[831]={ drop_item={
-		{ id=831001, item_id=2203, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[841]={ drop_item={
-		{ id=841001, item_id=12373, item_num=1, deadline={}, drop_show=0 },
-		{ id=841006, item_id=12837, item_num=1, deadline={}, drop_show=0 },
-		{ id=841011, item_id=2023, item_num=3, deadline={}, drop_show=0 },
-		{ id=841016, item_id=2203, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[842]={ drop_item={
-		{ id=842001, item_id=12368, item_num=1, deadline={}, drop_show=0 },
-		{ id=842006, item_id=12829, item_num=1, deadline={}, drop_show=0 },
-		{ id=842011, item_id=2023, item_num=3, deadline={}, drop_show=0 },
-		{ id=842016, item_id=2203, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[843]={ drop_item={
-		{ id=843001, item_id=12365, item_num=1, deadline={}, drop_show=0 },
-		{ id=843006, item_id=12823, item_num=1, deadline={}, drop_show=0 },
-		{ id=843011, item_id=2023, item_num=3, deadline={}, drop_show=0 },
-		{ id=843016, item_id=2203, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[844]={ drop_item={
-		{ id=844001, item_id=12359, item_num=1, deadline={}, drop_show=0 },
-		{ id=844006, item_id=12817, item_num=1, deadline={}, drop_show=0 },
-		{ id=844011, item_id=2023, item_num=3, deadline={}, drop_show=0 },
-		{ id=844016, item_id=2203, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[845]={ drop_item={
-		{ id=845001, item_id=12378, item_num=1, deadline={}, drop_show=0 },
-		{ id=845002, item_id=12848, item_num=1, deadline={}, drop_show=0 },
-		{ id=845003, item_id=2023, item_num=3, deadline={}, drop_show=0 },
-		{ id=845004, item_id=2203, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[871]={ drop_item={
-		{ id=871001, item_id=12335, item_num=1, deadline={}, drop_show=0 },
-		{ id=871002, item_id=12810, item_num=1, deadline={}, drop_show=0 },
-		{ id=871003, item_id=2023, item_num=10, deadline={}, drop_show=0 },
-		{ id=871004, item_id=2052, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[872]={ drop_item={
-		{ id=871005, item_id=12339, item_num=1, deadline={}, drop_show=0 },
-		{ id=871006, item_id=12809, item_num=1, deadline={}, drop_show=0 },
-		{ id=871007, item_id=2023, item_num=10, deadline={}, drop_show=0 },
-		{ id=871008, item_id=2052, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[873]={ drop_item={
-		{ id=871009, item_id=12353, item_num=1, deadline={}, drop_show=0 },
-		{ id=871010, item_id=12807, item_num=1, deadline={}, drop_show=0 },
-		{ id=871011, item_id=2023, item_num=10, deadline={}, drop_show=0 },
-		{ id=871012, item_id=2052, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[874]={ drop_item={
-		{ id=871013, item_id=12361, item_num=1, deadline={}, drop_show=0 },
-		{ id=871014, item_id=12813, item_num=1, deadline={}, drop_show=0 },
-		{ id=871015, item_id=2023, item_num=10, deadline={}, drop_show=0 },
-		{ id=871016, item_id=2052, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[875]={ drop_item={
-		{ id=871017, item_id=12362, item_num=1, deadline={}, drop_show=0 },
-		{ id=871018, item_id=12819, item_num=1, deadline={}, drop_show=0 },
-		{ id=871019, item_id=2023, item_num=10, deadline={}, drop_show=0 },
-		{ id=871020, item_id=2052, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[876]={ drop_item={
-		{ id=871021, item_id=12367, item_num=1, deadline={}, drop_show=0 },
-		{ id=871022, item_id=12827, item_num=1, deadline={}, drop_show=0 },
-		{ id=871023, item_id=2023, item_num=10, deadline={}, drop_show=0 },
-		{ id=871024, item_id=2052, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[877]={ drop_item={
-		{ id=871025, item_id=12372, item_num=1, deadline={}, drop_show=0 },
-		{ id=871026, item_id=12835, item_num=1, deadline={}, drop_show=0 },
-		{ id=871027, item_id=2023, item_num=10, deadline={}, drop_show=0 },
-		{ id=871028, item_id=2052, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[878]={ drop_item={
-		{ id=871029, item_id=12377, item_num=1, deadline={}, drop_show=0 },
-		{ id=871030, item_id=12846, item_num=1, deadline={}, drop_show=0 },
-		{ id=871031, item_id=2023, item_num=10, deadline={}, drop_show=0 },
-		{ id=871032, item_id=2052, item_num=10, deadline={}, drop_show=0 },
-}
-},
 	[990]={ drop_item={
 		{ id=990001, item_id=3, item_num=300, deadline={}, drop_show=0 },
 		{ id=990002, item_id=10, item_num=120, deadline={}, drop_show=0 },
@@ -1694,7 +1506,7 @@ local drop_data=
 }
 },
 	[1559]={ drop_item={
-		{ id=1559001, item_id=12385, item_num=1, deadline={}, drop_show=0 },
+		{ id=1559001, item_id=12352, item_num=1, deadline={}, drop_show=0 },
 		{ id=1559002, item_id=3, item_num=400, deadline={}, drop_show=0 },
 }
 },
@@ -1863,9 +1675,9 @@ local drop_data=
 }
 },
 	[1600]={ drop_item={
-		{ id=1600001, item_id=12865, item_num=1, deadline={}, drop_show=0 },
-		{ id=1600002, item_id=12271, item_num=1, deadline={}, drop_show=0 },
-		{ id=1600003, item_id=2202, item_num=5, deadline={}, drop_show=0 },
+		{ id=1600001, item_id=12243, item_num=1, deadline={}, drop_show=0 },
+		{ id=1600002, item_id=2202, item_num=5, deadline={}, drop_show=0 },
+		{ id=1600003, item_id=5, item_num=600, deadline={}, drop_show=0 },
 		{ id=1600004, item_id=2023, item_num=3, deadline={}, drop_show=0 },
 }
 },
@@ -1911,23 +1723,13 @@ local drop_data=
 }
 },
 	[1490]={ drop_item={
-		{ id=1490001, item_id=12367, item_num=1, deadline={}, drop_show=0 },
+		{ id=1490001, item_id=12353, item_num=1, deadline={}, drop_show=0 },
 		{ id=1490002, item_id=2022, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[1484]={ drop_item={
-		{ id=1491001, item_id=12827, item_num=1, deadline={}, drop_show=0 },
+		{ id=1491001, item_id=12807, item_num=1, deadline={}, drop_show=0 },
 		{ id=1491002, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[1483]={ drop_item={
-		{ id=1483001, item_id=12813, item_num=1, deadline={}, drop_show=0 },
-		{ id=1483002, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[1482]={ drop_item={
-		{ id=1482001, item_id=12384, item_num=1, deadline={}, drop_show=0 },
-		{ id=1482002, item_id=2022, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[8001]={ drop_item={
@@ -1958,46 +1760,6 @@ local drop_data=
 	[8006]={ drop_item={
 		{ id=8004001, item_id=12352, item_num=1, deadline={}, drop_show=0 },
 		{ id=8004002, item_id=3, item_num=400, deadline={}, drop_show=0 },
-}
-},
-	[8007]={ drop_item={
-		{ id=8005001, item_id=12356, item_num=1, deadline={}, drop_show=0 },
-		{ id=8005002, item_id=3, item_num=400, deadline={}, drop_show=0 },
-}
-},
-	[8008]={ drop_item={
-		{ id=8008001, item_id=12357, item_num=1, deadline={}, drop_show=0 },
-		{ id=8008002, item_id=3, item_num=400, deadline={}, drop_show=0 },
-}
-},
-	[8009]={ drop_item={
-		{ id=8009001, item_id=12364, item_num=1, deadline={}, drop_show=0 },
-		{ id=8009002, item_id=3, item_num=400, deadline={}, drop_show=0 },
-}
-},
-	[8010]={ drop_item={
-		{ id=8010001, item_id=12366, item_num=1, deadline={}, drop_show=0 },
-		{ id=8010002, item_id=3, item_num=400, deadline={}, drop_show=0 },
-}
-},
-	[8011]={ drop_item={
-		{ id=8011001, item_id=12370, item_num=1, deadline={}, drop_show=0 },
-		{ id=8011002, item_id=3, item_num=400, deadline={}, drop_show=0 },
-}
-},
-	[8012]={ drop_item={
-		{ id=8012001, item_id=12375, item_num=1, deadline={}, drop_show=0 },
-		{ id=8012002, item_id=3, item_num=400, deadline={}, drop_show=0 },
-}
-},
-	[8013]={ drop_item={
-		{ id=8013001, item_id=12379, item_num=1, deadline={}, drop_show=0 },
-		{ id=8013002, item_id=3, item_num=400, deadline={}, drop_show=0 },
-}
-},
-	[8014]={ drop_item={
-		{ id=8013003, item_id=12385, item_num=1, deadline={}, drop_show=0 },
-		{ id=8013004, item_id=3, item_num=400, deadline={}, drop_show=0 },
 }
 },
 	[8041]={ drop_item={
@@ -2053,144 +1815,8 @@ local drop_data=
 }
 },
 	[8053]={ drop_item={
-		{ id=8046003, item_id=12807, item_num=1, deadline={}, drop_show=0 },
-		{ id=8046004, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8054]={ drop_item={
-		{ id=8046005, item_id=13836, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8055]={ drop_item={
-		{ id=8046006, item_id=13837, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8056]={ drop_item={
-		{ id=8046007, item_id=12339, item_num=1, deadline={}, drop_show=0 },
-		{ id=8046008, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8057]={ drop_item={
-		{ id=8046009, item_id=12809, item_num=1, deadline={}, drop_show=0 },
-		{ id=8046010, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8058]={ drop_item={
-		{ id=8046011, item_id=13836, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8059]={ drop_item={
-		{ id=8046012, item_id=13837, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8060]={ drop_item={
-		{ id=8046013, item_id=12335, item_num=1, deadline={}, drop_show=0 },
-		{ id=8046014, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8061]={ drop_item={
-		{ id=8046015, item_id=12810, item_num=1, deadline={}, drop_show=0 },
-		{ id=8046016, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8062]={ drop_item={
-		{ id=8046017, item_id=12361, item_num=1, deadline={}, drop_show=0 },
-		{ id=8046018, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8063]={ drop_item={
-		{ id=8046019, item_id=12813, item_num=1, deadline={}, drop_show=0 },
-		{ id=8046020, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8064]={ drop_item={
-		{ id=8046021, item_id=12362, item_num=1, deadline={}, drop_show=0 },
-		{ id=8046022, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8065]={ drop_item={
-		{ id=8046023, item_id=12819, item_num=1, deadline={}, drop_show=0 },
-		{ id=8046024, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8066]={ drop_item={
-		{ id=8066021, item_id=12367, item_num=1, deadline={}, drop_show=0 },
-		{ id=8066022, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8067]={ drop_item={
-		{ id=8066023, item_id=12827, item_num=1, deadline={}, drop_show=0 },
-		{ id=8066024, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8068]={ drop_item={
-		{ id=8067021, item_id=12339, item_num=1, deadline={}, drop_show=0 },
-		{ id=8067022, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8069]={ drop_item={
-		{ id=8068023, item_id=12809, item_num=1, deadline={}, drop_show=0 },
-		{ id=8068024, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8070]={ drop_item={
-		{ id=8070021, item_id=12371, item_num=1, deadline={}, drop_show=0 },
-		{ id=8070022, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8071]={ drop_item={
-		{ id=8071023, item_id=12833, item_num=1, deadline={}, drop_show=0 },
-		{ id=8071024, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8072]={ drop_item={
-		{ id=8072021, item_id=12377, item_num=1, deadline={}, drop_show=0 },
-		{ id=8072022, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8073]={ drop_item={
-		{ id=8072023, item_id=12846, item_num=1, deadline={}, drop_show=0 },
-		{ id=8072024, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8074]={ drop_item={
-		{ id=8074021, item_id=12367, item_num=1, deadline={}, drop_show=0 },
-		{ id=8074022, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8075]={ drop_item={
-		{ id=8074023, item_id=12827, item_num=1, deadline={}, drop_show=0 },
-		{ id=8074024, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8076]={ drop_item={
-		{ id=8076001, item_id=12381, item_num=1, deadline={}, drop_show=0 },
-		{ id=8076002, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8077]={ drop_item={
-		{ id=8076003, item_id=12851, item_num=1, deadline={}, drop_show=0 },
-		{ id=8076004, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8078]={ drop_item={
-		{ id=8078001, item_id=12361, item_num=1, deadline={}, drop_show=0 },
-		{ id=8078002, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8079]={ drop_item={
-		{ id=8079001, item_id=12813, item_num=1, deadline={}, drop_show=0 },
-		{ id=8079002, item_id=2023, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8080]={ drop_item={
-		{ id=8079003, item_id=12367, item_num=1, deadline={}, drop_show=0 },
-		{ id=8079004, item_id=2022, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[8081]={ drop_item={
-		{ id=8079005, item_id=12827, item_num=1, deadline={}, drop_show=0 },
-		{ id=8079006, item_id=2023, item_num=1, deadline={}, drop_show=0 },
+		{ id=8053001, item_id=12807, item_num=1, deadline={}, drop_show=0 },
+		{ id=8053002, item_id=2023, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[1601]={ drop_item={
@@ -2275,18 +1901,6 @@ local drop_data=
 		{ id=1614001, item_id=2460, item_num=60, deadline={}, drop_show=0 },
 		{ id=1614002, item_id=2061, item_num=50, deadline={}, drop_show=0 },
 		{ id=1614003, item_id=1, item_num=600000, deadline={}, drop_show=0 },
-}
-},
-	[1615]={ drop_item={
-		{ id=1615001, item_id=2608, item_num=3000, deadline={}, drop_show=0 },
-		{ id=1615002, item_id=1, item_num=600000, deadline={}, drop_show=0 },
-		{ id=1615003, item_id=12256, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[1616]={ drop_item={
-		{ id=1616001, item_id=14006, item_num=6, deadline={}, drop_show=0 },
-		{ id=1616002, item_id=1, item_num=600000, deadline={}, drop_show=0 },
-		{ id=1616003, item_id=12257, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[1661]={ drop_item={
@@ -2383,16 +1997,6 @@ local drop_data=
 },
 	[1692]={ drop_item={
 		{ id=1692001, item_id=3, item_num=2480, deadline={}, drop_show=0 },
-}
-},
-	[1696]={ drop_item={
-		{ id=1696001, item_id=10, item_num=200, deadline={}, drop_show=0 },
-		{ id=1696002, item_id=11, item_num=24000, deadline={}, drop_show=0 },
-}
-},
-	[1697]={ drop_item={
-		{ id=1696003, item_id=10, item_num=300, deadline={}, drop_show=0 },
-		{ id=1696004, item_id=1, item_num=500000, deadline={}, drop_show=0 },
 }
 },
 	[1701]={ drop_item={
@@ -3535,126 +3139,6 @@ local drop_data=
 		{ id=1956002, item_id=11502, item_num=2, deadline={}, drop_show=0 },
 }
 },
-	[1957]={ drop_item={
-		{ id=1957001, item_id=1524, item_num=6, deadline={}, drop_show=0 },
-		{ id=1957002, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[1958]={ drop_item={
-		{ id=1958001, item_id=1524, item_num=8, deadline={}, drop_show=0 },
-		{ id=1958002, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1959]={ drop_item={
-		{ id=1959001, item_id=1524, item_num=10, deadline={}, drop_show=0 },
-		{ id=1959002, item_id=11502, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1960]={ drop_item={
-		{ id=1960001, item_id=1525, item_num=6, deadline={}, drop_show=0 },
-		{ id=1960002, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[1961]={ drop_item={
-		{ id=1961001, item_id=1525, item_num=8, deadline={}, drop_show=0 },
-		{ id=1961002, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1962]={ drop_item={
-		{ id=1962001, item_id=1525, item_num=10, deadline={}, drop_show=0 },
-		{ id=1962002, item_id=11502, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1963]={ drop_item={
-		{ id=1963001, item_id=1526, item_num=6, deadline={}, drop_show=0 },
-		{ id=1963002, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[1964]={ drop_item={
-		{ id=1964001, item_id=1526, item_num=8, deadline={}, drop_show=0 },
-		{ id=1964002, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1965]={ drop_item={
-		{ id=1965001, item_id=1526, item_num=10, deadline={}, drop_show=0 },
-		{ id=1965002, item_id=11502, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1966]={ drop_item={
-		{ id=1966001, item_id=1527, item_num=6, deadline={}, drop_show=0 },
-		{ id=1966002, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[1967]={ drop_item={
-		{ id=1967001, item_id=1527, item_num=8, deadline={}, drop_show=0 },
-		{ id=1967002, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1968]={ drop_item={
-		{ id=1968001, item_id=1527, item_num=10, deadline={}, drop_show=0 },
-		{ id=1968002, item_id=11502, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1969]={ drop_item={
-		{ id=1969001, item_id=1528, item_num=6, deadline={}, drop_show=0 },
-		{ id=1969002, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[1970]={ drop_item={
-		{ id=1970001, item_id=1528, item_num=8, deadline={}, drop_show=0 },
-		{ id=1970002, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1971]={ drop_item={
-		{ id=1971001, item_id=1528, item_num=10, deadline={}, drop_show=0 },
-		{ id=1971002, item_id=11502, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1972]={ drop_item={
-		{ id=1972001, item_id=1529, item_num=6, deadline={}, drop_show=0 },
-		{ id=1972002, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[1973]={ drop_item={
-		{ id=1973001, item_id=1529, item_num=8, deadline={}, drop_show=0 },
-		{ id=1973002, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1974]={ drop_item={
-		{ id=1974001, item_id=1529, item_num=10, deadline={}, drop_show=0 },
-		{ id=1974002, item_id=11502, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1975]={ drop_item={
-		{ id=1975001, item_id=1530, item_num=6, deadline={}, drop_show=0 },
-		{ id=1975002, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[1976]={ drop_item={
-		{ id=1976001, item_id=1530, item_num=8, deadline={}, drop_show=0 },
-		{ id=1976002, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1977]={ drop_item={
-		{ id=1977001, item_id=1530, item_num=10, deadline={}, drop_show=0 },
-		{ id=1977002, item_id=11502, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1978]={ drop_item={
-		{ id=1978001, item_id=1531, item_num=6, deadline={}, drop_show=0 },
-		{ id=1978002, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[1979]={ drop_item={
-		{ id=1979001, item_id=1531, item_num=8, deadline={}, drop_show=0 },
-		{ id=1979002, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[1980]={ drop_item={
-		{ id=1980001, item_id=1531, item_num=10, deadline={}, drop_show=0 },
-		{ id=1980002, item_id=11502, item_num=2, deadline={}, drop_show=0 },
-}
-},
 	[2001]={ drop_item={
 		{ id=2001001, item_id=1501, item_num=6, deadline={}, drop_show=0 },
 		{ id=2001002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
@@ -4745,174 +4229,6 @@ local drop_data=
 		{ id=2156002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
 		{ id=2156003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
 		{ id=2156004, item_id=11501, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[2157]={ drop_item={
-		{ id=2157001, item_id=1524, item_num=6, deadline={}, drop_show=0 },
-		{ id=2157002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2157003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2157004, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[2158]={ drop_item={
-		{ id=2158001, item_id=1524, item_num=6, deadline={}, drop_show=0 },
-		{ id=2158002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2158003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2158004, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[2159]={ drop_item={
-		{ id=2159001, item_id=1524, item_num=6, deadline={}, drop_show=0 },
-		{ id=2159002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2159003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2159004, item_id=11501, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[2160]={ drop_item={
-		{ id=2160001, item_id=1525, item_num=6, deadline={}, drop_show=0 },
-		{ id=2160002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2160003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2160004, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[2161]={ drop_item={
-		{ id=2161001, item_id=1525, item_num=6, deadline={}, drop_show=0 },
-		{ id=2161002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2161003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2161004, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[2162]={ drop_item={
-		{ id=2162001, item_id=1525, item_num=6, deadline={}, drop_show=0 },
-		{ id=2162002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2162003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2162004, item_id=11501, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[2163]={ drop_item={
-		{ id=2163001, item_id=1526, item_num=6, deadline={}, drop_show=0 },
-		{ id=2163002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2163003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2163004, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[2164]={ drop_item={
-		{ id=2164001, item_id=1526, item_num=6, deadline={}, drop_show=0 },
-		{ id=2164002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2164003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2164004, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[2165]={ drop_item={
-		{ id=2165001, item_id=1526, item_num=6, deadline={}, drop_show=0 },
-		{ id=2165002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2165003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2165004, item_id=11501, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[2166]={ drop_item={
-		{ id=2166001, item_id=1527, item_num=6, deadline={}, drop_show=0 },
-		{ id=2166002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2166003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2166004, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[2167]={ drop_item={
-		{ id=2167001, item_id=1527, item_num=6, deadline={}, drop_show=0 },
-		{ id=2167002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2167003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2167004, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[2168]={ drop_item={
-		{ id=2168001, item_id=1527, item_num=6, deadline={}, drop_show=0 },
-		{ id=2168002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2168003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2168004, item_id=11501, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[2169]={ drop_item={
-		{ id=2169001, item_id=1528, item_num=6, deadline={}, drop_show=0 },
-		{ id=2169002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2169003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2169004, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[2170]={ drop_item={
-		{ id=2170001, item_id=1528, item_num=6, deadline={}, drop_show=0 },
-		{ id=2170002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2170003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2170004, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[2171]={ drop_item={
-		{ id=2171001, item_id=1528, item_num=6, deadline={}, drop_show=0 },
-		{ id=2171002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2171003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2171004, item_id=11501, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[2172]={ drop_item={
-		{ id=2172001, item_id=1529, item_num=6, deadline={}, drop_show=0 },
-		{ id=2172002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2172003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2172004, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[2173]={ drop_item={
-		{ id=2173001, item_id=1529, item_num=6, deadline={}, drop_show=0 },
-		{ id=2173002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2173003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2173004, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[2174]={ drop_item={
-		{ id=2174001, item_id=1529, item_num=6, deadline={}, drop_show=0 },
-		{ id=2174002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2174003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2174004, item_id=11501, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[2175]={ drop_item={
-		{ id=2175001, item_id=1530, item_num=6, deadline={}, drop_show=0 },
-		{ id=2175002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2175003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2175004, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[2176]={ drop_item={
-		{ id=2176001, item_id=1530, item_num=6, deadline={}, drop_show=0 },
-		{ id=2176002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2176003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2176004, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[2177]={ drop_item={
-		{ id=2177001, item_id=1530, item_num=6, deadline={}, drop_show=0 },
-		{ id=2177002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2177003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2177004, item_id=11501, item_num=3, deadline={}, drop_show=0 },
-}
-},
-	[2178]={ drop_item={
-		{ id=2178001, item_id=1531, item_num=6, deadline={}, drop_show=0 },
-		{ id=2178002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2178003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2178004, item_id=11501, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[2179]={ drop_item={
-		{ id=2179001, item_id=1531, item_num=6, deadline={}, drop_show=0 },
-		{ id=2179002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2179003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2179004, item_id=11501, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[2180]={ drop_item={
-		{ id=2180001, item_id=1531, item_num=6, deadline={}, drop_show=0 },
-		{ id=2180002, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-		{ id=2180003, item_id=11502, item_num=1, deadline={}, drop_show=0 },
-		{ id=2180004, item_id=11501, item_num=3, deadline={}, drop_show=0 },
 }
 },
 	[2191]={ drop_item={
@@ -9838,151 +9154,186 @@ local drop_data=
 }
 },
 	[4801]={ drop_item={
-		{ id=4801001, item_id=33, item_num=120, deadline={}, drop_show=0 },
+		{ id=4801001, item_id=3, item_num=20, deadline={}, drop_show=0 },
+		{ id=4801002, item_id=1, item_num=100000, deadline={}, drop_show=0 },
+		{ id=4801003, item_id=11, item_num=4800, deadline={}, drop_show=0 },
+		{ id=4801004, item_id=2001, item_num=20, deadline={}, drop_show=0 },
+		{ id=4801005, item_id=8002, item_num=12, deadline={}, drop_show=0 },
+		{ id=4801006, item_id=8102, item_num=3, deadline={}, drop_show=0 },
+		{ id=4801007, item_id=11502, item_num=2, deadline={}, drop_show=0 },
 }
 },
 	[4802]={ drop_item={
-		{ id=4802001, item_id=33, item_num=24, deadline={}, drop_show=0 },
+		{ id=4802001, item_id=1, item_num=10000, deadline={}, drop_show=0 },
+		{ id=4802002, item_id=11, item_num=600, deadline={}, drop_show=0 },
+		{ id=4802003, item_id=2001, item_num=4, deadline={}, drop_show=0 },
 }
 },
 	[4803]={ drop_item={
-		{ id=4803001, item_id=33, item_num=75, deadline={}, drop_show=0 },
+		{ id=4803001, item_id=3, item_num=5, deadline={}, drop_show=0 },
+		{ id=4803002, item_id=1, item_num=40000, deadline={}, drop_show=0 },
+		{ id=4803003, item_id=11, item_num=1800, deadline={}, drop_show=0 },
+		{ id=4803004, item_id=2001, item_num=8, deadline={}, drop_show=0 },
+		{ id=4803005, item_id=8002, item_num=4, deadline={}, drop_show=0 },
+		{ id=4803006, item_id=8102, item_num=1, deadline={}, drop_show=0 },
+		{ id=4803007, item_id=11502, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[4804]={ drop_item={
-		{ id=4804001, item_id=33, item_num=15, deadline={}, drop_show=0 },
+		{ id=4804001, item_id=3, item_num=5, deadline={}, drop_show=0 },
+		{ id=4804002, item_id=1, item_num=20000, deadline={}, drop_show=0 },
+		{ id=4804003, item_id=11, item_num=800, deadline={}, drop_show=0 },
+		{ id=4804004, item_id=2001, item_num=4, deadline={}, drop_show=0 },
+		{ id=4804005, item_id=8102, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[4805]={ drop_item={
-		{ id=4805001, item_id=33, item_num=68, deadline={}, drop_show=0 },
+		{ id=4805001, item_id=3, item_num=5, deadline={}, drop_show=0 },
+		{ id=4805002, item_id=1, item_num=30000, deadline={}, drop_show=0 },
+		{ id=4805003, item_id=11, item_num=1600, deadline={}, drop_show=0 },
+		{ id=4805004, item_id=2001, item_num=8, deadline={}, drop_show=0 },
+		{ id=4805005, item_id=8002, item_num=4, deadline={}, drop_show=0 },
+		{ id=4805006, item_id=8102, item_num=1, deadline={}, drop_show=0 },
+		{ id=4805007, item_id=11502, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[4806]={ drop_item={
-		{ id=4806001, item_id=33, item_num=24, deadline={}, drop_show=0 },
+		{ id=4806001, item_id=3, item_num=5, deadline={}, drop_show=0 },
+		{ id=4806002, item_id=1, item_num=10000, deadline={}, drop_show=0 },
+		{ id=4806003, item_id=11, item_num=800, deadline={}, drop_show=0 },
+		{ id=4806004, item_id=2001, item_num=4, deadline={}, drop_show=0 },
 }
 },
 	[4807]={ drop_item={
-		{ id=4807001, item_id=33, item_num=80, deadline={}, drop_show=0 },
+		{ id=4807001, item_id=3, item_num=15, deadline={}, drop_show=0 },
+		{ id=4807002, item_id=1, item_num=80000, deadline={}, drop_show=0 },
+		{ id=4807003, item_id=11, item_num=4000, deadline={}, drop_show=0 },
+		{ id=4807004, item_id=2001, item_num=16, deadline={}, drop_show=0 },
+		{ id=4807005, item_id=8002, item_num=10, deadline={}, drop_show=0 },
+		{ id=4807006, item_id=8102, item_num=3, deadline={}, drop_show=0 },
+		{ id=4807007, item_id=11502, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[4808]={ drop_item={
-		{ id=4808001, item_id=33, item_num=50, deadline={}, drop_show=0 },
+		{ id=4808001, item_id=3, item_num=10, deadline={}, drop_show=0 },
+		{ id=4808002, item_id=1, item_num=40000, deadline={}, drop_show=0 },
+		{ id=4808003, item_id=11, item_num=2000, deadline={}, drop_show=0 },
+		{ id=4808004, item_id=2001, item_num=8, deadline={}, drop_show=0 },
+		{ id=4808005, item_id=8002, item_num=5, deadline={}, drop_show=0 },
+		{ id=4808006, item_id=8102, item_num=1, deadline={}, drop_show=0 },
+		{ id=4808007, item_id=11502, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[4809]={ drop_item={
-		{ id=4809001, item_id=33, item_num=38, deadline={}, drop_show=0 },
+		{ id=4809001, item_id=3, item_num=5, deadline={}, drop_show=0 },
+		{ id=4809002, item_id=1, item_num=20000, deadline={}, drop_show=0 },
+		{ id=4809003, item_id=11, item_num=800, deadline={}, drop_show=0 },
+		{ id=4809004, item_id=2001, item_num=4, deadline={}, drop_show=0 },
+		{ id=4809005, item_id=8102, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[4810]={ drop_item={
-		{ id=4810001, item_id=33, item_num=20, deadline={}, drop_show=0 },
+		{ id=4810001, item_id=1, item_num=10000, deadline={}, drop_show=0 },
+		{ id=4810002, item_id=11, item_num=600, deadline={}, drop_show=0 },
+		{ id=4810003, item_id=2001, item_num=4, deadline={}, drop_show=0 },
 }
 },
 	[4811]={ drop_item={
-		{ id=4811001, item_id=33, item_num=25, deadline={}, drop_show=0 },
+		{ id=4811001, item_id=1, item_num=10000, deadline={}, drop_show=0 },
+		{ id=4811002, item_id=11, item_num=600, deadline={}, drop_show=0 },
+		{ id=4811003, item_id=2001, item_num=4, deadline={}, drop_show=0 },
 }
 },
 	[4812]={ drop_item={
-		{ id=4812001, item_id=33, item_num=38, deadline={}, drop_show=0 },
+		{ id=4812001, item_id=3, item_num=10, deadline={}, drop_show=0 },
+		{ id=4812002, item_id=1, item_num=40000, deadline={}, drop_show=0 },
+		{ id=4812003, item_id=11, item_num=2000, deadline={}, drop_show=0 },
+		{ id=4812004, item_id=2001, item_num=8, deadline={}, drop_show=0 },
+		{ id=4812005, item_id=8002, item_num=5, deadline={}, drop_show=0 },
+		{ id=4812006, item_id=8102, item_num=1, deadline={}, drop_show=0 },
+		{ id=4812007, item_id=11502, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[4813]={ drop_item={
-		{ id=4813001, item_id=33, item_num=45, deadline={}, drop_show=0 },
+		{ id=4813001, item_id=3, item_num=10, deadline={}, drop_show=0 },
+		{ id=4813002, item_id=1, item_num=40000, deadline={}, drop_show=0 },
+		{ id=4813003, item_id=11, item_num=2200, deadline={}, drop_show=0 },
+		{ id=4813004, item_id=2001, item_num=8, deadline={}, drop_show=0 },
+		{ id=4813005, item_id=8002, item_num=5, deadline={}, drop_show=0 },
+		{ id=4813006, item_id=8102, item_num=1, deadline={}, drop_show=0 },
+		{ id=4813007, item_id=11502, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[4814]={ drop_item={
-		{ id=4814001, item_id=33, item_num=14, deadline={}, drop_show=0 },
+		{ id=4814001, item_id=1, item_num=10000, deadline={}, drop_show=0 },
+		{ id=4814002, item_id=11, item_num=600, deadline={}, drop_show=0 },
+		{ id=4814003, item_id=2001, item_num=4, deadline={}, drop_show=0 },
 }
 },
 	[4815]={ drop_item={
-		{ id=4815001, item_id=33, item_num=75, deadline={}, drop_show=0 },
+		{ id=4815001, item_id=3, item_num=5, deadline={}, drop_show=0 },
+		{ id=4815002, item_id=1, item_num=20000, deadline={}, drop_show=0 },
+		{ id=4815003, item_id=11, item_num=1000, deadline={}, drop_show=0 },
+		{ id=4815004, item_id=2001, item_num=4, deadline={}, drop_show=0 },
+		{ id=4815005, item_id=8102, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[4816]={ drop_item={
-		{ id=4816001, item_id=33, item_num=90, deadline={}, drop_show=0 },
+		{ id=4816001, item_id=3, item_num=15, deadline={}, drop_show=0 },
+		{ id=4816002, item_id=1, item_num=80000, deadline={}, drop_show=0 },
+		{ id=4816003, item_id=11, item_num=4200, deadline={}, drop_show=0 },
+		{ id=4816004, item_id=2001, item_num=16, deadline={}, drop_show=0 },
+		{ id=4816005, item_id=8002, item_num=10, deadline={}, drop_show=0 },
+		{ id=4816006, item_id=8102, item_num=3, deadline={}, drop_show=0 },
+		{ id=4816007, item_id=11502, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[4817]={ drop_item={
-		{ id=4817001, item_id=33, item_num=18, deadline={}, drop_show=0 },
+		{ id=4817001, item_id=3, item_num=5, deadline={}, drop_show=0 },
+		{ id=4817002, item_id=1, item_num=10000, deadline={}, drop_show=0 },
+		{ id=4817003, item_id=11, item_num=800, deadline={}, drop_show=0 },
+		{ id=4817004, item_id=2001, item_num=4, deadline={}, drop_show=0 },
 }
 },
 	[4818]={ drop_item={
-		{ id=4818001, item_id=33, item_num=50, deadline={}, drop_show=0 },
+		{ id=4818001, item_id=3, item_num=10, deadline={}, drop_show=0 },
+		{ id=4818002, item_id=1, item_num=40000, deadline={}, drop_show=0 },
+		{ id=4818003, item_id=11, item_num=2000, deadline={}, drop_show=0 },
+		{ id=4818004, item_id=2001, item_num=8, deadline={}, drop_show=0 },
+		{ id=4818005, item_id=8002, item_num=5, deadline={}, drop_show=0 },
+		{ id=4818006, item_id=8102, item_num=1, deadline={}, drop_show=0 },
+		{ id=4818007, item_id=11502, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[4819]={ drop_item={
-		{ id=4819001, item_id=33, item_num=100, deadline={}, drop_show=0 },
+		{ id=4819001, item_id=3, item_num=20, deadline={}, drop_show=0 },
+		{ id=4819002, item_id=1, item_num=90000, deadline={}, drop_show=0 },
+		{ id=4819003, item_id=11, item_num=4600, deadline={}, drop_show=0 },
+		{ id=4819004, item_id=2001, item_num=20, deadline={}, drop_show=0 },
+		{ id=4819005, item_id=8002, item_num=10, deadline={}, drop_show=0 },
+		{ id=4819006, item_id=8102, item_num=3, deadline={}, drop_show=0 },
+		{ id=4819007, item_id=11502, item_num=2, deadline={}, drop_show=0 },
 }
 },
 	[4820]={ drop_item={
-		{ id=4820001, item_id=33, item_num=150, deadline={}, drop_show=0 },
+		{ id=4820001, item_id=3, item_num=20, deadline={}, drop_show=0 },
+		{ id=4820002, item_id=2001, item_num=40, deadline={}, drop_show=0 },
+		{ id=4820003, item_id=8002, item_num=16, deadline={}, drop_show=0 },
+		{ id=4820004, item_id=8102, item_num=6, deadline={}, drop_show=0 },
+		{ id=4820005, item_id=10, item_num=60, deadline={}, drop_show=0 },
+		{ id=4820006, item_id=2022, item_num=1, deadline={}, drop_show=0 },
+		{ id=4820007, item_id=2061, item_num=2, deadline={}, drop_show=0 },
+		{ id=4820008, item_id=2401, item_num=4, deadline={}, drop_show=0 },
 }
 },
 	[4821]={ drop_item={
-		{ id=4821001, item_id=33, item_num=6, deadline={}, drop_show=0 },
+		{ id=4821001, item_id=1, item_num=10000, deadline={}, drop_show=0 },
+		{ id=4821002, item_id=11, item_num=400, deadline={}, drop_show=0 },
 }
 },
 	[4822]={ drop_item={
-		{ id=4822001, item_id=33, item_num=4, deadline={}, drop_show=0 },
-}
-},
-	[4851]={ drop_item={
-		{ id=4851001, item_id=3, item_num=100, deadline={}, drop_show=0 },
-		{ id=4851002, item_id=33, item_num=100, deadline={}, drop_show=0 },
-		{ id=4851003, item_id=8003, item_num=4, deadline={}, drop_show=0 },
-}
-},
-	[4852]={ drop_item={
-		{ id=4852001, item_id=3, item_num=100, deadline={}, drop_show=0 },
-		{ id=4852002, item_id=33, item_num=120, deadline={}, drop_show=0 },
-		{ id=4852003, item_id=8102, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[4853]={ drop_item={
-		{ id=4853001, item_id=3, item_num=100, deadline={}, drop_show=0 },
-		{ id=4853002, item_id=33, item_num=150, deadline={}, drop_show=0 },
-		{ id=4853003, item_id=1, item_num=60000, deadline={}, drop_show=0 },
-}
-},
-	[4854]={ drop_item={
-		{ id=4854001, item_id=3, item_num=100, deadline={}, drop_show=0 },
-		{ id=4854002, item_id=33, item_num=200, deadline={}, drop_show=0 },
-		{ id=4854003, item_id=1, item_num=80000, deadline={}, drop_show=0 },
-}
-},
-	[4855]={ drop_item={
-		{ id=4855001, item_id=3, item_num=100, deadline={}, drop_show=0 },
-		{ id=4855002, item_id=33, item_num=200, deadline={}, drop_show=0 },
-		{ id=4855003, item_id=11, item_num=3600, deadline={}, drop_show=0 },
-}
-},
-	[4856]={ drop_item={
-		{ id=4856001, item_id=3, item_num=100, deadline={}, drop_show=0 },
-		{ id=4856002, item_id=33, item_num=300, deadline={}, drop_show=0 },
-		{ id=4856003, item_id=11503, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[4857]={ drop_item={
-		{ id=4857001, item_id=3, item_num=100, deadline={}, drop_show=0 },
-		{ id=4857002, item_id=33, item_num=300, deadline={}, drop_show=0 },
-		{ id=4857003, item_id=8003, item_num=8, deadline={}, drop_show=0 },
-}
-},
-	[4858]={ drop_item={
-		{ id=4858001, item_id=3, item_num=100, deadline={}, drop_show=0 },
-		{ id=4858002, item_id=33, item_num=300, deadline={}, drop_show=0 },
-		{ id=4858003, item_id=8102, item_num=4, deadline={}, drop_show=0 },
-}
-},
-	[4859]={ drop_item={
-		{ id=4859001, item_id=3, item_num=100, deadline={}, drop_show=0 },
-		{ id=4859002, item_id=33, item_num=400, deadline={}, drop_show=0 },
-		{ id=4859003, item_id=11, item_num=6000, deadline={}, drop_show=0 },
-}
-},
-	[4860]={ drop_item={
-		{ id=4860001, item_id=3, item_num=100, deadline={}, drop_show=0 },
-		{ id=4860002, item_id=33, item_num=400, deadline={}, drop_show=0 },
-		{ id=4860003, item_id=2202, item_num=1, deadline={}, drop_show=0 },
+		{ id=4822001, item_id=1, item_num=10000, deadline={}, drop_show=0 },
+		{ id=4822002, item_id=11, item_num=400, deadline={}, drop_show=0 },
 }
 },
 	[4901]={ drop_item={
@@ -10180,90 +9531,6 @@ local drop_data=
 		{ id=6057003, item_id=1, item_num=1000000, deadline={}, drop_show=0 },
 		{ id=6057004, item_id=2061, item_num=4, deadline={}, drop_show=0 },
 		{ id=6057005, item_id=2170, item_num=10000, deadline={}, drop_show=0 },
-}
-},
-	[6101]={ drop_item={
-		{ id=6101001, item_id=35, item_num=80, deadline={}, drop_show=0 },
-		{ id=6101002, item_id=2608, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[6102]={ drop_item={
-		{ id=6102001, item_id=35, item_num=75, deadline={}, drop_show=0 },
-		{ id=6102002, item_id=2608, item_num=8, deadline={}, drop_show=0 },
-}
-},
-	[6103]={ drop_item={
-		{ id=6103001, item_id=35, item_num=70, deadline={}, drop_show=0 },
-		{ id=6103002, item_id=2608, item_num=6, deadline={}, drop_show=0 },
-}
-},
-	[6111]={ drop_item={
-		{ id=6111001, item_id=3, item_num=600, deadline={}, drop_show=0 },
-		{ id=6111002, item_id=35, item_num=3200, deadline={}, drop_show=0 },
-		{ id=6111003, item_id=2608, item_num=720, deadline={}, drop_show=0 },
-		{ id=6111004, item_id=12266, item_num=1, deadline={2,30}, drop_show=0 },
-}
-},
-	[6112]={ drop_item={
-		{ id=6112001, item_id=3, item_num=480, deadline={}, drop_show=0 },
-		{ id=6112002, item_id=35, item_num=2560, deadline={}, drop_show=0 },
-		{ id=6112003, item_id=2608, item_num=560, deadline={}, drop_show=0 },
-		{ id=6112004, item_id=12265, item_num=1, deadline={2,30}, drop_show=0 },
-}
-},
-	[6113]={ drop_item={
-		{ id=6113001, item_id=3, item_num=420, deadline={}, drop_show=0 },
-		{ id=6113002, item_id=35, item_num=2240, deadline={}, drop_show=0 },
-		{ id=6113003, item_id=2608, item_num=490, deadline={}, drop_show=0 },
-		{ id=6113004, item_id=12264, item_num=1, deadline={2,30}, drop_show=0 },
-}
-},
-	[6114]={ drop_item={
-		{ id=6114001, item_id=3, item_num=360, deadline={}, drop_show=0 },
-		{ id=6114002, item_id=35, item_num=1920, deadline={}, drop_show=0 },
-		{ id=6114003, item_id=2608, item_num=420, deadline={}, drop_show=0 },
-		{ id=6114004, item_id=12263, item_num=1, deadline={2,30}, drop_show=0 },
-}
-},
-	[6115]={ drop_item={
-		{ id=6115001, item_id=3, item_num=330, deadline={}, drop_show=0 },
-		{ id=6115002, item_id=35, item_num=1760, deadline={}, drop_show=0 },
-		{ id=6115003, item_id=2608, item_num=390, deadline={}, drop_show=0 },
-		{ id=6115004, item_id=12262, item_num=1, deadline={2,30}, drop_show=0 },
-}
-},
-	[6116]={ drop_item={
-		{ id=6116001, item_id=3, item_num=300, deadline={}, drop_show=0 },
-		{ id=6116002, item_id=35, item_num=1600, deadline={}, drop_show=0 },
-		{ id=6116003, item_id=2608, item_num=350, deadline={}, drop_show=0 },
-		{ id=6116004, item_id=12261, item_num=1, deadline={2,30}, drop_show=0 },
-}
-},
-	[6117]={ drop_item={
-		{ id=6117001, item_id=3, item_num=270, deadline={}, drop_show=0 },
-		{ id=6117002, item_id=35, item_num=1440, deadline={}, drop_show=0 },
-		{ id=6117003, item_id=2608, item_num=320, deadline={}, drop_show=0 },
-		{ id=6117004, item_id=12260, item_num=1, deadline={2,30}, drop_show=0 },
-}
-},
-	[6118]={ drop_item={
-		{ id=6118001, item_id=3, item_num=230, deadline={}, drop_show=0 },
-		{ id=6118002, item_id=35, item_num=1200, deadline={}, drop_show=0 },
-		{ id=6118003, item_id=2608, item_num=270, deadline={}, drop_show=0 },
-		{ id=6118004, item_id=12259, item_num=1, deadline={2,30}, drop_show=0 },
-}
-},
-	[6119]={ drop_item={
-		{ id=6119001, item_id=3, item_num=180, deadline={}, drop_show=0 },
-		{ id=6119002, item_id=35, item_num=960, deadline={}, drop_show=0 },
-		{ id=6119003, item_id=2608, item_num=220, deadline={}, drop_show=0 },
-		{ id=6119004, item_id=12259, item_num=1, deadline={2,30}, drop_show=0 },
-}
-},
-	[6120]={ drop_item={
-		{ id=6120001, item_id=3, item_num=150, deadline={}, drop_show=0 },
-		{ id=6120002, item_id=35, item_num=800, deadline={}, drop_show=0 },
-		{ id=6120003, item_id=2608, item_num=180, deadline={}, drop_show=0 },
 }
 },
 	[6501]={ drop_item={
@@ -11188,36 +10455,6 @@ local drop_data=
 		{ id=6682003, item_id=1, item_num=48000, deadline={}, drop_show=0 },
 }
 },
-	[9001]={ drop_item={
-		{ id=9001001, item_id=3, item_num=300, deadline={}, drop_show=0 },
-		{ id=9001002, item_id=11, item_num=36000, deadline={}, drop_show=0 },
-		{ id=9001003, item_id=8101, item_num=40, deadline={}, drop_show=0 },
-}
-},
-	[9002]={ drop_item={
-		{ id=9002001, item_id=3, item_num=300, deadline={}, drop_show=0 },
-		{ id=9002002, item_id=1, item_num=500000, deadline={}, drop_show=0 },
-		{ id=9002003, item_id=8002, item_num=60, deadline={}, drop_show=0 },
-}
-},
-	[9003]={ drop_item={
-		{ id=9003001, item_id=3, item_num=300, deadline={}, drop_show=0 },
-		{ id=9003002, item_id=11, item_num=48000, deadline={}, drop_show=0 },
-		{ id=9003003, item_id=2401, item_num=20, deadline={}, drop_show=0 },
-}
-},
-	[9004]={ drop_item={
-		{ id=9004001, item_id=3, item_num=300, deadline={}, drop_show=0 },
-		{ id=9004002, item_id=11, item_num=60000, deadline={}, drop_show=0 },
-		{ id=9004003, item_id=2401, item_num=40, deadline={}, drop_show=0 },
-}
-},
-	[9005]={ drop_item={
-		{ id=9005001, item_id=3, item_num=300, deadline={}, drop_show=0 },
-		{ id=9005002, item_id=11, item_num=60000, deadline={}, drop_show=0 },
-		{ id=9005003, item_id=2401, item_num=60, deadline={}, drop_show=0 },
-}
-},
 	[11501]={ drop_item={
 		{ id=11501001, item_id=11002, item_num=1, deadline={}, drop_show=0 },
 		{ id=11501002, item_id=11009, item_num=1, deadline={}, drop_show=0 },
@@ -12114,265 +11351,6 @@ local drop_data=
 		{ id=10135002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
 }
 },
-	[10136]={ drop_item={
-		{ id=10136001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10136002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[10137]={ drop_item={
-		{ id=10137001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10137003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10137004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10138]={ drop_item={
-		{ id=10138001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10138003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10138004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10139]={ drop_item={
-		{ id=10139001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10139002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[10140]={ drop_item={
-		{ id=10140001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10140003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10140004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10141]={ drop_item={
-		{ id=10141001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10141002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[10142]={ drop_item={
-		{ id=10142001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10142003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10142004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10143]={ drop_item={
-		{ id=10143001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10143003, item_id=1, item_num=24000, deadline={}, drop_show=0 },
-		{ id=10143004, item_id=11, item_num=2100, deadline={}, drop_show=0 },
-}
-},
-	[10144]={ drop_item={
-		{ id=10144001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10144003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10144004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10145]={ drop_item={
-		{ id=10145001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10145003, item_id=1, item_num=24000, deadline={}, drop_show=0 },
-		{ id=10145004, item_id=11, item_num=2100, deadline={}, drop_show=0 },
-}
-},
-	[10146]={ drop_item={
-		{ id=10146001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10146003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10146004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10147]={ drop_item={
-		{ id=10147001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10147003, item_id=1, item_num=24000, deadline={}, drop_show=0 },
-		{ id=10147004, item_id=11, item_num=2100, deadline={}, drop_show=0 },
-}
-},
-	[10148]={ drop_item={
-		{ id=10148001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10148003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10148004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10149]={ drop_item={
-		{ id=10149001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10149003, item_id=1, item_num=30000, deadline={}, drop_show=0 },
-		{ id=10149004, item_id=11, item_num=3600, deadline={}, drop_show=0 },
-}
-},
-	[10150]={ drop_item={
-		{ id=10150001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10150002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[10151]={ drop_item={
-		{ id=10151001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10151002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[10152]={ drop_item={
-		{ id=10152001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10152003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10152004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10153]={ drop_item={
-		{ id=10153001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10153003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10153004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10154]={ drop_item={
-		{ id=10154001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10154003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10154004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10155]={ drop_item={
-		{ id=10155001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10155003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10155004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10156]={ drop_item={
-		{ id=10156001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10156003, item_id=1, item_num=24000, deadline={}, drop_show=0 },
-		{ id=10156004, item_id=11, item_num=2100, deadline={}, drop_show=0 },
-}
-},
-	[10157]={ drop_item={
-		{ id=10157001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10157003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10157004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10158]={ drop_item={
-		{ id=10158001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10158002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[10159]={ drop_item={
-		{ id=10159001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10159003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10159004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10160]={ drop_item={
-		{ id=10160001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10160003, item_id=1, item_num=24000, deadline={}, drop_show=0 },
-		{ id=10160004, item_id=11, item_num=2100, deadline={}, drop_show=0 },
-}
-},
-	[10161]={ drop_item={
-		{ id=10161001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10161003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10161004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10162]={ drop_item={
-		{ id=10162001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10162003, item_id=1, item_num=24000, deadline={}, drop_show=0 },
-		{ id=10162004, item_id=11, item_num=2100, deadline={}, drop_show=0 },
-}
-},
-	[10163]={ drop_item={
-		{ id=10163001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10163002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[10164]={ drop_item={
-		{ id=10164001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10164002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[10165]={ drop_item={
-		{ id=10165001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10165003, item_id=1, item_num=30000, deadline={}, drop_show=0 },
-		{ id=10165004, item_id=11, item_num=3600, deadline={}, drop_show=0 },
-}
-},
-	[10166]={ drop_item={
-		{ id=10166001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10166003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10166004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10167]={ drop_item={
-		{ id=10167001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10167003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10167004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10168]={ drop_item={
-		{ id=10168001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10168003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10168004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10169]={ drop_item={
-		{ id=10169001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10169003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10169004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10170]={ drop_item={
-		{ id=10170001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10170003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10170004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10171]={ drop_item={
-		{ id=10171001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10171003, item_id=1, item_num=24000, deadline={}, drop_show=0 },
-		{ id=10171004, item_id=11, item_num=2100, deadline={}, drop_show=0 },
-}
-},
-	[10172]={ drop_item={
-		{ id=10172001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10172003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10172004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10173]={ drop_item={
-		{ id=10173001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10173002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[10174]={ drop_item={
-		{ id=10174001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10174003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10174004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10175]={ drop_item={
-		{ id=10175001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10175003, item_id=1, item_num=24000, deadline={}, drop_show=0 },
-		{ id=10175004, item_id=11, item_num=2100, deadline={}, drop_show=0 },
-}
-},
-	[10176]={ drop_item={
-		{ id=10176001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10176003, item_id=1, item_num=20000, deadline={}, drop_show=0 },
-		{ id=10176004, item_id=11, item_num=1800, deadline={}, drop_show=0 },
-}
-},
-	[10177]={ drop_item={
-		{ id=10177001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10177002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[10178]={ drop_item={
-		{ id=10178001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10178003, item_id=1, item_num=24000, deadline={}, drop_show=0 },
-		{ id=10178004, item_id=11, item_num=2100, deadline={}, drop_show=0 },
-}
-},
-	[10179]={ drop_item={
-		{ id=10179001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10179003, item_id=1, item_num=30000, deadline={}, drop_show=0 },
-		{ id=10179004, item_id=11, item_num=3600, deadline={}, drop_show=0 },
-}
-},
-	[10180]={ drop_item={
-		{ id=10180001, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=10180002, item_id=1610, item_num=10, deadline={}, drop_show=0 },
-}
-},
 	[13000]={ drop_item={
 		{ id=13000001, item_id=1101, item_num=1, deadline={}, drop_show=0 },
 		{ id=13000002, item_id=1107, item_num=1, deadline={}, drop_show=0 },
@@ -12444,10 +11422,10 @@ local drop_data=
 		{ id=13012007, item_id=21062, item_num=1, deadline={}, drop_show=0 },
 		{ id=13012008, item_id=21072, item_num=1, deadline={}, drop_show=0 },
 		{ id=13012009, item_id=21102, item_num=1, deadline={}, drop_show=0 },
-		{ id=13012010, item_id=21112, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[13013]={ drop_item={
+		{ id=13012010, item_id=21112, item_num=1, deadline={}, drop_show=0 },
 		{ id=13013001, item_id=21003, item_num=1, deadline={}, drop_show=0 },
 		{ id=13013002, item_id=21013, item_num=1, deadline={}, drop_show=0 },
 		{ id=13013003, item_id=21023, item_num=1, deadline={}, drop_show=0 },
@@ -12964,13 +11942,6 @@ local drop_data=
 		{ id=13201022, item_id=1020, item_num=1, deadline={}, drop_show=0 },
 		{ id=13201023, item_id=1021, item_num=1, deadline={}, drop_show=0 },
 		{ id=13201024, item_id=1022, item_num=1, deadline={}, drop_show=0 },
-		{ id=13201025, item_id=1024, item_num=1, deadline={}, drop_show=0 },
-		{ id=13201026, item_id=1025, item_num=1, deadline={}, drop_show=0 },
-		{ id=13201027, item_id=1026, item_num=1, deadline={}, drop_show=0 },
-		{ id=13201028, item_id=1027, item_num=1, deadline={}, drop_show=0 },
-		{ id=13201029, item_id=1029, item_num=1, deadline={}, drop_show=0 },
-		{ id=13201030, item_id=1030, item_num=1, deadline={}, drop_show=0 },
-		{ id=13201031, item_id=1031, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[13205]={ drop_item={
@@ -13000,94 +11971,6 @@ local drop_data=
 		{ id=13205024, item_id=1022, item_num=1, deadline={}, drop_show=0 },
 }
 },
-	[13206]={ drop_item={
-		{ id=13206001, item_id=1001, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206002, item_id=1002, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206003, item_id=1003, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206004, item_id=1004, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206005, item_id=1005, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206006, item_id=1006, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206007, item_id=1007, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206008, item_id=1008, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206009, item_id=1009, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206010, item_id=1010, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206011, item_id=1011, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206012, item_id=1012, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206013, item_id=1013, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206014, item_id=1014, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206015, item_id=1105, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206016, item_id=1301, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206017, item_id=1015, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206018, item_id=1016, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206019, item_id=1017, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206020, item_id=1018, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206021, item_id=1113, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206022, item_id=1020, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206023, item_id=1021, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206024, item_id=1022, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206025, item_id=1024, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206026, item_id=1025, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206027, item_id=1026, item_num=1, deadline={}, drop_show=0 },
-		{ id=13206028, item_id=1027, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[13207]={ drop_item={
-		{ id=13207001, item_id=1001, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207002, item_id=1002, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207003, item_id=1003, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207004, item_id=1004, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207005, item_id=1005, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207006, item_id=1006, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207007, item_id=1007, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207008, item_id=1008, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207009, item_id=1009, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207010, item_id=1010, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207011, item_id=1011, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207012, item_id=1012, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207013, item_id=1013, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207014, item_id=1014, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207015, item_id=1105, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207016, item_id=1301, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207017, item_id=1015, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207018, item_id=1016, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207019, item_id=1017, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207020, item_id=1018, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207021, item_id=1113, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207022, item_id=1020, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207023, item_id=1021, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207024, item_id=1022, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207025, item_id=1024, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207026, item_id=1025, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207027, item_id=1026, item_num=1, deadline={}, drop_show=0 },
-		{ id=13207028, item_id=1027, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[13210]={ drop_item={
-		{ id=13210001, item_id=1001, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210002, item_id=1002, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210003, item_id=1003, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210004, item_id=1004, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210005, item_id=1005, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210006, item_id=1006, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210007, item_id=1007, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210008, item_id=1008, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210009, item_id=1009, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210010, item_id=1010, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210011, item_id=1011, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210012, item_id=1012, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210013, item_id=1013, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210014, item_id=1014, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210015, item_id=1105, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210016, item_id=1301, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210017, item_id=1015, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210018, item_id=1016, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210019, item_id=1017, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210020, item_id=1018, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210021, item_id=1113, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210022, item_id=1020, item_num=1, deadline={}, drop_show=0 },
-		{ id=13210023, item_id=1021, item_num=1, deadline={}, drop_show=0 },
-}
-},
 	[13034]={ drop_item={
 		{ id=13034001, item_id=7309, item_num=1, deadline={}, drop_show=0 },
 		{ id=13034002, item_id=7310, item_num=1, deadline={}, drop_show=0 },
@@ -13106,14 +11989,6 @@ local drop_data=
 		{ id=13034015, item_id=7328, item_num=1, deadline={}, drop_show=0 },
 		{ id=13034016, item_id=7329, item_num=1, deadline={}, drop_show=0 },
 		{ id=13034017, item_id=7331, item_num=1, deadline={}, drop_show=0 },
-		{ id=13034018, item_id=7333, item_num=1, deadline={}, drop_show=0 },
-		{ id=13034019, item_id=7334, item_num=1, deadline={}, drop_show=0 },
-		{ id=13034020, item_id=7335, item_num=1, deadline={}, drop_show=0 },
-		{ id=13034021, item_id=7336, item_num=1, deadline={}, drop_show=0 },
-		{ id=13034022, item_id=7337, item_num=1, deadline={}, drop_show=0 },
-		{ id=13034023, item_id=7339, item_num=1, deadline={}, drop_show=0 },
-		{ id=13034024, item_id=7340, item_num=1, deadline={}, drop_show=0 },
-		{ id=13034025, item_id=7341, item_num=1, deadline={}, drop_show=0 },
 }
 },
 	[13221]={ drop_item={
@@ -13320,151 +12195,6 @@ local drop_data=
 		{ id=13304005, item_id=2202, item_num=1, deadline={}, drop_show=0 },
 		{ id=13304006, item_id=2453, item_num=5, deadline={}, drop_show=0 },
 		{ id=13304007, item_id=30, item_num=600, deadline={}, drop_show=0 },
-}
-},
-	[13502]={ drop_item={
-		{ id=13502001, item_id=17326, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502002, item_id=17327, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502003, item_id=17328, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502004, item_id=17329, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502005, item_id=17330, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502006, item_id=17331, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502007, item_id=17332, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502008, item_id=17333, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502009, item_id=17334, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502010, item_id=17335, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502011, item_id=17336, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502012, item_id=17337, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502013, item_id=17338, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502014, item_id=17339, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502015, item_id=17340, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502016, item_id=17341, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502017, item_id=17342, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502018, item_id=17343, item_num=1, deadline={}, drop_show=0 },
-		{ id=13502019, item_id=17344, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[13515]={ drop_item={
-		{ id=13515001, item_id=17345, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515002, item_id=17346, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515003, item_id=17347, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515004, item_id=17348, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515005, item_id=17349, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515006, item_id=17350, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515007, item_id=17351, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515008, item_id=17352, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515009, item_id=17353, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515010, item_id=17354, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515011, item_id=17355, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515012, item_id=17356, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515013, item_id=17357, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515014, item_id=17358, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515015, item_id=17359, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515016, item_id=17360, item_num=1, deadline={}, drop_show=0 },
-		{ id=13515017, item_id=17361, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[13528]={ drop_item={
-		{ id=13528001, item_id=17362, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528002, item_id=17363, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528003, item_id=17364, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528004, item_id=17365, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528005, item_id=17366, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528006, item_id=17367, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528007, item_id=17368, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528008, item_id=17369, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528009, item_id=17370, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528010, item_id=17371, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528011, item_id=17372, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528012, item_id=17373, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528013, item_id=17375, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528014, item_id=17376, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528015, item_id=17377, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528016, item_id=17378, item_num=1, deadline={}, drop_show=0 },
-		{ id=13528017, item_id=17380, item_num=2, deadline={}, drop_show=0 },
-}
-},
-	[13529]={ drop_item={
-		{ id=13529001, item_id=14001, item_num=8, deadline={}, drop_show=0 },
-}
-},
-	[13530]={ drop_item={
-		{ id=13530001, item_id=14001, item_num=24, deadline={}, drop_show=0 },
-}
-},
-	[13531]={ drop_item={
-		{ id=13531001, item_id=14001, item_num=50, deadline={}, drop_show=0 },
-}
-},
-	[13532]={ drop_item={
-		{ id=13532001, item_id=2608, item_num=300, deadline={}, drop_show=0 },
-		{ id=13532002, item_id=14006, item_num=2, deadline={}, drop_show=0 },
-		{ id=13532003, item_id=1, item_num=500000, deadline={}, drop_show=0 },
-}
-},
-	[13533]={ drop_item={
-		{ id=13533001, item_id=17381, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533002, item_id=17382, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533003, item_id=17383, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533004, item_id=17384, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533005, item_id=17385, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533006, item_id=17386, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533007, item_id=17387, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533008, item_id=17388, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533009, item_id=17389, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533010, item_id=17390, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533011, item_id=17391, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533012, item_id=17392, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533013, item_id=17393, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533014, item_id=17394, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533015, item_id=17395, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533016, item_id=17396, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533017, item_id=17397, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533018, item_id=17398, item_num=1, deadline={}, drop_show=0 },
-		{ id=13533019, item_id=17399, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[13550]={ drop_item={
-		{ id=13550001, item_id=14001, item_num=80, deadline={}, drop_show=0 },
-}
-},
-	[13551]={ drop_item={
-		{ id=13551001, item_id=17400, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551002, item_id=17401, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551003, item_id=17402, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551004, item_id=17403, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551005, item_id=17404, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551006, item_id=17405, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551007, item_id=17406, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551008, item_id=17407, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551009, item_id=17408, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551010, item_id=17409, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551011, item_id=17410, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551012, item_id=17411, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551013, item_id=17412, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551014, item_id=17413, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551015, item_id=17414, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551016, item_id=17415, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551017, item_id=17416, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551018, item_id=17417, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551019, item_id=17418, item_num=1, deadline={}, drop_show=0 },
-		{ id=13551020, item_id=17419, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[13552]={ drop_item={
-		{ id=13552001, item_id=2023, item_num=40, deadline={}, drop_show=0 },
-}
-},
-	[13553]={ drop_item={
-		{ id=13552002, item_id=2052, item_num=40, deadline={}, drop_show=0 },
-}
-},
-	[13554]={ drop_item={
-		{ id=13552003, item_id=2460, item_num=50, deadline={}, drop_show=0 },
-}
-},
-	[13555]={ drop_item={
-		{ id=13552004, item_id=13081, item_num=7, deadline={}, drop_show=0 },
 }
 },
 	[13701]={ drop_item={
@@ -13966,116 +12696,6 @@ local drop_data=
 		{ id=13774017, item_id=17268, item_num=1, deadline={}, drop_show=0 },
 }
 },
-	[13775]={ drop_item={
-		{ id=13775001, item_id=17269, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775002, item_id=17270, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775003, item_id=17271, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775004, item_id=17272, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775005, item_id=17273, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775006, item_id=17274, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775007, item_id=17275, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775008, item_id=17276, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775009, item_id=17277, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775010, item_id=17278, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775011, item_id=17279, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775012, item_id=17280, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775013, item_id=17281, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775014, item_id=17282, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775015, item_id=17283, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775016, item_id=17284, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775017, item_id=17285, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775018, item_id=17286, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775019, item_id=17287, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775020, item_id=17288, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775021, item_id=17289, item_num=1, deadline={}, drop_show=0 },
-		{ id=13775022, item_id=17290, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[13776]={ drop_item={
-		{ id=13776001, item_id=2023, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[13777]={ drop_item={
-		{ id=13777001, item_id=2023, item_num=20, deadline={}, drop_show=0 },
-}
-},
-	[13778]={ drop_item={
-		{ id=13778001, item_id=2023, item_num=30, deadline={}, drop_show=0 },
-}
-},
-	[13779]={ drop_item={
-		{ id=13779001, item_id=2052, item_num=10, deadline={}, drop_show=0 },
-}
-},
-	[13780]={ drop_item={
-		{ id=13780001, item_id=2052, item_num=20, deadline={}, drop_show=0 },
-}
-},
-	[13781]={ drop_item={
-		{ id=13781001, item_id=2052, item_num=30, deadline={}, drop_show=0 },
-}
-},
-	[13782]={ drop_item={
-		{ id=13782001, item_id=2061, item_num=120, deadline={}, drop_show=0 },
-}
-},
-	[13783]={ drop_item={
-		{ id=13783001, item_id=15, item_num=980, deadline={}, drop_show=0 },
-		{ id=13783002, item_id=2451, item_num=30, deadline={}, drop_show=0 },
-		{ id=13783003, item_id=2452, item_num=30, deadline={}, drop_show=0 },
-		{ id=13783004, item_id=2453, item_num=30, deadline={}, drop_show=0 },
-		{ id=13783005, item_id=11, item_num=180000, deadline={}, drop_show=0 },
-		{ id=13783006, item_id=2401, item_num=60, deadline={}, drop_show=0 },
-}
-},
-	[13784]={ drop_item={
-		{ id=13784001, item_id=2203, item_num=15, deadline={}, drop_show=0 },
-		{ id=13784002, item_id=11, item_num=500000, deadline={}, drop_show=0 },
-		{ id=13784003, item_id=1, item_num=2000000, deadline={}, drop_show=0 },
-}
-},
-	[13785]={ drop_item={
-		{ id=13785001, item_id=2460, item_num=40, deadline={}, drop_show=0 },
-}
-},
-	[13786]={ drop_item={
-		{ id=13786001, item_id=13081, item_num=6, deadline={}, drop_show=0 },
-}
-},
-	[13787]={ drop_item={
-		{ id=13787001, item_id=2023, item_num=30, deadline={}, drop_show=0 },
-}
-},
-	[13788]={ drop_item={
-		{ id=13788001, item_id=2052, item_num=30, deadline={}, drop_show=0 },
-}
-},
-	[13789]={ drop_item={
-		{ id=13789001, item_id=17291, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789002, item_id=17292, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789003, item_id=17293, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789004, item_id=17294, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789005, item_id=17295, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789006, item_id=17296, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789007, item_id=17297, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789008, item_id=17298, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789009, item_id=17299, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789010, item_id=17300, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789011, item_id=17301, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789012, item_id=17302, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789013, item_id=17303, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789014, item_id=17304, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789015, item_id=17305, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789016, item_id=17306, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789017, item_id=17307, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789018, item_id=17308, item_num=1, deadline={}, drop_show=0 },
-		{ id=13789019, item_id=17309, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[13796]={ drop_item={
-		{ id=13796001, item_id=2061, item_num=150, deadline={}, drop_show=0 },
-}
-},
 	[13820]={ drop_item={
 		{ id=13820001, item_id=13735, item_num=1, deadline={}, drop_show=0 },
 }
@@ -14312,14 +12932,6 @@ local drop_data=
 		{ id=13833002, item_id=1, item_num=150000, deadline={}, drop_show=0 },
 }
 },
-	[13834]={ drop_item={
-		{ id=13833003, item_id=2052, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[13835]={ drop_item={
-		{ id=13833004, item_id=2052, item_num=2, deadline={}, drop_show=0 },
-}
-},
 	[13836]={ drop_item={
 		{ id=13836001, item_id=3, item_num=50, deadline={}, drop_show=0 },
 		{ id=13836002, item_id=2201, item_num=1, deadline={}, drop_show=0 },
@@ -14366,205 +12978,6 @@ local drop_data=
 		{ id=13853001, item_id=3, item_num=680, deadline={}, drop_show=0 },
 		{ id=13853002, item_id=2023, item_num=18, deadline={}, drop_show=0 },
 		{ id=13853003, item_id=10, item_num=200, deadline={}, drop_show=0 },
-}
-},
-	[13854]={ drop_item={
-		{ id=13854001, item_id=8102, item_num=10, deadline={}, drop_show=0 },
-		{ id=13854002, item_id=9012, item_num=10, deadline={}, drop_show=0 },
-		{ id=13854003, item_id=9013, item_num=6, deadline={}, drop_show=0 },
-}
-},
-	[13890]={ drop_item={
-		{ id=13890001, item_id=17310, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890002, item_id=17311, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890003, item_id=17312, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890004, item_id=17313, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890005, item_id=17314, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890006, item_id=17315, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890007, item_id=17316, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890008, item_id=17317, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890009, item_id=17318, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890010, item_id=17319, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890011, item_id=17320, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890012, item_id=17321, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890013, item_id=17322, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890014, item_id=17323, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890015, item_id=17324, item_num=1, deadline={}, drop_show=0 },
-		{ id=13890016, item_id=17325, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[13951]={ drop_item={
-		{ id=13951001, item_id=2023, item_num=2, deadline={}, drop_show=0 },
-		{ id=13951002, item_id=2022, item_num=3, deadline={}, drop_show=0 },
-		{ id=13951003, item_id=11, item_num=15000, deadline={}, drop_show=0 },
-}
-},
-	[13952]={ drop_item={
-		{ id=13952001, item_id=2023, item_num=4, deadline={}, drop_show=0 },
-		{ id=13952002, item_id=2022, item_num=6, deadline={}, drop_show=0 },
-		{ id=13952003, item_id=11, item_num=65000, deadline={}, drop_show=0 },
-}
-},
-	[13953]={ drop_item={
-		{ id=13953001, item_id=2023, item_num=6, deadline={}, drop_show=0 },
-		{ id=13953002, item_id=2022, item_num=8, deadline={}, drop_show=0 },
-		{ id=13953003, item_id=11, item_num=180000, deadline={}, drop_show=0 },
-}
-},
-	[13954]={ drop_item={
-		{ id=13954001, item_id=2052, item_num=3, deadline={}, drop_show=0 },
-		{ id=13954002, item_id=8102, item_num=40, deadline={}, drop_show=0 },
-		{ id=13954003, item_id=1, item_num=450000, deadline={}, drop_show=0 },
-}
-},
-	[13955]={ drop_item={
-		{ id=13955001, item_id=2052, item_num=5, deadline={}, drop_show=0 },
-		{ id=13955002, item_id=8102, item_num=80, deadline={}, drop_show=0 },
-		{ id=13955003, item_id=1, item_num=600000, deadline={}, drop_show=0 },
-}
-},
-	[13956]={ drop_item={
-		{ id=13956001, item_id=2052, item_num=8, deadline={}, drop_show=0 },
-		{ id=13956002, item_id=8102, item_num=120, deadline={}, drop_show=0 },
-		{ id=13956003, item_id=1, item_num=800000, deadline={}, drop_show=0 },
-}
-},
-	[13957]={ drop_item={
-		{ id=13957001, item_id=2023, item_num=4, deadline={}, drop_show=0 },
-		{ id=13957002, item_id=2022, item_num=6, deadline={}, drop_show=0 },
-		{ id=13957003, item_id=2203, item_num=8, deadline={}, drop_show=0 },
-}
-},
-	[13958]={ drop_item={
-		{ id=13958001, item_id=2023, item_num=6, deadline={}, drop_show=0 },
-		{ id=13958002, item_id=2022, item_num=8, deadline={}, drop_show=0 },
-		{ id=13958003, item_id=2203, item_num=14, deadline={}, drop_show=0 },
-}
-},
-	[13959]={ drop_item={
-		{ id=13959001, item_id=2023, item_num=10, deadline={}, drop_show=0 },
-		{ id=13959002, item_id=2022, item_num=10, deadline={}, drop_show=0 },
-		{ id=13959003, item_id=2203, item_num=20, deadline={}, drop_show=0 },
-}
-},
-	[13960]={ drop_item={
-		{ id=13960001, item_id=15, item_num=450, deadline={}, drop_show=0 },
-		{ id=13960002, item_id=2052, item_num=8, deadline={}, drop_show=0 },
-		{ id=13960003, item_id=2203, item_num=15, deadline={}, drop_show=0 },
-}
-},
-	[13961]={ drop_item={
-		{ id=13961001, item_id=15, item_num=980, deadline={}, drop_show=0 },
-		{ id=13961002, item_id=2052, item_num=12, deadline={}, drop_show=0 },
-		{ id=13961003, item_id=2203, item_num=20, deadline={}, drop_show=0 },
-}
-},
-	[13962]={ drop_item={
-		{ id=13962001, item_id=15, item_num=1680, deadline={}, drop_show=0 },
-		{ id=13962002, item_id=2052, item_num=15, deadline={}, drop_show=0 },
-		{ id=13962003, item_id=2203, item_num=24, deadline={}, drop_show=0 },
-}
-},
-	[13963]={ drop_item={
-		{ id=13963001, item_id=15, item_num=680, deadline={}, drop_show=0 },
-		{ id=13963002, item_id=2061, item_num=60, deadline={}, drop_show=0 },
-		{ id=13963003, item_id=2401, item_num=80, deadline={}, drop_show=0 },
-}
-},
-	[13964]={ drop_item={
-		{ id=13964001, item_id=15, item_num=1680, deadline={}, drop_show=0 },
-		{ id=13964002, item_id=2061, item_num=90, deadline={}, drop_show=0 },
-		{ id=13964003, item_id=2401, item_num=120, deadline={}, drop_show=0 },
-}
-},
-	[13965]={ drop_item={
-		{ id=13965001, item_id=15, item_num=3280, deadline={}, drop_show=0 },
-		{ id=13965002, item_id=2061, item_num=120, deadline={}, drop_show=0 },
-		{ id=13965003, item_id=2401, item_num=160, deadline={}, drop_show=0 },
-}
-},
-	[13966]={ drop_item={
-		{ id=13966001, item_id=15, item_num=1280, deadline={}, drop_show=0 },
-		{ id=13966002, item_id=2460, item_num=12, deadline={}, drop_show=0 },
-		{ id=13966003, item_id=13081, item_num=4, deadline={}, drop_show=0 },
-}
-},
-	[13967]={ drop_item={
-		{ id=13967001, item_id=15, item_num=3280, deadline={}, drop_show=0 },
-		{ id=13967002, item_id=2460, item_num=24, deadline={}, drop_show=0 },
-		{ id=13967003, item_id=13081, item_num=6, deadline={}, drop_show=0 },
-}
-},
-	[13968]={ drop_item={
-		{ id=13968001, item_id=15, item_num=6480, deadline={}, drop_show=0 },
-		{ id=13968002, item_id=2460, item_num=40, deadline={}, drop_show=0 },
-		{ id=13968003, item_id=13081, item_num=8, deadline={}, drop_show=0 },
-}
-},
-	[13971]={ drop_item={
-		{ id=13971001, item_id=15, item_num=1280, deadline={}, drop_show=0 },
-		{ id=13971002, item_id=900, item_num=1, deadline={}, drop_show=0 },
-		{ id=13971003, item_id=27, item_num=200, deadline={}, drop_show=0 },
-}
-},
-	[13972]={ drop_item={
-		{ id=13972001, item_id=15, item_num=1680, deadline={}, drop_show=0 },
-		{ id=13972002, item_id=900, item_num=2, deadline={}, drop_show=0 },
-		{ id=13972003, item_id=27, item_num=400, deadline={}, drop_show=0 },
-}
-},
-	[13973]={ drop_item={
-		{ id=13973001, item_id=15, item_num=4580, deadline={}, drop_show=0 },
-		{ id=13973002, item_id=900, item_num=3, deadline={}, drop_show=0 },
-		{ id=13973003, item_id=27, item_num=600, deadline={}, drop_show=0 },
-}
-},
-	[14001]={ drop_item={
-		{ id=14001001, item_id=24003, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001002, item_id=24006, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001003, item_id=24009, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001004, item_id=24012, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001005, item_id=24015, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001006, item_id=24018, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001007, item_id=24002, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001008, item_id=24005, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001009, item_id=24008, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001010, item_id=24011, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001011, item_id=24014, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001012, item_id=24017, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001013, item_id=24001, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001014, item_id=24004, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001015, item_id=24007, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001016, item_id=24010, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001017, item_id=24013, item_num=1, deadline={}, drop_show=0 },
-		{ id=14001018, item_id=24016, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[14002]={ drop_item={
-		{ id=14002001, item_id=24003, item_num=1, deadline={}, drop_show=0 },
-		{ id=14002002, item_id=24006, item_num=1, deadline={}, drop_show=0 },
-		{ id=14002003, item_id=24009, item_num=1, deadline={}, drop_show=0 },
-		{ id=14002004, item_id=24012, item_num=1, deadline={}, drop_show=0 },
-		{ id=14002005, item_id=24015, item_num=1, deadline={}, drop_show=0 },
-		{ id=14002006, item_id=24018, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[14003]={ drop_item={
-		{ id=14003001, item_id=24003, item_num=1, deadline={}, drop_show=0 },
-		{ id=14003002, item_id=24006, item_num=1, deadline={}, drop_show=0 },
-		{ id=14003003, item_id=24009, item_num=1, deadline={}, drop_show=0 },
-		{ id=14003004, item_id=24012, item_num=1, deadline={}, drop_show=0 },
-		{ id=14003005, item_id=24015, item_num=1, deadline={}, drop_show=0 },
-		{ id=14003006, item_id=24018, item_num=1, deadline={}, drop_show=0 },
-}
-},
-	[14006]={ drop_item={
-		{ id=14006001, item_id=2601, item_num=3, deadline={}, drop_show=0 },
-		{ id=14006002, item_id=2602, item_num=3, deadline={}, drop_show=0 },
-		{ id=14006003, item_id=2603, item_num=3, deadline={}, drop_show=0 },
-		{ id=14006004, item_id=2604, item_num=3, deadline={}, drop_show=0 },
-		{ id=14006005, item_id=2605, item_num=3, deadline={}, drop_show=0 },
-		{ id=14006006, item_id=2606, item_num=3, deadline={}, drop_show=0 },
 }
 },
 	[14101]={ drop_item={
@@ -15635,23 +14048,23 @@ local drop_data=
 }
 },
 	[25001]={ drop_item={
-		{ id=25001001, item_id=3, item_num=30, deadline={}, drop_show=0 },
+		{ id=25001001, item_id=3, item_num=40, deadline={}, drop_show=0 },
 		{ id=25001002, item_id=11, item_num=8000, deadline={}, drop_show=0 },
 }
 },
 	[25002]={ drop_item={
-		{ id=25001003, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=25001004, item_id=11, item_num=8000, deadline={}, drop_show=0 },
+		{ id=25001003, item_id=12801, item_num=1, deadline={}, drop_show=0 },
+		{ id=25001004, item_id=3, item_num=40, deadline={}, drop_show=0 },
 }
 },
 	[25003]={ drop_item={
-		{ id=25001005, item_id=3, item_num=30, deadline={}, drop_show=0 },
-		{ id=25001006, item_id=11, item_num=8000, deadline={}, drop_show=0 },
+		{ id=25001005, item_id=17254, item_num=1, deadline={}, drop_show=0 },
+		{ id=25001006, item_id=3, item_num=40, deadline={}, drop_show=0 },
 }
 },
 	[25004]={ drop_item={
-		{ id=25001007, item_id=3, item_num=30, deadline={2,7}, drop_show=0 },
-		{ id=25001008, item_id=11, item_num=8000, deadline={}, drop_show=0 },
+		{ id=25001007, item_id=900, item_num=1, deadline={2,7}, drop_show=0 },
+		{ id=25001008, item_id=3, item_num=40, deadline={}, drop_show=0 },
 }
 }
 }

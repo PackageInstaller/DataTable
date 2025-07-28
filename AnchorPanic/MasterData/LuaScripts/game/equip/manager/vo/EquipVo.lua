@@ -632,7 +632,6 @@ function setPropsAwardMsgData(self, pt_prop_award)
     self:setTuPoAttachAttr(pt_prop_award.break_add_attr)
     self:setSkillEffect(pt_prop_award.skill_effect)
     self.refineLvl = pt_prop_award.refine_lv
-    --self.isLock = pt_prop_award.is_lock
 end
 
 -- 设置奖励展示道具数据(本地奖励包)

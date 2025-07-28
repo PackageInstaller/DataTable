@@ -53,8 +53,6 @@ function registerMsgHandler(self)
         SC_LOOK_FASHION_COLOR = self.__onParseLookFashionColor,
         --- *s2c* 解锁时装炫彩 13346
         SC_UNLOCK_FASHION_COLOR = self.__onPareseUnlockFashionColor,
-        --- *s2c* 时装拥有信息 13350
-        SC_HERO_FASHION_HAVE_INFO = self.__onParseHeroFashionHaveInfo,
 
     }
 end
@@ -85,7 +83,7 @@ end
 
 --- *c2s* 查看战员时装的炫彩 13344
 function onReqLookFashionColor(self, args)
-    SOCKET_SEND(Protocol.CS_LOOK_FASHION_COLOR, { hero_tid = args.heroTid, fashion_id = args.fashionId })
+    SOCKET_SEND(Protocol.CS_LOOK_FASHION_COLOR, { hero_id = args.heroId, fashion_id = args.fashionId })
 end
 
 ---------------------------------------------------------------响应------------------------------------------------------------------
@@ -116,12 +114,7 @@ function __onResHeroFashionUnlockHandler(self, msg)
             self.ReceiveFashionSuccess:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyReceiveFashionSuccessHandler, self)
         end
         self.ReceiveFashionSuccess:open(msg)
-        fashion.FashionManager:parseHeroFashionAddHaveInfo(msg.fashion_type, msg.hero_tid, msg.fashion_id)
-        if msg.fashion_coin_num <= 0 then
-            fashion.FashionManager:parseMsgWearFashionUnlock(msg.fashion_type, msg.hero_tid, msg.fashion_id)
-        end
-        
-       
+        fashion.FashionManager:parseMsgWearFashionUnlock(msg.fashion_type, msg.hero_tid, msg.fashion_id)
     else
         print("解锁失败：", msg.hero_tid, msg.fashion_type, msg.fashion_id)
     end
@@ -149,11 +142,6 @@ end
 --- *s2c* 解锁时装炫彩 13346
 function __onPareseUnlockFashionColor(self, msg)
 
-end
-
---- *s2c* 时装拥有信息 13350
-function __onParseHeroFashionHaveInfo(self,msg)
-    fashion.FashionManager:parseHeroFashionHaveInfo(msg)
 end
 
 ------------------------------------------------------------------------ 时装面板 ------------------------------------------------------------------------

@@ -26,15 +26,6 @@ function onInit(self, go)
     self.mTxtFashionName = self:getChildGO("mTxtFashionName"):GetComponent(ty.Text)
     self.mTxtFashionSeries = self:getChildGO("mTxtFashionSeries"):GetComponent(ty.Text)
     self.mImgMoneyIcon = self:getChildGO("mImgMoneyIcon"):GetComponent(ty.AutoRefImage)
-
-    self.mTagContent = self:getChildGO("mTagContent")
-    self.mTag1 = self:getChildGO("mTag1")
-    self.mTag2 = self:getChildGO("mTag2")
-    self.mTag3 = self:getChildGO("mTag3")
-
-    -- self.mTxtTag1 = self:getChildGO("mTxtTag1"):GetComponent(ty.Text)
-    -- self.mTxtTag2 = self:getChildGO("mTxtTag2"):GetComponent(ty.Text)
-    -- self.mTxtTag3 = self:getChildGO("mTxtTag3"):GetComponent(ty.Text)
 end
 -- 初始化数据
 function initData(self)
@@ -61,17 +52,16 @@ function deActive(self)
     end
 end
 
+function initViewText(self)
+    super.initViewText(self)
+end
+
 function addAllUIEvent(self)
     self:addUIEvent(self.mImgIcon.gameObject, self.onClickShowHandler)
 end
 
 function setData(self, param)
     super.setData(self, param)
-
-    -- self.mTxtTag1.text = _TT(84507)
-    -- self.mTxtTag2.text = _TT(84508)
-    -- self.mTxtTag3.text = _TT(84509)
-
     self.mFashionVo = param
     self.mTxtFashionName.text = self.mFashionVo:getFashionName()
     if #self.mFashionVo:getFashionName() > 5 then
@@ -86,13 +76,6 @@ function setData(self, param)
     self.mTxtSellOut.text = _TT(50046)--已持有
     self.mImgDiscount:SetActive(self.mFashionVo:getDiscount() > 0)
     self.mTxtDiscount.text = self.mFashionVo:getDiscount() .. "%" .. _TT(25037)
-
-    local tapList = self.mFashionVo.heroFashionData.tap
-   
-    self.mTag1:SetActive(table.indexof01(tapList,1) > 0)
-    self.mTag2:SetActive(table.indexof01(tapList,2) > 0)
-    self.mTag3:SetActive(table.indexof01(tapList,3) > 0)
-
     self:updateState()
     if (self.mFashionVo:getCanUpdate()) then
         if self.time then
@@ -147,17 +130,9 @@ function updateState(self)
         textColor = (MoneyUtil.getMoneyCountByTid(self.mFashionVo:getMoneyTid()) >= self.mFashionVo:getMoneyCount()) and "202226ff" or "D53529ff"
     end
     self.mGroupMoney:SetActive((not self.mFashionVo:getIsSellOut()))
-
-    local payType = self.mFashionVo:getMoneyTid()
-    if payType == MoneyType.MONEY then
-        self.mImgMoneyIcon.gameObject:SetActive(false)
-        textColor = "000000ff"
-        self.mTxtBuy.text = HtmlUtil:color("¥"..self.mFashionVo:getMoneyCount()/100, textColor)
-    else
-        self.mImgMoneyIcon.gameObject:SetActive((not self.mFashionVo:getIsSellOut()))
-        self.mImgMoneyIcon:SetImg(MoneyUtil.getMoneyIconUrlByTid(self.mFashionVo:getMoneyTid()), true)
-        self.mTxtBuy.text = HtmlUtil:color(self.mFashionVo:getMoneyCount(), textColor)
-    end
+    self.mImgMoneyIcon.gameObject:SetActive((not self.mFashionVo:getIsSellOut()))
+    self.mImgMoneyIcon:SetImg(MoneyUtil.getMoneyIconUrlByTid(self.mFashionVo:getMoneyTid()), true)
+    self.mTxtBuy.text = HtmlUtil:color(self.mFashionVo:getMoneyCount(), textColor)
 end
 
 return _M

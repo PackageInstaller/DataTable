@@ -59,9 +59,6 @@ function initData(self, go)
     self.m_storyAniName = { "eye", "idle_eye", "mouth", "idle_mouth" }
     -- 剧情单独的表情
     self.m_storyOtherName = { "talk_mouth", "talk_mouth_large", "talk_mouth_Medium", "talk_mouth_Samll" }
-
-    --是否是小屏
-    self.isSmall = ScreenUtil:isSmallScreen()
 end
 
 function hideRenderCamera(self)
@@ -70,11 +67,7 @@ function hideRenderCamera(self)
 end
 
 function loadAni(self, pos, name)
-    if self.mDataDic[pos] == nil and self.mDataDic[pos+1] ~= nil then
-        self.mDataDic[pos + 1].liveView:loadClip(gs.Animator.StringToHash(name))
-    else
-        self.mDataDic[pos].liveView:loadClip(gs.Animator.StringToHash(name))
-    end
+    self.mDataDic[pos].liveView:loadClip(gs.Animator.StringToHash(name))
 end
 
 -- 回调C#通知剧情被跳过
@@ -184,17 +177,6 @@ function changeSceneBG(self, url)
         end
         -- self.mStoryBGComponent:SetAdapt()
         self.url = url
-
-       
-        if self.isSmall then
-            local index = string.find(url, "arts/ui/bg/story/cg/")
-            if index ~=nil then
-                self.mStoryBGComponent.state = 2
-            else
-                self.mStoryBGComponent.state = 1
-            end
-            self.mStoryBGComponent:SetAdapt()
-        end
     end
 end
 

@@ -49,11 +49,11 @@ function initCamera(self, minDistance, maxDistance, distance, angle_x, angle_y)
 end
 
 function addEventListener(self)
-    GameDispatcher:addEventListener(EventName.SANDPLAY_PLAYERSTATE_MOVE, self.lookLive, self)
+    GameDispatcher:addEventListener(EventName.FIELDEXPLORATION_JOYSTICK_UPDATE, self.lookLive, self)
 end
 
 function removeEventListener(self)
-    GameDispatcher:removeEventListener(EventName.SANDPLAY_PLAYERSTATE_MOVE, self.lookLive, self)
+    GameDispatcher:removeEventListener(EventName.FIELDEXPLORATION_JOYSTICK_UPDATE, self.lookLive, self)
 end
 
 -- --一开始进来的镜头拉近
@@ -89,14 +89,12 @@ function lookLive(self, args)
     if self.sceneCameraTrans and not gs.GoUtil.IsTransNull(self.sceneCameraTrans) then
         self.sceneCameraTrans.eulerAngles = gs.Vector3(self.angle_x, self.angle_y, 0)
         self.centerPos = self.mLiveTran.position + gs.Vector3(0, 0.8, 0)
-        if args and args.isForthwith then
+        if args.isForthwith then
             gs.TransQuick:SetCenterRadiusPos(self.sceneCameraTrans, self.angle_y, self.angle_x, 0, self.distance, self.centerPos.x, self.centerPos.y, self.centerPos.z)
         else
             gs.TransQuick:LerpCenterRadiusPos(self.sceneCameraTrans, self.angle_y, self.angle_x, 0, self.distance, self.centerPos.x, self.centerPos.y, self.centerPos.z)
         end
     end
-
-    GameDispatcher:dispatchEvent(EventName.SANDPLAY_CAMERA_REFRESHPOS)
 end
 
 --移动端镜头缩放
@@ -144,15 +142,13 @@ function DoTweenAngle(self, val, angle_x, angle_y, time, finishCall)
     self.lateDistance = self.distance
     self.distance = val
 
-    local tweener_angle = self.sceneCameraTrans:DORotate(gs.Vector3(angle_x, angle_y, 0), time)
+    local tweener_angle = self.sceneCameraTrans:DORotate(gs.Vector3(angle_y, angle_x, 0), time)
     tweener_angle:SetEase(gs.DT.Ease.OutQuint)
     tweener_angle.onUpdate = function()
         if not self.sceneCameraTrans then return end
 
         self.centerPos = self.mLiveTran.position + gs.Vector3(0, 0.8, 0)
         gs.TransQuick:SetCenterRadiusPos(self.sceneCameraTrans, gs.TransQuick:GetRotationY(self.sceneCameraTrans), gs.TransQuick:GetRotationX(self.sceneCameraTrans), 0, self.distance, self.centerPos.x, self.centerPos.y, self.centerPos.z)
-
-        GameDispatcher:dispatchEvent(EventName.SANDPLAY_CAMERA_REFRESHPOS)
     end
 
     tweener_angle.onComplete = function ()
@@ -182,10 +178,6 @@ function DoCusTweenAngle(self, posX, posY, posZ, rotX, rotY, rotZ, time, finishC
     local move_tween = self.sceneCameraTrans:DOMove(gs.Vector3(posX, posY, posZ), time)
     tweener_angle:SetEase(gs.DT.Ease.OutQuint)
 
-    tweener_angle.onUpdate = function()
-        GameDispatcher:dispatchEvent(EventName.SANDPLAY_CAMERA_REFRESHPOS)
-    end
-
     tweener_angle.onComplete = function ()
         if finishCall then
             finishCall()
@@ -204,7 +196,7 @@ function DoCusTweenAngle(self, posX, posY, posZ, rotX, rotY, rotZ, time, finishC
 end
 
 function restoreTween(self)
-    self:DoTweenAngle(self.lateDistance, self.angle_x, self.angle_y)
+    self:DoTweenAngle(self.lateDistance, self.angle_y, self.angle_x)
 end
 
 function destroy(self)

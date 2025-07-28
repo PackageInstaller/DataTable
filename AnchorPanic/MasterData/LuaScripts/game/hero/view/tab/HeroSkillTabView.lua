@@ -470,14 +470,17 @@ function onUpdateSkillInfo(self, skillId, isUnlock)
         maxLvl = sysParam.SysParamManager:getValue(SysParamType.SKILLCEILING)
     end
 
+    local isLock = true
+    local isLvEnough = false
+
     local TalentLv = self.mCurHeroVo:getActivePassiveSkill(skillId) --天赋等级
     local activeSkillLv = self.mCurHeroVo:getActiveSkill(skillId) --技能等级
     local upLv = self.isTalent and TalentLv or activeSkillLv --技能养成等级
     local tureSkillLv = upLv + extraLv --当前的实际等级
 
-    self.mSkillUpVo = hero.HeroSkillUpManager:getSkillUpConfigVo(self.mCurHeroVo.tid, skillId, upLv)
-    local isLvEnough = self.mSkillUpVo ~= nil and self.mCurHeroVo.militaryRank >= self.mSkillUpVo.needHeroRank--星级
-    local isLock = self.mSkillUpVo ~= nil and self.mCurHeroVo.evolutionLvl < self.mSkillUpVo.needStar--等级
+    local skillUpVo = hero.HeroSkillUpManager:getSkillUpConfigVo(self.mCurHeroVo.tid, skillId, tureSkillLv)
+    isLvEnough = skillUpVo ~= nil and self.mCurHeroVo.militaryRank >= skillUpVo.needHeroRank--星级
+    isLock = skillUpVo ~= nil and self.mCurHeroVo.evolutionLvl < skillUpVo.needStar--等级
 
     if self.mItem ~= nil then
         self.mItem:poolRecover()
@@ -521,8 +524,6 @@ function onUpdateSkillInfo(self, skillId, isUnlock)
     self.mSkillItem:setScale(0.9)
 
     self.mTxtLv.text = _TT(3072, tureSkillLv)
-
-    local skillUpVo = hero.HeroSkillUpManager:getSkillUpConfigVo(self.mCurHeroVo.tid, skillId, tureSkillLv)
     self.mTxtSkillDesc.text = skillUpVo:getDesc()
 
     local isMaxLvl = tureSkillLv >= maxLvl
@@ -552,6 +553,8 @@ function onUpdateSkillInfo(self, skillId, isUnlock)
     self.mTxtNextLv.text = _TT(3072, tureSkillLv + 1)
     local nextSkillUpVo = hero.HeroSkillUpManager:getSkillUpConfigVo(self.mCurHeroVo.tid, skillId, tureSkillLv + 1)
     self.mTxtNextDesc.text = nextSkillUpVo:getDesc()
+
+    self.mSkillUpVo = hero.HeroSkillUpManager:getSkillUpConfigVo(self.mCurHeroVo.tid, skillId, upLv)
 
     if (self.isTalent) then
         self.mBtnPromote:SetActive(true)

@@ -296,8 +296,7 @@ end
 
 function onBtnGetHandler(self)
     local vo = mail.MailManager:getMailVoById(self.childShowId)
-
-    local function reqCall()
+    if not vo:getHasAward() or vo.state == 2 then
         GameDispatcher:dispatchEvent(EventName.MAIL_DEL_REQ, { self.childShowId })
         local list = mail.MailManager:getMailList()
         local openIndex = 0
@@ -311,17 +310,8 @@ function onBtnGetHandler(self)
         end
         gs.Message.Show(_TT(405))
         self.childShowId = openIndex
-    end
-    if vo:getHasAward() and vo.state ~= 2 then
-        GameDispatcher:dispatchEvent(EventName.MAIL_AWARD_REQ, { self.childShowId })
     else
-        if vo.isCollection then
-            UIFactory:alertMessge(_TT(423), true, function()
-                reqCall()
-            end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
-        else
-            reqCall()
-        end
+        GameDispatcher:dispatchEvent(EventName.MAIL_AWARD_REQ, { self.childShowId })
     end
 end
 

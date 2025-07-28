@@ -104,22 +104,6 @@ local hero_biography_data=
 	[1022]={ biography_list={102201}, type=4
 },
 	[1023]={ biography_list={102301}, type=3
-},
-	[1024]={ biography_list={102401}, type=4
-},
-	[1025]={ biography_list={102501}, type=3
-},
-	[1026]={ biography_list={102601}, type=2
-},
-	[1027]={ biography_list={102701}, type=2
-},
-	[1028]={ biography_list={102801}, type=2
-},
-	[1029]={ biography_list={102901}, type=3
-},
-	[1030]={ biography_list={103001}, type=2
-},
-	[1031]={ biography_list={103101}, type=3
 }
 }
 

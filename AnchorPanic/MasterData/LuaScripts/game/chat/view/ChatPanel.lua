@@ -83,8 +83,6 @@ function active(self, args)
     GameDispatcher:addEventListener(EventName.CHAT_MSG_UPDATE, self.onChatMsgUpdateHandler, self)
 
     self:setChannelTab(args)
-
-    GameDispatcher:dispatchEvent(EventName.REQ_EMOJI_UNLOCK_LIST)
 end
 
 function deActive(self)

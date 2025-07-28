@@ -27,9 +27,6 @@ function parseData(self, cusModelId, cusData)
     self.changeSound = cusData.change_sound
     -- 01还没用到
     self.change02Sound = cusData.change02_sound
-    self.standbyCv = cusData.standby_cv
-    self.leveaCv = cusData.levea_cv
-    self.enterMusic = cusData.enter_music
 end
 
 

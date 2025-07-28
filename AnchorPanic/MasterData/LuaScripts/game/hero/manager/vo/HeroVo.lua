@@ -135,15 +135,6 @@ function getUIModel(self)
     return self:getHeroModel()
 end
 
-function getHostelModel(self)
-    local fashionVo = fashion.FashionManager:getHeroWearingFashionVo(fashion.Type.CLOTHES, self.id)
-    if not fashionVo then
-        return nil
-    end
-    local fashionConfigVo = fashion.FashionManager:getHeroFashionConfigVo(fashion.Type.CLOTHES, self.tid, fashionVo.fashionId)
-    return fashionConfigVo.hostelModel
-end
-
 function getConfigVo(self)
     return self.m_orgConfigVo
 end
@@ -259,7 +250,6 @@ function parseMsgData(self, pt_hero_info)
     if pt_hero_info.resonance_id_list then
         self:setActiveResonancePos(pt_hero_info.resonance_id_list)
     end
-    self:setDnaEggInfo(pt_hero_info)
 
     self.m_isPreData = false
 
@@ -293,7 +283,6 @@ function parseDetailMsgData(self, pt_hero_info)
     if pt_hero_info.resonance_id_list then
         self:setActiveResonancePos(pt_hero_info.resonance_id_list)
     end
-    self:setDnaEggInfo(pt_hero_info)
 
     self.m_isPreData = false
 
@@ -346,34 +335,6 @@ function parseOtherMsg(self, pt_other_hero_info)
     self.m_isPreData = false
 
     return true
-end
-
-function setDnaEggInfo(self, pt_hero_info)
-    ----dna蛋信息
-    --战员蛋当前形态
-    local isLvl
-    if self.egg_form and self.egg_form == pt_hero_info.egg_form then
-        if self.egg_lv ~= pt_hero_info.egg_lv then
-            isLvl = true
-        end
-    end
-    self.egg_form = pt_hero_info.egg_form or hero.eggType.none
-    --[[ --当前蛋id
-        desc:
-            在 == hero.eggType.egg 时 此id代表是蛋品质123索引
-            在 == hero.eggType.role 时 此id代表是战员形态配置索引
-    --]]
-    self.egg_id = pt_hero_info.egg_id
-    --当前培养等级
-    self.egg_lv = pt_hero_info.egg_lv
-    --战员蛋属性是否计算(有某个属性id在内即为这个属性id不计算属性)
-    self.egg_attr_cal = {}
-    for i, v in ipairs(pt_hero_info.egg_attr_cal or {}) do
-        self.egg_attr_cal[i] = v
-    end
-    if isLvl then
-        GameDispatcher:dispatchEvent(EventName.DNA_LV_UP, self.id)
-    end
 end
 
 -- 设置出战的技能列表
@@ -586,6 +547,7 @@ function setAttrList(self, cusList)
         return
     end
 
+
     self.attrList = {}
     self.attrDic = {}
     self.allElementDemage = 0 --全属性增伤
@@ -596,9 +558,9 @@ function setAttrList(self, cusList)
         -- elseif cusList[i].key == 113 then
         --     self.allElementDefine = cusList[i].value
         -- else
-        local attrVo = {key = cusList[i].key, value = cusList[i].value}
-        table.insert(self.attrList, attrVo)
-        self.attrDic[attrVo.key] = attrVo.value
+            local attrVo = {key = cusList[i].key, value = cusList[i].value}
+            table.insert(self.attrList, attrVo)
+            self.attrDic[attrVo.key] = attrVo.value
         --end
     end
     table.sort(self.attrList, AttConst.sort)
@@ -913,11 +875,6 @@ function getActivesSkillResonanceCount(self)
     end
 
     return count
-end
-
---判断当前战员dna状态
-function checkDnaStatus(self, eggType)
-    return self.egg_form == eggType
 end
 
 return _M

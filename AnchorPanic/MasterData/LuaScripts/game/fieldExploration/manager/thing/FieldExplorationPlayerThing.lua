@@ -59,7 +59,6 @@ function setupModel(self)
     end
 
     self.mModel = self:getModel()
-    self.mModel.m_rootGo.layer = gs.LayerMask.NameToLayer("Role")
     self.mModel:setupPrefab(prefabPath, false, function ()
         self:onModelLoadFinish()
         if self.mLoadFinishCall then
@@ -70,10 +69,6 @@ end
 
 function onModelLoadFinish(self)
     super.onModelLoadFinish(self)
-
-    if self.mData.config.heroTid == 9999 then
-        self:cameraFollow()
-    end
 
     --是否配置了抓取技能，如果配置了抓取技能的话需要使用缸体碰撞移动
     self.mHaveGrabSkill = false
@@ -113,7 +108,6 @@ function onModelLoadFinish(self)
     else
         self.m_CharacterController = self.mModel.m_rootGo:AddComponent(ty.CharacterController)
         gs.UnityEngineUtil.InitCharacterController(self.m_CharacterController, 30, 0.2, self.mData.config.agent_radius, self.mData.config.agent_height, gs.Vector3(0, self.mData.config.agent_height * 0.5, 0))
-        -- self.m_CharacterController.skinWidth = 0.001
     end
 
     --单单只是为了让场景中的事件碰撞发现而已
@@ -246,7 +240,7 @@ function forceActionState(self, actionState)
             local targetRotation = gs.Quaternion.LookRotation(gs.Vector3(self.mJoystickDir.deltaRatioX * self.infoAttr.move_dir, 0, self.mJoystickDir.deltaRatioY * self.infoAttr.move_dir))
             if gs.Quaternion.Angle(self:getTrans().rotation, targetRotation) > 1 then
                 -- local rotation = gs.Quaternion.Slerp(self:getTrans().rotation, targetRotation, self.m_rotateSpeed * self.mJoystickDir.deltaTime)
-                self:setAngle(targetRotation.eulerAngles.y, true)
+                self:setEulerAngles({x = 0, y = targetRotation.eulerAngles.y, z = 0})
             end
             self:setTranForward(self.infoAttr.speed * gs.Time.deltaTime)
 
@@ -293,7 +287,7 @@ function forceActionState(self, actionState)
             local targetRotation = gs.Quaternion.LookRotation(gs.Vector3(self.mJoystickDir.deltaRatioX * self.infoAttr.move_dir, 0, self.mJoystickDir.deltaRatioY * self.infoAttr.move_dir))
             if gs.Quaternion.Angle(self:getTrans().rotation, targetRotation) > 1 then
                 -- local rotation = gs.Quaternion.Slerp(self:getTrans().rotation, targetRotation, self.m_rotateSpeed * self.mJoystickDir.deltaTime)
-                self:setAngle(targetRotation.eulerAngles.y, true)
+                self:setEulerAngles({x = 0, y = targetRotation.eulerAngles.y, z = 0})
             end
             self:setTranForward(self.infoAttr.speed * gs.Time.deltaTime)
 
@@ -457,41 +451,10 @@ function setTranForward(self, speed, forward)
     else
         gs.UnityEngineUtil.CharacterControllerMove(self.m_CharacterController, forward * speed)
     end
-
 end
 
-function cameraFollow(self)
-    local go_left = gs.GameObject.Find("viewportPoint_left")
-    local go_right = gs.GameObject.Find("viewportPoint_right")
-    if go_left == nil or gs.GoUtil.IsGoNull(go_left) or go_right == nil or gs.GoUtil.IsGoNull(go_right) then
-        return
-    end
-
-    local sceneCamera = gs.CameraMgr:GetSceneCamera()
-    local IsInView = function (position)
-        local viewPos = sceneCamera:WorldToViewportPoint(position)
-        if viewPos.x > 0 and viewPos.x < 1 and viewPos.y > 0 and viewPos.y < 1 and viewPos.z > 0 then
-            return true
-        end
-
-        return false
-    end
-
-    local doWhile = function ()
-        if IsInView(go_left.transform.position) == false then
-            return true
-        end
-
-        if IsInView(go_right.transform.position) == false then
-            return true
-        end
-
-        return false
-    end
-
-    while (doWhile()) do
-        sceneCamera.transform:Translate(gs.VEC3_FORWARD * -1, gs.Space.Self)
-    end
+function FindNameInChilds(self, node_name)
+    return gs.GoUtil.FindNameInChilds(self.mModel:getTrans(), node_name)
 end
 
 function getAllSkill(self)

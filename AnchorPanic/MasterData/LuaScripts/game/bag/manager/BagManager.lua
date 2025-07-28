@@ -66,7 +66,6 @@ function __init(self)
     self.mBagTabArge = nil
 
     self.mIsShowBreakBraceletsTip = true
-    self:setIsOpenEggProps(false)
 end
 
 -- 分解出售道具基础配置
@@ -160,24 +159,9 @@ end
 
 -- 获取页签对应的背包道具列表
 function getBagPagePropsList(self, cusPageType, cusSuitIdList, cusSlotPosList, cusColorList, cusSortData, cusBagType)
-   
     local propsDic = self:getPropsDic(cusBagType)
-
-    local needDic = {}
-    if cusBagType == bag.BagTabType.NORMAL then
-        local dic2 = self.mBagDic[bag.BagType.HeroFragment] and self.mBagDic[bag.BagType.HeroFragment] or {}
-        for k, v in pairs(propsDic) do
-            needDic[k] = v
-        end
-        for k, v in pairs(dic2) do
-            needDic[k] = v
-        end
-    else
-        needDic = propsDic
-    end
-    
     local list = {}
-    for id, propsVo in pairs(needDic) do
+    for id, propsVo in pairs(propsDic) do
         if (self:isBelongPage(propsVo, cusPageType, cusSuitIdList, cusSlotPosList, cusColorList)) then
             table.insert(list, propsVo)
         end
@@ -285,27 +269,19 @@ function isBelongPage(self, cusPropsVo, cusPageType, cusSuitIdList, cusSlotPosLi
             if (cusPropsVo.isCanUse == false) then
                 return true
             end
-        elseif cusPropsVo.type == PropsType.HERO_FRAGMENT then
-            return true
         end
     elseif (cusPageType == bag.BagTabType.CONSUME) then
-        if (cusPropsVo.type == PropsType.NORMAL ) then
+        if (cusPropsVo.type == PropsType.NORMAL) then
             if (cusPropsVo.isCanUse == true) then
                 return true
             end
         end
-    -- elseif (cusPageType == bag.BagTabType.HERO_FRAGMENT) then
-    --     if (cusPropsVo.type == PropsType.HERO_FRAGMENT) then
-    --         return true
-    --     end
+    elseif (cusPageType == bag.BagTabType.HERO_FRAGMENT) then
+        if (cusPropsVo.type == PropsType.HERO_FRAGMENT) then
+            return true
+        end
     elseif (cusPageType == bag.BagTabType.RAWMAT) then
         if (cusPropsVo.type == PropsType.RAWMAT) then
-            if (cusPropsVo.isCanUse == false) then
-                return true
-            end
-        end
-    elseif (cusPageType == bag.BagTabType.HEROEGG) then
-        if (cusPropsVo.type == PropsType.HEROEGG) then
             if (cusPropsVo.isCanUse == false) then
                 return true
             end
@@ -367,18 +343,6 @@ end
 
 -- 获取道具字典
 function getPropsDic(self, cusBagType)
-    -- --特殊处理 合并了背包和英雄碎片
-    -- if cusBagType == bag.BagType.Bag then
-    --     local list1 = self.mBagDic[cusBagType] and self.mBagDic[cusBagType] or {}
-    --     local list2 = self.mBagDic[bag.BagType.HeroFragment] and self.mBagDic[bag.BagType.HeroFragment] or {}
-    --     -- for i = 1,#list2 do
-    --     --     table.insert(list1,list2[i])
-    --     -- end
-    --     -- return list1
-    --     return table.merge(list1, list2)
-    --     --return
-    -- end
-
     if (cusBagType) then
         return self.mBagDic[cusBagType] or {}
     else
@@ -548,7 +512,7 @@ function setBreakProps(self, cusId)
     end
 
     bag.BagManager:dispatchEvent(bag.BagManager.EVENT_BREAK_SHOW_UPDATE, {state = state, id = cusId})
-    GameDispatcher:dispatchEvent(EventName.BAG_BREAK_UPDATE_VIEW)
+    -- GameDispatcher:dispatchEvent(EventName.BAG_BREAK_UPDATE_VIEW)
 end
 
 function setBreakPropsList(self, args)
@@ -655,12 +619,6 @@ function updateBubble(self)
             if propsVo.isCanUse then
                 if propsVo.effectType ~= UseEffectType.ADD_STAMINA then
                     consumeBubble = self:checkConsumeBubble(propsVo)
-                elseif propsVo.effectType == UseEffectType.USE_GET_HEROEGG then
-                    local hasCount = bag.BagManager:getPropsCountByTid(propsVo.tid)
-                    local needCount = propsVo.effectList[1] 
-                    if hasCount >= needCount then
-                        consumeBubble = self:checkConsumeBubble(propsVo)
-                    end
                 end
             end
         end
@@ -717,36 +675,6 @@ end
 
 function getBreakBraceletsShowTips(self)
     return self.mIsShowBreakBraceletsTip
-end
-
-function setBreakHeroEggShowTips(self,value)
-    self.mIsShowBreakHeroEggTip = value 
-end
-
-function getBreakHeroEggShowTips(self)
-    return self.mIsShowBreakHeroEggTip
-end
-
---检查道具是否满足数量
-function checkPropsCountIsEnough(self, itemId, needNum, isNoTips)
-    local ownNum = self:getPropsCountByTid(itemId)
-    if ownNum < needNum then
-        if not isNoTips then
-            gs.Message.Show(_TT(60518))
-        end
-        return false
-    end
-    return true
-end
-
-function setIsOpenEggProps(self, b)
-    self.isOpenEggProps = b
-end
-
-function getIsOpenEggProps(self)
-    local b = self.isOpenEggProps
-    self.isOpenEggProps = false
-    return b
 end
 
 --析构函数

@@ -45,16 +45,9 @@ MoneyType = {
     --联盟币
     GUILD_TYPE = 30,
 
-    --开心农场货币
-    HappyFarm_TYPE = 33,
-
-    --联盟团战货币
-    GUILDWAR_TYPE = 35,
     ------------------------------非货币类，但需要在货币栏上显示使用
     -- 碎片货币
     PAY_FRAGMENTS_TYPE_TYPE = 1500,
-    -- dna心智体货币
-    DNA_TYPE = 2070,
     -- 基因参数
     COVENANT_GENE_POINT_TYPE = 20050,
     ------------------------------特殊------------------------------
@@ -114,11 +107,6 @@ MoneyTid = {
     GUILD_TID = 30,
     --新无限城
     DOUNDLESS_TID = 31,
-
-    --开心农场货币
-    HAPPYFARM_TID = 33,
-    --联盟团战货币
-    GUILDWAR_TID = 35,
     ------------------------------非货币类，但需要在货币栏上显示使用
     -- 碎片货币
     PAY_FRAGMENTS_TYPE_TID = 1500,
@@ -136,8 +124,6 @@ MoneyTid = {
     RECRUIT_ACT_BRACELETS_TICKET_TID = 2052,
     -- 限定研发
     RECRUIT_BRACELETS_CONVERT_TID = 2060,
-    -- dna心智体货币
-    DNA_TID = 2070,
     -- 竞技场挑战券
     ARENA_CHALLENGE_TICKET_TID = 2150,
     -- 基因参数
@@ -167,14 +153,10 @@ MoneyTid = {
     --钛石
     TITANITE_TID = 2801,
 
-    --新年抽奖道具
-    ROUNDPRIZE_PROPS = 2071,
-
-    ROUNDPRIZE_PROPS_TWO = 2073,
-
     ------------------------------限时货币  限时活动的货币
     -- 活动玩法货币 限时
     ACTIVITY_COIN_TID = 28,
+
 
 }
 
@@ -205,11 +187,7 @@ PROPS_MONEY_TID_LIST = {
     MoneyTid.MODULE_MEMBER_TYPE_TID,
     MoneyTid.ITEM_2061,
     MoneyTid.PVP_HELL_TID,
-    MoneyTid.DISASTER_TID,
-    MoneyTid.ROUNDPRIZE_PROPS,
-    MoneyTid.ROUNDPRIZE_PROPS_TWO,
-    MoneyTid.GUILDWAR_TID,
-    MoneyTid.DNA_TID,
+    MoneyTid.DISASTER_TID
 }
 
 MoneyUtil = {}
@@ -297,10 +275,6 @@ function MoneyUtil.getMoneyCountByTid(moneyTid)
         count = playerVo:getDoundlessCoin()
     elseif (moneyTid == MoneyTid.GUILD_FUND_TID) then
         count = guild.GuildManager:getGuildCoin()
-    elseif (moneyTid == MoneyTid.HAPPYFARM_TID) then
-        count = playerVo:getHappyFarmMoney()
-    elseif (moneyTid == MoneyTid.GUILDWAR_TID) then
-        count = playerVo:getGuildWarCoin()
     else
         count = bag.BagManager:getPropsCountByTid(moneyTid)
     end
@@ -378,14 +352,14 @@ function MoneyUtil.judgeNeedMoneyCountByTidTips(moneyTid, count, shopVo, callBac
             end
         else
             UIFactory:alertMessge(_TT(66), true, function()
-                GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Purchase})
+                GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.Purchase })
                 if endCall then
                     endCall()
                 end
             end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil
-        )
-    end
-end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
+            )
+        end
+    end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
 end
 
 -- 根据金钱类型和需要数量，判断是否足够的提示
@@ -414,17 +388,6 @@ function MoneyUtil.shortValueStr(cusValue, cusType)
         return k_value .. "万"
     end
     return cusValue
-end
-
-function MoneyUtil.setCostIconAndNum(id, needNum, ariImage, textCpt, isNoColorChange, enoughColor, notEnoughtColor)
-    enoughColor = enoughColor or "FFFFFFFF"
-    notEnoughtColor = notEnoughtColor or "DE1E1EFF"
-    ariImage:SetImg(UrlManager:getPropsIconUrl(id), false)
-    local ownNum = MoneyUtil.getMoneyCountByTid(id)
-    textCpt.text = needNum
-    if not isNoColorChange then
-        textCpt.color = gs.ColorUtil.GetColor(ownNum >= needNum and enoughColor or notEnoughtColor)
-    end
 end
 
 return MoneyUtil

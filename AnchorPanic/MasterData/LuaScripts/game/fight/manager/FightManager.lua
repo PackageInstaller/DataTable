@@ -1336,8 +1336,6 @@ function _battleFinish(self)
             -- AudioManager:pauseMusicByFade(2, function()
             AudioManager:playMusicById(31, false) --胜利音乐
             -- end)
-        elseif self.m_resultData.result == 4 then
-            GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_PANEL_SHOW)
         else
             GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_PANEL_OVER, { isWin = true })
         end
@@ -1510,14 +1508,6 @@ end
 
 function getIsUIByFightEnd(self)
     return self.mIsByFightEnd
-end
-
-function setLastReqInfoBattleType(self,battleType)
-    self.mLastReqInfoBattleType = battleType
-end
-
-function getLastReqInfoBattleType(self)
-    return self.mLastReqInfoBattleType
 end
 
 return _M

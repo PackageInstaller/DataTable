@@ -197,7 +197,7 @@ function playMusicById(self, cusId, loop)
             self:playMusic(UrlManager:getMusicPath(data.intro), false)
 
             self:clearMusicTimeOutSn()
-            local time = self.mMusicData and self.mMusicData.m_source.clip.length or 1
+            local time = self.mMusicData.m_source.clip.length
             self.mMusicTimeOutSn = LoopManager:setTimeout(time, nil, function()
                 self:playMusic(UrlManager:getMusicPath(data.loop), true)
             end)
@@ -234,9 +234,7 @@ function playMusic(self, path, loop, finishCall)
     end
     self:stopMusic()
     self.mMusicData = self:playAudioSound(path, loop, finishCall)
-    if self.mMusicData then
-        self.mMusicData.m_source.volume = self.mMusicVolume * self.mTotalVolume
-    end
+    self.mMusicData.m_source.volume = self.mMusicVolume * self.mTotalVolume
 end
 
 --移除主背景音乐
@@ -573,31 +571,8 @@ function setTotalVolume(self, val)
     end
 end
 
---因为切换cv音效功能需要根据不同配置去用不同目录的音效
---但是我们有两套播放cv的逻辑 一套在lua 一套在c#
---lua这边是根据配置去那名字拼接路径的 c#那边是直接传递路径的不好改
---为了兼容故而在这播放音效最底层去处理
-local function fixCvPath(path)
-    -- 判断路径是否以指定前缀开头
-    local cvPrefixPath = UrlManager:getCVSoundPrefixPath()
-    if string.startsWith(path, cvPrefixPath) then
-        local data = systemSetting.SystemSettingManager:getCurCvTypeSettingCfg()
-        local folderName = data[1]
-        if folderName ~= "cv" then
-            --替换前缀中出现的cv为多国cv总目录
-            local newCvPrefixPath = string.gsub(cvPrefixPath, "cv", "cv_multiple")
-            --拼接目标国家cv目录
-            newCvPrefixPath = newCvPrefixPath .. folderName .. "/"
-            --替换路径前缀
-            path = string.replacePrefix(path, cvPrefixPath, newCvPrefixPath)
-        end
-    end
-    return path
-end
-
 --播放一个音频文件
 function playAudioSound(self, path, beLoop, finishCall, wpos, parentTrans)
-    path = fixCvPath(path)
     local audioData = nil
     local function _delayCall()
         self:stopAudioSound(audioData)
@@ -629,25 +604,6 @@ function loadAudioSound(self, path, beLoop, wpos, parentTrans, deleteCall)
     end
 
     return AudioDataVo:create(path, beLoop, wpos, parentTrans, deleteCall)
-end
-
-function preloadCvByCvId(self, cvId, noTips)
-    local cvData = self:getCVData(cvId)
-    if not cvData then
-        return false
-    end
-    local path = UrlManager:getCVSoundPath(cvData.voice)
-    path = fixCvPath(path)
-    local audioGo = gs.GOPoolMgr:Get(path, false)
-    if not audioGo then
-        if not noTips then
-            gs.Message.Show(_TT(1431))
-        end
-        return false
-    end
-
-    gs.GOPoolMgr:Recover(audioGo, path)
-    return true
 end
 
 function deleteAudioSound(self, audioData)

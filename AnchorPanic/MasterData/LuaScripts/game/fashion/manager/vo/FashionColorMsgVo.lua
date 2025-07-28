@@ -1,7 +1,7 @@
 module("fashion.FashionColorMsgVo", Class.impl())
 
 function parseMsg(self, cusData)
-    self.heroTid = cusData.hero_tid
+    self.heroId = cusData.hero_id
     self.fashionId = cusData.fashion_id
     -- 正在使用的
     self.colorId = cusData.color_id

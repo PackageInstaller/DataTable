@@ -133,7 +133,7 @@ function getIsCover(self, cusTile)
         otherStartRow = DormitoryCost.ROW_COUNT - endCol + 1
         otherEndRow = DormitoryCost.ROW_COUNT - startCol + 1
 
-        otherStartCol = DormitoryCost.COL_COUNT - self:getHight() + 1
+        otherStartCol = DormitoryCost.COL_COUNT - self:getHight()
         otherEndCol = DormitoryCost.COL_COUNT
     end
 
@@ -143,7 +143,6 @@ function getIsCover(self, cusTile)
             if propsId ~= 0 then
                 local tid = dormitory.DormitoryManager:getFurnitruePropsTid(propsId)
                 local data = dormitory.DormitoryManager:getDormitoryBaseVo(tid)
-
                 if startRow <= data.height then
                     return true
                 end

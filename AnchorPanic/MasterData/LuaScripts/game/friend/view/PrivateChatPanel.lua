@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : PrivateChatPanel
 @Description    : 私聊
@@ -25,6 +25,7 @@ function ctor(self)
 
 end
 
+
 function initData(self)
     self.mSelectId = nil
     self.mItemList = {}
@@ -42,7 +43,7 @@ function initData(self)
     self.mIsInput = true
 end
 
---析构
+--析构  
 function dtor(self)
 end
 
@@ -86,6 +87,7 @@ function configUI(self)
     self:addOnClick(self:getChildGO("BtnStopPcm"), stopPcm)
     --------------------------------------------------------讯飞测试----------------------------------------------------
 end
+
 
 function addTriggerEvent(self)
     local isCancel = false
@@ -147,8 +149,8 @@ function active(self, args)
     friend.FriendManager:addEventListener(friend.FriendManager.PRIVATE_CHAT_ADD, self.onAddChatContentHandler, self)
     friend.FriendManager:addEventListener(friend.FriendManager.PRIVATE_CHAT_UPDATE, self.onUpdateChatContentHandler, self)
     friend.FriendManager:addEventListener(friend.FriendManager.FRIEND_UPDATE, self.onUpdateFriendHandlerHandler, self)
-    
-    GameDispatcher:dispatchEvent(EventName.REQ_EMOJI_UNLOCK_LIST)
+
+
 end
 
 --反激活（销毁工作）
@@ -204,7 +206,7 @@ function onOpenEmojiHandler(self)
         self.mEmojiPanel = UI.new(friend.PrivateEmojiPanel)
         self.mEmojiPanel:addEventListener(View.EVENT_CLOSE, self.onEmojiPanelCloseHandler, self)
     end
-    self.mEmojiPanel:open({posX = 80, posY = 0})
+    self.mEmojiPanel:open({ posX = 80, posY = 0 })
 end
 
 -- 关闭表情
@@ -247,7 +249,7 @@ function onSendHandler(self)
         return
     end
     self.mInputTxt.text = ""
-    GameDispatcher:dispatchEvent(EventName.SEND_PRIVATE_CHAT_INFO, {id = self.mIndex, friendId = self.mSelectId, contentType = chat.ContentType.JUST_TEXT, content = content})
+    GameDispatcher:dispatchEvent(EventName.SEND_PRIVATE_CHAT_INFO, { id = self.mIndex, friendId = self.mSelectId, contentType = chat.ContentType.JUST_TEXT, content = content })
     self.mIndex = self.mIndex + 1
 end
 
@@ -260,7 +262,7 @@ function onSelectEmojiHandler(self, args)
     if self.mEmojiPanel then
         self.mEmojiPanel:close()
     end
-    GameDispatcher:dispatchEvent(EventName.SEND_PRIVATE_CHAT_INFO, {id = self.mIndex, friendId = self.mSelectId, contentType = args.emojiType, content = args.emojiContent})
+    GameDispatcher:dispatchEvent(EventName.SEND_PRIVATE_CHAT_INFO, { id = self.mIndex, friendId = self.mSelectId, contentType = args.emojiType, content = args.emojiContent })
     self.mIndex = self.mIndex + 1
 end
 
@@ -429,22 +431,6 @@ end
 -- 聊天内容滚动到最新
 function chatScollOver(self, cusOff)
     local scollOver = function()
-        if not self.m_childTrans or table.empty(self.m_childTrans) then
-            return
-        end
-
-        if self.mTalkGroup == nil or gs.GoUtil.IsTransNull(self.mTalkGroup) then
-            self.mTalkGroup = self:getChildTrans("mTalkGroup")
-        end
-
-        if self.mScrollView == nil or gs.GoUtil.IsTransNull(self.mScrollView) then
-            self.mScrollView = self:getChildTrans("mScrollView")
-        end
-
-        if self.mScrollContent == nil or gs.GoUtil.IsTransNull(self.mScrollContent) then
-            self.mScrollContent = self:getChildTrans("mTalkContent")
-        end
-
         self.mScrollView:SetParent(self.mTalkGroup, false)
         if self.mScrollContent.rect.size.y >= self.mScrollView.rect.size.y then
             local mPos = self.mScrollContent.anchoredPosition

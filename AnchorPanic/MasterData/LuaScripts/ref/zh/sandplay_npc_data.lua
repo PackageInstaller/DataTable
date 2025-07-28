@@ -27,17 +27,17 @@ local sandplay_npc_data=
 },
 	[2005]={ event_list={2005}, type=2, fun_name=95006, name=95006, icon="mini_event_icon_5.png", bubble_txt={}, normal_speed=0, prefab_name="arts/sceneModule/christmas/prefab/snow_prop_mupai.prefab", effect_name="", is_cross=0, interact_range=80, collision_type=1, collision_range={10}
 },
-	[2006]={ event_list={}, type=0, fun_name=0, name=95057, icon="", bubble_txt={
+	[2006]={ event_list={2006}, type=1, fun_name=95056, name=95057, icon="mini_event_icon_18.png", bubble_txt={
 		[42]={ type=0, param=0, txt=95083 },
 		[43]={ type=0, param=0, txt=95084 },
 }, normal_speed=0, prefab_name="arts/character/pet/2103_qb/model2103_qb.prefab", effect_name="", is_cross=0, interact_range=80, collision_type=1, collision_range={10}
 },
-	[2007]={ event_list={}, type=0, fun_name=0, name=95060, icon="", bubble_txt={
+	[2007]={ event_list={2007}, type=1, fun_name=95055, name=95060, icon="mini_event_icon_17.png", bubble_txt={
 		[40]={ type=0, param=0, txt=95081 },
 		[41]={ type=0, param=0, txt=95082 },
 }, normal_speed=0, prefab_name="arts/character/pet/3103_qb/model3103_qb.prefab", effect_name="", is_cross=0, interact_range=80, collision_type=1, collision_range={10}
 },
-	[3001]={ event_list={3001}, type=2, fun_name=95007, name=0, icon="mini_event_icon_10.png", bubble_txt={}, normal_speed=0, prefab_name="arts/sceneModule/farm/prefabs/farm_fish_01.prefab", effect_name="", is_cross=0, interact_range=100, collision_type=1, collision_range={10}
+	[3001]={ event_list={3001}, type=2, fun_name=95007, name=95007, icon="mini_event_icon_10.png", bubble_txt={}, normal_speed=0, prefab_name="arts/sceneModule/christmas/prefab/snow_prop_mupai.prefab", effect_name="", is_cross=0, interact_range=100, collision_type=1, collision_range={10}
 },
 	[4001]={ event_list={4001}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
 },
@@ -80,34 +80,6 @@ local sandplay_npc_data=
 	[4018]={ event_list={4018}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
 },
 	[4103]={ event_list={4103}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4019]={ event_list={4019}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4020]={ event_list={4020}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4021]={ event_list={4021}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4022]={ event_list={4022}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4023]={ event_list={4023}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4024]={ event_list={4024}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4025]={ event_list={4025}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4026]={ event_list={4026}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4027]={ event_list={4027}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4028]={ event_list={4028}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4029]={ event_list={4029}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4030]={ event_list={4030}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4104]={ event_list={4104}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[4105]={ event_list={4105}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
 },
 	[5001]={ event_list={5001}, type=3, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/monster/6110/model6110.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
 },
@@ -227,105 +199,11 @@ local sandplay_npc_data=
 		[47]={ type=0, param=0, txt=95088 },
 }, normal_speed=0, prefab_name="arts/character/pet/4103_qb/model4103_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
 },
-	[5028]={ event_list={}, type=1, fun_name=0, name=95198, icon="", bubble_txt={
-		[124]={ type=0, param=0, txt=95230 },
-		[125]={ type=0, param=0, txt=95231 },
-}, normal_speed=0, prefab_name="arts/character/pet/4515_qb/model4515_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5029]={ event_list={}, type=1, fun_name=0, name=95199, icon="", bubble_txt={
-		[128]={ type=0, param=0, txt=95234 },
-		[129]={ type=0, param=0, txt=95235 },
-}, normal_speed=0, prefab_name="arts/character/pet/4513_qb/model4513_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5030]={ event_list={}, type=1, fun_name=0, name=95200, icon="", bubble_txt={
-		[130]={ type=0, param=0, txt=95236 },
-		[131]={ type=0, param=0, txt=95237 },
-}, normal_speed=0, prefab_name="arts/character/pet/4514_qb/model4514_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5031]={ event_list={}, type=1, fun_name=0, name=95201, icon="", bubble_txt={
-		[142]={ type=0, param=0, txt=95248 },
-		[143]={ type=0, param=0, txt=95249 },
-}, normal_speed=0, prefab_name="arts/character/pet/4510_qb/model4510_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5032]={ event_list={}, type=1, fun_name=0, name=95202, icon="", bubble_txt={
-		[144]={ type=0, param=0, txt=95250 },
-		[145]={ type=0, param=0, txt=95251 },
-}, normal_speed=0, prefab_name="arts/character/pet/4503_qb/model4503_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5033]={ event_list={}, type=1, fun_name=0, name=95203, icon="", bubble_txt={
-		[126]={ type=0, param=0, txt=95232 },
-		[127]={ type=0, param=0, txt=95233 },
-}, normal_speed=0, prefab_name="arts/character/pet/4517_qb/model4517_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5034]={ event_list={}, type=1, fun_name=0, name=95204, icon="", bubble_txt={
-		[134]={ type=0, param=0, txt=95240 },
-		[135]={ type=0, param=0, txt=95241 },
-}, normal_speed=0, prefab_name="arts/character/pet/4104_qb/model4104_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5035]={ event_list={}, type=1, fun_name=0, name=95205, icon="", bubble_txt={
-		[122]={ type=0, param=0, txt=95228 },
-		[123]={ type=0, param=0, txt=95229 },
-}, normal_speed=0, prefab_name="arts/character/pet/4519_qb/model4519_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5036]={ event_list={}, type=1, fun_name=0, name=95206, icon="", bubble_txt={
-		[132]={ type=0, param=0, txt=95238 },
-		[133]={ type=0, param=0, txt=95239 },
-}, normal_speed=0, prefab_name="arts/character/pet/4518_qb/model4518_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5037]={ event_list={}, type=1, fun_name=0, name=95207, icon="", bubble_txt={
-		[138]={ type=0, param=0, txt=95244 },
-		[139]={ type=0, param=0, txt=95245 },
-}, normal_speed=0, prefab_name="arts/character/pet/4106_qb/model4106_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5038]={ event_list={}, type=1, fun_name=0, name=95208, icon="", bubble_txt={
-		[114]={ type=0, param=0, txt=95220 },
-		[115]={ type=0, param=0, txt=95221 },
-}, normal_speed=0, prefab_name="arts/character/pet/3108_qb/model3108_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5039]={ event_list={}, type=1, fun_name=0, name=95209, icon="", bubble_txt={
-		[120]={ type=0, param=0, txt=95226 },
-		[121]={ type=0, param=0, txt=95227 },
-}, normal_speed=0, prefab_name="arts/character/pet/4511_qb/model4511_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5040]={ event_list={}, type=1, fun_name=0, name=95210, icon="", bubble_txt={
-		[112]={ type=0, param=0, txt=95218 },
-		[113]={ type=0, param=0, txt=95219 },
-}, normal_speed=0, prefab_name="arts/character/pet/4521_qb/model4521_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5041]={ event_list={}, type=1, fun_name=0, name=95211, icon="", bubble_txt={
-		[136]={ type=0, param=0, txt=95242 },
-		[137]={ type=0, param=0, txt=95243 },
-}, normal_speed=0, prefab_name="arts/character/pet/4509_qb/model4509_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5042]={ event_list={}, type=1, fun_name=0, name=95212, icon="", bubble_txt={
-		[118]={ type=0, param=0, txt=95224 },
-		[119]={ type=0, param=0, txt=95225 },
-}, normal_speed=0, prefab_name="arts/character/pet/1105_qb/model1105_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5043]={ event_list={}, type=1, fun_name=0, name=95213, icon="", bubble_txt={
-		[110]={ type=0, param=0, txt=95216 },
-		[111]={ type=0, param=0, txt=95217 },
-}, normal_speed=0, prefab_name="arts/character/pet/3101_qb/model3101_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5044]={ event_list={}, type=1, fun_name=0, name=95214, icon="", bubble_txt={
-		[116]={ type=0, param=0, txt=95222 },
-		[117]={ type=0, param=0, txt=95223 },
-}, normal_speed=0, prefab_name="arts/character/pet/4512_qb/model4512_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[5045]={ event_list={}, type=1, fun_name=0, name=95215, icon="", bubble_txt={
-		[140]={ type=0, param=0, txt=95246 },
-		[141]={ type=0, param=0, txt=95247 },
-}, normal_speed=0, prefab_name="arts/character/pet/2504_qb/model2504_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
 	[6001]={ event_list={6001}, type=5, fun_name=0, name=95005, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/sceneModule/christmas/prefab/snow_prop_mupai.prefab", effect_name="", is_cross=0, interact_range=80, collision_type=1, collision_range={10}
 },
 	[6002]={ event_list={6002}, type=5, fun_name=95117, name=0, icon="mini_event_icon_19.png", bubble_txt={}, normal_speed=0, prefab_name="arts/sceneModule/christmas/prefab/snow_prop_mupai.prefab", effect_name="", is_cross=0, interact_range=80, collision_type=1, collision_range={10}
 },
 	[6003]={ event_list={6003}, type=5, fun_name=95113, name=0, icon="mini_event_icon_19.png", bubble_txt={}, normal_speed=0, prefab_name="arts/sceneModule/newyear/prefab/dx_prop_03_bornpoint_01.prefab", effect_name="", is_cross=0, interact_range=80, collision_type=3, collision_range={}
-},
-	[6004]={ event_list={6004}, type=5, fun_name=0, name=95113, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/sceneModule/christmas/prefab/snow_prop_mupai.prefab", effect_name="", is_cross=0, interact_range=80, collision_type=1, collision_range={10}
-},
-	[6005]={ event_list={6005}, type=5, fun_name=0, name=95112, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/sceneModule/christmas/prefab/snow_prop_mupai.prefab", effect_name="", is_cross=0, interact_range=80, collision_type=1, collision_range={10}
 },
 	[999]={ event_list={2001,2002,2003,2004}, type=1, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="", effect_name="", is_cross=0, interact_range=0, collision_type=0, collision_range={}
 },
@@ -454,32 +332,6 @@ local sandplay_npc_data=
 	[40029]={ event_list={40029}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
 },
 	[40030]={ event_list={40030}, type=4, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/scene_module/cele/modelcl_15_baoxiang_01.prefab", effect_name="", is_cross=0, interact_range=60, collision_type=1, collision_range={30}
-},
-	[80001]={ event_list={80001}, type=8, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="", effect_name="", is_cross=1, interact_range=30, collision_type=0, collision_range={30}
-},
-	[80002]={ event_list={80002}, type=8, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="", effect_name="", is_cross=1, interact_range=30, collision_type=0, collision_range={30}
-},
-	[80003]={ event_list={80003}, type=8, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="", effect_name="", is_cross=1, interact_range=30, collision_type=0, collision_range={30}
-},
-	[80004]={ event_list={80004}, type=8, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="", effect_name="", is_cross=1, interact_range=30, collision_type=0, collision_range={30}
-},
-	[80005]={ event_list={80005}, type=8, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="", effect_name="", is_cross=1, interact_range=30, collision_type=0, collision_range={30}
-},
-	[80006]={ event_list={80006}, type=8, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="", effect_name="", is_cross=1, interact_range=30, collision_type=0, collision_range={30}
-},
-	[80007]={ event_list={80007}, type=8, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="", effect_name="", is_cross=1, interact_range=30, collision_type=0, collision_range={30}
-},
-	[80008]={ event_list={80008}, type=8, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="", effect_name="", is_cross=1, interact_range=30, collision_type=0, collision_range={30}
-},
-	[80009]={ event_list={80009}, type=8, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="", effect_name="", is_cross=1, interact_range=30, collision_type=0, collision_range={30}
-},
-	[80010]={ event_list={80010}, type=8, fun_name=0, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="", effect_name="", is_cross=1, interact_range=30, collision_type=0, collision_range={30}
-},
-	[81001]={ event_list={80101}, type=9, fun_name=137012, name=95067, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/pet/4508_qb/model4508_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[81002]={ event_list={2012}, type=1, fun_name=137015, name=95065, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/character/pet/3504_qb/model3504_qb.prefab", effect_name="", is_cross=0, interact_range=70, collision_type=1, collision_range={30}
-},
-	[81003]={ event_list={80102}, type=10, fun_name=137032, name=0, icon="", bubble_txt={}, normal_speed=0, prefab_name="arts/sceneModule/farm/prefabs/farm_15_jiwo.prefab", effect_name="", is_cross=0, interact_range=0, collision_type=1, collision_range={30}
 }
 }
 

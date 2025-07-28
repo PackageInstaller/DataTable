@@ -113,7 +113,6 @@ function setData(self, param)
     --     self.mScaleTweener = TweenFactory:scaleTo(self.mRectContent, math.Vector3(1.3, 1.3, 1), math.Vector3(1, 1, 1), 0.3, nil,
     --     function()
     --         self.mScaleTweener:Kill()
-
     --         self.mScaleTweener = nil
     --     end)
     --     self.mAlphaTweener = TweenFactory:canvasGroupAlphaTo(self.mCanvasGroupContent, 0.5, 1, 0.3, nil,
@@ -123,11 +122,7 @@ function setData(self, param)
     --     end)
     -- end
     self.mTxtContent.text = contentStr
-    if chapterVo.chapterId >= 10 then
-        self.mTxtNum.text = chapterVo.chapterId
-    else
-        self.mTxtNum.text = "0" .. chapterVo.chapterId
-    end
+    self.mTxtNum.text = "0" .. chapterVo.chapterId
     self.mImgBg:SetImg(UrlManager:getIconPath("mainMap/img_main_item" .. chapterVo.chapterId .. ".png"), false)
 
     -- 显示是否解锁的标识

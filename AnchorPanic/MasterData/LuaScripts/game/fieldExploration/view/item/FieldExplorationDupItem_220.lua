@@ -71,7 +71,6 @@ end
 -- 回收
 function recover(self)
     self:getChildTrans("mImgLine01"):SetParent(self.m_trans)
-    self:getChildTrans("mImgLine01"):GetComponent(ty.RectTransform).anchoredPosition = gs.VEC2_ZERO
     super.recover(self)
 end
 

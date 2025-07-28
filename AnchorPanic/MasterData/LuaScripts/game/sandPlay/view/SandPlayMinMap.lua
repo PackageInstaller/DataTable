@@ -48,14 +48,14 @@ end
 
 function addEventListener(self)
     GameDispatcher:addEventListener(EventName.SANDPLAY_PLAYERSTATE_MOVE, self.refreshMap, self)
-    GameDispatcher:addEventListener(EventName.SANDPLAY_NPC_ADD, self.onRefreshNPC, self)
+    GameDispatcher:addEventListener(EventName.SANDPLAY_NPC_ADD, self.addNPC, self)
     GameDispatcher:addEventListener(EventName.SANDPLAY_NPC_REMOVE, self.removeNPC, self)
 
 end
 
 function removeEventListener(self)
     GameDispatcher:removeEventListener(EventName.SANDPLAY_PLAYERSTATE_MOVE, self.refreshMap, self)
-    GameDispatcher:removeEventListener(EventName.SANDPLAY_NPC_ADD, self.onRefreshNPC, self)
+    GameDispatcher:removeEventListener(EventName.SANDPLAY_NPC_ADD, self.addNPC, self)
     GameDispatcher:removeEventListener(EventName.SANDPLAY_NPC_REMOVE, self.removeNPC, self)
 end
 
@@ -72,20 +72,18 @@ function refreshNPCIcon(self)
 end
 
 --更新检查NPC图标
-function onRefreshNPC(self, npcThing)
-    if npcThing:getData().config then
-        local npcConfig = npcThing:getData().config.base_config
-        local signPath = npcConfig:getSignPath()
-        if signPath then
-            local npc_id = npcConfig.npc_id
-            local signItem = self:creatNPCSign(npc_id)
+function addNPC(self, npcThing)
+    local npcConfig = npcThing:getData().config.base_config
+    local signPath = npcConfig:getSignPath()
+    if signPath then
+        local npc_id = npcConfig.npc_id
+        local signItem = self:creatNPCSign(npc_id)
 
-            local minPos_x, minPos_y = self:getOnMinMapPos(npcThing:getPosition())
-            signItem:setPos(minPos_x, minPos_y)
-            signItem:getTrans().eulerAngles = gs.VEC3_ZERO
+        local minPos_x, minPos_y = self:getOnMinMapPos(npcThing:getPosition())
+        signItem:setPos(minPos_x, minPos_y)
+        signItem:getTrans().eulerAngles = gs.VEC3_ZERO
 
-            signItem.m_go:GetComponent(ty.AutoRefImage):SetImg(signPath)
-        end
+        signItem.m_go:GetComponent(ty.AutoRefImage):SetImg(signPath)
     end
 end
 

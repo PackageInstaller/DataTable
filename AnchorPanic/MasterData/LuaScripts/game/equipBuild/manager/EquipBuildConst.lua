@@ -43,10 +43,10 @@ end
 
 ----------------------- 界面排序专用-----------------------------
 -- 强化排序和筛选
-equipBuild.panelSortType = {  COLOR = "COLOR", LEVEL = "LEVEL",POS = "POS" }
+equipBuild.panelSortType = {  COLOR = "COLOR", LEVEL = "LEVEL" }
 equipBuild.panelSortTypeList = {  equipBuild.panelSortType.COLOR, equipBuild.panelSortType.LEVEL }
 
-equipBuild.panelRemakeSortTypeList = { equipBuild.panelSortType.LEVEL ,equipBuild.panelSortType.POS }
+equipBuild.panelRemakeSortTypeList = { equipBuild.panelSortType.LEVEL }
 
 equipBuild.filterSubTypeAll = "ALL"
 equipBuild.panelFilterType = { COLOR = "COLOR", SUIT = "SUIT", POS = "POS" }
@@ -98,12 +98,21 @@ equipBuild.getSortTypeName = function(type)
         name = _TT(1003) --"等级"
     elseif (type == equipBuild.panelSortType.COLOR) then
         name = _TT(1004) --"品质"
-    elseif (type == equipBuild.panelSortType.POS) then
-        name = _TT(71432) --"品质"
     end
     return name
 end
 
+equipBuild.getSortTypeName = function(type)
+    local name = "xx"
+    if type == equipBuild.panelSortType.DEFAULT then
+        name = _TT(71433)
+    elseif (type == equipBuild.panelSortType.LEVEL) then
+        name = _TT(1003) --"等级"
+    elseif (type == equipBuild.panelSortType.COLOR) then
+        name = _TT(1004) --"品质"
+    end
+    return name
+end
 --[[ 替换语言包自动生成，请勿修改！
 	语言包: _TT(71433):	"默认"
 	语言包: _TT(71432):	"部位"

@@ -26,9 +26,6 @@ equipBuild.EquipBreakUpSucUnlockAttrPanel = require("game/equipBuild/view/suc/Eq
 equipBuild.EquipStrengthenSucPanel = require("game/equipBuild/view/suc/EquipStrengthenSucPanel")
 
 -- 芯片改造
-equipBuild.EquipRemakeShowDataVo = require("game/equipBuild/manager/vo/EquipRemakeShowDataVo")
-equipBuild.EquipRemakeUpAgentView = require("game/equipBuild/view/EquipRemakeUpAgentView")
-
 equipBuild.EquipRemakeVo = require('rodata/EquipRemakeDataRo')
 equipBuild.EquipRemakeManager = require("game/equipBuild/manager/EquipRemakeManager").new()
 equipBuild.EquipRemakeController = require("game/equipBuild/controller/EquipRemakeController").new(equipBuild.EquipRemakeManager)
@@ -38,11 +35,6 @@ equipBuild.EquipRemakeSucPanel = require("game/equipBuild/view/suc/EquipRemakeSu
 equipBuild.EquipRemakeInfoItem = require("game/equipBuild/view/item/EquipRemakeInfoItem")
 equipBuild.EquipRemakeUpView = require("game/equipBuild/view/EquipRemakeUpView")
 equipBuild.EquipRemakeMaterialItem = require("game/equipBuild/view/item/EquipRemakeMaterialItem")
-
-equipBuild.EquipRemakeUpTargetView = require("game/equipBuild/view/EquipRemakeUpTargetView")
-equipBuild.EquipRemakeMaterialAgentItem = require("game/equipBuild/view/item/EquipRemakeMaterialAgentItem")
-
-equipBuild.EquipRemakeUpAgentOptView = require("game/equipBuild/view/EquipRemakeUpAgentOptView")
 
 -- 芯片重构
 equipBuild.EquipReconstructVo = require('rodata/EquipReconstructDataRo')

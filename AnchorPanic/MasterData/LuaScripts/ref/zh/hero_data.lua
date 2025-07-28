@@ -26,7 +26,7 @@ local hero_data=
 		[14]={ key=13, value=9 },
 		[15]={ key=14, value=54 },
 		[16]={ key=101, value=600 },
-}, ability={"A","A","A","A","B"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4105.png", img_body="hero_body_4105.png", model_effect="", stagger_voice=3, hello_voice=207, join_voice=202, win_voice=206, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=201, change_id=1503, star=0, need_fragment={1503,100}, warship_skill={10031,10032}, involve_buff={1003861,100380}, is_hide=0, editor_skill={1003,100301,100302,100304,100303}, is_limit=0
+}, ability={"A","A","A","A","B"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4105.png", img_body="hero_body_4105.png", model_effect="", stagger_voice=3, hello_voice=207, join_voice=202, win_voice=206, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=201, change_id=1503, star=0, need_fragment={1503,100}, warship_skill={10031,10032}, involve_buff={1003861,100380}, is_hide=0, editor_skill={1003,100301,100302,100304}, is_limit=0
 },
 	[1004]={ name="泠", english="Batianta", stature="163CM", weight="48KG", blood=1024, birthday={9,17}, jp_voice="敬请期待", jp_cvid=0, chn_voice="宋媛媛", chn_cvid=605, life="泠来自伯基索米，是在伯基索米政府旗下服役的AIMBS，她无论是学习还是工作都精益求精并谋求第一，尤其是在各类有竞赛性质的活动中表现得尤为明显，因为这个原因，她被大家私下里称为“永远的第一名”。\n\n好日子不能永远持续下去，永远的第一名也终有失手的一天——在一次多国联合的对修格尔作战演习的最后关头，泠锁定的最终目标被来自莱斯坦斯的“焰羽”抢先击杀，随着冠军的桂冠落到了焰羽头上，泠的不败神话也被打破了。\n\n那次演习行动后不久，泠以外派战员的身份被派遣到了莱斯坦斯，有传言她是因为之前在比赛中失利，被伯基索米政府“惩罚”而得到了这个待遇，但这也只是传言而已……", camp=4, hero_type=2, ele_type=1, hero_color=4, location=2, skill_list={1004,100401,100402,100404}, init_skill_list={1004,100401,100402,100404,100480}, inborn_skill={100480,100490}, show_model="4504", model="4504", showQ_model="", head="heroHead/hero_head_4504.png", show_weapon=0, img_painting="record_pic_4504.png", basic_attr={
 		[17]={ key=11, value=444 },
@@ -36,7 +36,7 @@ local hero_data=
 		[21]={ key=101, value=550 },
 }, ability={"C","S","A","C","B"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4504.png", img_body="hero_body_4504.png", model_effect="", stagger_voice=3, hello_voice=307, join_voice=302, win_voice=306, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=301, change_id=1504, star=0, need_fragment={1504,100}, warship_skill={10041,10042}, involve_buff={100490}, is_hide=0, editor_skill={1004,100401,100402,100404}, is_limit=0
 },
-	[1005]={ name="奥莉维娅", english="DAVIST", stature="172CM", weight="53KG", blood=1024, birthday={11,16}, jp_voice="敬请期待", jp_cvid=0, chn_voice="落羽", chn_cvid=805, life="克罗瓦德第三骑兵军团的先锋骑兵，热血活泼，开朗明快，因其乐于助人且不计回报的性格，在军团内有很高的人气。\n\n偶尔会因为热血上头的性格缺点而闹出一些事故并受到责罚，但这些事故往往会让她的人气和受欢迎程度更为高涨，这是怎么一回事呢。", camp=2, hero_type=1, ele_type=2, hero_color=4, location=1, skill_list={1005,100501,100502,100504}, init_skill_list={1005,100501,100502,100504,100580}, inborn_skill={100580,100590}, show_model="4108", model="4108", showQ_model="", head="heroHead/hero_head_4108.png", show_weapon=0, img_painting="record_pic_4108.png", basic_attr={
+	[1005]={ name="奥莉维娅", english="DAVIST", stature="172CM", weight="53KG", blood=1024, birthday={11,16}, jp_voice="敬请期待", jp_cvid=0, chn_voice="赵涵雨", chn_cvid=805, life="克罗瓦德第三骑兵军团的先锋骑兵，热血活泼，开朗明快，因其乐于助人且不计回报的性格，在军团内有很高的人气。\n\n偶尔会因为热血上头的性格缺点而闹出一些事故并受到责罚，但这些事故往往会让她的人气和受欢迎程度更为高涨，这是怎么一回事呢。", camp=2, hero_type=1, ele_type=2, hero_color=4, location=1, skill_list={1005,100501,100502,100504}, init_skill_list={1005,100501,100502,100504,100580}, inborn_skill={100580,100590}, show_model="4108", model="4108", showQ_model="", head="heroHead/hero_head_4108.png", show_weapon=0, img_painting="record_pic_4108.png", basic_attr={
 		[22]={ key=11, value=446 },
 		[23]={ key=12, value=72 },
 		[24]={ key=13, value=10 },
@@ -84,7 +84,7 @@ local hero_data=
 		[51]={ key=101, value=400 },
 }, ability={"B","B","C","S","A"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4507.png", img_body="hero_body_4507.png", model_effect="", stagger_voice=3, hello_voice=907, join_voice=902, win_voice=906, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=901, change_id=1510, star=0, need_fragment={1510,100}, warship_skill={10101,10102}, involve_buff={101001,101002,1010041,1010801,1010802}, is_hide=0, editor_skill={1010,101001,101002,101004}, is_limit=0
 },
-	[1011]={ name="卡兰丽莎", english="Kalan Lisa", stature="176CM", weight="54KG", blood=1024, birthday={2,22}, jp_voice="敬请期待", jp_cvid=0, chn_voice="张馨允", chn_cvid=2005, life="卡兰丽莎隶属于约瑟伯格，是中央议会的直属特工，奉中央议会命令处理各种任务——不管黑的，还是白的。\n\n卡兰丽莎并不在意自己究竟算是间谍、特工还是执行人，她只会滴水不漏地完成任务——且独来独往。\n\n曾经有人从卡兰丽莎在社交礼仪上的滴水不漏猜测她是否有贵族血统，但她自己从未承认过这件事。", camp=1, hero_type=1, ele_type=1, hero_color=4, location=2, skill_list={1011,101102,101101,101104}, init_skill_list={1011,101102,101101,101104,101180}, inborn_skill={101180,101190}, show_model="4501", model="4501", showQ_model="", head="heroHead/hero_head_4501.png", show_weapon=0, img_painting="record_pic_4501.png", basic_attr={
+	[1011]={ name="卡兰丽莎", english="Kalan Lisa", stature="176CM", weight="54KG", blood=1024, birthday={2,22}, jp_voice="敬请期待", jp_cvid=0, chn_voice="子音", chn_cvid=2005, life="卡兰丽莎隶属于约瑟伯格，是中央议会的直属特工，奉中央议会命令处理各种任务——不管黑的，还是白的。\n\n卡兰丽莎并不在意自己究竟算是间谍、特工还是执行人，她只会滴水不漏地完成任务——且独来独往。\n\n曾经有人从卡兰丽莎在社交礼仪上的滴水不漏猜测她是否有贵族血统，但她自己从未承认过这件事。", camp=1, hero_type=1, ele_type=1, hero_color=4, location=2, skill_list={1011,101102,101101,101104}, init_skill_list={1011,101102,101101,101104,101180}, inborn_skill={101180,101190}, show_model="4501", model="4501", showQ_model="", head="heroHead/hero_head_4501.png", show_weapon=0, img_painting="record_pic_4501.png", basic_attr={
 		[52]={ key=11, value=444 },
 		[53]={ key=12, value=71 },
 		[54]={ key=13, value=10 },
@@ -295,7 +295,7 @@ local hero_data=
 		[184]={ key=101, value=500 },
 }, ability={"B","B","C","B","B"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_1103.png", img_body="hero_body_1103.png", model_effect="", stagger_voice=3, hello_voice=3507, join_voice=3502, win_voice=3506, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=3501, change_id=1802, star=0, need_fragment={1802,5}, warship_skill={13021}, involve_buff={1302801,1302802}, is_hide=0, editor_skill={1302,130201,130202,130204}, is_limit=0
 },
-	[1303]={ name="纽卡斯尔", english="DAVIST", stature="175CM", weight="48KG", blood=1024, birthday={11,46}, jp_voice="敬请期待", jp_cvid=0, chn_voice="陈泊羽", chn_cvid=7005, life="纽卡斯尔，本名蒂佩妮，黎苏根“圆梦人商业咨询事务所”的所有者，也是黎苏根最出名的情报贩子之一，她旗下的事务所现和莱斯坦斯黎苏根分局建立了多种业务合作，是安全局的优秀合作伙伴之一。", camp=1, hero_type=2, ele_type=5, hero_color=3, location=1, skill_list={1303,130301,130302,130304}, init_skill_list={1303,130301,130302,130304,130380}, inborn_skill={130380,130390}, show_model="1105", model="1105", showQ_model="", head="heroHead/hero_head_1105.png", show_weapon=0, img_painting="record_pic_1105.png", basic_attr={
+	[1303]={ name="纽卡斯尔", english="DAVIST", stature="175CM", weight="48KG", blood=1024, birthday={11,46}, jp_voice="敬请期待", jp_cvid=0, chn_voice="林簌", chn_cvid=7005, life="纽卡斯尔，本名蒂佩妮，黎苏根“圆梦人商业咨询事务所”的所有者，也是黎苏根最出名的情报贩子之一，她旗下的事务所现和莱斯坦斯黎苏根分局建立了多种业务合作，是安全局的优秀合作伙伴之一。", camp=1, hero_type=2, ele_type=5, hero_color=3, location=1, skill_list={1303,130301,130302,130304}, init_skill_list={1303,130301,130302,130304,130380}, inborn_skill={130380,130390}, show_model="1105", model="1105", showQ_model="", head="heroHead/hero_head_1105.png", show_weapon=0, img_painting="record_pic_1105.png", basic_attr={
 		[185]={ key=11, value=397 },
 		[186]={ key=12, value=61 },
 		[187]={ key=13, value=8 },
@@ -335,7 +335,7 @@ local hero_data=
 		[209]={ key=101, value=500 },
 }, ability={"A","C","C","A","B"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_1104.png", img_body="hero_body_1104.png", model_effect="", stagger_voice=3, hello_voice=4007, join_voice=4002, win_voice=4006, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=4001, change_id=1807, star=0, need_fragment={1807,20}, warship_skill={13071}, involve_buff={130786,130780,130790}, is_hide=0, editor_skill={1307,130701,130702,130704}, is_limit=0
 },
-	[1113]={ name="伊芙特", english="Celterin ", stature="166CM", weight="43KG", blood=1024, birthday={11,12}, jp_voice="敬请期待", jp_cvid=0, chn_voice="圆不溜秋", chn_cvid=5005, life="出身于塞洛维的大小姐，天性懒散爱摸鱼，梦想是吃喝玩乐，由于某些特别的原因不得不来到丛林地区，并成为了当地的一位巡林员，在跟随前辈处理事件的过程中，她自己也完成了一次思维上的蜕变。\n现在嘛，依然在从事巡林员的老本行，虽然多多少少已经适应了林区并和当地人成为了朋友，但她依然在为升迁和尽早回去主城的目标而消极地奋斗着。", camp=7, hero_type=2, ele_type=5, hero_color=4, location=1, skill_list={1113,111301,111302,111304}, init_skill_list={1113,111301,111302,111304,111380}, inborn_skill={111380,111390}, show_model="3504", model="3504", showQ_model="3504", head="heroHead/hero_head_3504.png", show_weapon=0, img_painting="record_pic_3504.png", basic_attr={
+	[1113]={ name="伊芙特", english="Celterin ", stature="166CM", weight="43KG", blood=1024, birthday={11,12}, jp_voice="敬请期待", jp_cvid=0, chn_voice="圆不溜秋", chn_cvid=5005, life="目前塞洛维政府的巡林员，懒散、爱摸鱼，缺乏同理心。\n出身在核心城内，是温床公司的大小姐，但出于父辈的“到基层历练”要求，不得不靠自己面试应聘了巡林员，将大好时光都花费在丛林中，是目前塞洛维xx地区的巡林负责人（斯利普尼尔部落和其他几个小部落就在其中）。由于这片区一直很太平，伊芙特一直在艰辛且丧气地巡查着，摸鱼是最大的爱好（曾经因为好奇斯利普尼尔部落的“圣石”潜入到村里，差点被首领捉住，幸好逃掉了）。就在她快能结束掉麻烦的工作时，斯利普尼尔部落附近发生了污染现象。伊芙特提报给研究员，配合研究院对斯利普尼尔部落周边环境进行调查和制定污染处理方案，却在与斯利普尼尔部落交涉时候遇到阻碍。斯利普尼尔部落的人坚决不肯搬迁到政府提供的临时住处，并且坚决抵制她们进入斯利普尼尔部落的地界。\n伊芙特本身并不喜欢原始的丛林，不理解那些人为什么放着大好的主城临时住处不去享用，要留在丛林这又潮湿又多奇怪虫子的地方。只想赶紧把这麻烦的事情处理掉，然后自己申请回去主城里，不再吃这生活的苦。但与她搭档的研究员是温床公司另一位德高望重的技术入股的股东的徒弟——卡丽斯托。卡丽斯托绝不允许伊芙特仓促地使用不合理的手段处理部落的事情，于是事情变得棘手。\n后来随着玩家经历了一系列事件之后，她虽然还是不理解斯利普尼尔部落对自己部落的留恋，但也终于开始学会尊重别人的意志。", camp=1, hero_type=2, ele_type=5, hero_color=4, location=1, skill_list={1113,111301,111302,111304}, init_skill_list={1113,111301,111302,111304,111380}, inborn_skill={111380,111390}, show_model="3504", model="3504", showQ_model="3504", head="heroHead/hero_head_3504.png", show_weapon=0, img_painting="record_pic_3504.png", basic_attr={
 		[215]={ key=11, value=448 },
 		[216]={ key=12, value=69 },
 		[217]={ key=13, value=9 },
@@ -415,73 +415,6 @@ local hero_data=
 		[264]={ key=14, value=53 },
 		[265]={ key=101, value=600 },
 }, ability={"B","B","B","B","S"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4516.png", img_body="hero_body_4516.png", model_effect="", stagger_voice=3, hello_voice=5007, join_voice=5002, win_voice=5006, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=5001, change_id=1523, star=0, need_fragment={1523,100}, warship_skill={10231,10232}, involve_buff={1023902,1023903,1023904}, is_hide=0, editor_skill={1023,102301,102302,102304,102305}, is_limit=1
-},
-	[1024]={ name="阿尔戈", english="Tiya", stature="174CM", weight="48.5KG", blood=1024, birthday={11,12}, jp_voice="敬请期待", jp_cvid=0, chn_voice="梁瑞雪", chn_cvid=5605, life="莱斯坦斯劲爆大新闻，登记处来了一位少女，口口声声说要来找自己的投资人，经过交谈竟然得知，她口中这位投资人竟然是——\n“链！尉！官！”\n面对接待人员惊诧的目光，少女扬起脸，露出无辜的笑容。\n“他居然没有和你们说过我吗……就是你们的链尉官啦，这是他的介绍信，我们是在塞洛维认识的。”\n“我们重新认识一下好了，我是阿尔戈，是一位正直善良的旅行商人，链尉官又去哪里出任务了？他居然没有在这里等我！”\n“咦，我的经营范围吗？嗯……大庭广众不太好说，找个地方坐下来聊聊怎么样？”", camp=2, hero_type=5, ele_type=4, hero_color=4, location=3, skill_list={1024,102401,102402,102404}, init_skill_list={1024,102401,102402,102404,102480}, inborn_skill={102480,102490}, show_model="4517", model="4517", showQ_model="4517", head="heroHead/hero_head_4517.png", show_weapon=0, img_painting="record_pic_4517.png", basic_attr={
-		[266]={ key=11, value=453 },
-		[267]={ key=12, value=68 },
-		[268]={ key=13, value=11 },
-		[269]={ key=14, value=61 },
-		[270]={ key=101, value=450 },
-}, ability={"B","B","B","B","S"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4517.png", img_body="hero_body_4517.png", model_effect="", stagger_voice=3, hello_voice=5107, join_voice=5102, win_voice=5106, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=5101, change_id=1524, star=0, need_fragment={1524,100}, warship_skill={10241,10242}, involve_buff={1024803,1024804,1024805}, is_hide=0, editor_skill={1024,102401,102402,102404}, is_limit=0
-},
-	[1025]={ name="辉月", english="Tiya", stature="174CM", weight="48.5KG", blood=1025, birthday={11,12}, jp_voice="敬请期待", jp_cvid=0, chn_voice="玥杉", chn_cvid=5605, life="继承了名为【辉月】的专属封号，来自护星骑士团的命星骑士，却是所有命星骑士中最不为人知的一位。\n星都的人们总是赞扬【慧光】和【烁曦】两位命星骑士对维拉提亚所作出的功绩，记住了太阳的灼烈和辰星的闪耀，而忽视了夜晚清冷却温柔的月光。\n辉月用一片黑纱遮住自己的双目，亦能听见失者的诉求，如同月升月落，安静地照拂在这片土地上，给人们带去入眠时的安宁与静谧，迎接明日的到来。\n“为什么要遮住双眼？”\n“这是……一个秘密。”", camp=7, hero_type=6, ele_type=3, hero_color=4, location=1, skill_list={1025,102501,102502,102504}, init_skill_list={1025,102501,102502,102504,102580}, inborn_skill={102580,102590}, show_model="4518", model="4518", showQ_model="4518", head="heroHead/hero_head_4518.png", show_weapon=0, img_painting="record_pic_4518.png", basic_attr={
-		[271]={ key=11, value=517 },
-		[272]={ key=12, value=70 },
-		[273]={ key=13, value=14 },
-		[274]={ key=14, value=60 },
-		[275]={ key=101, value=500 },
-		[276]={ key=149, value=6000 },
-}, ability={"B","B","B","B","S"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4518.png", img_body="hero_body_4518.png", model_effect="", stagger_voice=3, hello_voice=5207, join_voice=5202, win_voice=5206, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=5201, change_id=1525, star=0, need_fragment={1525,100}, warship_skill={10251,10252}, involve_buff={1025044,102580}, is_hide=0, editor_skill={1025,102501,102502,102503,102504}, is_limit=0
-},
-	[1026]={ name="克里安卡", english="Tiya", stature="174CM", weight="48.5KG", blood=1026, birthday={11,12}, jp_voice="敬请期待", jp_cvid=0, chn_voice="李梦洁", chn_cvid=5605, life="克里安卡的一切都是假的，身份、名字、经历。\n她的一切也都是真的，言语，心灵、对你的情感。\n因为你，她才借用了另一个人的身份，最终走到阳光下，然后握住了你的手。\n“来到莱斯坦斯的目的吗？抱歉，现在的我，还没法加入这里，但我会听从链尉官的指令为莱斯坦斯办事……假如我足够幸运，等将来的某一天，我希望能够加入你们。”克里安卡说着，微笑地看着你，“就像承诺过的那样，我会跟在你身边，然后一起走向未来。”", camp=2, hero_type=6, ele_type=2, hero_color=4, location=4, skill_list={1026,102601,102602,102604}, init_skill_list={1026,102601,102602,102604,102680}, inborn_skill={102680,102690}, show_model="4519", model="4519", showQ_model="4519", head="heroHead/hero_head_4519.png", show_weapon=0, img_painting="record_pic_4519.png", basic_attr={
-		[277]={ key=11, value=502 },
-		[278]={ key=12, value=71 },
-		[279]={ key=13, value=13 },
-		[280]={ key=14, value=60 },
-		[281]={ key=101, value=500 },
-		[282]={ key=149, value=6000 },
-}, ability={"B","B","B","B","S"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4519.png", img_body="hero_body_4519.png", model_effect="", stagger_voice=3, hello_voice=5307, join_voice=5302, win_voice=5306, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=5301, change_id=1526, star=0, need_fragment={1526,100}, warship_skill={10261,10262}, involve_buff={1026861,102690}, is_hide=0, editor_skill={1026,102601,102602,102604}, is_limit=0
-},
-	[1027]={ name="黎寒之骑·朝晖", english="Tiya", stature="174CM", weight="48.5KG", blood=1027, birthday={11,12}, jp_voice="敬请期待", jp_cvid=0, chn_voice="朝露", chn_cvid=5605, life="曾经被驱逐出维拉提亚的朝晖，选择接受了教皇的邀请，重返故土，拾起骑士的身份，参与骑士选拔大会。\n而这一次，她不再为了那虚无缥缈的大义，不再为了那欺骗世人的妄语，只为了证明自己所做的一切并非毫无意义。\n她依旧和过去一样勇敢且坚毅，对于骑士战法的熟稔让她足以拿起那柄星芒闪烁的长剑，和长枪一起挥舞，给对手带来更加强大的威慑。\n“我不会再逃避了，我会像你说的那样，成为一个拥有信条的骑士。”\n“我将为你，为了我自己，为我爱的一切而挥剑。”\n“请为我授勋吧，链尉官。”  ", camp=6, hero_type=2, ele_type=3, hero_color=4, location=4, skill_list={1027,102701,102702,102704}, init_skill_list={1027,102701,102702,102704,102780}, inborn_skill={102780,102790}, show_model="4520", model="4520", showQ_model="4520", head="heroHead/hero_head_4520.png", show_weapon=0, img_painting="record_pic_4520.png", basic_attr={
-		[283]={ key=11, value=495 },
-		[284]={ key=12, value=75 },
-		[285]={ key=13, value=10 },
-		[286]={ key=14, value=58 },
-		[287]={ key=101, value=550 },
-}, ability={"B","B","B","B","S"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4520.png", img_body="hero_body_4520.png", model_effect="", stagger_voice=3, hello_voice=5407, join_voice=5402, win_voice=5406, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=5401, change_id=1527, star=0, need_fragment={1527,100}, warship_skill={10271,10272}, involve_buff={1027861,1027901,1027903}, is_hide=0, editor_skill={1027,102701,102702,102704,102703}, is_limit=0
-},
-	[1028]={ name="云篆", english="Tiya", stature="174CM", weight="48.5KG", blood=1028, birthday={11,12}, jp_voice="敬请期待", jp_cvid=0, chn_voice="", chn_cvid=5605, life="“小仙我从星火而来，以求仙问卜为业，上晓天文，下通地理，可解人情冷暖，可知世态无常。”\n这是云篆在莱斯坦斯登记时所说的第一句话，负责为她办理手续的工作人员怔愣了足足有一分钟，幸好有同行的链尉官帮忙解围和解释，但这与常人颇有差异的言语让她不得不又经历了一次身份审查。\n为表歉意，云篆送了工作人员一张符箓，但对方惊恐的神情使她意识到，这儿的人可能是误会了什么。\n云篆唉声叹气，无奈地仰头望天，对于旁人的误解很是忧伤，她扭过头，看着走在身边的链尉官，“还好你对我没什么误解，以后也请多多帮忙了~”\n“对了，比起云篆这个代号，我更喜欢听你叫我的名字，双！”", camp=6, hero_type=6, ele_type=0, hero_color=4, location=3, skill_list={1028,102801,102802,102804}, init_skill_list={1028,102801,102802,102804,102880}, inborn_skill={102880,102890}, show_model="4521", model="4521", showQ_model="4521", head="heroHead/hero_head_4521.png", show_weapon=0, img_painting="record_pic_4521.png", basic_attr={
-		[288]={ key=11, value=514 },
-		[289]={ key=12, value=72 },
-		[290]={ key=13, value=14 },
-		[291]={ key=14, value=61 },
-		[292]={ key=101, value=500 },
-		[293]={ key=149, value=6000 },
-}, ability={"B","B","B","B","S"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4521.png", img_body="hero_body_4521.png", model_effect="", stagger_voice=3, hello_voice=5507, join_voice=5502, win_voice=5506, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=5501, change_id=1528, star=0, need_fragment={1528,100}, warship_skill={10281,10282}, involve_buff={1028862,1028863,1028802,1028901}, is_hide=0, editor_skill={1028,102801,102802,102804,102803,102805}, is_limit=1
-},
-	[1029]={ name="闪蝶", english="Tiya", stature="174CM", weight="48.5KG", blood=1029, birthday={11,12}, jp_voice="敬请期待", jp_cvid=0, chn_voice="", chn_cvid=5605, life="受链尉官邀请，从赞布拉城来的地下武器技师。在没有遇到你之前，她只是一枚将自己吐丝包裹，封闭在虫茧里的毛毛虫。\n但是现在，她终于破茧，因为她遇到了那只保护了自己的黑蝴蝶，这让她有了面对暴风雨的勇气。\n当闪蝶张开双翼，翱翔于天际的时候，世人皆惊叹于闪蝶的美丽，却不知这份美丽的来源一一位软弱的人直面过去，挣脱束缚的勇敢。\n“请，请让我铭记这份温暖，链尉官。是您点燃了我的勇气，让我不会逃避神光重科。等……等我处理完这边的琐事，您可以邀请我去莱斯坦斯学习吗？我，我很能干的，请相信我！”", camp=6, hero_type=5, ele_type=1, hero_color=4, location=3, skill_list={1029,102901,102902,102904}, init_skill_list={1029,102901,102902,102904,102980}, inborn_skill={102980,102990}, show_model="4522", model="4522", showQ_model="4522", head="heroHead/hero_head_4522.png", show_weapon=0, img_painting="record_pic_4522.png", basic_attr={
-		[294]={ key=11, value=495 },
-		[295]={ key=12, value=72 },
-		[296]={ key=13, value=11 },
-		[297]={ key=14, value=62 },
-		[298]={ key=101, value=450 },
-}, ability={"B","B","B","B","S"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4522.png", img_body="hero_body_4522.png", model_effect="", stagger_voice=3, hello_voice=5607, join_voice=5602, win_voice=5606, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=5601, change_id=1529, star=0, need_fragment={1529,100}, warship_skill={10291,10292}, involve_buff={1029803,1029804,1029805,1029902,1029905,1029904,1029861}, is_hide=0, editor_skill={1029,102901,102902,102904}, is_limit=0
-},
-	[1030]={ name="红叶", english="Tiya", stature="174CM", weight="48.5KG", blood=1030, birthday={11,12}, jp_voice="敬请期待", jp_cvid=0, chn_voice="", chn_cvid=5605, life="行走于虚蚀荒芜之地上的浪者，实际与那位鹰鹫般的女性皆为来自被人类社会称之为“禁地”的极北地区，其名为虚蚀猎人。\n因不可解的诅咒而行于大地，在赴死的路上寻求那一瞬而至的美丽。\n一如深秋的红叶，以灼身之姿挥动赤刃，将凋零的宿命燃作破晓流星。\n向死而生？抑或奔赴黄泉？她的意，只在刀刃出鞘时昭示——\n“若绽放注定凋零，何不在盛放时烧穿天际？”", camp=6, hero_type=1, ele_type=2, hero_color=4, location=4, skill_list={1030,103001,103002,103004}, init_skill_list={1030,103001,103002,103004,103080}, inborn_skill={103080,103090}, show_model="4523", model="4523", showQ_model="4523", head="heroHead/hero_head_4523.png", show_weapon=0, img_painting="record_pic_4523.png", basic_attr={
-		[299]={ key=11, value=495 },
-		[300]={ key=12, value=80 },
-		[301]={ key=13, value=11 },
-		[302]={ key=14, value=56 },
-		[303]={ key=101, value=600 },
-}, ability={"B","B","B","B","S"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4523.png", img_body="hero_body_4523.png", model_effect="", stagger_voice=3, hello_voice=5707, join_voice=5702, win_voice=5706, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=5701, change_id=1530, star=0, need_fragment={1530,100}, warship_skill={10301,10302}, involve_buff={}, is_hide=0, editor_skill={1030,103001,103002,103004,103003,103005}, is_limit=0
-},
-	[1031]={ name="珂芙尼尔", english="Tiya", stature="174CM", weight="48.5KG", blood=1031, birthday={11,12}, jp_voice="敬请期待", jp_cvid=0, chn_voice="", chn_cvid=5605, life="“灰暗之世仅有的绚然，以珂尼之名点亮第一束光，链尉官，吾自此将与汝共同卫护这人世。”\n“咳咳。”珂芙尼尔甩了甩头发，握着自己刚刚接受过改装的武器，充满期待地看向你，“怎样，吾命定的看护者啊……”\n“珂芙尼尔小姐，请看镜头。”负责拍摄的员工友善地提醒她，“这张照片将作为身份证件留存。”\n“好的好的。”珂芙尼尔忙不迭点头，“链尉官啊，吾、世界第一的魔法少女，珂芙尼尔的加入必定会与汝一起缔造新的奇迹~”\n在她的吟唱声中，后勤部的员工按下快门，留下了魔法少女与莱斯坦斯达成合作的珍贵瞬间。", camp=2, hero_type=5, ele_type=2, hero_color=4, location=2, skill_list={1031,103101,103102,103104}, init_skill_list={1031,103101,103102,103104,103180}, inborn_skill={103180,103190}, show_model="4524", model="4524", showQ_model="4524", head="heroHead/hero_head_4524.png", show_weapon=0, img_painting="record_pic_4524.png", basic_attr={
-		[304]={ key=11, value=495 },
-		[305]={ key=12, value=72 },
-		[306]={ key=13, value=11 },
-		[307]={ key=14, value=61 },
-		[308]={ key=101, value=450 },
-}, ability={"B","B","B","B","S"}, attr_ability={{11,4},{12,3},{13,2},{14,1},{101,4}}, shadow_head="hero/heroShadow/hero_shadow_4524.png", img_body="hero_body_4524.png", model_effect="", stagger_voice=3, hello_voice=5807, join_voice=5802, win_voice=5806, fail_voice=0, level_voice=0, military_voice=0, star_voice=0, mail_voice=0, recruit_voice=5801, change_id=1531, star=0, need_fragment={1531,100}, warship_skill={10311,10312}, involve_buff={}, is_hide=0, editor_skill={1031,103101,103102,103104}, is_limit=0
 }
 }
 

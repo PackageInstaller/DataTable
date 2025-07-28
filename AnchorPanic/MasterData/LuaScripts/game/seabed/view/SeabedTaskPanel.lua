@@ -28,9 +28,7 @@ end
 -- 激活
 function active(self, args)
     super.active(self, args)
-    MoneyManager:setMoneyTidList({})
-    self:updateBubble()
-    GameDispatcher:addEventListener(EventName.UPDATE_SEABED_RED,self.updateBubble,self)
+    MoneyManager:setMoneyTidList({ })
 end
 
 function getTabClass(self)
@@ -50,22 +48,6 @@ end
 -- 反激活（销毁工作）
 function deActive(self)
     super.deActive(self)
-    MoneyManager:setMoneyTidList({ MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID })
-    GameDispatcher:removeEventListener(EventName.UPDATE_SEABED_RED,self.updateBubble,self)
 end
-
-function updateBubble(self)
-    if seabed.SeabedManager:canGetTaskByType(seabed.SeabedTaskType.Def) then
-        self:addBubble(seabed.SeabedTaskType.Def)
-    else
-        self:removeBubble(seabed.SeabedTaskType.Def)
-    end
-    if seabed.SeabedManager:canGetTaskByType(seabed.SeabedTaskType.High) then
-        self:addBubble(seabed.SeabedTaskType.High)
-    else
-        self:removeBubble(seabed.SeabedTaskType.High)
-    end
-end
-
 
 return _M

@@ -156,13 +156,6 @@ FightDef.BATTLE_TYPE_CHANGE_POS = 71
 FightDef.BATTLE_TYPE_MAX_HIT_STUN = 72
 --73)。% 副本boss承受伤害值 (公会战用)
 FightDef.BATTLE_TYPE_BOSS_SUFFER_DAMAGE = 73
---75)。% 战斗加场地护盾值(值)
-FightDef.BATTLE_TYPE_ADD_SCENE_SHIELD = 74
---75)。% 战斗伤害扣场地护盾值(值)
-FightDef.BATTLE_TYPE_HURT_ON_SCENE_SHIELD = 75
-
---77).    % 闪蝶静电球放电
-FightDef.BATTLE_TYPE_SHANDIE_ELE_CAMERA = 77
 
 -- 战斗效果类型 END
 
@@ -191,7 +184,7 @@ FightDef.DAMAGE_TYPE_SET = {
     [FightDef.BATTLE_TYPE_ELE_DAMAGE] = true,
     [FightDef.BATTLE_TYPE_BURST] = true,
     [FightDef.BATTLE_TYPE_DIRECT_DAMAGE] = true,
-    -- [FightDef.BATTLE_TYPE_ANTI_INJURY] = true,
+    [FightDef.BATTLE_TYPE_ANTI_INJURY] = true,
     [FightDef.BATTLE_TYPE_CLEAR_ELECTROCUTE] = true,
     [FightDef.BATTLE_TYPE_BLEED] = true,
     [FightDef.BATTLE_TYPE_BURN] = true,
@@ -225,8 +218,6 @@ FightDef.FLY_TEXT_ACTION_SET = {
     [FightDef.BATTLE_TYPE_CURE] = true,
     [FightDef.BATTLE_TYPE_SHIELD_ADD] = true,
     [FightDef.BATTLE_TYPE_HURT_ON_SHIELD] = true,
-    [FightDef.BATTLE_TYPE_ADD_SCENE_SHIELD] = true,
-    [FightDef.BATTLE_TYPE_HURT_ON_SCENE_SHIELD] = true,
 }
 
 -- 模型动作枚举
@@ -524,14 +515,6 @@ FightDef.POINT_RFIRE = 8
 FightDef.POINT_HIT = 9
 -- 头部
 FightDef.POINT_HEAD = 10
-
-
--- 跟随相机旋转挂点
-FightDef.POINT_CAMERA_RT = 50
--- 跟随相机轨道挂点
-FightDef.POINT_CAMERA_DT = 51
--- 跟随相机翻转挂点
-FightDef.POINT_CAMERA_FT = 52
 
 -------------- 技能主类型
 -- 普攻

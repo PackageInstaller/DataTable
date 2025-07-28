@@ -69,7 +69,6 @@ end
 
 --- *c2s* 战斗回放统计数据 20123
 function reqBattleRePlayDate(self, fightType, replayDataId)
-    fight.FightManager:setLastReqInfoBattleType(fightType)
     SOCKET_SEND(Protocol.CS_BATTLE_REPLAY_STATISTIC, { type = fightType, id = replayDataId })
 end
 
@@ -355,7 +354,7 @@ function onRecvSC_BATTLE_RESULT(self, msg)
     fight.FightManager:clearSyncWord()
     fight.FightManager:setResultData(msg)
     if fight.FightManager:getIsFighting() then
-        if msg.result == 1 and fight.FightManager:getBattleType() ~= PreFightBattleType.Arena_Peak_Pvp and fight.FightManager:getBattleType() ~= PreFightBattleType.GuildWar then
+        if msg.result == 1 and fight.FightManager:getBattleType() ~= PreFightBattleType.Arena_Peak_Pvp then
             -- 胜利
             msg._actType = fight.FightDef.ACTION_TYPE_WIN
         elseif msg.result == 3 then

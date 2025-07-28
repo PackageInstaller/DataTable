@@ -62,7 +62,6 @@ PlayerHeadFrameGrid = require 'lib/component/PlayerHeadFrameGrid'
 CustomTabBar = require 'lib/component/CustomTabBar'
 CustomTabBar2 = require 'lib/component/CustomTabBar2'
 DropDownEx = require("lib/component/DropDownEx")
-DropDown = require("lib/component/DropDown")
 ArcScrollList = require("lib/component/ArcScrollList")
 ArcScrollBaseItem = require("lib/component/ArcScrollBaseItem")
 Gyro = require 'lib/component/Gyro'

@@ -10,13 +10,14 @@ module("arenaEntrance.ArenaHellResultDataPanel", Class.impl(View))
 UIRes = UrlManager:getUIPrefabPath("arenaEntrance/ArenaHellResultDataPanel.prefab")
 
 destroyTime = 0 -- 自动销毁时间-1默认 0即时销毁 999不销毁
-panelType = 1 -- 窗口类型 1 全屏 2 弹窗 -1无底图弹窗
+panelType = -1 -- 窗口类型 1 全屏 2 弹窗 -1无底图弹窗
 
 -- 构造函数
 function ctor(self)
     super.ctor(self)
-    self:setTxtTitle(_TT(3065))
+
     self:setSize(0, 0)
+    self:setTxtTitle(_TT(3065))
 end
 -- 析构  
 function dtor(self)
@@ -42,25 +43,14 @@ function configUI(self)
 
     self.mImgWin1 = self:getChildGO("mImgWin1")
     self.mImgWin2 = self:getChildGO("mImgWin2")
-    self.mImgWin3 = self:getChildGO("mImgWin3")
+
 end
 
 -- 激活
 function active(self, args)
     super.active(self, args)
-    MoneyManager:setMoneyTidList({})
-    self.lastBattleType = fight.FightManager:getLastReqInfoBattleType()
-
     self.resultData = args
-
-    if self.lastBattleType == PreFightBattleType.GuildWar then
-        self.mRoundList[3]:SetActive(false)
-    end
-   
-
     self.defIndex = 1
-
-
     self:updateClickRound(self.defIndex)
     --self:updatePreviewData()
 end
@@ -109,7 +99,6 @@ end
 -- 反激活（销毁工作）
 function deActive(self)
     super.deActive(self)
-    MoneyManager:setMoneyTidList({MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID})
     self:recoverAllItem()
     self:recoverEnemy()
 end
@@ -124,17 +113,9 @@ function updatePreviewData(self)
     if arenaEntrance.ArenaEntranceManager.IsSelfAttack then
         self.mImgWin1:SetActive(self.resultData.result == 1)
         self.mImgWin2:SetActive(self.resultData.result == 2)
-        self.mImgWin3:SetActive(self.resultData.result == 3)
     else
         self.mImgWin1:SetActive(self.resultData.result == 2)
         self.mImgWin2:SetActive(self.resultData.result == 1)
-        self.mImgWin3:SetActive(self.resultData.result == 3)
-    end
-
-    if self.lastBattleType == PreFightBattleType.GuildWar then
-        self.mImgWin1:SetActive(self.resultData.result == 1)
-        self.mImgWin2:SetActive(self.resultData.result == 2)
-        self.mImgWin3:SetActive(self.resultData.result == 3)
     end
 
     local allData = {}
@@ -154,15 +135,6 @@ function updatePreviewData(self)
     else
         side1, side2 = 2, 1
     end
-
-    if self.lastBattleType == PreFightBattleType.GuildWar  then
-        if guildWar.GuildWarManager:getLookIsSelf() then
-            side1, side2 = 1, 2
-        else
-            side1, side2 = 2, 1
-        end
-    end
-
 
     for i = 1, #self.resultData.statistic do
 

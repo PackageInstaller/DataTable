@@ -357,7 +357,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=0, thing_type=33 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_1006.png", pre_id=1005, drop_list={30,32,33,31}
 },
-	[1007]={ name="1-7", first_award=22001, target_list={{11,36}}, max_round=30, begin_time={{2024,11,6},{5,0,0}}, thing_list={
+	[1007]={ name="1-7", first_award=22001, target_list={{11,36}}, max_round=30, begin_time={{2024,6,5},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=11, thing_type=32 },
@@ -416,7 +416,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_1007.png", pre_id=1006, drop_list={30,32,33,31}
 },
-	[1008]={ name="1-8", first_award=22001, target_list={{11,35}}, max_round=30, begin_time={{2024,11,7},{5,0,0}}, thing_list={
+	[1008]={ name="1-8", first_award=22001, target_list={{11,35}}, max_round=30, begin_time={{2024,6,6},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=11, thing_type=35 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=11, thing_type=33 },
@@ -475,7 +475,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_1008.png", pre_id=1007, drop_list={30,32,33,31}
 },
-	[1009]={ name="1-9", first_award=22001, target_list={{11,16}}, max_round=20, begin_time={{2024,11,8},{5,0,0}}, thing_list={
+	[1009]={ name="1-9", first_award=22001, target_list={{11,16}}, max_round=20, begin_time={{2024,6,7},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=30 },
@@ -534,7 +534,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_1009.png", pre_id=1008, drop_list={30,32,33,31,35}
 },
-	[1010]={ name="1-10", first_award=22001, target_list={{11,52}}, max_round=30, begin_time={{2024,11,9},{5,0,0}}, thing_list={
+	[1010]={ name="1-10", first_award=22001, target_list={{11,52}}, max_round=30, begin_time={{2024,6,8},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=0, tile_type=10, ice_type=11, thing_type=33 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=11, thing_type=35 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=11, thing_type=33 },
@@ -593,7 +593,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=11, thing_type=33 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_1010.png", pre_id=1009, drop_list={30,32,33,31,35}
 },
-	[2001]={ name="2-1", first_award=22001, target_list={{11,56}}, max_round=20, begin_time={{2024,11,10},{5,0,0}}, thing_list={
+	[2001]={ name="2-1", first_award=22001, target_list={{11,56}}, max_round=20, begin_time={{2024,6,9},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=0, tile_type=10, ice_type=11, thing_type=35 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=11, thing_type=32 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=11, thing_type=32 },
@@ -652,7 +652,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=11, thing_type=30 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_2001.png", pre_id=1010, drop_list={30,32,33,31,35}
 },
-	[2002]={ name="2-2", first_award=22001, target_list={{11,23}}, max_round=25, begin_time={{2024,11,11},{5,0,0}}, thing_list={
+	[2002]={ name="2-2", first_award=22001, target_list={{11,23}}, max_round=25, begin_time={{2024,6,10},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=11, thing_type=35 },
@@ -711,7 +711,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_2002.png", pre_id=2001, drop_list={30,32,33,31,35}
 },
-	[2003]={ name="2-3", first_award=22001, target_list={{11,30}}, max_round=25, begin_time={{2024,11,12},{5,0,0}}, thing_list={
+	[2003]={ name="2-3", first_award=22001, target_list={{11,30}}, max_round=25, begin_time={{2024,6,11},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=0, tile_type=10, ice_type=0, thing_type=30 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=0, thing_type=30 },
 		[3]={ row=7, col=3, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
@@ -770,7 +770,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=0, thing_type=34 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_2003.png", pre_id=2002, drop_list={30,32,33,31,35}
 },
-	[2004]={ name="2-4", first_award=22001, target_list={{32,25},{35,35}}, max_round=25, begin_time={{2024,11,13},{5,0,0}}, thing_list={
+	[2004]={ name="2-4", first_award=22001, target_list={{32,25},{35,35}}, max_round=25, begin_time={{2024,6,12},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[3]={ row=7, col=3, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
@@ -829,7 +829,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=0, thing_type=35 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_2004.png", pre_id=2003, drop_list={30,32,33,34,35}
 },
-	[2005]={ name="2-5", first_award=22001, target_list={{11,25}}, max_round=25, begin_time={{2024,11,14},{5,0,0}}, thing_list={
+	[2005]={ name="2-5", first_award=22001, target_list={{11,25}}, max_round=25, begin_time={{2024,6,13},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=30 },
@@ -888,7 +888,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_2005.png", pre_id=2004, drop_list={30,32,33,31,35}
 },
-	[2006]={ name="2-6", first_award=22001, target_list={{21,28}}, max_round=25, begin_time={{2024,11,15},{5,0,0}}, thing_list={
+	[2006]={ name="2-6", first_award=22001, target_list={{21,28}}, max_round=25, begin_time={{2024,6,14},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=30 },
@@ -947,7 +947,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_2006.png", pre_id=2005, drop_list={30,32,33,31,35}
 },
-	[2007]={ name="2-7", first_award=22001, target_list={{21,14}}, max_round=25, begin_time={{2024,11,16},{5,0,0}}, thing_list={
+	[2007]={ name="2-7", first_award=22001, target_list={{21,14}}, max_round=25, begin_time={{2024,6,15},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=31 },
@@ -1006,7 +1006,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_2007.png", pre_id=2006, drop_list={30,34,33,31,35}
 },
-	[2008]={ name="2-8", first_award=22001, target_list={{21,30}}, max_round=25, begin_time={{2024,11,17},{5,0,0}}, thing_list={
+	[2008]={ name="2-8", first_award=22001, target_list={{21,30}}, max_round=25, begin_time={{2024,6,16},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[3]={ row=7, col=3, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
@@ -1065,7 +1065,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_2008.png", pre_id=2007, drop_list={30,32,33,31,35}
 },
-	[2009]={ name="2-9", first_award=22001, target_list={{21,38}}, max_round=25, begin_time={{2024,11,18},{5,0,0}}, thing_list={
+	[2009]={ name="2-9", first_award=22001, target_list={{21,38}}, max_round=25, begin_time={{2024,6,17},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=0, tile_type=10, ice_type=0, thing_type=33 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=0, thing_type=35 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=33 },
@@ -1124,7 +1124,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_2009.png", pre_id=2008, drop_list={30,32,33,31,35}
 },
-	[2010]={ name="2-10", first_award=22001, target_list={{21,32}}, max_round=25, begin_time={{2024,11,19},{5,0,0}}, thing_list={
+	[2010]={ name="2-10", first_award=22001, target_list={{21,32}}, max_round=25, begin_time={{2024,6,18},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
@@ -1183,7 +1183,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_2010.png", pre_id=2009, drop_list={30,32,33,34,35}
 },
-	[3001]={ name="3-1", first_award=22001, target_list={{21,40}}, max_round=25, begin_time={{2024,11,20},{5,0,0}}, thing_list={
+	[3001]={ name="3-1", first_award=22001, target_list={{21,40}}, max_round=25, begin_time={{2024,6,19},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
@@ -1242,7 +1242,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_3001.png", pre_id=2010, drop_list={31,32,30,35,34}
 },
-	[3002]={ name="3-2", first_award=22001, target_list={{21,40},{11,38}}, max_round=30, begin_time={{2024,11,21},{5,0,0}}, thing_list={
+	[3002]={ name="3-2", first_award=22001, target_list={{21,40},{11,38}}, max_round=30, begin_time={{2024,6,20},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=0, thing_type=30 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=11, thing_type=35 },
@@ -1301,7 +1301,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=11, thing_type=21 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_3002.png", pre_id=3001, drop_list={30,32,33,31,35}
 },
-	[3003]={ name="3-3", first_award=22001, target_list={{21,10},{11,20}}, max_round=25, begin_time={{2024,11,22},{5,0,0}}, thing_list={
+	[3003]={ name="3-3", first_award=22001, target_list={{21,10},{11,20}}, max_round=25, begin_time={{2024,6,21},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=0, tile_type=10, ice_type=0, thing_type=21 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=0, thing_type=32 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=34 },
@@ -1360,7 +1360,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=13, thing_type=21 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_3003.png", pre_id=3002, drop_list={30,32,33,31,34}
 },
-	[3004]={ name="3-4", first_award=22001, target_list={{11,10}}, max_round=40, begin_time={{2024,11,23},{5,0,0}}, thing_list={
+	[3004]={ name="3-4", first_award=22001, target_list={{11,10}}, max_round=40, begin_time={{2024,6,22},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[3]={ row=7, col=3, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
@@ -1419,7 +1419,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_3004.png", pre_id=3003, drop_list={30,32,33,31,34}
 },
-	[3005]={ name="3-5", first_award=22001, target_list={{11,29}}, max_round=40, begin_time={{2024,11,24},{5,0,0}}, thing_list={
+	[3005]={ name="3-5", first_award=22001, target_list={{11,29}}, max_round=40, begin_time={{2024,6,23},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=0, thing_type=31 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=31 },
@@ -1478,7 +1478,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_3005.png", pre_id=3004, drop_list={30,32,33,31,34}
 },
-	[3006]={ name="3-6", first_award=22001, target_list={{11,10}}, max_round=40, begin_time={{2024,11,25},{5,0,0}}, thing_list={
+	[3006]={ name="3-6", first_award=22001, target_list={{11,10}}, max_round=40, begin_time={{2024,6,24},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=33 },
@@ -1537,7 +1537,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_3006.png", pre_id=3005, drop_list={30,32,33,35,31}
 },
-	[3007]={ name="3-7", first_award=22001, target_list={{11,16}}, max_round=40, begin_time={{2024,11,26},{5,0,0}}, thing_list={
+	[3007]={ name="3-7", first_award=22001, target_list={{11,16}}, max_round=40, begin_time={{2024,6,25},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=0, tile_type=10, ice_type=0, thing_type=30 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=0, thing_type=30 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=32 },
@@ -1596,7 +1596,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=0, tile_type=10, ice_type=0, thing_type=33 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_3007.png", pre_id=3006, drop_list={30,32,31,35,33}
 },
-	[3008]={ name="3-8", first_award=22001, target_list={{11,36}}, max_round=40, begin_time={{2024,11,27},{5,0,0}}, thing_list={
+	[3008]={ name="3-8", first_award=22001, target_list={{11,36}}, max_round=40, begin_time={{2024,6,26},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=13, thing_type=32 },
@@ -1655,7 +1655,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_3008.png", pre_id=3007, drop_list={30,32,33,31,34}
 },
-	[3009]={ name="3-9", first_award=22001, target_list={{11,31}}, max_round=40, begin_time={{2024,11,28},{5,0,0}}, thing_list={
+	[3009]={ name="3-9", first_award=22001, target_list={{11,31}}, max_round=40, begin_time={{2024,6,27},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=0, tile_type=10, ice_type=13, thing_type=35 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=13, thing_type=33 },
@@ -1714,7 +1714,7 @@ local xiaoxiaole_dup_data=
 		[56]={ row=1, col=8, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 }, max_row=7, max_col=8, tile_size=80, mask_bg="arts/ui/pack/eliminate/mark_3009.png", pre_id=3008, drop_list={30,32,33,31,35}
 },
-	[3010]={ name="3-10", first_award=22001, target_list={{11,16}}, max_round=40, begin_time={{2024,11,29},{5,0,0}}, thing_list={
+	[3010]={ name="3-10", first_award=22001, target_list={{11,16}}, max_round=40, begin_time={{2024,6,28},{5,0,0}}, thing_list={
 		[1]={ row=7, col=1, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[2]={ row=7, col=2, is_invalid=1, tile_type=10, ice_type=0, thing_type=0 },
 		[3]={ row=7, col=3, is_invalid=0, tile_type=10, ice_type=0, thing_type=30 },

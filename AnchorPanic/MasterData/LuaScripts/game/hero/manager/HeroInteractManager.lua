@@ -106,18 +106,6 @@ function getShowBoardHeroModelId(self)
     return heroVo:getHeroModel()
 end
 
--- 获取配置里得cv延迟播放时间
-function getCvDataLayBack(self, baseData)
-    local data = systemSetting.SystemSettingManager:getCurCvTypeSettingCfg()
-    local fieldName = data[3]
-    local voice_layback = baseData[fieldName]
-    if not voice_layback then
-        logError(string.format("hero_interact_data 音效延迟配置错误，当前语音切换字段是%s没有配置: /n/r %s",
-        tostring(voice_layback), table.tostring(data)))
-    end
-    return voice_layback and voice_layback / 1000 or 0
-end
-
 return _M
 
 --[[ 替换语言包自动生成，请勿修改！

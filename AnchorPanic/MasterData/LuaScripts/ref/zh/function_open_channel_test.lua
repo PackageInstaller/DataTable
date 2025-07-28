@@ -39,13 +39,13 @@ local function_open=
 },
 	[20]={ level=1, dupId=1015, event=1, name="新手目标", stage=0, event_dupId=0
 },
-	[21]={ level=1, dupId=1102, event=0, name="战员宿舍", stage=0, event_dupId=0
+	[21]={ level=1, dupId=1015, event=0, name="战员宿舍", stage=0, event_dupId=0
 },
 	[22]={ level=1, dupId=1003, event=0, name="商城", stage=0, event_dupId=0
 },
 	[23]={ level=1, dupId=1015, event=0, name="通行证", stage=0, event_dupId=0
 },
-	[25]={ level=1, dupId=1102, event=0, name="档案", stage=0, event_dupId=0
+	[25]={ level=999, dupId=1102, event=0, name="档案", stage=0, event_dupId=0
 },
 	[26]={ level=1, dupId=1304, event=1, name="肉鸽", stage=0, event_dupId=1301
 },
@@ -80,10 +80,6 @@ local function_open=
 	[43]={ level=1, dupId=1310, event=0, name="总力战", stage=0, event_dupId=0
 },
 	[44]={ level=1, dupId=1015, event=0, name="庆典", stage=0, event_dupId=0
-},
-	[45]={ level=1, dupId=1015, event=1, name="时装通行证", stage=0, event_dupId=0
-},
-	[46]={ level=1, dupId=1015, event=0, name="特供", stage=0, event_dupId=0
 },
 	[101]={ level=1, dupId=0, event=1, name="主线", stage=0, event_dupId=0
 },
@@ -129,13 +125,9 @@ local function_open=
 },
 	[404]={ level=1, dupId=1103, event=1, name="烙痕普通池", stage=0, event_dupId=0
 },
-	[405]={ level=1, dupId=1003, event=1, name="链接up池", stage=0, event_dupId=0
+	[405]={ level=999, dupId=1003, event=1, name="链接up池", stage=0, event_dupId=0
 },
 	[406]={ level=1, dupId=1103, event=1, name="烙痕up池", stage=0, event_dupId=0
-},
-	[407]={ level=1, dupId=1003, event=1, name="纳源链接", stage=0, event_dupId=0
-},
-	[408]={ level=1, dupId=1103, event=1, name="纳源铸痕", stage=0, event_dupId=0
 },
 	[501]={ level=1, dupId=0, event=1, name="编队", stage=0, event_dupId=0
 },
@@ -175,7 +167,7 @@ local function_open=
 },
 	[808]={ level=1, dupId=1003, event=0, name="辅助碎片商店", stage=0, event_dupId=0
 },
-	[809]={ level=1, dupId=1102, event=0, name="家具商店", stage=0, event_dupId=0
+	[809]={ level=1, dupId=1015, event=0, name="家具商店", stage=0, event_dupId=0
 },
 	[810]={ level=1, dupId=1209, event=0, name="模组补给", stage=0, event_dupId=0
 },
@@ -321,7 +313,7 @@ local function_open=
 },
 	[10309]={ level=1, dupId=1408, event=1, name="无限城", stage=0, event_dupId=1401
 },
-	[10310]={ level=1, dupId=1515, event=1, name="溯战外章2", stage=0, event_dupId=1501
+	[10310]={ level=1, dupId=1415, event=1, name="溯战外章2", stage=0, event_dupId=1408
 },
 	[10601]={ level=1, dupId=1209, event=1, name="低级芯片副本", stage=0, event_dupId=0
 },
@@ -349,19 +341,15 @@ local function_open=
 },
 	[1903]={ level=1, dupId=1003, event=1, name="充值", stage=0, event_dupId=0
 },
-	[1904]={ level=1, dupId=1003, event=1, name="皮肤商店", stage=0, event_dupId=0
+	[1904]={ level=999, dupId=1003, event=1, name="皮肤商店", stage=0, event_dupId=0
 },
 	[1905]={ level=1, dupId=1003, event=1, name="等级礼包", stage=0, event_dupId=0
 },
-	[1906]={ level=1, dupId=1003, event=1, name="时装币商店", stage=0, event_dupId=0
+	[1906]={ level=999, dupId=1003, event=1, name="时装币商店", stage=0, event_dupId=0
 },
 	[1907]={ level=1, dupId=1003, event=1, name="体力月卡", stage=0, event_dupId=0
 },
-	[1908]={ level=1, dupId=1003, event=1, name="皮肤详细信息", stage=0, event_dupId=0
-},
-	[1909]={ level=1, dupId=1003, event=1, name="限时礼包", stage=0, event_dupId=0
-},
-	[1910]={ level=1, dupId=1015, event=1, name="超值限时礼包", stage=0, event_dupId=0
+	[1908]={ level=999, dupId=1003, event=1, name="皮肤详细信息", stage=0, event_dupId=0
 },
 	[2001]={ level=1, dupId=1015, event=1, name="怪物档案", stage=0, event_dupId=0
 },
@@ -449,10 +437,6 @@ local function_open=
 },
 	[2117]={ level=1, dupId=1015, event=0, name="活动-连电路", stage=0, event_dupId=0
 },
-	[2118]={ level=1, dupId=1015, event=0, name="开心农场-养殖界面", stage=0, event_dupId=0
-},
-	[2120]={ level=1, dupId=1015, event=0, name="背包游戏", stage=0, event_dupId=0
-},
 	[3401]={ level=1, dupId=1015, event=0, name="社区关注", stage=0, event_dupId=0
 },
 	[4401]={ level=1, dupId=1015, event=0, name="月卡送SSR", stage=0, event_dupId=0
@@ -460,12 +444,6 @@ local function_open=
 	[4402]={ level=1, dupId=1015, event=0, name="庆典任务", stage=0, event_dupId=0
 },
 	[4403]={ level=1, dupId=1015, event=0, name="庆典累充", stage=0, event_dupId=0
-},
-	[4601]={ level=999, dupId=1015, event=0, name="充值好礼", stage=0, event_dupId=0
-},
-	[4602]={ level=1, dupId=1015, event=0, name="狂欢好礼", stage=0, event_dupId=0
-},
-	[4603]={ level=1, dupId=1015, event=0, name="投资理财", stage=0, event_dupId=0
 }
 }
 

@@ -27,11 +27,6 @@ function configUI(self)
     self.mTxtDiscount = self:getChildGO("mTxtDiscount"):GetComponent(ty.Text)
     self.mImgIcon = self:getChildGO("mImgIcon"):GetComponent(ty.AutoRefImage)
     self.mImgMoneyIcon = self:getChildGO("mImgMoneyIcon"):GetComponent(ty.AutoRefImage)
-
-    self.mTagContent = self:getChildGO("mTagContent")
-    self.mTag1 = self:getChildGO("mTag1")
-    self.mTag2 = self:getChildGO("mTag2")
-    self.mTag3 = self:getChildGO("mTag3")
 end
 
 --激活
@@ -76,12 +71,6 @@ function setData(self, cusParent, data)
     self.mData = data
     local showVo = self.mData.itemData
 
-    local tapList = showVo.heroFashionData.tap
-   
-    self.mTag1:SetActive(table.indexof01(tapList,1) > 0)
-    self.mTag2:SetActive(table.indexof01(tapList,2) > 0)
-    self.mTag3:SetActive(table.indexof01(tapList,3) > 0)
-
     self.mImgIcon:SetImg(showVo:getShadowIcon(), false)
 
     if (showVo:getCanUpdate()) then
@@ -124,17 +113,9 @@ function updateFashionItemState(self)
     self.mTxtTime.text = TimeUtil.getFormatTimeBySeconds_10(self.mData.itemData:getTime())
     local textColor = (MoneyUtil.getMoneyCountByTid(self.mData.itemData:getMoneyTid()) >= needMoney) and "000000ff" or "D53529ff"
     self.mGroupMoney:SetActive((not self.mData.itemData:getIsSellOut()))
-
-    if self.mData.itemData:getMoneyTid() == MoneyType.MONEY then
-        self.mImgMoneyIcon.gameObject:SetActive(false)
-        textColor = "000000ff"
-        self.mTxtBuy.text = HtmlUtil:color("¥"..needMoney/100, textColor)
-    else
-        self.mImgMoneyIcon.gameObject:SetActive((not self.mData.itemData:getIsSellOut()))
-        self.mImgMoneyIcon:GetComponent(ty.AutoRefImage):SetImg(MoneyUtil.getMoneyIconUrlByTid(self.mData.itemData:getMoneyTid()), true)
-        self.mTxtBuy.text = HtmlUtil:color(needMoney, textColor)
-    end
-    
+    self.mImgMoneyIcon.gameObject:SetActive((not self.mData.itemData:getIsSellOut()))
+    self.mImgMoneyIcon:GetComponent(ty.AutoRefImage):SetImg(MoneyUtil.getMoneyIconUrlByTid(self.mData.itemData:getMoneyTid()), true)
+    self.mTxtBuy.text = HtmlUtil:color(needMoney, textColor)
 
     self.mGroupTime:SetActive(self.mData.itemData:getTime() > 0)
 end

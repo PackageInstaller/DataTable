@@ -102,10 +102,6 @@ LinkCode = {
     Disaster = 43,
     -- 主界面-周年庆
     Celebration = 44,
-    --时装通行证2
-    FashionPermitTwo = 45,
-    --特供
-    SpecialSupply = 46,
     -- 冒险-主线
     MainMap = 101,
     -- 冒险-行动
@@ -116,8 +112,6 @@ LinkCode = {
     BranchStory = 104,
     -- 冒险-战员传记
     Biography = 105,
-    -- 冒险-主线
-    MainMap2 = 107,
 
     --冒险-芯片
     DupEquip = 106,
@@ -154,11 +148,6 @@ LinkCode = {
     RecruitActivity = 405,
     --手环活动研发
     RecruitBraceletsActivity = 406,
-
-    --战员定制
-    RecruitAppActTop = 407,
-    --手环定制
-    RecruitAppBracelets = 408,
 
     -- 战员遣散
     HeroDismiss = 407,
@@ -204,11 +193,6 @@ LinkCode = {
     -- 商店-情报所-情报中心
     ShopFragmentFragment = 813,
 
-    --商店-联盟团战
-    ShopGuildWar = 814,
-    -- 商店-贸易战-特供物资-心智体
-    ShopDna = 815,
-
     -- 兑换商店-装潢商店
     ShopDecoration = 80203,
     -- 兑换商店-无限城
@@ -221,14 +205,13 @@ LinkCode = {
     ShopCovenant = 80403,
     -- 兑换商店-异想回渊
     ShopDupApostles = 80404,
+ 
 
     --工会boss
     GuildBoss = 4001,
 
     --联盟扫荡
     GuildSweep = 4002,
-    --联盟团战
-    GuildWar = 4003,
     -- 问卷调查
     SurveyWebView = 1001,
     -- web页面
@@ -293,23 +276,11 @@ LinkCode = {
     StrengthCard = 1907,
     -- 战员时装-展示界面
     HeroFashionShow = 1908,
-    --特供补给包-限时礼包
-    ShopLimitGift = 1909,
-
-    --阿尔戈特供
-    Supercial = 1910,
-    --商城组合商店
-    SHOPCOMBO = 1911,
-    --商城场景商店
-    SHOPSCENE = 1912,
-    --商城部件商店
-    SHOPPAIRTS = 1913,
     -- 档案——怪物
     ManualMonster = 2001,
     -- 档案——战员
     ManualHero = 2007,
-    --2.2小游戏-整理背包
-    OrganizeBackpacks = 2123,
+
     --基建-加工厂2
     BuildBaseFactor2 = 3201,
     --基建-总生产线
@@ -325,9 +296,6 @@ LinkCode = {
     --基建-控制中心
     BuildBaseControllerCenter = 3207,
 
-    --活动-充值好礼
-    ActivityRechargeNiceGift = 3402,
-
     --新手活动-累计链接
     NoviceActivityRecruit = 3801,
     --新手活动-累计铸造
@@ -337,14 +305,7 @@ LinkCode = {
 
     --新手活动-抽奖
     NoviceRafflePanel = 3805,
-    --新手活动-累充
-    NoviceRechargePanel = 3807,
 
-    --特供-狂欢好礼
-    ActivityCarnivaGift = 4602,
-
-    --特供-自选礼包
-    ActivitySelectBuy = 4604,
     --阵型 力场训练
     FormationPower = 50102,
     -- 战员培养-升级
@@ -533,31 +494,8 @@ LinkCode = {
     CelebrationTask = 4402,
     --周年庆典-庆典累充
     CelebrationAccRecharge = 4403,
-    --周年庆典-庆典抽奖
-    CelebrationRoundPrize = 4404,
-    --周年庆典-庆典抽奖2
-    CelebrationRoundPrizeTwo = 4405,
     --水管游戏
     Ciruit = 2117,
-
-    --开心农场
-    HappyFarm = 2121, --农场场景
-    HappyFarm_Breed = 2118, ---农场养殖
-    HappyFarm_Task = 2119, ---农场任务
-    HappyFarm_Warehouse = 2120, ---农场仓库
-    HappyFarm_Shop = 2122, --农场商店
-
-    --痒了又痒
-    ThreeSheep = 2124,
-    --打砖块
-    ShootBrick = 2125,
-    --拼图游戏
-    PutImage = 2127,
-
-    --连连看
-    Linklink = 2128,
-
-    SandPlay = 2126,
 
     --taptap奖励
     TaptapAward = 99999,

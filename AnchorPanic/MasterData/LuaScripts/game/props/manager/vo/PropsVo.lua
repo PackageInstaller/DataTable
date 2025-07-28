@@ -64,9 +64,7 @@ function setConfigData(self, cusConfigVo)
     self.sellType = cusConfigVo.sellType
     self.price = cusConfigVo.price
     self.uiCode = cusConfigVo.uiCode
-    
     self.uiCodeList = cusConfigVo.uiCodeList
-    self.useUiCodeList = cusConfigVo.useUiCodeList
     self.sort = cusConfigVo.sort
 
     self.effectType = cusConfigVo.effectType
@@ -114,7 +112,6 @@ function setPropsAwardMsgData(self, pt_prop_award)
     self.color = pt_prop_award.color
     self.expiredTime = pt_prop_award.expiredTime
     self.expiredOddTime = pt_prop_award.expiredOddTime
-    self:setLockState( pt_prop_award.is_lock)
 end
 
 -- 设置奖励展示道具数据(本地奖励包) */

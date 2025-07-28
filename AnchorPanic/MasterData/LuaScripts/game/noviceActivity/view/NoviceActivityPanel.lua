@@ -6,12 +6,13 @@
 @Author         : Shuai
 @copyright      : (LY) 2023 雷焰网络
 -----------------------------------------------------
-]] module("noviceActivity.NoviceActivityPanel", Class.impl(TabView))
+]]
+module("noviceActivity.NoviceActivityPanel", Class.impl(TabView))
 UIRes = UrlManager:getUIPrefabPath("noviceActivity/NoviceActivityPanel.prefab")
 
 destroyTime = 0 -- 自动销毁时间-1默认
 panelType = 1 -- 窗口类型 1 全屏 2 弹窗
--- 构造函数
+--构造函数
 function ctor(self)
     super.ctor(self)
     self:setSize(0, 0)
@@ -33,20 +34,15 @@ end
 function active(self, args)
     super.active(self, args)
     MoneyManager:setMoneyTidList({})
-    noviceActivity.NoviceActivityManager:addEventListener(noviceActivity.NoviceActivityManager.UPDATE_RED,
-        self.updateBubble, self)
-
-    --GameDispatcher:addEventListener(EventName.ACTIVITY_NOVICE_UPDATE, self.setTabBar, self)
+    noviceActivity.NoviceActivityManager:addEventListener(noviceActivity.NoviceActivityManager.UPDATE_RED, self.updateBubble, self)
     self:initAllBubble()
-    -- self:updateViewState()
-    -- self:addTimer(1, 0, self.updateViewState)
+    self:updateViewState()
+    self:addTimer(1, 0, self.updateViewState)
 end
--- 反激活（销毁工作）
+--反激活（销毁工作）
 function deActive(self)
     super.deActive(self)
-    noviceActivity.NoviceActivityManager:removeEventListener(noviceActivity.NoviceActivityManager.UPDATE_RED,
-        self.updateBubble, self)
-    --GameDispatcher:removeEventListener(EventName.ACTIVITY_NOVICE_UPDATE, self.setTabBar, self)
+    noviceActivity.NoviceActivityManager:removeEventListener(noviceActivity.NoviceActivityManager.UPDATE_RED, self.updateBubble, self)
     MoneyManager:setMoneyTidList()
     self:removeAllBubble()
     self.curPage = nil
@@ -57,32 +53,9 @@ function addAllUIEvent(self)
 end
 
 function setTabBar(self)
-    -- cusLog("刷新============setTabBar")
-    -- local isClose = activity.ActivityManager:getNoviceActivityIsOpen()
-    -- isClose = isClose or activity.ActivityManager:getNoviceActivitySsrIsOpen()
-    -- isClose = isClose or activity.ActivityManager:getNoviceActivityRechargeIsOpen()
-    -- if not isClose then
-    --     self:onClickClose()
-    --     return
-    -- end
-
     if #self:getTabDataList() <= 0 then
         return
     end
-
-    -- if activity.ActivityManager:getNoviceActivityIsOpen() then
-    --     self.curPage = noviceActivity.NoviceActivityConst:getTabList()[1].page
-    -- else
-    --     if activity.ActivityManager:getNoviceActivitySsrIsOpen() then
-    --         self.curPage = noviceActivity.NoviceActivityConst.NOVICEAVTIVITY_SSR
-    --     end
-
-    --     if activity.ActivityManager:getNoviceActivityRechargeIsOpen() then
-    --         self.curPage = noviceActivity.NoviceActivityConst.NOVICEACTIVITY_RECHARGE
-    --     end
-    -- end
-
-    -- end
 
     if not self.tabViewGo then
         self.tabViewGo = AssetLoader.GetGO(UrlManager:getUIPrefabPath("compent/TabView.prefab"), self)
@@ -90,24 +63,14 @@ function setTabBar(self)
         self.tabViewGo.transform:SetParent(self.base_childTrans["mGroupCusTab"], false)
     end
 
-    if self.tabBar then
-        self.tabBar:poolRecover()
-    end
-
-    self.tabBar = CustomTabBar:create(self:getChildGO("GroupTabItem"), self.tabView_childTrans["TabBarNode"],
-        self.onClickMenuHandler, self, nil, "TabViewTabBar4")
+    self.tabBar = CustomTabBar:create(self:getChildGO("GroupTabItem"), self.tabView_childTrans["TabBarNode"], self.onClickMenuHandler, self, nil, "TabViewTabBar4")
     self.tabBar:setData(self:getTabDataList())
 end
 
 function getTabDatas(self)
     self.tabDataList = {}
     for index, vo in pairs(noviceActivity.NoviceActivityConst:getTabList()) do
-        self.tabDataList[index] = {
-            type = vo.page,
-            content = {vo.nomalLan},
-            nomalIcon = vo.nomalIcon,
-            selectIcon = vo.selectIcon
-        }
+        self.tabDataList[index] = { type = vo.page, content = { vo.nomalLan }, nomalIcon = vo.nomalIcon, selectIcon = vo.selectIcon }
     end
     return self.tabDataList
 end
@@ -158,12 +121,11 @@ end
 
 function updateViewState(self)
     local isClose = activity.ActivityManager:getNoviceActivityIsOpen()
-    isClose = isClose or activity.ActivityManager:getNoviceActivitySsrIsOpen()
-    isClose = isClose or activity.ActivityManager:getNoviceActivityRechargeIsOpen()
     if not isClose then
         self:onClickClose()
     end
 end
+
 
 return _M
 

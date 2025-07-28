@@ -89,6 +89,20 @@ local pos_effect_data=
 },
 	[1060]={ side=2, pos_list={0}, effect_list={8060}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 },
+	[5001]={ side=1, pos_list={1,2,3,4,5,6}, effect_list={8310,8310,8310,8310,8310,8310}, background_list={"common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png"}, effect_prefab_icon={"buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab"}, effect_prefab_buff={"zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab"}, icon_list={"zchj_8.png","zchj_8.png","zchj_8.png","zchj_8.png","zchj_8.png","zchj_8.png"}, row={1,2,3,1,2,3}, col={1,1,1,2,2,2}
+},
+	[5002]={ side=1, pos_list={4,5,6,7,8,9}, effect_list={8310,8310,8310,8310,8310,8310}, background_list={"common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png"}, effect_prefab_icon={"buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab"}, effect_prefab_buff={"zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab"}, icon_list={"zchj_8.png","zchj_8.png","zchj_8.png","zchj_8.png","zchj_8.png","zchj_8.png"}, row={1,2,3,1,2,3}, col={2,2,2,3,3,3}
+},
+	[5003]={ side=1, pos_list={7,8,9,10,11,12}, effect_list={8310,8310,8310,8310,8310,8310}, background_list={"common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png"}, effect_prefab_icon={"buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab","buff_zchj_8.prefab"}, effect_prefab_buff={"zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab","zchj_buff_jyl.prefab"}, icon_list={"zchj_8.png","zchj_8.png","zchj_8.png","zchj_8.png","zchj_8.png","zchj_8.png"}, row={1,2,3,1,2,3}, col={3,3,3,4,4,4}
+},
+	[5004]={ side=1, pos_list={1,2,3,4,5,6}, effect_list={8311,8311,8311,8311,8311,8311}, background_list={"common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png"}, effect_prefab_icon={"buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab"}, effect_prefab_buff={"zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab"}, icon_list={"zchj_9.png","zchj_9.png","zchj_9.png","zchj_9.png","zchj_9.png","zchj_9.png"}, row={1,2,3,1,2,3}, col={1,1,1,2,2,2}
+},
+	[5005]={ side=1, pos_list={4,5,6,7,8,9}, effect_list={8311,8311,8311,8311,8311,8311}, background_list={"common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png"}, effect_prefab_icon={"buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab"}, effect_prefab_buff={"zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab"}, icon_list={"zchj_9.png","zchj_9.png","zchj_9.png","zchj_9.png","zchj_9.png","zchj_9.png"}, row={1,2,3,1,2,3}, col={2,2,2,3,3,3}
+},
+	[5006]={ side=1, pos_list={7,8,9,10,11,12}, effect_list={8311,8311,8311,8311,8311,8311}, background_list={"common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png","common_frm_12.png"}, effect_prefab_icon={"buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab","buff_zchj_9.prefab"}, effect_prefab_buff={"zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab","zchj_buff_ls.prefab"}, icon_list={"zchj_9.png","zchj_9.png","zchj_9.png","zchj_9.png","zchj_9.png","zchj_9.png"}, row={1,2,3,1,2,3}, col={3,3,3,4,4,4}
+},
+	[8001]={ side=1, pos_list={0}, effect_list={8311}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_21.png"}, row={0}, col={0}
+},
 	[3001]={ side=2, pos_list={0}, effect_list={8101}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 },
 	[3002]={ side=2, pos_list={0}, effect_list={8102}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
@@ -631,12 +645,6 @@ local pos_effect_data=
 },
 	[3498]={ side=1, pos_list={0}, effect_list={8098}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 },
-	[3499]={ side=2, pos_list={0}, effect_list={8099}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[3500]={ side=2, pos_list={0}, effect_list={8100}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[3501]={ side=2, pos_list={0}, effect_list={25000}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
 	[3801]={ side=1, pos_list={0}, effect_list={8701}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 },
 	[3802]={ side=1, pos_list={0}, effect_list={8702}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
@@ -1023,8 +1031,6 @@ local pos_effect_data=
 },
 	[2616]={ side=2, pos_list={0}, effect_list={5162911}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 },
-	[2617]={ side=2, pos_list={0}, effect_list={511192}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
 	[4100]={ side=2, pos_list={0}, effect_list={8900}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 },
 	[4101]={ side=2, pos_list={0}, effect_list={8901}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
@@ -1325,318 +1331,6 @@ local pos_effect_data=
 },
 	[4255]={ side=2, pos_list={0}, effect_list={19093}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 },
-	[4256]={ side=1, pos_list={0}, effect_list={19094}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4257]={ side=1, pos_list={0}, effect_list={19095}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4258]={ side=1, pos_list={0}, effect_list={19096}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4259]={ side=1, pos_list={0}, effect_list={19097}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4260]={ side=1, pos_list={0}, effect_list={19098}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4261]={ side=1, pos_list={0}, effect_list={19099}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4262]={ side=1, pos_list={0}, effect_list={19100}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4263]={ side=1, pos_list={0}, effect_list={19101}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4264]={ side=1, pos_list={0}, effect_list={19102}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4265]={ side=2, pos_list={0}, effect_list={19103}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4266]={ side=2, pos_list={0}, effect_list={19104}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4267]={ side=2, pos_list={0}, effect_list={19105}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4268]={ side=2, pos_list={0}, effect_list={19106}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4269]={ side=2, pos_list={0}, effect_list={19107}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4270]={ side=2, pos_list={0}, effect_list={19108}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4271]={ side=2, pos_list={0}, effect_list={19109}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4272]={ side=2, pos_list={0}, effect_list={19110}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4273]={ side=2, pos_list={0}, effect_list={19111}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4274]={ side=2, pos_list={0}, effect_list={19112}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4275]={ side=2, pos_list={0}, effect_list={19113}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4276]={ side=2, pos_list={0}, effect_list={19114}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4277]={ side=2, pos_list={0}, effect_list={19115}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4278]={ side=2, pos_list={0}, effect_list={19116}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4279]={ side=2, pos_list={0}, effect_list={19117}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4280]={ side=2, pos_list={0}, effect_list={19118}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4281]={ side=2, pos_list={0}, effect_list={19119}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4282]={ side=2, pos_list={0}, effect_list={19120}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4283]={ side=2, pos_list={0}, effect_list={19121}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4284]={ side=2, pos_list={0}, effect_list={19122}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4285]={ side=2, pos_list={0}, effect_list={19123}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4286]={ side=2, pos_list={0}, effect_list={19124}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4287]={ side=2, pos_list={0}, effect_list={19125}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4288]={ side=1, pos_list={0}, effect_list={19126}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4289]={ side=1, pos_list={0}, effect_list={19127}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4290]={ side=1, pos_list={0}, effect_list={19128}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4291]={ side=1, pos_list={0}, effect_list={19129}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4292]={ side=1, pos_list={0}, effect_list={19130}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4293]={ side=1, pos_list={0}, effect_list={19131}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4294]={ side=1, pos_list={0}, effect_list={19132}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4295]={ side=1, pos_list={0}, effect_list={19133}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4296]={ side=1, pos_list={0}, effect_list={19134}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4297]={ side=2, pos_list={0}, effect_list={19135}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4298]={ side=2, pos_list={0}, effect_list={19136}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4299]={ side=2, pos_list={0}, effect_list={19137}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4300]={ side=2, pos_list={0}, effect_list={19138}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4301]={ side=2, pos_list={0}, effect_list={19139}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4302]={ side=2, pos_list={0}, effect_list={19140}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4303]={ side=2, pos_list={0}, effect_list={19141}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4304]={ side=2, pos_list={0}, effect_list={19142}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4305]={ side=2, pos_list={0}, effect_list={19143}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4306]={ side=2, pos_list={0}, effect_list={19144}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4307]={ side=2, pos_list={0}, effect_list={19145}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4308]={ side=2, pos_list={0}, effect_list={19146}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4309]={ side=2, pos_list={0}, effect_list={19147}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4310]={ side=2, pos_list={0}, effect_list={19148}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4311]={ side=2, pos_list={0}, effect_list={19149}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4312]={ side=2, pos_list={0}, effect_list={19150}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4313]={ side=2, pos_list={0}, effect_list={19151}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4314]={ side=2, pos_list={0}, effect_list={19152}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4315]={ side=2, pos_list={0}, effect_list={19153}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4316]={ side=2, pos_list={0}, effect_list={19154}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4317]={ side=2, pos_list={0}, effect_list={19155}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4318]={ side=2, pos_list={0}, effect_list={19156}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4319]={ side=1, pos_list={0}, effect_list={19157}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4320]={ side=1, pos_list={0}, effect_list={19158}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4321]={ side=1, pos_list={0}, effect_list={19159}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4322]={ side=1, pos_list={0}, effect_list={19160}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4323]={ side=1, pos_list={0}, effect_list={19161}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4324]={ side=1, pos_list={0}, effect_list={19162}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4325]={ side=1, pos_list={0}, effect_list={19163}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4326]={ side=1, pos_list={0}, effect_list={19164}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4327]={ side=1, pos_list={0}, effect_list={19165}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4328]={ side=2, pos_list={0}, effect_list={19166}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4329]={ side=2, pos_list={0}, effect_list={19167}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4330]={ side=2, pos_list={0}, effect_list={19168}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4331]={ side=2, pos_list={0}, effect_list={19169}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4332]={ side=2, pos_list={0}, effect_list={19170}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4333]={ side=2, pos_list={0}, effect_list={19171}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4334]={ side=2, pos_list={0}, effect_list={19172}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4335]={ side=2, pos_list={0}, effect_list={19173}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4336]={ side=2, pos_list={0}, effect_list={19174}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4337]={ side=2, pos_list={0}, effect_list={19175}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4338]={ side=2, pos_list={0}, effect_list={19176}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4339]={ side=2, pos_list={0}, effect_list={19177}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4340]={ side=2, pos_list={0}, effect_list={19178}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4341]={ side=2, pos_list={0}, effect_list={19179}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4342]={ side=2, pos_list={0}, effect_list={19180}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4343]={ side=2, pos_list={0}, effect_list={19181}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4344]={ side=2, pos_list={0}, effect_list={19182}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4345]={ side=2, pos_list={0}, effect_list={19183}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4346]={ side=2, pos_list={0}, effect_list={19184}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4347]={ side=2, pos_list={0}, effect_list={19185}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4348]={ side=2, pos_list={0}, effect_list={19186}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4349]={ side=2, pos_list={0}, effect_list={19187}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4350]={ side=1, pos_list={0}, effect_list={19188}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4351]={ side=1, pos_list={0}, effect_list={19189}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4352]={ side=1, pos_list={0}, effect_list={19190}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4353]={ side=1, pos_list={0}, effect_list={19191}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4354]={ side=1, pos_list={0}, effect_list={19192}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4355]={ side=1, pos_list={0}, effect_list={19193}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4356]={ side=1, pos_list={0}, effect_list={19194}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4357]={ side=1, pos_list={0}, effect_list={19195}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4358]={ side=1, pos_list={0}, effect_list={19196}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4359]={ side=2, pos_list={0}, effect_list={19197}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4360]={ side=2, pos_list={0}, effect_list={19198}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4361]={ side=2, pos_list={0}, effect_list={19199}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4362]={ side=2, pos_list={0}, effect_list={19200}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4363]={ side=2, pos_list={0}, effect_list={19201}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4364]={ side=2, pos_list={0}, effect_list={19202}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4365]={ side=2, pos_list={0}, effect_list={19203}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4366]={ side=2, pos_list={0}, effect_list={19204}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4367]={ side=2, pos_list={0}, effect_list={19205}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4368]={ side=2, pos_list={0}, effect_list={19206}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4369]={ side=2, pos_list={0}, effect_list={19207}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4370]={ side=2, pos_list={0}, effect_list={19208}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4371]={ side=2, pos_list={0}, effect_list={19209}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4372]={ side=2, pos_list={0}, effect_list={19210}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4373]={ side=2, pos_list={0}, effect_list={19211}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4374]={ side=2, pos_list={0}, effect_list={19212}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4375]={ side=2, pos_list={0}, effect_list={19213}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4376]={ side=2, pos_list={0}, effect_list={19214}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4377]={ side=2, pos_list={0}, effect_list={19215}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4378]={ side=2, pos_list={0}, effect_list={19216}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4379]={ side=2, pos_list={0}, effect_list={19217}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4380]={ side=2, pos_list={0}, effect_list={19218}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4381]={ side=1, pos_list={0}, effect_list={19219}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4382]={ side=1, pos_list={0}, effect_list={19220}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4383]={ side=1, pos_list={0}, effect_list={19221}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4384]={ side=1, pos_list={0}, effect_list={19222}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4385]={ side=1, pos_list={0}, effect_list={19223}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4386]={ side=1, pos_list={0}, effect_list={19224}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4387]={ side=1, pos_list={0}, effect_list={19225}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4388]={ side=1, pos_list={0}, effect_list={19226}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4389]={ side=1, pos_list={0}, effect_list={19227}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4390]={ side=2, pos_list={0}, effect_list={19228}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4391]={ side=2, pos_list={0}, effect_list={19229}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4392]={ side=2, pos_list={0}, effect_list={19230}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4393]={ side=2, pos_list={0}, effect_list={19231}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4394]={ side=2, pos_list={0}, effect_list={19232}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4395]={ side=2, pos_list={0}, effect_list={19233}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4396]={ side=2, pos_list={0}, effect_list={19234}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4397]={ side=2, pos_list={0}, effect_list={19235}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4398]={ side=2, pos_list={0}, effect_list={19236}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4399]={ side=2, pos_list={0}, effect_list={19237}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4400]={ side=2, pos_list={0}, effect_list={19238}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4401]={ side=2, pos_list={0}, effect_list={19239}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4402]={ side=2, pos_list={0}, effect_list={19240}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4403]={ side=2, pos_list={0}, effect_list={19241}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4404]={ side=2, pos_list={0}, effect_list={19242}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4405]={ side=2, pos_list={0}, effect_list={19243}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4406]={ side=2, pos_list={0}, effect_list={19244}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4407]={ side=2, pos_list={0}, effect_list={19245}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4408]={ side=2, pos_list={0}, effect_list={19246}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4409]={ side=2, pos_list={0}, effect_list={19247}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4410]={ side=2, pos_list={0}, effect_list={19248}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4411]={ side=2, pos_list={0}, effect_list={19249}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
 	[4215]={ side=2, pos_list={0}, effect_list={9107}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 },
 	[4216]={ side=2, pos_list={0}, effect_list={9108}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
@@ -1659,58 +1353,6 @@ local pos_effect_data=
 },
 	[4505]={ side=2, pos_list={0}, effect_list={9359}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 },
-	[4506]={ side=2, pos_list={0}, effect_list={9364}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4507]={ side=2, pos_list={0}, effect_list={9365}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4508]={ side=2, pos_list={0}, effect_list={9366}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4509]={ side=2, pos_list={0}, effect_list={9367}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4510]={ side=2, pos_list={0}, effect_list={9368}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4511]={ side=1, pos_list={0}, effect_list={9369}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4512]={ side=2, pos_list={0}, effect_list={9374}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4513]={ side=2, pos_list={0}, effect_list={9375}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4514]={ side=2, pos_list={0}, effect_list={9376}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4515]={ side=2, pos_list={0}, effect_list={9377}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4516]={ side=2, pos_list={0}, effect_list={9378}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4517]={ side=1, pos_list={0}, effect_list={9379}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4518]={ side=2, pos_list={0}, effect_list={9384}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4519]={ side=2, pos_list={0}, effect_list={9385}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4520]={ side=2, pos_list={0}, effect_list={9386}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4521]={ side=2, pos_list={0}, effect_list={9387}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4522]={ side=2, pos_list={0}, effect_list={9388}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[4523]={ side=1, pos_list={0}, effect_list={9389}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[5001]={ side=2, pos_list={0}, effect_list={24001}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[5002]={ side=2, pos_list={0}, effect_list={24002}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[5003]={ side=2, pos_list={0}, effect_list={24003}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[5004]={ side=2, pos_list={0}, effect_list={24004}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[5005]={ side=2, pos_list={0}, effect_list={24005}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[5006]={ side=2, pos_list={0}, effect_list={24006}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[5007]={ side=2, pos_list={0}, effect_list={24007}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[5008]={ side=2, pos_list={0}, effect_list={24008}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
 	[9000]={ side=2, pos_list={0}, effect_list={8963}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 },
 	[9001]={ side=2, pos_list={0}, effect_list={8964}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
@@ -1726,60 +1368,6 @@ local pos_effect_data=
 	[9006]={ side=2, pos_list={0}, effect_list={8975}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 },
 	[9007]={ side=2, pos_list={0}, effect_list={8976}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9008]={ side=1, pos_list={0}, effect_list={8980}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9009]={ side=2, pos_list={0}, effect_list={8981}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9010]={ side=2, pos_list={0}, effect_list={8982}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9011]={ side=1, pos_list={0}, effect_list={8986}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9012]={ side=2, pos_list={0}, effect_list={8987}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9013]={ side=2, pos_list={0}, effect_list={8988}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9014]={ side=2, pos_list={0}, effect_list={8992}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9015]={ side=2, pos_list={0}, effect_list={8993}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9016]={ side=2, pos_list={0}, effect_list={8997}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9017]={ side=2, pos_list={0}, effect_list={8998}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9018]={ side=2, pos_list={0}, effect_list={9016}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9019]={ side=2, pos_list={0}, effect_list={9017}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9020]={ side=2, pos_list={0}, effect_list={9021}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9021]={ side=2, pos_list={0}, effect_list={9022}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9022]={ side=1, pos_list={0}, effect_list={9023}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9023]={ side=2, pos_list={0}, effect_list={9027}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9024]={ side=2, pos_list={0}, effect_list={9028}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9025]={ side=1, pos_list={0}, effect_list={9029}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9026]={ side=2, pos_list={0}, effect_list={9035}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9027]={ side=2, pos_list={0}, effect_list={9036}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9028]={ side=1, pos_list={0}, effect_list={9037}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9029]={ side=2, pos_list={0}, effect_list={9044}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9030]={ side=2, pos_list={0}, effect_list={9045}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9031]={ side=1, pos_list={0}, effect_list={9046}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9032]={ side=2, pos_list={0}, effect_list={9053}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9033]={ side=2, pos_list={0}, effect_list={9054}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
-},
-	[9034]={ side=1, pos_list={0}, effect_list={9055}, background_list={0}, effect_prefab_icon={0}, effect_prefab_buff={0}, icon_list={"zchj_32.png"}, row={0}, col={0}
 }
 }
 

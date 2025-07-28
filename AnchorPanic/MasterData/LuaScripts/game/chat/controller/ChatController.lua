@@ -38,8 +38,6 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.REQ_CHANGE_CHANNEL_ROOM, self.__reqChangeChannelRoomHandler, self)
     -- 通知后端前端聊天界面已关闭，后端发送的消息频率会降低
     GameDispatcher:addEventListener(EventName.REQ_NOTIFY_SERVER_CHAT_CLOSE, self.__reqNotifyServerChatCloseHandler, self)
-    -- 请求表情包解锁列表
-    GameDispatcher:addEventListener(EventName.REQ_EMOJI_UNLOCK_LIST, self.__reqGetEmojiUnlockList, self)
 end
 
 --注册server发来的数据
@@ -53,8 +51,6 @@ function registerMsgHandler(self)
         SC_PUBLIC_CHAT = self.__onResChatMsgHandler,
         --- *s2c* 修改聊天房间号 10053
         SC_CHANGE_CHAT_ROOM = self.__onResChangeChatRoomMsgHandler,
-        --- *s2c* 获取表情列表 12030
-        SC_GET_EMOJI_LIST = self.__onResGetEmojiListMsgHandler,
     }
 end
 
@@ -79,16 +75,11 @@ function __onResChangeChatRoomMsgHandler(self, msg)
     chat.ChatManager:changeChatRoomMsg(msg)
 end
 
---- *s2c* 获取表情列表 12030
-function __onResGetEmojiListMsgHandler(self, msg)
-    chat.ChatManager:onResGetEmojiListMsg(msg)
-end
-
 ---------------------------------------------------------------请求------------------------------------------------------------------
 --- *c2s* 公共聊天面板设置 10054
 function __reqChatPanelHandler(self, args)
     local channel = args.channel
-    SOCKET_SEND(Protocol.CS_PUBLIC_CHAT_SETTING, { channel = channel })
+    SOCKET_SEND(Protocol.CS_PUBLIC_CHAT_SETTING, {channel = channel})
 end
 
 --- *c2s* 公共聊天 10050
@@ -97,24 +88,19 @@ function __reqSendChatHandler(self, args)
     local content = args.content
     local channel = args.channel
     local room = args.room
-    SOCKET_SEND(Protocol.CS_PUBLIC_CHAT, { channel = channel, room = room, content_type = contentType, content = content })
+    SOCKET_SEND(Protocol.CS_PUBLIC_CHAT, {channel = channel, room = room, content_type = contentType, content = content})
 end
 
 --- *c2s* 修改聊天房间号 10052
 function __reqChangeChannelRoomHandler(self, args)
     local room = args.room
     local channel = args.channel
-    SOCKET_SEND(Protocol.CS_CHANGE_CHAT_ROOM, { channel = channel, room = room })
+    SOCKET_SEND(Protocol.CS_CHANGE_CHAT_ROOM, {channel = channel, room = room})
 end
 
 --- 通知后端前端聊天界面已关闭，后端发送的消息频率会降低
 function __reqNotifyServerChatCloseHandler(self, args)
-    SOCKET_SEND(Protocol.CS_CLOSE_PUBLIC_CHAT, { channel = args.channel })
-end
-
---- *c2s* 获取表情列表 12029
-function __reqGetEmojiUnlockList(self)
-    SOCKET_SEND(Protocol.CS_GET_EMOJI_LIST)
+    SOCKET_SEND(Protocol.CS_CLOSE_PUBLIC_CHAT, {channel = args.channel})
 end
 
 ------------------------------------------------------------------界面------------------------------------------
@@ -158,23 +144,23 @@ function onReqChatSpeechUpLoadHandler(self, args)
     local clientFileWPath = sdk.SdkManager:getXunFeiAudioWPath(voiceFileName)
     local clientFileRCompressPath = chat.formatCompressSuffix(clientFileRPath)
     local clientFileWCompressPath = chat.formatCompressSuffix(clientFileWPath)
-    if (gs.File.Exists(clientFileWPath)) then
-        if (self.mChatPanel and self.mChatPanel.isPop) then
+    if(gs.File.Exists(clientFileWPath))then
+        if(self.mChatPanel and self.mChatPanel.isPop)then
             local channel = self.mChatPanel:getCurChannel()
             local room = self.mChatPanel:getCurRoom()
             local serverFilePath = string.format("voice/world_chat/channel_%s/room_%s/%s", channel, room, sdk.SdkManager:getXunFeiAudioName(voiceFileName))
             voiceContent = FilterWordUtil:filter(voiceContent)
             -- if FilterWordUtil:hasFilterWord(voiceContent) then
             --     gs.Message.Show(_TT(513)) --"存在敏感字或非法符号"
-            if (voiceContent == "") then
+            if(voiceContent == "")then
                 gs.Message.Show("请说话")
                 -- 删除本地录音文件
                 gs.File.Delete(clientFileWPath)
             else
                 local function upLoadResultCall(result)
-                    if (result) then
-                        if (self.mChatPanel and self.mChatPanel.isPop) then
-                            GameDispatcher:dispatchEvent(EventName.REQ_SEND_CHAT, { contentType = chat.ContentType.VOICE_TEXT, content = chat.getVoiceFormatContent(string.omit(voiceContent, sysParam.SysParamManager:getValue(SysParamType.CHAT_VOICE_CHARACTER_LIMIT)), serverFilePath, clientFileRPath), channel = channel, room = room })
+                    if(result)then
+                        if(self.mChatPanel and self.mChatPanel.isPop)then
+                            GameDispatcher:dispatchEvent(EventName.REQ_SEND_CHAT, {contentType = chat.ContentType.VOICE_TEXT, content = chat.getVoiceFormatContent(string.omit(voiceContent, sysParam.SysParamManager:getValue(SysParamType.CHAT_VOICE_CHARACTER_LIMIT)), serverFilePath, clientFileRPath), channel = channel, room = room})
                         else
                             -- 删除本地录音文件
                             gs.File.Delete(clientFileWPath)
@@ -204,21 +190,21 @@ end
 
 -- 请求云桶聊天语音文件下载
 function onReqChatSpeechDownLoadHandler(self, args)
-    if (self.mChatPanel and self.mChatPanel.isPop) then
+    if(self.mChatPanel and self.mChatPanel.isPop)then
         local voiceContent, serverFilePath, voiceLen = chat.parseVoiceFormatContent(args.content)
         local fileNameWithExtensions = string.getFileNameByPath(serverFilePath)
         local fileNameWithoutExtensions = string.split(fileNameWithExtensions, ".")[1]
         local clientFileRPath = sdk.SdkManager:getXunFeiAudioRPath(fileNameWithoutExtensions)
         local clientFileWPath = sdk.SdkManager:getXunFeiAudioWPath(fileNameWithoutExtensions)
-        if (gs.File.Exists(clientFileWPath)) then
+        if(gs.File.Exists(clientFileWPath))then
             gs.AudioManager:StopPcm()
             gs.AudioManager.PcmVolume = 100
             gs.AudioManager:PlayPcm(clientFileRPath, sdk.XunFeiParam.SampleRate, nil)
         else
             local function downLoadResultCall(result)
                 gs.FileUtil.DecompressFileByGzip(chat.formatCompressSuffix(clientFileWPath), clientFileWPath)
-                if (self.mChatPanel and self.mChatPanel.isPop) then
-                    if (result) then
+                if(self.mChatPanel and self.mChatPanel.isPop)then
+                    if(result)then
                         -- gs.Message.Show("云桶：下载成功")
                         gs.AudioManager:StopPcm()
                         gs.AudioManager.PcmVolume = 100

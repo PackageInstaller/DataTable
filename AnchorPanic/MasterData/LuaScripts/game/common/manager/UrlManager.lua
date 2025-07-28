@@ -92,14 +92,9 @@ function getFightSoundPath(self, pathName)
     return ""
 end
 
--- 获取cv配音路径开头
-function getCVSoundPrefixPath(self)
-    return "arts/audio/cv/"
-end
-
 -- 获取cv配音路径
 function getCVSoundPath(self, pathName)
-    return self:getCVSoundPrefixPath() .. pathName
+    return "arts/audio/cv/" .. pathName
 end
 
 -- 获取ui音源路径
@@ -262,8 +257,7 @@ end
 
 -- 战员时装界面半身像路径（是时装商店的不一样）
 function getHeroFashionBodyPath(self, modelId)
-    local url = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) and "heroFashion_Har" or "heroFashion"
-    return self:getIconPath(string.format("%s/hero_fashion_%s.png", url, modelId))
+    return self:getIconPath(string.format("heroFashion/hero_fashion_%s.png", modelId))
 end
 
 -- 模组头像
@@ -524,8 +518,7 @@ end
 
 -- 获取英雄半身像通过模型id
 function getHeroSmallBodyImgUrl(self, modelId)
-    local url = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) and "heroSmallList_Har" or "heroSmallList"
-    return string.format("arts/ui/icon/%s/hero_smallBody_%s.png", url, modelId)
+    return string.format("arts/ui/icon/heroSmallList/hero_smallBody_%s.png", modelId)
     -- local dic = self:getDic(self.getHeroBodyImgUrl, modelId)
     -- if (not dic.source) then
     --     dic.source = string.format("arts/ui/icon/heroList/hero_bigBody_%s.png", modelId)
@@ -535,13 +528,11 @@ end
 
 -- 获取英雄半身像通过模型id
 function getHeroBodyImgUrl(self, modelId)
-    local url = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) and "heroList_Har" or "heroList"
-    return string.format("arts/ui/icon/%s/hero_bigBody_%s.png", url, modelId)
-    -- local dic = self:getDic(self.getHeroBodyImgUrl, modelId)
-    -- if (not dic.source) then
-    --     dic.source = string.format("arts/ui/icon/heroList/hero_bigBody_%s.png", modelId)
-    -- end
-    -- return dic.source
+    local dic = self:getDic(self.getHeroBodyImgUrl, modelId)
+    if (not dic.source) then
+        dic.source = string.format("arts/ui/icon/heroList/hero_bigBody_%s.png", modelId)
+    end
+    return dic.source
 end
 
 -- 获取英雄半身像通过模型id
@@ -564,8 +555,7 @@ end
 
 -- 获取pain像
 function getPainImg(self, imgName)
-    local url = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) and "heroRecord_Har" or "heroRecord"
-    return self:getBgPath(string.format("%s/%s", url, imgName))
+    return "arts/ui/bg/heroRecord/" .. imgName
 end
 
 ---- 获取时装服饰像
@@ -1062,76 +1052,6 @@ function getDynamicEmojiUrl(self, index)
     local dic = self:getDic(self.getDynamicEmojiUrl, index)
     if (not dic.source) then
         dic.source = UrlManager:getIconPath(string.format("emoji/dynamic/dynamic_%s.png", index))
-    end
-    return dic.source
-end
-
--- 获取dna音效路径
-function getDnaSoundPath(self, tid, ttype)
-    return "arts/audio/UI/dna/" .. string.format("ui_dna_%s_%s.prefab", tid, ttype)
-end
-
-function getDnaOtherSoundPath(self, name)
-    return "arts/audio/UI/dna/" .. name .. ".prefab"
-end
-
--- 获取dna蛋图标路径
-function getDnaEggIconUrl(self, id)
-    local dic = self:getDic(self.getDnaEggIconUrl, id)
-    if (not dic.source) then
-        dic.source = UrlManager:getIconPath(string.format("dna/dna_egg_%s.png", id))
-    end
-    return dic.source
-end
-
--- 获取dna人形头像路径
-function getDnaHeroHeadUrl(self, id)
-    local dic = self:getDic(self.getDnaHeroHeadUrl, id)
-    if (not dic.source) then
-        dic.source = UrlManager:getIconPath(string.format("dna/dna_head_%s.png", id))
-    end
-    return dic.source
-end
-
--- 获取dna人形形象路径
-function getDnaHeroRoleUrl(self, id)
-    local dic = self:getDic(self.getDnaHeroRoleUrl, id)
-    if (not dic.source) then
-        dic.source = UrlManager:getIconPath(string.format("dna/dna_role_%s.png", id))
-    end
-    return dic.source
-end
-
--- 获取dna人形形象帧动画路径
-function getDnaRoleFrameAniUrl(self, id)
-    local dic = self:getDic(self.getDnaRoleFrameAniUrl, id)
-    if (not dic.source) then
-        dic.source = string.format("arts/fx/ui/dnaFrame/prefabs/dna_frame_ani_%s.prefab", id)
-    end
-    return dic.source
-end
-
--- 获取dna选择蛋item品质背景图
-function getDnaEggChoiceItemBgUrl(self, quality)
-    local dic = self:getDic(self.getDnaEggChoiceItemBgUrl, quality)
-    if (not dic.source) then
-        -- quality传入的暂时只有1-3品质 资源美术命名的pnl_05 - 07(显示的品质是倒着来的)
-        dic.source = UrlManager:getPackPath(string.format("dna/pnl_0%s.png", 5 + (3 - quality)))
-    end
-    return dic.source
-end
-
--- 获取dna品质icon
-function getDnaGridQualityBg(self, quality)
-    local dic = self:getDic(self.getDnaGridQualityBg, quality)
-    if (not dic.source) then
-        if quality == hero.eggQuality.r then
-            dic.source = self:getCommon5Path("common_0175.png")
-        elseif quality == hero.eggQuality.sr then
-            dic.source = self:getCommon5Path("common_0174.png")
-        elseif quality == hero.eggQuality.ssr then
-            dic.source = self:getCommon5Path("common_0173.png")
-        end
     end
     return dic.source
 end

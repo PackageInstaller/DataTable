@@ -10,8 +10,8 @@ function main()
     require("utils/LuaVMSetting")
     initLuaVMSetting()
 
-    GCUtil.setLuaGCParam(150, 400)
-
+    GCUtil.setLuaGCParam(150,400)
+    
     math.randomseed(tostring(os.time()):reverse():sub(1, 6));
     Debug:log_info("Main", "LUA版本：" .. _VERSION)
     require('game/download/Init')

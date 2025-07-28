@@ -43,17 +43,9 @@ function __init(self)
     self.mActivityReturnConfig = {}
     self.mActivityReturnMsgDic = {}
     self.todoEventList = {}
-
-    self.rechargeEndTime = nil
-    self.totalCount = nil
-    self.rewardList = nil
-    
-    self.ssrEndTime = nil
-    self.ssrState = nil
-    --self.rewardList 
 end
 
-function setNoviceUpdate(self, canUpdate)
+function setNoviceUpdate(self,canUpdate)
     self.update = canUpdate
 end
 
@@ -61,8 +53,8 @@ function getNoviceUpdate(self)
     return self.update
 end
 
-function setTodoEvent(self, call, act)
-    table.insert(self.todoEventList, { fun = call, act = act })
+function setTodoEvent(self,call,act)
+    table.insert(self.todoEventList,{fun = call ,act = act})
     --self.todoEvent = call
 end
 
@@ -86,7 +78,7 @@ function parseNoviceStrollData(self)
     local baseData = RefMgr:getData("novice_stroll_data")
     for id, data in pairs(baseData) do
         local vo = noviceActivity.NoviceActivityRaffleVo.new()
-        vo:parseRaffleData(id, data)
+        vo:parseRaffleData(id,data)
         self.mRaffleDic[id] = vo
         self.mRaffleMaxId = id > self.mRaffleMaxId and id or self.mRaffleMaxId
     end
@@ -99,7 +91,7 @@ function getNoviceStrollMaxId(self)
     return self.mRaffleMaxId
 end
 --获取抽奖配置
-function getNoviceStrollData(self, step)
+function getNoviceStrollData(self,step)
     if self.mRaffleDic == nil then
         self:parseNoviceStrollData()
     end
@@ -107,7 +99,7 @@ function getNoviceStrollData(self, step)
 end
 
 --解析转盘数据
-function parseServeRaffle(self, msg)
+function parseServeRaffle(self,msg)
     self.m_RaffleTime = msg.end_time
     self.gear = msg.gear
     --GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
@@ -115,7 +107,7 @@ function parseServeRaffle(self, msg)
 end
 
 --解析转盘结果
-function parseServerRaffleDraw(self, msg)
+function parseServerRaffleDraw(self,msg)
     self.gear = msg.gear
     self.pos = msg.pos
     --GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
@@ -467,12 +459,6 @@ function updateBubble(self, type)
     elseif type == noviceActivity.NoviceActivityConst.NOVICEACTIVITY_RETURN then
         isFlag = self:updateBublleReturn()
         funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RETURN
-    elseif type == noviceActivity.NoviceActivityConst.NOVICEACTIVITY_RECHARGE then
-        isFlag = self:updateBublleRecharge()
-        funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RECHARGE
-    elseif type == noviceActivity.NoviceActivityConst.NOVICEAVTIVITY_SSR then
-        isFlag = self:updatebublleSsr()
-        funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_SSR
     end
     mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_NOVICE_ACTIVITY, isFlag, funcId)
     return isFlag
@@ -518,103 +504,6 @@ function updateBublleReturn(self)
     end
     return false
 end
-
-
-function updateBublleRecharge(self)
-    local list = self:getRechargeList()
-    for i = 1, #list, 1 do
-        if list[i]:getState() == Celebration.CelebrationConst.CelebrationTaskState.Recive then
-            return true
-        end
-    end
-    return false
-end
-
-function updatebublleSsr(self)
-    return self:getSSROptionalState() == Celebration.CelebrationConst.AwardState.Recive
-end
-
---------------------------------------------------------------------------------------------
-function parseNoviceRechargeData(self)
-    self.mNoviceRechargeData = {}
-    local baseData = RefMgr:getData("novice_recharge_data")
-    for id, data in pairs(baseData) do
-        local vo = LuaPoolMgr:poolGet(noviceActivity.NoviceActivityRechargeVo)
-        vo:parseData(id, data)
-        self.mNoviceRechargeData[vo.index] = vo
-    end
-end
-
-function getRechargeList(self)
-    if self.mNoviceRechargeData == nil then
-        self:parseNoviceRechargeData()
-    end
-
-    local list = {}
-    for k, vo in pairs(self.mNoviceRechargeData) do
-        table.insert(list, vo)
-    end
-    return self.mNoviceRechargeData
-end
-
-function parseSsrPanelInfoMsg(self, msg)
-    self.ssrEndTime = msg.end_time
-    self.ssrState = msg.state
-    self:dispatchEvent(self.UPDATE_RED, noviceActivity.NoviceActivityConst.NOVICEAVTIVITY_SSR)
-    GameDispatcher:dispatchEvent(EventName.UPDATE_SSROPTIONAL_INFO)
-    if self.ssrEndTime == 0 then
-        GameDispatcher:dispatchEvent(EventName.ACTIVITY_NOVICE_UPDATE)
-    end
-    --
-    --GameDispatcher:dispatchEvent(EventName.ACTIVITY_NOVICE_UPDATE)
-    --0-不可领取,1-可领取,2-已领取
-end
-
-
-function getSSrEndTime(self)
-    return self.ssrEndTime == nil and 0 or self.ssrEndTime
-end
-
-function getSSROptionalState(self)
-    return self.ssrState == nil and 0 or self.ssrState
-end
-
-
-function parseNoviceActivityRechargeMsg(self, msg)
-    self.rechargeEndTime = msg.end_time
-    self.totalCount = msg.total_count
-    self.rewardList = msg.reward_list
-
-    self:dispatchEvent(self.UPDATE_RED, noviceActivity.NoviceActivityConst.NOVICEACTIVITY_RECHARGE)
-    GameDispatcher:dispatchEvent(EventName.ACTIVITY_NOVICE_UPDATE)
-end
-
-function getNoviceActivityRechargeEndTime(self)
-    return self.rechargeEndTime == nil and 0 or self.rechargeEndTime
-
-end
-
-function getRechargeNum(self)
-    return self.totalCount == nil and 0 or self.totalCount / 100
-end
-
-function updateNoviceActivityRechargeMsg(self, msg)
-    if self.rewardList == nil then
-        self.rewardList = {}
-    end
-
-    --if table.indexof01(self.rewardList) < 0  then
-    table.insert(self.rewardList, msg.recharge_id)
-    --end
-    self:dispatchEvent(self.UPDATE_RED, noviceActivity.NoviceActivityConst.NOVICEACTIVITY_RECHARGE)
-    GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_ACC_RECHARGE_LIST)
-end
-
-
-function checkRechargeIsRecivedAward(self, id)
-    return table.indexof(self.rewardList, id)
-end
-
 
 return _M
 

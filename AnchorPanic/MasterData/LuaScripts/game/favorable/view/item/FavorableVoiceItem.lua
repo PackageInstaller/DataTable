@@ -101,9 +101,6 @@ function onClick(self)
             self.mTween:Kill()
             self.mTween = nil
         end
-        
-        AudioManager:preloadCvByCvId(self.data.voiceId)
-
         if self.isPlaying then
             self.isPlaying = false
             -- gs.TransQuick:SizeDelta01(self.mImgPro, 0)

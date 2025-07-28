@@ -3,10 +3,6 @@
 local role_showoffset=
 
 {
-	["0000"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["1102"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=0.96, model_show_scale=0.96, camera_offset_y=0, story_offset={}
-},
 	["1102_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=0.96, model_show_scale=0.96, camera_offset_y=0, story_offset={}
 },
 	["1103"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.05, story_offset={}
@@ -22,8 +18,6 @@ local role_showoffset=
 	["1105_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=0.96, model_show_scale=0.96, camera_offset_y=0, story_offset={}
 },
 	["1105_1"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=0.96, model_show_scale=0.96, camera_offset_y=0, story_offset={}
-},
-	["1105_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=0.96, model_show_scale=0.96, camera_offset_y=0, story_offset={}
 },
 	["1501"]={ main_offset={0,0.05,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.05,0}, interaction_offset={}, chip_offset={0,0.05,0}, normal_ui_offset={0,0.05,0}, monster_offset={}, model_scale=0.96, model_show_scale=0.96, camera_offset_y=0, story_offset={}
 },
@@ -83,8 +77,6 @@ local role_showoffset=
 },
 	["2502_1"]={ main_offset={0,0.2,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.2,0}, interaction_offset={}, chip_offset={0,0.2,0}, normal_ui_offset={0,0.2,0}, monster_offset={}, model_scale=1.03, model_show_scale=1.03, camera_offset_y=-0.13, story_offset={0,0.15,0}
 },
-	["2502_2"]={ main_offset={0,0.2,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.2,0}, interaction_offset={}, chip_offset={0,0.2,0}, normal_ui_offset={0,0.2,0}, monster_offset={}, model_scale=1.03, model_show_scale=1.03, camera_offset_y=-0.13, story_offset={0,0.15,0}
-},
 	["2503"]={ main_offset={}, overview_offset={0,-0.1,0}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={}
 },
 	["2503_h"]={ main_offset={}, overview_offset={0,-0.1,0}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={}
@@ -92,8 +84,6 @@ local role_showoffset=
 	["2504"]={ main_offset={0,0.05,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.05,0}, interaction_offset={}, chip_offset={0,0.05,0}, normal_ui_offset={0,0.05,0}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.05, story_offset={}
 },
 	["2504_h"]={ main_offset={0,0.05,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.05,0}, interaction_offset={}, chip_offset={0,0.05,0}, normal_ui_offset={0,0.05,0}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.05, story_offset={}
-},
-	["2504_2"]={ main_offset={0,0.05,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.05,0}, interaction_offset={}, chip_offset={0,0.05,0}, normal_ui_offset={0,0.05,0}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.05, story_offset={}
 },
 	["3101"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1.03, model_show_scale=1.03, camera_offset_y=-0.05, story_offset={}
 },
@@ -138,8 +128,6 @@ local role_showoffset=
 	["3108_2_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=0.95, model_show_scale=0.95, camera_offset_y=0, story_offset={}
 },
 	["3108_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=0.95, model_show_scale=0.95, camera_offset_y=0, story_offset={}
-},
-	["3108_4"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=0.95, model_show_scale=0.95, camera_offset_y=0, story_offset={}
 },
 	["3109"]={ main_offset={0,0.05,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.05,0}, interaction_offset={}, chip_offset={0,0.05,0}, normal_ui_offset={0,0.05,0}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.03, story_offset={}
 },
@@ -201,8 +189,6 @@ local role_showoffset=
 },
 	["4105_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.05, story_offset={}
 },
-	["4105_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.05, story_offset={}
-},
 	["4106"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.97, camera_offset_y=0, story_offset={0,-0.05,0}
 },
 	["4106_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.97, camera_offset_y=0, story_offset={0,-0.05,0}
@@ -225,8 +211,6 @@ local role_showoffset=
 },
 	["4107_2_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=0.96, model_show_scale=0.96, camera_offset_y=0, story_offset={}
 },
-	["4107_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=0.96, model_show_scale=0.96, camera_offset_y=0, story_offset={}
-},
 	["4108"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
 	["4108_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
@@ -234,8 +218,6 @@ local role_showoffset=
 	["4108_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
 	["4108_h_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4108_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
 	["4501"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={}
 },
@@ -249,8 +231,6 @@ local role_showoffset=
 },
 	["4501_2_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={}
 },
-	["4501_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={}
-},
 	["4502"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.05, story_offset={}
 },
 	["4502_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.05, story_offset={}
@@ -263,8 +243,6 @@ local role_showoffset=
 },
 	["4502_2_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.05, story_offset={}
 },
-	["4502_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.05, story_offset={}
-},
 	["4503"]={ main_offset={}, overview_offset={0,0.1,0}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={0,0.05,0}
 },
 	["4503_h"]={ main_offset={}, overview_offset={0,0.1,0}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={0,0.05,0}
@@ -275,10 +253,6 @@ local role_showoffset=
 },
 	["4503_2"]={ main_offset={}, overview_offset={0,0.1,0}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={0,0.05,0}
 },
-	["4503_3"]={ main_offset={}, overview_offset={0,0.1,0}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={0,0.05,0}
-},
-	["4503_4"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={0,0.05,0}
-},
 	["4504"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1.05, model_show_scale=1.05, camera_offset_y=0, story_offset={}
 },
 	["4504_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1.05, model_show_scale=1.05, camera_offset_y=0, story_offset={}
@@ -286,8 +260,6 @@ local role_showoffset=
 	["4504_1"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1.05, model_show_scale=1.05, camera_offset_y=0, story_offset={}
 },
 	["4504_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1.05, model_show_scale=1.05, camera_offset_y=0, story_offset={}
-},
-	["4504_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1.05, model_show_scale=1.05, camera_offset_y=0, story_offset={}
 },
 	["4504_1_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1.05, model_show_scale=1.05, camera_offset_y=0, story_offset={}
 },
@@ -313,9 +285,7 @@ local role_showoffset=
 },
 	["4506_2_h"]={ main_offset={0,-0.1,0}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={0,-0.1,0}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={}
 },
-	["4506_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={0,-0.1,0}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={}
-},
-	["4506_4"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={0,-0.1,0}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={}
+	["4506_3"]={ main_offset={0,-0.1,0}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={0,-0.1,0}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.98, camera_offset_y=0, story_offset={}
 },
 	["4507"]={ main_offset={0,0.2,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.2,0}, interaction_offset={}, chip_offset={0,0.2,0}, normal_ui_offset={0,0.2,0}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.07, story_offset={0,0.15,0}
 },
@@ -326,10 +296,6 @@ local role_showoffset=
 	["4507_1_h"]={ main_offset={0,0.2,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.2,0}, interaction_offset={}, chip_offset={0,0.2,0}, normal_ui_offset={0,0.2,0}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.07, story_offset={0,0.15,0}
 },
 	["4507_2"]={ main_offset={0,0.2,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.2,0}, interaction_offset={}, chip_offset={0,0.2,0}, normal_ui_offset={0,0.2,0}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.07, story_offset={0,0.15,0}
-},
-	["4507_3"]={ main_offset={0,0.2,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.2,0}, interaction_offset={}, chip_offset={0,0.2,0}, normal_ui_offset={0,0.2,0}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.07, story_offset={0,0.15,0}
-},
-	["4507_4"]={ main_offset={0,0.2,0}, overview_offset={}, formation_offset={}, cultivate_offset={0,0.2,0}, interaction_offset={}, chip_offset={0,0.2,0}, normal_ui_offset={0,0.2,0}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=-0.07, story_offset={0,0.15,0}
 },
 	["4508"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
@@ -344,8 +310,6 @@ local role_showoffset=
 	["4509"]={ main_offset={}, overview_offset={0,-0.11,0}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
 	["4509_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4509_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
 	["4510"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={0,0.12,0}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
@@ -365,65 +329,17 @@ local role_showoffset=
 },
 	["4513_2"]={ main_offset={0,-0.08,0}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
-	["4513_3"]={ main_offset={0,-0.08,0}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
 	["4514"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
 	["4514_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4514_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
 	["4515"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
 	["4515_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
-	["4515_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
 	["4516"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
 	["4516_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4516_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=0, model_show_scale=0, camera_offset_y=0, story_offset={}
-},
-	["4517"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4517_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4518"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4518_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4519"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4519_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4519_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4520"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4520_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4520_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4521"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4521_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4522"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4522_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4522_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4523"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4523_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4523_3"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4524"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
-},
-	["4524_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },
 	["6101"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={0,-0.2,-0.5}, model_scale=1.5, model_show_scale=1.2, camera_offset_y=0, story_offset={}
 },
@@ -1157,17 +1073,9 @@ local role_showoffset=
 },
 	["6316_b_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.2, camera_offset_y=0, story_offset={}
 },
-	["6316_g"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.2, camera_offset_y=0, story_offset={}
+	["6316_g"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.8, camera_offset_y=0, story_offset={}
 },
-	["6316_g_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.2, camera_offset_y=0, story_offset={}
-},
-	["6316_h"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.2, camera_offset_y=0, story_offset={}
-},
-	["6316_h_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.2, camera_offset_y=0, story_offset={}
-},
-	["6316_d"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.2, camera_offset_y=0, story_offset={}
-},
-	["6316_d_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.2, camera_offset_y=0, story_offset={}
+	["6316_g_2"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=0.8, camera_offset_y=0, story_offset={}
 },
 	["7101"]={ main_offset={}, overview_offset={}, formation_offset={}, cultivate_offset={}, interaction_offset={}, chip_offset={}, normal_ui_offset={}, monster_offset={}, model_scale=1, model_show_scale=1, camera_offset_y=0, story_offset={}
 },

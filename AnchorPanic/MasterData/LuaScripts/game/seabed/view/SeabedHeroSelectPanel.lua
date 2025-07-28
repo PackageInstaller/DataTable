@@ -51,15 +51,9 @@ function configUI(self)
     self.mRecommandFormation = self:getChildTrans("mRecommandFormation")
     self.mImgEleBg = self:getChildGO("mImgEleBg")
 
-    self.mTxtTips = self:getChildGO("mTxtTips"):GetComponent(ty.Text)
     self.mTxtName = self:getChildGO("mTxtName"):GetComponent(ty.Text)
 
     self.mBtnNext = self:getChildGO("mBtnNext")
-
-    self:setGuideTrans("functips_seabed_function_heroSelectleft", self:getChildTrans("mHeroSelectContent"))
-    self:setGuideTrans("functips_seabed_function_heroSelectright", self:getChildTrans("mFunctionTips_heroSelect"))
-    
-    
 end
 
 -- UI事件管理(关闭界面会自动移除)
@@ -185,16 +179,7 @@ end
 function showPanel(self)
     local vo = seabed.SeabedManager:getSeabedDifficultyDataById(self.id)
     self.mTxtRecommandLv.text = _TT(3072, vo.suggestLevel)
-    
-    --self.mTxtName.text = _TT(111033).. self.id
-    local tips = ""
-    local difList = seabed.SeabedManager:getSeabedDifficultyData()
-    for i = 1,#difList do
-        if difList[i].id == self.id then
-            tips =_TT( difList[i].difficultyTitle)
-        end
-    end
-    self.mTxtTips.text = tips
+    self.mTxtName.text = _TT(111033).. self.id
 
     self:clearEleList()
     local suggestEle = vo.suggestEle

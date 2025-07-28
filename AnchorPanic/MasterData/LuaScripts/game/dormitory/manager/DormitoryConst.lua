@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : DormitoryConst
 @Description    : 宿舍常量
@@ -33,7 +33,8 @@ DormitoryCost.SITE_WALL_BACK = 5
 -- 墙面4 右边 地面为40列
 DormitoryCost.SITE_WALL_RIGHT = 6
 
-DormitoryCost.SITE_WALL_LIST = {DormitoryCost.SITE_WALL_FRONT, DormitoryCost.SITE_WALL_LEFT, DormitoryCost.SITE_WALL_BACK, DormitoryCost.SITE_WALL_RIGHT}
+DormitoryCost.SITE_WALL_LIST = { DormitoryCost.SITE_WALL_FRONT, DormitoryCost.SITE_WALL_LEFT, DormitoryCost.SITE_WALL_BACK, DormitoryCost.SITE_WALL_RIGHT }
+
 
 -- 地板样式子类型
 DormitoryCost.FLOOR_SUBTYPE = 7
@@ -43,6 +44,7 @@ DormitoryCost.TOP_SUBTYPE = 8
 DormitoryCost.WALL_SUBTYPE = 9
 -- 挂饰道具子类型
 DormitoryCost.MURAL_SUBTYPE = 10
+
 
 -- 默认地板道具tid
 DormitoryCost.DEFAULT_FLOOR_TID = sysParam.SysParamManager:getValue(961)
@@ -54,15 +56,17 @@ DormitoryCost.DEFAULT_WALL_TID = sysParam.SysParamManager:getValue(959)
 -- 给门一个客户端用的id
 DormitoryCost.DOOR_CLIENT_ID = 99999
 
+
+
 ------------------------------------资源相关----------------------------------
 -- 网格名列表
-DormitoryCost.TILE_NAME_LIST = {"dormitory_101_tile_01_floor", "dormitory_101_tile_01_top", "dormitory_101_tile_02_front", "dormitory_101_tile_02_left", "dormitory_101_tile_02_back", "dormitory_101_tile_02_right"}
+DormitoryCost.TILE_NAME_LIST = { "dormitory_101_tile_01_floor", "dormitory_101_tile_01_top", "dormitory_101_tile_02_front", "dormitory_101_tile_02_left", "dormitory_101_tile_02_back", "dormitory_101_tile_02_right" }
 -- 家私挂点名列表
-DormitoryCost.SITE_ROOT_LIST = {"floor_high", "top_high", "frontwall_high", "leftwall_high", "backwall_high", "rightwall_high"}
+DormitoryCost.SITE_ROOT_LIST = { "floor_high", "top_high", "frontwall_high", "leftwall_high", "backwall_high", "rightwall_high" }
 -- 单片网格列表
-DormitoryCost.TILE_ITEM_LIST = {"dormitory_101_tile_03_floor", "dormitory_101_tile_03_top", "dormitory_101_tile_03_front", "dormitory_101_tile_03_left", "dormitory_101_tile_03_back", "dormitory_101_tile_03_right"}
+DormitoryCost.TILE_ITEM_LIST = { "dormitory_101_tile_03_floor", "dormitory_101_tile_03_top", "dormitory_101_tile_03_front", "dormitory_101_tile_03_left", "dormitory_101_tile_03_back", "dormitory_101_tile_03_right" }
 -- 墙面网格片挂点列表
-DormitoryCost.WALL_TILE_ROOT_LIST = {"frontwall_low", "leftwall_low", "backwall_low", "rightwall_low"}
+DormitoryCost.WALL_TILE_ROOT_LIST = { "frontwall_low", "leftwall_low", "backwall_low", "rightwall_low" }
 --地面网格片挂点
 DormitoryCost.FLOOR_TILE_ROOT = "floor_low"
 
@@ -82,7 +86,8 @@ DormitoryCost.ROOT_WALL_LEFT = "wall_left_c"
 -- 右面墙预制体挂点
 DormitoryCost.ROOT_WALL_RIGHT = "wall_right_d"
 
-DormitoryCost.ROOT_WALL_LIST = {DormitoryCost.ROOT_WALL_FRONT, DormitoryCost.ROOT_WALL_LEFT, DormitoryCost.ROOT_WALL_BACK, DormitoryCost.ROOT_WALL_RIGHT}
+DormitoryCost.ROOT_WALL_LIST = { DormitoryCost.ROOT_WALL_FRONT, DormitoryCost.ROOT_WALL_LEFT, DormitoryCost.ROOT_WALL_BACK, DormitoryCost.ROOT_WALL_RIGHT }
+
 
 -- 基础地板资源预制体名
 DormitoryCost.BASE_WALL_FLOOR = "dormitory_101_11_base_floor"
@@ -99,6 +104,7 @@ DormitoryCost.ROOT_BACK_WALL_DOOR = "backwall_door"
 DormitoryCost.ROOT_LEFT_WALL_DOOR = "leftwall_door"
 -- 右方墙的门挂点
 DormitoryCost.ROOT_RIGHT_WALL_DOOR = "rightwall_door"
+
 
 ------------------------------------Q版人物动作----------------------------------
 DormitoryCost.QWALK = "Qwalk"
@@ -135,9 +141,9 @@ DormitoryCost.ACT_CHAIR_FELL = gs.Animator.StringToHash("Qchair_fell")
 DormitoryCost.ACT_SHOW_SHIFT = gs.Animator.StringToHash("Qshift")
 
 --待机随机动作列表
-DormitoryCost.ACT_SHOW_LIST = {DormitoryCost.ACT_SHOW_IDLE}
+DormitoryCost.ACT_SHOW_LIST = { DormitoryCost.ACT_SHOW_IDLE }
 --所有的Q版动作
-DormitoryCost.ACT_LIST =
+DormitoryCost.ACT_LIST = 
 {
     DormitoryCost.ACT_SHOW_IDLE,
     DormitoryCost.ACT_SHOW_STAND,
@@ -166,6 +172,7 @@ DormitoryCost.CONDITION_TO_WALK = gs.Animator.StringToHash("TO_WALK")
 DormitoryCost.CONDITION_TO_STAND = gs.Animator.StringToHash("TO_STAND")
 DormitoryCost.CONDITION_TO_IDLE = gs.Animator.StringToHash("TO_IDLE")
 
+
 ---Q版AI状态
 DormitoryCost.LIVESTATE_OTHER = 1 --休闲
 DormitoryCost.LIVESTATE_RUN = 2 --寻路
@@ -185,7 +192,7 @@ DormitoryCost.INTERACTING = 3 --三阶段(睡觉) 交互中
 DormitoryCost.INTERACTEND = 4 --四阶段（下床） 交互结束
 
 --需要加气泡的动作
-DormitoryCost.NEED_BUBBLE_HASH_ARRAY =
+DormitoryCost.NEED_BUBBLE_HASH_ARRAY = 
 {
     DormitoryCost.QWALK,
     DormitoryCost.QSTAND,
@@ -199,7 +206,7 @@ DormitoryCost.NEED_BUBBLE_HASH_ARRAY =
 local lateIndex = 0
 -- 获取随机脚步声
 DormitoryCost.getRandomFSSount = function()
-    local list = {"ui_dor_FS_01.prefab", "ui_dor_FS_02.prefab", "ui_dor_FS_03.prefab", "ui_dor_FS_04.prefab"}
+    local list = { "ui_dor_FS_01.prefab", "ui_dor_FS_02.prefab", "ui_dor_FS_03.prefab", "ui_dor_FS_04.prefab" }
 
     local function getRandom()
         local index = math.random(1, #list)
@@ -213,31 +220,6 @@ DormitoryCost.getRandomFSSount = function()
     local random = getRandom()
     return list[random]
 end
-
---全部收纳
-DormitoryCost.all_Storage = function (notClear)
-    local list = dormitory.DormitoryManager:getMoveInfoList()
-    for i, v in ipairs(list) do
-        dormitory.DormitorySceneController:storageFuniture(v.id, v.tid)
-    end
-
-    local list = dormitory.DormitoryManager:getFurnitureListByDormitory()
-    if not list then
-        return
-    end
-    for i, furnitureVo in ipairs(list) do
-        local propsVo = props.PropsVo:poolGet()
-        propsVo:setTid(furnitureVo.tid)
-        propsVo.id = furnitureVo.id
-        -- if propsVo.subType ~= DormitoryCost.FLOOR_SUBTYPE or propsVo.subType ~= DormitoryCost.TOP_SUBTYPE or propsVo.subType ~= DormitoryCost.WALL_SUBTYPE then
-        -- 排除默认墙、地板、天花板
-        dormitory.DormitorySceneController:storageFuniture(furnitureVo.id, furnitureVo.tid)
-        -- end
-    end
-
-    dormitory.DormitoryManager:clearAllFurniture(notClear) --暂时先去除
-    GameDispatcher:dispatchEvent(EventName.DORMITORY_ALL_STORAGE)
-end
-
+ 
 --[[ 替换语言包自动生成，请勿修改！
 ]]

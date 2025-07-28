@@ -41,13 +41,7 @@ local scene_data=
 },
 	[108]={ title="无限城沙漠05", scene="infinite_105", music_id=11, scene_anima_name={}
 },
-	[109]={ title="因斐诺遗迹", scene="107", music_id=11, scene_anima_name={}
-},
 	[110]={ title="锚点空间", scene="303", music_id=11, scene_anima_name={}
-},
-	[111]={ title="克里安卡住所室外", scene="111", music_id=11, scene_anima_name={}
-},
-	[1004]={ title="克里安卡住所地下室", scene="109", music_id=11, scene_anima_name={}
 },
 	[122]={ title="天空之境", scene="122", music_id=11, scene_anima_name={}
 },
@@ -169,8 +163,6 @@ local scene_data=
 },
 	[703]={ title="克罗瓦德工厂内部", scene="703", music_id=11, scene_anima_name={}
 },
-	[799]={ title="互动宿舍场景", scene="l_dormitory_102", music_id=78, scene_anima_name={}
-},
 	[2001]={ title="迷宫1", scene="maze_101", music_id=33, scene_anima_name={}
 },
 	[2002]={ title="迷宫2", scene="maze_102", music_id=33, scene_anima_name={}
@@ -233,19 +225,13 @@ local scene_data=
 },
 	[4008]={ title="", scene="1002", music_id=48, scene_anima_name={}
 },
-	[4009]={ title="支线-潮湿雨林", scene="108", music_id=48, scene_anima_name={}
-},
 	[10001]={ title="圣诞地图", scene="l_snow_01", music_id=51, scene_anima_name={}
 },
-	[10002]={ title="新年地图", scene="l_newyear_02", music_id=73, scene_anima_name={}
+	[10002]={ title="新年地图", scene="l_newyear_01", music_id=54, scene_anima_name={}
 },
 	[10003]={ title="地下实验室", scene="dx_101", music_id=54, scene_anima_name={}
 },
 	[10004]={ title="庆典场景", scene="l_cele_01", music_id=54, scene_anima_name={}
-},
-	[10005]={ title="开心农场", scene="farm_101", music_id=1007, scene_anima_name={}
-},
-	[10006]={ title="新年小地图", scene="dx_102", music_id=73, scene_anima_name={}
 },
 	[20001]={ title="蛋壳场景", scene="danke_01", music_id=29, scene_anima_name={}
 },
@@ -264,16 +250,6 @@ local scene_data=
 	[1303]={ title="下雨的福登城", scene="1303", music_id=48, scene_anima_name={}
 },
 	[1401]={ title="战斗场景", scene="1401", music_id=48, scene_anima_name={}
-},
-	[1501]={ title="第10章战斗场景", scene="1501", music_id=48, scene_anima_name={}
-},
-	[1601]={ title="第11章战斗场景1", scene="1601", music_id=48, scene_anima_name={}
-},
-	[1701]={ title="第12章战斗场景1", scene="1701", music_id=48, scene_anima_name={}
-},
-	[112]={ title="乐土竞逐专用场景", scene="112", music_id=48, scene_anima_name={}
-},
-	[113]={ title="2.6活动场景", scene="113", music_id=48, scene_anima_name={}
 },
 	[21001]={ title="捡金币场景-1", scene="pickup_101", music_id=62, scene_anima_name={}
 },
@@ -294,26 +270,6 @@ local scene_data=
 	[21009]={ title="捡金币场景-9", scene="pickup_109", music_id=62, scene_anima_name={}
 },
 	[21010]={ title="捡金币场景-10", scene="pickup_110", music_id=62, scene_anima_name={}
-},
-	[21011]={ title="走格子场景", scene="pickup_110", music_id=62, scene_anima_name={}
-},
-	[21012]={ title="走格子场景", scene="pickup_110", music_id=62, scene_anima_name={}
-},
-	[21013]={ title="走格子场景", scene="pickup_110", music_id=62, scene_anima_name={}
-},
-	[21014]={ title="走格子场景", scene="pickup_110", music_id=62, scene_anima_name={}
-},
-	[21015]={ title="走格子场景", scene="pickup_110", music_id=62, scene_anima_name={}
-},
-	[21016]={ title="走格子场景", scene="pickup_110", music_id=62, scene_anima_name={}
-},
-	[21017]={ title="走格子场景", scene="pickup_110", music_id=62, scene_anima_name={}
-},
-	[21018]={ title="走格子场景", scene="pickup_110", music_id=62, scene_anima_name={}
-},
-	[21019]={ title="走格子场景", scene="pickup_110", music_id=62, scene_anima_name={}
-},
-	[21020]={ title="走格子场景", scene="pickup_110", music_id=62, scene_anima_name={}
 },
 	[30001]={ title="", scene="battle_blue", music_id=48, scene_anima_name={}
 },

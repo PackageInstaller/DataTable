@@ -38,8 +38,6 @@ fightUI.FightSkillTips = require('game/fightUI/view/FightSkillTips')
 fightUI.FightBlackMask = require('game/fightUI/view/FightBlackMask')
 fightUI.FightSupportInfoTips = require('game/fightUI/view/FightSupportInfoTips')
 
-fightUI.FightForcesSkillTips = require('game/fightUI/view/FightForcesSkillTips')
-
 -- fightUI.FightWinEndView = require('game/fightUI/result/win/FightWinEndView')
 -- fightUI.FightFailEndView = require('game/fightUI/result/fail/FightFailEndView')
 

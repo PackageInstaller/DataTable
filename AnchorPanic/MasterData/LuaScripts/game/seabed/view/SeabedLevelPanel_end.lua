@@ -11,11 +11,9 @@ function showPanel(self)
     for i = 1, #difficultyList do
         local item = SimpleInsItem:create(self.mLevelItem, self.mLevelScroll.content, "mSeabedLevelItem")
         local isLock = seabed.SeabedManager:getDifficultyIsLock(difficultyList[i].id)
-        local tips = _TT(self:getDifTiple(difficultyList[i].id))
-
         item:getChildGO("mTxtTips"):GetComponent(ty.Text).text =
-            isLock and _TT(4062) or tips
-        item:getChildGO("mTxtSelect"):GetComponent(ty.Text).text = tips
+            isLock and _TT(4062) or _TT(111033) .. difficultyList[i].id
+        item:getChildGO("mTxtSelect"):GetComponent(ty.Text).text = _TT(111033).. difficultyList[i].id
         item:getChildGO("mTxtTips"):GetComponent(ty.Text).color =
             isLock and gs.ColorUtil.GetColor("478798FF") or gs.ColorUtil.GetColor("7FB3BEFF")
         item:getChildGO("mIsLock"):SetActive(isLock)

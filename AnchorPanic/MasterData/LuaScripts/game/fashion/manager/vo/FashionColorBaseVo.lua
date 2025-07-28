@@ -6,7 +6,6 @@ function parseData(self, cusId, cusData)
     self.heroTid = cusData.tid
     self.fashionId = cusData.fashion_id
     self.modelId = cusData.model_id
-    self.cameraType = cusData.camera_type
     self.colorList = {}
 
     for i, v in ipairs(cusData.fashion_color_data) do

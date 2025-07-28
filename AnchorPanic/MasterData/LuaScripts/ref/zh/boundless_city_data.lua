@@ -97,7 +97,7 @@ local boundless_city_data=
 		[226]={ radio=3600, des=97876 },
 }
 },
-	[3]={ left_level=68, right_level=120, city_data={
+	[3]={ left_level=68, right_level=90, city_data={
 		[1]={ max_room_num=30, demote_num=0, stay_num=20, promote_num=10, disturbance_rank={1,10}, stay_point=10000, promote_drop=6507 },
 		[2]={ max_room_num=30, demote_num=10, stay_num=10, promote_num=10, disturbance_rank={1,10}, stay_point=12000, promote_drop=6508 },
 		[3]={ max_room_num=20, demote_num=10, stay_num=10, promote_num=10, disturbance_rank={1,10}, stay_point=16000, promote_drop=0 },

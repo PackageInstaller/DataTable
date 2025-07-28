@@ -3,7 +3,7 @@ module("fashion.FashionManager", Class.impl(Manager))
 -- 当前选择的英雄改变
 SELECTE_CHANGE = "SELECTE_CHANGE"
 
--- 构造函数
+--构造函数
 function ctor(self)
     super.ctor(self)
     self:__initData()
@@ -62,17 +62,10 @@ function parseConfigData(self)
     end
 end
 
-function getFashionData(self,heroTid,fashionId)
-    if self.clothesDic == nil then
-        self:parseConfigData()
-    end
-    return self.m_fashionConfigDic[fashion.Type.CLOTHES][heroTid][fashionId]
-end
-
 -- 初始化皮肤部位配置表
 function parseFashionColorData(self)
-    self.mFashionColorDic = {} -- 战员id和时装id为索引
-    self.mFashionColorModeIdDic = {} -- 模型id为索引
+    self.mFashionColorDic = {} --战员id和时装id为索引
+    self.mFashionColorModeIdDic = {} --模型id为索引
     local baseData = RefMgr:getData("hero_fashion_color_data")
     for id, data in pairs(baseData) do
 
@@ -82,6 +75,7 @@ function parseFashionColorData(self)
         local baseVo = fashion.FashionColorBaseVo.new()
         baseVo:parseData(id, data)
         self.mFashionColorModeIdDic[data.model_id] = baseVo
+
 
         if not self.mFashionColorDic[data.tid] then
             self.mFashionColorDic[data.tid] = {}
@@ -95,23 +89,6 @@ function parseFashionColorData(self)
             table.insert(self.mFashionColorDic[data.tid][data.fashion_id], vo)
         end
     end
-end
-
--- 初始化模型材质配置表
-function parseModelHarData(self)
-    self.mModelHarDic = {}
-    local baseData = RefMgr:getData("model_har_data")
-    for id, data in pairs(baseData) do
-        self.mModelHarDic[id] = data
-    end
-end
-
--- 获取模型材质配置
-function getModelHarData(self, modelId)
-    if not self.mModelHarDic then
-        self:parseModelHarData()
-    end
-    return self.mModelHarDic[modelId]
 end
 
 -- 获取时装部位列表
@@ -156,18 +133,6 @@ function getFashionConfigDic(self, fashionType)
         self:parseConfigData()
     end
     return self.m_fashionConfigDic[fashionType]
-end
-
-function getAllFashionListByType(self, fashionType)
-    local list = {}
-    for k, heroVo in pairs(self:getFashionConfigDic(fashionType)) do
-        for i, fashionVo in ipairs(heroVo) do
-            if fashionVo.fashionId ~= 1 then
-                table.insert(list, fashionVo)
-            end
-        end
-    end
-    return list or {}
 end
 
 -- 判断对应英雄是否有时装
@@ -308,9 +273,7 @@ function parseMsgFashionInfo(self, msgList)
         if (#msgFashionList > 0) then
             self:__parseHeroFashionInfo(heroId, msgFashionList)
             GameDispatcher:dispatchEvent(EventName.UPDATE_HERO_FASHION_DATA, {})
-            GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_PANEL, {
-                heroId = heroId
-            })
+            GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_PANEL, { heroId = heroId })
         else
             self.m_heroFashionDic[heroId] = nil
             GameDispatcher:dispatchEvent(EventName.UPDATE_HERO_FASHION_DATA, {})
@@ -346,11 +309,7 @@ function parseMsgWearFashionResult(self, msgFashionType, heroId, fashionId)
             end
         end
         GameDispatcher:dispatchEvent(EventName.UPDATE_HERO_WEAR_FASHION, {})
-        GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_PANEL, {
-            heroId = heroId,
-            fashionType = fashionType,
-            fashionId = fashionId
-        })
+        GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_PANEL, { heroId = heroId, fashionType = fashionType, fashionId = fashionId })
     end
 end
 
@@ -378,11 +337,7 @@ function parseMsgWearFashionUnlock(self, msgFashionType, heroTid, fashionId)
             fashionVo.isWear = false
             fashionVo.fashionType = fashionType
             table.insert(list, fashionVo)
-            GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_PANEL, {
-                heroId = heroId,
-                fashionType = fashionType,
-                fashionId = fashionId
-            })
+            GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_PANEL, { heroId = heroId, fashionType = fashionType, fashionId = fashionId })
         end
     end
     gs.Message.Show2(_TT(62505))
@@ -485,14 +440,14 @@ end
 function parseLookFashionColorMsg(self, msg)
     local msgVo = fashion.FashionColorMsgVo.new()
     msgVo:parseMsg(msg)
-    self.mHeroFashionColorDic[msgVo.heroTid .. "_" .. msgVo.fashionId] = msgVo
+    self.mHeroFashionColorDic[msgVo.heroId .. "_" .. msgVo.fashionId] = msgVo
 
     GameDispatcher:dispatchEvent(EventName.UPDATE_HERO_FASHION_COLOR, msgVo)
 end
 
 -- 获取战员对应皮肤的部位信息
-function getHeroFashionColor(self, heroTid, fashionId)
-    return self.mHeroFashionColorDic[heroTid .. "_" .. fashionId]
+function getHeroFashionColor(self, heroId, fashionId)
+    return self.mHeroFashionColorDic[heroId .. "_" .. fashionId]
 end
 
 -- 战员皮肤部位解锁
@@ -505,54 +460,7 @@ end
 
 --------------------------------------------------------------end 服务器数据------------------------------------------------------------------------
 
--- 战员时装解锁信息
-function parseHeroFashionHaveInfo(self, msg)
-    self.mHeroHaveFashionDic = {}
-    self.mHeroHaveFashionDic[fashion.Type.CLOTHES] = {}
-    self.mHeroHaveFashionDic[fashion.Type.WEAPON] = {}
-    for i = 1, #msg.hero_have_body_fashion do
-        if self.mHeroHaveFashionDic[fashion.Type.CLOTHES][msg.hero_have_body_fashion[i].hero_tid] == nil then
-            self.mHeroHaveFashionDic[fashion.Type.CLOTHES][msg.hero_have_body_fashion[i].hero_tid] = {}
-        end
-        self.mHeroHaveFashionDic[fashion.Type.CLOTHES][msg.hero_have_body_fashion[i].hero_tid] = msg.hero_have_body_fashion[i].have_fashion_id_list
-    end
-
-    for i = 1, #msg.hero_have_weapons_fashion do
-        if self.mHeroHaveFashionDic[fashion.Type.WEAPON][msg.hero_have_body_fashion[i].hero_tid] == nil then
-            self.mHeroHaveFashionDic[fashion.Type.WEAPON][msg.hero_have_body_fashion[i].hero_tid] = {}
-        end
-        self.mHeroHaveFashionDic[fashion.Type.WEAPON][msg.hero_have_weapons_fashion[i].hero_tid] = msg.hero_have_body_fashion[i].have_fashion_id_list
-    end
-end
-
-function parseHeroFashionAddHaveInfo(self,msgFashionType,tid,fashionId)
-    if self.mHeroHaveFashionDic == nil then
-        self.mHeroHaveFashionDic = {}
-        self.mHeroHaveFashionDic[fashion.Type.CLOTHES] = {}
-        self.mHeroHaveFashionDic[fashion.Type.WEAPON] = {}
-    end
-    
-    local fashionType = fashion.getFashionTypeByMsg(msgFashionType)
-    if self.mHeroHaveFashionDic[fashionType][tid] == nil then
-        self.mHeroHaveFashionDic[fashionType][tid] = {}
-    end
-    table.insert(self.mHeroHaveFashionDic[fashionType][tid],fashionId)
-end
-
-function getHeroFashionHaveInfo(self, fashionType, tid, fashionId)
-    if self.mHeroHaveFashionDic == nil then
-        return false
-    end
-
-    local data = self.mHeroHaveFashionDic[fashionType]
-    if data[tid] == nil then
-        return false
-    end
-
-    return table.indexof01(data[tid], fashionId) > 0
-end
-
--- 析构函数
+--析构函数
 function dtor(self)
 end
 

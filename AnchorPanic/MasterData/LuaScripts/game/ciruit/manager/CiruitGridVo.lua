@@ -10,22 +10,21 @@ function poolGet(self)
     return LuaPoolMgr:poolGet(self)
 end
 
-function setData(self, id, gridConfigVo)
+function setData(self, id, row, col, gridConfigVo)
     self.m_id = id
+    self.m_row = row
+    self.m_col = col
+
     self.m_configVo = gridConfigVo
 
-    self:initPassDir()
-end
-
-function initPassDir(self)
     self.m_passsDirDic = {} --哪些方向可以链接
     if self.m_configVo.grid_type == CiruitConst.GridType.Start then
         self.m_passsDirDic =
         {
-            [CiruitConst.GridDir.Up] = {type = 1, grid = {}},
-            [CiruitConst.GridDir.Right] = {type = 1, grid = {}},
-            [CiruitConst.GridDir.Down] = {type = 1, grid = {}},
-            [CiruitConst.GridDir.Left] = {type = 1, grid = {}},
+            [CiruitConst.GridDir.Up] = {type = 1, grid = {[self.m_id] = 1}},
+            [CiruitConst.GridDir.Right] = {type = 1, grid = {[self.m_id] = 1}},
+            [CiruitConst.GridDir.Down] = {type = 1, grid = {[self.m_id] = 1}},
+            [CiruitConst.GridDir.Left] = {type = 1, grid = {[self.m_id] = 1}},
         }
 
     elseif self.m_configVo.grid_type == CiruitConst.GridType.End then
@@ -74,36 +73,14 @@ function initPassDir(self)
     end
 end
 
---放入场景
-function put(self, row, col)
-    self.m_row = row
-    self.m_col = col
-end
-
---从场景里面回收
-function revoke(self)
-    self.m_row = nil
-    self.m_col = nil
-
-    self:initPassDir()
-end
-
-function isPut(self)
-    return self.m_row ~= nil and self.m_col ~= nil
-end
-
 function resetPassState(self)
-    local passDic = {}
-    for dir, dirGridDic in pairs(self.m_passsDirDic) do
-        dirGridDic.grid = {}
-        passDic[dir] = dirGridDic
-    end
-    self.m_passsDirDic = passDic
-
-    if self.m_configVo.grid_type == CiruitConst.GridType.Start then
-        for dir, passGrid in pairs(self.m_passsDirDic) do
-            passGrid.grid[self.m_id] = 1
+    if self.m_configVo.grid_type ~= CiruitConst.GridType.Start then
+        local passDic = {}
+        for dir, dirGridDic in pairs(self.m_passsDirDic) do
+            dirGridDic.grid = {}
+            passDic[dir] = dirGridDic
         end
+        self.m_passsDirDic = passDic
     end
 end
 
@@ -167,17 +144,11 @@ function pass(self, sourceDir, sourceGridIdList)
     end
     self.m_passsDirDic[sourceDir].grid = passGridIdList
 
-    -- logAll(sourceDir, "来源方向" .. self.m_id)
-    -- logAll(sourceGridIdList, "来源连通" .. self.m_id)
-
-    -- logAll(passDirList, "可以联通的方向" .. self.m_id)
-    -- logAll(self.m_passsDirDic, "联通情况" .. self.m_id)
+    -- logAll(sourceDir, "来源方向")
+    -- logAll(passDirList, "可以联通的方向")
+    -- logAll(self.m_passsDirDic, "联通情况")
 
     return true
-end
-
-function getGridType(self)
-    return self.m_configVo.grid_type
 end
 
 function getId(self)
@@ -218,10 +189,6 @@ end
 
 --是否可以联通
 function canPass(self, dir)
-    if self.m_configVo.grid_type == CiruitConst.GridType.Start then
-        return false
-    end
-
     if not dir then
         return false
     end

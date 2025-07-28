@@ -104,22 +104,6 @@ local hero_biography_chapter_data=
 	[102201]={ deblocking={1}, name="刺玫", chapter_list={102201,102202,102203}
 },
 	[102301]={ deblocking={1}, name="霆渊·艾丽西亚", chapter_list={102301,102302,102303}
-},
-	[102401]={ deblocking={1}, name="阿尔戈", chapter_list={102401,102402,102403}
-},
-	[102501]={ deblocking={1}, name="辉月", chapter_list={102501,102502,102503}
-},
-	[102601]={ deblocking={1}, name="克里安卡", chapter_list={102601,102602,102603}
-},
-	[102701]={ deblocking={1}, name="黎寒之骑·朝晖", chapter_list={102701,102702,102703}
-},
-	[102801]={ deblocking={1}, name="云篆", chapter_list={102801,102802,102803}
-},
-	[102901]={ deblocking={1}, name="闪蝶", chapter_list={102901,102902,102903}
-},
-	[103001]={ deblocking={1}, name="红叶", chapter_list={103001,103002,103003}
-},
-	[103101]={ deblocking={1}, name="珂芙尼尔", chapter_list={103101,103102,103103}
 }
 }
 

@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : CelebrationPanel
 @Description    : 活动主界面
@@ -28,22 +28,15 @@ end
 function configUI(self)
     super.configUI(self)
     self.GroupTabItem = self:getChildGO("GroupTabItem")
-
-    self.mNoClick = self:getChildGO("mNoClick")
 end
 -- 激活
 function active(self, args)
-    MoneyManager:setMoneyTidList({})
     super.active(self, args)
-   
+    MoneyManager:setMoneyTidList({})
     GameDispatcher:addEventListener(EventName.ACTIVITY_OPEN_UPDATE, self.updateActivityLimit, self)
     GameDispatcher:addEventListener(EventName.UPDATE_CELEBRATION_RED_STATE, self.updateRedFlag, self)
     GameDispatcher:addEventListener(EventName.ACTIVITY_CLOSE_UPDATE, self.updateActivityLimitClose, self)
-    GameDispatcher:addEventListener(EventName.CELEBRATION_NOCLICK, self.refreshNoClick, self)
-
     self:updateRedFlag()
-
-    self.mNoClick:SetActive(false)
 end
 --反激活（销毁工作）
 function deActive(self)
@@ -52,31 +45,8 @@ function deActive(self)
     GameDispatcher:removeEventListener(EventName.ACTIVITY_OPEN_UPDATE, self.updateActivityLimit, self)
     GameDispatcher:removeEventListener(EventName.UPDATE_CELEBRATION_RED_STATE, self.updateRedFlag, self)
     GameDispatcher:removeEventListener(EventName.ACTIVITY_CLOSE_UPDATE, self.updateActivityLimitClose, self)
-    GameDispatcher:removeEventListener(EventName.CELEBRATION_NOCLICK, self.refreshNoClick, self)
-
     self:removeRedFlag()
     self.curPage = nil
-end
-
--- 玩家点击关闭
-function onClickClose(self)
-    if self.mNoClick.activeInHierarchy then 
-        return
-    end
-    super.onClickClose(self)
-end
-
--- 打开导航栏
-function openNavigationLink(self)
-    if self.mNoClick.activeInHierarchy then 
-        return
-    end
-    super.openNavigationLink(self)
-end
-
-function refreshNoClick(self, value)
-    self.mNoClick:SetActive(value)
-    self.tabBar:setCanClick(value)
 end
 
 -- 更新主UI红点信息--isActivityLimit是否是显示活动
@@ -91,13 +61,13 @@ function updateRedFlag(self)
     end
 end
 
-function updateActivityLimitClose(self, idList)
-    local tabDataList = self:getTabDataList()
-    if #tabDataList <= 0 then
+function updateActivityLimitClose(self,idList)
+    if table.indexof(idList.closeList,activity.ActivityId.CelebrationTask) then
         self:close()
         return
     end
-    local tabType = tabDataList[self:getLastTabIndex(self.curPage)].page
+    
+    local tabType = self:getTabDataList()[self:getLastTabIndex(self.curPage)].page
     self:refreshTab(tabType)
 end
 
@@ -122,6 +92,7 @@ function refreshTab(self, tabType)
     self.tabBar:setType(tabType)
     self:updateRedFlag()
 end
+
 
 function setTabBar(self)
     if #self:getTabDataList() <= 0 then
@@ -148,7 +119,7 @@ function getTabDatas(self)
     self.tabDataList = {}
     for index, vo in pairs(Celebration.CelebrationConst:getTabList()) do
         if activity.ActivityManager:getActivityVoById(vo.activityId) and activity.ActivityManager:getActivityVoById(vo.activityId):isOpen() then
-            self.tabDataList[index] = {type = vo.page, content = {vo.nomalLan}, nomalIcon = vo.nomalIcon, selectIcon = vo.nomalIcon}
+            self.tabDataList[index] = { type = vo.page, content = { vo.nomalLan }, nomalIcon = vo.nomalIcon, selectIcon = vo.nomalIcon}
         end
     end
     return self.tabDataList

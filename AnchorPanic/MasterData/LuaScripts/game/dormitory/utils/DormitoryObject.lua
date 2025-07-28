@@ -100,7 +100,7 @@ function getInitColRow(self, col, row)
     return tileData
 end
 
-function createObject(self, cusSite, cusPropsVo, cusInfo, configInfo, finishCall)
+function createObject(self, cusSite, cusPropsVo, cusInfo, finishCall)
     self.mSite = cusSite
     self.propsVo = cusPropsVo
 
@@ -109,11 +109,11 @@ function createObject(self, cusSite, cusPropsVo, cusInfo, configInfo, finishCall
         self.mMsgInfo = cusInfo
         self.mDirAngle = cusInfo.dir
         self.mCurCenterTile = {col = self.mMsgInfo.col, row = self.mMsgInfo.row}
-    elseif configInfo then
-        self.mDirAngle = configInfo.dir
-        self.mCurCenterTile = {col = configInfo.col, row = configInfo.row}
     else
         self.mCurCenterTile = self:getInitColRow(self.mInitCol, self.mInitRow)
+        -- self.mCurCenterTile = { col = self.mInitCol, row = self.mInitRow }
+        -- self.mCurTileInfo = { col = 20, row = 20 }
+        -- self:setMoveInfo()
         local furnitureVo = dormitory.DormitoryManager:getFurnitureInfo(cusPropsVo.id)
         self.mMsgInfo = furnitureVo
     end
@@ -123,8 +123,8 @@ function createObject(self, cusSite, cusPropsVo, cusInfo, configInfo, finishCall
     self.m_trans = self.m_rootGo.transform
     self:initObjectInfo()
 
-    local isSelect = cusInfo == nil and configInfo == nil
-    self:setupPrefab(UrlManager:getFurniturePrefabUrl(self:getResName()), finishCall, isSelect)
+    -- self:setupPrefab(string.format("arts/fx/3d/dormitory/prefab/furniture/%s.prefab", self:getResName()))
+    self:setupPrefab(UrlManager:getFurniturePrefabUrl(self:getResName()), finishCall, cusInfo == nil)
 
     GameDispatcher:addEventListener(EventName.SELECT_FURNITURE_CANCEL, self.onCancelSelect, self)
     GameDispatcher:addEventListener(EventName.PUT_FURNITURE_SURE, self.onSurePut, self)
@@ -206,12 +206,8 @@ function removeFurniture(self)
     self:onRecover()
 end
 -- 确定摆放更改
-function onSurePut(self, propsId)
-    if propsId == nil then
-        if not self.isSelectState then
-            return
-        end
-    elseif propsId ~= self.propsVo.id then
+function onSurePut(self)
+    if not self.isSelectState then
         return
     end
 
@@ -556,7 +552,7 @@ function updateHoldFurniture(self)
     local startCol, endCol, startRow, endRow = self:getBuildArea(self.mCurCenterTile)
     for c = startCol, endCol do
         for r = startRow, endRow do
-            -- logAll(self.propsVo.id, "更新占用" .. c .. "-" .. r)
+            -- logAll( self.propsVo.id,"更新占用" .. c .. "-" .. r)
             dormitory.DormitorySceneController:setTileHoldFurniture(self.mSite, c, r, self.propsVo.id)
         end
     end
@@ -612,50 +608,50 @@ function getIsCover(self, cusTile)
     local max_col = self.maxCol - 8
     local max_row = self.maxRow - 8
 
-    if startRow < 8 or endRow < 8 then --后
+    if startRow < 8 or endRow < 8 then
         local otherStartCol = self.maxCol - endCol + 1
         local otherEndCol = self.maxCol - startCol + 1
         -- DormitoryCost.SITE_WALL_BACK
         for c = otherStartCol, otherEndCol do
             for r = 1, self:getHight() do
                 local height = getH(DormitoryCost.SITE_WALL_BACK, c, r)
-                if height > 0 and startRow <= height then
+                if height > 0 and (startRow <= height or endRow <= height) then
                     return true
                 end
             end
         end
 
-    elseif startRow > max_row or endRow > max_row then --前
+    elseif startRow > max_row or endRow > max_row then
         -- DormitoryCost.SITE_WALL_FRONT
         for c = startCol, endCol do
             for r = 1, self:getHight() do
                 local height = getH(DormitoryCost.SITE_WALL_FRONT, c, r)
-                if height > 0 and endRow > (self.maxRow - height) then
+                if height > 0 and ((self.maxRow - startRow) <= height or (self.maxRow - endRow) <= height) then
                     return true
                 end
             end
         end
     end
 
-    if startCol < 8 or endCol < 8 then --左
+    if startCol < 8 or endCol < 8 then
         -- DormitoryCost.SITE_WALL_LEFT
         for c = startRow, endRow do
             for r = 1, self:getHight() do
                 local height = getH(DormitoryCost.SITE_WALL_LEFT, c, r)
-                if height > 0 and startCol <= height then
+                if height > 0 and (startCol <= height or endCol <= height) then
                     return true
                 end
             end
         end
 
-    elseif startCol > max_col or endCol > max_col then --右
+    elseif startCol > max_col or endCol > max_col then
         -- DormitoryCost.SITE_WALL_RIGHT
         local otherStartRow = self.maxRow - endRow + 1
         local otherEndRow = self.maxCol - startRow + 1
         for c = otherStartRow, otherEndRow do
             for r = 1, self:getHight() do
                 local height = getH(DormitoryCost.SITE_WALL_RIGHT, c, r)
-                if height > 0 and endCol > (self.maxCol - height) then
+                if height > 0 and ((self.maxCol - startCol) <= height or (self.maxCol - endCol) <= height) then
                     return true
                 end
             end

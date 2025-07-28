@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : ShopBuyView
 @Description    : 商店购买确认页面、快捷购买
@@ -19,10 +19,6 @@ function ctor(self)
     self:setSize(1120, 520)
 end
 
--- 初始化数据
-function initData(self)
-    self.mPropsItems = {}
-end
 function configUI(self)
     self.mBtnBuy = self:getChildGO('mBtnBuy')
     self.mGroup = self:getChildTrans("mGroup")
@@ -53,9 +49,6 @@ function configUI(self)
     self.mImgEquipIcon = self:getChildGO("mImgEquipIcon"):GetComponent(ty.AutoRefImage)
     self.mNumberStepper:Init(1, 1, 1, -1, self.onStepChange, self)
     self:setGuideTrans("guide_btn_shopbuy", self.mBtnBuy.transform)
-    self.mHeroEggGetTitle = self:getChildGO("mHeroEggGetTitle")
-    self.mProScroll = self:getChildGO("mProScroll"):GetComponent(ty.ScrollRect)
-    self.mBtnHeroEggPro = self:getChildGO("mBtnHeroEggPro")
 end
 
 function active(self, args)
@@ -67,12 +60,7 @@ function active(self, args)
     self.mTxtInput.onValueChanged:AddListener(inputChange)
     self.mMoney.gameObject:SetActive(false)
     self.mNumberStepper.CurrCount = 1
-    if args.shopVo then
-        self.mShopVo = args.shopVo
-        self.mCloseCall = args.closeCall
-    else
-        self.mShopVo = args
-    end
+    self.mShopVo = args
     self:setData()
     --TweenFactory:move2LPosX(self.mGroup, self.mGroupSlidingPos.localPosition.x, 0.5)
 end
@@ -84,14 +72,12 @@ function deActive(self)
         self.mMoneyBarItem = nil
     end
     self:recoverBtnGoDic()
-    self:clearItemList()
 end
 
 function addAllUIEvent(self)
     self:addUIEvent(self.mBtnClose, self.onClickClose)
     self:addUIEvent(self.mCloseMask, self.onClickClose)
     self:addUIEvent(self.mBtnBuy, self.onBuyHandler)
-    self:addUIEvent(self.mBtnHeroEggPro, self.onOpenHeroEggProClick)
 end
 
 function setData(self)
@@ -129,7 +115,7 @@ function setData(self)
         self.mTxtLimit.text = ""
     end
 
-    local propsVo = props.PropsManager:getPropsVo({tid = self.mShopVo:getItemTid(), num = self.mShopVo:getItemNum()})
+    local propsVo = props.PropsManager:getPropsVo({ tid = self.mShopVo:getItemTid(), num = self.mShopVo:getItemNum() })
     if propsVo.type == PropsType.EQUIP and propsVo.subType == PropsEquipSubType.SLOT_7 then
         self.mImgIcon.gameObject:SetActive(false)
         self.mImgEquipBG.gameObject:SetActive(true)
@@ -141,11 +127,11 @@ function setData(self)
         self.mImgIcon:SetImg(UrlManager:getPropsIconUrl(propsVo.tid), false)
     end
     self.mImgColor:SetImg(UrlManager:getPackPath("shop/shop_tips_color_" .. propsVo.color .. ".png"), false)
-
+  
     if not self.mMoneyBarItem then
         self.mMoneyBarItem = MoneyItem:poolGet()
     end
-    self.mMoneyBarItem:setData(self.mMoney, {tid = self.mShopVo:getRealPayType()})
+    self.mMoneyBarItem:setData(self.mMoney, { tid = self.mShopVo:getRealPayType() })
     self.mTxtDes.text = propsVo:getDes()
 
     if self.mGridProp then
@@ -153,7 +139,6 @@ function setData(self)
         self.mGridProp = nil
     end
     self:updateItem()
-    self:updateEggInfo()
 end
 
 function setBuyNum(self, currCount)
@@ -164,7 +149,7 @@ end
 
 function updateItem(self)
     self:clearItem()
-    local costPropsVo = props.PropsManager:getPropsVo({tid = self.mShopVo:getRealPayType(), num = 1})
+    local costPropsVo = props.PropsManager:getPropsVo({ tid = self.mShopVo:getRealPayType(), num = 1 })
     self.mGridProp = PropsGrid:create(self.mGroupItemProp, costPropsVo, 0.45)
     self.mGroupItem:SetImg(MoneyUtil.getMoneyIconUrlByTid(costPropsVo.tid), true)
     self.mGridProp:setShowColorBgState(false)
@@ -177,52 +162,11 @@ function clearItem(self)
     end
 end
 
-function updateEggInfo(self)
-    self:clearItemList()
-    if not self.mHeroEggGetTitle then
-        return
-    end
-    local costPropsVo = props.PropsManager:getPropsVo({tid = self.mShopVo:getItemTid(), num = 1})
-    self.mHeroEggGetTitle:SetActive(costPropsVo.effectType == UseEffectType.USE_GET_HEROEGG)
-    if costPropsVo.effectType == UseEffectType.USE_GET_HEROEGG then
-        local ruleVo = props.PropsManager:getItemRuleDataByTid(costPropsVo.tid)
-        local allItem = {}
-        for k, vo in pairs(ruleVo.ruleDic) do
-            for i = 1, #vo.itemList do
-                table.insert(allItem, vo.itemList[i])
-            end
-        end
-        for i = 1,#allItem do
-            local propsGrid = PropsGrid:createByData({
-                tid = allItem[i],
-                num = 1,
-                parent = self.mProScroll.content,
-                scale = 0.7,
-                showUseInTip = true
-            })
-            table.insert(self.mPropsItems, propsGrid)
-        end
-    end
-end
-
-function clearItemList(self)
-    for i = 1, #self.mPropsItems, 1 do
-        self.mPropsItems[i]:poolRecover()
-    end
-    self.mPropsItems = {}
-end
-
-function onOpenHeroEggProClick(self)
-    local costPropsVo = props.PropsManager:getPropsVo({tid = self.mShopVo:getItemTid(), num = 1})
-    GameDispatcher:dispatchEvent(EventName.OPEN_USE_HEROEGG_PRO_VIEW,{tid = costPropsVo.tid})
-end
-
 function onStepChange(self, cusCount, cusType)
     if cusType == 1 then
         -- '最大值'
-        local MaxCount = sysParam.SysParamManager:getValue(SysParamType.SHOP_MAX_BUY_NUM)
-        if self.mNumberStepper.MaxCount >= MaxCount then
-            gs.Message.Show(_TT(272, MaxCount))
+        if self.mNumberStepper.MaxCount >= sysParam.SysParamManager:getValue(SysParamType.SHOP_MAX_BUY_NUM) then
+            gs.Message.Show(_TT(272))
             return
         end
         gs.Message.Show(_TT(4018))
@@ -259,30 +203,21 @@ function onBuyHandler(self)
 
     local result, tips = MoneyUtil.judgeNeedMoneyCountByTid(self.mShopVo:getRealPayType(), self.mNumberStepper.CurrCount * self.mShopVo:getPrice(), true, true)
     if result and tips == "" then
-        GameDispatcher:dispatchEvent(EventName.REQ_SHOP_BUY, {type = self.mShopVo:getType(), id = self.mShopVo:getId(), num = self.mNumberStepper.CurrCount})
+        GameDispatcher:dispatchEvent(EventName.REQ_SHOP_BUY, { type = self.mShopVo:getType(), id = self.mShopVo:getId(), num = self.mNumberStepper.CurrCount })
         self:close()
-        if self.mCloseCall then
-            self.mCloseCall()
-        end
     elseif result and tips ~= "" then
         UIFactory:alertMessge(tips, true, function()
-            GameDispatcher:dispatchEvent(EventName.REQ_SHOP_BUY, {type = self.mShopVo:getType(), id = self.mShopVo:getId(), num = self.mNumberStepper.CurrCount})
+            GameDispatcher:dispatchEvent(EventName.REQ_SHOP_BUY, { type = self.mShopVo:getType(), id = self.mShopVo:getId(), num = self.mNumberStepper.CurrCount })
             self:close()
-            if self.mCloseCall then
-                self.mCloseCall()
-            end
         end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil
-    )
-elseif not result then
-    UIFactory:alertMessge(tips, true, function()
-        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Purchase})
-        self:close()
-        if self.mCloseCall then
-            self.mCloseCall()
-        end
-    end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil
-)
-end
+        )
+    elseif not result then
+        UIFactory:alertMessge(tips, true, function()
+            GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.Purchase })
+            self:close()
+        end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil
+        )
+    end
 end
 -----------------------------------------------------------
 function recoverBtnGoDic(self)
@@ -294,6 +229,7 @@ function recoverBtnGoDic(self)
     end
     self.m_btnGoDic = {}
 end
+
 
 return _M
 

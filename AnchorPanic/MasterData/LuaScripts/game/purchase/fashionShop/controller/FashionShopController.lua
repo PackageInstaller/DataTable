@@ -29,9 +29,6 @@ function listNotification(self)
 
     GameDispatcher:addEventListener(EventName.OPEN_SKIN_SHOW_ONE_VIEW, self.onOpenFashionShowOneViewHandler, self)
 
-    GameDispatcher:addEventListener(EventName.REQ_FASHION_COMBO_SHOP_BUY, self.onReqFashionShowShopBuyHandler, self)
-
-    GameDispatcher:addEventListener(EventName.OPEN_SKIN_SHOW_ONE_VIEW_BUY, self.onOpenFashionShowOneBuyViewHandler, self)
 end
 
 --注册server发来的数据
@@ -41,8 +38,6 @@ function registerMsgHandler(self)
         SC_FASHION_SHOP_PANEL = self.onResFashionShopInfoHandler,
         --- *s2c* 皮肤商店购买商品结果 24133
         SC_FASHION_SHOP_BUY = self.onResFashionShopBuyHandler,
-
-        SC_FASHION_COMBO_SHOP_BUY = self.onResFashionComboShopBuyHandler
     }
 end
 
@@ -55,22 +50,11 @@ end
 function onResFashionShopBuyHandler(self, msg)
     purchase.FashionShopManager:parseFashionBuyMsg(msg)
 end
-
-
-function onResFashionComboShopBuyHandler(self,msg)
-    if msg.result == 1 then
-        purchase.FashionShopManager:parseFashionComboBuyMsg(msg)
-    end
-end
 ---------------------------------------------------------------请求------------------------------------------------------------------
 -- 请求皮肤商店购买商品
 function onReqFashionShopBuyHandler(self, args)
     --- *c2s* 皮肤商店购买商品 24132
     SOCKET_SEND(Protocol.CS_FASHION_SHOP_BUY, { goods_id = args.id, is_use_discount = args.isUseDis })
-end
-
-function onReqFashionShowShopBuyHandler(self, args)
-    SOCKET_SEND(Protocol.CS_FASHION_COMBO_SHOP_BUY, { goods_id = args.id },Protocol.SC_FASHION_COMBO_SHOP_BUY)
 end
 ---------------------------------------------------------------界面创建------------------------------------------------------------------
 function onOpenFashionShowViewHandler(self, args)
@@ -113,18 +97,6 @@ function onDestroyFashionShowOneView(self)
     self.mFashionShowOneView = nil
 end
 
-function onOpenFashionShowOneBuyViewHandler(self,args)
-    if self.mFashionShowOneBuyView == nil then
-        self.mFashionShowOneBuyView = purchase.FashionShowOneBuyView.new()
-        self.mFashionShowOneBuyView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFashionShowOneBuyView, self)
-    end
-    self.mFashionShowOneBuyView:open(args)
-end
-
-function onDestroyFashionShowOneBuyView(self)
-    self.mFashionShowOneBuyView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFashionShowOneBuyView, self)
-    self.mFashionShowOneBuyView = nil
-end
 
 return _M
 

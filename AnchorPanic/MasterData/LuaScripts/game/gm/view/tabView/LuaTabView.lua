@@ -1,8 +1,8 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : LuaTabView
 @Description    : GMLUA
-@date           : 2022-2-22
+@date           : 2022-2-22 
 @Author         : lyx
 @copyright      : (LY) 2020 雷焰网络
 -----------------------------------------------------
@@ -28,8 +28,7 @@ function configUI(self)
     self.mBtnSkipGuide = self:getChildGO('mBtnSkipGuide')
     self.mBtnDevictInfo = self:getChildGO('mBtnDevictInfo')
     self.mBtnIssueShow = self:getChildGO('mBtnIssueShow')
-    self.mBtnTestHar = self:getChildGO('mBtnTestHar')
-
+    
     self.mBtnCreateABLoadHistory = self:getChildGO('mBtnCreateABLoadHistory')
     self.mBtnGetABLoadHistory = self:getChildGO('mBtnGetABLoadHistory')
 end
@@ -42,6 +41,7 @@ function initData(self)
     self.mLuaFenv = setmetatable({}, { __index = _G })
 end
 
+
 function active(self)
     super.active(self)
     self:addOnClick(self.mBtnRun, self.__onRunLuaHandler)
@@ -52,10 +52,9 @@ function active(self)
     self:addOnClick(self.mBtnSkipGuide, self.__onSkipGuideHandler)
     self:addOnClick(self.mBtnDevictInfo, self.__onClickDeviceInfoHandler)
     self:addOnClick(self.mBtnIssueShow, self.__onClickIssueShowHandler)
-
+    
     self:addOnClick(self.mBtnCreateABLoadHistory, self.__onClickCreateABLoadHistoryHandler)
     self:addOnClick(self.mBtnGetABLoadHistory, self.__onClickGetABLoadHistoryHandler)
-    self:addOnClick(self.mBtnTestHar, self.__onClickTestHarHandler)
 end
 
 function deActive(self)
@@ -96,8 +95,7 @@ end
 
 -- 返回登录界面
 function __onReloginHandler(self)
-    GameDispatcher:dispatchEvent(EventName.REQ_EXIT_GAME,
-        { isCleanGameRes = false, isCleanServerInfo = false, isNeedLoginSdk = true, isNeedRunUpdate = false })
+    GameDispatcher:dispatchEvent(EventName.REQ_EXIT_GAME, { isCleanGameRes = false, isCleanServerInfo = false, isNeedLoginSdk = true, isNeedRunUpdate = false })
 end
 
 function __onClickDeviceInfoHandler(self)
@@ -105,13 +103,13 @@ function __onClickDeviceInfoHandler(self)
     print("设备型号", deviceName)
     print("GPU名称", gpuName)
     print("CPU名称", cpuName)
-
+    
     local isHarmonyOs, harmonyOsVersion = sdk.SdkManager:getHarmonyOsData()
     print("是否鸿蒙系统", isHarmonyOs)
-    if (isHarmonyOs) then
+    if(isHarmonyOs)then
         print("鸿蒙系统版本号", harmonyOsVersion)
     end
-
+    
     print("是否模拟器系统", sdk.SdkManager:getIsSimulator())
     print("系统总内存", string.format("%.1fGB", gs.SdkManager:GetMemorySize("SystemTotalMemory") / 1024))
     print("系统剩余有效内存", string.format("%.1fGB", gs.SdkManager:GetMemorySize("SystemAvaliMemory") / 1024))
@@ -127,7 +125,7 @@ function __onClickIssueShowHandler(self)
 end
 
 function __onClickCreateABLoadHistoryHandler(self)
-    if (gs.Directory.Exists(gs.PathUtil.GetPersistentAssetsWPath("ABLoadHistory"))) then
+    if(gs.Directory.Exists(gs.PathUtil.GetPersistentAssetsWPath("ABLoadHistory")))then
         gs.Directory.Delete(gs.PathUtil.GetPersistentAssetsWPath("ABLoadHistory"), true)
     end
     gs.Message.Show("创建ab加载历史文件成功，请重启")
@@ -135,18 +133,13 @@ function __onClickCreateABLoadHistoryHandler(self)
 end
 
 function __onClickGetABLoadHistoryHandler(self)
-    if (gs.File.Exists(gs.PathUtil.GetPersistentAssetsWPath("ABLoadHistory/ABLoadHistory.txt"))) then
+    if(gs.File.Exists(gs.PathUtil.GetPersistentAssetsWPath("ABLoadHistory/ABLoadHistory.txt")))then
         gs.SdkManager:Copy(gs.PathUtil.GetPersistentAssetsWPath("ABLoadHistory/ABLoadHistory.txt"))
         gs.Message.Show("复制ab加载历史文件成功")
         gs.SdkManager:CloseApplication()
     else
         gs.Message.Show("复制ab加载历史文件失败")
     end
-end
-
-function __onClickTestHarHandler(self)
-    gs.Message.Show("操作成功，关闭界面重新进入")
-    gm.GmManager.isTestHar = true
 end
 
 -- 跳过新手
@@ -161,6 +154,7 @@ end
 -- customFenv：自定义环境
 function eval(self, content, customFenv)
     if (type(content) == "string") then
+
         local strArr = string.split(content, "\n")
         content = ""
         for i = 1, #strArr do
@@ -172,19 +166,12 @@ function eval(self, content, customFenv)
                 end
             end
         end
-
-        local eval, err = loadstring("return " .. content)
-        if not eval then
-            eval, err = loadstring(content)
-        end
-
-        if eval then
+        local eval = loadstring("return " .. content)
+        if type(eval) == "function" then
             if customFenv then
                 setfenv(eval, customFenv)
             end
             return eval()
-        else
-            print("加载代码时出错：" .. err)
         end
     end
 end

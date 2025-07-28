@@ -107,22 +107,6 @@ local effect_data=
 },
 	[1023]={ target_rule=5, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[100]%+《60》的骋电伤害"
 },
-	[1024]={ target_rule=7, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位单体}造成自身攻击[100]%+《60》的生蕴伤害"
-},
-	[1025]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[100]%+《60》的寒霜伤害"
-},
-	[1026]={ target_rule=5, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位前排单体}造成自身攻击[100]%+《60》的轰炎伤害"
-},
-	[1027]={ target_rule=5, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位前排单体}造成自身攻击[100]%+《60》的寒霜伤害"
-},
-	[1028]={ target_rule=7, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位单体}造成自身攻击[100]%+《60》的直击伤害"
-},
-	[1029]={ target_rule=7, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位单体}造成自身攻击[100]%+《60》的骋电伤害"
-},
-	[1030]={ target_rule=5, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位前排单体}造成自身攻击[100]%+《60》的轰炎伤害"
-},
-	[1031]={ target_rule=2, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方后排单体}造成自身攻击[100]%+《60》的轰炎伤害"
-},
 	[100101]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[150]%+《100》的量蚀伤害，且最后一击附加1层{{辐射}}，最多叠加3层"
 },
 	[1001011]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={100101}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方前排单体}造成自身攻击[150]%+《100》的量蚀伤害，且最后一击附加1层{{辐射}}，最多叠加3层"
@@ -205,13 +189,13 @@ local effect_data=
 },
 	[1007021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={100702}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[60]%+《35》的寒霜伤害，且最后一击附加1层{{渐冻}}，持续2回合，最多叠加10层"
 },
-	[100704]={ target_rule=1, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[108]%+《65》的寒霜伤害，且首段命中有35%几率对目标造成{{冰冻}}，持续1回合"
+	[100704]={ target_rule=1, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[108]%+《65》的寒霜伤害，且首段命中有【35】%几率对目标造成{{冰冻}}，持续1回合"
 },
-	[1007041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={100704}, trigger_rate=3500, is_effect_inc=1, damage_source=8, desc="对{敌方全体}造成自身攻击[108]%+《65》的寒霜伤害，且首段命中有35%几率对目标造成{{冰冻}}，持续1回合"
+	[1007041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={100704}, trigger_rate=3500, is_effect_inc=1, damage_source=8, desc="对{敌方全体}造成自身攻击[108]%+《65》的寒霜伤害，且首段命中有【35】%几率对目标造成{{冰冻}}，持续1回合"
 },
-	[1007042]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,9904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[108]%+《65》的寒霜伤害，且首段命中有35%几率对目标造成{{冰冻}}，持续1回合"
+	[1007042]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,9904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[108]%+《65》的寒霜伤害，且首段命中有【35】%几率对目标造成{{冰冻}}，持续1回合"
 },
-	[1007043]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,9904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[108]%+《65》的寒霜伤害，且首段命中有35%几率对目标造成{{冰冻}}，持续1回合"
+	[1007043]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,9904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[108]%+《65》的寒霜伤害，且首段命中有【35】%几率对目标造成{{冰冻}}，持续1回合"
 },
 	[100801]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[166]%+《100》的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加10层"
 },
@@ -221,9 +205,9 @@ local effect_data=
 },
 	[1008021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={100802}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方直线四格}造成自身攻击[110]%+《65》的轰炎伤害，且最后一击附加1层{{灼伤}}，持续2回合，最多叠加10层"
 },
-	[100804]={ target_rule=1, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[112]%+《65》的轰炎伤害，且最后一击有50%几率附加{{燃烧}}(回合结束时，目标受到梅鹿特攻击40%的轰炎伤害)，持续2回合，最多叠加3层"
+	[100804]={ target_rule=1, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[112]%+《65》的轰炎伤害，且最后一击有【50】%几率附加{{燃烧}}(回合结束时，目标受到梅鹿特攻击40%的轰炎伤害)，持续2回合，最多叠加3层"
 },
-	[1008041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={100804}, trigger_rate=5000, is_effect_inc=1, damage_source=8, desc="对{敌方全体}造成自身攻击[112]%+《65》的轰炎伤害，且最后一击有50%几率附加{{燃烧}}(回合结束时，目标受到梅鹿特攻击40%的轰炎伤害)，持续2回合，最多叠加3层"
+	[1008041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={100804}, trigger_rate=5000, is_effect_inc=1, damage_source=8, desc="对{敌方全体}造成自身攻击[112]%+《65》的轰炎伤害，且最后一击有【50】%几率附加{{燃烧}}(回合结束时，目标受到梅鹿特攻击40%的轰炎伤害)，持续2回合，最多叠加3层"
 },
 	[100901]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[154]%+《100》的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加10层"
 },
@@ -247,9 +231,9 @@ local effect_data=
 },
 	[1010021]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=2, trigger_num={101002}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="使{友方全体}攻击提升艾可攻击的[8]%+《35》，持续1回合，并赋予1种{{音符}}"
 },
-	[101004]={ target_rule=27, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[103]%+《65》的骋电伤害，且有40%几率对目标造成{{封印}}(无法释放源能爆发)，持续1回合"
+	[101004]={ target_rule=27, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[103]%+《65》的骋电伤害，且有【35】%几率对目标造成{{封印}}(无法释放源能爆发)，持续1回合"
 },
-	[1010041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=2, trigger_num={101004}, trigger_rate=4000, is_effect_inc=1, damage_source=8, desc="对{敌方全体}造成自身攻击[103]%+《65》的骋电伤害，且有40%几率对目标造成{{封印}}(无法释放源能爆发)，持续1回合"
+	[1010041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=2, trigger_num={101004}, trigger_rate=4000, is_effect_inc=1, damage_source=8, desc="对{敌方全体}造成自身攻击[103]%+《65》的骋电伤害，且有【35】%几率对目标造成{{封印}}(无法释放源能爆发)，持续1回合"
 },
 	[101101]={ target_rule=2, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方直线四格}造成自身攻击[112]%+《65》的骋电伤害，且最后一击附加1层{{感电}}，持续2回合，最多叠加5层"
 },
@@ -267,9 +251,9 @@ local effect_data=
 },
 	[101202]={ target_rule=1, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方直线四格}造成自身攻击[111]%+《65》的直击伤害"
 },
-	[101204]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[342]%+《175》的直击伤害，且每段攻击有80%几率无视目标70%防御"
+	[101204]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[342]%+《175》的直击伤害，且每段攻击有【80】%几率无视目标70%防御"
 },
-	[1012041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={101204}, trigger_rate=8000, is_effect_inc=0, damage_source=8, desc="对{敌方前排单体}造成自身攻击[342]%+《175》的直击伤害，且每段攻击有80%几率无视目标70%防御"
+	[1012041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={101204}, trigger_rate=8000, is_effect_inc=0, damage_source=8, desc="对{敌方前排单体}造成自身攻击[342]%+《175》的直击伤害，且每段攻击有【80】%几率无视目标70%防御"
 },
 	[101301]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[167]%+《100》的骋电伤害，且最后一击附加1层{{感电}}，持续2回合，最多叠加5层"
 },
@@ -351,13 +335,13 @@ local effect_data=
 },
 	[1106021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={110602}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方横向一排}造成自身攻击[105]%+《75》的寒霜伤害，且最后一击附加1层{{渐冻}}，持续2回合，最多叠加10层"
 },
-	[110604]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成[256]%+《175》的寒霜伤害，且首段命中有60%几率对目标造成{{冰冻}}，持续1回合"
+	[110604]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成[256]%+《175》的寒霜伤害，且首段命中有【60】%几率对目标造成{{冰冻}}，持续1回合"
 },
-	[1106041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={110604}, trigger_rate=6000, is_effect_inc=1, damage_source=8, desc="对{敌方前排单体}造成[256]%+《175》的寒霜伤害，且首段命中有60%几率对目标造成{{冰冻}}，持续1回合"
+	[1106041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={110604}, trigger_rate=6000, is_effect_inc=1, damage_source=8, desc="对{敌方前排单体}造成[256]%+《175》的寒霜伤害，且首段命中有【60】%几率对目标造成{{冰冻}}，持续1回合"
 },
-	[1106042]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,9904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方前排单体}造成[256]%+《175》的寒霜伤害，且首段命中有60%几率对目标造成{{冰冻}}，持续1回合"
+	[1106042]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,9904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方前排单体}造成[256]%+《175》的寒霜伤害，且首段命中有【60】%几率对目标造成{{冰冻}}，持续1回合"
 },
-	[1106043]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,9904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方前排单体}造成[256]%+《175》的寒霜伤害，且首段命中有60%几率对目标造成{{冰冻}}，持续1回合"
+	[1106043]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,9904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方前排单体}造成[256]%+《175》的寒霜伤害，且首段命中有【60】%几率对目标造成{{冰冻}}，持续1回合"
 },
 	[110701]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="使{自身}获得{{护盾}}(护盾值为羚角最大生命的[18]%)，持续2回合"
 },
@@ -387,9 +371,9 @@ local effect_data=
 },
 	[1109021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={110902}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方横向两排}造成自身攻击[89]%+《60》的寒霜伤害，且最后一击附加1层{{渐冻}}，持续2回合，最多叠加10层"
 },
-	[110904]={ target_rule=1, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[110]%+《65》的寒霜伤害，且最后一击有30%几率附加{{冰蚀}}(寒霜抗性降低15%)，持续2回合"
+	[110904]={ target_rule=1, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[110]%+《65》的寒霜伤害，且最后一击有【30】%几率附加{{冰蚀}}(寒霜抗性降低15%)，持续2回合"
 },
-	[1109041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={110904}, trigger_rate=3000, is_effect_inc=1, damage_source=8, desc="对{敌方全体}造成自身攻击[110]%+《65》的寒霜伤害，且最后一击有30%几率附加{{冰蚀}}(寒霜抗性降低15%)，持续2回合"
+	[1109041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={110904}, trigger_rate=3000, is_effect_inc=1, damage_source=8, desc="对{敌方全体}造成自身攻击[110]%+《65》的寒霜伤害，且最后一击有【30】%几率附加{{冰蚀}}(寒霜抗性降低15%)，持续2回合"
 },
 	[111001]={ target_rule=1, damage_area=4, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方横向一排}造成自身攻击[119]%+《75》的骋电伤害，且最后一击附加1层{{感电}}，持续2回合，最多叠加5层"
 },
@@ -399,9 +383,9 @@ local effect_data=
 },
 	[1110021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={111002}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方前排单体}造成自身攻击[158]%+《100》的骋电伤害，且最后一击附加1层{{感电}}，持续2回合，最多叠加5层"
 },
-	[111004]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[290]%+《175》的骋电伤害，且最后一击有80%几率对目标附加其当前生命8%的骋电伤害，伤害上限为艾丽西亚攻击的80%"
+	[111004]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[290]%+《175》的骋电伤害，且最后一击有【80】%几率对目标附加其当前生命8%的骋电伤害，伤害上限为艾丽西亚攻击的80%"
 },
-	[1110041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=32, trigger_num={111004}, trigger_rate=8000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[290]%+《175》的骋电伤害，且最后一击有80%几率对目标附加其当前生命8%的骋电伤害，伤害上限为艾丽西亚攻击的80%"
+	[1110041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=32, trigger_num={111004}, trigger_rate=8000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[290]%+《175》的骋电伤害，且最后一击有【80】%几率对目标附加其当前生命8%的骋电伤害，伤害上限为艾丽西亚攻击的80%"
 },
 	[111101]={ target_rule=1, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方直线四格}造成自身攻击[106]%+《65》的直击伤害"
 },
@@ -477,9 +461,9 @@ local effect_data=
 },
 	[1205021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={120502}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方前排单体}造成自身攻击[139]%+《100》的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加10层"
 },
-	[120504]={ target_rule=1, damage_area=4, damage_num=2, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方横向两排}造成自身攻击[155]%+《100》的轰炎伤害，且最后一击有60%几率附加自身最大生命8%的轰炎伤害"
+	[120504]={ target_rule=1, damage_area=4, damage_num=2, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方横向两排}造成自身攻击[155]%+《100》的轰炎伤害，且最后一击有【60】%几率附加自身最大生命8%的轰炎伤害"
 },
-	[1205041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=4, trigger_num={120504}, trigger_rate=6000, is_effect_inc=0, damage_source=1, desc="对{敌方横向两排}造成自身攻击[155]%+《100》的轰炎伤害，且最后一击有60%几率附加自身最大生命8%的轰炎伤害"
+	[1205041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=4, trigger_num={120504}, trigger_rate=6000, is_effect_inc=0, damage_source=1, desc="对{敌方横向两排}造成自身攻击[155]%+《100》的轰炎伤害，且最后一击有【60】%几率附加自身最大生命8%的轰炎伤害"
 },
 	[120601]={ target_rule=5, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位单体}造成自身攻击[158]%+《100》的骋电伤害，且最后一击附加1层{{感电}}，持续2回合，最多叠加5层"
 },
@@ -489,9 +473,9 @@ local effect_data=
 },
 	[1206021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={120602}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方十字范围}造成自身攻击[134]%+《85》的骋电伤害，且最后一击附加1层{{感电}}，持续2回合，最多叠加5层"
 },
-	[120604]={ target_rule=5, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方直线四格}造成自身攻击[194]%+《115》的骋电伤害，且每段攻击有70%几率使自身骋电伤害提升15%，最多叠加10层，行动结束后失效"
+	[120604]={ target_rule=5, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方直线四格}造成自身攻击[194]%+《115》的骋电伤害，且每段攻击有【70%】几率使自身骋电伤害提升15%，最多叠加10层，行动结束后失效"
 },
-	[1206041]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=97, trigger_num={120604}, trigger_rate=5000, is_effect_inc=0, damage_source=8, desc="对{敌方直线四格}造成自身攻击[194]%+《115》的骋电伤害，且每段攻击有70%几率使自身骋电伤害提升15%，最多叠加10层，行动结束后失效"
+	[1206041]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=97, trigger_num={120604}, trigger_rate=5000, is_effect_inc=0, damage_source=8, desc="对{敌方直线四格}造成自身攻击[194]%+《115》的骋电伤害，且每段攻击有【70%】几率使自身骋电伤害提升15%，最多叠加10层，行动结束后失效"
 },
 	[120701]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[129]%+《100》的量蚀伤害，且最后一击附加1层{{辐射}}，最多叠加3层"
 },
@@ -551,9 +535,9 @@ local effect_data=
 },
 	[1304021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={130402}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方十字范围}造成自身攻击[120]%+《85》的寒霜伤害，且最后一击附加1层{{渐冻}}，持续2回合，最多叠加10层"
 },
-	[130404]={ target_rule=2, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方后排单体}造成自身攻击[258]%+《175》的寒霜伤害，且最后一击有50%几率附加{{冻伤}}(目标受到寒霜伤害时有50%几率承伤加深25%)，持续2回合"
+	[130404]={ target_rule=2, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方后排单体}造成自身攻击[258]%+《175》的寒霜伤害，且最后一击有【50】%几率附加{{冻伤}}(目标受到寒霜伤害时有50%几率承伤加深25%)，持续2回合"
 },
-	[1304041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={130404}, trigger_rate=5000, is_effect_inc=1, damage_source=8, desc="对{敌方后排单体}造成自身攻击[258]%+《175》的寒霜伤害，且最后一击有50%几率附加{{冻伤}}(目标受到寒霜伤害时有50%几率承伤加深25%)，持续2回合"
+	[1304041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={130404}, trigger_rate=5000, is_effect_inc=1, damage_source=8, desc="对{敌方后排单体}造成自身攻击[258]%+《175》的寒霜伤害，且最后一击有【50】%几率附加{{冻伤}}(目标受到寒霜伤害时有50%几率承伤加深25%)，持续2回合"
 },
 	[130501]={ target_rule=1, damage_area=5, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方十字范围}造成自身攻击[130]%+《85》的骋电伤害，且最后一击附加1层{{感电}}，持续2回合，最多叠加5层"
 },
@@ -601,11 +585,11 @@ local effect_data=
 },
 	[1113011]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={111301}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="为{敌方前排单体}造成自身攻击[150]%+《100》的量蚀伤害，且最后一击附加1层{{辐射}}，最多叠加3层"
 },
-	[111302]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="为{友方全体}施加{{动力支持}}(攻击提升伊芙特攻击的[14]%+《65》)，持续1回合；同属性战员技能攻击时有45%几率额外附加1层{{辐射}}"
+	[111302]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="为{友方全体}施加{{动力支持}}(攻击提升伊芙特攻击的[14]%+《65》)，持续1回合；同属性战员技能攻击时有【45】%几率额外附加1层{{辐射}}"
 },
-	[1113021]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=5, trigger_num={111302}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="为{友方全体}施加{{动力支持}}(攻击提升伊芙特攻击的[14]%+《65》)，持续1回合；同属性战员技能攻击时有45%几率额外附加1层{{辐射}}"
+	[1113021]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=5, trigger_num={111302}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="为{友方全体}施加{{动力支持}}(攻击提升伊芙特攻击的[14]%+《65》)，持续1回合；同属性战员技能攻击时有【45】%几率额外附加1层{{辐射}}"
 },
-	[1113022]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={1,3}, trigger_rate=4500, is_effect_inc=0, damage_source=8, desc="为{友方全体}施加{{动力支持}}(攻击提升伊芙特攻击的[14]%+《65》)，持续1回合；同属性战员技能攻击时有45%几率额外附加1层{{辐射}}"
+	[1113022]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={1,3}, trigger_rate=4500, is_effect_inc=0, damage_source=8, desc="为{友方全体}施加{{动力支持}}(攻击提升伊芙特攻击的[14]%+《65》)，持续1回合；同属性战员技能攻击时有【45】%几率额外附加1层{{辐射}}"
 },
 	[111304]={ target_rule=1, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方直线四格}造成自身攻击[184]%+《115》的量蚀伤害，且技能释放时有50%几率对目标造成{{核心锁定}}(量蚀抗性降低20%)，持续2回合"
 },
@@ -649,7 +633,7 @@ local effect_data=
 },
 	[1016042]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={101604}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="蒂雅进入{{观星状态}}并赋予{敌方全体}1层{{星辰印记}}(目标行动结束后将受到来自蒂雅的星光坠击，伤害为蒂雅攻击的[180]%)，持续2回合"
 },
-	[101603]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对敌方生命百分比最低单位进行致命打击，每颗星辰提供蒂雅攻击[36]%的量蚀伤害并附加目标已损失生命[[6]]%的真实伤害(上限为蒂雅攻击的100%)"
+	[101603]={ target_rule=4, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对敌方生命百分比最低单位进行致命打击，每颗星辰提供蒂雅攻击[36]%的量蚀伤害并附加目标已损失生命[[6]]%的真实伤害(上限为蒂雅攻击的100%)"
 },
 	[1016031]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={101603}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对敌方生命百分比最低单位进行致命打击，每颗星辰提供蒂雅攻击[36]%的量蚀伤害并附加目标已损失生命[[6]]%的真实伤害(上限为蒂雅攻击的100%)"
 },
@@ -683,9 +667,9 @@ local effect_data=
 },
 	[1018051]={ target_rule=27, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{{磁化壁垒}}消耗时，将对攻击方造成自身最大生命[8]%的骋电伤害"
 },
-	[101901]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{友方全体}施加寒冰护盾，护盾值为霜琼攻击的[95]%，持续1回合；若为同属性战员，则额外使其暴伤抗性提高20%，持续1回合"
+	[101901]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{友方全体}施加寒冰护盾，护盾值为霜琼攻击的[95]%，持续1回合；若为同属性战员，则额外使其暴击抗性提高20%，持续1回合"
 },
-	[1019011]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{友方全体}施加寒冰护盾，护盾值为霜琼攻击的[95]%，持续1回合；若为同属性战员，则额外使其暴伤抗性提高20%，持续1回合"
+	[1019011]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{友方全体}施加寒冰护盾，护盾值为霜琼攻击的[95]%，持续1回合；若为同属性战员，则额外使其暴击抗性提高20%，持续1回合"
 },
 	[101902]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击[144]%+《100》的冰霜伤害，且最后一击附加2层{{渐冻}}，持续2回合，最多叠加6层"
 },
@@ -735,15 +719,15 @@ local effect_data=
 },
 	[1021021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102102}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方横向一排}造成自身攻击[108]%+《75》的生蕴伤害，且最后一击附加2层{{蕴蚀}}，最多叠加6层"
 },
-	[102104]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={102104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="危峭进入爆气状态并为友方全体（自身除外）开启守护效果，持续2回合。该状态下友方单位受到攻击伤害时(普攻除外)，危峭会对攻击者发动反击，造成自身攻击[196]%的生蕴伤害并无视目标20%防御，最多反击4次。\n危峭反击造成的伤害视为源能爆发伤害"
+	[102104]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={102104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="危峭进入爆气状态并为友方全体（自身除外）开启守护效果，持续2回合。该状态下友方单位受到攻击伤害时(普攻除外)，危峭会对攻击者发动反击，造成自身攻击[196]%的生蕴伤害并无视目标20%防御，最多反击4次。"
 },
-	[1021041]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="危峭进入爆气状态并为友方全体（自身除外）开启守护效果，持续2回合。该状态下友方单位受到攻击伤害时(普攻除外)，危峭会对攻击者发动反击，造成自身攻击[196]%的生蕴伤害并无视目标20%防御，最多反击4次。\n危峭反击造成的伤害视为源能爆发伤害"
+	[1021041]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="危峭进入爆气状态并为友方全体（自身除外）开启守护效果，持续2回合。该状态下友方单位受到攻击伤害时(普攻除外)，危峭会对攻击者发动反击，造成自身攻击[196]%的生蕴伤害并无视目标20%防御，最多反击4次。"
 },
-	[1021042]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="危峭进入爆气状态并为友方全体（自身除外）开启守护效果，持续2回合。该状态下友方单位受到攻击伤害时(普攻除外)，危峭会对攻击者发动反击，造成自身攻击[196]%的生蕴伤害并无视目标20%防御，最多反击4次。\n危峭反击造成的伤害视为源能爆发伤害"
+	[1021042]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="危峭进入爆气状态并为友方全体（自身除外）开启守护效果，持续2回合。该状态下友方单位受到攻击伤害时(普攻除外)，危峭会对攻击者发动反击，造成自身攻击[196]%的生蕴伤害并无视目标20%防御，最多反击4次。"
 },
-	[1021043]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=155, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="危峭进入爆气状态并为友方全体（自身除外）开启守护效果，持续2回合。该状态下友方单位受到攻击伤害时(普攻除外)，危峭会对攻击者发动反击，造成自身攻击[196]%的生蕴伤害并无视目标20%防御，最多反击4次。\n危峭反击造成的伤害视为源能爆发伤害"
+	[1021043]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=155, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="危峭进入爆气状态并为友方全体（自身除外）开启守护效果，持续2回合。该状态下友方单位受到攻击伤害时(普攻除外)，危峭会对攻击者发动反击，造成自身攻击[196]%的生蕴伤害并无视目标20%防御，最多反击4次。"
 },
-	[1021044]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="危峭进入爆气状态并为友方全体（自身除外）开启守护效果，持续2回合。该状态下友方单位受到攻击伤害时(普攻除外)，危峭会对攻击者发动反击，造成自身攻击[196]%的生蕴伤害并无视目标20%防御，最多反击4次。\n危峭反击造成的伤害视为源能爆发伤害"
+	[1021044]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="危峭进入爆气状态并为友方全体（自身除外）开启守护效果，持续2回合。该状态下友方单位受到攻击伤害时(普攻除外)，危峭会对攻击者发动反击，造成自身攻击[196]%的生蕴伤害并无视目标20%防御，最多反击4次。"
 },
 	[102103]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="危峭会对攻击者发动反击，造成自身攻击[196]%的生蕴伤害并无视目标20%防御，最多反击3次。"
 },
@@ -780,154 +764,6 @@ local effect_data=
 	[102305]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位前排单体}造成[298]%+《175》的骋电伤害，且目标每存在1层{{感电}}，自身对其伤害额外提高6%；若释放源能爆发时自身处于{霆渊之境}，则{无我寂灭}进化为{魂灵王权}，对敌方全体造成伤害，但对首要目标外的技能伤害继承系数为42.5%"
 },
 	[1023051]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=5, trigger_num={102305}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方对位前排单体}造成[298]%+《175》的骋电伤害，且目标每存在1层{{感电}}，自身对其伤害额外提高6%；若释放源能爆发时自身处于{霆渊之境}，则{无我寂灭}进化为{魂灵王权}，对敌方全体造成伤害，但对首要目标外的技能伤害继承系数为42.5%"
-},
-	[102401]={ target_rule=1, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方直线四格}造成自身攻击[102]%+《65》的生蕴伤害，且最后一击附加1层{{蕴蚀}}，最多叠加6层"
-},
-	[1024011]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102401}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方直线四格}造成自身攻击[102]%+《65》的生蕴伤害，且最后一击附加1层{{蕴蚀}}，最多叠加6层"
-},
-	[102402]={ target_rule=1, damage_area=4, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方横向一排}造成自身攻击[112]%+《75》的生蕴伤害，且最后一击附加1层{{蕴蚀}}，最多叠加6层"
-},
-	[1024021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102402}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方横向一排}造成自身攻击[112]%+《75》的生蕴伤害，且最后一击附加1层{{蕴蚀}}，最多叠加6层"
-},
-	[102404]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[115]%+《65》的生蕴伤害，且最后一击附加2层{{蕴蚀}}，最多叠加6层；此外，源能爆发对首要目标有100%几率附加{缠尾}(处于该效果下的敌方在下次行动时将会被扣除1格能量)，持续至角色流程结束"
-},
-	[1024041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102404}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[115]%+《65》的生蕴伤害，且最后一击附加2层{{蕴蚀}}，最多叠加6层；此外，源能爆发对首要目标有100%几率附加{缠尾}(处于该效果下的敌方在下次行动时将会被扣除1格能量)，持续至角色流程结束"
-},
-	[1024042]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=5, trigger_num={102404}, trigger_rate=10000, is_effect_inc=1, damage_source=8, desc="对{敌方全体}造成自身攻击[115]%+《65》的生蕴伤害，且最后一击附加2层{{蕴蚀}}，最多叠加6层；此外，源能爆发对首要目标有100%几率附加{缠尾}(处于该效果下的敌方在下次行动时将会被扣除1格能量)，持续至角色流程结束"
-},
-	[1024043]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[115]%+《65》的生蕴伤害，且最后一击附加2层{{蕴蚀}}，最多叠加6层；此外，源能爆发对首要目标有100%几率附加{缠尾}(处于该效果下的敌方在下次行动时将会被扣除1格能量)，持续至角色流程结束"
-},
-	[102501]={ target_rule=1, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方前排单体}造成自身攻击力[152]%+《100》的寒霜伤害，且最后一击附加2层{{渐冻}}，持续2回合，最多叠加6层"
-},
-	[1025011]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102501}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方前排单体}造成自身攻击力[152]%+《100》的寒霜伤害，且最后一击附加2层{{渐冻}}，持续2回合，最多叠加6层"
-},
-	[102502]={ target_rule=1, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击力[62]%+《35》的寒霜伤害，且最后一击附加1层{{渐冻}}，持续2回合，最多叠加6层"
-},
-	[1025021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102502}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击力[62]%+《35》的寒霜伤害，且最后一击附加1层{{渐冻}}，持续2回合，最多叠加6层"
-},
-	[102504]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="辉月立即获得2枚月刃并在场景中创造持续2回合的{{满月辉境}}。{{满月辉境}}中的友方在受到技能伤害时有[30]%几率使辉月获得1枚月刃，月刃最多可存在5枚"
-},
-	[1025041]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=69, trigger_num={}, trigger_rate=3200, is_effect_inc=0, damage_source=8, desc="辉月立即获得2枚月刃并在场景中创造持续2回合的{{满月辉境}}。{{满月辉境}}中的友方在受到技能伤害时有[30]%几率使辉月获得1枚月刃，月刃最多可存在5枚"
-},
-	[1025042]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={102504}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="辉月立即获得2枚月刃并在场景中创造持续2回合的{{满月辉境}}。{{满月辉境}}中的友方在受到技能伤害时有[30]%几率使辉月获得1枚月刃，月刃最多可存在5枚"
-},
-	[1025043]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1025041}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="辉月立即获得2枚月刃并在场景中创造持续2回合的{{满月辉境}}。{{满月辉境}}中的友方在受到技能伤害时有[30]%几率使辉月获得1枚月刃，月刃最多可存在5枚"
-},
-	[1025044]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={102504}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="辉月立即获得2枚月刃并在场景中创造持续2回合的{{满月辉境}}。{{满月辉境}}中的友方在受到技能伤害时有[30]%几率使辉月获得1枚月刃，月刃最多可存在5枚"
-},
-	[102503]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="辉月清除自身所有控制效果，展开月华(结界的生命值为5枚月刃吸收伤害的总和+辉月最大生命的40%)，持续2回合。"
-},
-	[1025031]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="辉月清除自身所有控制效果，展开月华(结界的生命值为5枚月刃吸收伤害的总和+辉月最大生命的40%)，持续2回合。"
-},
-	[102601]={ target_rule=5, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位前排单体}造成自身攻击[152]%+《100》%的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[1026011]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102601}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方对位前排单体}造成自身攻击[152]%+《100》%的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[102602]={ target_rule=1, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方直线四格}造成自身攻击[62]%+《35》%的轰炎伤害，且最后一击附加1层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[1026021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102602}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方直线四格}造成自身攻击[62]%+《35》%的轰炎伤害，且最后一击附加1层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[102604]={ target_rule=1, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[115]%+《65》%的轰炎伤害，且最后一击附加1层{{灼伤}}，持续2回合，最多叠加8层；此外，克里安卡会牵引{焰苗}层数最多的敌人至最前排(位置与克里安卡同一行)，若该位置存在其他敌人则将其与牵引对象交换位置"
-},
-	[1026041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102604}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[115]%+《65》%的轰炎伤害，且最后一击附加1层{{灼伤}}，持续2回合，最多叠加8层；此外，克里安卡会牵引{焰苗}层数最多的敌人至最前排(位置与克里安卡同一行)，若该位置存在其他敌人则将其与牵引对象交换位置"
-},
-	[1026042]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=5, trigger_num={102604}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[115]%+《65》%的轰炎伤害，且最后一击附加1层{{灼伤}}，持续2回合，最多叠加8层；此外，克里安卡会牵引{焰苗}层数最多的敌人至最前排(位置与克里安卡同一行)，若该位置存在其他敌人则将其与牵引对象交换位置"
-},
-	[102701]={ target_rule=5, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位前排单体}造成自身攻击力[158]%+《100》的寒霜伤害，且最后一击附加2层{{渐冻}}，持续2回合，最多叠加6层"
-},
-	[1027011]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102701}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方对位前排单体}造成自身攻击力[158]%+《100》的寒霜伤害，且最后一击附加2层{{渐冻}}，持续2回合，最多叠加6层"
-},
-	[102702]={ target_rule=1, damage_area=4, damage_num=2, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方横向两排}造成自身攻击[100]%+《60》的寒霜伤害，且最后一击附加1层{{渐冻}}，持续2回合，最多叠加6层"
-},
-	[1027021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102702}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方横向两排}造成自身攻击[100]%+《60》的寒霜伤害，且最后一击附加1层{{渐冻}}，持续2回合，最多叠加6层"
-},
-	[102704]={ target_rule=5, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位前排单体}造成自身攻击力[280]%+《175》的寒霜伤害，若目标{{渐冻}}>=4层，则本次源能爆发伤害提升20%"
-},
-	[1027041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={102704,102703}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方对位前排单体}造成自身攻击力[280]%+《175》的寒霜伤害，若目标{{渐冻}}>=4层，则本次源能爆发伤害提升20%"
-},
-	[102703]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="谴罚满6层时则会对锁定目标释放1次源能爆发(无消耗，当前行动单位技能释放后发动)，且该伤害无法被抵挡(抵挡盾无法触发)"
-},
-	[102801]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{友方全体}附加1层{云蔽翳}护盾，护盾值为云篆最大生命的8%，持续2回合，最多叠加2层；护盾存在期间，目标受到的溢出治疗量将转化为{云蔽翳}的护盾值"
-},
-	[1028011]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{友方全体}附加1层{云蔽翳}护盾，护盾值为云篆最大生命的8%，持续2回合，最多叠加2层；护盾存在期间，目标受到的溢出治疗量将转化为{云蔽翳}的护盾值"
-},
-	[102802]={ target_rule=7, damage_area=4, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方横向一排}造成自身攻击[120]+《75》%的直击伤害"
-},
-	[102804]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆请来混元阵图，使友方全体获得[20]%的格挡几率并获得1层{云蔽翳}护盾，持续2回合。阵图展开期间，友方受到技能攻击时有[16]%几率使云篆获得1层{爻辞}，最多叠加6层，且云篆每回合结束时会获得1层{爻辞}"
-},
-	[1028041]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=69, trigger_num={}, trigger_rate=1600, is_effect_inc=0, damage_source=8, desc="云篆请来混元阵图，使友方全体获得[20]%的格挡几率并获得1层{云蔽翳}护盾，持续2回合。阵图展开期间，友方受到技能攻击时有[16]%几率使云篆获得1层{爻辞}，最多叠加6层，且云篆每回合结束时会获得1层{爻辞}"
-},
-	[1028042]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1028041}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆请来混元阵图，使友方全体获得[20]%的格挡几率并获得1层{云蔽翳}护盾，持续2回合。阵图展开期间，友方受到技能攻击时有[16]%几率使云篆获得1层{爻辞}，最多叠加6层，且云篆每回合结束时会获得1层{爻辞}"
-},
-	[1028043]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=5, trigger_num={102804}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆请来混元阵图，使友方全体获得[20]%的格挡几率并获得1层{云蔽翳}护盾，持续2回合。阵图展开期间，友方受到技能攻击时有[16]%几率使云篆获得1层{爻辞}，最多叠加6层，且云篆每回合结束时会获得1层{爻辞}"
-},
-	[1028044]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={102804}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆请来混元阵图，使友方全体获得[20]%的格挡几率并获得1层{云蔽翳}护盾，持续2回合。阵图展开期间，友方受到技能攻击时有[16]%几率使云篆获得1层{爻辞}，最多叠加6层，且云篆每回合结束时会获得1层{爻辞}"
-},
-	[1028045]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆请来混元阵图，使友方全体获得[20]%的格挡几率并获得1层{云蔽翳}护盾，持续2回合。阵图展开期间，友方受到技能攻击时有[16]%几率使云篆获得1层{爻辞}，最多叠加6层，且云篆每回合结束时会获得1层{爻辞}"
-},
-	[102803]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=0, desc="云篆激活{浮图}中断目标战斗流程并对其附加1层{箓术}"
-},
-	[102805]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆受到技能攻击时将会对攻击方造成自身最大生命14%的真实伤害"
-},
-	[102901]={ target_rule=1, damage_area=4, damage_num=2, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方横向两排}造成自身攻击[171]%+《100》的骋电伤害，且最后一击附加2层[感电}，持续2回合，最多叠加6层"
-},
-	[1029011]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102901}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方横向两排}造成自身攻击[171]%+《100》的骋电伤害，且最后一击附加2层[感电}，持续2回合，最多叠加6层"
-},
-	[102902]={ target_rule=1, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方直线四格}造成自身攻击[127]%+《75》的骋电伤害，且最后一击附加1层{{感电}}，持续2回合，最多叠加6层"
-},
-	[1029021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102902}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方直线四格}造成自身攻击[127]%+《75》的骋电伤害，且最后一击附加1层{{感电}}，持续2回合，最多叠加6层"
-},
-	[102904]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[180]%的骋电伤害，且立即触发1次静电球的放电"
-},
-	[1029041]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={102904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[180]%的骋电伤害，且立即触发1次静电球的放电"
-},
-	[1029042]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={102904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[180]%的骋电伤害，且立即触发1次静电球的放电"
-},
-	[1029043]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,1029902}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[180]%的骋电伤害，且立即触发1次静电球的放电"
-},
-	[1029044]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,1029902}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[180]%的骋电伤害，且立即触发1次静电球的放电"
-},
-	[102903]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="静电球的放电"
-},
-	[103001]={ target_rule=7, damage_area=4, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方横向一排}造成自身攻击[128]%+《75》的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[1030011]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={103001}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方横向一排}造成自身攻击[128]%+《75》的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[103002]={ target_rule=7, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方直线四格}造成自身攻击[117]%+《65》的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[1030021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={103002}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方直线四格}造成自身攻击[117]%+《65》的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[103004]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[126]+《65》%的轰炎伤害，且对首要目标伤害提升{{灼伤}}层数*10%"
-},
-	[1030041]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=10, trigger_num={103004}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[126]+《65》%的轰炎伤害，且对首要目标伤害提升{{灼伤}}层数*10%"
-},
-	[103003]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="秘刃·绯红闪，对敌方全体造成自身攻击90%的轰炎伤害"
-},
-	[103005]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="秘刃·焚绝黄泉，对敌方全体造成自身攻击60%的轰炎伤害，对首要目标伤害额外提升{{灼伤}}层数*[6]%"
-},
-	[103101]={ target_rule=2, damage_area=4, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方横向一排}造成自身攻击[112]%+《75》的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[1031011]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={103101}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方横向一排}造成自身攻击[112]%+《75》的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[103102]={ target_rule=2, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方直线四格}造成自身攻击[109]%+《65》的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[1031021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={103102}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方直线四格}造成自身攻击[109]%+《65》的轰炎伤害，且最后一击附加2层{{灼伤}}，持续2回合，最多叠加8层"
-},
-	[103104]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="珂芙尼尔对{敌方全体}造成自身攻击[116]%+《65》的轰炎伤害并获得{灵魂丝结}，且首段命中时对目标附加{代价}(被附加时有35%几率立即损失当前源能的50%，受到珂芙尼尔的源能技攻击时将损失源能上限值的20%源能)，持续2回合"
-},
-	[1031041]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={103104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="珂芙尼尔对{敌方全体}造成自身攻击[116]%+《65》的轰炎伤害并获得{灵魂丝结}，且首段命中时对目标附加{代价}(被附加时有35%几率立即损失当前源能的50%，受到珂芙尼尔的源能技攻击时将损失源能上限值的20%源能)，持续2回合"
-},
-	[1031042]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={103104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="珂芙尼尔对{敌方全体}造成自身攻击[116]%+《65》的轰炎伤害并获得{灵魂丝结}，且首段命中时对目标附加{代价}(被附加时有35%几率立即损失当前源能的50%，受到珂芙尼尔的源能技攻击时将损失源能上限值的20%源能)，持续2回合"
-},
-	[1031043]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={103104}, trigger_rate=3500, is_effect_inc=1, damage_source=8, desc="珂芙尼尔对{敌方全体}造成自身攻击[116]%+《65》的轰炎伤害并获得{灵魂丝结}，且首段命中时对目标附加{代价}(被附加时有35%几率立即损失当前源能的50%，受到珂芙尼尔的源能技攻击时将损失源能上限值的20%源能)，持续2回合"
-},
-	[1031044]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="珂芙尼尔对{敌方全体}造成自身攻击[116]%+《65》的轰炎伤害并获得{灵魂丝结}，且首段命中时对目标附加{代价}(被附加时有35%几率立即损失当前源能的50%，受到珂芙尼尔的源能技攻击时将损失源能上限值的20%源能)，持续2回合"
-},
-	[1031045]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="珂芙尼尔对{敌方全体}造成自身攻击[116]%+《65》的轰炎伤害并获得{灵魂丝结}，且首段命中时对目标附加{代价}(被附加时有35%几率立即损失当前源能的50%，受到珂芙尼尔的源能技攻击时将损失源能上限值的20%源能)，持续2回合"
-},
-	[1031046]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,1031042}, trigger_rate=10000, is_effect_inc=0, damage_source=0, desc=""
-},
-	[1031047]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,1031042}, trigger_rate=10000, is_effect_inc=0, damage_source=0, desc=""
 },
 	[100186]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[87]\n基础攻击+[21%]\n友方场上每存在1名量蚀型战员，自身最大生命提升8%；天赋2触发时自身立即获得500源能"
 },
@@ -966,8 +802,6 @@ local effect_data=
 	[101086]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={1010801,1010802}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[86]\n基础攻击+[21%]\n{{音符}}的持续回合+1"
 },
 	[101186]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={101180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[98]\n基础攻击+[24%]\n{天赋1}触发的源能爆发伤害提升30%，且重复触发时伤害不再衰减"
-},
-	[1011861]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={101130}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[98]\n基础攻击+[24%]\n{天赋1}触发的源能爆发伤害提升30%，且重复触发时伤害不再衰减"
 },
 	[101286]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={101280}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[98]\n基础攻击+[24%]\n{{连击点}}层数上限+2，且战斗开始时，获得3层{{连击点}}"
 },
@@ -1134,90 +968,6 @@ local effect_data=
 	[1023862]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[129]\n基础攻击+[25%]\n自身释放源能技时有70%几率返还能量，处于{霆渊之境}时，自身每次攻击时将消耗2层{渊响}，使自身无视防御提升8%并获得1层{渊逆}，持续1回合，最多叠加3层"
 },
 	[1023863]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[129]\n基础攻击+[25%]\n自身释放源能技时有70%几率返还能量，处于{霆渊之境}时，自身每次攻击时将消耗2层{渊响}，使自身无视防御提升8%并获得1层{渊逆}，持续1回合，最多叠加3层"
-},
-	[102486]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1024803,1024804,1024805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[116]\n基础攻击+[22%]\n阿尔戈天赋1的自身属性强化效果回合数持续至2回合；阿尔戈获得天赋1的属性强化效果时，友方其他战员也可获得50%的对应属性强化效果（持续2回合）；阿尔戈前三回合开始拿取物品时，必定不会拿到与上一回合相同的物品"
-},
-	[1024861]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1024804,1024805,1024806}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[116]\n基础攻击+[22%]\n阿尔戈天赋1的自身属性强化效果回合数持续至2回合；阿尔戈获得天赋1的属性强化效果时，友方其他战员也可获得50%的对应属性强化效果（持续2回合）；阿尔戈前三回合开始拿取物品时，必定不会拿到与上一回合相同的物品"
-},
-	[1024862]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={102480}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[116]\n基础攻击+[22%]\n阿尔戈天赋1的自身属性强化效果回合数持续至2回合；阿尔戈获得天赋1的属性强化效果时，友方其他战员也可获得50%的对应属性强化效果（持续2回合）；阿尔戈前三回合开始拿取物品时，必定不会拿到与上一回合相同的物品"
-},
-	[102586]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=157, trigger_num={1,102580}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[121]\n基础攻击+[23%]\n辉月每消耗1枚{月刃}，自身源能将增加10%，且{月华}破碎或替换时，辉月会立即获得2枚月刃"
-},
-	[1025861]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[121]\n基础攻击+[23%]\n辉月每消耗1枚{月刃}，自身源能将增加10%，且{月华}破碎或替换时，辉月会立即获得2枚月刃"
-},
-	[1025862]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=157, trigger_num={1,102503}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[121]\n基础攻击+[23%]\n辉月每消耗1枚{月刃}，自身源能将增加10%，且{月华}破碎或替换时，辉月会立即获得2枚月刃"
-},
-	[1025863]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=167, trigger_num={1,102503}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[121]\n基础攻击+[23%]\n辉月每消耗1枚{月刃}，自身源能将增加10%，且{月华}破碎或替换时，辉月会立即获得2枚月刃"
-},
-	[102686]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=154, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[122]\n基础攻击+[24%]\n克里安卡受到致命伤害时，将清除自身所有负面效果，并恢复50%的最大生命，同时进入{绽燃}状态，持续2回合,该状态下不会死亡且自身会获得{回火}(战斗中仅生效1次)"
-},
-	[1026861]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[122]\n基础攻击+[24%]\n克里安卡受到致命伤害时，将清除自身所有负面效果，并恢复50%的最大生命，同时进入{绽燃}状态，持续2回合,该状态下不会死亡且自身会获得{回火}(战斗中仅生效1次)"
-},
-	[1026862]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[122]\n基础攻击+[24%]\n克里安卡受到致命伤害时，将清除自身所有负面效果，并恢复50%的最大生命，同时进入{绽燃}状态，持续2回合,该状态下不会死亡且自身会获得{回火}(战斗中仅生效1次)"
-},
-	[1026863]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[122]\n基础攻击+[24%]\n克里安卡受到致命伤害时，将清除自身所有负面效果，并恢复50%的最大生命，同时进入{绽燃}状态，持续2回合,该状态下不会死亡且自身会获得{回火}(战斗中仅生效1次)"
-},
-	[1026864]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[122]\n基础攻击+[24%]\n克里安卡受到致命伤害时，将清除自身所有负面效果，并恢复50%的最大生命，同时进入{绽燃}状态，持续2回合,该状态下不会死亡且自身会获得{回火}(战斗中仅生效1次)"
-},
-	[1026865]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[122]\n基础攻击+[24%]\n克里安卡受到致命伤害时，将清除自身所有负面效果，并恢复50%的最大生命，同时进入{绽燃}状态，持续2回合,该状态下不会死亡且自身会获得{回火}(战斗中仅生效1次)"
-},
-	[1026866]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,1026861}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[122]\n基础攻击+[24%]\n克里安卡受到致命伤害时，将清除自身所有负面效果，并恢复50%的最大生命，同时进入{绽燃}状态，持续2回合,该状态下不会死亡且自身会获得{回火}(战斗中仅生效1次)"
-},
-	[102786]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[130]\n基础攻击+[25%]\n战斗开始时立即触发1次锁定，且被锁定目标会被附加孤立效果(被孤立单位受到的伤害时无法被分担)；当锁定目标死亡时会自动触发1次锁定"
-},
-	[1027861]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1027901}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[130]\n基础攻击+[25%]\n战斗开始时立即触发1次锁定，且被锁定目标会被附加孤立效果(被孤立单位受到的伤害时无法被分担)；当锁定目标死亡时会自动触发1次锁定"
-},
-	[1027862]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=53, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[130]\n基础攻击+[25%]\n战斗开始时立即触发1次锁定，且被锁定目标会被附加孤立效果(被孤立单位受到的伤害时无法被分担)；当锁定目标死亡时会自动触发1次锁定"
-},
-	[1027863]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[130]\n基础攻击+[25%]\n战斗开始时立即触发1次锁定，且被锁定目标会被附加孤立效果(被孤立单位受到的伤害时无法被分担)；当锁定目标死亡时会自动触发1次锁定"
-},
-	[1027864]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=104, trigger_num={1,1023902}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[130]\n基础攻击+[25%]\n战斗开始时立即触发1次锁定，且被锁定目标会被附加孤立效果(被孤立单位受到的伤害时无法被分担)；当锁定目标死亡时会自动触发1次锁定"
-},
-	[102886]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[125]\n基础攻击+[24%]\n每回合开始时，云篆会基于自身当前生命获得1层{卜运}(若当前生命>50%，则获得{苍阳}，否则获得{太阴})。{苍阳}状态下，云篆受到技能攻击时将会对攻击方造成自身最大生命14%的真实伤害；{太阴}状态下，云篆受到技能攻击时将为友方全体生成1个相当于自身最大生命10%的护盾，最多叠加2层，持续1回合"
-},
-	[1028861]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[125]\n基础攻击+[24%]\n每回合开始时，云篆会基于自身当前生命获得1层{卜运}(若当前生命>50%，则获得{苍阳}，否则获得{太阴})。{苍阳}状态下，云篆受到技能攻击时将会对攻击方造成自身最大生命14%的真实伤害；{太阴}状态下，云篆受到技能攻击时将为友方全体生成1个相当于自身最大生命10%的护盾，最多叠加2层，持续1回合"
-},
-	[1028862]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[125]\n基础攻击+[24%]\n每回合开始时，云篆会基于自身当前生命获得1层{卜运}(若当前生命>50%，则获得{苍阳}，否则获得{太阴})。{苍阳}状态下，云篆受到技能攻击时将会对攻击方造成自身最大生命14%的真实伤害；{太阴}状态下，云篆受到技能攻击时将为友方全体生成1个相当于自身最大生命10%的护盾，最多叠加2层，持续1回合"
-},
-	[1028863]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=69, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[125]\n基础攻击+[24%]\n每回合开始时，云篆会基于自身当前生命获得1层{卜运}(若当前生命>50%，则获得{苍阳}，否则获得{太阴})。{苍阳}状态下，云篆受到技能攻击时将会对攻击方造成自身最大生命14%的真实伤害；{太阴}状态下，云篆受到技能攻击时将为友方全体生成1个相当于自身最大生命10%的护盾，最多叠加2层，持续1回合"
-},
-	[1028864]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=69, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[125]\n基础攻击+[24%]\n每回合开始时，云篆会基于自身当前生命获得1层{卜运}(若当前生命>50%，则获得{苍阳}，否则获得{太阴})。{苍阳}状态下，云篆受到技能攻击时将会对攻击方造成自身最大生命14%的真实伤害；{太阴}状态下，云篆受到技能攻击时将为友方全体生成1个相当于自身最大生命10%的护盾，最多叠加2层，持续1回合"
-},
-	[102986]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[123]\n基础攻击+[24]%\n闪蝶受到致命伤害时会立刻被电离护盾保护(生命回复50%且本回合不会再受到伤害)，同时使静电球的{电极}层数补充至满层，战斗中仅生效1次"
-},
-	[1029861]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,102986}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[123]\n基础攻击+[24]%\n闪蝶受到致命伤害时会立刻被电离护盾保护(生命回复50%且本回合不会再受到伤害)，同时使静电球的{电极}层数补充至满层，战斗中仅生效1次"
-},
-	[1029862]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,102986}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[123]\n基础攻击+[24]%\n闪蝶受到致命伤害时会立刻被电离护盾保护(生命回复50%且本回合不会再受到伤害)，同时使静电球的{电极}层数补充至满层，战斗中仅生效1次"
-},
-	[1029863]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,102986}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[123]\n基础攻击+[24]%\n闪蝶受到致命伤害时会立刻被电离护盾保护(生命回复50%且本回合不会再受到伤害)，同时使静电球的{电极}层数补充至满层，战斗中仅生效1次"
-},
-	[1029864]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[123]\n基础攻击+[24]%\n闪蝶受到致命伤害时会立刻被电离护盾保护(生命回复50%且本回合不会再受到伤害)，同时使静电球的{电极}层数补充至满层，战斗中仅生效1次"
-},
-	[1029865]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[123]\n基础攻击+[24]%\n闪蝶受到致命伤害时会立刻被电离护盾保护(生命回复50%且本回合不会再受到伤害)，同时使静电球的{电极}层数补充至满层，战斗中仅生效1次"
-},
-	[1029866]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[123]\n基础攻击+[24]%\n闪蝶受到致命伤害时会立刻被电离护盾保护(生命回复50%且本回合不会再受到伤害)，同时使静电球的{电极}层数补充至满层，战斗中仅生效1次"
-},
-	[103086]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={1030804,1030805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[138]\n基础攻击+[27%]\n狐火咒解状态下，秘刃·焚绝黄泉的消耗层数-1，且自身在该状态下受到致命伤害时，将会被狐火的力量包裹，以1点生命在场上存活至下回合行动开始（该形态下可以被施加治疗和护盾，且免疫控制效果，释放秘刃·焚绝黄泉不再消耗{狐火}），战斗中仅生效1次"
-},
-	[1030861]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={1030808}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[138]\n基础攻击+[27%]\n狐火咒解状态下，秘刃·焚绝黄泉的消耗层数-1，且自身在该状态下受到致命伤害时，将会被狐火的力量包裹，以1点生命在场上存活至下回合行动开始（该形态下可以被施加治疗和护盾，且免疫控制效果，释放秘刃·焚绝黄泉不再消耗{狐火}），战斗中仅生效1次"
-},
-	[1030862]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={103005}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[138]\n基础攻击+[27%]\n狐火咒解状态下，秘刃·焚绝黄泉的消耗层数-1，且自身在该状态下受到致命伤害时，将会被狐火的力量包裹，以1点生命在场上存活至下回合行动开始（该形态下可以被施加治疗和护盾，且免疫控制效果，释放秘刃·焚绝黄泉不再消耗{狐火}），战斗中仅生效1次"
-},
-	[1030863]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={1030801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[138]\n基础攻击+[27%]\n狐火咒解状态下，秘刃·焚绝黄泉的消耗层数-1，且自身在该状态下受到致命伤害时，将会被狐火的力量包裹，以1点生命在场上存活至下回合行动开始（该形态下可以被施加治疗和护盾，且免疫控制效果，释放秘刃·焚绝黄泉不再消耗{狐火}），战斗中仅生效1次"
-},
-	[1030864]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,1030867}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[138]\n基础攻击+[27%]\n狐火咒解状态下，秘刃·焚绝黄泉的消耗层数-1，且自身在该状态下受到致命伤害时，将会被狐火的力量包裹，以1点生命在场上存活至下回合行动开始（该形态下可以被施加治疗和护盾，且免疫控制效果，释放秘刃·焚绝黄泉不再消耗{狐火}），战斗中仅生效1次"
-},
-	[1030865]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,1030867}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[138]\n基础攻击+[27%]\n狐火咒解状态下，秘刃·焚绝黄泉的消耗层数-1，且自身在该状态下受到致命伤害时，将会被狐火的力量包裹，以1点生命在场上存活至下回合行动开始（该形态下可以被施加治疗和护盾，且免疫控制效果，释放秘刃·焚绝黄泉不再消耗{狐火}），战斗中仅生效1次"
-},
-	[1030866]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=172, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[138]\n基础攻击+[27%]\n狐火咒解状态下，秘刃·焚绝黄泉的消耗层数-1，且自身在该状态下受到致命伤害时，将会被狐火的力量包裹，以1点生命在场上存活至下回合行动开始（该形态下可以被施加治疗和护盾，且免疫控制效果，释放秘刃·焚绝黄泉不再消耗{狐火}），战斗中仅生效1次"
-},
-	[1030867]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,1030867}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[138]\n基础攻击+[27%]\n狐火咒解状态下，秘刃·焚绝黄泉的消耗层数-1，且自身在该状态下受到致命伤害时，将会被狐火的力量包裹，以1点生命在场上存活至下回合行动开始（该形态下可以被施加治疗和护盾，且免疫控制效果，释放秘刃·焚绝黄泉不再消耗{狐火}），战斗中仅生效1次"
-},
-	[1030868]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[138]\n基础攻击+[27%]\n狐火咒解状态下，秘刃·焚绝黄泉的消耗层数-1，且自身在该状态下受到致命伤害时，将会被狐火的力量包裹，以1点生命在场上存活至下回合行动开始（该形态下可以被施加治疗和护盾，且免疫控制效果，释放秘刃·焚绝黄泉不再消耗{狐火}），战斗中仅生效1次"
-},
-	[1030869]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[138]\n基础攻击+[27%]\n狐火咒解状态下，秘刃·焚绝黄泉的消耗层数-1，且自身在该状态下受到致命伤害时，将会被狐火的力量包裹，以1点生命在场上存活至下回合行动开始（该形态下可以被施加治疗和护盾，且免疫控制效果，释放秘刃·焚绝黄泉不再消耗{狐火}），战斗中仅生效1次"
-},
-	[103186]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="攻击+[138]\n基础攻击+[27%]\n狐火咒解状态下，秘刃·焚绝黄泉的消耗层数-1，且自身在该状态下受到致命伤害时，将会被狐火的力量包裹，以1点生命在场上存活至下回合行动开始（该形态下可以被施加治疗和护盾，且免疫控制效果，释放秘刃·焚绝黄泉不再消耗{狐火}），战斗中仅生效1次"
 },
 	[100180]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，使友方全体获得1层{{护盾}}(护盾值为烁曦最大生命的[8]%；同属性战员护盾值提升20%)，持续2回合，最多叠加2层"
 },
@@ -1521,11 +1271,11 @@ local effect_data=
 },
 	[102080]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={1020,102001,102002,102004}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每攻击2次，将获得1层{{寒翎}}(自身格挡几率提升[15]%，暴击几率提升[[6]]%)，最多叠加4层；满层时将额外获得[[[15]]]%的攻击提升"
 },
-	[102090]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=5, trigger_num={102001,102002,102004}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每次技能攻击时，若首要目标生命低于65%，则在技能释放后追加1次{掠血灭痕}，对其造成自身攻击[[80]]%的寒霜伤害，该效果对于护盾目标伤害提升100%\n[掠血灭痕]被视为释放源能爆发"
+	[102090]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=5, trigger_num={102001,102002,102004}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每次技能攻击时，若首要目标生命低于65%，则在技能释放后追加1次{掠血灭痕}，对其造成自身攻击[[80]]%的寒霜伤害，该效果对于护盾目标伤害提升100%"
 },
-	[1020901]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={102003}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每次技能攻击时，若首要目标生命低于65%，则在技能释放后追加1次{掠血灭痕}，对其造成自身攻击[[80]]%的寒霜伤害，该效果对于护盾目标伤害提升100%\n[掠血灭痕]被视为释放源能爆发"
+	[1020901]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={102003}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每次技能攻击时，若首要目标生命低于65%，则在技能释放后追加1次{掠血灭痕}，对其造成自身攻击[[80]]%的寒霜伤害，该效果对于护盾目标伤害提升100%"
 },
-	[1020902]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={102005}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每次技能攻击时，若首要目标生命低于65%，则在技能释放后追加1次{掠血灭痕}，对其造成自身攻击[[80]]%的寒霜伤害，该效果对于护盾目标伤害提升100%\n[掠血灭痕]被视为释放源能爆发"
+	[1020902]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={102005}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每次技能攻击时，若首要目标生命低于65%，则在技能释放后追加1次{掠血灭痕}，对其造成自身攻击[[80]]%的寒霜伤害，该效果对于护盾目标伤害提升100%"
 },
 	[102180]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={102101,102102,102104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次释放技能时，自身获得1层{念气}效果，最多叠加2层；友方在行动时会消耗自身1层{念气}，使其攻击提升危峭攻击的[12]%，无视防御抵抗提升[[12]]%，持续1回合；若为同属性战员则额外获得[[[14]]]%的生蕴伤害提升"
 },
@@ -1541,25 +1291,23 @@ local effect_data=
 },
 	[1021806]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次释放技能时，自身获得1层{念气}效果，最多叠加2层；友方在行动时会消耗自身1层{念气}，使其攻击提升危峭攻击的[12]%，无视防御抵抗提升[[12]]%，持续1回合；若为同属性战员则额外获得[[[14]]]%的生蕴伤害提升"
 },
-	[1021807]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={102103}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次释放技能时，自身获得1层{念气}效果，最多叠加2层；友方在行动时会消耗自身1层{念气}，使其攻击提升危峭攻击的[12]%，无视防御抵抗提升[[12]]%，持续1回合；若为同属性战员则额外获得[[[14]]]%的生蕴伤害提升"
-},
 	[102190]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=35, trigger_num={1,102104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="爆气状态下，自身将获得50%格挡几率，且自身的无视防御抵抗提升20%"
 },
-	[102280]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=99, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态\n{榴弹射击}与{掩护射击}被视为释放源能爆发"
+	[102280]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=99, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态"
 },
-	[1022801]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=99, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态\n{榴弹射击}与{掩护射击}被视为释放源能爆发"
+	[1022801]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=99, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态"
 },
-	[1022802]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,102280}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态\n{榴弹射击}与{掩护射击}被视为释放源能爆发"
+	[1022802]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,102280}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态"
 },
-	[1022803]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=35, trigger_num={1,1022801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态\n{榴弹射击}与{掩护射击}被视为释放源能爆发"
+	[1022803]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=35, trigger_num={1,1022801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态"
 },
-	[1022804]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=156, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态\n{榴弹射击}与{掩护射击}被视为释放源能爆发"
+	[1022804]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=156, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态"
 },
-	[1022805]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=10, trigger_num={102205}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态\n{榴弹射击}与{掩护射击}被视为释放源能爆发"
+	[1022805]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=10, trigger_num={102205}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态"
 },
-	[1022806]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=164, trigger_num={102203}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态\n{榴弹射击}与{掩护射击}被视为释放源能爆发"
+	[1022806]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态"
 },
-	[1022807]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态\n{榴弹射击}与{掩护射击}被视为释放源能爆发"
+	[1022807]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时会为刺玫装填1层{弹药}(若为同属性战员，则装填数量+1)，上限12层。{弹药}满层时，刺玫会进入{火力全开}状态并立即对敌方全体发动1次{榴弹射击}，造成自身攻击[120]%的直击伤害；该状态下，刺玫在友方战员(自身除外)行动结束后会消耗自身5层弹药对敌方全体发动1次{掩护射击}，造成自身攻击[60]%的直击伤害，且对首要目标伤害加深5%*{{赏金}}层数，弹药层数=0时退出该状态"
 },
 	[102290]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={102203,102205}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每触发1次{榴弹射击}或{掩护射击}时，将对目标附加1层{{赏金}}(每层赏金降低目标[1]%伤害减免和[2]%直击抗性)，持续2回合，最多叠加12层"
 },
@@ -1593,7 +1341,7 @@ local effect_data=
 },
 	[1023814]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1023807}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="友方战员释放技能时，自身会获得1层{渊响}，上限5层，满层时将转化为{渊鸣}({渊鸣}存在时{渊响}禁止转化)；若自身行动时存在{渊鸣}，则消耗{渊鸣}进入{霆渊之境}(若已处于{霆渊之境}，则不会消耗{渊鸣})，持续2回合；进入{霆渊之境}时，友方全体将会获得[1]层{渊逆}效果(每次受到攻击伤害时将消耗1层{渊逆}使自身获得60%伤害减免提升，友方获得的效果减半)，持续1回合，最多叠加3层"
 },
-	[102390]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=172, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在受到致命伤害时，将会触发{摇篮之拥}(届时自身将无法行动、无法被敌方技能选中、无法受到自身以外的治疗，且免疫所有伤害和负面效果)；该状态下{渊响}的获取几率降低为[50]%，同时友方战员每次释放技能时会为霆渊·艾丽西亚提供1层{渊回}；若自身行动前存在6层{渊回}，则消耗所有{渊回}使自身苏醒，生命继承自身最大生命的[25]%(不消耗{渊鸣})；{渊回}不足6层，则消耗{渊鸣}进行复活，生命继承自身最大生命的[50]%；若不满足复活条件则会持续{摇篮之拥}（当己方场上仅剩自身时，{摇篮之拥}禁止触发）"
+	[102390]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=154, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在受到致命伤害时，将会触发{摇篮之拥}(届时自身将无法行动、无法被敌方技能选中、无法受到自身以外的治疗，且免疫所有伤害和负面效果)；该状态下{渊响}的获取几率降低为[50]%，同时友方战员每次释放技能时会为霆渊·艾丽西亚提供1层{渊回}；若自身行动前存在6层{渊回}，则消耗所有{渊回}使自身苏醒，生命继承自身最大生命的[25]%(不消耗{渊鸣})；{渊回}不足6层，则消耗{渊鸣}进行复活，生命继承自身最大生命的[50]%；若不满足复活条件则会持续{摇篮之拥}（当己方场上仅剩自身时，{摇篮之拥}禁止触发）"
 },
 	[1023901]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在受到致命伤害时，将会触发{摇篮之拥}(届时自身将无法行动、无法被敌方技能选中、无法受到自身以外的治疗，且免疫所有伤害和负面效果)；该状态下{渊响}的获取几率降低为[50]%，同时友方战员每次释放技能时会为霆渊·艾丽西亚提供1层{渊回}；若自身行动前存在6层{渊回}，则消耗所有{渊回}使自身苏醒，生命继承自身最大生命的[25]%(不消耗{渊鸣})；{渊回}不足6层，则消耗{渊鸣}进行复活，生命继承自身最大生命的[50]%；若不满足复活条件则会持续{摇篮之拥}（当己方场上仅剩自身时，{摇篮之拥}禁止触发）"
 },
@@ -1622,290 +1370,6 @@ local effect_data=
 	[1023913]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在受到致命伤害时，将会触发{摇篮之拥}(届时自身将无法行动、无法被敌方技能选中、无法受到自身以外的治疗，且免疫所有伤害和负面效果)；该状态下{渊响}的获取几率降低为[50]%，同时友方战员每次释放技能时会为霆渊·艾丽西亚提供1层{渊回}；若自身行动前存在6层{渊回}，则消耗所有{渊回}使自身苏醒，生命继承自身最大生命的[25]%(不消耗{渊鸣})；{渊回}不足6层，则消耗{渊鸣}进行复活，生命继承自身最大生命的[50]%；若不满足复活条件则会持续{摇篮之拥}（当己方场上仅剩自身时，{摇篮之拥}禁止触发）"
 },
 	[1023914]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在受到致命伤害时，将会触发{摇篮之拥}(届时自身将无法行动、无法被敌方技能选中、无法受到自身以外的治疗，且免疫所有伤害和负面效果)；该状态下{渊响}的获取几率降低为[50]%，同时友方战员每次释放技能时会为霆渊·艾丽西亚提供1层{渊回}；若自身行动前存在6层{渊回}，则消耗所有{渊回}使自身苏醒，生命继承自身最大生命的[25]%(不消耗{渊鸣})；{渊回}不足6层，则消耗{渊鸣}进行复活，生命继承自身最大生命的[50]%；若不满足复活条件则会持续{摇篮之拥}（当己方场上仅剩自身时，{摇篮之拥}禁止触发）"
-},
-	[1023915]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在受到致命伤害时，将会触发{摇篮之拥}(届时自身将无法行动、无法被敌方技能选中、无法受到自身以外的治疗，且免疫所有伤害和负面效果)；该状态下{渊响}的获取几率降低为[50]%，同时友方战员每次释放技能时会为霆渊·艾丽西亚提供1层{渊回}；若自身行动前存在6层{渊回}，则消耗所有{渊回}使自身苏醒，生命继承自身最大生命的[25]%(不消耗{渊鸣})；{渊回}不足6层，则消耗{渊鸣}进行复活，生命继承自身最大生命的[50]%；若不满足复活条件则会持续{摇篮之拥}（当己方场上仅剩自身时，{摇篮之拥}禁止触发）"
-},
-	[102480]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，阿尔戈从箱包中随机拿取物品：\n{{疲乏气体}}：自身格挡几率提升[40]%，且源能技首段命中有45%几率使目标源能获取效率降低25%(自身强化持续1回合，负面效果持续2回合)；\n{{神经毒素}}：自身伤害减免提升[20]%，且源能技最后一击有35%几率使目标当前源能减少50%(自身强化持续1回合)；\n{{滞缓药剂}}：自身无视防御抵抗提升[30]%，且源能技最后一击有40%几率使目标速度降低35%(自身强化持续1回合，负面效果持续2回合)"
-},
-	[1024801]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={102401,102402}, trigger_rate=4500, is_effect_inc=1, damage_source=8, desc="每回合开始时，阿尔戈从箱包中随机拿取物品：\n{{疲乏气体}}：自身格挡几率提升[40]%，且源能技首段命中有45%几率使目标源能获取效率降低25%(自身强化持续1回合，负面效果持续2回合)；\n{{神经毒素}}：自身伤害减免提升[20]%，且源能技最后一击有35%几率使目标当前源能减少50%(自身强化持续1回合)；\n{{滞缓药剂}}：自身无视防御抵抗提升[30]%，且源能技最后一击有40%几率使目标速度降低35%(自身强化持续1回合，负面效果持续2回合)"
-},
-	[1024802]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102401,102402}, trigger_rate=3500, is_effect_inc=1, damage_source=8, desc="每回合开始时，阿尔戈从箱包中随机拿取物品：\n{{疲乏气体}}：自身格挡几率提升[40]%，且源能技首段命中有45%几率使目标源能获取效率降低25%(自身强化持续1回合，负面效果持续2回合)；\n{{神经毒素}}：自身伤害减免提升[20]%，且源能技最后一击有35%几率使目标当前源能减少50%(自身强化持续1回合)；\n{{滞缓药剂}}：自身无视防御抵抗提升[30]%，且源能技最后一击有40%几率使目标速度降低35%(自身强化持续1回合，负面效果持续2回合)"
-},
-	[1024803]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={102401,102402}, trigger_rate=4000, is_effect_inc=1, damage_source=8, desc="每回合开始时，阿尔戈从箱包中随机拿取物品：\n{{疲乏气体}}：自身格挡几率提升[40]%，且源能技首段命中有45%几率使目标源能获取效率降低25%(自身强化持续1回合，负面效果持续2回合)；\n{{神经毒素}}：自身伤害减免提升[20]%，且源能技最后一击有35%几率使目标当前源能减少50%(自身强化持续1回合)；\n{{滞缓药剂}}：自身无视防御抵抗提升[30]%，且源能技最后一击有40%几率使目标速度降低35%(自身强化持续1回合，负面效果持续2回合)"
-},
-	[1024804]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，阿尔戈从箱包中随机拿取物品：\n{{疲乏气体}}：自身格挡几率提升[40]%，且源能技首段命中有45%几率使目标源能获取效率降低25%(自身强化持续1回合，负面效果持续2回合)；\n{{神经毒素}}：自身伤害减免提升[20]%，且源能技最后一击有35%几率使目标当前源能减少50%(自身强化持续1回合)；\n{{滞缓药剂}}：自身无视防御抵抗提升[30]%，且源能技最后一击有40%几率使目标速度降低35%(自身强化持续1回合，负面效果持续2回合)"
-},
-	[1024805]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，阿尔戈从箱包中随机拿取物品：\n{{疲乏气体}}：自身格挡几率提升[40]%，且源能技首段命中有45%几率使目标源能获取效率降低25%(自身强化持续1回合，负面效果持续2回合)；\n{{神经毒素}}：自身伤害减免提升[20]%，且源能技最后一击有35%几率使目标当前源能减少50%(自身强化持续1回合)；\n{{滞缓药剂}}：自身无视防御抵抗提升[30]%，且源能技最后一击有40%几率使目标速度降低35%(自身强化持续1回合，负面效果持续2回合)"
-},
-	[1024806]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，阿尔戈从箱包中随机拿取物品：\n{{疲乏气体}}：自身格挡几率提升[40]%，且源能技首段命中有45%几率使目标源能获取效率降低25%(自身强化持续1回合，负面效果持续2回合)；\n{{神经毒素}}：自身伤害减免提升[20]%，且源能技最后一击有35%几率使目标当前源能减少50%(自身强化持续1回合)；\n{{滞缓药剂}}：自身无视防御抵抗提升[30]%，且源能技最后一击有40%几率使目标速度降低35%(自身强化持续1回合，负面效果持续2回合)"
-},
-	[102490]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身的效果命中在首回合将提升[12]%，持续1回合；当成功对目标造成天赋一包含的负面效果时，自身的效果命中将提升[1.5]%（单个源能技只会触发一次），持续至战斗结束，最多叠加4层"
-},
-	[1024901]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=35, trigger_num={1,1024801,1024802}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身的效果命中在首回合将提升[12]%，持续1回合；当成功对目标造成天赋一包含的负面效果时，自身的效果命中将提升[1.5]%（单个源能技只会触发一次），持续至战斗结束，最多叠加4层"
-},
-	[102580]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时自身会获得1枚{{月刃}}(敌方在对我方战员造成技能伤害时，辉月会消耗1枚月刃吸收其[25]%的技能伤害并储存)；自身在场时，友方战员生命将会获得辉月最大生命[8]%的生命上限加成（自身除外）"
-},
-	[1025801]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=169, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时自身会获得1枚{{月刃}}(敌方在对我方战员造成技能伤害时，辉月会消耗1枚月刃吸收其[25]%的技能伤害并储存)；自身在场时，友方战员生命将会获得辉月最大生命[8]%的生命上限加成（自身除外）"
-},
-	[1025802]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=168, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时自身会获得1枚{{月刃}}(敌方在对我方战员造成技能伤害时，辉月会消耗1枚月刃吸收其[25]%的技能伤害并储存)；自身在场时，友方战员生命将会获得辉月最大生命[8]%的生命上限加成（自身除外）"
-},
-	[1025803]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时自身会获得1枚{{月刃}}(敌方在对我方战员造成技能伤害时，辉月会消耗1枚月刃吸收其[25]%的技能伤害并储存)；自身在场时，友方战员生命将会获得辉月最大生命[8]%的生命上限加成（自身除外）"
-},
-	[102590]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时辉月会创造1次{{满月辉境}}；当辉月在场且{{月刃}}消耗5枚时，辉月清除自身所有控制效果，展开{{月华}}，承受敌方普攻与技能伤害，{{月华}}承受伤害上限为5枚{{月刃}}吸收伤害的总和加上辉月最大生命的[40]%，持续2回合。{{月华}}会优先结算角色受到的伤害，若超出{{月华}}生命上限，则会直接破碎以免除该次伤害，且{{月华}}持续期间再次展开时会发生替换"
-},
-	[1025901]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,1025801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时辉月会创造1次{{满月辉境}}；当辉月在场且{{月刃}}消耗5枚时，辉月清除自身所有控制效果，展开{{月华}}，承受敌方普攻与技能伤害，{{月华}}承受伤害上限为5枚{{月刃}}吸收伤害的总和加上辉月最大生命的[40]%，持续2回合。{{月华}}会优先结算角色受到的伤害，若超出{{月华}}生命上限，则会直接破碎以免除该次伤害，且{{月华}}持续期间再次展开时会发生替换"
-},
-	[1025902]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时辉月会创造1次{{满月辉境}}；当辉月在场且{{月刃}}消耗5枚时，辉月清除自身所有控制效果，展开{{月华}}，承受敌方普攻与技能伤害，{{月华}}承受伤害上限为5枚{{月刃}}吸收伤害的总和加上辉月最大生命的[40]%，持续2回合。{{月华}}会优先结算角色受到的伤害，若超出{{月华}}生命上限，则会直接破碎以免除该次伤害，且{{月华}}持续期间再次展开时会发生替换"
-},
-	[1025903]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=164, trigger_num={102503}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时辉月会创造1次{{满月辉境}}；当辉月在场且{{月刃}}消耗5枚时，辉月清除自身所有控制效果，展开{{月华}}，承受敌方普攻与技能伤害，{{月华}}承受伤害上限为5枚{{月刃}}吸收伤害的总和加上辉月最大生命的[40]%，持续2回合。{{月华}}会优先结算角色受到的伤害，若超出{{月华}}生命上限，则会直接破碎以免除该次伤害，且{{月华}}持续期间再次展开时会发生替换"
-},
-	[102680]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，克里安卡会为自身、己方生命值最低和攻击最高的友方单位附加{{回火}}，获得{{回火}}的目标会获得1层基于克里安卡最大生命[24]%的护盾，且获得3次反伤和1次免疫负面状态的效果，持续2回合(反伤系数为[18]%，该伤害穿透护盾且不超过克里安卡最大生命的[24]%)"
-},
-	[1026801]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1026802}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，克里安卡会为自身、己方生命值最低和攻击最高的友方单位附加{{回火}}，获得{{回火}}的目标会获得1层基于克里安卡最大生命[24]%的护盾，且获得3次反伤和1次免疫负面状态的效果，持续2回合(反伤系数为[18]%，该伤害穿透护盾且不超过克里安卡最大生命的[24]%)"
-},
-	[1026802]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,102680}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，克里安卡会为自身、己方生命值最低和攻击最高的友方单位附加{{回火}}，获得{{回火}}的目标会获得1层基于克里安卡最大生命[24]%的护盾，且获得3次反伤和1次免疫负面状态的效果，持续2回合(反伤系数为[18]%，该伤害穿透护盾且不超过克里安卡最大生命的[24]%)"
-},
-	[1026803]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1026802}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，克里安卡会为自身、己方生命值最低和攻击最高的友方单位附加{{回火}}，获得{{回火}}的目标会获得1层基于克里安卡最大生命[24]%的护盾，且获得3次反伤和1次免疫负面状态的效果，持续2回合(反伤系数为[18]%，该伤害穿透护盾且不超过克里安卡最大生命的[24]%)"
-},
-	[1026804]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1026804}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，克里安卡会为自身、己方生命值最低和攻击最高的友方单位附加{{回火}}，获得{{回火}}的目标会获得1层基于克里安卡最大生命[24]%的护盾，且获得3次反伤和1次免疫负面状态的效果，持续2回合(反伤系数为[18]%，该伤害穿透护盾且不超过克里安卡最大生命的[24]%)"
-},
-	[1026805]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,102680}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，克里安卡会为自身、己方生命值最低和攻击最高的友方单位附加{{回火}}，获得{{回火}}的目标会获得1层基于克里安卡最大生命[24]%的护盾，且获得3次反伤和1次免疫负面状态的效果，持续2回合(反伤系数为[18]%，该伤害穿透护盾且不超过克里安卡最大生命的[24]%)"
-},
-	[1026806]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1026805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，克里安卡会为自身、己方生命值最低和攻击最高的友方单位附加{{回火}}，获得{{回火}}的目标会获得1层基于克里安卡最大生命[24]%的护盾，且获得3次反伤和1次免疫负面状态的效果，持续2回合(反伤系数为[18]%，该伤害穿透护盾且不超过克里安卡最大生命的[24]%)"
-},
-	[1026807]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，克里安卡会为自身、己方生命值最低和攻击最高的友方单位附加{{回火}}，获得{{回火}}的目标会获得1层基于克里安卡最大生命[24]%的护盾，且获得3次反伤和1次免疫负面状态的效果，持续2回合(反伤系数为[18]%，该伤害穿透护盾且不超过克里安卡最大生命的[24]%)"
-},
-	[1026808]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，克里安卡会为自身、己方生命值最低和攻击最高的友方单位附加{{回火}}，获得{{回火}}的目标会获得1层基于克里安卡最大生命[24]%的护盾，且获得3次反伤和1次免疫负面状态的效果，持续2回合(反伤系数为[18]%，该伤害穿透护盾且不超过克里安卡最大生命的[24]%)"
-},
-	[1026809]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，克里安卡会为自身、己方生命值最低和攻击最高的友方单位附加{{回火}}，获得{{回火}}的目标会获得1层基于克里安卡最大生命[24]%的护盾，且获得3次反伤和1次免疫负面状态的效果，持续2回合(反伤系数为[18]%，该伤害穿透护盾且不超过克里安卡最大生命的[24]%)"
-},
-	[102690]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="同一回合内，克里安卡会对攻击她的敌人添加{焰苗}(每次受到攻击伤害时添加1次，单个目标最多被添加[4]次)；自身和{{回火}}下的友方在受到带有{焰苗}的敌人攻击时，承受伤害将降低该敌人带有的{焰苗}层数*[8]%"
-},
-	[1026901]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={102690}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="同一回合内，克里安卡会对攻击她的敌人添加{焰苗}(每次受到攻击伤害时添加1次，单个目标最多被添加[4]次)；自身和{{回火}}下的友方在受到带有{焰苗}的敌人攻击时，承受伤害将降低该敌人带有的{焰苗}层数*[8]%"
-},
-	[1026902]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="同一回合内，克里安卡会对攻击她的敌人添加{焰苗}(每次受到攻击伤害时添加1次，单个目标最多被添加[4]次)；自身和{{回火}}下的友方在受到带有{焰苗}的敌人攻击时，承受伤害将降低该敌人带有的{焰苗}层数*[8]%"
-},
-	[1026903]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={102680}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="同一回合内，克里安卡会对攻击她的敌人添加{焰苗}(每次受到攻击伤害时添加1次，单个目标最多被添加[4]次)；自身和{{回火}}下的友方在受到带有{焰苗}的敌人攻击时，承受伤害将降低该敌人带有的{焰苗}层数*[8]%"
-},
-	[102780]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在场时，每回合开始将激活{骑士的誓言}——友方所有战员攻击提升[10]%，同属性战员效果提升40%，持续1回合；{骑士的誓言}为自身额外提供[20]%的暴击几率"
-},
-	[1027801]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,102780}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在场时，每回合开始将激活{骑士的誓言}——友方所有战员攻击提升[10]%，同属性战员效果提升40%，持续1回合；{骑士的誓言}为自身额外提供[20]%的暴击几率"
-},
-	[1027802]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在场时，每回合开始将激活{骑士的誓言}——友方所有战员攻击提升[10]%，同属性战员效果提升40%，持续1回合；{骑士的誓言}为自身额外提供[20]%的暴击几率"
-},
-	[1027803]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在场时，每回合开始将激活{骑士的誓言}——友方所有战员攻击提升[10]%，同属性战员效果提升40%，持续1回合；{骑士的誓言}为自身额外提供[20]%的暴击几率"
-},
-	[1027804]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,1023902}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在场时，每回合开始将激活{骑士的誓言}——友方所有战员攻击提升[10]%，同属性战员效果提升40%，持续1回合；{骑士的誓言}为自身额外提供[20]%的暴击几率"
-},
-	[102790]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身在场时，每回合开始将激活{骑士的誓言}——友方所有战员攻击提升[10]%，同属性战员效果提升40%，持续1回合；{骑士的誓言}为自身额外提供[20]%的暴击几率"
-},
-	[1027901]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="行动时将{锁定}敌方生命值最低的目标(目标为怪物时优先锁定BOSS>精英)，使友方对其造成的伤害提升[10]%，自身效果提升[50]%。敌方单位每降低25%血量，自身获得1层{谴罚}，当{谴罚}满6层时则会对锁定目标释放1次源能爆发(无消耗，当前行动单位技能释放后发动)，且该伤害{无法被抵挡}"
-},
-	[1027902]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=170, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="行动时将{锁定}敌方生命值最低的目标(目标为怪物时优先锁定BOSS>精英)，使友方对其造成的伤害提升[10]%，自身效果提升[50]%。敌方单位每降低25%血量，自身获得1层{谴罚}，当{谴罚}满6层时则会对锁定目标释放1次源能爆发(无消耗，当前行动单位技能释放后发动)，且该伤害{无法被抵挡}"
-},
-	[1027903]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="行动时将{锁定}敌方生命值最低的目标(目标为怪物时优先锁定BOSS>精英)，使友方对其造成的伤害提升[10]%，自身效果提升[50]%。敌方单位每降低25%血量，自身获得1层{谴罚}，当{谴罚}满6层时则会对锁定目标释放1次源能爆发(无消耗，当前行动单位技能释放后发动)，且该伤害{无法被抵挡}"
-},
-	[1027904]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,1027903}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="行动时将{锁定}敌方生命值最低的目标(目标为怪物时优先锁定BOSS>精英)，使友方对其造成的伤害提升[10]%，自身效果提升[50]%。敌方单位每降低25%血量，自身获得1层{谴罚}，当{谴罚}满6层时则会对锁定目标释放1次源能爆发(无消耗，当前行动单位技能释放后发动)，且该伤害{无法被抵挡}"
-},
-	[1027905]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={102703}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="行动时将{锁定}敌方生命值最低的目标(目标为怪物时优先锁定BOSS>精英)，使友方对其造成的伤害提升[10]%，自身效果提升[50]%。敌方单位每降低25%血量，自身获得1层{谴罚}，当{谴罚}满6层时则会对锁定目标释放1次源能爆发(无消耗，当前行动单位技能释放后发动)，且该伤害{无法被抵挡}"
-},
-	[1027906]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="行动时将{锁定}敌方生命值最低的目标(目标为怪物时优先锁定BOSS>精英)，使友方对其造成的伤害提升[10]%，自身效果提升[50]%。敌方单位每降低25%血量，自身获得1层{谴罚}，当{谴罚}满6层时则会对锁定目标释放1次源能爆发(无消耗，当前行动单位技能释放后发动)，且该伤害{无法被抵挡}"
-},
-	[1027907]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={102703}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="行动时将{锁定}敌方生命值最低的目标(目标为怪物时优先锁定BOSS>精英)，使友方对其造成的伤害提升[10]%，自身效果提升[50]%。敌方单位每降低25%血量，自身获得1层{谴罚}，当{谴罚}满6层时则会对锁定目标释放1次源能爆发(无消耗，当前行动单位技能释放后发动)，且该伤害{无法被抵挡}"
-},
-	[1027908]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="行动时将{锁定}敌方生命值最低的目标(目标为怪物时优先锁定BOSS>精英)，使友方对其造成的伤害提升[10]%，自身效果提升[50]%。敌方单位每降低25%血量，自身获得1层{谴罚}，当{谴罚}满6层时则会对锁定目标释放1次源能爆发(无消耗，当前行动单位技能释放后发动)，且该伤害{无法被抵挡}"
-},
-	[102880]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆首次行动时，自身会获得1层{{浮图}}，当敌方行动并发动技能攻击时，云篆会激活{{浮图}}中断其战斗流程并对其附加1层{{箓术}}(目标攻击降低[10]%)，持续2回合；每次激活{{浮图}}时，云篆的无视防御抵抗将提升[8]%，持续至战斗结束，最多叠加5层"
-},
-	[1028801]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=173, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆首次行动时，自身会获得1层{{浮图}}，当敌方行动并发动技能攻击时，云篆会激活{{浮图}}中断其战斗流程并对其附加1层{{箓术}}(目标攻击降低[10]%)，持续2回合；每次激活{{浮图}}时，云篆的无视防御抵抗将提升[8]%，持续至战斗结束，最多叠加5层"
-},
-	[1028802]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆首次行动时，自身会获得1层{{浮图}}，当敌方行动并发动技能攻击时，云篆会激活{{浮图}}中断其战斗流程并对其附加1层{{箓术}}(目标攻击降低[10]%)，持续2回合；每次激活{{浮图}}时，云篆的无视防御抵抗将提升[8]%，持续至战斗结束，最多叠加5层"
-},
-	[1028803]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,102880}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆首次行动时，自身会获得1层{{浮图}}，当敌方行动并发动技能攻击时，云篆会激活{{浮图}}中断其战斗流程并对其附加1层{{箓术}}(目标攻击降低[10]%)，持续2回合；每次激活{{浮图}}时，云篆的无视防御抵抗将提升[8]%，持续至战斗结束，最多叠加5层"
-},
-	[1028804]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆首次行动时，自身会获得1层{{浮图}}，当敌方行动并发动技能攻击时，云篆会激活{{浮图}}中断其战斗流程并对其附加1层{{箓术}}(目标攻击降低[10]%)，持续2回合；每次激活{{浮图}}时，云篆的无视防御抵抗将提升[8]%，持续至战斗结束，最多叠加5层"
-},
-	[1028805]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,1028901}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆首次行动时，自身会获得1层{{浮图}}，当敌方行动并发动技能攻击时，云篆会激活{{浮图}}中断其战斗流程并对其附加1层{{箓术}}(目标攻击降低[10]%)，持续2回合；每次激活{{浮图}}时，云篆的无视防御抵抗将提升[8]%，持续至战斗结束，最多叠加5层"
-},
-	[1028806]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=164, trigger_num={102803}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆首次行动时，自身会获得1层{{浮图}}，当敌方行动并发动技能攻击时，云篆会激活{{浮图}}中断其战斗流程并对其附加1层{{箓术}}(目标攻击降低[10]%)，持续2回合；每次激活{{浮图}}时，云篆的无视防御抵抗将提升[8]%，持续至战斗结束，最多叠加5层"
-},
-	[1028807]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=164, trigger_num={102803}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆首次行动时，自身会获得1层{{浮图}}，当敌方行动并发动技能攻击时，云篆会激活{{浮图}}中断其战斗流程并对其附加1层{{箓术}}(目标攻击降低[10]%)，持续2回合；每次激活{{浮图}}时，云篆的无视防御抵抗将提升[8]%，持续至战斗结束，最多叠加5层"
-},
-	[102890]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆的生命上限永久提升[12]%，且云篆在受到技能攻击时有[70]%几率获得1层{{<0x01|#ffb136|120082=爻辞>}}，最多叠加6层"
-},
-	[1028901]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=69, trigger_num={}, trigger_rate=7000, is_effect_inc=0, damage_source=8, desc="云篆的生命上限永久提升[12]%，且云篆在受到技能攻击时有[70]%几率获得1层{{<0x01|#ffb136|120082=爻辞>}}，最多叠加6层"
-},
-	[1028902]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={1028901}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="云篆的生命上限永久提升[12]%，且云篆在受到技能攻击时有[70]%几率获得1层{{<0x01|#ffb136|120082=爻辞>}}，最多叠加6层"
-},
-	[102980]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个<0x01|#ffb136|120083=静电球>，<0x01|#ffb136|120083=静电球>继承闪蝶[30]%的{攻击类属性}，持续2回合，最多同时存在3个。处于<0x01|#ffb136|120083=静电球>九宫格范围的敌方单位速度降低[8]%*{<0x01|#ffb136|120085=电极>}层数、骋电抗性降低[5]%*{<0x01|#ffb136|120085=电极>}层数(无法叠加，仅生效最大值)\n每回合结束时，每个<0x01|#ffb136|120083=静电球>都会对敌方全体进行<0x01|#ffb136|120084=放电>，造成<0x01|#ffb136|120083=静电球>攻击力50%*{<0x01|#ffb136|120085=电极>}层数的骋电伤害(可暴击)。闪蝶行动时会为<0x01|#ffb136|120083=静电球>提供1层{<0x01|#ffb136|120085=电极>}，每个<0x01|#ffb136|120083=静电球>的最多可储存4层{<0x01|#ffb136|120085=电极>}"
-},
-	[1029801]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个<0x01|#ffb136|120083=静电球>，<0x01|#ffb136|120083=静电球>继承闪蝶[30]%的{攻击类属性}，持续2回合，最多同时存在3个。处于<0x01|#ffb136|120083=静电球>九宫格范围的敌方单位速度降低[8]%*{<0x01|#ffb136|120085=电极>}层数、骋电抗性降低[5]%*{<0x01|#ffb136|120085=电极>}层数(无法叠加，仅生效最大值)\n每回合结束时，每个<0x01|#ffb136|120083=静电球>都会对敌方全体进行<0x01|#ffb136|120084=放电>，造成<0x01|#ffb136|120083=静电球>攻击力50%*{<0x01|#ffb136|120085=电极>}层数的骋电伤害(可暴击)。闪蝶行动时会为<0x01|#ffb136|120083=静电球>提供1层{<0x01|#ffb136|120085=电极>}，每个<0x01|#ffb136|120083=静电球>的最多可储存4层{<0x01|#ffb136|120085=电极>}"
-},
-	[1029802]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个<0x01|#ffb136|120083=静电球>，<0x01|#ffb136|120083=静电球>继承闪蝶[30]%的{攻击类属性}，持续2回合，最多同时存在3个。处于<0x01|#ffb136|120083=静电球>九宫格范围的敌方单位速度降低[8]%*{<0x01|#ffb136|120085=电极>}层数、骋电抗性降低[5]%*{<0x01|#ffb136|120085=电极>}层数(无法叠加，仅生效最大值)\n每回合结束时，每个<0x01|#ffb136|120083=静电球>都会对敌方全体进行<0x01|#ffb136|120084=放电>，造成<0x01|#ffb136|120083=静电球>攻击力50%*{<0x01|#ffb136|120085=电极>}层数的骋电伤害(可暴击)。闪蝶行动时会为<0x01|#ffb136|120083=静电球>提供1层{<0x01|#ffb136|120085=电极>}，每个<0x01|#ffb136|120083=静电球>的最多可储存4层{<0x01|#ffb136|120085=电极>}"
-},
-	[1029803]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个<0x01|#ffb136|120083=静电球>，<0x01|#ffb136|120083=静电球>继承闪蝶[30]%的{攻击类属性}，持续2回合，最多同时存在3个。处于<0x01|#ffb136|120083=静电球>九宫格范围的敌方单位速度降低[8]%*{<0x01|#ffb136|120085=电极>}层数、骋电抗性降低[5]%*{<0x01|#ffb136|120085=电极>}层数(无法叠加，仅生效最大值)\n每回合结束时，每个<0x01|#ffb136|120083=静电球>都会对敌方全体进行<0x01|#ffb136|120084=放电>，造成<0x01|#ffb136|120083=静电球>攻击力50%*{<0x01|#ffb136|120085=电极>}层数的骋电伤害(可暴击)。闪蝶行动时会为<0x01|#ffb136|120083=静电球>提供1层{<0x01|#ffb136|120085=电极>}，每个<0x01|#ffb136|120083=静电球>的最多可储存4层{<0x01|#ffb136|120085=电极>}"
-},
-	[1029804]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=12, desc="每回合开始时会随机在敌方周围生成1个<0x01|#ffb136|120083=静电球>，<0x01|#ffb136|120083=静电球>继承闪蝶[30]%的{攻击类属性}，持续2回合，最多同时存在3个。处于<0x01|#ffb136|120083=静电球>九宫格范围的敌方单位速度降低[8]%*{<0x01|#ffb136|120085=电极>}层数、骋电抗性降低[5]%*{<0x01|#ffb136|120085=电极>}层数(无法叠加，仅生效最大值)\n每回合结束时，每个<0x01|#ffb136|120083=静电球>都会对敌方全体进行<0x01|#ffb136|120084=放电>，造成<0x01|#ffb136|120083=静电球>攻击力50%*{<0x01|#ffb136|120085=电极>}层数的骋电伤害(可暴击)。闪蝶行动时会为<0x01|#ffb136|120083=静电球>提供1层{<0x01|#ffb136|120085=电极>}，每个<0x01|#ffb136|120083=静电球>的最多可储存4层{<0x01|#ffb136|120085=电极>}"
-},
-	[1029806]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个<0x01|#ffb136|120083=静电球>，<0x01|#ffb136|120083=静电球>继承闪蝶[30]%的{攻击类属性}，持续2回合，最多同时存在3个。处于<0x01|#ffb136|120083=静电球>九宫格范围的敌方单位速度降低[8]%*{<0x01|#ffb136|120085=电极>}层数、骋电抗性降低[5]%*{<0x01|#ffb136|120085=电极>}层数(无法叠加，仅生效最大值)\n每回合结束时，每个<0x01|#ffb136|120083=静电球>都会对敌方全体进行<0x01|#ffb136|120084=放电>，造成<0x01|#ffb136|120083=静电球>攻击力50%*{<0x01|#ffb136|120085=电极>}层数的骋电伤害(可暴击)。闪蝶行动时会为<0x01|#ffb136|120083=静电球>提供1层{<0x01|#ffb136|120085=电极>}，每个<0x01|#ffb136|120083=静电球>的最多可储存4层{<0x01|#ffb136|120085=电极>}"
-},
-	[1029808]={ target_rule=10, damage_area=6, damage_num=0, trigger_type=105, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个静电球(无敌状态，占据空位，且静电球继承闪蝶[50]%的{攻击类属性})，持续2回合，最多出现3个。处于静电球九宫格范围的敌方单位速度降低[10]%*{电极}层数、骋电抗性降低[5]%*{电极}层数(无法叠加，仅生效最大值)/n每回合结束时，静电球会对敌方全体进行放电，造成静电球攻击力[40]%*{电极}层数的骋电伤害(可暴击)。闪蝶行动时会为静电球提供1层{电极}，每个静电球的最多可储存4层{电极}"
-},
-	[1029809]={ target_rule=10, damage_area=6, damage_num=0, trigger_type=105, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个静电球(无敌状态，占据空位，且静电球继承闪蝶[50]%的{攻击类属性})，持续2回合，最多出现3个。处于静电球九宫格范围的敌方单位速度降低[10]%*{电极}层数、骋电抗性降低[5]%*{电极}层数(无法叠加，仅生效最大值)/n每回合结束时，静电球会对敌方全体进行放电，造成静电球攻击力[40]%*{电极}层数的骋电伤害(可暴击)。闪蝶行动时会为静电球提供1层{电极}，每个静电球的最多可储存4层{电极}"
-},
-	[1029810]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个静电球(无敌状态，占据空位，且静电球继承闪蝶[50]%的{攻击类属性})，持续2回合，最多出现3个。处于静电球九宫格范围的敌方单位速度降低[10]%*{电极}层数、骋电抗性降低[5]%*{电极}层数(无法叠加，仅生效最大值)/n每回合结束时，静电球会对敌方全体进行放电，造成静电球攻击力[40]%*{电极}层数的骋电伤害(可暴击)。闪蝶行动时会为静电球提供1层{电极}，每个静电球的最多可储存4层{电极}"
-},
-	[1029811]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个静电球(无敌状态，占据空位，且静电球继承闪蝶[50]%的{攻击类属性})，持续2回合，最多出现3个。处于静电球九宫格范围的敌方单位速度降低[10]%*{电极}层数、骋电抗性降低[5]%*{电极}层数(无法叠加，仅生效最大值)/n每回合结束时，静电球会对敌方全体进行放电，造成静电球攻击力[40]%*{电极}层数的骋电伤害(可暴击)。闪蝶行动时会为静电球提供1层{电极}，每个静电球的最多可储存4层{电极}"
-},
-	[1029812]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个<0x01|#ffb136|120083=静电球>，<0x01|#ffb136|120083=静电球>继承闪蝶[30]%的{攻击类属性}，持续2回合，最多同时存在3个。处于<0x01|#ffb136|120083=静电球>九宫格范围的敌方单位速度降低[8]%*{<0x01|#ffb136|120085=电极>}层数、骋电抗性降低[5]%*{<0x01|#ffb136|120085=电极>}层数(无法叠加，仅生效最大值)\n每回合结束时，每个<0x01|#ffb136|120083=静电球>都会对敌方全体进行<0x01|#ffb136|120084=放电>，造成<0x01|#ffb136|120083=静电球>攻击力50%*{<0x01|#ffb136|120085=电极>}层数的骋电伤害(可暴击)。闪蝶行动时会为<0x01|#ffb136|120083=静电球>提供1层{<0x01|#ffb136|120085=电极>}，每个<0x01|#ffb136|120083=静电球>的最多可储存4层{<0x01|#ffb136|120085=电极>}"
-},
-	[1029813]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个<0x01|#ffb136|120083=静电球>，<0x01|#ffb136|120083=静电球>继承闪蝶[30]%的{攻击类属性}，持续2回合，最多同时存在3个。处于<0x01|#ffb136|120083=静电球>九宫格范围的敌方单位速度降低[8]%*{<0x01|#ffb136|120085=电极>}层数、骋电抗性降低[5]%*{<0x01|#ffb136|120085=电极>}层数(无法叠加，仅生效最大值)\n每回合结束时，每个<0x01|#ffb136|120083=静电球>都会对敌方全体进行<0x01|#ffb136|120084=放电>，造成<0x01|#ffb136|120083=静电球>攻击力50%*{<0x01|#ffb136|120085=电极>}层数的骋电伤害(可暴击)。闪蝶行动时会为<0x01|#ffb136|120083=静电球>提供1层{<0x01|#ffb136|120085=电极>}，每个<0x01|#ffb136|120083=静电球>的最多可储存4层{<0x01|#ffb136|120085=电极>}"
-},
-	[1029814]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个<0x01|#ffb136|120083=静电球>，<0x01|#ffb136|120083=静电球>继承闪蝶[30]%的{攻击类属性}，持续2回合，最多同时存在3个。处于<0x01|#ffb136|120083=静电球>九宫格范围的敌方单位速度降低[8]%*{<0x01|#ffb136|120085=电极>}层数、骋电抗性降低[5]%*{<0x01|#ffb136|120085=电极>}层数(无法叠加，仅生效最大值)\n每回合结束时，每个<0x01|#ffb136|120083=静电球>都会对敌方全体进行<0x01|#ffb136|120084=放电>，造成<0x01|#ffb136|120083=静电球>攻击力50%*{<0x01|#ffb136|120085=电极>}层数的骋电伤害(可暴击)。闪蝶行动时会为<0x01|#ffb136|120083=静电球>提供1层{<0x01|#ffb136|120085=电极>}，每个<0x01|#ffb136|120083=静电球>的最多可储存4层{<0x01|#ffb136|120085=电极>}"
-},
-	[1029815]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时会随机在敌方周围生成1个<0x01|#ffb136|120083=静电球>，<0x01|#ffb136|120083=静电球>继承闪蝶[30]%的{攻击类属性}，持续2回合，最多同时存在3个。处于<0x01|#ffb136|120083=静电球>九宫格范围的敌方单位速度降低[8]%*{<0x01|#ffb136|120085=电极>}层数、骋电抗性降低[5]%*{<0x01|#ffb136|120085=电极>}层数(无法叠加，仅生效最大值)\n每回合结束时，每个<0x01|#ffb136|120083=静电球>都会对敌方全体进行<0x01|#ffb136|120084=放电>，造成<0x01|#ffb136|120083=静电球>攻击力50%*{<0x01|#ffb136|120085=电极>}层数的骋电伤害(可暴击)。闪蝶行动时会为<0x01|#ffb136|120083=静电球>提供1层{<0x01|#ffb136|120085=电极>}，每个<0x01|#ffb136|120083=静电球>的最多可储存4层{<0x01|#ffb136|120085=电极>}"
-},
-	[102990]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={102980}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<0x01|#ffb136|120083=静电球>的持续回合+1，且<0x01|#ffb136|120083=静电球>在{<0x01|#ffb136|120085=电极>}满层时进化为闪电球，<0x01|#ffb136|120084=放电>时有[12]%*闪电球个数的几率对目标造成{麻痹}效果(敌方无法行动，且伤害减免降低[10]%)，持续至下回合结束"
-},
-	[1029901]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1029802}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<0x01|#ffb136|120083=静电球>的持续回合+1，且<0x01|#ffb136|120083=静电球>在{<0x01|#ffb136|120085=电极>}满层时进化为闪电球，<0x01|#ffb136|120084=放电>时有[12]%*闪电球个数的几率对目标造成{麻痹}效果(敌方无法行动，且伤害减免降低[10]%)，持续至下回合结束"
-},
-	[1029902]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=0, is_effect_inc=0, damage_source=8, desc="<0x01|#ffb136|120083=静电球>的持续回合+1，且<0x01|#ffb136|120083=静电球>在{<0x01|#ffb136|120085=电极>}满层时进化为闪电球，<0x01|#ffb136|120084=放电>时有[12]%*闪电球个数的几率对目标造成{麻痹}效果(敌方无法行动，且伤害减免降低[10]%)，持续至下回合结束"
-},
-	[1029903]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1029902}, trigger_rate=0, is_effect_inc=0, damage_source=8, desc="<0x01|#ffb136|120083=静电球>的持续回合+1，且<0x01|#ffb136|120083=静电球>在{<0x01|#ffb136|120085=电极>}满层时进化为闪电球，<0x01|#ffb136|120084=放电>时有[12]%*闪电球个数的几率对目标造成{麻痹}效果(敌方无法行动，且伤害减免降低[10]%)，持续至下回合结束"
-},
-	[1029904]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1029803}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<0x01|#ffb136|120083=静电球>的持续回合+1，且<0x01|#ffb136|120083=静电球>在{<0x01|#ffb136|120085=电极>}满层时进化为闪电球，<0x01|#ffb136|120084=放电>时有[12]%*闪电球个数的几率对目标造成{麻痹}效果(敌方无法行动，且伤害减免降低[10]%)，持续至下回合结束"
-},
-	[103080]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=156, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶在友方行动后会获得1层{{狐火}}，上限为10层。满层时红叶释放{{狐火咒解}}(清除自身控制效果)并立即对{{敌方全体}}发动{{秘刃·绯红闪}},造成红叶攻击[90]%的轰炎伤害；{{狐火咒解}}状态下，红叶无法再获得{{狐火}}，且任意角色行动后红叶会消耗2层{{狐火}}对{{敌方全体}}发动1次{{秘刃·焚绝黄泉}}，造成红叶攻击[60]%的轰炎伤害(对首要目标伤害额外提升{{灼伤}}层数*[5]%)，{{狐火}}层数=0时红叶将退出该状态\n{{秘刃·绯红闪}}与{{秘刃·焚绝黄泉}}被视为释放源能爆发"
-},
-	[1030801]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,103080}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶在友方行动后会获得1层{{狐火}}，上限为10层。满层时红叶释放{{狐火咒解}}(清除自身控制效果)并立即对{{敌方全体}}发动{{秘刃·绯红闪}},造成红叶攻击[90]%的轰炎伤害；{{狐火咒解}}状态下，红叶无法再获得{{狐火}}，且任意角色行动后红叶会消耗2层{{狐火}}对{{敌方全体}}发动1次{{秘刃·焚绝黄泉}}，造成红叶攻击[60]%的轰炎伤害(对首要目标伤害额外提升{{灼伤}}层数*[5]%)，{{狐火}}层数=0时红叶将退出该状态\n{{秘刃·绯红闪}}与{{秘刃·焚绝黄泉}}被视为释放源能爆发"
-},
-	[1030802]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=35, trigger_num={1,1030801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶在友方行动后会获得1层{{狐火}}，上限为10层。满层时红叶释放{{狐火咒解}}(清除自身控制效果)并立即对{{敌方全体}}发动{{秘刃·绯红闪}},造成红叶攻击[90]%的轰炎伤害；{{狐火咒解}}状态下，红叶无法再获得{{狐火}}，且任意角色行动后红叶会消耗2层{{狐火}}对{{敌方全体}}发动1次{{秘刃·焚绝黄泉}}，造成红叶攻击[60]%的轰炎伤害(对首要目标伤害额外提升{{灼伤}}层数*[5]%)，{{狐火}}层数=0时红叶将退出该状态\n{{秘刃·绯红闪}}与{{秘刃·焚绝黄泉}}被视为释放源能爆发"
-},
-	[1030803]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶在友方行动后会获得1层{{狐火}}，上限为10层。满层时红叶释放{{狐火咒解}}(清除自身控制效果)并立即对{{敌方全体}}发动{{秘刃·绯红闪}},造成红叶攻击[90]%的轰炎伤害；{{狐火咒解}}状态下，红叶无法再获得{{狐火}}，且任意角色行动后红叶会消耗2层{{狐火}}对{{敌方全体}}发动1次{{秘刃·焚绝黄泉}}，造成红叶攻击[60]%的轰炎伤害(对首要目标伤害额外提升{{灼伤}}层数*[5]%)，{{狐火}}层数=0时红叶将退出该状态\n{{秘刃·绯红闪}}与{{秘刃·焚绝黄泉}}被视为释放源能爆发"
-},
-	[1030804]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=156, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶在友方行动后会获得1层{{狐火}}，上限为10层。满层时红叶释放{{狐火咒解}}(清除自身控制效果)并立即对{{敌方全体}}发动{{秘刃·绯红闪}},造成红叶攻击[90]%的轰炎伤害；{{狐火咒解}}状态下，红叶无法再获得{{狐火}}，且任意角色行动后红叶会消耗2层{{狐火}}对{{敌方全体}}发动1次{{秘刃·焚绝黄泉}}，造成红叶攻击[60]%的轰炎伤害(对首要目标伤害额外提升{{灼伤}}层数*[5]%)，{{狐火}}层数=0时红叶将退出该状态\n{{秘刃·绯红闪}}与{{秘刃·焚绝黄泉}}被视为释放源能爆发"
-},
-	[1030805]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=152, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶在友方行动后会获得1层{{狐火}}，上限为10层。满层时红叶释放{{狐火咒解}}(清除自身控制效果)并立即对{{敌方全体}}发动{{秘刃·绯红闪}},造成红叶攻击[90]%的轰炎伤害；{{狐火咒解}}状态下，红叶无法再获得{{狐火}}，且任意角色行动后红叶会消耗2层{{狐火}}对{{敌方全体}}发动1次{{秘刃·焚绝黄泉}}，造成红叶攻击[60]%的轰炎伤害(对首要目标伤害额外提升{{灼伤}}层数*[5]%)，{{狐火}}层数=0时红叶将退出该状态\n{{秘刃·绯红闪}}与{{秘刃·焚绝黄泉}}被视为释放源能爆发"
-},
-	[1030806]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=10, trigger_num={103005}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶在友方行动后会获得1层{{狐火}}，上限为10层。满层时红叶释放{{狐火咒解}}(清除自身控制效果)并立即对{{敌方全体}}发动{{秘刃·绯红闪}},造成红叶攻击[90]%的轰炎伤害；{{狐火咒解}}状态下，红叶无法再获得{{狐火}}，且任意角色行动后红叶会消耗2层{{狐火}}对{{敌方全体}}发动1次{{秘刃·焚绝黄泉}}，造成红叶攻击[60]%的轰炎伤害(对首要目标伤害额外提升{{灼伤}}层数*[5]%)，{{狐火}}层数=0时红叶将退出该状态\n{{秘刃·绯红闪}}与{{秘刃·焚绝黄泉}}被视为释放源能爆发"
-},
-	[1030807]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=164, trigger_num={103003}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶在友方行动后会获得1层{{狐火}}，上限为10层。满层时红叶释放{{狐火咒解}}(清除自身控制效果)并立即对{{敌方全体}}发动{{秘刃·绯红闪}},造成红叶攻击[90]%的轰炎伤害；{{狐火咒解}}状态下，红叶无法再获得{{狐火}}，且任意角色行动后红叶会消耗2层{{狐火}}对{{敌方全体}}发动1次{{秘刃·焚绝黄泉}}，造成红叶攻击[60]%的轰炎伤害(对首要目标伤害额外提升{{灼伤}}层数*[5]%)，{{狐火}}层数=0时红叶将退出该状态\n{{秘刃·绯红闪}}与{{秘刃·焚绝黄泉}}被视为释放源能爆发"
-},
-	[1030808]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={103005}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶在友方行动后会获得1层{{狐火}}，上限为10层。满层时红叶释放{{狐火咒解}}(清除自身控制效果)并立即对{{敌方全体}}发动{{秘刃·绯红闪}},造成红叶攻击[90]%的轰炎伤害；{{狐火咒解}}状态下，红叶无法再获得{{狐火}}，且任意角色行动后红叶会消耗2层{{狐火}}对{{敌方全体}}发动1次{{秘刃·焚绝黄泉}}，造成红叶攻击[60]%的轰炎伤害(对首要目标伤害额外提升{{灼伤}}层数*[5]%)，{{狐火}}层数=0时红叶将退出该状态\n{{秘刃·绯红闪}}与{{秘刃·焚绝黄泉}}被视为释放源能爆发"
-},
-	[1030809]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,103080}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶在友方行动后会获得1层{{狐火}}，上限为10层。满层时红叶释放{{狐火咒解}}(清除自身控制效果)并立即对{{敌方全体}}发动{{秘刃·绯红闪}},造成红叶攻击[90]%的轰炎伤害；{{狐火咒解}}状态下，红叶无法再获得{{狐火}}，且任意角色行动后红叶会消耗2层{{狐火}}对{{敌方全体}}发动1次{{秘刃·焚绝黄泉}}，造成红叶攻击[60]%的轰炎伤害(对首要目标伤害额外提升{{灼伤}}层数*[5]%)，{{狐火}}层数=0时红叶将退出该状态\n{{秘刃·绯红闪}}与{{秘刃·焚绝黄泉}}被视为释放源能爆发"
-},
-	[103090]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=108, trigger_num={1,103080}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶每次消耗{{狐火}}时，自身将获得1层{{识破}}(每层识破提升[6]%的轰炎伤害和[4]%的无视防御，死亡不移除)，持续至战斗结束，最多叠加6层。当红叶自身带有{识破}时，{{秘刃·焚绝黄泉}}将对目标附加重伤效果(受到的治疗和护盾效果降低8%)，持续2回合，最多叠加5层；当红叶自身{识破}满层时，{{秘刃·焚绝}}黄泉对首要目标附加{{焚祸}}(无法获得护盾)，持续2回合"
-},
-	[1030901]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={103005}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶每次消耗{{狐火}}时，自身将获得1层{{识破}}(每层识破提升[6]%的轰炎伤害和[4]%的无视防御，死亡不移除)，持续至战斗结束，最多叠加6层。当红叶自身带有{识破}时，{{秘刃·焚绝黄泉}}将对目标附加重伤效果(受到的治疗和护盾效果降低8%)，持续2回合，最多叠加5层；当红叶自身{识破}满层时，{{秘刃·焚绝}}黄泉对首要目标附加{{焚祸}}(无法获得护盾)，持续2回合"
-},
-	[1030902]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=5, trigger_num={103005}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="红叶每次消耗{{狐火}}时，自身将获得1层{{识破}}(每层识破提升[6]%的轰炎伤害和[4]%的无视防御，死亡不移除)，持续至战斗结束，最多叠加6层。当红叶自身带有{识破}时，{{秘刃·焚绝黄泉}}将对目标附加重伤效果(受到的治疗和护盾效果降低8%)，持续2回合，最多叠加5层；当红叶自身{识破}满层时，{{秘刃·焚绝}}黄泉对首要目标附加{{焚祸}}(无法获得护盾)，持续2回合"
-},
-	[103180]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031801]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,1031802,1031803,1031804,1031805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031802]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031803]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=104, trigger_num={1,1031802}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031804]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=104, trigger_num={1,1031803}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031805]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=104, trigger_num={1,1031804}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031806]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=104, trigger_num={1,1031805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031807]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=104, trigger_num={1,1031802,1031803,1031804,1031805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031808]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1301808}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031809]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1031810}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031810]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,1031802,1031803,1031804,1031805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031811]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=104, trigger_num={1,1031802,1031803,1031804,1031805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[1031812]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,1031802,1031803,1031804,1031805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动时，珂芙尼尔将从4种晖灵中随机获取1种：(优先获取未获取的)\n获得{{炽芒晖灵}}时，对友方全体施加攻击增益(目标攻击提升[10]%)，持续2回合\n获得{{曜金晖灵}}时，对友方全体施加减伤增益(属性抗性提升[12]%)，持续2回合\n获得{{蔚宇晖灵}}时，对友方全体施加控制抵抗增益(受到眩晕、冰冻、麻痹和封印时有[50]%几率抵抗该效果)，持续2回合\n获得{{陇息晖灵}}时，对友方全体施加守护增益(目标受到技能伤害时伤害降低[8]%，且有[25]%几率免疫50%承受伤害)，持续2回合\n当珂芙尼尔拥有全部晖灵时，会进入{{璀璨共鸣}}，该状态下珂芙尼尔将无法被敌方选中(仅会受到群体伤害，无法被单体技能选中，若场中仅剩自身则无法共鸣)"
-},
-	[103190]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=107, trigger_num={}, trigger_rate=8000, is_effect_inc=0, damage_source=8, desc="珂芙尼尔在拥有<color=#ffb136>灵魂丝结</color>时，自身行动后会有<color=#18ec68>80</color>%几率对友方全体施加1层<color=#ffb136>心灵烙印</color>，上限2层(目标在受到眩晕、冰冻、麻痹或封印时会消耗1层抵消其中1个效果)，持续2回合"
-},
-	[1031901]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={103190}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="珂芙尼尔在拥有<color=#ffb136>灵魂丝结</color>时，自身行动后会有<color=#18ec68>80</color>%几率对友方全体施加1层<color=#ffb136>心灵烙印</color>，上限2层(目标在受到眩晕、冰冻、麻痹或封印时会消耗1层抵消其中1个效果)，持续2回合"
-},
-	[1031902]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=35, trigger_num={1,103190}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="珂芙尼尔在拥有<color=#ffb136>灵魂丝结</color>时，自身行动后会有<color=#18ec68>80</color>%几率对友方全体施加1层<color=#ffb136>心灵烙印</color>，上限2层(目标在受到眩晕、冰冻、麻痹或封印时会消耗1层抵消其中1个效果)，持续2回合"
-},
-	[1031903]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={103190}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="珂芙尼尔在拥有<color=#ffb136>灵魂丝结</color>时，自身行动后会有<color=#18ec68>80</color>%几率对友方全体施加1层<color=#ffb136>心灵烙印</color>，上限2层(目标在受到眩晕、冰冻、麻痹或封印时会消耗1层抵消其中1个效果)，持续2回合"
-},
-	[101030]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="艾可首回合获得50%源能补充，且源能爆发对首要目标的封印几率提升[25]%"
-},
-	[1010301]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={1010041}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="艾可首回合获得50%源能补充，且源能爆发对首要目标的封印几率提升[25]%"
-},
-	[101130]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={3}, trigger_rate=2500, is_effect_inc=0, damage_source=8, desc="卡兰丽莎释放源能爆发若未击败目标，则有[25]%几率会再次释放{源能爆发}(伤害效果等同于天赋1)；当敌方场上存在{首领}单位时，触发几率提升至[50]%，当前回合重复触发时概率衰减[25]%"
-},
-	[1011301]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={101130}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="卡兰丽莎释放源能爆发若未击败目标，则有[25]%几率会再次释放{源能爆发}(伤害效果等同于天赋1)；当敌方场上存在{首领}单位时，触发几率提升至[50]%，当前回合重复触发时概率衰减[25]%"
-},
-	[1011302]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={101130}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="卡兰丽莎释放源能爆发若未击败目标，则有[25]%几率会再次释放{源能爆发}(伤害效果等同于天赋1)；当敌方场上存在{首领}单位时，触发几率提升至[50]%，当前回合重复触发时概率衰减[25]%"
-},
-	[130130]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="莉丽拉首回合获得50%源能补充，且自身奥义释放时会额外对友方附加1层{紧急加护}(护盾可吸收目标承受伤害，上限为莉丽拉最大生命的18%，若超出吸收上限，则护盾消失并抵消该次伤害，且护盾消失时驱散友方身上1个减益或异常效果)"
-},
-	[1301301]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=5, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="莉丽拉首回合获得50%源能补充，且自身奥义释放时会额外对友方附加1层{紧急加护}(护盾可吸收目标承受伤害，上限为莉丽拉最大生命的18%，若超出吸收上限，则护盾消失并抵消该次伤害，且护盾消失时驱散友方身上1个减益或异常效果)"
-},
-	[1301302]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=5, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="莉丽拉首回合获得50%源能补充，且自身奥义释放时会额外对友方附加1层{紧急加护}(护盾可吸收目标承受伤害，上限为莉丽拉最大生命的18%，若超出吸收上限，则护盾消失并抵消该次伤害，且护盾消失时驱散友方身上1个减益或异常效果)"
-},
-	[1301303]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=174, trigger_num={1,1301301}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="莉丽拉首回合获得50%源能补充，且自身奥义释放时会额外对友方附加1层{紧急加护}(护盾可吸收目标承受伤害，上限为莉丽拉最大生命的18%，若超出吸收上限，则护盾消失并抵消该次伤害，且护盾消失时驱散友方身上1个减益或异常效果)"
-},
-	[101530]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={1015805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="鹿灵行动后将不再重置层数，且行动时会驱散达瓦林受到的控制效果；达瓦林在奥义释放后会立即触发1次鹿灵攻击，伤害系数为原伤害的55%(鹿灵攻击不影响本身的鹿灵行动效果)"
-},
-	[1015301]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=164, trigger_num={101503}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="鹿灵行动后将不再重置层数，且行动时会驱散达瓦林受到的控制效果；达瓦林在奥义释放后会立即触发1次鹿灵攻击，伤害系数为原伤害的55%(鹿灵攻击不影响本身的鹿灵行动效果)"
-},
-	[1015302]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={101504}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="鹿灵行动后将不再重置层数，且行动时会驱散达瓦林受到的控制效果；达瓦林在奥义释放后会立即触发1次鹿灵攻击，伤害系数为原伤害的55%(鹿灵攻击不影响本身的鹿灵行动效果)"
-},
-	[110530]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="言每回合开始时有[30]%几率获得50%源能补充，自身源能爆发击败首要目标时将补充自身{剑气}至满层，且有[45]%几率再次释放1次(无消耗且首要目标将选择对位前排，单回合最多触发1次)。自身拥有{剑气}时，每层剑气将会为自身提供[5]%的伤害减免"
-},
-	[1105301]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={110530}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="言每回合开始时有[30]%几率获得50%源能补充，自身源能爆发击败首要目标时将补充自身{剑气}至满层，且有[45]%几率再次释放1次(无消耗且首要目标将选择对位前排，单回合最多触发1次)。自身拥有{剑气}时，每层剑气将会为自身提供[5]%的伤害减免"
-},
-	[1105302]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,110580}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="言每回合开始时有[30]%几率获得50%源能补充，自身源能爆发击败首要目标时将补充自身{剑气}至满层，且有[45]%几率再次释放1次(无消耗且首要目标将选择对位前排，单回合最多触发1次)。自身拥有{剑气}时，每层剑气将会为自身提供[5]%的伤害减免"
-},
-	[1105303]={ target_rule=5, damage_area=2, damage_num=1, trigger_type=12, trigger_num={110504}, trigger_rate=4500, is_effect_inc=0, damage_source=8, desc="言每回合开始时有[30]%几率获得50%源能补充，自身源能爆发击败首要目标时将补充自身{剑气}至满层，且有[45]%几率再次释放1次(无消耗且首要目标将选择对位前排，单回合最多触发1次)。自身拥有{剑气}时，每层剑气将会为自身提供[5]%的伤害减免"
-},
-	[1105304]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={1105303}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="言每回合开始时有[30]%几率获得50%源能补充，自身源能爆发击败首要目标时将补充自身{剑气}至满层，且有[45]%几率再次释放1次(无消耗且首要目标将选择对位前排，单回合最多触发1次)。自身拥有{剑气}时，每层剑气将会为自身提供[5]%的伤害减免"
-},
-	[1105305]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=12, trigger_num={110504}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="言每回合开始时有[30]%几率获得50%源能补充，自身源能爆发击败首要目标时将补充自身{剑气}至满层，且有[45]%几率再次释放1次(无消耗且首要目标将选择对位前排，单回合最多触发1次)。自身拥有{剑气}时，每层剑气将会为自身提供[5]%的伤害减免"
-},
-	[101630]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,101680}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="蒂雅被{星辰之力}环绕时，将获得{星辰之力}层数*[5]%伤害加深效果；{观星状态}下，每次星辰坠击触发时，自身将恢复星辰坠击伤害的30%(恢复上限为已损失生命的30%)"
-},
-	[1016301]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={101603}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="蒂雅被{星辰之力}环绕时，将获得{星辰之力}层数*[5]%伤害加深效果；{观星状态}下，每次星辰坠击触发时，自身将恢复星辰坠击伤害的30%(恢复上限为已损失生命的30%)"
-},
-	[1016302]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="蒂雅被{星辰之力}环绕时，将获得{星辰之力}层数*[5]%伤害加深效果；{观星状态}下，每次星辰坠击触发时，自身将恢复星辰坠击伤害的30%(恢复上限为已损失生命的30%)"
-},
-	[100430]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=95, trigger_num={}, trigger_rate=5500, is_effect_inc=0, damage_source=8, desc="我方战员行动时有[55]%几率获得泠攻击[6]%的攻击提升(行动结束后移除，骋电型战员行动时为相同几率获得[9]%攻击提升)，且{闪电标记}的持续回合+1，层数上限+1"
-},
-	[1004301]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=95, trigger_num={}, trigger_rate=5500, is_effect_inc=0, damage_source=8, desc="我方战员行动时有[55]%几率获得泠攻击[6]%的攻击提升(行动结束后移除，骋电型战员行动时为相同几率获得[9]%攻击提升)，且{闪电标记}的持续回合+1，层数上限+1"
-},
-	[1004302]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={100490}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员行动时有[55]%几率获得泠攻击[6]%的攻击提升(行动结束后移除，骋电型战员行动时为相同几率获得[9]%攻击提升)，且{闪电标记}的持续回合+1，层数上限+1"
-},
-	[1004303]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={100490}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员行动时有[55]%几率获得泠攻击[6]%的攻击提升(行动结束后移除，骋电型战员行动时为相同几率获得[9]%攻击提升)，且{闪电标记}的持续回合+1，层数上限+1"
-},
-	[1004304]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={100430}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员行动时有[55]%几率获得泠攻击[6]%的攻击提升(行动结束后移除，骋电型战员行动时为相同几率获得[9]%攻击提升)，且{闪电标记}的持续回合+1，层数上限+1"
-},
-	[1004305]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={1004301}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员行动时有[55]%几率获得泠攻击[6]%的攻击提升(行动结束后移除，骋电型战员行动时为相同几率获得[9]%攻击提升)，且{闪电标记}的持续回合+1，层数上限+1"
-},
-	[100730]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="冷蛟首回合速度提升[20]%，获得50%源能补充，且源能爆发对首要目标的冰冻几率提升[15]%；每回合开始时，冷蛟有[35]%几率对敌方全体附加2层{渐冻}，首回合提升至[70]%"
-},
-	[1007301]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1007041}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="冷蛟首回合速度提升[20]%，获得50%源能补充，且源能爆发对首要目标的冰冻几率提升[15]%；每回合开始时，冷蛟有[35]%几率对敌方全体附加2层{渐冻}，首回合提升至[70]%"
-},
-	[1007302]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=71, trigger_num={1}, trigger_rate=7000, is_effect_inc=0, damage_source=8, desc="冷蛟首回合速度提升[20]%，获得50%源能补充，且源能爆发对首要目标的冰冻几率提升[15]%；每回合开始时，冷蛟有[35]%几率对敌方全体附加2层{渐冻}，首回合提升至[70]%"
-},
-	[1007303]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="冷蛟首回合速度提升[20]%，获得50%源能补充，且源能爆发对首要目标的冰冻几率提升[15]%；每回合开始时，冷蛟有[35]%几率对敌方全体附加2层{渐冻}，首回合提升至[70]%"
-},
-	[1007304]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1007302}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="冷蛟首回合速度提升[20]%，获得50%源能补充，且源能爆发对首要目标的冰冻几率提升[15]%；每回合开始时，冷蛟有[35]%几率对敌方全体附加2层{渐冻}，首回合提升至[70]%"
-},
-	[1007305]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=77, trigger_num={2,0}, trigger_rate=3500, is_effect_inc=0, damage_source=8, desc="冷蛟首回合速度提升[20]%，获得50%源能补充，且源能爆发对首要目标的冰冻几率提升[15]%；每回合开始时，冷蛟有[35]%几率对敌方全体附加2层{渐冻}，首回合提升至[70]%"
-},
-	[1007306]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={1007305}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="冷蛟首回合速度提升[20]%，获得50%源能补充，且源能爆发对首要目标的冰冻几率提升[15]%；每回合开始时，冷蛟有[35]%几率对敌方全体附加2层{渐冻}，首回合提升至[70]%"
-},
-	[1007307]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="冷蛟首回合速度提升[20]%，获得50%源能补充，且源能爆发对首要目标的冰冻几率提升[15]%；每回合开始时，冷蛟有[35]%几率对敌方全体附加2层{渐冻}，首回合提升至[70]%"
-},
-	[1007308]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="冷蛟首回合速度提升[20]%，获得50%源能补充，且源能爆发对首要目标的冰冻几率提升[15]%；每回合开始时，冷蛟有[35]%几率对敌方全体附加2层{渐冻}，首回合提升至[70]%"
 },
 	[3001]={ target_rule=7, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位单体}造成自身攻击[120%]的伤害"
 },
@@ -2284,44 +1748,6 @@ local effect_data=
 	[5161041]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=5, trigger_num={516104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[150]%的伤害，并对敌方速度最高的角色进行放逐（使目标消失，放逐结束时出现在随机位置），持续2回合"
 },
 	[5161042]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=2, trigger_num={516104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[150]%的伤害，并对敌方速度最高的角色进行放逐（使目标消失，放逐结束时出现在随机位置），持续2回合"
-},
-	[5171]={ target_rule=7, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位单体}造成自身攻击[108]%的伤害"
-},
-	[517101]={ target_rule=7, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位直线四格}造成自身攻击[102]%的伤害"
-},
-	[517102]={ target_rule=7, damage_area=4, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位横向一排}造成自身攻击[98]%的伤害"
-},
-	[517104]={ target_rule=7, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[150]%的伤害，且对首要目标伤害加深80%"
-},
-	[5171041]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=5, trigger_num={517104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[150]%的伤害，且对首要目标伤害加深80%"
-},
-	[5181]={ target_rule=7, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位单体}造成自身攻击[108]%的伤害"
-},
-	[518101]={ target_rule=7, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位直线四格}造成自身攻击[102]%的伤害"
-},
-	[518102]={ target_rule=7, damage_area=4, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位横向一排}造成自身攻击[98]%的伤害"
-},
-	[518104]={ target_rule=7, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[150]%的伤害，之后对敌方生命值最高的目标额外触发一次燃烧基础伤害"
-},
-	[5181041]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=2, trigger_num={518104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[150]%的伤害，之后对敌方生命值最高的目标额外触发一次燃烧基础伤害"
-},
-	[5181042]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="对{敌方全体}造成自身攻击[150]%的伤害，之后对敌方生命值最高的目标额外触发一次燃烧基础伤害"
-},
-	[5182]={ target_rule=7, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位单体}造成自身攻击[108]%的伤害"
-},
-	[518201]={ target_rule=7, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位直线四格}造成自身攻击[102]%的伤害"
-},
-	[518202]={ target_rule=7, damage_area=4, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位横向一排}造成自身攻击[98]%的伤害"
-},
-	[518204]={ target_rule=7, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[150]%的伤害"
-},
-	[5183]={ target_rule=7, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位单体}造成自身攻击[108]%的伤害"
-},
-	[518301]={ target_rule=7, damage_area=3, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位直线四格}造成自身攻击[102]%的伤害"
-},
-	[518302]={ target_rule=7, damage_area=4, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方对位横向一排}造成自身攻击[98]%的伤害"
-},
-	[518304]={ target_rule=7, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="对{敌方全体}造成自身攻击[150]%的伤害"
 },
 	[300080]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次受到攻击时，获得1层{{激化}}(自身攻击提升8%)，最多叠加5层"
 },
@@ -2755,9 +2181,9 @@ local effect_data=
 },
 	[5111906]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身死亡时转化为暗天使形态，生命继承原生命的50%，且该状态下不受任何减益与异常效果影响，自身所有抗性提高30%"
 },
-	[511191]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5111905}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="获得40%吸血加成，且暗天使形态的生命继承提升至80%"
+	[511191]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5111905}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暗天使形态的生命继承提升至80%，且自身获得40%吸血加成"
 },
-	[5111911]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="获得40%吸血加成，且暗天使形态的生命继承提升至80%"
+	[5111911]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暗天使形态的生命继承提升至80%，且自身获得40%吸血加成"
 },
 	[511280]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身免疫控制，且每损失30%最大生命，自身将获得1次{{圣光豁免}}(驱散自身所有减益与异常状态，且下一次行动时所有攻击转化为真实伤害)"
 },
@@ -2787,7 +2213,7 @@ local effect_data=
 },
 	[5121801]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="当友方死亡时，自身会进入{{共生状态}}(攻击提升15%)，最多叠加4层；{{共生状态}}层数≥2时，吸血加成提升50%。自身对生命高于60%的目标伤害加深25%"
 },
-	[512190]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动后，自身获得1层{{冰甲效果}}(寒霜抗性提升40%，暴伤抗性提升30%)，持续2回合，最多叠加2层"
+	[512190]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次行动后，自身获得1层{{冰甲效果}}(寒霜抗性提升40%，暴击抗性提升30%)，持续2回合，最多叠加2层"
 },
 	[512181]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={512180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="当友方死亡时，自身会进入{{共生状态}}(攻击提升24%)，最多叠加4层；{{共生状态}}层数≥2时，吸血加成提升50%。自身对生命高于40%的目标伤害加深25%"
 },
@@ -2883,11 +2309,9 @@ local effect_data=
 },
 	[516180]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每回合开始时将获得1层基于自身攻击240%的护盾，最多叠加2层。护盾被击破时，将会对敌方全体造成震慑效果（目标攻击降低25%，技能伤害降低25%），最多叠加2层，持续1回合"
 },
-	[5161801]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=157, trigger_num={1,516180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每回合开始时将获得1层基于自身攻击240%的护盾，最多叠加2层。护盾被击破时，将会对敌方全体造成震慑效果（目标攻击降低25%，技能伤害降低25%），最多叠加2层，持续1回合"
+	[5161801]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=157, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每回合开始时将获得1层基于自身攻击240%的护盾，最多叠加2层。护盾被击破时，将会对敌方全体造成震慑效果（目标攻击降低25%，技能伤害降低25%），最多叠加2层，持续1回合"
 },
-	[5161802]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每回合开始时将获得1层基于自身攻击240%的护盾，最多叠加2层。护盾被击破时，将会对敌方全体造成震慑效果（目标攻击降低25%，技能伤害降低25%），最多叠加2层，持续1回合"
-},
-	[516181]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=157, trigger_num={1,516180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身天赋1提供的护盾被击破时，额外为自身提升35%无视防御，最多叠加2层，持续2回合"
+	[516181]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=157, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身天赋1提供的护盾被击破时，额外为自身提升35%无视防御，最多叠加2层，持续2回合"
 },
 	[516182]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={516180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身天赋1提供的护盾被击破时，额外为自身提升35%无视防御，最多叠加2层，持续2回合"
 },
@@ -2906,66 +2330,6 @@ local effect_data=
 	[516290]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每受到1次攻击，自身的格挡几率提升15%，持续1回合，最多叠加5层。"
 },
 	[516291]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=2, trigger_num={516104}, trigger_rate=2500, is_effect_inc=0, damage_source=8, desc="释放终结技时，有25%的概率额外放逐1个目标，对敌方速度最高的2个角色进行放逐，持续2回合"
-},
-	[517180]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每回合开始时将获得1层基于自身攻击240%的护盾，最多叠加2层。护盾被击破时，将会对敌方全体造成震慑效果（目标攻击降低25%，技能伤害降低25%），最多叠加2层，持续1回合"
-},
-	[5171801]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=157, trigger_num={1,517180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每回合开始时将获得1层基于自身攻击240%的护盾，最多叠加2层。护盾被击破时，将会对敌方全体造成震慑效果（目标攻击降低25%，技能伤害降低25%），最多叠加2层，持续1回合"
-},
-	[5171802]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每回合开始时将获得1层基于自身攻击240%的护盾，最多叠加2层。护盾被击破时，将会对敌方全体造成震慑效果（目标攻击降低25%，技能伤害降低25%），最多叠加2层，持续1回合"
-},
-	[517181]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={517180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="护盾值提升至自身攻击的360%"
-},
-	[517190]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=5, trigger_num={517104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身生命低于30%时，奥义{{}最终演算}}将对敌方速度最高的单位进行放逐，持续2回合（每场战斗只会触发一次放逐）"
-},
-	[5171901]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=2, trigger_num={517104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身生命低于30%时，奥义{{}最终演算}}将对敌方速度最高的单位进行放逐，持续2回合（每场战斗只会触发一次放逐）"
-},
-	[518180]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=11, trigger_num={0,1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="在每次敌方行动时，对全体敌方造成一次燃烧伤害，造成目标15%的当前生命值真实伤害（无视伤害减免）；自身受到生命值低于70%的目标攻击时，免疫60%受到的伤害"
-},
-	[5181801]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="在每次敌方行动时，对全体敌方造成一次燃烧伤害，造成目标15%的当前生命值真实伤害（无视伤害减免）；自身受到生命值低于70%的目标攻击时，免疫60%受到的伤害"
-},
-	[5181802]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=153, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="在每次敌方行动时，对全体敌方造成一次燃烧伤害，造成目标15%的当前生命值真实伤害（无视伤害减免）；自身受到生命值低于70%的目标攻击时，免疫60%受到的伤害"
-},
-	[5181803]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="在每次敌方行动时，对全体敌方造成一次燃烧伤害，造成目标15%的当前生命值真实伤害（无视伤害减免）；自身受到生命值低于70%的目标攻击时，免疫60%受到的伤害"
-},
-	[518181]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5181803}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="在每次敌方行动时，对全体敌方造成一次燃烧伤害，造成目标18%的当前生命值真实伤害（无视伤害减免）；自身受到生命值低于70%的目标攻击时，免疫60%受到的伤害"
-},
-	[518190]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，凝视敌方初始攻击最高的角色，使其每次受到的燃烧伤害额外附加艾许攻击的15%"
-},
-	[5181901]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5181802}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，凝视敌方初始攻击最高的角色，使其每次受到的燃烧伤害额外附加艾许攻击的15%"
-},
-	[5181902]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，凝视敌方初始攻击最高的角色，使其每次受到的燃烧伤害额外附加艾许攻击的15%"
-},
-	[5181903]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5181041}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，凝视敌方初始攻击最高的角色，使其每次受到的燃烧伤害额外附加艾许攻击的15%"
-},
-	[518191]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={518190}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，凝视敌方初始攻击最高的2个角色，使其每次受到的燃烧伤害额外附加艾许攻击的15%"
-},
-	[518280]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=69, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合受到每个敌方的首个技能攻击造成的伤害降低50%，生命低于50%后，每回合开始额外获得1层基于自身攻击120%的护盾，持续2回合，最多叠加2层"
-},
-	[5182801]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合受到每个敌方的首个技能攻击造成的伤害降低50%，生命低于50%后，每回合开始额外获得1层基于自身攻击120%的护盾，持续2回合，最多叠加2层"
-},
-	[518281]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={518280}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合受到每个敌方的首个技能攻击造成的伤害降低75%，生命低于50%后，每回合开始额外获得1层基于自身攻击160%的护盾，持续2回合，最多叠加2层"
-},
-	[5182811]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={5182801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合受到每个敌方的首个技能攻击造成的伤害降低75%，生命低于50%后，每回合开始额外获得1层基于自身攻击160%的护盾，持续2回合，最多叠加2层"
-},
-	[518290]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始，选择对上回合对自身造成伤害最低的敌方，对其九宫格范围的目标造成自身攻击150%的真实伤害，首回合选择防御最高的敌方九宫格范围内目标"
-},
-	[518291]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={518290}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始，选择对上回合对自身造成伤害最低的敌方，对其九宫格范围的目标造成自身攻击180%的真实伤害，首回合选择防御最高的敌方九宫格范围内目标"
-},
-	[518380]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=2, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每次技能攻击后为目标附加1层{{耀斑}}，每次受到技能攻击时为攻击者附加1层{{耀斑}}，上限3层，持续2回合，达到上限时，消耗目标带有的所有{{耀斑}}，移除目标50%护盾值，同时对目标造成自身攻击80%的额外伤害"
-},
-	[5183801]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=69, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每次技能攻击后为目标附加1层{{耀斑}}，每次受到技能攻击时为攻击者附加1层{{耀斑}}，上限3层，持续2回合，达到上限时，消耗目标带有的所有{{耀斑}}，移除目标50%护盾值，同时对目标造成自身攻击80%的额外伤害"
-},
-	[5183802]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每次技能攻击后为目标附加1层{{耀斑}}，每次受到技能攻击时为攻击者附加1层{{耀斑}}，上限3层，持续2回合，达到上限时，消耗目标带有的所有{{耀斑}}，移除目标50%护盾值，同时对目标造成自身攻击80%的额外伤害"
-},
-	[5183803]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,5183801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每次技能攻击后为目标附加1层{{耀斑}}，每次受到技能攻击时为攻击者附加1层{{耀斑}}，上限3层，持续2回合，达到上限时，消耗目标带有的所有{{耀斑}}，移除目标50%护盾值，同时对目标造成自身攻击80%的额外伤害"
-},
-	[518381]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={518380}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身每次技能攻击后为目标附加1层{{耀斑}}，每次受到技能攻击时为攻击者附加1层{{耀斑}}，上限3层，持续2回合，达到上限时，消耗目标带有的所有{{耀斑}}，移除目标50%护盾值，同时对目标造成自身攻击100%的额外伤害"
-},
-	[518390]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,518380}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{{耀斑}}达到上限时，额外为目标添加1层{{光坍}}，持续2回合，释放终结技计时，对带有带{{光坍}}的目标伤害额外提升80%"
-},
-	[5183901]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{{耀斑}}达到上限时，额外为目标添加1层{{光坍}}，持续2回合，释放终结技计时，对带有带{{光坍}}的目标伤害额外提升80%"
-},
-	[518391]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={5183901}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{{耀斑}}达到上限时，额外为目标添加1层{{光坍}}，持续2回合，释放终结技时，对带有带{{光坍}}的目标伤害额外提升100%"
 },
 	[300086]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，清除{{激化}}，且所有抗性降低15%，持续2回合(持续时间结束恢复硬直)"
 },
@@ -3202,38 +2566,6 @@ local effect_data=
 	[5161862]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身获得的护盾效果降低40%，所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
 },
 	[5161863]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身获得的护盾效果降低40%，所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[517186]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身获得的护盾效果降低40%，所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5171861]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身获得的护盾效果降低40%，所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5171862]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身获得的护盾效果降低40%，所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5171863]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身获得的护盾效果降低40%，所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[518186]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身免疫受到的伤害效果降低至30%，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5181861]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5181801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身免疫受到的伤害效果降低至30%，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5181862]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身免疫受到的伤害效果降低至30%，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5181863]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身免疫受到的伤害效果降低至30%，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[518286]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身获得的护盾效果降低40%，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5182861]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身获得的护盾效果降低40%，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5182862]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，自身获得的护盾效果降低40%，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[518386]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，清除场上所有的{{光坍}}和{{耀斑}}，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5183861]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，清除场上所有的{{光坍}}和{{耀斑}}，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5183862]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，清除场上所有的{{光坍}}和{{耀斑}}，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5183863]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，清除场上所有的{{光坍}}和{{耀斑}}，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
-},
-	[5183864]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直击破时，清除场上所有的{{光坍}}和{{耀斑}}，且所有抗性降低35%，持续2回合(持续时间结束恢复硬直)"
 },
 	[6002]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身激活武力效果，直击伤害提升[20]%。行动结束后失效"
 },
@@ -3477,13 +2809,13 @@ local effect_data=
 },
 	[73273]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={102090}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n尤加利装备时，每回合开始可获得1层寒翎，且每层寒翎额外提供自身[[8]]%无视防御；掠血灭痕触发血限提升至[[70]]%"
 },
-	[7328]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n玛瑟琳装备时，每次行动会对敌方全体附加1层撕裂，且目标每有1层撕裂，自身对其无视防御提升[6]%，行动后对敌方生命百分比最低的单位释放{{灵魂收割}}，造成其当前生命[20]%的真实伤害(伤害上限为玛瑟琳攻击的[300]%)\n{{灵魂收割}}被视为释放源能爆发"
+	[7328]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n玛瑟琳装备时，每次行动会对敌方全体附加1层撕裂，且目标每有1层撕裂，自身对其无视防御提升[6]%，行动后对敌方生命百分比最低的单位释放灵魂收割，造成其当前生命[20]%的真实伤害(伤害上限为玛瑟琳攻击的[300]%)"
 },
-	[73281]={ target_rule=27, damage_area=2, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n玛瑟琳装备时，每次行动会对敌方全体附加1层撕裂，且目标每有1层撕裂，自身对其无视防御提升[6]%，行动后对敌方生命百分比最低的单位释放{{灵魂收割}}，造成其当前生命[20]%的真实伤害(伤害上限为玛瑟琳攻击的[300]%)\n{{灵魂收割}}被视为释放源能爆发"
+	[73281]={ target_rule=27, damage_area=2, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n玛瑟琳装备时，每次行动会对敌方全体附加1层撕裂，且目标每有1层撕裂，自身对其无视防御提升[6]%，行动后对敌方生命百分比最低的单位释放灵魂收割，造成其当前生命[20]%的真实伤害(伤害上限为玛瑟琳攻击的[300]%)"
 },
-	[73282]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n玛瑟琳装备时，每次行动会对敌方全体附加1层撕裂，且目标每有1层撕裂，自身对其无视防御提升[6]%，行动后对敌方生命百分比最低的单位释放{{灵魂收割}}，造成其当前生命[20]%的真实伤害(伤害上限为玛瑟琳攻击的[300]%)\n{{灵魂收割}}被视为释放源能爆发"
+	[73282]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n玛瑟琳装备时，每次行动会对敌方全体附加1层撕裂，且目标每有1层撕裂，自身对其无视防御提升[6]%，行动后对敌方生命百分比最低的单位释放灵魂收割，造成其当前生命[20]%的真实伤害(伤害上限为玛瑟琳攻击的[300]%)"
 },
-	[73283]={ target_rule=4, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n玛瑟琳装备时，每次行动会对敌方全体附加1层撕裂，且目标每有1层撕裂，自身对其无视防御提升[6]%，行动后对敌方生命百分比最低的单位释放{{灵魂收割}}，造成其当前生命[20]%的真实伤害(伤害上限为玛瑟琳攻击的[300]%)\n{{灵魂收割}}被视为释放源能爆发"
+	[73283]={ target_rule=4, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n玛瑟琳装备时，每次行动会对敌方全体附加1层撕裂，且目标每有1层撕裂，自身对其无视防御提升[6]%，行动后对敌方生命百分比最低的单位释放灵魂收割，造成其当前生命[20]%的真实伤害(伤害上限为玛瑟琳攻击的[300]%)"
 },
 	[7329]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击几率提升[12]%\n危峭装备时自身攻击提升[7.5]%，无视防御提升[15]%，爆气状态反击移除触发限制，且反击次数上限[+1]，每回合开始和结束均可获得1层念气"
 },
@@ -3525,141 +2857,15 @@ local effect_data=
 },
 	[73315]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n刺玫装备时，首回合获得5层{弹药}补充和50%源能补充，且友方同属性战员在攻击{{赏金}}下的目标时攻击将提升[2]%*{{赏金}}层数"
 },
-	[7332]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n霆渊·艾丽西亚装备时，自身每拥有1层渊逆，攻击提升[4]%，战斗开始获得1层{渊鸣}且有[40]%几率直接进入{霆渊之境}，且{霆渊之境}下的{魂灵王权}效果获得强化，全体伤害技能继承系数强化至[45]%,并对护盾目标伤害提升[16]%"
+	[7332]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n霆渊·艾丽西亚装备时，战斗开始获得1层{渊鸣}且有[40]%几率直接进入{霆渊之境}，且{霆渊之境}下的{魂灵王权}效果获得强化，全体伤害技能继承系数强化至[45]%,并对护盾目标伤害提升[16]%"
 },
-	[73321]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n霆渊·艾丽西亚装备时，自身每拥有1层渊逆，攻击提升[4]%，战斗开始获得1层{渊鸣}且有[40]%几率直接进入{霆渊之境}，且{霆渊之境}下的{魂灵王权}效果获得强化，全体伤害技能继承系数强化至[45]%,并对护盾目标伤害提升[16]%"
+	[73321]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n霆渊·艾丽西亚装备时，战斗开始获得1层{渊鸣}且有[40]%几率直接进入{霆渊之境}，且{霆渊之境}下的{魂灵王权}效果获得强化，全体伤害技能继承系数强化至[45]%,并对护盾目标伤害提升[16]%"
 },
-	[73322]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=4000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n霆渊·艾丽西亚装备时，自身每拥有1层渊逆，攻击提升[4]%，战斗开始获得1层{渊鸣}且有[40]%几率直接进入{霆渊之境}，且{霆渊之境}下的{魂灵王权}效果获得强化，全体伤害技能继承系数强化至[45]%,并对护盾目标伤害提升[16]%"
+	[73322]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=4000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n霆渊·艾丽西亚装备时，战斗开始获得1层{渊鸣}且有[40]%几率直接进入{霆渊之境}，且{霆渊之境}下的{魂灵王权}效果获得强化，全体伤害技能继承系数强化至[45]%,并对护盾目标伤害提升[16]%"
 },
-	[73323]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73322}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n霆渊·艾丽西亚装备时，自身每拥有1层渊逆，攻击提升[4]%，战斗开始获得1层{渊鸣}且有[40]%几率直接进入{霆渊之境}，且{霆渊之境}下的{魂灵王权}效果获得强化，全体伤害技能继承系数强化至[45]%,并对护盾目标伤害提升[16]%"
+	[73323]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73322}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n霆渊·艾丽西亚装备时，战斗开始获得1层{渊鸣}且有[40]%几率直接进入{霆渊之境}，且{霆渊之境}下的{魂灵王权}效果获得强化，全体伤害技能继承系数强化至[45]%,并对护盾目标伤害提升[16]%"
 },
-	[73324]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={102305}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n霆渊·艾丽西亚装备时，自身每拥有1层渊逆，攻击提升[4]%，战斗开始获得1层{渊鸣}且有[40]%几率直接进入{霆渊之境}，且{霆渊之境}下的{魂灵王权}效果获得强化，全体伤害技能继承系数强化至[45]%,并对护盾目标伤害提升[16]%"
-},
-	[73325]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={1023806}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n霆渊·艾丽西亚装备时，自身每拥有1层渊逆，攻击提升[4]%，战斗开始获得1层{渊鸣}且有[40]%几率直接进入{霆渊之境}，且{霆渊之境}下的{魂灵王权}效果获得强化，全体伤害技能继承系数强化至[45]%,并对护盾目标伤害提升[16]%"
-},
-	[7333]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n阿尔戈装备时，战斗开始自身将额外获得1格能量；源能爆发对非首要目标将有[17]%几率附加{缠尾}；若自身本回合拿取的物品与上一回合不同时，自身的效果命中将额外提高[8]%，且技能伤害将提升[50]%，持续1回合"
-},
-	[73331]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n阿尔戈装备时，战斗开始自身将额外获得1格能量；源能爆发对非首要目标将有[17]%几率附加{缠尾}；若自身本回合拿取的物品与上一回合不同时，自身的效果命中将额外提高[8]%，且技能伤害将提升[50]%，持续1回合"
-},
-	[73332]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=5, trigger_num={102404}, trigger_rate=1700, is_effect_inc=1, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n阿尔戈装备时，战斗开始自身将额外获得1格能量；源能爆发对非首要目标将有[17]%几率附加{缠尾}；若自身本回合拿取的物品与上一回合不同时，自身的效果命中将额外提高[8]%，且技能伤害将提升[50]%，持续1回合"
-},
-	[73333]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n阿尔戈装备时，战斗开始自身将额外获得1格能量；源能爆发对非首要目标将有[17]%几率附加{缠尾}；若自身本回合拿取的物品与上一回合不同时，自身的效果命中将额外提高[8]%，且技能伤害将提升[50]%，持续1回合"
-},
-	[73334]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n阿尔戈装备时，战斗开始自身将额外获得1格能量；源能爆发对非首要目标将有[17]%几率附加{缠尾}；若自身本回合拿取的物品与上一回合不同时，自身的效果命中将额外提高[8]%，且技能伤害将提升[50]%，持续1回合"
-},
-	[73335]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73332}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n阿尔戈装备时，战斗开始自身将额外获得1格能量；源能爆发对非首要目标将有[17]%几率附加{缠尾}；若自身本回合拿取的物品与上一回合不同时，自身的效果命中将额外提高[8]%，且技能伤害将提升[50]%，持续1回合"
-},
-	[7334]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴伤抗性提升[20]%\n辉月装备时，首回合会立即获得[1]枚月刃，且释放技能时（额外释放技能除外）有[36]%几率获得1枚月刃；身处满月辉境中的辉月伤害减免将额外提升[12.5]%"
-},
-	[73341]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴伤抗性提升[20]%\n辉月装备时，首回合会立即获得[1]枚月刃，且释放技能时（额外释放技能除外）有[36]%几率获得1枚月刃；身处满月辉境中的辉月伤害减免将额外提升[12.5]%"
-},
-	[73342]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73341}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴伤抗性提升[20]%\n辉月装备时，首回合会立即获得[1]枚月刃，且释放技能时（额外释放技能除外）有[36]%几率获得1枚月刃；身处满月辉境中的辉月伤害减免将额外提升[12.5]%"
-},
-	[73343]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={102501,102502,102504}, trigger_rate=3600, is_effect_inc=0, damage_source=8, desc="暴伤抗性提升[20]%\n辉月装备时，首回合会立即获得[1]枚月刃，且释放技能时（额外释放技能除外）有[36]%几率获得1枚月刃；身处满月辉境中的辉月伤害减免将额外提升[12.5]%"
-},
-	[73344]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73343}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴伤抗性提升[20]%\n辉月装备时，首回合会立即获得[1]枚月刃，且释放技能时（额外释放技能除外）有[36]%几率获得1枚月刃；身处满月辉境中的辉月伤害减免将额外提升[12.5]%"
-},
-	[73345]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={102504}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴伤抗性提升[20]%\n辉月装备时，首回合会立即获得[1]枚月刃，且释放技能时（额外释放技能除外）有[36]%几率获得1枚月刃；身处满月辉境中的辉月伤害减免将额外提升[12.5]%"
-},
-	[7335]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御抵抗提升[18]%\n克里安卡装备时，生命上限提升[7.5]%，释放源能爆发有[70]%几率为己方生命值最低和攻击最高的友方单位附加{回火}，且{回火}的反伤次数提升至[4]次"
-},
-	[73351]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={3}, trigger_rate=7000, is_effect_inc=0, damage_source=8, desc="无视防御抵抗提升[18]%\n克里安卡装备时，生命上限提升[7.5]%，释放源能爆发有[70]%几率为己方生命值最低和攻击最高的友方单位附加{回火}，且{回火}的反伤次数提升至[4]次"
-},
-	[73352]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73351}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御抵抗提升[18]%\n克里安卡装备时，生命上限提升[7.5]%，释放源能爆发有[70]%几率为己方生命值最低和攻击最高的友方单位附加{回火}，且{回火}的反伤次数提升至[4]次"
-},
-	[73353]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御抵抗提升[18]%\n克里安卡装备时，生命上限提升[7.5]%，释放源能爆发有[70]%几率为己方生命值最低和攻击最高的友方单位附加{回火}，且{回火}的反伤次数提升至[4]次"
-},
-	[7336]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n黎寒之骑·朝晖装备时，每回合开始将获得[1]层谴罚，且每击败1名目标，友方全体攻击将提升[8]%，持续2回合，最多叠加4层，自身获得的效果提升40%（每次击败目标将刷新全体该效果的持续时间）；谴罚发动的源能爆发对生命值低于3000的目标攻击时，有[35]%几率斩杀该目标"
-},
-	[73361]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n黎寒之骑·朝晖装备时，每回合开始将获得[1]层谴罚，且每击败1名目标，友方全体攻击将提升[8]%，持续2回合，最多叠加4层，自身获得的效果提升40%（每次击败目标将刷新全体该效果的持续时间）；谴罚发动的源能爆发对生命值低于3000的目标攻击时，有[35]%几率斩杀该目标"
-},
-	[73362]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n黎寒之骑·朝晖装备时，每回合开始将获得[1]层谴罚，且每击败1名目标，友方全体攻击将提升[8]%，持续2回合，最多叠加4层，自身获得的效果提升40%（每次击败目标将刷新全体该效果的持续时间）；谴罚发动的源能爆发对生命值低于3000的目标攻击时，有[35]%几率斩杀该目标"
-},
-	[73363]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={102703}, trigger_rate=3500, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n黎寒之骑·朝晖装备时，每回合开始将获得[1]层谴罚，且每击败1名目标，友方全体攻击将提升[8]%，持续2回合，最多叠加4层，自身获得的效果提升40%（每次击败目标将刷新全体该效果的持续时间）；谴罚发动的源能爆发对生命值低于3000的目标攻击时，有[35]%几率斩杀该目标"
-},
-	[73364]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73361}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n黎寒之骑·朝晖装备时，每回合开始将获得[1]层谴罚，且每击败1名目标，友方全体攻击将提升[8]%，持续2回合，最多叠加4层，自身获得的效果提升40%（每次击败目标将刷新全体该效果的持续时间）；谴罚发动的源能爆发对生命值低于3000的目标攻击时，有[35]%几率斩杀该目标"
-},
-	[73365]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73363}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n黎寒之骑·朝晖装备时，每回合开始将获得[1]层谴罚，且每击败1名目标，友方全体攻击将提升[8]%，持续2回合，最多叠加4层，自身获得的效果提升40%（每次击败目标将刷新全体该效果的持续时间）；谴罚发动的源能爆发对生命值低于3000的目标攻击时，有[35]%几率斩杀该目标"
-},
-	[73366]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={102703}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n黎寒之骑·朝晖装备时，每回合开始将获得[1]层谴罚，且每击败1名目标，友方全体攻击将提升[8]%，持续2回合，最多叠加4层，自身获得的效果提升40%（每次击败目标将刷新全体该效果的持续时间）；谴罚发动的源能爆发对生命值低于3000的目标攻击时，有[35]%几率斩杀该目标"
-},
-	[7337]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n梅鹿特装备时，当前回合每有1名角色行动(敌我皆可)，自身有[60]%几率获得1层{行动指令}，持续1回合，最多叠加3层(满层时梅鹿特将在当前角色行动后启动1次阳离子炮击)；且该效果触发的阳离子炮击对生命低于50%的目标伤害提升[40]%，对生命高于50%的目标额外附加目标最大生命[8]%的真实伤害(伤害上限为梅鹿特攻击的192]%)"
-},
-	[73371]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=156, trigger_num={}, trigger_rate=6000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n梅鹿特装备时，当前回合每有1名角色行动(敌我皆可)，自身有[60]%几率获得1层{行动指令}，持续1回合，最多叠加3层(满层时梅鹿特将在当前角色行动后启动1次阳离子炮击)；且该效果触发的阳离子炮击对生命低于50%的目标伤害提升[40]%，对生命高于50%的目标额外附加目标最大生命[8]%的真实伤害(伤害上限为梅鹿特攻击的192]%)"
-},
-	[73372]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=152, trigger_num={}, trigger_rate=6000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n梅鹿特装备时，当前回合每有1名角色行动(敌我皆可)，自身有[60]%几率获得1层{行动指令}，持续1回合，最多叠加3层(满层时梅鹿特将在当前角色行动后启动1次阳离子炮击)；且该效果触发的阳离子炮击对生命低于50%的目标伤害提升[40]%，对生命高于50%的目标额外附加目标最大生命[8]%的真实伤害(伤害上限为梅鹿特攻击的192]%)"
-},
-	[73373]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,73371}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n梅鹿特装备时，当前回合每有1名角色行动(敌我皆可)，自身有[60]%几率获得1层{行动指令}，持续1回合，最多叠加3层(满层时梅鹿特将在当前角色行动后启动1次阳离子炮击)；且该效果触发的阳离子炮击对生命低于50%的目标伤害提升[40]%，对生命高于50%的目标额外附加目标最大生命[8]%的真实伤害(伤害上限为梅鹿特攻击的192]%)"
-},
-	[73374]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={100804}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n梅鹿特装备时，当前回合每有1名角色行动(敌我皆可)，自身有[60]%几率获得1层{行动指令}，持续1回合，最多叠加3层(满层时梅鹿特将在当前角色行动后启动1次阳离子炮击)；且该效果触发的阳离子炮击对生命低于50%的目标伤害提升[40]%，对生命高于50%的目标额外附加目标最大生命[8]%的真实伤害(伤害上限为梅鹿特攻击的192]%)"
-},
-	[73375]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={100804}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n梅鹿特装备时，当前回合每有1名角色行动(敌我皆可)，自身有[60]%几率获得1层{行动指令}，持续1回合，最多叠加3层(满层时梅鹿特将在当前角色行动后启动1次阳离子炮击)；且该效果触发的阳离子炮击对生命低于50%的目标伤害提升[40]%，对生命高于50%的目标额外附加目标最大生命[8]%的真实伤害(伤害上限为梅鹿特攻击的192]%)"
-},
-	[73376]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={100804}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n梅鹿特装备时，当前回合每有1名角色行动(敌我皆可)，自身有[60]%几率获得1层{行动指令}，持续1回合，最多叠加3层(满层时梅鹿特将在当前角色行动后启动1次阳离子炮击)；且该效果触发的阳离子炮击对生命低于50%的目标伤害提升[40]%，对生命高于50%的目标额外附加目标最大生命[8]%的真实伤害(伤害上限为梅鹿特攻击的192]%)"
-},
-	[73377]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73371}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n梅鹿特装备时，当前回合每有1名角色行动(敌我皆可)，自身有[60]%几率获得1层{行动指令}，持续1回合，最多叠加3层(满层时梅鹿特将在当前角色行动后启动1次阳离子炮击)；且该效果触发的阳离子炮击对生命低于50%的目标伤害提升[40]%，对生命高于50%的目标额外附加目标最大生命[8]%的真实伤害(伤害上限为梅鹿特攻击的192]%)"
-},
-	[73378]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73372}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n梅鹿特装备时，当前回合每有1名角色行动(敌我皆可)，自身有[60]%几率获得1层{行动指令}，持续1回合，最多叠加3层(满层时梅鹿特将在当前角色行动后启动1次阳离子炮击)；且该效果触发的阳离子炮击对生命低于50%的目标伤害提升[40]%，对生命高于50%的目标额外附加目标最大生命[8]%的真实伤害(伤害上限为梅鹿特攻击的192]%)"
-},
-	[7338]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴伤抗性提升[18]%\n云篆装备时，首回合将会获得50%源能补充，且释放技能时有[55]%几率获得2层爻辞；每次激活浮图时，自身生命上限提升[6]%，持续至战斗结束，最多叠加5层"
-},
-	[73381]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴伤抗性提升[18]%\n云篆装备时，首回合将会获得50%源能补充，且释放技能时有[55]%几率获得2层爻辞；每次激活浮图时，自身生命上限提升[6]%，持续至战斗结束，最多叠加5层"
-},
-	[73382]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={102801,102802,102804}, trigger_rate=5500, is_effect_inc=0, damage_source=8, desc="暴伤抗性提升[18]%\n云篆装备时，首回合将会获得50%源能补充，且释放技能时有[55]%几率获得2层爻辞；每次激活浮图时，自身生命上限提升[6]%，持续至战斗结束，最多叠加5层"
-},
-	[73383]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=108, trigger_num={1,102880}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴伤抗性提升[18]%\n云篆装备时，首回合将会获得50%源能补充，且释放技能时有[55]%几率获得2层爻辞；每次激活浮图时，自身生命上限提升[6]%，持续至战斗结束，最多叠加5层"
-},
-	[73384]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73382}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴伤抗性提升[18]%\n云篆装备时，首回合将会获得50%源能补充，且释放技能时有[55]%几率获得2层爻辞；每次激活浮图时，自身生命上限提升[6]%，持续至战斗结束，最多叠加5层"
-},
-	[7339]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击几率提升[12]%\n闪蝶装备时，战斗开始时生成的静电球数量+1，且闪蝶释放技能时有[50]%几率为静电球提供1层{电极}，此外，释放源能爆发后有[[35]]%几率刷新静电球的持续回合"
-},
-	[73391]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击几率提升[12]%\n闪蝶装备时，战斗开始时生成的静电球数量+1，且闪蝶释放技能时有[50]%几率为静电球提供1层{电极}，此外，释放源能爆发后有[[35]]%几率刷新静电球的持续回合"
-},
-	[73392]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={102901,102902,102904}, trigger_rate=5500, is_effect_inc=0, damage_source=8, desc="暴击几率提升[12]%\n闪蝶装备时，战斗开始时生成的静电球数量+1，且闪蝶释放技能时有[50]%几率为静电球提供1层{电极}，此外，释放源能爆发后有[[35]]%几率刷新静电球的持续回合"
-},
-	[73393]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={102904}, trigger_rate=3500, is_effect_inc=0, damage_source=8, desc="暴击几率提升[12]%\n闪蝶装备时，战斗开始时生成的静电球数量+1，且闪蝶释放技能时有[50]%几率为静电球提供1层{电极}，此外，释放源能爆发后有[[35]]%几率刷新静电球的持续回合"
-},
-	[73394]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击几率提升[12]%\n闪蝶装备时，战斗开始时生成的静电球数量+1，且闪蝶释放技能时有[50]%几率为静电球提供1层{电极}，此外，释放源能爆发后有[[35]]%几率刷新静电球的持续回合"
-},
-	[73395]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击几率提升[12]%\n闪蝶装备时，战斗开始时生成的静电球数量+1，且闪蝶释放技能时有[50]%几率为静电球提供1层{电极}，此外，释放源能爆发后有[[35]]%几率刷新静电球的持续回合"
-},
-	[73396]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73392}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击几率提升[12]%\n闪蝶装备时，战斗开始时生成的静电球数量+1，且闪蝶释放技能时有[50]%几率为静电球提供1层{电极}，此外，释放源能爆发后有[[35]]%几率刷新静电球的持续回合"
-},
-	[73397]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73393}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击几率提升[12]%\n闪蝶装备时，战斗开始时生成的静电球数量+1，且闪蝶释放技能时有[50]%几率为静电球提供1层{电极}，此外，释放源能爆发后有[[35]]%几率刷新静电球的持续回合"
-},
-	[7340]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n红叶装备时，对护盾目标伤害提升[16]%，战斗开始获得[6]层狐火；红叶消耗狐火时，有[64]%几率额外获得一层识破，同时获得1层强攻（自身攻击提升[4]%，最多叠加3层）；且退出{狐火咒解}状态时红叶会立即获得[1]层{狐火}，此外还会根据当前场上阵亡单位数量额外获得相同数量的狐火层数"
-},
-	[73401]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n红叶装备时，对护盾目标伤害提升[16]%，战斗开始获得[6]层狐火；红叶消耗狐火时，有[64]%几率额外获得一层识破，同时获得1层强攻（自身攻击提升[4]%，最多叠加3层）；且退出{狐火咒解}状态时红叶会立即获得[1]层{狐火}，此外还会根据当前场上阵亡单位数量额外获得相同数量的狐火层数"
-},
-	[73402]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73401}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n红叶装备时，对护盾目标伤害提升[16]%，战斗开始获得[6]层狐火；红叶消耗狐火时，有[64]%几率额外获得一层识破，同时获得1层强攻（自身攻击提升[4]%，最多叠加3层）；且退出{狐火咒解}状态时红叶会立即获得[1]层{狐火}，此外还会根据当前场上阵亡单位数量额外获得相同数量的狐火层数"
-},
-	[73403]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,1030801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n红叶装备时，对护盾目标伤害提升[16]%，战斗开始获得[6]层狐火；红叶消耗狐火时，有[64]%几率额外获得一层识破，同时获得1层强攻（自身攻击提升[4]%，最多叠加3层）；且退出{狐火咒解}状态时红叶会立即获得[1]层{狐火}，此外还会根据当前场上阵亡单位数量额外获得相同数量的狐火层数"
-},
-	[73404]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,1030801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n红叶装备时，对护盾目标伤害提升[16]%，战斗开始获得[6]层狐火；红叶消耗狐火时，有[64]%几率额外获得一层识破，同时获得1层强攻（自身攻击提升[4]%，最多叠加3层）；且退出{狐火咒解}状态时红叶会立即获得[1]层{狐火}，此外还会根据当前场上阵亡单位数量额外获得相同数量的狐火层数"
-},
-	[73405]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73403}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n红叶装备时，对护盾目标伤害提升[16]%，战斗开始获得[6]层狐火；红叶消耗狐火时，有[64]%几率额外获得一层识破，同时获得1层强攻（自身攻击提升[4]%，最多叠加3层）；且退出{狐火咒解}状态时红叶会立即获得[1]层{狐火}，此外还会根据当前场上阵亡单位数量额外获得相同数量的狐火层数"
-},
-	[73406]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=108, trigger_num={1,103080}, trigger_rate=6400, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n红叶装备时，对护盾目标伤害提升[16]%，战斗开始获得[6]层狐火；红叶消耗狐火时，有[64]%几率额外获得一层识破，同时获得1层强攻（自身攻击提升[4]%，最多叠加3层）；且退出{狐火咒解}状态时红叶会立即获得[1]层{狐火}，此外还会根据当前场上阵亡单位数量额外获得相同数量的狐火层数"
-},
-	[73407]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73406}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n红叶装备时，对护盾目标伤害提升[16]%，战斗开始获得[6]层狐火；红叶消耗狐火时，有[64]%几率额外获得一层识破，同时获得1层强攻（自身攻击提升[4]%，最多叠加3层）；且退出{狐火咒解}状态时红叶会立即获得[1]层{狐火}，此外还会根据当前场上阵亡单位数量额外获得相同数量的狐火层数"
-},
-	[73408]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n红叶装备时，对护盾目标伤害提升[16]%，战斗开始获得[6]层狐火；红叶消耗狐火时，有[64]%几率额外获得一层识破，同时获得1层强攻（自身攻击提升[4]%，最多叠加3层）；且退出{狐火咒解}状态时红叶会立即获得[1]层{狐火}，此外还会根据当前场上阵亡单位数量额外获得相同数量的狐火层数"
-},
-	[73409]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n红叶装备时，对护盾目标伤害提升[16]%，战斗开始获得[6]层狐火；红叶消耗狐火时，有[64]%几率额外获得一层识破，同时获得1层强攻（自身攻击提升[4]%，最多叠加3层）；且退出{狐火咒解}状态时红叶会立即获得[1]层{狐火}，此外还会根据当前场上阵亡单位数量额外获得相同数量的狐火层数"
-},
-	[734091]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升[24]%\n红叶装备时，对护盾目标伤害提升[16]%，战斗开始获得[6]层狐火；红叶消耗狐火时，有[64]%几率额外获得一层识破，同时获得1层强攻（自身攻击提升[4]%，最多叠加3层）；且退出{狐火咒解}状态时红叶会立即获得[1]层{狐火}，此外还会根据当前场上阵亡单位数量额外获得相同数量的狐火层数"
-},
-	[7341]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n珂芙尼尔装备时，首回合将会获得50%源能补充，并获得{{1}}颗宝石，且自身释放技能时有50%几率获得1颗随机宝石"
-},
-	[73411]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n珂芙尼尔装备时，首回合将会获得50%源能补充，并获得{{1}}颗宝石，且自身释放技能时有50%几率获得1颗随机宝石"
-},
-	[73412]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n珂芙尼尔装备时，首回合将会获得50%源能补充，并获得{{1}}颗宝石，且自身释放技能时有50%几率获得1颗随机宝石"
-},
-	[73413]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73412}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n珂芙尼尔装备时，首回合将会获得50%源能补充，并获得{{1}}颗宝石，且自身释放技能时有50%几率获得1颗随机宝石"
-},
-	[73414]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={1,3}, trigger_rate=5000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n珂芙尼尔装备时，首回合将会获得50%源能补充，并获得{{1}}颗宝石，且自身释放技能时有50%几率获得1颗随机宝石"
-},
-	[73415]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={73414}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，自身速度提升[4]%，效果命中提升[2]%，持续2回合，最多叠加2层\n珂芙尼尔装备时，首回合将会获得50%源能补充，并获得{{1}}颗宝石，且自身释放技能时有50%几率获得1颗随机宝石"
+	[73324]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={102305}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升[20]%\n霆渊·艾丽西亚装备时，战斗开始获得1层{渊鸣}且有[40]%几率直接进入{霆渊之境}，且{霆渊之境}下的{魂灵王权}效果获得强化，全体伤害技能继承系数强化至[45]%,并对护盾目标伤害提升[16]%"
 },
 	[7401]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每过一回合，攻击提升50%"
 },
@@ -3781,7 +2987,7 @@ local effect_data=
 },
 	[80842]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=4, trigger_num={}, trigger_rate=8000, is_effect_inc=0, damage_source=1, desc="<color=#f05009>「敌方」</color>攻击强化(100%)，且最后一击有80%几率附带自身攻击50%的真实伤害"
 },
-	[8085]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)，且最后一击有80%几率附带自身攻击50%的真实伤害"
+	[8085]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)，且对护盾目标伤害提高100%"
 },
 	[80851]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)，且对护盾目标伤害提高100%"
 },
@@ -3824,34 +3030,6 @@ local effect_data=
 	[80972]={ target_rule=27, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；受到攻击时，对攻击方附加一层毒羽，回合结束时，每层毒羽使目标损失10%的最大生命值，上限3层，持续2回合"
 },
 	[8098]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>防御降低(40%)，速度降低(20%)"
-},
-	[8099]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；且受到攻击时将会对敌方全体造成反击伤害(伤害系数为自身攻击的80%)"
-},
-	[80991]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；且受到攻击时将会对敌方全体造成反击伤害(伤害系数为自身攻击的80%)"
-},
-	[80992]={ target_rule=27, damage_area=2, damage_num=1, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；且受到攻击时将会对敌方全体造成反击伤害(伤害系数为自身攻击的80%)"
-},
-	[8100]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；除BOSS外，每回合开始时扣除25%当前生命值，获得等量的护盾值，回合结束时将转化自身剩余护盾值治疗友方全体"
-},
-	[81001]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；除BOSS外，每回合开始时扣除25%当前生命值，获得等量的护盾值，回合结束时将转化自身剩余护盾值治疗友方全体"
-},
-	[81002]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；除BOSS外，每回合开始时扣除25%当前生命值，获得等量的护盾值，回合结束时将转化自身剩余护盾值治疗友方全体"
-},
-	[81003]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；除BOSS外，每回合开始时扣除25%当前生命值，获得等量的护盾值，回合结束时将转化自身剩余护盾值治疗友方全体"
-},
-	[81004]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；除BOSS外，每回合开始时扣除25%当前生命值，获得等量的护盾值，回合结束时将转化自身剩余护盾值治疗友方全体"
-},
-	[25000]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；战斗开始时，获得60%减伤，存在减伤时，友方阵亡将会治疗自身20%的最大生命，每次受到技能攻击后，将6%减伤转化为3%伤害提升"
-},
-	[250001]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；战斗开始时，获得60%减伤，存在减伤时，友方阵亡将会治疗自身20%的最大生命，每次受到技能攻击后，将6%减伤转化为3%伤害提升"
-},
-	[250002]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；战斗开始时，获得60%减伤，存在减伤时，友方阵亡将会治疗自身20%的最大生命，每次受到技能攻击后，将6%减伤转化为3%伤害提升"
-},
-	[250003]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=39, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；战斗开始时，获得60%减伤，存在减伤时，友方阵亡将会治疗自身20%的最大生命，每次受到技能攻击后，将6%减伤转化为3%伤害提升"
-},
-	[250004]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；战斗开始时，获得60%减伤，存在减伤时，友方阵亡将会治疗自身20%的最大生命，每次受到技能攻击后，将6%减伤转化为3%伤害提升"
-},
-	[250005]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=62, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)；战斗开始时，获得60%减伤，存在减伤时，友方阵亡将会治疗自身20%的最大生命，每次受到技能攻击后，将6%减伤转化为3%伤害提升"
 },
 	[8101]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(30%)"
 },
@@ -4083,17 +3261,17 @@ local effect_data=
 },
 	[81722]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=6000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)，且攻击时有60%几率附加腐蚀(目标防御降低25%)，持续至战斗结束，最多叠加4层"
 },
-	[8173]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(80%)，且受到攻击时获得1层抗性加成(暴伤抗性提升20%)，持续2回合，最多叠加4层"
+	[8173]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(80%)，且受到攻击时获得1层抗性加成(暴击抗性提升20%)，持续2回合，最多叠加4层"
 },
-	[81731]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(80%)，且受到攻击时获得1层抗性加成(暴伤抗性提升20%)，持续2回合，最多叠加4层"
+	[81731]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(80%)，且受到攻击时获得1层抗性加成(暴击抗性提升20%)，持续2回合，最多叠加4层"
 },
-	[81732]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(80%)，且受到攻击时获得1层抗性加成(暴伤抗性提升20%)，持续2回合，最多叠加4层"
+	[81732]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(80%)，且受到攻击时获得1层抗性加成(暴击抗性提升20%)，持续2回合，最多叠加4层"
 },
-	[8174]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)，且受到攻击时获得1层抗性加成(暴伤抗性提升20%)，持续2回合，最多叠加4层"
+	[8174]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)，且受到攻击时获得1层抗性加成(暴击抗性提升20%)，持续2回合，最多叠加4层"
 },
-	[81741]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)，且受到攻击时获得1层抗性加成(暴伤抗性提升20%)，持续2回合，最多叠加4层"
+	[81741]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)，且受到攻击时获得1层抗性加成(暴击抗性提升20%)，持续2回合，最多叠加4层"
 },
-	[81742]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)，且受到攻击时获得1层抗性加成(暴伤抗性提升20%)，持续2回合，最多叠加4层"
+	[81742]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(100%)，且受到攻击时获得1层抗性加成(暴击抗性提升20%)，持续2回合，最多叠加4层"
 },
 	[8175]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(80%)，且自身死亡时，将治疗全体友方(治疗量为自身攻击的160%)"
 },
@@ -4183,7 +3361,7 @@ local effect_data=
 },
 	[81942]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={81823}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>死亡时的复仇印记将无法驱散"
 },
-	[8201]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(50%)，且暴伤抗性提升(60%)"
+	[8201]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(50%)，且暴击抗性提升(60%)"
 },
 	[8202]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化(100%)，且硬直上限提升(100%)"
 },
@@ -4589,9 +3767,9 @@ local effect_data=
 },
 	[84031]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(50%)，且速度提升(40%)"
 },
-	[8404]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(50%)，且暴伤抗性提升(60%)"
+	[8404]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(50%)，且暴击抗性提升(60%)"
 },
-	[84041]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(50%)，且暴伤抗性提升(60%)"
+	[84041]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(50%)，且暴击抗性提升(60%)"
 },
 	[8405]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化(50%)，且获得吸血加成(100%)"
 },
@@ -4673,7 +3851,7 @@ local effect_data=
 },
 	[8556]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>吸血加成提升50%"
 },
-	[8557]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>暴击抵抗强化(60%)"
+	[8557]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>暴击抗性强化(60%)"
 },
 	[8558]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>死亡时对攻击者造成自身最大生命30%的真实伤害"
 },
@@ -5875,33 +5053,33 @@ local effect_data=
 },
 	[88731]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暗天使形态失效，但伤害减免提升50%，且第3回合开始，BOSS每回合将激发1层反伤光环(每层反伤光环将反弹受到伤害的8%给攻击方)，最多叠加5层"
 },
-	[8874]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但伤害加深提升50%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[8874]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但伤害加深提升50%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[88741]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但伤害加深提升50%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[88741]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但伤害加深提升50%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[88742]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5051902}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但伤害加深提升50%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[88742]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5051902}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但伤害加深提升50%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[88743]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={505190}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但伤害加深提升50%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[88743]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={505190}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但伤害加深提升50%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[8875]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但硬直上限提升200%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[8875]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但硬直上限提升200%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[88751]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但硬直上限提升200%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[88751]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但硬直上限提升200%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[88752]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={503180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但硬直上限提升200%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[88752]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={503180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但硬直上限提升200%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[8876]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但对出血目标暴击几率提升80%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[8876]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但对出血目标暴击几率提升80%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[88761]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但对出血目标暴击几率提升80%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[88761]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但对出血目标暴击几率提升80%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[88762]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={502180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但对出血目标暴击几率提升80%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[88762]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={502180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但对出血目标暴击几率提升80%，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[8877]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但防御提升2000点，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[8877]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但防御提升2000点，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[88771]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但防御提升2000点，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[88771]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但防御提升2000点，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[88772]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={508190}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但防御提升2000点，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[88772]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={508190}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果失效，但防御提升2000点，且第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
-	[8878]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升12%，无视防御提升15%，攻击提升40%)，最多叠加4层，持续至战斗结束"
+	[8878]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第3回合开始，BOSS每回合将激发1层铠甲效果(格挡几率提升20%，无视防御提升25%，攻击提升40%)，最多叠加4层，持续至战斗结束"
 },
 	[8879]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第3回合开始，BOSS每回合会对敌方全体施加1层腐朽效果(回合结束时目标损失15%最大生命)，持续至战斗结束，最多叠加4层"
 },
@@ -5999,31 +5177,31 @@ local effect_data=
 },
 	[88933]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身转阶段失效，但硬直上限提高100%，受到攻击时获得{{幽魂}}的概率提升至100%，每层{{幽魂}}额外提升6%伤害减免，且生命低于50%时，激发狂血沸腾效果，攻击提升100%，且伤害进化为真实伤害"
 },
-	[8894]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但防御提升2600点，且每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[8894]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但防御提升2600点，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[88941]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但防御提升2600点，且每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[88941]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但防御提升2600点，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[88942]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5051902}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但防御提升2600点，且每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[88942]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5051902}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但防御提升2600点，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[88943]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={505190}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但防御提升2600点，且每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[88943]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={505190}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但防御提升2600点，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[8895]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[8895]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[8896]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果和转阶段失效，但战斗开始时获得自身攻击1000%的护盾，且每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[8896]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果和转阶段失效，但战斗开始时获得自身攻击1000%的护盾，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[88961]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果和转阶段失效，但战斗开始时获得自身攻击1000%的护盾，且每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[88961]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果和转阶段失效，但战斗开始时获得自身攻击1000%的护盾，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[88962]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={504180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果和转阶段失效，但战斗开始时获得自身攻击1000%的护盾，且每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[88962]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={504180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果和转阶段失效，但战斗开始时获得自身攻击1000%的护盾，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[88963]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果和转阶段失效，但战斗开始时获得自身攻击1000%的护盾，且每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[88963]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果和转阶段失效，但战斗开始时获得自身攻击1000%的护盾，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[88964]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果和转阶段失效，但战斗开始时获得自身攻击1000%的护盾，且每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[88964]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身恢复效果和转阶段失效，但战斗开始时获得自身攻击1000%的护盾，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[8897]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[8897]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[8898]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暗天使形态失效，但防御提升3600点，且每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[8898]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暗天使形态失效，但防御提升3600点，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
-	[88981]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暗天使形态失效，但防御提升3600点，且每行动1次，自身获得1层焦渴效果，攻击提升30%，暴击几率提升12%，持续至战斗结束，最多叠加5层"
+	[88981]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暗天使形态失效，但防御提升3600点，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
 	[8899]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身硬直提升100%，且每行动1次，自身获得1层焦渴效果，攻击提升40%，暴击几率提升15%，持续至战斗结束，最多叠加5层"
 },
@@ -6061,13 +5239,13 @@ local effect_data=
 },
 	[89566]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=35, trigger_num={1,89564}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="自身护盾效果失效，但暴击几率提升40%，暴击伤害提升60%，战斗开始后两回合内免疫控制，第三回合开始，BOSS获得[怨恨]效果，攻击最后一击命中后会为目标施加随机1层减益（包含攻击降低20%、速度降低20%[可驱散]）持续至战斗结束，自身获得对应类型的增益（攻击提升20%、速度提升20%）持续3回合，每种减益及其对应的增益上限3层"
 },
-	[8958]={ target_rule=27, damage_area=1, damage_num=1, trigger_type=71, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>每击杀一个敌方单位，永久提升己方全体1%暴击几率，1%伤害加深"
+	[8958]={ target_rule=27, damage_area=1, damage_num=1, trigger_type=71, trigger_num={1}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="首回合开始时，我方防御最低的战员，获得[眷顾]:免疫减益,自身速度提升50%，释放[额外技能（除普攻、源能技、源能爆发以外的技能）]时额外获得50%伤害加深，并驱散敌方通过[怨恨]获得的1种{增益}效果;行动后为{自身九宫格范围}的友方驱散1种{减益}或{异常}效果"
 },
-	[89581]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={100303,101503,101603,102003,102005,102103,100506,101703,101803,101805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>每击杀一个敌方单位，永久提升己方全体1%暴击几率，1%伤害加深"
+	[89581]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={100303,101503,101603,102003,102005,102103,100506,101703,101803,101805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="首回合开始时，我方防御最低的战员，获得[眷顾]:免疫减益,自身速度提升50%，释放[额外技能（除普攻、源能技、源能爆发以外的技能）]时额外获得50%伤害加深，并驱散敌方通过[怨恨]获得的1种{增益}效果;行动后为{自身九宫格范围}的友方驱散1种{减益}或{异常}效果"
 },
-	[89582]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=5, trigger_num={100303,101503,101603,102003,102005,102103,100506,101703,101803,101805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>每击杀一个敌方单位，永久提升己方全体1%暴击几率，1%伤害加深"
+	[89582]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=5, trigger_num={100303,101503,101603,102003,102005,102103,100506,101703,101803,101805}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="首回合开始时，我方防御最低的战员，获得[眷顾]:免疫减益,自身速度提升50%，释放[额外技能（除普攻、源能技、源能爆发以外的技能）]时额外获得50%伤害加深，并驱散敌方通过[怨恨]获得的1种{增益}效果;行动后为{自身九宫格范围}的友方驱散1种{减益}或{异常}效果"
 },
-	[89583]={ target_rule=10, damage_area=6, damage_num=9, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>每击杀一个敌方单位，永久提升己方全体1%暴击几率，1%伤害加深"
+	[89583]={ target_rule=10, damage_area=6, damage_num=9, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="首回合开始时，我方防御最低的战员，获得[眷顾]:免疫减益,自身速度提升50%，释放[额外技能（除普攻、源能技、源能爆发以外的技能）]时额外获得50%伤害加深，并驱散敌方通过[怨恨]获得的1种{增益}效果;行动后为{自身九宫格范围}的友方驱散1种{减益}或{异常}效果"
 },
 	[8960]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，但硬直上限提高100%；第三回合开始，BOSS每层{{幽魂}}额外提升5%无视防御，且每回合结束时BOSS提升10%暴击率，15%暴击伤害，最多叠加6层"
 },
@@ -6126,332 +5304,6 @@ local effect_data=
 	[8974]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>每击杀一个敌方单位，永久提升己方全体1%暴击几率，1%伤害加深"
 },
 	[89741]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>每击杀一个敌方单位，永久提升己方全体1%暴击几率，1%伤害加深"
-},
-	[8977]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身恢复效果失效，但硬直上限提高150%，防御提升3600点；且第3回合开始，芙兰朵每回合提升10%暴击，12%暴击伤害，持续至战斗结束，最多叠加5层"
-},
-	[89771]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身恢复效果失效，但硬直上限提高150%，防御提升3600点；且第3回合开始，芙兰朵每回合提升10%暴击，12%暴击伤害，持续至战斗结束，最多叠加5层"
-},
-	[89772]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={503180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身恢复效果失效，但硬直上限提高150%，防御提升3600点；且第3回合开始，芙兰朵每回合提升10%暴击，12%暴击伤害，持续至战斗结束，最多叠加5层"
-},
-	[89773]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身恢复效果失效，但硬直上限提高150%，防御提升3600点；且第3回合开始，芙兰朵每回合提升10%暴击，12%暴击伤害，持续至战斗结束，最多叠加5层"
-},
-	[8978]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>每回合开始时，若场上仅剩自身，召唤侍女协助作战，回合结束时，所有存活的侍女损失100%最大生命，同时为BOSS提升15%暴击伤害，持续3回合，最多叠加9层"
-},
-	[8979]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，所有存活的侍女损失100%最大生命，同时为BOSS提升15%暴击伤害，持续3回合，最多叠加9层"
-},
-	[89791]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，所有存活的侍女损失100%最大生命，同时为BOSS提升15%暴击伤害，持续3回合，最多叠加9层"
-},
-	[8980]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>每击杀一个敌方单位，永久提升己方全体1%暴击几率，1%伤害加深"
-},
-	[89801]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>每击杀一个敌方单位，永久提升己方全体1%暴击几率，1%伤害加深"
-},
-	[8983]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>BOSS天赋锁血及恢复效果失效，但硬直上限提升100%，且对出血目标攻击时，暴击率提升100%，第三回合开始，蕾娜每回合提升10%无视防御，8%暴击伤害，最多叠加5层，持续至战斗结束"
-},
-	[89831]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>BOSS天赋锁血及恢复效果失效，但硬直上限提升100%，且对出血目标攻击时，暴击率提升100%，第三回合开始，蕾娜每回合提升10%无视防御，8%暴击伤害，最多叠加5层，持续至战斗结束"
-},
-	[89832]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={502180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>BOSS天赋锁血及恢复效果失效，但硬直上限提升100%，且对出血目标攻击时，暴击率提升100%，第三回合开始，蕾娜每回合提升10%无视防御，8%暴击伤害，最多叠加5层，持续至战斗结束"
-},
-	[89833]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>BOSS天赋锁血及恢复效果失效，但硬直上限提升100%，且对出血目标攻击时，暴击率提升100%，第三回合开始，蕾娜每回合提升10%无视防御，8%暴击伤害，最多叠加5层，持续至战斗结束"
-},
-	[89834]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5021807}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>BOSS天赋锁血及恢复效果失效，但硬直上限提升100%，且对出血目标攻击时，暴击率提升100%，第三回合开始，蕾娜每回合提升10%无视防御，8%暴击伤害，最多叠加5层，持续至战斗结束"
-},
-	[8984]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>每回合开始时，若场上仅剩BOSS自身，召唤鬼面狮协助作战，鬼面狮释放技能攻击时，其余鬼面狮会使用普攻协同攻击首要目标，每次鬼面狮协同攻击时，自身受到伤害提升10%，持续1回合，最多叠加3层，同时为全体提升15%暴击伤害，持续3回合，最多叠加9层"
-},
-	[8985]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=99, trigger_num={442501}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="鬼面狮释放技能攻击时，其余鬼面狮会使用普攻协同攻击首要目标，每次鬼面狮协同攻击时，自身受到伤害提升10%，持续1回合，最多叠加3层，同时为全体提升10%暴击伤害，持续1回合，最多叠加5层"
-},
-	[89851]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={4425}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="鬼面狮释放技能攻击时，其余鬼面狮会使用普攻协同攻击首要目标，每次鬼面狮协同攻击时，自身受到伤害提升10%，持续1回合，最多叠加3层，同时为全体提升10%暴击伤害，持续1回合，最多叠加5层"
-},
-	[89852]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={4425}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="鬼面狮释放技能攻击时，其余鬼面狮会使用普攻协同攻击首要目标，每次鬼面狮协同攻击时，自身受到伤害提升10%，持续1回合，最多叠加3层，同时为全体提升10%暴击伤害，持续1回合，最多叠加5层"
-},
-	[8986]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="鬼面狮释放技能攻击时，其余鬼面狮会使用普攻协同攻击首要目标，每次鬼面狮协同攻击时，自身受到伤害提升10%，持续1回合，最多叠加3层，同时为全体提升10%暴击伤害，持续1回合，最多叠加5层"
-},
-	[89861]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="#N/A"
-},
-	[8989]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>硬直上限提升100%，第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[89891]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>硬直上限提升100%，第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[89892]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>硬直上限提升100%，第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[8990]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>每回合开始时，若场上仅剩BOSS自身，召唤猎狼协助作战，回合结束时，存活的每个被召唤的猎狼献祭自身，为BOSS附加{{狂野庇护}}，提升10%免伤，持续2回合，最多叠加5层"
-},
-	[8991]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，所有存活猎狼献祭自身，为BOSS提升10%免伤，持续3回合，最多叠加5层"
-},
-	[89911]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，所有存活猎狼献祭自身，为BOSS提升10%免伤，持续3回合，最多叠加5层"
-},
-	[8994]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={508190}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身恢复效果失效，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升12%无视防御，10%暴击伤害，最多叠加5层"
-},
-	[89941]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身恢复效果失效，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升12%无视防御，10%暴击伤害，最多叠加5层"
-},
-	[89942]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身恢复效果失效，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升12%无视防御，10%暴击伤害，最多叠加5层"
-},
-	[89943]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身恢复效果失效，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升12%无视防御，10%暴击伤害，最多叠加5层"
-},
-	[8995]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>每回合开始时，若场上仅剩BOSS自身，召唤4只山岭兽协助作战，回合结束时，存活的每个被召唤的山岭兽献祭自身，使BOSS获得1层{能量结晶}}，{能量结晶}达到12层后，BOSS每次行动后可无消耗释放一次终结技，并且每层{能量结晶}额外提供2%格挡几率"
-},
-	[8996]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个被召唤的山岭兽献祭自身，使BOSS获得1层{能量结晶}"
-},
-	[89961]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个被召唤的山岭兽献祭自身，使BOSS获得1层{能量结晶}"
-},
-	[89962]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个被召唤的山岭兽献祭自身，使BOSS获得1层{能量结晶}"
-},
-	[9013]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升10%暴击率，15%暴击伤害，最多叠加6层"
-},
-	[90131]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升10%暴击率，15%暴击伤害，最多叠加6层"
-},
-	[90132]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升10%暴击率，15%暴击伤害，最多叠加6层"
-},
-	[9014]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>每回合开始时，若场上仅剩BOSS，召唤4只斧鹿头协助作战，回合结束时，存活的每个被召唤的斧鹿头献祭自身，使BOSS获得1层{鹿契}，{鹿契}达到12层后，BOSS技能攻击时有30%几率眩晕目标2回合，并且每层{鹿契}额外为BOSS提供2%格挡几率"
-},
-	[9015]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个被召唤的斧鹿头献祭自身，使BOSS获得1层{鹿契}"
-},
-	[90151]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个被召唤的斧鹿头献祭自身，使BOSS获得1层{鹿契}"
-},
-	[90152]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个被召唤的斧鹿头献祭自身，使BOSS获得1层{鹿契}"
-},
-	[9018]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5051902}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身护盾效果失效，防御提升3000点，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升8%暴击率，12%暴击伤害，最多叠加6层"
-},
-	[90181]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身护盾效果失效，防御提升3000点，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升8%暴击率，12%暴击伤害，最多叠加6层"
-},
-	[90182]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身护盾效果失效，防御提升3000点，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升8%暴击率，12%暴击伤害，最多叠加6层"
-},
-	[90183]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身护盾效果失效，防御提升3000点，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升8%暴击率，12%暴击伤害，最多叠加6层"
-},
-	[90184]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身护盾效果失效，防御提升3000点，硬直上限提升100%，第三回合开始，每回合结束时BOSS提升8%暴击率，12%暴击伤害，最多叠加6层"
-},
-	[9019]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>每回合开始时，若场上仅剩BOSS自身，呼叫4个佣兵协助作战，回合结束时，存活的每个佣兵都会跑路，使BOSS获得1层{{火气}}，每层提高致命一击2%触发几率，{{火气}}达到12层时，BOSS每回合开始时额外释放一次终结技"
-},
-	[9020]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个水管混混都会跑路，使BOSS获得1层{{火气}}"
-},
-	[90201]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个水管混混都会跑路，使BOSS获得1层{{火气}}"
-},
-	[90202]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个水管混混都会跑路，使BOSS获得1层{{火气}}"
-},
-	[9023]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，同时为BOSS附加{决断动摇}，每层{决断动摇}使BOSS致命一击的触发几率降低20%,持续一回合"
-},
-	[90231]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，同时为BOSS附加{决断动摇}，每层{决断动摇}使BOSS致命一击的触发几率降低20%,持续一回合"
-},
-	[90232]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，同时为BOSS附加{决断动摇}，每层{决断动摇}使BOSS致命一击的触发几率降低20%,持续一回合"
-},
-	[90233]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，同时为BOSS附加{决断动摇}，每层{决断动摇}使BOSS致命一击的触发几率降低20%,持续一回合"
-},
-	[9024]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={5031808}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>BOSS天赋锁血及恢复效果失效，但防御提升3600点，且第三回合开始，每回合结束时BOSS提升8%暴击率，12%暴击伤害，最多叠加6层，持续至战斗结束"
-},
-	[90241]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={503180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>BOSS天赋锁血及恢复效果失效，但防御提升3600点，且第三回合开始，每回合结束时BOSS提升8%暴击率，12%暴击伤害，最多叠加6层，持续至战斗结束"
-},
-	[90242]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={3,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>BOSS天赋锁血及恢复效果失效，但防御提升3600点，且第三回合开始，每回合结束时BOSS提升8%暴击率，12%暴击伤害，最多叠加6层，持续至战斗结束"
-},
-	[90243]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>BOSS天赋锁血及恢复效果失效，但防御提升3600点，且第三回合开始，每回合结束时BOSS提升8%暴击率，12%暴击伤害，最多叠加6层，持续至战斗结束"
-},
-	[9025]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>每回合开始时，若场上仅剩BOSS自身，呼叫4个钻头车协助作战，回合结束时，存活的每个钻头车都会跑路，但会使BOSS获得一层{冲击钻头},每层提升50防御穿透，{冲击钻头}达到10层时，技能攻击时为目标附加{震荡冲击}，每层{震荡冲击}在回合结束时造成BOSS攻击50%的伤害,最多叠加2层，持续2回合"
-},
-	[9026]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个钻头车都会跑路，回合结束时，存活的每个钻头车都会跑路"
-},
-	[90261]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个钻头车都会跑路，回合结束时，存活的每个钻头车都会跑路"
-},
-	[90262]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个钻头车都会跑路，回合结束时，存活的每个钻头车都会跑路"
-},
-	[90263]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个钻头车都会跑路，回合结束时，存活的每个钻头车都会跑路"
-},
-	[9029]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，击杀钻头车时，自身额外获得一层{钻头碎片}，技能攻击最后一段后，每层{钻头碎片}随机攻击技能范围内存活的敌方，造成自身攻击10%的伤害"
-},
-	[90291]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，击杀钻头车时，自身额外获得一层{钻头碎片}，技能攻击最后一段后，每层{钻头碎片}随机攻击技能范围内存活的敌方，造成自身攻击10%的伤害"
-},
-	[90292]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，击杀钻头车时，自身额外获得一层{钻头碎片}，技能攻击最后一段后，每层{钻头碎片}随机攻击技能范围内存活的敌方，造成自身攻击10%的伤害"
-},
-	[90293]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=94, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，击杀钻头车时，自身额外获得一层{钻头碎片}，技能攻击最后一段后，每层{钻头碎片}随机攻击技能范围内存活的敌方，造成自身攻击10%的伤害"
-},
-	[9030]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>硬直上限提升100%，第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[90301]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>硬直上限提升100%，第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[90302]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>硬直上限提升100%，第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[90303]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>硬直上限提升100%，第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[9031]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>回合开始时，召唤4只侍女协助作战，回合结束时，存活的每个被召唤的侍女献祭自身，为BOSS提升10%免伤，持续2回合，最多叠加5层\n第[4]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影障]：回合开始时，每层提供1层免疫技能攻击的护盾，上限4层\n第[5]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影蚀]: 技能攻击时，将会偷取攻击首要目标1层增益，上限4层\n第[6]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影劫]：行动结束后，额外释放1次终结技，上限2层"
-},
-	[90311]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={4}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>回合开始时，召唤4只侍女协助作战，回合结束时，存活的每个被召唤的侍女献祭自身，为BOSS提升10%免伤，持续2回合，最多叠加5层\n第[4]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影障]：回合开始时，每层提供1层免疫技能攻击的护盾，上限4层\n第[5]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影蚀]: 技能攻击时，将会偷取攻击首要目标1层增益，上限4层\n第[6]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影劫]：行动结束后，额外释放1次终结技，上限2层"
-},
-	[90312]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={5}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>回合开始时，召唤4只侍女协助作战，回合结束时，存活的每个被召唤的侍女献祭自身，为BOSS提升10%免伤，持续2回合，最多叠加5层\n第[4]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影障]：回合开始时，每层提供1层免疫技能攻击的护盾，上限4层\n第[5]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影蚀]: 技能攻击时，将会偷取攻击首要目标1层增益，上限4层\n第[6]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影劫]：行动结束后，额外释放1次终结技，上限2层"
-},
-	[90313]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={6}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>回合开始时，召唤4只侍女协助作战，回合结束时，存活的每个被召唤的侍女献祭自身，为BOSS提升10%免伤，持续2回合，最多叠加5层\n第[4]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影障]：回合开始时，每层提供1层免疫技能攻击的护盾，上限4层\n第[5]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影蚀]: 技能攻击时，将会偷取攻击首要目标1层增益，上限4层\n第[6]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影劫]：行动结束后，额外释放1次终结技，上限2层"
-},
-	[90314]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={7,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>回合开始时，召唤4只侍女协助作战，回合结束时，存活的每个被召唤的侍女献祭自身，为BOSS提升10%免伤，持续2回合，最多叠加5层\n第[4]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影障]：回合开始时，每层提供1层免疫技能攻击的护盾，上限4层\n第[5]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影蚀]: 技能攻击时，将会偷取攻击首要目标1层增益，上限4层\n第[6]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得1层[影劫]：行动结束后，额外释放1次终结技，上限2层"
-},
-	[9032]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[4]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影障]：回合开始时，每层提供1层免疫技能攻击的护盾，上限4层\n击杀所有被召唤出的侍女时，永久获得[空护]：回合开始时，提供1层免疫技能攻击的护盾，持续1回合"
-},
-	[90321]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[4]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影障]：回合开始时，每层提供1层免疫技能攻击的护盾，上限4层\n击杀所有被召唤出的侍女时，永久获得[空护]：回合开始时，提供1层免疫技能攻击的护盾，持续1回合"
-},
-	[90322]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[4]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影障]：回合开始时，每层提供1层免疫技能攻击的护盾，上限4层\n击杀所有被召唤出的侍女时，永久获得[空护]：回合开始时，提供1层免疫技能攻击的护盾，持续1回合"
-},
-	[90323]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[4]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影障]：回合开始时，每层提供1层免疫技能攻击的护盾，上限4层\n击杀所有被召唤出的侍女时，永久获得[空护]：回合开始时，提供1层免疫技能攻击的护盾，持续1回合"
-},
-	[9033]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[5]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影蚀]：技能攻击时，将会偷取攻击首要目标1层增益，上限4层，持续时间永久\n击杀所有被召唤出的侍女时，永久获得[空窃]：技能攻击BOSS时，复制敌方1层{共生状态}至自身，持续1回合"
-},
-	[90331]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[5]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影蚀]：技能攻击时，将会偷取攻击首要目标1层增益，上限4层，持续时间永久\n击杀所有被召唤出的侍女时，永久获得[空窃]：技能攻击BOSS时，复制敌方1层{共生状态}至自身，持续1回合"
-},
-	[90332]={ target_rule=38, damage_area=1, damage_num=1, trigger_type=5, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[5]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影蚀]：技能攻击时，将会偷取攻击首要目标1层增益，上限4层，持续时间永久\n击杀所有被召唤出的侍女时，永久获得[空窃]：技能攻击BOSS时，复制敌方1层{共生状态}至自身，持续1回合"
-},
-	[90333]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[5]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影蚀]：技能攻击时，将会偷取攻击首要目标1层增益，上限4层，持续时间永久\n击杀所有被召唤出的侍女时，永久获得[空窃]：技能攻击BOSS时，复制敌方1层{共生状态}至自身，持续1回合"
-},
-	[9034]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[6]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影劫]：行动结束后，额外释放一次终结技，最多额外释放2次\n击杀所有被召唤出的侍女时，永久获得[空怒]：每次释放源能爆发时，源能爆发伤害提升10%，持续1回合"
-},
-	[90341]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[6]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影劫]：行动结束后，额外释放一次终结技，最多额外释放2次\n击杀所有被召唤出的侍女时，永久获得[空怒]：每次释放源能爆发时，源能爆发伤害提升10%，持续1回合"
-},
-	[90342]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=107, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[6]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影劫]：行动结束后，额外释放一次终结技，最多额外释放2次\n击杀所有被召唤出的侍女时，永久获得[空怒]：每次释放源能爆发时，源能爆发伤害提升10%，持续1回合"
-},
-	[90343]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[6]回合，召唤出的侍女，献祭自身时，每个献祭的侍女会使BOSS永久获得一层[影劫]：行动结束后，额外释放一次终结技，最多额外释放2次\n击杀所有被召唤出的侍女时，永久获得[空怒]：每次释放源能爆发时，源能爆发伤害提升10%，持续1回合"
-},
-	[9037]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空护]：回合开始时，获得1层免疫技能攻击的护盾，护盾持续1回合\n第[5]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空窃]： 技能攻击BOSS时，复制敌方1层{共生状态}（仅属性提升效果）至自身，持续1回合\n第[6]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空怒]：每次释放终结技时，获得10%源能爆发伤害提升，源能爆发伤害提升持续1回合"
-},
-	[90371]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空护]：回合开始时，获得1层免疫技能攻击的护盾，护盾持续1回合\n第[5]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空窃]： 技能攻击BOSS时，复制敌方1层{共生状态}（仅属性提升效果）至自身，持续1回合\n第[6]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空怒]：每次释放终结技时，获得10%源能爆发伤害提升，源能爆发伤害提升持续1回合"
-},
-	[90372]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=104, trigger_num={1,90323}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空护]：回合开始时，获得1层免疫技能攻击的护盾，护盾持续1回合\n第[5]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空窃]： 技能攻击BOSS时，复制敌方1层{共生状态}（仅属性提升效果）至自身，持续1回合\n第[6]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空怒]：每次释放终结技时，获得10%源能爆发伤害提升，源能爆发伤害提升持续1回合"
-},
-	[90373]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=104, trigger_num={1,90333}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空护]：回合开始时，获得1层免疫技能攻击的护盾，护盾持续1回合\n第[5]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空窃]： 技能攻击BOSS时，复制敌方1层{共生状态}（仅属性提升效果）至自身，持续1回合\n第[6]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空怒]：每次释放终结技时，获得10%源能爆发伤害提升，源能爆发伤害提升持续1回合"
-},
-	[90374]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=104, trigger_num={1,90343}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空护]：回合开始时，获得1层免疫技能攻击的护盾，护盾持续1回合\n第[5]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空窃]： 技能攻击BOSS时，复制敌方1层{共生状态}（仅属性提升效果）至自身，持续1回合\n第[6]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空怒]：每次释放终结技时，获得10%源能爆发伤害提升，源能爆发伤害提升持续1回合"
-},
-	[90375]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空护]：回合开始时，获得1层免疫技能攻击的护盾，护盾持续1回合\n第[5]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空窃]： 技能攻击BOSS时，复制敌方1层{共生状态}（仅属性提升效果）至自身，持续1回合\n第[6]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空怒]：每次释放终结技时，获得10%源能爆发伤害提升，源能爆发伤害提升持续1回合"
-},
-	[90376]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=69, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空护]：回合开始时，获得1层免疫技能攻击的护盾，护盾持续1回合\n第[5]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空窃]： 技能攻击BOSS时，复制敌方1层{共生状态}（仅属性提升效果）至自身，持续1回合\n第[6]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空怒]：每次释放终结技时，获得10%源能爆发伤害提升，源能爆发伤害提升持续1回合"
-},
-	[90377]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空护]：回合开始时，获得1层免疫技能攻击的护盾，护盾持续1回合\n第[5]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空窃]： 技能攻击BOSS时，复制敌方1层{共生状态}（仅属性提升效果）至自身，持续1回合\n第[6]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空怒]：每次释放终结技时，获得10%源能爆发伤害提升，源能爆发伤害提升持续1回合"
-},
-	[90378]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=104, trigger_num={1,90333}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空护]：回合开始时，获得1层免疫技能攻击的护盾，护盾持续1回合\n第[5]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空窃]： 技能攻击BOSS时，复制敌方1层{共生状态}（仅属性提升效果）至自身，持续1回合\n第[6]回合，击杀所有被召唤出的侍女时，我方全体永久获得[空怒]：每次释放终结技时，获得10%源能爆发伤害提升，源能爆发伤害提升持续1回合"
-},
-	[9038]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[90381]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[90382]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[90383]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[9039]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>回合开始时，铸造4把异剑协助作战，回合结束时，熔炼所有在场的异剑，每把异剑为BOSS提升10%免伤，持续2回合；每把异剑被击败时，BOSS吸收其碎片获得3%暴击率提升\n第[4]回合，召唤雷剑修坎特，熔炼雷剑时，BOSS获得{雷劫}：每回合开始时，对敌方全体造成自身攻击100%的骋电伤害,重复获得{雷劫}时，将会转化为10%伤害提升\n第[5]回合，召唤冰剑格拉尔，熔炼冰剑时，BOSS获得{冰缚}：技能攻击为目标附加{束缚}：速度降低50%，且无法获得源能，上限1层，持续2回合；重复获得{冰缚}时，将会转化为10%属性抗性提升\n第[6]回合，召唤炎剑苏格姆，熔炼炎剑时，BOSS获得{炎爆}：终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并为敌方全体附加[炎毒]：受到的治疗效果降低50%，上限1层，持续2回合；重复获得{炎爆}时，将会转化为10%攻击力提升"
-},
-	[90391]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={4}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>回合开始时，铸造4把异剑协助作战，回合结束时，熔炼所有在场的异剑，每把异剑为BOSS提升10%免伤，持续2回合；每把异剑被击败时，BOSS吸收其碎片获得3%暴击率提升\n第[4]回合，召唤雷剑修坎特，熔炼雷剑时，BOSS获得{雷劫}：每回合开始时，对敌方全体造成自身攻击100%的骋电伤害,重复获得{雷劫}时，将会转化为10%伤害提升\n第[5]回合，召唤冰剑格拉尔，熔炼冰剑时，BOSS获得{冰缚}：技能攻击为目标附加{束缚}：速度降低50%，且无法获得源能，上限1层，持续2回合；重复获得{冰缚}时，将会转化为10%属性抗性提升\n第[6]回合，召唤炎剑苏格姆，熔炼炎剑时，BOSS获得{炎爆}：终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并为敌方全体附加[炎毒]：受到的治疗效果降低50%，上限1层，持续2回合；重复获得{炎爆}时，将会转化为10%攻击力提升"
-},
-	[90392]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={5}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>回合开始时，铸造4把异剑协助作战，回合结束时，熔炼所有在场的异剑，每把异剑为BOSS提升10%免伤，持续2回合；每把异剑被击败时，BOSS吸收其碎片获得3%暴击率提升\n第[4]回合，召唤雷剑修坎特，熔炼雷剑时，BOSS获得{雷劫}：每回合开始时，对敌方全体造成自身攻击100%的骋电伤害,重复获得{雷劫}时，将会转化为10%伤害提升\n第[5]回合，召唤冰剑格拉尔，熔炼冰剑时，BOSS获得{冰缚}：技能攻击为目标附加{束缚}：速度降低50%，且无法获得源能，上限1层，持续2回合；重复获得{冰缚}时，将会转化为10%属性抗性提升\n第[6]回合，召唤炎剑苏格姆，熔炼炎剑时，BOSS获得{炎爆}：终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并为敌方全体附加[炎毒]：受到的治疗效果降低50%，上限1层，持续2回合；重复获得{炎爆}时，将会转化为10%攻击力提升"
-},
-	[90393]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={6}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>回合开始时，铸造4把异剑协助作战，回合结束时，熔炼所有在场的异剑，每把异剑为BOSS提升10%免伤，持续2回合；每把异剑被击败时，BOSS吸收其碎片获得3%暴击率提升\n第[4]回合，召唤雷剑修坎特，熔炼雷剑时，BOSS获得{雷劫}：每回合开始时，对敌方全体造成自身攻击100%的骋电伤害,重复获得{雷劫}时，将会转化为10%伤害提升\n第[5]回合，召唤冰剑格拉尔，熔炼冰剑时，BOSS获得{冰缚}：技能攻击为目标附加{束缚}：速度降低50%，且无法获得源能，上限1层，持续2回合；重复获得{冰缚}时，将会转化为10%属性抗性提升\n第[6]回合，召唤炎剑苏格姆，熔炼炎剑时，BOSS获得{炎爆}：终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并为敌方全体附加[炎毒]：受到的治疗效果降低50%，上限1层，持续2回合；重复获得{炎爆}时，将会转化为10%攻击力提升"
-},
-	[90394]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=77, trigger_num={7,0}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>回合开始时，铸造4把异剑协助作战，回合结束时，熔炼所有在场的异剑，每把异剑为BOSS提升10%免伤，持续2回合；每把异剑被击败时，BOSS吸收其碎片获得3%暴击率提升\n第[4]回合，召唤雷剑修坎特，熔炼雷剑时，BOSS获得{雷劫}：每回合开始时，对敌方全体造成自身攻击100%的骋电伤害,重复获得{雷劫}时，将会转化为10%伤害提升\n第[5]回合，召唤冰剑格拉尔，熔炼冰剑时，BOSS获得{冰缚}：技能攻击为目标附加{束缚}：速度降低50%，且无法获得源能，上限1层，持续2回合；重复获得{冰缚}时，将会转化为10%属性抗性提升\n第[6]回合，召唤炎剑苏格姆，熔炼炎剑时，BOSS获得{炎爆}：终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并为敌方全体附加[炎毒]：受到的治疗效果降低50%，上限1层，持续2回合；重复获得{炎爆}时，将会转化为10%攻击力提升"
-},
-	[9040]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="熔炼所有在场的异剑，每把异剑为BOSS提升10%免伤，持续2回合，每有1把铸造出的剑被击败，BOSS吸收其碎片获得2%暴击率提升"
-},
-	[90401]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="熔炼所有在场的异剑，每把异剑为BOSS提升10%免伤，持续2回合，每有1把铸造出的剑被击败，BOSS吸收其碎片获得2%暴击率提升"
-},
-	[9041]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[4]回合，铸造雷剑修坎特，熔炼雷剑时，BOSS获得[雷劫]：每回合开始时，对敌方全体造成自身攻击100%的额外骋电伤害,重复获得[雷劫]时，将会转化为10%伤害提升"
-},
-	[90411]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[4]回合，铸造雷剑修坎特，熔炼雷剑时，BOSS获得[雷劫]：每回合开始时，对敌方全体造成自身攻击100%的额外骋电伤害,重复获得[雷劫]时，将会转化为10%伤害提升"
-},
-	[90412]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[4]回合，铸造雷剑修坎特，熔炼雷剑时，BOSS获得[雷劫]：每回合开始时，对敌方全体造成自身攻击100%的额外骋电伤害,重复获得[雷劫]时，将会转化为10%伤害提升"
-},
-	[90413]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[4]回合，铸造雷剑修坎特，熔炼雷剑时，BOSS获得[雷劫]：每回合开始时，对敌方全体造成自身攻击100%的额外骋电伤害,重复获得[雷劫]时，将会转化为10%伤害提升"
-},
-	[90414]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=167, trigger_num={1,9041}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[4]回合，铸造雷剑修坎特，熔炼雷剑时，BOSS获得[雷劫]：每回合开始时，对敌方全体造成自身攻击100%的额外骋电伤害,重复获得[雷劫]时，将会转化为10%伤害提升"
-},
-	[90415]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[4]回合，铸造雷剑修坎特，熔炼雷剑时，BOSS获得[雷劫]：每回合开始时，对敌方全体造成自身攻击100%的额外骋电伤害,重复获得[雷劫]时，将会转化为10%伤害提升"
-},
-	[9042]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[5]回合，铸造冰剑格拉尔，熔炼冰剑时，BOSS获得[冰缚]:技能攻击为目标寒冰束缚：速度降低50%，且无法获得源能，持续2回合，重复获得[冰缚]时，将会转化为10%属性抗性提升"
-},
-	[90421]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[5]回合，铸造冰剑格拉尔，熔炼冰剑时，BOSS获得[冰缚]:技能攻击为目标寒冰束缚：速度降低50%，且无法获得源能，持续2回合，重复获得[冰缚]时，将会转化为10%属性抗性提升"
-},
-	[90422]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[5]回合，铸造冰剑格拉尔，熔炼冰剑时，BOSS获得[冰缚]:技能攻击为目标寒冰束缚：速度降低50%，且无法获得源能，持续2回合，重复获得[冰缚]时，将会转化为10%属性抗性提升"
-},
-	[90423]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[5]回合，铸造冰剑格拉尔，熔炼冰剑时，BOSS获得[冰缚]:技能攻击为目标寒冰束缚：速度降低50%，且无法获得源能，持续2回合，重复获得[冰缚]时，将会转化为10%属性抗性提升"
-},
-	[90424]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=167, trigger_num={1,9042}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[5]回合，铸造冰剑格拉尔，熔炼冰剑时，BOSS获得[冰缚]:技能攻击为目标寒冰束缚：速度降低50%，且无法获得源能，持续2回合，重复获得[冰缚]时，将会转化为10%属性抗性提升"
-},
-	[90425]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[5]回合，铸造冰剑格拉尔，熔炼冰剑时，BOSS获得[冰缚]:技能攻击为目标寒冰束缚：速度降低50%，且无法获得源能，持续2回合，重复获得[冰缚]时，将会转化为10%属性抗性提升"
-},
-	[9043]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[6]回合，铸造炎剑苏格姆，熔炼炎剑时，BOSS获得[炎爆]:终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并附加[炎毒]：受到的治疗效果降低50%，持续2回合；重复获得[炎爆]时，将会转化为10%攻击力提升"
-},
-	[90431]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[6]回合，铸造炎剑苏格姆，熔炼炎剑时，BOSS获得[炎爆]:终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并附加[炎毒]：受到的治疗效果降低50%，持续2回合；重复获得[炎爆]时，将会转化为10%攻击力提升"
-},
-	[90432]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[6]回合，铸造炎剑苏格姆，熔炼炎剑时，BOSS获得[炎爆]:终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并附加[炎毒]：受到的治疗效果降低50%，持续2回合；重复获得[炎爆]时，将会转化为10%攻击力提升"
-},
-	[90433]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=96, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[6]回合，铸造炎剑苏格姆，熔炼炎剑时，BOSS获得[炎爆]:终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并附加[炎毒]：受到的治疗效果降低50%，持续2回合；重复获得[炎爆]时，将会转化为10%攻击力提升"
-},
-	[90434]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=167, trigger_num={1,9043}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[6]回合，铸造炎剑苏格姆，熔炼炎剑时，BOSS获得[炎爆]:终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并附加[炎毒]：受到的治疗效果降低50%，持续2回合；重复获得[炎爆]时，将会转化为10%攻击力提升"
-},
-	[90435]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[6]回合，铸造炎剑苏格姆，熔炼炎剑时，BOSS获得[炎爆]:终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并附加[炎毒]：受到的治疗效果降低50%，持续2回合；重复获得[炎爆]时，将会转化为10%攻击力提升"
-},
-	[90436]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=2, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="第[6]回合，铸造炎剑苏格姆，熔炼炎剑时，BOSS获得[炎爆]:终结技将会触发二次爆炸，对除首要目标外的敌方全体造成本次技能伤害40%的轰炎伤害，并附加[炎毒]：受到的治疗效果降低50%，持续2回合；重复获得[炎爆]时，将会转化为10%攻击力提升"
-},
-	[9046]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击败任意3把雷剑后，我方全体获得{雷鸣}：攻击生命低于50%的目标时，伤害提升10%\n第[5]回合，击败任意3把冰剑后，我方全体获得{霜触}：技能攻击会为目标附加{冰蚀}：属性抗性降低10%，速度降低10%，持续1回合，最多叠加2层\n第[6]回合，击败任意3把炎剑后，我方全体获得{余烬}：源能爆发会额外触发1次溅射伤害，对敌方全体造成本次技能伤害50%的伤害"
-},
-	[90461]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击败任意3把雷剑后，我方全体获得{雷鸣}：攻击生命低于50%的目标时，伤害提升10%\n第[5]回合，击败任意3把冰剑后，我方全体获得{霜触}：技能攻击会为目标附加{冰蚀}：属性抗性降低10%，速度降低10%，持续1回合，最多叠加2层\n第[6]回合，击败任意3把炎剑后，我方全体获得{余烬}：源能爆发会额外触发1次溅射伤害，对敌方全体造成本次技能伤害50%的伤害"
-},
-	[90462]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击败任意3把雷剑后，我方全体获得{雷鸣}：攻击生命低于50%的目标时，伤害提升10%\n第[5]回合，击败任意3把冰剑后，我方全体获得{霜触}：技能攻击会为目标附加{冰蚀}：属性抗性降低10%，速度降低10%，持续1回合，最多叠加2层\n第[6]回合，击败任意3把炎剑后，我方全体获得{余烬}：源能爆发会额外触发1次溅射伤害，对敌方全体造成本次技能伤害50%的伤害"
-},
-	[90463]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=104, trigger_num={1,90414}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击败任意3把雷剑后，我方全体获得{雷鸣}：攻击生命低于50%的目标时，伤害提升10%\n第[5]回合，击败任意3把冰剑后，我方全体获得{霜触}：技能攻击会为目标附加{冰蚀}：属性抗性降低10%，速度降低10%，持续1回合，最多叠加2层\n第[6]回合，击败任意3把炎剑后，我方全体获得{余烬}：源能爆发会额外触发1次溅射伤害，对敌方全体造成本次技能伤害50%的伤害"
-},
-	[90464]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=104, trigger_num={1,90425}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击败任意3把雷剑后，我方全体获得{雷鸣}：攻击生命低于50%的目标时，伤害提升10%\n第[5]回合，击败任意3把冰剑后，我方全体获得{霜触}：技能攻击会为目标附加{冰蚀}：属性抗性降低10%，速度降低10%，持续1回合，最多叠加2层\n第[6]回合，击败任意3把炎剑后，我方全体获得{余烬}：源能爆发会额外触发1次溅射伤害，对敌方全体造成本次技能伤害50%的伤害"
-},
-	[90465]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=104, trigger_num={1,90434}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击败任意3把雷剑后，我方全体获得{雷鸣}：攻击生命低于50%的目标时，伤害提升10%\n第[5]回合，击败任意3把冰剑后，我方全体获得{霜触}：技能攻击会为目标附加{冰蚀}：属性抗性降低10%，速度降低10%，持续1回合，最多叠加2层\n第[6]回合，击败任意3把炎剑后，我方全体获得{余烬}：源能爆发会额外触发1次溅射伤害，对敌方全体造成本次技能伤害50%的伤害"
-},
-	[90466]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击败任意3把雷剑后，我方全体获得{雷鸣}：攻击生命低于50%的目标时，伤害提升10%\n第[5]回合，击败任意3把冰剑后，我方全体获得{霜触}：技能攻击会为目标附加{冰蚀}：属性抗性降低10%，速度降低10%，持续1回合，最多叠加2层\n第[6]回合，击败任意3把炎剑后，我方全体获得{余烬}：源能爆发会额外触发1次溅射伤害，对敌方全体造成本次技能伤害50%的伤害"
-},
-	[90467]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击败任意3把雷剑后，我方全体获得{雷鸣}：攻击生命低于50%的目标时，伤害提升10%\n第[5]回合，击败任意3把冰剑后，我方全体获得{霜触}：技能攻击会为目标附加{冰蚀}：属性抗性降低10%，速度降低10%，持续1回合，最多叠加2层\n第[6]回合，击败任意3把炎剑后，我方全体获得{余烬}：源能爆发会额外触发1次溅射伤害，对敌方全体造成本次技能伤害50%的伤害"
-},
-	[90468]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=96, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深\n第[4]回合，击败任意3把雷剑后，我方全体获得{雷鸣}：攻击生命低于50%的目标时，伤害提升10%\n第[5]回合，击败任意3把冰剑后，我方全体获得{霜触}：技能攻击会为目标附加{冰蚀}：属性抗性降低10%，速度降低10%，持续1回合，最多叠加2层\n第[6]回合，击败任意3把炎剑后，我方全体获得{余烬}：源能爆发会额外触发1次溅射伤害，对敌方全体造成本次技能伤害50%的伤害"
-},
-	[9047]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=71, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，免疫[冰冻],第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[90471]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，免疫[冰冻],第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[90472]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，免疫[冰冻],第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[90473]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，免疫[冰冻],第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[90474]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>自身转阶段失效，硬直上限提升100%，免疫[冰冻],第3回合开始，每回合结束时BOSS提升300防御穿透，10%暴击伤害，最多叠加5层"
-},
-	[9048]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>回合开始时，召唤4个蛇亚龙协助作战，回合结束时，吸收所有仍存活的蛇亚龙，每吸收1个为自身添加1层{{行动}}（上限8层，持续1回合），每添加2层{{行动}}，将会额外随机释放1次主动技能\n每个蛇亚龙行动后，BOSS获得1层{{行动}}，BOSS行动开始时，若带有{{行动}}不低于2层，额外驱散自身2种减益\nBOSS的技能攻击会为目标附加2层{{冻痕}}，叠加至5层时转化为{{永冻}}（无法行动，不可被驱散、清除，持续2回合）\nBOSS终结技，对带有{{冻痕}}的目标额外提升{{冻痕}}层数*10%伤害，对被{{永冻}}目标额外提升200%伤害，释放终结技后，普攻{{冻痕}}层数最高的敌方目标"
-},
-	[9049]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="回合结束时，吸收所有仍存活的蛇亚龙，每吸收1个为自身添加1层{{行动}}（持续1回合）"
-},
-	[90491]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="回合结束时，吸收所有仍存活的蛇亚龙，每吸收1个为自身添加1层{{行动}}（持续1回合）"
-},
-	[9050]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=156, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每个友方行动后，自身获得1层{{行动}}，BOSS行动开始时，若带有{{行动}}不低于2层，额外驱散自身2种减益，每添加2层{{行动}}，将会额外随机释放1次主动技能"
-},
-	[90501]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每个友方行动后，自身获得1层{{行动}}，BOSS行动开始时，若带有{{行动}}不低于2层，额外驱散自身2种减益，每添加2层{{行动}}，将会额外随机释放1次主动技能"
-},
-	[90502]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,90492}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每个友方行动后，自身获得1层{{行动}}，BOSS行动开始时，若带有{{行动}}不低于2层，额外驱散自身2种减益，每添加2层{{行动}}，将会额外随机释放1次主动技能"
-},
-	[90503]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每个友方行动后，自身获得1层{{行动}}，BOSS行动开始时，若带有{{行动}}不低于2层，额外驱散自身2种减益，每添加2层{{行动}}，将会额外随机释放1次主动技能"
-},
-	[90504]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每个友方行动后，自身获得1层{{行动}}，BOSS行动开始时，若带有{{行动}}不低于2层，额外驱散自身2种减益，每添加2层{{行动}}，将会额外随机释放1次主动技能"
-},
-	[9051]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS的技能攻击会为目标附加2层{{冻痕}}，叠加至5层时转化为{{永冻}}（无法行动，不可被驱散、清除，持续2回合）,BOSS终结技，对带有{{冻痕}}的目标额外提升{{冻痕}}层数*10%伤害，对被{{永冻}}目标额外提升200%伤害，释放终结技后，普攻{{冻痕}}层数最高的敌方目标"
-},
-	[90511]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS的技能攻击会为目标附加2层{{冻痕}}，叠加至5层时转化为{{永冻}}（无法行动，不可被驱散、清除，持续2回合）,BOSS终结技，对带有{{冻痕}}的目标额外提升{{冻痕}}层数*10%伤害，对被{{永冻}}目标额外提升200%伤害，释放终结技后，普攻{{冻痕}}层数最高的敌方目标"
-},
-	[90512]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS的技能攻击会为目标附加2层{{冻痕}}，叠加至5层时转化为{{永冻}}（无法行动，不可被驱散、清除，持续2回合）,BOSS终结技，对带有{{冻痕}}的目标额外提升{{冻痕}}层数*10%伤害，对被{{永冻}}目标额外提升200%伤害，释放终结技后，普攻{{冻痕}}层数最高的敌方目标"
-},
-	[90513]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=2, trigger_num={506104}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS的技能攻击会为目标附加2层{{冻痕}}，叠加至5层时转化为{{永冻}}（无法行动，不可被驱散、清除，持续2回合）,BOSS终结技，对带有{{冻痕}}的目标额外提升{{冻痕}}层数*10%伤害，对被{{永冻}}目标额外提升200%伤害，释放终结技后，普攻{{冻痕}}层数最高的敌方目标"
-},
-	[90514]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=39, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS的技能攻击会为目标附加2层{{冻痕}}，叠加至5层时转化为{{永冻}}（无法行动，不可被驱散、清除，持续2回合）,BOSS终结技，对带有{{冻痕}}的目标额外提升{{冻痕}}层数*10%伤害，对被{{永冻}}目标额外提升200%伤害，释放终结技后，普攻{{冻痕}}层数最高的敌方目标"
-},
-	[9055]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，触发额外技能释放时，自身伤害额外提升3%，上限50层\n击杀单位时，自身额外获得一层{{计划}}\n每回合开始时，{{计划}}层数最高的我方战员获得临时效果{{计划充能}}：非额外释放的源能爆发后，将会回复自身50%源能；其余带有{{计划}}的我方战员，自身行动开始时损失当前生命的30%，为{{计划充能}}的友方添加12%攻击提升（上限4层，持续1回合）\n带有{{冻痕}}的我方战员，技能攻击BOSS后会为自身移除一层{{冻痕}}"
-},
-	[90551]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，触发额外技能释放时，自身伤害额外提升3%，上限50层\n击杀单位时，自身额外获得一层{{计划}}\n每回合开始时，{{计划}}层数最高的我方战员获得临时效果{{计划充能}}：非额外释放的源能爆发后，将会回复自身50%源能；其余带有{{计划}}的我方战员，自身行动开始时损失当前生命的30%，为{{计划充能}}的友方添加12%攻击提升（上限4层，持续1回合）\n带有{{冻痕}}的我方战员，技能攻击BOSS后会为自身移除一层{{冻痕}}"
-},
-	[90552]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，触发额外技能释放时，自身伤害额外提升3%，上限50层\n击杀单位时，自身额外获得一层{{计划}}\n每回合开始时，{{计划}}层数最高的我方战员获得临时效果{{计划充能}}：非额外释放的源能爆发后，将会回复自身50%源能；其余带有{{计划}}的我方战员，自身行动开始时损失当前生命的30%，为{{计划充能}}的友方添加12%攻击提升（上限4层，持续1回合）\n带有{{冻痕}}的我方战员，技能攻击BOSS后会为自身移除一层{{冻痕}}"
-},
-	[90553]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={1,3,9}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，触发额外技能释放时，自身伤害额外提升3%，上限50层\n击杀单位时，自身额外获得一层{{计划}}\n每回合开始时，{{计划}}层数最高的我方战员获得临时效果{{计划充能}}：非额外释放的源能爆发后，将会回复自身50%源能；其余带有{{计划}}的我方战员，自身行动开始时损失当前生命的30%，为{{计划充能}}的友方添加12%攻击提升（上限4层，持续1回合）\n带有{{冻痕}}的我方战员，技能攻击BOSS后会为自身移除一层{{冻痕}}"
-},
-	[90554]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，触发额外技能释放时，自身伤害额外提升3%，上限50层\n击杀单位时，自身额外获得一层{{计划}}\n每回合开始时，{{计划}}层数最高的我方战员获得临时效果{{计划充能}}：非额外释放的源能爆发后，将会回复自身50%源能；其余带有{{计划}}的我方战员，自身行动开始时损失当前生命的30%，为{{计划充能}}的友方添加12%攻击提升（上限4层，持续1回合）\n带有{{冻痕}}的我方战员，技能攻击BOSS后会为自身移除一层{{冻痕}}"
-},
-	[90555]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，触发额外技能释放时，自身伤害额外提升3%，上限50层\n击杀单位时，自身额外获得一层{{计划}}\n每回合开始时，{{计划}}层数最高的我方战员获得临时效果{{计划充能}}：非额外释放的源能爆发后，将会回复自身50%源能；其余带有{{计划}}的我方战员，自身行动开始时损失当前生命的30%，为{{计划充能}}的友方添加12%攻击提升（上限4层，持续1回合）\n带有{{冻痕}}的我方战员，技能攻击BOSS后会为自身移除一层{{冻痕}}"
-},
-	[90556]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，触发额外技能释放时，自身伤害额外提升3%，上限50层\n击杀单位时，自身额外获得一层{{计划}}\n每回合开始时，{{计划}}层数最高的我方战员获得临时效果{{计划充能}}：非额外释放的源能爆发后，将会回复自身50%源能；其余带有{{计划}}的我方战员，自身行动开始时损失当前生命的30%，为{{计划充能}}的友方添加12%攻击提升（上限4层，持续1回合）\n带有{{冻痕}}的我方战员，技能攻击BOSS后会为自身移除一层{{冻痕}}"
-},
-	[90557]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，触发额外技能释放时，自身伤害额外提升3%，上限50层\n击杀单位时，自身额外获得一层{{计划}}\n每回合开始时，{{计划}}层数最高的我方战员获得临时效果{{计划充能}}：非额外释放的源能爆发后，将会回复自身50%源能；其余带有{{计划}}的我方战员，自身行动开始时损失当前生命的30%，为{{计划充能}}的友方添加12%攻击提升（上限4层，持续1回合）\n带有{{冻痕}}的我方战员，技能攻击BOSS后会为自身移除一层{{冻痕}}"
-},
-	[90558]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>击杀敌方单位时，永久提升己方全体1%暴击几率，1%伤害加深，触发额外技能释放时，自身伤害额外提升3%，上限50层\n击杀单位时，自身额外获得一层{{计划}}\n每回合开始时，{{计划}}层数最高的我方战员获得临时效果{{计划充能}}：非额外释放的源能爆发后，将会回复自身50%源能；其余带有{{计划}}的我方战员，自身行动开始时损失当前生命的30%，为{{计划充能}}的友方添加12%攻击提升（上限4层，持续1回合）\n带有{{冻痕}}的我方战员，技能攻击BOSS后会为自身移除一层{{冻痕}}"
 },
 	[9000]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无法受到治疗"
 },
@@ -6545,7 +5397,7 @@ local effect_data=
 },
 	[91064]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS自身恢复效果失效，但对出血目标暴击几率提升50%,每次受到伤害后，提升BOSS自身5%无视防御，上限15层，满层后额外获得50%暴击伤害提升，场上仅剩BOSS自身时，对出血目标暴击几率提升80%"
 },
-	[91065]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={91061}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS自身恢复效果失效，但对出血目标暴击几率提升50%,每次受到伤害后，提升BOSS自身5%无视防御，上限15层，满层后额外获得50%暴击伤害提升，场上仅剩BOSS自身时，对出血目标暴击几率提升80%"
+	[91065]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=62, trigger_num={91061}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS自身恢复效果失效，但对出血目标暴击几率提升50%,每次受到伤害后，提升BOSS自身5%无视防御，上限15层，满层后额外获得50%暴击伤害提升，场上仅剩BOSS自身时，对出血目标暴击几率提升80%"
 },
 	[9300]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="硬直上限降低20%"
 },
@@ -6553,71 +5405,17 @@ local effect_data=
 },
 	[9302]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="首回合伤害提升100%"
 },
-	[9303]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每次攻击会驱散目标2个增益效果"
+	[9351]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋2失效，天赋1效果强化(天赋1护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
 },
-	[9351]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋{{补丁}}效果强化(护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
+	[93511]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋2失效，天赋1效果强化(天赋1护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
 },
-	[93511]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋{{补丁}}效果强化(护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
+	[93512]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=157, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋2失效，天赋1效果强化(天赋1护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
 },
-	[93512]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=157, trigger_num={1,517180}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋{{补丁}}效果强化(护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
+	[9352]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升750%，攻击提升80%，无视防御提升50%，且自身天赋2失效，天赋1效果强化(天赋1护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
 },
-	[9352]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升750%，攻击提升80%，无视防御提升50%，且自身天赋{{补丁}}效果强化(护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
+	[9353]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升900%，攻击提升80%，无视防御提升60%，且自身天赋2失效，天赋1效果强化(天赋1护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
 },
-	[9353]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升900%，攻击提升80%，无视防御提升60%，且自身天赋{{补丁}}效果强化(护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
-},
-	[9354]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升1200%(无法死亡)，攻击提升100%，无视防御提升80%，且自身天赋{{补丁}}效果强化(护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
-},
-	[9360]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋{{业劫焚脉}}效果强化(造成目标当前生命值18%的真实伤害)"
-},
-	[93601]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋{{业劫焚脉}}效果强化(造成目标当前生命值18%的真实伤害)"
-},
-	[9361]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升750%，攻击提升80%，无视防御提升50%，且自身天赋{{业劫焚脉}}效果强化(造成目标当前生命值18%的真实伤害)"
-},
-	[9362]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升900%，攻击提升80%，无视防御提升60%，且自身天赋{{业劫焚脉}}效果强化(造成目标当前生命值18%的真实伤害)"
-},
-	[9363]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升1200%(无法死亡)，攻击提升100%，无视防御提升80%，且自身天赋{{业劫焚脉}}效果强化(造成目标当前生命值18%的真实伤害)，天赋{{烬灭凝视}}获得强化(战斗开始时，凝视敌方攻击最高的2个角色)"
-},
-	[9369]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员损失生命增加源能的效率提升30%，且每次治疗溢出的治疗量可以对BOSS造成100%的真实伤害"
-},
-	[93691]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员损失生命增加源能的效率提升30%，且每次治疗溢出的治疗量可以对BOSS造成100%的真实伤害"
-},
-	[93692]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员损失生命增加源能的效率提升30%，且每次治疗溢出的治疗量可以对BOSS造成100%的真实伤害"
-},
-	[9370]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋{{负导天罚}}效果强化(对其九宫格范围的目标造成自身攻击180%的真实伤害)"
-},
-	[93701]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋{{负导天罚}}效果强化(对其九宫格范围的目标造成自身攻击180%的真实伤害)"
-},
-	[9371]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升750%，攻击提升80%，无视防御提升50%，且自身天赋{{负导天罚}}效果强化(对其九宫格范围的目标造成自身攻击180%的真实伤害)"
-},
-	[9372]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升900%，攻击提升80%，无视防御提升60%，且自身天赋{{负导天罚}}效果强化(对其九宫格范围的目标造成自身攻击180%的真实伤害)"
-},
-	[9373]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升1200%(无法死亡)，攻击提升100%，无视防御提升80%，自身天赋{{雷殛庇护}}获得强化(受到每个敌方的首个技能攻击造成的伤害降低75%)，生命低于50%后，每回合开始额外获得1层基于自身攻击160%的护盾；\n自身天赋{{负导天罚}}效果强化(对其九宫格范围的目标造成自身攻击180%的真实伤害)"
-},
-	[9379]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员释放技能时，根据本回合释放该技能的次数，获得临时技能伤害提升，按照25%、50%、75%的伤害提升进行循环"
-},
-	[93791]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员释放技能时，根据本回合释放该技能的次数，获得临时技能伤害提升，按照25%、50%、75%的伤害提升进行循环"
-},
-	[9380]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋{{耀斑污染}}效果强化(消耗耀斑时，对目标造成的额外伤害提升至自身攻击的100%）"
-},
-	[93801]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升500%，攻击提升50%，无视防御提升40%，且自身天赋{{耀斑污染}}效果强化(消耗耀斑时，对目标造成的额外伤害提升至自身攻击的100%）"
-},
-	[9381]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升750%，攻击提升80%，无视防御提升50%，且自身天赋{{耀斑污染}}效果强化(消耗耀斑时，对目标造成的额外伤害提升至自身攻击的100%）"
-},
-	[9382]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升900%，攻击提升80%，无视防御提升60%，且自身天赋{{耀斑污染}}效果强化(消耗耀斑时，对目标造成的额外伤害提升至自身攻击的100%）"
-},
-	[9383]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升1200%(无法死亡)，攻击提升100%，无视防御提升80%，且自身天赋{{耀斑污染}}效果强化(消耗耀斑时，对目标造成的额外伤害提升至自身攻击的100%）；\n自身天赋{{辉烬坍缩}}效果强化（释放终结技时，对带有带[光坍]的目标伤害额外提升100%）"
-},
-	[9389]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，损失当前生命的99%，获得等量的护盾值\n回合结束时，自身通过战场补给获得的护盾未被击破，永久获得1层10%攻击提升，上限5层，\n回合结束后，自身所有护盾将会100%转化治疗自身生命值"
-},
-	[93891]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，损失当前生命的99%，获得等量的护盾值\n回合结束时，自身通过战场补给获得的护盾未被击破，永久获得1层10%攻击提升，上限5层，\n回合结束后，自身所有护盾将会100%转化治疗自身生命值"
-},
-	[93892]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，损失当前生命的99%，获得等量的护盾值\n回合结束时，自身通过战场补给获得的护盾未被击破，永久获得1层10%攻击提升，上限5层，\n回合结束后，自身所有护盾将会100%转化治疗自身生命值"
-},
-	[93893]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，损失当前生命的99%，获得等量的护盾值\n回合结束时，自身通过战场补给获得的护盾未被击破，永久获得1层10%攻击提升，上限5层，\n回合结束后，自身所有护盾将会100%转化治疗自身生命值"
-},
-	[93894]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，损失当前生命的99%，获得等量的护盾值\n回合结束时，自身通过战场补给获得的护盾未被击破，永久获得1层10%攻击提升，上限5层，\n回合结束后，自身所有护盾将会100%转化治疗自身生命值"
-},
-	[93895]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="每回合开始时，损失当前生命的99%，获得等量的护盾值\n回合结束时，自身通过战场补给获得的护盾未被击破，永久获得1层10%攻击提升，上限5层，\n回合结束后，自身所有护盾将会100%转化治疗自身生命值"
+	[9354]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="BOSS生命提升1200%(无法死亡)，攻击提升100%，无视防御提升80%，且自身天赋2失效，天赋1效果强化(天赋1护盾值提升至自身攻击的360%，且护盾被击破时对敌方全体额外造成自身攻击180%的真实伤害)"
 },
 	[9401]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方骋电、轰炎型战员造成伤害提高30%"
 },
@@ -6783,53 +5581,11 @@ local effect_data=
 },
 	[9544]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="获得一次免伤"
 },
-	[9545]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="被动效果：开局进入暗形态"
-},
-	[95451]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="永久无法行动、加隐匿buff"
-},
-	[95452]={ target_rule=27, damage_area=2, damage_num=1, trigger_type=35, trigger_num={1,9545}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暗形态触发"
-},
-	[95453]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=100, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暗形态补充能量"
-},
-	[95454]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,95453}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="切换为光形态释放额外技能"
-},
-	[95455]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=35, trigger_num={1,9546}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="被动效果：加光形态的时候移除暗形态"
-},
-	[95456]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="移除暗形态buff"
-},
-	[95457]={ target_rule=27, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="进入光形态"
-},
-	[95458]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,9546}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="被动效果：移除光的时候额外释放技能"
-},
-	[95459]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=62, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="被动效果：BOSS死亡自身退场"
-},
-	[9546]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="光形态额外技能动作"
-},
-	[95461]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害战员获得被动"
-},
-	[95462]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="光形态额外技能动作"
-},
-	[95463]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="光形态额外技能动作"
-},
-	[9547]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="移除能量buff标识"
-},
-	[95471]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="移除能量buff1"
-},
-	[95472]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="移除能量buff2"
-},
-	[95473]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="移除能量buff3"
-},
-	[95474]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="进入暗形态"
-},
-	[9548]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="占位普攻"
-},
-	[9549]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="离场"
-},
 	[9700]={ target_rule=10, damage_area=2, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="全体战员伤害提升4%"
 },
 	[9701]={ target_rule=10, damage_area=2, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="全体战员防御提升15%"
 },
-	[9702]={ target_rule=10, damage_area=2, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="全体战员暴伤抗性提升10%"
+	[9702]={ target_rule=10, damage_area=2, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="全体战员暴击抗性提升10%"
 },
 	[9703]={ target_rule=10, damage_area=2, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="全体战员无视防御提升10%"
 },
@@ -6973,15 +5729,7 @@ local effect_data=
 },
 	[220041]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="无视防御提升{{44}}%\n霆渊艾丽西亚装备时，战斗开始有{{100}}%几率直接进入{{超载状态}}，且{{超载状态}}下的源能爆发进化效果获得强化，全体伤害系数强化至[54%]"
 },
-	[22005]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="超载状态下，释放源能技时有70%几率不消耗能量"
-},
-	[22012]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升{{52.8}}%\n战斗开始时红叶获得{{8}}层狐火；且退出妖力状态时红叶会立即获得{{3}}层狐火，此外还会根据敌方当前场上阵亡单位数量额外获得相同数量层数的狐火"
-},
-	[220121]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升{{52.8}}%\n战斗开始时红叶获得{{8}}层狐火；且退出妖力状态时红叶会立即获得{{3}}层狐火，此外还会根据敌方当前场上阵亡单位数量额外获得相同数量层数的狐火"
-},
-	[220122]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,1030801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升{{52.8}}%\n战斗开始时红叶获得{{8}}层狐火；且退出妖力状态时红叶会立即获得{{3}}层狐火，此外还会根据敌方当前场上阵亡单位数量额外获得相同数量层数的狐火"
-},
-	[220123]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=44, trigger_num={1,1030801}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="暴击伤害提升{{52.8}}%\n战斗开始时红叶获得{{8}}层狐火；且退出妖力状态时红叶会立即获得{{3}}层狐火，此外还会根据敌方当前场上阵亡单位数量额外获得相同数量层数的狐火"
+	[22005]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="超载状态下，释放源能技时有100%几率不消耗能量"
 },
 	[20000]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每次行动时恢复15%最大生命"
 },
@@ -7727,905 +6475,75 @@ local effect_data=
 },
 	[190931]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，BOSS单次承受伤害上限降低至25%，每次承受伤害达到上限时，将中断敌方行动"
 },
-	[19094]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（50%），但生蕴战员攻击提升(40%)"
-},
-	[190941]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（50%），但生蕴战员攻击提升(40%)"
-},
-	[19095]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>战员攻击提升(25%)，但硬直击破效率降低(40%)"
-},
-	[19096]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>生命上限降低(20%)，但生蕴伤害提高（40%）"
-},
-	[19097]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>攻击降低（20%），生命上限降低（20%）"
-},
-	[19098]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（40%），防御降低（40%）"
-},
-	[19099]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>防御降低（40%），获得护盾效果降低（40%）"
-},
-	[19100]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>生命上限降低（20%），获得护盾效果降低（40%）"
-},
-	[19101]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>硬直击破效率降低(60%)，生命上限降低(20%)"
-},
-	[19102]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>防御降低（40%），受到的治疗效果降低(40%)"
-},
-	[19103]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191031]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191032]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[19104]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，技能攻击命中时每有一个目标，可获得持续一回合的5%伤害加深，上限5层"
-},
-	[191041]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，技能攻击命中时每有一个目标，可获得持续一回合的5%伤害加深，上限5层"
-},
-	[191042]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=17, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，技能攻击命中时每有一个目标，可获得持续一回合的5%伤害加深，上限5层"
-},
-	[19105]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，受到攻击时会对攻击方施加反击伤害(伤害系数为自身攻击的50%)"
-},
-	[191051]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，受到攻击时会对攻击方施加反击伤害(伤害系数为自身攻击的50%)"
-},
-	[191052]={ target_rule=27, damage_area=1, damage_num=1, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，受到攻击时会对攻击方施加反击伤害(伤害系数为自身攻击的50%)"
-},
-	[19106]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 生命强化50%，攻击时获得60%吸血加成"
-},
-	[191061]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 生命强化50%，攻击时获得60%吸血加成"
-},
-	[191062]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 生命强化50%，攻击时获得60%吸血加成"
-},
-	[19107]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191071]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191072]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[19108]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，技能攻击命中时每有一个目标，可获得持续一回合的5%伤害加深，上限5层"
-},
-	[191081]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，技能攻击命中时每有一个目标，可获得持续一回合的5%伤害加深，上限5层"
-},
-	[191082]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=17, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，技能攻击命中时每有一个目标，可获得持续一回合的5%伤害加深，上限5层"
-},
-	[19109]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，获得反伤光环，受到攻击时会反弹受到的伤害(反伤系数为15%)"
-},
-	[19110]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标一回合"
-},
-	[191101]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标一回合"
-},
-	[191102]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=1500, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标一回合"
-},
-	[19111]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时为敌方附加一层怨恨效果，降低敌方全体40%速度，持续2回合，最多叠加2层"
-},
-	[191111]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时为敌方附加一层怨恨效果，降低敌方全体40%速度，持续2回合，最多叠加2层"
-},
-	[191112]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时为敌方附加一层怨恨效果，降低敌方全体40%速度，持续2回合，最多叠加2层"
-},
-	[19112]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 生命强化75%，攻击时获得60%吸血加成"
-},
-	[191121]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 生命强化75%，攻击时获得60%吸血加成"
-},
-	[191122]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 生命强化75%，攻击时获得60%吸血加成"
-},
-	[19113]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191131]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191132]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[19114]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，技能攻击命中时每有一个目标，可获得持续一回合的8%伤害加深，上限5层"
-},
-	[191141]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，技能攻击命中时每有一个目标，可获得持续一回合的8%伤害加深，上限5层"
-},
-	[191142]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=17, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，技能攻击命中时每有一个目标，可获得持续一回合的8%伤害加深，上限5层"
-},
-	[19115]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，反击伤害系数提升至自身攻击的80%"
-},
-	[191151]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，反击伤害系数提升至自身攻击的80%"
-},
-	[191152]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，反击伤害系数提升至自身攻击的80%"
-},
-	[191153]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191052}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，反击伤害系数提升至自身攻击的80%"
-},
-	[19116]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[191161]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[191162]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[19117]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[191171]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[191172]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[191173]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191072}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[19118]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，BOSS技能攻击命中时有25%的几率附加炽焰沼锁（目标速度降低至0），持续两回合"
-},
-	[191181]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，BOSS技能攻击命中时有25%的几率附加炽焰沼锁（目标速度降低至0），持续两回合"
-},
-	[191182]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={1,3}, trigger_rate=2500, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，BOSS技能攻击命中时有25%的几率附加炽焰沼锁（目标速度降低至0），持续两回合"
-},
-	[19119]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，反伤光环的系数提升至20%"
-},
-	[191191]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，反伤光环的系数提升至20%"
-},
-	[19120]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[191201]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[191202]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[191203]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191102}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[191204]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[191205]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[191206]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={191102}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[19121]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层怨恨额外降低目标15%技能伤害，持续2回合，最多叠加2层"
-},
-	[191211]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层怨恨额外降低目标15%技能伤害，持续2回合，最多叠加2层"
-},
-	[191212]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,191112}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层怨恨额外降低目标15%技能伤害，持续2回合，最多叠加2层"
-},
-	[19122]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[191221]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[191222]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[19123]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[191231]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[191232]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[191233]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191132}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[19124]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，BOSS技能攻击命中时有30%的几率附加炽焰沼锁（目标速度降低至0），持续两回合"
-},
-	[191241]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，BOSS技能攻击命中时有30%的几率附加炽焰沼锁（目标速度降低至0），持续两回合"
-},
-	[191242]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={1,3}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，BOSS技能攻击命中时有30%的几率附加炽焰沼锁（目标速度降低至0），持续两回合"
-},
-	[19126]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（50%），但轰炎战员攻击提升（40%）"
-},
-	[191261]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（50%），但轰炎战员攻击提升（40%）"
-},
-	[19127]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>战员攻击提升(25%)，但硬直击破效率降低(40%)"
-},
-	[19128]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>生命上限降低(20%)，但轰炎伤害提高（40%）"
-},
-	[19129]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>攻击降低（20%），生命上限降低（20%）"
-},
-	[19130]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（40%），防御降低（40%）"
-},
-	[19131]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>防御降低（40%），获得护盾效果降低（40%）"
-},
-	[19132]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>生命上限降低（20%），获得护盾效果降低（40%）"
-},
-	[19133]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>硬直击破效率降低(60%)，生命上限降低(20%)"
-},
-	[19134]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>防御降低（40%），受到的治疗效果降低(40%)"
-},
-	[19135]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击附带自身最大生命5%的额外伤害"
-},
-	[191351]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击附带自身最大生命5%的额外伤害"
-},
-	[191352]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=4, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击附带自身最大生命5%的额外伤害"
-},
-	[19136]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，行动时获得自身最大生命值5%的护盾，最多叠加2层，持续2回合"
-},
-	[191361]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，行动时获得自身最大生命值5%的护盾，最多叠加2层，持续2回合"
-},
-	[191362]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，行动时获得自身最大生命值5%的护盾，最多叠加2层，持续2回合"
-},
-	[19137]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，受到攻击时有20%概率回复自身攻击100%的生命"
-},
-	[191371]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，受到攻击时有20%概率回复自身攻击100%的生命"
-},
-	[191372]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=74, trigger_num={}, trigger_rate=2000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，受到攻击时有20%概率回复自身攻击100%的生命"
-},
-	[19138]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[191381]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[191382]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[19139]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击附带自身最大生命5%的额外伤害"
-},
-	[191391]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击附带自身最大生命5%的额外伤害"
-},
-	[191392]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=4, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击附带自身最大生命5%的额外伤害"
-},
-	[19140]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，行动时获得自身最大生命值8%的护盾，最多叠加2层，持续2回合"
-},
-	[191401]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，行动时获得自身最大生命值8%的护盾，最多叠加2层，持续2回合"
-},
-	[191402]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，行动时获得自身最大生命值8%的护盾，最多叠加2层，持续2回合"
-},
-	[19141]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，获得强攻光环，对带有护盾的目标伤害加深75%"
-},
-	[191411]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，获得强攻光环，对带有护盾的目标伤害加深75%"
-},
-	[191412]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，获得强攻光环，对带有护盾的目标伤害加深75%"
-},
-	[19142]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，受到攻击时有20%概率回复自身攻击100%的生命"
-},
-	[191421]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，受到攻击时有20%概率回复自身攻击100%的生命"
-},
-	[191422]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=74, trigger_num={}, trigger_rate=2000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，受到攻击时有20%概率回复自身攻击100%的生命"
-},
-	[19143]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时为友方全体附加一层{余烬}效果，提升友方全体40%暴击率，持续2回合，最多叠加2层"
-},
-	[191431]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时为友方全体附加一层{余烬}效果，提升友方全体40%暴击率，持续2回合，最多叠加2层"
-},
-	[191432]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时为友方全体附加一层{余烬}效果，提升友方全体40%暴击率，持续2回合，最多叠加2层"
-},
-	[19144]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[191441]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[191442]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[19145]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击附带自身最大生命8%的额外伤害"
-},
-	[191451]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击附带自身最大生命8%的额外伤害"
-},
-	[191452]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=4, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击附带自身最大生命8%的额外伤害"
-},
-	[19146]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，行动时获得自身最大生命值8%的护盾，最多叠加2层，持续2回合"
-},
-	[191461]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，行动时获得自身最大生命值8%的护盾，最多叠加2层，持续2回合"
-},
-	[191462]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，行动时获得自身最大生命值8%的护盾，最多叠加2层，持续2回合"
-},
-	[19147]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，回复概率提升至25%"
-},
-	[191471]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，回复概率提升至25%"
-},
-	[191472]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，回复概率提升至25%"
-},
-	[191473]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191372}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，回复概率提升至25%"
-},
-	[19148]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[191481]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[191482]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[19149]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，附加额外伤害的比例提升至8%"
-},
-	[191491]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，附加额外伤害的比例提升至8%"
-},
-	[191492]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，附加额外伤害的比例提升至8%"
-},
-	[191493]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191392}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，附加额外伤害的比例提升至8%"
-},
-	[19150]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，受到攻击时若存在护盾，减免8%受到的攻击伤害"
-},
-	[191501]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，受到攻击时若存在护盾，减免8%受到的攻击伤害"
-},
-	[191502]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，受到攻击时若存在护盾，减免8%受到的攻击伤害"
-},
-	[19151]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，对带有护盾的目标伤害加深提升至100%"
-},
-	[191511]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，对带有护盾的目标伤害加深提升至100%"
-},
-	[191512]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，对带有护盾的目标伤害加深提升至100%"
-},
-	[191513]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191412}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，对带有护盾的目标伤害加深提升至100%"
-},
-	[19152]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，回复概率提升至30%"
-},
-	[191521]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，回复概率提升至30%"
-},
-	[191522]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，回复概率提升至30%"
-},
-	[191523]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191422}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，回复概率提升至30%"
-},
-	[19153]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层{余烬}额外提升15%暴击伤害"
-},
-	[191531]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层{余烬}额外提升15%暴击伤害"
-},
-	[191532]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,191432}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层{余烬}额外提升15%暴击伤害"
-},
-	[19154]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[191541]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[191542]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[19155]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，附加额外伤害的比例提升至10%"
-},
-	[191551]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，附加额外伤害的比例提升至10%"
-},
-	[191552]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，附加额外伤害的比例提升至10%"
-},
-	[191553]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191452}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，附加额外伤害的比例提升至10%"
-},
-	[19156]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，受到攻击时若存在护盾，减免10%受到的攻击伤害"
-},
-	[191561]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，受到攻击时若存在护盾，减免10%受到的攻击伤害"
-},
-	[191562]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，受到攻击时若存在护盾，减免10%受到的攻击伤害"
-},
-	[19157]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（50%），但直击战员攻击提升（40%）"
-},
-	[191571]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（50%），但直击战员攻击提升（40%）"
-},
-	[19158]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>战员攻击提升(25%)，但硬直击破效率降低(40%)"
-},
-	[19159]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>生命上限降低(20%)，但直击伤害提高（40%）"
-},
-	[19160]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>攻击降低（20%），生命上限降低（20%）"
-},
-	[19161]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（40%），防御降低（40%）"
-},
-	[19162]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>防御降低（40%），获得护盾效果降低（40%）"
-},
-	[19163]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>生命上限降低（20%），获得护盾效果降低（40%）"
-},
-	[19164]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>硬直击破效率降低(60%)，生命上限降低(20%)"
-},
-	[19165]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>防御降低（40%），受到的治疗效果降低(40%)"
-},
-	[19166]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191661]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191662]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[19167]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，释放主动技能后，有10%概率额外释放一次当前技能"
-},
-	[191671]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，释放主动技能后，有10%概率额外释放一次当前技能"
-},
-	[191672]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={1,3}, trigger_rate=1000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，释放主动技能后，有10%概率额外释放一次当前技能"
-},
-	[19168]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时有15%概率眩晕目标一回合"
-},
-	[191681]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时有15%概率眩晕目标一回合"
-},
-	[191682]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=1500, is_effect_inc=1, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时有15%概率眩晕目标一回合"
-},
-	[19169]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[191691]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[191692]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[19170]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191701]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191702]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[19171]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，释放主动技能后，有10%概率额外释放一次当前技能"
-},
-	[191711]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，释放主动技能后，有10%概率额外释放一次当前技能"
-},
-	[191712]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={1,3}, trigger_rate=1000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，释放主动技能后，有10%概率额外释放一次当前技能"
-},
-	[19172]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，获得强攻光环，对带有护盾的目标伤害加深75%"
-},
-	[191721]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，获得强攻光环，对带有护盾的目标伤害加深75%"
-},
-	[191722]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，获得强攻光环，对带有护盾的目标伤害加深75%"
-},
-	[19173]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标一回合"
-},
-	[191731]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标一回合"
-},
-	[191732]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=1500, is_effect_inc=1, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标一回合"
-},
-	[19174]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时为友方全体附加一层{凝甲}，提升友方全体15%暴击抗性，持续2回合，最多叠加2层"
-},
-	[191741]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时为友方全体附加一层{凝甲}，提升友方全体15%暴击抗性，持续2回合，最多叠加2层"
-},
-	[191742]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时为友方全体附加一层{凝甲}，提升友方全体15%暴击抗性，持续2回合，最多叠加2层"
-},
-	[19175]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[191751]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[191752]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[19176]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191761]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191762]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[19177]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，释放主动技能后，有10%概率额外释放一次当前技能"
-},
-	[191771]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，释放主动技能后，有10%概率额外释放一次当前技能"
-},
-	[191772]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=2, trigger_num={1,3}, trigger_rate=1000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，释放主动技能后，有10%概率额外释放一次当前技能"
-},
-	[19178]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至22.5%"
-},
-	[191781]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至22.5%"
-},
-	[191782]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至22.5%"
-},
-	[191783]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191682}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至22.5%"
-},
-	[19179]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[191791]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[191792]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[19180]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[191801]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[191802]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[191803]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191702}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[19181]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，每有一个友方死亡，概率额外增加5%"
-},
-	[191811]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，每有一个友方死亡，概率额外增加5%"
-},
-	[191812]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=62, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，每有一个友方死亡，概率额外增加5%"
-},
-	[19182]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，对带有护盾的目标伤害加深提升至100%"
-},
-	[191821]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，对带有护盾的目标伤害加深提升至100%"
-},
-	[191822]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，对带有护盾的目标伤害加深提升至100%"
-},
-	[191823]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191722}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，对带有护盾的目标伤害加深提升至100%"
-},
-	[19183]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至22.5%"
-},
-	[191831]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至22.5%"
-},
-	[191832]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至22.5%"
-},
-	[191833]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191732}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至22.5%"
-},
-	[19184]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层{凝甲}额外提升15%爆伤抗性"
-},
-	[191841]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层{凝甲}额外提升15%爆伤抗性"
-},
-	[191842]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,191742}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层{凝甲}额外提升15%爆伤抗性"
-},
-	[19185]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[191851]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[191852]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[19186]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[191861]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[191862]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[191863]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191762}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[19187]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每有一个友方死亡，概率额外增加5%"
-},
-	[191871]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每有一个友方死亡，概率额外增加5%"
-},
-	[191872]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=62, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每有一个友方死亡，概率额外增加5%"
-},
-	[19188]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（50%），但骋电战员攻击提升（40%）"
-},
-	[191881]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（50%），但骋电战员攻击提升（40%）"
-},
-	[19189]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>战员攻击提升(25%)，但硬直击破效率降低(40%)"
-},
-	[19190]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>生命上限降低(20%)，但骋电伤害提高（40%）"
-},
-	[19191]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>攻击降低（20%），生命上限降低（20%）"
-},
-	[19192]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（40%），防御降低（40%）"
-},
-	[19193]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>防御降低（40%），获得护盾效果降低（40%）"
-},
-	[19194]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>生命上限降低（20%），获得护盾效果降低（40%）"
-},
-	[19195]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>硬直击破效率降低(60%)，生命上限降低(20%)"
-},
-	[19196]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>防御降低（40%），受到的治疗效果降低(40%)"
-},
-	[19197]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191971]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[191972]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[19198]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，BOSS每次承受伤害最多为自身最大生命的35%"
-},
-	[191981]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，BOSS每次承受伤害最多为自身最大生命的35%"
-},
-	[19199]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时有15%概率眩晕目标一回合"
-},
-	[191991]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时有15%概率眩晕目标一回合"
-},
-	[191992]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=1500, is_effect_inc=1, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时有15%概率眩晕目标一回合"
-},
-	[19200]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[192001]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[192002]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[19201]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[192011]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[192012]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[19202]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，BOSS每次承受伤害最多为自身最大生命的35%"
-},
-	[192021]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，BOSS每次承受伤害最多为自身最大生命的35%"
-},
-	[19203]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，受到攻击时会对攻击方施加反击伤害(伤害系数为自身攻击的50%)"
-},
-	[192031]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，受到攻击时会对攻击方施加反击伤害(伤害系数为自身攻击的50%)"
-},
-	[192032]={ target_rule=27, damage_area=1, damage_num=1, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="<color=#f05009>「敌方」</color>攻击强化75%，受到攻击时会对攻击方施加反击伤害(伤害系数为自身攻击的50%)"
-},
-	[19204]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标一回合"
-},
-	[192041]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标一回合"
-},
-	[192042]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=1500, is_effect_inc=1, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标一回合"
-},
-	[19205]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时降低敌方全体40%速度，持续2回合，最多叠加2层"
-},
-	[192051]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时降低敌方全体40%速度，持续2回合，最多叠加2层"
-},
-	[192052]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，且死亡时降低敌方全体40%速度，持续2回合，最多叠加2层"
-},
-	[19206]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[192061]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[192062]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[19207]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[192071]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[192072]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击最后一击有30%几率削减目标5%源能"
-},
-	[19208]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，BOSS每次承受伤害最多为自身最大生命的35%"
-},
-	[192081]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，BOSS每次承受伤害最多为自身最大生命的35%"
-},
-	[19209]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至22.5%"
-},
-	[192091]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至22.5%"
-},
-	[192092]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至22.5%"
-},
-	[192093]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={191992}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至22.5%"
-},
-	[19210]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[192101]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[192102]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[19211]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[192111]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[192112]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[192113]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={192012}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，削减源能的几率提升至35%"
-},
-	[19212]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，承受伤害上限降低至25%，每次承受伤害达到上限时，将中断敌方行动"
-},
-	[192121]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，承受伤害上限降低至25%，每次承受伤害达到上限时，将中断敌方行动"
-},
-	[19213]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 速度提升100%，反击伤害系数提升至自身攻击的100%"
-},
-	[192131]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 速度提升100%，反击伤害系数提升至自身攻击的100%"
-},
-	[192132]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 速度提升100%，反击伤害系数提升至自身攻击的100%"
-},
-	[192133]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={192032}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 速度提升100%，反击伤害系数提升至自身攻击的100%"
-},
-	[19214]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至22.5%"
-},
-	[192141]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至22.5%"
-},
-	[192142]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至22.5%"
-},
-	[192143]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={192042}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至22.5%"
-},
-	[19215]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，死亡时提升友方全体40%速度，40%暴击率，持续2回合，最多叠加2层"
-},
-	[192151]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，死亡时提升友方全体40%速度，40%暴击率，持续2回合，最多叠加2层"
-},
-	[192152]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=1, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，死亡时提升友方全体40%速度，40%暴击率，持续2回合，最多叠加2层"
-},
-	[19216]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[192161]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[192162]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[19217]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[192171]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[192172]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[192173]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={192072}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，削减源能的几率提升至40%"
-},
-	[19218]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，承受伤害上限降低至25%，每次承受伤害达到上限时，将中断敌方行动"
-},
-	[192181]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，承受伤害上限降低至25%，每次承受伤害达到上限时，将中断敌方行动"
-},
-	[19219]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（50%），但轰炎战员攻击提升（40%）"
-},
-	[192191]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（50%），但轰炎战员攻击提升（40%）"
-},
-	[19220]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>战员攻击提升(25%)，但硬直击破效率降低(40%)"
-},
-	[19221]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>生命上限降低(20%)，但轰炎伤害提高（40%）"
-},
-	[19222]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>攻击降低（20%），生命上限降低（20%）"
-},
-	[19223]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>速度降低（40%），防御降低（40%）"
-},
-	[19224]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>防御降低（40%），获得护盾效果降低（40%）"
-},
-	[19225]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>生命上限降低（20%），获得护盾效果降低（40%）"
-},
-	[19226]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>硬直击破效率降低(60%)，生命上限降低(20%)"
-},
-	[19227]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#3575f3>「我方」</color>防御降低（40%），受到的治疗效果降低(40%)"
-},
-	[19228]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击时有15%概率眩晕目标1回合"
-},
-	[192281]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击时有15%概率眩晕目标1回合"
-},
-	[192282]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=1500, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，攻击时有15%概率眩晕目标1回合"
-},
-	[19229]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，每次受到的伤害由全体分担；BOSS每次回复生命时，额外获得回复量30%的护盾值"
-},
-	[192291]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，每次受到的伤害由全体分担；BOSS每次回复生命时，额外获得回复量30%的护盾值"
-},
-	[192292]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化50%，每次受到的伤害由全体分担；BOSS每次回复生命时，额外获得回复量30%的护盾值"
-},
-	[19230]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时为目标附加1层{蚀毒}，上限5层，持续2回合，回合结束时，每层{蚀毒}使携带者损失8%当前生命值"
-},
-	[192301]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时为目标附加1层{蚀毒}，上限5层，持续2回合，回合结束时，每层{蚀毒}使携带者损失8%当前生命值"
-},
-	[192302]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时为目标附加1层{蚀毒}，上限5层，持续2回合，回合结束时，每层{蚀毒}使携带者损失8%当前生命值"
-},
-	[19231]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[192311]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[192312]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化50%，攻击时获得60%吸血加成"
-},
-	[19232]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时有15%概率眩晕目标1回合"
-},
-	[192321]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时有15%概率眩晕目标1回合"
-},
-	[192322]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=1500, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，攻击时有15%概率眩晕目标1回合"
-},
-	[19233]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，每次受到的伤害由全体分担；BOSS每次回复生命时，额外获得回复量40%的护盾值"
-},
-	[192331]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，每次受到的伤害由全体分担；BOSS每次回复生命时，额外获得回复量40%的护盾值"
-},
-	[192332]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化60%，每次受到的伤害由全体分担；BOSS每次回复生命时，额外获得回复量40%的护盾值"
-},
-	[19234]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，受到攻击时会对攻击方施加反击伤害(伤害系数为自身攻击的50%)"
-},
-	[192341]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，受到攻击时会对攻击方施加反击伤害(伤害系数为自身攻击的50%)"
-},
-	[192342]={ target_rule=27, damage_area=1, damage_num=1, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="<color=#f05009>「敌方」</color>攻击强化75%，受到攻击时会对攻击方施加反击伤害(伤害系数为自身攻击的50%)"
-},
-	[19235]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时为目标附加1层{蚀毒}，上限5层，持续2回合，回合结束时，每层{蚀毒}使携带者损失10%当前生命值"
-},
-	[192351]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时为目标附加1层{蚀毒}，上限5层，持续2回合，回合结束时，每层{蚀毒}使携带者损失10%当前生命值"
-},
-	[192352]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时为目标附加1层{蚀毒}，上限5层，持续2回合，回合结束时，每层{蚀毒}使携带者损失10%当前生命值"
-},
-	[19236]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击带有护盾的伤害提升100%"
-},
-	[192361]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击带有护盾的伤害提升100%"
-},
-	[192362]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击带有护盾的伤害提升100%"
-},
-	[19237]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[192371]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[192372]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>生命强化75%，攻击时获得60%吸血加成"
-},
-	[19238]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标1回合"
-},
-	[192381]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标1回合"
-},
-	[192382]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=1500, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，攻击时有15%概率眩晕目标1回合"
-},
-	[19239]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，每次受到的伤害由全体分担；BOSS每次回复生命时，额外获得回复量40%的护盾值"
-},
-	[192391]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，每次受到的伤害由全体分担；BOSS每次回复生命时，额外获得回复量40%的护盾值"
-},
-	[192392]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击强化75%，每次受到的伤害由全体分担；BOSS每次回复生命时，额外获得回复量40%的护盾值"
-},
-	[19240]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，每层{蚀毒}额外降低目标8%受治疗效果"
-},
-	[192401]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，每层{蚀毒}额外降低目标8%受治疗效果"
-},
-	[192402]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,192302}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，每层{蚀毒}额外降低目标8%受治疗效果"
-},
-	[19241]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[192411]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[192412]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，攻击时无视防御提升50%"
-},
-	[19242]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[192421]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[192422]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[192423]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={192322}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[192424]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[192425]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[192426]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={192322}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，眩晕概率提升至20%，眩晕持续时间增加至2回合"
-},
-	[19243]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，受到的分担伤害降低20%，通过回复获得的护盾值比例提升至50%"
-},
-	[192431]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，受到的分担伤害降低20%，通过回复获得的护盾值比例提升至50%"
-},
-	[192432]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，受到的分担伤害降低20%，通过回复获得的护盾值比例提升至50%"
-},
-	[192433]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，受到的分担伤害降低20%，通过回复获得的护盾值比例提升至50%"
-},
-	[192434]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，受到的分担伤害降低20%，通过回复获得的护盾值比例提升至50%"
-},
-	[192435]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={192332}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升75%，受到的分担伤害降低20%，通过回复获得的护盾值比例提升至50%"
-},
-	[19244]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 速度提升100%，反击伤害系数提升至自身攻击的80%"
-},
-	[192441]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 速度提升100%，反击伤害系数提升至自身攻击的80%"
-},
-	[192442]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 速度提升100%，反击伤害系数提升至自身攻击的80%"
-},
-	[192443]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={192342}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color> 速度提升100%，反击伤害系数提升至自身攻击的80%"
-},
-	[19245]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层{蚀毒}额外降低目标10%受治疗效果"
-},
-	[192451]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层{蚀毒}额外降低目标10%受治疗效果"
-},
-	[192452]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=35, trigger_num={1,192352}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，每层{蚀毒}额外降低目标10%受治疗效果"
-},
-	[19246]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，对带有护盾目标造成伤害时，有50%概率削减目标10%源能"
-},
-	[192461]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，对带有护盾目标造成伤害时，有50%概率削减目标10%源能"
-},
-	[192462]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=5000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，对带有护盾目标造成伤害时，有50%概率削减目标10%源能"
-},
-	[19247]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[192471]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[192472]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，攻击时无视防御提升60%"
-},
-	[19248]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至25%，眩晕持续时间增加至2回合"
-},
-	[192481]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至25%，眩晕持续时间增加至2回合"
-},
-	[192482]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至25%，眩晕持续时间增加至2回合"
-},
-	[192483]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={192382}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至25%，眩晕持续时间增加至2回合"
-},
-	[192484]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至25%，眩晕持续时间增加至2回合"
-},
-	[192485]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至25%，眩晕持续时间增加至2回合"
-},
-	[192486]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={192382}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，眩晕概率提升至25%，眩晕持续时间增加至2回合"
-},
-	[19249]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，受到的分担伤害降低20%；BOSS通过回复获得的护盾值比例提升至60%，攻击带有出血的目标时获得50%吸血加成"
-},
-	[192491]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，受到的分担伤害降低20%；BOSS通过回复获得的护盾值比例提升至60%，攻击带有出血的目标时获得50%吸血加成"
-},
-	[192492]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，受到的分担伤害降低20%；BOSS通过回复获得的护盾值比例提升至60%，攻击带有出血的目标时获得50%吸血加成"
-},
-	[192493]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，受到的分担伤害降低20%；BOSS通过回复获得的护盾值比例提升至60%，攻击带有出血的目标时获得50%吸血加成"
-},
-	[192494]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，受到的分担伤害降低20%；BOSS通过回复获得的护盾值比例提升至60%，攻击带有出血的目标时获得50%吸血加成"
-},
-	[192495]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，受到的分担伤害降低20%；BOSS通过回复获得的护盾值比例提升至60%，攻击带有出血的目标时获得50%吸血加成"
-},
-	[192496]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，受到的分担伤害降低20%；BOSS通过回复获得的护盾值比例提升至60%，攻击带有出血的目标时获得50%吸血加成"
-},
-	[192497]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={192392}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>速度提升100%，受到的分担伤害降低20%；BOSS通过回复获得的护盾值比例提升至60%，攻击带有出血的目标时获得50%吸血加成"
-},
 	[22000]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="不死之身，收到伤害不会死亡"
 },
-	[22006]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>每回合开始时，若场上仅剩BOSS，召唤4只斧鹿头(60级)协助作战，回合结束时，存活的每个被召唤的斧鹿头献祭自身，使BOSS获得1层{鹿契}，{鹿契}达到12层后，BOSS技能攻击时有30%几率眩晕目标2回合，并且每层{鹿契}额外为BOSS提供2%格挡几率"
+	[23000]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="消耗100能量对敌方全体造成2000点真实伤害，并有35%几率对敌方附加冰冻效果，持续1回合"
 },
-	[22007]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>每回合开始时，若场上仅剩BOSS，召唤4只斧鹿头(80级)协助作战，回合结束时，存活的每个被召唤的斧鹿头献祭自身，使BOSS获得1层{鹿契}，{鹿契}达到12层后，BOSS技能攻击时有30%几率眩晕目标2回合，并且每层{鹿契}额外为BOSS提供2%格挡几率"
+	[230001]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=158, trigger_num={}, trigger_rate=3500, is_effect_inc=1, damage_source=8, desc="消耗100能量对敌方全体造成2000点真实伤害，并有35%几率对敌方附加冰冻效果，持续1回合"
 },
-	[22008]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>每回合开始时，若场上仅剩BOSS，召唤4只斧鹿头(100级)协助作战，回合结束时，存活的每个被召唤的斧鹿头献祭自身，使BOSS获得1层{鹿契}，{鹿契}达到12层后，BOSS技能攻击时有30%几率眩晕目标2回合，并且每层{鹿契}额外为BOSS提供2%格挡几率"
+	[23001]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="消耗100能量为我方全体回复其最大生命15%的生命值，并使其格挡几率提升15%，最多叠加3层"
 },
-	[22009]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>每回合开始时，若场上仅剩BOSS，召唤4只斧鹿头(120级)协助作战，回合结束时，存活的每个被召唤的斧鹿头献祭自身，使BOSS获得1层{鹿契}，{鹿契}达到12层后，BOSS技能攻击时有30%几率眩晕目标2回合，并且每层{鹿契}额外为BOSS提供2%格挡几率"
+	[230011]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=158, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="消耗100能量为我方全体回复其最大生命15%的生命值，并使其格挡几率提升15%，最多叠加3层"
 },
-	[22010]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个被召唤的斧鹿头献祭自身，使BOSS获得1层{鹿契}"
+	[23002]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="消耗100能量对敌方全体造成4000点真实伤害，并降低目标10%的暴击抗性，持续2回合"
 },
-	[220101]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个被召唤的斧鹿头献祭自身，使BOSS获得1层{鹿契}"
+	[230021]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=158, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="消耗100能量对敌方全体造成4000点真实伤害，并降低目标10%的暴击抗性，持续2回合"
 },
-	[220102]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」回合结束时，存活的每个被召唤的斧鹿头献祭自身，使BOSS获得1层{鹿契}"
+	[23003]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="消耗100能量对敌方全体造成等同于我方护盾值10%的真实伤害，并使其无视防御抵抗降低15%，持续2回合"
 },
-	[23000]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="选择空天工程方向，接受来自极北科学考察队的协助，为你提供科技：人工天气\n[战斗中主动使用：消耗100能量对敌方全体造成20000点真实伤害并移除其当前生命的20%，并有60%几率对敌方附加冰冻效果，持续1回合]"
+	[230031]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=158, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="消耗100能量对敌方全体造成等同于我方护盾值10%的真实伤害，并使其无视防御抵抗降低15%，持续2回合"
 },
-	[230001]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=158, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="选择空天工程方向，接受来自极北科学考察队的协助，为你提供科技：人工天气\n[战斗中主动使用：消耗100能量对敌方全体造成20000点真实伤害并移除其当前生命的20%，并有60%几率对敌方附加冰冻效果，持续1回合]"
+	[23010]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=163, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="冷冻弹施加控制成功时，将为友方全体赋予1层增益(伤害提升10%，效果命中提升5%)，最多叠加3层"
 },
-	[230002]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=158, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="选择空天工程方向，接受来自极北科学考察队的协助，为你提供科技：人工天气\n[战斗中主动使用：消耗100能量对敌方全体造成20000点真实伤害并移除其当前生命的20%，并有60%几率对敌方附加冰冻效果，持续1回合]"
+	[23011]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，若目标生命低于50%，则效果命中提升4%"
 },
-	[230003]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=6000, is_effect_inc=0, damage_source=8, desc="选择空天工程方向，接受来自极北科学考察队的协助，为你提供科技：人工天气\n[战斗中主动使用：消耗100能量对敌方全体造成20000点真实伤害并移除其当前生命的20%，并有60%几率对敌方附加冰冻效果，持续1回合]"
+	[230111]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，若目标生命低于50%，则效果命中提升4%"
 },
-	[23001]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="选择仿生生命方向，接受来自莱福尔生命科学研究院的协助，为你提供科技：代谢反应\n[战斗中主动使用：消耗100能量为我方全体回复其最大生命20%的生命值，并使其格挡几率提升25%，持续至战斗结束，最多叠加2层]"
+	[23012]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，若目标生命低于50%，则效果命中提升6%"
 },
-	[230011]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=158, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="选择仿生生命方向，接受来自莱福尔生命科学研究院的协助，为你提供科技：代谢反应\n[战斗中主动使用：消耗100能量为我方全体回复其最大生命20%的生命值，并使其格挡几率提升25%，持续至战斗结束，最多叠加2层]"
+	[230121]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，若目标生命低于50%，则效果命中提升6%"
 },
-	[23002]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="选择机械科学方向，接受来自劳顿机械仿生研究所的协助，为你提供科技：等量交换\n[战斗中主动使用：消耗100能量对敌方全体造成20000点真实伤害并移除其最大生命的15%，并降低目标15%的属性抗性，持续2回合]"
+	[23013]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，若目标生命低于50%，则效果命中提升10%"
 },
-	[230021]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=158, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="选择机械科学方向，接受来自劳顿机械仿生研究所的协助，为你提供科技：等量交换\n[战斗中主动使用：消耗100能量对敌方全体造成20000点真实伤害并移除其最大生命的15%，并降低目标15%的属性抗性，持续2回合]"
+	[230131]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，若目标生命低于50%，则效果命中提升10%"
 },
-	[230022]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=158, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="选择机械科学方向，接受来自劳顿机械仿生研究所的协助，为你提供科技：等量交换\n[战斗中主动使用：消耗100能量对敌方全体造成20000点真实伤害并移除其最大生命的15%，并降低目标15%的属性抗性，持续2回合]"
+	[23014]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标伤害提升10%（可叠加）"
 },
-	[23003]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=1, desc="选择自然地质方向，接受来自大地之母教派的协助，为你提供科技：营力共振\n[战斗中主动使用：消耗100能量对敌方全体造成等同于我方护盾值25%的真实伤害，并使其防御降低50%，持续2回合]"
+	[230141]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标伤害提升10%（可叠加）"
 },
-	[230031]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=158, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="选择自然地质方向，接受来自大地之母教派的协助，为你提供科技：营力共振\n[战斗中主动使用：消耗100能量对敌方全体造成等同于我方护盾值25%的真实伤害，并使其防御降低50%，持续2回合]"
+	[23015]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标伤害提升20%（可叠加）"
 },
-	[23010]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=163, trigger_num={23000,1,9904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{人工天气}施加控制成功时，将为友方全体赋予1层增益(伤害提升10%，效果命中提升5%)，最多叠加3层"
+	[230151]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标伤害提升20%（可叠加）"
 },
-	[23011]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，若目标生命低于50%，则效果命中提升4%"
+	[23016]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标伤害提升40%（可叠加）"
 },
-	[23012]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，若目标生命低于50%，则效果命中提升6%"
+	[230161]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标伤害提升40%（可叠加）"
 },
-	[23013]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，若目标生命低于50%，则效果命中提升10%"
+	[23017]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击伤害提升15%（可叠加）"
 },
-	[23014]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标伤害提升10%（可叠加）"
+	[230171]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击伤害提升15%（可叠加）"
 },
-	[23015]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标伤害提升20%（可叠加）"
+	[23018]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击伤害提升30%（可叠加）"
 },
-	[23016]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标伤害提升40%（可叠加）"
+	[230181]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击伤害提升30%（可叠加）"
 },
-	[23017]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击伤害提升15%（可叠加）"
+	[23019]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击伤害提升50%（可叠加）"
 },
-	[23018]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击伤害提升30%（可叠加）"
+	[230191]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击伤害提升50%（可叠加）"
 },
-	[23019]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击伤害提升50%（可叠加）"
+	[23020]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击提升8%（可叠加）"
 },
-	[23020]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击提升8%（可叠加）"
+	[230201]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击提升8%（可叠加）"
 },
-	[23021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击提升12%（可叠加）"
+	[23021]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击提升12%（可叠加）"
 },
-	[23022]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击提升20%（可叠加）"
+	[230211]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击提升12%（可叠加）"
 },
-	[23023]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方被控制时，全属性抗性降低15%（可叠加）"
+	[23022]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击提升20%（可叠加）"
 },
-	[230231]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,9904,230001}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方被控制时，全属性抗性降低15%（可叠加）"
+	[230221]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对处于控制下的目标暴击提升20%（可叠加）"
 },
-	[23024]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方被控制时，全属性抗性降低18%（可叠加）"
-},
-	[230241]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,9904,230001}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方被控制时，全属性抗性降低18%（可叠加）"
-},
-	[23025]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方被控制时，全属性抗性降低25%（可叠加）"
-},
-	[230251]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=104, trigger_num={1,9904,230001}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方被控制时，全属性抗性降低25%（可叠加）"
-},
-	[23026]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=158, trigger_num={23000}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="释放{人工天气}后，将为友方全体赋予1层护盾(护盾值为目标最大生命的50%+10000)，持续2回合"
+	[23026]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=158, trigger_num={23001}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="释放冷冻弹后，将为友方全体赋予1层护盾(护盾值为目标最大生命的50%+10000)，持续2回合"
 },
 	[23027]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员效果命中提升4%（可叠加）"
 },
@@ -8633,35 +6551,55 @@ local effect_data=
 },
 	[23029]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员效果命中提升6%（可叠加）"
 },
-	[23030]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=94, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对首要目标造成伤害时，对其他目标造成本次伤害10%的真实伤害（可叠加）"
+	[23030]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对首要目标造成伤害时，对其他目标造成本次伤害10%的真实伤害（可叠加）"
 },
-	[23031]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=94, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对首要目标造成伤害时，对其他目标造成本次伤害15%的真实伤害（可叠加）"
+	[230301]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=94, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对首要目标造成伤害时，对其他目标造成本次伤害10%的真实伤害（可叠加）"
 },
-	[23032]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=94, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对首要目标造成伤害时，对其他目标造成本次伤害25%的真实伤害（可叠加）"
+	[23031]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对首要目标造成伤害时，对其他目标造成本次伤害15%的真实伤害（可叠加）"
 },
-	[23033]={ target_rule=27, damage_area=2, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=8000, is_effect_inc=0, damage_source=8, desc="战斗开始时有80%几率对敌方全体造成冰冻效果，持续1回合"
+	[230311]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=94, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对首要目标造成伤害时，对其他目标造成本次伤害15%的真实伤害（可叠加）"
 },
-	[23034]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={3}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发后，有30%几率为友方全体提供1层攻击增益(攻击提升5%)，持续2回合，最多叠加3层（可叠加）"
+	[23032]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对首要目标造成伤害时，对其他目标造成本次伤害25%的真实伤害（可叠加）"
 },
-	[23035]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={3}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发后，有30%几率为友方全体提供1层攻击增益(攻击提升8%)，持续2回合，最多叠加3层（可叠加）"
+	[230321]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=94, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对首要目标造成伤害时，对其他目标造成本次伤害25%的真实伤害（可叠加）"
 },
-	[23036]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={3}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发后，有30%几率为友方全体提供1层攻击增益(攻击提升12%)，持续2回合，最多叠加3层（可叠加）"
+	[23033]={ target_rule=27, damage_area=2, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=8000, is_effect_inc=1, damage_source=8, desc="战斗开始时有80%几率对敌方全体造成冰冻效果，持续1回合"
 },
-	[23037]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=800, is_effect_inc=0, damage_source=8, desc="我方战员对敌方造成伤害时，有8%几率使目标陷入冰冻状态，持续1回合（无视敌方效果抵抗）"
+	[23034]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发后，有30%几率为友方全体提供1层攻击增益(攻击提升5%)，持续2回合，最多叠加3层（可叠加）"
 },
-	[23038]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=163, trigger_num={23000,1,9904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{人工天气}施加控制成功时，将为友方全体赋予1层免伤效果(伤害减免提升15%)，最多叠加3层"
+	[230341]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发后，有30%几率为友方全体提供1层攻击增益(攻击提升5%)，持续2回合，最多叠加3层（可叠加）"
 },
-	[23039]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方每次受到攻击时，效果抵抗降低1%，最多叠加6层，持续2回合（不同等级可叠加）"
+	[23035]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发后，有30%几率为友方全体提供1层攻击增益(攻击提升8%)，持续2回合，最多叠加3层（可叠加）"
 },
-	[23040]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方每次受到攻击时，效果抵抗降低1.5%，最多叠加6层，持续2回合（不同等级可叠加）"
+	[230351]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发后，有30%几率为友方全体提供1层攻击增益(攻击提升8%)，持续2回合，最多叠加3层（可叠加）"
 },
-	[23041]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方每次受到攻击时，效果抵抗降低2.5%，最多叠加6层，持续2回合（不同等级可叠加）"
+	[23036]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发后，有30%几率为友方全体提供1层攻击增益(攻击提升12%)，持续2回合，最多叠加3层（可叠加）"
 },
-	[23042]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，{人工天气}恢复75%能量。当{人工天气}施加控制成功时，立即获得25%能量"
+	[230361]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={}, trigger_rate=3000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发后，有30%几率为友方全体提供1层攻击增益(攻击提升12%)，持续2回合，最多叠加3层（可叠加）"
 },
-	[230421]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=163, trigger_num={23000,1,9904}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，{人工天气}恢复75%能量。当{人工天气}施加控制成功时，立即获得25%能量"
+	[23037]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对敌方造成伤害时，有8%几率使目标陷入冰冻状态，持续1回合（无视敌方效果抵抗）"
 },
-	[23110]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=159, trigger_num={23001}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{代谢反应}释放时，我方全体将获得1层增益(受到治疗效果提升5%，生命上限提升5%)，最多叠加3层"
+	[230371]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=40, trigger_num={}, trigger_rate=800, is_effect_inc=0, damage_source=8, desc="我方战员对敌方造成伤害时，有8%几率使目标陷入冰冻状态，持续1回合（无视敌方效果抵抗）"
+},
+	[23038]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=163, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="冷冻弹施加控制成功时，将为友方全体赋予1层免伤效果(伤害减免提升15%)，最多叠加3层"
+},
+	[23039]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方每次受到攻击时，效果抵抗降低1%，最多叠加6层，持续2回合（不同等级可叠加）"
+},
+	[230391]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方每次受到攻击时，效果抵抗降低1%，最多叠加6层，持续2回合（不同等级可叠加）"
+},
+	[23040]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方每次受到攻击时，效果抵抗降低1.5%，最多叠加6层，持续2回合（不同等级可叠加）"
+},
+	[230401]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方每次受到攻击时，效果抵抗降低1.5%，最多叠加6层，持续2回合（不同等级可叠加）"
+},
+	[23041]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方每次受到攻击时，效果抵抗降低2.5%，最多叠加6层，持续2回合（不同等级可叠加）"
+},
+	[230411]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="敌方每次受到攻击时，效果抵抗降低2.5%，最多叠加6层，持续2回合（不同等级可叠加）"
+},
+	[23042]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，冷冻弹恢复75%能量；当冷冻弹施加控制成功时，立即获得25%能量"
+},
+	[230421]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=163, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，冷冻弹恢复75%能量；当冷冻弹施加控制成功时，立即获得25%能量"
+},
+	[23110]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=158, trigger_num={23001}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="回复弹释放后，我方全体将获得1层增益(受到治疗效果提升5%，生命上限提升5%)，最多叠加3层"
 },
 	[23111]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员治疗效果提升10%（可叠加）"
 },
@@ -8669,41 +6607,71 @@ local effect_data=
 },
 	[23113]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员治疗效果提升35%（可叠加）"
 },
-	[23114]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到治疗时会获得等同于治疗量15%的护盾效果（可叠加）"
+	[23114]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到治疗时会获得等同于治疗量15%的护盾效果（可叠加）"
 },
-	[23115]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到治疗时会获得等同于治疗量25%的护盾效果（可叠加）"
+	[231141]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到治疗时会获得等同于治疗量15%的护盾效果（可叠加）"
 },
-	[23116]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到治疗时会获得等同于治疗量40%的护盾效果（可叠加）"
+	[23115]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到治疗时会获得等同于治疗量25%的护盾效果（可叠加）"
 },
-	[23117]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将降低敌方20点硬直"
+	[231151]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到治疗时会获得等同于治疗量25%的护盾效果（可叠加）"
 },
-	[23118]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将降低敌方30点硬直"
+	[23116]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到治疗时会获得等同于治疗量40%的护盾效果（可叠加）"
 },
-	[23119]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将降低敌方50点硬直"
+	[231161]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到治疗时会获得等同于治疗量40%的护盾效果（可叠加）"
 },
-	[23120]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=52, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，将提高友方全体2%的格挡几率，持续2回合，最多叠加5层（可叠加）"
+	[23117]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将降低敌方20点硬直"
 },
-	[23121]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=52, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，将提高友方全体3%的格挡几率，持续2回合，最多叠加5层（可叠加）"
+	[231171]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=39, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将降低敌方20点硬直"
 },
-	[23122]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=52, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，将提高友方全体5%的格挡几率，持续2回合，最多叠加5层（可叠加）"
+	[23118]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将降低敌方30点硬直"
 },
-	[23123]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到治疗时，暴伤抗性将提升4%，持续2回合，最多叠加5层（可叠加）"
+	[231181]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=39, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将降低敌方30点硬直"
 },
-	[23124]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到治疗时，暴伤抗性将提升5%，持续2回合，最多叠加5层（可叠加）"
+	[23119]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将降低敌方50点硬直"
 },
-	[23125]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=48, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到治疗时，暴伤抗性将提升6%，持续2回合，最多叠加5层（可叠加）"
+	[231191]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=39, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将降低敌方50点硬直"
 },
-	[23126]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=52, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，会对敌方附加1层生命损失效果(每层效果可在己方释放技能时触发，使目标损失最大生命2%的血量，损失上限为触发者最大生命的6%)，持续2回合，最多叠加5层"
+	[23120]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，将提高友方全体2%的格挡几率，持续2回合，最多叠加5层（可叠加）"
 },
-	[231261]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，会对敌方附加1层生命损失效果(每层效果可在己方释放技能时触发，使目标损失最大生命2%的血量，损失上限为触发者最大生命的6%)，持续2回合，最多叠加5层"
+	[231201]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=52, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，将提高友方全体2%的格挡几率，持续2回合，最多叠加5层（可叠加）"
+},
+	[23121]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，将提高友方全体3%的格挡几率，持续2回合，最多叠加5层（可叠加）"
+},
+	[231211]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=52, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，将提高友方全体3%的格挡几率，持续2回合，最多叠加5层（可叠加）"
+},
+	[23122]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，将提高友方全体5%的格挡几率，持续2回合，最多叠加5层（可叠加）"
+},
+	[231221]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=52, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，将提高友方全体5%的格挡几率，持续2回合，最多叠加5层（可叠加）"
+},
+	[23123]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到治疗时，暴击抗性将提升4%，持续2回合，最多叠加5层（可叠加）"
+},
+	[231231]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=52, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到治疗时，暴击抗性将提升4%，持续2回合，最多叠加5层（可叠加）"
+},
+	[23124]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到治疗时，暴击抗性将提升5%，持续2回合，最多叠加5层（可叠加）"
+},
+	[231241]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=52, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到治疗时，暴击抗性将提升5%，持续2回合，最多叠加5层（可叠加）"
+},
+	[23125]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到治疗时，暴击抗性将提升6%，持续2回合，最多叠加5层（可叠加）"
+},
+	[231251]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=52, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到治疗时，暴击抗性将提升6%，持续2回合，最多叠加5层（可叠加）"
+},
+	[23126]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，会对敌方附加1层生命损失效果(每层效果可在己方释放技能时触发，使目标损失最大生命2%的血量，损失上限为触发者最大生命的6%)，持续2回合，最多叠加5层"
+},
+	[231261]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=52, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，会对敌方附加1层生命损失效果(每层效果可在己方释放技能时触发，使目标损失最大生命2%的血量，损失上限为触发者最大生命的6%)，持续2回合，最多叠加5层"
 },
 	[231262]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=5, trigger_num={1,3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗友方时，会对敌方附加1层生命损失效果(每层效果可在己方释放技能时触发，使目标损失最大生命2%的血量，损失上限为触发者最大生命的6%)，持续2回合，最多叠加5层"
 },
-	[23127]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发时将会赋予友方全体生命增幅效果(生命上限提升2%)，持续至战斗结束，最多叠加8层（可叠加）"
+	[23127]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发时将会赋予友方全体生命增幅效果(生命上限提升2%)，持续至战斗结束，最多叠加8层（可叠加）"
 },
-	[23128]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发时将会赋予友方全体生命增幅效果(生命上限提升3%)，持续至战斗结束，最多叠加8层（可叠加）"
+	[231271]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发时将会赋予友方全体生命增幅效果(生命上限提升2%)，持续至战斗结束，最多叠加8层（可叠加）"
 },
-	[23129]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发时将会赋予友方全体生命增幅效果(生命上限提升5%)，持续至战斗结束，最多叠加8层（可叠加）"
+	[23128]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发时将会赋予友方全体生命增幅效果(生命上限提升3%)，持续至战斗结束，最多叠加8层（可叠加）"
+},
+	[231281]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发时将会赋予友方全体生命增幅效果(生命上限提升3%)，持续至战斗结束，最多叠加8层（可叠加）"
+},
+	[23129]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发时将会赋予友方全体生命增幅效果(生命上限提升5%)，持续至战斗结束，最多叠加8层（可叠加）"
+},
+	[231291]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=5, trigger_num={3}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放源能爆发时将会赋予友方全体生命增幅效果(生命上限提升5%)，持续至战斗结束，最多叠加8层（可叠加）"
 },
 	[23130]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员生命低于50%时，自身伤害减免将提高5%（可叠加）"
 },
@@ -8711,21 +6679,27 @@ local effect_data=
 },
 	[23132]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员生命低于50%时，自身伤害减免将提高12%（可叠加）"
 },
-	[23133]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击敌方时，将会对敌方附加自身当前生命20%的额外伤害"
+	[23133]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击敌方时，将会对敌方附加自身当前生命20%的额外伤害"
 },
-	[23134]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗生命低于50%的战员时，治疗效果将额外提升5%（可叠加）"
+	[231331]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击敌方时，将会对敌方附加自身当前生命20%的额外伤害"
 },
-	[23135]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗生命低于50%的战员时，治疗效果将额外提升10%（可叠加）"
+	[23134]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗生命低于50%的战员时，治疗效果将额外提升5%（可叠加）"
 },
-	[23136]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗生命低于50%的战员时，治疗效果将额外提升15%（可叠加）"
+	[231341]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗生命低于50%的战员时，治疗效果将额外提升5%（可叠加）"
 },
-	[23137]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=159, trigger_num={23001}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{代谢反应}释放时，将驱散我方全体的负面效果"
+	[23135]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗生命低于50%的战员时，治疗效果将额外提升10%（可叠加）"
 },
-	[23138]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，{代谢反应}拥有60%能量。当我方战员治疗时，立即获得5%能量"
+	[231351]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗生命低于50%的战员时，治疗效果将额外提升10%（可叠加）"
 },
-	[231381]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，{代谢反应}拥有60%能量。当我方战员治疗时，立即获得5%能量"
+	[23136]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗生命低于50%的战员时，治疗效果将额外提升15%（可叠加）"
 },
-	[231382]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=161, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，{代谢反应}拥有60%能量。当我方战员治疗时，立即获得5%能量"
+	[231361]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在治疗生命低于50%的战员时，治疗效果将额外提升15%（可叠加）"
+},
+	[23137]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=158, trigger_num={23001}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="回复弹释放时，将驱散我方全体的负面效果"
+},
+	[23138]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，回复弹拥有60%能量。当我方战员治疗时，立即获得5%能量"
+},
+	[231381]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=161, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，回复弹拥有60%能量。当我方战员治疗时，立即获得5%能量"
 },
 	[23139]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员生命高于50%时，自身技能伤害提升15%（可叠加）"
 },
@@ -8733,9 +6707,11 @@ local effect_data=
 },
 	[23141]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员生命高于50%时，自身技能伤害提升40%（可叠加）"
 },
-	[23142]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=40, trigger_num={}, trigger_rate=1500, is_effect_inc=0, damage_source=8, desc="我方战员对敌方造成伤害时，有15%几率回复自身10%最大生命"
+	[23142]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对敌方造成伤害时，有15%几率回复自身10%最大生命"
 },
-	[23210]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=158, trigger_num={23002}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{等量交换}释放后，我方全体将获得1层增益(暴击伤害提升5%，攻击提升5%)，最多叠加3层"
+	[231421]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=10, trigger_num={}, trigger_rate=1500, is_effect_inc=0, damage_source=8, desc="我方战员对敌方造成伤害时，有15%几率回复自身10%最大生命"
+},
+	[23210]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=158, trigger_num={23002}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="炸弹释放后，我方全体将获得1层增益(暴击伤害提升5%，攻击提升5%)，最多叠加3层"
 },
 	[23211]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员伤害加深提升5%（可叠加）"
 },
@@ -8743,37 +6719,69 @@ local effect_data=
 },
 	[23213]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员伤害加深提升12%（可叠加）"
 },
-	[23214]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时会获得10%的吸血加成（可叠加）"
+	[23214]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时会获得10%的吸血加成（可叠加）"
 },
-	[23215]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时会获得15%的吸血加成（可叠加）"
+	[232141]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时会获得10%的吸血加成（可叠加）"
 },
-	[23216]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时会获得25%的吸血加成（可叠加）"
+	[23215]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时会获得15%的吸血加成（可叠加）"
 },
-	[23217]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将获得1层仇恨效果(攻击提升4%，暴击几率提升2%)，持续2回合，最多叠加4层（可叠加）"
+	[232151]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时会获得15%的吸血加成（可叠加）"
 },
-	[23218]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将获得1层仇恨效果(攻击提升5%，暴击几率提升3%)，持续2回合，最多叠加4层（可叠加）"
+	[23216]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时会获得25%的吸血加成（可叠加）"
 },
-	[23219]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将获得1层仇恨效果(攻击提升6%，暴击几率提升4%)，持续2回合，最多叠加4层（可叠加）"
+	[232161]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时会获得25%的吸血加成（可叠加）"
 },
-	[23220]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击敌方时会附加1层重伤效果(目标获得的护盾效果降低2%)，持续2回合，最多叠加4层（可叠加）"
+	[23217]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将获得1层仇恨效果(攻击提升4%，暴击几率提升2%)，持续2回合，最多叠加4层（可叠加）"
 },
-	[23221]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击敌方时会附加1层重伤效果(目标获得的护盾效果降低3%)，持续2回合，最多叠加4层（可叠加）"
+	[232171]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将获得1层仇恨效果(攻击提升4%，暴击几率提升2%)，持续2回合，最多叠加4层（可叠加）"
 },
-	[23222]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击敌方时会附加1层重伤效果(目标获得的护盾效果降低5%)，持续2回合，最多叠加4层（可叠加）"
+	[23218]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将获得1层仇恨效果(攻击提升5%，暴击几率提升3%)，持续2回合，最多叠加4层（可叠加）"
 },
-	[23223]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，暴击伤害将提升6%（可叠加）"
+	[232181]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将获得1层仇恨效果(攻击提升5%，暴击几率提升3%)，持续2回合，最多叠加4层（可叠加）"
 },
-	[23224]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，暴击伤害将提升9%（可叠加）"
+	[23219]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将获得1层仇恨效果(攻击提升6%，暴击几率提升4%)，持续2回合，最多叠加4层（可叠加）"
 },
-	[23225]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=10, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，暴击伤害将提升15%（可叠加）"
+	[232191]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=74, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员受到攻击时将获得1层仇恨效果(攻击提升6%，暴击几率提升4%)，持续2回合，最多叠加4层（可叠加）"
 },
-	[23226]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时，会对敌方附加1层虚弱效果(每层效果可降低目标10%的暴伤抗性)，持续2回合，最多叠加5层"
+	[23220]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击敌方时会附加1层重伤效果(目标获得的护盾效果降低2%)，持续2回合，最多叠加4层（可叠加）"
+},
+	[232201]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击敌方时会附加1层重伤效果(目标获得的护盾效果降低2%)，持续2回合，最多叠加4层（可叠加）"
+},
+	[23221]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击敌方时会附加1层重伤效果(目标获得的护盾效果降低3%)，持续2回合，最多叠加4层（可叠加）"
+},
+	[232211]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击敌方时会附加1层重伤效果(目标获得的护盾效果降低3%)，持续2回合，最多叠加4层（可叠加）"
+},
+	[23222]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击敌方时会附加1层重伤效果(目标获得的护盾效果降低5%)，持续2回合，最多叠加4层（可叠加）"
+},
+	[232221]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击敌方时会附加1层重伤效果(目标获得的护盾效果降低5%)，持续2回合，最多叠加4层（可叠加）"
+},
+	[23223]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，暴击伤害将提升6%（可叠加）"
+},
+	[232231]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，暴击伤害将提升6%（可叠加）"
+},
+	[23224]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，暴击伤害将提升9%（可叠加）"
+},
+	[232241]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，暴击伤害将提升9%（可叠加）"
+},
+	[23225]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，暴击伤害将提升15%（可叠加）"
+},
+	[232251]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，暴击伤害将提升15%（可叠加）"
+},
+	[23226]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时，会对敌方附加1层虚弱效果(每层效果可降低目标10%的暴击抗性)，持续2回合，最多叠加5层"
+},
+	[232261]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时，会对敌方附加1层虚弱效果(每层效果可降低目标10%的暴击抗性)，持续2回合，最多叠加5层"
 },
 	[23227]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每损失10%生命，自身伤害减免提升1.5%，最多叠加5层（可叠加）"
 },
+	[232271]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每损失10%生命，自身伤害减免提升1.5%，最多叠加5层（可叠加）"
+},
 	[23228]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每损失10%生命，自身伤害减免提升2.5%，最多叠加5层（可叠加）"
 },
+	[232281]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每损失10%生命，自身伤害减免提升2.5%，最多叠加5层（可叠加）"
+},
 	[23229]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每损失10%生命，自身伤害减免提升4%，最多叠加5层（可叠加）"
+},
+	[232291]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每损失10%生命，自身伤害减免提升4%，最多叠加5层（可叠加）"
 },
 	[23230]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员源能爆发伤害提升15%（可叠加）"
 },
@@ -8781,23 +6789,29 @@ local effect_data=
 },
 	[23232]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员源能爆发伤害提升40%（可叠加）"
 },
-	[23233]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员击败敌方时，将立即获得50%源能"
+	[23233]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员击败敌方时，将立即获得50%源能"
 },
-	[23234]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击护盾目标时，伤害提升10%（可叠加）"
+	[232331]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员击败敌方时，将立即获得50%源能"
 },
-	[23235]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击护盾目标时，伤害提升15%（可叠加）"
+	[23234]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击护盾目标时，伤害提升10%（可叠加）"
 },
-	[23236]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击护盾目标时，伤害提升25%（可叠加）"
+	[232341]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击护盾目标时，伤害提升10%（可叠加）"
 },
-	[23237]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=159, trigger_num={23002}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{等量交换}释放时将移除目标50%护盾值，且使其承伤加深8%，持续2回合"
+	[23235]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击护盾目标时，伤害提升15%（可叠加）"
 },
-	[232371]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=159, trigger_num={23002}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{等量交换}释放时将移除目标50%护盾值，且使其承伤加深8%，持续2回合"
+	[232351]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击护盾目标时，伤害提升15%（可叠加）"
 },
-	[23238]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，{等量交换}拥有50%能量。当我方战员释放源能技和源能爆发时，有80%几率立即获得5%能量"
+	[23236]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击护盾目标时，伤害提升25%（可叠加）"
 },
-	[232381]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，{等量交换}拥有50%能量。当我方战员释放源能技和源能爆发时，有80%几率立即获得5%能量"
+	[232361]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击护盾目标时，伤害提升25%（可叠加）"
 },
-	[232382]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=5, trigger_num={1,3}, trigger_rate=8000, is_effect_inc=0, damage_source=8, desc="战斗开始时，{等量交换}拥有50%能量。当我方战员释放源能技和源能爆发时，有80%几率立即获得5%能量"
+	[23237]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=159, trigger_num={23002}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="爆炸弹释放时将移除目标50%护盾值，且使其承伤加深8%，持续2回合"
+},
+	[232371]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=159, trigger_num={23002}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="爆炸弹释放时将移除目标50%护盾值，且使其承伤加深8%，持续2回合"
+},
+	[23238]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，爆炸弹拥有50%能量。当我方战员释放源能技和源能爆发时，有80%几率立即获得5%能量"
+},
+	[232381]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=8000, is_effect_inc=0, damage_source=8, desc="战斗开始时，爆炸弹拥有50%能量。当我方战员释放源能技和源能爆发时，有80%几率立即获得5%能量"
 },
 	[23239]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员生命高于50%时，自身技能伤害提升15%（可叠加）"
 },
@@ -8805,9 +6819,11 @@ local effect_data=
 },
 	[23241]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员生命高于50%时，自身技能伤害提升40%（可叠加）"
 },
-	[23242]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=40, trigger_num={}, trigger_rate=1500, is_effect_inc=0, damage_source=8, desc="我方战员对敌方造成伤害时，有15%几率回复自身10%最大生命"
+	[23242]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员对敌方造成伤害时，有15%几率回复自身10%最大生命"
 },
-	[23310]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=158, trigger_num={23003}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{营力共振}释放后，我方全体将获得1层增益(属性伤害提升5%，无视防御提升5%)，最多叠加3层"
+	[232421]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=10, trigger_num={}, trigger_rate=1500, is_effect_inc=0, damage_source=8, desc="我方战员对敌方造成伤害时，有15%几率回复自身10%最大生命"
+},
+	[23310]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=159, trigger_num={23003}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="直击弹释放后，我方全体将获得1层增益(属性伤害提升5%，无视防御提升5%)，最多叠加3层"
 },
 	[23311]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员获得的护盾效果提升4%（可叠加）"
 },
@@ -8815,11 +6831,11 @@ local effect_data=
 },
 	[23313]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员获得的护盾效果提升10%（可叠加）"
 },
-	[23314]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在存在护盾时会获得7.5%的格挡几率（可叠加）"
+	[23314]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在存在护盾时会获得7.5%的格挡几率（可叠加）"
 },
-	[23315]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在存在护盾时会获得9%的格挡几率（可叠加）"
+	[23315]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在存在护盾时会获得9%的格挡几率（可叠加）"
 },
-	[23316]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在存在护盾时会获得13.5%的格挡几率（可叠加）"
+	[23316]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在存在护盾时会获得13.5%的格挡几率（可叠加）"
 },
 	[23317]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放护盾时护盾增强8%（可叠加）"
 },
@@ -8827,31 +6843,45 @@ local effect_data=
 },
 	[23319]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在释放护盾时护盾增强12%（可叠加）"
 },
-	[23320]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加1层抵挡盾(可抵挡敌方攻击伤害)（不同等级可叠加次数）"
+	[23320]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加1层抵挡盾(可抵挡敌方攻击伤害)（可叠加）"
 },
-	[233201]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=5000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加1层抵挡盾(可抵挡敌方攻击伤害)（不同等级可叠加次数）"
+	[233201]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加1层抵挡盾(可抵挡敌方攻击伤害)（可叠加）"
 },
-	[23321]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加2层抵挡盾(可抵挡敌方攻击伤害)（不同等级可叠加次数）"
+	[23321]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加2层抵挡盾(可抵挡敌方攻击伤害)（可叠加）"
 },
-	[233211]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=5000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加2层抵挡盾(可抵挡敌方攻击伤害)（不同等级可叠加次数）"
+	[233211]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加2层抵挡盾(可抵挡敌方攻击伤害)（可叠加）"
 },
-	[23322]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加3层抵挡盾(可抵挡敌方攻击伤害)（不同等级可叠加次数）"
+	[23322]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加3层抵挡盾(可抵挡敌方攻击伤害)（可叠加）"
 },
-	[233221]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=5000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加3层抵挡盾(可抵挡敌方攻击伤害)（不同等级可叠加次数）"
+	[233221]={ target_rule=26, damage_area=2, damage_num=1, trigger_type=8, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在击败敌方时有50%几率为友方全体附加3层抵挡盾(可抵挡敌方攻击伤害)（可叠加）"
 },
-	[23323]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，无视防御将提升4%（可叠加）"
+	[23323]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，无视防御将提升4%（可叠加）"
 },
-	[23324]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，无视防御将提升6%（可叠加）"
+	[233231]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，无视防御将提升4%（可叠加）"
 },
-	[23325]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，无视防御将提升10%（可叠加）"
+	[23324]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，无视防御将提升6%（可叠加）"
 },
-	[23326]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=32, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时附带额外伤害效果(消耗自身20%护盾值转化为附加伤害）"
+	[233241]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，无视防御将提升6%（可叠加）"
 },
-	[23327]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每次护盾消失时，自身属性伤害将提升2.5%，持续2回合，最多叠加3层（可叠加）"
+	[23325]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，无视防御将提升10%（可叠加）"
 },
-	[23328]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每次护盾消失时，自身属性伤害将提升5%，持续2回合，最多叠加3层（可叠加）"
+	[233251]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=5, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击时，无视防御将提升10%（可叠加）"
 },
-	[23329]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每次护盾消失时，自身属性伤害将提升7.5%，持续2回合，最多叠加3层（可叠加）"
+	[23326]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时附带额外伤害效果(消耗自身20%护盾值转化为附加伤害）"
+},
+	[233261]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=32, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在攻击时附带额外伤害效果(消耗自身20%护盾值转化为附加伤害）"
+},
+	[23327]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每次护盾消失时，自身属性伤害将提升2.5%，持续2回合，最多叠加3层（可叠加）"
+},
+	[233271]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每次护盾消失时，自身属性伤害将提升2.5%，持续2回合，最多叠加3层（可叠加）"
+},
+	[23328]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每次护盾消失时，自身属性伤害将提升5%，持续2回合，最多叠加3层（可叠加）"
+},
+	[233281]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每次护盾消失时，自身属性伤害将提升5%，持续2回合，最多叠加3层（可叠加）"
+},
+	[23329]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每次护盾消失时，自身属性伤害将提升7.5%，持续2回合，最多叠加3层（可叠加）"
+},
+	[233291]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员每次护盾消失时，自身属性伤害将提升7.5%，持续2回合，最多叠加3层（可叠加）"
 },
 	[23330]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员普攻伤害提升10%（可叠加）"
 },
@@ -8859,7 +6889,7 @@ local effect_data=
 },
 	[23332]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员普攻伤害提升25%（可叠加）"
 },
-	[23333]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=159, trigger_num={23003}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{营力共振}释放时，我方全体将获得基于自身最大生命50%的护盾，持续2回合"
+	[23333]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=158, trigger_num={23003}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="直击弹释放时，我方全体将获得基于自身最大生命50%的护盾，持续2回合"
 },
 	[23334]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员存在护盾时，自身攻击将提升4%（可叠加）"
 },
@@ -8867,15 +6897,11 @@ local effect_data=
 },
 	[23336]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员存在护盾时，自身攻击将提升10%（可叠加）"
 },
-	[23337]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{营力共振}对敌方造成伤害时附加虚弱效果(攻击降低25%，回复效果降低40%)，持续2回合"
+	[23337]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=158, trigger_num={23003}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="直击弹对敌方造成伤害时附加虚弱效果(攻击降低25%，回复效果降低40%)，持续2回合"
 },
-	[233371]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=74, trigger_num={23003}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{营力共振}对敌方造成伤害时附加虚弱效果(攻击降低25%，回复效果降低40%)，持续2回合"
+	[23338]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，直击弹拥有25%能量。当我方战员施加护盾时，立即获得10%能量"
 },
-	[23338]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，{营力共振}拥有25%能量。当我方战员施加护盾时，立即获得10%能量"
-},
-	[233381]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，{营力共振}拥有25%能量。当我方战员施加护盾时，立即获得10%能量"
-},
-	[233382]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=160, trigger_num={5}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，{营力共振}拥有25%能量。当我方战员施加护盾时，立即获得10%能量"
+	[233381]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=160, trigger_num={5}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="战斗开始时，直击弹拥有25%能量。当我方战员施加护盾时，立即获得10%能量"
 },
 	[23339]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员存在护盾时，自身伤害减免提升5%（可叠加）"
 },
@@ -8883,95 +6909,13 @@ local effect_data=
 },
 	[23341]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员存在护盾时，自身伤害减免提升12%（可叠加）"
 },
-	[23342]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="{营力共振}释放时，我方每有1名战员存在护盾，{营力共振}伤害提升20%"
+	[23342]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=159, trigger_num={23003}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="直击弹释放时，我方每有1名战员存在护盾，直击弹伤害提升20%"
 },
-	[23500]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="进入战斗时，使链尉官技能的能量恢复至上限"
+	[23500]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="进入战斗时，使链尉官技能的能量恢复至上限"
 },
-	[23503]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="进入战斗时，敌方全体受到等同于各自生命上限15%的真实伤害"
+	[23503]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="进入战斗时，敌方全体受到等同于各自生命上限30%的真实伤害"
 },
 	[23505]={ target_rule=26, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="进入战斗后，角色失去所有电量"
-},
-	[23600]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员攻击的最后一击将附加目标最大生命4%的额外伤害"
-},
-	[23601]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到攻击伤害时，会获得一层反击增幅效果（每层增幅可使自身下次行动时攻击提升8%，防御穿透提升120点，最多叠加3层）"
-},
-	[236011]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=13, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到攻击伤害时，会获得一层反击增幅效果（每层增幅可使自身下次行动时攻击提升8%，防御穿透提升120点，最多叠加3层）"
-},
-	[23602]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=11, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到速度高于自身的敌人攻击时，格挡几率提升25%，且每回合结束时自身速度提高10点，持续至战斗结束"
-},
-	[236021]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=6, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员在受到速度高于自身的敌人攻击时，格挡几率提升25%，且每回合结束时自身速度提高10点，持续至战斗结束"
-},
-	[23603]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员初始生命提升25%，且生命首次低于60%时，激活1次净化（驱散自身所有负面效果），每场战斗仅触发一次"
-},
-	[236031]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员初始生命提升25%，且生命首次低于60%时，激活1次净化（驱散自身所有负面效果），每场战斗仅触发一次"
-},
-	[236032]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=0, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="我方战员初始生命提升25%，且生命首次低于60%时，激活1次净化（驱散自身所有负面效果），每场战斗仅触发一次"
-},
-	[23700]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="怪物基础速度+50,硬直上限提升50%,怪物基础生命+50%,怪物基础攻击+50%,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[237001]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="怪物基础速度+50,硬直上限提升50%,怪物基础生命+50%,怪物基础攻击+50%,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[23701]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="怪物基础速度+100,硬直上限提升75%,怪物基础生命+75%,怪物基础攻击+75%,怪物格挡几率+50%;怪物攻击时有25%几率对目标附加噩梦效果(攻击降低15%,且承伤加深10%),持续1回合，最多叠加2层,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[237011]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=2500, is_effect_inc=1, damage_source=8, desc="怪物基础速度+100,硬直上限提升75%,怪物基础生命+75%,怪物基础攻击+75%,怪物格挡几率+50%;怪物攻击时有25%几率对目标附加噩梦效果(攻击降低15%,且承伤加深10%),持续1回合，最多叠加2层,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[237012]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="怪物基础速度+100,硬直上限提升75%,怪物基础生命+75%,怪物基础攻击+75%,怪物格挡几率+50%;怪物攻击时有25%几率对目标附加噩梦效果(攻击降低15%,且承伤加深10%),持续1回合，最多叠加2层,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[23702]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="怪物基础速度+150,硬直上限提升100%,怪物基础生命+100%,怪物基础攻击+100%,怪物格挡几率+50%,怪物无视防御+50%;怪物攻击时有40%几率对目标附加噩梦效果(攻击降低15%，且承伤加深10%),持续1回合,最多叠加2层;怪物攻击时有25%几率对目标附加束缚效果(无法释放源能爆发,且受到治疗和护盾效果降低40%),持续1回合,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[237021]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=4000, is_effect_inc=1, damage_source=8, desc="怪物基础速度+150,硬直上限提升100%,怪物基础生命+100%,怪物基础攻击+100%,怪物格挡几率+50%,怪物无视防御+50%;怪物攻击时有40%几率对目标附加噩梦效果(攻击降低15%，且承伤加深10%),持续1回合,最多叠加2层;怪物攻击时有25%几率对目标附加束缚效果(无法释放源能爆发,且受到治疗和护盾效果降低40%),持续1回合,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[237022]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=2500, is_effect_inc=1, damage_source=8, desc="怪物基础速度+150,硬直上限提升100%,怪物基础生命+100%,怪物基础攻击+100%,怪物格挡几率+50%,怪物无视防御+50%;怪物攻击时有40%几率对目标附加噩梦效果(攻击降低15%，且承伤加深10%),持续1回合,最多叠加2层;怪物攻击时有25%几率对目标附加束缚效果(无法释放源能爆发,且受到治疗和护盾效果降低40%),持续1回合,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[237023]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="怪物基础速度+150,硬直上限提升100%,怪物基础生命+100%,怪物基础攻击+100%,怪物格挡几率+50%,怪物无视防御+50%;怪物攻击时有40%几率对目标附加噩梦效果(攻击降低15%，且承伤加深10%),持续1回合,最多叠加2层;怪物攻击时有25%几率对目标附加束缚效果(无法释放源能爆发,且受到治疗和护盾效果降低40%),持续1回合,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[23703]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="怪物基础速度+200,硬直上限提升150%,怪物基础生命+200%,怪物基础攻击+150%,怪物格挡几率+50%,怪物无视防御+50%，无视防御抵抗+50%;怪物攻击时有50%几率对目标附加噩梦效果(攻击降低15%,防御降低20%,且承伤加深10%),持续1回合,最多叠加2层;怪物攻击时有35%几率对目标附加束缚效果(无法释放源能爆发,且受到治疗和护盾效果降低40%),持续1回合,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[237031]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=5000, is_effect_inc=1, damage_source=8, desc="怪物基础速度+200,硬直上限提升150%,怪物基础生命+200%,怪物基础攻击+150%,怪物格挡几率+50%,怪物无视防御+50%，无视防御抵抗+50%;怪物攻击时有50%几率对目标附加噩梦效果(攻击降低15%,防御降低20%,且承伤加深10%),持续1回合,最多叠加2层;怪物攻击时有35%几率对目标附加束缚效果(无法释放源能爆发,且受到治疗和护盾效果降低40%),持续1回合,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[237032]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=3500, is_effect_inc=1, damage_source=8, desc="怪物基础速度+200,硬直上限提升150%,怪物基础生命+200%,怪物基础攻击+150%,怪物格挡几率+50%,怪物无视防御+50%，无视防御抵抗+50%;怪物攻击时有50%几率对目标附加噩梦效果(攻击降低15%,防御降低20%,且承伤加深10%),持续1回合,最多叠加2层;怪物攻击时有35%几率对目标附加束缚效果(无法释放源能爆发,且受到治疗和护盾效果降低40%),持续1回合,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[237033]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="怪物基础速度+200,硬直上限提升150%,怪物基础生命+200%,怪物基础攻击+150%,怪物格挡几率+50%,怪物无视防御+50%，无视防御抵抗+50%;怪物攻击时有50%几率对目标附加噩梦效果(攻击降低15%,防御降低20%,且承伤加深10%),持续1回合,最多叠加2层;怪物攻击时有35%几率对目标附加束缚效果(无法释放源能爆发,且受到治疗和护盾效果降低40%),持续1回合,该环境下,施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[23710]={ target_rule=27, damage_area=2, damage_num=0, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="该环境下，施法者提供的攻击力加成上限为自身基础攻击的100%"
-},
-	[23800]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="精英与首领韧性提升100%"
-},
-	[24001]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="该遗迹中的怪物获得16%效果抵抗和12%伤害减免提升"
-},
-	[24002]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="该遗迹中的怪物获得35%暴击几率和50%暴击伤害提升"
-},
-	[24003]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="该遗迹中的怪物获得30%暴伤抗性和15%暴击抵抗提升"
-},
-	[24004]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="该遗迹中的怪物获得15%属性抗性和25%无视防御抵抗"
-},
-	[24005]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击有35%几率对目标附加1层水压效果(速度降低40点)，持续1回合，最多叠加3层"
-},
-	[240051]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=3500, is_effect_inc=1, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击有35%几率对目标附加1层水压效果(速度降低40点)，持续1回合，最多叠加3层"
-},
-	[24006]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击对目标附加1层冲击效果(处于冲击下的目标受到攻击时，有20%几率转化为眩晕效果，每层冲击提高5%的转化几率)，持续1回合，最多叠加2层"
-},
-	[240061]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=17, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击对目标附加1层冲击效果(处于冲击下的目标受到攻击时，有20%几率转化为眩晕效果，每层冲击提高5%的转化几率)，持续1回合，最多叠加2层"
-},
-	[240062]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击对目标附加1层冲击效果(处于冲击下的目标受到攻击时，有20%几率转化为眩晕效果，每层冲击提高5%的转化几率)，持续1回合，最多叠加2层"
-},
-	[240063]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=40, trigger_num={}, trigger_rate=1500, is_effect_inc=1, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击对目标附加1层冲击效果(处于冲击下的目标受到攻击时，有20%几率转化为眩晕效果，每层冲击提高5%的转化几率)，持续1回合，最多叠加2层"
-},
-	[240064]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击对目标附加1层冲击效果(处于冲击下的目标受到攻击时，有20%几率转化为眩晕效果，每层冲击提高5%的转化几率)，持续1回合，最多叠加2层"
-},
-	[240065]={ target_rule=0, damage_area=0, damage_num=0, trigger_type=32, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>攻击对目标附加1层冲击效果(处于冲击下的目标受到攻击时，有20%几率转化为眩晕效果，每层冲击提高5%的转化几率)，持续1回合，最多叠加2层"
-},
-	[24007]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>战斗开始时获得自身最大生命15%的护盾，持续2回合；且每回合开始时有60%几率获得影遁效果(速度提升40%)，持续1回合"
-},
-	[240071]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>战斗开始时获得自身最大生命15%的护盾，持续2回合；且每回合开始时有60%几率获得影遁效果(速度提升40%)，持续1回合"
-},
-	[240072]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>战斗开始时获得自身最大生命15%的护盾，持续2回合；且每回合开始时有60%几率获得影遁效果(速度提升40%)，持续1回合"
-},
-	[240073]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=3, trigger_num={}, trigger_rate=6000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>战斗开始时获得自身最大生命15%的护盾，持续2回合；且每回合开始时有60%几率获得影遁效果(速度提升40%)，持续1回合"
-},
-	[24008]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>受到攻击伤害时将会对攻击方反弹17%的伤害，且生命每降低20%，自身获得10%的吸血加成"
-},
-	[240081]={ target_rule=10, damage_area=1, damage_num=1, trigger_type=7, trigger_num={}, trigger_rate=10000, is_effect_inc=0, damage_source=8, desc="<color=#f05009>「敌方」</color>受到攻击伤害时将会对攻击方反弹17%的伤害，且生命每降低20%，自身获得10%的吸血加成"
 }
 }
 

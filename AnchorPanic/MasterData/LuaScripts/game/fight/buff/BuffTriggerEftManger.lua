@@ -9,12 +9,6 @@
 ]]
 module('fight.BuffTriggerEftManger', Class.impl(Manager))
 
-local STAND_POS = 1
-local BODY_POS = 2
-local HEAD_POS = 3
-local WEAPON_POS = 4
-local CAMERA_POS = 5
-
 --构造函数
 function ctor(self)
     self.buffTriggerEftList = {}
@@ -50,7 +44,7 @@ function buffTrigger(self, liveId, buffId, addLevel)
             fightUI.FightFlyUtil:fly3DImg2(self.id, UrlManager:getFightArtfontPath(v), pos, buffRo:getType() ~= 2)
         end
     end
-
+    
     -- 有文本飘文本
     if buffRo and buffRo:getFlyText() ~= "" then
         local pos = liveThing:getPointPos(fight.FightDef.POINT_SPINE)
@@ -62,78 +56,56 @@ end
 function updateBuffEft(self, liveId, buffId, addLevel)
     local buffRo = Buff.BuffRoMgr:getBuffRo(buffId)
     if buffRo then
-        local casterLiveVo = fight.SceneManager:getThing(liveId)
-        local casterModelId = nil
-        if casterLiveVo then
-            casterModelId = casterLiveVo:getModelID()
+        local eftArr = buffRo:getHangStand()
+        if not table.empty(eftArr) then
+            local eftname = eftArr[addLevel]
+            if not eftname then
+                eftname = eftArr[1]
+            end
+            self:playEffTravel(liveId, buffId, eftname)
+        end
+        eftArr = buffRo:getHangBody()
+        if not table.empty(eftArr) then
+            local eftname = eftArr[addLevel]
+            if not eftname then
+                eftname = eftArr[1]
+            end
+            self:playEffTravel(liveId, buffId, eftname)
         end
 
-        local eftArr = buffRo:getHangStand(casterModelId)
+        eftArr = buffRo:getHangHead()
         if not table.empty(eftArr) then
             local eftname = eftArr[addLevel]
             if not eftname then
                 eftname = eftArr[1]
             end
-            self:playEffTravel(liveId, STAND_POS, buffId, eftname)
-        end
-        eftArr = buffRo:getHangBody(casterModelId)
-        if not table.empty(eftArr) then
-            local eftname = eftArr[addLevel]
-            if not eftname then
-                eftname = eftArr[1]
-            end
-            self:playEffTravel(liveId, BODY_POS, buffId, eftname)
+            self:playEffTravel(liveId, buffId, eftname)
         end
 
-        eftArr = buffRo:getHangHead(casterModelId)
+        eftArr = buffRo:getHangWeapon()
         if not table.empty(eftArr) then
             local eftname = eftArr[addLevel]
             if not eftname then
                 eftname = eftArr[1]
             end
-            self:playEffTravel(liveId, HEAD_POS, buffId, eftname)
-        end
-
-        eftArr = buffRo:getHangWeapon(casterModelId)
-        if not table.empty(eftArr) then
-            local eftname = eftArr[addLevel]
-            if not eftname then
-                eftname = eftArr[1]
-            end
-            self:playEffTravel(liveId, WEAPON_POS, buffId, eftname)
-        end
-
-        eftArr = buffRo:getHangCamera(casterModelId)
-        -- table.print(eftArr)
-        if not table.empty(eftArr) then
-            local eftname = eftArr[addLevel]
-            if not eftname then
-                eftname = eftArr[1]
-            end
-            self:playEffTravel(liveId, CAMERA_POS, buffId, eftname)
+            self:playEffTravel(liveId, buffId, eftname)
         end
     end
 end
 
 -- 播放演出特效
-function playEffTravel(self, liveId, posType, buffId, eftName)
+function playEffTravel(self, liveId, buffId, eftName)
     local liveThing = fight.SceneItemManager:getLivething(liveId)
     self.mEffectName = UrlManager:get3DBuffPath(eftName)
     local eftGo = gs.GOPoolMgr:Get(self.mEffectName)
     if eftGo then
-        if posType == CAMERA_POS then
-            eftGo:SetActive(true)
-            local scTrans = gs.CameraMgr:GetSceneCameraTrans()
-            gs.TransQuick:SetParentOrg(eftGo.transform, scTrans)
-        else
-            eftGo:SetActive(true)
-            gs.TransQuick:SetParentOrg(eftGo.transform, liveThing:getTrans())
-            local charAppend = eftGo:GetComponent(ty.CharAppendEffect)
-            if charAppend then
-                charAppend.CharSet = liveThing:getRootGO()
-            end
-
+        eftGo:SetActive(true)
+        gs.TransQuick:SetParentOrg(eftGo.transform, liveThing:getTrans())
+        local charAppend = eftGo:GetComponent(ty.CharAppendEffect)
+        if charAppend then
+            charAppend.CharSet = liveThing:getRootGO()
         end
+
         local eftVo = { buffId = buffId, startTime = os.time(), eftName = eftName, eftGo = eftGo }
         table.insert(self.buffTriggerEftList, eftVo)
     end

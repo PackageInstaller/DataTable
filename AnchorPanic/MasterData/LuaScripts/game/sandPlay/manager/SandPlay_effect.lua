@@ -21,7 +21,7 @@ function resetData(self)
 end
 
 -- 通过已有资源创建新实例
-function create(self, thing, path, parentTrans, lifeTime, lpos)
+function create(self, path, parentTrans, lifeTime)
     local item = self:poolGet()
     item:resetData()
 
@@ -38,35 +38,18 @@ function create(self, thing, path, parentTrans, lifeTime, lpos)
     item.m_go:SetActive(true)
     item.m_path = path
     item.m_time = time
-    item.m_thing = thing
 
-    if not gs.GoUtil.IsTransNull(item.m_go.transform) then
-        if parentTrans and not gs.GoUtil.IsTransNull(parentTrans) then
-            gs.TransQuick:SetParentOrg01(item.m_go, parentTrans)
-            gs.TransQuick:LPos(item.m_go.transform, gs.VEC3_ZERO)
-        else
-            gs.TransQuick:SetParentOrg01(item.m_go, nil)
-        end
-    end
-
-    if lpos then
-        gs.TransQuick:LPos(item.m_go.transform, lpos)
+    if parentTrans and not gs.GoUtil.IsTransNull(parentTrans) and not gs.GoUtil.IsTransNull(item.m_go.transform) then
+        gs.TransQuick:SetParentOrg01(item.m_go, parentTrans)
+        gs.TransQuick:LPos(item.m_go.transform, gs.VEC3_ZERO)
     end
 
     lifeTime = lifeTime or 2
     if lifeTime > 0 then
-        item.m_autoRecoverSn = LoopManager:setTimeout(lifeTime, item, item.onLifeTimeRecover)
+        item.m_autoRecoverSn = LoopManager:setTimeout(lifeTime, item, item.recover)
     end
 
     return item
-end
-
-function onLifeTimeRecover(self)
-    if self.m_thing then
-        self.m_thing:removeEffect(self.m_snId)
-    else
-        self:recover()
-    end
 end
 
 -- 回收

@@ -67,6 +67,18 @@ local parkour_event_skill_data=
 },
 	[10116]={ type=208, buff_id={}, param={0}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
 },
+	[10201]={ type=204, buff_id={}, param={106,{-0.04,0,-3.6}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
+},
+	[10202]={ type=204, buff_id={}, param={106,{-0.04,0,-3.6}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
+},
+	[10203]={ type=204, buff_id={}, param={106,{-7.98999977,0.015583992,2.8599999}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
+},
+	[10204]={ type=204, buff_id={}, param={106,{8.22000027,0.015583992,2.8599999}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
+},
+	[10205]={ type=202, buff_id={}, param={{{2,{10203,10107}},{2,{10201,10109}},{2,{10204,10113}},{2,{10202,10115}}},90541}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
+},
+	[10206]={ type=202, buff_id={}, param={{{2,{10204,10108}},{2,{10202,10110}},{2,{10203,10112}},{2,{10201,10114}}},90541}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
+},
 	[10301]={ type=204, buff_id={}, param={106,{-8.09000015,0,-3.25}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
 },
 	[10302]={ type=204, buff_id={}, param={106,{-3.74000001,0,3.88000011}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
@@ -135,7 +147,7 @@ local parkour_event_skill_data=
 },
 	[10708]={ type=204, buff_id={}, param={106,{5.52,0,2.48}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
 },
-	[10710]={ type=204, buff_id={}, param={0,{5.8,0,3.75}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
+	[10710]={ type=204, buff_id={}, param={0,{5.375,0,1.5}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
 },
 	[10711]={ type=204, buff_id={}, param={106,{9.4,2,1.5}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
 },
@@ -180,56 +192,6 @@ local parkour_event_skill_data=
 	[10812]={ type=207, buff_id={}, param={0}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
 },
 	[10813]={ type=207, buff_id={}, param={0}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[10200]={ type=207, buff_id={}, param={1}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[10201]={ type=208, buff_id={}, param={0}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[10202]={ type=209, buff_id={}, param={}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[10203]={ type=210, buff_id={}, param={{1,90,90}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[10204]={ type=210, buff_id={}, param={{0,45,45}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[10205]={ type=207, buff_id={}, param={1}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[10206]={ type=207, buff_id={}, param={0}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13100]={ type=213, buff_id={}, param={{13101,13102,13103,13104,13105,13106,13107},{12005,10206}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13200]={ type=213, buff_id={}, param={{13201,13202,13203,13204,13205,13206,13207,13208,13209,13210,13211,13212,13213,13214,13215,13216,13217,13218,13219},{12005,10206}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13300]={ type=213, buff_id={}, param={{13301,13302,13303,13304,13305,13306,13307,13308,13309,13310,13311,13312,13313,13314,13315,13316,13317,13318,13319,13320,13321,13322,13323,13324,13325,13326,13327,13328,13329,13330,13331,13332,13333,13334,13335,13336,13337,13338,13339},{12005,10206}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13400]={ type=213, buff_id={}, param={{13401,13402,13403,13404,13405,13406,13407,13408,13409,13410,13411,13412},{12005,10206}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13500]={ type=213, buff_id={}, param={{13501,13502,13503,13504,13505,13506,13507,13508,13509,13510,13511,13512,13513,13514,13515,13516,13517,13518,13519,13520,13521,13522},{12005,10206}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13600]={ type=213, buff_id={}, param={{13601,13602,13603,13604,13605,13606,13607,13608,13609,13610,13611,13612,13613,13614,13615,13616,13617,13618,13619,13620,13621,13622,13623,13624,13625,13626,13627,13628,13629,13630,13631,13632,13633,13634,13635,13636,13637,13638,13639,13640},{12005,10206}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13700]={ type=213, buff_id={}, param={{13701,13702,13703,13704,13705,13706},{12005,10206}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13701]={ type=204, buff_id={}, param={0,{0.510999978,0,2.53699994}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13702]={ type=204, buff_id={}, param={0,{-1.41400003,0,3.546}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13800]={ type=213, buff_id={}, param={{13801,13802,13803,13804,13805,13806,13807,13808,13809,13810,13811,13812,13813,13814,13815,13816},{12005,10206}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13801]={ type=204, buff_id={}, param={0,{1.25999999,0,1.63999999}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13802]={ type=204, buff_id={}, param={0,{-2.76999998,0,1.63999999}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13900]={ type=213, buff_id={}, param={{13901,13902,13903,13904,13905,13906,13907,13908,13909,13910,13911,13912,13913,13914,13915},{12005,10206}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13901]={ type=204, buff_id={}, param={0,{1.44700003,0,1.70700002}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[13902]={ type=204, buff_id={}, param={0,{-1.50999999,0,3.71000004}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[14000]={ type=213, buff_id={}, param={{14001,14002,14003,14004,14005,14006,14007,14008,14009,14010,14011,14012,14013,14014},{14015,10206}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[14001]={ type=204, buff_id={}, param={0,{1.88999999,0,4.13000011}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
-},
-	[14002]={ type=204, buff_id={}, param={0,{-3.08999991,0,1.23699999}}, decide_time={}, damage_cd=0, range_type=0, range_subtype={}, is_show_range=0
 }
 }
 

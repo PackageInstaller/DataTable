@@ -53,16 +53,7 @@ manual.ManualModulePanel = require('game/manual/manualModule/view/ManualModulePa
 manual.ManualModuleManager = require('game/manual/manualModule/manager/ManualModuleManager')
 manual.ManualModuleItem = require('game/manual/manualModule/view/item/ManualModuleItem')
 manual.ManualModuleInfoView = require('game/manual/manualModule/view/ManualModuleInfoView')
-
---图集-时装
-
-manual.ManualFashionTabView = require('game/manual/manualFashion/view/ManualFashionTabView')
-manual.ManualFashionTabSubView = require('game/manual/manualFashion/view/ManualFashionTabSubView')
-manual.ManualFashionItem = require('game/manual/manualFashion/view/item/ManualFashionItem')
-manual.ManualFashionManager = require('game/manual/manualFashion/manager/ManualFashionManager').new()
-manual.ManualFashionController = require('game/manual/manualFashion/controller/ManualFashionController').new(manual.ManualFashionManager)
-
-local module = { manual.ManualController, manual.ManualStoryController, manual.ManualWorldController, manual.ManualMusicController,manual.ManualFashionController }
+local module = { manual.ManualController, manual.ManualStoryController, manual.ManualWorldController, manual.ManualMusicController }
 return module
 
 --[[ 替换语言包自动生成，请勿修改！

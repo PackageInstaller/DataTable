@@ -451,8 +451,6 @@ function parseFormationList(self, list)
     end
     table.sort(self:instance().m_fightTeamIdList, sortTeamList)
     self:dispatchEvent(self.UPDATE_TEAM_FORMATION_DATA, {})
-
-    GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_RED_INFO)
 end
 
 -- 返回修改的服务器阵型英雄列表结果
@@ -638,8 +636,6 @@ function isLockFormation(self)
 
         elseif battleType == PreFightBattleType.Doundless then
             dupVo = doundless.DoundlessManager:getDoundlessCityStageDataById(dupId)
-        elseif battleType == PreFightBattleType.Seabed then
-            dupVo = seabed.SeabedManager:getSeabedDupDataById(dupId)
         end
 
         if dupVo ~= nil then

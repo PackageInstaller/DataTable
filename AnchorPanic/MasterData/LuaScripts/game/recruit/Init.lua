@@ -7,7 +7,7 @@ recruit = {}
 --manager
 require("game/recruit/manager/RecruitConst")
 recruit.RecruitManager = require("game/recruit/manager/RecruitManager").new()
-recruit.ItemRecruitDataRo = require("rodata/ItemRecruitDataRo")
+recruit.HeroRecruitConfigVo = require("rodata/ItemRecruitDataRo")
 recruit.HeroRecruitRuleConfigVo = require("rodata/HeroRecruitRuleConfigVo")
 recruit.RecruitLogVo = require("game/recruit/manager/vo/RecruitLogVo")
 recruit.RecruitMenuVo = require("game/recruit/manager/vo/RecruitMenuVo")
@@ -26,9 +26,6 @@ recruit.RecruitBraceletsTabView = require("game/recruit/view/tab/RecruitBracelet
 recruit.RecruitActTopTabView = require("game/recruit/view/tab/RecruitActTopTabView")
 recruit.RecruitActBraceletsTabView = require("game/recruit/view/tab/RecruitActBraceletsTabView")
 recruit.RecruitActPlayerTabView = require("game/recruit/view/tab/RecruitActPlayerTabView")
-recruit.RecruitAppTopTabView = require("game/recruit/view/tab/RecruitAppTopTabView")
-recruit.RecruitAppBraceletsTabView = require("game/recruit/view/tab/RecruitAppBraceletsTabView")
-
 recruit.RecruitMaskView = require("game/recruit/view/RecruitMaskView")
 
 recruit.RecruitLogPanel = require("game/recruit/view/RecruitLogPanel")
@@ -39,11 +36,9 @@ recruit.RecruitRulePanel = require("game/recruit/view/RecruitRulePanel")
 recruit.RecruitNewPlayResulitPanel = require("game/recruit/view/RecruitNewPlayResulitPanel")
 recruit.RecruitRuleItem = require("game/recruit/view/item/RecruitRuleItem")
 recruit.RecruitDialPanel = require("game/recruit/view/RecruitDialPanel")
-recruit.RecruitSelectHeroPanel = require("game/recruit/view/RecruitSelectHeroPanel")
 
 recruit.RecruitSucPanel = require("game/recruit/view/RecruitSucPanel")
 recruit.RecruitSucItem = require("game/recruit/view/item/RecruitSucItem")
-recruit.RecruitAppSelectHeroItem = require("game/recruit/view/item/RecruitAppSelectHeroItem")
 
 recruit.RecruitShowAllItem = require("game/recruit/view/item/RecruitShowAllItem")
 recruit.RecruitCardShowAllItem = require("game/recruit/view/item/RecruitCardShowAllItem")
@@ -64,8 +59,6 @@ recruit.RecruitCardSceneController = require("game/recruit/controller/RecruitCar
 
 recruit.RecruitTrialManager = require('game/recruit/manager/RecruitTrialManager').new()
 
-
-
 --战员遣散
 -- recruit.HeroDismissPanel = require("game/recruit/view/HeroDismissPanel")
 -- recruit.DismissHeroCardMini = require("game/recruit/view/item/DismissHeroCardMini")
@@ -73,6 +66,6 @@ recruit.RecruitTrialManager = require('game/recruit/manager/RecruitTrialManager'
 recruit.RecruitController = require("game/recruit/controller/RecruitController").new(recruit.RecruitManager)
 local module = {recruit.RecruitController}
 return module
-
+ 
 --[[ 替换语言包自动生成，请勿修改！
 ]]

@@ -25,9 +25,6 @@ function setData(self, cusParent, cusItemVo)
     self.id = cusItemVo[2]
     self.num = cusItemVo[3]
     self:updateView()
-
-    self.btn:SetActive(cusItemVo[4])
-    -- self.isSelectMask:SetActive(cusItemVo[4])
 end
 
 function setIsSelect(self, is)
@@ -57,6 +54,7 @@ function updateView(self)
     self.isSelectMask:SetActive(false)
 end
 
+
 function addAllUIEvent(self)
     self:addUIEvent(self.btn, self.onSelfClick)
     self:addUIEvent(self.mBtnChack, self.onCheckHandler)
@@ -79,7 +77,7 @@ function onCheckHandler(self)
         TipsFactory:equipTips(equipVo)
     else
         local propsVo = props.PropsManager:getPropsConfigVo(self.vo.tid)
-        TipsFactory:propsTips({propsVo = propsVo, isShowUseBtn = false}, {rectTransform = nil})
+        TipsFactory:propsTips({ propsVo = propsVo, isShowUseBtn = false }, { rectTransform = nil })
     end
 
 end

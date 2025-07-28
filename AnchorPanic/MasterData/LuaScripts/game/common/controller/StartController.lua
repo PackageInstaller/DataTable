@@ -112,14 +112,11 @@ function initModule(self)
         "game/battleMapHall/Init",
         "game/role/Init",
         "game/activity/Init",
-
         "game/firstCharge/Init",
         "game/permit/Init",
         "game/purchase/Init",
         "game/dailyCheckIn/Init",
         "game/fashionPermit/Init",
-        "game/fashionPermitTwo/Init",
-        "game/supercial/Init",
         "game/mainui/Init",
         "game/mail/Init",
         "game/mainCity/Init",
@@ -183,22 +180,14 @@ function initModule(self)
 
         "game/buildBase/Init",
         "game/dormitory/Init",
-        "game/bigHostel/Init",
         "game/noviceActivity/Init",
         "game/fieldExploration/Init",
         "game/ciruit/Init",
-        "game/threeSheep/Init",
         "game/sandPlay/Init",
         "game/danke/Init",
-        "game/shootBrick/Init",
-        "game/putImage/Init",
-        "game/linklink/Init",
-
         "game/mainActivity/Init",
-        "game/roundPrize/Init",
-        "game/roundPrizeTwo/Init",
+
         "game/arenaEntrance/Init",
-        "game/guildWar/Init",
         "game/guild/Init",
         "game/guildBossImitate/Init",
         "game/returned/Init",
@@ -209,16 +198,12 @@ function initModule(self)
         "game/eliminate/Init",
         "game/disaster/Init",
         "game/seabed/Init",
-
-        "game/dna/Init",
-
         --移至最后
         "game/fightUI/Init",
         --屏蔽模块
         --"game/rogueLike/Init",
         --"game/infiniteCity/Init",
         "game/subPack/Init",
-        "game/organizeBackpacks/Init",
     }
 
     -- self.gModuleList = {}

@@ -1,4 +1,5 @@
---[[-----------------------------------------------------
+--[[
+-----------------------------------------------------
 @filename       : WelfareOptFestivalView
 @Description    : 节日福利
 @Author         : sxt
@@ -68,42 +69,26 @@ function showPanel(self, isInit)
         local tween = item:getGo():GetComponent(ty.UIDoTween)
 
         if isInit == true then
-            local frameSn = LoopManager:addFrame(4 + i * 2, 1, self, function()
+            LoopManager:addFrame(4 + i * 2, 1, self, function()
                 item:getGo():SetActive(true)
                 tween:BeginTween()
             end)
-
-            table.insert(self.mFrameSnList, frameSn)
         else
             item:getGo():SetActive(true)
         end
         item:getChildGO("mGeted"):SetActive(geted)
-        -- item:getChildGO("mBtnClick"):SetActive(geted == false and i <= signDay)
-        local canget = geted == false and i <= signDay or geted
-        item:getChildGO("mCanGet"):SetActive(canget)
-        item:getChildGO("mReceive"):SetActive(canget and not geted)
-        local txt1=(geted == false and i <= signDay) and _TT(48151) or _TT(48152)
-        item:getChildGO("mTxtState"):GetComponent(ty.Text).text = item:getChildGO("mCanGet").activeSelf==true and txt1 or _TT(48150,self:getHanziNum(i))
-        item:getChildGO("mTxtState"):GetComponent(ty.Text).color = item:getChildGO("mCanGet").activeSelf==true and gs.ColorUtil.GetColor("FFFFFFFF") or gs.ColorUtil.GetColor("FFFFFFFF")
-        item:getChildGO("mTxtDay"):GetComponent(ty.Text).text= item:getChildGO("mCanGet").activeSelf==true and  HtmlUtil:color("0"..i,"FFFFFFFF") or HtmlUtil:color("0"..i,"FFFFFFFF")
+        item:getChildGO("mImgDay"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPackPath("celebration/celebration_Sign_0"..i..".png"),true)
+        item:getChildGO("mBtnClick"):SetActive(geted == false and i <= signDay)
+        item:getChildGO("mCanGet"):SetActive(geted == false and i <= signDay)
 
         for j = 1, #vo.mReward do
             local itemData = vo.mReward[j]
             local propsItem = SimpleInsItem:create(self.mFestivaPropsItem, item:getChildTrans("mPropsContent"), "FestivaPropsItem")
-            local itemUrlBg = (geted == false and i <= signDay) and "celebration_36" or "celebration_28"
             propsItem:getChildGO("mPropsImg"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPropsIconUrl(itemData[1]), false)
-            propsItem:getGo():GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPackPath("celebration/"..itemUrlBg..".png"), false)
-            propsItem:getChildGO("mTxtCount"):GetComponent(ty.Text).text ="X".. itemData[2]
-            propsItem:getChildGO("mImgLight"):SetActive(canget)
+            propsItem:getChildGO("mTxtCount"):GetComponent(ty.Text).text = itemData[2]
             propsItem:addUIEvent("mPropsImg", function()
-                if geted or i > signDay then
-                    local propsVo = props.PropsManager:getPropsConfigVo(itemData[1])
-                    TipsFactory:propsTips({ propsVo = propsVo, isShowUseBtn = nil }, { rectTransform = propsItem:getChildTrans("mPropsImg") })
-                else
-                    GameDispatcher:dispatchEvent(EventName.REQ_FESTIVAL_REWARD, {
-                    day = i
-                })
-                end
+                local propsVo = props.PropsManager:getPropsConfigVo(itemData[1])
+                TipsFactory:propsTips({propsVo = propsVo, isShowUseBtn = nil}, {rectTransform = propsItem:getChildTrans("mPropsImg")})
             end)
 
             table.insert(self.mFestivalPropsItemList, propsItem)
@@ -126,13 +111,6 @@ function showPanel(self, isInit)
 end
 
 function clearFestivalItem(self)
-    if self.mFrameSnList then
-        for i, v in ipairs(self.mFrameSnList) do
-            LoopManager:removeFrameByIndex(v)
-        end
-    end
-    self.mFrameSnList = {}
-    
     self:clearFestivalPropsItem()
     for i = 1, #self.mFestivalItemList do
         self.mFestivalItemList[i]:poolRecover()
@@ -145,24 +123,6 @@ function clearFestivalPropsItem(self)
         self.mFestivalPropsItemList[i]:poolRecover()
     end
     self.mFestivalPropsItemList = {}
-end
-
-function getHanziNum(self,i)
-    if i==1 then
-        return "一"
-    elseif i==2 then
-        return "二"
-    elseif i==3 then
-        return "三"
-    elseif i==4 then
-        return "四"
-    elseif i==5 then
-        return "五"
-    elseif i==6 then
-        return "六"
-    else
-        return "七"
-    end
 end
 
 return _M

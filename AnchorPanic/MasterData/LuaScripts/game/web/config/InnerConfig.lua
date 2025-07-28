@@ -41,10 +41,7 @@ return {
 
     -- 获取资源密钥（本处改动需同步发布机）
     ["get_ab_key"] = "https://web_gms_api_dev.leiyangame.com/WebKeyConfig/getWebKeyConfig/g/12",
-    
-    -- 客户端debug登录权限
-    ["client_auth_login"] = "https://web_gms_api_test.leiyangame.com/Api/ClientServer/checkClientAuthLogin/g/12",
-    
+
     -------------------------------------------------- sdk_app_dev --------------------------------------------------
     -- 获取token
     ["token_url"] = "https://sdk_app_dev.leiyangame.com/User/Login/g/12",

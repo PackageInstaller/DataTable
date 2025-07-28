@@ -213,24 +213,7 @@ formation.FormationSeabedHeroSelectPanel = require("game/formation/seabed/view/F
 formation.FormationSeabedHeroSelectItem = require("game/formation/seabed/view/item/FormationSeabedHeroSelectItem")
 
 formation.FormationSeabedManager = require("game/formation/seabed/manager/FormationSeabedManager")
-formation.FormationSeabedController = require("game/formation/seabed/controller/FormationSeabedController").new(formation.FormationSeabedManager)
-
------------------------------------------------------------ guildWar atk ------------------------------------------------------
-
-formation.FormationGuildWarAtkPanel = require("game/formation/guildWarAtk/view/FormationGuildWarAtkPanel")
-
-formation.FormationGuildWarAtkSelectPanel = require("game/formation/guildWarAtk/view/FormationGuildWarAtkSelectPanel")
-formation.FormationGuildWarAtkSelectItem = require("game/formation/guildWarAtk/view/item/FormationGuildWarAtkSelectItem")
-formation.FormationGuildWarAtkManager = require("game/formation/guildWarAtk/manager/FormationGuildWarAtkManager").new()
-formation.FormationGuildWarAtkController = require("game/formation/guildWarAtk/controller/FormationGuildWarAtkController").new(formation.FormationGuildWarAtkManager)
-
------------------------------------------------------------ guildWar def ------------------------------------------------------
-
-formation.FormationGuildWarDefPanel = require("game/formation/guildWarDef/view/FormationGuildWarDefPanel")
-formation.FormationGuildWarDefSelectPanel = require("game/formation/guildWarDef/view/FormationGuildWarDefSelectPanel")
-formation.FormationGuildWarDefSelectItem = require("game/formation/guildWarDef/view/item/FormationGuildWarDefSelectItem")
-formation.FormationGuildWarDefManager = require("game/formation/guildWarDef/manager/FormationGuildWarDefManager").new()
-formation.FormationGuildWarDefController = require("game/formation/guildWarDef/controller/FormationGuildWarDefController").new(formation.FormationGuildWarDefManager)
+formation.formationSeabedController = require("game/formation/seabed/controller/FormationSeabedController").new(formation.FormationSeabedManager)
 
 
 local module = {}
@@ -257,9 +240,6 @@ table.insert(module, formation.FormationArenaPeakDefenseController)
 table.insert(module, formation.FormationArenaPeakAttackController)
 table.insert(module, formation.FormationGuildBossWarController)
 table.insert(module, formation.FormationDisasterController)
-table.insert(module, formation.FormationSeabedController)
-table.insert(module, formation.FormationGuildWarDefController)
-table.insert(module, formation.FormationGuildWarAtkController)
 return module
 
 --[[ 替换语言包自动生成，请勿修改！

@@ -80,10 +80,6 @@ role.AttrKey = {
     DOUNDLESS_COIN = 633,
 
     CHAT_BUBBLE_TID = 634, --聊天气泡使用中id
-
-    HAPPYFARM_COIN = 635, --开心农场货币
-
-    GUILDWAR_COIN = 636, --公会战货币
 }
 
 role.getPageName = function(cusPageType)

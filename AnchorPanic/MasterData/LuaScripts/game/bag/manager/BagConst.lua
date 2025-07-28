@@ -12,12 +12,6 @@ bag.BagType = {
     Equip = 5,
     -- 手环
     Bracelets = 6,
-
-    --开心农场
-    HappyFarm = 7,
-
-    --战员蛋
-    HeroEgg = 8,
 }
 
 -- 背包页签类型
@@ -31,7 +25,6 @@ bag.BagTabType = {
     ORDER = 6,
     HERO_FRAGMENT = 7,
     RAWMAT = 8,
-    HEROEGG = 9 ,
 }
 
 bag.getPageName = function(cusPageType)
@@ -52,8 +45,6 @@ bag.getPageName = function(cusPageType)
         name = _TT(4054)--"战员情报"
     elseif (cusPageType == bag.BagTabType.RAWMAT) then
         name = _TT(4055)--"原料"
-    elseif (cusPageType == bag.BagTabType.HEROEGG) then
-        name = _TT(149903)
     end
     return name
 end
@@ -76,8 +67,6 @@ bag.getIconURL = function(cusPageType)
         url = "bag/bag_icon_6.png"--"战员碎片"
         -- elseif (cusPageType == bag.BagTabType.RAWMAT) then
         --     url = _TT(4055)--"原料"
-    elseif (cusPageType == bag.BagTabType.HEROEGG) then
-        url = "bag/bag_icon_6.png"--"战员碎片"
     end
     return UrlManager:getPackPath(url)
 end
@@ -95,8 +84,6 @@ bag.getPageIcon = function(cusPageType)
     elseif (cusPageType == bag.BagTabType.ORDER) then
         icon = UrlManager:getIconPath("tabIcon/tabIcon_14.png")--"序列物"
     elseif (cusPageType == bag.BagTabType.HERO_FRAGMENT) then
-        icon = UrlManager:getIconPath("tabIcon/tabIcon_13.png")--"战员情报"
-    elseif (cusPageType == bag.BagTabType.HEROEGG) then
         icon = UrlManager:getIconPath("tabIcon/tabIcon_13.png")--"战员情报"
     end
     return icon
@@ -119,8 +106,6 @@ bag.getPageNameEn = function(cusPageType)
     elseif (cusPageType == bag.BagTabType.HERO_FRAGMENT) then
         name = "Fragment"
     elseif (cusPageType == bag.BagTabType.RAWMAT) then
-        name = "RawMaterials"
-    elseif (cusPageType == bag.BagTabType.HEROEGG) then
         name = "RawMaterials"
     end
     return name
@@ -197,9 +182,6 @@ bag.getSortList = function(cusSortType)
         table.insert(sortList, bag.BagSortType.COUNT)
         table.insert(sortList, bag.BagSortType.ID)
     elseif cusSortType == bag.BagTabType.ORDER then
-        table.insert(sortList, bag.BagSortType.COLOR)
-        table.insert(sortList, bag.BagSortType.ID)
-    elseif cusSortType == bag.BagTabType.HEROEGG then
         table.insert(sortList, bag.BagSortType.COLOR)
         table.insert(sortList, bag.BagSortType.ID)
     end
@@ -468,7 +450,7 @@ end
 bag.getTabOpType = function(cusType)
     if cusType == bag.BagTabType.NORMAL or cusType == bag.BagTabType.CONSUME or cusType == bag.BagTabType.RAWMAT then
         return 1
-    elseif cusType == bag.BagTabType.EQUIP or cusType == bag.BagTabType.BRACELETS or cusType == bag.BagTabType.NUCLEAR or cusType == bag.BagTabType.ORDER or cusType == bag.BagTabType.HEROEGG then
+    elseif cusType == bag.BagTabType.EQUIP or cusType == bag.BagTabType.BRACELETS or cusType == bag.BagTabType.NUCLEAR or cusType == bag.BagTabType.ORDER then
         return 2
     end
 end

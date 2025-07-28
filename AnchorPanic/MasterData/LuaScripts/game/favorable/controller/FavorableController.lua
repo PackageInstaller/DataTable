@@ -23,8 +23,6 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.REQ_FAVORABLE_GIVE, self.onReqFavorableGive, self)
 
     GameDispatcher:addEventListener(EventName.REQ_FAVORABLE_REWARD, self.reqFavorableReward, self)
-
-    GameDispatcher:addEventListener(EventName.REQ_HERO_STORY_REWARD, self.onReqHeroStoryReward, self)
 end
 
 --注册server发来的数据
@@ -38,10 +36,6 @@ function registerMsgHandler(self)
         SC_RELATION_REWARD = self.onHeroFavorableRewardHandler,
         --- *s2c* 领领取亲密度奖励结果 13144
         SC_RECEIVE_RELATION_REWARD = self.onReceiveReawrdHandler,
-        --- *s2c* 已领取心语集奖励lv列表 13145
-        --SC_RELATION_STORY_REWARD = self.onRelationStoryRewardHandler,
-        --- *s2c* 领取心语集奖励 13147
-        SC_RECEIVE_STORY_REWARD = self.updateHeroStoryReward,
     }
 end
 
@@ -80,22 +74,6 @@ end
 --- *c2s* 领取亲密度奖励 13143
 function reqFavorableReward(self, args)
     SOCKET_SEND(Protocol.CS_RECEIVE_RELATION_REWARD, { hero_tid = args.heroTid, id = args.id })
-end
-
-
--- function onRelationStoryRewardHandler(self, msg)
---     self.mMgr:parseHeroStoryRewardMsg(msg)
--- end
-
-
-function onReqHeroStoryReward(self,args)
-    SOCKET_SEND(Protocol.CS_RECEIVE_STORY_REWARD, { hero_tid = args.tid, relation_lv = args.lv },Protocol.SC_RECEIVE_STORY_REWARD)
-end
-
-function updateHeroStoryReward(self,msg)
-    if msg.result == 1 then
-        self.mMgr:updateHeroStoryReward(msg)
-    end
 end
 
 ------------------------------------------------------------------------ 好感面板 ------------------------------------------------------------------------

@@ -252,5 +252,4 @@ function deActive(self)
 
     self:clearProps()
 end
-
 return _M

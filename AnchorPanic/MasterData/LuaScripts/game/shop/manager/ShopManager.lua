@@ -116,7 +116,7 @@ end
 function parseShopBuyMsg(self, msg)
     local item = self:getShopItem(msg.shop_type, msg.shop_id)
     item.buy_times = item.buy_times + msg.num
-    self:dispatchEvent(EVENT_SHOP_ITEM_UPDATE, {type = msg.shop_type, id = msg.shop_id})
+    self:dispatchEvent(EVENT_SHOP_ITEM_UPDATE, { type = msg.shop_type, id = msg.shop_id })
 end
 
 -- 某类型商店数据更新
@@ -204,8 +204,7 @@ end
 function getShopItemByTid(self, cusType, cusTid)
     local shopData = self.mShopItemData[cusType]
     if not shopData then
-        -- Debug:log_error('ShopManager', '不存在商店类型：', cusType)
-        print('ShopManager' .. '不存在商店类型：'..cusType)
+        Debug:log_error('ShopManager', '不存在商店类型：', cusType)
         return nil
     end
 
@@ -214,8 +213,7 @@ function getShopItemByTid(self, cusType, cusTid)
             return shopVo
         end
     end
-    -- Debug:log_error('ShopManager', '不存在商品Tid：', cusTid)
-    print('ShopManager' .. '不存在商品Tid：'..cusTid)
+    Debug:log_error('ShopManager', '不存在商品Tid：', cusTid)
     return nil
 end
 

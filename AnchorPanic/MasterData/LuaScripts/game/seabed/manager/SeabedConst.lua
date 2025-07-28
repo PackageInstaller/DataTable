@@ -39,16 +39,16 @@ seabed.getSeabedTaskList = function()
         page = seabed.SeabedTaskType.Def,
         nomalLan = _TT(111060),
         nomalLanEn = "",
-        nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_84.png"),
-        selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_84.png"),
+        nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_2.png"),
+        selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_2.png"),
     }
 
     tab[seabed.SeabedTaskType.High] = {
         page = seabed.SeabedTaskType.High,
         nomalLan = _TT(111061),
         nomalLanEn = "",
-        nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_85.png"),
-        selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_85.png"),
+        nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_74.png"),
+        selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_74.png"),
     }
     return tab
 end

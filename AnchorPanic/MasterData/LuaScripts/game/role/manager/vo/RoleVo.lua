@@ -111,8 +111,6 @@ function initData(self)
     self.m_GuildCoin = nil
     --无限城
     self.m_DoundlessCoin = nil
-    --联盟团战货币
-    self.m_GuildWarCoin = nil
 end
 
 -- 解析消息
@@ -188,10 +186,6 @@ function parseMsgData(self, cusMsgData)
     self:setDoundlessCoin(cusMsgData.boundless_city_coin)
     --聊天气泡id
     self:setChatBubbleTid(cusMsgData.dialog_box)
-    --开心农场货币
-    self:setHappyFarmMoney(cusMsgData.farm_coin)
-    --联盟团战货币
-    self:setGuildWarCoin(cusMsgData.guild_war_coin)
 end
 
 ----------------------------------------以下为玩家属性------------------------------------------
@@ -643,32 +637,6 @@ end
 
 function getDoundlessCoin(self)
     return self.m_DoundlessCoin
-end
-
-function setHappyFarmMoney(self, money)
-    local num = tonumber(money)
-
-    if (self.m_playerHappyFarmMoney ~= num) then
-        self.m_playerHappyFarmMoney = num
-        self:dispatchEvent(role.RoleVo.CHANGE_PLAYER_MONEY, MoneyTid.HAPPYFARM_TID)
-    end
-end
-
-function getHappyFarmMoney(self)
-    return self.m_playerHappyFarmMoney or 0
-end
-
-function setGuildWarCoin(self,money)
-    local num = tonumber(money)
-
-    if (self.m_GuildWarCoin ~= num) then
-        self.m_GuildWarCoin = num
-        self:dispatchEvent(role.RoleVo.CHANGE_PLAYER_MONEY, MoneyTid.GUILDWAR_TID)
-    end
-end
-
-function getGuildWarCoin(self)
-    return self.m_GuildWarCoin or 0
 end
 
 return _M

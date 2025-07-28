@@ -366,62 +366,6 @@ local hero_lvl_target=
 		[3]={ need_level=60, drop_id=1023, des=53704 },
 		[4]={ need_level=80, drop_id=1024, des=53706 },
 }
-},
-	[1024]={ level_reward={
-		[1]={ need_level=20, drop_id=1048, des=53702 },
-		[2]={ need_level=40, drop_id=1022, des=53703 },
-		[3]={ need_level=60, drop_id=1023, des=53704 },
-		[4]={ need_level=80, drop_id=1024, des=53706 },
-}
-},
-	[1025]={ level_reward={
-		[1]={ need_level=20, drop_id=1037, des=53702 },
-		[2]={ need_level=40, drop_id=1022, des=53703 },
-		[3]={ need_level=60, drop_id=1023, des=53704 },
-		[4]={ need_level=80, drop_id=1024, des=53706 },
-}
-},
-	[1026]={ level_reward={
-		[1]={ need_level=20, drop_id=1061, des=53702 },
-		[2]={ need_level=40, drop_id=1022, des=53703 },
-		[3]={ need_level=60, drop_id=1023, des=53704 },
-		[4]={ need_level=80, drop_id=1024, des=53706 },
-}
-},
-	[1027]={ level_reward={
-		[1]={ need_level=20, drop_id=1037, des=53702 },
-		[2]={ need_level=40, drop_id=1022, des=53703 },
-		[3]={ need_level=60, drop_id=1023, des=53704 },
-		[4]={ need_level=80, drop_id=1024, des=53706 },
-}
-},
-	[1028]={ level_reward={
-		[1]={ need_level=20, drop_id=1049, des=53702 },
-		[2]={ need_level=40, drop_id=1022, des=53703 },
-		[3]={ need_level=60, drop_id=1023, des=53704 },
-		[4]={ need_level=80, drop_id=1024, des=53706 },
-}
-},
-	[1029]={ level_reward={
-		[1]={ need_level=20, drop_id=1034, des=53702 },
-		[2]={ need_level=40, drop_id=1022, des=53703 },
-		[3]={ need_level=60, drop_id=1023, des=53704 },
-		[4]={ need_level=80, drop_id=1024, des=53706 },
-}
-},
-	[1030]={ level_reward={
-		[1]={ need_level=20, drop_id=1061, des=53702 },
-		[2]={ need_level=40, drop_id=1022, des=53703 },
-		[3]={ need_level=60, drop_id=1023, des=53704 },
-		[4]={ need_level=80, drop_id=1024, des=53706 },
-}
-},
-	[1031]={ level_reward={
-		[1]={ need_level=20, drop_id=1061, des=53702 },
-		[2]={ need_level=40, drop_id=1022, des=53703 },
-		[3]={ need_level=60, drop_id=1023, des=53704 },
-		[4]={ need_level=80, drop_id=1024, des=53706 },
-}
 }
 }
 

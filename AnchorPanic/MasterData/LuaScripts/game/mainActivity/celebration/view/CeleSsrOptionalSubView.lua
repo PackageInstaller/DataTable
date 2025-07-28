@@ -48,13 +48,6 @@ function configUI(self)
     self.mTxtTTMiddleTitle = self:getChildGO("mTxtTTMiddleTitle"):GetComponent(ty.Text)
 
     self.mTxtTime = self:getChildGO("mTxtTime"):GetComponent(ty.Text)
-
-    self.mTxtHero1 = self:getChildGO("mTxtHero1"):GetComponent(ty.Text)
-    self.mTxtHero2 = self:getChildGO("mTxtHero2"):GetComponent(ty.Text)
-    self.mTxtHero3 = self:getChildGO("mTxtHero3"):GetComponent(ty.Text)
-
-    self.mTxtTipsInfo1 = self:getChildGO("mTxtTipsInfo1"):GetComponent(ty.Text)
-    self.mTxtTipsInfo2 = self:getChildGO("mTxtTipsInfo2"):GetComponent(ty.Text)
 end
 
 --激活
@@ -86,13 +79,6 @@ function initViewText(self)
     self.mTxtTBelow.text=_TT(121002)--"污染中和町(中)<color=#ff7022>x1</color>"
     self.mTxtTMiddle.text=_TT(121003)--"源晶辉锭<color=#ff7022>x80</color>"--_TT()
     self.mTxtMoneyDes.text="￥             ".._TT(9)
-
-    self.mTxtHero1.text = _TT(95122)
-    self.mTxtHero2.text = _TT(95128)
-    self.mTxtHero3.text = _TT(95139)
-
-    self.mTxtTipsInfo1.text= _TT(121209)
-    self.mTxtTipsInfo2.text= _TT(121210)
 end
 
 
@@ -101,7 +87,7 @@ function addAllUIEvent(self)
 end
 
 function onClickGet(self)
-    if Celebration.CelebrationManager:getSSROptionalState()==Celebration.CelebrationConst.AwardState.Recive then
+    if purchase.MonthCardManager:getLeftDays() > 0 and Celebration.CelebrationManager:getSSROptionalState()~=Celebration.CelebrationConst.AwardState.Recived then
         GameDispatcher:dispatchEvent(EventName.REQ_RECIVE_SSR_OPTIONAL_AWARD)
     else
         if (purchase.MonthCardManager:getHadBuyTimes() < sysParam.SysParamManager:getValue(SysParamType.MONTY_CARD_LIMIT_BUY_TIMES)) then

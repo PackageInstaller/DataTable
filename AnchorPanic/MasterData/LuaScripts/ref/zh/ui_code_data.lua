@@ -29,7 +29,7 @@ local ui_code_data=
 },
 	[14]={ id=14, lang_id=0, music_id=29, ui_code_name=52013, ui_effect="", ui_type=2, code_type=4
 },
-	[17]={ id=17, lang_id=0, music_id=0, ui_code_name=52014, ui_effect="", ui_type=1, code_type=4
+	[17]={ id=17, lang_id=0, music_id=29, ui_code_name=52014, ui_effect="", ui_type=1, code_type=4
 },
 	[15]={ id=15, lang_id=0, music_id=29, ui_code_name=52015, ui_effect="", ui_type=1, code_type=4
 },
@@ -45,7 +45,7 @@ local ui_code_data=
 },
 	[22]={ id=22, lang_id=0, music_id=29, ui_code_name=52022, ui_effect="", ui_type=1, code_type=4
 },
-	[23]={ id=23, lang_id=0, music_id=29, ui_code_name=72109, ui_effect="", ui_type=1, code_type=4
+	[23]={ id=23, lang_id=0, music_id=29, ui_code_name=52023, ui_effect="", ui_type=1, code_type=4
 },
 	[24]={ id=24, lang_id=0, music_id=4, ui_code_name=0, ui_effect="", ui_type=1, code_type=4
 },
@@ -81,15 +81,11 @@ local ui_code_data=
 },
 	[41]={ id=41, lang_id=0, music_id=29, ui_code_name=52023, ui_effect="", ui_type=1, code_type=4
 },
-	[42]={ id=42, lang_id=0, music_id=29, ui_code_name=98114, ui_effect="", ui_type=1, code_type=4
+	[42]={ id=42, lang_id=0, music_id=29, ui_code_name=52023, ui_effect="", ui_type=1, code_type=4
 },
 	[43]={ id=43, lang_id=0, music_id=29, ui_code_name=104001, ui_effect="", ui_type=1, code_type=4
 },
 	[44]={ id=44, lang_id=0, music_id=29, ui_code_name=104001, ui_effect="", ui_type=1, code_type=4
-},
-	[45]={ id=45, lang_id=0, music_id=29, ui_code_name=98112, ui_effect="", ui_type=1, code_type=4
-},
-	[46]={ id=46, lang_id=0, music_id=29, ui_code_name=138001, ui_effect="", ui_type=1, code_type=4
 },
 	[101]={ id=101, lang_id=0, music_id=29, ui_code_name=2915, ui_effect="", ui_type=1, code_type=4
 },
@@ -136,10 +132,6 @@ local ui_code_data=
 	[405]={ id=405, lang_id=0, music_id=29, ui_code_name=52040, ui_effect="", ui_type=1, code_type=4
 },
 	[406]={ id=406, lang_id=0, music_id=29, ui_code_name=52041, ui_effect="", ui_type=1, code_type=4
-},
-	[407]={ id=407, lang_id=0, music_id=29, ui_code_name=584, ui_effect="", ui_type=1, code_type=4
-},
-	[408]={ id=408, lang_id=0, music_id=29, ui_code_name=585, ui_effect="", ui_type=1, code_type=4
 },
 	[501]={ id=501, lang_id=0, music_id=0, ui_code_name=52042, ui_effect="", ui_type=1, code_type=4
 },
@@ -188,10 +180,6 @@ local ui_code_data=
 	[812]={ id=812, lang_id=336, music_id=0, ui_code_name=336, ui_effect="", ui_type=1, code_type=4
 },
 	[813]={ id=43, lang_id=339, music_id=0, ui_code_name=339, ui_effect="", ui_type=1, code_type=4
-},
-	[814]={ id=814, lang_id=52133, music_id=0, ui_code_name=52133, ui_effect="", ui_type=1, code_type=4
-},
-	[815]={ id=50224, lang_id=52132, music_id=0, ui_code_name=52132, ui_effect="", ui_type=1, code_type=4
 },
 	[1001]={ id=1001, lang_id=0, music_id=29, ui_code_name=52051, ui_effect="", ui_type=2, code_type=4
 },
@@ -407,7 +395,7 @@ local ui_code_data=
 },
 	[1903]={ id=1903, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=1, code_type=4
 },
-	[1904]={ id=1904, lang_id=0, music_id=29, ui_code_name=52128, ui_effect="", ui_type=1, code_type=4
+	[1904]={ id=1904, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=1, code_type=4
 },
 	[1905]={ id=1905, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=1, code_type=4
 },
@@ -416,16 +404,6 @@ local ui_code_data=
 	[1907]={ id=1907, lang_id=0, music_id=29, ui_code_name=52126, ui_effect="", ui_type=1, code_type=4
 },
 	[1908]={ id=1908, lang_id=0, music_id=0, ui_code_name=0, ui_effect="", ui_type=0, code_type=0
-},
-	[1909]={ id=1909, lang_id=0, music_id=29, ui_code_name=52127, ui_effect="", ui_type=1, code_type=4
-},
-	[1910]={ id=1910, lang_id=0, music_id=29, ui_code_name=138001, ui_effect="", ui_type=1, code_type=4
-},
-	[1911]={ id=1904, lang_id=0, music_id=29, ui_code_name=52134, ui_effect="", ui_type=1, code_type=4
-},
-	[1912]={ id=1904, lang_id=0, music_id=29, ui_code_name=52135, ui_effect="", ui_type=1, code_type=4
-},
-	[1913]={ id=1904, lang_id=0, music_id=29, ui_code_name=52136, ui_effect="", ui_type=1, code_type=4
 },
 	[2001]={ id=2001, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=1, code_type=4
 },
@@ -451,7 +429,7 @@ local ui_code_data=
 },
 	[2015]={ id=2015, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=1, code_type=4
 },
-	[80402]={ id=26, lang_id=0, music_id=29, ui_code_name=52130, ui_effect="", ui_type=1, code_type=4
+	[80402]={ id=26, lang_id=0, music_id=29, ui_code_name=52118, ui_effect="", ui_type=1, code_type=4
 },
 	[80404]={ id=10306, lang_id=0, music_id=29, ui_code_name=52117, ui_effect="", ui_type=1, code_type=4
 },
@@ -481,11 +459,7 @@ local ui_code_data=
 },
 	[3804]={ id=3804, lang_id=0, music_id=29, ui_code_name=52023, ui_effect="", ui_type=1, code_type=4
 },
-	[3805]={ id=3805, lang_id=0, music_id=29, ui_code_name=52023, ui_effect="", ui_type=1, code_type=4
-},
-	[3806]={ id=3806, lang_id=0, music_id=29, ui_code_name=121218, ui_effect="", ui_type=1, code_type=4
-},
-	[3807]={ id=3807, lang_id=0, music_id=29, ui_code_name=121219, ui_effect="", ui_type=1, code_type=4
+	[3805]={ id=3805, lang_id=0, music_id=29, ui_code_name=52023, ui_effect="", ui_type=0, code_type=0
 },
 	[320201]={ id=107, lang_id=0, music_id=17, ui_code_name=52122, ui_effect="", ui_type=0, code_type=52123
 },
@@ -497,7 +471,7 @@ local ui_code_data=
 },
 	[2103]={ id=2103, lang_id=0, music_id=29, ui_code_name=92004, ui_effect="", ui_type=1, code_type=4
 },
-	[2104]={ id=2104, lang_id=0, music_id=29, ui_code_name=92002, ui_effect="", ui_type=1, code_type=4
+	[2104]={ id=2104, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=0, code_type=0
 },
 	[2105]={ id=2105, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=0, code_type=0
 },
@@ -515,59 +489,23 @@ local ui_code_data=
 },
 	[2113]={ id=2113, lang_id=0, music_id=53, ui_code_name=95006, ui_effect="", ui_type=0, code_type=0
 },
-	[2114]={ id=2114, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
+	[2114]={ id=2114, lang_id=0, music_id=57, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
 },
-	[2115]={ id=2115, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
+	[2115]={ id=2115, lang_id=0, music_id=57, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
 },
-	[2116]={ id=2116, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
+	[2116]={ id=2116, lang_id=0, music_id=57, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
 },
-	[2117]={ id=2117, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
+	[2117]={ id=2117, lang_id=0, music_id=57, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
 },
-	[2118]={ id=2118, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=1, code_type=4
+	[4001]={ id=40, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=0, code_type=0
 },
-	[2119]={ id=2118, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=1, code_type=4
-},
-	[2120]={ id=2118, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=1, code_type=4
-},
-	[2121]={ id=2118, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=1, code_type=4
-},
-	[2122]={ id=2118, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=1, code_type=4
-},
-	[2123]={ id=2120, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
-},
-	[2124]={ id=2121, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
-},
-	[2125]={ id=2122, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
-},
-	[2126]={ id=2101, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=0, code_type=0
-},
-	[2127]={ id=2123, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
-},
-	[2128]={ id=2124, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=0, code_type=0
-},
-	[4001]={ id=40, lang_id=0, music_id=65, ui_code_name=52111, ui_effect="", ui_type=0, code_type=0
-},
-	[4002]={ id=40, lang_id=0, music_id=64, ui_code_name=52111, ui_effect="", ui_type=0, code_type=0
-},
-	[4003]={ id=40, lang_id=0, music_id=65, ui_code_name=149186, ui_effect="", ui_type=1, code_type=4
+	[4002]={ id=40, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=0, code_type=0
 },
 	[4401]={ id=4401, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=1, code_type=4
 },
 	[4402]={ id=4402, lang_id=0, music_id=29, ui_code_name=121010, ui_effect="", ui_type=1, code_type=4
 },
 	[4403]={ id=4403, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=1, code_type=4
-},
-	[4404]={ id=4404, lang_id=0, music_id=29, ui_code_name=121215, ui_effect="", ui_type=1, code_type=4
-},
-	[4405]={ id=4405, lang_id=0, music_id=29, ui_code_name=121220, ui_effect="", ui_type=1, code_type=4
-},
-	[4601]={ id=4601, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=1, code_type=4
-},
-	[4602]={ id=4602, lang_id=0, music_id=29, ui_code_name=138501, ui_effect="", ui_type=1, code_type=4
-},
-	[4603]={ id=4603, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=1, code_type=4
-},
-	[4604]={ id=4604, lang_id=0, music_id=29, ui_code_name=95194, ui_effect="", ui_type=1, code_type=4
 },
 	[99999]={ id=50219, lang_id=0, music_id=29, ui_code_name=52111, ui_effect="", ui_type=2, code_type=4
 }

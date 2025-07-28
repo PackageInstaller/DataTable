@@ -1,5 +1,6 @@
 --[[     战斗UI
-]] -- module('fightUI.FightUI', Class.impl('lib.component.BaseContainer'))
+]]
+-- module('fightUI.FightUI', Class.impl('lib.component.BaseContainer'))
 module('fightUI.FightUI', Class.impl(View))
 
 UIRes = UrlManager:getUIPrefabPath("fight/FightUI.prefab")
@@ -90,11 +91,11 @@ function configUI(self)
     self.m_cureTxtRight = self:getChildGO('CureTxtRigth'):GetComponent(ty.Text)
 
     self.m_cureDescTxtLeft = self:getChildGO('CureDescTxtLeft'):GetComponent(ty.Text)
-    self.m_cureDescTxtLeft.text = "总治疗" -- _TT(3003)
+    self.m_cureDescTxtLeft.text = "总治疗"--_TT(3003)
     self.m_cureDescTxtRight = self:getChildGO('CureDescTxtRight'):GetComponent(ty.Text)
-    self.m_cureDescTxtRight.text = "总治疗" -- _TT(3003)
+    self.m_cureDescTxtRight.text = "总治疗"--_TT(3003)
 
-    -- 战场过载
+    --战场过载
     self.mTxtTips_1 = self:getChildGO("mTxtTips_1"):GetComponent(ty.Text)
     self.mTxtTips_1.text = _TT(3061)
     self.mTxtTips_2 = self:getChildGO("mTxtTips_2"):GetComponent(ty.Text)
@@ -283,130 +284,75 @@ end
 
 -- 竞技场跳过
 function onOmitHandler(self)
-
-    local dupVo = fight.FightManager:getDupSettingData(fight.FightManager:getBattleType())
-    local promptId = dupVo:getPromptId()
-    local needRound = dupVo:getSkipNeedRound()
-
-    --海底的特殊处理
-    if fight.FightManager:getBattleType() == PreFightBattleType.Seabed then
-        if fight.FightManager:getCurRound() >= needRound then
+    if fight.FightManager:getBattleType() == PreFightBattleType.ArenaChallenge or fight.FightManager:getBattleType() == PreFightBattleType.Friend or fight.FightManager:getBattleType() == PreFightBattleType.Arena_Peak_Pvp then
+        local round = sysParam.SysParamManager:getValue(SysParamType.ARENA_JUMP_ROUND, 2)
+        if fight.FightManager:getCurRound() >= round then
             if fight.SceneManager:isInFightScene() then
-                UIFactory:alertMessge(_TT(promptId), true, function()
-                    fight.FightManager:reqBattleSkip()
-                    self:close()
-                end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, RemindConst.SEABED_JUMP)
+                fight.FightManager:reqBattleSkip()
             end
+            self:close()
         else
-            gs.Message.Show(_TT(3057, needRound))
-        end
-    else
-        if promptId > 0 then
-            if fight.FightManager:getCurRound() >= needRound then
-                if fight.SceneManager:isInFightScene() then
-                    UIFactory:alertMessge(_TT(promptId), true, function()
-                        fight.FightManager:reqBattleSkip()
-                        self:close()
-                    end, _TT(1), nil, true, nil, _TT(2), _TT(5))
-                end
-            else
-                gs.Message.Show(_TT(3057, needRound))
-            end
-        else
-            if fight.FightManager:getCurRound() >= needRound then
-                if fight.SceneManager:isInFightScene() then
-                    fight.FightManager:reqBattleSkip()
-                end
-                self:close()
-            else
-                gs.Message.Show(_TT(3057, needRound))
-            end
+            gs.Message.Show(_TT(3057, round))
         end
     end
 
-    -- if fight.FightManager:getBattleType() == PreFightBattleType.ArenaChallenge or fight.FightManager:getBattleType() == PreFightBattleType.Friend or fight.FightManager:getBattleType() == PreFightBattleType.Arena_Peak_Pvp then
-    --     local round = sysParam.SysParamManager:getValue(SysParamType.ARENA_JUMP_ROUND, 2)
-    --     if fight.FightManager:getCurRound() >= round then
-    --         if fight.SceneManager:isInFightScene() then
-    --             fight.FightManager:reqBattleSkip()
-    --         end
-    --         self:close()
-    --     else
-    --         gs.Message.Show(_TT(3057, round))
-    --     end
-    -- end
+    if fight.FightManager:getBattleType() == PreFightBattleType.Guild_boss_war or
+        fight.FightManager:getBattleType() == PreFightBattleType.Guild_boss_imitate then
+        local round = sysParam.SysParamManager:getValue(SysParamType.GUILDBOSS_FIGHT_SKIP, 2)
+        if fight.FightManager:getCurRound() >= round then
+            if fight.SceneManager:isInFightScene() then
+                UIFactory:alertMessge(_TT(94987), true, function()
+                    fight.FightManager:reqBattleSkip()
+                    self:close()
+                end, _TT(1), nil, true, nil, _TT(2), _TT(5))
+            end
+        else
+            gs.Message.Show(_TT(3057, round))
+        end
+    end
 
-    -- if fight.FightManager:getBattleType() == PreFightBattleType.Guild_boss_war or
-    --     fight.FightManager:getBattleType() == PreFightBattleType.Guild_boss_imitate then
-    --     local round = sysParam.SysParamManager:getValue(SysParamType.GUILDBOSS_FIGHT_SKIP, 2)
-    --     if fight.FightManager:getCurRound() >= round then
-    --         if fight.SceneManager:isInFightScene() then
-    --             UIFactory:alertMessge(_TT(94987), true, function()
-    --                 fight.FightManager:reqBattleSkip()
-    --                 self:close()
-    --             end, _TT(1), nil, true, nil, _TT(2), _TT(5))
-    --         end
-    --     else
-    --         gs.Message.Show(_TT(3057, round))
-    --     end
-    -- end
+    if fight.FightManager:getBattleType() == PreFightBattleType.Guild_Sweep or
+        fight.FightManager:getBattleType() == PreFightBattleType.Guild_Imitate then
+        local round = sysParam.SysParamManager:getValue(SysParamType.GUILD_SWEEP_SKIP, 2)
+        if fight.FightManager:getCurRound() >= round then
+            if fight.SceneManager:isInFightScene() then
+                UIFactory:alertMessge(_TT(94987), true, function()
+                    fight.FightManager:reqBattleSkip()
+                    self:close()
+                end, _TT(1), nil, true, nil, _TT(2), _TT(5))
+            end
+        else
+            gs.Message.Show(_TT(3057, round))
+        end
+    end
 
-    -- if fight.FightManager:getBattleType() == PreFightBattleType.Guild_Sweep or
-    --     fight.FightManager:getBattleType() == PreFightBattleType.Guild_Imitate then
-    --     local round = sysParam.SysParamManager:getValue(SysParamType.GUILD_SWEEP_SKIP, 2)
-    --     if fight.FightManager:getCurRound() >= round then
-    --         if fight.SceneManager:isInFightScene() then
-    --             UIFactory:alertMessge(_TT(94987), true, function()
-    --                 fight.FightManager:reqBattleSkip()
-    --                 self:close()
-    --             end, _TT(1), nil, true, nil, _TT(2), _TT(5))
-    --         end
-    --     else
-    --         gs.Message.Show(_TT(3057, round))
-    --     end
-    -- end
+    if fight.FightManager:getBattleType() == PreFightBattleType.Doundless then
+        local round = sysParam.SysParamManager:getValue(SysParamType.DOUNDLESS_FIGHT_SKIP, 2)
+        if fight.FightManager:getCurRound() >= round then
+            if fight.SceneManager:isInFightScene() then
+                UIFactory:alertMessge(_TT(94987), true, function()
+                    fight.FightManager:reqBattleSkip()
+                    self:close()
+                end, _TT(1), nil, true, nil, _TT(2), _TT(5))
+            end
+        else
+            gs.Message.Show(_TT(3057, round))
+        end
+    end
 
-    -- if fight.FightManager:getBattleType() == PreFightBattleType.Doundless then
-    --     local round = sysParam.SysParamManager:getValue(SysParamType.DOUNDLESS_FIGHT_SKIP, 2)
-    --     if fight.FightManager:getCurRound() >= round then
-    --         if fight.SceneManager:isInFightScene() then
-    --             UIFactory:alertMessge(_TT(94987), true, function()
-    --                 fight.FightManager:reqBattleSkip()
-    --                 self:close()
-    --             end, _TT(1), nil, true, nil, _TT(2), _TT(5))
-    --         end
-    --     else
-    --         gs.Message.Show(_TT(3057, round))
-    --     end
-    -- end
-
-    -- if fight.FightManager:getBattleType() == PreFightBattleType.Disaster or fight.FightManager:getBattleType() == PreFightBattleType.Disater_imitate then
-    --     local round = sysParam.SysParamManager:getValue(SysParamType.DISASTER_FIGHT_SKIP, 2)
-    --     if fight.FightManager:getCurRound() >= round then
-    --         if fight.SceneManager:isInFightScene() then
-    --             UIFactory:alertMessge(_TT(94987), true, function()
-    --                 fight.FightManager:reqBattleSkip()
-    --                 self:close()
-    --             end, _TT(1), nil, true, nil, _TT(2), _TT(5))
-    --         end
-    --     else
-    --         gs.Message.Show(_TT(3057, round))
-    --     end
-    -- end
-
-    -- if fight.FightManager:getBattleType() == PreFightBattleType.Seabed then
-    --     local round = sysParam.SysParamManager:getValue(SysParamType.SEABED_FIGHT_SKIP, 2)
-    --     if fight.FightManager:getCurRound() >= round then
-    --         if fight.SceneManager:isInFightScene() then
-    --             UIFactory:alertMessge(_TT(112522), true, function()
-    --                 fight.FightManager:reqBattleSkip()
-    --                 self:close()
-    --             end, _TT(1), nil, true, nil, _TT(2), _TT(5),nil,RemindConst.SEABED_JUMP)
-    --         end
-    --     else
-    --         gs.Message.Show(_TT(3057, round))
-    --     end
-    -- end
+    if fight.FightManager:getBattleType() == PreFightBattleType.Disaster or fight.FightManager:getBattleType() == PreFightBattleType.Disater_imitate then
+        local round = sysParam.SysParamManager:getValue(SysParamType.DISASTER_FIGHT_SKIP, 2)
+        if fight.FightManager:getCurRound() >= round then
+            if fight.SceneManager:isInFightScene() then
+                UIFactory:alertMessge(_TT(94987), true, function()
+                    fight.FightManager:reqBattleSkip()
+                    self:close()
+                end, _TT(1), nil, true, nil, _TT(2), _TT(5))
+            end
+        else
+            gs.Message.Show(_TT(3057, round))
+        end
+    end
 end
 
 -- 点击BUFF按钮
@@ -538,9 +484,7 @@ function onShowSupportHandler(self)
             self.mFightSupportTips = fightUI.FightSupportInfoTips.new()
             self.mFightSupportTips:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFightSupportTips, self)
         end
-        self.mFightSupportTips:open({
-            skillList = skillList
-        })
+        self.mFightSupportTips:open({skillList = skillList})
     end
 end
 function onDestroyFightSupportTips(self)
@@ -590,8 +534,7 @@ function active(self)
     end
 
     -- self.m_roundTxt1.text = string.format("%02d/%02d", fight.FightManager:getCurRound(), fight.FightManager:getMaxRound())
-    self.m_roundTxt2.text = string.format("%02d/%02d", fight.FightManager:getCurRound(),
-    fight.FightManager:getMaxRound())
+    self.m_roundTxt2.text = string.format("%02d/%02d", fight.FightManager:getCurRound(), fight.FightManager:getMaxRound())
 
     self.m_beAutoLock = false
     self.m_beSpeedLock = false
@@ -659,9 +602,13 @@ function active(self)
 
             fight.FightAction:start()
 
-            local dupVo = fight.FightManager:getDupSettingData(fight.FightManager:getBattleType())
             -- 跳过按钮显示控制
-            self.m_omitBtn:SetActive(dupVo and dupVo:getSkipNeedRound() > 0)
+            self.m_omitBtn:SetActive(fight.FightManager:getBattleType() == PreFightBattleType.ArenaChallenge or
+                fight.FightManager:getBattleType() == PreFightBattleType.Friend or fight.FightManager:getBattleType() == PreFightBattleType.Arena_Peak_Pvp or
+                fight.FightManager:getBattleType() == PreFightBattleType.Guild_boss_war or fight.FightManager:getBattleType() == PreFightBattleType.Guild_boss_imitate
+                or fight.FightManager:getBattleType() == PreFightBattleType.Guild_Sweep or fight.FightManager:getBattleType() == PreFightBattleType.Doundless
+                or fight.FightManager:getBattleType() == PreFightBattleType.Disaster or fight.FightManager:getBattleType() == PreFightBattleType.Disater_imitate
+            or fight.FightManager:getBattleType() == PreFightBattleType.Guild_Imitate)
         end
         self.m_startView:setActive(true)
         self.m_startView:start(_finishCall)
@@ -681,10 +628,12 @@ function active(self)
     self.m_hideMaxSkill = guide.GuideCondition:condition23()
     self.m_skillView:hideMaxSkill(self.m_hideMaxSkill)
 
-    self.mGuildBossDamage:SetActive(bType == PreFightBattleType.Guild_boss_war or bType ==
-        PreFightBattleType.Guild_boss_imitate or bType == PreFightBattleType.Guild_Sweep or
-        bType == PreFightBattleType.Disaster or bType ==
-    PreFightBattleType.Disater_imitate or bType == PreFightBattleType.Guild_Imitate)
+    self.mGuildBossDamage:SetActive(bType == PreFightBattleType.Guild_boss_war or
+        bType == PreFightBattleType.Guild_boss_imitate or
+        bType == PreFightBattleType.Guild_Sweep or
+        bType == PreFightBattleType.Disaster or
+        bType == PreFightBattleType.Disater_imitate or
+    bType == PreFightBattleType.Guild_Imitate)
     -- local langId = 94588
     -- if bType == PreFightBattleType.Guild_boss_war then
     --     langId = 94588
@@ -693,8 +642,7 @@ function active(self)
     -- elseif bType == PreFightBattleType.Guild_Sweep then
     --     langId = 94588
     -- end
-    local langId = bType == (PreFightBattleType.Guild_boss_imitate or bType == PreFightBattleType.Disater_imitate) and
-    94593 or 94588
+    local langId = bType == (PreFightBattleType.Guild_boss_imitate or bType == PreFightBattleType.Disater_imitate) and 94593 or 94588
     self.mTextGuildBossDamage.text = _TT(langId) .. 0
 
     self.needSmallerStage = sysParam.SysParamManager:getValue(1904)
@@ -887,8 +835,7 @@ end
 
 function _refreshRound(self)
     -- self.m_roundTxt1.text = string.format("%02d", fight.FightManager:getCurRound())
-    self.m_roundTxt2.text = string.format("%02d/%02d", fight.FightManager:getCurRound(),
-    fight.FightManager:getMaxRound())
+    self.m_roundTxt2.text = string.format("%02d/%02d", fight.FightManager:getCurRound(), fight.FightManager:getMaxRound())
 end
 
 -- 更新阵容雷达
@@ -923,18 +870,6 @@ function _refreshFormat(self)
                     end
                 end
             end
-            --if v.m_raceVo.mon
-        end
-
-        local format
-        if v:isAttacker() == 1 then
-            format = self.m_leftSFormat
-        else
-            format = self.m_rightSFormat
-        end
-
-        if v:getRaceVo().monType == monster.MonsterType.NO_HP_MONSTER then
-            format:setNoHpFlag(v:getGridID(),v:isDead())
         end
     end
 end
@@ -1000,8 +935,7 @@ function _roleGoAction(self, actionData)
     if liveVo then
         if liveVo:isAttacker() ~= 1 or liveVo:getRaceType() ~= 0 then
             self.m_skillView:setVisibleByScale(false)
-            if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FIGHT_ABBLOCK) and self.m_beHideBlock ~=
-                true and not fight.FightManager:isReplaying() then
+            if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FIGHT_ABBLOCK) and self.m_beHideBlock ~= true and not fight.FightManager:isReplaying() then
                 self.m_blockView:setVisibleByScale(true)
                 self.m_blockView:updateBlockVal()
             else
@@ -1028,8 +962,7 @@ function _roleGoAction(self, actionData)
     self.m_queueView:setActiveItem(self.m_curHeroID, liveVo:isAttacker())
     self:resetFirstTipsContent()
 
-    if battleMap.MainMapManager:isStagePass(self.needSmallerStage) == nil and
-        tonumber(fight.FightManager:getBattleFieldID()) > self.needStage then
+    if battleMap.MainMapManager:isStagePass(self.needSmallerStage) == nil and tonumber(fight.FightManager:getBattleFieldID()) > self.needStage then
         self.mSetTimeOutSn = LoopManager:setTimeout(self.outTime, self, self.showFirstEff)
     end
 end
@@ -1070,8 +1003,7 @@ function _updateBuff(self, targetLiveID)
                             self.m_skillView:disableUprightSkill(_TT(3056))
                         elseif fID == BuffDef.BUFF_TYPE_SKILL_SOUL_COST_ADD then
                             self.m_skillView:changeSoul(v[3] * v[2]) -- 层数 * 数值
-                        elseif fID == BuffDef.BUFF_TYPE_SKILL_SOUL_COST_CUT or fID ==
-                            BuffDef.BUFF_TYPE_SKILL_SOUL_COST_CUT_2 then
+                        elseif fID == BuffDef.BUFF_TYPE_SKILL_SOUL_COST_CUT or fID == BuffDef.BUFF_TYPE_SKILL_SOUL_COST_CUT_2 then
                             self.m_skillView:changeSoul(-v[3] * v[2]) -- 层数 * 数值
                         end
                     end
@@ -1092,8 +1024,7 @@ function _runSkillAction(self, actionData)
     local liveVo = fight.SceneManager:getThing(self.m_curHeroID)
     if liveVo == nil or liveVo:isAttacker() ~= 1 then
         if skillVo and skillVo:getQteArg() == 1 then
-            if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FIGHT_ABBLOCK) and self.m_beHideBlock ~=
-                true and not fight.FightManager:isReplaying() then
+            if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FIGHT_ABBLOCK) and self.m_beHideBlock ~= true and not fight.FightManager:isReplaying() then
                 self.m_blockView:setVisibleByScale(true)
                 self.m_blockView:updateBlockVal()
             else
@@ -1122,7 +1053,7 @@ function _runSkillAction(self, actionData)
     self:_refreshFormat()
 end
 
--- 显示技能名称
+--显示技能名称
 function showSkillName(self, skillData)
 
     local skillName = skillData.skillName
@@ -1168,10 +1099,8 @@ function updateSupport(self)
         if skillList and #skillList > 0 then
             for i, v in ipairs(skillList) do
                 local skillVo = fight.SkillManager:getSkillRo(v)
-                local item = SimpleInsItem:create(self:getChildGO("GroupSupportItem"), self.mGroupSupport,
-                "FightUISupportItem")
-                item:getChildGO("mImgSupportIcon"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getSkillIconPath(
-                skillVo:getIcon()), false)
+                local item = SimpleInsItem:create(self:getChildGO("GroupSupportItem"), self.mGroupSupport, "FightUISupportItem")
+                item:getChildGO("mImgSupportIcon"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getSkillIconPath(skillVo:getIcon()), false)
                 table.insert(self.mSupportList, item)
             end
         end
@@ -1201,7 +1130,7 @@ function updateBossHead(self)
         self.m_bossHeadAreaView:setVisibleByScale(false)
         return
     end
-
+    
     -- if bType == PreFightBattleType.Disaster or bType == PreFightBattleType.Disater_imitate then
     --     local curDif = disaster.DisasterManager:getCurChallengingDif()
     --     local maxDif = disaster.DisasterManager:getDisasterDupMaxDif()
@@ -1220,17 +1149,17 @@ function updateBossHead(self)
     --         end
     --     end
     -- else
-    local defList = fight.SceneManager:getSideThingIDs(2)
-    for i, v in ipairs(defList) do
-        local liveId = defList[i]
-        local liveVo = fight.SceneManager:getThing(liveId)
-        if liveVo and not liveVo:isDead() and liveVo:getRaceVo().monType == monster.MonsterType.SUPER_BOSS then
-            self.m_bossHeadAreaView:setVisibleByScale(true)
-            self.m_bossHeadAreaView:setBossLiveId(liveId)
-            break
+        local defList = fight.SceneManager:getSideThingIDs(2)
+        for i, v in ipairs(defList) do
+            local liveId = defList[i]
+            local liveVo = fight.SceneManager:getThing(liveId)
+            if liveVo and not liveVo:isDead() and liveVo:getRaceVo().monType == monster.MonsterType.SUPER_BOSS then
+                self.m_bossHeadAreaView:setVisibleByScale(true)
+                self.m_bossHeadAreaView:setBossLiveId(liveId)
+                break
+            end
         end
-    end
-    -- end
+    --end
 end
 
 -- 有角色出招 会通知这里
@@ -1330,8 +1259,7 @@ end
 
 function showFirstEff(self)
     if self.mSetTimeOutSn then
-        if storyTalk.StoryTalkManager:getCurHasStory() == false and guide.GuideManager:getCurHasGuide() == false and
-            gs.PopPanelManager.HasSubPopActive() == false then
+        if storyTalk.StoryTalkManager:getCurHasStory() == false and guide.GuideManager:getCurHasGuide() == false and gs.PopPanelManager.HasSubPopActive() == false then
             self.m_firstTipsContent:SetActive(true)
         else
             self.m_firstTipsContent:SetActive(false)
@@ -1414,7 +1342,7 @@ function showDamageInfo(self)
             self.m_totalDamageTransRight:SetActive(false)
             self.m_totalDamageTransLeft:SetActive(false)
 
-            -- 治疗
+            --治疗
             if self.m_totalCure ~= nil and self.m_totalCure > 0 then
                 local cureTrans
                 if liveVo:isAttacker() == 1 then
@@ -1446,9 +1374,8 @@ end
 -- 公会战总伤害
 function showGuildBossTotalDamageInfo(self, damage)
     local battleType = fight.FightManager:getBattleType()
-    if battleType ~= PreFightBattleType.Guild_boss_war and battleType ~= PreFightBattleType.Guild_boss_imitate and
-        battleType ~= PreFightBattleType.Guild_Sweep and battleType ~= PreFightBattleType.Disaster and battleType ~=
-        PreFightBattleType.Disater_imitate and battleType ~= PreFightBattleType.Guild_Imitate then
+    if battleType ~= PreFightBattleType.Guild_boss_war and battleType ~= PreFightBattleType.Guild_boss_imitate and battleType ~= PreFightBattleType.Guild_Sweep and
+        battleType ~= PreFightBattleType.Disaster and battleType ~= PreFightBattleType.Disater_imitate and battleType ~= PreFightBattleType.Guild_Imitate then
         return
     end
     -- local langId = 94588
@@ -1456,11 +1383,6 @@ function showGuildBossTotalDamageInfo(self, damage)
     --     langId = 94593
     -- end
     local langId = battleType == (PreFightBattleType.Guild_boss_imitate or battleType == PreFightBattleType.Disater_imitate) and 94593 or 94588
-    if damage >= 100000000 then --亿
-        damage = string.format("%.2f", damage / 100000000) .. _TT(3090)
-    elseif damage >= 1000000000000 then --万亿
-        damage = string.format("%.2f", damage / 1000000000000) _TT(3091)
-    end
     self.mTextGuildBossDamage.text = _TT(langId) .. tostring(damage)
 end
 
@@ -1498,23 +1420,13 @@ end
 
 -- FightUI的预加载资源（战斗时加载）
 function getFightUIPreloadPrefabs()
-    return {UrlManager:getUIPrefabPath("fight/FightUI.prefab"),
-        UrlManager:getUIPrefabPath("fight/FightSkillItem.prefab"),
-        UrlManager:getUIPrefabPath("fight/FightForcesSkillItem.prefab"),
-        UrlManager:getUIPrefabPath("fight/FightMaxSkillItem.prefab"),
-        UrlManager:getUIPrefabPath("fight/FightQueueItem.prefab"),
-        UrlManager:getUIPrefabPath("fight/FightSmallFormat.prefab"),
-        UrlManager:getUIPrefabPath("fight/FightSFormatLeft.prefab"),
-        UrlManager:getUIPrefabPath("fight/FightSFormatRight.prefab"),
-        UrlManager:getUIPrefabPath("fight/FlyHudText.prefab"),
-        UrlManager:getUIPrefabPath("fight/FightQueueIcon.prefab"),
-        UrlManager:getUIPrefabPath("fight/FlyHudImg.prefab"),
-        UrlManager:getUIPrefabPath("fight/liveui/FightOtherIcon.prefab"),
-        UrlManager:getUIPrefabPath("fight/liveui/BuffEleIcon.prefab"),
-        UrlManager:getUIPrefabPath("fight/liveui/HeadAreaItem1.prefab"),
-        UrlManager:getUIPrefabPath("fight/liveui/FightBuffIcon.prefab"),
-        UrlManager:getUIBaseSoundPath("ui_start_mission.prefab"),
-    UrlManager:getUIEfxPath("fx_ui_common_aoyibaofa.prefab")}
+    return {
+        UrlManager:getUIPrefabPath("fight/FightUI.prefab"), UrlManager:getUIPrefabPath("fight/FightSkillItem.prefab"), UrlManager:getUIPrefabPath("fight/FightForcesSkillItem.prefab"),
+        UrlManager:getUIPrefabPath("fight/FightMaxSkillItem.prefab"), UrlManager:getUIPrefabPath("fight/FightQueueItem.prefab"), UrlManager:getUIPrefabPath("fight/FightSmallFormat.prefab"),
+        UrlManager:getUIPrefabPath("fight/FightSFormatLeft.prefab"), UrlManager:getUIPrefabPath("fight/FightSFormatRight.prefab"), UrlManager:getUIPrefabPath("fight/FlyHudText.prefab"),
+        UrlManager:getUIPrefabPath("fight/FightQueueIcon.prefab"), UrlManager:getUIPrefabPath("fight/FlyHudImg.prefab"), UrlManager:getUIPrefabPath("fight/liveui/FightOtherIcon.prefab"),
+        UrlManager:getUIPrefabPath("fight/liveui/BuffEleIcon.prefab"), UrlManager:getUIPrefabPath("fight/liveui/HeadAreaItem1.prefab"), UrlManager:getUIPrefabPath("fight/liveui/FightBuffIcon.prefab"),
+    UrlManager:getUIBaseSoundPath("ui_start_mission.prefab"), UrlManager:getUIEfxPath("fx_ui_common_aoyibaofa.prefab")}
 end
 
 -- FightUI的预加载资源（战斗时加载）

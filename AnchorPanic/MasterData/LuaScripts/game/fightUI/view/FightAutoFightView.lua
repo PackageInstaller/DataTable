@@ -3,30 +3,6 @@
 ]]
 module('fightUI.FightAutoFightView', Class.impl('lib.component.BaseNode'))
 
---构造函数
-function ctor(self)
-    super.ctor(self)
-
-    self.mMoveDis = 0
-    -- 缓动列表
-    self.mTweenList = {}
-
-    -- 能否缩放
-    self.isCanScale = true
-
-    -- 目标最近点
-    self.targetMoveZPosMin = gs.Vector3(0, 1.5, -0.8)
-    -- 镜头初始点
-    self.cameraInitPos = gs.Vector3(0, 1.5, -3)
-    -- 目标最远点
-    self.targetMoveZPosMax = gs.Vector3(0, 1.5, -6)
-
-    self.oldPosition1 = { x = 0, y = 0, z = 0 } --双指缩放  上一次手指1的位置
-    self.oldPosition2 = { x = 0, y = 0, z = 0 } --双指缩放  上一次手指2的位置 
-
-    self.mAllMoveY = 0
-end
-
 function initData(self, rootGo)
     super.initData(self, rootGo)
 
@@ -35,9 +11,6 @@ function initData(self, rootGo)
     self.mGroupSelectSkill:SetActiveLocal(false)
     self.mSelectSkillPrevent = self:getChildGO("mSelectSkillPrevent")
     self.mSelectSkillPrevent:SetActiveLocal(false)
-
-    self.mFightCameraTriggerGO = self:getChildGO("mFightCameraTrigger")
-    self.mFightCameraTriggerGO:SetActiveLocal(false)
 
     self.selectItem1 = SimpleInsItem:create2(self:getChildGO("mGroupSelectSkill1"))
     self.selectItem2 = SimpleInsItem:create2(self:getChildGO("mGroupSelectSkill2"))
@@ -69,18 +42,10 @@ function initData(self, rootGo)
     self.mSkill2:setSkillCall(onSelectSkill2)
     self.mSkill2:getSoulBgTrans().gameObject:SetActive(false)
     self.mSkill2:setEffGroupActive(false)
-
-    self.mToggleFlw = self:getChildGO("mToggleFlw"):GetComponent(ty.Toggle)
-    local function _toggleCall(bVal)
-        local type = bVal and 1 or 0
-        fight.FightCamera:setFightCameraType(type)
-        self:checkFightCameraHandler()
-    end
-    self.mToggleFlw.onValueChanged:AddListener(_toggleCall)
-
     self:setGuideTrans("guide_fight_auto_Skill_2", self.mSkill2.m_trans)
 
     self:addOnClick(self.mSelectSkillPrevent, self.onCloseSelectSkill)
+
 end
 
 -- 设置自动战斗模块开启状态
@@ -90,7 +55,6 @@ function showAutoFight(self, bool)
         self:setVisibleByScale(true)
         self:updateHeroItem()
     else
-        self.mToggleFlw.isOn = false
         self:setVisibleByScale(false)
         self:setActionLiveId(0)
     end
@@ -279,7 +243,6 @@ function updateHeroItem(self)
 
                 item:getChildGO("mGroupMon"):SetActive(false)
                 item:getChildGO("mGroupWeak"):SetActive(false)
-                item:getChildGO("mLockCamreraToggle"):SetActive(self.mToggleFlw.isOn)
 
                 self:setHpVisible(item, true)
             else
@@ -288,7 +251,6 @@ function updateHeroItem(self)
                 -- item:getChildGO("mImgEleIcon"):SetActive(false)
                 item:getChildGO("mImgStopAct"):SetActive(false)
                 item:getChildGO("mTxtSkillName"):SetActive(false)
-                item:getChildGO("mLockCamreraToggle"):SetActive(false)
             end
         else
             item:getChildGO("mImgHeadEmpty"):SetActive(true)
@@ -296,7 +258,6 @@ function updateHeroItem(self)
             -- item:getChildGO("mImgEleIcon"):SetActive(false)
             item:getChildGO("mImgStopAct"):SetActive(false)
             item:getChildGO("mTxtSkillName"):SetActive(false)
-            item:getChildGO("mLockCamreraToggle"):SetActive(false)
         end
         table.insert(self.mHeroHeadItem, item)
     end
@@ -306,7 +267,6 @@ end
 function recoverHeroHeadItem(self)
     if self.mHeroHeadItem then
         for i, v in pairs(self.mHeroHeadItem) do
-            v:getChildGO("mLockCamreraToggle"):GetComponent(ty.Toggle).onValueChanged:RemoveAllListeners()
             v:poolRecover()
             -- UIEffectMgr:addEffect("fx_ui_fight_release", v:getChildTrans("mGroupHead"))
         end
@@ -330,7 +290,6 @@ function updateState(self)
                 if liveVo:isDead() then
                     item:getChildGO("mImgHeadIcon"):GetComponent(ty.CanvasGroup).alpha = 0.3
                     item:getChildGO("mImgStopAct"):SetActive(true)
-                    item:getChildGO("mLockCamreraToggle"):SetActive(false)
                     item:getChildGO("mImgStopAct"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getFightUIPath("fight_icon_13.png"), true)
                     self:setHpVisible(item, false)
                 else
@@ -363,7 +322,6 @@ function updateState(self)
                     self:setHpVisible(item, true)
                     self:updateBar(item, liveVo)
                     self:updateBuffIcon(item, liveVo)
-                    self:updateLocakCamera(item, liveVo)
                 end
             end
         end
@@ -446,239 +404,7 @@ function updateBuffIcon(self, item, liveVo)
     end
 end
 
--- 锁定镜头
-function updateLocakCamera(self, item)
-    if item:getChildGO("mLockCamreraToggle") then
-        item:getChildGO("mLockCamreraToggle"):SetActive(self.mToggleFlw.isOn)
-        item:getChildGO("mLockCamreraToggle"):GetComponent(ty.Toggle).onValueChanged:RemoveAllListeners()
-        if not self.mToggleFlw.isOn then
-            item:getChildGO("mLockCamreraToggle"):GetComponent(ty.Toggle).isOn = false
-        end
-        local liveVo = nil
-        local function _toggleCall(bVal)
 
-            local attList = fight.SceneManager:getSideThingIDs(1)
-            table.sort(attList, self.heroSort)
-
-            if attList and #attList > 0 then
-                for i = 1, #attList do
-                    local otherItem = self.mHeroHeadItem[i]
-                    if otherItem == item then
-                        liveVo = fight.SceneManager:getThing(attList[i])
-                    end
-                end
-            end
-            local liveId = bVal and liveVo.id or nil
-            self.mAllMoveY = 0
-            fight.FightCamera:lockOnLive(liveId)
-        end
-        item:getChildGO("mLockCamreraToggle"):GetComponent(ty.Toggle).onValueChanged:AddListener(_toggleCall)
-    end
-end
-
-------------------------------------------------------------------
-
--- 检测是否开启自由视角操作
-function checkFightCameraHandler(self)
-    local type = fight.FightCamera:getFightCameraType()
-    if type ~= 0 then
-        self:onFightCameraHandler()
-    end
-    self:updateState()
-end
-
--- 开启战斗跟随镜头操作
-function onFightCameraHandler(self)
-    self.mFightCameraTriggerGO:SetActiveLocal(true)
-
-    self.mFightCameraTrigger = self.mFightCameraTriggerGO:GetComponent(ty.LongPressOrClickEventTrigger)
-    local function _onBeginDragHandler()
-        self:__onBeginDragHandler()
-    end
-    self.mFightCameraTrigger.onBeginDrag:AddListener(_onBeginDragHandler)
-    local function _onEndDragHandler()
-    end
-    self.mFightCameraTrigger.onEndDrag:AddListener(_onEndDragHandler)
-    local function _onPointerDownHandler()
-        self.mBeginMousePos = gs.Input.mousePosition
-        self.mPointerDown = true
-    end
-    self.mFightCameraTrigger.onPointerDown:AddListener(_onPointerDownHandler)
-    local function _onPointerUpHandler()
-        self.mPointerDown = false
-    end
-    self.mFightCameraTrigger.onPointerUp:AddListener(_onPointerUpHandler)
-
-    if self.mTouchFrameSn then
-        LoopManager:removeFrameByIndex(self.mTouchFrameSn)
-        self.mTouchFrameSn = nil
-    end
-    self.mTouchFrameSn = LoopManager:addFrame(1, 0, self, self.onTouchFrameHandler)
-end
-
-function removeFightCameraHandler(self)
-
-    self.mFightCameraTrigger.onBeginDrag:RemoveAllListeners()
-    self.mFightCameraTrigger.onEndDrag:RemoveAllListeners()
-    self.mFightCameraTrigger.onPointerDown:RemoveAllListeners()
-    self.mFightCameraTrigger.onPointerUp:RemoveAllListeners()
-    self.mFightCameraTrigger.onPointerExit:RemoveAllListeners()
-
-    self.mFightCameraTrigger = nil
-    self.mFightCameraTriggerGO:SetActiveLocal(false)
-
-    if self.mTouchFrameSn then
-        LoopManager:removeFrameByIndex(self.mTouchFrameSn)
-        self.mTouchFrameSn = nil
-    end
-end
-
-function onTouchFrameHandler(self)
-    if gs.Application.isMobilePlatform then
-        if gs.Input.touchCount == 1 then
-            self.m_IsSingleFinger = true
-        elseif gs.Input.touchCount == 2 and (gs.Input.GetTouch(0).phase == gs.TouchPhase.Moved or gs.Input.GetTouch(1).phase == gs.TouchPhase.Moved) then
-            self.touch_1 = gs.Input.GetTouch(0)
-            self.touch_2 = gs.Input.GetTouch(1)
-            if self.m_IsSingleFinger then
-                self.oldPosition1.x = gs.TransQuick:GetTouchPosition_X(self.touch_1)
-                self.oldPosition1.y = gs.TransQuick:GetTouchPosition_Y(self.touch_1)
-                self.oldPosition1.z = 0
-
-                self.oldPosition2.x = gs.TransQuick:GetTouchPosition_X(self.touch_2)
-                self.oldPosition2.y = gs.TransQuick:GetTouchPosition_Y(self.touch_2)
-                self.oldPosition2.z = 0
-            end
-
-            local tempPosition1 = {}
-            tempPosition1.x = gs.TransQuick:GetTouchPosition_X(self.touch_1)
-            tempPosition1.y = gs.TransQuick:GetTouchPosition_Y(self.touch_1)
-            tempPosition1.z = 0
-
-            local tempPosition2 = {}
-            tempPosition2.x = gs.TransQuick:GetTouchPosition_X(self.touch_2)
-            tempPosition2.y = gs.TransQuick:GetTouchPosition_Y(self.touch_2)
-            tempPosition2.z = 0
-
-            local currentTouchDistance = (gs.Vector3(tempPosition1.x, tempPosition1.y, tempPosition1.z) - gs.Vector3(tempPosition2.x, tempPosition2.y, tempPosition2.z)).magnitude
-            local lastTouchDistance = (gs.Vector3(self.oldPosition1.x, self.oldPosition1.y, self.oldPosition1.z) - gs.Vector3(self.oldPosition2.x, self.oldPosition2.y, self.oldPosition2.z)).magnitude
-
-            local distance = (currentTouchDistance - lastTouchDistance) * gs.Time.deltaTime
-
-            --备份上一次触摸点的位置，用于对比
-            self.oldPosition1 = tempPosition1
-            self.oldPosition2 = tempPosition2
-            self.m_IsSingleFinger = false
-
-            self:updateScaleModel(distance * 0.1)
-        end
-    else
-        local wheel = gs.Input.GetAxis("Mouse ScrollWheel")
-        if wheel ~= 0 then
-            self:updateScaleModel(wheel)
-        end
-    end
-end
-
--- 更新模型缩放效果（相机移动） 
-function updateScaleModel(self, dis)
-    if not self.isCanScale then
-        return
-    end
-    if not self.targetMoveZPosMin then
-        return
-    end
-    local tran = fight.FightCamera:getLockHeroCameraDt()
-    local ftTran = fight.FightCamera:getLockHeroCameraFt()
-    if not tran then
-        return
-    end
-
-    self.mMoveDis = gs.Mathf.Clamp(self.mMoveDis + dis, 0, 1)
-
-    -- 模型放大缩小
-    local tragetDis = gs.Vector3.Distance(self.targetMoveZPosMin, self.targetMoveZPosMax)
-    local normal = (self.targetMoveZPosMin - self.targetMoveZPosMax).normalized
-
-    local targetPos = normal * (tragetDis * self.mMoveDis) + self.targetMoveZPosMax
-
-    self.mAllMoveY = 0
-    table.insert(self.mTweenList, TweenFactory:move2Lpos(tran, targetPos, 0.5))
-    table.insert(self.mTweenList, TweenFactory:move2Lpos(ftTran, gs.VEC3_ZERO, 0.5))
-    table.insert(self.mTweenList, TweenFactory:lRotate(ftTran, gs.VEC3_ZERO, 0.5))
-
-end
-function __onBeginDragHandler(self)
-    self:clearTween()
-    if (not self.m_frameSn) then
-        self.m_frameSn = LoopManager:addFrame(1, 0, self, self.__onFrameUpdateHandler)
-    end
-end
-
-
-function __onFrameUpdateHandler(self)
-    if gs.Application.isMobilePlatform and gs.Input.touchCount == 2 then
-        if (self.m_frameSn) then
-            LoopManager:removeFrameByIndex(self.m_frameSn)
-            self.m_frameSn = nil
-            return
-        end
-    end
-
-    if (gs.Input:GetMouseButton(0) or gs.Input.touchCount == 1) and self.mPointerDown then
-        -- 手指在屏幕上
-        self.mMouseMovePos = gs.Input.mousePosition - self.mBeginMousePos
-
-        self.mAroundSpeed = self.mMouseMovePos.x / (gs.Time.deltaTime * 4)
-        self.mMoveYSpeed = self.mMouseMovePos.y / (gs.Time.deltaTime * 4)
-        if math.abs(self.mMouseMovePos.x) > math.abs(self.mMouseMovePos.y) then
-            self.mMoveYSpeed = 0
-        else
-            self.mAroundSpeed = 0
-        end
-
-    end
-
-    local dtTran = fight.FightCamera:getLockHeroCameraDt()
-    local rtTran = fight.FightCamera:getLockHeroCameraRt()
-    local ftTran = fight.FightCamera:getLockHeroCameraFt()
-    local scTran = fight.FightCamera:getCameraTrans()
-    if not rtTran or gs.GoUtil.IsTransNull(rtTran) then
-        return
-    end
-
-    rtTran:RotateAround(rtTran.position, gs.Vector3.up, self.mAroundSpeed * gs.Time.deltaTime)
-    self.mAroundSpeed = self.mAroundSpeed * 0.8-- gs.Mathf.Pow(0.01, gs.Time.deltaTime)
-
-    -------------------------------------------------------------
-
-    -- local nextMove = self.mAllMoveY - self.mMoveYSpeed * gs.Time.deltaTime
-    -- if nextMove < 45 and nextMove > -45 then
-    --     -- 模型上下拖动
-    --     ftTran:RotateAround(rtTran.position, ftTran.right, -self.mMoveYSpeed * gs.Time.deltaTime)
-    --     self.mAllMoveY = nextMove
-    --     self.mMoveYSpeed = self.mMoveYSpeed * 0.8
-    -- end
-
-    if not gs.Input:GetMouseButton(0) and math.abs(self.mAroundSpeed) < 0.1 and math.abs(self.mMoveYSpeed) < 0.01 then
-        if (self.m_frameSn) then
-            LoopManager:removeFrameByIndex(self.m_frameSn)
-            self.m_frameSn = nil
-        end
-    end
-
-    self.mBeginMousePos = gs.Input.mousePosition
-end
-
-function clearTween(self)
-    self.mAllMoveY = 0
-    for i, tween in ipairs(self.mTweenList) do
-        if tween then
-            tween:Kill()
-        end
-    end
-    self.mTweenList = {}
-end
 
 -- 获取选中的技能名称语言包(传index 临时获取未保存服务器的选择)
 function getSelectSkillNameLan(self, liveId, index)
@@ -704,7 +430,6 @@ end
 
 function destroy(self, isAuto)
     self:recoverHeroHeadItem()
-    self.mToggleFlw.onValueChanged:RemoveAllListeners()
     super.destroy(self)
 end
 

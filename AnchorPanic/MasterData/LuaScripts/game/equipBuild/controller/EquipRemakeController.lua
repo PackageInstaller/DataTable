@@ -24,11 +24,6 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.REQ_EQUIP_REMAKE, self.__onReqEquipRemakeHandler, self)
     -- 确认装备改造（首次改造不需要确认）
     GameDispatcher:addEventListener(EventName.REQ_EQUIP_CONFIRM_REMAKE, self.__onReqEquipConfirmRemakeHandler, self)
-
-    GameDispatcher:addEventListener(EventName.OPEN_EQUIP_REMAKE_UP_AGENT_OPT_VIEW,self.__onOpenEquipRemakeUpAgentOptViewHandler, self)
-    
-    GameDispatcher:addEventListener(EventName.OPEN_EQUIP_REMAKESUC_PANEL, self.__onOpenEquipRemakeSucPanelHandler, self)
-    
 end
 
 --注册server发来的数据
@@ -65,17 +60,13 @@ function __onResEquipRemakeHandler(self, msg)
         local equipId = msg.equip_id
         local remakePos = msg.pos
         local preRemakeAttr = msg.new_attr
+        
         local selectEquipVo = equipBuild.EquipBuildManager:getEquipVo(equipId, heroId)
         local oldEquipVo = selectEquipVo:clone()
         local curEquipVo = selectEquipVo:clone()
         curEquipVo:setRemakeAttr(preRemakeAttr)
+        self:__onOpenEquipRemakeSucPanelHandler({oldEquipVo = oldEquipVo, curEquipVo = curEquipVo, remakePos = remakePos})
 
-        local isAgentOpt = equipBuild.EquipRemakeManager:getIsAgentOpt()
-        if isAgentOpt then
-            GameDispatcher:dispatchEvent(EventName.UPDATE_EQUIP_REMAKE_UP_AGENT_OPT_VIEW,{oldEquipVo = oldEquipVo, curEquipVo = curEquipVo, remakePos = remakePos})
-        else
-            self:__onOpenEquipRemakeSucPanelHandler({oldEquipVo = oldEquipVo, curEquipVo = curEquipVo, remakePos = remakePos})
-        end
         local function attrUpdate(self, args)
             selectEquipVo:removeEventListener(selectEquipVo.UPDATE_EQUIP_DETAIL_DATA, attrUpdate, self)
             GameDispatcher:dispatchEvent(EventName.UPDATE_EQUIP_REMAKE, {heroId = heroId, equipId = equipId, remakePos = remakePos})
@@ -96,12 +87,7 @@ function __onResEquipConfirmRemakeHandler(self, msg)
     else
         Debug:log_info("","__onResEquipConfirmRemakeHandler")
         if (self.m_remakeSucPanel) then
-            if equipBuild.EquipRemakeManager:getAgentSuc() then
-                self.m_remakeSucPanel:showConfirmAgentSucc()
-            else
-                self.m_remakeSucPanel:showConfirmSucc()
-            end
-            
+            self.m_remakeSucPanel:showConfirmSucc()
         end
     end
 end
@@ -134,20 +120,6 @@ end
 function onDestroyRemakeUpViewHandler(self)
     self.mRemakeUpView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyRemakeUpViewHandler, self)
     self.mRemakeUpView = nil
-end
-
-
-function __onOpenEquipRemakeUpAgentOptViewHandler(self,args)
-    if self.mRemakeUpAgentOptView == nil then
-        self.mRemakeUpAgentOptView = equipBuild.EquipRemakeUpAgentOptView.new()
-        self.mRemakeUpAgentOptView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyRemakeUpAgentOptViewHandler, self)
-    end
-    self.mRemakeUpAgentOptView:open(args)
-end
-
-function onDestroyRemakeUpAgentOptViewHandler(self)
-    self.mRemakeUpAgentOptView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyRemakeUpAgentOptViewHandler, self)
-    self.mRemakeUpAgentOptView = nil
 end
 
 return _M

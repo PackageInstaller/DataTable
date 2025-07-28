@@ -120,7 +120,6 @@ function deActive(self)
     GameDispatcher:removeEventListener(EventName.FAVORABLE_REWARD_GAIN_UPDATE, self.updateBubble, self)
     GameDispatcher:removeEventListener(EventName.HERO_DETAIL_CLOSE, self.onClosePanel, self)
     GameDispatcher:removeEventListener(EventName.HERO_FILES_SHOW_ACTION, self.playAction, self)
-    self:destroyTimeSn()
     self:updateRoleNodeState(true)
     if self.mAudioData then
         AudioManager:stopAudioSound(self.mAudioData)
@@ -467,7 +466,6 @@ end
 function playAction(self, args)
     if self.mModelPlayer then
         if args.state then
-            self:destroyTimeSn()
             self.mModelPlayer.m_modelView:playAction(gs.Animator.StringToHash(args.actName))
             local cvData = AudioManager:getCVData(args.cvId)
             self:onShowHeroInTeractTextOnlyHandler(cvData.lines)
@@ -485,21 +483,12 @@ function playAction(self, args)
             end
             local baseData = hero.HeroInteractManager:getConfigData01(self.curHeroVo.model, nil, args.actName)
             self.mIsPlaying=true
-            self.mVoiceSn = LoopManager:addTimer(math.max(hero.HeroInteractManager:getCvDataLayBack(baseData), 0.1), 1, self, function()
-                if AudioManager:preloadCvByCvId(args.cvId) then
-                    self.mAudioData = AudioManager:playHeroCVOnReplace(args.cvId, function()
-                        self.mAudioData = nil
-                        self.mIsPlaying=false
-                        self:onShowHeroInTeractTextOnlyHandler(nil)
-                    end)
-                else
-                    self.mTimeSn = LoopManager:setTimeout(5, self, function (instance)
-                        instance:destroyTimeSn()
-                        instance.mAudioData = nil
-                        instance.mIsPlaying=false
-                        instance:onShowHeroInTeractTextOnlyHandler(nil)
-                    end)
-                end
+            self.mVoiceSn = LoopManager:addTimer(math.max(baseData.voice_layback / 1000, 0.1), 1, self, function()
+                self.mAudioData = AudioManager:playHeroCVOnReplace(args.cvId, function()
+                    self.mAudioData = nil
+                    self.mIsPlaying=false
+                    self:onShowHeroInTeractTextOnlyHandler(nil)
+                end)
             end)
         else
             self.mIsPlaying=false
@@ -573,12 +562,6 @@ function recoverModel(self, isResetMaincity)
     self.mModelPlayer:reset(isResetMaincity)
 end
 
-function destroyTimeSn(self)
-    if self.mTimeSn then
-        LoopManager:clearTimeout(self.mTimeSn)
-        self.mTimeSn = nil
-    end
-end
 
 return _M
 

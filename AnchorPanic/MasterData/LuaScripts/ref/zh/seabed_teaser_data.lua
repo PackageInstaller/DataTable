@@ -3,15 +3,15 @@
 local seabed_teaser_data=
 
 {
-	[1]={ des=111001,  extra_action_point=0
+	[1]={ des=111001
 },
-	[2]={ des=111002,  extra_action_point=0
+	[2]={ des=111002
 },
-	[3]={ des=111003,  extra_action_point=-1
+	[3]={ des=111003
 },
-	[4]={ des=111004,  extra_action_point=0
+	[4]={ des=111004
 },
-	[5]={ des=111005,  extra_action_point=0
+	[5]={ des=111005
 }
 }
 

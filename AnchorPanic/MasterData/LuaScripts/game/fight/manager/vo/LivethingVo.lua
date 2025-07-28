@@ -344,7 +344,6 @@ function clearBuff(self)
     self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_FROZE_EFFECT, false)
     self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_METAL_EFFECT, false)
     self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_WEEK_EFFECT, false)
-    self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_MODEL_HIT, false)
     local objLive = fight.SceneItemManager:getLivething(self:getLiveID())
     -- 目标已经不存在了, 不用想太多了
     if not objLive then return end
@@ -644,13 +643,13 @@ function updateAni(self, aniHash, startCall, endCall, isForceEndCall)
 end
 
 -- 通过动作过度的条件Hash更新动作
-function transAni(self, transHash, startCall, endCall, isForceEndCall)
+function transAni(self, transHash, startCall, endCall)
     -- 主动行动的动作不管冰冻状态，避免先后顺序导致卡战斗
     -- if self.isFroze then
     --     -- 冰冻中不能动
     --     return
     -- end
-    self:dispatchEvent(fight.LivethingVo.EVENT_ANI_TRANS_COND, { transHash, startCall, endCall, isForceEndCall })
+    self:dispatchEvent(fight.LivethingVo.EVENT_ANI_TRANS_COND, { transHash, startCall, endCall })
 end
 
 function setAnimationBoolVal(self, keyhash, val)

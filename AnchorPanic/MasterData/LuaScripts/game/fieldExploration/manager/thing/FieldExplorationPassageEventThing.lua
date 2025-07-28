@@ -8,8 +8,31 @@ module('game.fieldExploration.thing.FieldExplorationPassageEventThing', Class.im
 function onModelLoadFinish(self)
     super.onModelLoadFinish(self)
 
-    
+    self.mPassModel = self.mModel.m_modelTrans:Find("light").gameObject
+    self.mBlockModel = self.mModel.m_modelTrans:Find("dark").gameObject
+
+    self.mPassModel:SetActive(true)
+    self.mBlockModel:SetActive(false)
 end
 
+function onPass(self)
+    if self.mPassModel and not self.mPassModel.activeSelf then
+        self.mPassModel:SetActive(true)
+    end
+
+    if self.mBlockModel and self.mBlockModel.activeSelf then
+        self.mBlockModel:SetActive(false)
+    end
+end
+
+function onBlock(self)
+    if self.mPassModel and self.mPassModel.activeSelf then
+        self.mPassModel:SetActive(false)
+    end
+
+    if self.mBlockModel and not self.mBlockModel.activeSelf then
+        self.mBlockModel:SetActive(true)
+    end
+end
 
 return _M

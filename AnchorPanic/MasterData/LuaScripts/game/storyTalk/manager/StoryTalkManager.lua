@@ -423,13 +423,12 @@ end
 function reqSTORY_OVER(self, storyID)
     local ro = self.m_storyDict[storyID]
     if ro then
-        if self.m_passStoryList[ro:getLineID()] ~= nil and self.m_passStoryList[ro:getLineID()] >= storyID then
-            return
+        if SOCKET_SEND(Protocol.CS_STORY_OVER, {
+                story_id = storyID
+            }) == true then
+            self.m_passStoryList[ro:getLineID()] = storyID
+            print("reqSTORY_OVER ============ ", storyID)
         end
-
-        SOCKET_SEND(Protocol.CS_STORY_OVER, {story_id = storyID }) 
-        self.m_passStoryList[ro:getLineID()] = storyID
-        print("reqSTORY_OVER ============ ", storyID)
     end
 end
 

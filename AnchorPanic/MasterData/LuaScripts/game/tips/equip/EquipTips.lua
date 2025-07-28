@@ -32,8 +32,6 @@ function configUI(self)
 
     self.mGroupRemakeLvl = self:getChildGO("GroupRemakeLvl")
     self.mLinkItem = self:getChildGO("mLinkItem")
-
-    self.mTxtNotTips = self:getChildGO("mTxtNotTips"):GetComponent(ty.Text)
 end
 
 function active(self, args)
@@ -86,9 +84,8 @@ end
 function deActive(self)
     super.deActive(self)
     self.m_childTrans["Content"].anchoredPosition = gs.Vector2.zero
-    GameDispatcher:removeEventListener(EventName.UPDATE_PROPS_LOCK_STATE, self.updateLockState, self)
+
     if (self.m_equipVo) then
-       
         self.m_equipVo:removeEventListener(self.m_equipVo.UPDATE_EQUIP_DETAIL_DATA, self.__updateView, self)
         self.m_equipVo:removeEventListener(props.PropsVo.UPDATE, self.__updateView, self)
     end
@@ -121,7 +118,6 @@ function initViewText(self)
     self:setBtnLabel(self.m_childGos["BtnLoad"], 4324, "穿戴")
     self:setBtnLabel(self.m_childGos["BtnUnLoad"], 4327, "卸下")
     self:setBtnLabel(self:getChildGO("mBtnGoToCul"), 3516, "强化")
-    self.m_childGos["mTxtNotTips"]:GetComponent(ty.Text).text = _TT(4399)
 end
 
 function __getGoUniqueName(self, goName)
@@ -210,18 +206,8 @@ function __checkIsAbleToCul(self)
     end
 end
 
-function updateLockState(self,args)
-    if self.m_equipVo.id == args.id then
-        self.m_equipVo:setLockState(args.lock)
-    end
-    self:__updateTop()
-end
-
 function __updateView(self)
-    GameDispatcher:removeEventListener(EventName.UPDATE_PROPS_LOCK_STATE, self.updateLockState, self)
     self.m_equipVo:removeEventListener(self.m_equipVo.UPDATE_EQUIP_DETAIL_DATA, self.__updateView, self)
-    
-    GameDispatcher:addEventListener(EventName.UPDATE_PROPS_LOCK_STATE, self.updateLockState, self)
     local totalAttrList, totalAttrDic = self.m_equipVo:getTotalAttr()
     if (totalAttrList == nil and totalAttrDic == nil) then
         self.m_equipVo:addEventListener(self.m_equipVo.UPDATE_EQUIP_DETAIL_DATA, self.__updateView, self)
@@ -445,9 +431,6 @@ function __updateBaseAttr(self)
         end
     end
 
-    self.mTxtNotTips.gameObject:SetActive(#mainAttrList==0 and 
-    self.m_equipVo.subType ~= PropsEquipSubType.SLOT_7)
-
     gs.LayoutRebuilder.ForceRebuildLayoutImmediate(self.m_childTrans["BaseAttrContent"]);
 end
 
@@ -525,16 +508,12 @@ function __updateSkill(self)
             local des = equip.EquipSkillManager:getBraceletTipsSkillDes(self.m_equipVo, skillEffectList[1])
             local txtCloneGo = self:__getTxtGo("TextSkill")
             txtCloneGo.transform:SetParent(self.m_childTrans["ShowSkill"], false)
-            local tmpLink_txtCloneGo = txtCloneGo:GetComponent(ty.TextMeshProLink)
-            tmpLink_txtCloneGo:SetEventCall(notice.HrefUtil.commonTitleDesLinkData)
-            txtCloneGo:GetComponent(ty.TMP_Text).text = des -- HtmlUtil:color(des, "bababaff")
+            txtCloneGo:GetComponent(ty.Text).text = des -- HtmlUtil:color(des, "bababaff")
         else
             local equipConfigVo = equip.EquipManager:getEquipConfigVo(self.m_equipVo.tid)
             local txtCloneGo = self:__getTxtGo("TextSkill")
             txtCloneGo.transform:SetParent(self.m_childTrans["ShowSkill"], false)
-            local tmpLink_txtCloneGo = txtCloneGo:GetComponent(ty.TextMeshProLink)
-            tmpLink_txtCloneGo:SetEventCall(notice.HrefUtil.commonTitleDesLinkData)
-            txtCloneGo:GetComponent(ty.TMP_Text).text = equipConfigVo.defaultSkillDes -- HtmlUtil:color(des, "bababaff")
+            txtCloneGo:GetComponent(ty.Text).text = equipConfigVo.defaultSkillDes -- HtmlUtil:color(des, "bababaff")
         end
     else
         self.m_childGos["GroupSkill"]:SetActive(false)
@@ -547,9 +526,7 @@ function __updateSkill(self)
                 local des = equip.EquipSkillManager:getSkillDes(self.m_equipVo, skillEffectList[i])
                 local txtCloneGo = self:__getTxtGo("TextSkill")
                 txtCloneGo.transform:SetParent(self.m_childTrans["ShowSkill"], false)
-                local tmpLink_txtCloneGo = txtCloneGo:GetComponent(ty.TextMeshProLink)
-                tmpLink_txtCloneGo:SetEventCall(notice.HrefUtil.commonTitleDesLinkData)
-                txtCloneGo:GetComponent(ty.TMP_Text).text = des -- HtmlUtil:color(des, "bababaff")
+                txtCloneGo:GetComponent(ty.Text).text = des -- HtmlUtil:color(des, "bababaff")
             end
         end
     end

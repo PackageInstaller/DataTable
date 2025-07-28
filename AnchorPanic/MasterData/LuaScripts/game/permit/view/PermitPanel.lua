@@ -1,4 +1,5 @@
---[[-----------------------------------------------------
+--[[
+-----------------------------------------------------
 @filename       : PermitPanel
 @Description    : 通行证
 @date           : 2023-3-28 15:59:00
@@ -48,7 +49,6 @@ function configUI(self)
 
     self.mTxtHeroName = self:getChildGO("mTxtHeroName"):GetComponent(ty.Text)
     self.mBtnShowSkin = self:getChildGO("mBtnShowSkin")
-    self.mImgHeroHar = self:getChildGO("mImgHeroHar"):GetComponent(ty.AutoRefImage)
 end
 
 function active(self, args)
@@ -97,7 +97,8 @@ function deActive(self)
     RedPointManager:remove(self.mBtnOneKey.transform)
 end
 
---[[    初始化界面的静态文本，图片字
+--[[
+    初始化界面的静态文本，图片字
     每次打开界面都会重新读取，多语言切换时可以及时更新
 ]]
 function initViewText(self)
@@ -109,7 +110,7 @@ function initViewText(self)
 
     self:getChildGO("mTxtType"):GetComponent(ty.Text).text = _TT(98106)
     self.mTxtHeroName.text = _TT(98109)
-
+    
 end
 -- UI事件管理(关闭界面会自动移除)
 function addAllUIEvent(self)
@@ -124,7 +125,7 @@ function onClickShowSkinHandler(self)
     local dic = sysParam.SysParamManager:getValue(SysParamType.PERMIT_MODEL_INFO)
     local tid = dic[1]
     local id = dic[2]
-    GameDispatcher:dispatchEvent(EventName.OPEN_SKIN_SHOW_ONE_VIEW, { heroTid = tid, fashionId = id, isShow3D = true })
+    GameDispatcher:dispatchEvent(EventName.OPEN_SKIN_SHOW_ONE_VIEW, {heroTid = tid, fashionId = id, isShow3D = true})
 end
 
 function updateView(self)
@@ -136,13 +137,6 @@ function updateView(self)
         self.mLyScroller:ReplaceAllDataProvider(list)
     end
     self:updateState()
-
-    local dic = sysParam.SysParamManager:getValue(SysParamType.PERMIT_MODEL_INFO)
-    -- 部分渠道需要特殊处理
-    local isHar = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious())
-    self.mImgHeroHar.gameObject:SetActive(isHar)
-    local fashionData = fashion.FashionManager:getHeroFashionConfigVo(fashion.Type.CLOTHES, dic[1], dic[2])
-    self.mImgHeroHar:SetImg(UrlManager:getBgPath("heroRecord_Har/" .. fashionData:getUrlBody()))
 end
 function closeAllProps(self)
     if self.mPropsList then
@@ -161,7 +155,7 @@ function onClickTopHandler(self, isBuy)
         end
         GameDispatcher:dispatchEvent(EventName.OPEN_PERMIT_BUY_VIEW, {})
     else
-        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.Task })
+        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Task})
     end
 end
 
@@ -198,7 +192,7 @@ end
 function updateStageInfo(self, curStageVo)
     self:closeAllProps()
     for _, propVo in ipairs(curStageVo:getNoamlAwardList()) do
-        local propGrid = PropsGrid:create(self.mTansStageNomal, { tid = propVo.tid, num = propVo.num ~= nil and propVo.num or 1 }, 0.7, false)
+        local propGrid = PropsGrid:create(self.mTansStageNomal, {tid = propVo.tid, num = propVo.num ~= nil and propVo.num or 1}, 0.7, false)
         propGrid:setHasRec(curStageVo:getIsNomalRecived() and curStageVo:getIsUnlock())
         table.insert(self.mPropsList, propGrid)
     end
@@ -208,7 +202,7 @@ function updateStageInfo(self, curStageVo)
         gs.TransQuick:Scale0(self.mTansStageMoney, 0.7)
     end
     for _, propVo1 in ipairs(curStageVo:getSeniorAwardList()) do
-        local propGrid1 = PropsGrid:create(self.mTansStageMoney, { tid = propVo1.tid, num = propVo1.num ~= nil and propVo1.num or 1 }, 1, false)
+        local propGrid1 = PropsGrid:create(self.mTansStageMoney, {tid = propVo1.tid, num = propVo1.num ~= nil and propVo1.num or 1}, 1, false)
         propGrid1:setIconGray((not curStageVo:getIsBuy()))
         propGrid1:setHasRec(curStageVo:getIsSeniorRecived() and curStageVo:getIsUnlock())
         table.insert(self.mPropsList, propGrid1)

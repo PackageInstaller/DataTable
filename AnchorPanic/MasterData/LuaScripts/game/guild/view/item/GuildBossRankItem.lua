@@ -46,7 +46,7 @@ function setData(self, param)
     self.mTxtRank.gameObject:SetActive(self.data.rank > 3)
     self.mTxtRank.text = self.data.rank
     self.mTxtRankBig.text = self.data.rank
-    self.mTxtName.text = ""--FilterWordUtil:filterTemp(self.data.guild_name)
+    self.mTxtName.text = self.data.guild_name
     self.mTxtDamage.text = self.data.damage
 end
 

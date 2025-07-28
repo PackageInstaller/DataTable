@@ -49,7 +49,7 @@ function setData(self, param)
         -- self.mPlayerHead:setIsShowFrame(false)
     end
 
-    self.mTxtName.text = FilterWordUtil:filterTemp(self.data.playerName)
+    self.mTxtName.text = self.data.playerName
     self.mTxtScore.text = self:getScoreLab()
     self.mTxtDes.text = self.data.rankType == rank.RankConst.RANK_CYCLE and "评分：" or "层数："
     if self.data.titleId > 0 then

@@ -188,7 +188,7 @@ function loadExtraHeroModel(self, tid, finishCall)
     else
         local animStates = { "stand", "ready", "exit", "goin", "atk01", "die", "hit01", "hit02", "hit03", "hit04", "hit05", "hit06", "getup", "skill01", "skill02", "skill03", "skillmix", "skillmax", "win", "standby", "leave", "enter", "enter01", "change", "change01", "change02", "dizzy", "berserk" }
         for i, s in ipairs(animStates) do
-            local animUrl = string.format("arts/character/animat/monster/%s/%s.anim", modelID, s)
+            local animUrl = string.format("arts/character/monster/%s/anims/%s.anim", modelID, s)
             preloadList[#preloadList + 1] = animUrl
         end
     end

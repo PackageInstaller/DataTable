@@ -10,13 +10,10 @@ local STAND_POS = 1
 local BODY_POS = 2
 local HEAD_POS = 3
 local WEAPON_POS = 4
-local CAMERA_POS = 5
 --构造函数
 function ctor(self)
     self.m_buffEftDictQueue = {}
     self.m_buffReaction = {}
-    self.m_buffEftScene = {}
-    self.m_buffEftCamera = {}
 
     GameDispatcher:addEventListener(EventName.BUFF_ADD_EFT, self._addEft, self)
     GameDispatcher:addEventListener(EventName.BUFF_UPDATE_EFT, self._updateEft, self)
@@ -51,7 +48,7 @@ function _updateEft(self, buffVo)
             if not eftname then
                 eftname = eftArr[1]
             end
-            self:__updateEft(dictQueue[STAND_POS], STAND_POS, eftname, buffVo)
+            self:__updateEft(dictQueue[STAND_POS], eftname, buffVo)
         end
         eftArr = buffRo:getHangBody(casterModelId)
         if not table.empty(eftArr) then
@@ -61,7 +58,7 @@ function _updateEft(self, buffVo)
             if not eftname then
                 eftname = eftArr[1]
             end
-            self:__updateEft(dictQueue[BODY_POS], BODY_POS, eftname, buffVo)
+            self:__updateEft(dictQueue[BODY_POS], eftname, buffVo)
         end
 
         eftArr = buffRo:getHangHead(casterModelId)
@@ -73,7 +70,7 @@ function _updateEft(self, buffVo)
             if not eftname then
                 eftname = eftArr[1]
             end
-            self:__updateEft(dictQueue[HEAD_POS], HEAD_POS, eftname, buffVo)
+            self:__updateEft(dictQueue[HEAD_POS], eftname, buffVo)
         end
 
         eftArr = buffRo:getHangWeapon(casterModelId)
@@ -85,24 +82,12 @@ function _updateEft(self, buffVo)
             if not eftname then
                 eftname = eftArr[1]
             end
-            self:__updateEft(dictQueue[WEAPON_POS], WEAPON_POS, eftname, buffVo)
-        end
-
-        eftArr = buffRo:getHangCamera(casterModelId)
-        -- table.print(eftArr)
-        if not table.empty(eftArr) then
-            local idx = buffData[2]
-            if not idx then idx = 1 end
-            local eftname = eftArr[idx]
-            if not eftname then
-                eftname = eftArr[1]
-            end
-            self:__updateEft(dictQueue[CAMERA_POS], CAMERA_POS, eftname, buffVo)
+            self:__updateEft(dictQueue[WEAPON_POS], eftname, buffVo)
         end
     end
 end
 
-function __updateEft(self, queue, posType, eftname, buffVo)
+function __updateEft(self, queue, eftname, buffVo)
     local eftVo, index = self:_getEftVo(queue, buffVo)
     if eftVo then
         table.remove(queue, index)
@@ -125,45 +110,35 @@ function __updateEft(self, queue, posType, eftname, buffVo)
                 gs.GameObject.Destroy(eftVo.eftGo)
             end
         end
-
         local eftGo = gs.ResMgr:LoadGO(UrlManager:get3DBuffPath(eftname))
         if eftGo then
-            if posType == CAMERA_POS then
+            local liveObj = fight.SceneItemManager:getLivething(buffVo.m_entity.m_livethingID)
+            if not liveObj or not liveObj:getTrans() then return end
+            local casterLiveVo = fight.SceneManager:getThing(buffVo:getCaster())
 
-                local scTrans = gs.CameraMgr:GetSceneCameraTrans()
-                self.m_buffEftCamera[eftVo.sn] = eftVo
-                gs.TransQuick:SetParentOrg(eftGo.transform, scTrans)
+            gs.TransQuick:SetParentOrg(eftGo.transform, liveObj:getTrans())
+            local charAppend = eftGo:GetComponent(ty.CharAppendEffect)
+            if charAppend then
+                charAppend.CharSet = liveObj:getRootGO()
             else
-
-                local liveObj = fight.SceneItemManager:getLivething(buffVo.m_entity.m_livethingID)
-                if not liveObj or not liveObj:getTrans() then return end
-                local casterLiveVo = fight.SceneManager:getThing(buffVo:getCaster())
-
-                gs.TransQuick:SetParentOrg(eftGo.transform, liveObj:getTrans())
-                local charAppend = eftGo:GetComponent(ty.CharAppendEffect)
-                if charAppend then
-                    charAppend.CharSet = liveObj:getRootGO()
-                else
-                    gs.TransQuick:SetParentOrg(eftGo.transform, fight.SceneGrid:getRootTrans())
-                    if casterLiveVo and casterLiveVo.isAtt == 2 then
-                        gs.TransQuick:Rotate(eftGo.transform, 0, 180, 0)
-                    end
+                gs.TransQuick:SetParentOrg(eftGo.transform, fight.SceneGrid:getRootTrans())
+                if casterLiveVo and casterLiveVo.isAtt == 2 then
+                    gs.TransQuick:Rotate(eftGo.transform, 0, 180, 0)
                 end
             end
-
             local buffRo = Buff.BuffRoMgr:getBuffRo(buffVo:getRefID())
             eftVo = { sn = buffVo:sn(), refID = buffVo:getRefID(), eftname = eftname, eftGo = eftGo, pos = eftGo.transform.localPosition, coexist = buffRo:getEffectCoexist() }
             table.insert(queue, eftVo)
-            -- else
-            --     if eftVo.tweener then
-            --         eftVo.tweener:Kill()
-            --         eftVo.tweener = nil
-            --     end
-            --     eftVo.eftGo:SetActive(true)
-            --     eftVo.reactionActive = nil
-            --     table.insert(queue, eftVo)
-            -- end
         end
+        -- else
+        --     if eftVo.tweener then
+        --         eftVo.tweener:Kill()
+        --         eftVo.tweener = nil
+        --     end
+        --     eftVo.eftGo:SetActive(true)
+        --     eftVo.reactionActive = nil
+        --     table.insert(queue, eftVo)
+        -- end
     end
 end
 --添加特效
@@ -193,7 +168,6 @@ function _addEft(self, buffVo)
             dictQueue[BODY_POS] = {}
             dictQueue[HEAD_POS] = {}
             dictQueue[WEAPON_POS] = {}
-            dictQueue[CAMERA_POS] = {}
             self.m_buffEftDictQueue[buffVo.m_entity.m_livethingID] = dictQueue
         end
         local eftArr = buffRo:getHangStand(casterModelId)
@@ -239,18 +213,6 @@ function _addEft(self, buffVo)
                 eftname = eftArr[1]
             end
             self:_setupBuff(dictQueue, WEAPON_POS, eftname, buffVo, liveObj)
-        end
-
-        eftArr = buffRo:getHangCamera(casterModelId)
-        -- table.print(eftArr)
-        if not table.empty(eftArr) then
-            local idx = buffData[2]
-            if not idx then idx = 1 end
-            local eftname = eftArr[idx]
-            if not eftname then
-                eftname = eftArr[1]
-            end
-            self:_setupBuff(dictQueue, CAMERA_POS, eftname, buffVo, liveObj)
         end
     end
 end
@@ -396,32 +358,21 @@ function _setupBuff(self, queue, posType, eftname, buffVo, liveObj)
     if eftGo then
         -- eftGo.transform:SetParent(liveObj:getTrans())
         -- eftGo:SetActive(false)
+        gs.TransQuick:SetParentOrg(eftGo.transform, liveObj:getTrans())
+        local charAppend = eftGo:GetComponent(ty.CharAppendEffect)
+        if charAppend then
+            charAppend.CharSet = liveObj:getRootGO()
+        else
+            gs.TransQuick:SetParentOrg(eftGo.transform, fight.SceneGrid:getRootTrans())
+            local casterLiveVo = fight.SceneManager:getThing(buffVo:getCaster())
+            if casterLiveVo and casterLiveVo.isAtt == 2 then
+                gs.TransQuick:Rotate(eftGo.transform, 0, 180, 0)
+            end
+        end
+        -- eftGo:SetActive(true)
         local buffRo = Buff.BuffRoMgr:getBuffRo(buffVo:getRefID())
         local eftVo = { sn = buffVo:sn(), refID = buffVo:getRefID(), eftname = eftname, eftGo = eftGo, pos = eftGo.transform.localPosition, coexist = buffRo:getEffectCoexist() }
         table.insert(queue[posType], eftVo)
-
-        if posType == CAMERA_POS then
-            local scTrans = gs.CameraMgr:GetSceneCameraTrans()
-            self.m_buffEftCamera[eftVo.sn] = eftVo
-            gs.TransQuick:SetParentOrg(eftGo.transform, scTrans)
-        else
-            gs.TransQuick:SetParentOrg(eftGo.transform, liveObj:getTrans())
-
-            local charAppend = eftGo:GetComponent(ty.CharAppendEffect)
-            if charAppend then
-                charAppend.CharSet = liveObj:getRootGO()
-            else
-                self.m_buffEftScene[eftVo.sn] = eftVo
-
-                gs.TransQuick:SetParentOrg(eftGo.transform, fight.SceneGrid:getRootTrans())
-                local casterLiveVo = fight.SceneManager:getThing(buffVo:getCaster())
-                if casterLiveVo and casterLiveVo.isAtt == 2 then
-                    gs.TransQuick:Rotate(eftGo.transform, 0, 180, 0)
-                end
-            end
-            -- eftGo:SetActive(true)
-        end
-
     end
 end
 
@@ -460,10 +411,6 @@ function _removeEft(self, buffVo)
                     if v.reaction ~= true then
                         gs.GameObject.Destroy(v.eftGo)
                     end
-
-                    self.m_buffEftScene[v.sn] = nil
-                    self.m_buffEftCamera[v.sn] = nil
-
                 end
                 break
             end
@@ -484,16 +431,6 @@ function hideAllEft(self, liveId)
             end
         end
     end
-    for _, eftVo in pairs(self.m_buffEftScene) do
-        if eftVo and eftVo.eftGo and not gs.GoUtil.IsGoNull(eftVo.eftGo) and eftVo.eftGo.activeSelf == true then
-            eftVo.eftGo:SetActive(false)
-        end
-    end
-    for _, eftVo in pairs(self.m_buffEftCamera) do
-        if eftVo and eftVo.eftGo and not gs.GoUtil.IsGoNull(eftVo.eftGo) and eftVo.eftGo.activeSelf == true then
-            eftVo.eftGo:SetActive(false)
-        end
-    end
 end
 
 -- 显示身上的buff特效（奥义结束）
@@ -507,17 +444,6 @@ function showAllEft(self, liveId)
             if v and v.eftGo and not gs.GoUtil.IsGoNull(v.eftGo) and v.eftGo.activeSelf == false then
                 v.eftGo:SetActive(true)
             end
-        end
-    end
-
-    for _, eftVo in pairs(self.m_buffEftScene) do
-        if eftVo and eftVo.eftGo and not gs.GoUtil.IsGoNull(eftVo.eftGo) and eftVo.eftGo.activeSelf == false then
-            eftVo.eftGo:SetActive(true)
-        end
-    end
-    for _, eftVo in pairs(self.m_buffEftCamera) do
-        if eftVo and eftVo.eftGo and not gs.GoUtil.IsGoNull(eftVo.eftGo) and eftVo.eftGo.activeSelf == false then
-            eftVo.eftGo:SetActive(true)
         end
     end
 end

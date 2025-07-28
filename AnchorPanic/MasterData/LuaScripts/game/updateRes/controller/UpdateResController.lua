@@ -501,8 +501,20 @@ function judgeDownload(self)
                 if(download.ResDownLoadManager:getIsNeedCheckZip())then
                     totalNeedZipSize, totalZipNeedFreeSize = download.ResDownLoadManager:getZipSize()
                 end
-
-                local function confirmDownload()
+    
+                local freeDiskSpaceMB = gs.SdkManager:GetFreeDiskSpaceMB()
+                if(freeDiskSpaceMB > 0 and totalNeedSize + totalZipNeedFreeSize >= freeDiskSpaceMB * 1024)then
+                    local tipFormatTotalSize, tipTotalUnit = download.GetFormatSize(totalNeedSize + totalZipNeedFreeSize - freeDiskSpaceMB * 1024)
+                    updateRes.ShowAlert(updateRes.TipType.Normal, "更新提示", string.format("资源更新失败，请检查您的磁盘空间（还需要%s），再重启游戏试试", tostring(tipFormatTotalSize) .. tipTotalUnit)
+                        -- ,"确认",
+                        -- function()
+                        -- end
+                        ,"退出",
+                        function()
+                            CS.Lylibs.SDKManager.Ins:CloseApplication()
+                        end
+                    )
+                else
                     local isHasNetWork, isMobileNet, isWifi = web.getNetStatus()
                     if(isWifi)then
                         checkDownLoadModule()
@@ -537,23 +549,6 @@ function judgeDownload(self)
                             checkDownLoadModule()
                         end
                     end
-                end
-
-                local freeDiskSpaceMB = gs.SdkManager:GetFreeDiskSpaceMB()
-                if(freeDiskSpaceMB > 0 and totalNeedSize + totalZipNeedFreeSize >= freeDiskSpaceMB * 1024)then
-                    local tipFormatTotalSize, tipTotalUnit = download.GetFormatSize(totalNeedSize + totalZipNeedFreeSize - freeDiskSpaceMB * 1024)
-                    updateRes.ShowAlert(updateRes.TipType.Normal, "更新提示", string.format("资源更新还需要%s，您的磁盘空间可能不足，是否继续下载？", tostring(tipFormatTotalSize) .. tipTotalUnit)
-                        ,"确认",
-                        function()
-                            confirmDownload()
-                        end
-                        ,"退出",
-                        function()
-                            CS.Lylibs.SDKManager.Ins:CloseApplication()
-                        end
-                    )
-                else
-                    confirmDownload()
                 end
             else
                 download.ResDownLoadManager:setDownLoadModuleTypeList(nil, nil, nil)
@@ -596,7 +591,7 @@ function judgeDownload(self)
                     print("UpdateResController", string.format("获取cdn资源更新类型->响应，耗时：%s秒", web.__getTime() - time))
                     if(jsonObj == nil)then
                         print("UpdateResController", string.format("获取cdn资源更新类型->提示码：%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR))
-                        local titleTip = string.format("资源网络异常请重试！提示码：%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR)
+                        local titleTip = string.format("网络异常请重试！提示码：%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR)
                         if(string.find(webData, "<html") ~= nil)then
                             titleTip = titleTip .. "，" .. web.CDN_UPDATE_TYPE_SUB_CODE.HTML_CONTENT
                         end
@@ -636,8 +631,8 @@ function judgeDownload(self)
                                 checkDownLoadSizeTip()
                             end
                         else
-                            print("UpdateResController", string.format("资源网络异常请重试！提示码：%s，%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR, subCode))
-                            UIFactory:alertOK0("网络提示", string.format("资源网络异常请重试！提示码：%s，%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR, subCode), 
+                            print("UpdateResController", string.format("网络异常请重试！提示码：%s，%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR, subCode))
+                            UIFactory:alertOK0("网络提示", string.format("网络异常请重试！提示码：%s，%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR, subCode), 
                                 function() 
                                     WebInterfaceUtil:postAsyncLoop(url, parasmDic, correctCall, function(self, errorData, jsonObj) correctCall(self, errorData, nil) end, self, tryCount) 
                                 end)

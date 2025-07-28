@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : RecruitShowOneView
 @Description    : 招募单人展示
@@ -22,7 +22,7 @@ isAddMask = 0
 function ctor(self)
     super.ctor(self)
 end
---析构
+--析构  
 function dtor(self)
 end
 
@@ -90,7 +90,7 @@ function deActive(self)
         hero.HeroShowManager:setIsMess(false)
         local heroId = hero.HeroManager:getHeroIdByTid(self.heroTid)
         showBoard.ShowBoardManager:GetSaveTheList(heroId)
-        GameDispatcher:dispatchEvent(EventName.OPEN_HERO_DEVELOP_PANEL, {heroId = heroId, heroTid = self.heroTid})
+        GameDispatcher:dispatchEvent(EventName.OPEN_HERO_DEVELOP_PANEL, { heroId = heroId, heroTid = self.heroTid })
     end
 
     if self.mCvAudioData then
@@ -110,16 +110,17 @@ function getAdaptaTrans(self)
     return self:getChildTrans("mGroup")
 end
 
---[[
+
+--[[ 
     初始化界面的静态文本，图片字
     每次打开界面都会重新读取，多语言切换时可以及时更新
 ]]
 function initViewText(self)
-    self:setBtnLabel(self.mSkip, 46805, "跳过")
+
 end
 
 function getOpenSoundPath(self)
-    return ""
+    return "arts/audio/UI/recruit/ui_recruit_show01.prefab"
 end
 
 function __playOpenAction(self)
@@ -181,8 +182,9 @@ function updateView(self)
     end
 
     self.mImgClick:SetActive(false)
-    -- self:addTimerClick()
+    self:addTimerClick()
 
+    self:refreshHeroCv()
     self:updateConvertView()
 end
 
@@ -213,8 +215,6 @@ function refreshHeroCv(self)
             end
         end)
     end
-
-    AudioManager:playSoundEffect("arts/audio/UI/recruit/ui_recruit_show01.prefab")
 end
 
 function updateConvertView(self)
@@ -233,16 +233,7 @@ function updateConvertView(self)
         end
     end
 
-    if self.heroConfigVo.color >= 4 and isEmpty then
-        self.mAnimator:Play("RecruitShowOneView_Enter01")
-        LoopManager:setFrameout(124, self, self.refreshHeroCv)
-
-        AudioManager:playSoundEffect("arts/audio/UI/recruit/ui_recruit_show03.prefab")
-    else
-        self.mAnimator:Play("RecruitShowOneView_Enter02")
-        self:refreshHeroCv()
-    end
-
+    -- self.mAnimator:Play("RecruitShowOneView_Enter01")
 end
 
 function addTimerClick(self)
@@ -273,5 +264,5 @@ end
 return _M
 
 --[[ 替换语言包自动生成，请勿修改！
-语言包: _TT(571):"已转化"
+	语言包: _TT(571):	"已转化"
 ]]

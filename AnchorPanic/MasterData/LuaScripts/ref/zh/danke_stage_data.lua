@@ -43,7 +43,7 @@ local danke_stage_data=
 		[9]={ skill_id=308, weight=200 },
 		[10]={ skill_id=309, weight=200 },
 		[11]={ skill_id=310, weight=200 },
-}, key_monster=2003, begin_time={{2025,1,22},{5,0,0}}, star_list={1,2,5}
+}, key_monster=2003, begin_time={{2024,4,24},{5,0,0}}, star_list={1,2,5}
 },
 	[1004]={ pre_id=1003, stage_name=102111, figure="bg_02.jpg", map_id=4, reward={22001}, skill_list={102,108,101}, skill_weight={
 		[1]={ skill_id=108, weight=300 },
@@ -58,7 +58,7 @@ local danke_stage_data=
 		[10]={ skill_id=308, weight=200 },
 		[11]={ skill_id=309, weight=200 },
 		[12]={ skill_id=310, weight=200 },
-}, key_monster=2004, begin_time={{2025,1,23},{5,0,0}}, star_list={1,2,6}
+}, key_monster=2004, begin_time={{2024,4,25},{5,0,0}}, star_list={1,2,6}
 },
 	[1005]={ pre_id=1004, stage_name=102112, figure="bg_02.jpg", map_id=5, reward={22001}, skill_list={103,102,108}, skill_weight={
 		[1]={ skill_id=108, weight=300 },
@@ -73,7 +73,7 @@ local danke_stage_data=
 		[10]={ skill_id=308, weight=200 },
 		[11]={ skill_id=309, weight=200 },
 		[12]={ skill_id=310, weight=200 },
-}, key_monster=2005, begin_time={{2025,1,24},{5,0,0}}, star_list={1,2,7}
+}, key_monster=2005, begin_time={{2024,4,26},{5,0,0}}, star_list={1,2,7}
 },
 	[1006]={ pre_id=1005, stage_name=102113, figure="bg_02.jpg", map_id=6, reward={22001}, skill_list={113,114,103}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -88,7 +88,7 @@ local danke_stage_data=
 		[10]={ skill_id=308, weight=200 },
 		[11]={ skill_id=309, weight=200 },
 		[12]={ skill_id=310, weight=200 },
-}, key_monster=2006, begin_time={{2025,1,25},{5,0,0}}, star_list={1,2,8}
+}, key_monster=2006, begin_time={{2024,4,27},{5,0,0}}, star_list={1,2,8}
 },
 	[1007]={ pre_id=1006, stage_name=102114, figure="bg_03.jpg", map_id=7, reward={22001}, skill_list={101,109,110}, skill_weight={
 		[1]={ skill_id=101, weight=300 },
@@ -104,7 +104,7 @@ local danke_stage_data=
 		[11]={ skill_id=308, weight=200 },
 		[12]={ skill_id=309, weight=200 },
 		[13]={ skill_id=310, weight=200 },
-}, key_monster=2007, begin_time={{2025,1,26},{5,0,0}}, star_list={1,2,9}
+}, key_monster=2007, begin_time={{2024,4,28},{5,0,0}}, star_list={1,2,9}
 },
 	[1008]={ pre_id=1007, stage_name=102115, figure="bg_03.jpg", map_id=8, reward={22001}, skill_list={109,110,113}, skill_weight={
 		[1]={ skill_id=109, weight=300 },
@@ -120,7 +120,7 @@ local danke_stage_data=
 		[11]={ skill_id=308, weight=200 },
 		[12]={ skill_id=309, weight=200 },
 		[13]={ skill_id=310, weight=200 },
-}, key_monster=2008, begin_time={{2025,1,27},{5,0,0}}, star_list={1,2,10}
+}, key_monster=2008, begin_time={{2024,4,29},{5,0,0}}, star_list={1,2,10}
 },
 	[1009]={ pre_id=1008, stage_name=102116, figure="bg_03.jpg", map_id=9, reward={22001}, skill_list={102,108,101}, skill_weight={
 		[1]={ skill_id=102, weight=300 },
@@ -136,7 +136,7 @@ local danke_stage_data=
 		[11]={ skill_id=308, weight=200 },
 		[12]={ skill_id=309, weight=200 },
 		[13]={ skill_id=310, weight=200 },
-}, key_monster=2009, begin_time={{2025,1,28},{5,0,0}}, star_list={1,2,11}
+}, key_monster=2009, begin_time={{2024,4,30},{5,0,0}}, star_list={1,2,11}
 },
 	[1010]={ pre_id=1009, stage_name=102117, figure="bg_03.jpg", map_id=10, reward={22001}, skill_list={103,102,108}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -156,7 +156,7 @@ local danke_stage_data=
 		[15]={ skill_id=308, weight=200 },
 		[16]={ skill_id=309, weight=200 },
 		[17]={ skill_id=310, weight=200 },
-}, key_monster=2010, begin_time={{2025,1,29},{5,0,0}}, star_list={1,2,12}
+}, key_monster=2010, begin_time={{2024,5,1},{5,0,0}}, star_list={1,2,12}
 },
 	[1011]={ pre_id=1010, stage_name=102158, figure="bg_03.jpg", map_id=11, reward={22001}, skill_list={110,113,114}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -176,7 +176,7 @@ local danke_stage_data=
 		[15]={ skill_id=308, weight=200 },
 		[16]={ skill_id=309, weight=200 },
 		[17]={ skill_id=310, weight=200 },
-}, key_monster=2011, begin_time={{2025,1,30},{5,0,0}}, star_list={1,2,13}
+}, key_monster=2011, begin_time={{2024,5,2},{5,0,0}}, star_list={1,2,13}
 },
 	[1012]={ pre_id=1011, stage_name=102159, figure="bg_03.jpg", map_id=12, reward={22001}, skill_list={102,108,101}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -196,7 +196,7 @@ local danke_stage_data=
 		[15]={ skill_id=308, weight=200 },
 		[16]={ skill_id=309, weight=200 },
 		[17]={ skill_id=310, weight=200 },
-}, key_monster=2012, begin_time={{2025,1,31},{5,0,0}}, star_list={1,2,14}
+}, key_monster=2012, begin_time={{2024,5,3},{5,0,0}}, star_list={1,2,14}
 },
 	[1013]={ pre_id=1012, stage_name=102160, figure="bg_04.jpg", map_id=13, reward={22001}, skill_list={101,109,110}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -216,7 +216,7 @@ local danke_stage_data=
 		[15]={ skill_id=308, weight=200 },
 		[16]={ skill_id=309, weight=200 },
 		[17]={ skill_id=310, weight=200 },
-}, key_monster=2013, begin_time={{2025,2,1},{5,0,0}}, star_list={1,2,15}
+}, key_monster=2013, begin_time={{2024,5,4},{5,0,0}}, star_list={1,2,15}
 },
 	[1014]={ pre_id=1013, stage_name=102161, figure="bg_04.jpg", map_id=14, reward={22001}, skill_list={108,101,109}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -236,7 +236,7 @@ local danke_stage_data=
 		[15]={ skill_id=308, weight=200 },
 		[16]={ skill_id=309, weight=200 },
 		[17]={ skill_id=310, weight=200 },
-}, key_monster=2014, begin_time={{2025,2,2},{5,0,0}}, star_list={1,2,16}
+}, key_monster=2014, begin_time={{2024,5,5},{5,0,0}}, star_list={1,2,16}
 },
 	[1015]={ pre_id=1014, stage_name=102162, figure="bg_04.jpg", map_id=15, reward={22001}, skill_list={114,103,102}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -256,7 +256,7 @@ local danke_stage_data=
 		[15]={ skill_id=308, weight=200 },
 		[16]={ skill_id=309, weight=200 },
 		[17]={ skill_id=310, weight=200 },
-}, key_monster=2015, begin_time={{2025,2,3},{5,0,0}}, star_list={1,2,17}
+}, key_monster=2015, begin_time={{2024,5,6},{5,0,0}}, star_list={1,2,17}
 },
 	[1016]={ pre_id=1015, stage_name=102163, figure="bg_04.jpg", map_id=16, reward={22001}, skill_list={113,114,103}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -276,7 +276,7 @@ local danke_stage_data=
 		[15]={ skill_id=308, weight=200 },
 		[16]={ skill_id=309, weight=200 },
 		[17]={ skill_id=310, weight=200 },
-}, key_monster=2016, begin_time={{2025,2,4},{5,0,0}}, star_list={1,2,18}
+}, key_monster=2016, begin_time={{2024,5,7},{5,0,0}}, star_list={1,2,18}
 },
 	[1017]={ pre_id=1016, stage_name=102164, figure="bg_04.jpg", map_id=17, reward={22001}, skill_list={110,113,114}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -296,7 +296,7 @@ local danke_stage_data=
 		[15]={ skill_id=308, weight=200 },
 		[16]={ skill_id=309, weight=200 },
 		[17]={ skill_id=310, weight=200 },
-}, key_monster=2017, begin_time={{2025,2,5},{5,0,0}}, star_list={1,2,19}
+}, key_monster=2017, begin_time={{2024,5,8},{5,0,0}}, star_list={1,2,19}
 },
 	[1018]={ pre_id=1017, stage_name=102165, figure="bg_04.jpg", map_id=18, reward={22001}, skill_list={108,101,109}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -316,7 +316,7 @@ local danke_stage_data=
 		[15]={ skill_id=308, weight=200 },
 		[16]={ skill_id=309, weight=200 },
 		[17]={ skill_id=310, weight=200 },
-}, key_monster=2018, begin_time={{2025,2,6},{5,0,0}}, star_list={1,2,20}
+}, key_monster=2018, begin_time={{2024,5,9},{5,0,0}}, star_list={1,2,20}
 },
 	[1019]={ pre_id=1018, stage_name=102166, figure="bg_04.jpg", map_id=19, reward={22001}, skill_list={109,110,113}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -336,7 +336,7 @@ local danke_stage_data=
 		[15]={ skill_id=308, weight=200 },
 		[16]={ skill_id=309, weight=200 },
 		[17]={ skill_id=310, weight=200 },
-}, key_monster=2019, begin_time={{2025,2,7},{5,0,0}}, star_list={1,2,21}
+}, key_monster=2019, begin_time={{2024,5,10},{5,0,0}}, star_list={1,2,21}
 },
 	[1020]={ pre_id=1019, stage_name=102167, figure="bg_04.jpg", map_id=20, reward={22001}, skill_list={109,110,113}, skill_weight={
 		[1]={ skill_id=103, weight=300 },
@@ -356,7 +356,7 @@ local danke_stage_data=
 		[15]={ skill_id=308, weight=200 },
 		[16]={ skill_id=309, weight=200 },
 		[17]={ skill_id=310, weight=200 },
-}, key_monster=2020, begin_time={{2025,2,8},{5,0,0}}, star_list={1,2,22}
+}, key_monster=2020, begin_time={{2024,5,11},{5,0,0}}, star_list={1,2,22}
 }
 }
 

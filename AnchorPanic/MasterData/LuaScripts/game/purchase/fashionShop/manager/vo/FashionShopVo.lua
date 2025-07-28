@@ -33,7 +33,6 @@ function parseData(self, key, cusData)
     -- 折扣价格 用于折扣卡
     self.discountCost = cusData.discount_cost
 
-    self.itemId = cusData.item_id
     --self.canUpdate = 0 -- 无更新 --等待折扣 --正在折扣
 end
 
@@ -142,14 +141,12 @@ end
 
 -- 获取半身像资源
 function getShadowIcon(self)
-    local url = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) and "fashionShop_Har/" or "fashionShop/"
-    return UrlManager:getIconPath(url .. self.heroFashionData.fashionIcon)
+    return UrlManager:getIconPath("fashionShop/" .. self.heroFashionData.fashionIcon)
 end
 
 -- 获取皮肤立绘资源
 function getFashionShowUrl(self)
-    local url = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) and "heroRecord_Har/" or "heroRecord/"
-    return UrlManager:getBgPath(url .. self.heroFashionData:getUrlBody())
+    return UrlManager:getPainImg(self.heroFashionData:getUrlBody())
 end
 
 -- 获取当前战员tid

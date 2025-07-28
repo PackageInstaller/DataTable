@@ -9,17 +9,6 @@ recharge.RechargeType = {
     FASHION_PERMIT = 6,--时装通行证
 
     STRENGTH_CARD = 7,--体力月卡
-    LIMITSHOP_GIFT = 8,--商场限时礼包
-
-    FASHION_PERMIT_TWO = 9, -- 时装通行证2
-    SUPERCIAL = 10,-- 阿尔戈特供
-    CARNIVAL_GIFT = 11,-- 狂欢好礼
-    SELECT_GIFT = 12, -- 自选礼包
-
-    FASHION_HISTORY = 13, -- 时装回廊
-
-    FASHION_OTHER = 14,--组合部件
-    FASHION_COMBO = 15,--组合
 }
 
 recharge.rechargeDirectId = {
@@ -91,31 +80,7 @@ recharge.rechargeDic[recharge.RechargeType.FASHION_PERMIT]["1"] = "时装通行�
 
 recharge.rechargeDic[recharge.RechargeType.STRENGTH_CARD]  = _TT(50072)
 
-recharge.rechargeDic[recharge.RechargeType.FASHION_PERMIT_TWO] = {}
-recharge.rechargeDic[recharge.RechargeType.FASHION_PERMIT_TWO]["1"] = "时装通行证2"
-
-
-
-recharge.rechargeDic[recharge.RechargeType.SUPERCIAL] = {}
-recharge.rechargeDic[recharge.RechargeType.SUPERCIAL]["1"] = _TT(138020)
-recharge.rechargeDic[recharge.RechargeType.SUPERCIAL]["4"] = _TT(138021)
-recharge.rechargeDic[recharge.RechargeType.SUPERCIAL]["7"] = _TT(138022)
-recharge.rechargeDic[recharge.RechargeType.SUPERCIAL]["9"] = _TT(138023)
-recharge.rechargeDic[recharge.RechargeType.SUPERCIAL]["11"] = _TT(138024)
-
-recharge.rechargeDic[recharge.RechargeType.CARNIVAL_GIFT] = {}
-recharge.rechargeDic[recharge.RechargeType.CARNIVAL_GIFT]["1"] = _TT(138501)
-
-recharge.rechargeDic[recharge.RechargeType.SELECT_GIFT] = {}
-recharge.rechargeDic[recharge.RechargeType.SELECT_GIFT]["1"] = _TT(149003)
-recharge.rechargeDic[recharge.RechargeType.SELECT_GIFT]["2"] = _TT(149004)
-recharge.rechargeDic[recharge.RechargeType.SELECT_GIFT]["3"] = _TT(149005)
-recharge.rechargeDic[recharge.RechargeType.SELECT_GIFT]["4"] = _TT(149006)
-recharge.rechargeDic[recharge.RechargeType.SELECT_GIFT]["5"] = _TT(149007)
-
-
 recharge.sendRecharge = function(cusType, cusSubType, detailId, successCallBack)
-    detailId = detailId and tostring(detailId) or detailId
     local rechargeVo = recharge.RechargeManager:getRechargeVoByDetail(cusType, cusSubType, detailId)
     if rechargeVo then
         local name = ""
@@ -127,31 +92,13 @@ recharge.sendRecharge = function(cusType, cusSubType, detailId, successCallBack)
                     name = vo:getItemName()
                 end
             end
-        elseif cusType == recharge.RechargeType.LIMITSHOP_GIFT then
-            local vo = activity.ActitvityExtraManager:getLimitShopGiftDic()[detailId]
-            if vo then
-                name = vo:getName()
-            end
-        elseif cusType == recharge.RechargeType.FASHION_HISTORY then
-            local vo = activity.ActitvityExtraManager:getFashionHisDataById(tonumber(detailId))
-            if vo then
-                name = _TT(vo.rechargeName)
-            end
-        elseif cusType == recharge.RechargeType.FASHION_OTHER then
-            name = purchase.FashionShopManager:getRechargeName(tonumber(detailId))
-        elseif cusType == recharge.RechargeType.FASHION_COMBO then
-            local vo = purchase.FashionShopManager:getComboShopItemById(tonumber(detailId))
-                if vo then
-                    name = _TT(vo.configVo.name)
-                end
         else
             name = recharge.rechargeDic[cusType]
             if detailId then
                 name = recharge.rechargeDic[cusType][detailId]
             end
         end
-        --cusLog("发送充值请求====".. "类型：".. cusType.. "===".. "传入id".. detailId.. "===".. "name:".. name)
-        
+
         GameDispatcher:dispatchEvent(EventName.REQ_RECHARGE, { type = rechargeVo.type, subType = nil, itemId = rechargeVo.itemId, itemTitle = _TT(50026), itemName = name, itemDes = _TT(50027), successFun = successCallBack })
     else
         logError("无对应充值数据====" .. "类型：" .. cusType .. "===" .. "传入id" .. detailId)

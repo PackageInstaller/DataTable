@@ -6,7 +6,7 @@
 @copyright      : (LY) 2021 雷焰网络
 -----------------------------------------------------
 ]]
-module('game.sandPlay.view.SandPlayFishingTeachingView', Class.impl(View))
+module('game.teaching.view.SandPlayFishingTeachingView', Class.impl(View))
 
 --对应的ui文件
 UIRes = UrlManager:getUIPrefabPath("sandPlay/SandPlayFishingTeachingView.prefab")

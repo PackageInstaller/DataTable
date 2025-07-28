@@ -68,7 +68,7 @@ local circuit_dup_data=
 		[5023]={ row=4, col=5, gird_id=111 },
 }, max_row=4, max_col=6, pre_id=1004, put_grid={}, desc=130012, help=130010
 },
-	[1006]={ name="6", first_award=22001, begin_time={{2024,8,7},{5,0,0}}, grid_list={
+	[1006]={ name="6", first_award=22001, begin_time={{2024,8,8},{5,0,0}}, grid_list={
 		[6001]={ row=1, col=1, gird_id=201 },
 		[6002]={ row=1, col=2, gird_id=105 },
 		[6005]={ row=1, col=5, gird_id=105 },
@@ -80,7 +80,7 @@ local circuit_dup_data=
 		[6012]={ row=2, col=6, gird_id=202 },
 }, max_row=4, max_col=6, pre_id=1005, put_grid={}, desc=130012, help=130010
 },
-	[1007]={ name="7", first_award=22001, begin_time={{2024,8,8},{5,0,0}}, grid_list={
+	[1007]={ name="7", first_award=22001, begin_time={{2024,8,9},{5,0,0}}, grid_list={
 		[7002]={ row=1, col=2, gird_id=105 },
 		[7003]={ row=1, col=3, gird_id=109 },
 		[7004]={ row=1, col=4, gird_id=113 },
@@ -94,7 +94,7 @@ local circuit_dup_data=
 		[7018]={ row=3, col=6, gird_id=202 },
 }, max_row=4, max_col=6, pre_id=1006, put_grid={}, desc=130012, help=130010
 },
-	[1008]={ name="8", first_award=22001, begin_time={{2024,8,8},{5,0,0}}, grid_list={
+	[1008]={ name="8", first_award=22001, begin_time={{2024,8,10},{5,0,0}}, grid_list={
 		[8001]={ row=1, col=1, gird_id=201 },
 		[8002]={ row=1, col=2, gird_id=105 },
 		[8008]={ row=2, col=2, gird_id=109 },
@@ -108,7 +108,7 @@ local circuit_dup_data=
 		[8017]={ row=3, col=5, gird_id=105 },
 }, max_row=4, max_col=6, pre_id=1007, put_grid={}, desc=130012, help=130010
 },
-	[1009]={ name="9", first_award=22001, begin_time={{2024,8,9},{5,0,0}}, grid_list={
+	[1009]={ name="9", first_award=22001, begin_time={{2024,8,11},{5,0,0}}, grid_list={
 		[9001]={ row=1, col=1, gird_id=201 },
 		[9002]={ row=1, col=2, gird_id=105 },
 		[9004]={ row=1, col=4, gird_id=105 },
@@ -122,7 +122,7 @@ local circuit_dup_data=
 		[9015]={ row=3, col=3, gird_id=105 },
 }, max_row=4, max_col=6, pre_id=1008, put_grid={}, desc=130012, help=130010
 },
-	[1010]={ name="10", first_award=22001, begin_time={{2024,8,9},{5,0,0}}, grid_list={
+	[1010]={ name="10", first_award=22001, begin_time={{2024,8,12},{5,0,0}}, grid_list={
 		[10002]={ row=1, col=2, gird_id=105 },
 		[10003]={ row=1, col=3, gird_id=113 },
 		[10004]={ row=1, col=4, gird_id=105 },
@@ -254,7 +254,7 @@ local circuit_dup_data=
 		[16026]={ row=4, col=5, gird_id=105 },
 		[16027]={ row=4, col=6, gird_id=113 },
 		[16028]={ row=4, col=7, gird_id=202 },
-}, max_row=4, max_col=8, pre_id=2005, put_grid={}, desc=130012, help=130010
+}, max_row=4, max_col=7, pre_id=2005, put_grid={}, desc=130012, help=130010
 },
 	[2007]={ name="7", first_award=22001, begin_time={{2024,8,16},{5,0,0}}, grid_list={
 		[17001]={ row=1, col=1, gird_id=201 },
@@ -264,8 +264,8 @@ local circuit_dup_data=
 		[17005]={ row=1, col=5, gird_id=109 },
 		[17006]={ row=1, col=6, gird_id=109 },
 		[17007]={ row=1, col=7, gird_id=109 },
-		[17008]={ row=1, col=8, gird_id=202 },
-		[17009]={ row=2, col=1, gird_id=201 },
+		[17008]={ row=1, col=8, gird_id=201 },
+		[17009]={ row=2, col=1, gird_id=202 },
 		[17010]={ row=2, col=2, gird_id=113 },
 		[17011]={ row=2, col=3, gird_id=109 },
 		[17012]={ row=2, col=4, gird_id=105 },
@@ -275,9 +275,9 @@ local circuit_dup_data=
 		[17030]={ row=4, col=6, gird_id=109 },
 		[17031]={ row=4, col=7, gird_id=109 },
 		[17032]={ row=4, col=8, gird_id=202 },
-}, max_row=4, max_col=8, pre_id=2006, put_grid={}, desc=130012, help=130010
+}, max_row=4, max_col=7, pre_id=2006, put_grid={}, desc=130012, help=130010
 },
-	[2008]={ name="8", first_award=22001, begin_time={{2024,8,16},{5,0,0}}, grid_list={
+	[2008]={ name="8", first_award=22001, begin_time={{2024,8,17},{5,0,0}}, grid_list={
 		[18001]={ row=1, col=1, gird_id=201 },
 		[18002]={ row=1, col=2, gird_id=105 },
 		[18004]={ row=1, col=4, gird_id=105 },
@@ -290,7 +290,6 @@ local circuit_dup_data=
 		[18012]={ row=2, col=4, gird_id=109 },
 		[18013]={ row=2, col=5, gird_id=109 },
 		[18014]={ row=2, col=6, gird_id=109 },
-		[18018]={ row=3, col=2, gird_id=105 },
 		[18019]={ row=3, col=3, gird_id=105 },
 		[18020]={ row=3, col=4, gird_id=105 },
 		[18021]={ row=3, col=5, gird_id=109 },
@@ -304,9 +303,9 @@ local circuit_dup_data=
 		[18030]={ row=4, col=6, gird_id=109 },
 		[18031]={ row=4, col=7, gird_id=113 },
 		[18032]={ row=4, col=8, gird_id=202 },
-}, max_row=4, max_col=8, pre_id=2007, put_grid={}, desc=130012, help=130010
+}, max_row=4, max_col=7, pre_id=2007, put_grid={}, desc=130012, help=130010
 },
-	[2009]={ name="9", first_award=22001, begin_time={{2024,8,17},{5,0,0}}, grid_list={
+	[2009]={ name="9", first_award=22001, begin_time={{2024,8,18},{5,0,0}}, grid_list={
 		[19001]={ row=1, col=1, gird_id=201 },
 		[19002]={ row=1, col=2, gird_id=105 },
 		[19003]={ row=1, col=3, gird_id=111 },
@@ -315,33 +314,29 @@ local circuit_dup_data=
 		[19009]={ row=2, col=1, gird_id=201 },
 		[19010]={ row=2, col=2, gird_id=117 },
 		[19011]={ row=2, col=3, gird_id=105 },
-		[19012]={ row=2, col=4, gird_id=109 },
 		[19013]={ row=2, col=5, gird_id=113 },
 		[19014]={ row=2, col=6, gird_id=105 },
 		[19018]={ row=3, col=2, gird_id=105 },
-		[19019]={ row=3, col=3, gird_id=105 },
-		[19020]={ row=3, col=4, gird_id=105 },
+		[19019]={ row=3, col=3, gird_id=109 },
+		[19020]={ row=3, col=4, gird_id=109 },
 		[19021]={ row=3, col=5, gird_id=113 },
 		[19022]={ row=3, col=6, gird_id=105 },
 		[19023]={ row=3, col=7, gird_id=109 },
 		[19024]={ row=3, col=8, gird_id=202 },
-		[19026]={ row=4, col=2, gird_id=105 },
-		[19027]={ row=4, col=3, gird_id=105 },
-		[19028]={ row=4, col=4, gird_id=105 },
 		[19029]={ row=4, col=5, gird_id=105 },
 		[19030]={ row=4, col=6, gird_id=109 },
 		[19031]={ row=4, col=7, gird_id=109 },
 		[19032]={ row=4, col=8, gird_id=202 },
-}, max_row=4, max_col=8, pre_id=2008, put_grid={}, desc=130012, help=130010
+}, max_row=4, max_col=7, pre_id=2008, put_grid={}, desc=130012, help=130010
 },
-	[2010]={ name="10", first_award=22001, begin_time={{2024,8,17},{5,0,0}}, grid_list={
+	[2010]={ name="10", first_award=22001, begin_time={{2024,8,19},{5,0,0}}, grid_list={
 		[20002]={ row=1, col=2, gird_id=105 },
 		[20003]={ row=1, col=3, gird_id=109 },
 		[20004]={ row=1, col=4, gird_id=109 },
 		[20005]={ row=1, col=5, gird_id=109 },
 		[20006]={ row=1, col=6, gird_id=109 },
 		[20007]={ row=1, col=7, gird_id=113 },
-		[20008]={ row=1, col=8, gird_id=202 },
+		[20008]={ row=1, col=8, gird_id=201 },
 		[20009]={ row=2, col=1, gird_id=201 },
 		[20010]={ row=2, col=2, gird_id=111 },
 		[20011]={ row=2, col=3, gird_id=109 },
@@ -349,29 +344,29 @@ local circuit_dup_data=
 		[20013]={ row=2, col=5, gird_id=109 },
 		[20014]={ row=2, col=6, gird_id=109 },
 		[20015]={ row=2, col=7, gird_id=109 },
-		[20017]={ row=3, col=1, gird_id=201 },
+		[20017]={ row=3, col=1, gird_id=202 },
 		[20018]={ row=3, col=2, gird_id=111 },
 		[20019]={ row=3, col=3, gird_id=109 },
 		[20020]={ row=3, col=4, gird_id=113 },
 		[20023]={ row=3, col=7, gird_id=109 },
-		[20026]={ row=4, col=2, gird_id=105 },
+		[20026]={ row=4, col=2, gird_id=150 },
 		[20027]={ row=4, col=3, gird_id=113 },
 		[20028]={ row=4, col=4, gird_id=105 },
 		[20031]={ row=4, col=7, gird_id=105 },
 		[20032]={ row=4, col=8, gird_id=202 },
-}, max_row=4, max_col=8, pre_id=2009, put_grid={}, desc=130012, help=130010
+}, max_row=4, max_col=7, pre_id=2009, put_grid={}, desc=130012, help=130010
 },
 	[3001]={ name="1", first_award=22001, begin_time={{2024,8,20},{5,0,0}}, grid_list={
 		[21001]={ row=1, col=1, gird_id=201 },
-		[21002]={ row=1, col=2, gird_id=205 },
+		[21001]={ row=1, col=2, gird_id=205 },
 		[21003]={ row=1, col=3, gird_id=101 },
 		[21004]={ row=1, col=4, gird_id=101 },
-		[21005]={ row=1, col=5, gird_id=208 },
+		[21005]={ row=1, col=5, gird_id=205 },
 		[21006]={ row=1, col=6, gird_id=202 },
 		[21008]={ row=2, col=2, gird_id=101 },
 		[21009]={ row=2, col=3, gird_id=101 },
-		[21010]={ row=2, col=4, gird_id=210 },
-		[21011]={ row=2, col=5, gird_id=206 },
+		[21010]={ row=2, col=4, gird_id=209 },
+		[21011]={ row=2, col=5, gird_id=205 },
 		[21014]={ row=3, col=2, gird_id=101 },
 		[21015]={ row=3, col=3, gird_id=101 },
 		[21016]={ row=3, col=4, gird_id=101 },
@@ -380,28 +375,28 @@ local circuit_dup_data=
 		[21021]={ row=4, col=3, gird_id=101 },
 		[21022]={ row=4, col=4, gird_id=101 },
 		[21023]={ row=4, col=5, gird_id=101 },
-}, max_row=4, max_col=6, pre_id=2010, put_grid={105,109}, desc=130012, help=130011
+}, max_row=4, max_col=6, pre_id=2010, put_grid={{105,109}}, desc=130012, help=130011
 },
 	[3002]={ name="2", first_award=22001, begin_time={{2024,8,20},{5,0,0}}, grid_list={
 		[22001]={ row=1, col=1, gird_id=201 },
-		[22002]={ row=1, col=2, gird_id=205 },
+		[22002]={ row=1, col=2, gird_id=105 },
 		[22003]={ row=1, col=3, gird_id=101 },
 		[22004]={ row=1, col=4, gird_id=101 },
-		[22005]={ row=1, col=5, gird_id=210 },
+		[22005]={ row=1, col=5, gird_id=109 },
 		[22006]={ row=1, col=6, gird_id=202 },
-		[22008]={ row=2, col=2, gird_id=216 },
+		[22008]={ row=2, col=2, gird_id=213 },
 		[22009]={ row=2, col=3, gird_id=101 },
 		[22010]={ row=2, col=4, gird_id=101 },
 		[22011]={ row=2, col=5, gird_id=101 },
-		[22014]={ row=3, col=2, gird_id=207 },
-		[22015]={ row=3, col=3, gird_id=206 },
+		[22014]={ row=3, col=2, gird_id=205 },
+		[22015]={ row=3, col=3, gird_id=205 },
 		[22016]={ row=3, col=4, gird_id=101 },
 		[22017]={ row=3, col=5, gird_id=101 },
 		[22020]={ row=4, col=2, gird_id=101 },
 		[22021]={ row=4, col=3, gird_id=101 },
 		[22022]={ row=4, col=4, gird_id=101 },
 		[22023]={ row=4, col=5, gird_id=101 },
-}, max_row=4, max_col=6, pre_id=3001, put_grid={105,109,109}, desc=130012, help=130011
+}, max_row=4, max_col=6, pre_id=3001, put_grid={{105,109,109}}, desc=130012, help=130011
 },
 	[3003]={ name="3", first_award=22001, begin_time={{2024,8,21},{5,0,0}}, grid_list={
 		[23001]={ row=1, col=1, gird_id=201 },
@@ -420,13 +415,13 @@ local circuit_dup_data=
 		[23014]={ row=3, col=2, gird_id=101 },
 		[23015]={ row=3, col=3, gird_id=101 },
 		[23016]={ row=3, col=4, gird_id=101 },
-		[23017]={ row=3, col=5, gird_id=212 },
+		[23017]={ row=3, col=5, gird_id=211 },
 		[23018]={ row=3, col=6, gird_id=202 },
 		[23020]={ row=4, col=2, gird_id=101 },
 		[23021]={ row=4, col=3, gird_id=101 },
 		[23022]={ row=4, col=4, gird_id=101 },
 		[23023]={ row=4, col=5, gird_id=101 },
-}, max_row=4, max_col=6, pre_id=3002, put_grid={105,105,105,109}, desc=130012, help=130011
+}, max_row=4, max_col=6, pre_id=3002, put_grid={{105,105,105,109}}, desc=130012, help=130011
 },
 	[3004]={ name="4", first_award=22001, begin_time={{2024,8,21},{5,0,0}}, grid_list={
 		[24001]={ row=1, col=1, gird_id=201 },
@@ -435,7 +430,7 @@ local circuit_dup_data=
 		[24004]={ row=1, col=4, gird_id=101 },
 		[24005]={ row=1, col=5, gird_id=101 },
 		[24008]={ row=2, col=2, gird_id=101 },
-		[24009]={ row=2, col=3, gird_id=208 },
+		[24009]={ row=2, col=3, gird_id=205 },
 		[24010]={ row=2, col=4, gird_id=205 },
 		[24011]={ row=2, col=5, gird_id=101 },
 		[24012]={ row=2, col=6, gird_id=202 },
@@ -447,7 +442,7 @@ local circuit_dup_data=
 		[24021]={ row=4, col=3, gird_id=101 },
 		[24022]={ row=4, col=4, gird_id=101 },
 		[24023]={ row=4, col=5, gird_id=101 },
-}, max_row=4, max_col=6, pre_id=3003, put_grid={105,109,105,105,105,105,105}, desc=130012, help=130011
+}, max_row=4, max_col=6, pre_id=3003, put_grid={{105,109,105,105,105,105,105}}, desc=130012, help=130011
 },
 	[3005]={ name="5", first_award=22001, begin_time={{2024,8,22},{5,0,0}}, grid_list={
 		[25001]={ row=1, col=1, gird_id=201 },
@@ -459,8 +454,8 @@ local circuit_dup_data=
 		[25009]={ row=2, col=2, gird_id=101 },
 		[25010]={ row=2, col=3, gird_id=217 },
 		[25011]={ row=2, col=4, gird_id=101 },
-		[25012]={ row=2, col=5, gird_id=207 },
-		[25013]={ row=2, col=6, gird_id=210 },
+		[25012]={ row=2, col=5, gird_id=101 },
+		[25013]={ row=2, col=6, gird_id=209 },
 		[25014]={ row=2, col=7, gird_id=202 },
 		[25016]={ row=3, col=2, gird_id=101 },
 		[25017]={ row=3, col=3, gird_id=101 },
@@ -473,7 +468,7 @@ local circuit_dup_data=
 		[25025]={ row=4, col=4, gird_id=101 },
 		[25026]={ row=4, col=5, gird_id=101 },
 		[25027]={ row=4, col=6, gird_id=101 },
-}, max_row=4, max_col=7, pre_id=3004, put_grid={105,105,105,109,109,105,105,105,109}, desc=130012, help=130011
+}, max_row=4, max_col=7, pre_id=3004, put_grid={{105,117,105,105,109,109,109,105,113,113,105,109,109,109}}, desc=130012, help=130011
 },
 	[3006]={ name="6", first_award=22001, begin_time={{2024,8,22},{5,0,0}}, grid_list={
 		[26001]={ row=1, col=1, gird_id=201 },
@@ -485,26 +480,26 @@ local circuit_dup_data=
 		[26007]={ row=1, col=7, gird_id=101 },
 		[26009]={ row=2, col=1, gird_id=201 },
 		[26010]={ row=2, col=2, gird_id=101 },
-		[26011]={ row=2, col=3, gird_id=206 },
+		[26011]={ row=2, col=3, gird_id=205 },
 		[26012]={ row=2, col=4, gird_id=101 },
 		[26013]={ row=2, col=5, gird_id=101 },
-		[26014]={ row=2, col=6, gird_id=205 },
+		[26014]={ row=2, col=6, gird_id=105 },
 		[26015]={ row=2, col=7, gird_id=101 },
 		[26018]={ row=3, col=2, gird_id=101 },
 		[26019]={ row=3, col=3, gird_id=101 },
 		[26020]={ row=3, col=4, gird_id=101 },
 		[26021]={ row=3, col=5, gird_id=101 },
-		[26022]={ row=3, col=6, gird_id=207 },
-		[26023]={ row=3, col=7, gird_id=210 },
+		[26022]={ row=3, col=6, gird_id=205 },
+		[26023]={ row=3, col=7, gird_id=101 },
 		[26024]={ row=3, col=8, gird_id=202 },
 		[26026]={ row=4, col=2, gird_id=101 },
 		[26027]={ row=4, col=3, gird_id=101 },
 		[26028]={ row=4, col=4, gird_id=101 },
 		[26029]={ row=4, col=5, gird_id=101 },
 		[26030]={ row=4, col=6, gird_id=101 },
-		[26031]={ row=4, col=7, gird_id=210 },
+		[26031]={ row=4, col=7, gird_id=101 },
 		[26032]={ row=4, col=8, gird_id=202 },
-}, max_row=4, max_col=8, pre_id=3005, put_grid={109,109,109,105,113,113,105,109,105,105,117,105}, desc=130012, help=130011
+}, max_row=4, max_col=8, pre_id=3005, put_grid={{109,109,109,105,113,113,105,109,109,109,105,105,117,105}}, desc=130012, help=130011
 },
 	[3007]={ name="7", first_award=22001, begin_time={{2024,8,23},{5,0,0}}, grid_list={
 		[27001]={ row=1, col=1, gird_id=201 },
@@ -513,7 +508,7 @@ local circuit_dup_data=
 		[27004]={ row=1, col=4, gird_id=101 },
 		[27005]={ row=1, col=5, gird_id=205 },
 		[27006]={ row=1, col=6, gird_id=101 },
-		[27007]={ row=1, col=7, gird_id=208 },
+		[27007]={ row=1, col=7, gird_id=205 },
 		[27008]={ row=1, col=8, gird_id=202 },
 		[27010]={ row=2, col=2, gird_id=101 },
 		[27011]={ row=2, col=3, gird_id=101 },
@@ -522,8 +517,8 @@ local circuit_dup_data=
 		[27014]={ row=2, col=6, gird_id=101 },
 		[27015]={ row=2, col=7, gird_id=101 },
 		[27018]={ row=3, col=2, gird_id=101 },
-		[27019]={ row=3, col=3, gird_id=210 },
-		[27020]={ row=3, col=4, gird_id=206 },
+		[27019]={ row=3, col=3, gird_id=101 },
+		[27020]={ row=3, col=4, gird_id=101 },
 		[27021]={ row=3, col=5, gird_id=101 },
 		[27022]={ row=3, col=6, gird_id=101 },
 		[27023]={ row=3, col=7, gird_id=101 },
@@ -532,11 +527,11 @@ local circuit_dup_data=
 		[27028]={ row=4, col=4, gird_id=101 },
 		[27029]={ row=4, col=5, gird_id=101 },
 		[27030]={ row=4, col=6, gird_id=101 },
-		[27031]={ row=4, col=7, gird_id=210 },
+		[27031]={ row=4, col=7, gird_id=209 },
 		[27032]={ row=4, col=8, gird_id=202 },
-}, max_row=4, max_col=8, pre_id=3006, put_grid={109,109,109,113,109,105,109,105,109}, desc=130012, help=130011
+}, max_row=4, max_col=8, pre_id=3006, put_grid={{109,109,109,113,109,105,190,105,109}}, desc=130012, help=130011
 },
-	[3008]={ name="8", first_award=22001, begin_time={{2024,8,23},{5,0,0}}, grid_list={
+	[3008]={ name="8", first_award=22001, begin_time={{2024,8,24},{5,0,0}}, grid_list={
 		[28002]={ row=1, col=2, gird_id=101 },
 		[28003]={ row=1, col=3, gird_id=101 },
 		[28004]={ row=1, col=4, gird_id=101 },
@@ -546,14 +541,14 @@ local circuit_dup_data=
 		[28009]={ row=2, col=1, gird_id=201 },
 		[28010]={ row=2, col=2, gird_id=101 },
 		[28011]={ row=2, col=3, gird_id=101 },
-		[28012]={ row=2, col=4, gird_id=105 },
+		[28012]={ row=2, col=4, gird_id=205 },
 		[28013]={ row=2, col=5, gird_id=101 },
-		[28014]={ row=2, col=6, gird_id=210 },
+		[28014]={ row=2, col=6, gird_id=209 },
 		[28015]={ row=2, col=7, gird_id=101 },
 		[28016]={ row=2, col=8, gird_id=202 },
 		[28018]={ row=3, col=2, gird_id=101 },
 		[28019]={ row=3, col=3, gird_id=101 },
-		[28020]={ row=3, col=4, gird_id=109 },
+		[28020]={ row=3, col=4, gird_id=101 },
 		[28021]={ row=3, col=5, gird_id=101 },
 		[28022]={ row=3, col=6, gird_id=101 },
 		[28023]={ row=3, col=7, gird_id=101 },
@@ -564,20 +559,20 @@ local circuit_dup_data=
 		[28030]={ row=4, col=6, gird_id=101 },
 		[28031]={ row=4, col=7, gird_id=101 },
 		[28032]={ row=4, col=8, gird_id=202 },
-}, max_row=4, max_col=8, pre_id=3007, put_grid={109,113,105,105,105,109,105,109}, desc=130012, help=130011
+}, max_row=4, max_col=8, pre_id=3007, put_grid={{109,105,113,105,105,105,190,105,109}}, desc=130012, help=130011
 },
-	[3009]={ name="9", first_award=22001, begin_time={{2024,8,24},{5,0,0}}, grid_list={
+	[3009]={ name="9", first_award=22001, begin_time={{2024,8,25},{5,0,0}}, grid_list={
 		[29002]={ row=1, col=2, gird_id=101 },
 		[29003]={ row=1, col=3, gird_id=101 },
 		[29004]={ row=1, col=4, gird_id=101 },
 		[29005]={ row=1, col=5, gird_id=101 },
 		[29006]={ row=1, col=6, gird_id=101 },
-		[29007]={ row=1, col=7, gird_id=208 },
+		[29007]={ row=1, col=7, gird_id=205 },
 		[29008]={ row=1, col=8, gird_id=202 },
 		[29009]={ row=2, col=1, gird_id=201 },
 		[29010]={ row=2, col=2, gird_id=101 },
 		[29011]={ row=2, col=3, gird_id=101 },
-		[29012]={ row=2, col=4, gird_id=217 },
+		[29012]={ row=2, col=4, gird_id=101 },
 		[29013]={ row=2, col=5, gird_id=101 },
 		[29014]={ row=2, col=6, gird_id=101 },
 		[29015]={ row=2, col=7, gird_id=101 },
@@ -585,48 +580,49 @@ local circuit_dup_data=
 		[29018]={ row=3, col=2, gird_id=101 },
 		[29019]={ row=3, col=3, gird_id=101 },
 		[29020]={ row=3, col=4, gird_id=101 },
-		[29021]={ row=3, col=5, gird_id=210 },
+		[29021]={ row=3, col=5, gird_id=209 },
 		[29022]={ row=3, col=6, gird_id=101 },
 		[29023]={ row=3, col=7, gird_id=101 },
 		[29026]={ row=4, col=2, gird_id=101 },
 		[29027]={ row=4, col=3, gird_id=101 },
 		[29028]={ row=4, col=4, gird_id=101 },
-		[29029]={ row=4, col=5, gird_id=210 },
+		[29029]={ row=4, col=5, gird_id=209 },
 		[29030]={ row=4, col=6, gird_id=101 },
 		[29031]={ row=4, col=7, gird_id=101 },
 		[29032]={ row=4, col=8, gird_id=202 },
-}, max_row=4, max_col=8, pre_id=3008, put_grid={105,109,105,113,113,109,109,109,109,105,111,105}, desc=130012, help=130011
+}, max_row=4, max_col=8, pre_id=3008, put_grid={{105,109,105,113,113,109,109,109,109,105,111,105}}, desc=130012, help=130011
 },
-	[3010]={ name="10", first_award=22001, begin_time={{2024,8,24},{5,0,0}}, grid_list={
+	[3010]={ name="10", first_award=22001, begin_time={{2024,8,26},{5,0,0}}, grid_list={
 		[30001]={ row=1, col=1, gird_id=201 },
 		[30002]={ row=1, col=2, gird_id=205 },
 		[30003]={ row=1, col=3, gird_id=101 },
-		[30004]={ row=1, col=4, gird_id=214 },
+		[30004]={ row=1, col=4, gird_id=101 },
 		[30005]={ row=1, col=5, gird_id=101 },
 		[30006]={ row=1, col=6, gird_id=101 },
 		[30007]={ row=1, col=7, gird_id=213 },
 		[30008]={ row=1, col=8, gird_id=202 },
 		[30010]={ row=2, col=2, gird_id=101 },
-		[30011]={ row=2, col=3, gird_id=105 },
+		[30011]={ row=2, col=3, gird_id=205 },
 		[30012]={ row=2, col=4, gird_id=101 },
 		[30013]={ row=2, col=5, gird_id=101 },
 		[30014]={ row=2, col=6, gird_id=101 },
 		[30015]={ row=2, col=7, gird_id=101 },
 		[30016]={ row=2, col=8, gird_id=202 },
+		[30017]={ row=3, col=1, gird_id=201 },
 		[30018]={ row=3, col=2, gird_id=101 },
 		[30019]={ row=3, col=3, gird_id=101 },
 		[30020]={ row=3, col=4, gird_id=101 },
 		[30021]={ row=3, col=5, gird_id=101 },
 		[30022]={ row=3, col=6, gird_id=101 },
 		[30023]={ row=3, col=7, gird_id=101 },
-		[30025]={ row=4, col=1, gird_id=201 },
-		[30026]={ row=4, col=2, gird_id=210 },
+		[30026]={ row=4, col=2, gird_id=109 },
 		[30027]={ row=4, col=3, gird_id=101 },
-		[30028]={ row=4, col=4, gird_id=210 },
+		[30028]={ row=4, col=4, gird_id=101 },
 		[30029]={ row=4, col=5, gird_id=101 },
 		[30030]={ row=4, col=6, gird_id=101 },
 		[30031]={ row=4, col=7, gird_id=101 },
-}, max_row=4, max_col=8, pre_id=3009, put_grid={113,105,105,105,111,109,109,105,109,117,105,105}, desc=130012, help=130011
+		[30032]={ row=4, col=8, gird_id=202 },
+}, max_row=4, max_col=8, pre_id=3009, put_grid={{113,105,105,105,111,109,109,105,109,117,105,105}}, desc=130012, help=130011
 }
 }
 

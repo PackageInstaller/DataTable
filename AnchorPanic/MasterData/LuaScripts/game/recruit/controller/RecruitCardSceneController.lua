@@ -45,15 +45,12 @@ function enterMap(self)
         local Efx_2_Left = Environment.transform:Find("position/ui_card_02/laoyinchouka_01_boli11_01/fx_laoyinchouka_01_boli11_01_01_lan")
         local Efx_2_Right = Environment.transform:Find("position/ui_card_02/laoyinchouka_01_boli11_02/fx_laoyinchouka_01_boli11_02_01_lan")
 
-        local recruit_id = recruit.RecruitManager:getRecruitActionId()
-        local meunVo = recruit.RecruitManager:getRecruitMenuVo(recruit_id)
-        if meunVo then
-            Efx_1_Left.gameObject:SetActive(meunVo.type == recruit.RecruitType.RECRUIT_BRACELETS)
-            Efx_1_Right.gameObject:SetActive(meunVo.type == recruit.RecruitType.RECRUIT_BRACELETS)
+        local curType = recruit.RecruitManager:getRecruitActionType()
+        Efx_1_Left.gameObject:SetActive(curType == recruit.RecruitType.RECRUIT_BRACELETS)
+        Efx_1_Right.gameObject:SetActive(curType == recruit.RecruitType.RECRUIT_BRACELETS)
 
-            Efx_2_Left.gameObject:SetActive(meunVo.type == recruit.RecruitType.RECRUIT_ACTIVITY_2)
-            Efx_2_Right.gameObject:SetActive(meunVo.type == recruit.RecruitType.RECRUIT_ACTIVITY_2)
-        end
+        Efx_2_Left.gameObject:SetActive(curType == recruit.RecruitType.RECRUIT_ACTIVITY_2)
+        Efx_2_Right.gameObject:SetActive(curType == recruit.RecruitType.RECRUIT_ACTIVITY_2)
 
         self.mQuality_point = Environment.transform:Find("position/ui_card_02/laoyinchouka_01_zhongxinpingtai_01/fx_laoyinchouka_zhongtai")
     end
@@ -64,9 +61,7 @@ function enterMap(self)
         local time = AnimatorUtil.getAnimatorClipTime(self.mAnimator, "handcard_01")
         LoopManager:setTimeout(time, nil, function ()
             self.mAudioLoopData = AudioManager:playSoundEffect("arts/audio/UI/recruit/ui_bracelets_loop.prefab", true)
-            GameDispatcher:dispatchEvent(EventName.OPENRECRUITSKIPVIEW, {isNeedSkip = true, isNeedClick = true, IsNeedEfx = false, skillCall = function ()
-                self:onSkip()
-            end})
+            GameDispatcher:dispatchEvent(EventName.OPENRECRUITSKIPVIEW, {isNeedSkip = true, isNeedClick = true, IsNeedEfx = false})
         end)
     end
 
@@ -79,7 +74,9 @@ function playSceneMusic(self)
 end
 
 function initData(self, args)
-   if not self:isRecruitType() then
+    local curType = recruit.RecruitManager:getRecruitActionType()
+    if curType ~= recruit.RecruitType.RECRUIT_BRACELETS and
+        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_2 then
         return
     end
 
@@ -98,7 +95,9 @@ end
 
 --点击开开关，开始抽人
 function onOpenRecruit(self)
-    if not self:isRecruitType() then
+    local curType = recruit.RecruitManager:getRecruitActionType()
+    if curType ~= recruit.RecruitType.RECRUIT_BRACELETS and
+        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_2 then
         return
     end
 
@@ -129,7 +128,9 @@ end
 
 --关闭立绘界面
 function onCloseOneView(self)
-    if not self:isRecruitType() then
+    local curType = recruit.RecruitManager:getRecruitActionType()
+    if curType ~= recruit.RecruitType.RECRUIT_BRACELETS and
+        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_2 then
         return
     end
 
@@ -143,7 +144,9 @@ end
 
 --跳过
 function onSkip(self)
-    if not self:isRecruitType() then
+    local curType = recruit.RecruitManager:getRecruitActionType()
+    if curType ~= recruit.RecruitType.RECRUIT_BRACELETS and
+        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_2 then
         return
     end
 
@@ -157,13 +160,14 @@ end
 function ShowRecruitResult(self, isSkip)
     if not table.empty(self.mRecruitCardList)then
         if self.mCurShowHeroInfo.index < #self.mRecruitCardList then
-            local recruit_id = recruit.RecruitManager:getRecruitActionId()
-            local recruitConfigVo = recruit.RecruitManager:getRecruitConfigVo(recruit_id)
+            local curType = recruit.RecruitManager:getRecruitActionType()
+            local recruitConfigVo = recruit.RecruitManager:getRecruitConfigVo(curType)
+            local propsList = {{tid = recruitConfigVo.rebate_item[1], num = recruitConfigVo.rebate_item[2]}}
 
             if #self.mRecruitCardList == 1 then
                 self.mCurShowHeroInfo.index = 1
                 self.mCurShowHeroInfo.vo = self.mRecruitCardList[1]
-                GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_CARD_SHOW_ONE_VIEW, {tid = self.mRecruitCardList[1].tid, isNoSkip = true})
+                GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_CARD_SHOW_ONE_VIEW, {tid = self.mRecruitCardList[1].tid, propsList = propsList, isNoSkip = true})
 
                 self.mIsOver = true
             else
@@ -172,7 +176,7 @@ function ShowRecruitResult(self, isSkip)
                         self.mCurShowHeroInfo.index = i
                         self.mCurShowHeroInfo.vo = self.mRecruitCardList[i]
 
-                        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_CARD_SHOW_ONE_VIEW, {tid = self.mRecruitCardList[i].tid})
+                        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_CARD_SHOW_ONE_VIEW, {tid = self.mRecruitCardList[i].tid, propsList = propsList})
                         break
                     end
                 end
@@ -194,27 +198,15 @@ function onOver(self)
     if #self.mRecruitCardList > 1 then
         GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_CARD_SHOW_ALL_VIEW, self.mRecruitCardList)
     elseif #self.mRecruitCardList == 1 then
-        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_CARD_SHOW_ONE_VIEW, {tid = self.mRecruitCardList[1].tid, isNoSkip = true})
+        local curType = recruit.RecruitManager:getRecruitActionType()
+        local recruitConfigVo = recruit.RecruitManager:getRecruitConfigVo(curType)
+        local propsList = {{tid = recruitConfigVo.rebate_item[1], num = recruitConfigVo.rebate_item[2]}}
+
+        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_CARD_SHOW_ONE_VIEW, {tid = self.mRecruitCardList[1].tid, propsList = propsList, isNoSkip = true})
         self.mIsOver = true
     end
 
     self:clearData()
-end
-
-function isRecruitType(self)
-    local recruit_id = recruit.RecruitManager:getRecruitActionId()
-    local meunVo = recruit.RecruitManager:getRecruitMenuVo(recruit_id)
-    if not meunVo then
-        return
-    end
-
-    if meunVo.type ~= recruit.RecruitType.RECRUIT_BRACELETS and
-        meunVo.type ~= recruit.RecruitType.RECRUIT_APP_BRACELETS and
-        meunVo.type ~= recruit.RecruitType.RECRUIT_ACTIVITY_2 then
-        return
-    end
-
-    return true
 end
 
 -- 关闭当前地图

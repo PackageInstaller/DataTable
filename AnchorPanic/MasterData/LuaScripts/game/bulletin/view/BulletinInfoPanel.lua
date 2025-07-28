@@ -172,13 +172,7 @@ function showContent(self)
             if (string.starts(bulletinVo.pic, "http")) then
                 self.mImgBanner:GetComponent(ty.AutoRefRawImage):SetImgWebKey(bulletinVo.pic, true)
             else
-                -- if bulletinVo.pic == "1009" then
-                --     gs.TransQuick:SizeDelta01(self.mImgBanner:GetComponent(ty.RectTransform) ,830)
-                --     gs.TransQuick:SizeDelta02(self.mImgBanner:GetComponent(ty.RectTransform) ,530)
-                --     self.mImgBanner:GetComponent(ty.AutoRefRawImage):SetImg(UrlManager:getBgPath("bulletin/" .. string.format("bulletin_banner_1009.jpg", bulletinVo.pic)), false)
-                -- else
-                    self.mImgBanner:GetComponent(ty.AutoRefRawImage):SetImg(UrlManager:getBgPath("bulletin/" .. string.format("bulletin_banner_%s.jpg", bulletinVo.pic)), true)
-                --end
+                self.mImgBanner:GetComponent(ty.AutoRefRawImage):SetImg(UrlManager:getBgPath("bulletin/" .. string.format("bulletin_banner_%s.jpg", bulletinVo.pic)), true)
             end
         end
         gs.LayoutRebuilder.ForceRebuildLayoutImmediate(self:getChildTrans("mScroller"))--立即刷新

@@ -43,12 +43,6 @@ function init(self)
     -- 等待主场景加载完成后需要打开的uicode
     self.mWaitOpenUICode = 0
 
-    -- 是否拖拽改变spine
-    self.isDragSpine = nil
-
-    -- 是否展示交互场景
-    self.isShowBigHostel = nil
-
     -- 付费活动相关功能开放id manager需要拥有函数 checkShowState()
     self.activityFuncList = {
         { funcId = funcopen.FuncOpenConst.FUNC_ID_FIRSTCHARGE, mgr = firstCharge.FirstChargeManager },

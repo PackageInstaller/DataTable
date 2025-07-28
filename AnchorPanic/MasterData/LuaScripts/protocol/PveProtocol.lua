@@ -1550,11 +1550,19 @@ SC_AUTO_CHESS_RECEIVE_TASK_AWARD =
     {"coin", "int32", "已拥有的自走棋币"},
 }
  
+--- *c2s* 战员试玩信息 19600
+CS_HERO_TRY_INFO =
+{
+    19600, 
+    {"dup_id", "int16", "副本id"},
+}
+ 
 --- *s2c* 战员试玩信息 19601
 SC_HERO_TRY_INFO =
 {
     19601, 
-    {"pass_dup", "int16", "已通关副本id", "repeated"},
+    {"dup_id", "int16", "副本id"}, 
+    {"is_pass", "int8", "是否通关 0：否 1：是"},
 }
  
 --- *s2c* 保护刁民面板信息 19610
@@ -2102,15 +2110,14 @@ SC_SEABED_UPDATE_CELL_INFO =
     {"battle_info", pt_seabed_battle_info, "战斗信息"}, 
     {"shop_info", pt_seabed_shop_info, "商店信息"}, 
     {"event_select_buff", "int32", "触发事件后开始选buff", "repeated"}, 
-    {"pass_cell", "int16", "已走过格子", "repeated"}, 
-    {"pass_branch_cell", "int16", "已走过分支格子", "repeated"},
+    {"pass_cell", "int16", "已走过格子", "repeated"},
 }
  
 --- *c2s* 战后选择 19857
 CS_SEABED_POSTWAR_SELECT =
 {
     19857, 
-    {"select_type", "int8", "选择类型1-收藏品选择,2-buff选择,3-事件buff选择"}, 
+    {"select_type", "int8", "选择类型1-buff选择,2-收藏品选择,3-事件buff选择"}, 
     {"select_id", "int32", "选择的id"},
 }
  
@@ -2161,9 +2168,7 @@ SC_SEABED_SETTLE_INFO =
     {"is_pass", "int8", "是否通关"}, 
     {"point", "int32", "结算总分"}, 
     {"talent_point", "int32", "天赋点"}, 
-    {"stats_list", pt_seabed_stats_detail, "统计信息", "repeated"}, 
-    {"point_multiple", "int32", "积分倍率"}, 
-    {"difficulty", "int8", "通关难度"},
+    {"stats_list", pt_seabed_stats_detail, "统计信息", "repeated"},
 }
  
 --- *s2c* 历史信息 19865

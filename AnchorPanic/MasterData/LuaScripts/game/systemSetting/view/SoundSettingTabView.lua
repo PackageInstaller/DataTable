@@ -26,13 +26,6 @@ function configUI(self)
     self.mTextBgSound = self:getChildGO("mTextBgSound"):GetComponent(ty.Text)
     self.mTextEffectSound = self:getChildGO("mTextEffectSound"):GetComponent(ty.Text)
     self.mTextModelSound = self:getChildGO("mTextModelSound"):GetComponent(ty.Text)
-
-    self.GroupSwitchCv = self:getChildGO("GroupSwitchCv")
-    self.mBtnSwitchCv = self:getChildGO("mBtnSwitchCv")
-    self.mTxtSwitchCvShow = self:getChildGO("mTxtSwitchCvShow"):GetComponent(ty.Text)
-    self.mImgSwitchCvArrow = self:getChildTrans("mImgSwitchCvArrow")
-    self.mScrollSwitchCv = self:getChildGO("mScrollSwitchCv"):GetComponent(ty.ScrollRect)
-    self.mSwitchCvItem = self:getChildGO("mSwitchCvItem")
 end
 
 function initViewText(self)
@@ -42,9 +35,6 @@ function initViewText(self)
     self.mTextModelSound.text = _TT(62058) --"角色语音"
     self.mTextTitle1.text = _TT(62053) --"声音"
     self.mTextTitle2.text = _TT(62102) --"声音"
-
-    self:getChildGO("mTxtSwitchCvTitle"):GetComponent(ty.Text).text = _TT(95)
-    self:getChildGO("mTxtSwitchCvTitle2"):GetComponent(ty.Text).text = _TT(96)
 end
 
 function addAllUIEvent(self)
@@ -112,8 +102,6 @@ function active(self)
             fill = self.mSliderDic[systemSetting.SystemSettingDefine.soundEffectVolume].fill,
         },
     }
-
-    self:refreshSwitchCv()
 end
 
 function addSwichBtnEventAndVolumeState(self)
@@ -180,42 +168,6 @@ function deActive(self)
         if (v) then
             LoopManager:removeTimerByIndex(v)
         end
-    end
-    self:destroyCvDropDown()
-end
-
-function destroyCvDropDown(self)
-    if self.dropDown_switchCv then
-        self.dropDown_switchCv:destroy()
-        self.dropDown_switchCv = nil
-    end
-end
-
-function refreshSwitchCv(self)
-    self:destroyCvDropDown()
-    local isOpen = funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_SWITCH_CV, false)
-    self.GroupSwitchCv:SetActive(isOpen)
-    if isOpen then
-        self.dropDown_switchCv = DropDown.new()
-        self.dropDown_switchCv:setUiRef({
-            goDropDown = self.mBtnSwitchCv,
-            txtDropDown = self.mTxtSwitchCvShow,
-            tfDownArrow = self.mImgSwitchCvArrow,
-            goScroll = self.mScrollSwitchCv.gameObject,
-            tfContent = self.mScrollSwitchCv.content,
-            goItem = self.mSwitchCvItem,
-        })
-        self.dropDown_switchCv:setOptionClickCallBack(function (index)
-            systemSetting.SystemSettingManager:setCurSelectCvTypeSetting(index)
-        end)
-        
-        local strOptions = {}
-        local cvOptionsConfig = systemSetting.SystemSettingManager:getCvTypeSettingCfgs()
-        for i, v in ipairs(cvOptionsConfig) do
-            strOptions[i] = _TT(v[2])
-        end
-        local curSelectIdx = systemSetting.SystemSettingManager:getCurSelectCvTypeSetting()
-        self.dropDown_switchCv:resetOptions(strOptions, curSelectIdx)
     end
 end
 

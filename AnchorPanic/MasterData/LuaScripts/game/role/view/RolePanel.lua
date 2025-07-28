@@ -44,7 +44,7 @@ function initData(self)
     table.insert(self.mTabDataList, role.RoleInfoTab.RoleInfo)
     table.insert(self.mTabDataList, role.RoleInfoTab.QualitySetting)
     table.insert(self.mTabDataList, role.RoleInfoTab.SoundSetting)
-    if (not GameManager:getIsInCommiting() and funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_EXCHANGE_CODE, false)) then
+    if (not GameManager:getIsInCommiting()) then
         table.insert(self.mTabDataList, role.RoleInfoTab.ExchangeCodeTabView)
     end
     self.showTabType = 2

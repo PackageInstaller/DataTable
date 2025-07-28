@@ -278,12 +278,6 @@ function getFormatTimeBySeconds_12(t)
     return string.format("%d-%d %02d:%02d:%02d", timeTable.month, timeTable.day, timeTable.hour, timeTable.min, timeTable.sec)
 end
 
--- 根据时间戳获取指定格式的时间显示  9-3 10:10:9
-function getFormatTimeBySeconds_13(t)
-    local timeTable = getTimeTable(t)
-    return string.format("%02d:%02d:%02d", timeTable.hour, timeTable.min, timeTable.sec)
-end
-
 -- 根据秒数获取天，时，分，秒
 function getDHMSByTime(t)
     local d = math.floor(t / (24 * 3600))
@@ -492,59 +486,5 @@ function getTimeDifference(state, limit, specialTimer, returnParameter)
     end
     return difTimer
 end
-
--- 获取指定日期是当年的第几周（周一为每周第一天）
--- @param year 年份，如 2025
--- @param month 月份，1-12
--- @param day 日期，1-31
--- @return 当年的周数
-function getWeekOfYear()
-    local t = GameManager:getClientTime()
-    local now = os.date("*t", t)
-    local year, month, day = now.year, now.month, now.day
-    -- 计算指定日期是当年的第几天
-    local days_in_month = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
-    -- 检查闰年
-    if (year % 4 == 0 and year % 100 ~= 0) or (year % 400 == 0) then
-        days_in_month[2] = 29
-    end
-    
-    local day_of_year = 0
-    for i = 1, month - 1 do
-        day_of_year = day_of_year + days_in_month[i]
-    end
-    day_of_year = day_of_year + day
-    
-    -- 获取指定日期是星期几（1=周日，2=周一，...，7=周六）
-    local date_table = os.date("*t", os.time({year=year, month=month, day=day}))
-    local weekday = date_table.wday  -- 1=周日，2=周一，...，7=周六
-    
-    -- 计算当年第一周的第一天（第一个周一）
-    local first_weekday = os.date("*t", os.time({year=year, month=1, day=1})).wday
-    local first_monday_offset = (9 - first_weekday) % 7  -- 计算1月1日后的第一个周一
-    local first_monday = 1 + first_monday_offset
-    
-    -- 如果指定日期在第一个周一之前，属于上一年的最后一周
-    if day_of_year < first_monday then
-        -- 获取上一年的最后一周周数
-        local prev_year = year - 1
-        local prev_year_days = 365
-        if (prev_year % 4 == 0 and prev_year % 100 ~= 0) or (prev_year % 400 == 0) then
-            prev_year_days = 366
-        end
-        
-        -- 计算上一年最后一周的第一天
-        local prev_year_first_weekday = os.date("*t", os.time({year=prev_year, month=1, day=1})).wday
-        local prev_year_first_monday = 1 + ((9 - prev_year_first_weekday) % 7)
-        
-        -- 上一年的周数
-        return math.floor((prev_year_days - prev_year_first_monday + 7) / 7)
-    end
-    
-    -- 计算指定日期所在周数
-    local week_number = math.floor((day_of_year - first_monday) / 7) + 1
-    return week_number
-end
-
 
 return _M

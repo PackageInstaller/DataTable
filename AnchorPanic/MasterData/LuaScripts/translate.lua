@@ -237,8 +237,6 @@ gs.ObstacleAvoidanceType = CS.UnityEngine.AI.ObstacleAvoidanceType
 gs.ShadowResolution = CS.UnityEngine.ShadowResolution
 gs.VideoPlayer = CS.UnityEngine.Video.VideoPlayer
 gs.RenderSettings = CS.UnityEngine.RenderSettings
-gs.AnimationEvent = CS.UnityEngine.AnimationEvent
-
 gs.TMP_Text = CS.TMPro.TMP_Text
 gs.TMP_LinkInfo = CS.TMPro.TMP_LinkInfo
 gs.TMP_TextUtilities = CS.TMPro.TMP_TextUtilities
@@ -328,7 +326,6 @@ gs.VEC4_ONE = CS.UnityEngine.Vector4.one
 ---VEC4_CONST END-----------------------
 ---RECT_CONST BEGIN------------------------------
 gs.RECT_ZERO = CS.UnityEngine.Rect.zero
-gs.Rect = CS.UnityEngine.Rect
 ---RECT_CONST END-----------------------
 ---Matrix4x4 BEGIN----------------------------
 gs.MATRIX4X4_ZERO = CS.UnityEngine.Matrix4x4.zero

@@ -123,7 +123,7 @@ function updateView(self)
 
     for k, v in pairs(self.preResultData.heroData) do
         local heroVo = hero.HeroManager:getHeroVo(v.heroId)
-        if heroVo and heroVo:checkIsPreData() then
+        if heroVo:checkIsPreData() then
             return
         end
     end

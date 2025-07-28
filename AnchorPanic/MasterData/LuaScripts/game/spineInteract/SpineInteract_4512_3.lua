@@ -11,7 +11,7 @@ module('game.spineInteract.SpineInteract_4512_3', Class.impl("game.spineInteract
 
 function ctor(self)
     super.ctor(self)
-    self.baseModelId = "4512"
+    self.baseModelId = "4512_3"
 end
 
 function onClick1(self)

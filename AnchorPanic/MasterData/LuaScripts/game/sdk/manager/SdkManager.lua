@@ -32,7 +32,7 @@ SDK_XUNFEI_RESULT = "SDK_XUNFEI_RESULT"
 
 --构造函数
 function ctor(self)
-    super.ctor(self)
+	super.ctor(self)
     self:initData()
 end
 
@@ -73,9 +73,9 @@ end
 
 -- 检查Poco
 function checkPocoSdk(self)
-    if (not web.WebManager:isReleaseApp() and web.WebManager.platform ~= web.DEVICE_TYPE.WINDOWS) then
+    if(not web.WebManager:isReleaseApp() and web.WebManager.platform ~= web.DEVICE_TYPE.WINDOWS)then
         local sdkTrans = self:getSdkTrans()
-        if (sdkTrans) then
+        if(sdkTrans)then
             gs.GoUtil.AddComponent(sdkTrans.gameObject, typeof(CS.PocoManager))
         end
     end
@@ -83,23 +83,23 @@ end
 
 -- 检查讯飞
 function checkXunFeiSdk(self)
-    if (not self.mIsEditor) then
-        if (web.WebManager.platform ~= web.DEVICE_TYPE.WINDOWS) then
+    if(not self.mIsEditor)then
+        if(web.WebManager.platform ~= web.DEVICE_TYPE.WINDOWS)then
             local buglyAppId = nil
-            if (web.WebManager.platform == web.DEVICE_TYPE.ANDROID) then
+            if(web.WebManager.platform == web.DEVICE_TYPE.ANDROID)then
                 buglyAppId = web.__getConfig().bugly_app_id_android
             else
                 buglyAppId = web.__getConfig().bugly_app_id_ios
             end
             local isBuglyDebug = web.__getConfig().bugly_is_debug == "1"
-
+    
             -- 初始化注册
             local tip1 = web.WebManager.branch_type .. "-" .. web.WebManager.platform .. "-" .. web.WebManager.net_type .. "-" .. web.WebManager.channel_id .. "-" .. web.WebManager.sub_channel_id
             local tip2 = web.getFormatVersion(web.WebManager.prefix_version_str, web.WebManager.game_version_name, web.WebManager.pro_svn_version, web.WebManager.art_svn_version)
             local version = web.WebManager.game_version_name
             local userSign = self:getUniqueId()
             local initDelay = 0
-
+        
             self:buglyConfigDebugMode(isBuglyDebug)
             self:buglyConfigDefault(tip1 .. "（" .. tip2 .. "）", version, userSign, initDelay)
             self:buglyInitWithAppId(buglyAppId)
@@ -115,13 +115,13 @@ function checkXunFeiSdk(self)
         -- 设置讯飞录音文件写入路径
         self.mXunFeiAudioWriteDir = gs.PathUtil.GetPersistentAssetsWPath(self:getXunFeiAudioFolder())
         -- 清理旧的语音文件
-        if (gs.Directory.Exists(self.mXunFeiAudioWriteDir)) then
+        if(gs.Directory.Exists(self.mXunFeiAudioWriteDir))then
             gs.Directory.Delete(self.mXunFeiAudioWriteDir, true)
         end
         gs.SdkManager:SetXunFeiAudioDir(self.mXunFeiAudioWriteDir)
 
-        print("讯飞音频读取路径：" .. self.mXunFeiAudioReadDir)
-        print("讯飞音频写入路径：" .. self.mXunFeiAudioWriteDir)
+        print("讯飞音频读取路径："..self.mXunFeiAudioReadDir)
+        print("讯飞音频写入路径："..self.mXunFeiAudioWriteDir)
     end
 end
 
@@ -137,7 +137,7 @@ end
 
 -- 获取讯飞本地音频文件可读路径
 function getXunFeiAudioRPath(self, fileName)
-    if (fileName == nil) then
+    if(fileName == nil)then
         return self.mXunFeiAudioReadDir
     else
         return self.mXunFeiAudioReadDir .. "/" .. self:getXunFeiAudioName(fileName)
@@ -146,7 +146,7 @@ end
 
 -- 获取讯飞本地音频文件可写路径
 function getXunFeiAudioWPath(self, fileName)
-    if (fileName == nil) then
+    if(fileName == nil)then
         return self.mXunFeiAudioWriteDir
     else
         return self.mXunFeiAudioWriteDir .. "/" .. self:getXunFeiAudioName(fileName)
@@ -155,7 +155,7 @@ end
 
 -- 检查云桶
 function checkCosxmlSdk(self)
-    if (not self.mIsEditor) then
+    if(not self.mIsEditor)then
         local appId = web.__getConfig().cosxml_app_id
         local region = web.__getConfig().cosxml_region
         local bucket = web.__getConfig().cosxml_bucket
@@ -173,11 +173,11 @@ function getChannelData(self)
         return sdk.AndroidChannelId.NONE, ""
     end
     local jsonStr = gs.SdkManager:GetChannelData("")
-    if (jsonStr == nil) then
+    if(jsonStr == nil)then
         return sdk.AndroidChannelId.NONE, ""
     else
         jsonStr = string.gsub(jsonStr, " ", "")
-        if (jsonStr == "" or jsonStr == "{}") then
+        if(jsonStr == "" or jsonStr == "{}")then
             return sdk.AndroidChannelId.NONE, ""
         else
             local data = JsonUtil.decode(jsonStr)
@@ -197,17 +197,9 @@ function sdkLogin(self, isDefaultAuto)
         return
     end
     local params = {}
-    params.type = isDefaultAuto and 0 or 1
+    params.type = isDefaultAuto and 0 or 1 
     local jsonObjStr = JsonUtil.encode(params)
     gs.SdkManager:Login(jsonObjStr)
-end
-
--- 注销账号
-function destroyAccount(self)
-    if self.mIsEditor then
-        return
-    end
-    gs.SdkManager:DestroyAccount("")
 end
 
 -- 切换账号
@@ -215,6 +207,7 @@ function switchAccount(self)
     if self.mIsEditor then
         return
     end
+    -- 待补充参数
     gs.SdkManager:SwitchAccount("")
 end
 
@@ -283,7 +276,7 @@ function __getSendSdkParamsObj(self, isRoleLvlUp)
     local friendDataList = {}
     params.friend_list = friendDataList
     local friendList = friend.FriendManager:getFriendList()
-    if (friendList) then
+    if(friendList)then
         for i = 1, #friendList do
             local friendVo = friendList[i]
             local friendData = {}
@@ -307,7 +300,7 @@ function notifyCreateRoleSuc(self)
     if self.mIsEditor then
         return
     end
-    if (login.LoginManager.isFirstCreateRole == true) then
+    if(login.LoginManager.isFirstCreateRole == true)then
         login.LoginManager.isFirstCreateRole = false
         gs.SdkManager:NotifyCreateRoleSuc(self:__getSendSdkParams(false))
     end
@@ -376,7 +369,7 @@ end
 -- amount:充值金额，double类型的字符串
 -- productCode:充值品项的id，Sdk方运营给出商品列表
 function pay(self, orderId, deliveryAddress, itemId, itemPrice, itemTitle, itemName, itemDes, isCurrencyProduct)
-    if (self:getIsBranch()) then
+    if(self:getIsBranch())then
         print("版署版本无充值")
         return
     end
@@ -385,7 +378,7 @@ function pay(self, orderId, deliveryAddress, itemId, itemPrice, itemTitle, itemN
     --游戏厂商订单号
     params.gameOrderId = orderId
     --游戏自定义参数
-    params.gameExt = "orderId=" .. orderId .. "#itemId=" .. itemId .. "#pf_id=" .. web.WebManager.pf_id .. "#channel_id=" .. web.WebManager.channel_id
+    params.gameExt = "orderId="..orderId.."#itemId="..itemId.."#pf_id="..web.WebManager.pf_id.."#channel_id="..web.WebManager.channel_id
     --透传地址
     params.deliveryAddress = deliveryAddress or ""
     -- 金额.00f，单位：元（double）
@@ -433,7 +426,7 @@ function openSdkUserUI(self)
     if self.mIsEditor then
         return
     end
-    if (self:getIsBranch()) then
+    if(self:getIsBranch())then
         print("版属版本无用户中心界面")
         return
     end
@@ -475,8 +468,8 @@ function getSdkInfo(self)
     if self.mIsEditor then
         return nil
     end
-    if (not self.mSdkInfo) then
-        if (web.WebManager:isReleaseApp()) then
+    if(not self.mSdkInfo)then
+        if(web.WebManager:isReleaseApp())then
             local sdkInfo = gs.SdkManager:GetSdkInfo("")
             if (sdkInfo ~= "") then
                 local okFun = function(data)
@@ -533,94 +526,27 @@ end
 
 -- taptap特制活动
 function getIsTaptapActivity(self)
-    if (web.WebManager:isReleaseApp()) then
-        if (web.WebManager.platform == web.DEVICE_TYPE.WINDOWS) then
+    if(web.WebManager:isReleaseApp())then
+        if(web.WebManager.platform == web.DEVICE_TYPE.WINDOWS)then
             return true
         end
         local channelId, channelName = sdk.SdkManager:getChannelData()
-        local sdkInfo = sdk.SdkManager:getSdkInfo()
-        if (web.WebManager.platform == web.DEVICE_TYPE.ANDROID) then
+        if(web.WebManager.platform == web.DEVICE_TYPE.ANDROID)then
             if (channelId == sdk.AndroidChannelId.LEIYAN) then
                 -- 特殊处理好游快爆没有taptap特制活动
-                if (sdkInfo and sdkInfo.subChannelId and tostring(sdkInfo.subChannelId) == "1021003") then
+                local sdkInfo = sdk.SdkManager:getSdkInfo()
+                if(sdkInfo and sdkInfo.subChannelId and tostring(sdkInfo.subChannelId) == "1021003")then
                     return false
                 else
                     return true
                 end
             end
         end
-        if (web.WebManager.platform == web.DEVICE_TYPE.IOS) then
-            if (sdkInfo and (sdkInfo.packageName == "com.fxyx.mdjl.ios" or sdkInfo.packageName == "com.fxyx.mdjl.x7zfios.x7sy" or sdkInfo.packageName == "com.game.tezj")) then
-                -- 飞行quick3 苹果包不弹
-                return false
-            end
+        if(web.WebManager.platform == web.DEVICE_TYPE.IOS)then
             if (channelId == sdk.IosChannelId.LEIYAN) then
                 return true
             end
         end
-    end
-    return false
-end
-
--- 是否渠道华为包，特殊做些暴漏限制
-function getIsChannelHuaWei(self)
-    if (web.WebManager.platform == web.DEVICE_TYPE.ANDROID) then
-        local sdkInfo = sdk.SdkManager:getSdkInfo()
-        if (sdkInfo and sdkInfo.packageName == "com.leiyan.mdjl.huawei") then
-            return true
-        end
-    end
-    return false
-end
-
--- 是否渠道Vivo包，特殊做些暴漏限制
-function getIsChannelVivo(self)
-    if (web.WebManager.platform == web.DEVICE_TYPE.ANDROID) then
-        local sdkInfo = sdk.SdkManager:getSdkInfo()
-        if (sdkInfo and sdkInfo.packageName == "com.leiyan.mdjl.vivo") then
-            return true
-        end
-    end
-    return false
-end
-
--- 是否渠道Oppo包，特殊做些暴漏限制
-function getIsChannelOppo(self)
-    -- if (web.WebManager.platform == web.DEVICE_TYPE.ANDROID) then
-    --     local sdkInfo = sdk.SdkManager:getSdkInfo()
-    --     if (sdkInfo and sdkInfo.packageName == "com.leiyan.mdjl.nearme.gamecenter") then
-    --         return true
-    --     end
-    -- end
-    return false
-end
-
--- 是否渠道抖音包，特殊显示注销按钮
-function getIsChannelDouYin(self)
-    if (web.WebManager.platform == web.DEVICE_TYPE.ANDROID) then
-        local sdkInfo = sdk.SdkManager:getSdkInfo()
-        if (sdkInfo and sdkInfo.packageName == "com.fxyx.mdjl.bytedance.gamecenter") then
-            return true
-        end
-    end
-    return false
-end
-
--- 是否渠道抖音直播包
-function getIsChannelDouYinBroadcast(self)
-    if (web.WebManager.platform == web.DEVICE_TYPE.ANDROID) then
-        local sdkInfo = sdk.SdkManager:getSdkInfo()
-        if (sdkInfo and sdkInfo.packageName == "com.fxyx.mdjl") then
-            return true
-        end
-    end
-    return false
-end
-
--- 是否渠道特殊和谐
-function getIsChannelHarmonious(self)
-    if gm.GmManager.isTestHar or (self:getIsChannelHuaWei() or self:getIsChannelVivo() or self:getIsChannelOppo() or self:getIsChannelDouYin() or self:getIsChannelDouYinBroadcast()) then
-        return true
     end
     return false
 end
@@ -630,7 +556,7 @@ function getUniqueId(self)
     -- return gs.SdkManager:GetUniqueId()
     -- 使用sdk提供的唯一id
     local sdkInfo = sdk.SdkManager:getSdkInfo()
-    if (sdkInfo) then
+    if(sdkInfo)then
         return sdkInfo.uniqueId
     end
     return ""
@@ -665,10 +591,10 @@ function openWebView(self, webIdStr, webUrl, parentTrans, posX, posY, width, hei
         return ""
     end
     -- 保留两位小数
-    posX = posX - posX % 0.01
-    posY = posY - posY % 0.01
-    width = width - width % 0.01
-    height = height - height % 0.01
+    posX = posX-posX % 0.01
+    posY = posY-posY % 0.01
+    width = width-width % 0.01
+    height = height-height % 0.01
     local screenW, screenH = ScreenUtil:getScreenSize()
     local params = {}
     params.webId = webIdStr
@@ -700,9 +626,9 @@ function closeWebView(self, ...)
         return ""
     end
     local webIdListStr = ""
-    local webIdList = { ... }
+    local webIdList = {...}
     for i = 1, #webIdList do
-        if (i == 1) then
+        if(i == 1)then
             webIdListStr = webIdList[i]
         else
             webIdListStr = webIdListStr .. "_" .. webIdList[i]
@@ -877,11 +803,11 @@ end
 
 -- 分享结果回调
 function parseShare(self, msg)
-    if (msg == 0) then
+    if(msg == 0)then
         gs.Message.Show("分享失败")
-    elseif (msg == 1) then
+    elseif(msg == 1)then
         gs.Message.Show("分享成功")
-    elseif (msg == 2) then
+    elseif(msg == 2)then
         gs.Message.Show("分享取消成功")
     end
     self:dispatchEvent(self.SDK_SHARE, msg)
@@ -890,11 +816,11 @@ end
 -- 耳机状态回调
 function headphoneState(self, msg)
     if (msg) then
-        if msg == 1 or msg == "1" then -- 连上耳机
+        if msg==1 or msg=="1" then -- 连上耳机
             gs.AudioManager:ChangeMixerSnapshot(0)
             print("耳机快照模式")
         else
-            if gs.Application.platform == gs.RuntimePlatform.Android then
+            if gs.Application.platform==gs.RuntimePlatform.Android then
                 gs.AudioManager:ChangeMixerSnapshot(1)
                 print("Android扩音快照模式")
             else
@@ -910,71 +836,71 @@ end
 ----------------------------------------------------------------------讯飞回调----------------------------------------------------------------------
 -- 录音机已经准备好了，用户可以开始语音输入
 function parseXunFeiBegin(self, msg)
-    logInfo("录音机已经准备好了，用户可以开始语音输入", msg)
+	logInfo("录音机已经准备好了，用户可以开始语音输入", msg)
     self:dispatchEvent(self.SDK_XUNFEI_BEGIN, {})
 end
 
 -- 录音错误码
 function parseXunFeiError(self, msg)
-    logWarn("讯飞录音错误码：" .. msg, self.__cname)
+	logWarn("讯飞录音错误码："..msg, self.__cname)
     if (msg == "10118") then
-        gs.Message.Show("(您没有说话)可能是录音机权限被禁，请打开录音机权限")
-    elseif (msg == "20004") then
-        gs.Message.Show("没有听清楚，请重新说一遍")
-    elseif (msg == "20006") then
-        gs.Message.Show("没有录音权限或者没有麦克风")
-    elseif (msg == "22002") then
-        gs.Message.Show("")
-    elseif (msg == "22003") then
-        gs.Message.Show("")
-    end
+		gs.Message.Show("(您没有说话)可能是录音机权限被禁，请打开录音机权限")
+    elseif(msg == "20004")then
+		gs.Message.Show("没有听清楚，请重新说一遍")
+    elseif(msg == "20006")then
+		gs.Message.Show("没有录音权限或者没有麦克风")
+    elseif(msg == "22002")then
+		gs.Message.Show("")
+    elseif(msg == "22003")then
+		gs.Message.Show("")
+	end
     self:dispatchEvent(self.SDK_XUNFEI_ERROR, {})
 end
 
 -- 检测到了语音的尾端点，已经进入识别过程，不再接受语音输入
 function parseXunFeiEnd(self, msg)
-    logInfo("检测到了语音的尾端点，已经进入识别过程，不再接受语音输入：" .. msg, self.__cname)
+	logInfo("检测到了语音的尾端点，已经进入识别过程，不再接受语音输入："..msg, self.__cname)
     self:dispatchEvent(self.SDK_XUNFEI_END, {})
 end
 
 -- 语音解析完毕
 function parseXunFeiResult(self, msg)
     local paramsList = string.split(msg, '&')
-    local voiceContent = paramsList[1]
-    local voicePath = paramsList[2]
-    local voiceFileName = paramsList[3]
+	local voiceContent = paramsList[1]
+	local voicePath = paramsList[2]
+	local voiceFileName = paramsList[3]
 
-    logInfo(string.format("音频内容：%s", voiceContent), self.__cname)
-    logInfo(string.format("音频路径：%s", voicePath), self.__cname)
-    logInfo(string.format("音频文件名：%s", voiceFileName), self.__cname)
+	logInfo(string.format("音频内容：%s", voiceContent), self.__cname)
+	logInfo(string.format("音频路径：%s", voicePath), self.__cname)
+	logInfo(string.format("音频文件名：%s", voiceFileName), self.__cname)
 
-    self:dispatchEvent(self.SDK_XUNFEI_RESULT, { voiceContent = voiceContent, voiceFileName = voiceFileName })
+    self:dispatchEvent(self.SDK_XUNFEI_RESULT, {voiceContent = voiceContent, voiceFileName = voiceFileName})
 end
 
 -- 录入的音量变化
 function parseXunFeiVolume(self, msg)
     local volume = msg
-    -- logInfo("录入的音量变化："..volume, self.__cname)
-    -- gs.Message.Show("(录入的音量变化")
-    self:dispatchEvent(self.SDK_VOLMU_CHANGE, { volume = volume })
+	-- logInfo("录入的音量变化："..volume, self.__cname)
+	-- gs.Message.Show("(录入的音量变化")
+    self:dispatchEvent(self.SDK_VOLMU_CHANGE, {volume = volume})
 end
 
 -- 事件回调
 function parseXunFeiEvent(self, msg)
-    logWarn("事件回调码：" .. msg, self.__cname)
+	logWarn("事件回调码："..msg, self.__cname)
     if (msg == "10008") then
-        gs.Message.Show("没有听清楚，请重新说一遍")
+		gs.Message.Show("没有听清楚，请重新说一遍")
     elseif (msg == "10114") then
         gs.Message.Show("没有识别出来，请重新说一遍")
     elseif (msg == "10118") then
         gs.Message.Show("没有听清楚，请重新说一遍")
-    elseif (msg == "20004") then
+    elseif(msg == "20004")then
         gs.Message.Show("没有听清楚，请重新说一遍")
-    end
+	end
 end
 
 return _M
 
-
+ 
 --[[ 替换语言包自动生成，请勿修改！
 ]]

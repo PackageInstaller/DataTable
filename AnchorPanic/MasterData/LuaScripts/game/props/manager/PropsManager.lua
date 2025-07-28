@@ -17,30 +17,6 @@ function __init(self)
     self:__parseConfigData()
 end
 
-function parseItemRuleData(self)
-    self.mItemRuleDic = {}
-    local baseData = RefMgr:getData('item_rule_data')
-    for key, data in pairs(baseData) do
-        local vo = LuaPoolMgr:poolGet(props.ItemRuleVo)
-        vo:parseData(key, data)
-        self.mItemRuleDic[vo.id] = vo
-    end
-end
-
-function getItemRuleData(self)
-    if self.mItemRuleDic == nil then
-        self:parseItemRuleData()
-    end
-    return self.mItemRuleDic
-end
-
-function getItemRuleDataByTid(self,tid)
-    if self.mItemRuleDic == nil then
-        self:parseItemRuleData()
-    end
-    return self.mItemRuleDic[tid]
-end
-
 -- 初始化配置表
 function __parseConfigData(self)
     self.m_propsConfigDic = {}

@@ -36,11 +36,11 @@ function configUI(self)
     self.mTxtAutoReceive = self:getChildGO("mTxtAutoReceive"):GetComponent(ty.Text)
     self.mBtnAll = self:getChildGO("mBtnAll")
     self.mTxtTips = self:getChildGO("mTxtTips"):GetComponent(ty.Text)
-    self.mTextTitle = self:getChildGO("mTextTitle"):GetComponent(ty.Text)
+    self.mTxtTitle = self:getChildGO("mTxtTitle"):GetComponent(ty.Text)
 end
 
 function initViewText(self)
-    self.mTextTitle.text = _TT(95004)
+    self.mTxtTitle.text = _TT(95004)
 end
 
 --激活
@@ -56,6 +56,10 @@ function deActive(self)
     super.deActive(self)
 
     GameDispatcher:removeEventListener(EventName.DANKE_RECEIVE_REWARD, self.udpateView, self)
+end
+
+function initViewText(self)
+    -- self:setBtnLabel(self.aa, 10001, "按钮")
 end
 
 -- UI事件管理(关闭界面会自动移除)

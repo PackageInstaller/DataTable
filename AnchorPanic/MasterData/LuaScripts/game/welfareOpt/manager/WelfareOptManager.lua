@@ -134,7 +134,6 @@ function parseFestivalSignInfoMsg(self, msg)
 
     GameDispatcher:dispatchEvent(EventName.UPDATE_WELFAREOPT_FLAG, {tabType = welfareOpt.WelfareOptConst.WELFAREOPT_HOLIDAY})
     GameDispatcher:dispatchEvent(EventName.UPDATE_FESTIVAL_REWARD)
-    GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
     GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_RED_STATE)
 end
 
@@ -618,12 +617,10 @@ function parseSevenLoadingServerData(self, msg)
     GameDispatcher:dispatchEvent(EventName.UPDATE_WELFAREOPT_FLAG, {
         tabType = welfareOpt.WelfareOptConst.WELFAREOPT_SEVENLOADING
     })
-    -- GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
-    GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_RED_STATE)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
     if self:getSevenLoadingServerData() and #self:getSevenLoadingServerData().list >= 7 then
         GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_HIDE, activity.ActivityConst.ACTIVITY_SEVENLOADING)
     end
-    GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
 end
 
 -- 获取7天登录服务器数据

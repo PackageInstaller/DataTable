@@ -79,9 +79,6 @@ function updateView(self)
             break
         end
     end
-    if string.find(txt, ".png") ~= nil then 
-        txt = "[图片]"
-    end
     gs.TextExtension.SetTextWithElipsis(self.mTxtSimpleMessage, txt)
 end
 

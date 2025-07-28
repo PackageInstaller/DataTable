@@ -32,7 +32,7 @@ function create(self, path, beLoop, wpos, parentTrans, finishCall)
         
         if item.m_finishCall then item.m_finishCall() end
 
-        Debug:log_warn("AudioManager", "音频文件加载失败，请查看是否存在这个音频文件" .. path)
+        Debug:log_error("AudioManager", "音频文件加载失败，请查看是否存在这个音频文件" .. path)
         return
     end
 
@@ -45,7 +45,7 @@ function create(self, path, beLoop, wpos, parentTrans, finishCall)
 
         if item.m_finishCall then item.m_finishCall() end
 
-        Debug:log_warn("AudioManager", "音频文件加载失败，请查看这个音频文件是否存在clip，或者clip length是否为0；" .. path)
+        Debug:log_error("AudioManager", "音频文件加载失败，请查看这个音频文件是否存在clip，或者clip length是否为0；" .. path)
         return
     end
 
@@ -79,14 +79,6 @@ function addTimer(self)
 
         self.m_curPlayTime = self.m_curPlayTime + self:getTimeDetaTime()
 
-        if not self.m_source.clip then 
-            logError("该音效clip 为空,无法播放" .. self.m_path)
-
-            if self.m_finishCall then 
-                self.m_finishCall()
-            end
-            return
-        end
         if not self.m_loop and self.m_curPlayTime > self.m_source.clip.length + 0.5 then
             if self.m_finishCall then 
                 self.m_finishCall()

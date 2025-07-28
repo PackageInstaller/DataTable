@@ -3,9 +3,8 @@ module("recruit.RecruitNewPlayerTabView", Class.impl(TabSubView))
 UIRes = UrlManager:getUIPrefabPath("recruit/tab/RecruitNewPlayerTab.prefab")
 
 --构造函数
-function ctor(self, recruitId)
+function ctor(self)
     super.ctor(self)
-    self.m_recruitId = recruitId
 end
 
 -- 初始化数据
@@ -25,7 +24,7 @@ end
 
 function active(self)
     GameDispatcher:addEventListener(EventName.UPDATE_RECRUIT_PANEL, self.__onUpdateViewHandler, self)
-
+    
     --请求上一次的招募结果
     GameDispatcher:dispatchEvent(EventName.REQ_NEWPLAY_RECRUIT_RESULT)
     self:__updateView()
@@ -40,30 +39,30 @@ function initViewText(self)
 end
 
 function addAllUIEvent(self)
-    self:addUIEvent(self.m_btnTen, self.onClickTenHandler)
-    self:addUIEvent(self.m_btnRule, self.onClickRuleHandler)
+    self:addUIEvent(self.m_btnTen, self.__onClickTenHandler)
+    self:addUIEvent(self.m_btnRule, self.__onClickRuleHandler)
 
 end
 
 -- 已招募次数
 function getRecruitTimes(self)
-    return recruit.RecruitManager:getRecruitInfo(self.m_recruitId).recruit_daily_times
+    return recruit.RecruitManager:getRecruitInfo(self.m_recruitType).recruit_daily_times
 end
 
-function onClickTenHandler(self)
+function __onClickTenHandler(self)
     if (self:getRecruitTimes() >= sysParam.SysParamManager:getValue(SysParamType.RECRUIT_NEW_PLAYER_TIMES)) then
         gs.Message.Show(_TT(28009))--"不可超过招募次数上限"
     else
-        self:checkSend(self.m_recruitId, 10)
+        self:checkSend(self.m_recruitType, 10)
     end
 end
 
-function onClickRuleHandler(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_RULE_PANEL, {recruitId = self.m_recruitId})
+function __onClickRuleHandler(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_RULE_PANEL, { type = self.m_recruitType })
 end
 
-function checkSend(self, recruitId, times)
-    GameDispatcher:dispatchEvent(EventName.SEND_RECRUIT, {recruitId = recruitId, times = times})
+function checkSend(self, recruitType, times)
+    GameDispatcher:dispatchEvent(EventName.SEND_RECRUIT, { type = recruitType, times = times })
 end
 
 function __onUpdateViewHandler(self, args)
@@ -77,7 +76,7 @@ function __updateView(self)
     local maxCount = sysParam.SysParamManager:getValue(SysParamType.RECRUIT_NEW_PLAYER_TIMES)
     self.m_textRemainTimes.text = maxCount - self:getRecruitTimes()
 
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitId)
+    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitType)
     local costMoneyTid_ten = configVo:getCostTenId()
     local costMoneyCount_ten = configVo:getCostTenNum()
 
@@ -86,6 +85,6 @@ function __updateView(self)
 end
 
 return _M
-
+ 
 --[[ 替换语言包自动生成，请勿修改！
 ]]

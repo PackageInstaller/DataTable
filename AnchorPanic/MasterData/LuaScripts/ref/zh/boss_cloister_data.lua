@@ -3,7 +3,7 @@
 local boss_cloister_data=
 
 {
-	[1]={ level={1,120}, task_reward={
+	[1]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -17,7 +17,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6305.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6303.png", boss_model={"6305","6311","6303"}, name={74004,74005,74006}, angle={30,0}, mon_list={40093,40211,40226}
 },
-	[2]={ level={1,120}, task_reward={
+	[2]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -31,7 +31,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6304.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6310","6304","6312"}, name={74002,74008,74009}, angle={30,0}, mon_list={40078,40241,40264}
 },
-	[3]={ level={1,120}, task_reward={
+	[3]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -45,7 +45,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6309.png,dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6305.png", boss_model={"6309","6310","6305"}, name={74001,74002,74004}, angle={30,0}, mon_list={40063,40078,40093}
 },
-	[4]={ level={1,120}, task_reward={
+	[4]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -59,7 +59,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6305.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6303.png", boss_model={"6305","6311","6303"}, name={74004,74005,74006}, angle={30,0}, mon_list={40093,40211,40226}
 },
-	[5]={ level={1,120}, task_reward={
+	[5]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -73,7 +73,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6304.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6310","6304","6312"}, name={74002,74008,74009}, angle={30,0}, mon_list={40078,40241,40264}
 },
-	[6]={ level={1,120}, task_reward={
+	[6]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -87,7 +87,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6309.png,dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6305.png", boss_model={"6309","6310","6305"}, name={74001,74002,74004}, angle={30,0}, mon_list={40063,40078,40093}
 },
-	[7]={ level={1,120}, task_reward={
+	[7]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -101,7 +101,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6305.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6303.png", boss_model={"6305","6311","6303"}, name={74004,74005,74006}, angle={30,0}, mon_list={40093,40211,40226}
 },
-	[8]={ level={1,120}, task_reward={
+	[8]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -115,7 +115,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6304.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6310","6304","6312"}, name={74002,74008,74009}, angle={30,0}, mon_list={40078,40241,40264}
 },
-	[9]={ level={1,120}, task_reward={
+	[9]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -129,7 +129,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6309.png,dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6305.png", boss_model={"6309","6310","6305"}, name={74001,74002,74004}, angle={30,0}, mon_list={40063,40078,40093}
 },
-	[10]={ level={1,120}, task_reward={
+	[10]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -143,7 +143,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6309.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6309","6311","6312"}, name={74001,74005,74009}, angle={30,0}, mon_list={40063,40211,40264}
 },
-	[11]={ level={1,120}, task_reward={
+	[11]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -157,7 +157,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6310","6311","6312"}, name={74002,74005,74009}, angle={30,0}, mon_list={40078,40211,40264}
 },
-	[12]={ level={1,120}, task_reward={
+	[12]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -171,7 +171,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6305.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6305","6311","6312"}, name={74004,74005,74009}, angle={30,0}, mon_list={40093,40211,40264}
 },
-	[13]={ level={1,120}, task_reward={
+	[13]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -185,7 +185,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6310","6311","6312"}, name={74002,74005,74009}, angle={30,0}, mon_list={40078,40211,40264}
 },
-	[14]={ level={1,120}, task_reward={
+	[14]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -199,7 +199,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6305.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6305","6311","6312"}, name={74004,74005,74009}, angle={30,0}, mon_list={40093,40211,40264}
 },
-	[15]={ level={1,120}, task_reward={
+	[15]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -213,7 +213,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6304.png,dupApoWar/fight_yxhy_6303.png", boss_model={"6310","6304","6303"}, name={74002,74008,74006}, angle={30,0}, mon_list={40078,40241,40226}
 },
-	[16]={ level={1,120}, task_reward={
+	[16]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -227,7 +227,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6309.png,dupApoWar/fight_yxhy_6304.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6309","6304","6312"}, name={74001,74008,74009}, angle={30,0}, mon_list={40063,40241,40264}
 },
-	[17]={ level={1,120}, task_reward={
+	[17]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -241,7 +241,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6305.png,dupApoWar/fight_yxhy_6304.png,dupApoWar/fight_yxhy_6303.png", boss_model={"6305","6304","6303"}, name={74004,74008,74006}, angle={30,0}, mon_list={40093,40241,40226}
 },
-	[18]={ level={1,120}, task_reward={
+	[18]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -255,7 +255,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6310","6311","6312"}, name={74002,74005,74009}, angle={30,0}, mon_list={40078,40211,40264}
 },
-	[19]={ level={1,120}, task_reward={
+	[19]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -269,7 +269,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6309.png,dupApoWar/fight_yxhy_6304.png,dupApoWar/fight_yxhy_6303.png", boss_model={"6309","6304","6303"}, name={74001,74008,74006}, angle={30,0}, mon_list={40063,40241,40226}
 },
-	[20]={ level={1,120}, task_reward={
+	[20]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -283,7 +283,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6303.png", boss_model={"6310","6311","6303"}, name={74002,74005,74006}, angle={30,0}, mon_list={40078,40211,40226}
 },
-	[21]={ level={1,120}, task_reward={
+	[21]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -297,7 +297,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6309.png,dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6305.png", boss_model={"6309","6310","6305"}, name={74001,74002,74004}, angle={30,0}, mon_list={40063,40211,40264}
 },
-	[22]={ level={1,120}, task_reward={
+	[22]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -311,7 +311,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6309.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6309","6311","6312"}, name={74001,74005,74009}, angle={30,0}, mon_list={40063,40211,40264}
 },
-	[23]={ level={1,120}, task_reward={
+	[23]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -325,7 +325,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6310","6311","6312"}, name={74002,74005,74009}, angle={30,0}, mon_list={40078,40211,40264}
 },
-	[24]={ level={1,120}, task_reward={
+	[24]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -339,7 +339,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6305.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6305","6311","6312"}, name={74004,74005,74009}, angle={30,0}, mon_list={40093,40211,40264}
 },
-	[25]={ level={1,120}, task_reward={
+	[25]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -353,7 +353,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6310","6311","6312"}, name={74002,74005,74009}, angle={30,0}, mon_list={40078,40211,40264}
 },
-	[26]={ level={1,120}, task_reward={
+	[26]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -367,7 +367,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6305.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6305","6311","6312"}, name={74004,74005,74009}, angle={30,0}, mon_list={40093,40211,40264}
 },
-	[27]={ level={1,120}, task_reward={
+	[27]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -381,7 +381,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6304.png,dupApoWar/fight_yxhy_6303.png", boss_model={"6310","6304","6303"}, name={74002,74008,74006}, angle={30,0}, mon_list={40078,40241,40226}
 },
-	[28]={ level={1,120}, task_reward={
+	[28]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -395,7 +395,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6309.png,dupApoWar/fight_yxhy_6304.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6309","6304","6312"}, name={74001,74008,74009}, angle={30,0}, mon_list={40063,40241,40264}
 },
-	[29]={ level={1,120}, task_reward={
+	[29]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -409,7 +409,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6305.png,dupApoWar/fight_yxhy_6304.png,dupApoWar/fight_yxhy_6303.png", boss_model={"6305","6304","6303"}, name={74004,74008,74006}, angle={30,0}, mon_list={40093,40241,40226}
 },
-	[30]={ level={1,120}, task_reward={
+	[30]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },
@@ -423,7 +423,7 @@ local boss_cloister_data=
 		[11]={ star=27, rewards={{3,250},{24,250}}, des=72311, title=72311 },
 }, challenge_num=3, boss_img="dupApoWar/fight_yxhy_6310.png,dupApoWar/fight_yxhy_6311.png,dupApoWar/fight_yxhy_6312.png", boss_model={"6310","6311","6312"}, name={74002,74005,74009}, angle={30,0}, mon_list={40078,40211,40264}
 },
-	[31]={ level={1,120}, task_reward={
+	[31]={ level={1,90}, task_reward={
 		[1]={ star=1, rewards={{3,50},{24,50}}, des=72301, title=72301 },
 		[2]={ star=2, rewards={{3,100},{24,100}}, des=72302, title=72302 },
 		[3]={ star=3, rewards={{3,150},{24,150}}, des=72303, title=72303 },

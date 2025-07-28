@@ -24,8 +24,8 @@ function __init(self)
 end
 
 function parseRechargeList(self, msg)
-    -- print("商品充值列表数量：" .. #msg.pay_cfg)
-    -- print("商品已充值列表数量：" .. #msg.pay_list)
+    print("商品充值列表数量：" .. #msg.pay_cfg)
+    print("商品已充值列表数量：" .. #msg.pay_list)
 
     self.hasRechargeList = msg.pay_list
 
@@ -33,7 +33,7 @@ function parseRechargeList(self, msg)
     for i = 1, #msg.pay_cfg do
         local rechargeVo = recharge.RechargeVo.new()
         rechargeVo:parseData(msg.pay_cfg[i])
-        -- print(rechargeVo:toString())
+        print(rechargeVo:toString())
 
         if (not self.rechargeDic[rechargeVo.type]) then
             self.rechargeDic[rechargeVo.type] = {}

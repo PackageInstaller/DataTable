@@ -60,7 +60,7 @@ end
 -- 请求购买直购礼包道具
 function __onReqPanelBuyHandler(self, args)
     --- *c2s* 购买直购礼包道具 24098
-    SOCKET_SEND(Protocol.CS_DIRECT_GIFT_BUY, {goods_id = args.id, num = args.num},Protocol.SC_DIRECT_GIFT_BUY)
+    SOCKET_SEND(Protocol.CS_DIRECT_GIFT_BUY, {goods_id = args.id, num = args.num})
 end
 
 -- 购买界面

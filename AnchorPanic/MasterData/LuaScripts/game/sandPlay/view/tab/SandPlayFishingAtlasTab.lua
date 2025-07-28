@@ -118,8 +118,8 @@ function refreshSelect(self, fishData)
     self.mText_Time.text = timeStr
     self.mTextBait.text = _TT(98329) .. _TT(fishData.config.likeBait)
     self.mTextFishNum.text = _TT(98330, fishData.info.count)
-    self.mTextFishMinSize.text = _TT(98331, fishData.info.min_size * 0.01)
-    self.mTextFishMaxSize.text = _TT(98332, fishData.info.max_size * 0.01)
+    self.mTextFishMinSize.text = _TT(98331, fishData.info.min_size * 0.1)
+    self.mTextFishMaxSize.text = _TT(98332, fishData.info.max_size * 0.1)
 end
 
 function clearFishItem(self)

@@ -16,7 +16,7 @@ isBlur = 0
 escapeClose = 0 -- 是否能通过esc关闭窗口
 
 function initData(self)
-    self.m_showFuncDataList = {}
+
 end
 
 -- 初始化
@@ -36,9 +36,6 @@ function configUI(self)
     self.score = self:getChildGO("score")
     self.mTime = self:getChildGO("mTime")
     self.settlement_Type3Group = self:getChildGO("settlement_Type3Group")
-
-    self.mItem1 = self:getChildGO("mItem1")
-    self.mItem2 = self:getChildGO("mItem2")
 
     self.mTextSettlementCount_1 = self:getChildGO("mTextSettlementCount_1"):GetComponent(ty.Text)
     self.mTextSettlementCount_2 = self:getChildGO("mTextSettlementCount_2"):GetComponent(ty.Text)
@@ -118,47 +115,27 @@ function deActive(self)
     self:recyAllItem()
     self:clearJoystick()
     self:clearFuncList()
-    self.m_showFuncDataList = {}
 end
 
-function onHideFunclist(self, tag)
-    self.m_showFuncDataList[tag] = nil
-
-    if table.empty(self.m_showFuncDataList) then
-        self.mGroupFuncList.gameObject:SetActive(false)
-    else
-        self:refreshFuncItemList()
-    end
-
+function onHideFunclist(self)
+    self.mGroupFuncList.gameObject:SetActive(false)
 end
 
 function onShowFunclist(self, data)
     self.mGroupFuncList.gameObject:SetActive(true)
 
-    self.m_showFuncDataList[data.tag] = data.params
-
-    self:refreshFuncItemList()
-end
-
-function refreshFuncItemList(self)
     self:clearFuncList()
-    for tag, params in pairs(self.m_showFuncDataList) do
-        for i = 1, #params do
-            local item = SimpleInsItem:create(self.mItemFunc, self.mGroupFuncList, "FieldExplorationSceneUI_ClickItem")
+    for i = 1, #data.param do
+        local item = SimpleInsItem:create(self.mItemFunc, self.mGroupFuncList, "FieldExplorationSceneUI_ClickItem")
 
-            item:getChildGO("mTextLabel"):GetComponent(ty.Text).text = _TT(params[i].enId)
-            item:addUIEvent(nil, function()
-                if params[i].callback then
-                    params[i].callback()
-                end
-            end)
-            table.insert(self.mFuncItemList, item)
-        end
+        item:getChildGO("mTextLabel"):GetComponent(ty.Text).text = _TT(data.param[i].enId)
+        item:addUIEvent(nil, function()
+            if data.param[i].callback then
+                data.param[i].callback()
+            end
+        end)
+        table.insert(self.mFuncItemList, item)
     end
-
-    local thing = fieldExploration.FieldExplorationSceneController:getPlayerThing()
-    local followTrans = thing:getTrans()
-    gs.CameraMgr:World2UIOffsetY(followTrans, self.mGroupFuncList.parent, self.mGroupFuncList, 0.5)
 end
 
 function clearFuncList(self)
@@ -263,9 +240,6 @@ function refreshPlayerAttr(self, args)
 
         self.mTextSettlementCount_1.text = string.format("%s/%s", args.attr.money_silver, maxSilver)
         self.mTextSettlementCount_2.text = string.format("%s/%s", args.attr.money_gold, maxGold)
-
-        self.mItem1:SetActive(maxSilver > 0)
-        self.mItem2:SetActive(maxGold > 0)
     end
 end
 

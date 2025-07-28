@@ -10,19 +10,6 @@ function initData(self, rootGo)
     self.mSkillItem1:setSkillCall(self, self.onSkillCall)
     self.mSkillItem1:addOnParent(self:getChildTrans("ForcesSkillItem1"))
 
-    self.mEventTrigger = self.mSkillItem1.m_go:GetComponent(ty.LongPressOrClickEventTrigger)
-    local function _onLongPress()
-        self:_onLongPressHandler()
-    end
-    local function _onPointerUp()
-        self:_onPointerUpHandler()
-    end
-    if self.mEventTrigger then
-        self.mEventTrigger.onLongPress:AddListener(_onLongPress)
-        self.mEventTrigger.onPointerUp:AddListener(_onPointerUp)
-    end
-
-
     -- self.mSkillItem2 = fightUI.FightForcesSkillItem.new()
     -- self.mSkillItem2:setup(UrlManager:getUIPrefabPath("fight/FightForcesSkillItem.prefab"))
     -- self.mSkillItem2:setSkillCall(self, self.onSkillCall)
@@ -39,19 +26,6 @@ function initData(self, rootGo)
     table.insert(self.mItemList, self.mSkillItem1)
     -- table.insert(self.mItemList, self.mSkillItem2)
     -- table.insert(self.mItemList, self.mSkillItem3)
-end
-
-function _onLongPressHandler(self)
-    local skillList = fight.FightManager:getForcesSkillList()
-    
-    if skillList[1] then
-        local skillRo = fight.SkillManager:getSkillRo(skillList[1])
-        GameDispatcher:dispatchEvent(EventName.OPEN_FORCES_SKILL_TIPS, { skillRo = skillRo})
-    end
-end
-
-function _onPointerUpHandler(self)
-    GameDispatcher:dispatchEvent(EventName.CLOSE_FORCES_SKILL_TIPS)
 end
 
 -- 设置盟约技能列表

@@ -66,24 +66,6 @@ local mark_remake_data=
 	[7331]={ limit=3
 },
 	[7332]={ limit=3
-},
-	[7333]={ limit=3
-},
-	[7334]={ limit=3
-},
-	[7335]={ limit=3
-},
-	[7336]={ limit=3
-},
-	[7337]={ limit=3
-},
-	[7338]={ limit=3
-},
-	[7339]={ limit=3
-},
-	[7340]={ limit=3
-},
-	[7341]={ limit=3
 }
 }
 

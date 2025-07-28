@@ -42,7 +42,7 @@ function getDes(self)
 end
 --获取图片Url
 function getImgUrl(self)
-    return UrlManager:getBgPath("story/" .. self.backgroundName)
+    return UrlManager:getBgPath("story/cg/" .. self.backgroundName)
 end
 
 --获取是否已解锁

@@ -29,12 +29,6 @@ noviceActivity.NoviceActivityRaffleTabView = require("game/noviceActivity/view/N
 noviceActivity.NoviceActivityConst = require("game/noviceActivity/manager/NoviceActivityConst")
 noviceActivity.NoviceActivityManager = require("game/noviceActivity/manager/NoviceActivityManager").new()
 
-noviceActivity.NoviceActivitySsrOptionalTabView = require("game/noviceActivity/view/NoviceActivitySsrOptionalTabView")
-
-
-noviceActivity.NoviceActivityAccRechargeItem = require("game/noviceActivity/view/item/NoviceActivityAccRechargeItem")
-noviceActivity.NoviceActivityRechargeVo = require("game/noviceActivity/manager/vo/NoviceActivityRechargeVo")
-noviceActivity.NoviceActivityRechargeTabView = require("game/noviceActivity/view/NoviceActivityRechargeTabView")
 
 
 

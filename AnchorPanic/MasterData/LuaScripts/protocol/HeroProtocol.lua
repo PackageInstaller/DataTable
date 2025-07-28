@@ -387,7 +387,7 @@ SC_RECRUIT_INFO =
 CS_RECRUIT_ITEM =
 {
     13051, 
-    {"recruit_id", "int32", "招募id"}, 
+    {"type", "int8", "招募类型，1高级招募，2普通招募，3-新手招募，5-手环招募"}, 
     {"times", "int8", "1单抽，10十连抽"},
 }
  
@@ -395,7 +395,7 @@ CS_RECRUIT_ITEM =
 SC_RECRUIT_ITEM =
 {
     13052, 
-    {"recruit_id", "int32", "招募id"}, 
+    {"type", "int8", "招募类型，1高级招募，2普通招募，3-新手招募"}, 
     {"times", "int8", "1单抽，10十连抽"}, 
     {"result", "int8", "结果，1成功0失败"}, 
     {"item_list", pt_recruit_once, "获得的道具列表(战员用)", "repeated"}, 
@@ -406,14 +406,14 @@ SC_RECRUIT_ITEM =
 CS_GET_RECRUIT_LOG =
 {
     13053, 
-    {"recruit_id", "int32", "招募id"},
+    {"type", "int8", "招募类型，1高级招募，2普通招募，3新手招募，5手环招募"},
 }
  
 --- *s2c* 查看招募日志 13054
 SC_GET_RECRUIT_LOG =
 {
     13054, 
-    {"recruit_id", "int32", "招募id"}, 
+    {"type", "int8", "招募类型，1高级招募，2普通招募，3新手招募，5手环招募"}, 
     {"log_list", pt_recruit_log, "招募日志", "repeated"},
 }
  
@@ -436,24 +436,12 @@ SC_RECRUIT_GUARANTEED_AWARD =
 SC_RECRUIT_DEBUG_UP_INFO =
 {
     13057, 
-    {"info_list", pt_recruit_debug_up_detail, "其他SSR权重", "repeated"},
-}
- 
---- *c2s* 自选up选择 13058
-CS_SELECT_RECRUIT =
-{
-    13058, 
-    {"recruit_id", "int32", "招募id"}, 
-    {"select_tid", "int16", "自选tid"},
-}
- 
---- *s2c* 自选up选择 13059
-SC_SELECT_RECRUIT =
-{
-    13059, 
-    {"recruit_id", "int32", "招募id"}, 
-    {"select_tid", "int16", "自选tid"}, 
-    {"result", "int8", "结果，1成功0失败"},
+    {"up_hero_tid", "int16", "up战员tid"}, 
+    {"up_hero_weight", "int16", "up战员权重"}, 
+    {"other_hero_wight", pt_int_int, "其他SSR权重", "repeated"}, 
+    {"up_bracelet_tid", "int16", "up手环tid"}, 
+    {"up_bracelet_weight", "int16", "up手环权重"}, 
+    {"other_bracelet_wight", pt_int_int, "其他手环权重", "repeated"},
 }
  
 --- *s2c* 战员预览数据 13060
@@ -886,23 +874,6 @@ SC_RECEIVE_RELATION_REWARD =
     {"id", "int16", "领取的奖励id"},
 }
  
---- *c2s* 领取心语集奖励 13145
-CS_RECEIVE_STORY_REWARD =
-{
-    13145, 
-    {"hero_tid", "int32", "战员tid"}, 
-    {"relation_lv", "int16", "对应的好感度等级"},
-}
- 
---- *s2c* 领取心语集奖励 13146
-SC_RECEIVE_STORY_REWARD =
-{
-    13146, 
-    {"result", "int8", "领取结果 0：失败 1：成功"}, 
-    {"hero_tid", "int32", "战员tid"}, 
-    {"relation_lv", "int16", "对应的好感度等级"},
-}
- 
 --- *c2s* 所有属性预览 13150
 CS_ATTR_PREVIEW_ALL =
 {
@@ -1216,7 +1187,7 @@ SC_WEAR_FASHION_COLOR =
 CS_LOOK_FASHION_COLOR =
 {
     13344, 
-    {"hero_tid", "int32", "战员模板id"}, 
+    {"hero_id", "int32", "战员唯一id"}, 
     {"fashion_id", "int32", "时装id"},
 }
  
@@ -1224,7 +1195,7 @@ CS_LOOK_FASHION_COLOR =
 SC_LOOK_FASHION_COLOR =
 {
     13345, 
-    {"hero_tid", "int32", "战员模板id"}, 
+    {"hero_id", "int32", "战员唯一id"}, 
     {"fashion_id", "int32", "时装id"}, 
     {"color_id", "int32", "炫彩使用id"}, 
     {"color_list", "int32", "炫彩解锁列表 炫彩原皮0不在列表内", "repeated"}, 
@@ -1239,91 +1210,5 @@ SC_UNLOCK_FASHION_COLOR =
     {"hero_tid", "int32", "战员tid"}, 
     {"fashion_id", "int32", "时装id"}, 
     {"color_id", "int8", "炫彩id"}, 
-    {"fashion_coin_num", "int16", "获得时装币的数量"},
-}
- 
---- *s2c* 时装拥有信息 13350
-SC_HERO_FASHION_HAVE_INFO =
-{
-    13350, 
-    {"hero_have_body_fashion", pt_hero_have_fashion_info, "战员时装衣服拥有列表", "repeated"}, 
-    {"hero_have_weapons_fashion", pt_hero_have_fashion_info, "战员时装武器拥有列表", "repeated"},
-}
- 
---- *c2s* 战员蛋装备 13351
-CS_HERO_EGG_EQUIP =
-{
-    13351, 
-    {"hero_id", "int32", "战员id"}, 
-    {"egg_id", "int16", "战员蛋品质id"},
-}
- 
---- *c2s* 战员蛋升级 13352
-CS_HERO_EGG_UPGRADE =
-{
-    13352, 
-    {"hero_id", "int32", "战员id"},
-}
- 
---- *c2s* 战员孵化 13353
-CS_HERO_EGG_HATCH =
-{
-    13353, 
-    {"hero_id", "int32", "战员id"},
-}
- 
---- *s2c* 战员孵化 13354
-SC_HERO_EGG_HATCH =
-{
-    13354, 
-    {"hero_id", "int32", "战员id"}, 
-    {"result", "int8", "操作结果 0-失败 1-成功"},
-}
- 
---- *c2s* 战员蛋属性开关 13355
-CS_HERO_EGG_CAL_SWITCH =
-{
-    13355, 
-    {"hero_id", "int32", "战员id"}, 
-    {"close_attr_list", "int16", "关闭的属性列表", "repeated"},
-}
- 
---- *c2s* 重置战员等级 13363
-CS_RESET_HERO_LV =
-{
-    13363, 
-    {"hero_id", "int32", "战员id"},
-}
- 
---- *c2s* 重置战员等级-前瞻 13364
-CS_RESET_HERO_LV_PRE_VIEW =
-{
-    13364, 
-    {"hero_id", "int32", "战员id"},
-}
- 
---- *s2c* 重置战员等级-前瞻 13365
-SC_RESET_HERO_LV_PRE_VIEW =
-{
-    13365, 
-    {"hero_id", "int32", "战员id"}, 
-    {"award_list", pt_prop_award, "返还道具列表", "repeated"}, 
-    {"result", "int8", "操作结果 0-失败 1-成功"},
-}
- 
---- *s2c* 时装场景全部解锁信息 13370
-SC_FASHION_SCENE_PANEL =
-{
-    13370, 
-    {"fashion_scene_list", pt_fashion_scene_info, "战员的场景解锁", "repeated"},
-}
- 
---- *s2c* 解锁时装场景 13371
-SC_UNLOCK_FASHION_SCENE =
-{
-    13371, 
-    {"result", "int8", "解锁时装结果:0-失败，1-成功"}, 
-    {"hero_tid", "int32", "战员tid"}, 
-    {"fashion_id", "int32", "时装id"}, 
     {"fashion_coin_num", "int16", "获得时装币的数量"},
 }

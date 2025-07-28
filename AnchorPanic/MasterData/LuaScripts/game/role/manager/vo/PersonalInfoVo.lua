@@ -36,8 +36,6 @@ function parsePersonalInfoMsg(self, curData)
     self.achievementNum = curData.achievement_num
     -- 无限城
     self.cityId = curData.city_id
-    -- 皮肤数量
-    self.fashionNum = curData.fashion_num
     --好友备注
     self.remarks = curData.friend_remarks
     -- 展示战员列表
@@ -95,10 +93,6 @@ end
 --成就进度
 function getAchievementNum(self)
     return self.achievementNum
-end
---皮肤数量
-function getFashionNum(self)
-    return self.fashionNum
 end
 --战员数量
 function getHeroNum(self)

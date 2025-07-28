@@ -47,8 +47,8 @@ function setData(self, param)
                 GameDispatcher:dispatchEvent(EventName.MAINACTIVITY_REDSTATE_UPDATE)
             end
             self.mImgPassGo:SetActive(eliminate.EliminateManager:isStagePass(stageConfigVo.mapId))
-            self.mTxtName.color = stageConfigVo:isLock() and gs.ColorUtil.GetColor("C2C2C2FF") or gs.ColorUtil.GetColor("FFFFFFFF")
-            self.mImgTips.color = stageConfigVo:isLock() and gs.ColorUtil.GetColor("C2C2C2FF") or gs.ColorUtil.GetColor("FFFFFFFF")
+            self.mTxtName.color = stageConfigVo:isLock() and gs.ColorUtil.GetColor("777B81FF") or gs.ColorUtil.GetColor("202226FF")
+            self.mImgTips.color = stageConfigVo:isLock() and gs.ColorUtil.GetColor("777B81FF") or gs.ColorUtil.GetColor("202226FF")
             self.mImgLockGo:SetActive(stageConfigVo:isLock())
             self.mTxtName.gameObject:SetActive(true)
             if(stageConfigVo:isOpen())then

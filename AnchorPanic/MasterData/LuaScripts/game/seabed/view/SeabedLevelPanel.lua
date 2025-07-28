@@ -46,10 +46,6 @@ function configUI(self)
     self.mBtnNext = self:getChildGO("mBtnNext")
 
     self.mImgNo = self:getChildGO("mImgNo")
-
-    self:setGuideTrans("functips_seabed_function_levelScroll", self:getChildTrans("mLevelScroll"))
-    self:setGuideTrans("functips_seabed_function_des", self:getChildTrans("function_des"))
-    self:setGuideTrans("functips_seabed_function_fight", self.mBtnFight.transform)
 end
 
 -- 激活
@@ -57,7 +53,7 @@ function active(self, args)
     super.active(self, args)
     MoneyManager:setMoneyTidList({})
     self:showPanel()
-    local maxDif = seabed.SeabedManager:getHisUnLockMaxDifficulty()
+    local maxDif = seabed.SeabedManager:getHisMaxDifficulty()
     self:onClickLevelItem(maxDif)
 end
 
@@ -82,27 +78,15 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnNext, self.onBtnNextClickHandler)
 end
 
-function getDifTiple(self,id)
-    local difList = seabed.SeabedManager:getSeabedDifficultyData()
-    for i = 1,#difList do
-        if difList[i].id == id then
-            return difList[i].difficultyTitle
-        end
-    end
-end
-
 function showPanel(self)
     self:clearLevelItems()
     local difficultyList = seabed.SeabedManager:getSeabedDifficultyData()
-    
     for i = 1, #difficultyList do
         local item = SimpleInsItem:create(self.mLevelItem, self.mLevelScroll.content, "mSeabedLevelItem")
         local isLock = seabed.SeabedManager:getDifficultyIsLock(difficultyList[i].id)
-        local tips = _TT(self:getDifTiple(difficultyList[i].id))
-
         item:getChildGO("mTxtTips"):GetComponent(ty.Text).text =
-            isLock and _TT(4062) or tips
-        item:getChildGO("mTxtSelect"):GetComponent(ty.Text).text = tips
+            isLock and _TT(4062) or _TT(111033) .. difficultyList[i].id
+        item:getChildGO("mTxtSelect"):GetComponent(ty.Text).text = _TT(111033).. difficultyList[i].id
         item:getChildGO("mTxtTips"):GetComponent(ty.Text).color =
             isLock and gs.ColorUtil.GetColor("478798FF") or gs.ColorUtil.GetColor("7FB3BEFF")
         item:getChildGO("mIsLock"):SetActive(isLock)
@@ -160,7 +144,6 @@ function onClickLevelItem(self, id)
     self:clearPropsItems()
     local list = AwardPackManager:getAwardListById(vo.reward)
 
-    local maxId = seabed.SeabedManager:getHisMaxDifficulty()
     for i, vo in pairs(list) do
         local propsGrid = PropsGrid:createByData({
             tid = vo.tid,
@@ -170,7 +153,6 @@ function onClickLevelItem(self, id)
             showUseInTip = true
         })
 
-        propsGrid:setHasRec(id <= maxId)
         table.insert(self.mShowPropsItems, propsGrid)
     end
 
@@ -182,14 +164,13 @@ function showMaxTeaserInfo(self)
     self.mTeasetInfo:SetActive(self.curClickId == maxDifficulty)
     if self.curClickId == maxDifficulty then
         if self.curTeaser == nil then
-            self.curTeaser = seabed.SeabedManager:getLastTeaser()
+            self.curTeaser = 0
         end
         self:updateTeaserInfo()
     end
 end
 
 function updateTeaserInfo(self)
-    seabed.SeabedManager:setLastTeaser(self.curTeaser)
     self.mBtnLast:SetActive(self.curTeaser > 0)
     self.mBtnNext:SetActive(self.curTeaser < seabed.SeabedManager:getSeabedMaxTeaser())
 

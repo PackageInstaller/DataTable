@@ -2,36 +2,14 @@ module("recruit.RecruitActBraceletsTabView", Class.impl(TabSubView))
 
 UIRes = UrlManager:getUIPrefabPath("recruit/tab/RecruitActBraceletsTab.prefab")
 
-function ctor(self, recruitId)
-    self.m_recruitId = recruitId
-
+--构造函数
+function ctor(self)
     super.ctor(self)
-end
-
-function onLoadAssetComplete(self)
-    -- 实例化是一个克隆对象，并不是加载的那个prefab，需要重新取
-    self.UIObject = AssetLoader.GetGO(self.UIRes, self)
-    self.UITrans = self.UIObject.transform
-
-    local res_list = {121, 122, 123}
-
-    local go_dic = {}
-    for i = 1, #res_list do
-        local go = self.UITrans:Find("RecruitActBraceletsTab_" ..res_list[i]).gameObject
-        go:SetActive(res_list[i] == self.m_recruitId)
-        go_dic[res_list[i]] = go
-    end
-
-    self.m_childGos, self.m_childTrans = GoUtil.GetChildHash(go_dic[self.m_recruitId])
-
-    self:configUI()
-    self:dispatchEvent(EVENT_LOAD_FINISH)
-    self:addOnParent()
 end
 
 -- 初始化数据
 function initData(self)
-
+    self.m_recruitType = recruit.RecruitType.RECRUIT_ACTIVITY_2
 end
 
 function configUI(self)
@@ -51,29 +29,15 @@ function configUI(self)
     self.mBtnShop = self:getChildGO("BtnShop")
     self.mTxtData = self:getChildGO("mTxtData"):GetComponent(ty.Text)
     self.mDebugUpInfo = self:getChildGO("mDebugUpInfo")
-
-    self.mTextBuyTips = self:getChildGO("mTextBuyTips"):GetComponent(ty.Text)
-    self.mImgShopIcon = self:getChildGO("mImgShopIcon"):GetComponent(ty.AutoRefImage)
-    self.mTextBuyCount = self:getChildGO("mTextBuyCount"):GetComponent(ty.Text)
-    self.mTextBuy = self:getChildGO("mTextBuy"):GetComponent(ty.Text)
-    self.mShopBuy = self:getChildGO("mShopBuy")
-    self.shopBuyLayout = self:getChildGO("shopBuyLayout")
-
 end
 
 function active(self)
-    GameDispatcher:addEventListener(EventName.UPDATE_RECRUIT_PANEL, self.onUpdateViewHandler, self)
-    bag.BagManager:addEventListener(bag.BagManager.BAG_UPDATE, self.bagUpdate, self)
-    read.ReadManager:addEventListener(read.ReadManager.UPDATE_MODULE_READ, self.updateRedState, self)
-
-    self:updateView(true)
+    GameDispatcher:addEventListener(EventName.UPDATE_RECRUIT_PANEL, self.__onUpdateViewHandler, self)
+    self:__updateView(true)
 end
 
 function deActive(self)
-    GameDispatcher:removeEventListener(EventName.UPDATE_RECRUIT_PANEL, self.onUpdateViewHandler, self)
-    bag.BagManager:removeEventListener(bag.BagManager.BAG_UPDATE, self.bagUpdate, self)
-    read.ReadManager:removeEventListener(read.ReadManager.UPDATE_MODULE_READ, self.updateRedState, self)
-
+    GameDispatcher:removeEventListener(EventName.UPDATE_RECRUIT_PANEL, self.__onUpdateViewHandler, self)
 end
 
 function initViewText(self)
@@ -81,24 +45,20 @@ function initViewText(self)
 
     self:setBtnLabel(self.mBtnOne, 28035, "招募一次")
     self:setBtnLabel(self.mBtnTen, 28036, "招募十次")
-
-    self.mTextBuyTips.text = _TT(93126)
-    self.mTextBuy.text = _TT(10)
 end
 
 function addAllUIEvent(self)
     self:addUIEvent(self.mBtnLook, self.onClickLookTips)
     self:addUIEvent(self.mBtnShop, self.onClickShop)
 
-    self:addUIEvent(self.m_btnLog, self.onClickLogHandler)
-    self:addUIEvent(self.m_btnRule, self.onClickRuleHandler)
-    self:addUIEvent(self.mBtnOne, self.onClickOneHandler)
-    self:addUIEvent(self.mBtnTen, self.onClickTenHandler)
-    self:addUIEvent(self.mShopBuy, self.onClickShopBuy)
+    self:addUIEvent(self.m_btnLog, self.__onClickLogHandler)
+    self:addUIEvent(self.m_btnRule, self.__onClickRuleHandler)
+    self:addUIEvent(self.mBtnOne, self.__onClickOneHandler)
+    self:addUIEvent(self.mBtnTen, self.__onClickTenHandler)
 end
 
 function onClickLookTips(self)
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitId)
+    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitType)
 
     local equipVo = LuaPoolMgr:poolGet(props.EquipVo)
     equipVo:setTid(configVo.show_item)
@@ -106,61 +66,46 @@ function onClickLookTips(self)
 end
 
 function onClickShop(self)
-    if read.ReadManager:isModuleRead(219, 2060) then
-        GameDispatcher:dispatchEvent(EventName.REQ_MODULE_READ, {type = 219, id = 2060})
-    end
-
-    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.CovenantShop})
+    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.CovenantShop })
 end
 
-function onClickLogHandler(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_LOG_PANEL, {recruitId = self.m_recruitId})
+function __onClickLogHandler(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_LOG_PANEL, { type = self.m_recruitType })
 end
 
-function onClickRuleHandler(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_RULE_PANEL, {recruitId = self.m_recruitId})
+function __onClickRuleHandler(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_RULE_PANEL, { type = self.m_recruitType })
 end
 
-function onClickOneHandler(self)
+function __onClickOneHandler(self)
     if (recruit.RecruitManager.recruitTopTimes + 1 > sysParam.SysParamManager:getValue(SysParamType.RECRUIT_TOP_DAILY_MAX)) then
         gs.Message.Show(_TT(28009))--"不可超过招募次数上限"
     else
-        self:checkSend(self.m_recruitId, 1)
+        self:checkSend(self.m_recruitType, 1)
     end
 end
 
-function onClickTenHandler(self)
+function __onClickTenHandler(self)
     if (recruit.RecruitManager.recruitTopTimes + 10 > sysParam.SysParamManager:getValue(SysParamType.RECRUIT_TOP_DAILY_MAX)) then
         gs.Message.Show(_TT(28009))--"不可超过招募次数上限"
     else
-        self:checkSend(self.m_recruitId, 10)
+        self:checkSend(self.m_recruitType, 10)
     end
 end
 
-function onClickShopBuy(self)
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitId)
-    local shopId = configVo.show_item
-    local shopVo = shop.ShopManager:getShopItemByTid(ShopType.COVENANT, shopId)
-    if shopVo then
-        GameDispatcher:dispatchEvent(EventName.OPEN_SHOP_BUY_VIEW, shopVo)
-    else
-        logError("商店没有这个商品 id = " .. shopId)
-    end
+function checkSend(self, recruitType, times)
+    GameDispatcher:dispatchEvent(EventName.SEND_RECRUIT, { type = recruitType, times = times })
 end
 
-function checkSend(self, recruitId, times)
-    GameDispatcher:dispatchEvent(EventName.SEND_RECRUIT, {recruitId = recruitId, times = times})
-end
-
-function onUpdateViewHandler(self, args)
+function __onUpdateViewHandler(self, args)
     -- local type = args.type
     -- if (type == self.m_recruitType) then
-    self:updateView(false)
+    self:__updateView(false)
     -- end
 end
 
-function updateView(self, cusIsInit)
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitId)
+function __updateView(self, cusIsInit)
+    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitType)
     local costMoneyTid_one = configVo:getCostOneId()
     local costMoneyCount_one = configVo:getCostOneNum()
     local costMoneyTid_ten = configVo:getCostTenId()
@@ -173,92 +118,42 @@ function updateView(self, cusIsInit)
 
     self:upateActTime()
 
-    if GameManager.IS_DEBUG and not GameManager.HIDE_DEBUG_INFO then
-        self.mDebugUpInfo:SetActive(true)
-
-        local debugUpInfo = recruit.RecruitManager:getDebugShowRecruitUpInfoMsg(self.m_recruitId)
-        if debugUpInfo then
-            local equipVo = LuaPoolMgr:poolGet(props.EquipVo)
-            equipVo:setTid(configVo.show_item)
-
-            local msg = ""
-            for i, v in ipairs(debugUpInfo.other_ratio) do
-                msg = msg .. v.key .. ": " .. v.value .. "\n"
-            end
-            self.mTxtData.text = "当前UP烙痕：" .. equipVo:getName() .. " tid: " .. configVo.show_item .. "\n当前UP烙痕权重：" .. debugUpInfo.up_ratio .. "\n其他烙痕权重：\n" .. msg
-        else
-            self.mTxtData.text = "获取UP Debug数据出错了，请排查是否是配置出错。卡池ID:" .. self.m_recruitId
+    if GameManager.IS_DEBUG and not GameManager.HIDE_DEBUG_INFO and recruit.RecruitManager.debugUpInfo then
+        local upInfo = recruit.RecruitManager.debugUpInfo
+        local upItemVo = props.PropsManager:getPropsConfigVo(upInfo.up_bracelet_tid)
+        local msg = ""
+        for i, v in ipairs(upInfo.other_bracelet_wight) do
+            msg = msg .. v.key .. ": " .. v.value .. "\n"
         end
+        self.mDebugUpInfo:SetActive(true)
+        self.mTxtData.text = "当前UP烙痕：" .. upItemVo:getName() .. " tid: " .. upInfo.up_bracelet_tid .. "\n当前UP烙痕权重：" .. upInfo.up_bracelet_weight .. "\n其他烙痕权重：\n" .. msg
     else
         self.mDebugUpInfo:SetActive(false)
         self.mTxtData.text = ""
     end
-
-    self:updateRedState()
-    self:refreshShopBuy()
-    self:shopBuyRedUpdate()
-end
-
-function refreshShopBuy(self)
-    self.shopBuyLayout:SetActive(false)
-
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitId)
-    local shopId = configVo.show_item
-    local shopVo = shop.ShopManager:getShopItemByTid(ShopType.COVENANT, shopId)
-    if shopVo then
-        self.shopBuyLayout:SetActive(true)
-
-        self.mImgShopIcon:SetImg(MoneyUtil.getMoneyIconUrlByTid(shopVo:getPayTid()), false)
-
-        local namecolorStr = MoneyUtil.getMoneyCountByTid(shopVo:getRealPayType()) < shopVo.price and "FFFFFF" or "18ec68"
-        self.mTextBuyCount.text = string.format("<color=#%s>%s/%s</color>", namecolorStr, MoneyUtil.getMoneyCountByTid(shopVo:getRealPayType()), MoneyUtil.shortValueStr(shopVo.price))
-    -- else
-    --     logError("商店没有这个商品 id = " .. shopId)
-    end
-end
-
-function bagUpdate(self)
-    self:refreshShopBuy()
-    self:updateRedState()
-    self:shopBuyRedUpdate()
-end
-
-function shopBuyRedUpdate(self)
-    if recruit.RecruitManager:updateActBraceletsShopBuyRedState(self.m_recruitId) then
-        RedPointManager:add(self:getChildTrans("mShopBuy"), nil, 46, 9)
-    else
-        RedPointManager:remove(self:getChildTrans("mShopBuy"))
-    end
-end
-
-function updateRedState(self)
-    if recruit.RecruitManager:updateAppBraceletsShopRedState() then
-        RedPointManager:add(self:getChildTrans("mShopRed"), nil, 0, 0)
-    else
-        RedPointManager:remove(self:getChildTrans("mShopRed"))
-    end
 end
 
 function upateActTime(self)
-    local menuVo = recruit.RecruitManager:getRecruitMenuVo(self.m_recruitId)
+    local menuVo = recruit.RecruitManager:getRecruitMenuVo(self.m_recruitType)
 
     local beginTime = TimeUtil.getMDHByTime2(TimeUtil.transTime(menuVo.beginTime))
     local endTime, endHour = TimeUtil.getMDHByTime2(TimeUtil.transTime(menuVo.endTime))
     self.mTextTime.text = string.format("%s%s    %s", _TT(28046), endTime, endHour)
 end
 
+
 -- 已招募次数
 function getRecruitTimes(self)
-    return recruit.RecruitManager:getRecruitInfo(self.m_recruitId).guaranteed_times
+    return recruit.RecruitManager:getRecruitInfo(self.m_recruitType).guaranteed_times
 end
 -- 需要招募次数
 function getNeedTimes(self)
-    return recruit.RecruitManager:getRecruitInfo(self.m_recruitId).guaranteed_limit
+    return recruit.RecruitManager:getRecruitInfo(self.m_recruitType).guaranteed_limit
 end
 
 return _M
 
 --[[ 替换语言包自动生成，请勿修改！
-语言包: _TT(572):"未可领取"
-语言包: _TT(7):"已领取"
+	语言包: _TT(572):	"未可领取"
+	语言包: _TT(7):	"已领取"
 ]]

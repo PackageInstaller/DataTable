@@ -248,30 +248,11 @@ function onClickChangeHero(self, heroTid, isSelect)
 
 end
 
---清空所有战员选择
-function clearAllSettleHero(self)
-    local dataList = buildBase.BuildBaseManager:getAllBuildBaseDataList()
-    for k, baseVo in pairs(dataList) do
-        GameDispatcher:dispatchEvent(EventName.REQ_BUILDBASE_HEROLIST, { build_id = baseVo.id, hero_list = {} })
-    end
-end
-
 --清空选择
 function clearSettleHero(self)
     if next(self.mHeroSettleInList) then
         self.mHeroSettleInList = {}
     end
-end
-
--- 分帧一键入驻
-function onOneKeyWorkSend(self, workSendList)
-    local len = #workSendList
-    local index = 1
-    LoopManager:addFrame(1, len, self, function()
-        local data = workSendList[index]
-        GameDispatcher:dispatchEvent(EventName.REQ_BUILDBASE_HEROLIST, data)
-        index = index + 1
-    end)
 end
 
 function checkHeroIsMoved(self)
@@ -318,58 +299,6 @@ function sendHeroMoveInto(self)
         GameDispatcher:dispatchEvent(EventName.REQ_BUILDBASE_HEROLIST, { build_id = buildBase.BuildBaseManager:getNowBuildId(), hero_list = heroList })
         -- gs.Message.Show("战员入驻成功")
     end
-end
-
--- 设置自动排班的当前建筑类型
-function setSortBuildType(self, sortBuildType)
-    self.sortBuildType = sortBuildType
-end
--- 获取自动排班的当前建筑类型
-function getSortBuildType(self)
-    return self.sortBuildType
-end
-
--- 按照疲劳、建筑技能排序 
-function sortRelateSkillFunc(selectVo1, selectVo2)
-    local staminaMax = sysParam.SysParamManager:getValue(5001)
-    local buildBaseHeroInfo1 = buildBase.BuildBaseHeroManager:getBuildHeroInfo(selectVo1:getDataVo().tid)
-    local buildBaseHeroInfo2 = buildBase.BuildBaseHeroManager:getBuildHeroInfo(selectVo2:getDataVo().tid)
-    local isAvailuable1 = hero.HeroCuteManager:getHeroCuteConfigVo(selectVo1:getDataVo().tid) and 0 or -999
-    local isAvailuable2 = hero.HeroCuteManager:getHeroCuteConfigVo(selectVo2:getDataVo().tid) and 0 or -999
-    local stamina1 = buildBaseHeroInfo1.stamina + isAvailuable1
-    local stamina2 = buildBaseHeroInfo2.stamina + isAvailuable2
-
-    local buildType = buildBase.BuildBaseHeroManager:getSortBuildType()
-    local wight01, wight02 = 0, 0
-    local wightType01, wightType02 = 0, 0
-    for _, warShipSkillId in pairs(buildBaseHeroInfo1.skillList) do
-        local skillVo = buildBase.BuildBaseHeroManager:getSkillConfigBySkillId(warShipSkillId.skill_id)
-        if skillVo.buildType == buildType then
-            wight01 = 1
-            wightType01 = warShipSkillId.skill_id
-        end
-    end
-
-    for _, warShipSkillId in pairs(buildBaseHeroInfo2.skillList) do
-        local skillVo = buildBase.BuildBaseHeroManager:getSkillConfigBySkillId(warShipSkillId.skill_id)
-        if skillVo.buildType == buildType then
-            wight02 = 1
-            wightType02 = warShipSkillId.skill_id
-        end
-    end
-
-    wight01 = isAvailuable1 == 0 and wight01 or -1
-    wight02 = isAvailuable2 == 0 and wight02 or -1
-
-    if wight01 == 1 and wight01 > wight02 and stamina1 > staminaMax * 0.6 then
-        return true
-    end
-
-    if wight02 == 1 and wight02 > wight01 and stamina2 > staminaMax * 0.6 then
-        return false
-    end
-
-    return stamina1 > stamina2
 end
 
 return _M

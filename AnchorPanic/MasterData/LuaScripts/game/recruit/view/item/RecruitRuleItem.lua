@@ -7,9 +7,9 @@ function ctor(self)
     super.ctor(self)
     self.mHeadItem = {}
     self.mItemList = {}
-    self.colorStr = {"", "038008", "038008", "038008"}
+    self.colorStr = { "", "038008", "038008", "038008" }
 end
---析构
+--析构  
 function dtor(self)
 end
 
@@ -22,6 +22,7 @@ function configUI(self)
     self.mEquipGrid = self:getChildTrans("mEquipGrid")
 end
 
+
 --激活
 function active(self)
     super.active(self)
@@ -33,7 +34,7 @@ function deActive(self)
     self:recoverItem()
 end
 
---[[
+--[[ 
     初始化界面的静态文本，图片字
     每次打开界面都会重新读取，多语言切换时可以及时更新
 ]]
@@ -69,7 +70,7 @@ end
 function createItem_1(self)
     self.m_createIndex = self.m_createIndex + 1
     if self.m_createIndex <= #self.heroList then
-        local item = BraceletsGrid2:create(self.mEquipGrid, {self.heroList[self.m_createIndex], 1}, 1)
+        local item = BraceletsGrid2:create(self.mEquipGrid, { self.heroList[self.m_createIndex], 1 }, 1)
         item:setIsShowName(true)
         item:setClickEnable(true)
         self.mItemList[self.m_createIndex] = item
@@ -96,7 +97,7 @@ function createItem_2(self)
         item:setStarLvl(heroConfigVo:getStar())
         item:setScale(1)
         item:setCallBack(self, function()
-            GameDispatcher:dispatchEvent(EventName.OPEN_HERO_DETAILSINFOPANEL, {heroTid = heroConfigVo.tid})
+            GameDispatcher:dispatchEvent(EventName.OPEN_HERO_DETAILSINFOPANEL, { heroTid = heroConfigVo.tid })
             GameDispatcher:dispatchEvent(EventName.CLOSE_RECRUIT_RULE_PANEL)
         end)
         self.mHeadItem[self.m_createIndex] = item
@@ -116,14 +117,12 @@ function setData(self, cusParent, ruleList, index, type, createFinishCall)
     local pr = ruleList[index].pr
     local floorPr = ruleList[index].floor_pr
     self.heroList = table.copy(ruleList[index].hero_list)
-
-    for i = 1, 3 do
+    
+    for i=1,3 do
         self.m_childGos["mImgQuality_" .. i]:SetActive(color - 1 == i)
     end
 
-    if self.mRecruit_type == recruit.RecruitType.RECRUIT_BRACELETS
-        or self.mRecruit_type == recruit.RecruitType.RECRUIT_APP_BRACELETS
-        or self.mRecruit_type == recruit.RecruitType.RECRUIT_ACTIVITY_2 then
+    if self.mRecruit_type == recruit.RecruitType.RECRUIT_BRACELETS or self.mRecruit_type == recruit.RecruitType.RECRUIT_ACTIVITY_2 then
         self.mTxtTitle.text = _TT(28030, self.colorStr[color], pr)
     else
         self.mTxtTitle.text = _TT(28031, self.colorStr[color], pr, floorPr)
@@ -141,9 +140,7 @@ function createItem(self)
         return
     end
 
-    if self.mRecruit_type == recruit.RecruitType.RECRUIT_BRACELETS
-        or self.mRecruit_type == recruit.RecruitType.RECRUIT_APP_BRACELETS
-        or self.mRecruit_type == recruit.RecruitType.RECRUIT_ACTIVITY_2 then
+    if self.mRecruit_type == recruit.RecruitType.RECRUIT_BRACELETS or self.mRecruit_type == recruit.RecruitType.RECRUIT_ACTIVITY_2 then
         if not self.m_createTimer then
             self.m_createTimer = LoopManager:addFrame(1, #self.heroList, self, self.createItem_1)
         end
@@ -153,6 +150,7 @@ function createItem(self)
         end
     end
 end
+
 
 function __sortHeroTidList(tid_1, tid_2)
     if (tid_1 and tid_2) then

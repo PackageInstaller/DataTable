@@ -39,21 +39,8 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.SANDPLAY_FISHING_ONREQ_COLLECTAWARD, self.onReqCollect, self)
     GameDispatcher:addEventListener(EventName.SANDPLAY_FISHING_ONREQ_EVENTTRIGGER, self.onReqEventTrigger, self)
 
-    GameDispatcher:addEventListener(EventName.SANDPLAY_HAPPYFARM_ONREQPLANT, self.onReqHappyFarmPlant, self)
-    GameDispatcher:addEventListener(EventName.SANDPLAY_HAPPYFARM_FINISHTASK, self.onReqHappyFarmFinishTask, self)
-    GameDispatcher:addEventListener(EventName.SANDPLAY_HAPPYFARM_REAPCHICKEN, self.onReqHappyFarmReapChicken, self)
-
     GameDispatcher:addEventListener(EventName.OPEN_SANDPLAY_FISH_TEACHING_VIEW, self.onOpenSandPlayFishingTeachingView, self)
     GameDispatcher:addEventListener(EventName.OPEN_SANDPLAY_DUPINFOPANEL, self.onOpenSandPlayDupInfoPanel, self)
-
-    GameDispatcher:addEventListener(EventName.OPEN_SANDPLAY_HAPPYFARM_TASKPANEL, self.onOpenSandPlayHappyFarmTaskPanel, self)
-    GameDispatcher:addEventListener(EventName.OPEN_SANDPLAY_HAPPYFARM_SHOPPANEL, self.onOpenSandPlayHappyFarmShopPanel, self)
-    GameDispatcher:addEventListener(EventName.OPEN_SANDPLAY_HAPPYFARM_FIELD, self.onOpenSandPlayHappyFarmField, self)
-    GameDispatcher:addEventListener(EventName.CLOSE_SANDPLAY_HAPPYFARM_FIELD, self.onCloseSandPlayHappyFarmField, self)
-
-    GameDispatcher:addEventListener(EventName.OPEN_SANDPLAY_HAPPYFARM_BREEDPANEL, self.onOpenSandPlayHappyFarmBreedPanel, self)
-
-    bag.BagManager:addEventListener(bag.BagManager.BAG_UPDATE, self.onBagUpdateHandler, self)
 
 end
 
@@ -67,27 +54,10 @@ function registerMsgHandler(self)
         SC_FISHING_PANEL = self.onReceiveFishingInitInfo,
         SC_FISHING_TASK_UPDATE = self.onReceiveFishingTaskInfo,
         SC_FISHING = self.onReceiveFishing,
-
-        SC_HAPPY_FARM_FIELD_LIST = self.onReceiveHappyFarmEventList,
-        SC_HAPPY_FARM_ORDER_LIST = self.onReceiveHappyFarmTaskList,
     }
 end
 -------------------------------------------------------------数据--------------------------------------------------------
 -----------------------------接收
-function onReceiveHappyFarmEventList(self, msg)
-    -- logAll(msg, "*s2c* 农场事件列表 18190")
-    sandPlay.SandPlayManager:parseHappyFarmEventInfoDic(msg.farm_field_list)
-    GameDispatcher:dispatchEvent(EventName.SANDPLAY_HAPPYFARM_EVENT_UPDATE)
-end
-
-function onReceiveHappyFarmTaskList(self, msg)
-    -- logAll(msg, "*s2c* 农场订单列表 18191")
-    sandPlay.SandPlayManager:parseHappyFarmTaskData(msg.order_ids)
-    GameDispatcher:dispatchEvent(EventName.SANDPLAY_HAPPYFARM_TASK_REFRESH)
-
-    GameDispatcher:dispatchEvent(EventName.MAINACTIVITY_REDSTATE_UPDATE)
-end
-
 function onReceiveFishingInitInfo(self, msg)
     -- logAll(msg, "收到钓鱼基础信息")
     sandPlay.SandPlayManager:parseFishingInitData(msg)
@@ -105,7 +75,7 @@ function onReceiveFishingTaskInfo(self, msg)
 end
 
 function onReceiveFishing(self, msg)
-    -- logAll(msg, "钓鱼返回 = ")
+    logAll(msg, "钓鱼返回 = ")
 
     sandPlay.SandPlayManager:parseFishingFishData(msg.fish_info)
     sandPlay.SandPlayManager:setCurFishingFishResult(msg)
@@ -115,7 +85,7 @@ function onReceiveFishing(self, msg)
 end
 
 function onReceiveMapInfo(self, msg)
-    -- logAll(msg, "SC_SANDPLAY_PANEL = ")
+    logAll(msg, "SC_SANDPLAY_PANEL = ")
 
     sandPlay.SandPlayManager:initMapEventInfo(msg.map_list)
 
@@ -123,7 +93,7 @@ function onReceiveMapInfo(self, msg)
 end
 
 function onReceiveMapEventUpdata(self, msg)
-    -- logAll(msg, "SC_SANDPLAY_MAP_UPDATE = ")
+    logAll(msg, "SC_SANDPLAY_MAP_UPDATE = ")
 
     sandPlay.SandPlayManager:refreshMapEvent(msg.map_id, msg.npc_id, msg.event_id)
     GameDispatcher:dispatchEvent(EventName.SANDPLAY_RECEIVE_MAPEVENT_TRIGGER, {map_id = msg.map_id, npc_id = msg.npc_id, event_id = msg.event_id})
@@ -131,32 +101,9 @@ function onReceiveMapEventUpdata(self, msg)
 end
 
 -----------------------------请求
-function onReqHappyFarmPlant(self, args)
-    ---农田args： 收获 {0} 开荒 {1}  种植{2,种子id}浇水 {3}
-    ---家禽args： 收获{0} 养殖{1,种子Id}
-
-    local cmd = {field_id = args.field_id, args = args.params}
-    -- logAll(cmd, "请求操作开心农场作物 18192")
-    SOCKET_SEND(Protocol.CS_FARM_OPERATE, cmd)
-end
-
-function onReqHappyFarmFinishTask(self, args)
-    local cmd = {order_id = args}
-    -- logAll(cmd, "请求提交开心农场订单任务 18194")
-
-    SOCKET_SEND(Protocol.CS_SUBMIT_ORDER, cmd)
-end
-
-function onReqHappyFarmReapChicken(self, args)
-    local cmd = {seed_id = args}
-    -- logAll(cmd, "请求一键收鸡蛋 18194")
-
-    SOCKET_SEND(Protocol.CS_UNIFY_COLLECT, cmd)
-end
-
 function onReqFishing(self, fishInfo)
     local cmd = {fish_id = fishInfo.fish_id, bait = fishInfo.bait_id, size = fishInfo.size}
-    -- logAll(cmd, "请求钓鱼成功")
+    logAll(cmd, "请求钓鱼成功")
     SOCKET_SEND(Protocol.CS_FISHING, cmd, Protocol.SC_FISHING)
 end
 
@@ -181,7 +128,7 @@ function onReqEventTrigger(self, args)
     end
 
     local cmd = {map_id = map_id, npc_id = args.npc_id, event_id = args.event_id}
-    -- logAll(cmd, "请求事件触发 -----")
+    logAll(cmd, "请求事件触发 -----")
     SOCKET_SEND(Protocol.CS_SANDPLAY_TRIGGER_EVENT, cmd, Protocol.SC_SANDPLAY_MAP_UPDATE)
 
 end
@@ -312,73 +259,6 @@ function onDestroySandPlayDupInfoPanel(self)
     self.mSandPlayDupInfoPanel = nil
 end
 
--- 打开开心农场订单界面
-function onOpenSandPlayHappyFarmTaskPanel(self, args)
-    if self.mSandPlayHappyFarmTaskPanel == nil then
-        self.mSandPlayHappyFarmTaskPanel = UI.new(sandPlay.SandPlayHappyFarmTaskPanel)
-        self.mSandPlayHappyFarmTaskPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroySandPlayHappyFarmTaskPanel, self)
-    end
-    self.mSandPlayHappyFarmTaskPanel:open(args)
-end
-
--- ui销毁
-function onDestroySandPlayHappyFarmTaskPanel(self)
-    self.mSandPlayHappyFarmTaskPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroySandPlayHappyFarmTaskPanel, self)
-    self.mSandPlayHappyFarmTaskPanel = nil
-end
-
--- 打开开心农场商店界面
-function onOpenSandPlayHappyFarmShopPanel(self, args)
-    if self.mSandPlayHappyFarmShopPanel == nil then
-        self.mSandPlayHappyFarmShopPanel = UI.new(sandPlay.SandPlayHappyFarmShopPanel)
-        self.mSandPlayHappyFarmShopPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroySandPlayHappyFarmShopPanel, self)
-    end
-    self.mSandPlayHappyFarmShopPanel:open(args)
-end
-
--- ui销毁
-function onDestroySandPlayHappyFarmShopPanel(self)
-    self.mSandPlayHappyFarmShopPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroySandPlayHappyFarmShopPanel, self)
-    self.mSandPlayHappyFarmShopPanel = nil
-end
-
--- 打开开心农场种植仓库界面
-function onOpenSandPlayHappyFarmField(self, args)
-    if self.mSandPlayHappyFarmField == nil then
-        self.mSandPlayHappyFarmField = UI.new(sandPlay.SandPlayHappyFarmField)
-        self.mSandPlayHappyFarmField:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroySandPlayHappyFarmField, self)
-    end
-    self.mSandPlayHappyFarmField:open(args)
-end
-
--- 关闭开心农场种植仓库界面
-function onCloseSandPlayHappyFarmField(self, args)
-    if self.mSandPlayHappyFarmField then
-        self.mSandPlayHappyFarmField:close()
-    end
-end
-
--- ui销毁
-function onDestroySandPlayHappyFarmField(self)
-    self.mSandPlayHappyFarmField:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroySandPlayHappyFarmField, self)
-    self.mSandPlayHappyFarmField = nil
-end
-
--- 打开开心农场养殖界面
-function onOpenSandPlayHappyFarmBreedPanel(self, args)
-    if self.mSandPlayHappyFarmBreedPanel == nil then
-        self.mSandPlayHappyFarmBreedPanel = UI.new(sandPlay.SandPlayHappyFarmBreedPanel)
-        self.mSandPlayHappyFarmBreedPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroySandPlayHappyFarmBreedPanel, self)
-    end
-    self.mSandPlayHappyFarmBreedPanel:open(args)
-end
-
--- ui销毁
-function onDestroySandPlayHappyFarmBreedPanel(self)
-    self.mSandPlayHappyFarmBreedPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroySandPlayHappyFarmBreedPanel, self)
-    self.mSandPlayHappyFarmBreedPanel = nil
-end
-
 ---------------------------------------------------------------响应------------------------------------------------------------------
 
 function onActivityClose(self, args)
@@ -392,16 +272,6 @@ function onActivityClose(self, args)
             GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.MAIN_CITY)
         end
     end
-end
-
-function onBagUpdateHandler(self)
-    local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.HappyFarm)
-    if not activityVo:getIsCanOpen() then
-        return
-    end
-
-    GameDispatcher:dispatchEvent(EventName.MAINACTIVITY_REDSTATE_UPDATE)
-
 end
 
 ---------------------------------------------------------------请求------------------------------------------------------------------

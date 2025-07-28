@@ -35,8 +35,6 @@ function init(self)
     self.mNextMapId = nil
     self.mCurDupId = nil
     self.mPlayerThingScenePos = nil
-
-    self.mHappyFarmEventInfoDic = nil
 end
 
 function getSceneConfigVo(self, scene_id)
@@ -204,226 +202,6 @@ function getMapEventIsPass(self, map_id, npc_id, event_id)
     return false
 end
 
-------------------------------------------开心农场------------------------------------------
-
-function parseHappyFarmSeedCogfigData(self)
-    self.mHappyFarmSeedConfigDic = {}
-
-    local baseData = RefMgr:getData("happy_farm_data")
-    for key, data in pairs(baseData) do
-        if not self.mHappyFarmSeedConfigDic[data.type] then
-            self.mHappyFarmSeedConfigDic[data.type] = {}
-        end
-
-        local baseVo = sandPlay.SandPlayHappyFarmSeedConfigVo.new()
-        baseVo:parseCogfigData(key, data)
-
-        self.mHappyFarmSeedConfigDic[data.type][key] = baseVo
-    end
-end
-
-function getHappyFarmSeedConfigVoListByType(self, type)
-    if not self.mHappyFarmSeedConfigDic then
-        self:parseHappyFarmSeedCogfigData()
-    end
-
-    return self.mHappyFarmSeedConfigDic[type]
-end
-
-function getHappyFarmSeedConfigVo(self, seed_id)
-    if not self.mHappyFarmSeedConfigDic then
-        self:parseHappyFarmSeedCogfigData()
-    end
-
-    for type, seedConfigVoDic in pairs(self.mHappyFarmSeedConfigDic) do
-        for seedId, seedConfigVo in pairs(seedConfigVoDic) do
-            if seedConfigVo.id == seed_id then
-                return seedConfigVo
-            end
-        end
-    end
-end
-
-function parseHappyFarmTaskConfigVo(self)
-    if not self.mHappyFarmTaskConfigDic then
-        self.mHappyFarmTaskConfigDic = {}
-
-        local baseData = RefMgr:getData("farm_order_data")
-        for id, config in pairs(baseData) do
-            local baseVo = sandPlay.SandPlayHappyFarmTaskConfigVo.new()
-            baseVo:parseCogfigData(id, config)
-
-            self.mHappyFarmTaskConfigDic[id] = baseVo
-        end
-    end
-
-    return self.mHappyFarmTaskConfigDic
-end
-
-function getHappyFarmTaskConfigVoDic(self)
-    if not self.mHappyFarmTaskConfigDic then
-        self:parseHappyFarmTaskConfigVo()
-    end
-
-    return self.mHappyFarmTaskConfigDic
-end
-
-function getHappyFarmTaskConfigVo(self, task_id)
-    if not self.mHappyFarmTaskConfigDic then
-        self:parseHappyFarmTaskConfigVo()
-    end
-
-    return self.mHappyFarmTaskConfigDic[task_id]
-end
-
-function parseHappyFarmEventInfoDic(self, infoList)
-    if not self.mHappyFarmEventInfoDic then
-        self.mHappyFarmEventInfoDic = {}
-    end
-
-    for k, eventInfo in pairs(infoList) do
-        local fieldVo = self.mHappyFarmEventInfoDic[eventInfo.field_id]
-        if fieldVo == nil then
-            fieldVo = sandPlay.SandPlayHappyFarmFieldVo:create(eventInfo)
-        end
-
-        fieldVo:setData(eventInfo)
-
-        self.mHappyFarmEventInfoDic[fieldVo.field_id] = fieldVo
-        GameDispatcher:dispatchEvent(EventName.SANDPLAY_HAPPYFARM_EVENT_REFRESH, fieldVo.field_id)
-    end
-end
-
-function getHappyFarmEventInfoDic(self)
-    return self.mHappyFarmEventInfoDic or {}
-end
-
-function getHappyFarmEventInfo(self, field_id)
-    if not self.mHappyFarmEventInfoDic then
-        return nil
-    end
-
-    return self.mHappyFarmEventInfoDic[field_id] or nil
-end
-
-function parseHappyFarmTaskData(self, task_list)
-    self.mHappyFarmFinishTaskDic = {}
-    for k, task_id in pairs(task_list) do
-        self.mHappyFarmFinishTaskDic[task_id] = 1
-    end
-end
-
-function isHappyFarmFinishTask(self, task_id)
-    if not self.mHappyFarmFinishTaskDic then
-        return false
-    end
-
-    return self.mHappyFarmFinishTaskDic[task_id] == 1
-end
-
-function getHappyFarmRedState(self)
-    if self:getHappayFarmPoultryRedState() then
-        return true
-    end
-
-    if self:getHappyFarmCropRedState() then
-        return true
-    end
-
-    if self:getHappyFarmTaskRedState() then
-        return true
-    end
-
-    return false
-end
-
-function getHappayFarmPoultryRedState(self)
-    local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.HappyFarm)
-    if not activityVo:getIsCanOpen() then
-        return
-    end
-
-    return self:getHappyFarmFieldRedState(SandPlayConst.HappyFarm_Seed_Type.Poultry)
-end
-
-function getHappyFarmCropRedState(self)
-    local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.HappyFarm)
-    if not activityVo:getIsCanOpen() then
-        return
-    end
-
-    return self:getHappyFarmFieldRedState(SandPlayConst.HappyFarm_Seed_Type.Crop)
-end
-
-function getHappyFarmFieldRedState(self, type, subType)
-    local fieldDic = self:getHappyFarmEventInfoDic()
-
-    local fieldList = {}
-    for _, fieldVo in pairs(fieldDic) do
-        if fieldVo.configVo and fieldVo.configVo.type == type then
-            if subType then
-                if fieldVo.configVo.subtype == subType then
-                    table.insert(fieldList, fieldVo)
-                end
-            else
-                table.insert(fieldList, fieldVo)
-            end
-        end
-    end
-
-    for _, fieldVo in pairs(fieldList) do
-        if fieldVo.configVo.type == SandPlayConst.HappyFarm_Seed_Type.Poultry then
-            if fieldVo.configVo.subtype == SandPlayConst.HappyFarm_Poultry_Type.Chicken then
-                if fieldVo:getStage() == 2 then
-                    return true
-                end
-            elseif fieldVo.configVo.subtype == SandPlayConst.HappyFarm_Poultry_Type.Sheep then
-                if fieldVo:getStage() == 3 then
-                    return true
-                end
-            end
-        elseif fieldVo.configVo.type == SandPlayConst.HappyFarm_Seed_Type.Crop then
-            if fieldVo:getStage() == SandPlayConst.HappyFarm_FieldState.grow_up4 then
-                return true
-            end
-        end
-    end
-
-    return false
-end
-
-function getHappyFarmTaskRedState(self)
-    local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.HappyFarm)
-    if not activityVo:getIsCanOpen() then
-        return
-    end
-
-    local taskConfigVoDic = self:getHappyFarmTaskConfigVoDic()
-
-    for task_id, taskConfigVo in pairs(taskConfigVoDic) do
-        if self:getHappyFarmTaskRedStateById(taskConfigVo) then
-            return true
-        end
-    end
-
-    return false
-end
-
-function getHappyFarmTaskRedStateById(self, taskConfigVo)
-    if sandPlay.SandPlayManager:isHappyFarmFinishTask(taskConfigVo.id) then
-        return false
-    end
-
-    for _, cost in pairs(taskConfigVo.cost) do
-        local costTid, costCount = cost[1], cost[2]
-        if bag.BagManager:getPropsCountByTid(costTid, bag.BagType.HappyFarm) < costCount then
-            return false
-        end
-    end
-
-    return true
-end
-
 ------------------------------------------钓鱼------------------------------------------
 function parseFishTaskCogfigData(self)
     self.mFishTaskConfigVoDic = {}
@@ -560,8 +338,7 @@ function getFishByCurBait(self)
             return nil
         end
 
-        local minSize, maxSize = showConfig.length_interval[1], showConfig.length_interval[2]
-        local size = math.random(minSize, maxSize)
+        local size = math.random(showConfig.length_interval[1], showConfig.length_interval[2])
 
         local speed = 10
         local fishConfigVo = self:getFishConfigVo(fish_id)
@@ -643,25 +420,6 @@ function getFishingBait(self)
     return self.mCurBait
 end
 
-function canAutoFish(self)
-    local lasteAutoFishDt = StorageUtil:getNumber1(gstor.SANDPLAY_PLAYER_FISHAUTO)
-
-    local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.Fishing)
-    if activityVo and lasteAutoFishDt < activityVo.startTime then
-        return false
-    end
-
-    return true
-end
-
-function isAutoFish(self)
-    if self:canAutoFish() then
-        return StorageUtil:getBool1(gstor.SANDPLAY_PLAYER_FISHAUTOSTATE)
-    else
-        return false
-    end
-end
-
 ----------收集奖励是否有未领取奖励
 function getFishingAwardRedState(self)
     local rewardDic = self:getFishRewardConfigVoDic()
@@ -734,18 +492,6 @@ function getFishingActivityOpenRedState(self)
     local lasetClickRedDt = StorageUtil:getNumber1(gstor.SANDPLAY_FISHING_OPENRED)
     local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.Fishing)
     if activityVo and lasetClickRedDt < activityVo.startTime then
-        return true
-    end
-
-    return false
-end
-
--------------------------------------------------------------------钓鱼end---------------------------
-
-function getHappyFarmActivityOpenRedState(self)
-    local lasetClickRedDt = StorageUtil:getNumber1(gstor.SANDPLAY_HAPPYFARM_OPENRED)
-    local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.HappyFarm)
-    if activityVo and activityVo:getIsCanOpen() and lasetClickRedDt < activityVo.startTime then
         return true
     end
 

@@ -59,11 +59,6 @@ function configUI(self)
 
     self.mImgFishRange = self:getChildGO("mImgFishRange"):GetComponent(ty.RectTransform)
 
-    self.mImgEmpty = self:getChildGO("mImgEmpty")
-
-    self.mAutoBtn = self:getChildGO("mAutoBtn")
-    self.mAutoBtnChildGo = GoUtil.GetChildHash(self.mAutoBtn)
-
     self.mLyScroller = self:getChildGO("mLyScroller"):GetComponent(ty.LyScroller)
     self.mLyScroller:SetItemRender(sandPlay.SandPlayFishingBaitItem)
 end
@@ -76,14 +71,15 @@ end
 function addAllUIEvent(self)
     self:addUIEvent(self.mBtnAtlas, self.onOpenAtlas)
     self:addUIEvent(self.mBtnTeaching, self.onOpenTeaching)
-
-    self:addUIEvent(self.mImgEmpty, self.onClickEmpty)
-
-    self:addUIEvent(self.mAutoBtn, self.onClickAutoFish)
 end
 
 -- -- 设置货币栏
 function setMoneyBar(self)
+end
+
+-- 打开教学
+function onOpenTeaching(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_SANDPLAY_FISH_TEACHING_VIEW, { resList = { "fish_tips_1", "fish_tips_2", "fish_tips_3" }, des = { 98968, 98969, 98970 } })
 end
 
 -- 增加长按事件
@@ -98,10 +94,6 @@ function onAddPointerEvent(self)
     self.mBtnFishing.onClick:AddListener(_onPointerClickHandler)
 
     local function _onPointerDownHandler()
-        if self.mAutoFishState then
-            return
-        end
-
         if not self.mEatFish_info then
             return
         end
@@ -111,10 +103,6 @@ function onAddPointerEvent(self)
     self.mBtnFishing.onPointerDown:AddListener(_onPointerDownHandler)
 
     local function _onPointerUpHandler()
-        if self.mAutoFishState then
-            return
-        end
-
         if not self.mEatFish_info then
             return
         end
@@ -137,8 +125,6 @@ function active(self, args)
 
     GameDispatcher:addEventListener(EventName.SANDPLAY_FISHING_BAITSELECT, self.onShowBaitTips, self)
     GameDispatcher:addEventListener(EventName.SANDPLAY_FISHING_FISHEAT, self.onFishEat, self)
-    GameDispatcher:addEventListener(EventName.SANDPLAY_START_FISHING, self.onFishing, self)
-
     GameDispatcher:addEventListener(EventName.MAINACTIVITY_REDSTATE_UPDATE, self.updataRedState, self)
 
     bag.BagManager:addEventListener(bag.BagManager.BAG_UPDATE, self.refreshBait, self)
@@ -161,9 +147,6 @@ function active(self, args)
     self:openBaitView()
 
     self:updataRedState()
-
-    self.mAutoFishState = sandPlay.SandPlayManager:isAutoFish()
-    self:refreshAutoFish()
 end
 --反激活（销毁工作）
 function deActive(self)
@@ -171,8 +154,6 @@ function deActive(self)
 
     GameDispatcher:removeEventListener(EventName.SANDPLAY_FISHING_BAITSELECT, self.onShowBaitTips, self)
     GameDispatcher:removeEventListener(EventName.SANDPLAY_FISHING_FISHEAT, self.onFishEat, self)
-    GameDispatcher:removeEventListener(EventName.SANDPLAY_START_FISHING, self.onFishing, self)
-
     GameDispatcher:removeEventListener(EventName.MAINACTIVITY_REDSTATE_UPDATE, self.updataRedState, self)
 
     bag.BagManager:removeEventListener(bag.BagManager.BAG_UPDATE, self.refreshBait, self)
@@ -190,33 +171,6 @@ end
 function onClickClose(self)
     super.onClickClose(self)
     GameDispatcher:dispatchEvent(EventName.SANDPLAY_EXIT_FISHING)
-end
-
--- 打开教学
-function onOpenTeaching(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_SANDPLAY_FISH_TEACHING_VIEW, {resList = {"fish_tips_1", "fish_tips_2", "fish_tips_3"}, des = {98968, 98969, 98970}})
-end
-
-function onClickEmpty(self)
-    self.mBaitTipsGroup:SetActive(false)
-end
-
-function onClickAutoFish(self)
-    if not sandPlay.SandPlayManager:canAutoFish() then
-        gs.Message.Show(_TT(98975))
-        return
-    end
-
-    self.mAutoFishState = not self.mAutoFishState
-
-    StorageUtil:saveBool1(gstor.SANDPLAY_PLAYER_FISHAUTOSTATE, self.mAutoFishState)
-
-    self:refreshAutoFish()
-end
-
-function refreshAutoFish(self)
-    self.mAutoBtnChildGo["mNormal"]:SetActive(not self.mAutoFishState)
-    self.mAutoBtnChildGo["mSelect"]:SetActive(self.mAutoFishState)
 end
 
 function onFishEat(self, fish_info)
@@ -256,21 +210,14 @@ end
 function onFrame(self)
     ---更新浮标位置
     local minFishSignPos_x, maxFishSignPos_x = -217, 213
-
-    if not self.mAutoFishState then
-        if self.mImgFishSign.anchoredPosition.x >= minFishSignPos_x and self.mImgFishSign.anchoredPosition.x <= maxFishSignPos_x then
-            local anchoredPosition_x = self.mImgFishSign.anchoredPosition.x + gs.Time.deltaTime * self.mBuoyDir * self.mFishSignMoveSpeed
-            if anchoredPosition_x < minFishSignPos_x then
-                anchoredPosition_x = minFishSignPos_x
-            elseif anchoredPosition_x > maxFishSignPos_x then
-                anchoredPosition_x = maxFishSignPos_x
-            end
-            self.mImgFishSign.anchoredPosition = gs.Vector2(anchoredPosition_x, self.mImgFishSign.anchoredPosition.y)
+    if self.mImgFishSign.anchoredPosition.x >= minFishSignPos_x and self.mImgFishSign.anchoredPosition.x <= maxFishSignPos_x then
+        local anchoredPosition_x = self.mImgFishSign.anchoredPosition.x + gs.Time.deltaTime * self.mBuoyDir * self.mFishSignMoveSpeed
+        if anchoredPosition_x < minFishSignPos_x then
+            anchoredPosition_x = minFishSignPos_x
+        elseif anchoredPosition_x > maxFishSignPos_x then
+            anchoredPosition_x = maxFishSignPos_x
         end
-    else
-        self.mImgFishSign.anchoredPosition = gs.Vector2(self.mImgFishRange.anchoredPosition.x, self.mImgFishSign.anchoredPosition.y)
-
-        gs.TransQuick:SetLRotation(self.mAutoBtnChildGo["mImgAutoSelect"].transform, 0, 0, gs.TransQuick:GetRotationZ(self.mAutoBtnChildGo["mImgAutoSelect"].transform) + 3)
+        self.mImgFishSign.anchoredPosition = gs.Vector2(anchoredPosition_x, self.mImgFishSign.anchoredPosition.y)
     end
 
     local fishRangeWidth_half = (self.mImgFishRange.rect.width - self.mRangeMinWidth) / 2 --一半宽度
@@ -338,21 +285,9 @@ function refreshFishingProgress(self, value)
 
     if self.mFish_FillAmount >= 100 then
         GameDispatcher:dispatchEvent(EventName.SANDPLAY_FISHING_SUCCESS)
-
-        if not sandPlay.SandPlayManager:canAutoFish() then
-            local fishCount = StorageUtil:getNumber1(gstor.SANDPLAY_PLAYER_FISH_COUNT)
-            fishCount = fishCount + 1
-            StorageUtil:saveNumber1(gstor.SANDPLAY_PLAYER_FISH_COUNT, fishCount)
-
-            local autoCount = sysParam.SysParamManager:getValue(SysParamType.SandPlayAutoFishCount)
-            if fishCount >= autoCount then
-                StorageUtil:saveNumber1(gstor.SANDPLAY_PLAYER_FISHAUTO, GameManager:getClientTime())
-            end
-        end
     elseif self.mFish_FillAmount <= 0 then
         GameDispatcher:dispatchEvent(EventName.SANDPLAY_FISHING_FAIL)
     end
-
 end
 
 function KillTween(self)

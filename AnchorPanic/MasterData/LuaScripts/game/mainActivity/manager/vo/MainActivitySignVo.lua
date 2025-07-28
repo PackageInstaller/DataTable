@@ -6,7 +6,8 @@
 @Author         : Shuai
 @copyright      : (LY) 2023 雷焰网络
 -----------------------------------------------------
-]] module('game.mainActivity.manager.vo.MainActivitySignVo', Class.impl())
+]]
+module('game.mainActivity.manager.vo.MainActivitySignVo', Class.impl())
 
 function parseConfigData(self, key, cusData)
     self.daily = key
@@ -26,13 +27,7 @@ function getCanReceive(self)
 end
 
 function getDaily(self)
-    if self.daily < 10 then
-        return "0" .. self.daily
-    else
-        return self.daily
-    end
-    -- return _TT(136509, self.daily)
-    -- return string.format("%02d", self.daily)
+    return string.format("%02d", self.daily)
 end
 
 return _M

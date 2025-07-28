@@ -698,8 +698,6 @@ function getIsNormalQuality(self)
         return true
     elseif curSceneType == MAP_TYPE.RECRUIT_CARD then 
         return true
-    elseif curSceneType == MAP_TYPE.BIG_HOSTEL then 
-        return true
     end
 end
 
@@ -735,36 +733,6 @@ function getAllwindowResolution(self)
         end)
     end
     return self.mResolutionList
-end
-
---获取cv选项参数配置
-function getCvTypeSettingCfgs(self)
-    local cvOptionsConfig = sysParam.SysParamManager:getValue(SysParamType.CV_TYPE)
-    return cvOptionsConfig
-end
-
---获取当前cv选项配置
-function getCurCvTypeSettingCfg(self)
-    local cvOptionsConfig = self:getCvTypeSettingCfgs()
-    local curSelectIdx = self:getCurSelectCvTypeSetting()
-    local data = cvOptionsConfig[curSelectIdx]
-    return data
-end
-
---获取当前选中cv选项
-function getCurSelectCvTypeSetting(self)
-    local curSelectIdx = StorageUtil:getNumber1(gstor.CV_TYPE)
-    local config = self:getCvTypeSettingCfgs()
-    if not config[curSelectIdx] then
-        curSelectIdx = 1 
-        self:setCurSelectCvTypeSetting(curSelectIdx)
-    end
-    return curSelectIdx
-end
-
---设置当前选中cv选项
-function setCurSelectCvTypeSetting(self, curSelectIdx)
-    StorageUtil:saveNumber1(gstor.CV_TYPE, curSelectIdx)
 end
 
 return _M

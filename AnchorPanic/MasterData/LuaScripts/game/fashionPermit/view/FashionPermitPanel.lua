@@ -51,11 +51,8 @@ function configUI(self)
 
     self.mBtnShowSkin = self:getChildGO("mBtnShowSkin")
 
-    self.mImgHeroHar = self:getChildGO("mImgHeroHar"):GetComponent(ty.AutoRefImage)
     -- self.mTxtModel = self:getChildGO("mTxtModel"):GetComponent(ty.Text)
-     -- self.mTxtVoice = self:getChildGO("mTxtVoice"):GetComponent(ty.Text)
-    self.mBtnHis = self:getChildGO("mBtnHis")
-   
+    -- self.mTxtVoice = self:getChildGO("mTxtVoice"):GetComponent(ty.Text)
 end
 
 function onClickShowSkinHandler(self)
@@ -146,28 +143,9 @@ function initViewText(self)
     self:setBtnLabel(self.mBtnActive, nil, _TT(98105))
     self:setBtnLabel(self.mBtnOneKey, nil, _TT(1176))
 
-    self:getChildGO("mTxtHeroName"):GetComponent(ty.Text).text = _TT(98101)
-    self:getChildGO("mTxtType"):GetComponent(ty.Text).text = _TT(98115)
-    self:setBtnLabel(self.mBtnHis,nil,_TT(138512),"")
     -- self.mTxtModel.text = _TT(98107)
     -- self.mTxtVoice.text = _TT(98108)
 end
-
-function onClickBtnHisHandler(self)
-    local prefixVersion =
-    download.ResDownLoadManager:getServerVersionValue(gs.AssetSetting.PrefixVersionKey)
-
-    local isShow = StorageUtil:getBool1(prefixVersion .. "hisFashionHisBuyFashionPermit") == true 
-    if not isShow then
-        StorageUtil:saveBool1(prefixVersion .. "hisFashionHisBuyFashionPermit", true)
-        GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
-        GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_HIS_RED)
-        RedPointManager:remove(self.mBtnHis.transform)
-    end
-
-    GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_FASHION_HIS_VIEW,{type = activity.FashionHisType.FashionPermit})
-end
-
 -- UI事件管理(关闭界面会自动移除)
 function addAllUIEvent(self)
     self:addUIEvent(self.mBtnActive, self.onClickActiveHandler)
@@ -176,7 +154,6 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnOneKey, self.onClickOneKeyReciveHandler)
 
     self:addUIEvent(self.mBtnShowSkin, self.onClickShowSkinHandler)
-    self:addUIEvent(self.mBtnHis, self.onClickBtnHisHandler)
 end
 
 function updateView(self)
@@ -197,13 +174,6 @@ function updateView(self)
     -- local stageVo = fashionPermit.FashionPermitManager:getFashionPermitList()[count]
     -- self:updateStageInfo(stageVo)
     self.mLyScroller:SetItemIndex(fashionPermit.FashionPermitManager:getPermitIndex(), 0, 0, 0.1)
-    
-    -- 部分渠道需要特殊处理
-    local isHar = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious())
-    self.mImgHeroHar.gameObject:SetActive(isHar)
-    self:getChildGO("Spine"):SetActive(not isHar)
-    local fashionData = fashion.FashionManager:getHeroFashionConfigVo(fashion.Type.CLOTHES, self.heroTid, self.fashionId)
-    self.mImgHeroHar:SetImg(UrlManager:getBgPath("heroRecord_Har/" .. fashionData:getUrlBody()))
 end
 function closeAllProps(self)
     if self.mPropsList then
@@ -229,33 +199,15 @@ end
 
 function onClickActiveHandler(self)
     local detailId = "1";
-
-    local hasTid = hero.HeroManager:getHeroIdByTid(self.heroTid)
-    if hasTid then
-        if fashionPermit.FashionPermitManager:getFashionIsUnlock() then
-            local vo = fashion.FashionManager:getHeroFashionConfigVo(0, self.heroTid, self.fashionId)
-            UIFactory:alertMessge(_TT(98110, _TT(vo.fashionName)), true, function()
-                recharge.sendRecharge(recharge.RechargeType.FASHION_PERMIT, nil, detailId)
-            end, _TT(1), nil, true, function()
-            end, _TT(2), _TT(5))
-        else
+    if fashionPermit.FashionPermitManager:getFashionIsUnlock() then
+        local vo = fashion.FashionManager:getHeroFashionConfigVo(0, self.heroTid, self.fashionId)
+        UIFactory:alertMessge(_TT(98110, _TT(vo.fashionName)), true, function()
             recharge.sendRecharge(recharge.RechargeType.FASHION_PERMIT, nil, detailId)
-        end
-    else
-        UIFactory:alertMessge(_TT(98111), true, function()
-            if fashionPermit.FashionPermitManager:getFashionIsUnlock() then
-                local vo = fashion.FashionManager:getHeroFashionConfigVo(0, self.heroTid, self.fashionId)
-                UIFactory:alertMessge(_TT(98110, _TT(vo.fashionName)), true, function()
-                    recharge.sendRecharge(recharge.RechargeType.FASHION_PERMIT, nil, detailId)
-                end, _TT(1), nil, true, function()
-                end, _TT(2), _TT(5))
-            else
-                recharge.sendRecharge(recharge.RechargeType.FASHION_PERMIT, nil, detailId)
-            end
         end, _TT(1), nil, true, function()
         end, _TT(2), _TT(5))
+    else
+        recharge.sendRecharge(recharge.RechargeType.FASHION_PERMIT, nil, detailId)
     end
-    
 end
 
 function onClickOneKeyReciveHandler(self)
@@ -308,12 +260,6 @@ function updateState(self)
     else
         RedPointManager:remove(self.mBtnTask.transform)
     end
-
-    if activity.ActitvityExtraManager:getFashionPermitRedInfo() then
-        RedPointManager:add(self.mBtnHis.transform, nil, 62.3,13.6)
-    else
-        RedPointManager:remove(self.mBtnHis.transform)
-    end
 end
 
 function updateStageInfo(self, curStageVo)
@@ -344,15 +290,6 @@ function updateStageInfo(self, curStageVo)
 end
 
 function updateTime(self)
-    if activity.ActivityManager:getActivityVoById(activity.ActivityId.PermitFashionHis) then
-        local clientTime = GameManager:getClientTime()
-        local RemainingTime = activity.ActivityManager:getActivityVoById(activity.ActivityId.PermitFashionHis)
-            :getEndTime() - clientTime
-        self.mBtnHis:SetActive(RemainingTime > 0)    
-    else
-        self.mBtnHis:SetActive(false)    
-    end
-
     --
     if activity.ActivityManager:getActivityVoById(activity.ActivityId.Fashion_Permit) then
         local clientTime = GameManager:getClientTime()
@@ -366,9 +303,6 @@ function updateTime(self)
             self:close()
             return
         end
-    else
-        self:removeTimer(self.updateTime)
-        self:close()
     end
 end
 

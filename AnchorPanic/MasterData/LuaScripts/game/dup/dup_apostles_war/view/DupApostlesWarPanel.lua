@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : DupApostlesWarPanel
 @Description    : 使徒之战
@@ -51,6 +51,7 @@ function configUI(self)
     self.mBossContent = self:getChildTrans("mBossContent")
     self.DupApostlesEnterItem = self:getChildGO("DupApostlesEnterItem")
 
+
     self.mDifficultySelect = self:getChildGO("mDifficultySelect")
     self.mTxtSelectDiff = self:getChildGO("mTxtSelectDiff"):GetComponent(ty.Text)
     self.mTxtSelectNum = self:getChildGO("mTxtSelectNum"):GetComponent(ty.Text)
@@ -65,7 +66,7 @@ function configUI(self)
     self.mGroupSkillItem = self:getChildGO("mGroupSkillItem")
     self.mGroupTarget = self:getChildTrans("mGroupTarget")
     self.mGroupTargetItem = self:getChildGO("mGroupTargetItem")
-    self.mGroupHero = self:getChildTrans("mGroupHero") -- HeroHeadGrid
+    self.mGroupHero = self:getChildTrans("mGroupHero")      -- HeroHeadGrid
     self.mContent = self:getChildTrans("mContent")
     self.mDifficultyItem = self:getChildGO("mDifficultyItem")
     self.mBtnEnemyInfo = self:getChildGO("mBtnEnemyInfo")
@@ -118,14 +119,23 @@ end
 function active(self, args)
     super.active(self)
     MoneyManager:setMoneyTidList()
+    -- self.mBossData = args.bossData
+    self.data = dup.DupApostlesWarManager:getPanelInfo()
+    self.configVo = dup.DupApostlesWarManager:getClositerDataById(self.data.id)
+    self.mBossData = self.data.bossList[dup.DupApostlesWarManager:getCurrentBossId()]
 
+    -- dup.DupApostlesWarManager:setCurrentBossId(args.bossData.id)
     GameDispatcher:addEventListener(EventName.UPDATE_DUP_APOSTLES_PANEL, self.onUpdateDataHandler, self)
     dup.DupApostlesWarManager:addEventListener(dup.DupApostlesWarManager.EVENT_DATA_UPDATE, self.onUpdateDataHandler, self)
-
-    GameDispatcher:dispatchEvent(EventName.REQ_DUP_APOSTLES2_PANEL_INFO)
-
+    --首选项
+    for i = 1, #self.mBossData.difficultyList do
+        local dupData = self.mBossData.difficultyList[i]
+        if (dupData.isUnlock ~= 0) then
+            self.mChooseIndex = i
+        end
+    end
     self.isOpenSelectDiff = false
-    -- self:onUpdateDataHandler()
+    self:onUpdateDataHandler(true)
     -- self:updateView()
 end
 
@@ -144,11 +154,10 @@ function deActive(self)
         LoopManager:removeTimerByIndex(self.timerId)
     end
     self.timerId = nil
-
-    self.isInit = nil
 end
 
---[[
+
+--[[ 
     初始化界面的静态文本，图片字
     每次打开界面都会重新读取，多语言切换时可以及时更新
 ]]
@@ -175,21 +184,18 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnCloseDiff, self.onClickCloseSelectDiff)
 end
 
-function onUpdateDataHandler(self)
+function onUpdateDataHandler(self, init)
     self.data = dup.DupApostlesWarManager:getPanelInfo()
     self.configVo = dup.DupApostlesWarManager:getClositerDataById(self.data.id)
-    self.mBossData = self.data.bossList[dup.DupApostlesWarManager:getCurrentBossId()]
-
-    -- self.isInit = false
-    self:updateView()
+    self:updateView(init)
 end
 
 function onOpenShop(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.ShopDupApostles})
+    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.ShopDupApostles })
 end
 
 function onEnemyInfo(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_FORMATION_PREVIEW, {dupVo = self.mDupConfigVo})
+    GameDispatcher:dispatchEvent(EventName.OPEN_FORMATION_PREVIEW, { dupVo = self.mDupConfigVo })
 end
 
 function onUpdateDiffView(self)
@@ -197,10 +203,10 @@ function onUpdateDiffView(self)
     self:updateSelectDiff()
 end
 
-function updateView(self)
+function updateView(self, init)
     -- self.mTxtName.text = _TT(self.configVo.name[self.mBossData.id])
     self:updateBossList()
-    self:updateSelectDiff()
+    self:updateSelectDiff(init)
     self.mTxtChallengeNum.text = self.configVo.challengeNum - self.data.challengeTimes
     local mDupData = self.mBossData.difficultyList[self.mChooseIndex]
     self.mDupConfigVo = dup.DupApostlesWarManager:getDupDataById(mDupData.id)
@@ -232,7 +238,7 @@ function updateView(self)
     end
     if (nextRewardVo ~= nil) then
         for k, v in pairs(nextRewardVo.rewards) do
-            local propsGrid = PropsGrid:createByData({tid = v[1], num = v[2], parent = self.mNextAward, scale = 1, showUseInTip = true})
+            local propsGrid = PropsGrid:createByData({ tid = v[1], num = v[2], parent = self.mNextAward, scale = 1, showUseInTip = true })
             table.insert(self.mAwardList, propsGrid)
         end
     end
@@ -289,8 +295,7 @@ function updateBossList(self)
             dup.DupApostlesWarManager:setCurrentBossId(bossList[i].id)
             self.mBossData = bossList[i]
             self.isOpenSelectDiff = false
-            self.isInit = false
-            self:updateView()
+            self:updateView(true)
             self.mAnimation:SetTrigger("show")
             -- self.selectData = bossList[i]
             -- GameDispatcher:dispatchEvent(EventName.OPEN_DUP_APOSTLES_WAR_PANEL, { bossData =  })
@@ -299,11 +304,11 @@ function updateBossList(self)
     end
 end
 
-function updateSelectDiff(self)
+function updateSelectDiff(self, init)
     self:recoverDiffiItem()
     self.mImgClose:SetActive(not self.isOpenSelectDiff)
     self.mImgOpen:SetActive(self.isOpenSelectDiff)
-    if (not self.isInit) then
+    if (init) then
         for i = #self.mBossData.difficultyList, 1, -1 do
             local dupData = self.mBossData.difficultyList[i]
             if (dupData.isUnlock ~= 0) then
@@ -311,10 +316,7 @@ function updateSelectDiff(self)
                 break
             end
         end
-
-        self.isInit = true
     end
-
     if (self.isOpenSelectDiff) then
         --难度列表
         for i = #self.mBossData.difficultyList, 1, -1 do
@@ -512,10 +514,10 @@ function updateSkill(self, skillList)
     --         end
     --     end
     -- else
-
-    -- local skillId = sysParam.SysParamManager:getValue(SysParamType.DUO_APO_SKILLID)
-    -- local skillRo = fight.SkillManager:getSkillRo(skillId)
-    self.mRichText.text = _TT(self.mDupConfigVo.desc) --skillRo:getDesc()
+        
+        -- local skillId = sysParam.SysParamManager:getValue(SysParamType.DUO_APO_SKILLID)
+        -- local skillRo = fight.SkillManager:getSkillRo(skillId)
+        self.mRichText.text = _TT(self.mDupConfigVo.desc) --skillRo:getDesc()
     -- end
 end
 
@@ -552,7 +554,7 @@ function onFight(self)
             end
         end
         dup.DupApostlesWarManager.mIsTrain = false
-        formation.checkFormationFight(PreFightBattleType.DupApostle2War, nil, dupId, formation.TYPE.DUP_APOSTLES, self.mBossData.id, {lockList})
+        formation.checkFormationFight(PreFightBattleType.DupApostle2War, nil, dupId, formation.TYPE.DUP_APOSTLES, self.mBossData.id, { lockList })
     else
         gs.Message.Show(_TT(3540))
     end
@@ -560,110 +562,110 @@ end
 
 --打开规则说明界面
 function onClickFuncTipsHandler(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_FUNCTIPS_VIEW, {id = LinkCode.DupApostlesWarInfo})
+    GameDispatcher:dispatchEvent(EventName.OPEN_FUNCTIPS_VIEW, { id = LinkCode.DupApostlesWarInfo })
 end
 
 function onIntoTrain(self)
     UIFactory:alertMessge(_TT(43105), true,
-        function()
-            dup.DupApostlesWarManager.mIsTrain = true
-            local dupId = self.mBossData.difficultyList[self.mChooseIndex].id
-            formation.checkFormationFight(PreFightBattleType.DupApostle2War, nil, dupId, formation.TYPE.DUP_APOSTLES, self.mBossData.id, {})
-        end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, RemindConst.DUPAPO2TRAIN)
-    end
+    function()
+        dup.DupApostlesWarManager.mIsTrain = true
+        local dupId = self.mBossData.difficultyList[self.mChooseIndex].id
+        formation.checkFormationFight(PreFightBattleType.DupApostle2War, nil, dupId, formation.TYPE.DUP_APOSTLES, self.mBossData.id, {})
+    end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, RemindConst.DUPAPO2TRAIN)
+end
 
-    function onOpenReward(self)
-        GameDispatcher:dispatchEvent(EventName.OPEN_DUP_APOSTLES_REWARD_PANEL)
-    end
+function onOpenReward(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_DUP_APOSTLES_REWARD_PANEL)
+end
 
-    -- 回收项
-    function recoverItem(self)
-        if self.skillList then
-            for i, v in pairs(self.skillList) do
-                v:poolRecover()
-            end
-        end
-        self.skillList = {}
-    end
-
-    function recoverDiffiItem(self)
-        if self.mDifficultyList then
-            for i, v in pairs(self.mDifficultyList) do
-                v:poolRecover()
-            end
-        end
-        self.mDifficultyList = {}
-    end
-
-    function recoverAwardItem(self)
-        if self.mAwardList then
-            for i, v in pairs(self.mAwardList) do
-                v:poolRecover()
-            end
-        end
-        self.mAwardList = {}
-    end
-
-    -- 回收项
-
-    function recoverEnterItem(self)
-        for k, v in pairs(self.mEleTypeList) do
+-- 回收项
+function recoverItem(self)
+    if self.skillList then
+        for i, v in pairs(self.skillList) do
             v:poolRecover()
         end
-        self.mEleTypeList = {}
-        if self.mEnterItemList then
-            for i, v in pairs(self.mEnterItemList) do
-                LoopManager:clearTimeout(v.timerId)
-                v.tweenId = nil
-                v:poolRecover()
-            end
-        end
-        self.mEnterItemList = {}
     end
+    self.skillList = {}
+end
 
-    function recoverTargetItem(self)
-        if self.mTargetList then
-            for i, v in pairs(self.mTargetList) do
-                v:poolRecover()
-            end
+function recoverDiffiItem(self)
+    if self.mDifficultyList then
+        for i, v in pairs(self.mDifficultyList) do
+            v:poolRecover()
         end
-        self.mTargetList = {}
     end
+    self.mDifficultyList = {}
+end
 
-    function recoverHeroItem(self)
-        if self.mHeroList then
-            for i, v in pairs(self.mHeroList) do
-                v:poolRecover()
-            end
+function recoverAwardItem(self)
+    if self.mAwardList then
+        for i, v in pairs(self.mAwardList) do
+            v:poolRecover()
         end
-        self.mHeroList = {}
     end
+    self.mAwardList = {}
+end
 
-    function updateRed(self)
-        local isFlag = dup.DupApostlesWarManager:checkFlag()
-        if isFlag then
-            RedPointManager:add(self.mBtnStage.transform, nil, -124, 47)
-            self.mReceive:SetActive(true)
+-- 回收项
+
+function recoverEnterItem(self)
+    for k, v in pairs(self.mEleTypeList) do
+        v:poolRecover()
+    end
+    self.mEleTypeList = {}
+    if self.mEnterItemList then
+        for i, v in pairs(self.mEnterItemList) do
+            LoopManager:clearTimeout(v.timerId)
+            v.tweenId = nil
+            v:poolRecover()
+        end
+    end
+    self.mEnterItemList = {}
+end
+
+function recoverTargetItem(self)
+    if self.mTargetList then
+        for i, v in pairs(self.mTargetList) do
+            v:poolRecover()
+        end
+    end
+    self.mTargetList = {}
+end
+
+function recoverHeroItem(self)
+    if self.mHeroList then
+        for i, v in pairs(self.mHeroList) do
+            v:poolRecover()
+        end
+    end
+    self.mHeroList = {}
+end
+
+function updateRed(self)
+    local isFlag = dup.DupApostlesWarManager:checkFlag()
+    if isFlag then
+        RedPointManager:add(self.mBtnStage.transform, nil, -124, 47)
+        self.mReceive:SetActive(true)
+    else
+        RedPointManager:remove(self.mBtnStage.transform)
+        self.mReceive:SetActive(false)
+        if self.data.starNum >= self.configVo.maxStar then
+            self.mComplete:SetActive(true)
         else
-            RedPointManager:remove(self.mBtnStage.transform)
-            self.mReceive:SetActive(false)
-            if self.data.starNum >= self.configVo.maxStar then
-                self.mComplete:SetActive(true)
-            else
-                self.mComplete:SetActive(false)
-            end
+            self.mComplete:SetActive(false)
         end
     end
+end
 
-    return _M
+return _M
 
-    --[[ 替换语言包自动生成，请勿修改！
-语言包: _TT(3540):"当前挑战次数为0"
-语言包: _TT(3539):"通关上一难度解锁"
-语言包: _TT(3538):"-暂无锁定战员-"
-语言包: _TT(3537):"-无异常环境-"
-语言包: _TT(3531):"剩余挑战次数："
-语言包: _TT(3536):"锁定战员"
-语言包: _TT(3535):"关卡目标"
-语言包: _TT(3534):"异常环境"
+--[[ 替换语言包自动生成，请勿修改！
+	语言包: _TT(3540):	"当前挑战次数为0"
+	语言包: _TT(3539):	"通关上一难度解锁"
+	语言包: _TT(3538):	"-暂无锁定战员-"
+	语言包: _TT(3537):	"-无异常环境-"
+	语言包: _TT(3531):	"剩余挑战次数："
+	语言包: _TT(3536):	"锁定战员"
+	语言包: _TT(3535):	"关卡目标"
+	语言包: _TT(3534):	"异常环境"
 ]]

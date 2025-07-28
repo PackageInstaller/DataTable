@@ -8,9 +8,6 @@ function parseData(self, cusId, cusData)
     self.sort = cusData.sort
     self.icon = cusData.icon
     self.uicode = cusData.uicode
-    self.dissolves = cusData.dissolves
-    self.costTid = cusData.cost_tid
-    self.fashionIcon = cusData.fashionIcon
 end
 
 return _M

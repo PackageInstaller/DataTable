@@ -19,9 +19,6 @@ function parseData(self, key, cusData)
     self.funcId = cusData.func_id
     self.beginTime = cusData.begin_time
     self.endTime = cusData.end_time
-
-    self.hero_list = cusData.hero_list
-    self.sort = cusData.sort
 end
 
 function isOpenTime(self)

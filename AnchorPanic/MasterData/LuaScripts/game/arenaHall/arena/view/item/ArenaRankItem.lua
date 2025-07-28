@@ -38,7 +38,7 @@ function setData(self, param)
     if (self.data.rank <= 3) then
         --self.mTxtRankBig.color = gs.ColorUtil.GetColor(ColorUtil:getPropColor(self.data.rank))
 
-        local color = "ffc66d00"
+        local color="ffc66d00"
         if self.data.rank == 1 then
             color = "ffc66dff"
         elseif self.data.rank == 2 then
@@ -63,7 +63,7 @@ function setData(self, param)
     else
         self.mPlayerHeadGrid:setData(rankData.avatar)
     end
-    self.mTxtName.text = ""-- FilterWordUtil:filterTemp(rankData.name)
+    self.mTxtName.text = rankData.name
     self.mPlayerHeadGrid:setParent(self.mHeadGridNode)
     self.mPlayerHeadGrid:setScale(1)
     self.mPlayerHeadGrid:setCallBack(self, self.__onClickHeadHandler)

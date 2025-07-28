@@ -44,10 +44,7 @@ function configUI(self)
     self.mTipsAttrItem = self:getChildGO("mTipsAttrItem")
     self.mTxtTipsSkill = self:getChildGO("mTxtTipsSkill"):GetComponent(ty.Text)
     self.mTipsRelGroup = self:getChildTrans("mTipsRelGroup")
-    self.mTipsTxtDes = self:getChildGO("mTipsTxtDes"):GetComponent(ty.TMP_Text)
-    self.mTipsTxtDes_tmpLink = self:getChildGO("mTipsTxtDes"):GetComponent(ty.TextMeshProLink)
-    self.mTipsTxtDes_tmpLink:SetEventCall(notice.HrefUtil.commonTitleDesLinkData)
-
+    self.mTipsTxtDes = self:getChildGO("mTipsTxtDes"):GetComponent(ty.Text)
 
     self.mGroupEmpower = self:getChildGO("mGroupEmpower")
     self.mEmpowerContent = self:getChildTrans("mEmpowerContent")

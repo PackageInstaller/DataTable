@@ -44,17 +44,7 @@ function setData(self, cusParent, cusBillboardData)
     self:setParentTrans(cusParent)
     self.billboardData = cusBillboardData
     if self.billboardData then
-        local sp = gs.ResMgr:LoadSprite(string.format("arts/ui/bg/billboard/billboard_bg_%d_har.jpg", self.billboardData.illustration))
-        if not sp then
-            -- logError(string.format("=========轮播id%s 没有提交和谐资源，和策划核对后补上", self.billboardData.illustration))
-            logError(string.format("=========轮播id%s 没有提交和谐资源，和策划核对后补上", self.billboardData.illustration))
-            self.mImgItem:GetComponent(ty.AutoRefImage):SetImg(UrlManager:getBgPath("activityTarget/activity_bg_02.png")) -- 这里是故意设置错误图片，提示错误，需要注意错误。请勿删除代码
-        else
-
-            local url = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) and string.format("billboard/billboard_bg_%d_har.jpg", self.billboardData.illustration) or string.format("billboard/billboard_bg_%d.jpg", self.billboardData.illustration)
-
-            self.mImgItem:GetComponent(ty.AutoRefImage):SetImg(UrlManager:getBgPath(url))
-        end
+        self.mImgItem:GetComponent(ty.AutoRefImage):SetImg(UrlManager:getBgPath(string.format("billboard/billboard_bg_%d.jpg", self.billboardData.illustration)))
         self.mImgItem:SetActive(true)
     else
         self.mImgItem:SetActive(false)
@@ -85,7 +75,7 @@ end
 -- 更新红点
 function updateBubble(self, isBubble)
     if (isBubble) then
-        RedPointManager:add(self.UITrans, nil, 114, 25)
+        RedPointManager:add(self.UITrans, nil, -154, 54)
     else
         RedPointManager:remove(self.UITrans)
     end

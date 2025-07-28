@@ -651,7 +651,7 @@ function getModel(self, model, formationHeroVo, col_x, row_y, allLoadCall)
             end
         end
 
-        model:setModelID(type, formationHeroVo:getModel(), true, 1, _finishCall)
+        model:setModelID(type, formationHeroVo:getModel(), false, 1, _finishCall)
     end
     return model
 end

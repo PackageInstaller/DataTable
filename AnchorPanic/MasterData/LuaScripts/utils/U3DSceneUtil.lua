@@ -30,12 +30,11 @@ function loadSceneSingle(self, sceneName, loadCall, finishCall)
         GCUtil.colllectCSharpGC()
 
         -- 统一清理(3v3竞技场，全部清理)
-        if fight.FightManager:getLatestBattleType() == PreFightBattleType.Arena_Peak_Pvp or fight.FightManager:getLatestBattleType() == PreFightBattleType.GuildWar then
-            print("===========3v3竞技场 or 联盟团战，清理全部资源")
+        if fight.FightManager:getLatestBattleType() == PreFightBattleType.Arena_Peak_Pvp then
+            print("===========3v3竞技场，清理全部资源")
             gs.GOPoolMgr:ClearAll()
             gs.ResMgr:ForceUnload(true, true)
             self:UnLoadAssetBundle({ "arts/fx/3d/role/prefab", "arts/fx/3d/sceneModule/maze", "arts/audio", "arts/character" })
-        
         else
             -- gs.GOPoolMgr:ClearSameRes({ "arts/audio/cv", "arts/audio/sfx", "arts/audio/story", "arts/audio/UI", "arts/audio/amb",
             -- "arts/fx/3d/role/prefab/monster", "arts/fx/3d/role/prefab/boss", "arts/fx/3d/role/prefab/common", "arts/fx/ui",
@@ -189,14 +188,7 @@ end
 
 -- 设置激活场景
 function setActiveScene(self, sceneName)
-    local isOk, value = pcall(
-        function() 
-            gs.SceneManager.SetActiveScene(gs.SceneManager.GetSceneByName(sceneName)) 
-        end
-    )
-    if not isOk then
-        logError("激活场景" .. sceneName .. "出错：" .. value)
-    end
+    gs.SceneManager.SetActiveScene(gs.SceneManager.GetSceneByName(sceneName))
 end
 
 function unLoadScene(self, sceneName, loadCall, finishCall)

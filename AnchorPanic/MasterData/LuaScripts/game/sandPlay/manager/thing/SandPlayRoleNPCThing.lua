@@ -8,7 +8,7 @@ module('game.sandPlay.thing.SandPlayRoleNPCThing', Class.impl(sandPlay.SandPlayN
 function resetData(self)
     super.resetData(self)
 
-    self.mStopDistance = 0.1
+    self.m_stopDistance = 0.1
 end
 
 function onModelLoadFinish(self)
@@ -67,7 +67,7 @@ end
 
 function refreshPatrol(self)
     local position = self:getPosition()
-    if gs.Vector2.Distance(gs.Vector2(position.x, position.z), gs.Vector2(self.mPatrolPos.x, self.mPatrolPos.z)) <= self.mStopDistance then
+    if gs.Vector2.Distance(gs.Vector2(position.x, position.z), gs.Vector2(self.mPatrolPos.x, self.mPatrolPos.z)) <= self.m_stopDistance then
         if not self:checkNextPatrolPos() then
             self:clearPatrolFrameSn()
 
@@ -124,7 +124,7 @@ function addNavmeshAgent(self)
         -- 加速度
         self.m_NavMeshAgent.acceleration = 100
         -- 距离目标位置的停止距离
-        self.m_NavMeshAgent.stoppingDistance = self.mStopDistance
+        self.m_NavMeshAgent.stoppingDistance = self.m_stopDistance
         -- 自动刹车，不开启可能会在目标点附近来回晃动
         self.m_NavMeshAgent.autoBraking = true
 
@@ -151,11 +151,6 @@ end
 function recover(self)
     super.recover(self)
 
-    if self.m_NavMeshAgent == nil or gs.GoUtil.IsCompNull(self.m_NavMeshAgent) then
-        gs.GameObject.Destroy(self.m_NavMeshAgent)
-        self.m_NavMeshAgent = nil
-    end
-    
     self:clearPatrolFrameSn()
 end
 

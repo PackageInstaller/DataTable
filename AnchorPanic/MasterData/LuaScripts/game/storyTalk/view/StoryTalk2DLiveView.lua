@@ -22,18 +22,6 @@ function initData(self, go, modelID, modelLocation, nodeTrans, charactorType, is
     self:shakeAni()
 end
 
--- 根据屏幕宽高和贴图的宽高调整贴图的位置，保证贴图底部贴近屏幕底部
-function adjustViewPosY(self, liveView)
-    local offsetY = 0
-    if liveView then
-        local sw, sh = ScreenUtil:getScreenSize()
-        self.mParentRootRectTrans = liveView.transform.parent:GetComponent(ty.RectTransform)
-        local liveViewHalfHeight = liveView.Height / 2
-        offsetY = liveViewHalfHeight - sh / 2 - self.mParentRootRectTrans.localPosition.y
-    end
-    return offsetY
-end
-
 function initDataUI(self, modelID, modelLocation, nodeTrans, facePosX, facePosY, modelOffset, isBright, isVideoCall)
     self.mRoot = AssetLoader.GetGO(UrlManager:getUIPrefabPath('storyTalk/Story2DLiveViewUI.prefab'))
     self.mRootTrans = self.mRoot.transform
@@ -45,9 +33,7 @@ function initDataUI(self, modelID, modelLocation, nodeTrans, facePosX, facePosY,
     -- 设置底图宽高
     self.mModelTexImgRectTrans = self.mRoot:GetComponent(ty.RectTransform)
     self.mModelTexImgRectTrans.sizeDelta = gs.Vector2(self.mModelTexImg.Width, self.mModelTexImg.Height)
-    local rectOffset = gs.Vector3(0, self:adjustViewPosY(self.mModelTexImg), 0)
-    self.mModelTexImgRectTrans.localPosition = self.mModelTexImgRectTrans.localPosition + rectOffset
-    -- 设置锚点
+
 
     self.mFaceGo = self.mRootTrans:Find("Face").gameObject
     self.mFaceGoTrans = self.mFaceGo.transform
@@ -82,8 +68,6 @@ function initDataScene(self, modelID, nodeTrans, facePosX, facePosY, modelOffset
     faceTexSprite, faceTexWidth, faceTexHeight = self:getImgInfo(UrlManager:getStoryCharactorFaceUrl(modelID, "1"))
     self:setSceneRootTransform(self.mModelTexImg.sprite, self.mModelTexImgWidth, self.mModelTexImgHeight,
         self.mCamGo.transform, facePosX, facePosY, faceTexWidth)
-    local rectOffset = gs.Vector3(0, self:adjustViewPosY(self.mModelTexImg), 0)
-    self.mModelTexImgRectTrans.localPosition = self.mModelTexImgRectTrans.localPosition + rectOffset
 
     -- 设置表情相关内容
     self.mFaceGo = self.mRootTrans:Find("Face").gameObject
@@ -235,12 +219,9 @@ function updateModel(self, newEnterTrans, modelData)
 
 
     -- 更新位置
-    local adjustPosY = self:adjustViewPosY(self.mModelTexImg)
-    local rectOffset = newEnterTrans:InverseTransformPoint(newEnterTrans.position) +
-        gs.Vector3(self.modelOffset[1], self.modelOffset[2] + adjustPosY, self.modelOffset[3])
-    local pos = newEnterTrans:TransformPoint(rectOffset)
+    local offset = gs.Vector3(self.modelOffset[1] / 100, self.modelOffset[2] / 100, self.modelOffset[3] / 100)
     self:setBrightActive(isBright)
-    self:setPositionTween(pos, self.mTweenTime, function()
+    self:setPositionTween(newEnterTrans.position + offset, self.mTweenTime, function()
         self:shakeAni()
     end)
 

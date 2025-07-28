@@ -112,8 +112,7 @@ end
 
 -- 加速发电
 function onClickOpenChargeSPView(self)
-    local max = sysParam.SysParamManager:getValue(5003) or 200
-    if role.RoleManager:getRoleVo():getPlayerDrone() >= max then
+    if role.RoleManager:getRoleVo():getPlayerDrone() >= 200 then
         gs.Message.Show(_TT(76196))
         
     else

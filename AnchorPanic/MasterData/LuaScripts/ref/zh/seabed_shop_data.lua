@@ -3,277 +3,303 @@
 local seabed_shop_data=
 
 {
-	[1001]={ type=2, param=10001, pay_price=50, shop_weight=36
+	[1001]={ type=1, param=10001, shop_weight=35, pay_price=16
 },
-	[1002]={ type=2, param=10002, pay_price=12, shop_weight=44
+	[1002]={ type=1, param=10002, shop_weight=34, pay_price=19
 },
-	[1003]={ type=2, param=10003, pay_price=25, shop_weight=26
+	[1003]={ type=1, param=10003, shop_weight=22, pay_price=20
 },
-	[1004]={ type=2, param=10004, pay_price=50, shop_weight=16
+	[1004]={ type=1, param=10004, shop_weight=22, pay_price=26
 },
-	[1005]={ type=2, param=10005, pay_price=12, shop_weight=44
+	[1005]={ type=1, param=10005, shop_weight=15, pay_price=45
 },
-	[1006]={ type=2, param=10006, pay_price=25, shop_weight=26
+	[1006]={ type=1, param=10006, shop_weight=36, pay_price=10
 },
-	[1007]={ type=2, param=10007, pay_price=50, shop_weight=16
+	[1007]={ type=1, param=10007, shop_weight=23, pay_price=18
 },
-	[1008]={ type=2, param=10008, pay_price=12, shop_weight=44
+	[1008]={ type=1, param=10008, shop_weight=16, pay_price=32
 },
-	[1009]={ type=2, param=10009, pay_price=25, shop_weight=26
+	[1009]={ type=1, param=10009, shop_weight=34, pay_price=18
 },
-	[1010]={ type=2, param=10010, pay_price=50, shop_weight=16
+	[1010]={ type=1, param=10010, shop_weight=22, pay_price=30
 },
-	[1011]={ type=2, param=10011, pay_price=12, shop_weight=44
+	[1011]={ type=1, param=10011, shop_weight=35, pay_price=14
 },
-	[1012]={ type=2, param=10012, pay_price=25, shop_weight=26
+	[1012]={ type=1, param=10012, shop_weight=22, pay_price=24
 },
-	[1013]={ type=2, param=10013, pay_price=50, shop_weight=16
+	[1013]={ type=1, param=10013, shop_weight=16, pay_price=40
 },
-	[1014]={ type=2, param=10014, pay_price=12, shop_weight=44
+	[1098]={ type=2, param=10001, shop_weight=73, pay_price=10
 },
-	[1015]={ type=2, param=10015, pay_price=25, shop_weight=26
+	[1099]={ type=2, param=10002, shop_weight=35, pay_price=16
 },
-	[1016]={ type=2, param=10016, pay_price=50, shop_weight=16
+	[1100]={ type=2, param=10003, shop_weight=35, pay_price=16
 },
-	[1017]={ type=2, param=10017, pay_price=50, shop_weight=27
+	[1101]={ type=2, param=10004, shop_weight=34, pay_price=19
 },
-	[1018]={ type=2, param=10018, pay_price=12, shop_weight=44
+	[1102]={ type=2, param=10005, shop_weight=22, pay_price=20
 },
-	[1019]={ type=2, param=10019, pay_price=25, shop_weight=26
+	[1103]={ type=2, param=10006, shop_weight=22, pay_price=26
 },
-	[1020]={ type=2, param=10020, pay_price=50, shop_weight=16
+	[1104]={ type=2, param=10007, shop_weight=15, pay_price=45
 },
-	[1021]={ type=2, param=10021, pay_price=12, shop_weight=44
+	[1105]={ type=2, param=10008, shop_weight=36, pay_price=10
 },
-	[1022]={ type=2, param=10022, pay_price=25, shop_weight=26
+	[1106]={ type=2, param=10009, shop_weight=23, pay_price=18
 },
-	[1023]={ type=2, param=10023, pay_price=50, shop_weight=16
+	[1107]={ type=2, param=10010, shop_weight=16, pay_price=32
 },
-	[1024]={ type=2, param=10024, pay_price=50, shop_weight=27
+	[1108]={ type=2, param=10011, shop_weight=34, pay_price=18
 },
-	[1025]={ type=2, param=10025, pay_price=12, shop_weight=44
+	[1109]={ type=2, param=10012, shop_weight=22, pay_price=30
 },
-	[1026]={ type=2, param=10026, pay_price=25, shop_weight=26
+	[1110]={ type=2, param=10013, shop_weight=35, pay_price=14
 },
-	[1027]={ type=2, param=10027, pay_price=50, shop_weight=16
+	[1111]={ type=2, param=10014, shop_weight=22, pay_price=24
 },
-	[1028]={ type=2, param=10028, pay_price=50, shop_weight=36
+	[1112]={ type=2, param=10015, shop_weight=16, pay_price=40
 },
-	[1029]={ type=2, param=10029, pay_price=50, shop_weight=36
+	[1113]={ type=2, param=10016, shop_weight=73, pay_price=10
 },
-	[1030]={ type=2, param=10030, pay_price=12, shop_weight=44
+	[1114]={ type=2, param=10017, shop_weight=35, pay_price=16
 },
-	[1031]={ type=2, param=10031, pay_price=25, shop_weight=26
+	[1115]={ type=2, param=10018, shop_weight=35, pay_price=16
 },
-	[1032]={ type=2, param=10032, pay_price=50, shop_weight=16
+	[1116]={ type=2, param=10019, shop_weight=34, pay_price=19
 },
-	[1033]={ type=2, param=10033, pay_price=50, shop_weight=27
+	[1117]={ type=2, param=10020, shop_weight=22, pay_price=20
 },
-	[1034]={ type=2, param=10034, pay_price=50, shop_weight=27
+	[1118]={ type=2, param=10021, shop_weight=22, pay_price=26
 },
-	[1035]={ type=2, param=20001, pay_price=50, shop_weight=36
+	[1119]={ type=2, param=10022, shop_weight=15, pay_price=45
 },
-	[1036]={ type=2, param=20002, pay_price=12, shop_weight=44
+	[1120]={ type=2, param=10023, shop_weight=36, pay_price=10
 },
-	[1037]={ type=2, param=20003, pay_price=25, shop_weight=26
+	[1121]={ type=2, param=10024, shop_weight=23, pay_price=18
 },
-	[1038]={ type=2, param=20004, pay_price=50, shop_weight=16
+	[1122]={ type=2, param=10025, shop_weight=16, pay_price=32
 },
-	[1039]={ type=2, param=20005, pay_price=12, shop_weight=44
+	[1123]={ type=2, param=10026, shop_weight=34, pay_price=18
 },
-	[1040]={ type=2, param=20006, pay_price=25, shop_weight=26
+	[1124]={ type=2, param=10027, shop_weight=22, pay_price=30
 },
-	[1041]={ type=2, param=20007, pay_price=50, shop_weight=16
+	[1125]={ type=2, param=10028, shop_weight=35, pay_price=14
 },
-	[1042]={ type=2, param=20008, pay_price=12, shop_weight=44
+	[1126]={ type=2, param=10029, shop_weight=22, pay_price=24
 },
-	[1043]={ type=2, param=20009, pay_price=25, shop_weight=26
+	[1127]={ type=2, param=10030, shop_weight=16, pay_price=40
 },
-	[1044]={ type=2, param=20010, pay_price=50, shop_weight=16
+	[1128]={ type=2, param=10031, shop_weight=73, pay_price=10
 },
-	[1045]={ type=2, param=20011, pay_price=12, shop_weight=44
+	[1129]={ type=2, param=10032, shop_weight=35, pay_price=16
 },
-	[1046]={ type=2, param=20012, pay_price=25, shop_weight=26
+	[1130]={ type=2, param=10033, shop_weight=35, pay_price=16
 },
-	[1047]={ type=2, param=20013, pay_price=50, shop_weight=16
+	[1131]={ type=2, param=10034, shop_weight=34, pay_price=19
 },
-	[1048]={ type=2, param=20014, pay_price=12, shop_weight=44
+	[1132]={ type=2, param=20001, shop_weight=22, pay_price=20
 },
-	[1049]={ type=2, param=20015, pay_price=25, shop_weight=26
+	[1133]={ type=2, param=20002, shop_weight=22, pay_price=26
 },
-	[1050]={ type=2, param=20016, pay_price=50, shop_weight=16
+	[1134]={ type=2, param=20003, shop_weight=15, pay_price=45
 },
-	[1051]={ type=2, param=20017, pay_price=50, shop_weight=36
+	[1135]={ type=2, param=20004, shop_weight=36, pay_price=10
 },
-	[1052]={ type=2, param=20018, pay_price=12, shop_weight=44
+	[1136]={ type=2, param=20005, shop_weight=23, pay_price=18
 },
-	[1053]={ type=2, param=20019, pay_price=25, shop_weight=26
+	[1137]={ type=2, param=20006, shop_weight=16, pay_price=32
 },
-	[1054]={ type=2, param=20020, pay_price=50, shop_weight=16
+	[1138]={ type=2, param=20007, shop_weight=34, pay_price=18
 },
-	[1055]={ type=2, param=20021, pay_price=12, shop_weight=44
+	[1139]={ type=2, param=20008, shop_weight=22, pay_price=30
 },
-	[1056]={ type=2, param=20022, pay_price=25, shop_weight=26
+	[1140]={ type=2, param=20009, shop_weight=35, pay_price=14
 },
-	[1057]={ type=2, param=20023, pay_price=50, shop_weight=16
+	[1141]={ type=2, param=20010, shop_weight=22, pay_price=24
 },
-	[1058]={ type=2, param=20024, pay_price=50, shop_weight=27
+	[1142]={ type=2, param=20011, shop_weight=16, pay_price=40
 },
-	[1059]={ type=2, param=20025, pay_price=12, shop_weight=44
+	[1143]={ type=2, param=20012, shop_weight=73, pay_price=10
 },
-	[1060]={ type=2, param=20026, pay_price=25, shop_weight=26
+	[1144]={ type=2, param=20013, shop_weight=35, pay_price=16
 },
-	[1061]={ type=2, param=20027, pay_price=50, shop_weight=16
+	[1145]={ type=2, param=20014, shop_weight=35, pay_price=16
 },
-	[1062]={ type=2, param=20028, pay_price=50, shop_weight=27
+	[1146]={ type=2, param=20015, shop_weight=34, pay_price=19
 },
-	[1063]={ type=2, param=20029, pay_price=50, shop_weight=36
+	[1147]={ type=2, param=20016, shop_weight=22, pay_price=20
 },
-	[1064]={ type=2, param=20030, pay_price=12, shop_weight=44
+	[1148]={ type=2, param=20017, shop_weight=22, pay_price=26
 },
-	[1065]={ type=2, param=20031, pay_price=25, shop_weight=26
+	[1149]={ type=2, param=20018, shop_weight=15, pay_price=45
 },
-	[1066]={ type=2, param=20032, pay_price=50, shop_weight=16
+	[1150]={ type=2, param=20019, shop_weight=36, pay_price=10
 },
-	[1067]={ type=2, param=20033, pay_price=50, shop_weight=27
+	[1151]={ type=2, param=20020, shop_weight=23, pay_price=18
 },
-	[1068]={ type=2, param=20034, pay_price=50, shop_weight=27
+	[1152]={ type=2, param=20021, shop_weight=16, pay_price=32
 },
-	[1069]={ type=2, param=30001, pay_price=50, shop_weight=36
+	[1153]={ type=2, param=20022, shop_weight=34, pay_price=18
 },
-	[1070]={ type=2, param=30002, pay_price=12, shop_weight=44
+	[1154]={ type=2, param=20023, shop_weight=22, pay_price=30
 },
-	[1071]={ type=2, param=30003, pay_price=25, shop_weight=26
+	[1155]={ type=2, param=20024, shop_weight=35, pay_price=14
 },
-	[1072]={ type=2, param=30004, pay_price=50, shop_weight=16
+	[1156]={ type=2, param=20025, shop_weight=22, pay_price=24
 },
-	[1073]={ type=2, param=30005, pay_price=12, shop_weight=44
+	[1157]={ type=2, param=20026, shop_weight=16, pay_price=40
 },
-	[1074]={ type=2, param=30006, pay_price=25, shop_weight=26
+	[1158]={ type=2, param=20027, shop_weight=73, pay_price=10
 },
-	[1075]={ type=2, param=30007, pay_price=50, shop_weight=16
+	[1159]={ type=2, param=20028, shop_weight=35, pay_price=16
 },
-	[1076]={ type=2, param=30008, pay_price=12, shop_weight=44
+	[1160]={ type=2, param=20029, shop_weight=35, pay_price=16
 },
-	[1077]={ type=2, param=30009, pay_price=25, shop_weight=26
+	[1161]={ type=2, param=20030, shop_weight=34, pay_price=19
 },
-	[1078]={ type=2, param=30010, pay_price=50, shop_weight=16
+	[1162]={ type=2, param=20031, shop_weight=22, pay_price=20
 },
-	[1079]={ type=2, param=30011, pay_price=12, shop_weight=44
+	[1163]={ type=2, param=20032, shop_weight=22, pay_price=26
 },
-	[1080]={ type=2, param=30012, pay_price=25, shop_weight=26
+	[1164]={ type=2, param=20033, shop_weight=15, pay_price=45
 },
-	[1081]={ type=2, param=30013, pay_price=50, shop_weight=16
+	[1165]={ type=2, param=20034, shop_weight=36, pay_price=10
 },
-	[1082]={ type=2, param=30014, pay_price=12, shop_weight=44
+	[1166]={ type=2, param=30001, shop_weight=23, pay_price=18
 },
-	[1083]={ type=2, param=30015, pay_price=25, shop_weight=26
+	[1167]={ type=2, param=30002, shop_weight=16, pay_price=32
 },
-	[1084]={ type=2, param=30016, pay_price=50, shop_weight=16
+	[1168]={ type=2, param=30003, shop_weight=34, pay_price=18
 },
-	[1085]={ type=2, param=30017, pay_price=50, shop_weight=27
+	[1169]={ type=2, param=30004, shop_weight=22, pay_price=30
 },
-	[1086]={ type=2, param=30018, pay_price=12, shop_weight=44
+	[1170]={ type=2, param=30005, shop_weight=35, pay_price=14
 },
-	[1087]={ type=2, param=30019, pay_price=25, shop_weight=26
+	[1171]={ type=2, param=30006, shop_weight=22, pay_price=24
 },
-	[1088]={ type=2, param=30020, pay_price=50, shop_weight=16
+	[1172]={ type=2, param=30007, shop_weight=16, pay_price=40
 },
-	[1089]={ type=2, param=30021, pay_price=12, shop_weight=44
+	[1173]={ type=2, param=30008, shop_weight=73, pay_price=10
 },
-	[1090]={ type=2, param=30022, pay_price=25, shop_weight=26
+	[1174]={ type=2, param=30009, shop_weight=35, pay_price=16
 },
-	[1091]={ type=2, param=30023, pay_price=50, shop_weight=16
+	[1175]={ type=2, param=30010, shop_weight=35, pay_price=16
 },
-	[1092]={ type=2, param=30024, pay_price=50, shop_weight=27
+	[1176]={ type=2, param=30011, shop_weight=34, pay_price=19
 },
-	[1093]={ type=2, param=30025, pay_price=12, shop_weight=44
+	[1177]={ type=2, param=30012, shop_weight=22, pay_price=20
 },
-	[1094]={ type=2, param=30026, pay_price=25, shop_weight=26
+	[1178]={ type=2, param=30013, shop_weight=22, pay_price=26
 },
-	[1095]={ type=2, param=30027, pay_price=50, shop_weight=16
+	[1179]={ type=2, param=30014, shop_weight=15, pay_price=45
 },
-	[1096]={ type=2, param=30028, pay_price=50, shop_weight=27
+	[1180]={ type=2, param=30015, shop_weight=36, pay_price=10
 },
-	[1097]={ type=2, param=30029, pay_price=50, shop_weight=27
+	[1181]={ type=2, param=30016, shop_weight=23, pay_price=18
 },
-	[1098]={ type=2, param=30030, pay_price=12, shop_weight=44
+	[1182]={ type=2, param=30017, shop_weight=16, pay_price=32
 },
-	[1099]={ type=2, param=30031, pay_price=25, shop_weight=26
+	[1183]={ type=2, param=30018, shop_weight=34, pay_price=18
 },
-	[1100]={ type=2, param=30032, pay_price=50, shop_weight=16
+	[1184]={ type=2, param=30019, shop_weight=22, pay_price=30
 },
-	[1101]={ type=2, param=30033, pay_price=50, shop_weight=36
+	[1185]={ type=2, param=30020, shop_weight=35, pay_price=14
 },
-	[1102]={ type=2, param=30034, pay_price=50, shop_weight=27
+	[1186]={ type=2, param=30021, shop_weight=22, pay_price=24
 },
-	[1103]={ type=2, param=40001, pay_price=50, shop_weight=36
+	[1187]={ type=2, param=30022, shop_weight=16, pay_price=40
 },
-	[1104]={ type=2, param=40002, pay_price=12, shop_weight=44
+	[1188]={ type=2, param=30023, shop_weight=73, pay_price=10
 },
-	[1105]={ type=2, param=40003, pay_price=25, shop_weight=26
+	[1189]={ type=2, param=30024, shop_weight=35, pay_price=16
 },
-	[1106]={ type=2, param=40004, pay_price=50, shop_weight=16
+	[1190]={ type=2, param=30025, shop_weight=35, pay_price=16
 },
-	[1107]={ type=2, param=40005, pay_price=12, shop_weight=44
+	[1191]={ type=2, param=30026, shop_weight=34, pay_price=19
 },
-	[1108]={ type=2, param=40006, pay_price=25, shop_weight=26
+	[1192]={ type=2, param=30027, shop_weight=22, pay_price=20
 },
-	[1109]={ type=2, param=40007, pay_price=50, shop_weight=16
+	[1193]={ type=2, param=30028, shop_weight=22, pay_price=26
 },
-	[1110]={ type=2, param=40008, pay_price=12, shop_weight=44
+	[1194]={ type=2, param=30029, shop_weight=15, pay_price=45
 },
-	[1111]={ type=2, param=40009, pay_price=25, shop_weight=26
+	[1195]={ type=2, param=30030, shop_weight=36, pay_price=10
 },
-	[1112]={ type=2, param=40010, pay_price=50, shop_weight=16
+	[1196]={ type=2, param=30031, shop_weight=23, pay_price=18
 },
-	[1113]={ type=2, param=40011, pay_price=12, shop_weight=44
+	[1197]={ type=2, param=30032, shop_weight=16, pay_price=32
 },
-	[1114]={ type=2, param=40012, pay_price=25, shop_weight=26
+	[1198]={ type=2, param=30033, shop_weight=34, pay_price=18
 },
-	[1115]={ type=2, param=40013, pay_price=50, shop_weight=16
+	[1199]={ type=2, param=30034, shop_weight=22, pay_price=30
 },
-	[1116]={ type=2, param=40014, pay_price=12, shop_weight=44
+	[1200]={ type=2, param=40001, shop_weight=35, pay_price=14
 },
-	[1117]={ type=2, param=40015, pay_price=25, shop_weight=26
+	[1201]={ type=2, param=40002, shop_weight=22, pay_price=24
 },
-	[1118]={ type=2, param=40016, pay_price=50, shop_weight=16
+	[1202]={ type=2, param=40003, shop_weight=16, pay_price=40
 },
-	[1119]={ type=2, param=40017, pay_price=50, shop_weight=36
+	[1203]={ type=2, param=40004, shop_weight=73, pay_price=10
 },
-	[1120]={ type=2, param=40018, pay_price=12, shop_weight=44
+	[1204]={ type=2, param=40005, shop_weight=35, pay_price=16
 },
-	[1121]={ type=2, param=40019, pay_price=25, shop_weight=26
+	[1205]={ type=2, param=40006, shop_weight=35, pay_price=16
 },
-	[1122]={ type=2, param=40020, pay_price=50, shop_weight=16
+	[1206]={ type=2, param=40007, shop_weight=34, pay_price=19
 },
-	[1123]={ type=2, param=40021, pay_price=12, shop_weight=44
+	[1207]={ type=2, param=40008, shop_weight=22, pay_price=20
 },
-	[1124]={ type=2, param=40022, pay_price=25, shop_weight=26
+	[1208]={ type=2, param=40009, shop_weight=22, pay_price=26
 },
-	[1125]={ type=2, param=40023, pay_price=50, shop_weight=16
+	[1209]={ type=2, param=40010, shop_weight=15, pay_price=45
 },
-	[1126]={ type=2, param=40024, pay_price=50, shop_weight=27
+	[1210]={ type=2, param=40011, shop_weight=36, pay_price=10
 },
-	[1127]={ type=2, param=40025, pay_price=12, shop_weight=44
+	[1211]={ type=2, param=40012, shop_weight=23, pay_price=18
 },
-	[1128]={ type=2, param=40026, pay_price=25, shop_weight=26
+	[1212]={ type=2, param=40013, shop_weight=16, pay_price=32
 },
-	[1129]={ type=2, param=40027, pay_price=50, shop_weight=16
+	[1213]={ type=2, param=40014, shop_weight=34, pay_price=18
 },
-	[1130]={ type=2, param=40028, pay_price=50, shop_weight=27
+	[1214]={ type=2, param=40015, shop_weight=22, pay_price=30
 },
-	[1131]={ type=2, param=40029, pay_price=50, shop_weight=27
+	[1215]={ type=2, param=40016, shop_weight=35, pay_price=14
 },
-	[1132]={ type=2, param=40030, pay_price=12, shop_weight=44
+	[1216]={ type=2, param=40017, shop_weight=22, pay_price=24
 },
-	[1133]={ type=2, param=40031, pay_price=25, shop_weight=26
+	[1217]={ type=2, param=40018, shop_weight=16, pay_price=40
 },
-	[1134]={ type=2, param=40032, pay_price=50, shop_weight=16
+	[1218]={ type=2, param=40019, shop_weight=73, pay_price=10
 },
-	[1135]={ type=2, param=40033, pay_price=50, shop_weight=27
+	[1219]={ type=2, param=40020, shop_weight=35, pay_price=16
 },
-	[1136]={ type=2, param=40034, pay_price=50, shop_weight=20
+	[1220]={ type=2, param=40021, shop_weight=35, pay_price=16
+},
+	[1221]={ type=2, param=40022, shop_weight=34, pay_price=19
+},
+	[1222]={ type=2, param=40023, shop_weight=22, pay_price=20
+},
+	[1223]={ type=2, param=40024, shop_weight=22, pay_price=26
+},
+	[1224]={ type=2, param=40025, shop_weight=15, pay_price=45
+},
+	[1225]={ type=2, param=40026, shop_weight=36, pay_price=10
+},
+	[1226]={ type=2, param=40027, shop_weight=23, pay_price=18
+},
+	[1227]={ type=2, param=40028, shop_weight=16, pay_price=32
+},
+	[1228]={ type=2, param=40029, shop_weight=34, pay_price=18
+},
+	[1229]={ type=2, param=40030, shop_weight=22, pay_price=30
+},
+	[1230]={ type=2, param=40031, shop_weight=35, pay_price=14
+},
+	[1231]={ type=2, param=40032, shop_weight=22, pay_price=24
+},
+	[1232]={ type=2, param=40033, shop_weight=16, pay_price=40
+},
+	[1233]={ type=2, param=40034, shop_weight=73, pay_price=10
 }
 }
 

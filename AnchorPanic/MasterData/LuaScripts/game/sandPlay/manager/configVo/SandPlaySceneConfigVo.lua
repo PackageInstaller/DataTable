@@ -58,10 +58,9 @@ function parseCogfigData(self, key, cusData)
     for guide_id, guide_data in pairs(cusData.guide_data) do
         local data = {}
         data.name = _TT(guide_data.name)
-        data.icon = "arts/ui/icon/sandPlay/" .. guide_data.icon
+        data.icon = guide_data.icon
         data.param = guide_data.param
         data.activityList = guide_data.activity_id
-        data.red_id = guide_data.red_id or 0
         self.guideList[guide_id] = data
     end
 end

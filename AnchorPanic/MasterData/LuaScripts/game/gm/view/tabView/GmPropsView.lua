@@ -30,9 +30,8 @@ function configUI(self)
     self.mBtnHero = self:getChildGO("mBtnHero")
     self.mBtnEquip = self:getChildGO("mBtnEquip")
     self.mBtnNomal = self:getChildGO("mBtnNomal")
-    self.mBtnOrder = self:getChildGO("mBtnOrder")
-    self.mBtnFashion = self:getChildGO("mBtnFashion")
     self.mBtnBracelets = self:getChildGO("mBtnBracelets")
+    self.mBtnOrder = self:getChildGO("mBtnOrder")
 
     self.mTxtName = self:getChildGO("mTxtName"):GetComponent(ty.InputField)
 end
@@ -79,7 +78,6 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnNomal, self.onClickNomal)
     self:addUIEvent(self.mBtnBracelets, self.onClickBracelets)
     self:addUIEvent(self.mBtnOrder, self.onClickOrder)
-    self:addUIEvent(self.mBtnFashion, self.onClickFashion)
 end
 
 --所有道具
@@ -137,17 +135,6 @@ function onClickNomal(self)
     local list = {}
     for k, v in pairs(self.mPropsConfigDic) do
         if v.type == 1 then
-            table.insert(list, v)
-        end
-    end
-    self:updateView(list)
-end
-
---皮肤
-function onClickFashion(self)
-    local list = {}
-    for k, v in pairs(self.mPropsConfigDic) do
-        if v.type == 10 then
             table.insert(list, v)
         end
     end

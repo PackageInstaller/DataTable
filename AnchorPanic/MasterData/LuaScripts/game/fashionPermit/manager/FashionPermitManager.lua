@@ -334,7 +334,7 @@ function updateBubble(self)
     --     return false
     -- end
 
-    local isFlag = self:getCanReciveNum() >= 1 or self:canGetTask() or activity.ActitvityExtraManager:getFashionPermitRedInfo()
+    local isFlag = self:getCanReciveNum() >= 1 or self:canGetTask()
 
     mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_FASHIONPERMIT, isFlag)
     --GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_PERMIT_RED)

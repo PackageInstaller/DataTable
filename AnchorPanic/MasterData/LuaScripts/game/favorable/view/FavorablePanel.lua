@@ -50,7 +50,6 @@ function configUI(self)
     self.mTxtAddFavorable = self:getChildGO("mTxtAddFavorable"):GetComponent(ty.Text)
     self.mImgQualityBar = self:getChildGO("mImgQualityBar"):GetComponent(ty.Image)
     self.mBtnFavorable = self:getChildGO("mBtnFavorable")
-    self.mBtnStory = self:getChildGO("mBtnStory")
     self.mModelPlayer = ModelScenePlayer.new()
 end
 
@@ -124,7 +123,6 @@ end
 
 function initViewText(self)
     self:setBtnLabel(self.mBtnFavorable, nil, "档案")
-    self:setBtnLabel(self.mBtnStory,nil,_TT(41758))
 end
 
 function addAllUIEvent(self)
@@ -132,7 +130,6 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnLast, self.onClickHeroPreHandler)
     self:addUIEvent(self.mBtnNext, self.onClickHeroNextHandler)
     self:addUIEvent(self.mBtnBackList, self.onClickBackListHandler)
-    self:addUIEvent(self.mBtnStory,self.onClickStoryHandler)
 end
 
 function onClickHeroPreHandler(self)
@@ -159,16 +156,6 @@ function onClickHeroNextHandler(self)
         self.mUpLv = 0
         self:onUpdateFavorable()
     end
-end
-
-function onClickStoryHandler(self)
-    if not self.heroFavorableData.hasStory then
-        gs.Message.Show(_TT(41749))
-        return
-    end
-
-    self:setActiveArgs(self:getActiveArgs())
-    GameDispatcher:dispatchEvent(EventName.OPEN_HERO_STORY_PANEL, { heroId = self.cusHeroId, heroTid = self.heroVo.tid })
 end
 
 -- 打开英雄选择界面
@@ -355,8 +342,6 @@ function show(self)
     self.mBtnNext:SetActive(self.heroList[index + 1] ~= nil)
 
     self:updateBubble(self.cusHeroId)
-
-    --self.mBtnStory:SetActive(self.heroFavorableData.hasStory)
 end
 
 function updatePreView(self)
@@ -473,14 +458,6 @@ function updateBubble(self, curHeroId)
     else
         RedPointManager:remove(self.mBtnFavorable.transform)
     end
-
-    local storyFlag = favorable.FavorableManager:getStoryRewardHasRed(curHeroId)
-    if storyFlag then
-        RedPointManager:add(self.mBtnStory.transform, nil, 40.5, 40.5)
-    else
-        RedPointManager:remove(self.mBtnStory.transform)
-    end
-
     if hero.HeroFlagManager:getAllFlagExceptHero(curHeroId, hero.HeroFlagManager.FLAG_BTN_FAVORABLE) then
         RedPointManager:add(self.mBtnBackList.transform, nil, 40.5, 40.5)
     else
@@ -496,15 +473,6 @@ function updateCaseBubble(self)
         self:addBubble(favorable.FavorableConst.HERO_FILE_CASE, 21, 57)
     else
         self:removeBubble(favorable.FavorableConst.HERO_FILE_CASE)
-    end
-end
-
-function updateHeroStoryBubble(self)
-    local isBubble = favorable.FavorableManager:getStoryRewardHasRed(self.cusHeroId)
-    if isBubble then
-        self:addBubble(favorable.FavorableConst.HERO_STORY, 21, 57)
-    else
-        self:removeBubble(favorable.FavorableConst.HERO_STORY)
     end
 end
 

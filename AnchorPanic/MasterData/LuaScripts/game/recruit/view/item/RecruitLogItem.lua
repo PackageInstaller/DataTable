@@ -11,20 +11,17 @@ function setData(self, param)
     super.setData(self, param)
 
     local logVo = self.data
-    local recruitType = recruit.RecruitManager:getRecruitTypeById(logVo.recruit_id)
 
-    if recruitType == recruit.RecruitType.RECRUIT_BRACELETS
-        or recruitType == recruit.RecruitType.RECRUIT_APP_BRACELETS
-        or recruitType == recruit.RecruitType.RECRUIT_ACTIVITY_2 then
+    if logVo.recruitType == recruit.RecruitType.RECRUIT_BRACELETS or  logVo.recruitType == recruit.RecruitType.RECRUIT_ACTIVITY_2 then
         local itemConfigVo = props.PropsManager:getPropsConfigVo(logVo.itemTid)
 
-        self.mTextQuality.text = HtmlUtil:color(hero.getColorName(itemConfigVo.color), ColorUtil:getPropColor(itemConfigVo.color))
+        self.mTextQuality.text =  HtmlUtil:color(hero.getColorName(itemConfigVo.color), ColorUtil:getPropColor(itemConfigVo.color))
         self.mTextPlayerName.text = itemConfigVo:getName()
     else
         local heroConfigVo = hero.HeroManager:getHeroConfigVo(logVo.itemTid)
 
         self.mTextQuality.text = HtmlUtil:color(heroConfigVo:getColorName(), ColorUtil:getPropColor(heroConfigVo.color))
-        self.mTextPlayerName.text = heroConfigVo.name
+        self.mTextPlayerName.text =heroConfigVo.name
     end
 
     self.mTextTime.text = TimeUtil.getFormatTimeBySeconds_7(logVo.time)
@@ -39,6 +36,6 @@ function onDelete(self)
 end
 
 return _M
-
+ 
 --[[ 替换语言包自动生成，请勿修改！
 ]]

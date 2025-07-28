@@ -175,7 +175,6 @@ function onLinkController(self, linkId)
             return
         end
 
-        GameDispatcher:dispatchEvent(EventName.CLOSE_SEABED_TOP_PANEL)
         if map.MapLoader:getCurSceneType() == MAP_TYPE.MAIN_CITY then
             -- 在主页的直接处理
             if self.closeAllCall then

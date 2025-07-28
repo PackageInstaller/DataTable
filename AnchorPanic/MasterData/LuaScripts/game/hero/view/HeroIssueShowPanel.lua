@@ -112,8 +112,6 @@ function configUI(self)
     self.mMainExploreGroupBtn = self:getChildGO("mMainExploreGroupBtn")
     self.mBtnMainExploreUI = self:getChildGO("mBtnMainExploreUI")
     self.mBtnMainExplorePlayer = self:getChildGO("mBtnMainExplorePlayer")
-
-    self.mBtnClose = self:getChildGO("mBtnClose")
 end
 
 function setInputChangeFun(self, inputField, inputChangeFun)
@@ -147,24 +145,11 @@ end
 function active(self, args)
     super.active(self, args)
     MoneyManager:setMoneyTidList()
-
-    GameView.scene.gameObject:SetActive(false)
-    GameView.msg.gameObject:SetActive(false)
-    GameView.gm.gameObject:SetActive(false)
-    GameView.touchEffect.gameObject:SetActive(false)
-
-    self.gBtnClose:SetActive(false)
-    self.gBtnCloseAll:SetActive(false)
 end
 
 function deActive(self)
     super.deActive(self)
     MoneyManager:setMoneyTidList()
-
-    GameView.scene.gameObject:SetActive(true)
-    GameView.msg.gameObject:SetActive(true)
-    GameView.gm.gameObject:SetActive(true)
-    GameView.touchEffect.gameObject:SetActive(true)
 end
 
 function setAble(self, issueType)
@@ -228,8 +213,6 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnMainExploreUI, self.onClickMainExploreUIHandler)
     self:addUIEvent(self.mBtnMainExplorePlayer, self.onClickMainExplorePlayerHandler)
     self:addUIEvent(self.mBtnFashion, self.onClickChangeFashionHander)
-
-    self:addUIEvent(self.mBtnClose, self.onClickClose)
 end
 
 function getShowBgUrl(self, isChange)
@@ -311,9 +294,6 @@ function onClickChangeNodeHandler(self)
     self:setDecorateNodeVisible(true)
     Perset3dHandler:setupShowData(self:getShowNodeType(true), nil, nil, self:getShowBgUrl(false))
     if (self:getShowNodeType(false) == MainCityConst.ROLE_MODE_OVERVIEW) then
-
-        fight.FightCamera:setVideoQuality() --设置4k画质
-
         self:setDecorateNodeVisible(true)
     else
         self:setDecorateNodeVisible(false)
@@ -404,10 +384,6 @@ function onFrameHandler(self)
         if (self.mModelView and self.mModelView:getTrans() and self.mAngle) then
             self.mAngle.y = self.mAngle.y + self.mRotateSpeed * self.mRotateDir
             gs.TransQuick:SetLRotation(self.mModelView:getTrans(), self.mAngle)
-        end
-        if self.mAngle.y == 360 then
-            self.mAngle.y = 0
-            self.mIsRotate = false
         end
     end
 end

@@ -54,9 +54,6 @@ function listNotification(self)
     --请求玩家个人信息
     -- GameDispatcher:addEventListener(EventName.FIGHT_RESULT_PANEL_ACTVIE, self.onFightOverShowLvUpHandler, self)
     GameDispatcher:addEventListener(EventName.REQ_PLAYER_HOMEPAGE_INFO, self.onReqPlayerHomePageInfoHandler, self)
-    GameDispatcher:addEventListener(EventName.OPEN_HERO_GROUP_PANEL, self.onOpenHeroGroupPanelHandler, self)
-    GameDispatcher:addEventListener(EventName.OPEN_HERO_GROUP_SELECT_VIEW, self.onOpenHeroGroupSelectViewHandler, self)
-    GameDispatcher:addEventListener(EventName.OPEN_HERO_GROUP_FASHION_VIEW, self.onOpenHeroGroupFashionViewHandler, self)
 end
 
 --注册server发来的数据
@@ -102,7 +99,7 @@ function onAccountLoginSucHandler(self)
     -- 不请求角色列表了
     -- self:requestRoleList()
     -- 直接请求进游戏
-    SOCKET_SEND(Protocol.CS_ENTER_WORLD, { battle_sync_word = 0 })
+    SOCKET_SEND(Protocol.CS_ENTER_WORLD, {battle_sync_word = 0})
     GameManager:setIsGetPlayerData(true)
 end
 
@@ -155,7 +152,7 @@ function onPlayerBaseDataMsgHandler(self, msg)
     sdk.SdkManager:notifyLoginServerSuc()
 
     -- 比较消耗的实时发送不给进入游戏内
-    if (web.getLogCollectType() == web.DEBUG_LOG_COLLECT_TYPE.AUTO_REAL_TIME_UPLOAD) then
+	if(web.getLogCollectType() == web.DEBUG_LOG_COLLECT_TYPE.AUTO_REAL_TIME_UPLOAD)then
         web.setLogCollectType(web.DEBUG_LOG_COLLECT_TYPE.NONE)
     end
 
@@ -167,31 +164,12 @@ function onPlayerBaseDataMsgHandler(self, msg)
     else
         GameManager.IS_DEBUG = false
     end
-    
     -- 设置log界面是否允许弹出
     Debug:setLogAllow(GameManager.IS_DEBUG)
     gs.ApplicationUtil.SetDebugVisible(GameManager.IS_DEBUG)
     systemSetting.SystemSettingManager:setDefaultQuality()
 
     GameView.UINode["UID"].text = string.format("UID：%s", roleVo.showId)
-
-    if not (web.WebManager.net_type == web.NET_TYPE.OUTER_RELEASE) then
-
-        local sdkInfo = sdk.SdkManager:getSdkInfo()
-        if sdkInfo then
-            -- 新版本更新，暂时关闭
-            -- if not waterMask then
-            --     waterMask = require("game/common/view/WaterMark").new()
-            -- end
-            -- waterMask:updateWatermark(roleVo.showId, 10)
-        elseif login.LoginManager.clientAuthLv < 2 then
-            if not waterMask then
-                waterMask = require("game/common/view/WaterMark").new()
-            end
-            waterMask:updateWatermark(login.LoginManager.clientAuthId, 10)
-            -- waterMask:updateWatermark("test", 10)
-        end
-    end
 end
 
 -- 更新角色属性数据
@@ -245,36 +223,36 @@ end
 -- 请求角色改名
 function onReqModifyRoleNameHandler(self, args)
     --- *c2s* 玩家改名 12010
-    SOCKET_SEND(Protocol.CS_RENAME, { name = args.name })
+    SOCKET_SEND(Protocol.CS_RENAME, {name = args.name})
 end
 
 -- 请求角色修改个性签名
 function onReqModifyRoleAutographHandler(self, args)
     --- *c2s* 玩家修改签名 12012
-    SOCKET_SEND(Protocol.CS_SET_SIGNATURE, { signature = args.content })
+    SOCKET_SEND(Protocol.CS_SET_SIGNATURE, {signature = args.content})
 end
 
 --- 请求删除好友备注
 function onReqMasksClearHandler(self, id)
     --- *c2s* 删除好友备注 15032
-    SOCKET_SEND(Protocol.CS_FRIEND_REMARKS_CLEAR, { friend_id = id })
+    SOCKET_SEND(Protocol.CS_FRIEND_REMARKS_CLEAR, {friend_id = id})
 end
 
 -- 请求选择玩家的展示战员
 function onReqRoleSelectHeroHandler(self, args)
     --- *c2s* 设置展示战员 12015
-    SOCKET_SEND(Protocol.CS_SET_SHOW_HERO, { hero_list = args.showHeroList })
+    SOCKET_SEND(Protocol.CS_SET_SHOW_HERO, {hero_list = args.showHeroList})
     GameDispatcher:dispatchEvent(EventName.REQ_CANNOTDEL_HERO_DATA)
 end
 
 --- *c2s* 其它玩家预览信息 12030
 function onReqOtherRoleInfoHandler(self, id)
-    SOCKET_SEND(Protocol.CS_OTHER_PLAYER_PRE_INFO, { player_id = id }, Protocol.SC_OTHER_PLAYER_PRE_INFO)
+    SOCKET_SEND(Protocol.CS_OTHER_PLAYER_PRE_INFO, {player_id = id}, Protocol.SC_OTHER_PLAYER_PRE_INFO)
 end
 
 --- *c2s* 玩家使用激活码 24030
 function onReqExchangeCodeHandler(self, args)
-    SOCKET_SEND(Protocol.CS_USE_PLAYER_CODE, { code = args.code })
+    SOCKET_SEND(Protocol.CS_USE_PLAYER_CODE, {code = args.code})
 end
 
 --- *c2s* 玩家的个人主页信息 12033
@@ -603,54 +581,6 @@ end
 function onDestroyOtherMarkInfoViewHandler(self)
     self.mOtherMarkInfoView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyOtherMarkInfoViewHandler, self)
     self.mOtherMarkInfoView = nil
-end
-
---------------------------------------------------------------打开看板值班战员组----------------------------------------------------------------------
-function onOpenHeroGroupPanelHandler(self, args)
-
-    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HERO_GURAD_GROUP, true) == false then
-        return
-    end
-
-    if self.mRoleGuradGroupPanel == nil then
-        self.mRoleGuradGroupPanel = UI.new(role.RoleGuradGroupPanel)
-        self.mRoleGuradGroupPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupPanelHandler, self)
-    end
-    self.mRoleGuradGroupPanel:open(args)
-end
-
--- ui销毁
-function onDestroyHeroGroupPanelHandler(self)
-    self.mRoleGuradGroupPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupPanelHandler, self)
-    self.mRoleGuradGroupPanel = nil
-end
---------------------------------------------------------------打开看板值班战员组选择页面----------------------------------------------------------------------
-function onOpenHeroGroupSelectViewHandler(self, args)
-    if self.mRoleGuradGroupSelectView == nil then
-        self.mRoleGuradGroupSelectView = UI.new(role.RoleGuradGroupSelectView)
-        self.mRoleGuradGroupSelectView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupSelectViewHandler, self)
-    end
-    self.mRoleGuradGroupSelectView:open(args)
-end
-
--- ui销毁
-function onDestroyHeroGroupSelectViewHandler(self)
-    self.mRoleGuradGroupSelectView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupSelectViewHandler, self)
-    self.mRoleGuradGroupSelectView = nil
-end
---------------------------------------------------------------打开看板值班战员组选择换装页面----------------------------------------------------------------------
-function onOpenHeroGroupFashionViewHandler(self, args)
-    if self.mRoleGuradGroupFashionView == nil then
-        self.mRoleGuradGroupFashionView = UI.new(role.RoleGuradGroupFashionView)
-        self.mRoleGuradGroupFashionView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupFashionViewHandler, self)
-    end
-    self.mRoleGuradGroupFashionView:open(args)
-end
-
--- ui销毁
-function onDestroyHeroGroupFashionViewHandler(self)
-    self.mRoleGuradGroupFashionView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupFashionViewHandler, self)
-    self.mRoleGuradGroupFashionView = nil
 end
 
 return _M

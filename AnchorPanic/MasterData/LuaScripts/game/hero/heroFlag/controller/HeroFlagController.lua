@@ -51,9 +51,6 @@ function listNotification(self)
 
     GameDispatcher:addEventListener(EventName.UPDATE_FAVORABLE, self.onUpdateFavorable, self)
     GameDispatcher:addEventListener(EventName.FAVORABLE_REWARD_GAIN_UPDATE, self.onUpdateFavorable, self)
-
-    --程序手动检查战员红点
-    GameDispatcher:addEventListener(EventName.CHECK_ALL_HERO_RED, self.onCheckAllHeroRedHandler, self)
 end
 
 --注册server发来的数据
@@ -119,10 +116,6 @@ function __onHeroListInitHandler(self, args)
 end
 
 function onUpdateFavorable(self)
-    self:__checkAllHasGetHeroFlag()
-end
-
-function onCheckAllHeroRedHandler(self)
     self:__checkAllHasGetHeroFlag()
 end
 
@@ -223,11 +216,6 @@ function __checkHasGetHeroFlag(self, heroVo)
         local isCanRecLvlTargetList = hero.HeroFlagManager:isHeroCanRecLvlTarget(heroVo)
         hero.HeroFlagManager:setFlag(heroVo.id, hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST, isCanRecLvlTargetList)
         -- print(heroVo.id, hero.HeroFlagManager:getFlag(heroVo.id), "+++++++++++++++++++")
-
-        -- 英雄是否可培养DNA蛋功能
-        -- local isCanCultureDna = hero.HeroFlagManager:isCanCultureDna(heroVo)
-        local idRead = dna.DnaManager:getReadModelRed(heroVo)
-        hero.HeroFlagManager:setFlag(heroVo.id, hero.HeroFlagManager.FLAG_CAN_DNA, idRead)
     end
 
 
@@ -263,12 +251,6 @@ function __checkHasGetHeroFlag(self, heroVo)
         --战员好感
         local hasCaseReward = favorable.FavorableManager:getCaseRewardHasRed(heroVo.id)
         hero.HeroFlagManager:setFlag(heroVo.id, hero.HeroFlagManager.FLAG_BTN_FAVORABLE, hasCaseReward)
-    end
-
-    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FAVORABLE, false) then
-        --战员好感剧情
-        local hasCaseReward = favorable.FavorableManager:getStoryRewardHasRed(heroVo.id)
-        hero.HeroFlagManager:setFlag(heroVo.id, hero.HeroFlagManager.FLAG_BTN_STORY, hasCaseReward)
     end
 
     if (funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HERO_FASHION, false) and fashion.FashionManager:getFashionEnable(heroVo.tid)) then

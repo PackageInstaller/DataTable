@@ -63,16 +63,6 @@ function configUI(self)
     self.mTxtHandRing = self:getChildGO("mTxtHandRing"):GetComponent(ty.Text)
     self.mBackToLvUp = self:getChildGO("mBackToLvUp")
 
-    self.mBtnDna = self:getChildGO("mBtnDna")
-    self.mGroupInfo = self:getChildGO("mGroupInfo")
-    self.mImgDnaLock = self:getChildGO("mImgDnaLock")
-    self.mImgDnaAdd = self:getChildGO("mImgDnaAdd")
-    self.mAriDnaIcon = self:getChildGO("mAriDnaIcon"):GetComponent(ty.AutoRefImage)
-    self.mAriDnaHead = self:getChildGO("mAriDnaHead"):GetComponent(ty.AutoRefImage)
-    self.mTxtDnaName = self:getChildGO("mTxtDnaName"):GetComponent(ty.Text)
-
-    self.mBtnBigHostel = self:getChildGO("mBtnBigHostel")
-
     self:setGuideTrans("funcTips_guide_HeroDevelop_Btn_HandRing", self.mBtnHandRing.transform)
     self:setGuideTrans("funcTips_guide_HeroDevelop_Btn_Equip", self.mBtnEquip.transform)
 end
@@ -108,8 +98,7 @@ end
 
 function active(self, args)
     -- 此处确保尽快看到展示的场景
-    Perset3dHandler:setupShowData(MainCityConst.ROLE_MODE_OVERVIEW, nil, nil,
-    UrlManager:getBgPath("common/common_bg_003.jpg"))
+    Perset3dHandler:setupShowData(MainCityConst.ROLE_MODE_OVERVIEW, nil, nil, UrlManager:getBgPath("common/common_bg_003.jpg"))
     super.active(self, args)
     MoneyManager:setMoneyTidList({MoneyTid.GOLD_COIN_TID, MoneyTid.HERO_GLOBAL_EXP_TID}, 1)
     GameDispatcher:addEventListener(EventName.CHANGE_HERO_TAB, self.changeTabDatas, self)
@@ -124,6 +113,7 @@ function active(self, args)
     self.teamId = args.teamId
     self.mIsPrepare = args.isPrepare
 
+    
     if self.teamId then
         local heroIdList = {}
         for k, v in pairs(formation.FormationManager:getSelectFormationHeroList(self.teamId)) do
@@ -134,8 +124,7 @@ function active(self, args)
     elseif hero.HeroManager:getIsFormationList() then
         hero.HeroManager:setPanelShowHeroIdList(hero.HeroManager:getAllHeroIdList())
     end
-    self.mBtnHandRing:SetActive(funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HERO_BRACELETS, false) ==
-    true)
+    self.mBtnHandRing:SetActive(funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HERO_BRACELETS, false) == true)
     self.mBtnEquip:SetActive(funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HERO_EQUIP, false) == true)
 
     if (self.mCurHeroId and self.mCurTabType) then
@@ -143,7 +132,7 @@ function active(self, args)
     else
         self:changeTabDatas(false)
         -- 这里会从其他功能跳转过来，需要安全判断先设置下展示的英雄id
-        if (not self.mCurHeroId and args.heroId) then
+        if(not self.mCurHeroId and args.heroId)then
             hero.HeroManager:setPanelShowHeroId(args.heroId)
         end
         self:setData(args.heroId, args.tabType, args.subData, true)
@@ -170,7 +159,6 @@ function deActive(self)
     self:recoverModel(true)
     self:recoverNewDic()
     RedPointManager:remove(self.mBtnBackList.transform)
-    RedPointManager:remove(self.mBtnDna.transform)
     self.mModelClickEvent.onClick:RemoveAllListeners()
 end
 
@@ -180,9 +168,8 @@ function initViewText(self)
     self:setBtnLabel(self.mBtnInfo, 1223, "档案")
     self:setBtnLabel(self.mBtnFavorable, 1224, "互动")
 
-    self.mTxtEquip.text = _TT(1383) --关卡进度
+    self.mTxtEquip.text = _TT(1383)--关卡进度
     self.mTxtHandRing.text = _TT(4318)
-    self.mTxtDnaName.text = _TT(149903)
 end
 
 -- UI事件管理
@@ -197,9 +184,6 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnEquip, self.onClickEquipHandler)
     self:addUIEvent(self.mBtnHandRing, self.onClickBraceletsHandler)
     self:addUIEvent(self.mBackToLvUp, self.onBackToLvUp)
-    self:addUIEvent(self.mBtnDna, self.onClickBtnDnaHandler)
-
-    self:addUIEvent(self.mBtnBigHostel, self.onClickBigHostel)
 end
 
 function isHorizon(self)
@@ -230,12 +214,7 @@ function getTabDatas(self)
     for i = 1, #self.tabDataList do
         local tabType = self.tabDataList[i]
         if funcopen.FuncOpenManager:isOpen(funcOpenList[i]) then
-            self.tabDataList[i] = {
-                type = tabType,
-                content = {hero.getDevelopName(tabType)},
-                nomalIcon = hero
-                .getDevelopIcon(tabType),
-            selectIcon = hero.getDevelopIcon(tabType)}
+            self.tabDataList[i] = {type = tabType, content = {hero.getDevelopName(tabType)}, nomalIcon = hero.getDevelopIcon(tabType), selectIcon = hero.getDevelopIcon(tabType)}
         else
             self.tabDataList[i] = nil
         end
@@ -259,6 +238,7 @@ function changeTabDatas(self, isFullLevel)
             self.tabBar:setPage(hero.DevelopTabType.MILITARY_RANK_UP)
         end
         self.tabBar:setHideItem({hero.DevelopTabType.LVL_UP})
+
     else
         if self.tabBar.curSelectPage ~= hero.DevelopTabType.LVL_UP then
             self.tabBar:setPage(hero.DevelopTabType.LVL_UP)
@@ -324,8 +304,7 @@ function onClickFavorableHandler(self)
 end
 
 function onClickFashionHandler(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI,
-    {linkId = LinkCode.HeroFashion, param = {heroId = self.mCurHeroId, type = nil}})
+    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.HeroFashion, param = {heroId = self.mCurHeroId, type = nil}})
 end
 
 function onClickInfoHandler(self)
@@ -335,20 +314,6 @@ end
 
 function onBackToLvUp(self)
     self:changeTabDatas(false)
-end
-
-function onClickBigHostel(self)
-    local curHeroVo = hero.HeroManager:getHeroVo(self.mCurHeroId)
-    GameDispatcher:dispatchEvent(EventName.OPEN_BIGHOSTEL_SCENE, {model_id = curHeroVo:getHostelModel(), heroConfigVo = hero.HeroManager:getHeroConfigVo(curHeroVo.tid)})
-end
-
---打开dna培育界面
-function onClickBtnDnaHandler(self)
-    if dna.DnaManager:checkHeroDnaFuncOpen(self.mCurHeroId, true) then
-        GameDispatcher:dispatchEvent(EventName.OPEN_DNA_CULTIVATE_PANEL, {
-            teamId = self.teamId
-        })
-    end
 end
 
 -- 当前查看的英雄改变
@@ -385,9 +350,7 @@ function onBubbleUpdateHandler(self, args)
     if (heroId == self.mCurHeroId) then
         if (args.flagType == hero.HeroFlagManager.FLAG_TAB_LVL_UP or args.flagType == hero.HeroFlagManager.FLAG_TAB_STAR_UP or args.flagType == hero.HeroFlagManager.FLAG_BTN_EQUIP or
         args.flagType == hero.HeroFlagManager.FLAG_BTN_BRACELETS) or args.flagType == hero.HeroFlagManager.FLAG_TAB_GROW or
-        args.flagType == hero.HeroFlagManager.FLAG_TAB_RANK_UP or args.flagType == hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST or args.flagType == hero.HeroFlagManager.FLAG_TAB_SKILL_UP or
-        args.flagType == hero.HeroFlagManager.FLAG_CAN_DNA
-        then
+        args.flagType == hero.HeroFlagManager.FLAG_TAB_RANK_UP or args.flagType == hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST or args.flagType == hero.HeroFlagManager.FLAG_TAB_SKILL_UP then
         self:updateTabBubble(args.flagType, args.isFlag)
     end
 end
@@ -414,7 +377,7 @@ function updateTabBubble(self, flagType, isFlag)
             return hero.DevelopTabType.GROW
         elseif (_flagType == hero.HeroFlagManager.FLAG_TAB_RANK_UP) then
             return hero.DevelopTabType.MILITARY_RANK_UP
-        elseif (_flagType == hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST or _flagType == hero.HeroFlagManager.FLAG_CAN_DNA) then
+        elseif (_flagType == hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST) then
             return self.tabBar.curSelectPage
         end
     end
@@ -444,13 +407,10 @@ function updateTabBubble(self, flagType, isFlag)
         updateBubble(getTabType(flagType), isFlag, flagType)
         flagType = hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST
         local awardIsFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType)
-        flagType = hero.HeroFlagManager.FLAG_CAN_DNA
-        local dnaIsFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType)
 
         flagType = hero.HeroFlagManager.FLAG_TAB_LVL_UP
-        isFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType) or
-        hero.HeroFlagManager:getFlag(self.mCurHeroId, hero.HeroFlagManager.FLAG_TAB_RANK_UP)
-        updateBubble(getTabType(flagType), isFlag or awardIsFlag or dnaIsFlag, flagType)
+        isFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType) or hero.HeroFlagManager:getFlag(self.mCurHeroId, hero.HeroFlagManager.FLAG_TAB_RANK_UP)
+        updateBubble(getTabType(flagType), isFlag or awardIsFlag, flagType)
 
         flagType = hero.HeroFlagManager.FLAG_TAB_RANK_UP
         isFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType)
@@ -480,16 +440,6 @@ function updateTabBubble(self, flagType, isFlag)
         else
             RedPointManager:remove(self.mInfoRed.transform)
         end
-
-        -- 更新好感度资料剧情红点
-        flagType = hero.HeroFlagManager.FLAG_BTN_STORY
-        isFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType)
-        if isFlag then
-            RedPointManager:add(self.mFavorableRed.transform, nil, 20, 14)
-        else
-            RedPointManager:remove(self.mFavorableRed.transform)
-        end
-
         -- 更新时装红点
         local curHeroVo = hero.HeroManager:getHeroVo(self.mCurHeroId)
         local fashionEnable = fashion.FashionManager:getFashionEnable(curHeroVo.tid)
@@ -502,30 +452,26 @@ function updateTabBubble(self, flagType, isFlag)
             end
         end
     else
+
         if flagType == hero.HeroFlagManager.FLAG_TAB_LVL_UP then
-            local awardIsFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId,
-            hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST)
-            isFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType) or
-            hero.HeroFlagManager:getFlag(self.mCurHeroId, hero.HeroFlagManager.FLAG_TAB_RANK_UP)
+            local awardIsFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST)
+            isFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType) or hero.HeroFlagManager:getFlag(self.mCurHeroId, hero.HeroFlagManager.FLAG_TAB_RANK_UP)
             updateBubble(getTabType(flagType), isFlag or awardIsFlag, flagType)
         elseif flagType == hero.HeroFlagManager.FLAG_TAB_RANK_UP then
-            local awardIsFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId,
-            hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST)
+            local awardIsFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST)
             isFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType)
             updateBubble(getTabType(flagType), isFlag or awardIsFlag, flagType)
-        elseif flagType == hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST or flagType == hero.HeroFlagManager.FLAG_CAN_DNA then
-            local awardIsFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId,
-            hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST)
-            local dnaIsFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType)
-            updateBubble(getTabType(flagType), awardIsFlag or dnaIsFlag, flagType)
+        elseif flagType == hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST then
+            local awardIsFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, hero.HeroFlagManager.FLAG_CAN_LVL_TARGET_LIST)
+            updateBubble(getTabType(flagType), awardIsFlag, flagType)
 
             flagType = hero.HeroFlagManager.FLAG_TAB_LVL_UP
             isFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType)
-            updateBubble(getTabType(flagType), isFlag or awardIsFlag or dnaIsFlag, flagType)
+            updateBubble(getTabType(flagType), isFlag or awardIsFlag, flagType)
 
             flagType = hero.HeroFlagManager.FLAG_TAB_RANK_UP
             isFlag = hero.HeroFlagManager:getFlag(self.mCurHeroId, flagType)
-            updateBubble(getTabType(flagType), isFlag or awardIsFlag or dnaIsFlag, flagType)
+            updateBubble(getTabType(flagType), isFlag or awardIsFlag, flagType)
         else
             updateBubble(getTabType(flagType), isFlag, flagType)
         end
@@ -586,19 +532,6 @@ function setData(self, cusHeroId, cusTabType, cusTabArgs, isInit)
             self.mBtnNext:SetActive(false)
         end
         self:onUpdateHead()
-        self:updateDnaInfo()
-
-    end
-end
-
--- 更新大宿舍按钮文本
-function updateBigHostelBtn(self)
-    if self.mCurTabType ~= hero.DevelopTabType.LVL_UP and self.mCurTabType ~= hero.DevelopTabType.MILITARY_RANK_UP then
-        self.mBtnBigHostel:SetActive(false)
-    else
-        local curHeroVo = hero.HeroManager:getHeroVo(self.mCurHeroId)
-        local sceneData = purchase.FashionShopManager:getFashionSceneDataByModelId(curHeroVo.tid, curHeroVo:getHostelModel())
-        self.mBtnBigHostel:SetActive(sceneData ~= nil)
     end
 end
 
@@ -621,8 +554,6 @@ function updateTabView(self, subData)
             self.mBtnFavorableTxt.text = curHeroVo.favorableLevel
         end
     end
-    self:updateDnaInfo()
-    self:updateBigHostelBtn()
 end
 
 function setType(self, cusTabType, cusArgs, cusIsDispatch)
@@ -636,10 +567,10 @@ function setType(self, cusTabType, cusArgs, cusIsDispatch)
 
         self.mFlagOpen = true
         self:recoverModel(false)
+
     else
         if self.mFlagOpen then
-            Perset3dHandler:setupShowData(MainCityConst.ROLE_MODE_OVERVIEW, nil, nil,
-            UrlManager:getBgPath("common/common_bg_003.jpg"))
+            Perset3dHandler:setupShowData(MainCityConst.ROLE_MODE_OVERVIEW, nil, nil, UrlManager:getBgPath("common/common_bg_003.jpg"))
             if (self.mModelPlayer:getModelTrans()) then
                 self.mModelPlayer.m_modelView:setModeType(MainCityConst.ROLE_MODE_OVERVIEW)
             end
@@ -649,8 +580,11 @@ function setType(self, cusTabType, cusArgs, cusIsDispatch)
         self:updataBtnState()
         if (not self.mModelPlayer:getModelTrans()) then
             self:__updateModelView()
+
         end
+
     end
+
 end
 
 function updataBtnState(self)
@@ -671,20 +605,11 @@ function __updateModelView(self)
             Perset3dHandler:toNormalShowData()
             self.mFlagOpen = true
         end
-
-        local data = fashion.FashionManager:getModelHarData(heroVo:getHeroModel())
-        if (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) and data then
-            -- 替换材质球预览
-            self.mHarFrameSn = LoopManager:addFrame(1, 1, self, function()
-                self.mModelPlayer:setMaterial(data.pos, data.materials, {})
-            end)
-        end
     end
 
     self:recoverModel(false)
     if (heroVo) then
-        self.mModelPlayer:setData(heroVo.id, true, 1, true, MainCityConst.ROLE_MODE_OVERVIEW,
-        UrlManager:getBgPath("common/common_bg_003.jpg"), self.mClickerArea, true, onModelFinishLoadCall)
+        self.mModelPlayer:setData(heroVo.id, true, 1, true, MainCityConst.ROLE_MODE_OVERVIEW, UrlManager:getBgPath("common/common_bg_003.jpg"), self.mClickerArea, true, onModelFinishLoadCall)
         self:updateTabShow(heroVo)
     end
 end
@@ -714,10 +639,6 @@ end
 
 function recoverModel(self, isResetMaincity)
     self.mModelPlayer:reset(isResetMaincity)
-    if self.mHarFrameSn then
-        LoopManager:removeFrameByIndex(self.mHarFrameSn)
-        self.mHarFrameSn = nil
-    end
 end
 
 function recoverNewDic(self)
@@ -730,42 +651,9 @@ function recoverNewDic(self)
 end
 
 function updateGuide(self)
+
     for type, item in pairs(self.tabBar.btnMap) do
         self:setGuideTrans("guide_HeroDevelopTab_" .. type, item:getChildTrans("mBtnNomal"))
-    end
-end
-
-function updateDnaInfo(self)
-    --只在详情界面显示
-    local isShow = dna.DnaManager:checkFuncIsOpen(false) and
-    self.mCurTabType == hero.DevelopTabType.LVL_UP or self.mCurTabType == hero.DevelopTabType.MILITARY_RANK_UP
-    self.mBtnDna:SetActive(isShow)
-    if isShow then
-        RedPointManager:remove(self.mBtnDna.transform)
-        local isHeroDnaFuncOpen = dna.DnaManager:checkHeroDnaFuncOpen(self.mCurHeroId)
-        self.mGroupInfo:SetActive(isHeroDnaFuncOpen)
-        self.mImgDnaLock:SetActive(not isHeroDnaFuncOpen)
-        if isHeroDnaFuncOpen then
-            local curHeroVo = hero.HeroManager:getHeroVo(self.mCurHeroId)
-            local isNone = curHeroVo:checkDnaStatus(hero.eggType.none)
-            local isEgg = curHeroVo:checkDnaStatus(hero.eggType.egg)
-            local isRole = curHeroVo:checkDnaStatus(hero.eggType.role)
-            self.mImgDnaAdd:SetActive(isNone)
-            self.mAriDnaIcon.gameObject:SetActive(isEgg)
-            self.mAriDnaHead.gameObject:SetActive(isRole)
-            if isEgg then
-                local eggDataCfgVo = dna.DnaManager:getSingleEggDataCfgVoByHeroId(self.mCurHeroId)
-                self.mAriDnaIcon:SetImg(eggDataCfgVo:getDnaEggIconUrl())
-            end
-            if isRole then
-                local heroEggDataCfgVo = dna.DnaManager:getSingleHeroEggDataCfgVoByHeroId(self.mCurHeroId)
-                self.mAriDnaHead:SetImg(heroEggDataCfgVo:getDnaHeroHeadUrl())
-            end
-            local isFlag = dna.DnaManager:getHeroDnaFuncRedFlag(curHeroVo)
-            if isFlag then
-                RedPointManager:add(self.mBtnDna.transform, nil, 40, 40)
-            end
-        end
     end
 end
 

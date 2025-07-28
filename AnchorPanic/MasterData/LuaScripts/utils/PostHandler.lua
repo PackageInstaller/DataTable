@@ -16,24 +16,12 @@ function resetChromatic(self)
             post.ChromaticAberrationAmount = self.mChromaticAmount
             post.ChromaticAberrationStep = self.mChromaticStep
         end
-        -- self.mChromaticToggle = nil
-        -- self.mChromaticAmount = nil
-        -- self.mChromaticStep = nil
+        self.mChromaticToggle = nil
+        self.mChromaticAmount = nil
+        self.mChromaticStep = nil
     end
 
     self:resetBloomIntensity()
-end
-
--- 进场景初始化色散值
-function initChromatioc(self)
-    if not gs.GoUtil.IsCompNull(gs.CameraMgr:GetSceneCameraTrans()) then
-        local post = gs.CameraMgr:GetSceneCameraTrans():GetComponent(ty.PostProcessing)
-        if post and not gs.GoUtil.IsCompNull(post) then
-            self.mChromaticToggle = post.ChromaticAberrationToggle
-            self.mChromaticAmount = post.ChromaticAberrationAmount
-            self.mChromaticStep = post.ChromaticAberrationStep
-        end
-    end
 end
 
 -- 色散的调用
@@ -41,11 +29,11 @@ function chromaticTween(self, amount, startStep, endStep, duration)
     if not gs.GoUtil.IsCompNull(gs.CameraMgr:GetSceneCameraTrans()) then
         local post = gs.CameraMgr:GetSceneCameraTrans():GetComponent(ty.PostProcessing)
         if post and not gs.GoUtil.IsCompNull(post) then
-            -- if self.mChromaticToggle == nil then
-            --     self.mChromaticToggle = post.ChromaticAberrationToggle
-            --     self.mChromaticAmount = post.ChromaticAberrationAmount
-            --     self.mChromaticStep = post.ChromaticAberrationStep
-            -- end
+            if self.mChromaticToggle == nil then
+                self.mChromaticToggle = post.ChromaticAberrationToggle
+                self.mChromaticAmount = post.ChromaticAberrationAmount
+                self.mChromaticStep = post.ChromaticAberrationStep
+            end
             local function _closeCall()
                 if self.m_chromaticTween then
                     self.m_chromaticTween:Kill()
@@ -163,7 +151,7 @@ function setBloomValue(self, cameraTrans, intensity, color, radius, gamma, thres
                 self.mBloomSoftKnee = post.BloomSoftKnee
                 self.mBloomSampleScale = post.BloomSampleScale
             end
-
+            
             post.BloomIntensity = intensity or self.mBloomIntensity
             post.BloomColor = color or self.mBloomColor
             post.BloomRadius = radius or self.mBloomRadius
@@ -171,7 +159,7 @@ function setBloomValue(self, cameraTrans, intensity, color, radius, gamma, thres
             post.BloomThreshold = threshold or self.mBloomThreshold
             post.BloomSoftKnee = softKnee or self.mBloomSoftKnee
             post.BloomSampleScale = sampleScale or self.mBloomSampleScale
-
+            
         end
     end
 end

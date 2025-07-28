@@ -16,7 +16,7 @@ panelType = 2 -- 窗口类型 1 全屏 2 弹窗
 function ctor(self)
     super.ctor(self)
     self:setSize(1120, 520)
-    self:setTxtTitle(_TT(27611))
+    self:setTxtTitle(_TT(111030))
 end
 
 -- 初始化数据

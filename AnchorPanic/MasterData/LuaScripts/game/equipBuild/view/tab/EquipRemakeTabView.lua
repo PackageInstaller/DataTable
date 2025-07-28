@@ -50,11 +50,6 @@ function active(self, args)
     GameDispatcher:addEventListener(EventName.UPDATE_EQUIP_REMAKE, self.onUpdateRemakeHandler, self)
     GameDispatcher:addEventListener(EventName.OPEN_EQUIP_REMAKE_UP_VIEW, self.onOpenEquipRemakeViewHandler, self)
     GameDispatcher:addEventListener(EventName.CHANGE_BRACELETS, self.updateView, self)
-
-    GameDispatcher:addEventListener(EventName.OPEN_EQUIP_REMAKE_TARGET_VIEW,self.onOpenEquipRemakeAgentViewHandler, self)
-    GameDispatcher:addEventListener(EventName.OPEN_EQUIP_REMAKE_UP_AGENT_VIEW,self.onOpenEquipRemakeUpAgentViewHandler, self)
-
-    
     self:updateView()
 end
 
@@ -62,8 +57,6 @@ function deActive(self)
     GameDispatcher:removeEventListener(EventName.UPDATE_EQUIP_REMAKE, self.onUpdateRemakeHandler, self)
     GameDispatcher:removeEventListener(EventName.OPEN_EQUIP_REMAKE_UP_VIEW, self.onOpenEquipRemakeViewHandler, self)
     GameDispatcher:removeEventListener(EventName.CHANGE_BRACELETS, self.updateView, self)
-    GameDispatcher:removeEventListener(EventName.OPEN_EQUIP_REMAKE_TARGET_VIEW,self.onOpenEquipRemakeAgentViewHandler, self)
-    GameDispatcher:removeEventListener(EventName.OPEN_EQUIP_REMAKE_UP_AGENT_VIEW,self.onOpenEquipRemakeUpAgentViewHandler, self)
     if self.showItem then
         -- 回收之前打开的
         self.showItem:closeContent()
@@ -77,10 +70,6 @@ function deActive(self)
 
     if self.materialPanel then
         self.materialPanel:onClickClose()
-    end
-
-    if self.materialAgentPanel then
-        self.materialAgentPanel:onClickClose()
     end
     LoopManager:removeFrameByIndex(self.frameId)
 end
@@ -244,33 +233,6 @@ function onOpenEquipRemakeViewHandler(self, args)
     -- self.materialPanel:setVisibleCall(_showRightView)
     self.materialPanel:setData(args)
     self.materialPanel:open()
-end
-
-function onOpenEquipRemakeAgentViewHandler(self,args)
-    if self.materialAgentPanel == nil then
-        self.materialAgentPanel = equipBuild.EquipRemakeUpTargetView.new()
-        local function _onDestoryPanelHandler(self)
-            self.materialAgentPanel:removeEventListener(View.EVENT_VIEW_DESTROY, _onDestoryPanelHandler, self)
-            self.materialAgentPanel = nil
-            
-        end
-        self.materialAgentPanel:addEventListener(View.EVENT_VIEW_DESTROY, _onDestoryPanelHandler, self)
-    end
-    self.materialAgentPanel:open(args)
-end
-
-function onOpenEquipRemakeUpAgentViewHandler(self,args)
-    if self.materialUpAgentPanel == nil then
-        self.materialUpAgentPanel = equipBuild.EquipRemakeUpAgentView.new()
-        local function _onDestoryPanelHandler(self)
-            self.materialUpAgentPanel:removeEventListener(View.EVENT_VIEW_DESTROY, _onDestoryPanelHandler, self)
-            self.materialUpAgentPanel = nil
-            
-        end
-        self.materialUpAgentPanel:addEventListener(View.EVENT_VIEW_DESTROY, _onDestoryPanelHandler, self)
-    end
-    self.materialUpAgentPanel:setData(args)
-    self.materialUpAgentPanel:open(args)
 end
 
 return _M

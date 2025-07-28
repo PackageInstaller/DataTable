@@ -64,11 +64,6 @@ function onBtnQuitClick(self)
         return
     end
 
-    if guild.GuildManager:getIsJoinGuildWar() then
-        gs.Message.Show(_TT(149195))
-        return
-    end
-
     self.guildInfo = guild.GuildManager:getGuildInfo()
 
     UIFactory:alertMessge(_TT(94527), true, function()

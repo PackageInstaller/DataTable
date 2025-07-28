@@ -138,10 +138,6 @@ local attr_show_data=
 	[149]={ name=3152, show_type=2, type=2, sort=65, show=0, eng_name=3252, main_secondary_type=0
 },
 	[150]={ name=3152, show_type=2, type=2, sort=66, show=0, eng_name=3252, main_secondary_type=0
-},
-	[202]={ name=3264, show_type=2, type=2, sort=67, show=0, eng_name=3252, main_secondary_type=0
-},
-	[203]={ name=3265, show_type=2, type=2, sort=68, show=0, eng_name=3252, main_secondary_type=0
 }
 }
 

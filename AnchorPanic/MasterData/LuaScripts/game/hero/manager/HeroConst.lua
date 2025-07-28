@@ -624,19 +624,6 @@ hero.getSingleSelectOffset = function()
     return hero.__SingleSelectOffset
 end
 
---战员dna蛋 形态枚举
-hero.eggType = {
-    none = 0, --无
-    egg = 1, --蛋形态
-    role = 2 --人形态
-}
-
-hero.eggQuality = {
-    r = 1,
-    sr = 2,
-    ssr = 3
-}
-
 --[[ 替换语言包自动生成，请勿修改！
 	语言包: _TT(1030):	"属性"
 	语言包: _TT(1167):	"增幅"

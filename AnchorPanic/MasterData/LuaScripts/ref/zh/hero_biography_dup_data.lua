@@ -314,54 +314,6 @@ local hero_biography_dup_data=
 	[102302]={ type=1, sort=0, biography_id=102301, next_id=102303, mon={16016,16017,16018,16019,16020}, formation_id=507, name="EP-2", first_award=1955, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3200, show_drop=2155, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,2}, suggest_level={0,30}, suggest_ele={3,4}
 },
 	[102303]={ type=1, sort=0, biography_id=102301, next_id=0, mon={16021,16022,16023,16024,16025}, formation_id=504, name="EP-3", first_award=1956, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3500, show_drop=2156, dup_guard_extra={}, music_id=0, scene_id=301, point_line={0}, suggest_level={0,40}, suggest_ele={2,3}
-},
-	[102401]={ type=1, sort=0, biography_id=102401, next_id=102402, mon={16011,16012,16013,16014,16015}, formation_id=506, name="EP-1", first_award=1957, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=2500, show_drop=2157, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,3}, suggest_level={0,15}, suggest_ele={0,3}
-},
-	[102402]={ type=1, sort=0, biography_id=102401, next_id=102403, mon={16016,16017,16018,16019,16020}, formation_id=507, name="EP-2", first_award=1958, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3200, show_drop=2158, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,2}, suggest_level={0,30}, suggest_ele={3,4}
-},
-	[102403]={ type=1, sort=0, biography_id=102401, next_id=0, mon={16021,16022,16023,16024,16025}, formation_id=504, name="EP-3", first_award=1959, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3500, show_drop=2159, dup_guard_extra={}, music_id=0, scene_id=301, point_line={0}, suggest_level={0,40}, suggest_ele={2,3}
-},
-	[102501]={ type=1, sort=0, biography_id=102501, next_id=102502, mon={16011,16012,16013,16014,16015}, formation_id=506, name="EP-1", first_award=1960, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=2500, show_drop=2160, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,3}, suggest_level={0,15}, suggest_ele={0,3}
-},
-	[102502]={ type=1, sort=0, biography_id=102501, next_id=102503, mon={16016,16017,16018,16019,16020}, formation_id=507, name="EP-2", first_award=1961, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3200, show_drop=2161, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,2}, suggest_level={0,30}, suggest_ele={3,4}
-},
-	[102503]={ type=1, sort=0, biography_id=102501, next_id=0, mon={16021,16022,16023,16024,16025}, formation_id=504, name="EP-3", first_award=1962, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3500, show_drop=2162, dup_guard_extra={}, music_id=0, scene_id=301, point_line={0}, suggest_level={0,40}, suggest_ele={2,3}
-},
-	[102601]={ type=1, sort=0, biography_id=102601, next_id=102602, mon={16011,16012,16013,16014,16015}, formation_id=506, name="EP-1", first_award=1963, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=2500, show_drop=2163, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,3}, suggest_level={0,15}, suggest_ele={0,3}
-},
-	[102602]={ type=1, sort=0, biography_id=102601, next_id=102603, mon={16016,16017,16018,16019,16020}, formation_id=507, name="EP-2", first_award=1964, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3200, show_drop=2164, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,2}, suggest_level={0,30}, suggest_ele={3,4}
-},
-	[102603]={ type=1, sort=0, biography_id=102601, next_id=0, mon={16021,16022,16023,16024,16025}, formation_id=504, name="EP-3", first_award=1965, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3500, show_drop=2165, dup_guard_extra={}, music_id=0, scene_id=301, point_line={0}, suggest_level={0,40}, suggest_ele={2,3}
-},
-	[102701]={ type=1, sort=0, biography_id=102701, next_id=102702, mon={16011,16012,16013,16014,16015}, formation_id=506, name="EP-1", first_award=1966, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=2500, show_drop=2166, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,3}, suggest_level={0,15}, suggest_ele={0,3}
-},
-	[102702]={ type=1, sort=0, biography_id=102701, next_id=102703, mon={16016,16017,16018,16019,16020}, formation_id=507, name="EP-2", first_award=1967, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3200, show_drop=2167, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,2}, suggest_level={0,30}, suggest_ele={3,4}
-},
-	[102703]={ type=1, sort=0, biography_id=102701, next_id=0, mon={16021,16022,16023,16024,16025}, formation_id=504, name="EP-3", first_award=1968, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3500, show_drop=2168, dup_guard_extra={}, music_id=0, scene_id=301, point_line={0}, suggest_level={0,40}, suggest_ele={2,3}
-},
-	[102801]={ type=1, sort=0, biography_id=102801, next_id=102802, mon={16011,16012,16013,16014,16015}, formation_id=506, name="EP-1", first_award=1969, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=2500, show_drop=2169, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,3}, suggest_level={0,15}, suggest_ele={0,3}
-},
-	[102802]={ type=1, sort=0, biography_id=102801, next_id=102803, mon={16016,16017,16018,16019,16020}, formation_id=507, name="EP-2", first_award=1970, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3200, show_drop=2170, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,2}, suggest_level={0,30}, suggest_ele={3,4}
-},
-	[102803]={ type=1, sort=0, biography_id=102801, next_id=0, mon={16021,16022,16023,16024,16025}, formation_id=504, name="EP-3", first_award=1971, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3500, show_drop=2171, dup_guard_extra={}, music_id=0, scene_id=301, point_line={0}, suggest_level={0,40}, suggest_ele={2,3}
-},
-	[102901]={ type=1, sort=0, biography_id=102901, next_id=102902, mon={16011,16012,16013,16014,16015}, formation_id=506, name="EP-1", first_award=1972, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=2500, show_drop=2172, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,3}, suggest_level={0,15}, suggest_ele={0,3}
-},
-	[102902]={ type=1, sort=0, biography_id=102901, next_id=102903, mon={16016,16017,16018,16019,16020}, formation_id=507, name="EP-2", first_award=1973, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3200, show_drop=2173, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,2}, suggest_level={0,30}, suggest_ele={3,4}
-},
-	[102903]={ type=1, sort=0, biography_id=102901, next_id=0, mon={16021,16022,16023,16024,16025}, formation_id=504, name="EP-3", first_award=1974, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3500, show_drop=2174, dup_guard_extra={}, music_id=0, scene_id=301, point_line={0}, suggest_level={0,40}, suggest_ele={2,3}
-},
-	[103001]={ type=1, sort=0, biography_id=103001, next_id=103002, mon={16011,16012,16013,16014,16015}, formation_id=506, name="EP-1", first_award=1975, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=2500, show_drop=2175, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,3}, suggest_level={0,15}, suggest_ele={0,3}
-},
-	[103002]={ type=1, sort=0, biography_id=103001, next_id=103003, mon={16016,16017,16018,16019,16020}, formation_id=507, name="EP-2", first_award=1976, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3200, show_drop=2176, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,2}, suggest_level={0,30}, suggest_ele={3,4}
-},
-	[103003]={ type=1, sort=0, biography_id=103001, next_id=0, mon={16021,16022,16023,16024,16025}, formation_id=504, name="EP-3", first_award=1977, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3500, show_drop=2177, dup_guard_extra={}, music_id=0, scene_id=301, point_line={0}, suggest_level={0,40}, suggest_ele={2,3}
-},
-	[103101]={ type=1, sort=0, biography_id=103101, next_id=103102, mon={16011,16012,16013,16014,16015}, formation_id=506, name="EP-1", first_award=1978, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=2500, show_drop=2178, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,3}, suggest_level={0,15}, suggest_ele={0,3}
-},
-	[103102]={ type=1, sort=0, biography_id=103101, next_id=103103, mon={16016,16017,16018,16019,16020}, formation_id=507, name="EP-2", first_award=1979, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3200, show_drop=2179, dup_guard_extra={}, music_id=0, scene_id=301, point_line={2,2}, suggest_level={0,30}, suggest_ele={3,4}
-},
-	[103103]={ type=1, sort=0, biography_id=103101, next_id=0, mon={16021,16022,16023,16024,16025}, formation_id=504, name="EP-3", first_award=1980, story={{1,10001},{2,20001},{3,30001}}, need_tid=10, need_num=20, recommend_force=3500, show_drop=2180, dup_guard_extra={}, music_id=0, scene_id=301, point_line={0}, suggest_level={0,40}, suggest_ele={2,3}
 }
 }
 

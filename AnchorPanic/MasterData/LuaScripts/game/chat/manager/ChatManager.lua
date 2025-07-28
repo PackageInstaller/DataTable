@@ -113,32 +113,15 @@ function getEmojiConfigDic(self)
     if (not self.m_emojiConfigDic) then
         self:praseEmojiConfig()
     end
-
-    -- 只获取已解锁表情包
-    local dic = {}
-    for type, list in pairs(self.m_emojiConfigDic) do
-        for subType, subList in pairs(list) do
-            for i, ro in ipairs(subList) do
-                if table.indexof(self.mEmojiUnLockList, ro:getRefID()) ~= false then
-                    if (not dic[ro:getType()]) then
-                        dic[ro:getType()] = {}
-                    end
-                    if (not dic[ro:getType()][ro:getSubType()]) then
-                        dic[ro:getType()][ro:getSubType()] = {}
-                    end
-                    table.insert(dic[ro:getType()][ro:getSubType()], ro)
-                end
-            end
-        end
-    end
-
-    return dic
+    return self.m_emojiConfigDic
 end
 
 -- 获取表情字典
 function getEmojiConfigList(self, type, subType)
-    local dic = self:getEmojiConfigDic()
-    return dic[type][subType]
+    if (not self.m_emojiConfigDic) then
+        self:praseEmojiConfig()
+    end
+    return self.m_emojiConfigDic[type][subType]
 end
 
 ----------------------------------------------------------------------------聊天cd管理--------------------------------------------------------------------------------------
@@ -218,14 +201,6 @@ function changeChatRoomMsg(self, cusMsg)
         logError("修改频道房间失败，错误码：" .. cusMsg.result)
     end
     GameDispatcher:dispatchEvent(EventName.UPDATE_CHANGE_ROOM_RESULT, { channel = cusMsg.channel, isSuccess = cusMsg.result == 1 })
-end
-
--- 获取表情列表
-function onResGetEmojiListMsg(self, msg)
-    self.mEmojiUnLockList = {}
-    for i, pt_emoji_info in ipairs(msg.emoji_list) do
-        table.insert(self.mEmojiUnLockList, pt_emoji_info.emoji_id)
-    end
 end
 
 -- 添加公告途径的聊天消息

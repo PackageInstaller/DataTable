@@ -162,8 +162,6 @@ chat.getTabIconUrl = function(tab)
     local tabIndex = 18
     if tab == 2 then
         tabIndex = 101
-    elseif tab == 3 then
-        tabIndex = 201
     end
     return UrlManager:getStaticEmojiUrl(tabIndex)
 end

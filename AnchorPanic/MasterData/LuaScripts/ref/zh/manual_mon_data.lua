@@ -139,7 +139,7 @@ local manual_mon_data=
 },
 	[515]={ model="6315", name="“容器”的碎片", english="DAVIST", story="过去曾有着“维拉提亚天使”之称的护星骑士团团长，现在被污染成异变体，辉煌的过往已经变成了深埋地底的秘密，唯有死亡能得到解脱。", hero_type=6, shadow="mon_archives_normal_6315.png", shadow_unlock="mon_archives_shadow_6315.png", dangerous=3, skill_list={511280,511290,511286,5112,511201,511202,511204}, type=3, special="对位优先", speed="慢", element={0}, weak_point={2,5}
 },
-	[516]={ model="6316_b", name="艾许", english="DAVIST", story="本是由福登城科学家艾尔莎·图兰灵雅研制的人工智能，虚拟世界“伊甸园”的管理者，后因错误地理解艾尔莎的愿望而选择和残破的第十二使徒封禁物结合，生出了自我意识成为人造使徒级修格尔。试图用和锚点空间结合的“伊甸园”来吸收福登城所有人类的意识，并自诩为乐土世界的新神明。", hero_type=6, shadow="mon_archives_normal_6316_b.png", shadow_unlock="mon_archives_shadow_6316_b.png", dangerous=3, skill_list={516180,516190,516186,5161,516101,516102,516104}, type=4, special="对位优先", speed="慢", element={0}, weak_point={1,3}
+	[516]={ model="6316_b", name="艾许", english="DAVIST", story="沉沦伊甸的木偶", hero_type=6, shadow="mon_archives_normal_6316_b.png", shadow_unlock="mon_archives_shadow_6316_b.png", dangerous=3, skill_list={516180,516190,516186,5161,516101,516102,516104}, type=3, special="对位优先", speed="慢", element={0}, weak_point={1,3}
 }
 }
 

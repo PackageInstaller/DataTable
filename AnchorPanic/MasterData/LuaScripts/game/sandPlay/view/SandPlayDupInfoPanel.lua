@@ -4,7 +4,7 @@
 -- @Date:   2024-01-17 11:40:13
 -- @Copyright:   (LY) 2023 雷焰网络
 
-module('game.sandPlay.view.SandPlayDupInfoPanel', Class.impl(View))
+module('maze.SandPlayDupInfoPanel', Class.impl(View))
 
 UIRes = UrlManager:getUIPrefabPath("sandPlay/SandPlayDupInfoPanel.prefab")
 

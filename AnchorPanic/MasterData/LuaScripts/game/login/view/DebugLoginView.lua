@@ -101,7 +101,7 @@ function configUI(self)
     self.m_btnLogin = self:getChildGO('m_btnLogin')
 
     self.m_btnQuit = self:getChildGO('mBtnQuit')
-
+    
     self.m_inputIp = self:getChildGO('m_inputIp'):GetComponent(ty.InputField)
     self.m_inputPort = self:getChildGO('m_inputPort'):GetComponent(ty.InputField)
     self.m_inputName = self:getChildGO('m_inputName'):GetComponent(ty.InputField)
@@ -141,15 +141,9 @@ function configUI(self)
 
     self.mToggleCloseUIEff = self:getChildGO("mToggleCloseUIEff"):GetComponent(ty.Toggle)
     self.mToggleCloseUIEff.isOn = StorageUtil:getString0('login_show_ui_effect') == "1"
-
+    
     self.mTxtClientVersion = self:getChildGO('TextClientVersion'):GetComponent(ty.Text)
     self.mTxtServerVersion = self:getChildGO('TextServerVersion'):GetComponent(ty.Text)
-
-    self.m_inputClientAuthId = self:getChildGO('m_inputClientAuthId'):GetComponent(ty.InputField)
-    self.m_inputClientAuthPwd = self:getChildGO('m_inputClientAuthPwd'):GetComponent(ty.InputField)
-
-    self.m_inputClientAuthId.text = login.LoginManager.clientAuthId
-    self.m_inputClientAuthPwd.text = login.LoginManager.clientAuthPwd ~= "" and "********" or ""
 end
 --[[ 
     初始化界面的静态文本，图片字
@@ -209,7 +203,7 @@ function active(self, args)
     super.active(self, args)
     self:updateClientVersion()
     self:updateServerVersion()
-
+    
     login.LoginManager:setLoginViewVisible(true)
     web.WebManager:addEventListener(web.WebManager.GAIN_ALL_DATA_FINISH, self.__onGainAllDataFinishHandler, self)
     GameDispatcher:addEventListener(EventName.DEBUG_LOGIN_SELECT_SERVICE, self.onSelServiceHandler, self)
@@ -248,7 +242,7 @@ function __updateBgPlayState(self, isImgVideo)
         self.mImgSwitch:SetImg(UrlManager:getPackPath("updateRes/update_res_6.png"), true)
     end
     StorageUtil:saveBool0('IsUpdateResImgBg', isImgVideo)
-    if (self.mIsImgBg ~= (BoardShower:getBoardState() == BoardShower.BoardState.ImgBg)) then
+    if(self.mIsImgBg ~= (BoardShower:getBoardState() == BoardShower.BoardState.ImgBg))then
         BoardShower:onClickSwitchModeHandler()
     end
 end
@@ -288,8 +282,8 @@ end
 
 -- 销毁
 function destroyPanel(self)
-    if (web.WebManager:hasEventListener(web.WebManager.GAIN_ALL_DATA_FINISH, self.__onGainAllDataFinishHandler, self)) then
-        self:deActive(self)
+    if(web.WebManager:hasEventListener(web.WebManager.GAIN_ALL_DATA_FINISH, self.__onGainAllDataFinishHandler, self))then
+        self:deActive(self) 
     end
     super.destroyPanel(self)
 end
@@ -334,44 +328,31 @@ end
 function __onClickLoginHandler(self)
     -- storyTalk.StoryTalkCondition:condition10(nil, 1, 1, 101)
     -- gs.ResMgr:LoadGO(UrlManager:getRolePath01(3101))
-    local loginFun = function()
-        local data = {}
-        data.ip = self.m_inputIp.text
-        data.port = self.m_inputPort.text
-        data.accname = self.m_inputName.text
-        data.svr_id = self.svr_id
-        if data.accname == nil or data.accname == '' then
-            gs.Message.Show("输入你的大名")
-            return
-        end
-        if (FilterWordUtil:hasIllegalWord(data.accname)) then
-            gs.Message.Show("别输入标点特殊符号")
-            return
-        end
-        StorageUtil:saveString0(gs.Application.dataPath .. 'login', data.accname)
-        StorageUtil:saveString0(gs.Application.dataPath .. 'login_serv_ip', data.ip)
-        StorageUtil:saveString0(gs.Application.dataPath .. 'login_serv_port', data.port)
 
-        StorageUtil:saveString0('login_guide', (self.mToggleGuide.isOn and 1 or 0))
-        StorageUtil:saveString0('login_show_model_anim', (self.mToggleCloseShowAni.isOn and 1 or 0))
-        StorageUtil:saveString0('login_playVideoAudio', (self.mToggleCloseVideoAudio.isOn and 1 or 0))
-        StorageUtil:saveString0('login_show_ui_effect', (self.mToggleCloseUIEff.isOn and 1 or 0))
 
-        StorageUtil:saveString0('login_client_auth_id', login.LoginManager.clientAuthId)
-        StorageUtil:saveString0('login_client_auth_pwd', login.LoginManager.clientAuthPwd)
-
-        self:dispatchEvent(login.LoginManager.EVENT_LOGIN, data)
-    end
-
-    login.LoginManager.clientAuthId = self.m_inputClientAuthId.text
-    login.LoginManager.clientAuthPwd = self.m_inputClientAuthPwd.text == "********" and login.LoginManager.clientAuthPwd or self.m_inputClientAuthPwd.text
-
-    if login.LoginManager.clientAuthId == nil or login.LoginManager.clientAuthId == '' or login.LoginManager.clientAuthPwd == nil or login.LoginManager.clientAuthPwd == '' then
-        gs.Message.Show("请输入客户端登录权限账号密码")
+    local data = {}
+    data.ip = self.m_inputIp.text
+    data.port = self.m_inputPort.text
+    data.accname = self.m_inputName.text
+    data.svr_id = self.svr_id
+    if data.accname == nil or data.accname == '' then
+        gs.Message.Show("输入你的大名")
         return
     end
+    if (FilterWordUtil:hasIllegalWord(data.accname)) then
+        gs.Message.Show("别输入标点特殊符号")
+        return
+    end
+    StorageUtil:saveString0(gs.Application.dataPath .. 'login', data.accname)
+    StorageUtil:saveString0(gs.Application.dataPath .. 'login_serv_ip', data.ip)
+    StorageUtil:saveString0(gs.Application.dataPath .. 'login_serv_port', data.port)
 
-    web.WebController:reqClientAuthLogin(loginFun)
+    StorageUtil:saveString0('login_guide', (self.mToggleGuide.isOn and 1 or 0))
+    StorageUtil:saveString0('login_show_model_anim', (self.mToggleCloseShowAni.isOn and 1 or 0))
+    StorageUtil:saveString0('login_playVideoAudio', (self.mToggleCloseVideoAudio.isOn and 1 or 0))
+    StorageUtil:saveString0('login_show_ui_effect', (self.mToggleCloseUIEff.isOn and 1 or 0))
+
+    self:dispatchEvent(login.LoginManager.EVENT_LOGIN, data)
 end
 
 -- 点击选服

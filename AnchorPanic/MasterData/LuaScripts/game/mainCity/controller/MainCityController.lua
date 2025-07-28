@@ -57,21 +57,6 @@ function loadScene(self)
     end
 end
 
-function preloadCall(self, callFun)
-    if not mainui.MainUIManager.isShowBigHostel then
-        callFun()
-    else
-        local isActivie = bigHostel.BigHostelSceneController:checkSceneActive()
-        if not isActivie then
-            local showId = role.RoleManager:getRoleVo():getShowBoardHeroId()
-            local heroVo = hero.HeroManager:getHeroVo(showId)
-            local heroConfigVo = hero.HeroManager:getHeroConfigVo(heroVo.tid)
-
-            GameDispatcher:dispatchEvent(EventName.OPEN_BIGHOSTEL_SCENE, {model_id = heroVo:getHostelModel(), heroConfigVo = heroConfigVo, main_type = BigHostelConst.SceneUI_Type.MIANUI})
-        end
-    end
-end
-
 -- 进入地图
 function enterMap(self)
     super.enterMap(self)
@@ -124,11 +109,12 @@ function enterMap(self)
     -- GameDispatcher:dispatchEvent(EventName.SHOW_MAIN_UI, { isShowTween = true,isFirstCV = true })
     mainCity.MainCityManager.isLoadCompleted = true
 
+
     -- 等待主场景加载完成后需要打开的uicode
     local waitOpenUIcode = mainui.MainUIManager:getWaitOpenUIcode()
     if waitOpenUIcode > 0 then
         UIFactory:closeForcibly()
-        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = waitOpenUIcode})
+        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = waitOpenUIcode })
         mainui.MainUIManager:setWaitOpenUIcode(0)
     end
 
@@ -176,9 +162,9 @@ function clearMap(self)
     --     self.videoPlayer = nil
     -- end
 end
--- function playSceneMusic(self)
---     -- 主场景音乐自己管理
--- end
+function playSceneMusic(self)
+    -- 主场景音乐自己管理
+end
 
 -- 播放场景音乐,
 function playMainCityMusic(self)
@@ -245,15 +231,12 @@ function onUIClose(self, args)
     end
 
     self.closeTimeSn = LoopManager:addFrame(5, 1, self, function()
-        if mainui.MainUIManager.isShowBigHostel and bigHostel.BigHostelSceneController:checkSceneActive() then
-            GameDispatcher:dispatchEvent(EventName.SHOW_MAIN_UI, {isShowTween = true, isFirstCV = false})
-            return
-        end
         if ((args.panelType == 1 or args.panelType == 3) and args.panelName ~= "login.DebugLoginView" and args.panelName ~= "login.LoginView") or args.panelName == "guide.GuidePanel"
-            then
+        then
             self:showMainScene()
         end
     end)
+
 
     -- LoopManager:removeFrameByIndex(self.showMainuiFrameSn)
     -- self.showMainuiFrameSn = LoopManager:addFrame(1, 1, self, function()
@@ -268,10 +251,6 @@ function onUIClose(self, args)
 end
 
 function showMainScene(self, isChange)
-    if mainui.MainUIManager.isShowBigHostel then
-        
-        return
-    end
     if self.m_scene then
         self.m_scene:setSceneActive(true, isChange)
     end
@@ -327,13 +306,11 @@ function onShowBoardHeroChangeHandler(self)
     if (not isAllClose) then
         return
     end
-    local bool = not mainui.MainUIManager.isDragSpine
-    self:onShowBoardHeroInitHandler(bool)
+    self:onShowBoardHeroInitHandler(true)
 end
 
 -- 刷新主场景模型
 function refreshModel(self, isChange)
-    mainui.MainUIManager.isDragSpine = nil
     if isChange then
         mainui.MainUIManager:setIsShowDynamic(0)-- 切换模型，默认显示模型
     end

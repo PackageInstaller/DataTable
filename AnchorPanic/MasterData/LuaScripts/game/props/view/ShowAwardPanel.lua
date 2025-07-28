@@ -193,47 +193,10 @@ function showPropsAwardMsg(self, cusPropsList, closeCall)
         end
     end
     table.sort(list, bag.BagManager.sortPropsListByDescending)
-
-    if self:checkEggRewardShow(list) then
-        return
-    else
-        self:openView(list)
-    end
+    self:openView(list)
     -- local instance = self:getInstance()
     -- instance:createPropsGrid(list)
     -- instance:open()
-end
-
---dnaEgg开道具动画
-function checkEggRewardShow(self, award_propsVoList)
-    local isOpenEggProps = bag.BagManager:getIsOpenEggProps()
-    --检查是否打开过相关道具
-    if not isOpenEggProps then
-        return false
-    end
-    --检查是否包含dna蛋道具
-    local isEggProp, eggMaxQuality = false, 0
-    for _, propsVo in ipairs(award_propsVoList) do
-        if propsVo.type == PropsType.HEROEGG then
-            isEggProp = true
-            local eggCfgVo = dna.DnaManager:getSingleEggDataCfgVoByItemId(propsVo.tid)
-            if eggCfgVo.quality > eggMaxQuality then
-                eggMaxQuality = eggCfgVo.quality
-            end
-        end
-    end
-    if not isEggProp then
-        return false 
-    end
-
-    GameDispatcher:dispatchEvent(EventName.OPEN_DNA_OPEN_BOX_EFX_PANEL, {
-        eggMaxQuality = eggMaxQuality,
-        callBack = function ()
-            self:openView(award_propsVoList)
-        end
-    })
-
-    return true
 end
 
 function openView(self, list)

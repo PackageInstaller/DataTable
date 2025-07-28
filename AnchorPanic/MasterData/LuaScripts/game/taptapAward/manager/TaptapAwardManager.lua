@@ -22,15 +22,10 @@ function dtor(self)
 end
 
 function canOpenTaptapAwardPanel(self)
-    --return true
     local isTapTap = sdk.SdkManager:getIsTaptapActivity()
     local clientTime = GameManager:getClientTime()
-    local prefixVersion =
-        download.ResDownLoadManager:getServerVersionValue(gs.AssetSetting.PrefixVersionKey)
-    local isNoshow = StorageUtil:getBool1(prefixVersion .. "taptapNotShow") == true 
-    local endTime = sysParam.SysParamManager:getValue(SysParamType.TAPTAP_ENDTIME)
-    --local isNotRemind = remind.RemindManager:isTodayNotRemain(RemindConst.TAPTAP_AWARD)
-    return clientTime < endTime and not isNoshow and isTapTap
+    local isNotRemind = remind.RemindManager:isTodayNotRemain(RemindConst.TAPTAP_AWARD)
+    return clientTime < 1721682000 and not isNotRemind and isTapTap
 end
 
 

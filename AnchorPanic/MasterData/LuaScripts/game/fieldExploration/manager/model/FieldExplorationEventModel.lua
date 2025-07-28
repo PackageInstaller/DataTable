@@ -45,36 +45,4 @@ function setVisible(self, beVisible)
     end
 end
 
-function setPositionTween(self, lpos, tweenTime, callback)
-    if not lpos then return end
-    if self.m_position == lpos then return end
-    self.m_position:copy(lpos)
-
-    if self.posTweener then
-        self.posTweener:Kill()
-        self.posTweener = nil
-    end
-    if self.m_trans and lpos then
-        self.posTweener = TweenFactory:move2pos(self.m_trans, lpos, tweenTime, nil, callback)
-    end
-end
-
-function setAngle(self, angle, isNow, callback)
-    if isNow then
-        self:stopTurnAngle()
-        self.m_angle = angle
-        gs.TransQuick:SetRotation(self.m_trans, 0, angle, 0)
-        if callback then 
-            callback()
-        end
-    else
-        if angle ~= self.m_angle then
-            self:stopTurnAngle()
-            self.m_angle = angle
-            self.m_angle_tweener = TweenFactory:rotate(self.m_trans, math.Vector3(0, self.m_angle, 0), 0.3, callback)
-            fight.TweenManager:addTweener(self.m_angle_tweener)
-        end
-    end
-end
-
 return _M

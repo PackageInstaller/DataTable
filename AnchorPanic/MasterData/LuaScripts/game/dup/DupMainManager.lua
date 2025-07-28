@@ -85,7 +85,7 @@ end
 function getIsMatchActivityMoney(self, dupType)
     local isMatch = false
     local list = sysParam.SysParamManager:getValue(SysParamType.DUP_DROP_ACTIVITYMONEY_lIST)
-    if table.indexof(list, dupType) and activity.ActivityManager:getActivityVoById(activity.ActivityId.MainActivity) then
+    if table.indexof(list, dupType) and activity.ActivityManager:getActivityVoById(activity.ActivityId.NomalLevel) then
         isMatch = true
     end
     return isMatch

@@ -34,9 +34,6 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.FIGHT_RESULT_SHOW_BEFORE_UI, self._openTheBeforeUI, self)
     GameDispatcher:addEventListener(EventName.FIGHT_REQUEST_FLY, self.onRequestFlyHandler, self)
     GameDispatcher:addEventListener(EventName.OPEN_FIGHT_SKILL_TIPS, self.onShowFightSkillTips, self)
-    GameDispatcher:addEventListener(EventName.OPEN_FORCES_SKILL_TIPS, self.onShowForcesSkillTips, self)
-    GameDispatcher:addEventListener(EventName.CLOSE_FORCES_SKILL_TIPS, self.onCloseForcesSkillTips, self)
-
     GameDispatcher:addEventListener(EventName.EXIT_SCENE_AFTER_OPEN_PANEL, self.exitSceneAfterOpenPanel, self)
     GameDispatcher:addEventListener(EventName.FIGHT_RESULT_PREVIEW_SHOW, self.onShowPreviewHanlder, self)
     GameDispatcher:addEventListener(EventName.SHOW_FIGHT_BLACK_MASK, self.onShowFightBlackHanlder, self)
@@ -64,7 +61,6 @@ end
 -- 战斗结果返回 战斗结果（0:无效的战斗,1:胜利,2:失败）
 function onFightResultShowHandler(self)
     self:onHideFightHandler()
-    self:onCloseForcesSkillTips()
     self:onCloseFightSkillTips()
     if fight.FightManager:getLatestBattleType() == PreFightBattleType.Arena_Peak_Pvp and not fight.FightManager:isReplaying() then
 
@@ -78,19 +74,6 @@ function onFightResultShowHandler(self)
             return
         end
     end
-
-    if fight.FightManager:getLatestBattleType() == PreFightBattleType.GuildWar and not fight.FightManager:isReplaying() then
-        local fightResult = fight.FightManager:getResultData()
-        if fightResult and fightResult.args[1] == 1 then
-            GameDispatcher:dispatchEvent(EventName.EXIT_FIGHT_END_RESET)
-            -- 巅峰pvp
-            map.MapLoader:resetMapCtrl()
-
-            fight.FightManager:reqBattleEnter(PreFightBattleType.GuildWar, fight.FightManager:getLatestBattleFieldIDStr())
-            return
-        end
-    end
-
     if fight.FightManager.m_manualExitReplay == true then
         GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_PANEL_OVER, {isWin = true})
     else
@@ -241,7 +224,7 @@ end
 -- 战斗结束打开对应的功能界面
 function _openTheBeforeUI(self)
 
-    -- print("_openTheBeforeUI ======== ", self.m_beforeFlagDirty, self.m_lastBattleType, self.m_lastTargetID)
+    print("_openTheBeforeUI ======== ", self.m_beforeFlagDirty, self.m_lastBattleType, self.m_lastTargetID)
     if self.m_beforeFlagDirty == false then
         return
     end
@@ -298,7 +281,7 @@ function _openTheBeforeUI(self)
         elseif self.m_lastBattleType == PreFightBattleType.DupOldEquip then
             GameDispatcher:dispatchEvent(EventName.OPEN_DUP_OLD_EQUIP_PANEL)
         elseif self.m_lastBattleType == PreFightBattleType.HeroTrial then
-            GameDispatcher:dispatchEvent(EventName.OPEN_MAINACTIVITY_TRIAL_PANEL, {dupId = self.m_lastTargetID})
+            GameDispatcher:dispatchEvent(EventName.OPEN_MAINACTIVITY_TRIAL_PANEL)
 
         elseif self.m_lastBattleType == PreFightBattleType.DupMoney then
             GameDispatcher:dispatchEvent(EventName.OPEN_MAINPLAY_PANEL, {type = mainPlay.MainPlayConst.MAINPLAY_DUP})
@@ -369,9 +352,6 @@ function _openTheBeforeUI(self)
                 -- 回放额外打开记录
                 GameDispatcher:dispatchEvent(EventName.OPEN_ARENA_HELL_HIS_PANEL)
             end
-        elseif self.m_lastBattleType == PreFightBattleType.GuildWar then
-            GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Guild})
-            GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_MAIN_PANEL)
         elseif self.m_lastBattleType == PreFightBattleType.HeroBiography then
             local dupId = self.m_lastTargetID
             local biographyVo = battleMap.BiographyManager:getBiographyVoById(dupId)
@@ -508,7 +488,7 @@ function _openTheBeforeUI(self)
             GameDispatcher:dispatchEvent(EventName.OPEN_GUILDBOSSIMITATE_STAGEPANEL)
         elseif self.m_lastBattleType == PreFightBattleType.Seabed then
             GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_MAIN_PANEL)
-
+            
             local hasData = seabed.SeabedManager:getSeabedHasSettleData()
             if hasData == false then
                 GameDispatcher:dispatchEvent(EventName.CAN_SEABED_NEED_PANEL)
@@ -596,10 +576,7 @@ function onOpenWinViewHandler(self, msg)
         msg.state = arenaEntrance.ResultState.WIN
         GameDispatcher:dispatchEvent(EventName.OPEN_ARENA_HELL_RESULT_PANEL, msg)
         return
-    elseif battleType == PreFightBattleType.GuildWar then
-        msg.state = guildWar.ResultState.WIN
-        GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_RESULT_PANEL, msg)
-        return
+
     elseif battleType == PreFightBattleType.Cycle then
         if cycle.CycleManager:getResourceInfo().reason_point == 0 then
             GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_PANEL_OVER, {
@@ -698,10 +675,6 @@ function onOpenFailViewHandler(self, msg)
         msg.state = arenaEntrance.ResultState.LOSE
         GameDispatcher:dispatchEvent(EventName.OPEN_ARENA_HELL_RESULT_PANEL, msg)
         return
-    elseif battleType == PreFightBattleType.GuildWar then
-        msg.state = msg.result
-        GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_RESULT_PANEL, msg)
-        return
     end
 
     --无限城的失败就直接失败 不显示战败页面
@@ -767,25 +740,6 @@ end
 function onDestroyFightSkillTips(self)
     self.mFightSkillTips:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFightSkillTips, self)
     self.mFightSkillTips = nil
-end
-
-function onShowForcesSkillTips(self, args)
-    if self.mForcesSkillTips == nil then
-        self.mForcesSkillTips = fightUI.FightForcesSkillTips.new()
-        self.mForcesSkillTips:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyForcesSkillTips, self)
-    end
-    self.mForcesSkillTips:open(args)
-end
-
-function onCloseForcesSkillTips(self)
-    if self.mForcesSkillTips and self.mForcesSkillTips.isPop == 1 then
-        self.mForcesSkillTips:close()
-    end
-end
-
-function onDestroyForcesSkillTips(self)
-    self.mForcesSkillTips:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyForcesSkillTips, self)
-    self.mForcesSkillTips = nil
 end
 
 function onShowPreviewHanlder(self, args)

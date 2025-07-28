@@ -413,7 +413,6 @@ function _playWinAction(self, act)
         end
     end
 
-    fight.FightCamera:resetTranparency()
     fight.FightManager:popRoleAction()
 
     local thing = fight.SceneItemManager:getLivething(liveId)
@@ -445,8 +444,6 @@ function _playWinAction(self, act)
             end
             local liveTid = liveVo.tid
             LoopManager:setTimeout(useTime, self, function()
-                thing:setIsHitModel(false)
-                liveVo:setVisible(true)
                 thing:setDofPrepare()
 
                 fight.FightManager:updateTimeScale(1)
@@ -502,10 +499,6 @@ function moveNext(self)
     if self.m_waitingBack == true then return end
     -- 在后退中 或 技能还未播放完成 或暂停中
     if self.m_curSkillAI or (actionData._actType ~= fight.FightDef.ACTION_TYPE_RESULT and (self.m_actioning == true or self.m_pauseAction == true)) then
-        return
-    end
-    -- 在等待效果演出，不继续
-    if fight.FightActionPlayer.curBeforePriority ~= nil then
         return
     end
 

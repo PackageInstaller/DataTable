@@ -559,7 +559,7 @@ function onStartUseSkill(self, cameraPos)
                         --         self.m_attacker_vo:moveTo(targetPos, aniLenght)
                         --     end
                         -- end
-                        if cameraPos and self.m_skillRo:getCameraFocus() ~= 1 then
+                        if cameraPos then
                             -- 技术镜头展示
                             local skillCameraType = fight.SkillManager:getSkillCameraType(self.m_skillRo:getRefID())
                             if self.m_attacker_vo:isAttacker() == self.m_main_target_vo:isAttacker() then
@@ -574,7 +574,7 @@ function onStartUseSkill(self, cameraPos)
                             self:setTimeout(2, self, self.jumpSkill)
                             return
                         end
-                        -- self.resetTimeout = self:setTimeout(aniLenght + 0.1, self, self.reset)
+                        self.resetTimeout = self:setTimeout(aniLenght + 0.1, self, self.reset)
                         return
                     end
                     self:setTimeout(1, self, self.reset)
@@ -596,19 +596,15 @@ function onStartUseSkill(self, cameraPos)
         else
 
             local _endCall = function()
-                -- if self.resetTimeout then
-                --     self:clearTimeout(self.resetTimeout)
-                -- end
-                if self.m_isJumpCamera and self.m_skillRo:getIsScene() == 1 then
-                    -- 跳过技能不回调
-                else
-                    self:reset()
+                if self.resetTimeout then
+                    self:clearTimeout(self.resetTimeout)
                 end
+                self:reset()
             end
             if self.m_skillRo:getCameraFocus() == 1 and not self.m_isJumpCamera then
                 local switchFinishCall = function()
                     -- 奥义动作完成结束技能比较准
-                    self.m_attacker_vo:transAni(hash, _startCall, _endCall, true)
+                    self.m_attacker_vo:transAni(hash, _startCall, _endCall)
                 end
                 switchFinishCall()
                 -- 奥义切换高模
@@ -616,13 +612,13 @@ function onStartUseSkill(self, cameraPos)
             else
                 if self.m_skillRo:getCameraFocus() == 1 then
                     local switchFinishCall = function()
-                        self.m_attacker_vo:transAni(hash, _startCall, _endCall, true)
+                        self.m_attacker_vo:transAni(hash, _startCall)
                     end
                     switchFinishCall()
                     -- 奥义切换高模
                     -- self.m_liveObj:switchHighModel(switchFinishCall)
                 else
-                    self.m_attacker_vo:transAni(hash, _startCall, _endCall, true)
+                    self.m_attacker_vo:transAni(hash, _startCall)
                 end
             end
         end
@@ -691,7 +687,7 @@ function getAttckerPos(self, targetVo)
     local skillCameraType = fight.SkillManager:getSkillCameraType(self.m_skillRo:getRefID())
     local dis = self:getAttackerDist()
 
-    if self.m_skillRo:getCameraFocus() == 1 and (skillCameraType == 2 or skillCameraType == 8) then
+    if self.m_skillRo:getCameraFocus() == 1 and (skillCameraType == 2 or skillCameraType == 8 or dis == 999) then
         -- 奥义全体技能默认站战场中间
         targetPos = fight.SceneManager:getCenterPos()
 
@@ -746,9 +742,6 @@ function getCameraPos(self, targetPos, targetVo)
         -- elseif skillCameraType == 7 then
         --     cameraPos = self:getGridCenter()
         --     cameraPos = math.Vector3(cameraPos.x, cameraPos.y, cameraPos.z + targetPos.z)
-    elseif skillCameraType == 8 then
-        cameraPos = self:getGridCenter()
-        cameraPos = math.Vector3(cameraPos.x, cameraPos.y, cameraPos.z + targetPos.z)
     else
         if targetPos then
             cameraPos = (targetPos + targetVo.position) * 0.5
@@ -1055,9 +1048,7 @@ function _playEftList(self, efts, aniLenght)
 
             if hero_list then
                 for i, targetVo in ipairs(hero_list) do
-                    if not self.m_skillRo or (self.m_skillRo:getSkillTarget() == 0 and targetVo.hero_id == self.m_attacker_vo.id) then
-                        -- 对敌方的技能受击效果不包括自己
-                    else
+                    if targetVo.hero_id ~= self.m_attacker_vo.id then
                         travel = STravelFactory:travel02(self:skillID(), 3, self.m_attacker_vo.id, (targetVo.hero_id or targetVo.id))
                         onStarTravel(travel)
                     end

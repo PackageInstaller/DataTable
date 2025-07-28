@@ -98,23 +98,28 @@ end
 
 function __onPlayStoryPicHandler(self, args)
     if self.mFinishPic == nil then
-        local viewClasses = {
-            [1] = battleMap.MainMapFinish01View,
-            [2] = battleMap.MainMapFinish02View,
-            [3] = battleMap.MainMapFinish03View,
-            [4] = battleMap.MainMapFinish04View,
-            [5] = battleMap.MainMapFinish05View,
-            [6] = battleMap.MainMapFinish06View,
-            [7] = battleMap.MainMapFinish07View,
-            [8] = battleMap.MainMapFinish08View,
-            [9] = battleMap.MainMapFinish09View,
-            [10] = battleMap.MainMapFinish10View,
-            [11] = battleMap.MainMapFinish11View,
-            [12] = battleMap.MainMapFinish12View
-        }
+        if args.id == 1 then
+            self.mFinishPic = battleMap.MainMapFinish01View.new()
+        elseif args.id == 2 then
+            self.mFinishPic = battleMap.MainMapFinish02View.new()
+        elseif args.id == 3 then
+            self.mFinishPic = battleMap.MainMapFinish03View.new()
+        elseif args.id == 4 then
+            self.mFinishPic = battleMap.MainMapFinish04View.new()
+        elseif args.id == 5 then
+            self.mFinishPic = battleMap.MainMapFinish05View.new()
+        elseif args.id == 6 then
+            self.mFinishPic = battleMap.MainMapFinish06View.new()
+        elseif args.id == 7 then
+            self.mFinishPic = battleMap.MainMapFinish07View.new()
+        elseif args.id == 8 then
+            self.mFinishPic = battleMap.MainMapFinish08View.new()
+        elseif args.id == 9 then
+            self.mFinishPic = battleMap.MainMapFinish09View.new()
+        else
+            self.mFinishPic = battleMap.MainMapFinish01View.new()
+        end
 
-        local viewClass = viewClasses[args.id]
-        self.mFinishPic = viewClass.new() -- 动态加载类并创建实例，确保正确的类名和路径
         self.mFinishPic:addEventListener(View.EVENT_VIEW_DESTROY, self.__onDestroyPlayStoryHandler, self)
     end
     self.mFinishPic:setCallFinish(args.callback)

@@ -3,8 +3,6 @@
 local fight_show_data=
 
 {
-	["0000"]={ dist=9999, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
 	["1102"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["1102_h"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
@@ -22,8 +20,6 @@ local fight_show_data=
 	["1105_h"]={ dist=4, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["1105_1"]={ dist=4, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["1105_2"]={ dist=4, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["1501"]={ dist=4, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
@@ -105,8 +101,6 @@ local fight_show_data=
 },
 	["2502_1"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
-	["2502_2"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
 	["2503"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["2503_h"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
@@ -114,8 +108,6 @@ local fight_show_data=
 	["2504"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["2504_h"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["2504_2"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["3101"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
@@ -160,8 +152,6 @@ local fight_show_data=
 	["3108_2_h"]={ dist=4, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["3108_3"]={ dist=4, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["3108_4"]={ dist=4, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["3109"]={ dist=4, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
@@ -223,8 +213,6 @@ local fight_show_data=
 },
 	["4105_2"]={ dist=3, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
-	["4105_3"]={ dist=3, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
 	["4106"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4106_h"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
@@ -251,8 +239,6 @@ local fight_show_data=
 },
 	["4107_2_h"]={ dist=4, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
-	["4107_3"]={ dist=4, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
 	["4108"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4108_h"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
@@ -260,8 +246,6 @@ local fight_show_data=
 	["4108_2"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4108_2_h"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4108_3"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4501"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
@@ -275,8 +259,6 @@ local fight_show_data=
 },
 	["4501_2_h"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
-	["4501_3"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
 	["4502"]={ dist=4, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4502_h"]={ dist=4, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
@@ -289,8 +271,6 @@ local fight_show_data=
 },
 	["4502_2_h"]={ dist=4, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
-	["4502_3"]={ dist=4, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
 	["4503"]={ dist=3, weapon_node=2, need_weapon=1, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4503_h"]={ dist=3, weapon_node=2, need_weapon=1, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
@@ -301,10 +281,6 @@ local fight_show_data=
 },
 	["4503_2"]={ dist=3, weapon_node=2, need_weapon=1, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
-	["4503_3"]={ dist=3, weapon_node=2, need_weapon=1, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4503_4"]={ dist=3, weapon_node=2, need_weapon=1, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
 	["4504"]={ dist=0, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4504_h"]={ dist=0, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
@@ -314,8 +290,6 @@ local fight_show_data=
 	["4504_1_h"]={ dist=0, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4504_2"]={ dist=0, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4504_3"]={ dist=0, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4505"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
@@ -341,8 +315,6 @@ local fight_show_data=
 },
 	["4506_3"]={ dist=4, weapon_node=2, need_weapon=1, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
-	["4506_4"]={ dist=4, weapon_node=2, need_weapon=1, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
 	["4507"]={ dist=3, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4507_h"]={ dist=3, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
@@ -352,10 +324,6 @@ local fight_show_data=
 	["4507_1_h"]={ dist=3, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4507_2"]={ dist=3, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4507_3"]={ dist=3, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4507_4"]={ dist=4, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4508"]={ dist=0, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
@@ -371,8 +339,6 @@ local fight_show_data=
 },
 	["4509_2"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
-	["4509_3"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
 	["4510"]={ dist=4, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4510_2"]={ dist=4, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
@@ -380,8 +346,6 @@ local fight_show_data=
 	["4511"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4511_2"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4511_3"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4512"]={ dist=0, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
@@ -393,69 +357,17 @@ local fight_show_data=
 },
 	["4513_2"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
-	["4513_3"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
 	["4514"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4514_2"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4514_3"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4515"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4515_2"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
-	["4515_3"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
 	["4516"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["4516_2"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4516_3"]={ dist=2, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4517"]={ dist=6, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4517_2"]={ dist=6, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4517_3"]={ dist=6, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4518"]={ dist=3, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4518_2"]={ dist=3, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4518_3"]={ dist=3, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4519"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4519_2"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4519_3"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4520"]={ dist=3, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4520_2"]={ dist=3, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4520_3"]={ dist=3, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4521"]={ dist=0, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4521_2"]={ dist=0, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4522"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4522_2"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4522_3"]={ dist=0, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4523"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4523_2"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4523_3"]={ dist=2, weapon_node=2, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4524"]={ dist=0, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
-},
-	["4524_2"]={ dist=0, weapon_node=1, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
 	["6101"]={ dist=2, weapon_node=0, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=0
 },
@@ -1166,14 +1078,6 @@ local fight_show_data=
 	["6316_g"]={ dist=999, weapon_node=0, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=1
 },
 	["6316_g_2"]={ dist=999, weapon_node=0, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=1
-},
-	["6316_h"]={ dist=999, weapon_node=0, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=1
-},
-	["6316_h_2"]={ dist=999, weapon_node=0, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=1
-},
-	["6316_d"]={ dist=999, weapon_node=0, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=1
-},
-	["6316_d_2"]={ dist=999, weapon_node=0, need_weapon=0, target_camera_point={}, target_camera_rotation={}, extra_dist=0, lock_camera=1
 }
 }
 

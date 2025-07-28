@@ -108,8 +108,6 @@ function configUI(self)
     self.mTextLiveInter = self:getChildGO("mTextLiveInter"):GetComponent(ty.Text)
     self.mTextLiveMove = self:getChildGO("mTextLiveMove"):GetComponent(ty.Text)
 
-    self.mEditorSuit = self:getChildGO("mEditorSuit")
-
     self.mItemBubble:SetActive(false)
     self.mGroupLiveOption:SetActive(false)
     self.mGroupBring:SetActive(false)
@@ -139,16 +137,6 @@ end
 --激活
 function active(self, args)
     super.active(self)
-
-    if GameManager.IS_DEBUG and not GameManager.HIDE_DEBUG_INFO then
-        self.mEditorSuit:SetActive(true)
-    else
-        self.mEditorSuit:SetActive(false)
-    end
-
-    if gs.Application.isEditor then
-        dormitory.DormitoryFurnitureItem = require("game/dormitory/view/item/DormitoryFurnitureItem")
-    end
 
     self.m_RoomId = args
 
@@ -382,15 +370,7 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnHideUI, self.onHideUI)
 
     self:addUIEvent(self.mBtnInteract, self.onInteract)
-
-    self:addUIEvent(self.mEditorSuit, self.onEditorSaveSuit)
 end
-
---保存当前家具套装
-function onEditorSaveSuit(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_EDITORSAVE_VIEW)
-end
-
 --打开规则说明界面
 function onClickFuncTipsHandler(self)
     GameDispatcher:dispatchEvent(EventName.OPEN_FUNCTIPS_VIEW, {id = LinkCode.Dormitory})
@@ -831,11 +811,6 @@ function getMenuList(self)
 
         table.insert(list, {id = v.id, page = v.type, nomalLanId = v.langId, nomalLanEn = count, sort = v.sort, nomalIcon = string.format("arts/ui/pack/dormitory/%s.png", v.icon)})
     end
-
-    -- 插入套装页签
-    local count = dormitory.DormitoryManager:getAllSuitCount()
-    table.insert(list, {id = 0, page = 999, nomalLanId = 49722, nomalLanEn = count, sort = 0, nomalIcon = "arts/ui/pack/dormitory/item_furniture_tz.png"})
-
     table.sort(list, function(a, b)
         return a.sort < b.sort
     end)
@@ -855,7 +830,27 @@ end
 
 -- 全部收纳
 function onAllStorage(self)
-    DormitoryCost.all_Storage()
+    local list = dormitory.DormitoryManager:getMoveInfoList()
+    for i, v in ipairs(list) do
+        dormitory.DormitorySceneController:storageFuniture(v.id, v.tid)
+    end
+
+    local list = dormitory.DormitoryManager:getFurnitureListByDormitory()
+    if not list then
+        return
+    end
+    for i, furnitureVo in ipairs(list) do
+        local propsVo = props.PropsVo:poolGet()
+        propsVo:setTid(furnitureVo.tid)
+        propsVo.id = furnitureVo.id
+        if propsVo.subType ~= DormitoryCost.FLOOR_SUBTYPE and propsVo.subType ~= DormitoryCost.TOP_SUBTYPE or propsVo.subType ~= DormitoryCost.WALL_SUBTYPE then
+            -- 排除默认墙、地板、天花板
+            dormitory.DormitorySceneController:storageFuniture(furnitureVo.id, furnitureVo.tid)
+        end
+    end
+
+    dormitory.DormitoryManager:clearAllFurniture()
+    GameDispatcher:dispatchEvent(EventName.DORMITORY_ALL_STORAGE)
 
     self:updateTab()
 end
@@ -995,43 +990,32 @@ end
 -- 更新家具菜单列表
 function upateFurnitureListItem(self, refrePos)
     if self.mSelectSubType then
+        local list = dormitory.DormitoryManager:getSubtypeFurniture(self.mSelectSubType)
+
         local data = {}
-        if self.mSelectSubType == 999 then --套装
-            local list = dormitory.DormitoryManager:getSuitDic()
-            for k, v in pairs(list) do
-                table.insert(data, v)
-            end
-
-            table.sort(data, function(a, b)
-                return a.id < b.id
-            end)
-
-        else
-            local list = dormitory.DormitoryManager:getSubtypeFurniture(self.mSelectSubType)
-            for id, propInfo in pairs(list) do
-                table.insert(data, propInfo)
-            end
-
-            table.sort(data, function(a, b)
-                -- if a.useing and b.useing then
-                --     if a.useing == b.useing then
-                --         return a.tid < b.tid
-                --     else
-                --         return a.useing > b.useing
-                --     end
-                -- elseif not a.useing and not b.useing then
-                --     return a.tid < b.tid
-                -- else
-                --     if not a.useing then
-                --         return false
-                --     elseif not b.useing then
-                --         return true
-                --     end
-                -- end
-
-                return a.tid < b.tid
-            end)
+        for id, propInfo in pairs(list) do
+            table.insert(data, propInfo)
         end
+
+        table.sort(data, function(a, b)
+            -- if a.useing and b.useing then
+            --     if a.useing == b.useing then
+            --         return a.tid < b.tid
+            --     else
+            --         return a.useing > b.useing
+            --     end
+            -- elseif not a.useing and not b.useing then
+            --     return a.tid < b.tid
+            -- else
+            --     if not a.useing then
+            --         return false
+            --     elseif not b.useing then
+            --         return true
+            --     end
+            -- end
+
+            return a.tid < b.tid
+        end)
 
         -- if (self.mScroll2LyScroll.Count <= 0) then
         if refrePos or self.mScroll2LyScroll.Count <= 0 then

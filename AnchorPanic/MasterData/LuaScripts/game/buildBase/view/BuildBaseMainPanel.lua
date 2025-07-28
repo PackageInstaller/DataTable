@@ -27,9 +27,6 @@ function initData(self)
     self.canSelectPos = 0
 
     self.isEditor = false
-
-    self.ONE_KEY_CD_TIME = 5
-    self.currCdTime = 0
 end
 
 -- 初始化
@@ -37,7 +34,6 @@ function configUI(self)
     super.configUI(self)
 
     self.mBtnAll = self:getChildGO("mBtnAll")
-    self.mBtnWork = self:getChildGO("mBtnWork")
     self.mBtnEditor = self:getChildGO("mBtnEditor")
     self.mBtnAllPre = self:getChildGO("mBtnAllPre")
     self.mBtnFuncTips = self:getChildGO("mBtnFuncTips")
@@ -77,7 +73,7 @@ function active(self)
     -- self.isEditor = false
     self.selectPos = 0
     self.mMaskImg:SetActive(false)
-    MoneyManager:setMoneyTidList({ MoneyTid.UAV_TID, MoneyTid.POWER_TID, MoneyTid.TITANITE_TID })
+    MoneyManager:setMoneyTidList({MoneyTid.UAV_TID, MoneyTid.POWER_TID, MoneyTid.TITANITE_TID})
     buildBase.BuildBaseManager:addEventListener(buildBase.BuildBaseManager.SHOW_POWER_TIPS, self.onOpenPowerTips, self)
     GameDispatcher:addEventListener(EventName.UPDATE_BUILDBASE_PANEL_LEVEL_UP, self.onBuildBaseLevelUpHandler, self)
 
@@ -102,11 +98,6 @@ function active(self)
     -- bag.BagManager:addEventListener(bag.BagManager.BAG_UPDATE, self.bindRoomUI, self)
 
     self.mCamAni = gs.GameObject.Find("RotateTrans"):GetComponent(ty.Animator)
-
-    local centerLv = buildBase.BuildBaseManager:getShipLv(buildBase.BuildBaseType.ControllerCenter)
-    local limitLv = sysParam.SysParamManager:getValue(SysParamType.OPEN_ONE_KEY_WORK) --开放一键入驻等级
-    self.mBtnWork:SetActive(centerLv >= limitLv)
-    self.currCdTime = 0
 end
 
 -- 设置货币栏
@@ -144,20 +135,20 @@ function onClickPos(self, pos)
             if (buildType == buildBase.BuildBaseType.Laboratory or buildType == buildBase.BuildBaseType.Smelters or
             buildType == buildBase.BuildBaseType.Factory) and
             buildBase.BuildBaseManager:getBuildBaseData(pos).produce > 0 then
-                self:onClickGetHandler(pos)
-                -- GameDispatcher:dispatchEvent(EventName.REQ_BUILDBASE_AWARD, {
-                --     id = pos
-                -- })
-                return
+            self:onClickGetHandler(pos)
+            -- GameDispatcher:dispatchEvent(EventName.REQ_BUILDBASE_AWARD, {
+            --     id = pos
+            -- })
+            return
 
-            end
-
-            GameDispatcher:dispatchEvent(EventName.ENTER_BUILDBASE_ROOMSCENE, {
-                id = pos
-            })
         end
+
+        GameDispatcher:dispatchEvent(EventName.ENTER_BUILDBASE_ROOMSCENE, {
+            id = pos
+        })
     end
-    self:updateEditorUI()
+end
+self:updateEditorUI()
 end
 
 -- 反激活（销毁工作）
@@ -281,7 +272,7 @@ function bindRoomUI(self)
         if datas.isActive then
             -- 存在可领取的状态
             if buildType == buildBase.BuildBaseType.Laboratory or buildType == buildBase.BuildBaseType.Smelters or
-            buildType == buildBase.BuildBaseType.Factory then
+                buildType == buildBase.BuildBaseType.Factory then
                 if (buildBase.BuildBaseManager:getBuildBaseData(pos).produce ~= 0) then
                     local image = item:getChildGO("mGetValue"):GetComponent(ty.Image)
 
@@ -381,7 +372,7 @@ function updateUI(self)
 
             -- gs.TransQuick:SizeDelta01(datas.uiObj:getChildGO("mBg"):getComponent(ty.RectTransform), 150)
 
-            gs.TransQuick:UIPos(datas.uiObj.m_trans, pos.x - 9, pos.y + (self.isEditor and -100 or 100))
+            gs.TransQuick:UIPos(datas.uiObj.m_trans, pos.x - 9, pos.y + (self.isEditor and - 100 or 100))
 
         end
     end
@@ -496,15 +487,6 @@ function claerPosLevelData(self)
     self.mPosLevelDataDic = {}
 end
 
---[[ 
-    初始化界面的静态文本，图片字
-    每次打开界面都会重新读取，多语言切换时可以及时更新
-]]
-function initViewText(self)
-    self:setBtnLabel(self.mBtnWork, 76209, "一键入驻")
-end
-
-
 -- UI事件管理(关闭界面会自动移除)
 function addAllUIEvent(self)
     self:addUIEvent(self.mBtnAllPre, self.onBtnAllPreClick)
@@ -514,12 +496,11 @@ function addAllUIEvent(self)
         self.m_childGos["mTipsPower"]:SetActive(false)
     end)
     self:addUIEvent(self.mBtnAll, self.onBtnAllClick)
-    self:addUIEvent(self.mBtnWork, self.onKeyWork)
 end
 
 --打开规则说明界面
 function onClickFuncTipsHandler(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_FUNCTIPS_VIEW, { id = LinkCode.Covenant })
+    GameDispatcher:dispatchEvent(EventName.OPEN_FUNCTIPS_VIEW, {id = LinkCode.Covenant})
 end
 
 function onBtnAllClick(self)
@@ -653,102 +634,6 @@ function onOpenPowerTips(self)
         self.mTitlePower = self.m_childGos["mTitlePower"]:GetComponent(ty.Text)
     end
     self.mTitlePower.text = _TT(76186)
-end
-
--- 一键排班
-function onKeyWork(self)
-    if self.currCdTime > 0 and os.time() - self.currCdTime < self.ONE_KEY_CD_TIME then
-        gs.Message.Show(string.format("%s秒后再试", self.ONE_KEY_CD_TIME - (os.time() - self.currCdTime)))
-        return
-    end
-    self.currCdTime = os.time()
-    local tempWorkList = {}
-    local workSendList = {}
-    buildBase.BuildBaseHeroManager:clearAllSettleHero()
-    local staminaMax = sysParam.SysParamManager:getValue(5001)
-    local dataList = buildBase.BuildBaseManager:getAllBuildBaseDataList()
-    for k, baseVo in pairs(dataList) do
-        local list = {}
-        local tempList = {}
-        local buildId = baseVo.id
-        local buildType = buildBase.BuildBaseManager:getBuildType(buildId)
-        if buildType ~= buildBase.BuildBaseType.Dormitory then
-
-            buildBase.BuildBaseHeroManager:setSortBuildType(buildType)
-            local heroList = showBoard.ShowBoardManager:getHeroScrollList()
-            table.sort(heroList, buildBase.BuildBaseHeroManager.sortRelateSkillFunc)
-            -- heroList = buildBase.BuildBaseHeroManager:getSorHeroScrollList(heroList)
-            for _, heroSelectVo in ipairs(heroList) do
-                if table.indexof(tempWorkList, heroSelectVo:getDataVo().tid) == false then
-
-                    local buildBaseHeroMsgVo = buildBase.BuildBaseHeroManager:getBuildHeroInfo(heroSelectVo:getDataVo().tid)
-                    for _, warshipSkillVo in pairs(buildBaseHeroMsgVo.skillList) do
-                        local orderVo = buildBase.BuildBaseManager:getFacInfo(buildId)
-                        local orderType = (orderVo and orderVo.orderType > 0) and orderVo.orderType or nil
-                        local skillVo = buildBase.BuildBaseHeroManager:getSkillConfigBySkillId(warshipSkillVo.skill_id)
-                        if skillVo.produceType == orderType and buildBaseHeroMsgVo.stamina > 0 then
-                            table.insert(tempList, heroSelectVo)
-                            break
-                        end
-                        if skillVo.produceType ~= orderType and buildBaseHeroMsgVo.stamina > 0 then
-                            table.insert(list, heroSelectVo)
-                            break
-                        end
-                    end
-                end
-            end
-
-            if not table.empty(tempList) then
-                for i = #tempList, 1 do
-                    table.insert(list, 1, tempList[i])
-                end
-            end
-
-            local curLvBuildVo = buildBase.BuildBaseManager:getCurLvBuildConfigd(buildId)
-            local upLimit = curLvBuildVo.num
-
-            local sendList = {}
-            local len = math.min(upLimit, #list)
-            for i = 1, len do
-                table.insert(sendList, { hero_tid = list[i]:getDataVo().tid, pos = i })
-                table.insert(tempWorkList, list[i]:getDataVo().tid)
-            end
-
-            table.insert(workSendList, { build_id = buildId, hero_list = sendList })
-            -- GameDispatcher:dispatchEvent(EventName.REQ_BUILDBASE_HEROLIST, { build_id = buildId, hero_list = sendList })
-        end
-    end
-
-    -- 宿舍最后跑一遍
-    for k, baseVo in pairs(dataList) do
-        local list = {}
-        local buildId = baseVo.id
-        local buildType = buildBase.BuildBaseManager:getBuildType(buildId)
-        local heroList = showBoard.ShowBoardManager:getHeroScrollList(nil, showBoard.panelSortType.STAMINA, false)
-
-        if buildType == buildBase.BuildBaseType.Dormitory then
-            for _, heroSelectVo in ipairs(heroList) do
-                if table.indexof(tempWorkList, heroSelectVo:getDataVo().tid) == false then
-                    table.insert(list, heroSelectVo)
-                end
-            end
-
-            local curLvBuildVo = buildBase.BuildBaseManager:getCurLvBuildConfigd(buildId)
-            local upLimit = curLvBuildVo.num
-
-            local sendList = {}
-            local len = math.min(upLimit, #list)
-            for i = 1, len do
-                table.insert(sendList, { hero_tid = list[i]:getDataVo().tid, pos = i })
-                table.insert(tempWorkList, list[i]:getDataVo().tid)
-            end
-            table.insert(workSendList, { build_id = buildId, hero_list = sendList })
-            -- GameDispatcher:dispatchEvent(EventName.REQ_BUILDBASE_HEROLIST, { build_id = buildId, hero_list = sendList })
-        end
-    end
-    buildBase.BuildBaseHeroManager:onOneKeyWorkSend(workSendList)
-    -- gs.Message.Show("一键入驻完成")
-    gs.Message.Show(_TT(76210))
 end
 
 return _M

@@ -30,8 +30,8 @@ function parseData(self, cusId, cusData)
     self.suggestEle = cusData.suggest_ele
     --战场环境id
     self.posEffectId = cusData.pos_effect_id
-    
-    self.isLock = cusData.lock_formation
+
+
 end
 
 function getSceneId(self)
@@ -40,7 +40,7 @@ end
 
 --获取当前副本对应的阵型ID
 function getFormationId(self)
-    return self.isLock == 1 and self.formationId or 0
+    return self.mIsLock
 end
 
 function getMusicId(self)

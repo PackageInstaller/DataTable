@@ -104,12 +104,6 @@ function onClickQuit(self)
         return
     end
 
-    if fight.FightManager:getBattleType() == PreFightBattleType.GuildWar and fight.FightManager:isReplaying() == false then
-        -- gs.Message.Show("当前战斗不可以中途退出哦")
-        gs.Message.Show(_TT(92022))
-        return
-    end
-
     if fight.FightManager:isReplaying() then
         fight.FightManager:setManualExitReplay(true)
         fight.FightManager:reqBattleQuit()
@@ -165,7 +159,6 @@ end
 function updateFight(self)
     self:recoverItem()
     self.mBtnQuit:GetComponent(ty.Button).interactable = fight.FightManager:getBattleType() ~= PreFightBattleType.Arena_Peak_Pvp
-
     --self.mBtnQuit:SetActive(fight.FightManager:getBattleType() ~= PreFightBattleType.Arena_Peak_Pvp)
 
     for i, v in ipairs(self.SETTING_ITEM1_INFOs) do

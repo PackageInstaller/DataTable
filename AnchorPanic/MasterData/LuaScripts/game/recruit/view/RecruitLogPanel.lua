@@ -16,7 +16,7 @@ end
 
 -- 初始化数据
 function initData(self)
-    self.m_recruitId = nil
+    self.m_recruitType = nil
 
     self.mCurPage = 1
 end
@@ -44,7 +44,7 @@ end
 function active(self, args)
     super.active(self, args)
     GameDispatcher:addEventListener(EventName.UPDATE_RECRUIT_LOG, self.__onUpdateLogHandler, self)
-    self.m_recruitId = args.recruitId
+    self.m_recruitType = args.recruitType
 
     self:requestLog()
     self:setData()
@@ -97,15 +97,15 @@ function onNextPage(self)
 end
 
 function __onUpdateLogHandler(self, args)
-    local recruit_id = args.recruit_id
-    if (recruit_id == self.m_recruitId) then
+    local type = args.type
+    if (type == self.m_recruitType) then
         self:setData()
         self:udpateView()
     end
 end
 
 function setData(self)
-    self.mLogData = recruit.RecruitManager:getRecruitLogList(self.m_recruitId)
+    self.mLogData = recruit.RecruitManager:getRecruitLogList(self.m_recruitType)
     self.mMaxPage = math.ceil(#self.mLogData / 10)
     local isEmpty = table.empty(self.mLogData)
     self.mImgNo:SetActive(isEmpty)
@@ -126,8 +126,8 @@ function udpateView(self)
 end
 
 function requestLog(self)
-    if (self.m_recruitId) then
-        GameDispatcher:dispatchEvent(EventName.REQ_RECRUIT_LOG, { recruit_id = self.m_recruitId })
+    if (self.m_recruitType) then
+        GameDispatcher:dispatchEvent(EventName.REQ_RECRUIT_LOG, { type = self.m_recruitType })
     end
 end
 

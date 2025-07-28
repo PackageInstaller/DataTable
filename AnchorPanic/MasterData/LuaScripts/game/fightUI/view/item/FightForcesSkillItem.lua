@@ -16,23 +16,12 @@ function initData(self, rootGo)
     -- self.mImgMask:SetActiveLocal(false)
 
     self.mImgCd = self:getChildGO('mImgCd'):GetComponent(ty.AutoRefImage)
-    self.mStorage = self:getChildGO('mStorage'):GetComponent(ty.Image)
-
-    self.mGroupEff = self:getChildTrans("mGroupEff")
 end
 
 -- 点击释放技能
 function onSkillClick(self)
     if self.mCallBack then
         self.mCallBack(self.mCallObject, self.mSkillRo)
-    end
-    if self.mSkillRo and fight.FightManager:getForcesSkillEnergy() >= self.mSkillRo:getCost() then
-        if not self.clickEfx then
-            self.clickEfx = self:addEffect("fx_ui_common_player_skill_click", self.mGroupEff)
-        else
-            self.clickEfx.effectGo:SetActive(false)
-            self.clickEfx.effectGo:SetActive(true)
-        end
     end
 end
 
@@ -57,9 +46,6 @@ end
 
 -- 更新状态
 function updateState(self)
-    if not self.mSkillRo then
-        return
-    end
     -- if fight.FightManager:getForcesSkillEnergy() >= self.mSkillRo:getCost() then
     --     self.mImgMask:SetActiveLocal(false)
     -- else
@@ -68,19 +54,6 @@ function updateState(self)
     local val = fight.FightManager:getForcesSkillEnergy() / self.mSkillRo:getCost()
 
     self.mImgCd.fillAmount = 1 - val
-    self.mStorage.fillAmount = val
-
-    if val >= 1 then
-        if not self.isShowEff then
-            self.isShowEff = true
-            self:addEffect("fx_ui_common_player_skill", self.mGroupEff)
-        end
-    else
-        if self.isShowEff then
-            self.isShowEff = false
-            self:removeEffect("fx_ui_common_player_skill")
-        end
-    end
 
 
     -- if not self.mSkillCdMaskH then
@@ -93,13 +66,13 @@ end
 -- 移除
 function destroy(self)
     self:removeOnClick(self.m_go)
-    self:removeEffect("fx_ui_common_player_skill")
+
     RateLooper:removeFrameByIndex(self.m_skillCDSn)
 
     super.destroy(self)
 end
 
 return _M
-
+ 
 --[[ 替换语言包自动生成，请勿修改！
 ]]

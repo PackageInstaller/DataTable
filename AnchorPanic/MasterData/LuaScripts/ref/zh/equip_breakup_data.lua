@@ -1264,69 +1264,6 @@ local equip_breakup_data=
 		[3]={ level=40, cost={{9013,8}}, level_limit=60, pay_id=1, pay_num=100000 },
 		[4]={ level=60, cost={{9014,6}}, level_limit=80, pay_id=1, pay_num=180000 },
 }
-},
-	[7333]={ equip_breakup={
-		[1]={ level=0, cost={}, level_limit=20, pay_id=1, pay_num=0 },
-		[2]={ level=20, cost={{9012,10}}, level_limit=40, pay_id=1, pay_num=60000 },
-		[3]={ level=40, cost={{9013,8}}, level_limit=60, pay_id=1, pay_num=100000 },
-		[4]={ level=60, cost={{9014,6}}, level_limit=80, pay_id=1, pay_num=180000 },
-}
-},
-	[7334]={ equip_breakup={
-		[1]={ level=0, cost={}, level_limit=20, pay_id=1, pay_num=0 },
-		[2]={ level=20, cost={{9012,10}}, level_limit=40, pay_id=1, pay_num=60000 },
-		[3]={ level=40, cost={{9013,8}}, level_limit=60, pay_id=1, pay_num=100000 },
-		[4]={ level=60, cost={{9014,6}}, level_limit=80, pay_id=1, pay_num=180000 },
-}
-},
-	[7335]={ equip_breakup={
-		[1]={ level=0, cost={}, level_limit=20, pay_id=1, pay_num=0 },
-		[2]={ level=20, cost={{9012,10}}, level_limit=40, pay_id=1, pay_num=60000 },
-		[3]={ level=40, cost={{9013,8}}, level_limit=60, pay_id=1, pay_num=100000 },
-		[4]={ level=60, cost={{9014,6}}, level_limit=80, pay_id=1, pay_num=180000 },
-}
-},
-	[7336]={ equip_breakup={
-		[1]={ level=0, cost={}, level_limit=20, pay_id=1, pay_num=0 },
-		[2]={ level=20, cost={{9012,10}}, level_limit=40, pay_id=1, pay_num=60000 },
-		[3]={ level=40, cost={{9013,8}}, level_limit=60, pay_id=1, pay_num=100000 },
-		[4]={ level=60, cost={{9014,6}}, level_limit=80, pay_id=1, pay_num=180000 },
-}
-},
-	[7337]={ equip_breakup={
-		[1]={ level=0, cost={}, level_limit=20, pay_id=1, pay_num=0 },
-		[2]={ level=20, cost={{9012,10}}, level_limit=40, pay_id=1, pay_num=60000 },
-		[3]={ level=40, cost={{9013,8}}, level_limit=60, pay_id=1, pay_num=100000 },
-		[4]={ level=60, cost={{9014,6}}, level_limit=80, pay_id=1, pay_num=180000 },
-}
-},
-	[7338]={ equip_breakup={
-		[1]={ level=0, cost={}, level_limit=20, pay_id=1, pay_num=0 },
-		[2]={ level=20, cost={{9012,10}}, level_limit=40, pay_id=1, pay_num=60000 },
-		[3]={ level=40, cost={{9013,8}}, level_limit=60, pay_id=1, pay_num=100000 },
-		[4]={ level=60, cost={{9014,6}}, level_limit=80, pay_id=1, pay_num=180000 },
-}
-},
-	[7339]={ equip_breakup={
-		[1]={ level=0, cost={}, level_limit=20, pay_id=1, pay_num=0 },
-		[2]={ level=20, cost={{9012,10}}, level_limit=40, pay_id=1, pay_num=60000 },
-		[3]={ level=40, cost={{9013,8}}, level_limit=60, pay_id=1, pay_num=100000 },
-		[4]={ level=60, cost={{9014,6}}, level_limit=80, pay_id=1, pay_num=180000 },
-}
-},
-	[7340]={ equip_breakup={
-		[1]={ level=0, cost={}, level_limit=20, pay_id=1, pay_num=0 },
-		[2]={ level=20, cost={{9012,10}}, level_limit=40, pay_id=1, pay_num=60000 },
-		[3]={ level=40, cost={{9013,8}}, level_limit=60, pay_id=1, pay_num=100000 },
-		[4]={ level=60, cost={{9014,6}}, level_limit=80, pay_id=1, pay_num=180000 },
-}
-},
-	[7341]={ equip_breakup={
-		[1]={ level=0, cost={}, level_limit=20, pay_id=1, pay_num=0 },
-		[2]={ level=20, cost={{9012,10}}, level_limit=40, pay_id=1, pay_num=60000 },
-		[3]={ level=40, cost={{9013,8}}, level_limit=60, pay_id=1, pay_num=100000 },
-		[4]={ level=60, cost={{9014,6}}, level_limit=80, pay_id=1, pay_num=180000 },
-}
 }
 }
 

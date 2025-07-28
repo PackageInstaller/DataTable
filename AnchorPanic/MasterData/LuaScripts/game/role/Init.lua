@@ -29,17 +29,12 @@ role.RoleSelectHeroItem = require('game/role/view/item/RoleSelectHeroItem')
 role.RoleShowHeroItem = require('game/role/view/item/RoleShowHeroItem')
 role.OtherRoleShowHeroItem = require('game/role/view/item/OtherRoleShowHeroItem')
 role.RoleHeroShowEquipGrid = require('game/role/view/item/RoleHeroShowEquipGrid')
-role.RoleGuradGroupSelectItem = require('game/role/view/item/RoleGuradGroupSelectItem')
-role.RoleGuradGroupFashionItem = require('game/role/view/item/RoleGuradGroupFashionItem')
 
 role.OtherRoleVo = require('game/role/manager/vo/OtherRoleVo')
 role.MyRoleInfoPreView = require('game/role/view/MyRoleInfoPreView')
 role.OtherRoleInfoView = 'game/role/view/OtherRoleInfoView'
 role.OtherRoleMarkView = 'game/role/view/OtherRoleMarkView'
 role.SingleHeroInfoView = 'game/role/view/SingleHeroInfoView'
-role.RoleGuradGroupPanel = 'game/role/view/RoleGuradGroupPanel'
-role.RoleGuradGroupSelectView = 'game/role/view/RoleGuradGroupSelectView'
-role.RoleGuradGroupFashionView = 'game/role/view/RoleGuradGroupFashionView'
 
 role.RoleController = require('game/role/controller/RoleController').new(role.RoleManager)
 

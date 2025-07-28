@@ -86,15 +86,6 @@ RemindConst.ARENA_HELL_REDPOINT_TIPS = 32
 --总力战无限模式挑战
 RemindConst.DISASTER_FIGHT = 33
 
---海底跳过
-RemindConst.SEABED_JUMP = 34
-
---团战回放
-RemindConst.GUILDWAR_REPLAY  = 35
---战员撤离
-RemindConst.GUILDWAR_FALL = 36
---变更
-RemindConst.GUILDWAR_CHANGE = 37
 --资源静默下载
 RemindConst.BACKGROUND_DOWNLOAD = 50
 

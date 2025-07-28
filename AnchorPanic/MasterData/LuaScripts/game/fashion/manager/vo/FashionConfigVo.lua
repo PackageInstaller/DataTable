@@ -21,7 +21,6 @@ function parseConfigData(self, cusHeroTid, fashionType, cusData)
     self.costTid = cusData.cost_tid
     self.model = cusData.model
     self.highModel = cusData.high_model
-    self.hostelModel = cusData.hostel_model
     self.head = cusData.head
     self.imgbody = cusData.img_body
     self.imgpainting = cusData.img_painting
@@ -31,7 +30,6 @@ function parseConfigData(self, cusHeroTid, fashionType, cusData)
     self.fashionIcon = cusData.fashionIcon
     self.fashionCion = cusData.fashion_coin
     self.colour = cusData.colour
-    self.tap = cusData.tap
 end
 
 function getUIModel(self)
@@ -40,11 +38,6 @@ function getUIModel(self)
     end
     return self.model
 end
-
-function getHostelModel(self)
-    return self.hostelModel
-end
-
 --获取皮肤商店左上角色块的色值
 function getColour(self)
     if self.colour == "" then

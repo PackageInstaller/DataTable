@@ -135,54 +135,36 @@ function getCanRecAll(self)
 end
 
 function getCanRecAllByStyle(self, style)
-    local isMain = sysParam.SysParamManager:getValue(SysParamType.MainActivityType) == 1
-    if isMain then
-        return self:getCanOpenRed(style)
-    else
-        if not self.mStageStepDic then
-            self:parseStageStepConfig()
-        end
-        local red = false
-        local allStarNum = self:getAllStarNumByStyle(style)
-        for _, taskVo in pairs(self.mStageStepDic) do
-            local mAwardMsgVo = self:getStageAwardByStep(taskVo.stepId)
-            if taskVo.starNum <= allStarNum and mAwardMsgVo == nil and taskVo.stageType == style then
-                return true
-            end
-        end
-        return red or self:getCanOpenRed(style)
-    end
+    return self:getCanOpenRed(style)
+    -- if not self.mStageStepDic then
+    --     self:parseStageStepConfig()
+    -- end
+    -- local red = false
+    -- local allStarNum = self:getAllStarNumByStyle(style)
+    -- for _, taskVo in pairs(self.mStageStepDic) do
+    --     local mAwardMsgVo = self:getStageAwardByStep(taskVo.stepId)
+    --     if taskVo.starNum <= allStarNum and mAwardMsgVo == nil and taskVo.stageType == style then
+    --         return true
+    --     end
+    -- end
+    -- return red or self:getCanOpenRed(style)
 end
 
 function getCanOpenRed(self, style)
     local red = false
     local activityId = 0
     local isOpen = true
-    local isMain = sysParam.SysParamManager:getValue(SysParamType.MainActivityType) == 1
-
-    if isMain then
-        if style == mainActivity.ActiveDupStyleType.Easy then
-            activityId = activity.ActivityId.NomalLevel
-        elseif style == mainActivity.ActiveDupStyleType.Difficulty then
-            activityId = activity.ActivityId.DifficultyLevel
-        elseif style == mainActivity.ActiveDupStyleType.Hard then
-            activityId = activity.ActivityId.HellLevel
-        end
-    else
-        if style == mainActivity.ActiveDupStyleType.Easy then
-            activityId = activity.ActivityId.NomalLevel
-        elseif style == mainActivity.ActiveDupStyleType.Difficulty then
-            local newestDupId = mainActivity.ActiveDupManager:getNewestDupId(mainActivity.ActiveDupStyleType.Easy)
-            isOpen = newestDupId >= mainActivity.ActiveDupManager:getFirstDupByStype(mainActivity.ActiveDupStyleType.Easy)
-            activityId = activity.ActivityId.DifficultyLevel
-        elseif style == mainActivity.ActiveDupStyleType.Hard then
-            local newestDupId = mainActivity.ActiveDupManager:getNewestDupId(mainActivity.ActiveDupStyleType.Difficulty)
-            isOpen = newestDupId >= mainActivity.ActiveDupManager:getFirstDupByStype(mainActivity.ActiveDupStyleType.Difficulty)
-            activityId = activity.ActivityId.HellLevel
-        end
+    if style == mainActivity.ActiveDupStyleType.Easy then
+        activityId = activity.ActivityId.NomalLevel
+    elseif style == mainActivity.ActiveDupStyleType.Difficulty then
+        --local newestDupId = mainActivity.ActiveDupManager:getNewestDupId(mainActivity.ActiveDupStyleType.Easy)
+        --isOpen = newestDupId >= mainActivity.ActiveDupManager:getFirstDupByStype(mainActivity.ActiveDupStyleType.Easy)
+        activityId = activity.ActivityId.DifficultyLevel
+    elseif style == mainActivity.ActiveDupStyleType.Hard then
+        --local newestDupId = mainActivity.ActiveDupManager:getNewestDupId(mainActivity.ActiveDupStyleType.Difficulty)
+        --isOpen = newestDupId >= mainActivity.ActiveDupManager:getFirstDupByStype(mainActivity.ActiveDupStyleType.Difficulty)
+        activityId = activity.ActivityId.HellLevel
     end
-
-    
 
     local prefixVersion = download.ResDownLoadManager:getServerVersionValue(gs.AssetSetting.PrefixVersionKey)
 

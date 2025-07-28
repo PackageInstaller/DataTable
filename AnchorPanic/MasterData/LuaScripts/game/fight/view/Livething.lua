@@ -40,7 +40,6 @@ function setData(self, liveVo, callBack)
     self:playAction(fight.FightDef.ACT_STAND)
     local finishCall = function(beSuccess, live)
         self:setMaterial()
-        self:setAutoCameraNode(live)
         if callBack then
             callBack(beSuccess, live)
         end
@@ -57,52 +56,15 @@ function setWeaponData(self, modelId, showWeaponSn)
         self:setWeaponLoadFightAni(true)
         showWeaponSn = showWeaponSn or 1
         local wpath = UrlManager:getWeaponPath(string.format("%s_wq_%02d/model%s_wq_%02d.prefab", modelId, showWeaponSn, modelId, showWeaponSn))
-        self:addWeapon(wpath, sRo:getWeaponNode(), true)
+        self:addWeapon(wpath, sRo:getWeaponNode())
     end
-end
-
--- 设置战斗中角色镜头挂点
-function setAutoCameraNode(self, live)
-    if self.mCameraRT == nil then
-        self.mCameraRT = gs.GameObject()
-        self.mCameraRTTrans = self.mCameraRT.transform
-        self.mCameraRTTrans:SetParent(self.m_trans, false)
-        gs.TransQuick:Rotate(self.mCameraRTTrans, 0, -25, 0)
-
-    end
-    local rtName = string.match(self.m_prefabName, "model%d*") .. "CameraRT"
-    self.mCameraRT.name = rtName
-
-    if self.mCameraDT == nil then
-        self.mCameraDT = gs.GameObject()
-        self.mCameraDTTrans = self.mCameraDT.transform
-        gs.TransQuick:SetParentOrg(self.mCameraDTTrans, self.mCameraRTTrans)
-        gs.TransQuick:LPos(self.mCameraDTTrans, 0, 1.5, -3)
-        gs.TransQuick:Rotate(self.mCameraDTTrans, 0, 0, 0)
-    end
-    local dtName = string.match(self.m_prefabName, "model%d*") .. "CameraDT"
-    self.mCameraDT.name = dtName
-
-    if self.mCameraFT == nil then
-        self.mCameraFT = gs.GameObject()
-        self.mCameraFTTrans = self.mCameraFT.transform
-        gs.TransQuick:SetParentOrg(self.mCameraFTTrans, self.mCameraDTTrans)
-        gs.TransQuick:LPos(self.mCameraFTTrans, 0, 0, 0)
-        gs.TransQuick:Rotate(self.mCameraFTTrans, 0, 0, 0)
-    end
-    local ftName = string.match(self.m_prefabName, "model%d*") .. "CameraFT"
-    self.mCameraFT.name = ftName
-
-    self.m_points[fight.FightDef.POINT_CAMERA_RT] = gs.GoUtil.FindNameInChilds(self:getTrans(), rtName)
-    self.m_points[fight.FightDef.POINT_CAMERA_DT] = gs.GoUtil.FindNameInChilds(self:getTrans(), dtName)
-    self.m_points[fight.FightDef.POINT_CAMERA_FT] = gs.GoUtil.FindNameInChilds(self:getTrans(), ftName)
 end
 
 -- 设置替换的材质球
 function setMaterial(self)
     local fashionColorVo = fashion.FashionManager:getFasionColorVo(self.m_liveVo.tid, self.m_liveVo.m_fashionId, self.m_liveVo.m_fashionColorId)
     if fashionColorVo then
-        self:updateMaterial(fashionColorVo.posList, fashionColorVo.materials, fashionColorVo.dissolves)
+        self:updateMaterial(fashionColorVo.posList, fashionColorVo.materials)
     end
 end
 
@@ -180,7 +142,7 @@ function justChangeAppearance(self, liveVo, finishCall)
         if sRo then
             local showWeaponSn = 1
             local wpath = UrlManager:getWeaponPath(string.format("%s_wq_%02d/model%s_wq_%02d.prefab", liveVo:getModelID(), showWeaponSn, liveVo:getModelID(), showWeaponSn))
-            self:addWeapon(wpath, sRo:getWeaponNode(), true)
+            self:addWeapon(wpath, sRo:getWeaponNode())
         end
     end
 end
@@ -189,11 +151,6 @@ function _afterLoad(self)
     super._afterLoad(self)
     if self.m_liveVo:getRaceVo().monType == monster.MonsterType.SUPER_BOSS then
         -- 超级boss不显示头顶血条
-        return
-    end
-
-    if self.m_liveVo:getRaceVo().monType == monster.MonsterType.NO_HP_MONSTER then
-        -- 不显示头顶血条的怪物
         return
     end
 
@@ -280,7 +237,7 @@ function onUpdateAction(self, data)
 end
 
 function onAniTransCond(self, data)
-    self:playActionTrigger(data[1], data[2], data[3], nil, data[4])
+    self:playActionTrigger(data[1], data[2], data[3])
 end
 
 function updateAniBoolVal(self, data)
@@ -431,9 +388,6 @@ function setIsHitModel(self, isEnable)
         return
     end
     self.m_isHitModelEnable = isEnable
-    if isEnable then
-        self.m_liveVo:updateAni(fight.FightDef.ACT_DIE)
-    end
     self:setVisible(not isEnable)
 end
 

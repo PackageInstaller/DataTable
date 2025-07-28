@@ -45,7 +45,7 @@ function setData(self, param)
     --     self.mTxtName.text = robotVo:getName()
     -- else
     self.m_playerHeadGrid:setData(rankData.avatarId)
-    self.mTxtName.text = FilterWordUtil:filterTemp(rankData.playerName)
+    self.mTxtName.text = rankData.playerName
     -- end
     self.m_playerHeadGrid:setHeadFrame(rankData.avatarFrame)
     self.m_playerHeadGrid:setParent(self.m_headNode)
@@ -76,6 +76,6 @@ function onDelete(self)
 end
 
 return _M
-
+ 
 --[[ 替换语言包自动生成，请勿修改！
 ]]

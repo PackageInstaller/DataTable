@@ -366,62 +366,6 @@ local hero_military_rank_data=
 		[207]={ rank=3, level_limit=60, hero_level=0, num=0, cost_tid_list={{2514,24}}, pay_id=1, pay_num=360000, icon=1003, name=1091, deblocking=0, warship_skill={10232}, stage_id=0, level=1 },
 		[208]={ rank=4, level_limit=80, hero_level=0, num=0, cost_tid_list={}, pay_id=1, pay_num=0, icon=1004, name=1092, deblocking=102390, warship_skill={10232,1}, stage_id=0, level=1 },
 }
-},
-	[1024]={ military_rank={
-		[209]={ rank=1, level_limit=20, hero_level=0, num=0, cost_tid_list={{2542,16}}, pay_id=1, pay_num=60000, icon=1001, name=1089, deblocking=0, warship_skill={}, stage_id=0, level=1 },
-		[210]={ rank=2, level_limit=40, hero_level=0, num=0, cost_tid_list={{2543,20}}, pay_id=1, pay_num=240000, icon=1002, name=1090, deblocking=0, warship_skill={10241,1}, stage_id=0, level=1 },
-		[211]={ rank=3, level_limit=60, hero_level=0, num=0, cost_tid_list={{2544,24}}, pay_id=1, pay_num=360000, icon=1003, name=1091, deblocking=0, warship_skill={10242}, stage_id=0, level=1 },
-		[212]={ rank=4, level_limit=80, hero_level=0, num=0, cost_tid_list={}, pay_id=1, pay_num=0, icon=1004, name=1092, deblocking=102490, warship_skill={10242,1}, stage_id=0, level=1 },
-}
-},
-	[1025]={ military_rank={
-		[213]={ rank=1, level_limit=20, hero_level=0, num=0, cost_tid_list={{2532,16}}, pay_id=1, pay_num=60000, icon=1001, name=1089, deblocking=0, warship_skill={}, stage_id=0, level=1 },
-		[214]={ rank=2, level_limit=40, hero_level=0, num=0, cost_tid_list={{2533,20}}, pay_id=1, pay_num=240000, icon=1002, name=1090, deblocking=0, warship_skill={10251,1}, stage_id=0, level=1 },
-		[215]={ rank=3, level_limit=60, hero_level=0, num=0, cost_tid_list={{2534,24}}, pay_id=1, pay_num=360000, icon=1003, name=1091, deblocking=0, warship_skill={10252}, stage_id=0, level=1 },
-		[216]={ rank=4, level_limit=80, hero_level=0, num=0, cost_tid_list={}, pay_id=1, pay_num=0, icon=1004, name=1092, deblocking=102590, warship_skill={10252,1}, stage_id=0, level=1 },
-}
-},
-	[1026]={ military_rank={
-		[217]={ rank=1, level_limit=20, hero_level=0, num=0, cost_tid_list={{2522,16}}, pay_id=1, pay_num=60000, icon=1001, name=1089, deblocking=0, warship_skill={}, stage_id=0, level=1 },
-		[218]={ rank=2, level_limit=40, hero_level=0, num=0, cost_tid_list={{2523,20}}, pay_id=1, pay_num=240000, icon=1002, name=1090, deblocking=0, warship_skill={10261,1}, stage_id=0, level=1 },
-		[219]={ rank=3, level_limit=60, hero_level=0, num=0, cost_tid_list={{2524,24}}, pay_id=1, pay_num=360000, icon=1003, name=1091, deblocking=0, warship_skill={10262}, stage_id=0, level=1 },
-		[220]={ rank=4, level_limit=80, hero_level=0, num=0, cost_tid_list={}, pay_id=1, pay_num=0, icon=1004, name=1092, deblocking=102690, warship_skill={10262,1}, stage_id=0, level=1 },
-}
-},
-	[1027]={ military_rank={
-		[221]={ rank=1, level_limit=20, hero_level=0, num=0, cost_tid_list={{2532,16}}, pay_id=1, pay_num=60000, icon=1001, name=1089, deblocking=0, warship_skill={}, stage_id=0, level=1 },
-		[222]={ rank=2, level_limit=40, hero_level=0, num=0, cost_tid_list={{2533,20}}, pay_id=1, pay_num=240000, icon=1002, name=1090, deblocking=0, warship_skill={10271,1}, stage_id=0, level=1 },
-		[223]={ rank=3, level_limit=60, hero_level=0, num=0, cost_tid_list={{2534,24}}, pay_id=1, pay_num=360000, icon=1003, name=1091, deblocking=0, warship_skill={10272}, stage_id=0, level=1 },
-		[224]={ rank=4, level_limit=80, hero_level=0, num=0, cost_tid_list={}, pay_id=1, pay_num=0, icon=1004, name=1092, deblocking=102790, warship_skill={10272,1}, stage_id=0, level=1 },
-}
-},
-	[1028]={ military_rank={
-		[225]={ rank=1, level_limit=20, hero_level=0, num=0, cost_tid_list={{2502,16}}, pay_id=1, pay_num=60000, icon=1001, name=1089, deblocking=0, warship_skill={}, stage_id=0, level=1 },
-		[226]={ rank=2, level_limit=40, hero_level=0, num=0, cost_tid_list={{2503,20}}, pay_id=1, pay_num=240000, icon=1002, name=1090, deblocking=0, warship_skill={10281,1}, stage_id=0, level=1 },
-		[227]={ rank=3, level_limit=60, hero_level=0, num=0, cost_tid_list={{2504,24}}, pay_id=1, pay_num=360000, icon=1003, name=1091, deblocking=0, warship_skill={10282}, stage_id=0, level=1 },
-		[228]={ rank=4, level_limit=80, hero_level=0, num=0, cost_tid_list={}, pay_id=1, pay_num=0, icon=1004, name=1092, deblocking=102890, warship_skill={10282,1}, stage_id=0, level=1 },
-}
-},
-	[1029]={ military_rank={
-		[229]={ rank=1, level_limit=20, hero_level=0, num=0, cost_tid_list={{2512,16}}, pay_id=1, pay_num=60000, icon=1001, name=1089, deblocking=0, warship_skill={}, stage_id=0, level=1 },
-		[230]={ rank=2, level_limit=40, hero_level=0, num=0, cost_tid_list={{2513,20}}, pay_id=1, pay_num=240000, icon=1002, name=1090, deblocking=0, warship_skill={10291,1}, stage_id=0, level=1 },
-		[231]={ rank=3, level_limit=60, hero_level=0, num=0, cost_tid_list={{2514,24}}, pay_id=1, pay_num=360000, icon=1003, name=1091, deblocking=0, warship_skill={10292}, stage_id=0, level=1 },
-		[232]={ rank=4, level_limit=80, hero_level=0, num=0, cost_tid_list={}, pay_id=1, pay_num=0, icon=1004, name=1092, deblocking=102990, warship_skill={10292,1}, stage_id=0, level=1 },
-}
-},
-	[1030]={ military_rank={
-		[233]={ rank=1, level_limit=20, hero_level=0, num=0, cost_tid_list={{2522,16}}, pay_id=1, pay_num=60000, icon=1001, name=1089, deblocking=0, warship_skill={}, stage_id=0, level=1 },
-		[234]={ rank=2, level_limit=40, hero_level=0, num=0, cost_tid_list={{2523,20}}, pay_id=1, pay_num=240000, icon=1002, name=1090, deblocking=0, warship_skill={10301,1}, stage_id=0, level=1 },
-		[235]={ rank=3, level_limit=60, hero_level=0, num=0, cost_tid_list={{2524,24}}, pay_id=1, pay_num=360000, icon=1003, name=1091, deblocking=0, warship_skill={10302}, stage_id=0, level=1 },
-		[236]={ rank=4, level_limit=80, hero_level=0, num=0, cost_tid_list={}, pay_id=1, pay_num=0, icon=1004, name=1092, deblocking=103090, warship_skill={10302,1}, stage_id=0, level=1 },
-}
-},
-	[1031]={ military_rank={
-		[237]={ rank=1, level_limit=20, hero_level=0, num=0, cost_tid_list={{2522,16}}, pay_id=1, pay_num=60000, icon=1001, name=1089, deblocking=0, warship_skill={}, stage_id=0, level=1 },
-		[238]={ rank=2, level_limit=40, hero_level=0, num=0, cost_tid_list={{2523,20}}, pay_id=1, pay_num=240000, icon=1002, name=1090, deblocking=0, warship_skill={10311,1}, stage_id=0, level=1 },
-		[239]={ rank=3, level_limit=60, hero_level=0, num=0, cost_tid_list={{2524,24}}, pay_id=1, pay_num=360000, icon=1003, name=1091, deblocking=0, warship_skill={10312}, stage_id=0, level=1 },
-		[240]={ rank=4, level_limit=80, hero_level=0, num=0, cost_tid_list={}, pay_id=1, pay_num=0, icon=1004, name=1092, deblocking=103190, warship_skill={10312,1}, stage_id=0, level=1 },
-}
 }
 }
 

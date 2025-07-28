@@ -158,8 +158,8 @@ function updateConvertView(self)
     self:recoverAllGrid()
     self:recoverAllItemGrid()
 
-    local curId = recruit.RecruitManager:getRecruitActionId()
-    local recruitConfigVo = recruit.RecruitManager:getRecruitConfigVo(curId)
+    local curType = recruit.RecruitManager:getRecruitActionType()
+    local recruitConfigVo = recruit.RecruitManager:getRecruitConfigVo(curType)
     local propsList = {{tid = recruitConfigVo.rebate_item[1], num = recruitConfigVo.rebate_item[2] * #self.cardVoList}}
 
     local isEmpty = table.empty(propsList)

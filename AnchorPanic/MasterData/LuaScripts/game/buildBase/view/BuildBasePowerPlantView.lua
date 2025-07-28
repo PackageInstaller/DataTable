@@ -162,8 +162,8 @@ end
 function onClickConfirm(self)
     local result, tips = MoneyUtil.judgeNeedMoneyCountByTid(MoneyTid.ANTIEPIDEMIC_SERUM_TID, self.mStaminHelper, true, false)
     if result then
-        local all = self.LyNumberStepper.CurrCount + MoneyUtil.getMoneyCountByTid(MoneyTid.UAV_TID)
-        if all > self.max then
+        local all = self.mStaminHelper * self.mRate + MoneyUtil.getMoneyCountByTid(MoneyTid.UAV_TID)
+        if all > self.max and all <= (self.max + 4) then
             UIFactory:alertMessge(_TT(76026), true, function()
                 GameDispatcher:dispatchEvent(EventName.REQ_BUILDBASE_BUY_PRODUCE, { num = self.mStaminHelper })
                 self:onClickClose()

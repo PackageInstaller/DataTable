@@ -35,8 +35,6 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.OPEN_HERO_INFO_PANEL, self.__onOpenHeroInfoPanelHandler, self)
     -- 打开英雄详情信息面板
     GameDispatcher:addEventListener(EventName.OPEN_HERO_DETAILS_PANEL, self.__onOpenDetailsPanelHandler, self)
-    -- 打开英雄剧情信息面板
-    GameDispatcher:addEventListener(EventName.OPEN_HERO_STORY_PANEL, self.__onOpenStoryPanelHandler, self)
     -- 打开技能详情信息面板
     GameDispatcher:addEventListener(EventName.OPEN_HERO_SKILL_DETAILS_PANEL, self.__onOpenSkillDetailsPanelHandler, self)
     -- 打开英雄属性列表面板
@@ -95,12 +93,6 @@ function listNotification(self)
     -- 请求英雄详细数据
     GameDispatcher:addEventListener(EventName.REQ_HERO_DATA, self.__onReqHeroDataHandler, self)
     GameDispatcher:addEventListener(EventName.REQ_HERO_LVL_UP, self.__onReqHeroLvlUpHandler, self)
-
-    GameDispatcher:addEventListener(EventName.REQ_CS_RESET_HERO_LV, self.onReqCsResetHeroLvHandler, self)
-    GameDispatcher:addEventListener(EventName.REQ_CS_RESET_HERO_LV_PRE_VIEW, self.onReqCsResetHeroLvPreViewHandler, self)
-
-
-
     GameDispatcher:addEventListener(EventName.REQ_HERO_STAR_UP, self.__onReqHeroStarUpHandler, self)
     GameDispatcher:addEventListener(EventName.REQ_HERO_COLOR_UP, self.__onReqHeroColorUpHandler, self)
     -- 请求英雄预览属性
@@ -198,12 +190,6 @@ function registerMsgHandler(self)
 
         --- *s2c* 战员共鸣 13340
         SC_RESONANCE = self.onReceiveResonance,
-        --- *s2c* 重置战员等级-前瞻 13365
-        SC_RESET_HERO_LV_PRE_VIEW = self.onScResetHeroLvPreViewHandler,
-        --- *s2c* 时装场景全部解锁信息 13370
-        SC_FASHION_SCENE_PANEL = self.onFashionScenePanelHandler,
-        --- *s2c* 解锁时装场景 13371
-        SC_UNLOCK_FASHION_SCENE = self.onUnlockFashionSceneHandler,
     }
 end
 
@@ -230,30 +216,10 @@ function onRecvSC_HERO_ACTION_LIST(self, msg)
     GameDispatcher:dispatchEvent(EventName.UPDATE_LIVEVIEWUPDATEACTION)
 end
 
-
 -- 返回战员初始战力
 function onRecHeroInitPower(self, msg)
     GameDispatcher:dispatchEvent(EventName.UPDATE_HERO_INIT_POWER, msg)
 end
-
-function onScResetHeroLvPreViewHandler(self, msg)
-    if not msg.result or msg.result == 0 then
-       return 
-    end
-    self:onOpenHeroLvlUpResetViewHandler({
-        award_list = msg.award_list,
-        hero_id = msg.hero_id
-    })
-end
-
-function onFashionScenePanelHandler(self,msg)
-    hero.HeroManager:parseHeroSceneData(msg)
-end
-
-function onUnlockFashionSceneHandler(self,msg)
-   hero.HeroManager:parseHeroSceneUnlockData(msg)
-end
-
 -- 初始英雄预览列表
 function __onResHeroPreListMsgHandler(self, msg)
     hero.HeroManager:parseMsgHeroPreList(msg.hero_pre_list)
@@ -576,15 +542,6 @@ function __onReqHeroLvlUpHandler(self, args)
     SOCKET_SEND(Protocol.CS_HERO_LEVELUP, {id = heroId, level = args.level}, Protocol.SC_HERO_LEVELUP)
 end
 
-function onReqCsResetHeroLvHandler(self,args)
-    SOCKET_SEND(Protocol.CS_RESET_HERO_LV, {hero_id = args.hero_id})
-end
-
-function onReqCsResetHeroLvPreViewHandler(self, args)
-    --- *c2s* 重置战员等级-前瞻 13364
-    SOCKET_SEND(Protocol.CS_RESET_HERO_LV_PRE_VIEW, {hero_id = args.hero_id}, Protocol.SC_RESET_HERO_LV_PRE_VIEW)
-end
-
 -- 请求英雄升星进化
 function __onReqHeroStarUpHandler(self, args)
     if (self.m_starUpMaterialPanel) then
@@ -718,35 +675,6 @@ function __onReqHeroInitPowerHandler(self, args)
     --- *c2s* 战员初始战力 13162
     SOCKET_SEND(Protocol.CS_HERO_INIT_POWER, {hero_tid = args.heroTid})
 end
-
-
---打开英雄重置等级弹窗
-function onOpenHeroLvlUpResetViewHandler(self, args)
-    local destroyView = function()
-        self.mHeroLvlUpResetView:removeEventListener(View.EVENT_VIEW_DESTROY, destroyView, self)
-        self.mHeroLvlUpResetView = nil
-    end
-    if self.mHeroLvlUpResetView == nil then
-        self.mHeroLvlUpResetView = hero.HeroLvlUpResetView.new()
-        self.mHeroLvlUpResetView:addEventListener(View.EVENT_VIEW_DESTROY, destroyView, self)
-    end
-    self.mHeroLvlUpResetView:open(args)
-
-    return self.mHeroLvlUpResetView
-end
-
-
-
-
-
-
-
-
-
-
-
-
-
 ------------------------------------------------------------------------ 英雄面板 ------------------------------------------------------------------------
 function __onOpenHeroPanelHandler(self, args)
     if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HERO, true) == false then
@@ -813,25 +741,6 @@ end
 function onDestroyDetailsPanelHandler(self)
     self.m_heroDetailsPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyDetailsPanelHandler, self)
     self.m_heroDetailsPanel = nil
-end
-
-
------------------------------------------------------------------------- 英雄剧情面板 ------------------------------------------------------------------------
-
-function __onOpenStoryPanelHandler(self,args)
-    if not args.type then
-        args.type = favorable.FavorableConst.HERO_STORY
-    end
-    if self.m_heroStoryPanel == nil then
-        self.m_heroStoryPanel = hero.HeroStoryPanel.new()
-        self.m_heroStoryPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyStoryPanelHandler, self)
-    end
-    self.m_heroStoryPanel:open(args)
-end
-
-function onDestroyStoryPanelHandler(self)
-    self.m_heroStoryPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyStoryPanelHandler, self)
-    self.m_heroStoryPanel = nil
 end
 
 ------------------------------------------------------------------------ 英雄详情描述TIPS ------------------------------------------------------------------------

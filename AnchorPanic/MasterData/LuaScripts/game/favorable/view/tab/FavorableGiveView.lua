@@ -178,9 +178,8 @@ function updateView(self)
         vo.tweenId = i
         table.insert(giftList, vo)
     end
-    local giftTypeCount = #giftList
-    self.mGiveEmpty:SetActive(giftTypeCount <= 0)
-    if giftTypeCount == 0 or self.mGiveScrollView.Count ~= giftTypeCount then
+    self.mGiveEmpty:SetActive(#giftList <= 0)
+    if self.mGiveScrollView.Count <= 0 then
         self.mGiveScrollView.DataProvider = giftList
     else
         self.mGiveScrollView:ReplaceAllDataProvider(giftList)

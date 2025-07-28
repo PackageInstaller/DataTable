@@ -11,16 +11,16 @@ module('game.spineInteract.SpineInteract_4516_2', Class.impl("game.spineInteract
 
 function ctor(self)
     super.ctor(self)
-    self.baseModelId = "4516"
+    self.baseModelId = "4516_2"
 end
 
 function onClick1(self)
     self.spineAnim:Play("anim03")
-    self:startInteract("showtime03")
+    self:startInteract("showtime01")
 end
 function onClick2(self)
     self.spineAnim:Play("anim01")
-    self:startInteract("showtime01")
+    self:startInteract("showtime03")
 end
 function onClick3(self)
     self.spineAnim:Play("anim02")

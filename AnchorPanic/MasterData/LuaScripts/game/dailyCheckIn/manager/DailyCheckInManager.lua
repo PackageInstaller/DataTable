@@ -59,9 +59,7 @@ function parseDailyCheckInPanelMsg(self, msg)
             self.mDailyCheckInMsgList = {}
             isInit = true
         end
-        if activity.ActivityManager:getPromoIsShow() == nil then
-            activity.ActivityManager:setPromoIsShow(false)
-        end
+        activity.ActivityManager:setPromoIsShow(false)
         self.mIsSigned = (msg.today_is_sign > 0) and true or false
         for _, dailyId in pairs(msg.sign_days) do
             if table.indexof(self.mDailyCheckInMsgList, dailyId) == false and dailyId ~= 0 then

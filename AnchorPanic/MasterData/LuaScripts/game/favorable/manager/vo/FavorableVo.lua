@@ -14,14 +14,6 @@ function parseConfigData(self,cusData)
     --关系描述
     self.favorable = cusData.relation_des
 
-    --剧情奖励
-    self.storyReward = cusData.story_reward
-    --剧情id
-    self.storyId = cusData.story_id
-    --剧情title
-    self.storyTitle = cusData.story_title
-    --剧情描述
-    self.storyDes = cusData.story_des
 end
 
 return _M

@@ -93,8 +93,7 @@ end
 --再次链接
 function onOneTwoRecruit(self)
     UIFactory:alertMessge(_TT(28045), true, function()
-        local recruit_id = recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_NEW_PLAYER)
-        GameDispatcher:dispatchEvent(EventName.REQ_RECRUIT_HERO, {recruitId = recruit_id, times = 10})
+        GameDispatcher:dispatchEvent(EventName.REQ_RECRUIT_HERO, {type = recruit.RecruitType.RECRUIT_NEW_PLAYER, times = 10})
         self:close()
     end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, RemindConst.NEWPLAYRECRUITRESULT)
 end
@@ -106,8 +105,6 @@ function onClickClose(self)
 
         self:recoverItem()
         self:close()
-
-        GameDispatcher:dispatchEvent(EventName.RECRUIT_FINISH)
     end
 end
 
@@ -155,6 +152,8 @@ function close(self)
             super.close(self)
         end
     end
+
+    GameDispatcher:dispatchEvent(EventName.RECRUIT_FINISH)
 end
 
 function updateView(self)

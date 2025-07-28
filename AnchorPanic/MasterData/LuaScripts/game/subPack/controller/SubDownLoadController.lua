@@ -131,12 +131,8 @@ function onSubDownLoadSuccessUpdateHandler(self, args)
         download.ResDownLoadManager:setModuleAssetsSign(moduleType, true)
     end
     
-    if(not self:isExistNeedUpdate())then
-        gs.GOPoolMgr:ClearAll()
-        gs.ResMgr:ForceUnload(false, false)
-        if(not subPack.SubDownLoadManager:isDownGiftHadRec())then
-            GameDispatcher:dispatchEvent(EventName.REQ_REC_SUB_DOWNLOAD_GIFT)
-        end
+    if(not self:isExistNeedUpdate() and not subPack.SubDownLoadManager:isDownGiftHadRec())then
+        GameDispatcher:dispatchEvent(EventName.REQ_REC_SUB_DOWNLOAD_GIFT)
     end
 end
 

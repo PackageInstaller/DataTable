@@ -136,8 +136,6 @@ function onOpenManualPanelMainHandler(self, args)
         self:onOpenManualHeroPanelHandler()
     elseif type == manual.ManualType.SolderingMark then
         self:onOpenBracelesTabViewHandler()
-    elseif type == manual.ManualType.Fashion then
-        self:onOpenManualFashionPanelHandler()
     elseif type then
         gs.Message.Show(_TT(47102))
     else
@@ -320,19 +318,6 @@ end
 function onDestroyOpenModuleInfoViewHandler(self)
     self.mModuleInfoView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyOpenModuleInfoViewHandler, self)
     self.mModuleInfoView = nil
-end
-
-function onOpenManualFashionPanelHandler(self,args)
-    if self.mManualFashionPanel == nil then
-        self.mManualFashionPanel = manual.ManualFashionTabView.new()
-        self.mManualFashionPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyOpenManualFashionPanelHandler, self)
-    end
-    self.mManualFashionPanel:open(args)
-end
-
-function onDestroyOpenManualFashionPanelHandler(self)
-    self.mManualFashionPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyOpenManualFashionPanelHandler, self)
-    self.mManualFashionPanel = nil
 end
 
 

@@ -243,81 +243,14 @@ function updateAttrValue(self, cusKey, cusValue)
         self:getRoleVo():setActivityCoin(cusValue)
     elseif (cusKey == role.AttrKey.PVP_HELL_COIN) then
         self:getRoleVo():setPvpHellCoin(cusValue)
-    elseif (cusKey == role.AttrKey.PLAYER_GUILD_COIN) then
+    elseif(cusKey == role.AttrKey.PLAYER_GUILD_COIN) then
         self:getRoleVo():setGuildCoin(cusValue)
-    elseif (cusKey == role.AttrKey.DOUNDLESS_COIN) then
+    elseif(cusKey == role.AttrKey.DOUNDLESS_COIN) then
         self:getRoleVo():setDoundlessCoin(cusValue)
-    elseif (cusKey == role.AttrKey.CHAT_BUBBLE_TID) then
+    elseif(cusKey == role.AttrKey.CHAT_BUBBLE_TID) then
         self:getRoleVo():setChatBubbleTid(cusValue)
-    elseif (cusKey == role.AttrKey.HAPPYFARM_COIN) then
-        self:getRoleVo():setHappyFarmMoney(cusValue)
-    elseif (cusKey == role.AttrKey.GUILDWAR_COIN) then
-        self:getRoleVo():setGuildWarCoin(cusValue)
     end
 end
-
--- 获取看板娘预设组
-function getHeroGroup(self)
-    local data = nil
-    local type = self:getHeroGroupShowSpine()
-    if type == 0 then
-        data = StorageUtil:getTable1(gstor.HERO_GROUP_SAVE_MODEL)
-    else
-        data = StorageUtil:getTable1(gstor.HERO_GROUP_SAVE_SPINE)
-        local isChange = nil
-        if data and not table.empty(data) then
-            for k, heroId in pairs(data) do
-                if heroId then
-                    local heroVo = hero.HeroManager:getHeroVo(heroId)
-                    if heroVo and not hero.HeroInteractManager:getModelIsDynamic(heroVo:getHeroModel()) then
-                        data[k] = nil
-                        isChange = true
-                    end
-                end
-            end
-        end
-        if isChange then
-            -- 有更换过皮肤，存在不支持spine的皮肤，去除并重新保存
-            self:setHeroGroup(data)
-        end
-    end
-
-    return data or {}
-end
-
--- 设置看板娘spine预设组
-function setHeroGroup(self, value)
-    local type = self:getHeroGroupShowSpine()
-    if type == 0 then
-        StorageUtil:saveTable1(gstor.HERO_GROUP_SAVE_MODEL, value)
-    else
-        StorageUtil:saveTable1(gstor.HERO_GROUP_SAVE_SPINE, value)
-    end
-end
-
--- 获取看板娘预设组是否开启spine
-function getHeroGroupShowSpine(self)
-    local data = StorageUtil:getNumber1(gstor.HERO_GROUP_SHOW_SPINE)
-    return data
-end
-
--- 设置看板娘预设组是否开启spine value 0:模型 1:spine
-function setHeroGroupShowSpine(self, value)
-    StorageUtil:saveNumber1(gstor.HERO_GROUP_SHOW_SPINE, value)
-end
-
-
--- 获取看板娘spine是否首次设置，是就展示引导特效
-function getMainUISpineIsFirstShow(self, modelId)
-    local data = StorageUtil:getNumber1(gstor.MAINUI_DYNAMIC_IS_FIRST .. modelId)
-    return data
-end
-
--- 获取看板娘spine是否首次设置，是就展示引导特效 value 0:首次 1:非首次
-function setMainUISpineIsFirstShow(self, modelId, value)
-    StorageUtil:saveNumber1(gstor.MAINUI_DYNAMIC_IS_FIRST .. modelId, value)
-end
-
 
 --析构函数
 function dtor(self)

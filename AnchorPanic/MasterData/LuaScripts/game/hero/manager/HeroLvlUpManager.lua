@@ -125,12 +125,6 @@ function getCanGoLvl(self, cusHeroVo, allExp)
     return canGoLvl, useExp
 end
 
---获取等级重置消耗配置
-function getHeroResetLvCostCfg(self)
-    local costCfg = sysParam.SysParamManager:getValue(SysParamType.HERO_RESET_LV_COST)
-    return costCfg[1]
-end
-
 --析构函数
 function dtor(self)
 end

@@ -42,9 +42,6 @@ function configUI(self)
 
     self.mGroupStamina = self:getChildGO("mGroupStamina")
     self.mGroupSub2 = self:getChildTrans("mGroupSub2")
-
-    self.mNumberStepper = self:getChildGO("mNumberStepper"):GetComponent(ty.LyNumberStepper)
-    --self.mNumberStepper:Init(1, 1, 1, (#fashionPermitTwo.FashionPermitTwoManager:getFashionPermitList() - fashionPermitTwo.FashionPermitTwoManager:getFashionPermitedLv()), self.onStepChange, self)
 end
 
 function active(self, args)
@@ -75,42 +72,19 @@ function initViewText(self)
     self.mTxtCost.text = _TT(50066) --"消耗"
 end
 
-function onStepChange(self, cusCount, cusType)
-    if cusType == 1 then
-        -- '最大值'
-        if self.mNumberStepper.MaxCount >= self.maxNum then
-            gs.Message.Show(_TT(4018))
-            return
-        end
-    elseif cusType == 2 then
-        -- '最小值'
-        gs.Message.Show(_TT(4019))
-    end
-    self.mPropTxtPrice.text = self.mDirectBuyVo:getPrice() *  cusCount
-    --self:updatePrice()
-end
-
 function setData(self)
     self.mTxtName.text = self.mDirectBuyVo:getItemName()
     local limitNum = self.mDirectBuyVo:getLimit()
     local hadBuyNum = purchase.DirectBuyManager:getHadBuyNum(self.mDirectBuyVo:getId())
-
-   
     if (limitNum == 0 and self.mDirectBuyVo:getLimitType() == purchase.DirectBuyLimitType.UN_LIMIT) then
         self.mTxtLimit.text = _TT(25009) .. "∞"
-        --self.mNumberStepper.gameObject:SetActive(false)
     else
         if (limitNum - hadBuyNum > 0) then
-            self.maxNum = limitNum - hadBuyNum
-            self.mNumberStepper:Init(self.maxNum, 1, 1,-1 , self.onStepChange, self)
             self.mTxtLimit.text = _TT(25009) .. (limitNum - hadBuyNum)
-            --self.mNumberStepper.gameObject:SetActive(true)
         else
             self.mTxtLimit.text = ""
         end
     end
-
-    self.mNumberStepper.gameObject:SetActive(self.mDirectBuyVo:getPayType() ~= MoneyType.MONEY) 
 
     local propsVo = props.PropsManager:getPropsVo({ tid = self.mDirectBuyVo:getItemTid(), num = self.mDirectBuyVo:getItemNum() })
     self.mImgIcon:SetImg(UrlManager:getPropsIconUrl(propsVo.tid), false)
@@ -215,9 +189,9 @@ function __onBuyHandler(self)
         gs.Message.Show2(_TT(25011)) --"已售罄"
     else
         if (self.mDirectBuyVo:getPayType() ~= MoneyType.MONEY) then
-            local isEnought, tips = MoneyUtil.judgeNeedMoneyCountByTid(self.mDirectBuyVo:getPayType(), self.mDirectBuyVo:getPrice() * self.mNumberStepper.CurrCount, true, true)
+            local isEnought, tips = MoneyUtil.judgeNeedMoneyCountByTid(self.mDirectBuyVo:getPayType(), self.mDirectBuyVo:getPrice(), true, true)
             if (isEnought) then
-                GameDispatcher:dispatchEvent(EventName.REQ_DIRECT_BUY_GO, { id = self.mDirectBuyVo:getId(), num = self.mNumberStepper.CurrCount })
+                GameDispatcher:dispatchEvent(EventName.REQ_DIRECT_BUY_GO, { id = self.mDirectBuyVo:getId(), num = 1 })
                 self:close()
             else
                 UIFactory:alertMessge(tips, true, function()

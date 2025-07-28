@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : MiningController
 @Description    : 捞宝藏小游戏控制管理器
@@ -71,19 +71,16 @@ end
 --- *s2c* 挖矿信息 18130
 function onParseMinerPanelHandler(self, msg)
     self.mMgr:onParseMinerPanelMsg(msg)
-    GameDispatcher:dispatchEvent(EventName.MAINACTIVITY_REDSTATE_UPDATE)
 end
 
 --- *s2c* 挖矿任务进度更新 18132
 function onParseMinerTaskUpdateHandler(self, msg)
     self.mMgr:onParseMinerTaskUpdateMsg(msg)
-    GameDispatcher:dispatchEvent(EventName.MAINACTIVITY_REDSTATE_UPDATE)
 end
 
 --- *s2c* 挖矿任务领取 返回 18134
 function onParseMinerTaskGainHandler(self, msg)
     self.mMgr:onParseMinerTaskGainMsg(msg)
-    GameDispatcher:dispatchEvent(EventName.MAINACTIVITY_REDSTATE_UPDATE)
 end
 
 --- *s2c* 更新挖矿信息 18136
@@ -95,8 +92,8 @@ end
 --- *s2c* 挖矿获取阶段奖励返回 18138
 function onParseMinerRewardHandler(self, msg)
     self.mMgr:onParseMinerRewardMsg(msg)
-    GameDispatcher:dispatchEvent(EventName.MAINACTIVITY_REDSTATE_UPDATE)
 end
+
 
 --- *c2s* 通关挖矿玩法 18135
 function onSendPassMinerHandler(self, dupId)
@@ -114,18 +111,22 @@ end
 
 --- *c2s* 挖矿任务领取 18133
 function onReqMiningGainTaskHandler(self, ids)
-    SOCKET_SEND(Protocol.CS_MINER_TASK_GAIN, {task_id_list = ids})
+    SOCKET_SEND(Protocol.CS_MINER_TASK_GAIN, { task_id_list = ids })
 end
 
 --- *c2s* 挖矿获取阶段奖励 18137
 function onReqMiningGainStarHandler(self, ids)
-    SOCKET_SEND(Protocol.CS_GAIN_MINER_REWARD, {id_list = ids})
+    SOCKET_SEND(Protocol.CS_GAIN_MINER_REWARD, { id_list = ids })
 end
 
 --- *c2s* 挖矿事件触发通知 18131
 function onReqMiningEventHandler(self, id)
-    SOCKET_SEND(Protocol.CS_MINER_EVENT, {id = id})
+    SOCKET_SEND(Protocol.CS_MINER_EVENT, { id = id })
 end
+
+
+
+
 
 -- 挖矿游戏界面
 function onOpenMiningScene(self, args)
@@ -192,6 +193,7 @@ function onDestroyMiningDupInfoViewHandler(self)
     self.mMiningDupInfoView = nil
 end
 
+
 -- 挖矿副本结算
 function onOpenMiningDupResultView(self, args)
     if not self.mMiningDupResultView then
@@ -206,6 +208,7 @@ function onDestroyMiningDupResultViewHandler(self)
     self.mMiningDupResultView = nil
 end
 
+
 -- 挖矿副本结算
 function onOpenMiningStarAwardView(self, args)
     if not self.mMiningStarAwardView then
@@ -219,6 +222,7 @@ function onDestroyMiningStarAwardViewHandler(self)
     self.mMiningStarAwardView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyMiningStarAwardViewHandler, self)
     self.mMiningStarAwardView = nil
 end
+
 
 -- 挖矿排行榜
 function onOpenMiningRankPanel(self, args)
@@ -247,5 +251,7 @@ function onDestroyMiningTaskViewHandler(self)
     self.mMiningTaskView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyMiningTaskViewHandler, self)
     self.mMiningTaskView = nil
 end
+
+
 
 return _M

@@ -52,7 +52,6 @@ function enterMap(self)
         end
         local cameraCom = scCameraGo:GetComponent(ty.Camera)
         gs.CameraMgr:SetSceneCamera(cameraCom)
-        PostHandler:initChromatioc()
         -- gs.CameraMgr:SetRenderCamera(cameraCom)
         gs.GlobalIllumMgr:SetGlobalIllum(globalIllum)
         if cameraCom then

@@ -84,7 +84,7 @@ function loadFinish(self, go, finishCall, sorceId)
 end
 
 -- 设置改变材质
-function updateMaterial(self, posList, mats, dissolves)
+function updateMaterial(self, posList, mats)
     if not self.m_modelMaterials or gs.GoUtil.IsCompNull(self.m_modelMaterials) then
         return
     end
@@ -97,16 +97,6 @@ function updateMaterial(self, posList, mats, dissolves)
 
     if not table.empty(matList) then
         self.m_modelMaterials:ChangeMaterial(posList, matList)
-    end
-    local seed = math.random(0, 1000) / 10000
-    local num = math.random(-seed, seed)
-    if not table.empty(dissolves) then
-        self.m_modelMaterials.DissolveValue0 = dissolves[1] + num
-        self.m_modelMaterials.DissolveValue1 = dissolves[2] + num
-        self.m_modelMaterials.DissolveValue2 = dissolves[3] + num
-        self.m_modelMaterials.DissolveValue3 = dissolves[4] + num
-        self.m_modelMaterials.DissolveValue4 = dissolves[5] + num
-        self.m_modelMaterials.DissolveValue5 = dissolves[6] + num
     end
 end
 
@@ -597,7 +587,7 @@ function playShowItem(self, aniHash, callFun)
             --移除上次遗留的跟这次不重复的道具
             if not table.empty(tmpDict) then
                 for itemPath, _ in pairs(tmpDict) do
-                    self:removeAssembly(itemPath)
+                    self:removeAssembly(UrlManager:getShowItemPath(itemPath))
                 end
             end
 
@@ -673,10 +663,6 @@ function setupAniCallSys(self)
     local function _endCall(aniHash)
         local eventCalls = self.m_aniEndDisposableCallDict[aniHash]
         if eventCalls then
-            local endCall = self.m_isForceEndCall[aniHash]
-            if endCall then
-                self.m_isForceEndCall[self.m_curAniHash] = nil
-            end
             self.m_aniEndDisposableCallDict[aniHash] = nil
             for _, v in ipairs(eventCalls) do
                 v(aniHash)

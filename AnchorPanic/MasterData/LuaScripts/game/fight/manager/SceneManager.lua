@@ -452,13 +452,9 @@ function _getDupData(self)
     elseif battleType == PreFightBattleType.Doundless then
         return doundless.DoundlessManager:getDoundlessCityStageDataById(battleFieldID)
     elseif battleType == PreFightBattleType.Guild_Sweep then
-        return guild.GuildManager:getSweepDupDataByDupId(battleFieldID)
+        return  guild.GuildManager:getSweepDupDataByDupId(battleFieldID)
     elseif battleType == PreFightBattleType.Disaster or battleType == PreFightBattleType.Disater_imitate then
-        return disaster.DisasterManager:getDisasterDupDataByDupId(battleFieldID)
-    elseif battleType == PreFightBattleType.HeroTrial then
-        return mainActivity.MainActivityManager:getTrialConfigVo(battleFieldID)
-    elseif battleType == PreFightBattleType.Seabed then
-        return seabed.SeabedManager:getSeabedDupDataById(battleFieldID)
+        return  disaster.DisasterManager:getDisasterDupDataByDupId(battleFieldID)
     end
 end
 
@@ -493,9 +489,6 @@ function build(self, cusData)
             -- print("=================dupData:getSceneId()", dupData:getSceneId())
             self:setupMap(dupData:getSceneId())
         else
-            if fight.FightManager:getBattleType() == PreFightBattleType.GuildWar then
-                self:setupMap(112)
-            end
             if dupData then
                 logError("===============该玩法configVo没有预设getSceneId() 方法，发给前端检查" .. dupData.__cname)
             end

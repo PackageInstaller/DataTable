@@ -475,32 +475,6 @@ function action(self, effectInfo, senderLiveID, targetLiveID, finishCall)
         end
     elseif eftType == fight.FightDef.BATTLE_TYPE_BOSS_SUFFER_DAMAGE then
         GameDispatcher:dispatchEvent(EventName.FIGHT_GUILDBOSS_DAMAGE_UPDATE, eftVal)
-    elseif eftType == fight.FightDef.BATTLE_TYPE_ADD_SCENE_SHIELD then
-        -- print("====================BATTLE_TYPE_ADD_SCENE_SHIELD")
-        self:seeFly(actionID, targetLiveID, eftType, eftVal)
-    elseif eftType == fight.FightDef.BATTLE_TYPE_HURT_ON_SCENE_SHIELD then
-        -- print("====================BATTLE_TYPE_HURT_ON_SCENE_SHIELD")
-        self:seeFly(actionID, targetLiveID, eftType, eftVal)
-    elseif eftType == fight.FightDef.BATTLE_TYPE_SHANDIE_ELE_CAMERA then
-        -- print("====================BATTLE_TYPE_SHANDIE_ELE_CAMERA")
-        local liveId = fight.FightManager:toUniqueID(effectInfo.count_list[1], effectInfo.count_list[2])
-        local liveVo = fight.SceneManager:getThing(liveId)
-        local cameraPos
-        if liveVo:isAttacker() == 1 then
-            cameraPos, _ = fight.SceneGrid:getACenter()
-        else
-            cameraPos, _ = fight.SceneGrid:getDCenter()
-        end
-        fight.FightCamera:moveScFilpTrans(true, cameraPos, 10, liveVo.position.z, liveVo.position.z, 0)
-        fight.LivePerformManager:playSoundEff(liveId, "4522/sfx_role_4522_tianfu_buff_02_jing.prefab")
-
-        -- fight.FightCamera:focusAttacker(liveVo)
-        LoopManager:setTimeout(1.5, self, function()
-            if finishCall then
-                finishCall()
-            end
-        end)
-        isImmedCall = false
     end
 
     -- 优先级效果直接回调，需要等待的参考isImmedCall用法

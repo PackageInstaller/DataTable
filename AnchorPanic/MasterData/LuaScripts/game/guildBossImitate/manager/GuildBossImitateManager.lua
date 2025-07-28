@@ -128,13 +128,4 @@ function saveCacheDupId(self, dupId)
     StorageUtil:getNumber1(gstor.GUILDBOSSIMITATE_CACHE_DUPID, self.m_cacheDupId)
 end
 
-function getDupName(self, fieldID, battleType)
-    local dupConfigVo = self:getDupConfig(fieldID)
-    if dupConfigVo  then 
-        return dupConfigVo.stage_name
-    end
-
-    return ""
-end
-
 return _M

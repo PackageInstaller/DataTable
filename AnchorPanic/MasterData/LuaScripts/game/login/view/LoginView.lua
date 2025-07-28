@@ -121,7 +121,6 @@ function configUI(self)
     self.m_textCleanStorage = self:getChildGO('TextCleanStorage'):GetComponent(ty.Text)
     self.m_textAccountName = self:getChildGO('TextAccountName'):GetComponent(ty.Text)
 
-    self.m_btnDestroyAccount = self:getChildGO('mBtnDestroyAccount')
     self.m_btnQuit = self:getChildGO('mBtnQuit')
     self.m_btnAgeTip = self:getChildGO('BtnAgeTip')
 
@@ -152,7 +151,6 @@ function configUI(self)
     self.m_btnGetUniqueId:SetActive(web.WebManager:isShowUniqueId())
     
     -- self.mBtnAudio:SetActive(false)
-    self.m_btnDestroyAccount:SetActive(sdk.SdkManager:getIsChannelDouYin())
     self.m_btnQuit:SetActive(gs.Application.platform == gs.RuntimePlatform.WindowsPlayer)
 
     self.mTxtClientVersion = self:getChildGO('TextClientVersion'):GetComponent(ty.Text)
@@ -164,9 +162,6 @@ function initViewText(self)
     self:setBtnLabel(self.mBtnAudio, 62060, "音乐")
     self:setBtnLabel(self.m_btnCleanAssets, 71, "修复")
     self:setBtnLabel(self.mBtnSwitch, 1196, "切换")
-
-    self:setBtnLabel(self.m_btnDestroyAccount, 0, "销号")
-    self:setBtnLabel(self.m_btnQuit, 44219, "退出")
     -- self.m_textNotice.text = _TT(52010)
     -- self.m_textCleanAssets.text = '清除资源'
     -- self.m_textCleanStorage.text = '清除服务器记录'
@@ -199,7 +194,6 @@ end
 function addAllUIEvent(self)
     self:addUIEvent(self.m_btnNotice, self.__onClickNoticeHandler)
     self:addUIEvent(self.m_btnLogin, self.__onClickLoginHandler, UrlManager:getUIBaseSoundPath("ui_basic_load.prefab"))
-    self:addUIEvent(self.m_btnDestroyAccount, self.__onClickDestroyAccountHandler)
     self:addUIEvent(self.m_btnQuit, self.__onClickQuitHandler)
     self:addUIEvent(self.m_btnAgeTip, self.__onClickAgeTipHandler)
     self:addUIEvent(self.mBtnSwitch, self.__onClickSwitchHandler)
@@ -438,10 +432,6 @@ function __onClickLoginHandler(self)
             end, _TT(2), _TT(5), nil, nil)
         end
     end
-end
-
-function __onClickDestroyAccountHandler(self)
-    sdk.SdkManager:destroyAccount()
 end
 
 function __onClickQuitHandler(self)

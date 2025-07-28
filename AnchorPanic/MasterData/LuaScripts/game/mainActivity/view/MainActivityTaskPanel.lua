@@ -118,11 +118,11 @@ function setScrollerData(self)
         end
     end)
 
-    --if self.mTaskList[1].tweenId == nil then
+    if self.mTaskList[1].tweenId == nil then
         for i = 1, #self.mTaskList do
             self.mTaskList[i].tweenId = i * 3
         end
-    --end
+    end
 
     if self.mScroller.Count <= 0 then
         self.mScroller.DataProvider = self.mTaskList

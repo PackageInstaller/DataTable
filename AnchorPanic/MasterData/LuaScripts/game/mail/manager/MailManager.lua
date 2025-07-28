@@ -159,9 +159,7 @@ function getKeyDelIdList(self)
     local list = {}
     for _, mailVo in pairs(self.m_mailDic) do
         if (not mailVo:getHasAward() and mailVo.state == 1) or mailVo.state == 2 then
-            if mailVo.isCollection == false then
-                table.insert(list, mailVo.id)
-            end
+            table.insert(list, mailVo.id)
         end
     end
     return list

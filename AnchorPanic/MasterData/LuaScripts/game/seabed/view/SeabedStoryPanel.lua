@@ -41,7 +41,7 @@ end
 function active(self)
     super.active(self)
 
-    GameDispatcher:addEventListener(EventName.UPDATE_SEABED_RED,self.updateRed,self)
+    --GameDispatcher:addEventListener(EventName.UPDATE_CYCLE_RED,self.updateRed,self)
     MoneyManager:setMoneyTidList({})
     self:showPanel()
 
@@ -50,7 +50,7 @@ end
 
 function deActive(self)
     super.deActive(self)
-    GameDispatcher:removeEventListener(EventName.UPDATE_SEABED_RED,self.updateRed,self)
+    --GameDispatcher:removeEventListener(EventName.UPDATE_CYCLE_RED,self.updateRed,self)
     MoneyManager:setMoneyTidList({ MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID })
     self:clearStoryItems()
 end
@@ -99,11 +99,11 @@ end
 
 
 function updateRed(self)
-    if seabed.SeabedManager:canGetStory() then
-        RedPointManager:add(self.mBtnAward.transform, nil, -29.8, 31.3)
-    else
-        RedPointManager:remove(self.mBtnAward.transform)
-    end
+    -- if cycle.CycleManager:canGetStory() then
+    --     RedPointManager:add(self.mBtnAward.transform, nil, -29.8, 31.3)
+    -- else
+    --     RedPointManager:remove(self.mBtnAward.transform)
+    -- end
 end
 
 return _M

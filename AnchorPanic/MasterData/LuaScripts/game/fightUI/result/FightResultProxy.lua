@@ -87,22 +87,21 @@ end
 
 -- 返回对应副本的章节名、副本名
 function FightResultProxy:getDupName(cusBattleType, cusBattleFieldID)
-    return ""
-    -- if cusBattleType == 99 then
-    --     -- gm测试战斗类型
-    --     return "M100", "GM测试战斗类型"
-    -- end
+    if cusBattleType == 99 then
+        -- gm测试战斗类型
+        return "M100", "GM测试战斗类型"
+    end
 
-    -- local mgr = FightResultProxy.battleMgrDic[cusBattleType]
-    -- if not mgr then
-    --     logError(string.format("战斗类型%s未注册", cusBattleType), "FightResultProxy")
-    --     return "M100", _TT(3042)
-    -- end
-    -- if not mgr.getDupName then
-    --     logError(string.format("战斗类型%s的manager未提供getDupName方法", cusBattleType), "FightResultProxy")
-    --     return "M100", _TT(3042)
-    -- end
-    -- return mgr:getDupName(tonumber(cusBattleFieldID), cusBattleType)
+    local mgr = FightResultProxy.battleMgrDic[cusBattleType]
+    if not mgr then
+        logError(string.format("战斗类型%s未注册", cusBattleType), "FightResultProxy")
+        return "M100", _TT(3042)
+    end
+    if not mgr.getDupName then
+        logError(string.format("战斗类型%s的manager未提供getDupName方法", cusBattleType), "FightResultProxy")
+        return "M100", _TT(3042)
+    end
+    return mgr:getDupName(tonumber(cusBattleFieldID), cusBattleType)
 end
 
 -- 额外的战斗单位(预加载用)
@@ -168,8 +167,6 @@ FightResultProxy.battleMgrDic[PreFightBattleType.Friend] = training.TrainingMana
 FightResultProxy.battleMgrDic[PreFightBattleType.Doundless] = doundless.DoundlessManager
 -- FightResultProxy.battleMgrDic[PreFightBattleType.SandPlay] = sandPlay.SandPlayManager
 FightResultProxy.battleMgrDic[PreFightBattleType.Seabed] = seabed.SeabedManager
-FightResultProxy.battleMgrDic[PreFightBattleType.GuildWar] = guildWar.GuildWarManager
-FightResultProxy.battleMgrDic[PreFightBattleType.Guild_Imitate] = guildBossImitate.GuildBossImitateManager
 
 --[[ 替换语言包自动生成，请勿修改！
 语言包: _TT(3042):"异空间"

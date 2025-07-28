@@ -981,7 +981,7 @@ local element_tower_dup_data=
 },
 	[2489]={ tower_id=5, name=24607, describe=24909, pre_id=2488, next_id=2490, mon={13841,13842,13843,13844,13845}, formation_id=530, first_award=1169, scene_id=162, point_line=2, ele_type={4}, ele_type_num={4}, suggest_level={0,80}, suggest_ele={4,5}, lock_formation=0, pos_effect_id={3121,3153}, layer=89
 },
-	[2490]={ tower_id=5, name=24608, describe=24910, pre_id=2489, next_id=2491, mon={13846,13847,13848,13849,13850}, formation_id=543, first_award=1170, scene_id=129, point_line=3, ele_type={4}, ele_type_num={4}, suggest_level={0,80}, suggest_ele={2,5}, lock_formation=0, pos_effect_id={3122,3153}, layer=90
+	[2490]={ tower_id=5, name=24608, describe=24910, pre_id=2489, next_id=2491, mon={13846,13847,13848,13849,13850}, formation_id=543, first_award=1170, scene_id=129, point_line=0, ele_type={4}, ele_type_num={4}, suggest_level={0,80}, suggest_ele={2,5}, lock_formation=0, pos_effect_id={3122,3153}, layer=90
 },
 	[2491]={ tower_id=5, name=24609, describe=24911, pre_id=2490, next_id=2492, mon={13851,13852,13853,13854,13855}, formation_id=537, first_award=1161, scene_id=406, point_line=1, ele_type={4}, ele_type_num={5}, suggest_level={0,80}, suggest_ele={1,5}, lock_formation=0, pos_effect_id={3123,3154}, layer=91
 },

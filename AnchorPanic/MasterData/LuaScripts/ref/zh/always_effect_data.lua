@@ -65,13 +65,7 @@ local always_effect_data=
 },
 	["model4516_2.prefab"]={ eft_group={"4516_2_tianfu_buff_03.prefab"}, justUI=0
 },
-	["model4512_3.prefab"]={ eft_group={"4512_3_tianfu_buff_03.prefab"}, justUI=0
-},
-	["model6316_b_2.prefab"]={ eft_group={"6316_b_2_changjing.prefab"}, justUI=0
-},
-	["model6316_b.prefab"]={ eft_group={"6316_b_2_changjing.prefab"}, justUI=0
-},
-	["model4503_4_wq_01.prefab"]={ eft_group={"4503_4_dl_L.prefab","4503_4_dl_R.prefab"}, justUI=0
+	["model4512_3.prefab"]={ eft_group={"4512_3_tianfu_buff_03.prefab"}, justUI=1
 }
 }
 

@@ -110,54 +110,6 @@ local avatar_frame_data=
 	[12246]={ unlock_type=1, unlock_list={12246}, get_description=612246, res_name=512246, res="player_head_frame_12246.png", sort=53, dynamics=0
 },
 	[12247]={ unlock_type=1, unlock_list={12247}, get_description=612247, res_name=512247, res="player_head_frame_12247.png", sort=54, dynamics=0
-},
-	[12248]={ unlock_type=1, unlock_list={12248}, get_description=612248, res_name=512248, res="player_head_frame_12248.png", sort=55, dynamics=0
-},
-	[12249]={ unlock_type=1, unlock_list={12249}, get_description=612249, res_name=512249, res="player_head_frame_12249.png", sort=56, dynamics=0
-},
-	[12250]={ unlock_type=1, unlock_list={12250}, get_description=612250, res_name=512250, res="player_head_frame_12250.png", sort=57, dynamics=0
-},
-	[12251]={ unlock_type=1, unlock_list={12251}, get_description=612251, res_name=512251, res="player_head_frame_12251.png", sort=58, dynamics=0
-},
-	[12252]={ unlock_type=1, unlock_list={12252}, get_description=612252, res_name=512252, res="player_head_frame_12252.png", sort=59, dynamics=0
-},
-	[12253]={ unlock_type=1, unlock_list={12253}, get_description=612253, res_name=512253, res="player_head_frame_12253.png", sort=60, dynamics=0
-},
-	[12254]={ unlock_type=1, unlock_list={12254}, get_description=612254, res_name=512254, res="player_head_frame_12254.png", sort=61, dynamics=0
-},
-	[12255]={ unlock_type=1, unlock_list={12255}, get_description=612255, res_name=512255, res="dynamicHeadFrame_12255.prefab", sort=62, dynamics=1
-},
-	[12256]={ unlock_type=1, unlock_list={12256}, get_description=612256, res_name=512256, res="dynamicHeadFrame_12256.prefab", sort=63, dynamics=1
-},
-	[12257]={ unlock_type=1, unlock_list={12257}, get_description=612257, res_name=512257, res="dynamicHeadFrame_12257.prefab", sort=64, dynamics=1
-},
-	[12258]={ unlock_type=1, unlock_list={12258}, get_description=612258, res_name=512258, res="player_head_frame_12258.png", sort=65, dynamics=0
-},
-	[12259]={ unlock_type=1, unlock_list={12259}, get_description=612259, res_name=512259, res="player_head_frame_12259.png", sort=66, dynamics=0
-},
-	[12260]={ unlock_type=1, unlock_list={12260}, get_description=612260, res_name=512260, res="player_head_frame_12260.png", sort=67, dynamics=0
-},
-	[12261]={ unlock_type=1, unlock_list={12261}, get_description=612261, res_name=512261, res="player_head_frame_12261.png", sort=68, dynamics=0
-},
-	[12262]={ unlock_type=1, unlock_list={12262}, get_description=612262, res_name=512262, res="player_head_frame_12262.png", sort=69, dynamics=0
-},
-	[12263]={ unlock_type=1, unlock_list={12263}, get_description=612263, res_name=512263, res="player_head_frame_12263.png", sort=70, dynamics=0
-},
-	[12264]={ unlock_type=1, unlock_list={12264}, get_description=612264, res_name=512264, res="dynamicHeadFrame_12264.prefab", sort=71, dynamics=1
-},
-	[12265]={ unlock_type=1, unlock_list={12265}, get_description=612265, res_name=512265, res="dynamicHeadFrame_12265.prefab", sort=72, dynamics=1
-},
-	[12266]={ unlock_type=1, unlock_list={12266}, get_description=612266, res_name=512266, res="dynamicHeadFrame_12266.prefab", sort=73, dynamics=1
-},
-	[12267]={ unlock_type=1, unlock_list={12267}, get_description=612267, res_name=512267, res="player_head_frame_12267.png", sort=74, dynamics=0
-},
-	[12268]={ unlock_type=1, unlock_list={12268}, get_description=612268, res_name=512268, res="player_head_frame_12268.png", sort=75, dynamics=0
-},
-	[12269]={ unlock_type=1, unlock_list={12269}, get_description=612269, res_name=512269, res="player_head_frame_12269.png", sort=76, dynamics=0
-},
-	[12270]={ unlock_type=1, unlock_list={12270}, get_description=612270, res_name=512270, res="player_head_frame_12270.png", sort=77, dynamics=0
-},
-	[12271]={ unlock_type=1, unlock_list={12271}, get_description=612271, res_name=512271, res="player_head_frame_12271.png", sort=78, dynamics=0
 }
 }
 

@@ -44,10 +44,6 @@ function ctor(self)
     local shieldAddFont = gs.ResMgr:Load(UrlManager:getFntPath("shield_add_num.fontsettings"))
     local shieldCutFont = gs.ResMgr:Load(UrlManager:getFntPath("shield_cut_num.fontsettings"))
 
-    -- 场景盾量
-    local shieldAddFont2 = gs.ResMgr:Load(UrlManager:getFntPath("shield_add_num2.fontsettings"))
-    local shieldCutFont2 = gs.ResMgr:Load(UrlManager:getFntPath("shield_cut_num2.fontsettings"))
-
     -- 反伤
     local antiFont = gs.ResMgr:Load(UrlManager:getFntPath("anti_num.fontsettings"))
     -- 留血
@@ -92,9 +88,6 @@ function ctor(self)
 
     self.m_fontType[fight.FightDef.BATTLE_TYPE_SHIELD_ADD] = shieldAddFont
     self.m_fontType[fight.FightDef.BATTLE_TYPE_HURT_ON_SHIELD] = shieldCutFont
-
-    self.m_fontType[fight.FightDef.BATTLE_TYPE_ADD_SCENE_SHIELD] = shieldAddFont2
-    self.m_fontType[fight.FightDef.BATTLE_TYPE_HURT_ON_SCENE_SHIELD] = shieldCutFont2
 
     -- 元素伤害
     self.m_fontType[fight.FightDef.ATTR_ELE_HURT_THUNDER] = electrocuteFont

@@ -5,7 +5,7 @@ local story_data=
 {
 	[10011]={ battle_type=0, battle_field_id=0, happen_type=0, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=10011, is_speedup=1
 },
-	[10021]={ battle_type=2, battle_field_id=1001, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=10021, is_speedup=1
+	[10021]={ battle_type=2, battle_field_id=1001, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=10021, is_speedup=1
 },
 	[10022]={ battle_type=2, battle_field_id=1002, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=10022, is_speedup=1
 },
@@ -293,91 +293,25 @@ local story_data=
 },
 	[90121]={ battle_type=2, battle_field_id=1815, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=90121, is_speedup=1
 },
-	[100011]={ battle_type=2, battle_field_id=1901, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100011, is_speedup=1
-},
-	[100021]={ battle_type=2, battle_field_id=1902, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100021, is_speedup=1
-},
-	[100031]={ battle_type=2, battle_field_id=1904, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100031, is_speedup=1
-},
-	[100041]={ battle_type=2, battle_field_id=1906, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100041, is_speedup=1
-},
-	[100051]={ battle_type=2, battle_field_id=1908, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100051, is_speedup=1
-},
-	[100052]={ battle_type=2, battle_field_id=1908, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100052, is_speedup=1
-},
-	[100061]={ battle_type=2, battle_field_id=1910, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100061, is_speedup=1
-},
-	[100062]={ battle_type=2, battle_field_id=1910, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100062, is_speedup=1
-},
-	[100071]={ battle_type=2, battle_field_id=1912, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100071, is_speedup=1
-},
-	[100072]={ battle_type=2, battle_field_id=1912, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100072, is_speedup=1
-},
-	[100081]={ battle_type=2, battle_field_id=1914, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100081, is_speedup=1
-},
-	[100091]={ battle_type=2, battle_field_id=1915, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100091, is_speedup=1
-},
-	[110011]={ battle_type=2, battle_field_id=2001, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=110011, is_speedup=1
-},
-	[110021]={ battle_type=2, battle_field_id=2002, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=110021, is_speedup=1
-},
-	[110031]={ battle_type=2, battle_field_id=2004, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=110031, is_speedup=1
-},
-	[110041]={ battle_type=2, battle_field_id=2006, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=110041, is_speedup=1
-},
-	[110051]={ battle_type=2, battle_field_id=2008, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=110051, is_speedup=1
-},
-	[110061]={ battle_type=2, battle_field_id=2010, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=110061, is_speedup=1
-},
-	[110071]={ battle_type=2, battle_field_id=2012, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=110071, is_speedup=1
-},
-	[110081]={ battle_type=2, battle_field_id=2013, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=110081, is_speedup=1
-},
-	[110091]={ battle_type=2, battle_field_id=2014, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=110091, is_speedup=1
-},
-	[120011]={ battle_type=2, battle_field_id=2101, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120011, is_speedup=1
-},
-	[120021]={ battle_type=2, battle_field_id=2102, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120021, is_speedup=1
-},
-	[120031]={ battle_type=2, battle_field_id=2104, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120031, is_speedup=1
-},
-	[120041]={ battle_type=2, battle_field_id=2105, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120041, is_speedup=1
-},
-	[120051]={ battle_type=2, battle_field_id=2106, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120051, is_speedup=1
-},
-	[120052]={ battle_type=2, battle_field_id=2106, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120052, is_speedup=1
-},
-	[120061]={ battle_type=2, battle_field_id=2108, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120061, is_speedup=1
-},
-	[120071]={ battle_type=2, battle_field_id=2110, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120071, is_speedup=1
-},
-	[120081]={ battle_type=2, battle_field_id=2112, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120081, is_speedup=1
-},
-	[120091]={ battle_type=2, battle_field_id=2113, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120091, is_speedup=1
-},
-	[120101]={ battle_type=2, battle_field_id=2114, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120101, is_speedup=1
-},
-	[120111]={ battle_type=2, battle_field_id=2115, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=120111, is_speedup=1
-},
 	[100001]={ battle_type=40, battle_field_id=15091, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100001, is_speedup=1
 },
 	[100002]={ battle_type=40, battle_field_id=15092, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100002, is_speedup=1
 },
 	[100003]={ battle_type=40, battle_field_id=15093, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100003, is_speedup=1
 },
-	[101001]={ battle_type=56, battle_field_id=30001, happen_type=12, happen_arg={10310}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=0, synopsis="是否跳过本段剧情？", talk_group_id=101001, is_speedup=1
+	[101001]={ battle_type=56, battle_field_id=1001, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101001, is_speedup=1
 },
-	[101002]={ battle_type=56, battle_field_id=30006, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101002, is_speedup=1
+	[101002]={ battle_type=56, battle_field_id=1002, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101002, is_speedup=1
 },
-	[101003]={ battle_type=56, battle_field_id=30007, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101003, is_speedup=1
+	[101003]={ battle_type=56, battle_field_id=1003, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101003, is_speedup=1
 },
-	[101004]={ battle_type=56, battle_field_id=30003, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101004, is_speedup=1
+	[101004]={ battle_type=56, battle_field_id=1004, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101004, is_speedup=1
 },
-	[101005]={ battle_type=56, battle_field_id=30004, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101005, is_speedup=1
+	[101005]={ battle_type=56, battle_field_id=1080, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101005, is_speedup=1
 },
-	[101006]={ battle_type=56, battle_field_id=30002, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101006, is_speedup=1
+	[101006]={ battle_type=56, battle_field_id=1101, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101006, is_speedup=1
 },
-	[101008]={ battle_type=56, battle_field_id=30005, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101008, is_speedup=1
+	[101008]={ battle_type=56, battle_field_id=1102, happen_type=11, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=101008, is_speedup=1
 },
 	[430001]={ battle_type=43, battle_field_id=1001, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=10011, is_speedup=1
 },
@@ -799,160 +733,6 @@ local story_data=
 },
 	[44813]={ battle_type=44, battle_field_id=2516, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44813, is_speedup=0
 },
-	[44901]={ battle_type=44, battle_field_id=2601, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44901, is_speedup=0
-},
-	[44902]={ battle_type=44, battle_field_id=2603, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44902, is_speedup=0
-},
-	[44903]={ battle_type=44, battle_field_id=2603, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44903, is_speedup=0
-},
-	[44904]={ battle_type=44, battle_field_id=2605, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44904, is_speedup=0
-},
-	[44905]={ battle_type=44, battle_field_id=2606, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44905, is_speedup=0
-},
-	[44906]={ battle_type=44, battle_field_id=2607, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44906, is_speedup=0
-},
-	[44907]={ battle_type=44, battle_field_id=2609, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44907, is_speedup=0
-},
-	[44908]={ battle_type=44, battle_field_id=2610, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44908, is_speedup=0
-},
-	[44909]={ battle_type=44, battle_field_id=2612, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44909, is_speedup=0
-},
-	[44910]={ battle_type=44, battle_field_id=2613, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44910, is_speedup=0
-},
-	[44911]={ battle_type=44, battle_field_id=2615, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44911, is_speedup=0
-},
-	[44912]={ battle_type=44, battle_field_id=2616, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=44912, is_speedup=0
-},
-	[441001]={ battle_type=44, battle_field_id=2701, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441001, is_speedup=0
-},
-	[441002]={ battle_type=44, battle_field_id=2703, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441002, is_speedup=0
-},
-	[441003]={ battle_type=44, battle_field_id=2705, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441003, is_speedup=0
-},
-	[441004]={ battle_type=44, battle_field_id=2706, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441004, is_speedup=0
-},
-	[441005]={ battle_type=44, battle_field_id=2707, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441005, is_speedup=0
-},
-	[441006]={ battle_type=44, battle_field_id=2708, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441006, is_speedup=0
-},
-	[441007]={ battle_type=44, battle_field_id=2708, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441007, is_speedup=0
-},
-	[441008]={ battle_type=44, battle_field_id=2710, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441008, is_speedup=0
-},
-	[441009]={ battle_type=44, battle_field_id=2710, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441009, is_speedup=0
-},
-	[441010]={ battle_type=44, battle_field_id=2711, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441010, is_speedup=0
-},
-	[441011]={ battle_type=44, battle_field_id=2712, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441011, is_speedup=0
-},
-	[441012]={ battle_type=44, battle_field_id=2714, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441012, is_speedup=0
-},
-	[441013]={ battle_type=44, battle_field_id=2715, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441013, is_speedup=0
-},
-	[441014]={ battle_type=44, battle_field_id=2716, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441014, is_speedup=0
-},
-	[441101]={ battle_type=44, battle_field_id=2801, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441101, is_speedup=0
-},
-	[441102]={ battle_type=44, battle_field_id=2803, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441102, is_speedup=0
-},
-	[441103]={ battle_type=44, battle_field_id=2804, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441103, is_speedup=0
-},
-	[441104]={ battle_type=44, battle_field_id=2806, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441104, is_speedup=0
-},
-	[441105]={ battle_type=44, battle_field_id=2807, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441105, is_speedup=0
-},
-	[441106]={ battle_type=44, battle_field_id=2808, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441106, is_speedup=0
-},
-	[441107]={ battle_type=44, battle_field_id=2809, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441107, is_speedup=0
-},
-	[441108]={ battle_type=44, battle_field_id=2810, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441108, is_speedup=0
-},
-	[441109]={ battle_type=44, battle_field_id=2812, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441109, is_speedup=0
-},
-	[441110]={ battle_type=44, battle_field_id=2814, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441110, is_speedup=0
-},
-	[441111]={ battle_type=44, battle_field_id=2816, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441111, is_speedup=0
-},
-	[441201]={ battle_type=44, battle_field_id=2901, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441201, is_speedup=0
-},
-	[441202]={ battle_type=44, battle_field_id=2901, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441202, is_speedup=0
-},
-	[441203]={ battle_type=44, battle_field_id=2902, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441203, is_speedup=0
-},
-	[441204]={ battle_type=44, battle_field_id=2902, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441204, is_speedup=0
-},
-	[441205]={ battle_type=44, battle_field_id=2903, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441205, is_speedup=0
-},
-	[441206]={ battle_type=44, battle_field_id=2903, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441206, is_speedup=0
-},
-	[441207]={ battle_type=44, battle_field_id=2904, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441207, is_speedup=0
-},
-	[441208]={ battle_type=44, battle_field_id=2905, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441208, is_speedup=0
-},
-	[441209]={ battle_type=44, battle_field_id=2905, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441209, is_speedup=0
-},
-	[441210]={ battle_type=44, battle_field_id=2906, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441210, is_speedup=0
-},
-	[441211]={ battle_type=44, battle_field_id=2906, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441211, is_speedup=0
-},
-	[441212]={ battle_type=44, battle_field_id=2907, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441212, is_speedup=0
-},
-	[441213]={ battle_type=44, battle_field_id=2907, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441213, is_speedup=0
-},
-	[441214]={ battle_type=44, battle_field_id=2909, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441214, is_speedup=0
-},
-	[441215]={ battle_type=44, battle_field_id=2911, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441215, is_speedup=0
-},
-	[441216]={ battle_type=44, battle_field_id=2912, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441216, is_speedup=0
-},
-	[441217]={ battle_type=44, battle_field_id=2912, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441217, is_speedup=0
-},
-	[441218]={ battle_type=44, battle_field_id=2915, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441218, is_speedup=0
-},
-	[441219]={ battle_type=44, battle_field_id=2917, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441219, is_speedup=0
-},
-	[441220]={ battle_type=44, battle_field_id=2917, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441220, is_speedup=0
-},
-	[441221]={ battle_type=44, battle_field_id=2918, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441221, is_speedup=0
-},
-	[441222]={ battle_type=44, battle_field_id=2918, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441222, is_speedup=0
-},
-	[441223]={ battle_type=44, battle_field_id=2919, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441223, is_speedup=0
-},
-	[441224]={ battle_type=44, battle_field_id=2920, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441224, is_speedup=0
-},
-	[441301]={ battle_type=44, battle_field_id=3001, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441301, is_speedup=0
-},
-	[441302]={ battle_type=44, battle_field_id=3002, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441302, is_speedup=0
-},
-	[441303]={ battle_type=44, battle_field_id=3004, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441303, is_speedup=0
-},
-	[441304]={ battle_type=44, battle_field_id=3005, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441304, is_speedup=0
-},
-	[441305]={ battle_type=44, battle_field_id=3006, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441305, is_speedup=0
-},
-	[441306]={ battle_type=44, battle_field_id=3007, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441306, is_speedup=0
-},
-	[441307]={ battle_type=44, battle_field_id=3009, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441307, is_speedup=0
-},
-	[441308]={ battle_type=44, battle_field_id=3010, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441308, is_speedup=0
-},
-	[441309]={ battle_type=44, battle_field_id=3011, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441309, is_speedup=0
-},
-	[441310]={ battle_type=44, battle_field_id=3011, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441310, is_speedup=0
-},
-	[441311]={ battle_type=44, battle_field_id=3012, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441311, is_speedup=0
-},
-	[441312]={ battle_type=44, battle_field_id=3013, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441312, is_speedup=0
-},
-	[441313]={ battle_type=44, battle_field_id=3013, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441313, is_speedup=0
-},
-	[441314]={ battle_type=44, battle_field_id=3014, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441314, is_speedup=0
-},
-	[441315]={ battle_type=44, battle_field_id=3014, happen_type=6, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441315, is_speedup=0
-},
-	[441316]={ battle_type=44, battle_field_id=3015, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=441316, is_speedup=0
-},
 	[180101]={ battle_type=23, battle_field_id=180101, happen_type=9, happen_arg={}, effect_type=11, effect_param={{202,15101,15103,15104},{1,1,15102},{2,2}}, can_pass=0, line_id=0, is_repeat=1, synopsis="", talk_group_id=0, is_speedup=0
 },
 	[180102]={ battle_type=23, battle_field_id=180102, happen_type=9, happen_arg={}, effect_type=11, effect_param={{203,15106,15107,15109},{1,1,15108},{2,2}}, can_pass=0, line_id=0, is_repeat=1, synopsis="", talk_group_id=0, is_speedup=0
@@ -1071,49 +851,7 @@ local story_data=
 },
 	[111001]={ battle_type=11, battle_field_id=1008, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=1, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=0, is_speedup=0
 },
-	[270001]={ battle_type=33, battle_field_id=1032, happen_type=9, happen_arg={}, effect_type=7, effect_param={201,4956,4957}, can_pass=0, line_id=0, is_repeat=1, synopsis="", talk_group_id=0, is_speedup=0
-},
-	[280001]={ battle_type=58, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=7, effect_param={102,4500}, can_pass=0, line_id=0, is_repeat=1, synopsis="", talk_group_id=0, is_speedup=0
-},
-	[102201]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102201, is_speedup=0
-},
-	[102202]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102202, is_speedup=0
-},
-	[102203]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102203, is_speedup=0
-},
-	[102204]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102204, is_speedup=0
-},
-	[102205]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102205, is_speedup=0
-},
-	[102901]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102901, is_speedup=0
-},
-	[102902]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102902, is_speedup=0
-},
-	[102903]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102903, is_speedup=0
-},
-	[102904]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102904, is_speedup=0
-},
-	[102905]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102905, is_speedup=0
-},
-	[102401]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102401, is_speedup=0
-},
-	[102402]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102402, is_speedup=0
-},
-	[102403]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102403, is_speedup=0
-},
-	[102404]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102404, is_speedup=0
-},
-	[102405]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=102405, is_speedup=0
-},
-	[100801]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100801, is_speedup=0
-},
-	[100802]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100802, is_speedup=0
-},
-	[100803]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100803, is_speedup=0
-},
-	[100804]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100804, is_speedup=0
-},
-	[100805]={ battle_type=44, battle_field_id=0, happen_type=9, happen_arg={}, effect_type=0, effect_param={}, can_pass=1, line_id=0, is_repeat=1, synopsis="是否跳过本段剧情？", talk_group_id=100805, is_speedup=0
+	[270001]={ battle_type=33, battle_field_id=1017, happen_type=9, happen_arg={}, effect_type=7, effect_param={102,4913}, can_pass=0, line_id=0, is_repeat=1, synopsis="", talk_group_id=0, is_speedup=0
 }
 }
 

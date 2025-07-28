@@ -9,8 +9,7 @@ module('game.sandPlay.thing.SandPlayPlayerThing', Class.impl(sandPlay.SandPlayBa
 function resetData(self)
     super.resetData(self)
     self.m_rotateSpeed = 30 --旋转 速度
-    self.m_initStopDistance = 0.1
-    self.m_stopDistance = self.m_initStopDistance --停止的距离
+    self.m_stopDistance = 0.1 --停止的距离
 
     self.isFindPathing = false
 end
@@ -124,10 +123,6 @@ function onControlMove(self, args)
 
         end
     else
-        if self.m_PauseCall then
-            self.m_PauseCall()
-            self.m_PauseCall = nil
-        end
         self:resetFindPath()
         self:setActionState(SandPlayConst.HERO_ACTION_STATE.MOVE)
     end
@@ -156,22 +151,13 @@ function setActionState(self, actionState)
         end
     end
 
-    if not self:canForceActionState() then
-        return false
-    end
-
-    return self:forceActionState(actionState)
-end
-
---当前状态是否允许打断
-function canForceActionState(self)
     for _, state in pairs(SandPlayConst.NoAllowForceActionState) do
         if self.mCurActionState == state then
             return false
         end
     end
 
-    return true
+    return self:forceActionState(actionState)
 end
 
 --强切状态
@@ -203,10 +189,6 @@ function resetFindPath(self)
     self.m_CurFindPoint = nil
     self.m_MoveFinishCall = nil
     self.isFindPathing = false
-    self.m_PauseCall = nil
-    self.m_stopDistance = self.m_initStopDistance
-    -- 距离目标位置的停止距离
-    self.m_NavMeshAgent.stoppingDistance = self.m_stopDistance
 
     self:revertState()
 
@@ -214,7 +196,7 @@ function resetFindPath(self)
 end
 
 --设置寻路到某个点
-function onFindPath(self, point, finishCall, actionState, pauseCall)
+function onFindPath(self, point, finishCall, actionState)
     if point == self.m_CurFindPoint then
         return
     end
@@ -241,7 +223,6 @@ function onFindPath(self, point, finishCall, actionState, pauseCall)
         self.isFindPathing = true
         self.m_CurFindPoint = point
         self.m_MoveFinishCall = finishCall
-        self.m_PauseCall = pauseCall
 
         actionState = actionState or SandPlayConst.HERO_ACTION_STATE.AI_FIND
         self:setActionState(actionState)
@@ -268,7 +249,7 @@ function updateMove(self)
                 return
             end
 
-            self:turnDirByVector(self.m_NavMeshAgent.nextPosition - position, self.m_rotateSpeed, 10)
+            self:turnDirByVector(self.m_NavMeshAgent.nextPosition - position, self.m_rotateSpeed)
             self:setPosition(self.m_NavMeshAgent.nextPosition)
         end
     end
@@ -336,32 +317,14 @@ function getCurFuncNPC(self, npc_id)
     return self.mCurFuncNPC_id
 end
 
-function setField_Id(self, field_id)
-    self.mField_id = field_id
-end
-
-function getField_Id(self, field_id)
-    return self.mField_id
-end
-
 ---寻路
 function findPath(self, params)
-    if not self:canForceActionState() then
-        return false
-    end
-
-    if params.stopDistance then
-        self.m_stopDistance = params.stopDistance
-        -- 距离目标位置的停止距离
-        self.m_NavMeshAgent.stoppingDistance = self.m_stopDistance
-    end
-
-    self:onFindPath(params.param, params.finishCall, params.actionState, params.pauseCall)
+    self:onFindPath(params.param, params.finishCall, params.actionState)
 end
 
 function setPosition(self, lpos)
     self.mModel:setPosition(lpos)
-    GameDispatcher:dispatchEvent(EventName.SANDPLAY_PLAYERSTATE_MOVE, {isForthwith = true})
+    GameDispatcher:dispatchEvent(EventName.SANDPLAY_PLAYERSTATE_MOVE)
 end
 
 --前进
@@ -371,7 +334,7 @@ function setTranForward(self, speed, forward)
 
     self.m_NavMeshAgent:Warp(self:getPosition())
 
-    GameDispatcher:dispatchEvent(EventName.SANDPLAY_PLAYERSTATE_MOVE, {isForthwith = true})
+    GameDispatcher:dispatchEvent(EventName.SANDPLAY_PLAYERSTATE_MOVE)
 end
 
 -- function getAllSkill(self)

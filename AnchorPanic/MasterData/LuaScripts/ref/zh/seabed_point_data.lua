@@ -3,19 +3,19 @@
 local seabed_point_data=
 
 {
-	[1]={ score=200, des=111154
+	[1]={ score=200, des=56010
 },
-	[2]={ score=10, des=111155
+	[2]={ score=10, des=56011
 },
-	[3]={ score=20, des=111156
+	[3]={ score=20, des=56012
 },
-	[4]={ score=50, des=111157
+	[4]={ score=40, des=56013
 },
-	[5]={ score=100, des=111158
+	[5]={ score=100, des=56014
 },
-	[6]={ score=20, des=111159
+	[6]={ score=20, des=56093
 },
-	[7]={ score=20, des=111160
+	[7]={ score=20, des=56015
 }
 }
 

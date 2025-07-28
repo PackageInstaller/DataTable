@@ -7,7 +7,7 @@ local shop_show_data=
 },
 	[2]={ page_type=2, shop_type={2}, page_func_id={802}, sort=3, shop_lang={251}, eng_lang={259}, page_lang=255, pay_type={{4}}, func_id=802
 },
-	[3]={ page_type=3, shop_type={22,19,18,13,8,4}, page_func_id={50224,43,10309,10306,1806,809}, sort=2, shop_lang={149903,104001,97004,332,330,333}, eng_lang={261}, page_lang=257, pay_type={{2070},{2169},{31},{24},{2060},{5}}, func_id=809
+	[3]={ page_type=3, shop_type={19,18,13,8,4}, page_func_id={43,10309,10306,1806,809}, sort=2, shop_lang={104001,97004,332,330,333}, eng_lang={261}, page_lang=257, pay_type={{2169},{31},{24},{2060},{5}}, func_id=809
 },
 	[4]={ page_type=4, shop_type={5}, page_func_id={803}, sort=1, shop_lang={254}, eng_lang={264}, page_lang=254, pay_type={{3,1}}, func_id=803
 },
@@ -17,7 +17,7 @@ local shop_show_data=
 },
 	[7]={ page_type=11, shop_type={6}, page_func_id={810}, sort=5, shop_lang={257}, eng_lang={271}, page_lang=278, pay_type={{2001}}, func_id=810
 },
-	[8]={ page_type=17, shop_type={17,21}, page_func_id={812,814}, sort=8, shop_lang={336,149186}, eng_lang={271}, page_lang=336, pay_type={{30},{35}}, func_id=812
+	[8]={ page_type=17, shop_type={17}, page_func_id={812}, sort=8, shop_lang={336}, eng_lang={271}, page_lang=336, pay_type={{30}}, func_id=812
 }
 }
 

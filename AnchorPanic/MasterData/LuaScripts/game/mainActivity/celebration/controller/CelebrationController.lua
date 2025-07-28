@@ -29,8 +29,6 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.REQ_RECIVE_RECHARGE_AWARD,self.onReqReciveCelebrationRechargetAwardHandler,self)
     GameDispatcher:addEventListener(EventName.REQ_RECIVE_CELEBRATION_TASK_AWARD,self.onReqReciveCelebrationTaskAwardHandler,self)
     GameDispatcher:addEventListener(EventName.REQ_RECIVE_CELEBRATION_TARGET_TASK_AWARD,self.onReqReciveCelebrationTaskTargetAwardHandler,self)
-
-    role.RoleManager:getRoleVo():addEventListener(role.RoleVo.CHANGE_PLAYER_MONEY, self.onUpdateRedHandler, self)
 end
 
 --注册server发来的数据
@@ -66,7 +64,7 @@ end
 -----------------------------------------响应---------------------------------------------------------------------------
 -----------------周年庆ssr月卡自选领取结果返回-------------------
 function onResReciveSSROptionalAwardMsgHandler(self,msg)
-    if msg.result == 1 then
+    if msg.result then
         gs.Message.Show(_TT(41722))
     else
         gs.Message.Show(_TT(44209))

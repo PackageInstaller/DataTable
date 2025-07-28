@@ -117,66 +117,15 @@ end
 
 --旋转
 function setEulerAngles(self, anglesV3)
-    if not self.mModel then
-        return
-    end
-
     self.mModel:setEulerAngles(anglesV3)
 end
 
---旋转
-function setAngle(self, angle, isNow, callback)
-    if not self.mModel then
-        return
-    end
-
-    self.mModel:setAngle(angle, isNow, callback)
-end
-
-function getAngle(self)
-    if not self.mModel then
-        return 0
-    end
-    return self.mModel:getAngle()
-end
-
 function setPosition(self, lpos)
-    if not self.mModel then
-        return
-    end
-
     self.mModel:setPosition(lpos)
 end
 
-function setPositionTween(self, lpos, tweenTime, callback)
-    if not self.mModel then
-        return
-    end
-
-    self.mModel:setPositionTween(lpos, tweenTime, callback)
-end
-
-function getCurPos(self)
-    if not self.mModel then
-        return 0
-    end
-    return self.mModel:getCurPos()
-end
-
 function setScale(self, scale)
-    if not self.mModel then
-        return
-    end
-
     self.mModel:setScale(scale)
-end
-
-function FindNameInChilds(self, node_name)
-    if not self.mModel then
-        return
-    end
-
-    return gs.GoUtil.FindNameInChilds(self.mModel:getTrans(), node_name)
 end
 
 function getTrans(self)

@@ -119,11 +119,6 @@ function onBtnQuitClick(self)
         return
     end
 
-    if guild.GuildManager:getIsJoinGuildWar() then
-        gs.Message.Show(_TT(149195))
-        return
-    end
-
     self.guildInfo = guild.GuildManager:getGuildInfo()
     if #self.guildInfo.members > 1 then
         gs.Message.Show(_TT(94528))

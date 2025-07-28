@@ -61,13 +61,8 @@ function configUI(self)
     self.mBtnHideUI = self:getChildGO("mBtnHideUI")
     self.mImgHideUI = self:getChildGO("mImgHideUI"):GetComponent(ty.AutoRefImage)
     self.mBtnShowUI = self:getChildGO("mBtnShowUI")
-    self.mBtnShowUI2 = self:getChildGO("mBtnShowUI2")
     -- 模型交互热区
     self.mModeHitBox = self:getChildGO("mModeHitBox")
-    -- 模型交互热区
-    self.mDragHitBox = self:getChildGO("mDragHitBox")
-    self.mEventTrigger = self.mDragHitBox:GetComponent(ty.LongPressOrClickEventTrigger)
-    self.mEventTrigger:SetIsPassEvent(true)
     self.UIGroup = self:getChildGO("UI")
 
     -- spine动画节点
@@ -92,12 +87,15 @@ function configUI(self)
     ------------------- mGroupMutual 互动区-----------------------
     -- 看板娘互动模块
     self.mGroupMutual = self:getChildGO("mGroupMutual")
+    self.mGroupMenu = self:getChildGO("mGroupMenu")
     -- 互动对话背景
     self.mImgTalkBg = self:getChildGO("mImgTalkBg")
     -- 互动对话信息
     self.mTxtTalk = self:getChildGO("mTxtTalk"):GetComponent(ty.Text)
     -- 菜单开关
     -- self.mBtnOpenMenu = self:getChildGO("mBtnOpenMenu")
+    -- 菜单透明底
+    self.mMenuMask = self:getChildGO("mMenuMask")
     -- 送礼
     self.mBtnGift = self:getChildGO("mBtnGift")
     -- 切换角色
@@ -105,11 +103,6 @@ function configUI(self)
     -- 切换动态立绘
     self.mBtnDynamic = self:getChildGO("mBtnDynamic")
     self.mBtnDynamic:SetActive(false)
-    ---3D宿舍
-    self.mBtnBigHostel = self:getChildGO("mBtnBigHostel")
-
-    self.mTxtDynamic = self:getChildGO("mTxtDynamic"):GetComponent(ty.Text)
-
     ------------------------------商店标签------------------------------
     self.mImgShopAdvertising = self:getChildGO("mImgShopAdvertising")
     self.mTxtShopAdvertising = self:getChildGO("mTxtShopAdvertising"):GetComponent(ty.Text)
@@ -138,9 +131,6 @@ function configUI(self)
     self.mChatItem = self:getChildGO("mChatItem")
     self.mTextChatContent = self:getChildGO("mChatContent"):GetComponent(ty.Text)
     self.ChatRedPoint = self:getChildGO("ChatRedPoint")
-
-    self.mBtnBigHostelSwitch = self:getChildGO("mBtnBigHostelSwitch")
-    self.mBtnBigHostelExit = self:getChildGO("mBtnBigHostelExit")
 
     ------------------- mGroupFunc 功能区------------------------------
     self.mGroupSys = self:getChildGO("mGroupSys")
@@ -208,6 +198,7 @@ function configUI(self)
     self.mTxtStageName = self:getChildGO("mTxtStageName"):GetComponent(ty.Text)
     self.mTxtChapterName = self:getChildGO("mTxtChapterName"):GetComponent(ty.Text)
 
+    
     self.mBtnDisaster = self:getChildGO("mBtnDisaster")
     self.mBtnDisaster:GetComponent(ty.Image).alphaHitTestMinimumThreshold = 0.5
     self:registerIcon(MAIN_UI_FUNC_TYPE.RIGHT_DETAIL, self.mBtnDisaster, funcopen.FuncOpenConst.FUNC_ID_DISASTER, LinkCode.Disaster)
@@ -232,25 +223,10 @@ function configUI(self)
     self.mBtnReturned = self:getChildGO("mBtnReturned")
     self:registerIcon(MAIN_UI_FUNC_TYPE.LEFT_FUNC, self.mBtnReturned, funcopen.FuncOpenConst.FUNC_ID_RETURNED, LinkCode.Returned)
 
-    -- 特供
-    self.mBtnSpecialSupply = self:getChildGO("mBtnSpecialSupply")
-    self:registerIcon(MAIN_UI_FUNC_TYPE.LEFT_FUNC, self.mBtnSpecialSupply, funcopen.FuncOpenConst.FUNC_ID_SPECIALSUPPLY, LinkCode.SpecialSupply)
-    self:registerActivity(self.mBtnSpecialSupply, funcopen.FuncOpenConst.FUNC_ID_SPECIALSUPPLY, activity.ActitvityExtraManager)
-
     -- 周年庆典活动
     self.mBtnCelebration = self:getChildGO("mBtnCelebration")
     self:registerIcon(MAIN_UI_FUNC_TYPE.LEFT_FUNC, self.mBtnCelebration, funcopen.FuncOpenConst.FUNC_ID_CELEBRATION, LinkCode.Celebration)
     self:registerActivity(self.mBtnCelebration, funcopen.FuncOpenConst.FUNC_ID_CELEBRATION_TASK, mainActivity.MainActivityManager)
-
-    --阿尔戈特供
-    self.mBtnSupercial = self:getChildGO("mBtnSupercial")
-    self:registerIcon(MAIN_UI_FUNC_TYPE.LEFT_FUNC, self.mBtnSupercial, funcopen.FuncOpenConst.FUNC_ID_SUPECIAL, LinkCode.Supercial)
-    self:registerActivity(self.mBtnSupercial, funcopen.FuncOpenConst.FUNC_ID_SUPECIAL, supercial.SupercialManager)
-    self.mTxtSupercialTime = self:getChildGO("mTxtSupercialTime"):GetComponent(ty.Text)
-
-    -- 商店限时礼包
-    self.mBtnShopLimitGift = self:getChildGO("mBtnShopLimitGift")
-    self.mShopTime = self:getChildGO("mShopTime"):GetComponent(ty.Text)
 
     --首充------------------------------------------
     self.mBtnFirstCharge = self:getChildGO("mBtnFirstCharge")
@@ -262,9 +238,10 @@ function configUI(self)
     -- self:registerIcon(MAIN_UI_FUNC_TYPE.LEFT_ACTIVTY, self.mBtnActivity, funcopen.FuncOpenConst.FUNC_ID_ACTIVITY, LinkCode.Activity, self.mImgActivity)
 
     --时装通行证------------------------------------------
-    -- self.mBtnFashionPermit = self:getChildGO("mBtnFashionPermit")
-    -- self:registerIcon(MAIN_UI_FUNC_TYPE.LEFT_ACTIVTY, self.mBtnFashionPermit, funcopen.FuncOpenConst.FUNC_ID_FASHIONPERMIT, LinkCode.FashionPermit)
-    -- self:registerActivity(self.mBtnFashionPermit, funcopen.FuncOpenConst.FUNC_ID_FASHIONPERMIT, fashion.FashionManager)
+    self.mBtnFashionPermit = self:getChildGO("mBtnFashionPermit")
+    self:registerIcon(MAIN_UI_FUNC_TYPE.LEFT_ACTIVTY, self.mBtnFashionPermit, funcopen.FuncOpenConst.FUNC_ID_FASHIONPERMIT, LinkCode.FashionPermit)
+    self:registerActivity(self.mBtnFashionPermit, funcopen.FuncOpenConst.FUNC_ID_FASHIONPERMIT, fashion.FashionManager)
+
 
     -- 限时活动 -------------------------------------------------------------
     self.mBtnTimeAct = self:getChildGO("mBtnTimeAct")
@@ -272,18 +249,8 @@ function configUI(self)
     self:registerIcon(MAIN_UI_FUNC_TYPE.RIGHT_DETAIL, self.mBtnTimeAct, funcopen.FuncOpenConst.FUNC_ID_MAIN_ACTIVITY, LinkCode.MainActivity)
     self:registerActivity(self.mBtnTimeAct, funcopen.FuncOpenConst.FUNC_ID_MAIN_ACTIVITY, mainActivity.MainActivityManager)
 
-    self.mBtnTimeActImg = self.mBtnTimeAct:GetComponent(ty.AutoRefImage)
-    if (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) then
-        self.mBtnTimeActImg:SetImg(UrlManager:getBgPath("billboard/billboard_bg_3018_har.png"))
-    else
-        self.mBtnTimeActImg:SetImg(UrlManager:getBgPath("billboard/billboard_bg_3018.png"))
-    end
-
     self.mActivityView = mainui.MainUIActivityView.new()
-    self.mActivityView:setUIGo(self:getChildGO("MainUIActivity"))
-
-    self.mFashionPermitView = mainui.MainUIPermitView.new()
-    self.mFashionPermitView:setUIGo(self:getChildGO("mFashionPermit"))
+    self.mActivityView:setUIGo(self:getChildGO("mGroupActivity"))
 
     self.mBtnGame = self:getChildGO("mBtnGame")
     self.mNoteView = note.NoteView.new()
@@ -303,9 +270,6 @@ function active(self, args)
     if self.mActivityView then
         self.mActivityView:active()
     end
-    if self.mFashionPermitView then
-        self.mFashionPermitView:active()
-    end
     if self.mNoteView then
         self.mNoteView:show(self:getChildTrans("mGroupAdapt"))
         self.mNoteView:active()
@@ -318,39 +282,22 @@ function active(self, args)
         self:onTimer()
     end
 
-    self.mEventTrigger.onBeginDrag:AddListener(function()
-        -- self:onBeginDragHandler()
-        self.mIsDraging = true
-        GameDispatcher:dispatchEvent(EventName.MAINUI_SPINE_DRAG_START)
-
-    end)
-    self.mEventTrigger.onEndDrag:AddListener(function()
-        -- self:onEndDragHandler()
-        self.mIsDraging = false
-        GameDispatcher:dispatchEvent(EventName.MAINUI_SPINE_DRAG_END)
-    end)
-
     -- if(not LoopManager:hasTimer(self.mFirstGuide)) and true then
     --     local roleVo = role.RoleManager:getRoleVo()
     -- end
     dailyCheckIn.DailyCheckInManager:setisOnMainUI(true)
     self:updateUIBtn()
     self:updateRedFlag(true)
-    self:updateHarImg()
     --主界面左上角活动红点刷新
     GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
     -- self.mTxtNow.text = _TT(72101)
     self:setBtnLabel(self.mBtnChange, 1196, "切换助理")
-    self:setBtnLabel(self.mBtnShopLimitGift, 80, "限时")
     self:setBtnLabel(self.mBtnNovice, 90037, "新人")
     self:setBtnLabel(self.mBtnCelebration, 121006, "庆典")
-    self:setBtnLabel(self.mBtnSpecialSupply, 72115, "特供")
     self.mGroupMutual:SetActive(false)
     mainui.MainUIManager:StopCvMutual()
-    self:updateSpineHitBox()
-    self.mBtnBigHostelSwitch:SetActive(mainui.MainUIManager.isShowBigHostel)
-    self.mBtnBigHostelExit:SetActive(mainui.MainUIManager.isShowBigHostel)
 
+    self:updateSpineHitBox()
 end
 
 function resFirstShow(self)
@@ -364,25 +311,18 @@ function deActive(self)
     self:resFirstShow()
 
     self:resetMoneyBar()
+    self:closeModelMenu()
     self:clearSpine()
     self:removeEvent()
     self:updateRTHandler(false)
     if self.mActivityView then
         self.mActivityView:deActive()
     end
-    if self.mFashionPermitView then
-        self.mFashionPermitView:deActive()
-    end
     if self.mNoteView then
         self.mNoteView:deActive()
     end
-    if self.mAlphaTween then
-        self.mAlphaTween:Kill()
-    end
     dailyCheckIn.DailyCheckInManager:setisOnMainUI(false)
 
-    self.mEventTrigger.onBeginDrag:RemoveAllListeners()
-    self.mEventTrigger.onEndDrag:RemoveAllListeners()
 end
 
 function updateRTHandler(self, isShowRT)
@@ -482,27 +422,20 @@ function addEvent(self)
 
     read.ReadManager:addEventListener(read.ReadManager.UPDATE_MODULE_READ, self.refreshChatBubbleRedState, self)
     GameDispatcher:addEventListener(EventName.REFRESH_CHATBUBBLE_REDSTATE, self.refreshChatBubbleRedState, self)
-    role.RoleManager:getRoleVo():addEventListener(role.RoleVo.CHANGE_SHOW_BOARD_HERO, self.onShowBoardHeroChangeHandler, self)
-
-    -- 每次打开请求服务器面板对应频道数据
-    GameDispatcher:dispatchEvent(EventName.REQ_CHAT_PANEL_DATA, { channel = chat.ChannelType.WORLD })
 
     -- self:addOnClick(self.mGroupHead, self.onClickHeadHandler)
     self:addOnClick(self.mBtnHideUI, self.onHideUIHandler)
     self:addOnClick(self.mBtnShowUI, self.onShowUIHandler)
-    self:addOnClick(self.mBtnShowUI2, self.onShowUIHandler)
     self:addOnClick(self.mChatItem, self.onOpenChatHandler)
     self:addOnClick(self.mModeHitBox, self.onClickModelHandler)
+    self:addOnClick(self.mMenuMask, self.onClickMenuHandler)
+    -- self:addOnClick(self.mBtnOpenMenu, self.onClickMenuHandler)
     self:addOnClick(self.mBtnChange, self.onOpenShowBoardModelHandler)
     self:addOnClick(self.mBtnGift, self.onOpenGiftHandler)
     self:addOnClick(self.mBtnGame, self.onOpenGameHandler)
     self:addOnClick(self.mBtnDynamic, self.onChangeDynamicPicHandler)
-    self:addOnClick(self.mBtnBigHostel, self.onOpenBigHostelHandler)
-    self:addOnClick(self.mBtnBigHostelSwitch, self.onOpenBigHostelSwitchHandler)
-    self:addOnClick(self.mBtnBigHostelExit, self.onOpenBigHostelExitHandler)
-
     self:addOnClick(self.mBtnDownLoad, self.onOpenSubDownLoadHandler)
-    self:addOnClick(self.mBtnShopLimitGift, self.onOpenLimitShopHandler)
+
     -- test
     -- self:addOnClick(self.mBtnRogueLike,function()
     --     GameDispatcher:dispatchEvent(EventName.OPEN_ROGUELIKE_MAIN_PANEL)
@@ -545,45 +478,25 @@ function removeEvent(self)
 
     read.ReadManager:removeEventListener(read.ReadManager.UPDATE_MODULE_READ, self.refreshChatBubbleRedState, self)
     GameDispatcher:removeEventListener(EventName.REFRESH_CHATBUBBLE_REDSTATE, self.refreshChatBubbleRedState, self)
-    role.RoleManager:getRoleVo():removeEventListener(role.RoleVo.CHANGE_SHOW_BOARD_HERO, self.onShowBoardHeroChangeHandler, self)
 
     -- self:removeOnClick(self.mGroupHead, self.onClickHeadHandler)
     self:removeOnClick(self.mBtnHideUI)
 
     self:removeOnClick(self.mBtnShowUI)
-    self:removeOnClick(self.mBtnShowUI2)
     self:removeOnClick(self.mChatItem)
     self:removeOnClick(self.mModeHitBox)
+    self:removeOnClick(self.mMenuMask)
     -- self:removeOnClick(self.mBtnOpenMenu)
     self:removeOnClick(self.mBtnChange)
     self:removeOnClick(self.mBtnGift)
     self:removeOnClick(self.mBtnGame)
     self:removeOnClick(self.mBtnDynamic)
-    self:removeOnClick(self.mBtnBigHostel)
-    self:removeOnClick(self.mBtnBigHostelSwitch)
-    self:removeOnClick(self.mBtnBigHostelExit)
-
-    self:removeOnClick(self.mBtnShopLimitGift)
     self:removeOnClick(self.mBtnDownLoad, self.onOpenSubDownLoadHandler)
 
 end
 
--- 需要处理图片
-function updateHarImg(self)
-    if (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) then
-        local timeActImg = self.mBtnTimeAct:GetComponent(ty.AutoRefImage)
-        --timeActImg:SetImg(UrlManager:getPackPath("mainui/mainui_timeAct_3_har.png"))
-        timeActImg:SetImg(UrlManager:getBgPath("billboard/billboard_bg_3018_har.png"))
-    end
-end
-
 function clickActivityHandler(self)
     self:resFirstShow()
-end
-
--- 打开限时商店礼包界面
-function onOpenLimitShopHandler(self, args)
-    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.ShopLimitGift })
 end
 
 -- 打开玩家信息面板
@@ -613,35 +526,6 @@ function onOpenGiftHandler(self)
     end)
 end
 
-function onShowBoardHeroChangeHandler(self)
-    self:updateSpineHitBox()
-end
-
--- 进入大宿舍
-function onOpenBigHostelHandler(self)
-    local showId = role.RoleManager:getRoleVo():getShowBoardHeroId()
-    local heroVo = hero.HeroManager:getHeroVo(showId)
-    local heroConfigVo = hero.HeroManager:getHeroConfigVo(heroVo.tid)
-
-    GameDispatcher:dispatchEvent(EventName.OPEN_BIGHOSTEL_SCENE, { model_id = heroVo:getHostelModel(), heroConfigVo = heroConfigVo, main_type = BigHostelConst.SceneUI_Type.MIANUI })
-
-    self:onShowBoardHeroChangeHandler()
-end
-
--- 大宿舍切换动作
-function onOpenBigHostelSwitchHandler(self)
-    GameDispatcher:dispatchEvent(EventName.BIGHOSTEL_LIVE_SETTRIGGER, BigHostelConst.BaseAnimatorParams.Switch)
-end
-
--- 大宿舍退出
-function onOpenBigHostelExitHandler(self)
-    mainui.MainUIManager.isShowBigHostel = false
-
-    GameDispatcher:dispatchEvent(EventName.HIDE_MAIN_UI)
-    GameDispatcher:dispatchEvent(EventName.CLOSE_BIGHOSTEL_SCENEUI)
-    GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.MAIN_CITY)
-end
-
 -- 切换动态立绘和模型
 function onChangeDynamicPicHandler(self)
     GameDispatcher:dispatchEvent(EventName.MAINUI_SPINE_MODEL_CHANGE)
@@ -650,7 +534,7 @@ end
 
 function updateSpineHitBox(self)
     local state = hero.HeroInteractManager:getShowBoardUnique()
-    if (mainui.MainUIManager:getIsShowDynamic() == 1 and state) or mainui.MainUIManager.isShowBigHostel == true then
+    if mainui.MainUIManager:getIsShowDynamic() == 1 and state then
         self.mModeHitBox:SetActive(false)
     else
         self.mModeHitBox:SetActive(true)
@@ -681,9 +565,7 @@ function onTimer(self)
     self:updateDeviceInfo()
     self:updateRedFlag()
     self:updateChatInfo()
-    self:updateLimitShopInfo()
-    self:updateSupecialTimeInfo()
-    self:updateSpecialSupply()
+
     if self.isShowFirst == false and self.needTime ~= 999 and battleMap.MainMapManager:isStagePass(self.needSmallerStage) == nil and storyTalk.StoryTalkManager:getCurHasStory() == false and guide.GuideManager:getCurHasGuide() == false then
         if gs.PopPanelManager.HasSubPopActive() then
             self:resFirstShow()
@@ -694,50 +576,6 @@ function onTimer(self)
                 self.mCanFistShow:SetActive(true)
             end
         end
-    end
-end
-
-function updateLimitShopInfo(self)
-    self.mBtnShopLimitGift:SetActive(activity.ActitvityExtraManager:getFirstShopLimitEndTime() > 0)
-    if activity.ActitvityExtraManager:getFirstShopLimitEndTime() > 0 then
-        local deltaTime = activity.ActitvityExtraManager:getFirstShopLimitEndTime()
-        self.mShopTime.text = TimeUtil.getHMSByTime(deltaTime)
-    end
-end
-
-function updateSpecialSupply(self)
-    if activity.ActivityManager:getActivityVoById(activity.ActivityId.SpecialSupply) then
-        local isOpen = activity.ActivityManager:getActivityVoById(activity.ActivityId.SpecialSupply):isOpen()
-        local openNum = 0
-        if isOpen then
-            for i, v in ipairs(activity.ActivitySpecialSupplyConst:getTabList()) do
-                openNum = openNum + 1
-            end
-        end
-        self.mBtnSpecialSupply:SetActive(openNum >= 1)
-        return
-    end
-    if self.mBtnSpecialSupply.activeSelf then
-        self.mBtnSpecialSupply:SetActive(false)
-    end
-end
-
-function updateSupecialTimeInfo(self)
-    if activity.ActivityManager:getActivityVoById(activity.ActivityId.Supercial) ~= nil then
-        self.mTxtSupercialTime.gameObject:SetActive(true)
-        self.mBtnSupercial:SetActive(activity.ActivityManager:getActivityVoById(activity.ActivityId.Supercial):isOpen())
-        local clientTime = GameManager:getClientTime()
-        local remTime = activity.ActivityManager:getActivityVoById(activity.ActivityId.Supercial):getEndTime() - clientTime
-
-        local needTime = sysParam.SysParamManager:getValue(SysParamType.SUPERCIAL_NEED_TIME)
-        if remTime < needTime then
-            self.mTxtSupercialTime.text = TimeUtil.getFormatTimeBySeconds_10(remTime)
-
-        else
-            self.mTxtSupercialTime.text = ""
-        end
-    else
-        self.mBtnSupercial:SetActive(false)
     end
 end
 
@@ -779,19 +617,12 @@ function updateShowBoard(self)
     self.mBtnGift:SetActive(funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FAVORABLE, false))
 end
 
--- 通行证模块显示控制
 function updateFashionPermit(self)
-    self:getChildGO("mFashionPermit"):SetActive(false)
-    local list = activity.ActivityManager:getPermitBillboardList()
-    for i, billboardVo in ipairs(list) do
-        if billboardVo:isOpenTime() then
-            self:getChildGO("mFashionPermit"):SetActive(true)
-            if self.mFashionPermitView then
-                self.mFashionPermitView:onActivityUpdate()
-            end
-            break
-        end
-    end
+
+    --     cusLog(activity.ActivityManager:checkIsOpenByFuncId(funcopen.FuncOpenConst.FUNC_ID_FASHIONPERMIT) == true)
+    --     cusLog(funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FASHIONPERMIT) == true)
+    self.mBtnFashionPermit:SetActive(activity.ActivityManager:checkIsOpenByFuncId(funcopen.FuncOpenConst.FUNC_ID_FASHIONPERMIT) == true)
+    --     funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FASHIONPERMIT) == true)
 end
 
 -- 更新个人Hud信息
@@ -972,9 +803,6 @@ function updateRedFlag(self, isActive)
         -- if self.mActivityView then
         --     self.mActivityView:updateBubble(funcId, state)
         -- end
-        if self.mFashionPermitView then
-            self.mFashionPermitView:updateBubble(funcId, state)
-        end
     end
 end
 
@@ -982,26 +810,26 @@ end
 function registerIcon(self, type, obj, funcOpenId, uicode, showImg, showEnterEff, ignore)
     if type == MAIN_UI_FUNC_TYPE.LEFT_FUNC then
         -- 左侧系统按钮
-        table.insert(self.mSysList, { icon = obj, funcOpenId = funcOpenId, uicode = uicode })
+        table.insert(self.mSysList, {icon = obj, funcOpenId = funcOpenId, uicode = uicode})
     end
     if type == MAIN_UI_FUNC_TYPE.RIGHT_DOWN_FUNC then
         -- 右下功能按钮
-        table.insert(self.mFuncList, { icon = obj, funcOpenId = funcOpenId, uicode = uicode, showImg = showImg })
+        table.insert(self.mFuncList, {icon = obj, funcOpenId = funcOpenId, uicode = uicode, showImg = showImg})
     end
     if type == MAIN_UI_FUNC_TYPE.RIGHT_DETAIL then
         -- 右侧玩法按钮
-        table.insert(self.mDetailList, { icon = obj, funcOpenId = funcOpenId, uicode = uicode })
+        table.insert(self.mDetailList, {icon = obj, funcOpenId = funcOpenId, uicode = uicode})
     end
     if type == MAIN_UI_FUNC_TYPE.LEFT_ACTIVTY then
         -- 右侧玩法按钮
-        table.insert(self.mActivityList, { icon = obj, funcOpenId = funcOpenId, uicode = uicode })
+        table.insert(self.mActivityList, {icon = obj, funcOpenId = funcOpenId, uicode = uicode})
     end
     -- 注册点击事件（登记uicode）
     self:addOnClick(obj, function()
         self:resFirstShow()
 
         local function showView()
-            GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = uicode })
+            GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = uicode})
         end
 
         if showEnterEff then
@@ -1020,7 +848,7 @@ end
 
 -- 注册限时活动
 function registerActivity(self, obj, funcOpenId, mgr)
-    table.insert(self.mTimeActList, { icon = obj, funcOpenId = funcOpenId, mgr = mgr })
+    table.insert(self.mTimeActList, {icon = obj, funcOpenId = funcOpenId, mgr = mgr})
     -- if not mgr.registerActivity then
     --     logError(string.format("功能开放%s的限时活动无registerActivity方法", funcOpenId))
     --     return
@@ -1039,7 +867,6 @@ function updateActivityShow(self, funcOpenId)
         end
     end
     self:updatePayActivityIcon()
-
 end
 
 -- 活动开启通知
@@ -1058,14 +885,11 @@ function onActivityCloseHandler(self, args)
             self:updateActivityShow(vo.funcId)
         end
     end
-    self:updateFashionPermit()
 end
 
 -- 新手活动更新状态
 function onNoviceActivityUpdate(self)
     local isOpen = activity.ActivityManager:getNoviceActivityIsOpen()
-    isOpen = isOpen or activity.ActivityManager:getNoviceActivitySsrIsOpen()
-    isOpen = isOpen or activity.ActivityManager:getNoviceActivityRechargeIsOpen()
     self.mBtnNovice:SetActive(isOpen)
 end
 
@@ -1146,7 +970,7 @@ function updateUIBtn(self)
     self:onNoviceActivityUpdate()
     self:onRerturnedActivityUpdate()
     self:updateFashionPermit()
-    self:updateSpecialSupply()
+
 end
 --商店直购礼包广告标签
 function updateShopAdvertisingInfo(self)
@@ -1218,8 +1042,6 @@ function onShowHeroInTeractTextOnlyHandler(self, textContent)
             local state = hero.HeroInteractManager:getShowBoardHeroDynamic()
             self.mBtnDynamic:SetActive(state)
 
-            self:updateBigHostelBtn()
-
             self.mTxtTalk.text = textContent
 
             if self.closeMutualTween then
@@ -1269,8 +1091,6 @@ function __modelPlayed(self, interactData)
     local state = hero.HeroInteractManager:getShowBoardHeroDynamic()
     self.mBtnDynamic:SetActive(state)
 
-    self:updateBigHostelBtn()
-
     if self.closeMutualTween then
         self.closeMutualTween:Kill()
         self.closeMutualTween = nil
@@ -1288,17 +1108,6 @@ function updateDynamicLable(self)
     end
 end
 
--- 更新大宿舍按钮文本
-function updateBigHostelBtn(self)
-    self:setBtnLabel(self.mBtnBigHostel, 84514, "互动")
-
-    local showId = role.RoleManager:getRoleVo():getShowBoardHeroId()
-    local heroVo = hero.HeroManager:getHeroVo(showId)
-
-    local sceneData = purchase.FashionShopManager:getFashionSceneDataByModelId(heroVo.tid, heroVo:getHostelModel())
-    self.mBtnBigHostel:SetActive(sceneData ~= nil)
-end
-
 -- 关闭cv内容
 function closeMutual(self)
     if self.isShowMutual then
@@ -1312,6 +1121,28 @@ function closeMutual(self)
             self.mGroupMutual:SetActive(false)
         end)
     end
+end
+
+-- 互动菜单
+function onClickMenuHandler(self)
+    self:resFirstShow()
+    if not self.isShowMenu then
+        self.isShowMenu = true
+        self.mMenuMask:SetActive(true)
+        self.mGroupMenu:SetActive(true)
+        TweenFactory:canvasGroupAlphaTo(self.mGroupMenu:GetComponent(ty.CanvasGroup), 0, 1, 0.3)
+    else
+        self:closeModelMenu()
+    end
+end
+-- 关闭模型菜单
+function closeModelMenu(self)
+    self:resFirstShow()
+    self.isShowMenu = false
+    self.mMenuMask:SetActive(false)
+    -- TweenFactory:canvasGroupAlphaTo(self.mGroupMenu:GetComponent(ty.CanvasGroup), 1, 0, 0.3, nil, function()
+    --     self.mGroupMenu:SetActive(false)
+    -- end)
 end
 
 -- 设置货币栏
@@ -1337,50 +1168,24 @@ end
 function onHideUIHandler(self)
     self:resFirstShow()
 
-
     local visible = not self.UIGroup.activeSelf
+    -- local imgUrl = visible and UrlManager:getPackPath("mainui/mainui_6.png") or UrlManager:getPackPath("mainui/mainui_7.png")
+    -- self.mImgHideUI:SetImg(imgUrl, true)
+    self.UIGroup:SetActive(false)
+    self.mBtnShowUI:SetActive(true)
     if GameManager.IS_DEBUG then
         GameManager.HIDE_DEBUG_INFO = true
         gm.GmManager:dispatchEvent(gm.GmManager.EVENT_VISIBLE_CHANGE, visible)
         debugFrames.FPS:dispatchEvent(debugFrames.FPS.EVENT_VISIBLE_CHANGE, visible)
     end
-
-    if mainui.MainUIManager.isShowBigHostel then
-        GameDispatcher:dispatchEvent(EventName.OPEN_BIGHOSTEL_SCENEUI, { main_type = BigHostelConst.SceneUI_Type.MIANUI })
-        return
-    end
-    if mainui.MainUIManager:getIsShowDynamic() == 1 then
-        -- local imgUrl = visible and UrlManager:getPackPath("mainui/mainui_6.png") or UrlManager:getPackPath("mainui/mainui_7.png")
-        -- self.mImgHideUI:SetImg(imgUrl, true)
-        self.UIGroup:SetActive(false)
-        self.mBtnShowUI:SetActive(false)
-        self.mBtnShowUI2:SetActive(true)
-
-        if self.mAlphaTween then
-            self.mAlphaTween:Kill()
-        end
-        self.mAlphaTween = TweenFactory:canvasGroupAlphaTo(self.mBtnShowUI2:GetComponent(ty.CanvasGroup), 1, 0, 3)
-
-    else
-        -- local imgUrl = visible and UrlManager:getPackPath("mainui/mainui_6.png") or UrlManager:getPackPath("mainui/mainui_7.png")
-        -- self.mImgHideUI:SetImg(imgUrl, true)
-        self.UIGroup:SetActive(false)
-        self.mBtnShowUI:SetActive(true)
-        self.mBtnShowUI2:SetActive(false)
-    end
-
 end
 
 -- 打开UI
 function onShowUIHandler(self)
-    if self.mAlphaTween then
-        self.mAlphaTween:Kill()
-    end
     self:resFirstShow()
     -- local visible = not self.UIGroup.activeSelf
     self.UIGroup:SetActive(true)
     self.mBtnShowUI:SetActive(false)
-    self.mBtnShowUI2:SetActive(false)
 end
 
 -- 更新显示模型或spine
@@ -1407,10 +1212,6 @@ function destroy(self)
     if self.mActivityView then
         self.mActivityView:destroy()
         self.mActivityView = nil
-    end
-    if self.mFashionPermitView then
-        self.mFashionPermitView:destroy()
-        self.mFashionPermitView = nil
     end
     if self.mNoteView then
         self.mNoteView:destroy()
@@ -1471,13 +1272,13 @@ function onSubDownLoadFailUpdateHandler(self)
 end
 
 function updateSubDownLoadVisible(self)
-    if (web.WebManager:isOfficialApp()) then
+    if(web.WebManager:isOfficialApp())then
         self.mGroupDownLoad:SetActive(false)
     else
-        if (subPack.SubDownLoadController:isExistNeedUpdate()) then
+        if(subPack.SubDownLoadController:isExistNeedUpdate())then
             self.mGroupDownLoad:SetActive(true)
         else
-            if (subPack.SubDownLoadManager:isDownGiftHadRec()) then
+            if(subPack.SubDownLoadManager:isDownGiftHadRec())then
                 self.mGroupDownLoad:SetActive(false)
             else
                 self.mGroupDownLoad:SetActive(true)

@@ -112,10 +112,6 @@ PreFightBattleType = {
 
     --海底
     Seabed = 56 ,
-    --联盟团战
-    GuildWar = 57,
-    -- 皮肤试玩
-    Fashion_Imitate = 58,
 }
 
 --[[ 替换语言包自动生成，请勿修改！

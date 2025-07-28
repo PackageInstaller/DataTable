@@ -112,7 +112,6 @@ end
 
 -- 解析玩家称号配置表
 function getChatBubbleConfig(self, bubble_id)
-    bubble_id = bubble_id == 0 and 4001 or bubble_id -- 0是老消息，默认转换为基础的
     if not self.mChatBubbleConfigDic then
         self.mChatBubbleConfigDic = {}
         local baseData = RefMgr:getData("dialog_box_data")
@@ -167,7 +166,7 @@ function praseDecorateListMsg(self, moduleType, msgList)
         vo:praseMsgData(msgVo)
         idDic[vo.id] = vo
     end
-    self:dispatchEvent(self.UPDATE_DECORATE_LIST, { moduleType = moduleType })
+    self:dispatchEvent(self.UPDATE_DECORATE_LIST, {moduleType = moduleType})
     self:updateBubble()
 end
 
@@ -183,7 +182,7 @@ function praseDecorateDelMsg(self, moduleType, deleteId)
             self.mDecorateDic[moduleType] = nil
         end
 
-        self:dispatchEvent(self.UPDATE_DECORATE_LIST, { moduleType = moduleType })
+        self:dispatchEvent(self.UPDATE_DECORATE_LIST, {moduleType = moduleType})
         self:updateBubble()
     end
 end
@@ -192,7 +191,7 @@ end
 function praseChatBubbleMsg(self, msg)
     self.mChatBubbleDic = {}
     for _, chatInfo in pairs(msg.dialog_box_list) do
-        self.mChatBubbleDic[chatInfo.dialog_box_id] = { expired_time = chatInfo.expired_time, is_like = chatInfo.is_like }
+        self.mChatBubbleDic[chatInfo.dialog_box_id] = {expired_time = chatInfo.expired_time, is_like = chatInfo.is_like}
     end
 
     GameDispatcher:dispatchEvent(EventName.REFRESH_CHATBUBBLE_REDSTATE)

@@ -52,29 +52,6 @@ function configUI(self)
     self.mTxtTargetTaskName = self:getChildGO("mTxtTargetTaskName"):GetComponent(ty.Text)
     self.mTxtTargetTaskProgress = self:getChildGO("mTxtTargetTaskProgress"):GetComponent(ty.Text)
     self.mLyScroller:SetItemRender(Celebration.CelebrationTaskItem)
-
-    self.mBtnAwardPre = self:getChildGO("mBtnAwardPre")
-    self.mBtnCloseAward = self:getChildGO("mBtnCloseAward")
-    self.mBtnHideAward = self:getChildGO("mBtnHideAward")
-    self.mAwardShowContent = self:getChildTrans("mAwardShowContent")
-    self.mTxtAwardDes = self:getChildGO("mTxtAwardDes"):GetComponent(ty.Text)
-    self.mTxtAwardTips = self:getChildGO("mTxtAwardTips"):GetComponent(ty.Text)
-
-    self.mAwardEff = self:getChildGO("mAwardEff")
-end
-
-function onBtnAwardClick(self)
-    local taskAwardList=sysParam.SysParamManager:getValue(SysParamType.CELEBRATION_TASK_AWARD)[1]
-    self.showProps = PropsGrid:createByData({ tid = taskAwardList[1], num = taskAwardList[2], parent = self.mAwardShowContent, scale = 0.6, showUseInTip = true })
-    self.mBtnCloseAward:SetActive(true)
-end
-
-function onBtnHideAwardClick(self)
-    self.mBtnCloseAward:SetActive(false)
-    if self.showProps then
-        self.showProps:poolRecover()
-        self.showProps = nil
-    end
 end
 
 --激活
@@ -94,8 +71,6 @@ function deActive(self)
     self:clearItem()
     --self:removeTimer()
     self:clearScrollerItem()
-
-    self:onBtnHideAwardClick()
 end
 
 --[[ 
@@ -110,17 +85,12 @@ function initViewText(self)
     self.mTxtTargetIng.text=_TT(36520)
     self:setBtnLabel(self.mBtnTargetRecive, 412, "领取")
     self:setBtnLabel(self.mBtnGetAll, 403, "全部领取")
-    self.mTxtAwardDes.text = _TT(44212)
-    self.mTxtAwardTips.text = _TT(121217)
 end
 
 function addAllUIEvent(self)
     self:addUIEvent(self.mBtnGetAll,self.onClickGetAll)
     self:addUIEvent(self.mBtnTargetRecive,self.onClickGet)
     self:addUIEvent(self.mBtnFashion,self.onClickLockHandler)
-
-    self:addUIEvent(self.mBtnAwardPre, self.onBtnAwardClick)
-    self:addUIEvent(self.mBtnHideAward, self.onBtnHideAwardClick)
 end
 
 function onClickGet(self)
@@ -147,7 +117,7 @@ end
 function updateTargetTaskInfo(self)
     self:clearTargetAwardItem()
     local taskAwardList=sysParam.SysParamManager:getValue(SysParamType.CELEBRATION_TASK_AWARD)[1]
-    --self.mTargetAwardItem=PropsGrid:createByData({ tid = taskAwardList[1], num = taskAwardList[2], parent = self.mTargetAwardTrans, scale = 1, showUseInTip = true })
+    self.mTargetAwardItem=PropsGrid:createByData({ tid = taskAwardList[1], num = taskAwardList[2], parent = self.mTargetAwardTrans, scale = 1, showUseInTip = true })
     self:updateProgress()
 
 end
@@ -158,7 +128,6 @@ function updateProgress(self)
     local isoK=(curTaskOverNum>=taskNeedNum and Celebration.CelebrationManager:getTargetState()==Celebration.CelebrationConst.AwardState.Nomal) 
     self.mImgTargetIng:SetActive(Celebration.CelebrationManager:getTargetState()==Celebration.CelebrationConst.AwardState.Nomal and not isoK)
     self.mBtnTargetRecive:SetActive(isoK) 
-    self.mAwardEff:SetActive(not (not self.mImgTargetIng.activeSelf and not self.mBtnTargetRecive.activeSelf))
     self.mImgTargetRecived:SetActive((not self.mImgTargetIng.activeSelf and not self.mBtnTargetRecive.activeSelf))
     self.mTxtTargetTaskDes.text=_TT(121008,taskNeedNum)
     self.mImgTargetBar.fillAmount=curTaskOverNum/taskNeedNum
@@ -232,13 +201,9 @@ function updateList(self,isInit)
         end
     end
     self.mBtnGetAll:SetActive(#Celebration.CelebrationManager:getCanReciveListByDay(self.mCurDay)>0)
-    gs.TransQuick:SizeDelta02(self.mLyScroller.gameObject:GetComponent(ty.RectTransform),
-     #Celebration.CelebrationManager:getCanReciveListByDay(self.mCurDay)>0 and  457 or 532)
-
-
     local list = Celebration.CelebrationManager:getCelebrationTaskListByDay(self.mCurDay)
     if isInit then
-        for i = 1, #list do
+        for i = 1, 3 do
             list[i].tweenId =i/2
         end
         self:setTimeout(3 * 0.02, function() self.mLyScroller.DataProvider = list end)

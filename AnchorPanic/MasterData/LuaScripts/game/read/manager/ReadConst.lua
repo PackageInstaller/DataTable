@@ -42,8 +42,6 @@ ReadConst.MANUAL_HERO = 216
 ReadConst.MANUAL_MONSTER = 217
 -- 聊天气泡
 ReadConst.CHAT_BUBBLE = 218
--- dna战员新解锁功能
-ReadConst.DNA_NEW = 220
 
 --促销道具（适用于周期性已读红点）
 ReadConst.DISCOUNT_BUBBLE = 301

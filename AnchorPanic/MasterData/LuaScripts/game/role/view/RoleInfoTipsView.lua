@@ -41,7 +41,6 @@ function configUI(self)
     self.mTxtUID = self:getChildGO("mTxtUID"):GetComponent(ty.Text)
     self.mTxtHeroNum = self:getChildGO("mTxtHeroNum"):GetComponent(ty.Text)
     self.mTxtHeroSum = self:getChildGO("mTxtHeroSum"):GetComponent(ty.Text)
-    self.mTxtProgress = self:getChildGO("mTxtProgress"):GetComponent(ty.Text)
     self.mTxtHeroName = self:getChildGO("mTxtHeroName"):GetComponent(ty.Text)
     self.mTxtCurLevel = self:getChildGO("mTxtCurLevel"):GetComponent(ty.Text)
     self.mTxtPlayerlv = self:getChildGO("mTxtPlayerlv"):GetComponent(ty.Text)
@@ -49,9 +48,7 @@ function configUI(self)
     self.mTxtTowerName = self:getChildGO("mTxtTowerName"):GetComponent(ty.Text)
     self.mTxtSignature = self:getChildGO("mTxtSignature"):GetComponent(ty.Text)
     self.mTxtPlayerName = self:getChildGO("mTxtPlayerName"):GetComponent(ty.Text)
-    self.mTxtFashionPro = self:getChildGO("mTxtFashionPro"):GetComponent(ty.Text)
     self.mTxtTowerStage = self:getChildGO("mTxtTowerStage"):GetComponent(ty.Text)
-    self.mTxtFashionName = self:getChildGO("mTxtFashionName"):GetComponent(ty.Text)
     self.mImgContentBg = self:getChildGO("mImgContentBg"):GetComponent(ty.AutoRefImage)
     self.mTxtAchievementNum = self:getChildGO("mTxtAchievementNum"):GetComponent(ty.Text)
     self.mTxtAchievementSum = self:getChildGO("mTxtAchievementSum"):GetComponent(ty.Text)
@@ -71,8 +68,6 @@ function initViewText(self)
     self.mTxtAchievementName.text = _TT(25185)--成就进度
     self:setBtnLabel(self.mBtnApply, 25144, "申请")
     self.mTxtDoundlessName.text = _TT(97004)
-    self.mTxtFashionName.text = _TT(25225)
-    self.mTxtProgress.text = _TT(25226)
 
 end
 
@@ -89,9 +84,9 @@ function onClickGuildHandler(self)
     if self.data.guildInfo.uid == "0" then
         gs.Message.Show(_TT(97053))
     else
-        GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_TIPS_PANEL, { guildInfo = self.data.guildInfo })
+        GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_TIPS_PANEL,{guildInfo = self.data.guildInfo})
     end
-
+    
 end
 
 --激活
@@ -126,15 +121,14 @@ function updateBaseInfo(self)
         end
         self.mBtnApply:SetActive(self.data.id ~= role.RoleManager:getRoleVo().playerId)
         self.mBtnAddBlack:SetActive(self.data.id ~= role.RoleManager:getRoleVo().playerId)
-        self.mTxtSignature.text = FilterWordUtil:filterTemp(self.data:getAutograph())
-        self.mTxtPlayerName.text = FilterWordUtil:filterTemp(self.data:getPlayerName())
-        self.mTxtGuildName.text = FilterWordUtil:filterTemp(self.data.guildInfo.uid == "0" and _TT(97053) or self.data.guildInfo.name)
+        self.mTxtSignature.text = self.data:getAutograph()
+        self.mTxtPlayerName.text = self.data:getPlayerName()
+        self.mTxtGuildName.text =self.data.guildInfo.uid == "0" and _TT(97053) or self.data.guildInfo.name
         self.mTxtDoundlessCity.text = doundless.getCityEasyName(self.data.cityId)
         self.mTxtAchievementNum.text = self.data:getAchievementNum()
         self.mTxtHeroNum.text = self.data:getHeroNum()
         self.mTxtHeroSum.text = "/" .. hero.HeroManager:getHeroListNum()
         self.mTxtCurLevel.text = self.data:getMainStage()
-        self.mTxtFashionPro.text = _TT(45013, self.data:getFashionNum(), #fashion.FashionManager:getAllFashionListByType(fashion.Type.CLOTHES))
         self.mImgContentBg:SetImg(self.data:getBackGround(), false)
         self.mTxtTowerStage.text = self.data:getTowerStage()
         self.mTxtAchievementSum.text = "/" .. task.AchievementManager:getAchievementConfigPointNum(nil)

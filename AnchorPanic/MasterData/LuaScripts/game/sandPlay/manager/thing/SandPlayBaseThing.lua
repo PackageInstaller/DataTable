@@ -46,7 +46,6 @@ function setupModel(self)
         self:onModelLoadFinish()
         if self.mLoadFinishCall then
             self.mLoadFinishCall(self)
-            self.mLoadFinishCall = nil
         end
     end)
 end
@@ -56,19 +55,10 @@ function onModelLoadFinish(self)
     self:setAngle(self.mData.bornAngle, true)
 end
 
-function addEffect(self, effctName, lifeTime, parent)
+function addEffect(self, effctName, lifeTime)
     if string.NullOrEmpty(effctName) then return end
 
-    parent = parent or self:getTrans()
-    local effct = sandPlay.SandPlay_effect:create(self, effctName, parent, lifeTime)
-    self.mEffectList[effct.m_snId] = effct
-    return effct.m_snId
-end
-
-function addEffectToScene(self, effctName, lifeTime)
-    if string.NullOrEmpty(effctName) then return end
-
-    local effct = sandPlay.SandPlay_effect:create(self, effctName, nil, lifeTime, self:getPosition())
+    local effct = sandPlay.SandPlay_effect:create(effctName, self:getTrans(), lifeTime)
     self.mEffectList[effct.m_snId] = effct
     return effct.m_snId
 end
@@ -123,15 +113,14 @@ function setParent(self, parent)
 end
 
 -- 转向某个位置
-function turnDirByVector(self, pos, rotate_speed)
+function turnDirByVector(self, pos, right_away, rotate_speed)
     if pos == gs.VEC3_ZERO then
         return
     end
 
-    rotate_speed = rotate_speed or 0
     local targetRotation = gs.Quaternion.LookRotation(pos)
     if gs.Quaternion.Angle(self:getTrans().rotation, targetRotation) > 1 then
-        if rotate_speed == 0 then
+        if right_away then
             gs.TransQuick:SetRotation(self:getTrans(), 0, targetRotation.eulerAngles.y, 0)
         else
             gs.TransQuick:MoveTowardsLrotation01(self:getTrans(), gs.Vector3(0, targetRotation.eulerAngles.y, 0), gs.Time.deltaTime * rotate_speed)
@@ -147,14 +136,6 @@ function setPosition(self, lpos)
     self.mModel:setPosition(lpos)
 end
 
-function FindNameInChilds(self, node_name)
-    if not self.mModel then
-        return
-    end
-
-    return gs.GoUtil.FindNameInChilds(self:getTrans(), node_name)
-end
-
 -- 获取动作时长
 function getAniLenght(self, aniName, callback)
     if self.mModel then
@@ -167,9 +148,6 @@ function getAngle(self)
 end
 
 function getTrans(self)
-    if not self.mModel then
-        return nil
-    end
     return self.mModel.m_trans
 end
 

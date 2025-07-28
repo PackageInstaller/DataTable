@@ -51,9 +51,7 @@ SC_PLAYER_BASE_DATA =
     {"competition_coin", "int64str", "综合对抗币"}, 
     {"guild_coin", "int64str", "公会币"}, 
     {"boundless_city_coin", "int64str", "无限城币"}, 
-    {"dialog_box", "int32", "玩家聊天气泡"}, 
-    {"farm_coin", "int64str", "农场币"}, 
-    {"guild_war_coin", "int64str", "联盟团战币"},
+    {"dialog_box", "int32", "玩家聊天气泡"},
 }
  
 --- *s2c* 更新玩家int32属性 12002
@@ -292,8 +290,7 @@ SC_OTHER_PLAYER_PRE_INFO =
     {"hero_list", pt_other_hero_info, "展示战员列表", "repeated"}, 
     {"guild_info", pt_guild_simple_info, "公会信息"}, 
     {"city_id", "int16", "城区id"}, 
-    {"friend_remarks", "string", "好友备注"}, 
-    {"fashion_num", "int16", "时装数目"},
+    {"friend_remarks", "string", "好友备注"},
 }
  
 --- *c2s* 玩家的个人主页信息 12033
@@ -320,8 +317,7 @@ SC_PLAYER_HOMEPAGE_INFO =
     {"achievement_num", "int32", "成就进度"}, 
     {"city_id", "int8", "成就进度"}, 
     {"show_hero_list", pt_show_hero_info, "展示战员列表", "repeated"}, 
-    {"friend_remarks", "string", "好友备注"}, 
-    {"fashion_num", "int16", "时装数目"},
+    {"friend_remarks", "string", "好友备注"},
 }
  
 --- *c2s* 获取聊天气泡列表 12035
@@ -515,14 +511,6 @@ SC_WORLD_MANUAL =
     12105, 
     {"is_init", "int8", "是否初始化 0：否 1：是"}, 
     {"world_list", "int32", "世界观id列表", "repeated"},
-}
- 
---- *s2c* 战员蛋图鉴 12106
-SC_HERO_EGG_MANUAL =
-{
-    12106, 
-    {"is_init", "int8", "是否初始化 0：否 1：是"}, 
-    {"hero_egg_list", "int32", "战员蛋id列表", "repeated"},
 }
  
 --- *s2c* 锚驴面板信息 12130

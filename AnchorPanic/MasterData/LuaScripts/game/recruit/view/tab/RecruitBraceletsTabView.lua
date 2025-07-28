@@ -3,9 +3,8 @@ module("recruit.RecruitBraceletsTabView", Class.impl(TabSubView))
 UIRes = UrlManager:getUIPrefabPath("recruit/tab/RecruitBraceletsTab.prefab")
 
 --构造函数
-function ctor(self, recruitId)
+function ctor(self)
     super.ctor(self)
-    self.m_recruitId = recruitId
 end
 
 -- 初始化数据
@@ -33,14 +32,14 @@ function configUI(self)
 end
 
 function active(self)
-    GameDispatcher:addEventListener(EventName.UPDATE_RECRUIT_PANEL, self.onUpdateViewHandler, self)
-    self:updateView(true)
+    GameDispatcher:addEventListener(EventName.UPDATE_RECRUIT_PANEL, self.__onUpdateViewHandler, self)
+    self:__updateView(true)
 end
 
 function deActive(self)
     self:clearTimer()
 
-    GameDispatcher:removeEventListener(EventName.UPDATE_RECRUIT_PANEL, self.onUpdateViewHandler, self)
+    GameDispatcher:removeEventListener(EventName.UPDATE_RECRUIT_PANEL, self.__onUpdateViewHandler, self)
 end
 
 function initViewText(self)
@@ -49,55 +48,55 @@ function initViewText(self)
 end
 
 function addAllUIEvent(self)
-    self:addUIEvent(self.m_btnLog, self.onClickLogHandler)
-    self:addUIEvent(self.m_btnRule, self.onClickRuleHandler)
-    self:addUIEvent(self.mBtnOne, self.onClickOneHandler)
-    self:addUIEvent(self.mBtnTen, self.onClickTenHandler)
+    self:addUIEvent(self.m_btnLog, self.__onClickLogHandler)
+    self:addUIEvent(self.m_btnRule, self.__onClickRuleHandler)
+    self:addUIEvent(self.mBtnOne, self.__onClickOneHandler)
+    self:addUIEvent(self.mBtnTen, self.__onClickTenHandler)
 
     self:addUIEvent(self.mBtnShop, self.onClickShop)
 end
 
 function onClickShop(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.CovenantShop})
+    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.CovenantShop })
 end
 
-function onClickLogHandler(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_LOG_PANEL, {recruitId = self.m_recruitId})
+function __onClickLogHandler(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_LOG_PANEL, { type = self.m_recruitType })
 end
 
-function onClickRuleHandler(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_RULE_PANEL, {recruitId = self.m_recruitId})
+function __onClickRuleHandler(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_RULE_PANEL, { type = self.m_recruitType })
 end
 
-function onClickOneHandler(self)
+function __onClickOneHandler(self)
     if (recruit.RecruitManager.recruitTopTimes + 1 > sysParam.SysParamManager:getValue(SysParamType.RECRUIT_TOP_DAILY_MAX)) then
         gs.Message.Show(_TT(28009))--"不可超过招募次数上限"
     else
-        self:checkSend(self.m_recruitId, 1)
+        self:checkSend(self.m_recruitType, 1)
     end
 end
 
-function onClickTenHandler(self)
+function __onClickTenHandler(self)
     if (recruit.RecruitManager.recruitTopTimes + 10 > sysParam.SysParamManager:getValue(SysParamType.RECRUIT_TOP_DAILY_MAX)) then
         gs.Message.Show(_TT(28009))--"不可超过招募次数上限"
     else
-        self:checkSend(self.m_recruitId, 10)
+        self:checkSend(self.m_recruitType, 10)
     end
 end
 
-function checkSend(self, recruitId, times)
-    GameDispatcher:dispatchEvent(EventName.SEND_RECRUIT, {recruitId = recruitId, times = times})
+function checkSend(self, recruitType, times)
+    GameDispatcher:dispatchEvent(EventName.SEND_RECRUIT, { type = recruitType, times = times })
 end
 
-function onUpdateViewHandler(self, args)
+function __onUpdateViewHandler(self, args)
     -- local type = args.type
     -- if (type == self.m_recruitType) then
-    self:updateView(false)
+    self:__updateView(false)
     -- end
 end
 
-function updateView(self, cusIsInit)
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitId)
+function __updateView(self, cusIsInit)
+    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitType)
     local costMoneyTid_one = configVo:getCostOneId()
     local costMoneyCount_one = configVo:getCostOneNum()
     local costMoneyTid_ten = configVo:getCostTenId()
@@ -108,7 +107,7 @@ function updateView(self, cusIsInit)
     self.m_propsIcon_ten:SetImg(UrlManager:getPropsIconUrl(costMoneyTid_ten), false)
     self.m_textCount_ten.text = "x" .. costMoneyCount_ten
 
-    local RecruitInfo = recruit.RecruitManager:getRecruitInfo(self.m_recruitId)
+    local RecruitInfo = recruit.RecruitManager:getRecruitInfo(self.m_recruitType)
 
     local isFree = RecruitInfo.free_times < configVo.free_times
     self.mImgFree:SetActive(isFree)
@@ -118,7 +117,7 @@ function updateView(self, cusIsInit)
     self:clearTimer()
     if not isFree then
         self:refreshShowTime()
-        self.mFreeTimeSn = self:addTimer(1, -1, self.refreshShowTime)
+        self.mFreeTimeSn = self:addTimer(1,-1,self.refreshShowTime)
     end
 end
 
@@ -159,7 +158,7 @@ function refreshShowTime(self)
 end
 
 function clearTimer(self)
-    if self.mFreeTimeSn then
+    if self.mFreeTimeSn then 
         self:removeTimerByIndex(self.mFreeTimeSn)
         self.mFreeTimeSn = nil
     end
@@ -167,14 +166,15 @@ end
 
 -- 已招募次数
 function getRecruitTimes(self)
-    return recruit.RecruitManager:getRecruitInfo(self.m_recruitId).guaranteed_times
+    return recruit.RecruitManager:getRecruitInfo(self.m_recruitType).guaranteed_times
 end
 -- 需要招募次数
 function getNeedTimes(self)
-    return recruit.RecruitManager:getRecruitInfo(self.m_recruitId).guaranteed_limit
+    return recruit.RecruitManager:getRecruitInfo(self.m_recruitType).guaranteed_limit
 end
 
-return _M
 
+return _M
+ 
 --[[ 替换语言包自动生成，请勿修改！
 ]]

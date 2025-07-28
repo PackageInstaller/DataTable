@@ -126,9 +126,6 @@ function active(self, args)
         else
             self.heroRedType = hero.HeroFlagManager.FLAG_BTN_DEVELOP
         end
-
-        --自定义选中检查函数 用于选中前的选择判断
-        self.beforeSelectionCheckFunction = args.beforeSelectionCheckFunction or nil
     end
     hero.HeroManager:addEventListener(hero.HeroManager.PANEL_SINGLE_SELECT_HERO, self.__onUpdateShowHeroHandler, self)
     self:__updateFilterData()
@@ -142,19 +139,12 @@ function deActive(self)
     self.mSortView:resetAll()
     self:removeAllDelay()
     hero.setSingleSelectOffset(self.mScroll:GetContent().anchoredPosition.y)
-    self.beforeSelectionCheckFunction = nil
 end
 
 function initViewText(self)
 end
 
 function __onUpdateShowHeroHandler(self, args)
-    if self.beforeSelectionCheckFunction then
-        local isContinue = self.beforeSelectionCheckFunction(args.heroId)
-        if not isContinue then
-            return 
-        end
-    end
     local heroIdList = {}
     for i = #self.mHeroScrollList, 1, -1 do
         table.insert(heroIdList, 1, self.mHeroScrollList[i]:getDataVo().id)

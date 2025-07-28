@@ -90,7 +90,7 @@ function __updateInfo(self)
             self.mImgBg:SetImg(UrlManager:getPackPath("dup4/dup_challenge_enter_no.png"), true)
         else
             self.mImgBg:SetImg(UrlManager:getPackPath(string.format("dup4/dup_challenge_enter_%d.png", self:getData().type)), true)
-            local isPass = seabed.SeabedManager:getSeabedEndIsPass()
+            local isPass = battleMap.MainMapManager:isStagePass(9086)
             if self:getData().type == DupType.Seaded and isPass then
                 self.mImgBg:SetImg(UrlManager:getPackPath(string.format("dup4/dup_challenge_enter_%d_end.png", self:getData().type)), true)
             end

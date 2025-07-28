@@ -43,8 +43,6 @@ function configUI(self)
     self.mBtnMaxQuality = self:getChildGO("mBtnMaxQuality")
 
     self.mBtnFieldExploration = self:getChildGO("mBtnFieldExploration")
-
-    self.mBtnLastFashion = self:getChildGO("mBtnLastFashion")
 end
 
 function active(self)
@@ -74,8 +72,6 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnVsSelf, self.onVsSelf)
     self:addUIEvent(self.mBtnPlayerPrefs, self.onClearPlayerPrefs)
     self:addUIEvent(self.mSaveButton, self.onSave)
-
-    self:addUIEvent(self.mBtnLastFashion , self.onLastFashion)
     -- self:addUIEvent(self.mToogleRuntimeInspector, self.onLoadInspectorHandler)
 
     local function onLoadInspectorHandler(value)
@@ -104,34 +100,8 @@ function onFieldExploration(self)
     -- fieldExploration.FieldExplorationManager:setActivityId(220)
     -- GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Gold, param = {activity_id = 220}})
 
-    -- fieldExploration.FieldExplorationManager:setDupId(20001)
-    -- GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.FIELD_EXPLORATION)
-
-    GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.BIG_HOSTEL)
-end
-
-function onLastFashion(self)
-    local heroVoList = hero.HeroManager:getHeroList()
-
-    for i = 1, #heroVoList, 1 do
-        local dic = fashion.FashionManager:getHeroFashionConfigDic(fashion.Type.CLOTHES,heroVoList[i].tid)
-        local maxId =0
-        for k, v in pairs(dic) do
-            local isLock = fashion.FashionManager:getHeroFashionVo(fashion.Type.CLOTHES,heroVoList[i].id, v.fashionId)
-            if v.fashionId > maxId and isLock then
-                maxId = v.fashionId
-            end
-        end
-
-        --if maxId > 0 then
-            GameDispatcher:dispatchEvent(EventName.REQ_HERO_WEAR_FASHION, {
-                fashionType = fashion.Type.CLOTHES,
-                heroId = heroVoList[i].id,
-                fashionId = maxId
-            })
-        --end
-    end
-    gs.Message.Show("穿戴了拥有战员拥有的最大ID时装，还不谢谢我ヾ(･ω･`｡)")
+    fieldExploration.FieldExplorationManager:setDupId(20001)
+    GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.FIELD_EXPLORATION)
 end
 
 function onSave(self)

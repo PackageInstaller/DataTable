@@ -95,9 +95,6 @@ seabed.SeabedRankItem = require("game/seabed/view/item/SeabedRankItem")
 -- 加载海床排名面板
 seabed.SeabedRankPanel = require("game/seabed/view/SeabedRankPanel")
 
-seabed.SeabedShowLayerPanel = require("game/seabed/view/SeabedShowLayerPanel")
-
-
 ----------------------------------------------------------end(结局相关界面)-----------------------------------------------
 seabed.SeabedMainPanel_end = require("game/seabed/view/SeabedMainPanel_end")
 seabed.SeabedBattleBuffPanel_end = require("game/seabed/view/SeabedBattleBuffPanel_end")

@@ -395,7 +395,7 @@ function getMainMapProgress(self,type)
 
     local dic = self:getStageDic()
     for id, vo in pairs(dic) do
-        if vo.chapter ==  sysParam.SysParamManager:getValue(SysParamType.MainActivityChapter) and vo.styleType == type then
+        if vo.chapter == 8 and vo.styleType == type then
             allCount = allCount + 1
             if(self:isStagePass(id)) then
                 passCount = passCount + 1

@@ -88,11 +88,8 @@ function __onReplaceHandler(self)
 end
 
 function setData(self, oldEquipVo, curEquipVo, remakePos)
-    self.curEquipVo = curEquipVo
-    self.remakePos = remakePos
-
     local remakePosAttrList, remakePosAttrDic = oldEquipVo:getRemakeAttr()
-    local isFirst =  remakePosAttrDic[remakePos] == nil and true or false
+    local isFirst = remakePosAttrDic[remakePos] == nil and true or false
 
     self:recoverAttrList()
     self.m_groupFirst:SetActive(isFirst)
@@ -184,21 +181,6 @@ end
 function showConfirmSucc(self)
     self.m_groupFirst:SetActive(true)
     self.m_groupNotFirst:SetActive(false)
-end
-
-function showConfirmAgentSucc(self)
-    self.m_groupFirst:SetActive(true)
-    self.m_groupNotFirst:SetActive(false)
-
-    --local vo,pos,id,color = equipBuild.EquipRemakeManager:getNeedRemakeAgentInfo()
-    local remakePosAttrList, remakePosAttrDic = self.curEquipVo:getRemakeAttr()
-    local attrData = remakePosAttrDic[self.remakePos]
-    self:createAttrGroup(self.AttrFirstPoint, attrData, 1)
-    local pro = attrData.value / attrData.maxValue
-    local score = self:getScoreUrl(attrData.value , attrData.maxValue)
-    self.mTxtScore:SetImg(score)
-
-
 end
 
 function getScoreUrl(self, value,maxValue)

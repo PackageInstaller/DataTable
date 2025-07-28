@@ -781,34 +781,6 @@ function getHeroResonanceConfigVo(self, heroTid)
     return self.m_heroResonanceConfigDic[heroTid]
 end
 
-----------------------------------------------------------------------场景---------------------------
-
-function parseHeroSceneData(self, msg)
-    self.mHeroSceneDic = {}
-    for i = 1, #msg.fashion_scene_list do
-        self.mHeroSceneDic[msg.fashion_scene_list[i].hero_tid] = msg.fashion_scene_list[i].scene_list
-    end
-end
-
-function getHeroSceneUnlock(self, heroTid, sceneId)
-    if self.mHeroSceneDic and self.mHeroSceneDic[heroTid] then
-        for i = 1, #self.mHeroSceneDic[heroTid] do
-            return table.indexof01(self.mHeroSceneDic[heroTid], sceneId) > 0
-        end
-    end
-    return false
-end
-
-function parseHeroSceneUnlockData(self, msg)
-    if msg.result == 1 then
-        if not self.mHeroSceneDic[msg.hero_tid] then
-            self.mHeroSceneDic[msg.hero_tid] = {}
-        end
-
-        table.insert(self.mHeroSceneDic[msg.hero_tid], msg.fashion_id)
-    end
-end
-
 --析构函数
 function dtor(self)
 end

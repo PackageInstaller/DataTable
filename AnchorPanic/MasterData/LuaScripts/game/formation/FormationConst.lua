@@ -82,12 +82,6 @@ formation.DATA_TYPE = {
 
     --海底
     SEABED = 21,
-
-    --团战防御
-    GUILDWAR_DEF = 22,
-    --团战攻击
-    GUILDWAR_ATK = 23,
-   
 }
 
 -- 根据 后端阵型分段类型 获取 阵型类型
@@ -132,10 +126,6 @@ formation.getFormationTypeByDataType = function(dataType)
         return formation.TYPE.DISASTER
     elseif(dataType == formation.DATA_TYPE.SEABED) then
         return formation.TYPE.SEABED
-    elseif(dataType == formation.DATA_TYPE.GUILDWAR_DEF) then
-        return formation.TYPE.GUILDWARDEF
-    elseif(dataType == formation.DATA_TYPE.GUILDWAR_ATK) then
-        return formation.TYPE.GUILDWARATK
     else
         return formation.TYPE.NORMAL
     end
@@ -185,10 +175,6 @@ formation.getDataTypeByFormationType = function(formationType)
         return formation.DATA_TYPE.DISASTER
     elseif(formationType == formation.TYPE.SEABED) then
         return formation.DATA_TYPE.SEABED
-    elseif (formationType == formation.TYPE.GUILDWARDEF) then
-        return formation.DATA_TYPE.GUILDWAR_DEF
-    elseif (formationType == formation.TYPE.GUILDWARATK) then
-        return formation.DATA_TYPE.GUILDWAR_ATK
     else
         return formation.DATA_TYPE.NORMAL
     end
@@ -266,11 +252,6 @@ formation.TYPE.DOUNDLESSLOCK = _enumID()
 formation.TYPE.DISASTER = _enumID()
 
 formation.TYPE.SEABED = _enumID()
-
---公会团战
-formation.TYPE.GUILDWARATK = _enumID()
-formation.TYPE.GUILDWARDEF = _enumID()
-
 ------------------------------------------------------ end 模块类型 -------------------------------------------------------
 -- 通过模块类型获取队列id列表（队列id和后端定义保持一致）
 formation.getTeamIdListByType = function(formationType, dataId)
@@ -378,17 +359,6 @@ formation.getTeamIdListByType = function(formationType, dataId)
     elseif(formationType == formation.TYPE.SEABED) then
         if (isInit) then
             table.insert(teamIdList, formation.getTeamIdByDataType(formationType, 1))
-        end
-
-    elseif(formationType == formation.TYPE.GUILDWARATK) then
-        if (isInit) then
-            table.insert(teamIdList, formation.getTeamIdByDataType(formationType, 1))
-            table.insert(teamIdList, formation.getTeamIdByDataType(formationType, 2))
-        end
-    elseif(formationType == formation.TYPE.GUILDWARDEF) then
-        if (isInit) then
-            table.insert(teamIdList, formation.getTeamIdByDataType(formationType, 1))
-            table.insert(teamIdList, formation.getTeamIdByDataType(formationType, 2))
         end
     elseif (isInit) then
         table.insert(teamIdList, formation.getTeamIdByDataType(formationType, 1))
@@ -572,10 +542,6 @@ formation.getFormationController = function(cusFormationType)
         return formation.FormationDisasterController
     elseif(cusFormationType == formation.TYPE.SEABED) then
         return formation.FormationSeabedController    
-    elseif(cusFormationType == formation.TYPE.GUILDWARATK) then
-        return formation.FormationGuildWarAtkController 
-    elseif(cusFormationType == formation.TYPE.GUILDWARDEF) then
-        return formation.FormationGuildWarDefController 
     end
     return formation.FormationController
 end
@@ -634,11 +600,6 @@ formation.getFormationTypeByController = function(controller)
         return formation.TYPE.DISASTER
     elseif(controller.__cname == formation.FormationSeabedController.__cname) then
         return formation.TYPE.SEABED
-
-    elseif(controller.__cname == formation.FormationGuildWarAtkController.__cname) then
-        return formation.TYPE.GUILDWARATK
-    elseif(controller.__cname == formation.FormationGuildWarDefController.__cname) then
-        return formation.TYPE.GUILDWARDEF
         -- elseif (controller.__cname == formation.FormationDoundlessController.__cname) then
         --     return formation.TYPE.DOUNDLESS
     end

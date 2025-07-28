@@ -90,12 +90,7 @@ function setData(self, param)
         -- self.mImgLine.color = gs.ColorUtil.GetColor("404548ff")
     end
     self.mTxtContent.text = chapterVo:getName()
-    if chapterVo.chapterId >= 10 then
-        self.mTxtIndex.text =  chapterVo.chapterId
-    else
-        self.mTxtIndex.text = "0" .. chapterVo.chapterId
-    end
-   
+    self.mTxtIndex.text = "0" .. chapterVo.chapterId
 
     -- 外部触发帧事件
     self:__onFrameHandler()

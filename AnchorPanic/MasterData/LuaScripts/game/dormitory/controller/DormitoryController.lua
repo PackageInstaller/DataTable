@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : DormitoryController
 @Description    : 宿舍UI控制器
@@ -27,8 +27,6 @@ end
 function listNotification(self)
     GameDispatcher:addEventListener(EventName.ENTER_DORMITORY_SCENE, self.onEnterDormitory, self)
     GameDispatcher:addEventListener(EventName.OPEN_SETTLED_HERO_VIEW, self.onOpenSettledHeroView, self)
-    GameDispatcher:addEventListener(EventName.OPEN_EDITORSAVE_VIEW, self.onOpenEditorSaveSuitView, self)
-
     GameDispatcher:addEventListener(EventName.OPEN_DORMITORYINFO_PANEL, self.onOpenDormitoryInfoPanel, self)
     GameDispatcher:addEventListener(EventName.OPEN_DORMITORYLIVE_PANEL, self.onOpenDormitoryLivePanel, self)
 
@@ -49,9 +47,9 @@ end
 
 ---------------------------消息交互------------------------------------
 --- *c2s* 请求宿舍面板信息 24076
-function onReqDormitoryInfo(self, dormitory_id)
+function onReqDormitoryInfo(self,dormitory_id)
     dormitory_id = dormitory_id or dormitory.DormitoryManager:getRoomId()
-    SOCKET_SEND(Protocol.CS_DORMITORY_INFO, {dormitory_id = dormitory_id})
+    SOCKET_SEND(Protocol.CS_DORMITORY_INFO,{dormitory_id = dormitory_id})
 end
 
 --- *c2s* 摆放家具 24072
@@ -60,20 +58,16 @@ function onReqSaveFurniture(self)
     local moveInfoFurnitureList = self.mMgr:getMoveInfoList()
 
     local furnitureList = {}
-    for id, info in pairs(moveInfoFurnitureList) do
+    for id,info in pairs(moveInfoFurnitureList) do
         local isCanAdd = true
-        for _, furnitureVo in pairs(furniture_list) do
-            if furnitureVo.id == info.id and info.move == 2 then
-                if furnitureVo.row == info.put_info.row and furnitureVo.col == info.put_info.columns then
-                    isCanAdd = false
-                    break
-                else
-                    info.move = 0
-                end
+        for _,furnitureVo in pairs(furniture_list) do
+            if furnitureVo.id == info.id and info.move == 2 then 
+                isCanAdd = false
+                break
             end
         end
 
-        if isCanAdd then
+        if isCanAdd then 
             table.insert(furnitureList, info)
         end
     end
@@ -81,7 +75,7 @@ function onReqSaveFurniture(self)
         self:onPutFurnitureMsg({result = 1})
         return
     end
-
+    
     local cmd = {}
     cmd.dormitory_id = dormitory.DormitoryManager:getRoomId()
     cmd.furniture_list = furnitureList
@@ -101,7 +95,7 @@ function onPutFurnitureMsg(self, msg)
         self.mMgr:clearAllFurniture()
         gs.Message.Show2(_TT(49712))
         self:onReqDormitoryInfo()
-
+        
         GameDispatcher:dispatchEvent(EventName.SAVA_DORMITORT_FINISH)
     else
         gs.Message.Show2(_TT(49713))
@@ -120,13 +114,14 @@ function onSettledHeroList(self)
     cmd.build_id = dormitory.DormitoryManager:getRoomId()
     cmd.hero_list = {}
     for k, v in pairs(self.mMgr:getSelectHeroDic()) do
-        table.insert(cmd.hero_list, {hero_tid = k, pos = v})
+        table.insert(cmd.hero_list, { hero_tid = k, pos = v })
     end
 
     GameDispatcher:dispatchEvent(EventName.REQ_BUILDBASE_HEROLIST, cmd)
 end
 
-function onEnterDormitory(self, roomId)
+
+function onEnterDormitory(self,roomId)
     if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_DORMITORY, true) == false then
         return
     end
@@ -159,21 +154,6 @@ end
 function onDestroyDupPanelHandler(self)
     self.mDormitoryUI:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyDupPanelHandler, self)
     self.mDormitoryUI = nil
-end
-
--- 打开套装编辑界面
-function onOpenEditorSaveSuitView(self, args)
-    if self.mDormitoryEditorSaveSuitView == nil then
-        self.mDormitoryEditorSaveSuitView = UI.new(dormitory.DormitoryEditorSaveSuitView)
-        self.mDormitoryEditorSaveSuitView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyEditorSaveSuitHandler, self)
-    end
-    self.mDormitoryEditorSaveSuitView:open(args)
-end
-
--- ui销毁
-function onDestroyEditorSaveSuitHandler(self)
-    self.mDormitoryEditorSaveSuitView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyEditorSaveSuitHandler, self)
-    self.mDormitoryEditorSaveSuitView = nil
 end
 
 -- 打开宿舍入住战员选择界面
@@ -222,8 +202,8 @@ function onDestroyDormitoryLiveHandler(self)
 end
 
 return _M
-
+ 
 --[[ 替换语言包自动生成，请勿修改！
-语言包: _TT(49713):"保存失败"
-语言包: _TT(49712):"保存成功"
+	语言包: _TT(49713):	"保存失败"
+	语言包: _TT(49712):	"保存成功"
 ]]

@@ -9,9 +9,6 @@ function parseConfigData(self, cusData)
     self.dislikegift = cusData.dislike_gift
     -- 亲密度数据
     self.favorableData = {}
-    -- 是否有剧情
-    self.hasStory = cusData.is_story == 1
-
     for id, data in pairs(cusData.relation_data) do
         local vo = favorable.FavorableVo.new()
         vo:parseConfigData(data)

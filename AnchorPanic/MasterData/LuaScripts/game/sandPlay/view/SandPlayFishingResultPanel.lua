@@ -34,9 +34,6 @@ function configUI(self)
     self.mTextCount = self:getChildGO("mTextCount"):GetComponent(ty.Text)
     self.mTextSize = self:getChildGO("mTextSize"):GetComponent(ty.Text)
     self.mClose = self:getChildGO("mClose")
-
-    self.mTextTips = self:getChildGO("mTextTips"):GetComponent(ty.Text)
-    self.mTextAutoFish = self:getChildGO("mTextAutoFish"):GetComponent(ty.Text)
 end
 
 function initViewText(self)
@@ -54,22 +51,7 @@ function active(self, args)
 
         self.mTextName.text = _TT(fishConfigVo.name)
         self.mTextCount.text = _TT(98330, self.data.result.fish_info.amount)
-        self.mTextSize.text = _TT(98342, self.data.result.fish_info.cur_size * 0.01)
-    end
-
-    if sandPlay.SandPlayManager:isAutoFish() then
-        if bag.BagManager:getPropsCountByTid(self.data.bait_id) > 0 then
-            self.mTextAutoFish.gameObject:SetActive(true)
-
-            self.mAutoTime = 3
-            self.mTextAutoFish.text = _TT(98976, self.mAutoTime)
-
-            self:addTimer(1, self.mAutoTime, self.refreshAutoFishTime, self.onAutoFish)
-        else
-            self.mTextAutoFish.gameObject:SetActive(false)
-        end
-    else
-        self.mTextAutoFish.gameObject:SetActive(false)
+        self.mTextSize.text = _TT(98342, self.data.result.fish_info.cur_size * 0.1)
     end
 end
 
@@ -90,24 +72,9 @@ function onClickClose(self)
 
     ShowAwardPanel:showPropsAwardMsg(self.data.result.award_list, function ()
         if self.data.finishCall then
-            self.data.finishCall(false)
+            self.data.finishCall()
         end
     end)
-end
-
-function refreshAutoFishTime(self)
-    self.mAutoTime = self.mAutoTime - 1
-    self.mTextAutoFish.text = _TT(98976, self.mAutoTime)
-end
-
-function onAutoFish(self)
-    self:close()
-
-    if self.data.finishCall then
-        self.data.finishCall(true)
-    end
-
-    GameDispatcher:dispatchEvent(EventName.SANDPLAY_START_FISHING)
 end
 
 return _M

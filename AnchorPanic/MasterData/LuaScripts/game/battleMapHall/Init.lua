@@ -32,9 +32,6 @@ battleMap.MainMapFinish06View = require("game/battleMapHall/mainMap/view/MainMap
 battleMap.MainMapFinish07View = require("game/battleMapHall/mainMap/view/MainMapFinish07View")
 battleMap.MainMapFinish08View = require("game/battleMapHall/mainMap/view/MainMapFinish08View")
 battleMap.MainMapFinish09View = require("game/battleMapHall/mainMap/view/MainMapFinish09View")
-battleMap.MainMapFinish10View = require("game/battleMapHall/mainMap/view/MainMapFinish10View")
-battleMap.MainMapFinish11View = require("game/battleMapHall/mainMap/view/MainMapFinish11View")
-battleMap.MainMapFinish12View = require("game/battleMapHall/mainMap/view/MainMapFinish12View")
 --战员传记
 require("game/battleMapHall/biography/manager/BiographyConst")
 battleMap.HeroBiographyDataRo = require('rodata/HeroBiographyDataRo')

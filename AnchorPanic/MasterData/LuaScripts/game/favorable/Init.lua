@@ -25,10 +25,6 @@ favorable.FavorableGiveItem = require("game/favorable/view/item/FavorableGiveIte
 -- 等级解锁子元素
 favorable.FavorableMoreItem = require("game/favorable/view/item/FavorableMoreItem")
 
-favorable.FavorableStoryItem = require("game/favorable/view/item/FavorableStoryItem") 
-favorable.FavorableStoryView = require("game/favorable/view/tab/FavorableStoryView")
-
-
 
 favorable.FavorableCaseItem = require("game/favorable/view/item/FavorableCaseItem")
 favorable.FavorableActionItem = require("game/favorable/view/item/FavorableActionItem")

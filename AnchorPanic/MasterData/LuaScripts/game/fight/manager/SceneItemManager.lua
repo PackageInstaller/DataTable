@@ -310,14 +310,14 @@ function playBossGoinShow(self, finishCall)
                     finishCall = nil
                 end
             end
-            thing:playAction(fight.FightDef.ACT_STANDBY, nil, _playFinish, true)
+            thing:playAction(fight.FightDef.ACT_STANDBY, nil, _playFinish)
             fight.LivePerformManager:playStandby(liveID)
 
             UIEffectMgr:addEffect("BOSSInformationDisplay_" .. liveVo:getModelID(), GameView.pop)
 
             local skipCall = function()
                 thing:playAction(fight.FightDef.ACT_STAND)
-                -- _playFinish()
+                _playFinish()
             end
 
             if self.mFightBossShowSkip == nil then

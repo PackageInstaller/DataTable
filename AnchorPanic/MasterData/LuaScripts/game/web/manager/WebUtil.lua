@@ -456,16 +456,5 @@ web.uploadFile = function(isAppendDetail, localFilePath, remoteFileNameWithoutEx
     end)
 end
 
--- 获取Debug登录权限
-web.getClientAuthLoginUrl = function()
-    local data = ""
-    -- data = web.__getContactParams(data, "g", 12)
-    data = web.__getContactParams(data, "user_name", login.LoginManager.clientAuthId)
-    data = web.__getContactParams(data, "&pwd", login.LoginManager.clientAuthPwd)
-
-    local webConfig = require("game/web/config/OuterTestConfig") --固定用外测的配置
-    return web.__getUrlByReqType(true, web.__getConfig().client_auth_login .. "?", data, webConfig.common_key)
-end
-
 --[[ 替换语言包自动生成，请勿修改！
 ]]

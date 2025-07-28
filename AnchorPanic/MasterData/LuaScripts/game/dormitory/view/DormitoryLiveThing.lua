@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : DormitoryLiveThing
 @Description    : 宿舍战员
@@ -8,6 +8,7 @@
 -----------------------------------------------------
 ]]
 module('game.dormitory.view.DormitoryLiveThing', Class.impl(model.modelLive))
+
 
 --构造函数
 function ctor(self)
@@ -19,14 +20,14 @@ function ctor(self)
     self.showOnBringTime = 0.2
 
     self.audioDataDic = {}
-
+    
     self.m_rotateSpeed = 10 -- 旋转速度
 
     self.moveSpeed = 0
 end
 
 -- 设置模型
-function setModelID(self, liveTid, finishCall)
+function setModelID(self, liveTid,finishCall)
     self.m_liveTid = liveTid
 
     local config = hero.HeroCuteManager:getHeroCuteConfigVo(self.m_liveTid)
@@ -35,15 +36,15 @@ function setModelID(self, liveTid, finishCall)
 
         local prefabPath = config.mModelPrefab
         -- local prefabPath = "arts/character/pet/3101_qb/model3101_qb.prefab"
-        if string.NullOrEmpty(prefabPath) then
-            if finishCall then
+        if string.NullOrEmpty(prefabPath) then 
+            if finishCall then 
                 finishCall()
             end
             return
         end
 
         if self.m_uiPrefabPath ~= prefabPath then
-            self:setPrefab(prefabPath, beAlwayEft, finishCall)
+            self:setPrefab(prefabPath, beAlwayEft,finishCall)
             self.m_uiPrefabPath = prefabPath
         end
     end
@@ -51,22 +52,22 @@ function setModelID(self, liveTid, finishCall)
 end
 
 -- 设置模型
-function setPrefab(self, prefabPath, beAlwayEft, callback)
+function setPrefab(self, prefabPath, beAlwayEft,callback)
     self.mLoadFinishCall = callback
     self:setupPrefab(prefabPath, beAlwayEft)
     self:playAction(DormitoryCost.ACT_SHOW_STAND)
 end
 
-function loadFinish(self, go, finishCall, sorceId)
-    super.loadFinish(self, go, finishCall, sorceId)
+function loadFinish(self,go,finishCall, sorceId)
+    super.loadFinish(self,go,finishCall, sorceId)
 
     self.m_UILoadPoint = gs.GoUtil.FindNameInChilds(go.transform, "Spine_node")
-    if self.m_UILoadPoint == nil or gs.GoUtil.IsTransNull(self.m_UILoadPoint) then
+    if self.m_UILoadPoint == nil or gs.GoUtil.IsTransNull(self.m_UILoadPoint) then 
         logError("Q版模型缺少 Spine_node 挂点，请找俭城  " .. self.m_prefabName)
     end
 
     if self.m_ani then
-        self:setPreLoadAnisByHashList(DormitoryCost.ACT_LIST, self.mLoadFinishCall)
+        self:setPreLoadAnisByHashList(DormitoryCost.ACT_LIST,self.mLoadFinishCall)
 
         local function playWalkAudio(clipName)
             local mFsSoundPath = DormitoryCost.getRandomFSSount()
@@ -81,7 +82,7 @@ function loadFinish(self, go, finishCall, sorceId)
     end
 
     --添加通用碰撞
-    self:addAssembly("arts/character/pet/QModelCollider_00/QModelCollider_00.prefab", nil, function (assembly)
+    self:addAssembly("arts/character/pet/QModelCollider_00/QModelCollider_00.prefab",nil,function (assembly)
         if assembly then
             local mouseEvent = assembly.m_model:AddComponent(ty.GoMouseEvent)
             mouseEvent:SetCallFun(self, nil, self.onPointDownHandler, self.onPointerUpHandler, self.onPointerExitHandler)
@@ -179,7 +180,7 @@ end
 
 --添加气泡动作监听
 function addBubbleActEvent(self)
-    for k, clipName in pairs(DormitoryCost.NEED_BUBBLE_HASH_ARRAY) do
+    for k,clipName in pairs(DormitoryCost.NEED_BUBBLE_HASH_ARRAY) do
         self.m_ani:AddFrameCallEvent(clipName, function (_clipName)
             ---第一次播动画不冒气泡
             if self.isFirstBulle < 2 then
@@ -187,13 +188,13 @@ function addBubbleActEvent(self)
                 return
             end
 
-            if _clipName == DormitoryCost.QWALK then
+            if _clipName == DormitoryCost.QWALK then 
                 self:sentShowBubble(DormitoryCost.LIVESTATE_RUN)
-            elseif _clipName == DormitoryCost.QSTAND then
+            elseif _clipName == DormitoryCost.QSTAND then 
                 self:sentShowBubble(DormitoryCost.LIVESTATE_STAND)
-            elseif _clipName == DormitoryCost.QTAB then
+            elseif _clipName == DormitoryCost.QTAB then 
                 self:sentShowBubble(DormitoryCost.LIVESTATE_CLICK)
-            elseif _clipName == DormitoryCost.QBEDWARD_R_ING or _clipName == DormitoryCost.QBEDWARD_L_ING then
+            elseif _clipName == DormitoryCost.QBEDWARD_R_ING or _clipName == DormitoryCost.QBEDWARD_L_ING then 
                 self:sentShowBubble(DormitoryCost.LIVESTATE_INTERACT)
             elseif _clipName == DormitoryCost.QTAB then
                 self:sentShowBubble(DormitoryCost.LIVESTATE_OTHER)
@@ -207,7 +208,7 @@ function sentShowBubble(self, state)
     local curTime = GameManager:getClientTime()
     if curTime - self.lateBubbleTime >= sysParam.SysParamManager:getValue(SysParamType.DORMITORY_BUBBLECDTIME) then
         self.lateBubbleTime = curTime
-        GameDispatcher:dispatchEvent(EventName.DORMITORY_SETLIVEBULLETXT, {liveTid = self.m_liveTid, ai_state = state, modelTran = self.m_UILoadPoint})
+        GameDispatcher:dispatchEvent(EventName.DORMITORY_SETLIVEBULLETXT, { liveTid = self.m_liveTid, ai_state = state, modelTran = self.m_UILoadPoint })
     end
 end
 
@@ -261,6 +262,7 @@ function onControlMove(self, args)
             end
         end
 
+
         --拿到的是当前朝向往前一个格子的世界坐标
         local nextPos = self.m_trans:TransformPoint(gs.Vector3(0, 0, DormitoryCost.TITE_SIZE))
         --判断面前的下一个格子是否可以行走
@@ -279,7 +281,7 @@ function onControlMove(self, args)
         -- -- nextPos = self.m_trans:TransformPoint(gs.Vector3(0, 0, 0))
         -- nextTile = self:getCanMove(nextPos)
         -- if nextTile ~= nil then
-        --     if not self.testObj then
+        --     if not self.testObj then 
         --         self.testObj = gs.GameObject()
         --     end
         --     self.testObj.name = nextTile.col .. " __ " .. nextTile.row
@@ -299,7 +301,7 @@ function updateInteractState(self)
     local interactData = dormitory.DormitorySceneController.roomScene:getCollideInteractPoint(gs.Vector3(self.m_position.x, 0, self.m_position.z))
     local active = interactData ~= nil
 
-    GameDispatcher:dispatchEvent(EventName.DORMITORT_UPDATAMOVEINTERACTDATA, {active = active, interactData = interactData})
+    GameDispatcher:dispatchEvent(EventName.DORMITORT_UPDATAMOVEINTERACTDATA,{active  = active,interactData = interactData})
 end
 
 --根据位置获取地面的格子 判断是不是可以行走
@@ -322,8 +324,8 @@ function getCanMove(self, pos)
     -- end
     -- return nil
 
-    if self.mQRoleAI:checkTileIsCanMove(col, row) then
-        return {col = col, row = row}
+    if self.mQRoleAI:checkTileIsCanMove(col, row) then 
+        return { col = col, row = row }
     end
 
     return nil
@@ -346,8 +348,8 @@ function onPointDownHandler(self)
     if self.mQRoleAI then
         self.mQRoleAI:resetMove()
     end
-    if self.mInteractState ~= nil then
-        self:stopInteract()
+    if self.mInteractState ~= nil then 
+       self:stopInteract()
     else
         if not self.m_ani:IsPlayingShortNameHash(DormitoryCost.ACT_SHOW_TAB) then
             self:playAction(DormitoryCost.ACT_SHOW_TAB)
@@ -481,7 +483,7 @@ function onBringUpFrame(self)
         local tile = dormitory.DormitorySceneController:getTile(DormitoryCost.SITE_FLOOR, c, r)
         local pos = tile:getPosition()
         local movePos = gs.Vector3(pos.x, 0.5, pos.z)
-        self.mCurTile = {col = c, row = r}
+        self.mCurTile = { col = c, row = r }
         self:setPosition(movePos)
         self:resetInterActPoint()
 
@@ -511,9 +513,9 @@ function rereshInteractOutLineState(self)
                     local type, id = tile:getState2()
                     if type == 1 then
                         local furnitureObj = dormitory.DormitorySceneController.roomScene:getFurnitureById(id)
-                        if furnitureObj then
+                        if furnitureObj then 
                             local interactPoint = furnitureObj:getCanActionPoint(lpos)
-                            if interactPoint and interactPoint.actName ~= nil and #interactPoint.actName >= 4 then
+                            if interactPoint and interactPoint.actName ~= nil and #interactPoint.actName >= 4 then 
                                 outLineState = 1
                             else
                                 outLineState = 0
@@ -529,7 +531,7 @@ function rereshInteractOutLineState(self)
             if isBreak then break end
         end
 
-        if outLineFurniture then
+        if outLineFurniture  then 
             if outLineState == 0 then
                 outLineFurniture:SetOutLineColor_highlightState("FF0000FF")
             elseif outLineState == 1 then
@@ -537,7 +539,7 @@ function rereshInteractOutLineState(self)
             end
         end
 
-        if self.m_OutLineFurniture ~= nil and self.m_OutLineFurniture ~= outLineFurniture then
+        if self.m_OutLineFurniture ~= nil and self.m_OutLineFurniture ~= outLineFurniture then 
             self.m_OutLineFurniture:SetOutLineColor_normalState()
         end
 
@@ -549,7 +551,7 @@ end
 function freedInteract(self)
     if self.mCurTile then
         local lpos = gs.Vector3(self.m_position.x, 0, self.m_position.z)
-
+        
         local endCol = self.mCurTile.col + 1
         local endRow = self.mCurTile.row + 1
         local startCol = self.mCurTile.col - 1
@@ -564,13 +566,12 @@ function freedInteract(self)
                     local type, id = tile:getState2()
                     if type == 1 then
                         local furnitureObj = dormitory.DormitorySceneController.roomScene:getFurnitureById(id)
-                        if furnitureObj then
+                        if furnitureObj then 
                             local interactPoint = furnitureObj:getCanActionPoint(lpos)
-                            if interactPoint and (table.empty(interactPoint.actName) or table.nums(interactPoint.actName) < 4) then
-                                logError("这个挂点配置少了" .. furnitureObj:getResName())
+                            if interactPoint and #interactPoint.actName < 4 then 
+                                logError("这个挂点配置少了"  .. furnitureObj:getResName())
                             end
-
-                            if interactPoint and interactPoint.actName ~= nil and #interactPoint.actName >= 4 then
+                            if interactPoint and interactPoint.actName ~= nil and #interactPoint.actName >= 4 then 
                                 self:setInteractFurnitruePoint(interactPoint)
                                 self:startInteract(interactPoint.actName[2])
                                 isCanSetPos = false
@@ -591,11 +592,11 @@ function freedInteract(self)
                         -- 挤走其他小人
                         local ai = dormitory.DormitoryAIManager:getQRoleAI(id)
                         ai:removeTileRoleInfo()
-
-                        self:setCurTile({col = self.mCurTile.col, row = self.mCurTile.row})
+                        
+                        self:setCurTile({ col = self.mCurTile.col, row = self.mCurTile.row })
 
                         local tileData = self:getTileData(self.mCurTile.col, self.mCurTile.row, id)
-                        ai:setRoleToTile({col = tileData.col, row = tileData.row})
+                        ai:setRoleToTile({ col = tileData.col, row = tileData.row })
                         isBreak = true
                         break
                     end
@@ -609,17 +610,18 @@ function freedInteract(self)
                 lpos = newTile:getTileRolePos()
             end
             self:setPosition(lpos)
-            self:setCurTile({col = self.mCurTile.col, row = self.mCurTile.row})
+            self:setCurTile({ col = self.mCurTile.col, row = self.mCurTile.row })
         end
 
-        if self.m_OutLineFurniture ~= nil then
+        if self.m_OutLineFurniture ~= nil then 
             self.m_OutLineFurniture:SetOutLineColor_normalState()
         end
     end
 end
 
+
 --设置当前站员正在交互中
-function setIsOnInterAct(self, value)
+function setIsOnInterAct(self,value)
     self.isOnInterAct = value
 end
 
@@ -628,9 +630,9 @@ function getIsOnInterAct(self)
 end
 
 --同家具交互
-function startInteract(self, actName)
+function startInteract(self,actName)
     if not self.mCurInteractPointData then
-        return
+        return 
     end
 
     --释放占用的格子
@@ -639,7 +641,7 @@ function startInteract(self, actName)
 
     local floorTran = gs.GameObject.Find(DormitoryCost.SITE_ROOT_LIST[DormitoryCost.SITE_FLOOR]).transform
     self:setPosition(floorTran:InverseTransformPoint(self.mCurInteractPointData.point.position))
-    self:setAngle(self.mCurInteractPointData.point.eulerAngles.y, true)
+    self:setAngle(self.mCurInteractPointData.point.eulerAngles.y,true)
 
     actName = actName or self.mCurInteractPointData.actName[1]
     self:playAction(gs.Animator.StringToHash(actName))
@@ -649,25 +651,25 @@ function startInteract(self, actName)
     local frameCount = 0
 
     --每一个阶段开始的时候
-    for i = 1, DormitoryCost.INTERACTEND do
+    for i=1,DormitoryCost.INTERACTEND do
         clipName = self.mCurInteractPointData.actName[i]
         self.m_ani:AddFrameCallEvent(clipName, function (_clipName)
             self.mInteractState = i
 
-            if self.mInteractState == DormitoryCost.INTERACTEND then
-                self:setCurTile({col = self.mCurInteractPointData.col, row = self.mCurInteractPointData.row})
+            if self.mInteractState == DormitoryCost.INTERACTEND then 
+                self:setCurTile({ col = self.mCurInteractPointData.col, row = self.mCurInteractPointData.row })
             end
 
             if dormitory.DormitoryManager:getCurControllerLiveTid() == self.m_liveTid then
                 if self.mInteractState == DormitoryCost.JUMP then
-                    GameDispatcher:dispatchEvent(EventName.DORMITORT_UPDATAMOVEINTERACTDATA, {active = false})
+                    GameDispatcher:dispatchEvent(EventName.DORMITORT_UPDATAMOVEINTERACTDATA,{active  = false})
                 elseif self.mInteractState == DormitoryCost.LIE then
-                    GameDispatcher:dispatchEvent(EventName.DORMITORT_UPDATAMOVEINTERACTDATA, {active = false})
+                    GameDispatcher:dispatchEvent(EventName.DORMITORT_UPDATAMOVEINTERACTDATA,{active  = false})
                 elseif self.mInteractState == DormitoryCost.INTERACTING then
                     self:onStopInteract()
-                    GameDispatcher:dispatchEvent(EventName.DORMITORT_UPDATAMOVEINTERACTDATA, {active = true})
+                    GameDispatcher:dispatchEvent(EventName.DORMITORT_UPDATAMOVEINTERACTDATA,{active  = true})
                 elseif self.mInteractState == DormitoryCost.INTERACTEND then
-                    GameDispatcher:dispatchEvent(EventName.DORMITORT_UPDATAMOVEINTERACTDATA, {active = false})
+                    GameDispatcher:dispatchEvent(EventName.DORMITORT_UPDATAMOVEINTERACTDATA,{active  = false})
                 end
             end
         end, 1)
@@ -677,16 +679,16 @@ function startInteract(self, actName)
     clipName = self.mCurInteractPointData.actName[3]
     frameCount = self:GetTotalFrameCount(clipName)
     self.m_ani:AddFrameCallEvent(clipName, function (_clipName)
-        local tile = dormitory.DormitorySceneController:getTile(DormitoryCost.SITE_FLOOR, self.mCurInteractPointData.col, self.mCurInteractPointData.row)
+        local tile = dormitory.DormitorySceneController:getTile(DormitoryCost.SITE_FLOOR,  self.mCurInteractPointData.col, self.mCurInteractPointData.row)
         if tile then
             local type, id = tile:getState2()
             -- logAll(id,tile.mCol .. "_" .. tile.mRow .. "的格子状态")
-            if id ~= 0 and id ~= self.m_liveTid then
+            if id ~= 0 and id ~= self.m_liveTid then 
                 --继续睡
                 self:playAction(gs.Animator.StringToHash(self.mCurInteractPointData.actName[3]))
             else
-                local randomIndex = math.random(1, 2)
-                if randomIndex <= 1 then
+                local randomIndex = math.random(1,2)
+                if randomIndex <= 1 then 
                     --继续睡
                     self:playAction(gs.Animator.StringToHash(self.mCurInteractPointData.actName[3]))
                 end
@@ -711,14 +713,14 @@ function forceStopInteract(self)
 
         if dormitory.DormitoryManager:getCurControllerLiveTid() == nil then
             --放回到寻路的格子上去，不然寻路不了。
-            self.mQRoleAI:setRoleToTile({col = self.mCurInteractPointData.col, row = self.mCurInteractPointData.row})
+            self.mQRoleAI:setRoleToTile({ col = self.mCurInteractPointData.col, row = self.mCurInteractPointData.row })
             self.mQRoleAI:onAIStep()
         end
 
         self:resetInterActPoint()
         self:updateInteractState()
 
-        if dormitory.DormitoryManager:getCurControllerLiveTid() == self.m_liveTid then
+        if dormitory.DormitoryManager:getCurControllerLiveTid() == self.m_liveTid then 
             GameDispatcher:dispatchEvent(EventName.DORMITORY_INTERACT_FINISH)
         end
     end
@@ -732,7 +734,7 @@ end
 
 --停止同家具交互
 function onStopInteract(self)
-    if self.mInteractState == DormitoryCost.INTERACTING and self.mIsStopInterAct == true then
+    if self.mInteractState == DormitoryCost.INTERACTING and self.mIsStopInterAct == true then 
         if self:isCanStopInteract() then
             self:playAction(gs.Animator.StringToHash(self.mCurInteractPointData.actName[4]))
         end
@@ -741,17 +743,17 @@ end
 
 --是否可以停止交互
 function isCanStopInteract(self)
-    local tile = dormitory.DormitorySceneController:getTile(DormitoryCost.SITE_FLOOR, self.mCurInteractPointData.col, self.mCurInteractPointData.row)
+    local tile = dormitory.DormitorySceneController:getTile(DormitoryCost.SITE_FLOOR,  self.mCurInteractPointData.col, self.mCurInteractPointData.row)
     if tile then
         local type, id = tile:getState2()
-        if id == 0 or id == self.m_liveTid then
+        if id == 0 or id == self.m_liveTid then 
             return true
         end
     end
 end
 
 --当前正在交互的点的数据
-function setInteractFurnitruePoint(self, pointData)
+function setInteractFurnitruePoint(self,pointData)
     if self.isOnInterAct then return end
 
     self:resetInterActPoint()
@@ -784,40 +786,40 @@ function getTileData(self, col, row, id)
         local max_row = row + index
         --▷
         if max_col <= DormitoryCost.COL_COUNT then
-            for c = min_col, max_col do
-                local canMove = dormitory.DormitoryManager:getIsCanMove({col = c, row = max_row}, id)
+            for c= min_col, max_col do
+                local canMove = dormitory.DormitoryManager:getIsCanMove({ col = c, row = max_row }, id)
                 if canMove then
-                    return {col = c, row = max_row}
+                    return { col = c, row = max_row }
                 end
             end
         end
 
         --▽
         if min_row >= 0 then
-            for r = max_row, min_row, -1 do
-                local canMove = dormitory.DormitoryManager:getIsCanMove({col = max_col, row = r}, id)
+            for r= max_row, min_row , -1 do
+                local canMove = dormitory.DormitoryManager:getIsCanMove({ col = max_col, row = r }, id)
                 if canMove then
-                    return {col = max_col, row = r}
+                    return { col = max_col, row = r }
                 end
             end
         end
 
         --◁
         if min_col >= 0 then
-            for c = max_col, min_col, -1 do
-                local canMove = dormitory.DormitoryManager:getIsCanMove({col = c, row = min_row}, id)
+            for c= max_col, min_col , -1 do
+                local canMove = dormitory.DormitoryManager:getIsCanMove({ col = c, row = min_row }, id)
                 if canMove then
-                    return {col = c, row = min_row}
+                    return { col = c, row = min_row }
                 end
             end
         end
-
+        
         --△
         if max_row <= DormitoryCost.ROW_COUNT then
-            for r = min_row, max_row do
-                local canMove = dormitory.DormitoryManager:getIsCanMove({col = min_col, row = r}, id)
+            for r= min_row, max_row do
+                local canMove = dormitory.DormitoryManager:getIsCanMove({ col = min_col, row = r }, id)
                 if canMove then
-                    return {col = min_col, row = r}
+                    return { col = min_col, row = r }
                 end
             end
         end
@@ -895,7 +897,7 @@ function setPosition(self, lpos)
     self.m_position:copy(lpos)
     if self.m_trans and lpos then
         gs.TransQuick:LPos(self.m_trans, self.m_position.x, self.m_position.y, self.m_position.z)
-        GameDispatcher:dispatchEvent(EventName.DORMITORY_UPDATEBULLEPOS, {liveTid = self.m_liveTid, modelTran = self.m_trans})
+        GameDispatcher:dispatchEvent(EventName.DORMITORY_UPDATEBULLEPOS, { liveTid = self.m_liveTid, modelTran = self.m_trans })
     end
 end
 
@@ -922,11 +924,11 @@ function setAngle(self, angle, isNow)
             self.m_angle = angle
 
             local targetRotation = gs.Quaternion.Euler(gs.Vector3(0, self.m_angle, 0))
-            self.m_rotationFrameSn = LoopManager:addFrame(1, 0, self, function ()
+            self.m_rotationFrameSn = LoopManager:addFrame(1, 0, self,function ()
                 local rotation = gs.UnityEngineUtil.Quaternion_Slerp(self.m_trans, targetRotation, self.m_rotateSpeed * LoopManager:getDeltaTime())
                 gs.TransQuick:SetRotation(self.m_trans, 0, rotation.eulerAngles.y, 0)
 
-                if rotation.eulerAngles.y > self.m_angle - 0.1 and rotation.eulerAngles.y < self.m_angle + 0.1 then
+                if rotation.eulerAngles.y > self.m_angle - 0.1 and rotation.eulerAngles.y < self.m_angle + 0.1 then 
                     self:stopTurnAngle()
                 end
             end)

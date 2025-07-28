@@ -20,39 +20,19 @@ function configUI(self)
     self.mImgProps = self:getChildGO("mImgProps"):GetComponent(ty.AutoRefImage)
     self.mTxtPropsCount = self:getChildGO("mTxtPropsCount"):GetComponent(ty.Text)
     self.mBtnCreate = self:getChildGO("mBtnCreate")
-
-    self.mImgIcon = self:getChildGO("mImgIcon"):GetComponent(ty.AutoRefImage)
-    self.mBtnChangeIcon = self:getChildGO("mBtnChangeIcon")
-    self.mTxtChangeIcon = self:getChildGO("mTxtChangeIcon"):GetComponent(ty.Text)
 end
 
 function active(self)
     super.active(self)
-
-    GameDispatcher:addEventListener(EventName.UPDATE_GUILD_CHANGE_ICON_TEMP,self.updateTempIcon,self)
-
-    
     self:showPanel()
-end
-
-function updateTempIcon(self)
-    self.tempId = guild.GuildManager:getTempId()
-    local vo = guild.GuildManager:getIconDataById(self.tempId)
-    self.mImgIcon:SetImg(UrlManager:getIconPath(vo.icon),false)
 end
 
 function deActive(self)
     super.deActive(self)
-    GameDispatcher:removeEventListener(EventName.UPDATE_GUILD_CHANGE_ICON_TEMP,self.updateTempIcon,self)
 end
 
 function addAllUIEvent(self)
-    self:addUIEvent(self.mBtnChangeIcon, self.onBtnChangeIconClick)
     self:addUIEvent(self.mBtnCreate, self.onBtnCreateClick)
-end
-
-function onBtnChangeIconClick(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_CHANGE_ICON_PANEL,{type = 0})
 end
 
 --[[
@@ -67,13 +47,9 @@ function initViewText(self)
     self:getChildGO("mInputNamePlaceholder"):GetComponent(ty.Text).text = _TT(94514)
     self:getChildGO("mTxtCreate"):GetComponent(ty.Text).text = _TT(94515)
 
-    self.mTxtChangeIcon.text = "变更图标"
 end
 
 function showPanel(self)
-    self.tempId = guild.GuildManager:getTempId()
-    local vo = guild.GuildManager:getIconDataById(self.tempId)
-    self.mImgIcon:SetImg(UrlManager:getIconPath(vo.icon),false)
     self.mInputName.characterLimit = sysParam.SysParamManager:getValue(SysParamType.GUILD_NAME_LIMIT)
     self.mInputInfo.characterLimit = sysParam.SysParamManager:getValue(SysParamType.GUILD_NOTICE_LIMIT)
 
@@ -120,13 +96,12 @@ function onBtnCreateClick(self)
 
         GameDispatcher:dispatchEvent(EventName.REQ_CREATE_GUILD, {
             name = self.mInputName.text,
-            notice = self.mInputInfo.text,
-            iconId = self.tempId    
+            notice = self.mInputInfo.text
         })
 
     elseif not result then
         UIFactory:alertMessge(tips, true, function()
-            if MoneyUtil.getMoneyCountByType(MoneyTid.PAY_ITIANIUM_TID) >= self.needCount then
+            if MoneyUtil.getMoneyCountByType(MoneyTid.PAY_ITIANIUM_TID) > 0 and MoneyUtil.getMoneyCountByType(MoneyTid.PAY_ITIANIUM_TID) >= ti then
                 GameDispatcher:dispatchEvent(EventName.OPEN_CONVERT_TITANIUM_VIEW)
             else
                 GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Purchase})

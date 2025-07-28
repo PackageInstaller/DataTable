@@ -15,7 +15,7 @@ destroyTime = 0 -- 自动销毁时间-1默认 0即时销毁 999不销毁
 function ctor(self)
     super.ctor(self)
     self:setSize(0, 0)
-    self:setTxtTitle(_TT(92033))
+    self:setTxtTitle("角色试玩")
     self:setUICode(LinkCode.MainActivityTrial)
 end
 -- 初始化数据
@@ -28,51 +28,28 @@ end
 function configUI(self)
     super.configUI(self)
     self.mBtnTrial = self:getChildGO("mBtnTrial")
-    -- self.mBtnDetails = self:getChildGO("mBtnDetails")
+    self.mBtnDetails = self:getChildGO("mBtnDetails")
     self.mItemContent = self:getChildTrans("mItemContent")
-    -- self.mTextActivityTime = self:getChildGO("mTextActivityTime"):GetComponent(ty.Text)
+    self.mTextActivityTime = self:getChildGO("mTextActivityTime"):GetComponent(ty.Text)
     self.mTextTips = self:getChildGO("mTextTips"):GetComponent(ty.Text)
 
-    -- self.mImgPro = self:getChildGO("mImgPro"):GetComponent(ty.AutoRefImage)
-    -- self.mImgEleType = self:getChildGO("mImgEleType"):GetComponent(ty.AutoRefImage)
-
-    self.mchildPanel = self:getChildTrans("mchildPanel")
-
-    self.mTextTrial = self:getChildGO("mTextTrial"):GetComponent(ty.Text)
+    self.mImgPro = self:getChildGO("mImgPro"):GetComponent(ty.AutoRefImage)
+    self.mImgEleType = self:getChildGO("mImgEleType"):GetComponent(ty.AutoRefImage)
 end
 -- 激活
 function active(self, args)
     super.active(self, args)
     MoneyManager:setMoneyTidList({})
 
-    self.m_recruitId = args.recruit_id
-    if self.m_recruitId == nil then
-        if not args.dupId then
-            logError("试玩传入的 recruit_id 为空，dupId 也为空请检查逻辑")
-            return
-        else
-
-            local actTopRecruitList = recruit.RecruitManager:getRecruitConfigListByType(recruit.RecruitType.RECRUIT_ACTIVITY_1)
-            for _, configVo in pairs(actTopRecruitList) do
-                if configVo:getTry_hero() == args.dupId then
-                    self.m_recruitId = configVo.id
-                    break
-                end
-            end
-        end
-    end
-
-    self:loadChildPanel()
-
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitId)
-    self.m_dupId = configVo:getTry_hero()
-
-    local isReceive = not recruit.RecruitManager:getIsShowTrial(self.m_dupId)
+    local isReceive = args.is_pass == 1
+    self.m_dupId = args.dup_id
 
     self:clearProps()
-    local trial_configVo = mainActivity.MainActivityManager:getTrialConfigVo(self.m_dupId)
-    if trial_configVo then
-        local awardList = trial_configVo.first_award
+
+    local baseData = RefMgr:getData("try_hero_data")
+    local configVo = baseData[self.m_dupId]
+    if configVo then
+        local awardList = configVo.first_award
         for i = 1, #awardList do
             local propsGrid = PropsGrid:createByData({tid = awardList[i][1], num = awardList[i][2], parent = self.mItemContent, scale = 0.65, showUseInTip = true})
             propsGrid:setHasRec(isReceive)
@@ -80,15 +57,15 @@ function active(self, args)
         end
     end
 
-    local menuConfigVo = recruit.RecruitManager:getRecruitMenuVo(self.m_recruitId)
+    local menuConfigVo = recruit.RecruitManager:getRecruitMenuVo(recruit.RecruitType.RECRUIT_ACTIVITY_1)
     local md, hm = TimeUtil.getMDHByTime2(TimeUtil.transTime(menuConfigVo.endTime))
     self.mTextActivityTime.text = _TT(85009, md .. " " .. hm)
 
-    local configHeroVo = hero.HeroManager:getHeroConfigVo(configVo:getTrailHero_id())
+    local recruitConfigVo = recruit.RecruitManager:getRecruitConfigVo(recruit.RecruitType.RECRUIT_ACTIVITY_1)
+    local configHeroVo = hero.HeroManager:getHeroConfigVo(recruitConfigVo:getTrailHero_id())
+
     self.mImgEleType:SetImg(UrlManager:getHeroEleTypeIconUrl(configHeroVo.eleType), false)
     self.mImgPro:SetImg(UrlManager:getHeroJobSmallIconUrl(configHeroVo.professionType), false)
-    self.mTextHeroName.text = configHeroVo.name
-
 end
 
 --反激活（销毁工作）
@@ -97,40 +74,6 @@ function deActive(self)
 
     MoneyManager:setMoneyTidList()
     self:clearProps()
-
-    if (self.m_childPanelGo and not gs.GoUtil.IsGoNull(self.m_childPanelGo)) then
-        gs.GOPoolMgr:Recover(self.m_childPanelGo, self.mChildPanelPath)
-        self.m_childPanelGo = nil
-
-        self.m_childPanelGos, self.m_childPanelTrans = nil, nil
-    end
-end
-
-function loadChildPanel(self)
-    local res_list = {101, 111, 112}
-
-    local go_dic = {}
-    for i = 1, #res_list do
-        local go = self:getChildGO("MainActivityTrial_" .. res_list[i])
-        go:SetActive(res_list[i] == self.m_recruitId)
-        go_dic[res_list[i]] = go
-    end
-
-    self.m_childPanelGo = go_dic[self.m_recruitId]
-
-    gs.TransQuick:SetParentOrg(self.m_childPanelGo.transform, self.mchildPanel)
-    gs.TransQuick:UIPos(self.m_childPanelGo:GetComponent(ty.RectTransform), 0, 0)
-
-    self.m_childPanelGos, self.m_childPanelTrans = GoUtil.GetChildHash(self.m_childPanelGo)
-
-    self.mBtnDetails = self.m_childPanelGos["mBtnDetails"]
-    self.mTextActivityTime = self.m_childPanelGos["mTextActivityTime"]:GetComponent(ty.Text)
-
-    self.mImgPro = self.m_childPanelGos["mImgPro"]:GetComponent(ty.AutoRefImage)
-    self.mImgEleType = self.m_childPanelGos["mImgEleType"]:GetComponent(ty.AutoRefImage)
-    self.mTextHeroName = self.m_childPanelGos["mTextHeroName"]:GetComponent(ty.Text)
-
-    self:addUIEvent(self.mBtnDetails, self.onClickDetails)
 end
 
 --删除预制体
@@ -149,28 +92,23 @@ end
 ]]
 function initViewText(self)
     self.mTextTips.text = _TT(92017)
-    self.mTextTrial.text = _TT(29115)
 end
 
 -- UI事件管理(关闭界面会自动移除)
 function addAllUIEvent(self)
+    self:addUIEvent(self.mBtnDetails, self.onClickDetails)
     self:addUIEvent(self.mBtnTrial, self.onClickTrial)
 end
 
 function onClickDetails(self)
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitId)
+    local configVo = recruit.RecruitManager:getRecruitConfigVo(recruit.RecruitType.RECRUIT_ACTIVITY_1)
     GameDispatcher:dispatchEvent(EventName.OPEN_HERO_RECRUITINFOPANEL, {heroTid = configVo:getTrailHero_id()})
 end
 
 function onClickTrial(self)
-    if subPack.SubDownLoadController:isExistNeedUpdate() then
-        gs.Message.Show("请等待资源下载完成获得最佳体验")
-        return
-    end
-    recruit.RecruitManager:setRecruitActionId(self.m_recruitId)
     UIFactory:alertMessge(_TT(28034), true, function()
         fight.FightManager:reqBattleEnter(PreFightBattleType.HeroTrial, self.m_dupId)
-    end, _TT(1), nil, true, nil, _TT(2))
+    end, nil, nil, true)
 end
 
 function __closeOpenAction(self)

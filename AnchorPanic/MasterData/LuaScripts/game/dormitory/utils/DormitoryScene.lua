@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : DormitoryScene
 @Description    : 宿舍场景
@@ -43,16 +43,16 @@ function setup(self)
     GameDispatcher:addEventListener(EventName.ENTER_DORMITORY_EDIT, self.onEnterEdit, self)
     GameDispatcher:addEventListener(EventName.QUIT_DORMITORY_EDIT, self.onQuitEdit, self)
     GameDispatcher:addEventListener(EventName.DORMITORY_ALL_STORAGE, self.onAllStorage, self)
-    GameDispatcher:addEventListener(EventName.RESPONSE_BUILDBASE_BUILDINFO_UPDATE, self.onDormitoryHeroHandler, self)
+    GameDispatcher:addEventListener(EventName.RESPONSE_BUILDBASE_BUILDINFO_UPDATE,self.onDormitoryHeroHandler,self)
 end
 
 -- 初始化宿舍
 function onDormitoryInitHandler(self)
-    if not self.m_IsFristCreated then
+    if not self.m_IsFristCreated then 
         local room_id = dormitory.DormitoryManager:getRoomId()
         local buildBaseMsgVo = buildBase.BuildBaseManager:getBuildBaseData(room_id)
         local heroList = buildBaseMsgVo.heroList
-        for k, v in pairs(heroList) do
+        for k,v in pairs(heroList) do
             self.createCount = self.createCount + 1
         end
 
@@ -108,9 +108,11 @@ function createQRoleLive(self)
         local buildBaseMsgVo = buildBase.BuildBaseManager:getBuildBaseData(room_id)
         local heroList = buildBaseMsgVo.heroList
 
+
+
         if not table.empty(heroList) then
             for key, id in pairs(heroList) do
-                dormitory.DormitoryAIManager:createQRoleLive(id, function ()
+                dormitory.DormitoryAIManager:createQRoleLive(id,function ()
                     self:initCreateFurnituerWithLiveCall()
                 end)
             end
@@ -177,22 +179,24 @@ function initFurniture(self)
             propsVo:setTid(furnitureVo.tid)
             propsVo.id = furnitureVo.id
             if propsVo.subType == DormitoryCost.FLOOR_SUBTYPE
-                or propsVo.subType == DormitoryCost.TOP_SUBTYPE
-                or propsVo.subType == DormitoryCost.WALL_SUBTYPE then
+            or propsVo.subType == DormitoryCost.TOP_SUBTYPE
+            or propsVo.subType == DormitoryCost.WALL_SUBTYPE then
                 local baseData = dormitory.DormitoryManager:getDormitoryBaseVo(propsVo.tid)
                 self:replaceStyle(propsVo, baseData, true)
             else
-                self:createFurniture(furnitureVo.location, propsVo, furnitureVo, nil, function ()
+                self:createFurniture(furnitureVo.location, propsVo, furnitureVo,function ()
                     self:initCreateFurnituerWithLiveCall()
                 end)
             end
         end
     end
+
+    self:initWallFurnitureFade()
 end
 
 --关闭load界面
 function closeForcibly(self)
-    if self.createCount <= 0 then
+    if self.createCount <= 0 then 
         UIFactory:closeForcibly()
         self.m_IsFristCreated = true
     end
@@ -207,46 +211,29 @@ function initCreateFurnituerWithLiveCall(self)
 end
 
 -- 摆上家具
-function putonFurniture(self, args)
-    local propsVo = args.propsVo
-    local config_info = args.config_info
+function putonFurniture(self, cusPropsVo)
+    local baseData = dormitory.DormitoryManager:getDormitoryBaseVo(cusPropsVo.tid)
 
-    local baseData = dormitory.DormitoryManager:getDormitoryBaseVo(propsVo.tid)
     self.siteType = baseData.posType
-    if baseData.subType == DormitoryCost.FLOOR_SUBTYPE or baseData.subType == DormitoryCost.TOP_SUBTYPE or baseData.subType == DormitoryCost.WALL_SUBTYPE then
-        --判断正在摆放中的是不是有跟即将排放的相同
-        local moveInfoFurnitureList = dormitory.DormitoryManager:getMoveInfoList()
-        for id, info in ipairs(moveInfoFurnitureList) do
-            if info.move == 2 then
-                local _propsVo = props.PropsVo:poolGet()
-                _propsVo:setTid(info.tid)
-                _propsVo.id = info.id
-                if _propsVo.subType == DormitoryCost.FLOOR_SUBTYPE or _propsVo.subType == DormitoryCost.TOP_SUBTYPE or _propsVo.subType == DormitoryCost.WALL_SUBTYPE then
-                    if info.id == propsVo.id then
-                        return
-                    end
-                end
-            end
-        end
-        self:replaceStyle(propsVo, baseData)
+    if baseData.subType == DormitoryCost.FLOOR_SUBTYPE
+    or baseData.subType == DormitoryCost.TOP_SUBTYPE
+    or baseData.subType == DormitoryCost.WALL_SUBTYPE then
+        self:replaceStyle(cusPropsVo, baseData)
         return
     end
 
-    if self.siteType == DormitoryCost.SITE_WALL_FRONT or self.siteType == DormitoryCost.SITE_WALL_LEFT
-        or self.siteType == DormitoryCost.SITE_WALL_BACK or self.siteType == DormitoryCost.SITE_WALL_RIGHT then
-        local site = nil
-        if config_info ~= nil then
-            site = config_info.location
-        else
-            local id = self:getSelectSiteId()
-            site = DormitoryCost.SITE_WALL_LIST[id]
-        end
-
-        self:createFurniture(site, propsVo, nil, config_info)
+    if self.siteType == DormitoryCost.SITE_WALL_FRONT 
+        or  self.siteType == DormitoryCost.SITE_WALL_LEFT 
+        or  self.siteType == DormitoryCost.SITE_WALL_BACK
+        or  self.siteType == DormitoryCost.SITE_WALL_RIGHT then
+        local id = self:getSelectSiteId()
+        self:createFurniture(DormitoryCost.SITE_WALL_LIST[id], cusPropsVo)
+        self:initWallFurnitureFade()
     else
-        self:createFurniture(DormitoryCost.SITE_FLOOR, propsVo, nil, config_info)
+        self:createFurniture(DormitoryCost.SITE_FLOOR, cusPropsVo)
     end
-    dormitory.DormitoryManager:moveToTempBag(propsVo.id)
+    dormitory.DormitoryManager:moveToTempBag(cusPropsVo.id)
+
 end
 
 -- 替换地板、天花板、墙壁样式
@@ -261,7 +248,7 @@ function replaceStyle(self, cusPropsVo, baseData, isInit)
         self.mFloorGo = gs.ResMgr:LoadGO(UrlManager:getDormitoryWallPrefabUrl(baseData.resName))
         self.mFloorGo.transform:SetParent(self.mWallRoot.transform:Find(DormitoryCost.ROOT_WALL_FLOOR), false)
 
-        if not gs.Application.isMobilePlatform then
+         if not gs.Application.isMobilePlatform then
             local reflectionTexture = self.mFloorGo:GetComponent(ty.ReflectionTexture)
             if reflectionTexture and not gs.GoUtil.IsCompNull(reflectionTexture) then
                 reflectionTexture:SetRefTexSize(gs.ReflectionTexture.RefTextrueSize.size_512)
@@ -329,13 +316,26 @@ function initWallFade(self)
     end
 end
 
+function initWallFurnitureFade(self)
+    -- for key, name in pairs(DormitoryCost.SITE_ROOT_LIST) do
+    --     if key ~= DormitoryCost.SITE_FLOOR then
+    --         local tran = self:getSiteHanging(key)
+    --         local fadeComponent = tran:GetComponent(ty.FadeModelComponent)
+    --         if not gs.GoUtil.IsCompNull(fadeComponent) then
+    --             fadeComponent:Init()
+    --         end
+    --     end
+    -- end
+end
+
 -- 添加配套的门
 function addDoor(self, baseData, wallData)
+
     -- 门
     if self.mDoorData then
         gs.GameObject.Destroy(self.mDoorData.doorGo)
 
-        if self.mDoorData.startCol then
+        if self.mDoorData.startCol then 
             for c = self.mDoorData.startCol, self.mDoorData.endCol do
                 for r = self.mDoorData.startRow, self.mDoorData.endRow do
                     dormitory.DormitorySceneController:setTileHoldFurniture(self.mDoorData.wallId, c, r, 0)
@@ -344,10 +344,9 @@ function addDoor(self, baseData, wallData)
         end
 
         self.mDoorData = nil
-        dormitory.DormitoryManager:setCurDoorData(nil)
     end
 
-    if not string.NullOrEmpty(wallData.doorRes) then
+    if not string.NullOrEmpty(wallData.doorRes) then 
         local resName = UrlManager:getDormitoryWallPrefabUrl(wallData.doorRes)
         local doorGo = gs.ResMgr:LoadGO(resName)
         local doorRoot = self.mWallRoot.transform:Find(DormitoryCost.ROOT_WALL_LIST[wallData.wallId - 2]):Find("door_root")
@@ -357,7 +356,6 @@ function addDoor(self, baseData, wallData)
         self.mDoorData = {}
         self.mDoorData.doorGo = doorGo
         self.mDoorData.wallId = wallData.wallId
-        self.mDoorData.doorDeep = wallData.doorDeep
 
         local tile = dormitory.DormitorySceneController:getTile(wallData.wallId, wallData.col, 1)
         if tile then
@@ -399,10 +397,9 @@ function addDoor(self, baseData, wallData)
             self.mDoorData.endCol = endCol
             self.mDoorData.startRow = startRow
             self.mDoorData.endRow = endRow
-            dormitory.DormitoryManager:setCurDoorData(self.mDoorData)
         end
 
-        local angleList = {180, 90, 0, -90}
+        local angleList = { 180, 90, 0, -90 }
         gs.TransQuick:SetRotation(doorGo.transform, 0, angleList[wallData.wallId], 0)
 
     end
@@ -498,14 +495,14 @@ function setTileMaterial(self, site, col, row, type)
 end
 
 -- 生成家具
-function createFurniture(self, site, propsVo, furnitureVo, configInfo, finishCall)
+function createFurniture(self, site, propsVo, furnitureVo,finishCall)
+    local obj
+    
     if gs.Application.isEditor then
         dormitory.DormitoryObject = require("game/dormitory/utils/DormitoryObject")
         dormitory.DormitoryObject01 = require("game/dormitory/utils/DormitoryObject01")
         dormitory.DormitoryObject02 = require("game/dormitory/utils/DormitoryObject02")
     end
-
-    local obj = nil
     if site == DormitoryCost.SITE_FLOOR or site == DormitoryCost.SITE_TOP then
         obj = dormitory.DormitoryObject.new()
     elseif site == DormitoryCost.SITE_WALL_FRONT or site == DormitoryCost.SITE_WALL_BACK then
@@ -514,7 +511,7 @@ function createFurniture(self, site, propsVo, furnitureVo, configInfo, finishCal
         obj = dormitory.DormitoryObject02.new()
     else
     end
-    obj:createObject(site, propsVo, furnitureVo, configInfo, finishCall)
+    obj:createObject(site, propsVo, furnitureVo,finishCall)
     local id = furnitureVo and furnitureVo.id or propsVo.id
     self.mFurnitureDic[id] = obj
 
@@ -528,13 +525,12 @@ end
 
 -- 收纳家具
 function storageFuniture(self, cusId, cusTid)
-    -- logAll(cusTid, "收纳家具")
     local propsVo = props.PropsVo:poolGet()
     propsVo:setTid(cusTid)
     propsVo.id = cusId
     if propsVo.subType == DormitoryCost.FLOOR_SUBTYPE
-        or propsVo.subType == DormitoryCost.TOP_SUBTYPE
-        or propsVo.subType == DormitoryCost.WALL_SUBTYPE then
+    or propsVo.subType == DormitoryCost.TOP_SUBTYPE
+    or propsVo.subType == DormitoryCost.WALL_SUBTYPE then
 
         local upPropsVo = nil
         local dic = dormitory.DormitoryManager:getPropsDic()
@@ -571,7 +567,7 @@ function reset(self)
     GameDispatcher:removeEventListener(EventName.ENTER_DORMITORY_EDIT, self.onEnterEdit, self)
     GameDispatcher:removeEventListener(EventName.QUIT_DORMITORY_EDIT, self.onQuitEdit, self)
     GameDispatcher:removeEventListener(EventName.DORMITORY_ALL_STORAGE, self.onAllStorage, self)
-    GameDispatcher:removeEventListener(EventName.RESPONSE_BUILDBASE_BUILDINFO_UPDATE, self.onDormitoryHeroHandler, self)
+    GameDispatcher:removeEventListener(EventName.RESPONSE_BUILDBASE_BUILDINFO_UPDATE,self.onDormitoryHeroHandler,self)
 
     -- self:removeRole()
     dormitory.DormitoryAIManager:removeAllQRole()
@@ -611,8 +607,8 @@ function destroyFurniture(self)
 end
 
 --通过Id获取对应家具
-function getFurnitureById(self, id)
-    if not self.mFurnitureDic then
+function getFurnitureById(self,id)
+    if not self.mFurnitureDic then 
         return
     end
 
@@ -629,50 +625,50 @@ function getCurSelectFurniture(self)
 end
 
 --获取跟当前位置重叠碰撞的家具交互点
-function getCollideInteractPoint(self, pos)
+function getCollideInteractPoint(self,pos)
     local interactPointList = {}
-    for _, furnitureVo in pairs(self.mFurnitureDic) do
+    for _,furnitureVo in pairs(self.mFurnitureDic) do
         if furnitureVo.mSite == DormitoryCost.SITE_FLOOR then
             local actionPointDataList = furnitureVo:getAllInteractData()
-            for index, pointData in pairs(actionPointDataList) do
-                if pointData.heroTid == 0 and pointData.tile then
-                    if gs.Vector3.Distance(pointData.tile:getPosition(), pos) <= 0.6 then
-                        table.insert(interactPointList, pointData)
+            for index,pointData in pairs(actionPointDataList) do
+                if pointData.heroTid == 0 and pointData.tile then 
+                    if gs.Vector3.Distance(pointData.tile:getPosition(),pos) <= 0.6 then 
+                        table.insert(interactPointList,pointData)
                     end
                 end
             end
         end
     end
     if table.empty(interactPointList) then return nil end
-
-    local randomIndex = math.random(1, #interactPointList)
+    
+    local randomIndex = math.random(1,#interactPointList)
     return interactPointList[randomIndex]
 end
 
 ---随机获取可以交互的家具
 function getRandomCanInteractFurniturePointData(self)
-    if table.empty(self.mFurnitureDic) then
+    if table.empty(self.mFurnitureDic) then 
         return nil
     end
     local furnitureList = {}
-    for k, furnitureVo in pairs(self.mFurnitureDic) do
+    for k,furnitureVo in pairs(self.mFurnitureDic) do
         if furnitureVo.mSite == DormitoryCost.SITE_FLOOR then
             if furnitureVo:getCanActionPoint() then
-                table.insert(furnitureList, furnitureVo)
+                table.insert(furnitureList,furnitureVo)
             end
         end
     end
 
-    if table.empty(furnitureList) then
+    if table.empty(furnitureList) then 
         return nil
     end
 
-    local randomIndex = math.random(1, #furnitureList)
+    local randomIndex = math.random(1,#furnitureList)
     local furnitureVo = furnitureList[randomIndex]
-
+  
     local data = furnitureVo:getCanActionPoint()
-    if data then
-        return data
+    if data then 
+        return data 
     end
 end
 
@@ -753,6 +749,6 @@ function deleteFurnitureNum(self, subType, id)
 end
 
 return _M
-
+ 
 --[[ 替换语言包自动生成，请勿修改！
 ]]

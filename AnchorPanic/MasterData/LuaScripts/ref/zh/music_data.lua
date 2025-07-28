@@ -148,34 +148,6 @@ local music_data=
 	[64]={ title="boss一阶战斗曲", voice="", intro="music_battle_boss_3_a_intro.prefab", loop="music_battle_boss_3_a_loop.prefab"
 },
 	[65]={ title="boss二阶战斗曲", voice="", intro="music_battle_boss_3_b_intro.prefab", loop="music_battle_boss_3_b_loop.prefab"
-},
-	[66]={ title="2.1活动剧情音乐", voice="music_juqing_15.prefab", intro="", loop=""
-},
-	[67]={ title="搞笑和搞怪的情节", voice="music_juqing_16.prefab", intro="", loop=""
-},
-	[68]={ title="角色告白或者表达一些深度情绪", voice="music_juqing_17.prefab", intro="", loop=""
-},
-	[69]={ title="配合剧情演出的音乐，主要体现在故事中一些悲伤、痛苦的情节。比如重要之人死去，无法缅怀等等", voice="", intro="music_juqing_18_intro.prefab", loop="music_juqing_18_loop.prefab"
-},
-	[70]={ title="配合剧情演出的音乐，主要体现在故事推进，重要剧情以及对话博弈时的通用音乐", voice="", intro="music_juqing_19_intro.prefab", loop="music_juqing_19_loop.prefab"
-},
-	[71]={ title="配合剧情演出的音乐，主要体现在平和描述，日常感", voice="music_juqing_20.prefab", intro="", loop=""
-},
-	[72]={ title="2025年新年音乐", voice="music_juqing_21.prefab", intro="", loop=""
-},
-	[73]={ title="2025年新年音乐循环音乐", voice="", intro="music_juqing_21_intro.prefab", loop="music_juqing_21_loop.prefab"
-},
-	[74]={ title="2025年新年音乐的抒情段落", voice="music_juqing_21_loop2.prefab", intro="", loop=""
-},
-	[75]={ title="2.6音乐1", voice="", intro="music_juqing_22_intro.prefab", loop="music_juqing_22_loop.prefab"
-},
-	[76]={ title="2.6音乐2", voice="", intro="music_juqing_23_intro.prefab", loop="music_juqing_23_loop.prefab"
-},
-	[77]={ title="2.7音乐", voice="", intro="music_juqing_24_intro.prefab", loop="music_juqing_24_loop.prefab"
-},
-	[78]={ title="3D宿舍", voice="music_3Ddorm_1.prefab", intro="", loop=""
-},
-	[79]={ title="2.8音乐", voice="", intro="music_juqing_25_intro.prefab", loop="music_juqing_25_loop.prefab"
 }
 }
 

@@ -168,7 +168,6 @@ function __onResFormationHeroListHandler(self, msg)
             end
             self:getManager():dispatchEvent(self:getManager().UPDATE_TEAM_FORMATION_DATA, {})
         end
-        GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_RED_INFO)
     end
 end
 

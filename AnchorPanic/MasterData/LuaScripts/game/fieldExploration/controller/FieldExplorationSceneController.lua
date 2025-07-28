@@ -199,7 +199,7 @@ function onUpdateEvent(self)
                         eventThing = fieldExploration.FieldExplorationLiftEventThing:create(data)
                     elseif eventConfigVo.type == FieldExplorationConst.EventThing_PToggle then
                         eventThing = fieldExploration.FieldExplorationPToggleEventThing:create(data)
-                    elseif eventConfigVo.type == FieldExplorationConst.EventThing_Portal then
+                         elseif eventConfigVo.type == FieldExplorationConst.EventThing_Portal then
                         eventThing = fieldExploration.FieldExplorationPortalEventThing:create(data)
                     else
                         eventThing = fieldExploration.FieldExplorationPropEventThing:create(data)

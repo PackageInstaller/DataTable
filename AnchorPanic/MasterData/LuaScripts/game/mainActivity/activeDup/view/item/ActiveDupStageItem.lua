@@ -15,7 +15,6 @@ function __initData(self)
     self.mGoPointDic = nil
     self.mGoSelectPointDic = nil
     self.mImgBg = nil
-    self.mImgIcon = nil
     self.mTxtName = nil
     self.mImgLock = nil
     self.mImgSelect = nil
@@ -74,18 +73,17 @@ end
 function __getPrefabName(self)
     local stageVo = self:getData()
     local stageType = stageVo.type
-    -- if (stageType == mainActivity.MainMapStageType.Normal or stageType == mainActivity.MainMapStageType.StoryFight) then
-    --     return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_0_1.prefab")
-    -- elseif (stageType == mainActivity.MainMapStageType.Story) then
-    --     return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_2.prefab")
-    -- elseif (stageType == mainActivity.MainMapStageType.Elite) then
-    --     return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_3.prefab")
-    -- elseif (stageType == mainActivity.MainMapStageType.Boss) then
-    --     return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_4.prefab")
-    -- else
-    --     return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_0_1.prefab")
-    -- end
-    return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_0_1.prefab")
+    if (stageType == mainActivity.MainMapStageType.Normal or stageType == mainActivity.MainMapStageType.StoryFight) then
+        return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_0_1.prefab")
+    elseif (stageType == mainActivity.MainMapStageType.Story) then
+        return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_2.prefab")
+    elseif (stageType == mainActivity.MainMapStageType.Elite) then
+        return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_4.prefab")
+    elseif (stageType == mainActivity.MainMapStageType.Boss) then
+        return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_3.prefab")
+    else
+        return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_0_1.prefab")
+    end
 end
 
 function __initGo(self)
@@ -109,8 +107,6 @@ function __initGo(self)
     self.mImgPass = self.m_childGos["mImgPass"]
     self.mGroup = self.m_childGos["Group"]
     self.mImgNameBg = self:getChildGO("mImgNameBg"):GetComponent(ty.Image)
-    self.mImgBg = self:getChildGO("mImgBg"):GetComponent(ty.AutoRefImage)
-    self.mImgIcon = self:getChildGO("mImgIcon"):GetComponent(ty.AutoRefImage)
     self:setGuideTrans("guide_mainMapStage_item_" .. self:getData().stageId, self:getClickTrans())
     local rect = self.m_uiGo:GetComponent(ty.RectTransform)
     if self.m_data then
@@ -131,28 +127,6 @@ function __updateCustomView(self)
     end
     self:updateContentView()
     self:updateStyle()
-
-    local stageVo = self:getData()
-    self.mImgBg:SetImg(UrlManager:getPackPath("mainActivity/mainActivity_dup_0"..stageVo.styleType + 1 ..".png"),false)
-
-    local stageVo = self:getData()
-    local stageType = stageVo.type
-    self.mImgIcon.color = gs.ColorUtil.GetColor("ffffffff")
-    local typeid = 1
-      if (stageType == mainActivity.MainMapStageType.Normal or stageType == mainActivity.MainMapStageType.StoryFight) then
-        typeid = 1
-    elseif (stageType == mainActivity.MainMapStageType.Story) then
-        typeid = 2
-        self.mImgIcon.color = gs.ColorUtil.GetColor("ffffffff")
-    elseif (stageType == mainActivity.MainMapStageType.Elite) then
-        typeid = 3
-    elseif (stageType == mainActivity.MainMapStageType.Boss) then
-        typeid = 3
-        self.mImgIcon.color = gs.ColorUtil.GetColor("ed2e37ff")
-    -- else
-    --     return UrlManager:getUIPrefabPath("mainActivity/ActiveDupStageItem_0_1.prefab")
-    end
-    self.mImgIcon:SetImg(UrlManager:getPackPath("mainActivity/icon_"..typeid..".png"),false)
 end
 
 function updateLineAssets(self)
@@ -294,10 +268,10 @@ function updateStyle(self)
         self.mUnlock = "01"
     end
 
-    -- if (stageType == mainActivity.MainMapStageType.Boss) then
-    --     local source = UrlManager:getPackPath("mainMap4/mainMap_01" .. "_0" .. stageType .. "_" .. self.mUnlock .. ".png")
-    --     self.mImgStage:SetImg(source, true)
-    -- end
+    if (stageType == mainActivity.MainMapStageType.Boss) then
+        local source = UrlManager:getPackPath("mainMap4/mainMap_01" .. "_0" .. stageType .. "_" .. self.mUnlock .. ".png")
+        self.mImgStage:SetImg(source, true)
+    end
 
 end
 

@@ -44,6 +44,7 @@ function open(self, talkID)
     if self.UIObject then
         self:addOnParent()
     end
+
     GameDispatcher:dispatchEvent(EventName.EVENT_UI_OPEN, self)
 end
 
@@ -111,7 +112,7 @@ function customCloseStory(self)
             self.fightCameraObj:SetActive(self.fightCameraActive)
         end
     end
-    GameView:setUIDNode(true)
+
     self:destoryPrefabCall(true)
     self:destoryClickPrefabCall()
     self:destoryMultipPrefabCall()
@@ -127,6 +128,8 @@ function customCloseStory(self)
     -- gs.ColorUtil.SetColorA(self.mFlashEff, 0)
     -- self.mFlashEff:DOFadeR(1, self.mCloseTime)
     -- self:setTimeout(self.mCloseTime, function()
+
+
 
     storyTalk.StoryTalkManager:setNotAllowdPlay(false)
     AudioManager:stopStoryMusic()
@@ -175,17 +178,14 @@ function configUI(self)
 
     self.mStoryBGComponent:SetEndEvnet(function(eventType, url)
         if eventType == 3 then
-            local index = string.find(url, "story_cv/")
-            if index == nil then
-                AudioManager:stopAudioByUrl(url)
-            end
+            AudioManager:stopAudioByUrl(url)
             --self:stopAllAudio()
             -- for _, audioData in pairs(self.mPlayAudioList) do
 
-                --     if audioData.m_path == url then
-                    --         AudioManager:stopAudioSound(audioData)
-                    --     end
-                    -- end
+            --     if audioData.m_path == url then
+            --         AudioManager:stopAudioSound(audioData)
+            --     end
+            -- end
         end
     end)
 
@@ -250,9 +250,6 @@ function configUI(self)
     self.mSkipBtn = self:getChildGO("mSkipBtn")
     self.mSkipTxt = self:getChildGO("mSkipTxt"):GetComponent(ty.Text)
 
-    self.mHideBtn = self:getChildGO("mHideBtn")
-    self.mHideTxt = self:getChildGO("mHideTxt"):GetComponent(ty.Text)
-
     -- ================================历史层================================ --
     self.mHistoryLayer = self:getChildGO("mHistoryLayer")
     self.mHistoryLayer:SetActive(false)
@@ -293,7 +290,6 @@ function configUI(self)
         end
     end)
 
-    self.mBtnResetHide = self:getChildGO("mBtnResetHide")
     self.mJumpVideoBtn = self:getChildGO("mJumpVideoBtn")
     self.mJumpVideoBtn:SetActive(false)
     self:addBtnClickOption()
@@ -306,12 +302,12 @@ end
 
 -- 未被管理的自定义数据值
 function initCustomDataValue(self)
-    self.mAutoOneWordTime = 0.2 -- 自动点击单字时间
-    self.mAutoNeedTime = 3      -- 自动点击最短时间
-    self.mAutoRunImgFrame = 1   -- 自动背景旋转帧间隔
-    self.mPlayAudioDatas = {}   -- 在播放中的音效
-    self.mWaitPrintTime = 0.04  -- Msg打字时间间隔
-    self.mOptionData = {}       -- 分支选项记录 [1] 普通分支 [2] 特殊分支(需要全选)
+    self.mAutoIntTime = 3      -- 自动点击的间隔时间
+    self.mAutoNeedTime = 3     -- 自动点击最短时间
+    self.mAutoRunImgFrame = 1  -- 自动背景旋转帧间隔
+    self.mPlayAudioDatas = {}  -- 在播放中的音效
+    self.mWaitPrintTime = 0.04 -- Msg打字时间间隔
+    self.mOptionData = {}      -- 分支选项记录 [1] 普通分支 [2] 特殊分支(需要全选)
     -- self.mDisableAuto = false -- 禁止自动操作
 
     self.mNeedWaitSomething = 0
@@ -332,43 +328,6 @@ function addBtnClickOption(self)
     self:addOnClick(self.mSkipBtn, self.onSkipClick)
 
     self:addOnClick(self.mJumpVideoBtn, self.onJumVideoClick)
-
-    self:addOnClick(self.mHideBtn, self.onHideClick)
-    self:addOnClick(self.mBtnResetHide, self.onBtnResetHideClick)
-end
-
-function onHideClick(self)
-    self.isHideLayer = true
-    self.mTalkBlockLayer:SetActive(false)
-    self.mBtnResetHide:SetActive(true)
-
-    self.mBtnLayer:SetActive(false)
-    self.mChooseLayer:SetActive(false)
-
-    StorageUtil:saveBool0(gstor.STORY_AUTO, false) -- 保存自动状态到本地
-
-    if self.mAutoSn then
-        LoopManager:removeFrameByIndex(self.mAutoSn)
-        self.mAutoSn = nil
-    end
-    if self.mRotationAutoSn then
-        LoopManager:removeFrameByIndex(self.mRotationAutoSn)
-        self.mRotationAutoSn = nil
-    end
-    self.mIsAutoEnable = false
-    StorageUtil:saveBool0(gstor.STORY_AUTO, self.mIsAutoEnable) -- 保存自动状态到本地
-    GameView:setUIDNode(false)
-end
-
-function onBtnResetHideClick(self)
-    GameView:setUIDNode(true)
-    self.mTalkBlockLayer:SetActive(self.dialog == 1)
-    self.mBtnResetHide:SetActive(false)
-
-    self.mBtnLayer:SetActive(true)
-    self.mChooseLayer:SetActive(true)
-
-    self.isHideLayer = false
 end
 
 -- 更新默认的点击状态
@@ -439,9 +398,7 @@ end
 -- 自动点击逻辑
 function autoRunTalk(self)
     self.mAutoTime = self.mAutoTime + gs.Time.deltaTime
-
-    if self.mOneTalkFinishedLock:isAllUnlocked() and self.mAutoTime >= self.mReadTotalTime and self.mAutoTime >=
-        self.mAutoNeedTime and self.mNeedWaitSomething <= 0 then
+    if self.mOneTalkFinishedLock:isAllUnlocked() and self.mAutoTime >= self.mAutoNeedTime and self.mNeedWaitSomething <= 0 then
         self.mAutoTime = 0
         self:runTalk()
     end
@@ -462,7 +419,6 @@ function showMask(self)
 end
 
 function active(self)
-    self.isHideLayer = false
     GameDispatcher:addEventListener(EventName.STORY_CHOOSE_CLICK, self.onChooseClick, self)
     GameDispatcher:addEventListener(EventName.CLOSE_CHOOSE_CLICK, self.onChooseClose, self)
     GameDispatcher:addEventListener(EventName.STORY_SHOW_MASK, self.showMask, self)
@@ -491,6 +447,7 @@ function deActive(self)
     if sceneCtrl then
         sceneCtrl:resumeMapEnvAudio()
     end
+
 
     if self.mAvproPlayer then
         self.mAvproPlayer:Stop()
@@ -546,7 +503,6 @@ end
 
 -- 初始化剧情信息
 function initView(self)
-    self.mBtnResetHide:SetActive(false)
     self.mCurStoryRo = storyTalk.StoryTalkManager:getCurStoryRo()
 
     if not self.mCurStoryRo then
@@ -623,9 +579,11 @@ function runTalk(self)
     -- 当前段落初始化
     curData.curTalkId = self.curTalkId
 
+
     -- 音效相关
     self:stopAllAudio()
     self:playMusic(curData)
+
 
     if curData.pType ~= 5 and curData.dialog == 1 then
         self.mHistoryView:addTalkID(self.curTalkId) -- 添加到历史列表
@@ -738,12 +696,8 @@ function playMusic(self, data)
     end
 end
 
--- 新一帧动画的开始，设置剧情内容
+-- 设置剧情内容
 function setTalkData(self, curData)
-    -- 关闭原对话框
-    if self.mTalkBlockLayer and self.mTalkBlockLayer.name == "mTalkBlockLayer" then
-        self.mTalkBlockLayer:SetActive(false)
-    end
     -- 回忆效果
     self.mRecallEff.gameObject:SetActive(curData.is_memory == 1)
 
@@ -806,7 +760,6 @@ function setTalkTraditionalDialogContent(self, curData)
 
     self.msg = string.gsub(curData.msg, _TT(72202), playerName)
     self.mMsgChar = string.toCharArray(self.msg)
-    self.mReadTotalTime = #self.mMsgChar * self.mAutoOneWordTime
     self.mLastPrintIndex = 1
     self.mCurrentMsgLen = #self.mMsgChar
 
@@ -816,10 +769,8 @@ function setTalkTraditionalDialogContent(self, curData)
     -- self.mNeedWaitSomething = self.mNeedWaitSomething + 1
     self:onStartPrint()
 
-    self.dialog = curData.dialog
-
     -- ================================头像层================================ --
-    self.mTalkBlockLayer:SetActive(curData.dialog == 1 and self.isHideLayer == false)
+    self.mTalkBlockLayer:SetActive(curData.dialog == 1)
 end
 
 -- 设置策划自定义的对话剧情内容
@@ -835,33 +786,34 @@ function setTalkCustomDialogContent(self, curData)
 
     -- ================================内容================================ --
     -- 设置锚点为左上角
-    self.mGroupRect.anchorMin = gs.Vector2(0, 0.5)
-    self.mGroupRect.anchorMax = gs.Vector2(0, 0.5)
-    self.mGroupRect.anchoredPosition = gs.Vector2(curData.page_show_effect[storyTalk.PageShowEffect.wordOffsetX],
+    self.mGroupRect.anchorMin        = gs.Vector2(0, 0.5)
+    self.mGroupRect.anchorMax        = gs.Vector2(0, 0.5)
+    self.mGroupRect.anchoredPosition = gs.Vector2(
+        curData.page_show_effect[storyTalk.PageShowEffect.wordOffsetX],
         curData.page_show_effect[storyTalk.PageShowEffect.wordOffsetY])
 
-    local playerName = role.RoleManager:getRoleVo():getPlayerName() or _TT(72202)
+    local playerName                 = role.RoleManager:getRoleVo():getPlayerName() or _TT(72202)
     -- 文字框
-    self.mMsgTxtRect = self.mMsgTxt:GetComponent(ty.RectTransform)
-    self.mMsgTxtRect.sizeDelta = gs.Vector2(1000, self.mMsgTxtRect.sizeDelta.y) -- 设置文字框的宽度
-    self.mMsgTxt.fontSize = curData.msg_size == 0 and 24 or curData.msg_size
-    self.mMsgTxt.color = curData.msg_color == "" and gs.ColorUtil.GetColor(ColorUtil.WHITE_NUM) or
+    self.mMsgTxtRect                 = self.mMsgTxt:GetComponent(ty.RectTransform)
+    self.mMsgTxtRect.sizeDelta       = gs.Vector2(1000, self.mMsgTxtRect.sizeDelta.y) -- 设置文字框的宽度
+    self.mMsgTxt.fontSize            = curData.msg_size == 0 and 24 or curData.msg_size
+    self.mMsgTxt.color               = curData.msg_color == "" and
+        gs.ColorUtil.GetColor(ColorUtil.WHITE_NUM) or
         gs.ColorUtil.GetColor(curData.msg_color)
 
-    self.msg = string.gsub(curData.msg, _TT(72202), playerName)
-    self.mMsgChar = string.toCharArray(self.msg)
-    self.mReadTotalTime = #self.mMsgChar * self.mAutoOneWordTime
-    self.mLastPrintIndex = 1
-    self.mCurrentMsgLen = #self.mMsgChar
+    self.msg                         = string.gsub(curData.msg, _TT(72202), playerName)
+    self.mMsgChar                    = string.toCharArray(self.msg)
+    self.mLastPrintIndex             = 1
+    self.mCurrentMsgLen              = #self.mMsgChar
 
-    self.mMsgTxt.text = ""
+    self.mMsgTxt.text                = ""
 
     self:addWaitEvent("printMsg")
     -- self.mNeedWaitSomething = self.mNeedWaitSomething + 1
     self:onStartPrint()
 
     -- ================================头像层================================ --
-    self.mTalkBlockLayer:SetActive(true and self.isHideLayer == false)
+    self.mTalkBlockLayer:SetActive(true)
 end
 
 -- 区分主线和活动剧情
@@ -1096,8 +1048,7 @@ function runCGType(self, curData)
                 end)
     end
 
-    if curData.cg_type ~= storyTalk.CGType.Model and curData.cg_type ~= storyTalk.CGType.Model2D and curData.cg_type ~=
-        storyTalk.CGType.Texture2D then
+    if curData.cg_type ~= storyTalk.CGType.Model and curData.cg_type ~= storyTalk.CGType.Model2D and curData.cg_type ~= storyTalk.CGType.Texture2D then
         self.mStoryBGComponent:StartPlayTimeLine(self.mCurSotryID, curData.refId)
     end
 end

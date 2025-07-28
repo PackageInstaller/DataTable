@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : MiningDupItem
 @Description    : 挖矿副本item
@@ -19,7 +19,7 @@ EVENT_CLICK_SELECT = "EVENT_CLICK_SELECT"
 function ctor(self)
     super.ctor(self)
 end
---析构
+--析构  
 function dtor(self)
 end
 
@@ -60,7 +60,7 @@ function deActive(self)
     self:recoverItem()
 end
 
---[[
+--[[ 
     初始化界面的静态文本，图片字
     每次打开界面都会重新读取，多语言切换时可以及时更新
 ]]
@@ -144,8 +144,6 @@ function updateView(self)
 
     local isOpen = not self:isLock() and self:isOpenTime()
     self:getChildGO("mImgRed"):SetActive(isOpen and not StorageUtil:getBool1(mining.MiningManager.DupNewOpenStorageKey .. self.dupVo.id))
-
-    self.mImgSelect.transform.localScale = gs.Vector3(0.8, 0.8, 0.8)
 end
 
 function recoverItem(self)
@@ -170,7 +168,6 @@ end
 -- 设置为最后一项
 function setLastItem(self)
     self.mImgBg01:SetActive(false)
-    self.mImgSelect.transform.localScale = gs.VEC3_ONE
     self.mImgBg02:SetActive(true)
     self.mImgLine1:SetActive(false)
     self.mImgLine2:SetActive(false)

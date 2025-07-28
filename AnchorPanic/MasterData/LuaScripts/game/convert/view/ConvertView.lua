@@ -152,7 +152,7 @@ function onSendConvert(self)
                 GameDispatcher:dispatchEvent(EventName.OPEN_CONVERT_TITANIUM_VIEW)
             else
                 GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {
-                    linkId = LinkCode.Purchase,isCloseAll = true
+                    linkId = LinkCode.Purchase
                 })
             end
             self:close()

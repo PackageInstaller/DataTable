@@ -8,7 +8,7 @@ function getAnimatorClipTime(animator, aniName)
         end
     end
 
-    Debug:log_error("不存在名为" .. tostring(aniName) .. "的动画片段:")
+    Debug:log_error("不存在名为" .. aniName .. "的动画片段:")
 end
 
 return _M

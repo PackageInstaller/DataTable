@@ -43,7 +43,7 @@ local celebration_task_data=
 },
 	[20]={ task_type=15, time=1200, describe=121119, title=0, reward=25001, ui_code=102, day=4
 },
-	[21]={ task_type=1, time=5, describe=121120, title=0, reward=25004, ui_code=0, day=5
+	[21]={ task_type=1, time=5, describe=121120, title=0, reward=25001, ui_code=0, day=5
 },
 	[22]={ task_type=4013, time=10, describe=121121, title=0, reward=25001, ui_code=102, day=5
 },
@@ -63,7 +63,7 @@ local celebration_task_data=
 },
 	[30]={ task_type=15, time=1800, describe=121129, title=0, reward=25001, ui_code=102, day=6
 },
-	[31]={ task_type=1, time=7, describe=121130, title=0, reward=25004, ui_code=0, day=7
+	[31]={ task_type=1, time=7, describe=121130, title=0, reward=25001, ui_code=0, day=7
 },
 	[32]={ task_type=4013, time=14, describe=121131, title=0, reward=25001, ui_code=102, day=7
 },

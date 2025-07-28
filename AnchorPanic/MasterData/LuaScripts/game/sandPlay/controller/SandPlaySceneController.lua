@@ -247,12 +247,6 @@ function getNPCThingClass(self, npc_type)
         return sandPlay.SandPlayTreasureBoxThing
     elseif npc_type == SandPlayConst.NPC_TYPE.DOOR then
         return sandPlay.SandPlayDoorThing
-    elseif npc_type == SandPlayConst.NPC_TYPE.FIELD then
-        return sandPlay.SandPlayFieldThing
-    elseif npc_type == SandPlayConst.NPC_TYPE.BREED then
-        return sandPlay.SandPlayBreedThing
-    elseif npc_type == SandPlayConst.NPC_TYPE.POULTRYREAP then
-        return sandPlay.SandPlayPoultryReapThing
     else
         return sandPlay.SandPlayOtherNPCThing
     end

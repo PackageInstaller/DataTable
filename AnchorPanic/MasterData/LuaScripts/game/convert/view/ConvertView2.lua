@@ -183,7 +183,7 @@ function onSendConvert(self)
     else
         UIFactory:alertMessge(tips, true, function()
             GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {
-                linkId = LinkCode.Purchase,isCloseAll = true
+                linkId = LinkCode.Purchase
             })
             self:onClickClose()
         end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)

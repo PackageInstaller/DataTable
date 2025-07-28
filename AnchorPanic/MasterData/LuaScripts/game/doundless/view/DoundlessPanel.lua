@@ -260,8 +260,8 @@ function showPanel(self)
 
         item:getChildGO("mIsPass0" .. self.cityId):SetActive(self.maxDup > vo.stageId)
 
-        -- item:getChildGO("mImgSelect"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPackPath(
-        --     "doundless/doundless_select_" .. self.cityId .. ".png"), false)
+        item:getChildGO("mImgSelect"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPackPath(
+            "doundless/doundless_select_" .. self.cityId .. ".png"), false)
 
         local playList = doundless.DoundlessManager:getMaxDupPlayerList(vo.stageId)
         local playTrans = item:getChildTrans("mHeadContent")

@@ -28,7 +28,6 @@ function configUI(self)
     self.mGroupAwardTrans = self:getChildTrans("mGroupAwardTrans")
     self.mGroupFashion = self:getChildGO("mGroupFashion")
     self.mGroupStrength = self:getChildGO("mGroupStrength")
-    self.mImgRecom = self:getChildGO("mImgRecom"):GetComponent(ty.AutoRefImage)
 end
 
 function active(self, args)
@@ -75,7 +74,7 @@ function updateview(self)
     if not firstCharge.FirstChargeManager:getIsReCharge() then
         self.mGroupFashion:SetActive(false)
         self.mGroupFirstCharge:SetActive(true)
-
+        
         self:removeAllItem()
         local firstChargeList = firstCharge.FirstChargeManager:getFirstChargeList()
         for _, firstChargeVo in ipairs(firstCharge.FirstChargeManager:getFirstChargeList()) do
@@ -92,10 +91,6 @@ function updateview(self)
 
     self.mGroupGrowth:SetActive(not purchase.GrowthFundManager:getIsGrowthFundMoney())
     self.mGroupStrength:SetActive(purchase.GrowthFundManager:getIsGrowthFundMoney())
-
-    if (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) then
-        self.mImgRecom:SetImg(UrlManager:getPackPath("shop/shop_recom_15_har.png"))
-    end
 end
 
 function removeAllItem(self)

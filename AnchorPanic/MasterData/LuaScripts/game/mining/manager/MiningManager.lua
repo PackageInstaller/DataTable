@@ -235,7 +235,7 @@ end
 
 -- 获取冬雪捕捞是否需要红点提示
 function getAllRed(self)
-    if self:getStarHaveAward() then
+    if self:getStarAwardState() then
         return true
     end
     if self:hasTaskAward() then

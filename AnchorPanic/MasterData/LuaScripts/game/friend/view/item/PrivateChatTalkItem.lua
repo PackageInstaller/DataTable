@@ -241,7 +241,7 @@ function setContent(self)
             self.mTxtTalk.gameObject:SetActive(true)
             local content = self.mChatVo.content
             self.mTxtTalk.text = bubbleConfig:getColorContent(content)
-            -- gs.LayoutRebuilder.ForceRebuildLayoutImmediate(self.mTxtTalk.transform)
+            gs.LayoutRebuilder.ForceRebuildLayoutImmediate(self.mTxtTalk.transform)
 
             -- local realTextW = self.mTxtTalk.preferredWidth
             -- local contentSizeFitter = self.mTalkGroup:GetComponent(ty.ContentSizeFitter)
@@ -257,20 +257,18 @@ function setContent(self)
         else
             self.mImgEmoji.gameObject:SetActive(true)
             self.mTxtTalk.gameObject:SetActive(false)
-
-            if (self.mChatVo.contentType == chat.ContentType.STATIC_EMOJI) then
-                self.mFrameEmoji.enabled = false
-                -- 先清理下服用到的之前的帧相关
-                self.mImgEmoji:SetImg(nil, true)
-                self.mImgEmoji:SetImg(chat.getEmojiUrl(self.mChatVo.contentType, self.mChatVo.content), true)
-            elseif (self.mChatVo.contentType == chat.ContentType.DYNAMIC_EMOJI) then
-                self.mFrameEmoji.enabled = true
-                self.mFrameEmoji:SetSpriteList(unpack(chat.getEmojiUrl(self.mChatVo.contentType, self.mChatVo.content)))
-            end
-
             -- local contentSizeFitter = self.mTalkGroup:GetComponent(ty.ContentSizeFitter)
             -- contentSizeFitter.horizontalFit = gs.ContentSizeFitter.FitMode.PreferredSize
             -- contentSizeFitter.verticalFit = gs.ContentSizeFitter.FitMode.Unconstrained
+            -- if (self.mChatVo.contentType == chat.ContentType.STATIC_EMOJI) then
+            --     self.mFrameEmoji.enabled = false
+            --     -- 先清理下服用到的之前的帧相关
+            --     self.mImgEmoji:SetImg(nil, true)
+            --     self.mImgEmoji:SetImg(chat.getEmojiUrl(self.mChatVo.contentType, self.mChatVo.content), true)
+            -- elseif (self.mChatVo.contentType == chat.ContentType.DYNAMIC_EMOJI) then
+            --     self.mFrameEmoji.enabled = true
+            --     self.mFrameEmoji:SetSpriteList(unpack(chat.getEmojiUrl(self.mChatVo.contentType, self.mChatVo.content)))
+            -- end
         end
     end
 end

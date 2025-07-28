@@ -46,8 +46,7 @@ function parseMsg(self, msg)
     self.guildInfo  = msg.guild_info
     --无限城城区
     self.cityId = msg.city_id
-    --皮肤数量
-    self.fashionNum = msg.fashion_num
+
     --好友备注
     self.remarks = msg.friend_remarks
     
@@ -106,12 +105,6 @@ end
 function getAchievementNum(self)
     return self.achievementNum
 end
-
---皮肤数量
-function getFashionNum(self)
-    return self.fashionNum
-end
-
 --战员数量
 function getHeroNum(self)
     return self.heroNum

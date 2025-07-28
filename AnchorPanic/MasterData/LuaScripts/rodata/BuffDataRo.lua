@@ -33,7 +33,6 @@ function parseData(self, refID, refData)
     self.m_hang_body_model = refData.hang_body_model
     self.m_hang_head_model = refData.hang_head_model
     self.m_hang_weapon_model = refData.hang_weapon_model
-    self.m_hang_camera = refData.hang_camera
 end
 
 -- 模型状态表现，0无 1冰冻效果，2金属封印
@@ -188,21 +187,6 @@ end
 
 function getFlyText(self)
     return self.m_fly_text
-end
-
-function getHangCamera(self, modelId)
-    for i, effStr in ipairs(self.m_hang_camera) do
-        local arr = string.split(effStr, "|")
-
-        if modelId and arr[1] == modelId then
-            local list = {}
-            for i = 2, #arr do
-                table.insert(list, arr[i])
-            end
-            return list
-        end
-    end
-    return {}
 end
 
 return _M
