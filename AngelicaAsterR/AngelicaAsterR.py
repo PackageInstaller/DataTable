@@ -74,9 +74,6 @@ def decrypt_file(encrypted_file_path):
     with open('MasterData.json', 'w', encoding='utf-8') as f:
         f.write(formatted_json)
 
-    print("[+] 解密并保存 MasterData.json")
-
-
 def main():
     local_version = get_local_version()
     print(f"[*] 本地版本: {local_version}")

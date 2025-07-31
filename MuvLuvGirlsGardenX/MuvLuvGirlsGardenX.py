@@ -262,9 +262,9 @@ class MuvLuvDownloader:
     def run(self):
         self.console.print(f"Unity版本: 6000.0.37f1", style="cyan")
         
-        if not self.download_and_parse_master_data():
-            self.console.print("处理主数据表失败，程序终止。", style="bold red")
-            return
+        # if not self.download_and_parse_master_data():
+        #     self.console.print("处理主数据表失败，程序终止。", style="bold red")
+        #     return
         
         self.console.print("\n[bold]--- 开始处理游戏资产 ---[/bold]", style="cyan")
         if not self.get_configuration():
