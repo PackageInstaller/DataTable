@@ -19784,6 +19784,18 @@
       "item_sort_no": 20006
     },
     {
+      "no": 2081,
+      "category_sno": 110009,
+      "grade_sno": 110014,
+      "name_sno": 520181,
+      "desc_sno": 530181,
+      "slot_limit_sno": 110038,
+      "stat_limit_sno": 110041,
+      "icon_path": "MiriamMirage_Icon_Costume_00",
+      "atlas_type": 5,
+      "item_sort_no": 20006
+    },
+    {
       "no": 2082,
       "category_sno": 110009,
       "grade_sno": 110014,
@@ -21287,7 +21299,10 @@
       "stat_limit_sno": 110041,
       "icon_path": "Linzy_Icon_Costume_03",
       "atlas_type": 5,
-      "item_sort_no": 20004
+      "item_sort_no": 20004,
+      "have_limit": 1,
+      "repl_item_no": 2,
+      "repl_amount": 500
     },
     {
       "no": 2321,
@@ -21299,7 +21314,10 @@
       "stat_limit_sno": 110041,
       "icon_path": "Chloe_Icon_Costume_03",
       "atlas_type": 5,
-      "item_sort_no": 20004
+      "item_sort_no": 20004,
+      "have_limit": 1,
+      "repl_item_no": 2,
+      "repl_amount": 500
     },
     {
       "no": 2322,
@@ -21949,6 +21967,30 @@
       "slot_limit_sno": 110038,
       "stat_limit_sno": 110041,
       "icon_path": "Weiss_Icon_Costume_03",
+      "atlas_type": 5,
+      "item_sort_no": 20004
+    },
+    {
+      "no": 2375,
+      "category_sno": 110009,
+      "grade_sno": 110018,
+      "name_sno": 520575,
+      "desc_sno": 530575,
+      "slot_limit_sno": 110038,
+      "stat_limit_sno": 110041,
+      "icon_path": "MiriamMirage_Costume01",
+      "atlas_type": 5,
+      "item_sort_no": 20004
+    },
+    {
+      "no": 2376,
+      "category_sno": 110009,
+      "grade_sno": 110020,
+      "name_sno": 520576,
+      "desc_sno": 530576,
+      "slot_limit_sno": 110038,
+      "stat_limit_sno": 110041,
+      "icon_path": "MiriamMirage_Costume02",
       "atlas_type": 5,
       "item_sort_no": 20004
     },
@@ -24679,7 +24721,7 @@
       "desc_sno": 223381,
       "slot_limit_sno": 110031,
       "stat_limit_sno": 110041,
-      "icon_path": "Memory_Aki",
+      "icon_path": "Memory_MiriamMirage",
       "atlas_type": 4,
       "item_use_no": 1009,
       "item_sort_no": 3002
@@ -33710,6 +33752,28 @@
       "item_sort_no": 10
     },
     {
+      "no": 8160,
+      "category_sno": 110075,
+      "grade_sno": 110012,
+      "name_sno": 218160,
+      "desc_sno": 228158,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "UI/Textures/Item/Event/Icon_Summer05_event_1",
+      "item_sort_no": 10
+    },
+    {
+      "no": 8161,
+      "category_sno": 110075,
+      "grade_sno": 110012,
+      "name_sno": 218161,
+      "desc_sno": 218161,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "",
+      "item_sort_no": 10
+    },
+    {
       "no": 8901,
       "category_sno": 110008,
       "grade_sno": 110014,
@@ -35447,7 +35511,7 @@
       "desc_sno": 2210075,
       "slot_limit_sno": 110031,
       "stat_limit_sno": 110041,
-      "icon_path": "Memory_Signature_NoData",
+      "icon_path": "Memory_Signature_MiriamMirage",
       "atlas_type": 4,
       "move_behavior": 603,
       "item_sort_no": 20000
@@ -37485,6 +37549,17 @@
       "slot_limit_sno": 110031,
       "stat_limit_sno": 110041,
       "icon_path": "UI/Textures/Souls/ReneeSilver_128",
+      "item_sort_no": 40000
+    },
+    {
+      "no": 33170,
+      "category_sno": 110074,
+      "grade_sno": 110014,
+      "name_sno": 2133170,
+      "desc_sno": 2233170,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "UI/Textures/Souls/MiriamMirage_128",
       "item_sort_no": 40000
     },
     {
@@ -41910,7 +41985,7 @@
       "no": 44802,
       "category_sno": 110005,
       "grade_sno": 110014,
-      "name_sno": 2144801,
+      "name_sno": 2144802,
       "desc_sno": 2244802,
       "slot_limit_sno": 553003,
       "stat_limit_sno": 110041,

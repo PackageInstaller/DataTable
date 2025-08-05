@@ -19784,6 +19784,18 @@
       "item_sort_no": 20006
     },
     {
+      "no": 2081,
+      "category_sno": 110009,
+      "grade_sno": 110014,
+      "name_sno": 520181,
+      "desc_sno": 530181,
+      "slot_limit_sno": 110038,
+      "stat_limit_sno": 110041,
+      "icon_path": "MiriamMirage_Icon_Costume_00",
+      "atlas_type": 5,
+      "item_sort_no": 20006
+    },
+    {
       "no": 2082,
       "category_sno": 110009,
       "grade_sno": 110014,
@@ -19804,6 +19816,18 @@
       "slot_limit_sno": 110038,
       "stat_limit_sno": 110041,
       "icon_path": "HaruKamuy_Icon_Costume_00",
+      "atlas_type": 5,
+      "item_sort_no": 20006
+    },
+    {
+      "no": 2085,
+      "category_sno": 110009,
+      "grade_sno": 110014,
+      "name_sno": 520185,
+      "desc_sno": 530185,
+      "slot_limit_sno": 110038,
+      "stat_limit_sno": 110041,
+      "icon_path": "PetraAwaken_Icon_Costume_00",
       "atlas_type": 5,
       "item_sort_no": 20006
     },
@@ -21287,7 +21311,10 @@
       "stat_limit_sno": 110041,
       "icon_path": "Linzy_Icon_Costume_03",
       "atlas_type": 5,
-      "item_sort_no": 20004
+      "item_sort_no": 20004,
+      "have_limit": 1,
+      "repl_item_no": 2,
+      "repl_amount": 500
     },
     {
       "no": 2321,
@@ -21299,7 +21326,10 @@
       "stat_limit_sno": 110041,
       "icon_path": "Chloe_Icon_Costume_03",
       "atlas_type": 5,
-      "item_sort_no": 20004
+      "item_sort_no": 20004,
+      "have_limit": 1,
+      "repl_item_no": 2,
+      "repl_amount": 500
     },
     {
       "no": 2322,
@@ -21949,6 +21979,30 @@
       "slot_limit_sno": 110038,
       "stat_limit_sno": 110041,
       "icon_path": "Weiss_Icon_Costume_03",
+      "atlas_type": 5,
+      "item_sort_no": 20004
+    },
+    {
+      "no": 2375,
+      "category_sno": 110009,
+      "grade_sno": 110018,
+      "name_sno": 520575,
+      "desc_sno": 530575,
+      "slot_limit_sno": 110038,
+      "stat_limit_sno": 110041,
+      "icon_path": "MiriamMirage_Icon_Costume_01",
+      "atlas_type": 5,
+      "item_sort_no": 20004
+    },
+    {
+      "no": 2376,
+      "category_sno": 110009,
+      "grade_sno": 110020,
+      "name_sno": 520576,
+      "desc_sno": 530576,
+      "slot_limit_sno": 110038,
+      "stat_limit_sno": 110041,
+      "icon_path": "MiriamMirage_Icon_Costume_02",
       "atlas_type": 5,
       "item_sort_no": 20004
     },
@@ -24679,7 +24733,7 @@
       "desc_sno": 223381,
       "slot_limit_sno": 110031,
       "stat_limit_sno": 110041,
-      "icon_path": "Memory_Aki",
+      "icon_path": "Memory_MiriamMirage",
       "atlas_type": 4,
       "item_use_no": 1009,
       "item_sort_no": 3002
@@ -26125,7 +26179,7 @@
     {
       "no": 4188,
       "category_sno": 110006,
-      "grade_sno": 110021,
+      "grade_sno": 110020,
       "name_sno": 214188,
       "desc_sno": 224188,
       "slot_limit_sno": 662,
@@ -26236,6 +26290,18 @@
       "grade_sno": 110023,
       "name_sno": 214197,
       "desc_sno": 224197,
+      "slot_limit_sno": 661,
+      "stat_limit_sno": 110041,
+      "icon_path": "Icon_Box_Origin",
+      "atlas_type": 4,
+      "item_sort_no": 2220
+    },
+    {
+      "no": 4198,
+      "category_sno": 110006,
+      "grade_sno": 110021,
+      "name_sno": 214198,
+      "desc_sno": 224198,
       "slot_limit_sno": 661,
       "stat_limit_sno": 110041,
       "icon_path": "Icon_Box_Origin",
@@ -28480,6 +28546,54 @@
       "item_sort_no": 60000
     },
     {
+      "no": 6107,
+      "category_sno": 110077,
+      "grade_sno": 110020,
+      "name_sno": 216107,
+      "desc_sno": 226107,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_eas_troyca_tier_7",
+      "atlas_type": 6,
+      "item_sort_no": 60000
+    },
+    {
+      "no": 6108,
+      "category_sno": 110077,
+      "grade_sno": 110020,
+      "name_sno": 216108,
+      "desc_sno": 226108,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_eas_troyca_tier_7_3",
+      "atlas_type": 6,
+      "item_sort_no": 60000
+    },
+    {
+      "no": 6109,
+      "category_sno": 110077,
+      "grade_sno": 110020,
+      "name_sno": 216109,
+      "desc_sno": 226109,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_eas_troyca_tier_7_2",
+      "atlas_type": 6,
+      "item_sort_no": 60000
+    },
+    {
+      "no": 6110,
+      "category_sno": 110077,
+      "grade_sno": 110020,
+      "name_sno": 216110,
+      "desc_sno": 226110,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_eas_troyca_tier_7_1",
+      "atlas_type": 6,
+      "item_sort_no": 60000
+    },
+    {
       "no": 6111,
       "category_sno": 110077,
       "grade_sno": 110011,
@@ -29560,6 +29674,18 @@
       "item_sort_no": 60000
     },
     {
+      "no": 6235,
+      "category_sno": 110077,
+      "grade_sno": 110011,
+      "name_sno": 216235,
+      "desc_sno": 226235,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_Stage35_icon",
+      "atlas_type": 6,
+      "item_sort_no": 60000
+    },
+    {
       "no": 6301,
       "category_sno": 110077,
       "grade_sno": 110011,
@@ -30491,7 +30617,7 @@
       "desc_sno": 226814,
       "slot_limit_sno": 110031,
       "stat_limit_sno": 110041,
-      "icon_path": "sticker_special_",
+      "icon_path": "sticker_special_MiriamMirage01",
       "atlas_type": 6,
       "item_sort_no": 60000
     },
@@ -31514,6 +31640,96 @@
       "icon_path": "sticker_infinityraid_summer04_09",
       "atlas_type": 6,
       "item_sort_no": 60000
+    },
+    {
+      "no": 6982,
+      "category_sno": 110077,
+      "grade_sno": 110020,
+      "name_sno": 216982,
+      "desc_sno": 226982,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_infinityraid_side5_01"
+    },
+    {
+      "no": 6983,
+      "category_sno": 110077,
+      "grade_sno": 110020,
+      "name_sno": 216983,
+      "desc_sno": 226983,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_infinityraid_side5_02"
+    },
+    {
+      "no": 6984,
+      "category_sno": 110077,
+      "grade_sno": 110020,
+      "name_sno": 216984,
+      "desc_sno": 226984,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_infinityraid_side5_03"
+    },
+    {
+      "no": 6985,
+      "category_sno": 110077,
+      "grade_sno": 110020,
+      "name_sno": 216985,
+      "desc_sno": 226985,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_infinityraid_side5_04"
+    },
+    {
+      "no": 6986,
+      "category_sno": 110077,
+      "grade_sno": 110018,
+      "name_sno": 216986,
+      "desc_sno": 226986,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_infinityraid_side5_05"
+    },
+    {
+      "no": 6987,
+      "category_sno": 110077,
+      "grade_sno": 110016,
+      "name_sno": 216987,
+      "desc_sno": 226987,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_infinityraid_side5_06"
+    },
+    {
+      "no": 6988,
+      "category_sno": 110077,
+      "grade_sno": 110014,
+      "name_sno": 216988,
+      "desc_sno": 226988,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_infinityraid_side5_07"
+    },
+    {
+      "no": 6989,
+      "category_sno": 110077,
+      "grade_sno": 110012,
+      "name_sno": 216989,
+      "desc_sno": 226989,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_infinityraid_side5_08"
+    },
+    {
+      "no": 6990,
+      "category_sno": 110077,
+      "grade_sno": 110011,
+      "name_sno": 216990,
+      "desc_sno": 226990,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_infinityraid_side5_09"
     },
     {
       "no": 7001,
@@ -33710,6 +33926,28 @@
       "item_sort_no": 10
     },
     {
+      "no": 8160,
+      "category_sno": 110075,
+      "grade_sno": 110012,
+      "name_sno": 218160,
+      "desc_sno": 228158,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "UI/Textures/Item/Event/Icon_Summer05_event_1",
+      "item_sort_no": 10
+    },
+    {
+      "no": 8161,
+      "category_sno": 110075,
+      "grade_sno": 110012,
+      "name_sno": 218161,
+      "desc_sno": 218161,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "UI/Textures/Item/Event/Icon_Dice",
+      "item_sort_no": 10
+    },
+    {
       "no": 8901,
       "category_sno": 110008,
       "grade_sno": 110014,
@@ -35447,7 +35685,7 @@
       "desc_sno": 2210075,
       "slot_limit_sno": 110031,
       "stat_limit_sno": 110041,
-      "icon_path": "Memory_Signature_NoData",
+      "icon_path": "Memory_Signature_MiriamMirage",
       "atlas_type": 4,
       "move_behavior": 603,
       "item_sort_no": 20000
@@ -37485,6 +37723,17 @@
       "slot_limit_sno": 110031,
       "stat_limit_sno": 110041,
       "icon_path": "UI/Textures/Souls/ReneeSilver_128",
+      "item_sort_no": 40000
+    },
+    {
+      "no": 33170,
+      "category_sno": 110074,
+      "grade_sno": 110014,
+      "name_sno": 2133170,
+      "desc_sno": 2233170,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "UI/Textures/Souls/MiriamMirage_128",
       "item_sort_no": 40000
     },
     {
@@ -41910,7 +42159,7 @@
       "no": 44802,
       "category_sno": 110005,
       "grade_sno": 110014,
-      "name_sno": 2144801,
+      "name_sno": 2144802,
       "desc_sno": 2244802,
       "slot_limit_sno": 553003,
       "stat_limit_sno": 110041,
@@ -42080,6 +42329,28 @@
       "slot_limit_sno": 553005,
       "stat_limit_sno": 110041,
       "icon_path": "UI/Textures/Town/PE_TOWN_B_ReneeSideEvent_Castle",
+      "item_sort_no": 50000
+    },
+    {
+      "no": 44824,
+      "category_sno": 110005,
+      "grade_sno": 110018,
+      "name_sno": 2144824,
+      "desc_sno": 2244824,
+      "slot_limit_sno": 553005,
+      "stat_limit_sno": 110041,
+      "icon_path": "UI/Textures/Town/PE_TOWN_B_25Summer_ArkStatue",
+      "item_sort_no": 50000
+    },
+    {
+      "no": 44825,
+      "category_sno": 110005,
+      "grade_sno": 110018,
+      "name_sno": 2144825,
+      "desc_sno": 2244825,
+      "slot_limit_sno": 553005,
+      "stat_limit_sno": 110041,
+      "icon_path": "UI/Textures/Town/PE_TOWN_B_MiriamSideEvent_TrainingRoom",
       "item_sort_no": 50000
     },
     {
@@ -43930,6 +44201,18 @@
       "slot_limit_sno": 110031,
       "stat_limit_sno": 110041,
       "icon_path": "sticker_love_ReneeSilver01",
+      "atlas_type": 6,
+      "item_sort_no": 60000
+    },
+    {
+      "no": 531701,
+      "category_sno": 110077,
+      "grade_sno": 110012,
+      "name_sno": 21531701,
+      "desc_sno": 22531701,
+      "slot_limit_sno": 110031,
+      "stat_limit_sno": 110041,
+      "icon_path": "sticker_love_MiriamMirage01",
       "atlas_type": 6,
       "item_sort_no": 60000
     },
