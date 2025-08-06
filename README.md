@@ -17,5 +17,5 @@
 |    SoulOfDragon    |    龙魂旅人    |           国服 Sqlite           |
 |      SoulTide      |    灵魂潮汐    |           国服 LuaJIT           |
 |    SphereSeven    |     七星传     |            Qoo服 Lua            |
-|    WitchSpring    |   复苏的魔女   |    单机游戏，好玩，夹带私货(    |
+|    WitchSpring    |    魔女之泉    |   国际服Xml (单机游戏，好玩)   |
 |       Embers       |      辉烬      |            国服 Json            |

@@ -62,6 +62,7 @@ def generate_map(cs_file_path: str, output_py_path: str):
             all_class_maps[class_name] = (map_name, field_map)
 
     with open(output_py_path, 'w', encoding='utf-8') as f:
+        f.write("# 此文件由脚本自动生成，请勿手动修改。\n\n")
         all_map_names = []
         
         for class_name, (map_name, field_map) in all_class_maps.items():
