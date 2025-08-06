@@ -1,0 +1,414 @@
+[
+    {
+        "Id": 101,
+        "Index": 1,
+        "GuidanceSteps": [
+            10101,
+            10102,
+            10103
+        ],
+        "IsSave": false,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 102,
+        "Index": 2,
+        "GuidanceSteps": [
+            10201,
+            10202,
+            10203
+        ],
+        "IsSave": true,
+        "NextGuidance": [
+            103,
+            111
+        ],
+        "Priority": 10
+    },
+    {
+        "Id": 103,
+        "Index": 3,
+        "GuidanceSteps": [
+            10301,
+            10302,
+            10303
+        ],
+        "IsSave": false,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 111,
+        "Index": 4,
+        "GuidanceSteps": [
+            11101,
+            11102,
+            11103,
+            11104,
+            11105,
+            11106,
+            11107,
+            11108
+        ],
+        "IsSave": true,
+        "NextGuidance": [
+            112
+        ],
+        "Priority": 9
+    },
+    {
+        "Id": 112,
+        "Index": 5,
+        "GuidanceSteps": [
+            11201,
+            11202,
+            11203,
+            11204
+        ],
+        "IsSave": true,
+        "NextGuidance": [
+            351,
+            122,
+            371,
+            113
+        ],
+        "Priority": 1
+    },
+    {
+        "Id": 113,
+        "Index": 6,
+        "GuidanceSteps": [
+            11301,
+            11302,
+            11303,
+            11304,
+            11305,
+            11306
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 8
+    },
+    {
+        "Id": 121,
+        "Index": 7,
+        "GuidanceSteps": [
+            12101
+        ],
+        "IsSave": false,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 122,
+        "Index": 8,
+        "GuidanceSteps": [
+            12201,
+            12202,
+            12203
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 201,
+        "Index": 9,
+        "GuidanceSteps": [
+            20101,
+            20102
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 211,
+        "Index": 10,
+        "GuidanceSteps": [
+            21101,
+            21102,
+            21103
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 6
+    },
+    {
+        "Id": 221,
+        "Index": 11,
+        "GuidanceSteps": [
+            22101,
+            22102,
+            22103
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 5
+    },
+    {
+        "Id": 231,
+        "Index": 12,
+        "GuidanceSteps": [
+            23101,
+            23102,
+            23103,
+            23104,
+            23105,
+            23106
+        ],
+        "IsSave": true,
+        "NextGuidance": [
+            232,
+            233,
+            234,
+            235
+        ],
+        "Priority": 7
+    },
+    {
+        "Id": 232,
+        "Index": 13,
+        "GuidanceSteps": [
+            23201
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 233,
+        "Index": 14,
+        "GuidanceSteps": [
+            23301
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 234,
+        "Index": 15,
+        "GuidanceSteps": [
+            23401,
+            23402,
+            23403
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 235,
+        "Index": 16,
+        "GuidanceSteps": [
+            23501
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 241,
+        "Index": 17,
+        "GuidanceSteps": [
+            24101,
+            24102
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 4
+    },
+    {
+        "Id": 242,
+        "Index": 18,
+        "GuidanceSteps": [
+            24201
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 261,
+        "Index": 19,
+        "GuidanceSteps": [
+            26101,
+            26102,
+            26103
+        ],
+        "IsSave": false,
+        "NextGuidance": [
+            262
+        ],
+        "Priority": 3
+    },
+    {
+        "Id": 262,
+        "Index": 20,
+        "GuidanceSteps": [
+            26201
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 271,
+        "Index": 21,
+        "GuidanceSteps": [
+            27101,
+            27102,
+            27103
+        ],
+        "IsSave": false,
+        "NextGuidance": [
+            272
+        ],
+        "Priority": 1
+    },
+    {
+        "Id": 272,
+        "Index": 22,
+        "GuidanceSteps": [
+            27201
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 281,
+        "Index": 23,
+        "GuidanceSteps": [
+            28101,
+            28102,
+            28103
+        ],
+        "IsSave": false,
+        "NextGuidance": [
+            282
+        ],
+        "Priority": 2
+    },
+    {
+        "Id": 282,
+        "Index": 24,
+        "GuidanceSteps": [
+            28201
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 291,
+        "Index": 25,
+        "GuidanceSteps": [
+            29101
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 301,
+        "Index": 26,
+        "GuidanceSteps": [
+            30101
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 302,
+        "Index": 27,
+        "GuidanceSteps": [
+            30201
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 311,
+        "Index": 28,
+        "GuidanceSteps": [
+            31101,
+            31102,
+            31103,
+            31104,
+            31105
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 321,
+        "Index": 29,
+        "GuidanceSteps": [
+            32101,
+            32102
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 331,
+        "Index": 30,
+        "GuidanceSteps": [
+            33101,
+            33102
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 341,
+        "Index": 31,
+        "GuidanceSteps": [
+            34101,
+            34102
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 351,
+        "Index": 32,
+        "GuidanceSteps": [
+            35101
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 361,
+        "Index": 33,
+        "GuidanceSteps": [
+            36101,
+            36102,
+            36103
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    },
+    {
+        "Id": 371,
+        "Index": 34,
+        "GuidanceSteps": [
+            37101
+        ],
+        "IsSave": true,
+        "NextGuidance": [],
+        "Priority": 1
+    }
+]

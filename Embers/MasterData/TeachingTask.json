@@ -1,0 +1,99 @@
+[
+    {
+        "Id": 3160700,
+        "ComboSkillID": [
+            160701
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            5.0
+        ],
+        "FailResetTime": 1.0
+    },
+    {
+        "Id": 3160701,
+        "ComboSkillID": [
+            160711
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            0.0
+        ],
+        "FailResetTime": 1.0
+    },
+    {
+        "Id": 3160702,
+        "ComboSkillID": [
+            160711,
+            160701
+        ],
+        "TimeOutFail": [
+            -1.0,
+            2.5
+        ],
+        "SkillChargeTime": [
+            0.0,
+            5.0
+        ],
+        "FailResetTime": 1.0
+    },
+    {
+        "Id": 3160703,
+        "ComboSkillID": [
+            160731
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            0.0
+        ],
+        "FailResetTime": 1.0
+    },
+    {
+        "Id": 3160704,
+        "ComboSkillID": [
+            160732,
+            160733
+        ],
+        "TimeOutFail": [
+            15.0,
+            3.0
+        ],
+        "SkillChargeTime": [
+            0.0,
+            0.0
+        ],
+        "FailResetTime": 1.0
+    },
+    {
+        "Id": 3160705,
+        "ComboSkillID": [
+            160702
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            0.0
+        ],
+        "FailResetTime": 1.0
+    },
+    {
+        "Id": 3160706,
+        "ComboSkillID": [
+            160721
+        ],
+        "TimeOutFail": [
+            -1.0
+        ],
+        "SkillChargeTime": [
+            0.0
+        ],
+        "FailResetTime": 1.0
+    }
+]

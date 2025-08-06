@@ -1,0 +1,992 @@
+[
+    {
+        "Id": 1,
+        "Rarity": 0,
+        "TargetRank": 1,
+        "PlayerLv": 0,
+        "NeedLv": 1,
+        "Rate": 100,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8,
+            1.9
+        ],
+        "NeedGlod": 100
+    },
+    {
+        "Id": 2,
+        "Rarity": 0,
+        "TargetRank": 2,
+        "PlayerLv": 10,
+        "NeedLv": 3,
+        "Rate": 75,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+        ],
+        "NeedGlod": 200
+    },
+    {
+        "Id": 3,
+        "Rarity": 0,
+        "TargetRank": 3,
+        "PlayerLv": 20,
+        "NeedLv": 6,
+        "Rate": 50,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7
+        ],
+        "NeedGlod": 300
+    },
+    {
+        "Id": 4,
+        "Rarity": 0,
+        "TargetRank": 4,
+        "PlayerLv": 30,
+        "NeedLv": 9,
+        "Rate": 40,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "NeedGlod": 400
+    },
+    {
+        "Id": 5,
+        "Rarity": 0,
+        "TargetRank": 5,
+        "PlayerLv": 40,
+        "NeedLv": 12,
+        "Rate": 30,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5
+        ],
+        "NeedGlod": 500
+    },
+    {
+        "Id": 6,
+        "Rarity": 0,
+        "TargetRank": 6,
+        "PlayerLv": 50,
+        "NeedLv": 15,
+        "Rate": 25,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "NeedGlod": 600
+    },
+    {
+        "Id": 7,
+        "Rarity": 0,
+        "TargetRank": 7,
+        "PlayerLv": 60,
+        "NeedLv": 18,
+        "Rate": 20,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "NeedGlod": 700
+    },
+    {
+        "Id": 8,
+        "Rarity": 0,
+        "TargetRank": 8,
+        "PlayerLv": 70,
+        "NeedLv": 21,
+        "Rate": 18,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "NeedGlod": 800
+    },
+    {
+        "Id": 9,
+        "Rarity": 0,
+        "TargetRank": 9,
+        "PlayerLv": 80,
+        "NeedLv": 24,
+        "Rate": 15,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1
+        ],
+        "NeedGlod": 900
+    },
+    {
+        "Id": 10,
+        "Rarity": 1,
+        "TargetRank": 1,
+        "PlayerLv": 0,
+        "NeedLv": 1,
+        "Rate": 100,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8,
+            1.9
+        ],
+        "NeedGlod": 100
+    },
+    {
+        "Id": 11,
+        "Rarity": 1,
+        "TargetRank": 2,
+        "PlayerLv": 10,
+        "NeedLv": 3,
+        "Rate": 75,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+        ],
+        "NeedGlod": 200
+    },
+    {
+        "Id": 12,
+        "Rarity": 1,
+        "TargetRank": 3,
+        "PlayerLv": 20,
+        "NeedLv": 6,
+        "Rate": 50,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7
+        ],
+        "NeedGlod": 300
+    },
+    {
+        "Id": 13,
+        "Rarity": 1,
+        "TargetRank": 4,
+        "PlayerLv": 30,
+        "NeedLv": 9,
+        "Rate": 40,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "NeedGlod": 400
+    },
+    {
+        "Id": 14,
+        "Rarity": 1,
+        "TargetRank": 5,
+        "PlayerLv": 40,
+        "NeedLv": 12,
+        "Rate": 30,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5
+        ],
+        "NeedGlod": 500
+    },
+    {
+        "Id": 15,
+        "Rarity": 1,
+        "TargetRank": 6,
+        "PlayerLv": 50,
+        "NeedLv": 15,
+        "Rate": 25,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "NeedGlod": 600
+    },
+    {
+        "Id": 16,
+        "Rarity": 1,
+        "TargetRank": 7,
+        "PlayerLv": 60,
+        "NeedLv": 18,
+        "Rate": 20,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "NeedGlod": 700
+    },
+    {
+        "Id": 17,
+        "Rarity": 1,
+        "TargetRank": 8,
+        "PlayerLv": 70,
+        "NeedLv": 21,
+        "Rate": 18,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "NeedGlod": 800
+    },
+    {
+        "Id": 18,
+        "Rarity": 1,
+        "TargetRank": 9,
+        "PlayerLv": 80,
+        "NeedLv": 24,
+        "Rate": 15,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1
+        ],
+        "NeedGlod": 900
+    },
+    {
+        "Id": 19,
+        "Rarity": 2,
+        "TargetRank": 1,
+        "PlayerLv": 0,
+        "NeedLv": 1,
+        "Rate": 100,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8,
+            1.9
+        ],
+        "NeedGlod": 100
+    },
+    {
+        "Id": 20,
+        "Rarity": 2,
+        "TargetRank": 2,
+        "PlayerLv": 10,
+        "NeedLv": 3,
+        "Rate": 75,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+        ],
+        "NeedGlod": 200
+    },
+    {
+        "Id": 21,
+        "Rarity": 2,
+        "TargetRank": 3,
+        "PlayerLv": 20,
+        "NeedLv": 6,
+        "Rate": 50,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7
+        ],
+        "NeedGlod": 300
+    },
+    {
+        "Id": 22,
+        "Rarity": 2,
+        "TargetRank": 4,
+        "PlayerLv": 30,
+        "NeedLv": 9,
+        "Rate": 40,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "NeedGlod": 400
+    },
+    {
+        "Id": 23,
+        "Rarity": 2,
+        "TargetRank": 5,
+        "PlayerLv": 40,
+        "NeedLv": 12,
+        "Rate": 30,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5
+        ],
+        "NeedGlod": 500
+    },
+    {
+        "Id": 24,
+        "Rarity": 2,
+        "TargetRank": 6,
+        "PlayerLv": 50,
+        "NeedLv": 15,
+        "Rate": 25,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "NeedGlod": 600
+    },
+    {
+        "Id": 25,
+        "Rarity": 2,
+        "TargetRank": 7,
+        "PlayerLv": 60,
+        "NeedLv": 18,
+        "Rate": 20,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "NeedGlod": 700
+    },
+    {
+        "Id": 26,
+        "Rarity": 2,
+        "TargetRank": 8,
+        "PlayerLv": 70,
+        "NeedLv": 21,
+        "Rate": 18,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "NeedGlod": 800
+    },
+    {
+        "Id": 27,
+        "Rarity": 2,
+        "TargetRank": 9,
+        "PlayerLv": 80,
+        "NeedLv": 24,
+        "Rate": 15,
+        "RarityUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1
+        ],
+        "NeedGlod": 900
+    },
+    {
+        "Id": 28,
+        "Rarity": 3,
+        "TargetRank": 1,
+        "PlayerLv": 0,
+        "NeedLv": 1,
+        "Rate": 100,
+        "RarityUpRate": [
+            1.0,
+            1.1
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8,
+            1.9
+        ],
+        "NeedGlod": 100
+    },
+    {
+        "Id": 29,
+        "Rarity": 3,
+        "TargetRank": 2,
+        "PlayerLv": 10,
+        "NeedLv": 3,
+        "Rate": 75,
+        "RarityUpRate": [
+            1.0,
+            1.1
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+        ],
+        "NeedGlod": 200
+    },
+    {
+        "Id": 30,
+        "Rarity": 3,
+        "TargetRank": 3,
+        "PlayerLv": 20,
+        "NeedLv": 6,
+        "Rate": 50,
+        "RarityUpRate": [
+            1.0,
+            1.1
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7
+        ],
+        "NeedGlod": 300
+    },
+    {
+        "Id": 31,
+        "Rarity": 3,
+        "TargetRank": 4,
+        "PlayerLv": 30,
+        "NeedLv": 9,
+        "Rate": 40,
+        "RarityUpRate": [
+            1.0,
+            1.1
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "NeedGlod": 400
+    },
+    {
+        "Id": 32,
+        "Rarity": 3,
+        "TargetRank": 5,
+        "PlayerLv": 40,
+        "NeedLv": 12,
+        "Rate": 30,
+        "RarityUpRate": [
+            1.0,
+            1.1
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5
+        ],
+        "NeedGlod": 500
+    },
+    {
+        "Id": 33,
+        "Rarity": 3,
+        "TargetRank": 6,
+        "PlayerLv": 50,
+        "NeedLv": 15,
+        "Rate": 25,
+        "RarityUpRate": [
+            1.0,
+            1.1
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "NeedGlod": 600
+    },
+    {
+        "Id": 34,
+        "Rarity": 3,
+        "TargetRank": 7,
+        "PlayerLv": 60,
+        "NeedLv": 18,
+        "Rate": 20,
+        "RarityUpRate": [
+            1.0,
+            1.1
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "NeedGlod": 700
+    },
+    {
+        "Id": 35,
+        "Rarity": 3,
+        "TargetRank": 8,
+        "PlayerLv": 70,
+        "NeedLv": 21,
+        "Rate": 18,
+        "RarityUpRate": [
+            1.0,
+            1.1
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "NeedGlod": 800
+    },
+    {
+        "Id": 36,
+        "Rarity": 3,
+        "TargetRank": 9,
+        "PlayerLv": 80,
+        "NeedLv": 24,
+        "Rate": 15,
+        "RarityUpRate": [
+            1.0,
+            1.1
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1
+        ],
+        "NeedGlod": 900
+    },
+    {
+        "Id": 37,
+        "Rarity": 4,
+        "TargetRank": 1,
+        "PlayerLv": 0,
+        "NeedLv": 1,
+        "Rate": 100,
+        "RarityUpRate": [
+            1.0
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8,
+            1.9
+        ],
+        "NeedGlod": 100
+    },
+    {
+        "Id": 38,
+        "Rarity": 4,
+        "TargetRank": 2,
+        "PlayerLv": 10,
+        "NeedLv": 3,
+        "Rate": 75,
+        "RarityUpRate": [
+            1.0
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8
+        ],
+        "NeedGlod": 200
+    },
+    {
+        "Id": 39,
+        "Rarity": 4,
+        "TargetRank": 3,
+        "PlayerLv": 20,
+        "NeedLv": 6,
+        "Rate": 50,
+        "RarityUpRate": [
+            1.0
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6,
+            1.7
+        ],
+        "NeedGlod": 300
+    },
+    {
+        "Id": 40,
+        "Rarity": 4,
+        "TargetRank": 4,
+        "PlayerLv": 30,
+        "NeedLv": 9,
+        "Rate": 40,
+        "RarityUpRate": [
+            1.0
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "NeedGlod": 400
+    },
+    {
+        "Id": 41,
+        "Rarity": 4,
+        "TargetRank": 5,
+        "PlayerLv": 40,
+        "NeedLv": 12,
+        "Rate": 30,
+        "RarityUpRate": [
+            1.0
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4,
+            1.5
+        ],
+        "NeedGlod": 500
+    },
+    {
+        "Id": 42,
+        "Rarity": 4,
+        "TargetRank": 6,
+        "PlayerLv": 50,
+        "NeedLv": 15,
+        "Rate": 25,
+        "RarityUpRate": [
+            1.0
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3,
+            1.4
+        ],
+        "NeedGlod": 600
+    },
+    {
+        "Id": 43,
+        "Rarity": 4,
+        "TargetRank": 7,
+        "PlayerLv": 60,
+        "NeedLv": 18,
+        "Rate": 20,
+        "RarityUpRate": [
+            1.0
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2,
+            1.3
+        ],
+        "NeedGlod": 700
+    },
+    {
+        "Id": 44,
+        "Rarity": 4,
+        "TargetRank": 8,
+        "PlayerLv": 70,
+        "NeedLv": 21,
+        "Rate": 18,
+        "RarityUpRate": [
+            1.0
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1,
+            1.2
+        ],
+        "NeedGlod": 800
+    },
+    {
+        "Id": 45,
+        "Rarity": 4,
+        "TargetRank": 9,
+        "PlayerLv": 80,
+        "NeedLv": 24,
+        "Rate": 15,
+        "RarityUpRate": [
+            1.0
+        ],
+        "RankUpRate": [
+            1.0,
+            1.1
+        ],
+        "NeedGlod": 900
+    }
+]

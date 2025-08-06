@@ -1,0 +1,530 @@
+[
+    {
+        "Id": 160701,
+        "TeachingGroupName": "框选普攻",
+        "TeachingGroupConfig": [
+            1160706
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【小黑板】冰龙随行状态",
+        "FrameText": "普攻命中可以获得2点<color=#FF961D>灵能</color>，冰龙处于<color=#FF961D>随行状态</color>时会协同攻击，获得8点灵能。",
+        "Timing": 1,
+        "NextTeachingGroup": 0,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 0.10000000149011612,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 160702,
+        "TeachingGroupName": "框选灵能条1",
+        "TeachingGroupConfig": [
+            1160701
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "",
+        "FrameText": "",
+        "Timing": 0,
+        "NextTeachingGroup": 160703,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2160716
+        ],
+        "FinishClearBuff": [
+            2160716
+        ],
+        "DelayTime": 0.10000000149011612,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 160703,
+        "TeachingGroupName": "框选技能一",
+        "TeachingGroupConfig": [
+            1160707
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【小黑板】技能一",
+        "FrameText": "冰龙处于<color=#FF961D>随行状态</color>时，指挥冰龙对前方目标造成伤害与削韧，并施加1层霜冻。",
+        "Timing": 0,
+        "NextTeachingGroup": 160704,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2160703
+        ],
+        "FinishClearBuff": [
+            2160703
+        ],
+        "DelayTime": 0.10000000149011612,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 160704,
+        "TeachingGroupName": "框选普攻",
+        "TeachingGroupConfig": [
+            1160708
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【小黑板】长按普攻",
+        "FrameText": "按住普攻可以<color=#FF961D>蓄力</color>，向前发射冰锥，造成较高伤害和削韧。",
+        "Timing": 0,
+        "NextTeachingGroup": 160706,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 0.10000000149011612,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 160705,
+        "TeachingGroupName": "技能一按键教学",
+        "TeachingGroupConfig": [
+            3160701
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 3,
+        "BornPoint": [],
+        "FrameName": "【按键任务】技能一",
+        "FrameText": "命中目标并施加霜冻，每层霜冻持续2.4秒，最多4层。",
+        "Timing": 0,
+        "NextTeachingGroup": 0,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 0.10000000149011612,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy",
+            "HeroHeat"
+        ],
+        "SetPropertyValue": [
+            1200.0,
+            39.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 160706,
+        "TeachingGroupName": "长按普攻消除霜冻教学",
+        "TeachingGroupConfig": [
+            3160702
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 3,
+        "BornPoint": [],
+        "FrameName": "【任务】长按普攻消除霜冻",
+        "FrameText": "长按普攻，消耗1枚灵能弹<color=#FF961D>消除霜冻</color>，每消除1层获取中量灵能。",
+        "Timing": 0,
+        "NextTeachingGroup": 160707,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 0.10000000149011612,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy",
+            "HeroHeat"
+        ],
+        "SetPropertyValue": [
+            1200.0,
+            39.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 160707,
+        "TeachingGroupName": "框选灵能弹",
+        "TeachingGroupConfig": [
+            1160705
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【小黑板】灵能弹",
+        "FrameText": "蓄力普攻会消耗灵能弹，使用技能二可以装填灵能弹，耗尽后可以通过长按普攻装填。",
+        "Timing": 0,
+        "NextTeachingGroup": 160714,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2160715
+        ],
+        "FinishClearBuff": [
+            2160715
+        ],
+        "DelayTime": 0.10000000149011612,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 160708,
+        "TeachingGroupName": "框选灵能条与技能三",
+        "TeachingGroupConfig": [
+            1160702,
+            1160709
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [
+            1
+        ],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【小黑板】冰龙原初状态",
+        "FrameText": "消耗较多灵能，使用技能三切换为<color=#FF961D>原初状态</color>，对目标造成一定伤害与削韧。原初形态时，冰龙处于待机将对周围持续造成伤害并施加霜冻。",
+        "Timing": 0,
+        "NextTeachingGroup": 160709,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 0.10000000149011612,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 160709,
+        "TeachingGroupName": "框选灵能条3",
+        "TeachingGroupConfig": [
+            1160703
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【小黑板】维持灵能平衡",
+        "FrameText": "原初状态持续消耗灵能，灵能耗尽将切换回随行状态，请维持灵能平衡。",
+        "Timing": 0,
+        "NextTeachingGroup": 160710,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2160709,
+            2160712
+        ],
+        "FinishClearBuff": [
+            2160712
+        ],
+        "DelayTime": 1.0,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 160710,
+        "TeachingGroupName": "派生3按键教学",
+        "TeachingGroupConfig": [
+            3160704
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 3,
+        "BornPoint": [],
+        "FrameName": "【任务】技能三派生技",
+        "FrameText": "使用技能三指挥大龙飞向指定位置，对路径上的敌人施加1层霜冻，开启派生三技能的派生技能，造成大范围伤害，对命中的第一个敌人施加索敌标记。",
+        "Timing": 0,
+        "NextTeachingGroup": 160711,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 1.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy",
+            "HeroHeat"
+        ],
+        "SetPropertyValue": [
+            1200.0,
+            50.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 160711,
+        "TeachingGroupName": "维持灵能任务",
+        "TeachingGroupConfig": [
+            4160700
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 4,
+        "BornPoint": [],
+        "FrameName": "【任务】维持灵能不小于灵能阈值",
+        "FrameText": "灵能不小于灵能阈值时，冰龙会得到强化，更容易叠加霜冻层数，请努力维持灵能在阈值线之上。",
+        "Timing": 0,
+        "NextTeachingGroup": 0,
+        "FinishAddBuff": [
+            2160711
+        ],
+        "CreateAddBuff": [
+            2160705,
+            2160706
+        ],
+        "FinishClearBuff": [
+            2160705,
+            2160706
+        ],
+        "DelayTime": 1.0,
+        "FinishLevel": true,
+        "SetPropertyName": [
+            "Energy",
+            "HeroHeat"
+        ],
+        "SetPropertyValue": [
+            1200.0,
+            80.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "Normal"
+    },
+    {
+        "Id": 160712,
+        "TeachingGroupName": "灵能过载",
+        "TeachingGroupConfig": [
+            1160704
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【小黑板】灵能过载",
+        "FrameText": "灵能超出上限会<color=#FF961D>过载</color>，清空灵能并在5秒内无法获得灵能。",
+        "Timing": 0,
+        "NextTeachingGroup": 160713,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2160713
+        ],
+        "FinishClearBuff": [
+            2160713
+        ],
+        "DelayTime": 1.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 160713,
+        "TeachingGroupName": "请重新进入原初状态",
+        "TeachingGroupConfig": [
+            1160709
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【任务】切换原初状态",
+        "FrameText": "使用技能三将冰龙切换<color=#FF961D>原初状态</color>。",
+        "Timing": 0,
+        "NextTeachingGroup": 160711,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 1.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy",
+            "HeroHeat"
+        ],
+        "SetPropertyValue": [
+            1200.0,
+            100.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 160714,
+        "TeachingGroupName": "框选技能二",
+        "TeachingGroupConfig": [
+            1160710
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【小黑板】技能二",
+        "FrameText": "点按技能二可以装填灵能弹，长按技能二可以将冰龙切换回随行状态。",
+        "Timing": 0,
+        "NextTeachingGroup": 0,
+        "FinishAddBuff": [
+            2160704
+        ],
+        "CreateAddBuff": [
+            2160710
+        ],
+        "FinishClearBuff": [
+            2160710
+        ],
+        "DelayTime": 0.10000000149011612,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 100000,
+        "TeachingGroupName": "闪避",
+        "TeachingGroupConfig": [
+            10003
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "",
+        "FrameText": "",
+        "Timing": 0,
+        "NextTeachingGroup": 0,
+        "FinishAddBuff": [
+            3110408
+        ],
+        "CreateAddBuff": [
+            3110407
+        ],
+        "FinishClearBuff": [
+            3110407
+        ],
+        "DelayTime": 0.0,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 100001,
+        "TeachingGroupName": "新手教学破绽任务教学1",
+        "TeachingGroupConfig": [
+            1110401,
+            1110402,
+            1110403
+        ],
+        "NextTeachDelayTime": [
+            0.5,
+            0.5
+        ],
+        "NextTeachBanInputSkill": [
+            1,
+            1
+        ],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "",
+        "FrameText": "",
+        "Timing": 0,
+        "NextTeachingGroup": 0,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 0.0,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 100002,
+        "TeachingGroupName": "新手教学破绽任务教学2",
+        "TeachingGroupConfig": [
+            4110400
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 4,
+        "BornPoint": [],
+        "FrameName": "请使用高削韧技击中破绽",
+        "FrameText": "南星的技能一和技能二高削韧技能，击中<color=#FF7B00>破绽</color>能极大削减其<color=#FF7B00>韧性</color>，辉烬兽韧性值清空时会立即<color=#FF7B00>倒地</color>",
+        "Timing": 0,
+        "NextTeachingGroup": 100003,
+        "FinishAddBuff": [
+            3110403
+        ],
+        "CreateAddBuff": [
+            3110401,
+            3110402,
+            3110404,
+            3110405
+        ],
+        "FinishClearBuff": [
+            3110401,
+            3110402,
+            3110404,
+            3110405
+        ],
+        "DelayTime": 0.0,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 100003,
+        "TeachingGroupName": "新手教学破绽任务教学3",
+        "TeachingGroupConfig": [],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 0,
+        "BornPoint": [],
+        "FrameName": "完成削韧教学",
+        "FrameText": "请击败辉烬兽",
+        "Timing": 0,
+        "NextTeachingGroup": 0,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 0.0,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": ""
+    }
+]

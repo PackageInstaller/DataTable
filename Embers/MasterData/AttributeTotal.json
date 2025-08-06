@@ -1,0 +1,778 @@
+[
+    {
+        "Id": 1,
+        "Name": "体力",
+        "Type": 2,
+        "Uid": 200100,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 2,
+        "Name": "体力百分比",
+        "Type": 2,
+        "Uid": 200020,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 3,
+        "Name": "防御",
+        "Type": 2,
+        "Uid": 200110,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 4,
+        "Name": "防御百分比",
+        "Type": 2,
+        "Uid": 200040,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 5,
+        "Name": "攻击",
+        "Type": 2,
+        "Uid": 200120,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 6,
+        "Name": "攻击百分比",
+        "Type": 2,
+        "Uid": 200060,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 7,
+        "Name": "暴击",
+        "Type": 2,
+        "Uid": 200070,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 8,
+        "Name": "暴击伤害",
+        "Type": 2,
+        "Uid": 200080,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 9,
+        "Name": "治疗加成",
+        "Type": 2,
+        "Uid": 203030,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 10,
+        "Name": "受治疗加成",
+        "Type": 2,
+        "Uid": 203040,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 11,
+        "Name": "削韧加成",
+        "Type": 2,
+        "Uid": 203020,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 12,
+        "Name": "光属性伤害提高",
+        "Type": 2,
+        "Uid": 200130,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 13,
+        "Name": "暗属性伤害提高",
+        "Type": 2,
+        "Uid": 200140,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 14,
+        "Name": "水属性伤害提高",
+        "Type": 2,
+        "Uid": 200150,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 15,
+        "Name": "火属性伤害提高",
+        "Type": 2,
+        "Uid": 200160,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 16,
+        "Name": "风属性伤害提高",
+        "Type": 2,
+        "Uid": 200170,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 17,
+        "Name": "冰属性伤害提高",
+        "Type": 2,
+        "Uid": 200180,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 18,
+        "Name": "雷属性伤害提高",
+        "Type": 2,
+        "Uid": 200190,
+        "EntryType": 1,
+        "EntryIcon": "1010001"
+    },
+    {
+        "Id": 19,
+        "Name": "绝技·破霄",
+        "Type": 0,
+        "Uid": 7114,
+        "EntryType": 0,
+        "EntryIcon": "MainEntryIcon_7102"
+    },
+    {
+        "Id": 20,
+        "Name": "绝技·横扫",
+        "Type": 0,
+        "Uid": 7115,
+        "EntryType": 0,
+        "EntryIcon": "MainEntryIcon_7103"
+    },
+    {
+        "Id": 21,
+        "Name": "绝技·火控",
+        "Type": 0,
+        "Uid": 7116,
+        "EntryType": 0,
+        "EntryIcon": "MainEntryIcon_7106"
+    },
+    {
+        "Id": 22,
+        "Name": "绝技·陨殛",
+        "Type": 0,
+        "Uid": 7117,
+        "EntryType": 0,
+        "EntryIcon": "MainEntryIcon_7109"
+    },
+    {
+        "Id": 23,
+        "Name": "绝技·羽击",
+        "Type": 0,
+        "Uid": 7118,
+        "EntryType": 0,
+        "EntryIcon": "MainEntryIcon_7107"
+    },
+    {
+        "Id": 24,
+        "Name": "碎流猛攻",
+        "Type": 0,
+        "Uid": 7119,
+        "EntryType": 0,
+        "EntryIcon": "MainEntryIcon_7104"
+    },
+    {
+        "Id": 25,
+        "Name": "越战越勇",
+        "Type": 0,
+        "Uid": 7120,
+        "EntryType": 0,
+        "EntryIcon": "MainEntryIcon_7111"
+    },
+    {
+        "Id": 26,
+        "Name": "协同增幅",
+        "Type": 3,
+        "Uid": 7001,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 27,
+        "Name": "双效调优",
+        "Type": 3,
+        "Uid": 7002,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_poiseUp"
+    },
+    {
+        "Id": 28,
+        "Name": "效能累积",
+        "Type": 3,
+        "Uid": 7008,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 29,
+        "Name": "临界爆发",
+        "Type": 3,
+        "Uid": 7010,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 30,
+        "Name": "连锁破坏",
+        "Type": 3,
+        "Uid": 7011,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 31,
+        "Name": "毁灭增幅",
+        "Type": 3,
+        "Uid": 7017,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 32,
+        "Name": "超载爆击",
+        "Type": 3,
+        "Uid": 7034,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_criticUp"
+    },
+    {
+        "Id": 33,
+        "Name": "引力压制",
+        "Type": 3,
+        "Uid": 7035,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_poiseUp"
+    },
+    {
+        "Id": 34,
+        "Name": "直立增伤",
+        "Type": 3,
+        "Uid": 7036,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 35,
+        "Name": "图灵测试",
+        "Type": 3,
+        "Uid": 7037,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 36,
+        "Name": "愈护矩阵",
+        "Type": 3,
+        "Uid": 7038,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_defendUp"
+    },
+    {
+        "Id": 37,
+        "Name": "超载续航",
+        "Type": 3,
+        "Uid": 7039,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_energyUp"
+    },
+    {
+        "Id": 38,
+        "Name": "火种共振",
+        "Type": 3,
+        "Uid": 7040,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_xpEnergyUp"
+    },
+    {
+        "Id": 39,
+        "Name": "熵值逆转",
+        "Type": 3,
+        "Uid": 7041,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 40,
+        "Name": "动能的残像",
+        "Type": 3,
+        "Uid": 7042,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_speedUp"
+    },
+    {
+        "Id": 41,
+        "Name": "变量侵蚀",
+        "Type": 3,
+        "Uid": 7043,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 42,
+        "Name": "二次验证",
+        "Type": 3,
+        "Uid": 7044,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_poiseUp"
+    },
+    {
+        "Id": 43,
+        "Name": "蚀刻残响",
+        "Type": 3,
+        "Uid": 7045,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 44,
+        "Name": "术法余波",
+        "Type": 3,
+        "Uid": 7046,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_poiseUp"
+    },
+    {
+        "Id": 45,
+        "Name": "抗性增幅",
+        "Type": 3,
+        "Uid": 7047,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_HPUp"
+    },
+    {
+        "Id": 46,
+        "Name": "极速跃迁",
+        "Type": 3,
+        "Uid": 7048,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_speedUp"
+    },
+    {
+        "Id": 47,
+        "Name": "至高的认可",
+        "Type": 3,
+        "Uid": 7049,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_heal"
+    },
+    {
+        "Id": 48,
+        "Name": "预知未来",
+        "Type": 3,
+        "Uid": 7050,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 49,
+        "Name": "挑战者",
+        "Type": 3,
+        "Uid": 7051,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 50,
+        "Name": "箴言的反噬",
+        "Type": 3,
+        "Uid": 7052,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_HPUp"
+    },
+    {
+        "Id": 51,
+        "Name": "时序骤解",
+        "Type": 3,
+        "Uid": 7053,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_HPUp"
+    },
+    {
+        "Id": 52,
+        "Name": "以暴制暴",
+        "Type": 3,
+        "Uid": 7054,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_criticUp"
+    },
+    {
+        "Id": 53,
+        "Name": "肾上腺素",
+        "Type": 3,
+        "Uid": 7055,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_HPUp"
+    },
+    {
+        "Id": 54,
+        "Name": "紧急除颤",
+        "Type": 3,
+        "Uid": 7056,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_HPUp"
+    },
+    {
+        "Id": 55,
+        "Name": "刃锋强化",
+        "Type": 3,
+        "Uid": 7057,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_weaponEnergyUp"
+    },
+    {
+        "Id": 56,
+        "Name": "心脏过载",
+        "Type": 3,
+        "Uid": 7058,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_weaponEnergyUp"
+    },
+    {
+        "Id": 57,
+        "Name": "灵能吸附",
+        "Type": 3,
+        "Uid": 7059,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_weaponEnergyUp"
+    },
+    {
+        "Id": 58,
+        "Name": "幻醒灵速",
+        "Type": 3,
+        "Uid": 7060,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_weaponEnergyUp"
+    },
+    {
+        "Id": 59,
+        "Name": "集中蓄能",
+        "Type": 3,
+        "Uid": 7061,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_weaponEnergyUp"
+    },
+    {
+        "Id": 60,
+        "Name": "灯火的连击",
+        "Type": 3,
+        "Uid": 7062,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_poiseUp"
+    },
+    {
+        "Id": 61,
+        "Name": "学识的深渊",
+        "Type": 3,
+        "Uid": 7063,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 62,
+        "Name": "坠敌援护",
+        "Type": 3,
+        "Uid": 7064,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_energyUp"
+    },
+    {
+        "Id": 63,
+        "Name": "识破",
+        "Type": 3,
+        "Uid": 7065,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 64,
+        "Name": "死亡幻觉",
+        "Type": 3,
+        "Uid": 7066,
+        "EntryType": 1,
+        "EntryIcon": "NewEntryIcon_defendUp"
+    },
+    {
+        "Id": 65,
+        "Name": "超载爆击",
+        "Type": 3,
+        "Uid": 7034,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_criticUp"
+    },
+    {
+        "Id": 66,
+        "Name": "引力压制",
+        "Type": 3,
+        "Uid": 7035,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_poiseUp"
+    },
+    {
+        "Id": 67,
+        "Name": "直立增伤",
+        "Type": 3,
+        "Uid": 7036,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 68,
+        "Name": "图灵测试",
+        "Type": 3,
+        "Uid": 7037,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 69,
+        "Name": "愈护矩阵",
+        "Type": 3,
+        "Uid": 7038,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_defendUp"
+    },
+    {
+        "Id": 70,
+        "Name": "超载续航",
+        "Type": 3,
+        "Uid": 7039,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_energyUp"
+    },
+    {
+        "Id": 71,
+        "Name": "火种共振",
+        "Type": 3,
+        "Uid": 7040,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_xpEnergyUp"
+    },
+    {
+        "Id": 72,
+        "Name": "熵值逆转",
+        "Type": 3,
+        "Uid": 7041,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 73,
+        "Name": "动能的残像",
+        "Type": 3,
+        "Uid": 7042,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_speedUp"
+    },
+    {
+        "Id": 74,
+        "Name": "变量侵蚀",
+        "Type": 3,
+        "Uid": 7043,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 75,
+        "Name": "二次验证",
+        "Type": 3,
+        "Uid": 7044,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_poiseUp"
+    },
+    {
+        "Id": 76,
+        "Name": "蚀刻残响",
+        "Type": 3,
+        "Uid": 7045,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 77,
+        "Name": "术法余波",
+        "Type": 3,
+        "Uid": 7046,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_poiseUp"
+    },
+    {
+        "Id": 78,
+        "Name": "抗性增幅",
+        "Type": 3,
+        "Uid": 7047,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_HPUp"
+    },
+    {
+        "Id": 79,
+        "Name": "极速跃迁",
+        "Type": 3,
+        "Uid": 7048,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_speedUp"
+    },
+    {
+        "Id": 80,
+        "Name": "至高的认可",
+        "Type": 3,
+        "Uid": 7049,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_heal"
+    },
+    {
+        "Id": 81,
+        "Name": "预知未来",
+        "Type": 3,
+        "Uid": 7050,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 82,
+        "Name": "挑战者",
+        "Type": 3,
+        "Uid": 7051,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 83,
+        "Name": "箴言的反噬",
+        "Type": 3,
+        "Uid": 7052,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_HPUp"
+    },
+    {
+        "Id": 84,
+        "Name": "时序骤解",
+        "Type": 3,
+        "Uid": 7053,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_HPUp"
+    },
+    {
+        "Id": 85,
+        "Name": "以暴制暴",
+        "Type": 3,
+        "Uid": 7054,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_criticUp"
+    },
+    {
+        "Id": 86,
+        "Name": "肾上腺素",
+        "Type": 3,
+        "Uid": 7055,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_HPUp"
+    },
+    {
+        "Id": 87,
+        "Name": "紧急除颤",
+        "Type": 3,
+        "Uid": 7056,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_HPUp"
+    },
+    {
+        "Id": 88,
+        "Name": "刃锋强化",
+        "Type": 3,
+        "Uid": 7057,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_weaponEnergyUp"
+    },
+    {
+        "Id": 89,
+        "Name": "心脏过载",
+        "Type": 3,
+        "Uid": 7058,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_weaponEnergyUp"
+    },
+    {
+        "Id": 90,
+        "Name": "灵能吸附",
+        "Type": 3,
+        "Uid": 7059,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_weaponEnergyUp"
+    },
+    {
+        "Id": 91,
+        "Name": "幻醒灵速",
+        "Type": 3,
+        "Uid": 7060,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_weaponEnergyUp"
+    },
+    {
+        "Id": 92,
+        "Name": "集中蓄能",
+        "Type": 3,
+        "Uid": 7061,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_weaponEnergyUp"
+    },
+    {
+        "Id": 93,
+        "Name": "灯火的连击",
+        "Type": 3,
+        "Uid": 7062,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_poiseUp"
+    },
+    {
+        "Id": 94,
+        "Name": "学识的深渊",
+        "Type": 3,
+        "Uid": 7063,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 95,
+        "Name": "坠敌援护",
+        "Type": 3,
+        "Uid": 7064,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_energyUp"
+    },
+    {
+        "Id": 96,
+        "Name": "识破",
+        "Type": 3,
+        "Uid": 7065,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_ATKUp"
+    },
+    {
+        "Id": 97,
+        "Name": "死亡幻觉",
+        "Type": 3,
+        "Uid": 7066,
+        "EntryType": 2,
+        "EntryIcon": "NewEntryIcon_defendUp"
+    }
+]

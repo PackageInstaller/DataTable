@@ -1,0 +1,803 @@
+[
+    {
+        "Id": 1001,
+        "Index": 1,
+        "Type": 1,
+        "Name": "耐力",
+        "PageName": [
+            "耐力"
+        ],
+        "Img": [
+            "TeachingPictureEnergy"
+        ],
+        "Desc": [
+            "技能需消耗<color=#FF961D>耐力</color>，技能结束后耐力会缓慢恢复，<color=#FF961D>普通攻击</color>命中能额外恢复耐力。"
+        ],
+        "Release": 0,
+        "ReleaseConfig": 0
+    },
+    {
+        "Id": 1002,
+        "Index": 2,
+        "Type": 1,
+        "Name": "韧性",
+        "PageName": [
+            "韧性"
+        ],
+        "Img": [
+            "TeachingPictureTenacity"
+        ],
+        "Desc": [
+            "攻击敌方造成伤害时，会同时削减其<color=#FF961D>韧性</color>，显示在血条下方，当韧性被清空时，敌方会进入<color=#FF961D><击倒></color>状态，受到的伤害显著增加。"
+        ],
+        "Release": 0,
+        "ReleaseConfig": 0
+    },
+    {
+        "Id": 1003,
+        "Index": 3,
+        "Type": 1,
+        "Name": "破绽条",
+        "PageName": [
+            "破绽条"
+        ],
+        "Img": [
+            "TeachingPictureWeakness"
+        ],
+        "Desc": [
+            "辉烬兽在使用强力技能后,会出现转瞬即逝的<color=#FF961D><破绽></color>,注意看破绽条两侧向内收缩的半圆指示器，当指示器变为<color=#FF961D>黄色</color>或<color=#FF961D>红色</color>时命中敌人，会削减大量<color=#FF961D>韧性</color>。"
+        ],
+        "Release": 0,
+        "ReleaseConfig": 0
+    },
+    {
+        "Id": 1004,
+        "Index": 4,
+        "Type": 1,
+        "Name": "奥义技",
+        "PageName": [
+            "奥义技"
+        ],
+        "Img": [
+            "TeachingPictureXpSkill"
+        ],
+        "Desc": [
+            "<color=#FF961D>奥义技</color>是烬天使的终极技能，需要通过攻击积累<color=#FF961D>灵魂火种</color>才能释放。"
+        ],
+        "Release": 0,
+        "ReleaseConfig": 0
+    },
+    {
+        "Id": 1005,
+        "Index": 5,
+        "Type": 1,
+        "Name": "同伴奥义技",
+        "PageName": [
+            "同伴奥义技"
+        ],
+        "Img": [
+            "TeachingPictureAiXpSkill"
+        ],
+        "Desc": [
+            "同伴的<color=#FF961D>奥义技</color>准备就绪时，可以点击<color=#FF961D>同伴头像</color>释放。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 20001
+    },
+    {
+        "Id": 1006,
+        "Index": 6,
+        "Type": 1,
+        "Name": "属性克制",
+        "PageName": [
+            "属性克制"
+        ],
+        "Img": [
+            "TeachingPictureHoldback"
+        ],
+        "Desc": [
+            "霸主辉烬兽会被某些<color=#FF961D>属性克制</color>，当主控烬天使拥有克制的属性时，属性图标会被点亮，获得<color=#FF961D>伤害加成</color>。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 20003
+    },
+    {
+        "Id": 1007,
+        "Index": 7,
+        "Type": 1,
+        "Name": "弱点部位",
+        "PageName": [
+            "弱点部位"
+        ],
+        "Img": [
+            "TeachingPictureWeaknessPart"
+        ],
+        "Desc": [
+            "一般情况下，霸主辉烬兽的<color=#FF961D>头部为致命弱点</color>部位，<color=#FF961D>背部为普通弱点</color>部位，攻击弱点部位能造成大量<color=#FF961D>伤害</color>和<color=#FF961D>削韧</color>。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 20003
+    },
+    {
+        "Id": 1008,
+        "Index": 8,
+        "Type": 1,
+        "Name": "死核震荡",
+        "PageName": [
+            "死核辉烬兽",
+            "死核震荡"
+        ],
+        "Img": [
+            "TeachingPictureDeathcoreShock",
+            "TeachingPictureDeathcoreShock2"
+        ],
+        "Desc": [
+            "死核辉烬兽周身环绕金色光环，击杀可以触发<color=#FF961D>死核震荡</color>效果。",
+            "击杀死核辉烬兽触发<color=#FF961D>死核震荡</color>，可以将其沿直线击飞并对碰到的辉烬兽造成爆炸范围伤害。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 20004
+    },
+    {
+        "Id": 2001,
+        "Index": 9,
+        "Type": 2,
+        "Name": "加速",
+        "PageName": [
+            "加速"
+        ],
+        "Img": [
+            "TeachingPictureSpeedUp"
+        ],
+        "Desc": [
+            "在关卡中，烬天使在非战斗状态时获得加速效果。"
+        ],
+        "Release": 0,
+        "ReleaseConfig": 0
+    },
+    {
+        "Id": 2002,
+        "Index": 10,
+        "Type": 2,
+        "Name": "至高的庇佑",
+        "PageName": [
+            "至高的庇佑"
+        ],
+        "Img": [
+            "TeachingPictureBihuwu"
+        ],
+        "Desc": [
+            "与<color=#FF961D>至高的庇佑</color>进行交互获得治疗，每次治疗需要消耗一只蝴蝶，蝴蝶用尽后至高庇佑会进入休眠。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 11001
+    },
+    {
+        "Id": 2003,
+        "Index": 11,
+        "Type": 2,
+        "Name": "神秘草丛",
+        "PageName": [
+            "神秘草丛"
+        ],
+        "Img": [
+            "TeachingPictureHideGrass"
+        ],
+        "Desc": [
+            "一群蝴蝶环绕的草丛，可自由穿梭，进去看看可能会有所收获。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 11007
+    },
+    {
+        "Id": 2004,
+        "Index": 12,
+        "Type": 2,
+        "Name": "火纹回路",
+        "PageName": [
+            "火纹回路"
+        ],
+        "Img": [
+            "TeachingPictureHuowenhuilu"
+        ],
+        "Desc": [
+            "在火纹回路<color=#FF961D>休息</color>可以使小队恢复最佳状态，同时也会重置周围的辉烬兽。还可以使用<color=#FF961D>强化</color>功能来升级小队成员的战力。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 11002
+    },
+    {
+        "Id": 2005,
+        "Index": 13,
+        "Type": 2,
+        "Name": "界梯",
+        "PageName": [
+            "界梯"
+        ],
+        "Img": [
+            "TeachingPictureLadder"
+        ],
+        "Desc": [
+            "使用<color=#FF961D>界梯</color>可以帮你轻松上下高地。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 11006
+    },
+    {
+        "Id": 2006,
+        "Index": 14,
+        "Type": 2,
+        "Name": "强制战斗",
+        "PageName": [
+            "强制战斗"
+        ],
+        "Img": [
+            "TeachingPictureForced battle"
+        ],
+        "Desc": [
+            "遇到强制战斗时，本区域会被封锁<color=#FF961D>无法逃脱</color>，必须将辉烬兽全部消灭才会解除封锁，当辉烬兽被重置时封锁不会再次出现。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 11004
+    },
+    {
+        "Id": 2007,
+        "Index": 15,
+        "Type": 2,
+        "Name": "洞窟",
+        "PageName": [
+            "洞窟"
+        ],
+        "Img": [
+            "TeachingPictureCavern"
+        ],
+        "Desc": [
+            "穿过洞口，将进入一片全新的洞窟区域，请小心探索。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 11005
+    },
+    {
+        "Id": 2008,
+        "Index": 16,
+        "Type": 2,
+        "Name": "余火商人",
+        "PageName": [
+            "余火商人"
+        ],
+        "Img": [
+            "TeachingPictureBusinessman"
+        ],
+        "Desc": [
+            "通过战斗获得的货币可以在余火商购买商品，余火商人会在各个区域出没，并在每个区域提供不同商品，余火商人爱好收集不同区域的货币，只能使用本区域货币与之交易。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 11003
+    },
+    {
+        "Id": 2009,
+        "Index": 17,
+        "Type": 2,
+        "Name": "降落标记",
+        "PageName": [
+            "降落标记"
+        ],
+        "Img": [
+            "TeachingPictureDrop"
+        ],
+        "Desc": [
+            "<color=#FF961D>降落标记</color>的地面可以通行，安全降落到下方地面。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 11008
+    },
+    {
+        "Id": 2010,
+        "Index": 18,
+        "Type": 2,
+        "Name": "基础移动平台",
+        "PageName": [
+            "移动平台已激活",
+            "移动平台未激活"
+        ],
+        "Img": [
+            "TeachingPictureMovePlatformG",
+            "TeachingPictureMovePlatformR"
+        ],
+        "Desc": [
+            "已激活的移动平台会显示绿色灯光，平台沿着固定轨迹来回移动，站在上方可以前往目的地。",
+            "未激活的移动平台会显示为红色，平台未运行，请绕路而行。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 12001
+    },
+    {
+        "Id": 2011,
+        "Index": 19,
+        "Type": 2,
+        "Name": "机械移动平台",
+        "PageName": [
+            "机械移动平台"
+        ],
+        "Img": [
+            "TeachingPictureAttackMovePlatform"
+        ],
+        "Desc": [
+            "与移动平台上的机械开关进行交互，可以使平台向机械开关所在方向移动一段距离。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 12002
+    },
+    {
+        "Id": 2012,
+        "Index": 20,
+        "Type": 2,
+        "Name": "陷落板",
+        "PageName": [
+            "陷落板"
+        ],
+        "Img": [
+            "TeachingPictureFallBoard"
+        ],
+        "Desc": [
+            "陷落板会在踩上后破碎陷落，请快速通过，一段时间自动恢复。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 12003
+    },
+    {
+        "Id": 2013,
+        "Index": 21,
+        "Type": 2,
+        "Name": "火龙图腾",
+        "PageName": [
+            "火龙图腾"
+        ],
+        "Img": [
+            "TeachingPictureTotemFire"
+        ],
+        "Desc": [
+            "战胜冰狼后获得使用<color=#FF961D>火龙图腾</color>的能力，可以融化附近的冰墙。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 13001
+    },
+    {
+        "Id": 2014,
+        "Index": 22,
+        "Type": 2,
+        "Name": "青鸟图腾",
+        "PageName": [
+            "青鸟图腾"
+        ],
+        "Img": [
+            "TeachingPictureTotemBird"
+        ],
+        "Desc": [
+            "战胜巨人后获得使用<color=#FF961D>青鸟图腾</color>的能力，可以传送到与图腾连接的新区域。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 13002
+    },
+    {
+        "Id": 2015,
+        "Index": 23,
+        "Type": 2,
+        "Name": "地刺",
+        "PageName": [
+            "地刺"
+        ],
+        "Img": [
+            "TeachingPictureGroundStab"
+        ],
+        "Desc": [
+            "<color=#FF961D>地刺</color>会周期性从地面钻出，碰到地刺会受到伤害，请小心经过。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 14001
+    },
+    {
+        "Id": 3001,
+        "Index": 24,
+        "Type": 3,
+        "Name": "明饰",
+        "PageName": [
+            "明饰属性",
+            "高级词条",
+            "明饰强化"
+        ],
+        "Img": [
+            "system30011",
+            "system30012",
+            "system30013"
+        ],
+        "Desc": [
+            "明饰属性由主属性、副属性、固定词条和追加词条组成。获得明饰时一定会获取一条固定词条；追加词条则在明饰满级后解锁，随机获得词条。",
+            "词条分普通词条和高级词条，高级词条显示上更华丽，效果上更强大，且仅会出现在固定词条位置。",
+            "明饰品质越高可强化次数越多，明饰每强化一次主属性都会提升，所有副属性达到<color=#FF961D>+3/+6/+9/+12/+15</color>时会获得一次强化。"
+        ],
+        "Release": 0,
+        "ReleaseConfig": 0
+    },
+    {
+        "Id": 3002,
+        "Index": 25,
+        "Type": 3,
+        "Name": "明饰重构",
+        "PageName": [
+            "追加词条位",
+            "重构",
+            "备选池"
+        ],
+        "Img": [
+            "system30021",
+            "system30022",
+            "system30023"
+        ],
+        "Desc": [
+            "有追加词条位的明饰，在<color=#FF961D>强化达到上限</color>时追加词条位变为可用状态，并随机在位置上解锁一条词条。",
+            "追加词条位上的词条可进行<color=#FF961D>重构</color>，消耗特定材料，刷新出新的词条。<color=#FF961D>高级词条无法出现在追加词条中。</color>",
+            "刷新出的词条将<color=#FF961D>暂存在备选池中</color>，将备选池中的词条应用至追加词条位时，原有词条会被<color=#FF961D>覆盖消失</color>。"
+        ],
+        "Release": 0,
+        "ReleaseConfig": 0
+    },
+    {
+        "Id": 3003,
+        "Index": 26,
+        "Type": 3,
+        "Name": "手提箱改造",
+        "PageName": [
+            "手提箱改造",
+            "密匙"
+        ],
+        "Img": [
+            "system30031",
+            "system30032"
+        ],
+        "Desc": [
+            "手提箱可使用密匙进行改造提升属性，密匙的<color=#FF961D>品质</color>越高，改造的<color=#FF961D>可选结果越多</color>，改造可能<color=#FF961D>新增词条</color>，也有可能<color=#FF961D>提升原有词条等级</color>。",
+            "分解手提箱时，根据手提箱的<color=#FF961D>品质</color>，分解出对应品质的密匙，同时可能额外获取低品质的密匙。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70016
+    },
+    {
+        "Id": 3004,
+        "Index": 27,
+        "Type": 3,
+        "Name": "碎烬裂隙",
+        "PageName": [
+            "碎烬裂隙",
+            "难度开放"
+        ],
+        "Img": [
+            "system30041",
+            "system30042"
+        ],
+        "Desc": [
+            "碎烬裂隙中可获取德拉塔、烬天使<color=#FF961D>突破</color>材料、<color=#FF961D>武魂突破</color>材料。",
+            "通关前置难度副本后，<color=#FF961D>后续难度副本</color>才会开放。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70019
+    },
+    {
+        "Id": 3005,
+        "Index": 28,
+        "Type": 3,
+        "Name": "回廊裂隙",
+        "PageName": [
+            "回廊裂隙",
+            "高度",
+            "逐步解锁",
+            "首次通关",
+            "首通后增益"
+        ],
+        "Img": [
+            "system30051",
+            "system30052",
+            "system30053",
+            "system30054",
+            "system30055"
+        ],
+        "Desc": [
+            "回廊裂隙中存在各种强大的霸主辉烬兽，是传火者历练的主要场所，挑战成功后可获取多种奖励。",
+            "回廊裂隙存在于黎光塔的数个高度，高度越高，裂隙难度越高，挑战通过前一高度所有裂隙，下一高度才会开放。",
+            "同一高度中的裂隙需要从下到上逐步挑战通关解锁。",
+            "首次通关回廊裂隙不消耗可燃魂，挑战成功后获得丰厚首通奖励。",
+            "首通后会激活增益状态，使重复挑战更加轻松。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70010
+    },
+    {
+        "Id": 3006,
+        "Index": 29,
+        "Type": 3,
+        "Name": "暗箱裂隙",
+        "PageName": [
+            "暗箱裂隙",
+            "手提箱获取"
+        ],
+        "Img": [
+            "system30061",
+            "system30062"
+        ],
+        "Desc": [
+            "暗箱裂隙处于无光颠倒塔下方区域，辉烬兽异常强大，由于乱流的影响，<color=#FF961D>辉烬兽的种类会定期改变</color>。",
+            "暗箱裂隙产出稀有明饰手提箱，推荐<color=#FF961D>多人挑战</color>；进行挑战时，<color=#FF961D>每多一位传火者，获得的奖励都会增加</color>。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70016
+    },
+    {
+        "Id": 3007,
+        "Index": 30,
+        "Type": 3,
+        "Name": "极黯裂隙",
+        "PageName": [
+            "极黯裂隙",
+            "环境变化",
+            "兵分两路",
+            "周期刷新"
+        ],
+        "Img": [
+            "system30071",
+            "system30072",
+            "system30073",
+            "system30074"
+        ],
+        "Desc": [
+            "极黯裂隙是无光颠倒塔极为危险的区域，探索极黯裂隙，讨伐辉烬兽，可得到光耀城的表彰，获取<color=#FF961D>丰厚奖励</color>。",
+            "极黯裂隙的环境对烬天使有不同的影响，好好利用或许能更轻松地战胜辉烬兽。",
+            "极黯裂隙深层可能会出现复数辉烬兽，此时需要烬天使兵分两路，各自击败辉烬兽。",
+            "由于深受辉烬的影响，极黯裂隙深层会<color=#FF961D>周期进行变化，改变环境，重置已探索的区域</color>，可重新探索获取奖励。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70017
+    },
+    {
+        "Id": 3008,
+        "Index": 31,
+        "Type": 3,
+        "Name": "肃清裂隙",
+        "PageName": [
+            "肃清裂隙",
+            "积分规则"
+        ],
+        "Img": [
+            "system30081",
+            "system30082"
+        ],
+        "Desc": [
+            "肃清裂隙是传火者们切磋技艺的绝好渠道，根据传火者击败每种辉烬兽的<color=#FF961D>难度</color>和<color=#FF961D>时间</color>，给予对应<color=#FF961D>积分</color>。",
+            "<color=#FF961D>总积分</color>是挑战每种辉烬兽最高积分之和，达到一定阶段时传火者可获取奖励，总积分在排行榜前列的传火者可以获取更多额外奖励。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70018
+    },
+    {
+        "Id": 3009,
+        "Index": 32,
+        "Type": 3,
+        "Name": "训练模式",
+        "PageName": [
+            "训练模式",
+            "自由模式",
+            "计时模式"
+        ],
+        "Img": [
+            "system30091",
+            "system30092",
+            "system30093"
+        ],
+        "Desc": [
+            "传火者可在训练模式中指挥烬天使进行模拟战斗，训练模式分<color=#FF961D>自由模式</color>和<color=#FF961D>计时模式</color>。",
+            "在自由模式中，传火者可以自由配置喜欢的训练环境。",
+            "在计时模式中，传火者可进行为时1分钟的输出战斗模拟。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70004
+    },
+    {
+        "Id": 3010,
+        "Index": 33,
+        "Type": 3,
+        "Name": "远航灯",
+        "PageName": [
+            "远航灯",
+            "奖励规则",
+            "自动选择"
+        ],
+        "Img": [
+            "system30101",
+            "system30102",
+            "system30103"
+        ],
+        "Desc": [
+            "传火者可将烬天使由远航灯送出，去解决对应地区的事件，一段时间后带回丰厚奖励。",
+            "烬天使实力越强，大成功概率越高；根据<color=#FF961D>事件地区</color>，选择<color=#FF961D>同地区</color>的烬天使，大成功概率会更高",
+            "点击自动选择，会自动选择适合的烬天使。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70014
+    },
+    {
+        "Id": 3011,
+        "Index": 34,
+        "Type": 3,
+        "Name": "余温熔炉",
+        "PageName": [
+            "余温熔炉",
+            "样本获取",
+            "熔炉提效"
+        ],
+        "Img": [
+            "system30111",
+            "system30112",
+            "system30113"
+        ],
+        "Desc": [
+            "利用原初之灯的余温，<color=#FF961D>培育采集物</color>，一段时间后可收获对应采集物。",
+            "想要培育采集物，需要得到对应采集物的<color=#FF961D>样本</color>，可在世界探索获得。",
+            "去好友的原初之灯串门时，可以在余温熔炉为培育中的采集物<color=#FF961D>提效</color>，<color=#FF961D>自己和好友都可获取额外采集物</color>。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70014
+    },
+    {
+        "Id": 3012,
+        "Index": 35,
+        "Type": 3,
+        "Name": "具现熔炉",
+        "PageName": [
+            "具现熔炉",
+            "图纸获取",
+            "采集物获取"
+        ],
+        "Img": [
+            "system30121",
+            "system30122",
+            "system30123"
+        ],
+        "Desc": [
+            "利用原初之灯的火焰，可将采集物具现为战斗道具。",
+            "解锁战斗道具需要获取对应<color=#FF961D>战斗道具图纸</color>，图纸可由<color=#FF961D>公会商店购买</color>或<color=#FF961D>回廊裂隙首通奖励</color>获取。",
+            "采集物可在关卡采集或余温熔炉中获取。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70014
+    },
+    {
+        "Id": 3013,
+        "Index": 36,
+        "Type": 3,
+        "Name": "余火商的灯码",
+        "PageName": [
+            "余火商的灯码",
+            "好友灯码"
+        ],
+        "Img": [
+            "system30131",
+            "system30132"
+        ],
+        "Desc": [
+            "每日游历的余火商会在原初之灯的灯码处歇脚，<color=#FF961D>出售各种稀有的道具</color>。",
+            "去好友的原初之灯串门时，可以去灯码看看，或许可以选购到不错的东西。添加好友的<color=#FF961D>当天是无法去好友的灯码的，需要第二天再去</color>。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70014
+    },
+    {
+        "Id": 3014,
+        "Index": 37,
+        "Type": 3,
+        "Name": "公会",
+        "PageName": [
+            "公会"
+        ],
+        "Img": [
+            "system30141"
+        ],
+        "Desc": [
+            "传火者可在公会中获取额外的<color=#FF961D>战斗增益</color>，获取<color=#FF961D>丰厚的奖励</color>，快进入公会吧。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70015
+    },
+    {
+        "Id": 3015,
+        "Index": 38,
+        "Type": 3,
+        "Name": "公会货币",
+        "PageName": [
+            "公会任务",
+            "公会商店"
+        ],
+        "Img": [
+            "system30151",
+            "system30152"
+        ],
+        "Desc": [
+            "每日完成公会任务不仅可以<color=#FF961D>加速公会的成长</color>，还可<color=#FF961D>获取公会货币奖励</color>。",
+            "使用公会货币可在公会商店处获取<color=#FF961D>多种奖励</color>，商店的商品种类会随着<color=#FF961D>公会等级提升而解锁</color>。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70015
+    },
+    {
+        "Id": 3016,
+        "Index": 39,
+        "Type": 3,
+        "Name": "悬赏任务",
+        "PageName": [
+            "悬赏任务"
+        ],
+        "Img": [
+            "system30161"
+        ],
+        "Desc": [
+            "悬赏任务是光耀城<color=#FF961D>每日发布</color>的讨伐任务，完成后可获取奖励。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70011
+    },
+    {
+        "Id": 3018,
+        "Index": 41,
+        "Type": 3,
+        "Name": "活跃任务",
+        "PageName": [
+            "活跃任务"
+        ],
+        "Img": [
+            "system30181"
+        ],
+        "Desc": [
+            "活跃任务分为每日任务和每周任务，通过完成每日/每周活跃任务累积每日/每周活跃度，每日/每周活跃度达到一定阶段可获取对应奖励。"
+        ],
+        "Release": 3,
+        "ReleaseConfig": 70020
+    },
+    {
+        "Id": 3019,
+        "Index": 42,
+        "Type": 3,
+        "Name": "烬天使突破",
+        "PageName": [
+            "突破返还",
+            "材料获取"
+        ],
+        "Img": [
+            "system30191",
+            "system30192"
+        ],
+        "Desc": [
+            "烬天使突破需要消耗星火圣契，但突破完成后会返还大部分的星火圣契，便于培养更多烬天使。",
+            "星火圣契可以从回廊裂隙和活跃奖励中获得。"
+        ],
+        "Release": 0,
+        "ReleaseConfig": 0
+    },
+    {
+        "Id": 3020,
+        "Index": 43,
+        "Type": 3,
+        "Name": "武魂突破",
+        "PageName": [
+            "突破返还",
+            "材料获取"
+        ],
+        "Img": [
+            "system30201",
+            "system30192"
+        ],
+        "Desc": [
+            "武魂突破需要消耗炽魂凝锭，但突破完成后会返还大部分的炽魂凝锭，便于培养更多武魂。",
+            "炽魂凝锭可以从回廊裂隙和活跃奖励中获得。"
+        ],
+        "Release": 0,
+        "ReleaseConfig": 0
+    }
+]

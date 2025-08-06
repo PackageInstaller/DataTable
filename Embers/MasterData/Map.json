@@ -1,0 +1,325 @@
+[
+    {
+        "Id": 10,
+        "MapId": 0,
+        "DisplayPriority": 1,
+        "Name": "新手引导关卡",
+        "SceneName": "Level0",
+        "MapSize": [],
+        "MapGridSize": [],
+        "MapPrefabPath": "",
+        "MapLoadAssetPath": "",
+        "AssetPathPrefix": "",
+        "MiniMapPath": "",
+        "DefaultActiveMapMaskId": 0,
+        "TexelSize": [],
+        "MapMaskPath": "",
+        "MaskAlphaPath": "",
+        "TransferPoint": [],
+        "IncludeCopies": [],
+        "CavernId": [],
+        "MonsterType": [],
+        "ResourceType": [],
+        "ResourcePosition": [],
+        "InitPos": [],
+        "Scale": [
+            0.9,
+            1.0,
+            1.1
+        ],
+        "ContentScale": 1.0,
+        "MatchTeamLevel": 0,
+        "Open": 100,
+        "OpenType": 1
+    },
+    {
+        "Id": 100,
+        "MapId": 1,
+        "DisplayPriority": 1,
+        "Name": "玉虚山区",
+        "SceneName": "Level1",
+        "MapSize": [
+            3008.0,
+            3008.0
+        ],
+        "MapGridSize": [
+            376.0,
+            376.0
+        ],
+        "MapPrefabPath": "Map/MapGrid/100.prefab",
+        "MapLoadAssetPath": "Map/100/Altas/smallmap1_default",
+        "AssetPathPrefix": "smallmap1_",
+        "MiniMapPath": "Map/100/smallmap1_mask.png",
+        "DefaultActiveMapMaskId": 1,
+        "TexelSize": [],
+        "MapMaskPath": "Map/100/smallmap1_mask.png",
+        "MaskAlphaPath": "Map/100/smallmap1_alpha.png",
+        "TransferPoint": [
+            10101,
+            10102,
+            10103,
+            10104,
+            10105,
+            10106,
+            10201,
+            10202,
+            10203,
+            10204,
+            10301,
+            10302,
+            10303,
+            10304,
+            10311
+        ],
+        "IncludeCopies": [],
+        "CavernId": [
+            1011,
+            1012,
+            1013,
+            1014
+        ],
+        "MonsterType": [],
+        "ResourceType": [],
+        "ResourcePosition": [],
+        "InitPos": [
+            500.0,
+            350.0
+        ],
+        "Scale": [
+            0.6,
+            1.0,
+            1.2
+        ],
+        "ContentScale": 1.100000023841858,
+        "MatchTeamLevel": 0,
+        "Open": 300,
+        "OpenType": 1
+    },
+    {
+        "Id": 200,
+        "MapId": 2,
+        "DisplayPriority": 1,
+        "Name": "核心城",
+        "SceneName": "Level2",
+        "MapSize": [
+            4992.0,
+            4992.0
+        ],
+        "MapGridSize": [
+            624.0,
+            624.0
+        ],
+        "MapPrefabPath": "Map/MapGrid/200.prefab",
+        "MapLoadAssetPath": "Map/200/Altas/smallmap2_default",
+        "AssetPathPrefix": "smallmap2_",
+        "MiniMapPath": "Map/200/smallmap2_mask.png",
+        "DefaultActiveMapMaskId": 1,
+        "TexelSize": [],
+        "MapMaskPath": "Map/200/smallmap2_mask.png",
+        "MaskAlphaPath": "Map/200/smallmap2_alpha.png",
+        "TransferPoint": [
+            20101,
+            20102,
+            20103,
+            20104,
+            20105,
+            20106,
+            20107,
+            20108,
+            20109,
+            20110,
+            20111,
+            20112,
+            20113,
+            20114
+        ],
+        "IncludeCopies": [],
+        "CavernId": [
+            2011,
+            2012,
+            2013,
+            2014,
+            2015,
+            2016
+        ],
+        "MonsterType": [],
+        "ResourceType": [],
+        "ResourcePosition": [],
+        "InitPos": [
+            540.0,
+            1320.0
+        ],
+        "Scale": [
+            0.6,
+            1.0,
+            1.2
+        ],
+        "ContentScale": 1.100000023841858,
+        "MatchTeamLevel": 0,
+        "Open": 4400,
+        "OpenType": 1
+    },
+    {
+        "Id": 300,
+        "MapId": 3,
+        "DisplayPriority": 1,
+        "Name": "阿萨斯山区",
+        "SceneName": "Level3",
+        "MapSize": [
+            5088.0,
+            5088.0
+        ],
+        "MapGridSize": [
+            636.0,
+            636.0
+        ],
+        "MapPrefabPath": "Map/MapGrid/300.prefab",
+        "MapLoadAssetPath": "Map/300/Altas/smallmap3_default",
+        "AssetPathPrefix": "smallmap3_",
+        "MiniMapPath": "Map/300/smallmap3_mask.png",
+        "DefaultActiveMapMaskId": 1,
+        "TexelSize": [],
+        "MapMaskPath": "Map/300/smallmap3_mask.png",
+        "MaskAlphaPath": "Map/300/smallmap3_alpha.png",
+        "TransferPoint": [
+            30101,
+            30102,
+            30103,
+            30105,
+            30111,
+            30203,
+            30207,
+            30206,
+            30301,
+            30319,
+            30323,
+            30331
+        ],
+        "IncludeCopies": [],
+        "CavernId": [
+            3011,
+            3012,
+            3013,
+            3014
+        ],
+        "MonsterType": [],
+        "ResourceType": [],
+        "ResourcePosition": [],
+        "InitPos": [
+            5.0,
+            1200.0
+        ],
+        "Scale": [
+            0.6,
+            1.0,
+            1.2
+        ],
+        "ContentScale": 1.100000023841858,
+        "MatchTeamLevel": 0,
+        "Open": 7000,
+        "OpenType": 1
+    },
+    {
+        "Id": 400,
+        "MapId": 1,
+        "DisplayPriority": 2,
+        "Name": "溪源",
+        "SceneName": "Level4",
+        "MapSize": [
+            3792.0,
+            3792.0
+        ],
+        "MapGridSize": [
+            474.0,
+            474.0
+        ],
+        "MapPrefabPath": "Map/MapGrid/400.prefab",
+        "MapLoadAssetPath": "Map/400/Altas/smallmap4_default",
+        "AssetPathPrefix": "smallmap4_",
+        "MiniMapPath": "Map/400/smallmap4_mask.png",
+        "DefaultActiveMapMaskId": 1,
+        "TexelSize": [],
+        "MapMaskPath": "Map/400/smallmap4_mask.png",
+        "MaskAlphaPath": "Map/400/smallmap4_alpha.png",
+        "TransferPoint": [
+            40101,
+            40102,
+            40201,
+            40202,
+            40301,
+            40302,
+            40303,
+            40304,
+            40401,
+            40402,
+            40403
+        ],
+        "IncludeCopies": [],
+        "CavernId": [
+            4011,
+            4012,
+            4013,
+            4014,
+            4016,
+            4017
+        ],
+        "MonsterType": [],
+        "ResourceType": [],
+        "ResourcePosition": [],
+        "InitPos": [
+            5.0,
+            1200.0
+        ],
+        "Scale": [
+            0.6,
+            1.0,
+            1.2
+        ],
+        "ContentScale": 1.100000023841858,
+        "MatchTeamLevel": 0,
+        "Open": 19400,
+        "OpenType": 1
+    },
+    {
+        "Id": 999,
+        "MapId": 99,
+        "DisplayPriority": 1,
+        "Name": "光耀城",
+        "SceneName": "",
+        "MapSize": [
+            1000.0,
+            1000.0
+        ],
+        "MapGridSize": [
+            1000.0,
+            1000.0
+        ],
+        "MapPrefabPath": "Map/MapGrid/999.prefab",
+        "MapLoadAssetPath": "Map/999/Altas/smallmap999_default",
+        "AssetPathPrefix": "smallmap999_",
+        "MiniMapPath": "Map/999/smallmap999_mask.png",
+        "DefaultActiveMapMaskId": 1,
+        "TexelSize": [],
+        "MapMaskPath": "Map/999/smallmap999_mask.png",
+        "MaskAlphaPath": "Map/999/smallmap999_alpha.png",
+        "TransferPoint": [],
+        "IncludeCopies": [],
+        "CavernId": [],
+        "MonsterType": [],
+        "ResourceType": [],
+        "ResourcePosition": [],
+        "InitPos": [
+            0.0,
+            0.0
+        ],
+        "Scale": [
+            1.0,
+            1.2,
+            1.3
+        ],
+        "ContentScale": 1.2999999523162842,
+        "MatchTeamLevel": 0,
+        "Open": 4100,
+        "OpenType": 1
+    }
+]

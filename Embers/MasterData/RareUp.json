@@ -1,0 +1,128 @@
+[
+    {
+        "Id": 1,
+        "ModelName": "Weapon_R4",
+        "Quality": 4,
+        "Type": 5,
+        "EffectsType": [
+            1,
+            1,
+            2,
+            2,
+            0
+        ],
+        "EffectsName": [
+            "BeatUpgradeR2ToR4",
+            "BeatUpgradeR3ToR4",
+            "ResultUpgradeR2ToR4",
+            "ResultUpgradeR3ToR4"
+        ],
+        "PreModel": [
+            "Weapon_R2",
+            "Weapon_R3",
+            "Weapon_R2",
+            "Weapon_R3"
+        ],
+        "Trailing": "GemTrailingR4",
+        "Lighting": "GoldLighting"
+    },
+    {
+        "Id": 2,
+        "ModelName": "Weapon_R3",
+        "Quality": 3,
+        "Type": 5,
+        "EffectsType": [
+            1,
+            1,
+            2,
+            0
+        ],
+        "EffectsName": [
+            "BeatUpgradeR2ToR3",
+            "BeatUpgradeR3ToR3",
+            "ResultUpgradeR2ToR3"
+        ],
+        "PreModel": [
+            "Weapon_R2",
+            "Weapon_R3",
+            "Weapon_R2"
+        ],
+        "Trailing": "GemTrailingR3",
+        "Lighting": "PurpleLighting"
+    },
+    {
+        "Id": 3,
+        "ModelName": "Weapon_R2",
+        "Quality": 2,
+        "Type": 5,
+        "EffectsType": [
+            1,
+            0
+        ],
+        "EffectsName": [
+            "BeatUpgradeR2ToR2"
+        ],
+        "PreModel": [
+            "Weapon_R2"
+        ],
+        "Trailing": "GemTrailingR2",
+        "Lighting": "BlueLighting"
+    },
+    {
+        "Id": 4,
+        "ModelName": "Hero_R4",
+        "Quality": 4,
+        "Type": 4,
+        "EffectsType": [
+            1,
+            1,
+            0
+        ],
+        "EffectsName": [
+            "BeatUpgradeR3ToR4",
+            "ResultUpgradeR3ToR4"
+        ],
+        "PreModel": [
+            "Hero_R3",
+            "Hero_R3"
+        ],
+        "Trailing": "GemTrailingR4",
+        "Lighting": "GoldLighting"
+    },
+    {
+        "Id": 5,
+        "ModelName": "Hero_R3",
+        "Quality": 3,
+        "Type": 4,
+        "EffectsType": [
+            1,
+            0
+        ],
+        "EffectsName": [
+            "BeatUpgradeR3ToR3"
+        ],
+        "PreModel": [
+            "Hero_R3"
+        ],
+        "Trailing": "GemTrailingR3",
+        "Lighting": "PurpleLighting"
+    },
+    {
+        "Id": 6,
+        "ModelName": "Weapon_R2",
+        "Quality": 2,
+        "Type": 4,
+        "EffectsType": [
+            1,
+            0
+        ],
+        "EffectsName": [
+            "BeatUpgradeR2ToR2"
+        ],
+        "PreModel": [
+            "Weapon_R2"
+        ],
+        "Trailing": "GemTrailingR2",
+        "Lighting": "BlueLighting"
+    }
+]

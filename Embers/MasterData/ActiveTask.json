@@ -1,0 +1,428 @@
+[
+    {
+        "Id": 1001,
+        "ActiveType": 1,
+        "TargetType": 1001,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 20,
+        "TargetDesc": "登录游戏",
+        "TargetWindow": "",
+        "WindowParams": [],
+        "OpenId": 0
+    },
+    {
+        "Id": 1002,
+        "ActiveType": 1,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                2
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 20,
+        "TargetDesc": "通关回廊裂隙1次",
+        "TargetWindow": "CopyFirstWindow",
+        "WindowParams": [
+            2
+        ],
+        "OpenId": 70010
+    },
+    {
+        "Id": 1003,
+        "ActiveType": 1,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                1
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 20,
+        "TargetDesc": "通关碎烬裂隙1次",
+        "TargetWindow": "CopyFirstWindow",
+        "WindowParams": [
+            1
+        ],
+        "OpenId": 70019
+    },
+    {
+        "Id": 1004,
+        "ActiveType": 1,
+        "TargetType": 1004,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 120,
+        "ActiveItem": 9810,
+        "EXP": 40,
+        "TargetDesc": "累计消耗120点可燃魂",
+        "TargetWindow": "",
+        "WindowParams": [],
+        "OpenId": 0
+    },
+    {
+        "Id": 1005,
+        "ActiveType": 1,
+        "TargetType": 1015,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 40,
+        "TargetDesc": "提升明饰等级至上限1次",
+        "TargetWindow": "",
+        "WindowParams": [],
+        "OpenId": 0
+    },
+    {
+        "Id": 1006,
+        "ActiveType": 1,
+        "TargetType": 1013,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 20,
+        "TargetDesc": "提升烬天使等级1次",
+        "TargetWindow": "",
+        "WindowParams": [],
+        "OpenId": 0
+    },
+    {
+        "Id": 1007,
+        "ActiveType": 1,
+        "TargetType": 1007,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 10,
+        "TargetDesc": "派遣远航灯1次",
+        "TargetWindow": "SailLightDispatchWindow",
+        "WindowParams": [
+            0
+        ],
+        "OpenId": 70014
+    },
+    {
+        "Id": 1008,
+        "ActiveType": 1,
+        "TargetType": 1009,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 10,
+        "TargetDesc": "制作战斗道具1次",
+        "TargetWindow": "BattlePropMakeWindow",
+        "WindowParams": [
+            0
+        ],
+        "OpenId": 70014
+    },
+    {
+        "Id": 1009,
+        "ActiveType": 1,
+        "TargetType": 1010,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 10,
+        "TargetDesc": "使用战斗道具1次",
+        "TargetWindow": "",
+        "WindowParams": [],
+        "OpenId": 70013
+    },
+    {
+        "Id": 1010,
+        "ActiveType": 1,
+        "TargetType": 1008,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 10,
+        "TargetDesc": "在余温熔炉收获1次",
+        "TargetWindow": "HomeLandPlantWindow",
+        "WindowParams": [
+            0
+        ],
+        "OpenId": 70014
+    },
+    {
+        "Id": 1011,
+        "ActiveType": 1,
+        "TargetType": 1011,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 10,
+        "TargetDesc": "在余火商的灯码消费1次",
+        "TargetWindow": "HomeShopWindow",
+        "WindowParams": [
+            0
+        ],
+        "OpenId": 70014
+    },
+    {
+        "Id": 1012,
+        "ActiveType": 1,
+        "TargetType": 1003,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 20,
+        "TargetDesc": "在地图内采集1次",
+        "TargetWindow": "LevelMapWindow",
+        "WindowParams": [
+            100
+        ],
+        "OpenId": 0
+    },
+    {
+        "Id": 1013,
+        "ActiveType": 1,
+        "TargetType": 1002,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 1,
+        "ActiveItem": 9810,
+        "EXP": 20,
+        "TargetDesc": "完成1次悬赏任务",
+        "TargetWindow": "TaskMainWindow",
+        "WindowParams": [
+            1
+        ],
+        "OpenId": 70011
+    },
+    {
+        "Id": 2001,
+        "ActiveType": 2,
+        "TargetType": 1014,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 3,
+        "ActiveItem": 9820,
+        "EXP": 80,
+        "TargetDesc": "组队通关任意副本3次",
+        "TargetWindow": "",
+        "WindowParams": [],
+        "OpenId": 0
+    },
+    {
+        "Id": 2002,
+        "ActiveType": 2,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                3
+            ]
+        ],
+        "TargetValue": 2,
+        "ActiveItem": 9820,
+        "EXP": 40,
+        "TargetDesc": "通关暗箱裂隙2次",
+        "TargetWindow": "CopySecondType3Window",
+        "WindowParams": [
+            0
+        ],
+        "OpenId": 70016
+    },
+    {
+        "Id": 2003,
+        "ActiveType": 2,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                2
+            ]
+        ],
+        "TargetValue": 10,
+        "ActiveItem": 9820,
+        "EXP": 20,
+        "TargetDesc": "通关回廊裂隙10次",
+        "TargetWindow": "CopyFirstWindow",
+        "WindowParams": [
+            2
+        ],
+        "OpenId": 70010
+    },
+    {
+        "Id": 2004,
+        "ActiveType": 2,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                1
+            ]
+        ],
+        "TargetValue": 5,
+        "ActiveItem": 9820,
+        "EXP": 20,
+        "TargetDesc": "通关碎烬裂隙5次",
+        "TargetWindow": "CopyFirstWindow",
+        "WindowParams": [
+            1
+        ],
+        "OpenId": 70019
+    },
+    {
+        "Id": 2005,
+        "ActiveType": 2,
+        "TargetType": 1004,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 600,
+        "ActiveItem": 9820,
+        "EXP": 80,
+        "TargetDesc": "累计消耗600点可燃魂",
+        "TargetWindow": "",
+        "WindowParams": [],
+        "OpenId": 0
+    },
+    {
+        "Id": 2006,
+        "ActiveType": 2,
+        "TargetType": 1007,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 5,
+        "ActiveItem": 9820,
+        "EXP": 20,
+        "TargetDesc": "派遣远航灯5次",
+        "TargetWindow": "SailLightDispatchWindow",
+        "WindowParams": [
+            0
+        ],
+        "OpenId": 70014
+    },
+    {
+        "Id": 2007,
+        "ActiveType": 2,
+        "TargetType": 1008,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 5,
+        "ActiveItem": 9820,
+        "EXP": 20,
+        "TargetDesc": "在余温熔炉收获5次",
+        "TargetWindow": "HomeLandPlantWindow",
+        "WindowParams": [
+            0
+        ],
+        "OpenId": 70014
+    }
+]
