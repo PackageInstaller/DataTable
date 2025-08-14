@@ -1,0 +1,884 @@
+{
+    "10000": {
+        "Key": 10000,
+        "FishingAttrId": 10000,
+        "Name": "鱼属性模板-直接上钩",
+        "SizeDefaultWeight": [
+            [
+                1,
+                1500,
+                2000,
+                5000
+            ],
+            [
+                2,
+                2000,
+                2500,
+                3000
+            ],
+            [
+                3,
+                2500,
+                3000,
+                1000
+            ],
+            [
+                4,
+                3000,
+                3500,
+                500
+            ],
+            [
+                5,
+                3500,
+                4500,
+                0
+            ]
+        ],
+        "Qte": 0,
+        "BiteTime": [
+            2,
+            0.3,
+            8
+        ],
+        "OffHookTime": [
+            3,
+            2,
+            10
+        ],
+        "OffTime": [
+            1,
+            0,
+            3
+        ],
+        "DrawSpeed": [
+            15,
+            2,
+            20
+        ],
+        "OffSpeed": [
+            10,
+            2,
+            10
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            6,
+            0,
+            20
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            9,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithDraw": [
+            6,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -30,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            1,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            0.1,
+            0,
+            1
+        ],
+        "FishSpeed": [
+            1,
+            0.05,
+            3
+        ]
+    },
+    "10001": {
+        "Key": 10001,
+        "FishingAttrId": 10001,
+        "Name": "鱼属性模板-容易",
+        "SizeDefaultWeight": [
+            [
+                1,
+                2000,
+                2800,
+                5000
+            ],
+            [
+                2,
+                2800,
+                3600,
+                3000
+            ],
+            [
+                3,
+                3600,
+                4400,
+                1000
+            ],
+            [
+                4,
+                4400,
+                5200,
+                500
+            ],
+            [
+                5,
+                5200,
+                7000,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            2,
+            0.3,
+            8
+        ],
+        "OffHookTime": [
+            3,
+            2,
+            10
+        ],
+        "OffTime": [
+            1,
+            0,
+            3
+        ],
+        "DrawSpeed": [
+            20,
+            2,
+            50
+        ],
+        "OffSpeed": [
+            10,
+            2,
+            10
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            10,
+            0,
+            20
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            10,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithDraw": [
+            10,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            1,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            0.3,
+            0,
+            1
+        ],
+        "FishSpeed": [
+            1.5,
+            0.05,
+            3
+        ]
+    },
+    "10002": {
+        "Key": 10002,
+        "FishingAttrId": 10002,
+        "Name": "鱼属性模板-普通",
+        "SizeDefaultWeight": [
+            [
+                1,
+                1300,
+                2320,
+                5000
+            ],
+            [
+                2,
+                2320,
+                3340,
+                3000
+            ],
+            [
+                3,
+                3340,
+                4360,
+                1000
+            ],
+            [
+                4,
+                4360,
+                5380,
+                500
+            ],
+            [
+                5,
+                5380,
+                6400,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            1.5,
+            0.3,
+            5
+        ],
+        "OffHookTime": [
+            2,
+            1,
+            10
+        ],
+        "OffTime": [
+            0.7,
+            0,
+            3
+        ],
+        "DrawSpeed": [
+            15,
+            2,
+            30
+        ],
+        "OffSpeed": [
+            10,
+            2,
+            10
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            12,
+            0,
+            20
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            12,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithDraw": [
+            12,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            1,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            0.3,
+            0,
+            1
+        ],
+        "FishSpeed": [
+            3,
+            0.05,
+            3
+        ]
+    },
+    "10003": {
+        "Key": 10003,
+        "FishingAttrId": 10003,
+        "Name": "鱼属性模板-困难",
+        "SizeDefaultWeight": [
+            [
+                1,
+                3400,
+                5840,
+                5000
+            ],
+            [
+                2,
+                5840,
+                8280,
+                3000
+            ],
+            [
+                3,
+                8280,
+                10720,
+                1000
+            ],
+            [
+                4,
+                10720,
+                13160,
+                500
+            ],
+            [
+                5,
+                13160,
+                15600,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            1,
+            0.3,
+            5
+        ],
+        "OffHookTime": [
+            1,
+            0.2,
+            10
+        ],
+        "OffTime": [
+            0.4,
+            0,
+            3
+        ],
+        "DrawSpeed": [
+            10,
+            2,
+            20
+        ],
+        "OffSpeed": [
+            10,
+            2,
+            10
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            15,
+            0,
+            20
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            15,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithDraw": [
+            8,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            0.8,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            0.3,
+            0,
+            1
+        ],
+        "FishSpeed": [
+            5,
+            0.05,
+            10
+        ]
+    },
+    "10004": {
+        "Key": 10004,
+        "FishingAttrId": 10004,
+        "Name": "鱼属性模板-普通-转向比较多",
+        "SizeDefaultWeight": [
+            [
+                1,
+                1300,
+                2320,
+                5000
+            ],
+            [
+                2,
+                2320,
+                3340,
+                3000
+            ],
+            [
+                3,
+                3340,
+                4360,
+                1000
+            ],
+            [
+                4,
+                4360,
+                5380,
+                500
+            ],
+            [
+                5,
+                5380,
+                6400,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            1.5,
+            0.3,
+            5
+        ],
+        "OffHookTime": [
+            1,
+            0.2,
+            10
+        ],
+        "OffTime": [
+            0.5,
+            0,
+            3
+        ],
+        "DrawSpeed": [
+            15,
+            2,
+            30
+        ],
+        "OffSpeed": [
+            10,
+            2,
+            10
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            12,
+            0,
+            20
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            12,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithDraw": [
+            12,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            0.8,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            0.2,
+            0,
+            1
+        ],
+        "FishSpeed": [
+            4,
+            0.05,
+            6
+        ]
+    },
+    "10005": {
+        "Key": 10005,
+        "FishingAttrId": 10005,
+        "Name": "鱼属性模板-困难-转向少但是错误惩罚高",
+        "SizeDefaultWeight": [
+            [
+                1,
+                3400,
+                5840,
+                5000
+            ],
+            [
+                2,
+                5840,
+                8280,
+                3000
+            ],
+            [
+                3,
+                8280,
+                10720,
+                1000
+            ],
+            [
+                4,
+                10720,
+                13160,
+                500
+            ],
+            [
+                5,
+                13160,
+                15600,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            1,
+            0.3,
+            5
+        ],
+        "OffHookTime": [
+            0.2,
+            0.2,
+            10
+        ],
+        "OffTime": [
+            0.1,
+            0,
+            3
+        ],
+        "DrawSpeed": [
+            10,
+            2,
+            20
+        ],
+        "OffSpeed": [
+            15,
+            2,
+            30
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            20,
+            0,
+            40
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            30,
+            0,
+            50
+        ],
+        "SameDirectionSpeedWithDraw": [
+            8,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            1,
+            0.2,
+            1.5
+        ],
+        "FishStayInterval": [
+            0.4,
+            0,
+            1
+        ],
+        "FishSpeed": [
+            3,
+            0.05,
+            6
+        ]
+    },
+    "20000": {
+        "Key": 20000,
+        "FishingAttrId": 20000,
+        "Name": "垃圾模板-容易",
+        "SizeDefaultWeight": [
+            [
+                1,
+                300,
+                800,
+                5000
+            ],
+            [
+                2,
+                800,
+                1300,
+                3000
+            ],
+            [
+                3,
+                1300,
+                1800,
+                1000
+            ],
+            [
+                4,
+                1800,
+                2300,
+                500
+            ],
+            [
+                5,
+                2300,
+                2800,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            2,
+            0.3,
+            5
+        ],
+        "OffHookTime": [
+            3,
+            2,
+            10
+        ],
+        "OffTime": [
+            5,
+            2,
+            10
+        ],
+        "DrawSpeed": [
+            20,
+            2,
+            50
+        ],
+        "OffSpeed": [
+            10,
+            2,
+            10
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            10,
+            0,
+            20
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            10,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithDraw": [
+            10,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            1,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            3,
+            0.2,
+            5
+        ],
+        "FishSpeed": [
+            0.1,
+            0.05,
+            3
+        ]
+    },
+    "20001": {
+        "Key": 20001,
+        "FishingAttrId": 20001,
+        "Name": "垃圾模板-普通",
+        "SizeDefaultWeight": [
+            [
+                1,
+                300,
+                800,
+                5000
+            ],
+            [
+                2,
+                800,
+                1300,
+                3000
+            ],
+            [
+                3,
+                1300,
+                1800,
+                1000
+            ],
+            [
+                4,
+                1800,
+                2300,
+                500
+            ],
+            [
+                5,
+                2300,
+                2800,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            1.5,
+            0.3,
+            5
+        ],
+        "OffHookTime": [
+            2,
+            1,
+            10
+        ],
+        "OffTime": [
+            3,
+            2,
+            10
+        ],
+        "DrawSpeed": [
+            15,
+            2,
+            30
+        ],
+        "OffSpeed": [
+            10,
+            2,
+            10
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            12,
+            0,
+            20
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            12,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithDraw": [
+            12,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            1,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            1,
+            0.2,
+            2
+        ],
+        "FishSpeed": [
+            0.5,
+            0.05,
+            3
+        ]
+    },
+    "20002": {
+        "Key": 20002,
+        "FishingAttrId": 20002,
+        "Name": "垃圾模板-困难",
+        "SizeDefaultWeight": [
+            [
+                1,
+                300,
+                800,
+                5000
+            ],
+            [
+                2,
+                800,
+                1300,
+                3000
+            ],
+            [
+                3,
+                1300,
+                1800,
+                1000
+            ],
+            [
+                4,
+                1800,
+                2300,
+                500
+            ],
+            [
+                5,
+                2300,
+                2800,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            1,
+            0.3,
+            5
+        ],
+        "OffHookTime": [
+            1,
+            0.2,
+            10
+        ],
+        "OffTime": [
+            1,
+            0.5,
+            5
+        ],
+        "DrawSpeed": [
+            10,
+            2,
+            20
+        ],
+        "OffSpeed": [
+            10,
+            2,
+            10
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            15,
+            0,
+            20
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            15,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithDraw": [
+            8,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            1,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            1,
+            0.2,
+            2
+        ],
+        "FishSpeed": [
+            0.8,
+            0.05,
+            3
+        ]
+    }
+}

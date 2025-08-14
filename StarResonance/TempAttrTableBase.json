@@ -1,0 +1,4264 @@
+{
+    "90001": {
+        "Key": 90001,
+        "Id": 90001,
+        "Name": "全子弹大小",
+        "Desc": "全子弹大小",
+        "AttrType": 200,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90002": {
+        "Key": 90002,
+        "Id": 90002,
+        "Name": "博伊斯特效资源管理",
+        "Desc": "博伊斯特效资源管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90003": {
+        "Key": 90003,
+        "Id": 90003,
+        "Name": "投射物数量",
+        "Desc": "投射物数量",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 3,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90004": {
+        "Key": 90004,
+        "Id": 90004,
+        "Name": "冰法仗冰球爆炸大小",
+        "Desc": "冰法仗冰球爆炸大小",
+        "AttrType": 200,
+        "LogicType": 1,
+        "AttrParams": [
+            1216
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90005": {
+        "Key": 90005,
+        "Id": 90005,
+        "Name": "所有战斗资源扣除减少",
+        "Desc": "所有战斗资源扣除减少",
+        "AttrType": 302,
+        "LogicType": 0,
+        "AttrParams": [],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90006": {
+        "Key": 90006,
+        "Id": 90006,
+        "Name": "战斗公式攻击力额外加值",
+        "Desc": "战斗公式攻击力额外加值",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90007": {
+        "Key": 90007,
+        "Id": 90007,
+        "Name": "战斗公式最终额外加值",
+        "Desc": "战斗公式最终额外加值",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90008": {
+        "Key": 90008,
+        "Id": 90008,
+        "Name": "【激昂】持续时间",
+        "Desc": "【激昂】持续时间",
+        "AttrType": 501,
+        "LogicType": 3,
+        "AttrParams": [
+            14
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90009": {
+        "Key": 90009,
+        "Id": 90009,
+        "Name": "【引燃】Buff堆叠上限变化",
+        "Desc": "【引燃】Buff堆叠上限变化",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            4501
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90010": {
+        "Key": 90010,
+        "Id": 90010,
+        "Name": "【引燃】Buff持续时间百分比变化",
+        "Desc": "【引燃】Buff持续时间百分比变化",
+        "AttrType": 501,
+        "LogicType": 4,
+        "AttrParams": [
+            4501
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90011": {
+        "Key": 90011,
+        "Id": 90011,
+        "Name": "【弹丸】数量增加",
+        "Desc": "【弹丸】数量增加",
+        "AttrType": 1,
+        "LogicType": 3,
+        "AttrParams": [
+            48
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90012": {
+        "Key": 90012,
+        "Id": 90012,
+        "Name": "【陷阱】数量增加",
+        "Desc": "【陷阱】数量增加",
+        "AttrType": 1,
+        "LogicType": 3,
+        "AttrParams": [
+            44
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90013": {
+        "Key": 90013,
+        "Id": 90013,
+        "Name": "【怒气】技能消耗怒气减少",
+        "Desc": "【怒气】技能消耗怒气减少",
+        "AttrType": 302,
+        "LogicType": 2,
+        "AttrParams": [
+            13001
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90014": {
+        "Key": 90014,
+        "Id": 90014,
+        "Name": "【陷阱】重复生效次数",
+        "Desc": "【陷阱】重复生效次数",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90015": {
+        "Key": 90015,
+        "Id": 90015,
+        "Name": "装备坚定buff持续时间增加",
+        "Desc": "装备坚定buff持续时间增加",
+        "AttrType": 502,
+        "LogicType": 4,
+        "AttrParams": [
+            20015101
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90016": {
+        "Key": 90016,
+        "Id": 90016,
+        "Name": "陷阱就绪标记属性",
+        "Desc": "陷阱就绪标记属性",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90017": {
+        "Key": 90017,
+        "Id": 90017,
+        "Name": "异常累计效率",
+        "Desc": "异常累计效率",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [],
+        "LowerLimit": 0,
+        "UpperLimit": 9999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90018": {
+        "Key": 90018,
+        "Id": 90018,
+        "Name": "护盾额外加值",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90019": {
+        "Key": 90019,
+        "Id": 90019,
+        "Name": "暴击治疗属性",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90020": {
+        "Key": 90020,
+        "Id": 90020,
+        "Name": "百分百格挡标记",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90021": {
+        "Key": 90021,
+        "Id": 90021,
+        "Name": "幸运格挡减伤",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": "触发幸运格挡，本次格挡的伤害减免效果提升{*tempAttr.up*}。<br>幸运格挡：受到攻击时，格挡和幸运同时生效。"
+    },
+    "90022": {
+        "Key": 90022,
+        "Id": 90022,
+        "Name": "2201300额外压制",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90023": {
+        "Key": 90023,
+        "Id": 90023,
+        "Name": "（废弃）额外格挡几率",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90024": {
+        "Key": 90024,
+        "Id": 90024,
+        "Name": "卫刃激怒效果",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90025": {
+        "Key": 90025,
+        "Id": 90025,
+        "Name": "法环能量获取速度",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90026": {
+        "Key": 90026,
+        "Id": 90026,
+        "Name": "2204170特殊触发水属性伤害",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90027": {
+        "Key": 90027,
+        "Id": 90027,
+        "Name": "2205180翔返同时触发幸运和暴击时，技能伤害提升",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90028": {
+        "Key": 90028,
+        "Id": 90028,
+        "Name": "长枪勇气获取速度",
+        "Desc": "",
+        "AttrType": 301,
+        "LogicType": 2,
+        "AttrParams": [
+            14011
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90029": {
+        "Key": 90029,
+        "Id": 90029,
+        "Name": "长枪锐利效果提升",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90030": {
+        "Key": 90030,
+        "Id": 90030,
+        "Name": "长枪撕裂时间延长",
+        "Desc": "",
+        "AttrType": 502,
+        "LogicType": 4,
+        "AttrParams": [
+            2205071
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90031": {
+        "Key": 90031,
+        "Id": 90031,
+        "Name": "初始不暴击效果额外暴击",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90032": {
+        "Key": 90032,
+        "Id": 90032,
+        "Name": "长枪锐利上限",
+        "Desc": "",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            31501
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90033": {
+        "Key": 90033,
+        "Id": 90033,
+        "Name": "居合本次伤害同上次伤害",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90034": {
+        "Key": 90034,
+        "Id": 90034,
+        "Name": "【弓箭】光能战斗资源消耗减少效率",
+        "Desc": "",
+        "AttrType": 302,
+        "LogicType": 2,
+        "AttrParams": [
+            22001
+        ],
+        "LowerLimit": -999999,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90035": {
+        "Key": 90035,
+        "Id": 90035,
+        "Name": "暴击增加忽视防御",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90036": {
+        "Key": 90036,
+        "Id": 90036,
+        "Name": "撕裂技能倍率提升",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90037": {
+        "Key": 90037,
+        "Id": 90037,
+        "Name": "盈月技能双倍冷却时间效果",
+        "Desc": "",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            1117
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90038": {
+        "Key": 90038,
+        "Id": 90038,
+        "Name": "法杖水剑计数",
+        "Desc": "法杖水剑计数",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90039": {
+        "Key": 90039,
+        "Id": 90039,
+        "Name": "打击点放大",
+        "Desc": "打击点放大",
+        "AttrType": 505,
+        "LogicType": 1,
+        "AttrParams": [
+            300014,
+            300030
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90040": {
+        "Key": 90040,
+        "Id": 90040,
+        "Name": "博伊斯协同效果时间延长",
+        "Desc": "博伊斯协同效果时间延长",
+        "AttrType": 502,
+        "LogicType": 4,
+        "AttrParams": [
+            25301
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90041": {
+        "Key": 90041,
+        "Id": 90041,
+        "Name": "蒂娜护盾获取效率提升",
+        "Desc": "蒂娜护盾获取效率提升",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90042": {
+        "Key": 90042,
+        "Id": 90042,
+        "Name": "闪避不消耗次数概率",
+        "Desc": "",
+        "AttrType": 350,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90043": {
+        "Key": 90043,
+        "Id": 90043,
+        "Name": "【次要技能】冷却时间",
+        "Desc": "次要技能冷却时间",
+        "AttrType": 100,
+        "LogicType": 3,
+        "AttrParams": [
+            4
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90044": {
+        "Key": 90044,
+        "Id": 90044,
+        "Name": "【主要技能】冷却时间",
+        "Desc": "主要技能冷却时间",
+        "AttrType": 100,
+        "LogicType": 3,
+        "AttrParams": [
+            3
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90045": {
+        "Key": 90045,
+        "Id": 90045,
+        "Name": "【终极技能】冷却时间",
+        "Desc": "终极技能冷却时间",
+        "AttrType": 100,
+        "LogicType": 3,
+        "AttrParams": [
+            5
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90046": {
+        "Key": 90046,
+        "Id": 90046,
+        "Name": "职业资源获取效率",
+        "Desc": "职业资源获取效率",
+        "AttrType": 301,
+        "LogicType": 2,
+        "AttrParams": [
+            20001
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 1000000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90047": {
+        "Key": 90047,
+        "Id": 90047,
+        "Name": "护甲充能buff持续时间延长",
+        "Desc": "护甲充能buff持续时间延长",
+        "AttrType": 501,
+        "LogicType": 4,
+        "AttrParams": [
+            20024101
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90048": {
+        "Key": 90048,
+        "Id": 90048,
+        "Name": "闪避充能时间缩减",
+        "Desc": "闪避充能时间缩减",
+        "AttrType": 352,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90049": {
+        "Key": 90049,
+        "Id": 90049,
+        "Name": "（废弃）最终格挡几率提升",
+        "Desc": "最终格挡几率提升",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90050": {
+        "Key": 90050,
+        "Id": 90050,
+        "Name": "20096001效果增强",
+        "Desc": "20096001效果增强",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90051": {
+        "Key": 90051,
+        "Id": 90051,
+        "Name": "武器在后台时减少技能cd",
+        "Desc": "武器在后台时减少技能cd",
+        "AttrType": 103,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90052": {
+        "Key": 90052,
+        "Id": 90052,
+        "Name": "2200101存储30%伤害",
+        "Desc": "2200101存储30%伤害",
+        "AttrType": 2,
+        "LogicType": 5,
+        "AttrParams": [
+            12642
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90053": {
+        "Key": 90053,
+        "Id": 90053,
+        "Name": "【主要技能】冷却时间固定值",
+        "Desc": "主要技能冷却时间",
+        "AttrType": 101,
+        "LogicType": 3,
+        "AttrParams": [
+            3
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90054": {
+        "Key": 90054,
+        "Id": 90054,
+        "Name": "武器在前台时减少技能CD万分比",
+        "Desc": "武器在前台时减少技能CD",
+        "AttrType": 103,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90055": {
+        "Key": 90055,
+        "Id": 90055,
+        "Name": "武器在后台时减少技能CD万分比",
+        "Desc": "武器在后台时减少技能CD",
+        "AttrType": 104,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90056": {
+        "Key": 90056,
+        "Id": 90056,
+        "Name": "武器在前台时减少技能CD固定值",
+        "Desc": "武器在前台时减少技能CD",
+        "AttrType": 105,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90057": {
+        "Key": 90057,
+        "Id": 90057,
+        "Name": "武器在后台时减少技能CD固定值",
+        "Desc": "武器在后台时减少技能CD",
+        "AttrType": 106,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90058": {
+        "Key": 90058,
+        "Id": 90058,
+        "Name": "增加滑草的充能上限",
+        "Desc": "",
+        "AttrType": 352,
+        "LogicType": 1,
+        "AttrParams": [
+            1505
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 3,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90059": {
+        "Key": 90059,
+        "Id": 90059,
+        "Name": "塔塔战斗资源获取效率",
+        "Desc": "塔塔战斗资源获取效率",
+        "AttrType": 301,
+        "LogicType": 2,
+        "AttrParams": [
+            13001
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90060": {
+        "Key": 90060,
+        "Id": 90060,
+        "Name": "3000120塔塔提品1技能战斗资源扣除比例",
+        "Desc": "塔塔1技能战斗资源扣除比例",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1610
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90061": {
+        "Key": 90061,
+        "Id": 90061,
+        "Name": "3000410蒂娜1技能冷却缩减",
+        "Desc": "蒂娜1技能冷却缩减",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            1405
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90062": {
+        "Key": 90062,
+        "Id": 90062,
+        "Name": "【专精值】获取效率",
+        "Desc": "【专精值】获取效率",
+        "AttrType": 301,
+        "LogicType": 2,
+        "AttrParams": [
+            20001
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90063": {
+        "Key": 90063,
+        "Id": 90063,
+        "Name": "【护盾】持续时间",
+        "Desc": "【护盾】持续时间",
+        "AttrType": 501,
+        "LogicType": 3,
+        "AttrParams": [
+            26
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90064": {
+        "Key": 90064,
+        "Id": 90064,
+        "Name": "【领域】技能cd万分比",
+        "Desc": "【领域】技能cd万分比",
+        "AttrType": 100,
+        "LogicType": 3,
+        "AttrParams": [
+            50
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90065": {
+        "Key": 90065,
+        "Id": 90065,
+        "Name": "2000010猛袭加护，造成伤害提升",
+        "Desc": "造成伤害提升",
+        "AttrType": 2,
+        "LogicType": 5,
+        "AttrParams": [
+            12632
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90066": {
+        "Key": 90066,
+        "Id": 90066,
+        "Name": "2100010神秘加护，造成伤害提升",
+        "Desc": "造成伤害提升",
+        "AttrType": 2,
+        "LogicType": 5,
+        "AttrParams": [
+            12632
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90067": {
+        "Key": 90067,
+        "Id": 90067,
+        "Name": "2200010角斗加护，造成伤害提升",
+        "Desc": "造成伤害提升",
+        "AttrType": 2,
+        "LogicType": 5,
+        "AttrParams": [
+            12632
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90068": {
+        "Key": 90068,
+        "Id": 90068,
+        "Name": "加减属性action加成",
+        "Desc": "加减属性action加成",
+        "AttrType": 506,
+        "LogicType": 3,
+        "AttrParams": [
+            1004
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90069": {
+        "Key": 90069,
+        "Id": 90069,
+        "Name": "【双斧1技能】冷却缩减",
+        "Desc": "【双斧1技能】冷却缩减",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            1609,
+            1610
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 3000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90070": {
+        "Key": 90070,
+        "Id": 90070,
+        "Name": "【祝福】buff的持续时间增加",
+        "Desc": "【祝福】buff的持续时间增加",
+        "AttrType": 502,
+        "LogicType": 3,
+        "AttrParams": [
+            13
+        ],
+        "LowerLimit": 99999,
+        "UpperLimit": 0,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90071": {
+        "Key": 90071,
+        "Id": 90071,
+        "Name": "护佑加护-Break流",
+        "Desc": "增加属性倍率",
+        "AttrType": 507,
+        "LogicType": 1,
+        "AttrParams": [
+            10402
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90072": {
+        "Key": 90072,
+        "Id": 90072,
+        "Name": "额外治疗固定值",
+        "Desc": "额外治疗固定值",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": -9999999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90073": {
+        "Key": 90073,
+        "Id": 90073,
+        "Name": "冰矛消耗资源减少",
+        "Desc": "冰矛消耗资源减少",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1242
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90074": {
+        "Key": 90074,
+        "Id": 90074,
+        "Name": "连击流资源点",
+        "Desc": "连击流资源点",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 5,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90075": {
+        "Key": 90075,
+        "Id": 90075,
+        "Name": "天赋爆发冷却缩减",
+        "Desc": "天赋爆发冷却缩减",
+        "AttrType": 100,
+        "LogicType": 3,
+        "AttrParams": [
+            8
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90076": {
+        "Key": 90076,
+        "Id": 90076,
+        "Name": "天赋爆发充能效率",
+        "Desc": "天赋爆发充能效率",
+        "AttrType": 301,
+        "LogicType": 2,
+        "AttrParams": [
+            20001
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90077": {
+        "Key": 90077,
+        "Id": 90077,
+        "Name": "受控缩减",
+        "Desc": "受控缩减",
+        "AttrType": 501,
+        "LogicType": 3,
+        "AttrParams": [
+            1006
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90078": {
+        "Key": 90078,
+        "Id": 90078,
+        "Name": "状态持续加成",
+        "Desc": "状态持续加成",
+        "AttrType": 501,
+        "LogicType": 3,
+        "AttrParams": [
+            10
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90079": {
+        "Key": 90079,
+        "Id": 90079,
+        "Name": "控制持续加成",
+        "Desc": "控制持续加成",
+        "AttrType": 501,
+        "LogicType": 3,
+        "AttrParams": [
+            1006
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90080": {
+        "Key": 90080,
+        "Id": 90080,
+        "Name": "增益持续加成",
+        "Desc": "增益持续加成",
+        "AttrType": 501,
+        "LogicType": 3,
+        "AttrParams": [
+            1004
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90081": {
+        "Key": 90081,
+        "Id": 90081,
+        "Name": "【彩虹桥】持续时间",
+        "Desc": "[彩虹桥]持续时间",
+        "AttrType": 501,
+        "LogicType": 3,
+        "AttrParams": [
+            18
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90082": {
+        "Key": 90082,
+        "Id": 90082,
+        "Name": "2200080累乘增伤",
+        "Desc": "2200080累乘增伤",
+        "AttrType": 2,
+        "LogicType": 5,
+        "AttrParams": [
+            12632
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90083": {
+        "Key": 90083,
+        "Id": 90083,
+        "Name": "【鼓舞】提供的属性加成比例",
+        "Desc": "【鼓舞】提供的属性加成比例",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90084": {
+        "Key": 90084,
+        "Id": 90084,
+        "Name": "【治疗】技能冷却缩减",
+        "Desc": "【治疗】技能冷却缩减",
+        "AttrType": 101,
+        "LogicType": 3,
+        "AttrParams": [
+            1003
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90085": {
+        "Key": 90085,
+        "Id": 90085,
+        "Name": "【鼓舞】效果额外提升",
+        "Desc": "【鼓舞】效果额外提升",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90086": {
+        "Key": 90086,
+        "Id": 90086,
+        "Name": "【压制】效果开关",
+        "Desc": "【压制】效果开关",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90087": {
+        "Key": 90087,
+        "Id": 90087,
+        "Name": "天赋技能冷却缩减",
+        "Desc": "天赋技能冷却缩减",
+        "AttrType": 100,
+        "LogicType": 3,
+        "AttrParams": [
+            6
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90088": {
+        "Key": 90088,
+        "Id": 90088,
+        "Name": "蒂娜2技能冷却缩减",
+        "Desc": "蒂娜2技能冷却缩减",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            1407
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90089": {
+        "Key": 90089,
+        "Id": 90089,
+        "Name": "主城技能不能释放配置",
+        "Desc": "主城技能不能释放配置",
+        "AttrType": 509,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": -1,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90090": {
+        "Key": 90090,
+        "Id": 90090,
+        "Name": "主城技能可以释放配置",
+        "Desc": "主城技能可以释放配置",
+        "AttrType": 509,
+        "LogicType": 1,
+        "AttrParams": [
+            1222,
+            1223
+        ],
+        "LowerLimit": -1,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90091": {
+        "Key": 90091,
+        "Id": 90091,
+        "Name": "屏蔽天赋技能",
+        "Desc": "屏蔽天赋技能",
+        "AttrType": 509,
+        "LogicType": 3,
+        "AttrParams": [
+            6,
+            8
+        ],
+        "LowerLimit": -1,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90092": {
+        "Key": 90092,
+        "Id": 90092,
+        "Name": "【自然恩赐】Buff堆叠上限变化",
+        "Desc": "【自然恩赐】Buff堆叠上限变化",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            2202051
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90093": {
+        "Key": 90093,
+        "Id": 90093,
+        "Name": "【治疗链】Buff堆叠上限变化",
+        "Desc": "【治疗链】Buff堆叠上限变化",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            2202091
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90094": {
+        "Key": 90094,
+        "Id": 90094,
+        "Name": "【治疗种子】Buff堆叠上限变化",
+        "Desc": "【治疗种子】Buff堆叠上限变化",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            2202311
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90095": {
+        "Key": 90095,
+        "Id": 90095,
+        "Name": "新手允许释放助攻",
+        "Desc": "新手允许释放助攻",
+        "AttrType": 509,
+        "LogicType": 1,
+        "AttrParams": [
+            4006,
+            4030
+        ],
+        "LowerLimit": -1,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90096": {
+        "Key": 90096,
+        "Id": 90096,
+        "Name": "【扫射型变身机甲】冷却缩减",
+        "Desc": "【扫射型变身机甲】冷却缩减",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            706002,
+            706003,
+            706004
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90097": {
+        "Key": 90097,
+        "Id": 90097,
+        "Name": "【飞鸟投】不消耗能量",
+        "Desc": "【飞鸟投】不消耗能量",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1425
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90098": {
+        "Key": 90098,
+        "Id": 90098,
+        "Name": "长枪锐利扣除比率",
+        "Desc": "长枪锐利扣除比率",
+        "AttrType": 302,
+        "LogicType": 2,
+        "AttrParams": [
+            14001
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90099": {
+        "Key": 90099,
+        "Id": 90099,
+        "Name": "玄武背击堆叠上限",
+        "Desc": "玄武背击堆叠上限",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            2205301
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90100": {
+        "Key": 90100,
+        "Id": 90100,
+        "Name": "卫刃-护盾猛击消耗降低",
+        "Desc": "卫刃-护盾猛击消耗降低",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1922
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90101": {
+        "Key": 90101,
+        "Id": 90101,
+        "Name": "太刀镰特效资源管理",
+        "Desc": "太刀镰特效资源管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 5,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90102": {
+        "Key": 90102,
+        "Id": 90102,
+        "Name": "长枪多段攻击资源管理",
+        "Desc": "长枪多段攻击资源管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 3,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90103": {
+        "Key": 90103,
+        "Id": 90103,
+        "Name": "【锐利】Buff堆叠上限变化",
+        "Desc": "【锐利】Buff堆叠上限变化",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            31501
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90104": {
+        "Key": 90104,
+        "Id": 90104,
+        "Name": "奥尔维拉替换技B伤害提高",
+        "Desc": "奥尔维拉替换技B伤害提高",
+        "AttrType": 102,
+        "LogicType": 1,
+        "AttrParams": [
+            1722
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90105": {
+        "Key": 90105,
+        "Id": 90105,
+        "Name": "共鸣技能的冷却时间缩短",
+        "Desc": "共鸣技能的冷却时间缩短",
+        "AttrType": 100,
+        "LogicType": 3,
+        "AttrParams": [
+            8
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90106": {
+        "Key": 90106,
+        "Id": 90106,
+        "Name": "1701",
+        "Desc": "其他增伤属性加值",
+        "AttrType": 706,
+        "LogicType": 1,
+        "AttrParams": [
+            1701
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90107": {
+        "Key": 90107,
+        "Id": 90107,
+        "Name": "1701",
+        "Desc": "物伤属性加值",
+        "AttrType": 707,
+        "LogicType": 1,
+        "AttrParams": [
+            1701
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90108": {
+        "Key": 90108,
+        "Id": 90108,
+        "Name": "1701",
+        "Desc": "法伤属性加值",
+        "AttrType": 708,
+        "LogicType": 1,
+        "AttrParams": [
+            1701
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90109": {
+        "Key": 90109,
+        "Id": 90109,
+        "Name": "1701",
+        "Desc": "治疗属性加值",
+        "AttrType": 704,
+        "LogicType": 1,
+        "AttrParams": [
+            1701
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90110": {
+        "Key": 90110,
+        "Id": 90110,
+        "Name": "1701",
+        "Desc": "增伤属性加值",
+        "AttrType": 705,
+        "LogicType": 1,
+        "AttrParams": [
+            1701
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90111": {
+        "Key": 90111,
+        "Id": 90111,
+        "Name": "【太刀】消耗雷之印的技能伤害提升",
+        "Desc": "【太刀】消耗雷之印的技能伤害提升",
+        "AttrType": 705,
+        "LogicType": 1,
+        "AttrParams": [
+            1714,
+            1715,
+            1717,
+            1718,
+            1724,
+            1735,
+            1736
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90112": {
+        "Key": 90112,
+        "Id": 90112,
+        "Name": "太刀1715月刃伤害提升",
+        "Desc": "太刀1715月刃伤害提升",
+        "AttrType": 705,
+        "LogicType": 1,
+        "AttrParams": [
+            1715
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90113": {
+        "Key": 90113,
+        "Id": 90113,
+        "Name": "太刀1717一闪伤害提升",
+        "Desc": "太刀1717一闪伤害提升",
+        "AttrType": 705,
+        "LogicType": 1,
+        "AttrParams": [
+            1717
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90114": {
+        "Key": 90114,
+        "Id": 90114,
+        "Name": "太刀1718飞雷神伤害提升",
+        "Desc": "太刀1717飞雷神伤害提升",
+        "AttrType": 705,
+        "LogicType": 1,
+        "AttrParams": [
+            1718
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90115": {
+        "Key": 90115,
+        "Id": 90115,
+        "Name": "卫刃1922护盾猛击伤害提升",
+        "Desc": "卫刃1922护盾猛击伤害提升",
+        "AttrType": 705,
+        "LogicType": 1,
+        "AttrParams": [
+            1922
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90116": {
+        "Key": 90116,
+        "Id": 90116,
+        "Name": "【太刀】特攻急速%提升",
+        "Desc": "【太刀】特攻急速%提升",
+        "AttrType": 700,
+        "LogicType": 1,
+        "AttrParams": [
+            1715
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90117": {
+        "Key": 90117,
+        "Id": 90117,
+        "Name": "【太刀】消耗雷之印的暴击提升",
+        "Desc": "【太刀】消耗雷之印的暴击提升",
+        "AttrType": 702,
+        "LogicType": 1,
+        "AttrParams": [
+            1714,
+            1715,
+            1717,
+            1718,
+            1724
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90118": {
+        "Key": 90118,
+        "Id": 90118,
+        "Name": "【太刀】消耗雷之印的暴击伤害提升",
+        "Desc": "【太刀】消耗雷之印的暴击伤害提升",
+        "AttrType": 703,
+        "LogicType": 1,
+        "AttrParams": [
+            1714,
+            1715,
+            1717,
+            1718,
+            1724
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90119": {
+        "Key": 90119,
+        "Id": 90119,
+        "Name": "太刀1717一闪暴击提升",
+        "Desc": "",
+        "AttrType": 702,
+        "LogicType": 1,
+        "AttrParams": [
+            1717
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90120": {
+        "Key": 90120,
+        "Id": 90120,
+        "Name": "太刀1718飞雷神暴击提升",
+        "Desc": "",
+        "AttrType": 702,
+        "LogicType": 1,
+        "AttrParams": [
+            1718
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90121": {
+        "Key": 90121,
+        "Id": 90121,
+        "Name": "太刀旋转镰刀数量上限",
+        "Desc": "feature_summon_limit_0625",
+        "AttrType": 800,
+        "LogicType": 7,
+        "AttrParams": [
+            179903
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90122": {
+        "Key": 90122,
+        "Id": 90122,
+        "Name": "百分百命中标记",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90123": {
+        "Key": 90123,
+        "Id": 90123,
+        "Name": "【飞鸟投】速度+",
+        "Desc": "【飞鸟投】速度+",
+        "AttrType": 700,
+        "LogicType": 1,
+        "AttrParams": [
+            1425
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90124": {
+        "Key": 90124,
+        "Id": 90124,
+        "Name": "【飞鸟投】清空冷却",
+        "Desc": "【飞鸟投】清空冷却",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            1425
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90125": {
+        "Key": 90125,
+        "Id": 90125,
+        "Name": "【剑盾】不消耗圣令",
+        "Desc": "【剑盾】不消耗圣令",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            2405,
+            2406,
+            2412,
+            2421
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90126": {
+        "Key": 90126,
+        "Id": 90126,
+        "Name": "【剑盾】裁决不消耗光明能量",
+        "Desc": "【剑盾】裁决不消耗光明能量",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            2410,
+            2411
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90127": {
+        "Key": 90127,
+        "Id": 90127,
+        "Name": "【剑盾】圣令自回复加速",
+        "Desc": "【剑盾】圣令自回复加速",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90128": {
+        "Key": 90128,
+        "Id": 90128,
+        "Name": "【剑盾】英勇盾击buff叠层",
+        "Desc": "【剑盾】英勇盾击buff叠层",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            55418
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90129": {
+        "Key": 90129,
+        "Id": 90129,
+        "Name": "【太刀】刀意值",
+        "Desc": "【太刀】刀意值",
+        "AttrType": 301,
+        "LogicType": 2,
+        "AttrParams": [
+            12051
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90130": {
+        "Key": 90130,
+        "Id": 90130,
+        "Name": "【剑盾】英勇盾击防御效果提升",
+        "Desc": "【剑盾】英勇盾击防御效果提升",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90131": {
+        "Key": 90131,
+        "Id": 90131,
+        "Name": "魔杖自然回复加快",
+        "Desc": "魔杖自然回复加快",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90132": {
+        "Key": 90132,
+        "Id": 90132,
+        "Name": "长枪自然回复加快",
+        "Desc": "长枪自然回复加快",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90133": {
+        "Key": 90133,
+        "Id": 90133,
+        "Name": "奥义！雷霆天牢引cd",
+        "Desc": "奥义！雷霆天牢引cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3902
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90134": {
+        "Key": 90134,
+        "Id": 90134,
+        "Name": "奥义！绝对冰霜震荡cd",
+        "Desc": "奥义！绝对冰霜震荡cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3906
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90135": {
+        "Key": 90135,
+        "Id": 90135,
+        "Name": "奥义！时间加速法令cd",
+        "Desc": "奥义！时间加速法令cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3921
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90136": {
+        "Key": 90136,
+        "Id": 90136,
+        "Name": "雷暴本允许释放雷枪",
+        "Desc": "雷暴本允许释放雷枪",
+        "AttrType": 509,
+        "LogicType": 1,
+        "AttrParams": [
+            4011
+        ],
+        "LowerLimit": -1,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90137": {
+        "Key": 90137,
+        "Id": 90137,
+        "Name": "法杖冰晶能量消耗降低",
+        "Desc": "法杖冰晶能量消耗降低",
+        "AttrType": 302,
+        "LogicType": 2,
+        "AttrParams": [
+            12001
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90138": {
+        "Key": 90138,
+        "Id": 90138,
+        "Name": "镰刀月影特效资源管理",
+        "Desc": "镰刀月影特效资源管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90139": {
+        "Key": 90139,
+        "Id": 90139,
+        "Name": "【生命绽放】不消耗能量",
+        "Desc": "【生命绽放】不消耗能量",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1507
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90140": {
+        "Key": 90140,
+        "Id": 90140,
+        "Name": "太刀镰雷之印获取速度",
+        "Desc": "太刀镰雷之印获取速度",
+        "AttrType": 301,
+        "LogicType": 2,
+        "AttrParams": [
+            12041
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90141": {
+        "Key": 90141,
+        "Id": 90141,
+        "Name": "【复仇】不消耗能量",
+        "Desc": "【复仇】不消耗能量",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1937
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90142": {
+        "Key": 90142,
+        "Id": 90142,
+        "Name": "长枪-飞鸟投、锐利冲击伤害增加",
+        "Desc": "长枪-飞鸟投、锐利冲击伤害增加",
+        "AttrType": 705,
+        "LogicType": 1,
+        "AttrParams": [
+            1425,
+            1431
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90143": {
+        "Key": 90143,
+        "Id": 90143,
+        "Name": "【疾风刺】不消耗能量",
+        "Desc": "【疾风刺】不消耗能量",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1418
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90144": {
+        "Key": 90144,
+        "Id": 90144,
+        "Name": "魔杖-冰晶能量资源获取效率",
+        "Desc": "魔杖-冰晶能量资源获取效率",
+        "AttrType": 301,
+        "LogicType": 2,
+        "AttrParams": [
+            12001
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90145": {
+        "Key": 90145,
+        "Id": 90145,
+        "Name": "【太刀】看破斩触发概率",
+        "Desc": "【太刀】看破斩触发概率",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90146": {
+        "Key": 90146,
+        "Id": 90146,
+        "Name": "【光铸屏障】上限",
+        "Desc": "【光铸屏障】上限",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            55416
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90147": {
+        "Key": 90147,
+        "Id": 90147,
+        "Name": "【激怒】buff时间",
+        "Desc": "【激怒】buff时间",
+        "AttrType": 502,
+        "LogicType": 4,
+        "AttrParams": [
+            2201311
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90148": {
+        "Key": 90148,
+        "Id": 90148,
+        "Name": "共生印记转换量",
+        "Desc": "共生印记转换量",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90149": {
+        "Key": 90149,
+        "Id": 90149,
+        "Name": "森之祈愿对生命值最低的目标造成的治疗效果+",
+        "Desc": "森之祈愿对生命值最低的目标造成的治疗效果+",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90150": {
+        "Key": 90150,
+        "Id": 90150,
+        "Name": "【卫刃】砂岩之握cd",
+        "Desc": "【卫刃】砂岩之握cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            1926
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 45000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90151": {
+        "Key": 90151,
+        "Id": 90151,
+        "Name": "【剑盾】光铸身躯护盾效率",
+        "Desc": "【剑盾】光铸身躯护盾效率",
+        "AttrType": 301,
+        "LogicType": 2,
+        "AttrParams": [
+            27001
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90152": {
+        "Key": 90152,
+        "Id": 90152,
+        "Name": "待定-眼球王cd",
+        "Desc": "待定-眼球王cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3919
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90153": {
+        "Key": 90153,
+        "Id": 90153,
+        "Name": "奥义！瞬即斩cd",
+        "Desc": "奥义！瞬即斩cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3922
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90154": {
+        "Key": 90154,
+        "Id": 90154,
+        "Name": "奥义！重锤狂袭cd",
+        "Desc": "奥义！重锤狂袭cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3923
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90155": {
+        "Key": 90155,
+        "Id": 90155,
+        "Name": "绝技！风影缄默cd",
+        "Desc": "绝技！风影缄默cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3924
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90156": {
+        "Key": 90156,
+        "Id": 90156,
+        "Name": "绝技！无形冲击cd",
+        "Desc": "绝技！无形冲击cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3925
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90157": {
+        "Key": 90157,
+        "Id": 90157,
+        "Name": "奥义！迅捷涡流cd",
+        "Desc": "奥义！迅捷涡流cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3926
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90158": {
+        "Key": 90158,
+        "Id": 90158,
+        "Name": "绝技！怒吼指令cd",
+        "Desc": "绝技！怒吼指令cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3927
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90159": {
+        "Key": 90159,
+        "Id": 90159,
+        "Name": "绝技！追猎猛斩cd",
+        "Desc": "绝技！追猎猛斩cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3928
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90160": {
+        "Key": 90160,
+        "Id": 90160,
+        "Name": "绝技！缩壳防御cd",
+        "Desc": "绝技！缩壳防御cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3929
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90161": {
+        "Key": 90161,
+        "Id": 90161,
+        "Name": "绝技！大地之盾cd",
+        "Desc": "绝技！大地之盾cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3930
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90162": {
+        "Key": 90162,
+        "Id": 90162,
+        "Name": "奥义！坚毅壁垒cd",
+        "Desc": "奥义！坚毅壁垒cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3931
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90163": {
+        "Key": 90163,
+        "Id": 90163,
+        "Name": "绝技！破伤风打击cd",
+        "Desc": "绝技！破伤风打击cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3932
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90164": {
+        "Key": 90164,
+        "Id": 90164,
+        "Name": "绝技！挫志咆哮cd",
+        "Desc": "绝技！挫志咆哮cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3933
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90165": {
+        "Key": 90165,
+        "Id": 90165,
+        "Name": "绝技！瞬步奇袭cd",
+        "Desc": "绝技！瞬步奇袭cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3934
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90166": {
+        "Key": 90166,
+        "Id": 90166,
+        "Name": "奥义！雷牙cd",
+        "Desc": "奥义！雷牙cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3935
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90167": {
+        "Key": 90167,
+        "Id": 90167,
+        "Name": "待定-鱼人精英法师cd",
+        "Desc": "待定-鱼人精英法师cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3936
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90168": {
+        "Key": 90168,
+        "Id": 90168,
+        "Name": "待定-鱼人精英战士cd",
+        "Desc": "待定-鱼人精英战士cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3937
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90169": {
+        "Key": 90169,
+        "Id": 90169,
+        "Name": "待定-蜘蛛王cd",
+        "Desc": "待定-蜘蛛王cd",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            3938
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90170": {
+        "Key": 90170,
+        "Id": 90170,
+        "Name": "【长枪】职业技能伤害增加",
+        "Desc": "【长枪】职业技能伤害增加",
+        "AttrType": 707,
+        "LogicType": 1,
+        "AttrParams": [
+            1424,
+            1431,
+            1422,
+            1427,
+            1421,
+            1425,
+            1430,
+            1432
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90171": {
+        "Key": 90171,
+        "Id": 90171,
+        "Name": "魔杖能量获取速度",
+        "Desc": "魔杖能量获取速度",
+        "AttrType": 301,
+        "LogicType": 2,
+        "AttrParams": [
+            12001
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90172": {
+        "Key": 90172,
+        "Id": 90172,
+        "Name": "【狂野绽放】不消耗能量",
+        "Desc": "【狂野绽放】不消耗能量",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1518,
+            1541
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90173": {
+        "Key": 90173,
+        "Id": 90173,
+        "Name": "主城玩具和坐骑可以释放配置",
+        "Desc": "主城玩具可以释放配置",
+        "AttrType": 509,
+        "LogicType": 3,
+        "AttrParams": [
+            86
+        ],
+        "LowerLimit": -1,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90174": {
+        "Key": 90174,
+        "Id": 90174,
+        "Name": "特判伤害只能为1标记",
+        "Desc": "特判伤害只能为1标记",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90175": {
+        "Key": 90175,
+        "Id": 90175,
+        "Name": "【法环 】不消耗能量",
+        "Desc": "【法环 】不消耗能量",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1518,
+            1507,
+            1509,
+            1519,
+            1522,
+            1523,
+            1520,
+            1521,
+            1531,
+            1529,
+            1524
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90176": {
+        "Key": 90176,
+        "Id": 90176,
+        "Name": "吉他手增幅节拍特效管理",
+        "Desc": "吉他手增幅节拍特效管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90177": {
+        "Key": 90177,
+        "Id": 90177,
+        "Name": "【剑盾】英勇盾击层数增加",
+        "Desc": "英勇盾击buff层数增加",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            55402
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90179": {
+        "Key": 90179,
+        "Id": 90179,
+        "Name": "法杖激光能量消耗",
+        "Desc": "法杖激光能量消耗",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1241
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90180": {
+        "Key": 90180,
+        "Id": 90180,
+        "Name": "长枪-螺旋、破追伤害增加",
+        "Desc": "长枪-螺旋、破追伤害增加",
+        "AttrType": 706,
+        "LogicType": 1,
+        "AttrParams": [
+            1421,
+            1422,
+            1427
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90181": {
+        "Key": 90181,
+        "Id": 90181,
+        "Name": "刹那消耗",
+        "Desc": "刹那消耗",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1424
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90182": {
+        "Key": 90182,
+        "Id": 90182,
+        "Name": "法环治疗型技能冷却缩减",
+        "Desc": "法环治疗型技能冷却缩减",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            1522,
+            1523,
+            1521,
+            1529
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90183": {
+        "Key": 90183,
+        "Id": 90183,
+        "Name": "【激怒】Buff堆叠上限变化",
+        "Desc": "【激怒】Buff堆叠上限变化",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            2201311
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90184": {
+        "Key": 90184,
+        "Id": 90184,
+        "Name": "长枪-风环伤害",
+        "Desc": "长枪-风环伤害",
+        "AttrType": 706,
+        "LogicType": 1,
+        "AttrParams": [
+            1430,
+            1432
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90185": {
+        "Key": 90185,
+        "Id": 90185,
+        "Name": "长枪-风环伤害",
+        "Desc": "长枪-风环伤害",
+        "AttrType": 302,
+        "LogicType": 4,
+        "AttrParams": [
+            31901
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90186": {
+        "Key": 90186,
+        "Id": 90186,
+        "Name": "【滋养】Buff堆叠上限变化",
+        "Desc": "【滋养】Buff堆叠上限变化",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            21404
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90187": {
+        "Key": 90187,
+        "Id": 90187,
+        "Name": "【怒爆】不消耗能量",
+        "Desc": "【怒爆】不消耗能量",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1925,
+            1940
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90188": {
+        "Key": 90188,
+        "Id": 90188,
+        "Name": "【剑盾】神圣印记层数增加",
+        "Desc": "神圣印记层数增加",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            2206241
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90189": {
+        "Key": 90189,
+        "Id": 90189,
+        "Name": "【飞鸟投】充能上限",
+        "Desc": "【飞鸟投】充能上限",
+        "AttrType": 352,
+        "LogicType": 1,
+        "AttrParams": [
+            1425
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90190": {
+        "Key": 90190,
+        "Id": 90190,
+        "Name": "长枪08特效资源管理",
+        "Desc": "长枪08特效资源管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90191": {
+        "Key": 90191,
+        "Id": 90191,
+        "Name": "长枪05特效资源管理",
+        "Desc": "长枪05特效资源管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90192": {
+        "Key": 90192,
+        "Id": 90192,
+        "Name": "法环专精技能秒唱",
+        "Desc": "法环专精技能秒唱",
+        "AttrType": 710,
+        "LogicType": 1,
+        "AttrParams": [
+            1521,
+            1523
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90193": {
+        "Key": 90193,
+        "Id": 90193,
+        "Name": "生命绽放瞬发",
+        "Desc": "生命绽放瞬发",
+        "AttrType": 710,
+        "LogicType": 1,
+        "AttrParams": [
+            1507
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90194": {
+        "Key": 90194,
+        "Id": 90194,
+        "Name": "魔杖自然回复加快",
+        "Desc": "魔杖自然回复加快",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90195": {
+        "Key": 90195,
+        "Id": 90195,
+        "Name": "长枪自然回复加快",
+        "Desc": "长枪自然回复加快",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90196": {
+        "Key": 90196,
+        "Id": 90196,
+        "Name": "刀意自然回复",
+        "Desc": "刀意自然回复",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90197": {
+        "Key": 90197,
+        "Id": 90197,
+        "Name": "法环自然回复加快",
+        "Desc": "法环自然回复加快",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90198": {
+        "Key": 90198,
+        "Id": 90198,
+        "Name": "【太刀】消耗雷之印的技能伤害提升",
+        "Desc": "【太刀】消耗雷之印的技能伤害提升",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90199": {
+        "Key": 90199,
+        "Id": 90199,
+        "Name": "【卫刃】复仇消耗",
+        "Desc": "【卫刃】复仇消耗",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1937
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90200": {
+        "Key": 90200,
+        "Id": 90200,
+        "Name": "法杖冰激光增伤",
+        "Desc": "法杖冰激光增伤",
+        "AttrType": 102,
+        "LogicType": 1,
+        "AttrParams": [
+            1241
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90201": {
+        "Key": 90201,
+        "Id": 90201,
+        "Name": "超高出力冷却",
+        "Desc": "超高出力冷却",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            1705
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90202": {
+        "Key": 90202,
+        "Id": 90202,
+        "Name": "吉他手特效资源管理",
+        "Desc": "吉他手特效资源管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90203": {
+        "Key": 90203,
+        "Id": 90203,
+        "Name": "吉他手特攻不消耗能量",
+        "Desc": "吉他手特攻不消耗能量",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            2306,
+            2307
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90204": {
+        "Key": 90204,
+        "Id": 90204,
+        "Name": "吉他手5连奏不消耗能量",
+        "Desc": "吉他手5连奏不消耗能量",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            2312
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90205": {
+        "Key": 90205,
+        "Id": 90205,
+        "Name": "吉他手烈焰狂想无消耗",
+        "Desc": "吉他手烈焰狂想不消耗能量",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            2309,
+            230801,
+            230901,
+            231001
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90206": {
+        "Key": 90206,
+        "Id": 90206,
+        "Name": "万众瞩目充能上限",
+        "Desc": "万众瞩目充能上限",
+        "AttrType": 352,
+        "LogicType": 1,
+        "AttrParams": [
+            2316
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90207": {
+        "Key": 90207,
+        "Id": 90207,
+        "Name": "升格·无限狂想冷却缩减",
+        "Desc": "升格·无限狂想冷却缩减",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            2335
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90208": {
+        "Key": 90208,
+        "Id": 90208,
+        "Name": "伤转治疗效率",
+        "Desc": "伤转治疗效率",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90209": {
+        "Key": 90209,
+        "Id": 90209,
+        "Name": "万众瞩目音符热浪",
+        "Desc": "万众瞩目音符热浪",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90210": {
+        "Key": 90210,
+        "Id": 90210,
+        "Name": "吉他能量速度",
+        "Desc": "吉他能量速度",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90211": {
+        "Key": 90211,
+        "Id": 90211,
+        "Name": "精神凝聚时间",
+        "Desc": "精神凝聚时间",
+        "AttrType": 502,
+        "LogicType": 4,
+        "AttrParams": [
+            55223
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90212": {
+        "Key": 90212,
+        "Id": 90212,
+        "Name": "吉他伤转治疗效率",
+        "Desc": "吉他伤转治疗效率",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90213": {
+        "Key": 90213,
+        "Id": 90213,
+        "Name": "吉他回血歌消耗",
+        "Desc": "吉他回血歌消耗",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90214": {
+        "Key": 90214,
+        "Id": 90214,
+        "Name": "吉他热情回复速度",
+        "Desc": "吉他热情回复速度",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90215": {
+        "Key": 90215,
+        "Id": 90215,
+        "Name": "法杖冰陨石能量消耗",
+        "Desc": "法杖冰陨石能量消耗",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            1239
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90216": {
+        "Key": 90216,
+        "Id": 90216,
+        "Name": "镰刀攻速临时属性",
+        "Desc": "镰刀攻速临时属性",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "92000": {
+        "Key": 92000,
+        "Id": 92000,
+        "Name": "全移动速度加值",
+        "Desc": "全移动速度加值",
+        "AttrType": 3,
+        "LogicType": 5,
+        "AttrParams": [
+            10202,
+            10212,
+            10222
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "92001": {
+        "Key": 92001,
+        "Id": 92001,
+        "Name": "大招冷却百分比",
+        "Desc": "大招冷却百分比",
+        "AttrType": 100,
+        "LogicType": 3,
+        "AttrParams": [
+            5
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 5000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "92101": {
+        "Key": 92101,
+        "Id": 92101,
+        "Name": "【载具】耐力跑系加速冷却",
+        "Desc": "【载具】耐力跑系加速冷却",
+        "AttrType": 103,
+        "LogicType": 1,
+        "AttrParams": [
+            4542,
+            4543,
+            4544,
+            4545,
+            4546
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "92102": {
+        "Key": 92102,
+        "Id": 92102,
+        "Name": "【载具】泡泡浮空系加速冷却",
+        "Desc": "【载具】泡泡浮空系加速冷却",
+        "AttrType": 103,
+        "LogicType": 1,
+        "AttrParams": [
+            4529
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "92103": {
+        "Key": 92103,
+        "Id": 92103,
+        "Name": "【载具】滑板系加速冷却",
+        "Desc": "【载具】滑板系加速冷却",
+        "AttrType": 103,
+        "LogicType": 1,
+        "AttrParams": [
+            4531
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "93000": {
+        "Key": 93000,
+        "Id": 93000,
+        "Name": "【黯影堡垒】限制虚蚀层数",
+        "Desc": "【黯影堡垒】限制虚蚀层数",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            880700
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "95001": {
+        "Key": 95001,
+        "Id": 95001,
+        "Name": "协会狩猎搬运火种可以释放技能",
+        "Desc": "协会狩猎搬运火种可以释放技能",
+        "AttrType": 509,
+        "LogicType": 1,
+        "AttrParams": [
+            6002
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "96001": {
+        "Key": 96001,
+        "Id": 96001,
+        "Name": "大世界-屏蔽漂浮滑翔幻影冲锋技能",
+        "Desc": "大世界-屏蔽漂浮滑翔幻影冲锋技能",
+        "AttrType": 509,
+        "LogicType": 1,
+        "AttrParams": [
+            1222,
+            1223
+        ],
+        "LowerLimit": -1,
+        "UpperLimit": 1,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97000": {
+        "Key": 97000,
+        "Id": 97000,
+        "Name": "药品回血量",
+        "Desc": "药品回血量",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97001": {
+        "Key": 97001,
+        "Id": 97001,
+        "Name": "采集物掉落增加",
+        "Desc": "采集物掉落增加",
+        "AttrType": 600,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97002": {
+        "Key": 97002,
+        "Id": 97002,
+        "Name": "精英战利品钥匙每周获取数量",
+        "Desc": "数量增加",
+        "AttrType": 521,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97003": {
+        "Key": 97003,
+        "Id": 97003,
+        "Name": "首领战利品钥匙每周获取数量",
+        "Desc": "数量增加",
+        "AttrType": 522,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97004": {
+        "Key": 97004,
+        "Id": 97004,
+        "Name": "肉类掉落增加",
+        "Desc": "肉类掉落增加",
+        "AttrType": 601,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97005": {
+        "Key": 97005,
+        "Id": 97005,
+        "Name": "蒂娜·外观",
+        "Desc": "蒂娜·外观",
+        "AttrType": 602,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97006": {
+        "Key": 97006,
+        "Id": 97006,
+        "Name": "巨塔外观",
+        "Desc": "巨塔外观",
+        "AttrType": 602,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97007": {
+        "Key": 97007,
+        "Id": 97007,
+        "Name": "卡尼曼外观",
+        "Desc": "卡尼曼外观",
+        "AttrType": 602,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97008": {
+        "Key": 97008,
+        "Id": 97008,
+        "Name": "哥布林外观",
+        "Desc": "哥布林外观",
+        "AttrType": 602,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97009": {
+        "Key": 97009,
+        "Id": 97009,
+        "Name": "龙爪外观",
+        "Desc": "龙爪外观",
+        "AttrType": 602,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97010": {
+        "Key": 97010,
+        "Id": 97010,
+        "Name": "暗影堡垒外观",
+        "Desc": "暗影堡垒外观",
+        "AttrType": 602,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "97011": {
+        "Key": 97011,
+        "Id": 97011,
+        "Name": "极限本多次掉落标记",
+        "Desc": "极限本多次掉落标记",
+        "AttrType": 603,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98000": {
+        "Key": 98000,
+        "Id": 98000,
+        "Name": "通用特效资源管理",
+        "Desc": "通用特效资源管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 1000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98001": {
+        "Key": 98001,
+        "Id": 98001,
+        "Name": "陶洛斯重击打击点放大",
+        "Desc": "陶洛斯重击打击点放大",
+        "AttrType": 505,
+        "LogicType": 1,
+        "AttrParams": [
+            1805,
+            1852
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98002": {
+        "Key": 98002,
+        "Id": 98002,
+        "Name": "陶洛斯重击伤害提高",
+        "Desc": "陶洛斯重击伤害提高",
+        "AttrType": 102,
+        "LogicType": 1,
+        "AttrParams": [
+            1805,
+            1852
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 50000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98003": {
+        "Key": 98003,
+        "Id": 98003,
+        "Name": "陶洛斯特效资源管理",
+        "Desc": "陶洛斯特效资源管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 5,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98004": {
+        "Key": 98004,
+        "Id": 98004,
+        "Name": "陶洛斯资源扣除比率",
+        "Desc": "陶洛斯资源扣除比率",
+        "AttrType": 302,
+        "LogicType": 2,
+        "AttrParams": [
+            18001
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98005": {
+        "Key": 98005,
+        "Id": 98005,
+        "Name": "陶洛斯1技能充能上限",
+        "Desc": "",
+        "AttrType": 352,
+        "LogicType": 1,
+        "AttrParams": [
+            1806
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 3,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98006": {
+        "Key": 98006,
+        "Id": 98006,
+        "Name": "弓1技能充能上限",
+        "Desc": "",
+        "AttrType": 352,
+        "LogicType": 1,
+        "AttrParams": [
+            2220
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 5,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98007": {
+        "Key": 98007,
+        "Id": 98007,
+        "Name": "弓特攻冷却缩减",
+        "Desc": "",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            2220,
+            2222
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98991": {
+        "Key": 98991,
+        "Id": 98991,
+        "Name": "S1赛季养成怪物标识属性",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98992": {
+        "Key": 98992,
+        "Id": 98992,
+        "Name": "S2赛季养成怪物标识属性（占位）",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98993": {
+        "Key": 98993,
+        "Id": 98993,
+        "Name": "S3赛季养成怪物标识属性（占位）",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98994": {
+        "Key": 98994,
+        "Id": 98994,
+        "Name": "S4赛季养成怪物标识属性（占位）",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98995": {
+        "Key": 98995,
+        "Id": 98995,
+        "Name": "S5赛季养成怪物标识属性（占位）",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98996": {
+        "Key": 98996,
+        "Id": 98996,
+        "Name": "S6赛季养成怪物标识属性（占位）",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98997": {
+        "Key": 98997,
+        "Id": 98997,
+        "Name": "S7赛季养成怪物标识属性（占位）",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98998": {
+        "Key": 98998,
+        "Id": 98998,
+        "Name": "S8赛季养成怪物标识属性（占位）",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "98999": {
+        "Key": 98999,
+        "Id": 98999,
+        "Name": "S9赛季养成怪物标识属性（占位）",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99000": {
+        "Key": 99000,
+        "Id": 99000,
+        "Name": "全战斗资源获取效率",
+        "Desc": "全战斗资源获取效率",
+        "AttrType": 301,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 1000000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99001": {
+        "Key": 99001,
+        "Id": 99001,
+        "Name": "小怪[彩虹桥]进阶一刀没",
+        "Desc": "小怪[彩虹桥]进阶一刀没",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99002": {
+        "Key": 99002,
+        "Id": 99002,
+        "Name": "精英[彩虹桥]进阶增伤",
+        "Desc": "精英[彩虹桥]进阶增伤",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99003": {
+        "Key": 99003,
+        "Id": 99003,
+        "Name": "boss[彩虹桥]进阶增伤",
+        "Desc": "boss[彩虹桥]进阶增伤",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99004": {
+        "Key": 99004,
+        "Id": 99004,
+        "Name": "武器1力量/2智力/3敏捷标记（废弃）",
+        "Desc": "",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99005": {
+        "Key": 99005,
+        "Id": 99005,
+        "Name": "自适应力量/智力/敏捷",
+        "Desc": "自适应力量/智力/敏捷",
+        "AttrType": 760,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": "自适应力量/智力/敏捷+{*tempAttr.un*}"
+    },
+    "99006": {
+        "Key": 99006,
+        "Id": 99006,
+        "Name": "自适应物攻/魔攻",
+        "Desc": "自适应物攻/魔攻",
+        "AttrType": 761,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": "自适应物攻/魔攻+{*tempAttr.un*}"
+    },
+    "99010": {
+        "Key": 99010,
+        "Id": 99010,
+        "Name": "赛季力量",
+        "Desc": "赛季力量",
+        "AttrType": 750,
+        "LogicType": 3,
+        "AttrParams": [
+            84
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99011": {
+        "Key": 99011,
+        "Id": 99011,
+        "Name": "赛季敏捷",
+        "Desc": "赛季敏捷",
+        "AttrType": 751,
+        "LogicType": 3,
+        "AttrParams": [
+            84
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99012": {
+        "Key": 99012,
+        "Id": 99012,
+        "Name": "赛季智力",
+        "Desc": "赛季智力",
+        "AttrType": 752,
+        "LogicType": 3,
+        "AttrParams": [
+            84
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99013": {
+        "Key": 99013,
+        "Id": 99013,
+        "Name": "采集经验增加万分比",
+        "Desc": "采集经验增加万分比",
+        "AttrType": 375,
+        "LogicType": 8,
+        "AttrParams": [
+            101
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99014": {
+        "Key": 99014,
+        "Id": 99014,
+        "Name": "采集时间减少万分比",
+        "Desc": "采集时间减少万分比",
+        "AttrType": 371,
+        "LogicType": 8,
+        "AttrParams": [
+            101
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99015": {
+        "Key": 99015,
+        "Id": 99015,
+        "Name": "消耗精力减少万分比",
+        "Desc": "消耗精力减少万分比",
+        "AttrType": 373,
+        "LogicType": 8,
+        "AttrParams": [
+            101
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99016": {
+        "Key": 99016,
+        "Id": 99016,
+        "Name": "采集时间减少固定值",
+        "Desc": "采集时间减少固定值",
+        "AttrType": 370,
+        "LogicType": 8,
+        "AttrParams": [
+            101
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99017": {
+        "Key": 99017,
+        "Id": 99017,
+        "Name": "植物学挂机精力减少固定值",
+        "Desc": "植物学挂机精力减少固定值",
+        "AttrType": 376,
+        "LogicType": 8,
+        "AttrParams": [
+            101
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99018": {
+        "Key": 99018,
+        "Id": 99018,
+        "Name": "植物学挂机精力减少万分比",
+        "Desc": "植物学挂机精力减少万分比",
+        "AttrType": 377,
+        "LogicType": 8,
+        "AttrParams": [
+            101
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99019": {
+        "Key": 99019,
+        "Id": 99019,
+        "Name": "植物学挂机时间减少万分比",
+        "Desc": "植物学挂机时间减少万分比",
+        "AttrType": 378,
+        "LogicType": 8,
+        "AttrParams": [
+            101
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99020": {
+        "Key": 99020,
+        "Id": 99020,
+        "Name": "挖矿时间减少万分比",
+        "Desc": "挖矿时间减少万分比",
+        "AttrType": 371,
+        "LogicType": 8,
+        "AttrParams": [
+            102
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99021": {
+        "Key": 99021,
+        "Id": 99021,
+        "Name": "采集晶石时间减少万分比",
+        "Desc": "采集晶石时间减少万分比",
+        "AttrType": 371,
+        "LogicType": 8,
+        "AttrParams": [
+            103
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99022": {
+        "Key": 99022,
+        "Id": 99022,
+        "Name": "【护盾】充能上限",
+        "Desc": "【护盾】充能上限",
+        "AttrType": 352,
+        "LogicType": 1,
+        "AttrParams": [
+            1531
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99023": {
+        "Key": 99023,
+        "Id": 99023,
+        "Name": "【护盾】充能时间",
+        "Desc": "【护盾】充能时间",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            1531
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99024": {
+        "Key": 99024,
+        "Id": 99024,
+        "Name": "烹饪时间减少万分比",
+        "Desc": "烹饪时间减少万分比",
+        "AttrType": 371,
+        "LogicType": 8,
+        "AttrParams": [
+            201
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99025": {
+        "Key": 99025,
+        "Id": 99025,
+        "Name": "炼金时间减少万分比",
+        "Desc": "炼金时间减少万分比",
+        "AttrType": 371,
+        "LogicType": 8,
+        "AttrParams": [
+            202
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99026": {
+        "Key": 99026,
+        "Id": 99026,
+        "Name": "铸造时间减少万分比",
+        "Desc": "铸造时间减少万分比",
+        "AttrType": 371,
+        "LogicType": 8,
+        "AttrParams": [
+            203
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99027": {
+        "Key": 99027,
+        "Id": 99027,
+        "Name": "工艺时间减少万分比",
+        "Desc": "工艺时间减少万分比",
+        "AttrType": 371,
+        "LogicType": 8,
+        "AttrParams": [
+            204
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99028": {
+        "Key": 99028,
+        "Id": 99028,
+        "Name": "木作时间减少万分比",
+        "Desc": "木作时间减少万分比",
+        "AttrType": 371,
+        "LogicType": 8,
+        "AttrParams": [
+            205
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99029": {
+        "Key": 99029,
+        "Id": 99029,
+        "Name": "织造时间减少万分比",
+        "Desc": "织造时间减少万分比",
+        "AttrType": 371,
+        "LogicType": 8,
+        "AttrParams": [
+            206
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99178": {
+        "Key": 99178,
+        "Id": 99178,
+        "Name": "法杖冰矛施法时间缩小",
+        "Desc": "法杖冰矛施法时间缩小",
+        "AttrType": 710,
+        "LogicType": 1,
+        "AttrParams": [
+            1242
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    }
+}

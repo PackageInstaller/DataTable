@@ -1,0 +1,236 @@
+{
+    "101": {
+        "Key": 101,
+        "ProId": 101,
+        "Name": "植生学",
+        "Des": "【职业核心】<br><style=\"accent-gn\">专注采集</style>产物主要供给<style=\"accent-gn\">炼金、烹饪</style>职业用来制作辅助战斗的药剂、料理。<br><style=\"accent-gn\">普通采集</style>产物主要经由<style=\"accent-gn\">木作、织造、炼金、烹饪</style>职业进行再加工，再加工后的材料可用来制作<style=\"accent-gn\">装备镶嵌宝石素材、装备、服装染料、家具、鱼饵</style>等物品。",
+        "Type": 1,
+        "Sort": 1,
+        "Weight": 2,
+        "FormulaResetCost": [
+            1073010,
+            1
+        ],
+        "FunctionId": 501001,
+        "BgPic": "ui/textures/collection_profession/collection_profession_pic_5",
+        "Icon": "ui/atlas/life_profession/life_profession_collect",
+        "LevelUpIcon": "ui/atlas/level_up_icon/rolelevel_upgrade_collect",
+        "MapIcon": "ui/atlas/life_profession/life_icon_collect",
+        "LevelAward": [
+            2000101,
+            2000102,
+            2000103,
+            2000104,
+            2000105
+        ],
+        "HelpId": 2105
+    },
+    "102": {
+        "Key": 102,
+        "ProId": 102,
+        "Name": "矿物学",
+        "Des": "【职业核心】<br><style=\"accent-gn\">专注采集</style>产物主要供给<style=\"accent-gn\">铸造</style>职业用来制作装备精炼时所需的消耗品。<br><style=\"accent-gn\">普通采集</style>产物主要经由<style=\"accent-gn\">铸造、炼金、烹饪</style>职业进行再加工，再加工后的材料可用来制作<style=\"accent-gn\">装备、家具、料理</style>等物品。",
+        "Type": 1,
+        "Sort": 2,
+        "Weight": 2,
+        "FormulaResetCost": [
+            1073010,
+            1
+        ],
+        "FunctionId": 501002,
+        "BgPic": "ui/textures/collection_profession/collection_profession_pic_8",
+        "Icon": "ui/atlas/life_profession/life_profession_mining",
+        "LevelUpIcon": "ui/atlas/level_up_icon/rolelevel_upgrade_mining",
+        "MapIcon": "ui/atlas/life_profession/life_icon_mining",
+        "LevelAward": [
+            2000701,
+            2000702,
+            2000703,
+            2000704,
+            2000705
+        ],
+        "HelpId": 2106
+    },
+    "103": {
+        "Key": 103,
+        "ProId": 103,
+        "Name": "晶石学",
+        "Des": "【职业核心】<br><style=\"accent-gn\">专注采集</style>产物主要供给<style=\"accent-gn\">工艺</style>职业用来制作装备镶嵌宝石。<br><style=\"accent-gn\">普通采集</style>产物主要经由<style=\"accent-gn\">工艺、炼金、烹饪</style>职业进行再加工，再加工后的材料可用来制作<style=\"accent-gn\">装备、染色喷剂、家具、料理、玩具</style>等物品。",
+        "Type": 1,
+        "Sort": 3,
+        "Weight": 2,
+        "FormulaResetCost": [
+            1073010,
+            1
+        ],
+        "FunctionId": 501003,
+        "BgPic": "ui/textures/collection_profession/collection_profession_pic_4",
+        "Icon": "ui/atlas/life_profession/life_profession_stone",
+        "LevelUpIcon": "ui/atlas/level_up_icon/rolelevel_upgrade_stone",
+        "MapIcon": "ui/atlas/life_profession/life_icon_stone",
+        "LevelAward": [
+            2000801,
+            2000802,
+            2000803,
+            2000804,
+            2000805
+        ],
+        "HelpId": 2107
+    },
+    "201": {
+        "Key": 201,
+        "ProId": 201,
+        "Name": "烹饪",
+        "Des": "【职业核心】<br><style=\"accent-gn\">专注配方</style>主要可制作各种属性增强料理、超元气甜品等。制作所需材料主要由<style=\"accent-gn\">植生学、钓鱼</style>提供。<br><style=\"accent-gn\">普通配方</style>主要可制作鱼饵、家园肥料等。制作所需材料主要由<style=\"accent-gn\">植生学、钓鱼</style>提供，或经由<style=\"accent-gn\">烹饪</style>职业再加工而来。",
+        "Type": 3,
+        "Sort": 4,
+        "Weight": 1,
+        "FormulaResetCost": [
+            1073010,
+            1
+        ],
+        "FunctionId": 501004,
+        "BgPic": "ui/textures/collection_profession/collection_profession_pic_3",
+        "Icon": "ui/atlas/life_profession/life_profession_cook",
+        "LevelUpIcon": "ui/atlas/level_up_icon/rolelevel_upgrade_cook",
+        "MapIcon": "ui/atlas/life_profession/life_icon_cook",
+        "LevelAward": [
+            2000201,
+            2000202,
+            2000203,
+            2000204,
+            2000205
+        ],
+        "HelpId": 5050
+    },
+    "202": {
+        "Key": 202,
+        "ProId": 202,
+        "Name": "炼金",
+        "Des": "【职业核心】<br><style=\"accent-gn\">专注配方</style>主要可制作治愈芳香、转化药剂、染色喷剂等。制作所需材料主要由<style=\"accent-gn\">植生学、晶石学</style>提供。<br><style=\"accent-gn\">普通配方</style>主要可制作家园建材、盆栽、陶瓦家具、玻璃家具、玩具等无法交易的物品。制作所需材料主要由<style=\"accent-gn\">植生学、晶石学</style>职业采集而来，或经由<style=\"accent-gn\">炼金</style>职业再加工而来。",
+        "Type": 2,
+        "Sort": 6,
+        "Weight": 1,
+        "FormulaResetCost": [
+            1073010,
+            1
+        ],
+        "FunctionId": 501005,
+        "BgPic": "ui/textures/collection_profession/collection_profession_pic_2",
+        "Icon": "ui/atlas/life_profession/life_profession_refine",
+        "LevelUpIcon": "ui/atlas/level_up_icon/rolelevel_upgrade_refine",
+        "MapIcon": "ui/atlas/life_profession/life_icon_refine",
+        "LevelAward": [
+            2000301,
+            2000302,
+            2000303,
+            2000304,
+            2000305
+        ],
+        "HelpId": 2103
+    },
+    "203": {
+        "Key": 203,
+        "ProId": 203,
+        "Name": "铸造",
+        "Des": "【职业核心】<br><style=\"accent-gn\">专注配方</style>主要可制作神秘金属、辉耀石等。制作所需材料主要由<style=\"accent-gn\">矿物学、木作</style>提供。<br><style=\"accent-gn\">普通配方</style>主要可制作部分武器、重甲防具、家园建材、金属家具等。制作所需材料主要由<style=\"accent-gn\">矿物学</style>职业采集而来，或经由<style=\"accent-gn\">铸造、工艺、炼金</style>等职业再加工而来。",
+        "Type": 2,
+        "Sort": 7,
+        "Weight": 1,
+        "FormulaResetCost": [
+            1073010,
+            1
+        ],
+        "FunctionId": 501006,
+        "BgPic": "ui/textures/collection_profession/collection_profession_pic_6",
+        "Icon": "ui/atlas/life_profession/life_profession_foundry",
+        "LevelUpIcon": "ui/atlas/level_up_icon/rolelevel_upgrade_foundry",
+        "MapIcon": "ui/atlas/life_profession/life_icon_foundry",
+        "LevelAward": [
+            2000401,
+            2000402,
+            2000403,
+            2000404,
+            2000405
+        ],
+        "HelpId": 2110
+    },
+    "204": {
+        "Key": 204,
+        "ProId": 204,
+        "Name": "工艺",
+        "Des": "【职业核心】<br><style=\"accent-gn\">专注配方</style>主要可制作赤晶宝石、蓝晶宝石等。制作所需材料主要由<style=\"accent-gn\">晶石学、木作</style>提供。<br><style=\"accent-gn\">普通配方</style>主要可制作饰品类装备、家园建材、石制家具、观赏宝石等。制作所需材料主要由<style=\"accent-gn\">晶石学</style>职业采集而来，或经由<style=\"accent-gn\">工艺、铸造、炼金</style>等职业再加工而来。",
+        "Type": 2,
+        "Sort": 8,
+        "Weight": 1,
+        "FormulaResetCost": [
+            1073010,
+            1
+        ],
+        "FunctionId": 501007,
+        "BgPic": "ui/textures/collection_profession/collection_profession_pic_1",
+        "Icon": "ui/atlas/life_profession/life_profession_magiccraft",
+        "LevelUpIcon": "ui/atlas/level_up_icon/rolelevel_upgrade_magiccraft",
+        "MapIcon": "ui/atlas/life_profession/life_icon_magiccraft",
+        "LevelAward": [
+            2000501,
+            2000502,
+            2000503,
+            2000504,
+            2000505
+        ],
+        "HelpId": 2111
+    },
+    "205": {
+        "Key": 205,
+        "ProId": 205,
+        "Name": "木作",
+        "Des": "【职业核心】<br><style=\"accent-gn\">专注配方</style>主要可制作铸造精炼材料不可或缺的速燃碳粉、加工宝石不可或缺的宝石蜡等。制作所需材料主要由<style=\"accent-gn\">木作、植生学</style>提供。<br><style=\"accent-gn\">普通配方</style>主要可制作部分武器、家园建材、木制家具等。制作所需材料主要由<style=\"accent-gn\">木作导师兑换、植生学</style>提供，或经由<style=\"accent-gn\">木作、炼金、铸造</style>等职业再加工而来。",
+        "Type": 2,
+        "Sort": 5,
+        "Weight": 1,
+        "FormulaResetCost": [
+            1073010,
+            1
+        ],
+        "FunctionId": 501008,
+        "BgPic": "ui/textures/collection_profession/collection_profession_pic_10",
+        "Icon": "ui/atlas/life_profession/life_profession_woodwork",
+        "LevelUpIcon": "ui/atlas/level_up_icon/rolelevel_upgrade_woodwork",
+        "MapIcon": "ui/atlas/life_profession/life_icon_woodwork",
+        "LevelAward": [
+            2000601,
+            2000602,
+            2000603,
+            2000604,
+            2000605
+        ],
+        "HelpId": 2112
+    },
+    "206": {
+        "Key": 206,
+        "ProId": 206,
+        "Name": "织造",
+        "Des": "【职业核心】<br><style=\"accent-gn\">专注配方</style>主要可制作服装浸染料，用于时装染色。制作所需材料主要由<style=\"accent-gn\">植生学、炼金</style>提供。<br><style=\"accent-gn\">普通配方</style>主要可制作中甲防具、轻甲防具、护符、家园建材、布皮家具等。制作所需材料主要由<style=\"accent-gn\">植生学</style>职业采集、<style=\"accent-gn\">狩猎</style>而来，或经由<style=\"accent-gn\">织造、烹饪、铸造</style>等职业再加工而来。",
+        "Type": 2,
+        "Sort": 9,
+        "Weight": 1,
+        "FormulaResetCost": [
+            1073010,
+            1
+        ],
+        "FunctionId": 501009,
+        "BgPic": "ui/textures/collection_profession/collection_profession_pic_9",
+        "Icon": "ui/atlas/life_profession/life_profession_tailor",
+        "LevelUpIcon": "ui/atlas/level_up_icon/rolelevel_upgrade_tailor",
+        "MapIcon": "ui/atlas/life_profession/life_icon_tailor",
+        "LevelAward": [
+            2000901,
+            2000902,
+            2000903,
+            2000904,
+            2000905
+        ],
+        "HelpId": 2115
+    }
+}

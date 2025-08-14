@@ -1,0 +1,278 @@
+{
+    "10001": {
+        "Key": 10001,
+        "Id": 10001,
+        "Name": "巅峰A12",
+        "MainType": 2,
+        "SubType": 1,
+        "Desc": "达到10级",
+        "Show": 0,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10000,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_3"
+    },
+    "10002": {
+        "Key": 10002,
+        "Id": 10002,
+        "Name": "巅峰2",
+        "MainType": 2,
+        "SubType": 1,
+        "Desc": "达到20级",
+        "Show": 0,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10001,
+                1
+            ],
+            [
+                10011,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hitbase"
+    },
+    "10003": {
+        "Key": 10003,
+        "Id": 10003,
+        "Name": "巅峰3",
+        "MainType": 2,
+        "SubType": 1,
+        "Desc": "达到30级",
+        "Show": 0,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10002,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_8"
+    },
+    "10004": {
+        "Key": 10004,
+        "Id": 10004,
+        "Name": "巅峰4",
+        "MainType": 2,
+        "SubType": 1,
+        "Desc": "达到40级",
+        "Show": 0,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10003,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_6"
+    },
+    "10005": {
+        "Key": 10005,
+        "Id": 10005,
+        "Name": "巅峰5",
+        "MainType": 2,
+        "SubType": 1,
+        "Desc": "达到50级",
+        "Show": 0,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10004,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_5"
+    },
+    "10006": {
+        "Key": 10006,
+        "Id": 10006,
+        "Name": "巅峰6",
+        "MainType": 2,
+        "SubType": 1,
+        "Desc": "达到60级",
+        "Show": 0,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10005,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_3"
+    },
+    "10007": {
+        "Key": 10007,
+        "Id": 10007,
+        "Name": "巅峰7",
+        "MainType": 2,
+        "SubType": 1,
+        "Desc": "达到70级",
+        "Show": 0,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10006,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_4"
+    },
+    "10008": {
+        "Key": 10008,
+        "Id": 10008,
+        "Name": "巅峰8",
+        "MainType": 2,
+        "SubType": 1,
+        "Desc": "达到80级",
+        "Show": 0,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10007,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_3"
+    },
+    "10102": {
+        "Key": 10102,
+        "Id": 10102,
+        "Name": "大富翁",
+        "MainType": 4,
+        "SubType": 2,
+        "Desc": "累计持有绑定金币超过10000",
+        "Show": 0,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10016,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_4"
+    },
+    "11001": {
+        "Key": 11001,
+        "Id": 11001,
+        "Name": "浅尝辄止",
+        "MainType": 2,
+        "SubType": 2,
+        "Desc": "杀死一只怪物",
+        "Show": 1,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10016,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_3"
+    },
+    "11002": {
+        "Key": 11002,
+        "Id": 11002,
+        "Name": "神藏森林",
+        "MainType": 2,
+        "SubType": 1,
+        "Desc": "通关副本神藏森林",
+        "Show": 1,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10016,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_3"
+    },
+    "11003": {
+        "Key": 11003,
+        "Id": 11003,
+        "Name": "乐于助人",
+        "MainType": 2,
+        "SubType": 1,
+        "Desc": "完成一个主线任务",
+        "Show": 1,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10016,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_3"
+    },
+    "12001": {
+        "Key": 12001,
+        "Id": 12001,
+        "Name": "争强好胜",
+        "MainType": 3,
+        "SubType": 1,
+        "Desc": "在所有PK方式中击败玩家一名",
+        "Show": 1,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10016,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_3"
+    },
+    "13001": {
+        "Key": 13001,
+        "Id": 13001,
+        "Name": "柴米油盐",
+        "MainType": 4,
+        "SubType": 1,
+        "Desc": "学习任意一门生活技能",
+        "Show": 1,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10016,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_3"
+    },
+    "14001": {
+        "Key": 14001,
+        "Id": 14001,
+        "Name": "大病初愈",
+        "MainType": 5,
+        "SubType": 1,
+        "Desc": "首次复活",
+        "Show": 1,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10016,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_3"
+    },
+    "14002": {
+        "Key": 14002,
+        "Id": 14002,
+        "Name": "重伤",
+        "MainType": 5,
+        "SubType": 1,
+        "Desc": "首次消散",
+        "Show": 1,
+        "TimeLimit": 0,
+        "Award": [
+            [
+                10016,
+                1
+            ]
+        ],
+        "Icon": "asset/ui/atlas/ui_atlas_main:ui_sprite_skill_hero01_3"
+    }
+}

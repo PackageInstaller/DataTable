@@ -1,0 +1,605 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "Name": "就近复活",
+        "Type": 1,
+        "CountDown": 5,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "Name": "原地复活",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "3": {
+        "Key": 3,
+        "Id": 3,
+        "Name": "主城复活",
+        "Type": 3,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "4": {
+        "Key": 4,
+        "Id": 4,
+        "Name": "可被复活",
+        "Type": 5,
+        "CountDown": 8,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500114
+        ],
+        "WaitTime": 1500,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "Name": "复活点复活",
+        "Type": 2,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "Name": "出生点复活",
+        "Type": 2,
+        "CountDown": 1,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "Name": "复活点复活",
+        "Type": 2,
+        "CountDown": 5,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [],
+        "WaitTime": 500,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "Name": "可被复活",
+        "Type": 5,
+        "CountDown": 10,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500114
+        ],
+        "WaitTime": 1500,
+        "IsBossCanRevive": 0,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "9": {
+        "Key": 9,
+        "Id": 9,
+        "Name": "原地复活",
+        "Type": 4,
+        "CountDown": 30,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 0,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "10": {
+        "Key": 10,
+        "Id": 10,
+        "Name": "原地复活",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [],
+        "WaitTime": 500,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "11": {
+        "Key": 11,
+        "Id": 11,
+        "Name": "就近复活",
+        "Type": 2,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "12": {
+        "Key": 12,
+        "Id": 12,
+        "Name": "就近复活",
+        "Type": 1,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "13": {
+        "Key": 13,
+        "Id": 13,
+        "Name": "原地复活",
+        "Type": 4,
+        "CountDown": 5,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "20": {
+        "Key": 20,
+        "Id": 20,
+        "Name": "原地复活",
+        "Type": 4,
+        "CountDown": 5,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 0,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "21": {
+        "Key": 21,
+        "Id": 21,
+        "Name": "复活技能用",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "22": {
+        "Key": 22,
+        "Id": 22,
+        "Name": "复活技能用",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "23": {
+        "Key": 23,
+        "Id": 23,
+        "Name": "复活技能用",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "24": {
+        "Key": 24,
+        "Id": 24,
+        "Name": "复活技能用",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "25": {
+        "Key": 25,
+        "Id": 25,
+        "Name": "复活技能用",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "26": {
+        "Key": 26,
+        "Id": 26,
+        "Name": "复活技能用",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "27": {
+        "Key": 27,
+        "Id": 27,
+        "Name": "复活技能用",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "101": {
+        "Key": 101,
+        "Id": 101,
+        "Name": "就近复活",
+        "Type": 1,
+        "CountDown": 3,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "102": {
+        "Key": 102,
+        "Id": 102,
+        "Name": "原地复活",
+        "Type": 4,
+        "CountDown": 3,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "103": {
+        "Key": 103,
+        "Id": 103,
+        "Name": "复活点复活",
+        "Type": 2,
+        "CountDown": 3,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "104": {
+        "Key": 104,
+        "Id": 104,
+        "Name": "原地复活",
+        "Type": 4,
+        "CountDown": 10,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "105": {
+        "Key": 105,
+        "Id": 105,
+        "Name": "复活点复活",
+        "Type": 2,
+        "CountDown": 10,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "106": {
+        "Key": 106,
+        "Id": 106,
+        "Name": "原地复活",
+        "Type": 4,
+        "CountDown": 30,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "107": {
+        "Key": 107,
+        "Id": 107,
+        "Name": "复活点复活",
+        "Type": 2,
+        "CountDown": 30,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "108": {
+        "Key": 108,
+        "Id": 108,
+        "Name": "道具复活",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [
+            1,
+            1054015,
+            1
+        ],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_03",
+        "ProgressParam": []
+    },
+    "109": {
+        "Key": 109,
+        "Id": 109,
+        "Name": "原地复活",
+        "Type": 4,
+        "CountDown": 10,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "110": {
+        "Key": 110,
+        "Id": 110,
+        "Name": "复活点复活",
+        "Type": 2,
+        "CountDown": 10,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_02",
+        "ProgressParam": []
+    },
+    "111": {
+        "Key": 111,
+        "Id": 111,
+        "Name": "道具复活",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [
+            1,
+            1054015,
+            1
+        ],
+        "ReviveCount": [
+            [
+                1,
+                3
+            ]
+        ],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_03",
+        "ProgressParam": []
+    },
+    "112": {
+        "Key": 112,
+        "Id": 112,
+        "Name": "道具复活",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [
+            1,
+            1054015,
+            1
+        ],
+        "ReviveCount": [
+            [
+                1,
+                1
+            ]
+        ],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_03",
+        "ProgressParam": []
+    },
+    "113": {
+        "Key": 113,
+        "Id": 113,
+        "Name": "道具复活",
+        "Type": 4,
+        "CountDown": 0,
+        "Consume": [
+            1,
+            1054015,
+            1
+        ],
+        "ReviveCount": [
+            [
+                1,
+                0
+            ]
+        ],
+        "BeforeBuffId": [
+            500111
+        ],
+        "WaitTime": 2800,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_03",
+        "ProgressParam": []
+    },
+    "200": {
+        "Key": 200,
+        "Id": 200,
+        "Name": "可被复活",
+        "Type": 5,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500114
+        ],
+        "WaitTime": 1500,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    },
+    "201": {
+        "Key": 201,
+        "Id": 201,
+        "Name": "可被复活",
+        "Type": 5,
+        "CountDown": 0,
+        "Consume": [],
+        "ReviveCount": [],
+        "BeforeBuffId": [
+            500114
+        ],
+        "WaitTime": 1500,
+        "IsBossCanRevive": 1,
+        "Icon": "ui/atlas/dead/dead_btn_icon_01",
+        "ProgressParam": []
+    }
+}

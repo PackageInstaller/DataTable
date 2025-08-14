@@ -1,0 +1,462 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "TargetType": 134,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [
+            0
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 20,
+        "Season": 1,
+        "Title": "活跃",
+        "TargetDes": "登陆游戏({*val2*})",
+        "Active": 0,
+        "Cycle": 0,
+        "Sort": 1,
+        "QuickJumpType": 0,
+        "QuickJump": [],
+        "ShowCondition": []
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "TargetType": 265,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [
+            8
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 50,
+        "Season": 1,
+        "Title": "副本",
+        "TargetDes": "通关“不稳定空间”挑战({*val2*})",
+        "Active": 1,
+        "Cycle": 1,
+        "Sort": 2,
+        "QuickJumpType": 1,
+        "QuickJump": [
+            8,
+            4,
+            421
+        ],
+        "ShowCondition": []
+    },
+    "3": {
+        "Key": 3,
+        "Id": 3,
+        "TargetType": 265,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [
+            9,
+            17
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 75,
+        "Season": 1,
+        "Title": "副本",
+        "TargetDes": "通关“极限空间”挑战({*val2*})",
+        "Active": 1,
+        "Cycle": 1,
+        "Sort": 3,
+        "QuickJumpType": 1,
+        "QuickJump": [
+            8,
+            4,
+            421
+        ],
+        "ShowCondition": []
+    },
+    "4": {
+        "Key": 4,
+        "Id": 4,
+        "TargetType": 241,
+        "Num": 20,
+        "SceneId": 0,
+        "Param": [
+            0
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 25,
+        "Season": 1,
+        "Title": "狩猎",
+        "TargetDes": "击败普通怪物({*val2*})",
+        "Active": 1,
+        "Cycle": 1,
+        "Sort": 4,
+        "QuickJumpType": 2,
+        "QuickJump": [
+            100302,
+            7
+        ],
+        "ShowCondition": []
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "TargetType": 272,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [
+            54
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 25,
+        "Season": 1,
+        "Title": "狩猎",
+        "TargetDes": "击败精英({*val2*})",
+        "Active": 1,
+        "Cycle": 1,
+        "Sort": 5,
+        "QuickJumpType": 2,
+        "QuickJump": [
+            100805,
+            7,
+            2
+        ],
+        "ShowCondition": []
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "TargetType": 272,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [
+            55
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 50,
+        "Season": 1,
+        "Title": "狩猎",
+        "TargetDes": "击败首领({*val2*})",
+        "Active": 1,
+        "Cycle": 1,
+        "Sort": 6,
+        "QuickJumpType": 2,
+        "QuickJump": [
+            100806,
+            7,
+            1
+        ],
+        "ShowCondition": []
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "TargetType": 60,
+        "Num": 2,
+        "SceneId": 0,
+        "Param": [],
+        "IfFunctionOpen": 1,
+        "FunctionId": 300000,
+        "Activation": 25,
+        "Season": 1,
+        "Title": "钓鱼",
+        "TargetDes": "钓鱼({*val2*})",
+        "Active": 1,
+        "Cycle": 1,
+        "Sort": 7,
+        "QuickJumpType": 1,
+        "QuickJump": [
+            8,
+            5,
+            4732
+        ],
+        "ShowCondition": []
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "TargetType": 163,
+        "Num": 100,
+        "SceneId": 0,
+        "Param": [
+            20003
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 50,
+        "Season": 1,
+        "Title": "生活职业",
+        "TargetDes": "消耗专注({*val2*})",
+        "Active": 1,
+        "Cycle": 1,
+        "Sort": 8,
+        "QuickJumpType": 2,
+        "QuickJump": [
+            501000
+        ],
+        "ShowCondition": []
+    },
+    "9": {
+        "Key": 9,
+        "Id": 9,
+        "TargetType": 1,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [
+            7150
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 50,
+        "Season": 1,
+        "Title": "BOSS",
+        "TargetDes": "成功讨伐领主({*val2*})",
+        "Active": 1,
+        "Cycle": 0,
+        "Sort": 9,
+        "QuickJumpType": 2,
+        "QuickJump": [
+            800902
+        ],
+        "ShowCondition": []
+    },
+    "10": {
+        "Key": 10,
+        "Id": 10,
+        "TargetType": 341,
+        "Num": 3,
+        "SceneId": 0,
+        "Param": [
+            1,
+            4
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 25,
+        "Season": 1,
+        "Title": "社交",
+        "TargetDes": "在世界频道或协会频道发言({*val2*})",
+        "Active": 1,
+        "Cycle": 0,
+        "Sort": 10,
+        "QuickJumpType": 2,
+        "QuickJump": [
+            102100,
+            0,
+            4
+        ],
+        "ShowCondition": []
+    },
+    "11": {
+        "Key": 11,
+        "Id": 11,
+        "TargetType": 343,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [
+            1,
+            2,
+            3
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 25,
+        "Season": 1,
+        "Title": "拍照",
+        "TargetDes": "拍照({*val2*})",
+        "Active": 1,
+        "Cycle": 0,
+        "Sort": 11,
+        "QuickJumpType": 2,
+        "QuickJump": [
+            102001
+        ],
+        "ShowCondition": []
+    },
+    "12": {
+        "Key": 12,
+        "Id": 12,
+        "TargetType": 302,
+        "Num": 1,
+        "SceneId": 8,
+        "Param": [
+            5,
+            2310
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 25,
+        "Season": 1,
+        "Title": "齐舞",
+        "TargetDes": "在阿斯特里斯广场齐舞({*val2*})",
+        "Active": 1,
+        "Cycle": 0,
+        "Sort": 13,
+        "QuickJumpType": 1,
+        "QuickJump": [
+            8,
+            5,
+            1265
+        ],
+        "ShowCondition": []
+    },
+    "13": {
+        "Key": 13,
+        "Id": 13,
+        "TargetType": 115,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [
+            -2,
+            120001
+        ],
+        "IfFunctionOpen": 1,
+        "FunctionId": 800100,
+        "Activation": 75,
+        "Season": 1,
+        "Title": "委托",
+        "TargetDes": "完成{*val*}轮调查委托({*val2*})",
+        "Active": 1,
+        "Cycle": 0,
+        "Sort": 14,
+        "QuickJumpType": 1,
+        "QuickJump": [
+            8,
+            5,
+            4361
+        ],
+        "ShowCondition": []
+    },
+    "14": {
+        "Key": 14,
+        "Id": 14,
+        "TargetType": 302,
+        "Num": 1,
+        "SceneId": 8,
+        "Param": [
+            2,
+            4210
+        ],
+        "IfFunctionOpen": 0,
+        "FunctionId": 0,
+        "Activation": 25,
+        "Season": 1,
+        "Title": "玩耍",
+        "TargetDes": "与小伊互动({*val2*})",
+        "Active": 1,
+        "Cycle": 0,
+        "Sort": 15,
+        "QuickJumpType": 5,
+        "QuickJump": [
+            1381997
+        ],
+        "ShowCondition": []
+    },
+    "15": {
+        "Key": 15,
+        "Id": 15,
+        "TargetType": 43,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [],
+        "IfFunctionOpen": 1,
+        "FunctionId": 500122,
+        "Activation": 50,
+        "Season": 1,
+        "Title": "协会",
+        "TargetDes": "完成协会货运({*val2*})",
+        "Active": 1,
+        "Cycle": 0,
+        "Sort": 16,
+        "QuickJumpType": 1,
+        "QuickJump": [
+            12000,
+            2,
+            42
+        ],
+        "ShowCondition": []
+    },
+    "16": {
+        "Key": 16,
+        "Id": 16,
+        "TargetType": 273,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [
+            1001
+        ],
+        "IfFunctionOpen": 1,
+        "FunctionId": 900106,
+        "Activation": 50,
+        "Season": 1,
+        "Title": "活跃",
+        "TargetDes": "通过微信游戏启动并登录",
+        "Active": 1,
+        "Cycle": 0,
+        "Sort": 17,
+        "QuickJumpType": 2,
+        "QuickJump": [
+            900106
+        ],
+        "ShowCondition": [
+            [
+                76,
+                1001
+            ]
+        ]
+    },
+    "17": {
+        "Key": 17,
+        "Id": 17,
+        "TargetType": 273,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [
+            1002
+        ],
+        "IfFunctionOpen": 1,
+        "FunctionId": 900105,
+        "Activation": 50,
+        "Season": 1,
+        "Title": "活跃",
+        "TargetDes": "通过QQ游戏中心启动并登录",
+        "Active": 1,
+        "Cycle": 0,
+        "Sort": 18,
+        "QuickJumpType": 2,
+        "QuickJump": [
+            900105
+        ],
+        "ShowCondition": [
+            [
+                76,
+                1002
+            ]
+        ]
+    },
+    "18": {
+        "Key": 18,
+        "Id": 18,
+        "TargetType": 91,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [],
+        "IfFunctionOpen": 1,
+        "FunctionId": 102500,
+        "Activation": 50,
+        "Season": 1,
+        "Title": "家园",
+        "TargetDes": "完成家园委托({*val2*})",
+        "Active": 1,
+        "Cycle": 0,
+        "Sort": 19,
+        "QuickJumpType": 5,
+        "QuickJump": [
+            122027
+        ],
+        "ShowCondition": []
+    }
+}

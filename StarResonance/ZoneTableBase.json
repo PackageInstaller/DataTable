@@ -1,0 +1,5296 @@
+{
+    "1000": {
+        "Key": 1000,
+        "Id": 1000,
+        "Name": "自定义形状",
+        "ModelID": 300001,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1001": {
+        "Key": 1001,
+        "Id": 1001,
+        "Name": "方形区域",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1002": {
+        "Key": 1002,
+        "Id": 1002,
+        "Name": "圆形区域",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1003": {
+        "Key": 1003,
+        "Id": 1003,
+        "Name": "传送点",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_trans_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1004": {
+        "Key": 1004,
+        "Id": 1004,
+        "Name": "Boss补给品",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_recoverpackage",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1005": {
+        "Key": 1005,
+        "Id": 1005,
+        "Name": "二段跳获得点",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1006": {
+        "Key": 1006,
+        "Id": 1006,
+        "Name": "二段跳获得点消失表现",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1007": {
+        "Key": 1007,
+        "Id": 1007,
+        "Name": "环形区域",
+        "ModelID": 50003,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1008": {
+        "Key": 1008,
+        "Id": 1008,
+        "Name": "Boss台风扇特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_fengshan_wind_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1009": {
+        "Key": 1009,
+        "Id": 1009,
+        "Name": "传送门",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1010": {
+        "Key": 1010,
+        "Id": 1010,
+        "Name": "大型传送站",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1011": {
+        "Key": 1011,
+        "Id": 1011,
+        "Name": "小型传送站",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1012": {
+        "Key": 1012,
+        "Id": 1012,
+        "Name": "C区风扇特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_fengshan_wind_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1013": {
+        "Key": 1013,
+        "Id": 1013,
+        "Name": "C-D风扇特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_fengshan_wind_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1014": {
+        "Key": 1014,
+        "Id": 1014,
+        "Name": "D-F1风扇特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_fengshan_wind_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1015": {
+        "Key": 1015,
+        "Id": 1015,
+        "Name": "F1-F2风扇特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_fengshan_wind_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1016": {
+        "Key": 1016,
+        "Id": 1016,
+        "Name": "E301风扇特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_fengshan_wind_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1017": {
+        "Key": 1017,
+        "Id": 1017,
+        "Name": "可交互物",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1018": {
+        "Key": 1018,
+        "Id": 1018,
+        "Name": "Boss台风扇特效-持续",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_fengshan_wind_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1019": {
+        "Key": 1019,
+        "Id": 1019,
+        "Name": "副本入口",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1020": {
+        "Key": 1020,
+        "Id": 1020,
+        "Name": "DF风扇激光网",
+        "ModelID": 50001,
+        "EffectPath": "env/dng002/wall_df_jiguang",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1021": {
+        "Key": 1021,
+        "Id": 1021,
+        "Name": "DF风扇激光网2",
+        "ModelID": 50001,
+        "EffectPath": "env/dng002/wall_df_jiguang2",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1022": {
+        "Key": 1022,
+        "Id": 1022,
+        "Name": "念源种子",
+        "ModelID": 50002,
+        "EffectPath": "env/dng002/evn_juta_imaginecore",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1023": {
+        "Key": 1023,
+        "Id": 1023,
+        "Name": "脉冲特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dng002/p_fx_scene_dng002_liuguang",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1024": {
+        "Key": 1024,
+        "Id": 1024,
+        "Name": "出生特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dng002/p_fx_scene_dng002_robot_smoke02",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1025": {
+        "Key": 1025,
+        "Id": 1025,
+        "Name": "爆炸特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/gebulin_king/p_fx_fireblast_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1026": {
+        "Key": 1026,
+        "Id": 1026,
+        "Name": "巨塔风场",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_fengshan_wind_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1027": {
+        "Key": 1027,
+        "Id": 1027,
+        "Name": "封印特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dng002/p_fx_scene_fz_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1028": {
+        "Key": 1028,
+        "Id": 1028,
+        "Name": "野图风场",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_fengshan_wind_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1029": {
+        "Key": 1029,
+        "Id": 1029,
+        "Name": "英雄普通本",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1030": {
+        "Key": 1030,
+        "Id": 1030,
+        "Name": "英雄挑战本",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1031": {
+        "Key": 1031,
+        "Id": 1031,
+        "Name": "大秘境开始区域",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_recoverpackage",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1032": {
+        "Key": 1032,
+        "Id": 1032,
+        "Name": "测试-风场",
+        "ModelID": 50002,
+        "EffectPath": "effect/common/p_fx_common_windzone",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1033": {
+        "Key": 1033,
+        "Id": 1033,
+        "Name": "测试-方形风场",
+        "ModelID": 50001,
+        "EffectPath": "effect/common/p_fx_common_windzone",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1034": {
+        "Key": 1034,
+        "Id": 1034,
+        "Name": "野图风场5m直径10米高",
+        "ModelID": 50002,
+        "EffectPath": "effect/common/p_fx_common_windzone",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1035": {
+        "Key": 1035,
+        "Id": 1035,
+        "Name": "野图风场10m直径30米高",
+        "ModelID": 50002,
+        "EffectPath": "effect/common/p_fx_common_windzone_15-30",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1036": {
+        "Key": 1036,
+        "Id": 1036,
+        "Name": "野图风场15m直径50米高",
+        "ModelID": 50002,
+        "EffectPath": "effect/common/p_fx_common_windzone_15-50",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1037": {
+        "Key": 1037,
+        "Id": 1037,
+        "Name": "野图风环",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_common_windring",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1038": {
+        "Key": 1038,
+        "Id": 1038,
+        "Name": "加时间粒子（跑酷）",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/parkour/p_fx_shijianlizi_loop_hpy",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1039": {
+        "Key": 1039,
+        "Id": 1039,
+        "Name": "授勋仪式虚蚀特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/cut/fx_cut_xushi/p_fx_cutscene_demo_zzxs_06",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1040": {
+        "Key": 1040,
+        "Id": 1040,
+        "Name": "大秘境激活节点激活完成",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dmg/p_fx_damijing_jihuojiedian_03",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1041": {
+        "Key": 1041,
+        "Id": 1041,
+        "Name": "大秘境激活节点光圈",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dmg/p_fx_damijing_jihuojiedian_04",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1042": {
+        "Key": 1042,
+        "Id": 1042,
+        "Name": "大秘境激活节点未激活完成",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dmg/p_fx_damijing_jihuojiedian_03",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1043": {
+        "Key": 1043,
+        "Id": 1043,
+        "Name": "大秘境激活节点激活完成瞬间",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dmg/p_fx_damijing_jihuojiedian_02",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1045": {
+        "Key": 1045,
+        "Id": 1045,
+        "Name": "可交互物",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1046": {
+        "Key": 1046,
+        "Id": 1046,
+        "Name": "传送",
+        "ModelID": 50001,
+        "EffectPath": "effect/character/p_fx_transfer_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1047": {
+        "Key": 1047,
+        "Id": 1047,
+        "Name": "演示用风力通道出现特效-使用后可删除",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_guidao_zhankai",
+        "StatusInfo": [
+            [
+                0,
+                2
+            ],
+            [
+                1,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1048": {
+        "Key": 1048,
+        "Id": 1048,
+        "Name": "5006视野层级虚蚀雾",
+        "ModelID": 50002,
+        "EffectPath": "effect/cut/fx_cut_xushi/p_fx_cutscene_demo_zzxs_06_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1049": {
+        "Key": 1049,
+        "Id": 1049,
+        "Name": "5307视野层级防护罩造景",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1050": {
+        "Key": 1050,
+        "Id": 1050,
+        "Name": "回能粒子（跑酷）",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/parkour/p_fx_huinenglizi_loop_hpy",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1051": {
+        "Key": 1051,
+        "Id": 1051,
+        "Name": "节点粒子（跑酷）",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/parkour/p_fx_jiedianlizi_loop_hpy_small",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1052": {
+        "Key": 1052,
+        "Id": 1052,
+        "Name": "节点粒子消散（跑酷）",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/parkour/p_fx_jiedianlizi_disslove_hpy_small",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1053": {
+        "Key": 1053,
+        "Id": 1053,
+        "Name": "节点粒子（巨塔）",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/parkour/p_fx_jiedianlizi_loop_hpy_small",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                10
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [
+            [
+                0,
+                7000144,
+                0
+            ],
+            [
+                1,
+                0,
+                7000143
+            ]
+        ],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1060": {
+        "Key": 1060,
+        "Id": 1060,
+        "Name": "蒂娜BOSS柜子交互区域",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/dina/p_fx_dina_guizitishi",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1061": {
+        "Key": 1061,
+        "Id": 1061,
+        "Name": "授勋仪式出生虚蚀",
+        "ModelID": 50002,
+        "EffectPath": "effect/cut/fx_cut_xushi/p_fx_cutscene_demo_smoke",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1070": {
+        "Key": 1070,
+        "Id": 1070,
+        "Name": "预设拍照触发点",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/tips/p_fx_jingdian_jiaohu_001",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1071": {
+        "Key": 1071,
+        "Id": 1071,
+        "Name": "预设拍照限制区域",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1081": {
+        "Key": 1081,
+        "Id": 1081,
+        "Name": "英雄副本踩上区域特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/cty001/p_fx_env_light_hpy_02",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1082": {
+        "Key": 1082,
+        "Id": 1082,
+        "Name": "英雄本中央上下投光镜像",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/cty001/p_fx_env_light_hpy_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1083": {
+        "Key": 1083,
+        "Id": 1083,
+        "Name": "英雄本普通区域门特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/cty001/p_fx_env_light_hpy_03",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1090": {
+        "Key": 1090,
+        "Id": 1090,
+        "Name": "副本入口带特效",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1091": {
+        "Key": 1091,
+        "Id": 1091,
+        "Name": "副本入口带特效",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/atmosphere/p_fx_scene_cty_p02",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1101": {
+        "Key": 1101,
+        "Id": 1101,
+        "Name": "营救蒂娜黑雾",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/atmosphere/p_fx_dina01_blackmist_01",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1102": {
+        "Key": 1102,
+        "Id": 1102,
+        "Name": "吵架黑雾特效",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/virtualerosion/p_fx_dina01_smoke_01",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1103": {
+        "Key": 1103,
+        "Id": 1103,
+        "Name": "暴动核心黑雾",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/virtualerosion/p_fx_fluxriot01_fluxcore",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1104": {
+        "Key": 1104,
+        "Id": 1104,
+        "Name": "暴动区域升腾黑雾",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/common/p_fx_fluxriot01_zonemist_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1105": {
+        "Key": 1105,
+        "Id": 1105,
+        "Name": "暴动区域周围黑雾墙",
+        "ModelID": 50001,
+        "EffectPath": "effect/env/common/p_fx_fluxriot01_zonemist_02",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1106": {
+        "Key": 1106,
+        "Id": 1106,
+        "Name": "暴动内氛围黑雾01",
+        "ModelID": 50002,
+        "EffectPath": "effect/cut/fx_cs_5001_04/p_fx_cutscene_demo_xushi_zadi_05",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1107": {
+        "Key": 1107,
+        "Id": 1107,
+        "Name": "暴动内氛围黑雾02",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/common/p_fx_fluxriot01_sceneobjectmist_02",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1108": {
+        "Key": 1108,
+        "Id": 1108,
+        "Name": "暴动内氛围黑雾03",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/common/p_fx_fluxriot01_sceneobjectmist_03",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1109": {
+        "Key": 1109,
+        "Id": 1109,
+        "Name": "跑酷-空中目标",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/tips/p_fx_circle_hpy",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1110": {
+        "Key": 1110,
+        "Id": 1110,
+        "Name": "跑酷-地面目标",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/parkour/p_fx_wuping_xingbiao",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1111": {
+        "Key": 1111,
+        "Id": 1111,
+        "Name": "暴动裂缝",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/starvein/p_fx_screen_xinmai",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1112": {
+        "Key": 1112,
+        "Id": 1112,
+        "Name": "暴动裂缝-可交互",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/starvein/p_fx_screen_xinmai",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                3010
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1125": {
+        "Key": 1125,
+        "Id": 1125,
+        "Name": "副本风环400LOD(废弃)",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_common_windring_400lod",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1126": {
+        "Key": 1126,
+        "Id": 1126,
+        "Name": "主线虚调查点",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/virtualerosion/p_fx_dongxi_abnormal",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1127": {
+        "Key": 1127,
+        "Id": 1127,
+        "Name": "主线虚调查点",
+        "ModelID": 50002,
+        "EffectPath": "effect/common/p_fx_fireblast",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1128": {
+        "Key": 1128,
+        "Id": 1128,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/atmosphere/p_fx_dina01_blackmist_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1129": {
+        "Key": 1129,
+        "Id": 1129,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_dina/prefabs/dina_sphere_fog",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1130": {
+        "Key": 1130,
+        "Id": 1130,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/fire/p_fx_scene_dng002_robot_smoke",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1131": {
+        "Key": 1131,
+        "Id": 1131,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/atmosphere/p_fx_dina01_huoxinhuijin_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1132": {
+        "Key": 1132,
+        "Id": 1132,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1133": {
+        "Key": 1133,
+        "Id": 1133,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_fld001_dina_deadtree_002",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1134": {
+        "Key": 1134,
+        "Id": 1134,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_fld001_dina_deadtree_003",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1135": {
+        "Key": 1135,
+        "Id": 1135,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_fld001_dina_deadwood_001",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1136": {
+        "Key": 1136,
+        "Id": 1136,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_fld001_dina_deadwood_002",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1137": {
+        "Key": 1137,
+        "Id": 1137,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_fld001_dina_deadwood_003",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1138": {
+        "Key": 1138,
+        "Id": 1138,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_fld001_dina_deadwood_005",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1139": {
+        "Key": 1139,
+        "Id": 1139,
+        "Name": "主线2.1.5火场造景",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_fld001_dina_debris_001",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1140": {
+        "Key": 1140,
+        "Id": 1140,
+        "Name": "主线2.4.2地牢躲避物",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_cmn_basecamp_amikago_a",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1141": {
+        "Key": 1141,
+        "Id": 1141,
+        "Name": "主线2.4.2地牢躲避物",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_cmn_basecamp_barrel_c",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1142": {
+        "Key": 1142,
+        "Id": 1142,
+        "Name": "主线2.4.2地牢躲避物",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_cmn_basecamp_barreltower_a",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1143": {
+        "Key": 1143,
+        "Id": 1143,
+        "Name": "主线2.4.2地牢躲避物",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_cmn_basecamp_barreltower_b",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1144": {
+        "Key": 1144,
+        "Id": 1144,
+        "Name": "主线2.4.2地牢躲避物",
+        "ModelID": 50001,
+        "EffectPath": "env/fld001_mainquest_episode2/sm_env_cmn_basecamp_gozaire_a",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1145": {
+        "Key": 1145,
+        "Id": 1145,
+        "Name": "主线2.3.3丹佛记忆空间暂用",
+        "ModelID": 50002,
+        "EffectPath": "effect/common/decal/p_fx_warningdecal_sphere_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1146": {
+        "Key": 1146,
+        "Id": 1146,
+        "Name": "主线2.3.3丹佛记忆空间暂用",
+        "ModelID": 50002,
+        "EffectPath": "env/shouxun/shouxun_sphere_fog",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1147": {
+        "Key": 1147,
+        "Id": 1147,
+        "Name": "主线2.4.1安德拉废都虚",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/dina/p_fx_buff_xushi_head",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1148": {
+        "Key": 1148,
+        "Id": 1148,
+        "Name": "主线2.4.1安德拉废都虚",
+        "ModelID": 50002,
+        "EffectPath": "env/fld001_dina/prefabs/dina_sphere_fog",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1149": {
+        "Key": 1149,
+        "Id": 1149,
+        "Name": "跑酷-泥沼陷阱区域",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1150": {
+        "Key": 1150,
+        "Id": 1150,
+        "Name": "跑酷-冰冻陷阱区域",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1151": {
+        "Key": 1151,
+        "Id": 1151,
+        "Name": "攻打雷元素",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/p_fx_lightcloud_hpy_2",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1152": {
+        "Key": 1152,
+        "Id": 1152,
+        "Name": "世界boss绕场火焰",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/fire/p_fx_screen_raochang_huoyan",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1153": {
+        "Key": 1153,
+        "Id": 1153,
+        "Name": "跑酷-矩形冰冻陷阱区域",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1155": {
+        "Key": 1155,
+        "Id": 1155,
+        "Name": "风力通道-入口-空中-5m",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_wind_tongdao_shou_5m_variant",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [
+            [
+                0,
+                1
+            ]
+        ],
+        "DefaultState": 1,
+        "InteractionTemplate": [
+            [
+                0,
+                54003
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1156": {
+        "Key": 1156,
+        "Id": 1156,
+        "Name": "风力通道-出口-空中-5m",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_wind_tongdao_zhong",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [
+            [
+                0,
+                1
+            ]
+        ],
+        "DefaultState": 1,
+        "InteractionTemplate": [
+            [
+                0,
+                54004
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1157": {
+        "Key": 1157,
+        "Id": 1157,
+        "Name": "风力通道-入口-地面-3m",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_wind_tongdao_shou_3m_variant",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "DefaultState": 1,
+        "InteractionTemplate": [
+            [
+                0,
+                54001
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1158": {
+        "Key": 1158,
+        "Id": 1158,
+        "Name": "风力通道-出口-地面-3m",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_wind_tongdao_zhong_3m_variant",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "DefaultState": 1,
+        "InteractionTemplate": [
+            [
+                0,
+                54002
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1160": {
+        "Key": 1160,
+        "Id": 1160,
+        "Name": "蒂娜英雄本戳泡泡特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/character/p_fx_transfer_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1161": {
+        "Key": 1161,
+        "Id": 1161,
+        "Name": "蒂娜英雄本底圈特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/tips/p_fx_circle_hpy",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1162": {
+        "Key": 1162,
+        "Id": 1162,
+        "Name": "回能粒子（个人状态版本）",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/parkour/p_fx_huinenglizi_loop_hpy",
+        "StatusInfo": [
+            [
+                0,
+                2
+            ],
+            [
+                1,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1163": {
+        "Key": 1163,
+        "Id": 1163,
+        "Name": "普通烟雾",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/tips/p_fx_common_smoke",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1165": {
+        "Key": 1165,
+        "Id": 1165,
+        "Name": "主线3.1.1燃烧营地造景-营帐火焰",
+        "ModelID": 50001,
+        "EffectPath": "effect/env/dina01/p_fx_dina01_forestfire_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1166": {
+        "Key": 1166,
+        "Id": 1166,
+        "Name": "主线三阶段燃烧营地造景-火焰(左1）",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_scene_fire_buid_left_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1167": {
+        "Key": 1167,
+        "Id": 1167,
+        "Name": "主线三阶段燃烧营地造景-火焰(左2）",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_scene_fire_buid_left_02",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1168": {
+        "Key": 1168,
+        "Id": 1168,
+        "Name": "主线三阶段燃烧营地造景-火焰(左3）",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_scene_fire_buid_left_03",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1169": {
+        "Key": 1169,
+        "Id": 1169,
+        "Name": "主线三阶段燃烧营地造景-火焰(中1）",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_scene_fire_buid_middle_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1170": {
+        "Key": 1170,
+        "Id": 1170,
+        "Name": "主线三阶段燃烧营地造景-火焰(中2）",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_scene_fire_buid_middle_02",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1171": {
+        "Key": 1171,
+        "Id": 1171,
+        "Name": "主线3.1.1燃烧营地造景-室外烟雾",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/virtualerosion/p_fx_dina01_smoke_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1172": {
+        "Key": 1172,
+        "Id": 1172,
+        "Name": "主线3.1.1燃烧营地造景-室外烟雾",
+        "ModelID": 50001,
+        "EffectPath": "effect/env/dina01/p_fx_dina01_zhanchangnongyan",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1173": {
+        "Key": 1173,
+        "Id": 1173,
+        "Name": "主线3.1.1燃烧营地造景-灰烬",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/atmosphere/p_fx_dina01_huoxinhuijin_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1174": {
+        "Key": 1174,
+        "Id": 1174,
+        "Name": "主线三阶段燃烧营地造景-火焰(右1）",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_scene_fire_buid_right_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1175": {
+        "Key": 1175,
+        "Id": 1175,
+        "Name": "主线三阶段燃烧营地造景-火焰(右2）",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_scene_fire_buid_right_02",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1176": {
+        "Key": 1176,
+        "Id": 1176,
+        "Name": "主线三阶段燃烧营地造景-火焰(右3）",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_scene_fire_buid_right_03",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1177": {
+        "Key": 1177,
+        "Id": 1177,
+        "Name": "主线3.1.1燃烧营地造景-室内烟雾",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/virtualerosion/p_fx_dina01_smoke_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1178": {
+        "Key": 1178,
+        "Id": 1178,
+        "Name": "主线三阶段燃烧营地造景-火焰(中3）",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_scene_fire_buid_middle_03",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1179": {
+        "Key": 1179,
+        "Id": 1179,
+        "Name": "主线三阶段无交互草地焦痕",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/atmosphere/p_fx_common_dimian_jiaoheng",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1180": {
+        "Key": 1180,
+        "Id": 1180,
+        "Name": "主城跳舞区域",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1181": {
+        "Key": 1181,
+        "Id": 1181,
+        "Name": "可设置状态圆形区域",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1200": {
+        "Key": 1200,
+        "Id": 1200,
+        "Name": "逃脱副本地面箭头引导",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/tips/p_fx_yindao",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1201": {
+        "Key": 1201,
+        "Id": 1201,
+        "Name": "逃脱副本墙面箭头引导",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/tips/p_fx_yindao_wall",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1206": {
+        "Key": 1206,
+        "Id": 1206,
+        "Name": "风场特效-风柱底座",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_common_windfield_base",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1300": {
+        "Key": 1300,
+        "Id": 1300,
+        "Name": "主线四阶段-艾露娜结界·外",
+        "ModelID": 50001,
+        "EffectPath": "effect/skill/yiluna/p_fx_skill_iruna-01_spattack02_def_loop",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1301": {
+        "Key": 1301,
+        "Id": 1301,
+        "Name": "主线四阶段-艾露娜结界·里",
+        "ModelID": 50002,
+        "EffectPath": "effect/skill/yiluna/p_fx_iruna-01_spattack11_loop",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1302": {
+        "Key": 1302,
+        "Id": 1302,
+        "Name": "主线四阶段-艾露娜结界·眼",
+        "ModelID": 50002,
+        "EffectPath": "effect/skill/yiluna/p_fx_skill_iruna-01_zongzizhil",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1401": {
+        "Key": 1401,
+        "Id": 1401,
+        "Name": "奎宁分身消失特效",
+        "ModelID": 50001,
+        "EffectPath": "effect/boss/kaniman/p_fx_kuining_fensheng_chuxian",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1402": {
+        "Key": 1402,
+        "Id": 1402,
+        "Name": "奎宁真身出生特效",
+        "ModelID": 50001,
+        "EffectPath": "effect/boss/kaniman/p_fx_kuining_fensheng_chuxian",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1403": {
+        "Key": 1403,
+        "Id": 1403,
+        "Name": "可交互区域",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_jiaohuishanguang",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100121
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1404": {
+        "Key": 1404,
+        "Id": 1404,
+        "Name": "卡尼曼风区域（表现）",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/dragonwind/p_fx_dragonwind_kuangfeng",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1405": {
+        "Key": 1405,
+        "Id": 1405,
+        "Name": "卡尼曼boss交互",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                6001
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1406": {
+        "Key": 1406,
+        "Id": 1406,
+        "Name": "卡尼曼交互试炼2",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100122
+            ],
+            [
+                0,
+                100123
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1407": {
+        "Key": 1407,
+        "Id": 1407,
+        "Name": "卡尼曼交互试炼3",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100124
+            ],
+            [
+                0,
+                100125
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1410": {
+        "Key": 1410,
+        "Id": 1410,
+        "Name": "脚印特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_lujing_yingdao",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1501": {
+        "Key": 1501,
+        "Id": 1501,
+        "Name": "剧情通用可交互物-带蓝点特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_jiaohuishanguang",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                3010
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1502": {
+        "Key": 1502,
+        "Id": 1502,
+        "Name": "剧情通用可交互物",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                3010
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1503": {
+        "Key": 1503,
+        "Id": 1503,
+        "Name": "剧情通用可交互物-黄色光柱",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_jiaohuishanguang",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                3010
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1504": {
+        "Key": 1504,
+        "Id": 1504,
+        "Name": "剧情通用不可交互-黄色光柱",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_jiaohuishanguang",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1505": {
+        "Key": 1505,
+        "Id": 1505,
+        "Name": "剧情通用触发范围-状态变更",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2001": {
+        "Key": 2001,
+        "Id": 2001,
+        "Name": "标记区域-委托调查",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/world/p_fx_quyu_yuan",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2002": {
+        "Key": 2002,
+        "Id": 2002,
+        "Name": "标记区域-委托调查-打怪答题-选项一",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/world/p_fx_quyu_yuan_a",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                54035
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2003": {
+        "Key": 2003,
+        "Id": 2003,
+        "Name": "标记区域-委托调查-打怪答题-选项二",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/world/p_fx_quyu_yuan_b",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                54036
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2004": {
+        "Key": 2004,
+        "Id": 2004,
+        "Name": "标记区域-委托调查-打怪答题-选项三",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/world/p_fx_quyu_yuan_c",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                54037
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2005": {
+        "Key": 2005,
+        "Id": 2005,
+        "Name": "标记区域-委托调查-打怪答题-选项四",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/world/p_fx_quyu_yuan_d",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                54038
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2006": {
+        "Key": 2006,
+        "Id": 2006,
+        "Name": "龙卷风-进入区域",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dragon_wind/p_fx_weather_dragon_in",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2007": {
+        "Key": 2007,
+        "Id": 2007,
+        "Name": "龙卷风-作用区域",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dragon_wind/p_fx_weather_dragon",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                54000
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2008": {
+        "Key": 2008,
+        "Id": 2008,
+        "Name": "存活本-得分圈",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/world/p_fx_quyu_yuan_lv",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                54126
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [
+            [
+                0,
+                7600300,
+                0
+            ],
+            [
+                1,
+                0,
+                7600301
+            ]
+        ],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": [
+            0,
+            5000
+        ]
+    },
+    "2009": {
+        "Key": 2009,
+        "Id": 2009,
+        "Name": "风通道-入口",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2010": {
+        "Key": 2010,
+        "Id": 2010,
+        "Name": "风通道-出口",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2011": {
+        "Key": 2011,
+        "Id": 2011,
+        "Name": "光桥空气墙",
+        "ModelID": 50001,
+        "EffectPath": "skm_env_taban_airwall",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2101": {
+        "Key": 2101,
+        "Id": 2101,
+        "Name": "协会狩猎门",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_env_pve_portal",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "2102": {
+        "Key": 2102,
+        "Id": 2102,
+        "Name": "协会狩猎门开启状态",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_env_pve_portal_open",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "3001": {
+        "Key": 3001,
+        "Id": 3001,
+        "Name": "raid光龙空气墙",
+        "ModelID": 50003,
+        "EffectPath": "effect/boss/dragonlight/p_fx_dragonborn_light_shit_ground_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "6001": {
+        "Key": 6001,
+        "Id": 6001,
+        "Name": "关卡通用交互zone",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                6001
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "6002": {
+        "Key": 6002,
+        "Id": 6002,
+        "Name": "关卡通用交互zone（占用6001~6010）",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "6010": {
+        "Key": 6010,
+        "Id": 6010,
+        "Name": "关卡通用烟雾",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/kaniman/p_fx_kuining_fensheng_chuxian",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "10001": {
+        "Key": 10001,
+        "Id": 10001,
+        "Name": "传送圈-爬塔",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "10002": {
+        "Key": 10002,
+        "Id": 10002,
+        "Name": "协会木头人-终点特效1",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/tips/p_fx_circle_hpy",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "10003": {
+        "Key": 10003,
+        "Id": 10003,
+        "Name": "协会木头人-终点特效2",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/parkour/p_fx_wuping_xingbiao",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "20001": {
+        "Key": 20001,
+        "Id": 20001,
+        "Name": "职业试炼开启交互",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                20001
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "20002": {
+        "Key": 20002,
+        "Id": 20002,
+        "Name": "职业试炼结束交互",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                0
+            ]
+        ],
+        "StatusTransition": [
+            [
+                0,
+                1
+            ],
+            [
+                1,
+                0
+            ]
+        ],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                20002
+            ],
+            [
+                1,
+                20002
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "55021": {
+        "Key": 55021,
+        "Id": 55021,
+        "Name": "五阶段重回战乱主城",
+        "ModelID": 50002,
+        "EffectPath": "env/fld001_mainquest_vine/prefabs/p_fx_fuben_rukou",
+        "StatusInfo": [
+            [
+                0,
+                2
+            ],
+            [
+                1,
+                0
+            ],
+            [
+                2,
+                0
+            ],
+            [
+                3,
+                0
+            ],
+            [
+                4,
+                0
+            ],
+            [
+                5,
+                0
+            ],
+            [
+                6,
+                0
+            ]
+        ],
+        "StatusTransition": [
+            [
+                1,
+                1
+            ],
+            [
+                2,
+                2
+            ],
+            [
+                3,
+                3
+            ],
+            [
+                4,
+                4
+            ],
+            [
+                5,
+                5
+            ],
+            [
+                6,
+                6
+            ]
+        ],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                1,
+                55021
+            ],
+            [
+                2,
+                55021
+            ],
+            [
+                3,
+                55021
+            ],
+            [
+                4,
+                55021
+            ],
+            [
+                5,
+                55021
+            ],
+            [
+                6,
+                55021
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "100101": {
+        "Key": 100101,
+        "Id": 100101,
+        "Name": "存档触发",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100101
+            ],
+            [
+                0,
+                100102
+            ],
+            [
+                0,
+                100103
+            ],
+            [
+                0,
+                100104
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "100102": {
+        "Key": 100102,
+        "Id": 100102,
+        "Name": "营救蒂娜柜子交互",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100105
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "100103": {
+        "Key": 100103,
+        "Id": 100103,
+        "Name": "营救蒂娜小屋制服交互",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100106
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "100104": {
+        "Key": 100104,
+        "Id": 100104,
+        "Name": "营救蒂娜小屋地图交互",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100107
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "100105": {
+        "Key": 100105,
+        "Id": 100105,
+        "Name": "营救蒂娜小屋照片信件双交互",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100108
+            ],
+            [
+                0,
+                100109
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "100106": {
+        "Key": 100106,
+        "Id": 100106,
+        "Name": "营救蒂娜小屋物件交互（不发光）",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100110
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "100107": {
+        "Key": 100107,
+        "Id": 100107,
+        "Name": "营救蒂娜低处炮台交互",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "StatusTransition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100111
+            ],
+            [
+                0,
+                100112
+            ],
+            [
+                0,
+                100113
+            ],
+            [
+                0,
+                100114
+            ],
+            [
+                0,
+                100115
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "100108": {
+        "Key": 100108,
+        "Id": 100108,
+        "Name": "营救蒂娜高处炮台交互",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100116
+            ],
+            [
+                0,
+                100117
+            ],
+            [
+                0,
+                100118
+            ],
+            [
+                0,
+                100119
+            ],
+            [
+                0,
+                100120
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "100109": {
+        "Key": 100109,
+        "Id": 100109,
+        "Name": "营救蒂娜小屋物件交互（发光）",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_jiaohuishanguang",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100110
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "100346": {
+        "Key": 100346,
+        "Id": 100346,
+        "Name": "漂浮交互区域",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100346
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "112201": {
+        "Key": 112201,
+        "Id": 112201,
+        "Name": "内场法阵光柱",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/typeochaozai/p_fx_typeochaozai_protective_summon_loop",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120101": {
+        "Key": 120101,
+        "Id": 120101,
+        "Name": "龙爪BOSS风核心",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/dragonwind/p_fx_dragonwind_wind_hexin",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120102": {
+        "Key": 120102,
+        "Id": 120102,
+        "Name": "龙爪BOSS二阶段风场",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/dragonwind/p_fx_dragonwind_changdi_fengxian",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120103": {
+        "Key": 120103,
+        "Id": 120103,
+        "Name": "龙爪BOSS狂风区域",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/dragonwind/p_fx_dragonwind_kuangfeng",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120104": {
+        "Key": 120104,
+        "Id": 120104,
+        "Name": "场景小风线",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_scene_wind_small",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120105": {
+        "Key": 120105,
+        "Id": 120105,
+        "Name": "场景大风线",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dragon001_new/p_fx_scene_wind_big",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120106": {
+        "Key": 120106,
+        "Id": 120106,
+        "Name": "龙爪场景强风线",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dragon001_new/p_fx_scene_wind_big",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120107": {
+        "Key": 120107,
+        "Id": 120107,
+        "Name": "龙爪场景峡谷风场",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dragon001_new/p_fx_scene_wingchang",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120108": {
+        "Key": 120108,
+        "Id": 120108,
+        "Name": "龙爪场景山洞落石",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dragon001_new/p_fx_scene_wood_stone",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120109": {
+        "Key": 120109,
+        "Id": 120109,
+        "Name": "血霞军团踪迹--士兵刚来巨龙的心理描写",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120110": {
+        "Key": 120110,
+        "Id": 120110,
+        "Name": "血霞军团踪迹--将领的作战计划",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120111": {
+        "Key": 120111,
+        "Id": 120111,
+        "Name": "血霞军团踪迹--士兵的日记",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120112": {
+        "Key": 120112,
+        "Id": 120112,
+        "Name": "血霞军团踪迹--将领的回忆",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120113": {
+        "Key": 120113,
+        "Id": 120113,
+        "Name": "血霞军团踪迹--士兵的日记02",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120114": {
+        "Key": 120114,
+        "Id": 120114,
+        "Name": "血霞军团踪迹--将领的作战计划02",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120115": {
+        "Key": 120115,
+        "Id": 120115,
+        "Name": "血霞军团踪迹--士兵的包裹",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120116": {
+        "Key": 120116,
+        "Id": 120116,
+        "Name": "血霞军团踪迹--将领的回忆02",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120117": {
+        "Key": 120117,
+        "Id": 120117,
+        "Name": "血霞军团踪迹--士兵的回忆",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120118": {
+        "Key": 120118,
+        "Id": 120118,
+        "Name": "哥布林智者宝箱钥匙碎片01",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120119": {
+        "Key": 120119,
+        "Id": 120119,
+        "Name": "哥布林智者宝箱钥匙碎片02",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120120": {
+        "Key": 120120,
+        "Id": 120120,
+        "Name": "哥布林智者宝箱钥匙碎片03",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120121": {
+        "Key": 120121,
+        "Id": 120121,
+        "Name": "哥布林智者宝箱钥匙碎片04",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120122": {
+        "Key": 120122,
+        "Id": 120122,
+        "Name": "哥布林智者宝箱钥匙碎片05",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120123": {
+        "Key": 120123,
+        "Id": 120123,
+        "Name": "哥布林智者宝箱钥匙碎片06",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120124": {
+        "Key": 120124,
+        "Id": 120124,
+        "Name": "哥布林智者宝箱钥匙碎片07",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120125": {
+        "Key": 120125,
+        "Id": 120125,
+        "Name": "哥布林智者宝箱钥匙碎片08",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/guide/p_fx_cj_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120126": {
+        "Key": 120126,
+        "Id": 120126,
+        "Name": "龙爪风暴眼",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dragon_wind/p_fx_weather_dragon",
+        "StatusInfo": [
+            [
+                0,
+                3
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120127": {
+        "Key": 120127,
+        "Id": 120127,
+        "Name": "龙爪刮风特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_scene_dragon_windsmoke_intensity",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120128": {
+        "Key": 120128,
+        "Id": 120128,
+        "Name": "龙爪BOSS场景风暴眼",
+        "ModelID": 50002,
+        "EffectPath": "effect/env/dragon_wind/p_fx_weather_dragon_in",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "120129": {
+        "Key": 120129,
+        "Id": 120129,
+        "Name": "龙爪雷墙",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_scene_dragon_lightning_wall",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "130101": {
+        "Key": 130101,
+        "Id": 130101,
+        "Name": "虚蚀引导线",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/virtualerosion/p_fx_dongxi_path",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "140101": {
+        "Key": 140101,
+        "Id": 140101,
+        "Name": "冰龙冰桥吹风区域表现",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_dragonice_wind_scene",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "140102": {
+        "Key": 140102,
+        "Id": 140102,
+        "Name": "冰龙冰桥吹风区域效果",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "500201": {
+        "Key": 500201,
+        "Id": 500201,
+        "Name": "新手特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/virtualerosion/p_fx_xinshou_xushiyinji_boss_scene_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "500701": {
+        "Key": 500701,
+        "Id": 500701,
+        "Name": "虚蚀起身特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/monster/xushishouren/p_fx_xushishouren_atk_jianta",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "502301": {
+        "Key": 502301,
+        "Id": 502301,
+        "Name": "可交互物",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_jiaohuishanguang",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                100110
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "502501": {
+        "Key": 502501,
+        "Id": 502501,
+        "Name": "回能粒子（追踪嫌疑人）",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/parkour/p_fx_huinenglizi_loop_hpy",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                502501
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "531001": {
+        "Key": 531001,
+        "Id": 531001,
+        "Name": "毒雾救人-星元区域",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/parkour/p_fx_common_xingyuan_range",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600101": {
+        "Key": 600101,
+        "Id": 600101,
+        "Name": "哥布林本加速地板特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/weaponball/p_fx_wuqiliupai_qiu_suiji_big",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                600101
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600102": {
+        "Key": 600102,
+        "Id": 600102,
+        "Name": "哥布林本火系封印",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/weaponball/p_fx_wuqiliupai_qiu_fire_small",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [
+            [
+                0,
+                0,
+                0
+            ],
+            [
+                1,
+                0,
+                7030001
+            ]
+        ],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600103": {
+        "Key": 600103,
+        "Id": 600103,
+        "Name": "哥布林本森系封印",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/weaponball/p_fx_wuqiliupai_qiu_fahuan_forest_small",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [
+            [
+                0,
+                0,
+                0
+            ],
+            [
+                1,
+                0,
+                7030001
+            ]
+        ],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600104": {
+        "Key": 600104,
+        "Id": 600104,
+        "Name": "哥布林本风系封印",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/weaponball/p_fx_wuqiliupai_qiu_changqiang_wind_small",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [
+            [
+                0,
+                0,
+                0
+            ],
+            [
+                1,
+                0,
+                7030001
+            ]
+        ],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600501": {
+        "Key": 600501,
+        "Id": 600501,
+        "Name": "叙事支线-违禁物品灭火",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/atmosphere/p_fx_dina01_blackmist_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600502": {
+        "Key": 600502,
+        "Id": 600502,
+        "Name": "叙事支线-违禁物品灭火",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/fire/p_fx_scene_dng002_robot_smoke",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600503": {
+        "Key": 600503,
+        "Id": 600503,
+        "Name": "叙事支线-违禁物品灭火",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/atmosphere/p_fx_dina01_huoxinhuijin_01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600504": {
+        "Key": 600504,
+        "Id": 600504,
+        "Name": "叙事支线-违禁物品灭火",
+        "ModelID": 50001,
+        "EffectPath": "",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600505": {
+        "Key": 600505,
+        "Id": 600505,
+        "Name": "二阶段幻想种子发光特效",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/collect/p_fx_collect",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600506": {
+        "Key": 600506,
+        "Id": 600506,
+        "Name": "叙事支线-议员候选人的下落",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_lujing_yingdao",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                3010
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600507": {
+        "Key": 600507,
+        "Id": 600507,
+        "Name": "叙事支线-不合格的寻宝人",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_changjing_jiantou",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                3010
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600508": {
+        "Key": 600508,
+        "Id": 600508,
+        "Name": "叙事支线-脚印",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/env/p_fx_lujing_yingdao",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600509": {
+        "Key": 600509,
+        "Id": 600509,
+        "Name": "丹佛脚底虚蚀",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/denvel/p_fx_denvel_follow_xushi",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600510": {
+        "Key": 600510,
+        "Id": 600510,
+        "Name": "丹佛周围虚蚀start",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/dina/p_fx_dina_atk_ex_battle_xushi_start",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600511": {
+        "Key": 600511,
+        "Id": 600511,
+        "Name": "丹佛周围虚蚀",
+        "ModelID": 50002,
+        "EffectPath": "effect/boss/dina/p_fx_dina_atk_ex_battle_xushi_loop",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "600512": {
+        "Key": 600512,
+        "Id": 600512,
+        "Name": "下水道mini1-能源蚀刻线",
+        "ModelID": 4,
+        "EffectPath": "effect/common_new/env/lightning/p_fx_env_lightningshield",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "706101": {
+        "Key": 706101,
+        "Id": 706101,
+        "Name": "安德拉传送阵",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/starvein/p_fx_screen_xinmai",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "707201": {
+        "Key": 707201,
+        "Id": 707201,
+        "Name": "光桥副本减速墙01",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/world/p_fx_jiansudai01",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "707202": {
+        "Key": 707202,
+        "Id": 707202,
+        "Name": "光桥副本减速墙02",
+        "ModelID": 50001,
+        "EffectPath": "effect/common_new/world/p_fx_jiansudai02",
+        "StatusInfo": [],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "715001": {
+        "Key": 715001,
+        "Id": 715001,
+        "Name": "漂浮交互区域",
+        "ModelID": 50002,
+        "EffectPath": "",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                715002
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1203001": {
+        "Key": 1203001,
+        "Id": 1203001,
+        "Name": "扮演交互",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/p_fx_jiaohuishanguang",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                1203003
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    },
+    "1205001": {
+        "Key": 1205001,
+        "Id": 1205001,
+        "Name": "安德拉讨伐战风通道",
+        "ModelID": 50002,
+        "EffectPath": "effect/common_new/env/windfield/p_fx_wind_tongdao_shou_5m_variant",
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "StatusTransition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "DefaultState": 0,
+        "InteractionTemplate": [
+            [
+                0,
+                1205001
+            ]
+        ],
+        "InteractionTriggerCondition": [],
+        "InteractionCondition": [],
+        "InteractionAction": [],
+        "ShowStatusInfo": [],
+        "ShowStatusTransition": [],
+        "DefaultCamp": 0,
+        "LifeInfo": []
+    }
+}

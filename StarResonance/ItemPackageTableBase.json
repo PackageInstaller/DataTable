@@ -1,0 +1,289 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "Name": "道具",
+        "Icon": "ui/atlas/item/c_tab_icon/com_icon_tab_14",
+        "Capacity": 2000,
+        "Show": 1,
+        "Classify": [
+            [
+                "1",
+                "12",
+                "养成道具",
+                "bag_icon_materials"
+            ],
+            [
+                "2",
+                "15",
+                "贵重物品",
+                "bag_icon_noble_articles"
+            ],
+            [
+                "3",
+                "11",
+                "消耗品",
+                "bag_icon_expend"
+            ],
+            [
+                "4",
+                "13",
+                "玩法材料",
+                "bag_icon_other_materials"
+            ],
+            [
+                "5",
+                "14",
+                "任务道具",
+                "bag_icon_activitt"
+            ]
+        ],
+        "Consume": "0",
+        "CapacityExtra": 2100
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "Name": "装备",
+        "Icon": "ui/atlas/item/c_tab_icon/com_icon_tab_01",
+        "Capacity": 500,
+        "Show": 2,
+        "Classify": [
+            [
+                "1",
+                "200",
+                "武器",
+                "bag_btn_weapon"
+            ],
+            [
+                "2",
+                "201",
+                "头盔",
+                "bag_btn_helmet"
+            ],
+            [
+                "3",
+                "202",
+                "护甲",
+                "bag_btn_clothes"
+            ],
+            [
+                "4",
+                "203",
+                "护手",
+                "bag_btn_handguards"
+            ],
+            [
+                "5",
+                "204",
+                "鞋子",
+                "bag_btn_shoes"
+            ],
+            [
+                "6",
+                "205",
+                "耳环",
+                "bag_btn_earring"
+            ],
+            [
+                "7",
+                "206",
+                "项链",
+                "bag_btn_necklace"
+            ],
+            [
+                "8",
+                "207",
+                "戒指",
+                "bag_btn_ring"
+            ],
+            [
+                "9",
+                "208",
+                "左手环",
+                "bag_btn_bangle_2"
+            ],
+            [
+                "10",
+                "209",
+                "右手环",
+                "bag_btn_bangle_1"
+            ],
+            [
+                "11",
+                "210",
+                "护符",
+                "bag_btn_talisman"
+            ]
+        ],
+        "Consume": "0",
+        "CapacityExtra": 600
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "Name": "模组",
+        "Icon": "ui/atlas/item/c_tab_icon/com_icon_tab_62",
+        "Capacity": 2000,
+        "Show": 6,
+        "Classify": [],
+        "Consume": "0",
+        "CapacityExtra": 2100
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "Name": "战斗幻想",
+        "Icon": "ui/atlas/item/c_tab_icon/com_icon_tab_198",
+        "Capacity": 2000,
+        "Show": 5,
+        "Classify": [
+            [
+                "1",
+                "300",
+                "共鸣之力",
+                "bag_icon_resonance_03"
+            ],
+            [
+                "2",
+                "301",
+                "战斗意志",
+                "bag_icon_resonance_02"
+            ]
+        ],
+        "Consume": "0",
+        "CapacityExtra": 2100
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "Name": "衣橱",
+        "Icon": "",
+        "Capacity": 999999,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "0",
+        "CapacityExtra": 999999
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "Name": "武器",
+        "Icon": "",
+        "Capacity": 999999,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "0",
+        "CapacityExtra": 999999
+    },
+    "9": {
+        "Key": 9,
+        "Id": 9,
+        "Name": "个性化",
+        "Icon": "",
+        "Capacity": 999999,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "",
+        "CapacityExtra": 0
+    },
+    "10": {
+        "Key": 10,
+        "Id": 10,
+        "Name": "协会资源库",
+        "Icon": "",
+        "Capacity": -1,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "",
+        "CapacityExtra": 0
+    },
+    "11": {
+        "Key": 11,
+        "Id": 11,
+        "Name": "家具",
+        "Icon": "",
+        "Capacity": 999999,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "",
+        "CapacityExtra": 0
+    },
+    "12": {
+        "Key": 12,
+        "Id": 12,
+        "Name": "载具幻想",
+        "Icon": "",
+        "Capacity": 999999,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "",
+        "CapacityExtra": 0
+    },
+    "13": {
+        "Key": 13,
+        "Id": 13,
+        "Name": "家园货币",
+        "Icon": "",
+        "Capacity": -1,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "",
+        "CapacityExtra": 0
+    },
+    "100": {
+        "Key": 100,
+        "Id": 100,
+        "Name": "货币",
+        "Icon": "0",
+        "Capacity": -1,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "0",
+        "CapacityExtra": 0
+    },
+    "102": {
+        "Key": 102,
+        "Id": 102,
+        "Name": "天赋点特殊道具",
+        "Icon": "",
+        "Capacity": 999999,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "0",
+        "CapacityExtra": 999999
+    },
+    "110": {
+        "Key": 110,
+        "Id": 110,
+        "Name": "阅读物",
+        "Icon": "",
+        "Capacity": 999999,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "",
+        "CapacityExtra": 999999
+    },
+    "121": {
+        "Key": 121,
+        "Id": 121,
+        "Name": "明信片",
+        "Icon": "",
+        "Capacity": 999999,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "",
+        "CapacityExtra": 999999
+    },
+    "907": {
+        "Key": 907,
+        "Id": 907,
+        "Name": "典藏卡",
+        "Icon": "",
+        "Capacity": 999999,
+        "Show": 0,
+        "Classify": [],
+        "Consume": "",
+        "CapacityExtra": 999999
+    }
+}

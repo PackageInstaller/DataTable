@@ -1,0 +1,90 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "Note": "通行证：荣誉币+20%",
+        "PrivilegeConfig": [
+            [
+                1,
+                10006,
+                2000
+            ]
+        ],
+        "PrivilegeIcon": "ui/atlas/bpcard/bpcard_icon_honor_coin",
+        "IsShowAccelerated": true,
+        "Sort": 1
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "Note": "通行证：通行证经验+20%",
+        "PrivilegeConfig": [
+            [
+                1,
+                301,
+                2000
+            ]
+        ],
+        "PrivilegeIcon": "ui/atlas/bpcard/bpcard_icon_season",
+        "IsShowAccelerated": true,
+        "Sort": 2
+    },
+    "3": {
+        "Key": 3,
+        "Id": 3,
+        "Note": "通行证：活跃度+20%",
+        "PrivilegeConfig": [
+            [
+                2,
+                2000
+            ]
+        ],
+        "PrivilegeIcon": "ui/atlas/bpcard/bpcard_icon_ap",
+        "IsShowAccelerated": true,
+        "Sort": 3
+    },
+    "4": {
+        "Key": 4,
+        "Id": 4,
+        "Note": "通行证：等级+10",
+        "PrivilegeConfig": [
+            [
+                3,
+                10
+            ]
+        ],
+        "PrivilegeIcon": "ui/atlas/bpcard/bpcard_icon_upgrades",
+        "IsShowAccelerated": false,
+        "Sort": 5
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "Note": "神秘商店刷新次数+1",
+        "PrivilegeConfig": [
+            [
+                4,
+                6,
+                1
+            ]
+        ],
+        "PrivilegeIcon": "ui/atlas/bpcard/bpcard_icon_shop",
+        "IsShowAccelerated": false,
+        "Sort": 4
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "Note": "平台启动特权：荣誉币+5%",
+        "PrivilegeConfig": [
+            [
+                1,
+                10006,
+                500
+            ]
+        ],
+        "PrivilegeIcon": "ui/atlas/bpcard/bpcard_icon_honor_coin",
+        "IsShowAccelerated": false,
+        "Sort": 1
+    }
+}

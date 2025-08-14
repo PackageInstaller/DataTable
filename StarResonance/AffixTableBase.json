@@ -1,0 +1,4578 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "Name": "测试词缀1-战士烈火刀刀暴",
+        "Description": "角色100%暴击",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [
+            2
+        ],
+        "Effect": [
+            [
+                1,
+                1,
+                521801,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "Name": "测试词缀2-道士15狗，全区横着走",
+        "Description": "场景2侧随机召唤哥布林",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_touyunmuxuan",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [
+            1
+        ],
+        "Effect": [
+            [
+                2,
+                1,
+                1001,
+                2,
+                91
+            ],
+            [
+                2,
+                1,
+                1002,
+                2,
+                92
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                1000
+            ],
+            [
+                4,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "3": {
+        "Key": 3,
+        "Id": 3,
+        "Name": "测试词缀3-法师冰霜秒全场",
+        "Description": "随机一半怪物冰抗下降",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_lengjing",
+        "EffectType": 1,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                3,
+                2,
+                521901,
+                0,
+                2,
+                50
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "4": {
+        "Key": 4,
+        "Id": 4,
+        "Name": "乘胜追击",
+        "Description": "精英级别以上的怪物在霸体时受到的伤害降低35%，但在虚弱时受到250%的伤害。",
+        "Remark": "英雄本用",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 3,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                860101,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "Name": "神圣洗礼",
+        "Description": "角色受到治疗效果的3秒内，攻击命中敌人会减少所有技能1秒的冷却时间。",
+        "Remark": "主词缀",
+        "Icon": "ui/atlas/affix/com_affix_shenshengxili",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                860401,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "Name": "棱镜",
+        "Description": "角色的投射物类技能数量增加3，持续时间增加10秒，造成的伤害提高200%。",
+        "Remark": "主词缀",
+        "Icon": "ui/atlas/affix/com_affix_lengjing",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                860601,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "Name": "壁垒",
+        "Description": "角色的护盾获得量提升300%，有护盾存在时提高100%星元能量恢复速度",
+        "Remark": "主词缀",
+        "Icon": "ui/atlas/affix/com_affix_bilei",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                860701,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "Name": "狂风",
+        "Description": "角色造成风元素伤害时，有10%的概率产生一个风场，持续7秒，风场会持续造成伤害并吸引周围怪物，在风场内的怪物受到的伤害增加50%，冷却时间10秒。",
+        "Remark": "主词缀",
+        "Icon": "ui/atlas/affix/com_affix_kuangfeng",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                860801,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "9": {
+        "Key": 9,
+        "Id": 9,
+        "Name": "头晕目眩",
+        "Description": "角色造成火元素伤害时会附加一层5%的受伤加重效果，持续5秒，可以叠加。",
+        "Remark": "主词缀",
+        "Icon": "ui/atlas/affix/com_affix_touyunmuxuan",
+        "EffectType": 1,
+        "TargetType": 2,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                860901,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "10": {
+        "Key": 10,
+        "Id": 10,
+        "Name": "铜墙铁壁",
+        "Description": "怪物在受到伤害时，将伤害降低500点。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_tongqiangtiebi",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                861001,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "11": {
+        "Key": 11,
+        "Id": 11,
+        "Name": "噬魂之兽",
+        "Description": "角色每次受到伤害，将回复附近怪物5%的生命值。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_shixiezhishou",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                861101,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "12": {
+        "Key": 12,
+        "Id": 12,
+        "Name": "背水一战",
+        "Description": "战斗开始时充满奥义值。角色不处于健康状态时，获得75%的伤害提升，角色处于受伤状态时，额外获得75%的伤害提升。",
+        "Remark": "主词缀",
+        "Icon": "ui/atlas/affix/com_affix_beishuiyizhan",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                861401,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "13": {
+        "Key": 13,
+        "Id": 13,
+        "Name": "完美主义者",
+        "Description": "角色处于健康状态时，造成的伤害提高30%。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_wanmeizhuyizhe",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                861501,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "14": {
+        "Key": 14,
+        "Id": 14,
+        "Name": "重伤",
+        "Description": "怪物击中角色会使角色受到的伤害永久增加3%，该效果可以叠加。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zhongjizhiren",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                861601,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "15": {
+        "Key": 15,
+        "Id": 15,
+        "Name": "重生意志",
+        "Description": "非首领怪物生命值降至0时，会回复至满生命值状态一次并不断受到伤害。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zhisifangxiu",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                861801,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "16": {
+        "Key": 16,
+        "Id": 16,
+        "Name": "双刃剑",
+        "Description": "角色每5秒叠加1层效果，每层效果增加10%造成的伤害和受到的伤害（最大20层），每次受到伤害降低1层效果。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_shuangrenjian",
+        "EffectType": 3,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                861901,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "17": {
+        "Key": 17,
+        "Id": 17,
+        "Name": "战争振奋",
+        "Description": "角色每秒受到1%最大生命值的伤害（不极致），每次击败怪物时，回复最大生命值的10%。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zhandoukuangre",
+        "EffectType": 3,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                862101,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "18": {
+        "Key": 18,
+        "Id": 18,
+        "Name": "二刀流",
+        "Description": "角色切换武器后，获得30%的伤害和治疗效果提高，持续10秒。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_erdaoliu",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                862201,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "19": {
+        "Key": 19,
+        "Id": 19,
+        "Name": "冰霜之刃",
+        "Description": "怪物击中角色会使角色的移动速度降低10%，持续20秒，最多叠加7层。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_bingshuangzhiren",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                862401,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "20": {
+        "Key": 20,
+        "Id": 20,
+        "Name": "炸弹人",
+        "Description": "怪物消散时会在原地产生大范围爆炸。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                862601,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "21": {
+        "Key": 21,
+        "Id": 21,
+        "Name": "疾如风",
+        "Description": "怪物的移动速度增加20%。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jirufeng",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                862701,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "22": {
+        "Key": 22,
+        "Id": 22,
+        "Name": "奉献光环",
+        "Description": "怪物消散后会在地上留下烈火陷阱，对玩家造成伤害，持续15秒",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_xianjiguanghuan",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                862801,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "23": {
+        "Key": 23,
+        "Id": 23,
+        "Name": "升级模块",
+        "Description": "普通级别怪物每存活5秒，伤害提高30%，精英级别怪物每存活10秒，伤害提高20%，领主怪物每存活20秒，伤害提高10%。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_shengjimokuai",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                862901,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "24": {
+        "Key": 24,
+        "Id": 24,
+        "Name": "灵体",
+        "Description": "怪物每20秒获得3次完全免疫伤害的护盾",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_lingti",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                863101,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "25": {
+        "Key": 25,
+        "Id": 25,
+        "Name": "迅疾一闪",
+        "Description": "角色触发完美闪避时，刷新所有技能冷却时间，冷却时间30秒。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_xunjiyishan",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                863201,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "26": {
+        "Key": 26,
+        "Id": 26,
+        "Name": "乱雷",
+        "Description": "角色造成伤害时，有10%的概率召唤一道天雷打击敌人(此效果受刻印概率加成影响)。",
+        "Remark": "主词缀",
+        "Icon": "ui/atlas/affix/com_affix_luanlei",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                864101,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "27": {
+        "Key": 27,
+        "Id": 27,
+        "Name": "核冲击",
+        "Description": "怪物受到暴击伤害时，会记录伤害值并将伤害降为0，每经过3秒，将记录的伤害值一并结算，在此期间，记录的伤害值每秒增加50%。",
+        "Remark": "主词缀",
+        "Icon": "ui/atlas/affix/com_affix_hechongji",
+        "EffectType": 1,
+        "TargetType": 2,
+        "Level": 3,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                864201,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "28": {
+        "Key": 28,
+        "Id": 28,
+        "Name": "崩裂",
+        "Description": "怪物消散时会产生爆炸，对附近的角色造成伤害。",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_benghuai",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                870101,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "29": {
+        "Key": 29,
+        "Id": 29,
+        "Name": "激励",
+        "Description": "怪物消散时会永久使附近5米内首领级别以下的其他怪物造成的伤害提高30%，受到的伤害降低10%，该效果可以叠加，伤害减免最高提升至50%。",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_jili",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                870201,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "30": {
+        "Key": 30,
+        "Id": 30,
+        "Name": "乘胜追击",
+        "Description": "奥义值获取效率提高20%，击破霸体之后10秒内，造成3倍伤害。",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                870501,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "31": {
+        "Key": 31,
+        "Id": 31,
+        "Name": "水元素护盾",
+        "Description": "怪物出生时会获得一层水元素护盾，受到150%冰元素伤害和50%其他属性伤害",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_yuansuhudun_shui",
+        "EffectType": 3,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                870701,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "32": {
+        "Key": 32,
+        "Id": 32,
+        "Name": "火元素护盾",
+        "Description": "怪物出生时会获得一层水元素护盾，受到150%火元素伤害和50%其他属性伤害",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_yuansuhudun_huo",
+        "EffectType": 3,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                870801,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "33": {
+        "Key": 33,
+        "Id": 33,
+        "Name": "雷元素护盾",
+        "Description": "怪物出生时会获得一层水元素护盾，受到150%雷元素伤害和50%其他属性伤害",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_yuansuhudun_lei",
+        "EffectType": 3,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                870901,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "34": {
+        "Key": 34,
+        "Id": 34,
+        "Name": "风元素护盾",
+        "Description": "怪物出生时会获得一层水元素护盾，受到150%风元素伤害和50%其他属性伤害",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_yuansuhudun_feng",
+        "EffectType": 3,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                871001,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "35": {
+        "Key": 35,
+        "Id": 35,
+        "Name": "森元素护盾",
+        "Description": "怪物出生时会获得一层水元素护盾，受到150%森元素伤害和50%其他属性伤害",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_yuansuhudun_sen",
+        "EffectType": 3,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                871101,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "36": {
+        "Key": 36,
+        "Id": 36,
+        "Name": "角斗场",
+        "Description": "精英级别以上的怪物会在周围生成直径5米的庇护领域，领域内的怪物免疫来自领域外的伤害。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jiaodouchang",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                865001,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "37": {
+        "Key": 37,
+        "Id": 37,
+        "Name": "遮蔽",
+        "Description": "怪物在被攻击时有10%的概率进入3秒的隐身状态，并且免疫伤害，触发后有20秒的冷却时间。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zhebi",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                865201,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "38": {
+        "Key": 38,
+        "Id": 38,
+        "Name": "玻璃大炮",
+        "Description": "角色造成的伤害提高200%，但最大生命值降低50%。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_bolidapao",
+        "EffectType": 3,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                865401,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "39": {
+        "Key": 39,
+        "Id": 39,
+        "Name": "弹簧",
+        "Description": "怪物每次受到伤害，在0.5秒后回复等同于此次伤害值50%的生命值。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_tanhuang",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                865501,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "40": {
+        "Key": 40,
+        "Id": 40,
+        "Name": "无痛症",
+        "Description": "角色受到来自怪物的伤害时，记录伤害值并将伤害归0，当记录的伤害值总量超过角色生命上限时，角色立即消散。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_wutongzheng",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                865601,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "41": {
+        "Key": 41,
+        "Id": 41,
+        "Name": "猛毒",
+        "Description": "怪物造成伤害后会施加每秒减少1%最大生命值的不利效果，最多叠加10层。受到治疗后，若角色处于健康状态，则移除此效果。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zuzhou",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                865701,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "42": {
+        "Key": 42,
+        "Id": 42,
+        "Name": "疾风骤雨",
+        "Description": "角色每次造成伤害时，额外附加自身攻击力10%的无属性伤害。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jifengzhouyu",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                865901,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "43": {
+        "Key": 43,
+        "Id": 43,
+        "Name": "完美状态",
+        "Description": "角色的生命值在80%以上时，额外造成20%的伤害",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_wanmeizhuyizhe",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                872001,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "44": {
+        "Key": 44,
+        "Id": 44,
+        "Name": "虚蚀之魂",
+        "Description": "蒂娜的生命值在降低至70%和35%时会分别召唤一只虚蚀之魂，虚蚀之魂会点名愤怒值最高的玩家并对其造成持续伤害，虚蚀之魂在未被击破霸体时获得80%减伤，在被击破霸体时受到500%伤害。虚蚀之魂在消散时会使全体玩家伤害提高100%，持续10秒",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_shixiezhishou",
+        "EffectType": 3,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                872101,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "45": {
+        "Key": 45,
+        "Id": 45,
+        "Name": "疾风骤雨",
+        "Description": "角色每次造成伤害时，额外附加自身攻击力8%的伤害。",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_jifengzhouyu",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                865901,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "46": {
+        "Key": 46,
+        "Id": 46,
+        "Name": "迅疾一闪",
+        "Description": "角色触发完美闪避时，刷新所有技能冷却时间，冷却时间10秒。",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_xunjiyishan",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                3,
+                863201,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "47": {
+        "Key": 47,
+        "Id": 47,
+        "Name": "乱雷",
+        "Description": "角色暴击时，有30%概率生成一道天雷攻击周围的敌人，每次暴击时，触发概率增加10%，持续10秒，最多提高至100%",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_luanlei",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                3,
+                864101,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "48": {
+        "Key": 48,
+        "Id": 48,
+        "Name": "二刀流",
+        "Description": "角色切换武器后，获得30%的伤害和治疗效果提高，持续10秒。",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_erdaoliu",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                3,
+                862201,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "49": {
+        "Key": 49,
+        "Id": 49,
+        "Name": "神圣洗礼",
+        "Description": "角色受到治疗效果的3秒内，攻击命中敌人会减少所有技能1秒的冷却时间。",
+        "Remark": "英雄本词缀",
+        "Icon": "ui/atlas/affix/com_affix_shenshengxili",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                3,
+                860401,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "50": {
+        "Key": 50,
+        "Id": 50,
+        "Name": "腐坏再生",
+        "Description": "普通怪物的最大生命值下降25%，但是每秒回复最大生命值5%的生命",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_fuhuaizaisheng",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866402,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "51": {
+        "Key": 51,
+        "Id": 51,
+        "Name": "苦难",
+        "Description": "每层增加5%受到的伤害。击败普通怪物叠加1层，击败精英怪物叠加3层。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_kunan",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                866403,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "52": {
+        "Key": 52,
+        "Id": 52,
+        "Name": "重塑",
+        "Description": "获得副本技能：刷新，消耗35%当前生命值，刷新所有技能冷却时间，并获得50%的伤害提高，持续10秒。冷却时间1分钟",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_chongsu",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                866405,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "53": {
+        "Key": 53,
+        "Id": 53,
+        "Name": "警戒线",
+        "Description": "怪物每次受到的伤害不超过最大生命值的10%",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jingjiexian",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866407,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "54": {
+        "Key": 54,
+        "Id": 54,
+        "Name": "野性奔腾",
+        "Description": "角色附近10米内有怪物被击败时，减少所有技能冷却1秒",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_roushizhe",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866408,
+                0
+            ],
+            [
+                1,
+                1,
+                866409,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ],
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "55": {
+        "Key": 55,
+        "Id": 55,
+        "Name": "神圣治愈",
+        "Description": "角色受到治疗时, 会对周围10米的单位造成等量伤害",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_shenshengzhiyu",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                866410,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "56": {
+        "Key": 56,
+        "Id": 56,
+        "Name": "快打旋风",
+        "Description": "角色造成伤害减少80%, 每次造成伤害后提高2.5%伤害,持续5秒，可以叠加，最大提高200%。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jifengzhouyu",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                866411,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "57": {
+        "Key": 57,
+        "Id": 57,
+        "Name": "孤立无援",
+        "Description": "非领主怪物周围没有其他怪物时候, 受到的伤害提高80%",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_gudugan",
+        "EffectType": 1,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866413,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "58": {
+        "Key": 58,
+        "Id": 58,
+        "Name": "充气锤",
+        "Description": "角色伤害提高30%，角色处于受伤状态时，该词缀将暂时失效",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_chongqichui",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                866414,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "59": {
+        "Key": 59,
+        "Id": 59,
+        "Name": "定时炸弹",
+        "Description": "战斗中每25秒或普通怪物消散时有概率刷新一只自爆型机器人，一定时间后对所有玩家造成伤害",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_dingshizhadan",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866415,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "60": {
+        "Key": 60,
+        "Id": 60,
+        "Name": "孤独感",
+        "Description": "角色周围10米内有友军时，会获得加成，提升30%造成的伤害",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_gudugan",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                866417,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "61": {
+        "Key": 61,
+        "Id": 61,
+        "Name": "焚心以火",
+        "Description": "角色进入战斗后，每隔30秒会进入10秒的焚烧状态，状态期间如果移动会受到最大生命值一定比例的伤害。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_xianjiguanghuan",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                866418,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "62": {
+        "Key": 62,
+        "Id": 62,
+        "Name": "集结",
+        "Description": "进入战斗后，每30秒会在一名玩家身上生成防护罩，5秒后会对全体玩家降下落雷，在防护罩外的玩家将受到最大生命值50%的伤害。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_liwojindian",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                3,
+                1,
+                866420,
+                0,
+                1,
+                1
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "63": {
+        "Key": 63,
+        "Id": 63,
+        "Name": "黯影之池",
+        "Description": "非领主怪物消散后，生成一滩半径3米的毒池，对玩家造成伤害，并回复怪物生命值",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_anmie",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866424,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "64": {
+        "Key": 64,
+        "Id": 64,
+        "Name": "力量的代价",
+        "Description": "角色获得40%伤害提高和25%的冷却缩减, 但是每秒流失2%的生命值，该效果不会导致角色生命值降为0",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_liliangdedaijia",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                866425,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "65": {
+        "Key": 65,
+        "Id": 65,
+        "Name": "咆哮",
+        "Description": "非首领怪物在生命值降至30%时将被激怒，伤害提高100%，直至被击败。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_baonu",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866426,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "66": {
+        "Key": 66,
+        "Id": 66,
+        "Name": "绝对防御",
+        "Description": "所有怪物获得永久霸体",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jueduifangyu",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866427,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "67": {
+        "Key": 67,
+        "Id": 67,
+        "Name": "冰封领域",
+        "Description": "进入战斗后，地面会随机出现圆形冰封区域，角色在区域内会降低25%移动速度，并每秒受到最大生命值5%的伤害，区域在5秒后会产生一次爆炸，对区域内玩家造成25%最大生命值的伤害并且被冰冻5秒",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_bingfenglingyu",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                866428,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "68": {
+        "Key": 68,
+        "Id": 68,
+        "Name": "缠绕藤蔓",
+        "Description": "进入战斗后，会周期性在随机角色脚下刷新环形藤蔓区域，离开或者进入区域时，角色会受到伤害并被减速50%",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jiaoshazhiteng",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 2,
+        "Mutex": [],
+        "Effect": [
+            [
+                3,
+                1,
+                866431,
+                0,
+                1,
+                1
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                40
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "69": {
+        "Key": 69,
+        "Id": 69,
+        "Name": "灵魂虹吸（普通）",
+        "Description": "普通怪物获得10%生命偷取",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_linghunhongxi",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866433,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "70": {
+        "Key": 70,
+        "Id": 70,
+        "Name": "灵魂虹吸（精英）",
+        "Description": "精英怪物获得10%生命偷取",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_linghunhongxi",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866434,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "71": {
+        "Key": 71,
+        "Id": 71,
+        "Name": "晋升（普通）",
+        "Description": "普通怪物获得20%额外生命，造成伤害时有30%概率增伤25%",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jinsheng",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866435,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "72": {
+        "Key": 72,
+        "Id": 72,
+        "Name": "晋升（精英）",
+        "Description": "精英怪物获得50%额外生命，造成的伤害提高100%。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jinsheng",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866436,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "73": {
+        "Key": 73,
+        "Id": 73,
+        "Name": "坚如磐石",
+        "Description": "非领主怪物受到的暴击伤害降低30%",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jianrupanshi",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866437,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "74": {
+        "Key": 74,
+        "Id": 74,
+        "Name": "迅捷",
+        "Description": "非领主怪物的移动速度提高25%",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_xunjie",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866438,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "75": {
+        "Key": 75,
+        "Id": 75,
+        "Name": "坚韧",
+        "Description": "非领主怪物受到的所有伤害降低25%",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jianren",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866439,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "76": {
+        "Key": 76,
+        "Id": 76,
+        "Name": "进化·其一",
+        "Description": "所有怪物装等提升20",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_waiqiangzhonggan",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866440,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 20,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "77": {
+        "Key": 77,
+        "Id": 77,
+        "Name": "进化·其二",
+        "Description": "所有怪物装等提升30",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_waiqiangzhonggan",
+        "EffectType": 2,
+        "TargetType": 2,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866441,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 30,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "78": {
+        "Key": 78,
+        "Id": 78,
+        "Name": "神圣恩赐",
+        "Description": "角色造成治疗时，会对目标附加持续3秒的暴击率、暴击伤害和攻速提升25%效果",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_shenshengxili",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                866442,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "79": {
+        "Key": 79,
+        "Id": 79,
+        "Name": "乘胜追击",
+        "Description": "精英级别以上的怪物在霸体时受到的伤害降低50%，但在虚弱时受到500%的伤害。",
+        "Remark": "大秘境用主词缀",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                866448,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "80": {
+        "Key": 80,
+        "Id": 80,
+        "Name": "虚蚀之心",
+        "Description": "被虚蚀感染的敌人提供更高的分数加成。命运模式下，场景中出现虚蚀容器，交互后使周围敌人感染虚蚀之种",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "81": {
+        "Key": 81,
+        "Id": 81,
+        "Name": "虚蚀硬化",
+        "Description": "被虚蚀感染的小怪不受控制效果影响，精英的韧性条翻倍",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_jianren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [
+            82,
+            101
+        ],
+        "Effect": [
+            [
+                1,
+                4,
+                873401,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "82": {
+        "Key": 82,
+        "Id": 82,
+        "Name": "虚蚀喷发",
+        "Description": "被虚蚀感染的敌人周期性喷发【虚蚀火柱】",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_linghunhongxi",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [
+            81,
+            101
+        ],
+        "Effect": [
+            [
+                1,
+                4,
+                873404,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "83": {
+        "Key": 83,
+        "Id": 83,
+        "Name": "衰弱链接",
+        "Description": "每隔一段时间，随机一名玩家会与附近最远的玩家连线10秒。连线存在时两名玩家造成的伤害持续降低。玩家彼此靠近后连线清除",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_tanhuang",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [
+            84,
+            85
+        ],
+        "Effect": [
+            [
+                3,
+                1,
+                873410,
+                0,
+                1,
+                1
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                60000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "84": {
+        "Key": 84,
+        "Id": 84,
+        "Name": "虚蚀结晶",
+        "Description": "战斗中的敌人附近有几率生成一个不可被选中的虚蚀晶体，晶体会持续治疗附近敌人。玩家靠近晶体2秒以上后晶体销毁",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zhisifangxiu",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [
+            83,
+            85
+        ],
+        "Effect": [
+            [
+                1,
+                4,
+                873303,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "85": {
+        "Key": 85,
+        "Id": 85,
+        "Name": "虚蚀残影",
+        "Description": "战斗中的敌人附近有几率生成一个虚蚀精魄，精魄会进行10秒的施法，施法结束时使附近所有玩家的攻击力下降50%持续10秒",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zuzhou",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [
+            83,
+            84
+        ],
+        "Effect": [
+            [
+                1,
+                4,
+                873302,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "86": {
+        "Key": 86,
+        "Id": 86,
+        "Name": "强韧",
+        "Description": "小怪与精英类型的敌人生命值+30%，伤害+10%",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_baonu",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [
+            87
+        ],
+        "Effect": [
+            [
+                1,
+                4,
+                873406,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "87": {
+        "Key": 87,
+        "Id": 87,
+        "Name": "残暴",
+        "Description": "首领类型的敌人生命值+15%，伤害+10%",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_baonu",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [
+            86
+        ],
+        "Effect": [
+            [
+                1,
+                4,
+                873407,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "88": {
+        "Key": 88,
+        "Id": 88,
+        "Name": "焚心以火",
+        "Description": "每隔一段时间，随机四名玩家周期性陷入炎热状态持续3秒，此时玩家主动移动会损失生命值",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_anmie",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [
+            89,
+            90
+        ],
+        "Effect": [
+            [
+                3,
+                1,
+                873001,
+                0,
+                1,
+                4
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                60000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "89": {
+        "Key": 89,
+        "Id": 89,
+        "Name": "震荡",
+        "Description": "每隔一段时间，随机三名玩家脚下会周期性生成震荡区域，区域爆炸时会对范围内其他玩家造成伤害和眩晕",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [
+            88,
+            90
+        ],
+        "Effect": [
+            [
+                3,
+                1,
+                873104,
+                0,
+                1,
+                3
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                60000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "90": {
+        "Key": 90,
+        "Id": 90,
+        "Name": "意外惊喜",
+        "Description": "每隔一段时间，随机两名玩家周期性获得炸弹，炸弹5秒后会爆炸，造成范围伤害和击飞。玩家跳跃后会把炸弹留在原地",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_dingshizhadan",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [
+            88,
+            89
+        ],
+        "Effect": [
+            [
+                3,
+                1,
+                873203,
+                0,
+                1,
+                2
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                60000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "91": {
+        "Key": 91,
+        "Id": 91,
+        "Name": "进化1",
+        "Description": "敌人生命值+25%，伤害+15%",
+        "Remark": "S1特殊库",
+        "Icon": "ui/atlas/affix/com_affix_baonu",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                873411,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "92": {
+        "Key": 92,
+        "Id": 92,
+        "Name": "进化2",
+        "Description": "敌人生命值+25%，伤害+15%",
+        "Remark": "S1特殊库",
+        "Icon": "ui/atlas/affix/com_affix_baonu",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                873419,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "93": {
+        "Key": 93,
+        "Id": 93,
+        "Name": "虚蚀之种",
+        "Description": "副本中有部分敌人被【虚蚀之种】感染。被【虚蚀之种】感染的敌人会获得多种强化。<br><style=\"tipsYellow\">杀死被强化的敌人会获得更多积分！<br><style=\"tipsYellow\">",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "94": {
+        "Key": 94,
+        "Id": 94,
+        "Name": "治疗之赐",
+        "Description": "玩家造成的治疗量额外提高15%",
+        "Remark": "S1钥匙库",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                873412,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "95": {
+        "Key": 95,
+        "Id": 95,
+        "Name": "生命之赐",
+        "Description": "玩家的最大生命值提高20%",
+        "Remark": "S1钥匙库",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                873413,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "96": {
+        "Key": 96,
+        "Id": 96,
+        "Name": "暴击之赐",
+        "Description": "玩家的暴击提高8%",
+        "Remark": "S1钥匙库",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                873414,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "97": {
+        "Key": 97,
+        "Id": 97,
+        "Name": "急速之赐",
+        "Description": "玩家的急速提高8%",
+        "Remark": "S1钥匙库",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                873415,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "98": {
+        "Key": 98,
+        "Id": 98,
+        "Name": "幸运之赐",
+        "Description": "玩家的幸运提高8%",
+        "Remark": "S1钥匙库",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                873416,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "99": {
+        "Key": 99,
+        "Id": 99,
+        "Name": "精通之赐",
+        "Description": "玩家的精通提高8%",
+        "Remark": "S1钥匙库",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                873417,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "100": {
+        "Key": 100,
+        "Id": 100,
+        "Name": "全能之赐",
+        "Description": "玩家的全能提高8%",
+        "Remark": "S1钥匙库",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                873418,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "101": {
+        "Key": 101,
+        "Id": 101,
+        "Name": "暗蚀",
+        "Description": "被虚蚀感染的敌人被消灭时会给附近玩家添加【暗蚀】，每层每秒造成1%最大生命值的伤害",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_benghuai",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [
+            81,
+            82
+        ],
+        "Effect": [
+            [
+                1,
+                4,
+                700036,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "102": {
+        "Key": 102,
+        "Id": 102,
+        "Name": "虚蚀残影",
+        "Description": "周期性产生六只虚蚀残影，试图对玩家造成高额伤害。打断其吟唱或者受到控制，则会直接消散并给玩家提供暴击属性加成。",
+        "Remark": "S1库A",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_shadow1",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [
+            104,
+            106,
+            108
+        ],
+        "Effect": [
+            [
+                3,
+                1,
+                873420,
+                0,
+                1,
+                1
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                90000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "103": {
+        "Key": 103,
+        "Id": 103,
+        "Name": "强化虚蚀残影",
+        "Description": "出现的虚蚀残影的数量提高到十只",
+        "Remark": "S1库C",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_shadow2",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                3,
+                1,
+                873421,
+                0,
+                1,
+                1
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                90000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "104": {
+        "Key": 104,
+        "Id": 104,
+        "Name": "虚蚀陨星",
+        "Description": "周期性从天而降一颗虚蚀陨星，对范围造成高额分摊伤害，并给玩家提供急速属性加成。若没有任何一名玩家进行分摊，则陨星摧毁地面，造成全队高额伤害。",
+        "Remark": "S1库A",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_decoy1",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [
+            102,
+            106,
+            108
+        ],
+        "Effect": [
+            [
+                3,
+                1,
+                873422,
+                0,
+                1,
+                1
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                90000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "105": {
+        "Key": 105,
+        "Id": 105,
+        "Name": "强化虚蚀陨星",
+        "Description": "虚蚀陨星造成的伤害大幅提高",
+        "Remark": "S1库C",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_decoy2",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                3,
+                1,
+                873423,
+                0,
+                1,
+                1
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                90000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "106": {
+        "Key": 106,
+        "Id": 106,
+        "Name": "幻象入侵",
+        "Description": "周期性产生一只免疫控制且能基于造成的实际伤害恢复生命值的幻象，持续攻击玩家，并企图酝酿终极招式造成全队高额伤害。若该幻象被消灭，则给玩家提供精通属性加成。",
+        "Remark": "S1库A",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_meteor1",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [
+            102,
+            104,
+            108
+        ],
+        "Effect": [
+            [
+                3,
+                1,
+                873424,
+                0,
+                1,
+                1
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                90000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "107": {
+        "Key": 107,
+        "Id": 107,
+        "Name": "强化幻象入侵",
+        "Description": "幻象的属性大幅提高",
+        "Remark": "S1库C",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_meteor2",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                3,
+                1,
+                873425,
+                0,
+                1,
+                1
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                90000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "108": {
+        "Key": 108,
+        "Id": 108,
+        "Name": "散逸能量",
+        "Description": "周期性产生一只脆弱星源，并散落星源能量。拾取星源能量或直接治疗魂魄至满生命值，会使其消散并给玩家提供全能属性加成，否则会对玩家产生高额伤害。",
+        "Remark": "S1库A",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_energy3",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [
+            102,
+            104,
+            106
+        ],
+        "Effect": [
+            [
+                3,
+                1,
+                873426,
+                0,
+                1,
+                1
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                90000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "109": {
+        "Key": 109,
+        "Id": 109,
+        "Name": "强化散逸能量",
+        "Description": "脆弱星源的初始生命值大幅下降",
+        "Remark": "S1库C",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_energy4",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                3,
+                1,
+                873427,
+                0,
+                1,
+                1
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                90000
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": [
+            1,
+            2
+        ]
+    },
+    "110": {
+        "Key": 110,
+        "Id": 110,
+        "Name": "虚蚀残影",
+        "Description": "周期性产生六只虚蚀残影，试图对玩家造成高额伤害。打断其吟唱或者受到控制，则会直接消散并给玩家提供暴击属性加成。",
+        "Remark": "显示用库D",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_shadow1",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "111": {
+        "Key": 111,
+        "Id": 111,
+        "Name": "虚蚀陨星",
+        "Description": "周期性从天而降一颗虚蚀陨星，对范围造成高额分摊伤害，并给玩家提供急速属性加成。若没有任何一名玩家进行分摊，则陨星摧毁地面，造成全队高额伤害。",
+        "Remark": "显示用库D",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_decoy1",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "112": {
+        "Key": 112,
+        "Id": 112,
+        "Name": "幻象入侵",
+        "Description": "周期性产生一只免疫控制且能基于造成的实际伤害恢复生命值的幻象，持续攻击玩家，并企图酝酿终极招式造成全队高额伤害。若该幻象被消灭，则给玩家提供精通属性加成。",
+        "Remark": "显示用库D",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_meteor1",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "113": {
+        "Key": 113,
+        "Id": 113,
+        "Name": "散逸能量",
+        "Description": "周期性产生一只脆弱星源，并散落星源能量。拾取星源能量或直接治疗魂魄至满生命值，会使其消散并给玩家提供全能属性加成，否则会对玩家产生高额伤害。",
+        "Remark": "显示用库D",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_energy3",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "114": {
+        "Key": 114,
+        "Id": 114,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！<br><style=\"tipsYellow\">拾取其战利品的队伍能在副本通关结算时获取当前副本对应的高级战利品奖励！<br><style=\"tipsYellow\">",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                700122,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "115": {
+        "Key": 115,
+        "Id": 115,
+        "Name": "占位词缀",
+        "Description": "占位词缀",
+        "Remark": "占位词缀",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": false,
+        "PauseLogic": []
+    },
+    "116": {
+        "Key": 116,
+        "Id": 116,
+        "Name": "不明机械装置",
+        "Description": "场景中固定位置存在不明来源的机械装置，交互后可以获得增益！",
+        "Remark": "介绍用词缀",
+        "Icon": "ui/atlas/affix/com_affix_tongqiangtiebi",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "117": {
+        "Key": 117,
+        "Id": 117,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！<br><style=\"tipsYellow\">拾取其战利品的队伍能在副本通关结算时获取当前副本对应的高级战利品奖励！<br><style=\"tipsYellow\">",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                700123,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "118": {
+        "Key": 118,
+        "Id": 118,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！<br><style=\"tipsYellow\">拾取其战利品的队伍能在副本通关结算时获取当前副本对应的高级战利品奖励！<br><style=\"tipsYellow\">",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                700124,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "119": {
+        "Key": 119,
+        "Id": 119,
+        "Name": "团结之力",
+        "Description": "当队伍中同时拥有守护、辅助、攻击职责的职业时，全队造成的伤害+25%。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_wanmeizhuyizhe",
+        "EffectType": 1,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "120": {
+        "Key": 120,
+        "Id": 120,
+        "Name": "虚蚀先锋",
+        "Description": "受到强大的原初虚蚀之力影响，副本内的所有敌人获得巨额属性增幅。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_baonu",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                700129,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "995": {
+        "Key": 995,
+        "Id": 995,
+        "Name": "标记用-不稳定单人",
+        "Description": "区分当前难度用",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                701008,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": false,
+        "PauseLogic": []
+    },
+    "996": {
+        "Key": 996,
+        "Id": 996,
+        "Name": "标记用-不稳定多人",
+        "Description": "区分当前难度用",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                701008,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": false,
+        "PauseLogic": []
+    },
+    "997": {
+        "Key": 997,
+        "Id": 997,
+        "Name": "标记用-PT难度",
+        "Description": "用于副本开始前赛季表演，区分当前难度用",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                701008,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": false,
+        "PauseLogic": []
+    },
+    "998": {
+        "Key": 998,
+        "Id": 998,
+        "Name": "标记用-H难度",
+        "Description": "用于副本开始前赛季表演，区分当前难度用",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                701009,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": false,
+        "PauseLogic": []
+    },
+    "999": {
+        "Key": 999,
+        "Id": 999,
+        "Name": "标记用-M难度",
+        "Description": "用于副本开始前赛季表演，区分当前难度用",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_chengshengzhuiji",
+        "EffectType": 1,
+        "TargetType": 1,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                701010,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": false,
+        "PauseLogic": []
+    },
+    "1001": {
+        "Key": 1001,
+        "Id": 1001,
+        "Name": "黑暗领域",
+        "Description": "场景被黑暗笼罩，处在黑暗中会持续损失生命，通过场景中的光球可以规避黑暗",
+        "Remark": "爬塔事件",
+        "Icon": "ui/atlas/affix/com_affix_zuzhou",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "1002": {
+        "Key": 1002,
+        "Id": 1002,
+        "Name": "警戒机器",
+        "Description": "场景中存在巡逻的机器人，检测到有敌人靠近后，就会冲向敌人并自爆",
+        "Remark": "爬塔事件",
+        "Icon": "ui/atlas/affix/com_affix_tanhuang",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "1003": {
+        "Key": 1003,
+        "Id": 1003,
+        "Name": "监视者",
+        "Description": "监视者持续对场地进行扫描，被扫描到就会受到致命攻击",
+        "Remark": "爬塔事件",
+        "Icon": "ui/atlas/affix/com_affix_zuzhou",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "1004": {
+        "Key": 1004,
+        "Id": 1004,
+        "Name": "净化光幕",
+        "Description": "场景中间歇性出现净化光幕，需要开启保护罩躲避",
+        "Remark": "爬塔事件",
+        "Icon": "ui/atlas/affix/com_affix_tanhuang",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2001": {
+        "Key": 2001,
+        "Id": 2001,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：护手、耳坠</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style>",
+        "Remark": "极限·哥布林巢穴",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2002": {
+        "Key": 2002,
+        "Id": 2002,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：护手、耳坠</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style>",
+        "Remark": "极限·哥布林巢穴",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2003": {
+        "Key": 2003,
+        "Id": 2003,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">60装等橙装：护手、耳坠</style><br><br>较小概率<br><style=\"ItemQuality_4\">60装等橙装：武器</style>",
+        "Remark": "极限·哥布林巢穴",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2004": {
+        "Key": 2004,
+        "Id": 2004,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">80装等橙装：护手、耳坠</style><br><br>较小概率<br><style=\"ItemQuality_4\">80装等橙装：武器</style>",
+        "Remark": "极限·哥布林巢穴",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2011": {
+        "Key": 2011,
+        "Id": 2011,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：头盔、项链</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style>",
+        "Remark": "极限·蒂娜·精神之界",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2012": {
+        "Key": 2012,
+        "Id": 2012,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：头盔、项链</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style>",
+        "Remark": "极限·蒂娜·精神之界",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2013": {
+        "Key": 2013,
+        "Id": 2013,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">60装等橙装：头盔、项链</style><br><br>较小概率<br><style=\"ItemQuality_4\">60装等橙装：武器</style>",
+        "Remark": "极限·蒂娜·精神之界",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2014": {
+        "Key": 2014,
+        "Id": 2014,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">80装等橙装：头盔、项链</style><br><br>较小概率<br><style=\"ItemQuality_4\">80装等橙装：武器</style>",
+        "Remark": "极限·蒂娜·精神之界",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2021": {
+        "Key": 2021,
+        "Id": 2021,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：衣服、戒指</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style>",
+        "Remark": "极限·巨塔遗迹",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2022": {
+        "Key": 2022,
+        "Id": 2022,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：衣服、戒指</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style>",
+        "Remark": "极限·巨塔遗迹",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2023": {
+        "Key": 2023,
+        "Id": 2023,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">60装等橙装：衣服、戒指</style><br><br>较小概率<br><style=\"ItemQuality_4\">60装等橙装：武器</style>",
+        "Remark": "极限·巨塔遗迹",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2024": {
+        "Key": 2024,
+        "Id": 2024,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">80装等橙装：衣服、戒指</style><br><br>较小概率<br><style=\"ItemQuality_4\">80装等橙装：武器</style>",
+        "Remark": "极限·巨塔遗迹",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2031": {
+        "Key": 2031,
+        "Id": 2031,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：鞋子、护符</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style>",
+        "Remark": "极限·卡尼曼试炼",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2032": {
+        "Key": 2032,
+        "Id": 2032,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：鞋子、护符</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style>",
+        "Remark": "极限·卡尼曼试炼",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2033": {
+        "Key": 2033,
+        "Id": 2033,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">60装等橙装：鞋子、护符</style><br><br>较小概率<br><style=\"ItemQuality_4\">60装等橙装：武器</style>",
+        "Remark": "极限·卡尼曼试炼",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2034": {
+        "Key": 2034,
+        "Id": 2034,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">80装等橙装：鞋子、护符</style><br><br>较小概率<br><style=\"ItemQuality_4\">80装等橙装：武器</style>",
+        "Remark": "极限·卡尼曼试炼",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2041": {
+        "Key": 2041,
+        "Id": 2041,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：左手环、右手环</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style>",
+        "Remark": "极限·巨龙爪痕",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2042": {
+        "Key": 2042,
+        "Id": 2042,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：左手环、右手环</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style>",
+        "Remark": "极限·巨龙爪痕",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2043": {
+        "Key": 2043,
+        "Id": 2043,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">60装等橙装：左手环、右手环</style><br><br>较小概率<br><style=\"ItemQuality_4\">60装等橙装：武器</style>",
+        "Remark": "极限·巨龙爪痕",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2044": {
+        "Key": 2044,
+        "Id": 2044,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">80装等橙装：左手环、右手环</style><br><br>较小概率<br><style=\"ItemQuality_4\">80装等橙装：武器</style>",
+        "Remark": "极限·巨龙爪痕",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2051": {
+        "Key": 2051,
+        "Id": 2051,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：其他部位</style>",
+        "Remark": "极限·黯影堡垒",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2052": {
+        "Key": 2052,
+        "Id": 2052,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">40装等橙装：武器</style><br><br>较小概率<br><style=\"ItemQuality_4\">40装等橙装：其他部位</style>",
+        "Remark": "极限·黯影堡垒",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2053": {
+        "Key": 2053,
+        "Id": 2053,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">60装等橙装：武器</style><br><br>较小概率<br><style=\"ItemQuality_4\">60装等橙装：其他部位</style>",
+        "Remark": "极限·黯影堡垒",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2054": {
+        "Key": 2054,
+        "Id": 2054,
+        "Name": "灾厄之主",
+        "Description": "小心，强大的灾厄之主有极低概率撕裂时空入侵此位面！攻击并拾取其战利品的队伍，能在通关时额外获得：<br>较大概率<br><style=\"ItemQuality_4\">80装等橙装：武器</style><br><br>较小概率<br><style=\"ItemQuality_4\">80装等橙装：其他部位</style>",
+        "Remark": "极限·黯影堡垒",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    }
+}

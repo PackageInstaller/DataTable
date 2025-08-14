@@ -1,0 +1,922 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "LoadingBg": "ui/textures/login/loading1",
+        "TextTitle": "赛季成就",
+        "TextGeneral": "随着赛季更替，成就任务也会迎来全面更新，请在每个赛季中奋勇挑战，不断追逐新的荣耀吧！",
+        "LoadingType": 0
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "LoadingBg": "ui/textures/login/loading2",
+        "TextTitle": "能力评分",
+        "TextGeneral": "能力评分是冒险者自身培养程度的一个参考数值。冒险者提升生体元等级、对天赋、技能(含职业技能和战斗幻想)、装备、模组、臂章进行培养，都可以提升能力评分。",
+        "LoadingType": 0
+    },
+    "3": {
+        "Key": 3,
+        "Id": 3,
+        "LoadingBg": "ui/textures/login/loading3",
+        "TextTitle": "天赋分配",
+        "TextGeneral": "每个职业都有自己专属的职业天赋，选择自己喜欢的战斗流派，灵活分配天赋点，可以提升自己的战斗能力！",
+        "LoadingType": 0
+    },
+    "4": {
+        "Key": 4,
+        "Id": 4,
+        "LoadingBg": "ui/textures/login/loading4",
+        "TextTitle": "技能培养",
+        "TextGeneral": "装配自己喜欢的职业技能，并对其进行升级和进阶，可大幅提升作战能力！",
+        "LoadingType": 0
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "LoadingBg": "ui/textures/login/loading5",
+        "TextTitle": "战斗幻想",
+        "TextGeneral": "冒险者根据自己当前的攻击、辅助、守护的战斗定位，搭配合适的战斗幻想技能，战斗的时候能够事半功倍！",
+        "LoadingType": 0
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "LoadingBg": "ui/textures/login/loading6",
+        "TextTitle": "装备重铸",
+        "TextGeneral": "对装备进行重铸可以刷新装备的属性，并提升装备的完美度，使装备的属性和效果更加完美。",
+        "LoadingType": 0
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "LoadingBg": "ui/textures/login/loading7",
+        "TextTitle": "装备精炼",
+        "TextGeneral": "精炼可以大幅提升装备效果。精炼有可能成功，也有可能失败。放心尝试吧！失败不会扣除等级的哦！",
+        "LoadingType": 0
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "LoadingBg": "ui/textures/login/loading8",
+        "TextTitle": "装备精炼",
+        "TextGeneral": "精炼时，添加祝福道具，可以提升精炼的成功率。<br>同部位的装备更换时，精炼将自动免费转移。",
+        "LoadingType": 0
+    },
+    "9": {
+        "Key": 9,
+        "Id": 9,
+        "LoadingBg": "",
+        "TextTitle": "装备镶嵌",
+        "TextGeneral": "对装备进行镶嵌可以把宝石携带的属性赋予给装备，且选择中级或者高级的镶嵌方式可以直接获得更高等级的宝石效果哦！",
+        "LoadingType": 0
+    },
+    "10": {
+        "Key": 10,
+        "Id": 10,
+        "LoadingBg": "",
+        "TextTitle": "装配模组",
+        "TextGeneral": "装配模组并激活供能核心的等级效果，强化自身！<br>注意：仅已装配的模组生效，不同模组若携带同种供能核心，其成功链接的总次数是激活等级效果的前提！",
+        "LoadingType": 0
+    },
+    "11": {
+        "Key": 11,
+        "Id": 11,
+        "LoadingBg": "",
+        "TextTitle": "潜能激发",
+        "TextGeneral": "当生体元等级达到特定阶段时，可以在潜能激发中自由选择和配置潜能方案。<br>部分生体元等级将开放多种潜能以供选择，相同等级只能选择一个哦！",
+        "LoadingType": 0
+    },
+    "12": {
+        "Key": 12,
+        "Id": 12,
+        "LoadingBg": "",
+        "TextTitle": "环境共鸣",
+        "TextGeneral": "选中任意共鸣技能并拖动至槽位，即可完成装配。<br>装配后的技能会在主界面显示按钮，最多可装配 2 个共鸣技能。",
+        "LoadingType": 0
+    },
+    "13": {
+        "Key": 13,
+        "Id": 13,
+        "LoadingBg": "",
+        "TextTitle": "怪物讨伐 - 精英",
+        "TextGeneral": "只有首次对精英怪造成伤害的玩家或其队伍才会有目标掉落的战利品宝箱的开启权，首刀玩家及其队伍看到目标的生命条是红色，其他人看到是灰色哦。",
+        "LoadingType": 0
+    },
+    "14": {
+        "Key": 14,
+        "Id": 14,
+        "LoadingBg": "",
+        "TextTitle": "怪物讨伐 - 首领",
+        "TextGeneral": "可以通过怪物讨伐界面对首领怪物进行追踪哦！",
+        "LoadingType": 0
+    },
+    "15": {
+        "Key": 15,
+        "Id": 15,
+        "LoadingBg": "",
+        "TextTitle": "协会周活跃奖励",
+        "TextGeneral": "加入协会后，通过个人活跃和完成协会任务，可以为协会增加周活跃值，达到指定档位获得对应奖励！",
+        "LoadingType": 0
+    },
+    "16": {
+        "Key": 16,
+        "Id": 16,
+        "LoadingBg": "",
+        "TextTitle": "协会建设",
+        "TextGeneral": "拥有协会活动中心后，完成接待员萝拉发布的导览任务，可帮助你了解活动中心内每个工作人员的职责以及协会内各类设施的功能。<br>和成员们一起共同参与建设活动中心，获取更多资源，体验更多的乐趣吧！",
+        "LoadingType": 0
+    },
+    "17": {
+        "Key": 17,
+        "Id": 17,
+        "LoadingBg": "",
+        "TextTitle": "钓鱼小技巧",
+        "TextGeneral": "抛竿后，浮标会浮在水面，当有鱼准备咬钩时浮标会短暂下沉。<br>当有鱼咬钩后，浮标下沉后不会再上浮，此时可点击收竿进行刺鱼哦！",
+        "LoadingType": 0
+    },
+    "18": {
+        "Key": 18,
+        "Id": 18,
+        "LoadingBg": "",
+        "TextTitle": "鱼类研究",
+        "TextGeneral": "使用同类的鱼可增加研究进度，提高研究进度可进而提升该鱼类的研究等级，各种鱼类的研究结果会为钓鱼带来一些额外的加成。",
+        "LoadingType": 0
+    },
+    "19": {
+        "Key": 19,
+        "Id": 19,
+        "LoadingBg": "",
+        "TextTitle": "宝箱",
+        "TextGeneral": "命运的旅途给予冒险者的馈赠，开启后可获得丰厚的奖励。<br>积极在世界各地探索它们的踪迹吧。",
+        "LoadingType": 0
+    },
+    "20": {
+        "Key": 20,
+        "Id": 20,
+        "LoadingBg": "",
+        "TextTitle": "《阿斯特里亚平原的飓风气候与独特的物种性状研究》",
+        "TextGeneral": "【风屏障】一一阿斯特里亚的特有现象之一。受到星元循环失衡的影响，平原上的海风偶然汇聚一处，形成一种球型屏障，将内部与外界隔绝起来。",
+        "LoadingType": 0
+    },
+    "21": {
+        "Key": 21,
+        "Id": 21,
+        "LoadingBg": "",
+        "TextTitle": "《阿斯特里亚平原的飓风气候与独特的物种性状研究》",
+        "TextGeneral": "受到星元循环失衡的影响，洋流滋润的平原地区局部区域出现活跃的上升气流，阿斯特里斯人称之为一一【风力场】。在风力场使用【连跳】上升至一定高度时展开【漂浮、滑翔】，就能利用风力飞上天空了。",
+        "LoadingType": 0
+    },
+    "22": {
+        "Key": 22,
+        "Id": 22,
+        "LoadingBg": "",
+        "TextTitle": "《阿斯特里亚平原的飓风气候与独特的物种性状研究》",
+        "TextGeneral": "【风之回环】一一阿斯特里亚的高空中常常出现这种首尾相连的环状风，初步推测应该是由于平原特殊的飓风气候导致的高浓度风元素在空中凝结形成的。",
+        "LoadingType": 0
+    },
+    "23": {
+        "Key": 23,
+        "Id": 23,
+        "LoadingBg": "",
+        "TextTitle": "传送点",
+        "TextGeneral": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "LoadingType": 0
+    },
+    "24": {
+        "Key": 24,
+        "Id": 24,
+        "LoadingBg": "",
+        "TextTitle": "《阿斯特里亚平原的飓风气候与独特的物种性状研究》",
+        "TextGeneral": "【风力通道】一一阿斯特里亚的特有现象之一。由于星元循环失衡的影响，平原上会形成了大大小小的元素湍流通道，与小型气旋交互，即可打开风力通道入口。",
+        "LoadingType": 0
+    },
+    "25": {
+        "Key": 25,
+        "Id": 25,
+        "LoadingBg": "",
+        "TextTitle": "星元枢纽",
+        "TextGeneral": "地区的星脉流通交汇的点，与其共鸣后就与这里的星脉重建了连接。共鸣成功后会解锁该星元枢纽对应区域的迷雾，解锁地图信息。已经成功共鸣建立链接的星元枢纽可以进行传送。",
+        "LoadingType": 0
+    },
+    "26": {
+        "Key": 26,
+        "Id": 26,
+        "LoadingBg": "",
+        "TextTitle": "飓风粒子",
+        "TextGeneral": "世界上有许多飓风粒子，与之触碰即可触发收集粒子任务。在规定时间内完成任务即可获得奖励。",
+        "LoadingType": 0
+    },
+    "27": {
+        "Key": 27,
+        "Id": 27,
+        "LoadingBg": "",
+        "TextTitle": "家园委托",
+        "TextGeneral": "游商每日会有3项委托，内容是收购指定道具，完成委托可获得家园经验和家园币。",
+        "LoadingType": 0
+    },
+    "28": {
+        "Key": 28,
+        "Id": 28,
+        "LoadingBg": "",
+        "TextTitle": "家具制作",
+        "TextGeneral": "部分家具需要先解锁制造配方才可以被制造，达成指定目标或提交指定道具可解锁对应家具的制造配方。",
+        "LoadingType": 0
+    },
+    "29": {
+        "Key": 29,
+        "Id": 29,
+        "LoadingBg": "",
+        "TextTitle": "锚点手记",
+        "TextGeneral": "探索大世界、与不同的人们交谈，其中无意间透露出来的信息或许就揭示着世界的真相。",
+        "LoadingType": 0
+    },
+    "30": {
+        "Key": 30,
+        "Id": 30,
+        "LoadingBg": "",
+        "TextTitle": "锚点手记",
+        "TextGeneral": "点击【快速推理】按钮可直接跳过推理过程得出推理结果。",
+        "LoadingType": 0
+    },
+    "31": {
+        "Key": 31,
+        "Id": 31,
+        "LoadingBg": "",
+        "TextTitle": "怪物讨伐",
+        "TextGeneral": "野外地图会有各种类型的怪物，前去探索地图，并且与野外的怪物进行战斗，完成怪物的讨伐目标可以获得奖励升级讨伐手册。",
+        "LoadingType": 0
+    },
+    "32": {
+        "Key": 32,
+        "Id": 32,
+        "LoadingBg": "",
+        "TextTitle": "怪物讨伐",
+        "TextGeneral": "除了普通怪物外，野外还有实力强劲的精英怪物和首领怪物，讨伐它们会有战利品宝箱掉落，用钥匙可以打开获得稀有奖励。",
+        "LoadingType": 0
+    },
+    "33": {
+        "Key": 33,
+        "Id": 33,
+        "LoadingBg": "",
+        "TextTitle": "怪物讨伐",
+        "TextGeneral": "每次击败精英和首领怪物会获得经验、赛季积分、卢诺，有概率获得稀有怪物材料，击败首领还有概率获得装备。",
+        "LoadingType": 0
+    },
+    "34": {
+        "Key": 34,
+        "Id": 34,
+        "LoadingBg": "",
+        "TextTitle": "巨塔遗迹",
+        "TextGeneral": "通过使用次元切换能力，可前往一些无法到达的区域，善用次元切换逐渐挖掘巨塔的秘密吧！",
+        "LoadingType": 0
+    },
+    "35": {
+        "Key": 35,
+        "Id": 35,
+        "LoadingBg": "",
+        "TextTitle": "蒂娜·精神之界 - 虚蚀心像",
+        "TextGeneral": "虚蚀印记：虚蚀蒂娜给玩家施加虚蚀印记，虚蚀印记在持续时间结束之后会引爆，对当前目标造成持续高额伤害。",
+        "LoadingType": 0
+    },
+    "36": {
+        "Key": 36,
+        "Id": 36,
+        "LoadingBg": "",
+        "TextTitle": "极限闪避",
+        "TextGeneral": "当玩家冲刺闪避时成功规避敌人攻击则触发极限闪避，使玩家免受此次伤害并强化下一次普通攻击。部分精英或首领敌人会释放危险技能，技能释放的同时伴有红光亮起。",
+        "LoadingType": 0
+    },
+    "37": {
+        "Key": 37,
+        "Id": 37,
+        "LoadingBg": "",
+        "TextTitle": "反制攻击",
+        "TextGeneral": "在敌人危险技能击中自己的瞬间触发极限闪避，可以反制敌人的攻击并使敌人进入虚弱状态。<br>注意：反制成功后玩家免受此次伤害。",
+        "LoadingType": 0
+    },
+    "38": {
+        "Key": 38,
+        "Id": 38,
+        "LoadingBg": "",
+        "TextTitle": "霸体条",
+        "TextGeneral": "精英与首领敌人拥有的独特机制，攻击命中会削减目标霸体值。<br>当霸体值清空时，会触发击破立刻打断怪物当前动作并陷入一段时间的虚弱状态。<br>控制类技能能更高效的削减霸体值。",
+        "LoadingType": 0
+    },
+    "39": {
+        "Key": 39,
+        "Id": 39,
+        "LoadingBg": "",
+        "TextTitle": "分摊",
+        "TextGeneral": "敌人会对单个目标造成强力打击，范围内的所有队友可分摊其伤害。",
+        "LoadingType": 0
+    },
+    "40": {
+        "Key": 40,
+        "Id": 40,
+        "LoadingBg": "",
+        "TextTitle": "机制条",
+        "TextGeneral": "首领释放强大的持续技能时，注意观察倒计时，及时应对。",
+        "LoadingType": 0
+    },
+    "41": {
+        "Key": 41,
+        "Id": 41,
+        "LoadingBg": "",
+        "TextTitle": "集火标记",
+        "TextGeneral": "拥有集火标记的目标需要在短时间内快速击败，没有击败往往会产生不可接受的后果。",
+        "LoadingType": 0
+    },
+    "42": {
+        "Key": 42,
+        "Id": 42,
+        "LoadingBg": "",
+        "TextTitle": "点名标记",
+        "TextGeneral": "当头顶出现点名标记，需要注意应对接下来的技能。",
+        "LoadingType": 0
+    },
+    "43": {
+        "Key": 43,
+        "Id": 43,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "长按 [{*key.getKeyDesc(101)*}] / [{*key.getKeyDesc(108)*}] 可以进入聊天界面。",
+        "LoadingType": 3
+    },
+    "44": {
+        "Key": 44,
+        "Id": 44,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(124)*}] 可以打开快捷说明。",
+        "LoadingType": 3
+    },
+    "45": {
+        "Key": 45,
+        "Id": 45,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(25)*}] 可以使用额外技能。",
+        "LoadingType": 3
+    },
+    "46": {
+        "Key": 46,
+        "Id": 46,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(143)*}] 可以隐藏当前UI。",
+        "LoadingType": 3
+    },
+    "47": {
+        "Key": 47,
+        "Id": 47,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(34)*}] 可以打开/关闭自动战斗。",
+        "LoadingType": 3
+    },
+    "48": {
+        "Key": 48,
+        "Id": 48,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(140)*}] 可以打开相机。",
+        "LoadingType": 3
+    },
+    "49": {
+        "Key": 49,
+        "Id": 49,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(8)*}] 可以关闭当前界面。",
+        "LoadingType": 3
+    },
+    "50": {
+        "Key": 50,
+        "Id": 50,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(115)*}] 可以打开快捷轮盘。",
+        "LoadingType": 3
+    },
+    "51": {
+        "Key": 51,
+        "Id": 51,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(115)*}] 键可以打开快捷轮盘。",
+        "LoadingType": 2
+    },
+    "52": {
+        "Key": 52,
+        "Id": 52,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(34)*}] 键可以打开/关闭自动战斗。",
+        "LoadingType": 2
+    },
+    "53": {
+        "Key": 53,
+        "Id": 53,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(143)*}] 键可以隐藏当前UI。",
+        "LoadingType": 2
+    },
+    "54": {
+        "Key": 54,
+        "Id": 54,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(140)*}] 键可以打开相机。",
+        "LoadingType": 2
+    },
+    "55": {
+        "Key": 55,
+        "Id": 55,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(155)*}] 键可以切换聊天频道。",
+        "LoadingType": 2
+    },
+    "56": {
+        "Key": 56,
+        "Id": 56,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(102)*}] 键可以进入聊天界面。",
+        "LoadingType": 2
+    },
+    "57": {
+        "Key": 57,
+        "Id": 57,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(124)*}] 键可以打开快捷说明。",
+        "LoadingType": 2
+    },
+    "58": {
+        "Key": 58,
+        "Id": 58,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(25)*}] 键可以使用额外技能。",
+        "LoadingType": 2
+    },
+    "59": {
+        "Key": 59,
+        "Id": 59,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(8)*}] 键可以关闭当前界面。",
+        "LoadingType": 2
+    },
+    "60": {
+        "Key": 60,
+        "Id": 60,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "玩家骑乘可导航坐骑时，长按 [{*key.getKeyDesc(154)*}] 键即可对当前追踪目标进行自动导航。",
+        "LoadingType": 2
+    },
+    "61": {
+        "Key": 61,
+        "Id": 61,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(27)*}] 键，即可追踪当前正在进行的任务。",
+        "LoadingType": 2
+    },
+    "62": {
+        "Key": 62,
+        "Id": 62,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(118)*}] 键，即可查看当前已接取的任务列表。",
+        "LoadingType": 2
+    },
+    "63": {
+        "Key": 63,
+        "Id": 63,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(27)*}] 键，即可追踪当前正在进行的任务。",
+        "LoadingType": 3
+    },
+    "64": {
+        "Key": 64,
+        "Id": 64,
+        "LoadingBg": "",
+        "TextTitle": "键位小贴士",
+        "TextGeneral": "按下 [{*key.getKeyDesc(118)*}] 键，即可查看当前已接取的任务列表。",
+        "LoadingType": 3
+    },
+    "65": {
+        "Key": 65,
+        "Id": 65,
+        "LoadingBg": "",
+        "TextTitle": "卢诺",
+        "TextGeneral": "麦格纳大陆普遍使用的货币，由布法利亚教团负责管理和铸造。<br>铸造材料是含有星元的贵金属。<br>卢诺币的铸造工艺十分高超，几乎不可能被伪造。",
+        "LoadingType": 0
+    },
+    "66": {
+        "Key": 66,
+        "Id": 66,
+        "LoadingBg": "",
+        "TextTitle": "传送点",
+        "TextGeneral": "一种古老的<style=\"emph-gn\">布法利亚遗产</style>，能把接触到传送点的生物传送到遍布星脉的另一处传送点中，原理尚不明确。<br>传送点无法运输大量货物，只能传送随身携带的少量物资。",
+        "LoadingType": 0
+    },
+    "67": {
+        "Key": 67,
+        "Id": 67,
+        "LoadingBg": "",
+        "TextTitle": "双面币亭",
+        "TextGeneral": "位于城北欢乐街的一家老牌旅馆。<br>提供餐饮，住宿，特饮等服务。由于地处欢乐街中心地带，所以知名度很高。<br>店主威尔伯特是个和蔼的大叔，说话带有班哈尔特口音。",
+        "LoadingType": 0
+    },
+    "68": {
+        "Key": 68,
+        "Id": 68,
+        "LoadingBg": "",
+        "TextTitle": "海风节与游园会",
+        "TextGeneral": "为纪念独立，议会的每年一度的全民庆祝日。<br>节日当天，阿斯特里斯会飘散起华丽的彩带雨，市民们会在家门口拜访盛开的海百合，以表达祝愿与和平。城中还会举办各类诗会，巡游，游园会等特别庆典。",
+        "LoadingType": 0
+    },
+    "69": {
+        "Key": 69,
+        "Id": 69,
+        "LoadingBg": "",
+        "TextTitle": "虚雾",
+        "TextGeneral": "被扭曲的星元，来源不明，外表看起来像是黑色的雾气。<br>虚雾出现时，附近空间中的星元能量会变得混乱，十分危险。<br>另外，虚雾与星元会发生中和反应，因此解除虚雾的唯一方法是对污染区域注入大量星元。",
+        "LoadingType": 0
+    },
+    "70": {
+        "Key": 70,
+        "Id": 70,
+        "LoadingBg": "",
+        "TextTitle": "星元",
+        "TextGeneral": "星元在不可见的星脉中流淌，滋润着万物，是这个世界的本源能量。<br>各个种族对星元不同的理解与运用方式，呈现了这个世界的多元化。",
+        "LoadingType": 0
+    },
+    "71": {
+        "Key": 71,
+        "Id": 71,
+        "LoadingBg": "",
+        "TextTitle": "生体元",
+        "TextGeneral": "生物体内流淌的星元，是维系生命本源力量。",
+        "LoadingType": 0
+    },
+    "72": {
+        "Key": 72,
+        "Id": 72,
+        "LoadingBg": "",
+        "TextTitle": "布法利亚遗产",
+        "TextGeneral": "神族离开后所遗留的大量科技产物。<br>经过人类的改造，这些遗产展现出惊人的强大功能，如今已在人类社会广泛使用。因数量稀有，遗产由教团与开拓局统一收集后向各阶层分发，但其核心原理并未被人类理解。",
+        "LoadingType": 0
+    },
+    "73": {
+        "Key": 73,
+        "Id": 73,
+        "LoadingBg": "",
+        "TextTitle": "开拓局",
+        "TextGeneral": "一个支持冒险者活动、挖掘巴法利亚遗迹与讨伐怪物的全球性组织，<br>开拓局的立场是中立的，不属于任何国家。<br>阿斯特里斯分局的负责人是有着“金点子小姐”之称的瓦莱里娅女士。",
+        "LoadingType": 0
+    },
+    "74": {
+        "Key": 74,
+        "Id": 74,
+        "LoadingBg": "",
+        "TextTitle": "星元枢纽",
+        "TextGeneral": "星元以网状形式的星脉在雷格纳斯星球上流淌，<br>星脉网状结构的聚集之处被称为星元枢纽，星元浓度更高，能量也更强。",
+        "LoadingType": 0
+    },
+    "75": {
+        "Key": 75,
+        "Id": 75,
+        "LoadingBg": "",
+        "TextTitle": "风环与风场",
+        "TextGeneral": "风元素强烈碰撞，会产生名为风场的神奇现象。<br>充沛的风元素充斥在风场中，形成肉眼不可见的风环。如果有能与星元共鸣的能力，就可以利用风环在空中滑翔。",
+        "LoadingType": 0
+    },
+    "76": {
+        "Key": 76,
+        "Id": 76,
+        "LoadingBg": "",
+        "TextTitle": "阿斯特里斯",
+        "TextGeneral": "位于阿斯特里亚平原最南端的繁华港口都市。<br>曾经是班哈尔特为扩大版图兴建的殖民地，后来通过自治逐渐发展为贸易枢纽。<br>如今的阿斯特里斯，以包容的文化和发达的商业闻名，吸引着世界各地的商旅与冒险者。",
+        "LoadingType": 0
+    },
+    "77": {
+        "Key": 77,
+        "Id": 77,
+        "LoadingBg": "",
+        "TextTitle": "阿斯特里亚平原",
+        "TextGeneral": "位于贸易都市阿斯特里斯旁的平原地带，<br>地形开阔且充满奇幻色彩，分布着草原、遗迹等地貌，有丰富的探索空间。平原上活跃着各类组织，比如古老的卡尼曼部落、不受束缚的拾荒者、极具攻击性的亚人和山贼团。",
+        "LoadingType": 0
+    },
+    "78": {
+        "Key": 78,
+        "Id": 78,
+        "LoadingBg": "",
+        "TextTitle": "明斯特霍恩",
+        "TextGeneral": "位于阿斯特里亚平原中部的村庄，<br>得益于肥沃的土地，这里出产丰富的谷物、蔬菜和水果十分受欢迎。由于地处阿斯特里亚平原与巴哈马尔高原的贸易路线上，当地人与阿斯特里斯之间的贸易非常活跃。",
+        "LoadingType": 0
+    },
+    "79": {
+        "Key": 79,
+        "Id": 79,
+        "LoadingBg": "",
+        "TextTitle": "卡尼曼部落",
+        "TextGeneral": "与高度依赖布法利亚遗产的现代文明相比，<br>平原上的卡尼曼部落更加朴素、和善、崇尚自然。<br>他们崇拜自己的祖先，并称呼其为<style=\"emph-gn\">祖灵</style>。",
+        "LoadingType": 0
+    },
+    "80": {
+        "Key": 80,
+        "Id": 80,
+        "LoadingBg": "",
+        "TextTitle": "英雄碑林",
+        "TextGeneral": "为了在独立战争中逝去的人们，<br>民众们自发将牺牲亲人的名字和生平雕在木头上，并置于维尔古城附近的山崖，寓意守望家乡。<br>议会注意到之后，将这里改造成了英雄碑林。",
+        "LoadingType": 0
+    },
+    "81": {
+        "Key": 81,
+        "Id": 81,
+        "LoadingBg": "",
+        "TextTitle": "风啸的峡谷",
+        "TextGeneral": "在阿斯特里亚的狂涛海岸线上，屹立的峡谷如同大地裂痕。<br>此处终年回荡着令人毛骨悚然的风声，宛如巨狼的呜咽。<br>岩壁斑驳、残留的雕刻与符号，似乎寓意着古老文明的逝去与留存。",
+        "LoadingType": 0
+    },
+    "82": {
+        "Key": 82,
+        "Id": 82,
+        "LoadingBg": "",
+        "TextTitle": "地下街区",
+        "TextGeneral": "阿斯特里斯是一座巨大的城市，拥有着庞大的地下排水网络。<br>这里遮天蔽日，不见阳光，是滋生阴暗之地。<br>议会和守备兵的势力也极少涉足这里，因此而成为不法之徒聚集的地点。",
+        "LoadingType": 0
+    },
+    "83": {
+        "Key": 83,
+        "Id": 83,
+        "LoadingBg": "",
+        "TextTitle": "厄水海域",
+        "TextGeneral": "厄水海域是阿斯特里斯附近的一处高危水域，以凶险的海况和高发的海难事故而臭名昭著。<br>这片海域最显著的特征是直径数百米的巨型漩涡，<br>巨大的扭力会将船体完全撕碎并抛洒在周边海域，形成明显的碎片带。",
+        "LoadingType": 0
+    },
+    "84": {
+        "Key": 84,
+        "Id": 84,
+        "LoadingBg": "",
+        "TextTitle": "废墟下的都市",
+        "TextGeneral": "安德拉废都是布法利亚教团认定的圣地之一。<br>由于废墟内部栖息着大量怪物，教团仅在外围设立了警戒哨所。<br>最新勘探显示，现存结构仅是原城市的高层部分，废都的大部分依然埋藏于地底深处。",
+        "LoadingType": 0
+    },
+    "85": {
+        "Key": 85,
+        "Id": 85,
+        "LoadingBg": "",
+        "TextTitle": "载具",
+        "TextGeneral": "载具幻想们不仅具备自动追踪导航的能力，还拥有各自独特的技能哦！",
+        "LoadingType": 0
+    },
+    "86": {
+        "Key": 86,
+        "Id": 86,
+        "LoadingBg": "",
+        "TextTitle": "情感动作",
+        "TextGeneral": "长按任意情感动作，即可将其添加到收藏列表。",
+        "LoadingType": 0
+    },
+    "87": {
+        "Key": 87,
+        "Id": 87,
+        "LoadingBg": "",
+        "TextTitle": "情感动作",
+        "TextGeneral": "晒鱼的时候，是可以自由移动的哦！",
+        "LoadingType": 0
+    },
+    "88": {
+        "Key": 88,
+        "Id": 88,
+        "LoadingBg": "",
+        "TextTitle": "拍照",
+        "TextGeneral": "在拍照功能的战斗模式下，能抓拍冒险者释放技能时的飒爽英姿哦！",
+        "LoadingType": 0
+    },
+    "89": {
+        "Key": 89,
+        "Id": 89,
+        "LoadingBg": "",
+        "TextTitle": "拍照",
+        "TextGeneral": "当其他玩家正在进行情感动作时，若您将其邀请加入多人拍照队伍，就能通过拖动动作进度条，手动调节对方的动作状态啦～",
+        "LoadingType": 0
+    },
+    "90": {
+        "Key": 90,
+        "Id": 90,
+        "LoadingBg": "",
+        "TextTitle": "协会祝祷之泉",
+        "TextGeneral": "协会管理员可以在协会的祝祷之泉中，选择面向全体成员的增益效果哦～",
+        "LoadingType": 0
+    },
+    "91": {
+        "Key": 91,
+        "Id": 91,
+        "LoadingBg": "",
+        "TextTitle": "组队",
+        "TextGeneral": "组队状态下，可以在地图上能看到同场景队友的头像。",
+        "LoadingType": 0
+    },
+    "92": {
+        "Key": 92,
+        "Id": 92,
+        "LoadingBg": "",
+        "TextTitle": "组队",
+        "TextGeneral": "组队时切换地图分线，可以看到地图不同分线的队友头像。",
+        "LoadingType": 0
+    },
+    "93": {
+        "Key": 93,
+        "Id": 93,
+        "LoadingBg": "",
+        "TextTitle": "匹配",
+        "TextGeneral": "满足副本推荐的职责搭配，组队状态下也能参与匹配哦！快和小伙伴们一起开启匹配玩法，携手挑战吧！",
+        "LoadingType": 0
+    },
+    "94": {
+        "Key": 94,
+        "Id": 94,
+        "LoadingBg": "",
+        "TextTitle": "家园·种花",
+        "TextGeneral": "家园种花玩法中，可以通过浇水和施肥缩短植物的成熟时间。",
+        "LoadingType": 0
+    },
+    "95": {
+        "Key": 95,
+        "Id": 95,
+        "LoadingBg": "",
+        "TextTitle": "家园·花朵杂交",
+        "TextGeneral": "家园种花玩法中，花朵的颜色和形状由种植时的杂交结果决定。",
+        "LoadingType": 0
+    },
+    "96": {
+        "Key": 96,
+        "Id": 96,
+        "LoadingBg": "",
+        "TextTitle": "家园·主动授粉",
+        "TextGeneral": "家园种花玩法中，当花朵处于授粉期时，冒险者可主动对其授粉。<br>被授粉的植物开花后具有一半授粉时所用花粉的基因型。",
+        "LoadingType": 0
+    },
+    "97": {
+        "Key": 97,
+        "Id": 97,
+        "LoadingBg": "",
+        "TextTitle": "家园·被动杂交",
+        "TextGeneral": "家园种花玩法中，若花朵未在授粉期被冒险者授粉，则成熟时会受附近其他成熟花朵的花粉影响而决定开花时的结果。",
+        "LoadingType": 0
+    },
+    "98": {
+        "Key": 98,
+        "Id": 98,
+        "LoadingBg": "",
+        "TextTitle": "家园·收获",
+        "TextGeneral": "家园种花玩法中，自己种的花成熟时可以收获花朵和种子，亲友可以收获对应的花粉。",
+        "LoadingType": 0
+    },
+    "99": {
+        "Key": 99,
+        "Id": 99,
+        "LoadingBg": "",
+        "TextTitle": "家园·家具制造",
+        "TextGeneral": "想提升家具制造效率？那就多邀请亲友同住吧！同住的伙伴越多，家园制造台的队列也会越多哦～",
+        "LoadingType": 0
+    },
+    "100": {
+        "Key": 100,
+        "Id": 100,
+        "LoadingBg": "",
+        "TextTitle": "每日委托",
+        "TextGeneral": "每日委托来不及做？没关系！领取委托次数会累计到次日，最多可累计3次哦！",
+        "LoadingType": 0
+    },
+    "101": {
+        "Key": 101,
+        "Id": 101,
+        "LoadingBg": "",
+        "TextTitle": "每日委托",
+        "TextGeneral": "队长进入每日委托副本时，系统会自动为未领取委托任务的队员领取任务。",
+        "LoadingType": 0
+    },
+    "102": {
+        "Key": 102,
+        "Id": 102,
+        "LoadingBg": "",
+        "TextTitle": "每日委托",
+        "TextGeneral": "已完成当日委托的玩家可作为队员跟随其他冒险者进入每日委托副本，帮助其他冒险者完成委托！",
+        "LoadingType": 0
+    },
+    "103": {
+        "Key": 103,
+        "Id": 103,
+        "LoadingBg": "",
+        "TextTitle": "活跃度",
+        "TextGeneral": "优先完成当日有倍率的目标，即可更高效地达到当日活跃度目标。",
+        "LoadingType": 0
+    },
+    "104": {
+        "Key": 104,
+        "Id": 104,
+        "LoadingBg": "",
+        "TextTitle": "鱼类研究",
+        "TextGeneral": "研究指定鱼类，会更容易钓到对应鱼类的更高星级的鱼。",
+        "LoadingType": 0
+    },
+    "105": {
+        "Key": 105,
+        "Id": 105,
+        "LoadingBg": "",
+        "TextTitle": "环境共鸣·漂浮滑翔",
+        "TextGeneral": "与阿斯特里亚平原维尔古城中的英雄草共鸣即可获得漂浮及滑翔能力！<br>离地一定高度可进入漂浮状态，漂浮状态下可切换为滑翔状态，尽情在阿斯特里亚上空翱翔吧！",
+        "LoadingType": 0
+    },
+    "106": {
+        "Key": 106,
+        "Id": 106,
+        "LoadingBg": "",
+        "TextTitle": "环境共鸣·幻影冲锋",
+        "TextGeneral": "与阿斯特里亚平原巨塔遗迹顶端浮岛中的风核共鸣即可获得幻影冲锋能力！<br>每次最多可进行连续两次的超快速冲锋位移，还可撞破平原上的风屏障！",
+        "LoadingType": 0
+    },
+    "107": {
+        "Key": 107,
+        "Id": 107,
+        "LoadingBg": "",
+        "TextTitle": "休闲活动",
+        "TextGeneral": "每天不同时段均会开启不同的休闲活动，打开【推荐玩法】【休闲】内挑选感兴趣的活动参加吧！",
+        "LoadingType": 0
+    },
+    "108": {
+        "Key": 108,
+        "Id": 108,
+        "LoadingBg": "",
+        "TextTitle": "潜能激发",
+        "TextGeneral": "生体元等级的提升可以激发开拓者的潜能，可以在生体元等级界面内可以激活相应的潜能获得多段跳、立面奔跑等能力哦！",
+        "LoadingType": 0
+    },
+    "109": {
+        "Key": 109,
+        "Id": 109,
+        "LoadingBg": "",
+        "TextTitle": "神奇生物",
+        "TextGeneral": "平原上会不定时出没各种神奇生物，击败后有概率获取稀有头饰和坐骑！<br>具体出没规律可在怪物讨伐中查看哦！",
+        "LoadingType": 0
+    },
+    "110": {
+        "Key": 110,
+        "Id": 110,
+        "LoadingBg": "",
+        "TextTitle": "野外首领",
+        "TextGeneral": "野外每个整点及整点30分都会出现各种野外首领，讨伐后开启战利品宝箱有机会获得对应首领的意志！具体出没规律可在怪物讨伐中查看哦~<br>小提示：如果当前首领已被击败，尝试切换分线吧！",
+        "LoadingType": 0
+    },
+    "111": {
+        "Key": 111,
+        "Id": 111,
+        "LoadingBg": "",
+        "TextTitle": "衣橱小贴士",
+        "TextGeneral": "点击衣橱页签右侧的“小眼睛”可以隐藏该部位的外观显示。",
+        "LoadingType": 0
+    },
+    "112": {
+        "Key": 112,
+        "Id": 112,
+        "LoadingBg": "",
+        "TextTitle": "卢诺",
+        "TextGeneral": "麦格纳大陆普遍使用的货币，由布法利亚教团负责管理和铸造。<br>铸造材料是含有星元的贵金属。<br>卢诺币的铸造工艺十分高超，几乎不可能被伪造。",
+        "LoadingType": 0
+    },
+    "113": {
+        "Key": 113,
+        "Id": 113,
+        "LoadingBg": "",
+        "TextTitle": "传送点",
+        "TextGeneral": "一种古老的<style=\"emph-gn\">布法利亚遗产</style>，能把接触到传送点的生物传送到遍布星脉的另一处传送点中，原理尚不明确。<br>传送点无法运输大量货物，只能传送随身携带的少量物资。",
+        "LoadingType": 0
+    },
+    "114": {
+        "Key": 114,
+        "Id": 114,
+        "LoadingBg": "",
+        "TextTitle": "双面币亭",
+        "TextGeneral": "位于城北欢乐街的一家老牌旅馆。<br>提供餐饮，住宿，特饮等服务。由于地处欢乐街中心地带，所以知名度很高。<br>店主威尔伯特是个和蔼的大叔，说话带有班哈尔特口音。",
+        "LoadingType": 0
+    },
+    "115": {
+        "Key": 115,
+        "Id": 115,
+        "LoadingBg": "",
+        "TextTitle": "海风节与游园会",
+        "TextGeneral": "为纪念独立，议会的每年一度的全民庆祝日。<br>节日当天，阿斯特里斯会飘散起华丽的彩带雨，市民们会在家门口拜访盛开的海百合，以表达祝愿与和平。城中还会举办各类诗会，巡游，游园会等特别庆典。",
+        "LoadingType": 0
+    }
+}

@@ -1,0 +1,1066 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "TagName": "重击",
+        "TagString": "长按普通攻击键触发的招式",
+        "TagType": 2,
+        "ParentTag": 1001
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "TagName": "下落攻击",
+        "TagString": "在离地一定高度下使用普通攻击施展的下落招式",
+        "TagType": 2,
+        "ParentTag": 1001
+    },
+    "3": {
+        "Key": 3,
+        "Id": 3,
+        "TagName": "特殊攻击",
+        "TagString": "武器最为核心、广为人知的招牌技能招式",
+        "TagType": 1,
+        "ParentTag": 1010
+    },
+    "4": {
+        "Key": 4,
+        "Id": 4,
+        "TagName": "专精技能",
+        "TagString": "武器可以自由组合替换的技能招式",
+        "TagType": 1,
+        "ParentTag": 1010
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "TagName": "终极技能",
+        "TagString": "武器威力最为强大的终极战斗奥义",
+        "TagType": 1,
+        "ParentTag": 1010
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "TagName": "补充技能",
+        "TagString": "由天赋习得的特性技能",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "TagName": "受身技能",
+        "TagString": "处于受击浮空时能够使用的技能",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "TagName": "共鸣技能",
+        "TagString": "共鸣习得的威力强大的技能",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "9": {
+        "Key": 9,
+        "Id": 9,
+        "TagName": "直接伤害",
+        "TagString": "技能招式本身所产生的伤害",
+        "TagType": 2,
+        "ParentTag": 1002
+    },
+    "10": {
+        "Key": 10,
+        "Id": 10,
+        "TagName": "持续伤害",
+        "TagString": "技能对目标产生影响，或留下存在一段时间的伤害区域，使得目标持续受到伤害（该类伤害无法触发幸运效果）",
+        "TagType": 2,
+        "ParentTag": 1002
+    },
+    "11": {
+        "Key": 11,
+        "Id": 11,
+        "TagName": "直接治疗",
+        "TagString": "技能招式本身所产生的治疗",
+        "TagType": 2,
+        "ParentTag": 1003
+    },
+    "12": {
+        "Key": 12,
+        "Id": 12,
+        "TagName": "持续治疗",
+        "TagString": "技能对目标产生影响，或留下存在一段时间的治疗区域，使得目标持续回复生命值（该类治疗无法触发幸运效果）",
+        "TagType": 2,
+        "ParentTag": 1003
+    },
+    "13": {
+        "Key": 13,
+        "Id": 13,
+        "TagName": "祝福",
+        "TagString": "处于战斗能力、移动能力或其他能力强化的有利状态",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "14": {
+        "Key": 14,
+        "Id": 14,
+        "TagName": "激昂",
+        "TagString": "持续小段时间，强力提升战斗能力的效果",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "15": {
+        "Key": 15,
+        "Id": 15,
+        "TagName": "鼓舞",
+        "TagString": "战斗属性获得了大幅提升，若在天赋下有所养成，将会附加额外效果",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "16": {
+        "Key": 16,
+        "Id": 16,
+        "TagName": "虚弱",
+        "TagString": "处于战斗能力、移动能力或其他能力下降的不利状态下",
+        "TagType": 2,
+        "ParentTag": 1005
+    },
+    "17": {
+        "Key": 17,
+        "Id": 17,
+        "TagName": "易伤",
+        "TagString": "一段时间内所受伤害增加的不利效果",
+        "TagType": 2,
+        "ParentTag": 1005
+    },
+    "18": {
+        "Key": 18,
+        "Id": 18,
+        "TagName": "碎裂",
+        "TagString": "一段时间内所受伤害增加，若在天赋下有所养成，将会附加额外效果",
+        "TagType": 2,
+        "ParentTag": 1005
+    },
+    "19": {
+        "Key": 19,
+        "Id": 19,
+        "TagName": "冻结",
+        "TagString": "处于无法移动，无法做出任何战斗行为的不利状态下",
+        "TagType": 2,
+        "ParentTag": 1006
+    },
+    "20": {
+        "Key": 20,
+        "Id": 20,
+        "TagName": "束缚",
+        "TagString": "处于无法移动的不利状态下",
+        "TagType": 2,
+        "ParentTag": 1006
+    },
+    "21": {
+        "Key": 21,
+        "Id": 21,
+        "TagName": "眩晕",
+        "TagString": "处于无法移动，无法做出任何战斗行为，无法使用道具的不利状态下",
+        "TagType": 2,
+        "ParentTag": 1006
+    },
+    "22": {
+        "Key": 22,
+        "Id": 22,
+        "TagName": "减速",
+        "TagString": "处于移动速度下降的不利状态下",
+        "TagType": 2,
+        "ParentTag": 1006
+    },
+    "23": {
+        "Key": 23,
+        "Id": 23,
+        "TagName": "削韧",
+        "TagString": "击破强力目标霸体条的能力",
+        "TagType": 2,
+        "ParentTag": 1006
+    },
+    "24": {
+        "Key": 24,
+        "Id": 24,
+        "TagName": "冲刺",
+        "TagString": "连续位移类型技能",
+        "TagType": 2,
+        "ParentTag": 1007
+    },
+    "25": {
+        "Key": 25,
+        "Id": 25,
+        "TagName": "闪现",
+        "TagString": "不连续位移类型技能",
+        "TagType": 2,
+        "ParentTag": 1007
+    },
+    "26": {
+        "Key": 26,
+        "Id": 26,
+        "TagName": "护盾",
+        "TagString": "额外的生命值护盾，能够优先于生命值吸收伤害",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "27": {
+        "Key": 27,
+        "Id": 27,
+        "TagName": "招架",
+        "TagString": "技能的特殊阶段，在此阶段下受到伤害时能够免除部分伤害",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "28": {
+        "Key": 28,
+        "Id": 28,
+        "TagName": "火元素",
+        "TagString": "技能附带火元素的力量",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "29": {
+        "Key": 29,
+        "Id": 29,
+        "TagName": "冰元素",
+        "TagString": "技能附带冰元素的力量",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "30": {
+        "Key": 30,
+        "Id": 30,
+        "TagName": "雷元素",
+        "TagString": "技能附带雷元素的力量",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "31": {
+        "Key": 31,
+        "Id": 31,
+        "TagName": "风元素",
+        "TagString": "技能附带风元素的力量",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "32": {
+        "Key": 32,
+        "Id": 32,
+        "TagName": "岩元素",
+        "TagString": "技能附带岩元素的力量",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "33": {
+        "Key": 33,
+        "Id": 33,
+        "TagName": "森元素",
+        "TagString": "技能附带森元素的力量",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "34": {
+        "Key": 34,
+        "Id": 34,
+        "TagName": "光元素",
+        "TagString": "技能附带光元素的力量",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "35": {
+        "Key": 35,
+        "Id": 35,
+        "TagName": "暗元素",
+        "TagString": "技能附带暗元素的力量",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "36": {
+        "Key": 36,
+        "Id": 36,
+        "TagName": "协同",
+        "TagString": "跟随当前战斗使攻击行为进行同步攻击的效果",
+        "TagType": 2,
+        "ParentTag": 1017
+    },
+    "37": {
+        "Key": 37,
+        "Id": 37,
+        "TagName": "协战",
+        "TagString": "自行独立进行攻击，协助作战的效果",
+        "TagType": 2,
+        "ParentTag": 1017
+    },
+    "38": {
+        "Key": 38,
+        "Id": 38,
+        "TagName": "蓄力",
+        "TagString": "需要一段时间准备才能达到更强威力的技能释放方式",
+        "TagType": 1,
+        "ParentTag": 1009
+    },
+    "39": {
+        "Key": 39,
+        "Id": 39,
+        "TagName": "引导",
+        "TagString": "需要维持施法状态来延续效果的技能释放方式",
+        "TagType": 1,
+        "ParentTag": 1009
+    },
+    "40": {
+        "Key": 40,
+        "Id": 40,
+        "TagName": "强化",
+        "TagString": "效果处于增强或产生变化的技能释放状态",
+        "TagType": 1,
+        "ParentTag": 1008
+    },
+    "41": {
+        "Key": 41,
+        "Id": 41,
+        "TagName": "回能",
+        "TagString": "可以获得某些技能释放所需要的战斗资源",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "42": {
+        "Key": 42,
+        "Id": 42,
+        "TagName": "刻印",
+        "TagString": "在特定条件下能够触发的一类效果，其触发概率受到属性影响",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "43": {
+        "Key": 43,
+        "Id": 43,
+        "TagName": "压制",
+        "TagString": "自身生命值高于目标生命值时的状态，该状态下提供造成伤害与减伤加成，若在天赋下有所养成，将会附加额外效果",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "44": {
+        "Key": 44,
+        "Id": 44,
+        "TagName": "陷阱",
+        "TagString": "一种需要触发条件后产生效果的召唤物",
+        "TagType": 2,
+        "ParentTag": 1018
+    },
+    "45": {
+        "Key": 45,
+        "Id": 45,
+        "TagName": "图腾",
+        "TagString": "一种持续一段时间不移动对周围产生效果的召唤物",
+        "TagType": 2,
+        "ParentTag": 1018
+    },
+    "46": {
+        "Key": 46,
+        "Id": 46,
+        "TagName": "宠物",
+        "TagString": "一种能够移动跟随召唤者协助作战的召唤物",
+        "TagType": 2,
+        "ParentTag": 1018
+    },
+    "47": {
+        "Key": 47,
+        "Id": 47,
+        "TagName": "造物",
+        "TagString": "一种具有碰撞，可以改变地形的召唤物",
+        "TagType": 2,
+        "ParentTag": 1018
+    },
+    "48": {
+        "Key": 48,
+        "Id": 48,
+        "TagName": "弹丸",
+        "TagString": "一种体积较小、速度较快的飞行物",
+        "TagType": 2,
+        "ParentTag": 1019
+    },
+    "49": {
+        "Key": 49,
+        "Id": 49,
+        "TagName": "发射物",
+        "TagString": "一种体积较大、速度一般的飞行物",
+        "TagType": 2,
+        "ParentTag": 1019
+    },
+    "50": {
+        "Key": 50,
+        "Id": 50,
+        "TagName": "领域",
+        "TagString": "能够持续为自身或友方提供有利状态的范围效果",
+        "TagType": 2,
+        "ParentTag": 1020
+    },
+    "51": {
+        "Key": 51,
+        "Id": 51,
+        "TagName": "区域",
+        "TagString": "能够持续对敌方造成伤害或不利状态的范围效果",
+        "TagType": 2,
+        "ParentTag": 1020
+    },
+    "52": {
+        "Key": 52,
+        "Id": 52,
+        "TagName": "光环",
+        "TagString": "能够持续给自身范围内目标提供效果",
+        "TagType": 2,
+        "ParentTag": 1020
+    },
+    "53": {
+        "Key": 53,
+        "Id": 53,
+        "TagName": "普通怪物",
+        "TagString": "活跃于大陆中的普通怪物，战斗能力一般较为基础",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "54": {
+        "Key": 54,
+        "Id": 54,
+        "TagName": "精英",
+        "TagString": "怪物中出类拔萃的战士，一般具有威胁度较高的特殊技能",
+        "TagType": 2,
+        "ParentTag": 1021
+    },
+    "55": {
+        "Key": 55,
+        "Id": 55,
+        "TagName": "首领",
+        "TagString": "族群中绝对的强者，称之为王也毫不过分",
+        "TagType": 3,
+        "ParentTag": 1022
+    },
+    "56": {
+        "Key": 56,
+        "Id": 56,
+        "TagName": "旷野领主",
+        "TagString": "在地图中特殊领地区域才能发现的强力怪物",
+        "TagType": 3,
+        "ParentTag": 1022
+    },
+    "57": {
+        "Key": 57,
+        "Id": 57,
+        "TagName": "领主",
+        "TagString": "在副本地图中最为强力的怪物",
+        "TagType": 3,
+        "ParentTag": 1022
+    },
+    "58": {
+        "Key": 58,
+        "Id": 58,
+        "TagName": "健康",
+        "TagString": "当前生命值不低于生命上限50%的状态",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "59": {
+        "Key": 59,
+        "Id": 59,
+        "TagName": "受伤",
+        "TagString": "当前生命值不高于生命上限30%的状态",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "60": {
+        "Key": 60,
+        "Id": 60,
+        "TagName": "哥布林",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "61": {
+        "Key": 61,
+        "Id": 61,
+        "TagName": "基本攻击",
+        "TagString": "武器的基本招式",
+        "TagType": 2,
+        "ParentTag": 1001
+    },
+    "62": {
+        "Key": 62,
+        "Id": 62,
+        "TagName": "无元素",
+        "TagString": "技能不附带元素的力量",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "63": {
+        "Key": 63,
+        "Id": 63,
+        "TagName": "侵蚀",
+        "TagString": "受到未知来源的侵染，将会产生各种不良影响",
+        "TagType": 2,
+        "ParentTag": 1005
+    },
+    "64": {
+        "Key": 64,
+        "Id": 64,
+        "TagName": "强控",
+        "TagString": "对没有霸体值的目标造成强力控制",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "65": {
+        "Key": 65,
+        "Id": 65,
+        "TagName": "反制攻击",
+        "TagString": "红光反制成功后的攻击",
+        "TagType": 2,
+        "ParentTag": 1001
+    },
+    "66": {
+        "Key": 66,
+        "Id": 66,
+        "TagName": "物理",
+        "TagString": "伤害为物理伤害，受到格挡的影响",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "67": {
+        "Key": 67,
+        "Id": 67,
+        "TagName": "魔法",
+        "TagString": "伤害为魔法伤害，不会被格挡",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "68": {
+        "Key": 68,
+        "Id": 68,
+        "TagName": "单体",
+        "TagString": "目标较少时，产生更强作用（若产生伤害，对主要目标伤害不会衰减，对其他目标伤害急剧衰减）",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "69": {
+        "Key": 69,
+        "Id": 69,
+        "TagName": "范围",
+        "TagString": "目标较多时，产生更强作用（若产生伤害，对所有目标的伤害同时衰减）",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "70": {
+        "Key": 70,
+        "Id": 70,
+        "TagName": "吟唱",
+        "TagString": "需要一段时间准备才能释放的技能释放方式",
+        "TagType": 1,
+        "ParentTag": 1009
+    },
+    "71": {
+        "Key": 71,
+        "Id": 71,
+        "TagName": "暴击",
+        "TagString": "处于暴击提升的有利状态",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "72": {
+        "Key": 72,
+        "Id": 72,
+        "TagName": "幸运",
+        "TagString": "处于幸运提升的有利状态",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "73": {
+        "Key": 73,
+        "Id": 73,
+        "TagName": "加速",
+        "TagString": "处于冷却提升的有利状态",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "74": {
+        "Key": 74,
+        "Id": 74,
+        "TagName": "精通",
+        "TagString": "处于精通提升的有利状态",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "75": {
+        "Key": 75,
+        "Id": 75,
+        "TagName": "增伤",
+        "TagString": "处于伤害能力提升的有利状态",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "76": {
+        "Key": 76,
+        "Id": 76,
+        "TagName": "防护",
+        "TagString": "处于生存能力提升的有利状态",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "77": {
+        "Key": 77,
+        "Id": 77,
+        "TagName": "减攻",
+        "TagString": "处于进攻能力下降的不利状态下",
+        "TagType": 2,
+        "ParentTag": 1005
+    },
+    "78": {
+        "Key": 78,
+        "Id": 78,
+        "TagName": "减防",
+        "TagString": "处于生存能力下降的不利状态下",
+        "TagType": 2,
+        "ParentTag": 1005
+    },
+    "79": {
+        "Key": 79,
+        "Id": 79,
+        "TagName": "裹挟",
+        "TagString": "处于无法移动，无法做出任何战斗行为，并且被持续击飞和吸引的不利状态下",
+        "TagType": 2,
+        "ParentTag": 1006
+    },
+    "80": {
+        "Key": 80,
+        "Id": 80,
+        "TagName": "聚怪",
+        "TagString": "将敌方目标聚集到身边",
+        "TagType": 2,
+        "ParentTag": 1006
+    },
+    "81": {
+        "Key": 81,
+        "Id": 81,
+        "TagName": "急速",
+        "TagString": "处于急速提升的有利状态",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "82": {
+        "Key": 82,
+        "Id": 82,
+        "TagName": "野外怪物",
+        "TagString": "用于标记野外怪物，等级压制计算公式用到",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "83": {
+        "Key": 83,
+        "Id": 83,
+        "TagName": "沉默",
+        "TagString": "处于无法做出任何战斗行为的不利状态下",
+        "TagType": 2,
+        "ParentTag": 1006
+    },
+    "84": {
+        "Key": 84,
+        "Id": 84,
+        "TagName": "虚蚀",
+        "TagString": "受到赛季未知感染",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "85": {
+        "Key": 85,
+        "Id": 85,
+        "TagName": "重伤",
+        "TagString": "处于受治疗效果下降的不利状态下",
+        "TagType": 2,
+        "ParentTag": 1005
+    },
+    "86": {
+        "Key": 86,
+        "Id": 86,
+        "TagName": "玩具和坐骑技能",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "87": {
+        "Key": 87,
+        "Id": 87,
+        "TagName": "变身技能",
+        "TagString": "用于标记变身buff，使用退出按钮删除带有这个tag的所有变身buff",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "88": {
+        "Key": 88,
+        "Id": 88,
+        "TagName": "幸运效果伤害",
+        "TagString": "技能触发的幸运效果所产生的伤害（使用职业技能，且造成直接伤害或治疗时，会以等同于幸运几率的概率触发自身拥有的所有幸运效果）",
+        "TagType": 2,
+        "ParentTag": 1002
+    },
+    "89": {
+        "Key": 89,
+        "Id": 89,
+        "TagName": "幸运一击治疗",
+        "TagString": "技能触发的幸运效果所产生的治疗（使用职业技能，且造成直接伤害或治疗时，会以等同于幸运几率的概率触发自身拥有的所有幸运效果）",
+        "TagType": 2,
+        "ParentTag": 1003
+    },
+    "90": {
+        "Key": 90,
+        "Id": 90,
+        "TagName": "主属性",
+        "TagString": "处于主属性提升的有利状态",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "91": {
+        "Key": 91,
+        "Id": 91,
+        "TagName": "召唤物",
+        "TagString": "一种基础战斗单位，重复释放较为单一的技能",
+        "TagType": 2,
+        "ParentTag": 1018
+    },
+    "92": {
+        "Key": 92,
+        "Id": 92,
+        "TagName": "增疗",
+        "TagString": "处于治疗能力提升的有利状态",
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "93": {
+        "Key": 93,
+        "Id": 93,
+        "TagName": "近距离",
+        "TagString": "技能需要自身距离目标足够近时，才可以对其造成影响",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "94": {
+        "Key": 94,
+        "Id": 94,
+        "TagName": "远距离",
+        "TagString": "技能在自身距离目标较远时，仍旧可以对其造成影响",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "95": {
+        "Key": 95,
+        "Id": 95,
+        "TagName": "诅咒词条",
+        "TagString": "用于肉鸽玩法的buff词条类型",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "96": {
+        "Key": 96,
+        "Id": 96,
+        "TagName": "弹跳子弹",
+        "TagString": "用于肉鸽玩法的技能标记",
+        "TagType": 0,
+        "ParentTag": 0
+    },
+    "140": {
+        "Key": 140,
+        "Id": 140,
+        "TagName": "场景技能",
+        "TagString": "通过场景或者关卡玩法获得的额外技能",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "201": {
+        "Key": 201,
+        "Id": 201,
+        "TagName": "野外BOSS",
+        "TagString": "任务参与击杀某一类型的怪物",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "202": {
+        "Key": 202,
+        "Id": 202,
+        "TagName": "野外",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "203": {
+        "Key": 203,
+        "Id": 203,
+        "TagName": "副本",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "204": {
+        "Key": 204,
+        "Id": 204,
+        "TagName": "近战",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "205": {
+        "Key": 205,
+        "Id": 205,
+        "TagName": "远程",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "206": {
+        "Key": 206,
+        "Id": 206,
+        "TagName": "力量",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "207": {
+        "Key": 207,
+        "Id": 207,
+        "TagName": "敏捷",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "208": {
+        "Key": 208,
+        "Id": 208,
+        "TagName": "智力",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "209": {
+        "Key": 209,
+        "Id": 209,
+        "TagName": "辅助",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "210": {
+        "Key": 210,
+        "Id": 210,
+        "TagName": "战士",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "211": {
+        "Key": 211,
+        "Id": 211,
+        "TagName": "坦克",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "212": {
+        "Key": 212,
+        "Id": 212,
+        "TagName": "刺客",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "213": {
+        "Key": 213,
+        "Id": 213,
+        "TagName": "法系",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "214": {
+        "Key": 214,
+        "Id": 214,
+        "TagName": "射手",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "221": {
+        "Key": 221,
+        "Id": 221,
+        "TagName": "小怪（副本）",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "222": {
+        "Key": 222,
+        "Id": 222,
+        "TagName": "小精英（副本）",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "223": {
+        "Key": 223,
+        "Id": 223,
+        "TagName": "大精英（副本）",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "224": {
+        "Key": 224,
+        "Id": 224,
+        "TagName": "超精英（副本）",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "225": {
+        "Key": 225,
+        "Id": 225,
+        "TagName": "首领（副本）",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 1031
+    },
+    "1001": {
+        "Key": 1001,
+        "Id": 1001,
+        "TagName": "普通攻击",
+        "TagString": "使用普通攻击键触发的各类招式",
+        "TagType": 1,
+        "ParentTag": 1010
+    },
+    "1002": {
+        "Key": 1002,
+        "Id": 1002,
+        "TagName": "伤害",
+        "TagString": "使得目标损失生命值的效果",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1003": {
+        "Key": 1003,
+        "Id": 1003,
+        "TagName": "治疗",
+        "TagString": "使得目标回复生命值的效果",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1004": {
+        "Key": 1004,
+        "Id": 1004,
+        "TagName": "增益",
+        "TagString": "能够在战斗中对己方有利的效果",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1005": {
+        "Key": 1005,
+        "Id": 1005,
+        "TagName": "减益",
+        "TagString": "处于各种不利己方战斗的状态下",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1006": {
+        "Key": 1006,
+        "Id": 1006,
+        "TagName": "控制",
+        "TagString": "处于各种行为受到限制的不利状态下",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1007": {
+        "Key": 1007,
+        "Id": 1007,
+        "TagName": "位移",
+        "TagString": "技能能够帮助角色快速移动",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1008": {
+        "Key": 1008,
+        "Id": 1008,
+        "TagName": "生存",
+        "TagString": "技能能够帮助角色存活",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1009": {
+        "Key": 1009,
+        "Id": 1009,
+        "TagName": "释放类型",
+        "TagString": "技能释放的特殊释放方式",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1010": {
+        "Key": 1010,
+        "Id": 1010,
+        "TagName": "职业技能",
+        "TagString": "职业本身所拥有的技能",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1017": {
+        "Key": 1017,
+        "Id": 1017,
+        "TagName": "助战",
+        "TagString": "能额外产生攻击行为或抵抗进攻行为的辅助效果",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1018": {
+        "Key": 1018,
+        "Id": 1018,
+        "TagName": "召唤",
+        "TagString": "可以召唤存在状态受到召唤者影响的战斗单位",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1019": {
+        "Key": 1019,
+        "Id": 1019,
+        "TagName": "飞行物",
+        "TagString": "能够做物理运动并在命中后产生效果的技能机制",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1020": {
+        "Key": 1020,
+        "Id": 1020,
+        "TagName": "区域效果",
+        "TagString": "在一个有范围的区域生效的生效方式",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1021": {
+        "Key": 1021,
+        "Id": 1021,
+        "TagName": "强力目标",
+        "TagString": "实力远高于普通怪物的存在",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1022": {
+        "Key": 1022,
+        "Id": 1022,
+        "TagName": "头目",
+        "TagString": "首领、旷野领主及领主",
+        "TagType": 2,
+        "ParentTag": 1021
+    },
+    "1031": {
+        "Key": 1031,
+        "Id": 1031,
+        "TagName": "怪物类型tag",
+        "TagString": "",
+        "TagType": 1,
+        "ParentTag": 0
+    }
+}

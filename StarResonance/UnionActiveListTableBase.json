@@ -1,0 +1,202 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "Comment": "活跃度达200",
+        "UnionTitle": "协会活跃",
+        "UnionComment": "活跃度达{*val*}",
+        "Picture": "ui/textures/union_2/union_temporary03",
+        "TargetType": 1,
+        "TargetId": [
+            41,
+            200,
+            0
+        ],
+        "TimeId": 15,
+        "AwardId": 20500000,
+        "GetAwardId": 0,
+        "QuickJumpType": 2,
+        "QuickJumpParam": [
+            800505
+        ],
+        "ChangeUnion": 0,
+        "Label": "每日"
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "Comment": "活跃度达500",
+        "UnionTitle": "协会活跃",
+        "UnionComment": "活跃度达{*val*}",
+        "Picture": "ui/textures/union_2/union_temporary02",
+        "TargetType": 1,
+        "TargetId": [
+            41,
+            500,
+            0
+        ],
+        "TimeId": 15,
+        "AwardId": 20500010,
+        "GetAwardId": 0,
+        "QuickJumpType": 2,
+        "QuickJumpParam": [
+            800505
+        ],
+        "ChangeUnion": 0,
+        "Label": "每日"
+    },
+    "3": {
+        "Key": 3,
+        "Id": 3,
+        "Comment": "打卡任务完成",
+        "UnionTitle": "协会打卡",
+        "UnionComment": "完成协会打卡任务",
+        "Picture": "ui/textures/union_2/union_temporary04",
+        "TargetType": 1,
+        "TargetId": [
+            310,
+            1,
+            12000,
+            1200001,
+            23900101
+        ],
+        "TimeId": 15,
+        "AwardId": 20500020,
+        "GetAwardId": 0,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            12000,
+            2,
+            6
+        ],
+        "ChangeUnion": 1,
+        "Label": "每日"
+    },
+    "4": {
+        "Key": 4,
+        "Id": 4,
+        "Comment": "货运任务完成",
+        "UnionTitle": "协会货运",
+        "UnionComment": "完成协会货运任务",
+        "Picture": "ui/textures/union_2/union_temporary05",
+        "TargetType": 1,
+        "TargetId": [
+            43,
+            1,
+            0
+        ],
+        "TimeId": 15,
+        "AwardId": 20500030,
+        "GetAwardId": 0,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            12000,
+            2,
+            42
+        ],
+        "ChangeUnion": 1,
+        "Label": "每日"
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "Comment": "协会本周10人次参与狩猎玩法",
+        "UnionTitle": "协会狩猎",
+        "UnionComment": "本周{*val*}人次参与",
+        "Picture": "ui/textures/union_2/union_temporary07",
+        "TargetType": 2,
+        "TargetId": [
+            42,
+            10,
+            0,
+            12011,
+            12012,
+            12013
+        ],
+        "TimeId": 17,
+        "AwardId": 20500100,
+        "GetAwardId": 0,
+        "QuickJumpType": 2,
+        "QuickJumpParam": [
+            500108,
+            500151
+        ],
+        "ChangeUnion": 0,
+        "Label": "每周"
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "Comment": "协会本周30人次参与狩猎玩法",
+        "UnionTitle": "协会狩猎",
+        "UnionComment": "本周{*val*}人次参与",
+        "Picture": "ui/textures/union_2/union_temporary08",
+        "TargetType": 2,
+        "TargetId": [
+            42,
+            30,
+            0,
+            12011,
+            12012,
+            12013
+        ],
+        "TimeId": 17,
+        "AwardId": 20500110,
+        "GetAwardId": 0,
+        "QuickJumpType": 2,
+        "QuickJumpParam": [
+            500108,
+            500152
+        ],
+        "ChangeUnion": 0,
+        "Label": "每周"
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "Comment": "协会本周10人次参与战舞玩法",
+        "UnionTitle": "协会战舞",
+        "UnionComment": "本周{*val*}人次参与",
+        "Picture": "ui/textures/union_2/union_temporary09",
+        "TargetType": 2,
+        "TargetId": [
+            44,
+            10,
+            12000
+        ],
+        "TimeId": 17,
+        "AwardId": 20500120,
+        "GetAwardId": 0,
+        "QuickJumpType": 2,
+        "QuickJumpParam": [
+            500108,
+            900200
+        ],
+        "ChangeUnion": 0,
+        "Label": "每周"
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "Comment": "协会本周30人次参与战舞玩法",
+        "UnionTitle": "协会战舞",
+        "UnionComment": "本周{*val*}人次参与",
+        "Picture": "ui/textures/union_2/union_temporary09",
+        "TargetType": 2,
+        "TargetId": [
+            44,
+            30,
+            12000
+        ],
+        "TimeId": 17,
+        "AwardId": 20500130,
+        "GetAwardId": 0,
+        "QuickJumpType": 2,
+        "QuickJumpParam": [
+            500108,
+            900200
+        ],
+        "ChangeUnion": 0,
+        "Label": "每周"
+    }
+}
