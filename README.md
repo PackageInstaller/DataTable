@@ -5,7 +5,7 @@
 |    AlchemyStars    |    白夜极光    |    台服 Lua，需要自己反编译    |
 |    AnchorPanic    |    锚点降临    |            国服 Lua            |
 |   AngelicaAsterR   |    当归紫苑    | Dmm Json，带数据表自动检查更新 |
-|      EverSoul      |    永恒灵魂    |  国际服+日服 Json，会定期上传  |
+|      EverSoul      |    永恒灵魂    | 国际服 + 日服 Json，会定期上传 |
 |   GirlsCreationR   |      草画      | Dmm Json，带全资产自动检查更新 |
 |     LostSword     |    失落之剑    | 韩服 Json，带数据表自动检查更新 |
 | MirrenStarLegends |    千年之旅    |        国服关服前数据表        |
@@ -17,5 +17,6 @@
 |    SoulOfDragon    |    龙魂旅人    |           国服 Sqlite           |
 |      SoulTide      |    灵魂潮汐    |           国服 LuaJIT           |
 |    SphereSeven    |     七星传     |            Qoo服 Lua            |
-|    WitchSpring    |    魔女之泉    |   国际服Xml (单机游戏，好玩)   |
+|    WitchSpring    |    魔女之泉    |   国际服 Xml (单机游戏，好玩)   |
 |       Embers       |      辉烬      |            国服 Json            |
+|   StarResonance   |    星痕共鸣    |            国服 Json            |
