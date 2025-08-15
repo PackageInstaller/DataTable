@@ -1,0 +1,26 @@
+namespace ProjectA.Data;
+
+table LessonMissionData {
+  id:int;
+  group_id:int;
+  lesson_id:int;
+  unlock_misson_id:int;
+  lesson_mission_type:int;
+  lesson_type:int;
+  is_point_reward:int;
+  show_reward_length:int;
+  type:int;
+  cfg1:int;
+  cfg2_length:int;
+  name:string;
+  desc:string;
+  mission_reward_id:int;
+  jump_id:int;
+  version_id:int;
+}
+
+table LessonMissionTable {
+  datas:[LessonMissionData];
+}
+
+root_type LessonMissionTable;

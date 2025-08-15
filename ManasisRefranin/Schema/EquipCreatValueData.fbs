@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table EquipCreatValueData {
+  id:int;
+  name:string;
+  desc:string;
+}
+
+table EquipCreatValueTable {
+  datas:[EquipCreatValueData];
+}
+
+root_type EquipCreatValueTable;

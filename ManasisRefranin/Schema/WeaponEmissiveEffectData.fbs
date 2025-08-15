@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table WeaponEmissiveEffectData {
+  order_id:int;
+  id:int;
+  weapon_id:int;
+  trigger_name:string;
+}
+
+table WeaponEmissiveEffectTable {
+  datas:[WeaponEmissiveEffectData];
+}
+
+root_type WeaponEmissiveEffectTable;

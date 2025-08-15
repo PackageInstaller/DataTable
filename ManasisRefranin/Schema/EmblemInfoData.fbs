@@ -1,0 +1,29 @@
+namespace ProjectA.Data;
+
+table EmblemInfoData {
+  emblem_id:int;
+  name:string;
+  icon:string;
+  text:string;
+  rank:int;
+  require_lesson_length:int;
+  pre_emblem_id1:int;
+  pre_emblem_level1:int;
+  pre_emblem_id2:int;
+  pre_emblem_level2:int;
+  skill_release_level1:int;
+  skill_type1:int;
+  skill_id1:int;
+  skill_release_level2:int;
+  skill_type2:int;
+  skill_id2:int;
+  skill_release_level3:int;
+  skill_type3:int;
+  skill_id3:int;
+}
+
+table EmblemInfoTable {
+  datas:[EmblemInfoData];
+}
+
+root_type EmblemInfoTable;

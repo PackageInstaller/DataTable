@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table CrystalGrowUpData {
+  id:int;
+  rare:int;
+  level:int;
+  cost_element:int;
+}
+
+table CrystalGrowUpTable {
+  datas:[CrystalGrowUpData];
+}
+
+root_type CrystalGrowUpTable;

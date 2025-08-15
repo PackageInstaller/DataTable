@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table MissionCountData {
+  id:int;
+  mission_type:int;
+  is_show_progress:int;
+  progress_display_type:int;
+}
+
+table MissionCountTable {
+  datas:[MissionCountData];
+}
+
+root_type MissionCountTable;

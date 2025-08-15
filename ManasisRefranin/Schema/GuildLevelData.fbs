@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table GuildLevelData {
+  level:int;
+  guild_population:int;
+  deputy_admin_num:int;
+  upgrade_crbt:int;
+  upgrade_reource_length:int;
+  wish_npc:int;
+  shop_npc:int;
+}
+
+table GuildLevelTable {
+  datas:[GuildLevelData];
+}
+
+root_type GuildLevelTable;

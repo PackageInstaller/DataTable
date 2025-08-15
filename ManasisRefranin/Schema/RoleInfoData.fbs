@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table RoleInfoData {
+  role_level:int;
+  role_exp:int;
+  card_level_limt:int;
+  friends_num:int;
+  resource_point:int;
+  equip_level_limt:int;
+}
+
+table RoleInfoTable {
+  datas:[RoleInfoData];
+}
+
+root_type RoleInfoTable;

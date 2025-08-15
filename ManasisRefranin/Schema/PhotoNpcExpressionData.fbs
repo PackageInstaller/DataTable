@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table PhotoNpcExpressionData {
+  id:int;
+  npc_id:int;
+  name:string;
+  trigger:string;
+  mouth:string;
+  icon:string;
+}
+
+table PhotoNpcExpressionTable {
+  datas:[PhotoNpcExpressionData];
+}
+
+root_type PhotoNpcExpressionTable;

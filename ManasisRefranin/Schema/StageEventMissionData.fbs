@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table StageEventMissionData {
+  id:int;
+  mission_group_id:int;
+  order:int;
+  mission_id:int;
+  giveup_dialogue:string;
+  fail_dialogue:string;
+}
+
+table StageEventMissionTable {
+  datas:[StageEventMissionData];
+}
+
+root_type StageEventMissionTable;

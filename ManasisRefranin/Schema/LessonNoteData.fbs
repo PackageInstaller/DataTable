@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table LessonNoteData {
+  note_id:int;
+  desc:string;
+  paper:string;
+  sign:string;
+  card_id:int;
+  relation_level:int;
+}
+
+table LessonNoteTable {
+  datas:[LessonNoteData];
+}
+
+root_type LessonNoteTable;

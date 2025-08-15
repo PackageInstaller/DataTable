@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table QTEConditionData {
+  id:int;
+  skill_id:int;
+  unlock_type:int;
+  unlock_value:int;
+  range:int;
+  qte_type:int;
+  qte_type_value1:int;
+  qte_type_value2:int;
+  qte_type_value3:int;
+  qte_array:int;
+}
+
+table QTEConditionTable {
+  datas:[QTEConditionData];
+}
+
+root_type QTEConditionTable;

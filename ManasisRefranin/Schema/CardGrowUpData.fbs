@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table CardGrowUpData {
+  card_id:int;
+  hp:int;
+  attack:int;
+  defense:int;
+  crit_value:int;
+  block_value:int;
+  dodge_value:int;
+}
+
+table CardGrowUpTable {
+  datas:[CardGrowUpData];
+}
+
+root_type CardGrowUpTable;

@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table PassiveSkillEffectInfoData {
+  id:int;
+  target:int;
+  type:int;
+  value_type:int;
+  num1:int;
+  num2:int;
+  num3:int;
+  num4:int;
+  num5:int;
+}
+
+table PassiveSkillEffectInfoTable {
+  datas:[PassiveSkillEffectInfoData];
+}
+
+root_type PassiveSkillEffectInfoTable;

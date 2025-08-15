@@ -1,0 +1,26 @@
+namespace ProjectA.Data;
+
+table FishInfoData {
+  item_id:int;
+  name:string;
+  value:int;
+  fish_power:int;
+  fish_angry_power:int;
+  fish_escape_power:int;
+  first_angry_time_length:int;
+  angry_frequency_length:int;
+  angry_time_length:int;
+  min_length:int;
+  max_length:int;
+  min_biting_time:int;
+  max_biting_time:int;
+  prefab_id:string;
+  animation_id:string;
+  version_id:int;
+}
+
+table FishInfoTable {
+  datas:[FishInfoData];
+}
+
+root_type FishInfoTable;

@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table FishBaitData {
+  item_id:int;
+  name:string;
+  value:int;
+  value2_change:int;
+  value3_change:int;
+  value4_change:int;
+  value5_change:int;
+  special_fish_id:int;
+  special_fish_change:int;
+}
+
+table FishBaitTable {
+  datas:[FishBaitData];
+}
+
+root_type FishBaitTable;

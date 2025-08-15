@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table TicketCostData {
+  id:int;
+  type:int;
+  resources_id:int;
+  num:int;
+}
+
+table TicketCostTable {
+  datas:[TicketCostData];
+}
+
+root_type TicketCostTable;

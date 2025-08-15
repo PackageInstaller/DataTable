@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table GuildEstablishData {
+  id:int;
+  guild_build_item_type:int;
+  guild_build_item_id:int;
+  guild_build_item_num:int;
+}
+
+table GuildEstablishTable {
+  datas:[GuildEstablishData];
+}
+
+root_type GuildEstablishTable;

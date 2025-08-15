@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table LessonMissionAccumulateRewardData {
+  id:int;
+  group_id:int;
+  reward_type:int;
+  reward_sub_type:int;
+  points_type:int;
+  points_id:int;
+  points:int;
+  can_pass:bool;
+  reward_id:int;
+}
+
+table LessonMissionAccumulateRewardTable {
+  datas:[LessonMissionAccumulateRewardData];
+}
+
+root_type LessonMissionAccumulateRewardTable;

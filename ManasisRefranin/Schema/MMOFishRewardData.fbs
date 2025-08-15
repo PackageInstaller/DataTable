@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table MMOFishRewardData {
+  id:int;
+  reward_id:int;
+  reward_score:int;
+  extra_fish_score_percent:int;
+  next:int;
+}
+
+table MMOFishRewardTable {
+  datas:[MMOFishRewardData];
+}
+
+root_type MMOFishRewardTable;

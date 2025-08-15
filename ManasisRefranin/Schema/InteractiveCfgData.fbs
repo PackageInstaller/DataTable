@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table InteractiveCfgData {
+  id:int;
+  type:int;
+  interactive_id:int;
+  text:string;
+  text2:string;
+  icon:string;
+  system_id:int;
+  show_bubble:string;
+  transoprt_id:int;
+}
+
+table InteractiveCfgTable {
+  datas:[InteractiveCfgData];
+}
+
+root_type InteractiveCfgTable;

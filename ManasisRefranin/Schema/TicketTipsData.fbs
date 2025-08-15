@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table TicketTipsData {
+  id:int;
+  type:int;
+  config1:int;
+  config2:int;
+  string_true:string;
+  string_false:string;
+}
+
+table TicketTipsTable {
+  datas:[TicketTipsData];
+}
+
+root_type TicketTipsTable;

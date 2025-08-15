@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table LeaderTalentAuraData {
+  id:int;
+  aura_id:int;
+  level:int;
+  name:string;
+  icon:string;
+  desc:string;
+  passive_skill_id:int;
+}
+
+table LeaderTalentAuraTable {
+  datas:[LeaderTalentAuraData];
+}
+
+root_type LeaderTalentAuraTable;

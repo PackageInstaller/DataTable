@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table CardMissonDetailData {
+  id:int;
+  card_id:int;
+  section_id:int;
+  icon:string;
+  name:string;
+  content_length:int;
+  before_desc:string;
+  after_desc:string;
+}
+
+table CardMissonDetailTable {
+  datas:[CardMissonDetailData];
+}
+
+root_type CardMissonDetailTable;

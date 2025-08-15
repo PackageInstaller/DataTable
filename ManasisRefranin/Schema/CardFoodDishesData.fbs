@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table CardFoodDishesData {
+  id:int;
+  card_id:int;
+  dishes:int;
+  favorite_type:int;
+  favorite_cfg:int;
+  increase_rate:int;
+  conversation_id:string;
+}
+
+table CardFoodDishesTable {
+  datas:[CardFoodDishesData];
+}
+
+root_type CardFoodDishesTable;

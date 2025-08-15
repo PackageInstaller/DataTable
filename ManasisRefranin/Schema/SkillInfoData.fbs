@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table SkillInfoData {
+  id:int;
+  skill_id:int;
+  skill_level:int;
+  npc_id_length:int;
+  require_level:int;
+  cost_type:int;
+  cost_id:int;
+  cost_value:int;
+}
+
+table SkillInfoTable {
+  datas:[SkillInfoData];
+}
+
+root_type SkillInfoTable;

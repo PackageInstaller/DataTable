@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table StagePatrolPathData {
+  id:int;
+  stage_id:int;
+  path_id:int;
+  path_array_length:int;
+  sub_path_array_length:int;
+}
+
+table StagePatrolPathTable {
+  datas:[StagePatrolPathData];
+}
+
+root_type StagePatrolPathTable;

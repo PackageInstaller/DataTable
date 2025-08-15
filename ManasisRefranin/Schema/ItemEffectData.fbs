@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table ItemEffectData {
+  item_id:int;
+  name:string;
+  state_value:int;
+  state_fix_value:int;
+  atrr1_info:int;
+  atrr1_value:int;
+  atrr2_info:int;
+  atrr2_value:int;
+  passive_skill1:int;
+  duration:int;
+}
+
+table ItemEffectTable {
+  datas:[ItemEffectData];
+}
+
+root_type ItemEffectTable;

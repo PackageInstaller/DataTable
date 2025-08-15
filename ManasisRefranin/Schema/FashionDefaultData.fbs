@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table FashionDefaultData {
+  id:int;
+  card_id:int;
+  slot_id:int;
+  slot_name:string;
+  root:string;
+  rotation:int;
+  animation:string;
+  camera:string;
+}
+
+table FashionDefaultTable {
+  datas:[FashionDefaultData];
+}
+
+root_type FashionDefaultTable;

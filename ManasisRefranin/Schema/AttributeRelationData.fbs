@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table AttributeRelationData {
+  id:int;
+  attribute_id:int;
+  value_type:int;
+  display_type:int;
+  icon:int;
+}
+
+table AttributeRelationTable {
+  datas:[AttributeRelationData];
+}
+
+root_type AttributeRelationTable;

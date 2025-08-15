@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table RecurringLoginData {
+  id:int;
+  require_level:int;
+  login_time:int;
+  reward_id:int;
+  next_id:int;
+}
+
+table RecurringLoginTable {
+  datas:[RecurringLoginData];
+}
+
+root_type RecurringLoginTable;

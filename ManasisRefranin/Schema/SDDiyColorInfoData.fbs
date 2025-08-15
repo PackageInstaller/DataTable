@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table SDDiyColorInfoData {
+  id:int;
+  color_id:int;
+  diy_type:int;
+  r_info:int;
+  g_info:int;
+  b_info:int;
+  r2_info:int;
+  g2_info:int;
+  b2_info:int;
+}
+
+table SDDiyColorInfoTable {
+  datas:[SDDiyColorInfoData];
+}
+
+root_type SDDiyColorInfoTable;

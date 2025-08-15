@@ -1,0 +1,30 @@
+namespace ProjectA.Data;
+
+table AdventureAreaTriggerData {
+  id:int;
+  area_id:int;
+  name:string;
+  machine_type:int;
+  type:int;
+  trigger_id:int;
+  need_item1_length:int;
+  need_item2_length:int;
+  need_item3_length:int;
+  config1:int;
+  config2:int;
+  config3:int;
+  config4:int;
+  config5:int;
+  config_array1_length:int;
+  config_array2_length:int;
+  config_array3_length:int;
+  config_array4_length:int;
+  notice:int;
+  lack_notice:int;
+}
+
+table AdventureAreaTriggerTable {
+  datas:[AdventureAreaTriggerData];
+}
+
+root_type AdventureAreaTriggerTable;

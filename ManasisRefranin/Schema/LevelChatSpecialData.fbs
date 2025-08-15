@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table LevelChatSpecialData {
+  id:int;
+  chat_id:int;
+  sequence:int;
+  choice:int;
+  voice_id:int;
+  card_id:int;
+  voice_content:string;
+  relation:int;
+}
+
+table LevelChatSpecialTable {
+  datas:[LevelChatSpecialData];
+}
+
+root_type LevelChatSpecialTable;

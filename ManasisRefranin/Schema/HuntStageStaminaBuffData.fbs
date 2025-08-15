@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table HuntStageStaminaBuffData {
+  id:int;
+  stamina:int;
+  passive_skill_id:int;
+}
+
+table HuntStageStaminaBuffTable {
+  datas:[HuntStageStaminaBuffData];
+}
+
+root_type HuntStageStaminaBuffTable;

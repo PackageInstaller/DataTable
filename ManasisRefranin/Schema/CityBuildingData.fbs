@@ -1,0 +1,31 @@
+namespace ProjectA.Data;
+
+table CityBuildingData {
+  id:int;
+  city_id:int;
+  position_type:int;
+  part:int;
+  partname:string;
+  name:string;
+  desc:string;
+  building_id:string;
+  icon:string;
+  event_id:int;
+  guild_id:int;
+  scence_id:string;
+  scene_name_on_ai:string;
+  interactive_type_length:int;
+  system_id_length:int;
+  is_show_mini_map:string;
+  mini_map:string;
+  mini_map_scale:int;
+  mini_map_offset_length:int;
+  mini_map_rotate:int;
+  position_length:int;
+}
+
+table CityBuildingTable {
+  datas:[CityBuildingData];
+}
+
+root_type CityBuildingTable;

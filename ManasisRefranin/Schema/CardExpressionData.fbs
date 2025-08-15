@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table CardExpressionData {
+  id:int;
+  card_id:int;
+  expression:string;
+  speak_id:string;
+  speak_speed:int;
+  blink_time:int;
+}
+
+table CardExpressionTable {
+  datas:[CardExpressionData];
+}
+
+root_type CardExpressionTable;

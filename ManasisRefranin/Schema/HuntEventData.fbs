@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table HuntEventData {
+  event_id:int;
+  name:string;
+  appear_monster_length:int;
+  appear_monster_level_length:int;
+  appear_collection_length:int;
+  image_name:string;
+  init_stamina:int;
+}
+
+table HuntEventTable {
+  datas:[HuntEventData];
+}
+
+root_type HuntEventTable;

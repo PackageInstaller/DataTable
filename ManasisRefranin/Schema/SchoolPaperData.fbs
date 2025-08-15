@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table SchoolPaperData {
+  id:int;
+  pic_prafab:int;
+  unlock_type:int;
+  type_cfg:int;
+  priority:int;
+  text_id:int;
+  text_title:string;
+  text_pic:string;
+  text_info:string;
+}
+
+table SchoolPaperTable {
+  datas:[SchoolPaperData];
+}
+
+root_type SchoolPaperTable;

@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table RaceCfgData {
+  id:int;
+  cfg_id:int;
+  list:int;
+  pre_time_min:int;
+  pre_time_mxz:int;
+  continue_time:int;
+  prefect_time:int;
+  type:int;
+  spd1_ratio:int;
+  spd2_ratio:int;
+  spd3_ratio:int;
+}
+
+table RaceCfgTable {
+  datas:[RaceCfgData];
+}
+
+root_type RaceCfgTable;

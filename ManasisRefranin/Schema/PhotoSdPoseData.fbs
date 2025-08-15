@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table PhotoSdPoseData {
+  id:int;
+  pose_name:string;
+  sdpose_icon:string;
+  sd_pose_trigger:string;
+  eye_id:string;
+  mouth_id:string;
+  eyebrow:string;
+}
+
+table PhotoSdPoseTable {
+  datas:[PhotoSdPoseData];
+}
+
+root_type PhotoSdPoseTable;

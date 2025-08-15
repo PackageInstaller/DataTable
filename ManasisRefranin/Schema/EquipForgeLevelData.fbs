@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table EquipForgeLevelData {
+  forge_level:int;
+  exp:int;
+  effect_value:int;
+}
+
+table EquipForgeLevelTable {
+  datas:[EquipForgeLevelData];
+}
+
+root_type EquipForgeLevelTable;

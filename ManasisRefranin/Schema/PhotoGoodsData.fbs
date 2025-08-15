@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table PhotoGoodsData {
+  id:int;
+  goods_type:int;
+  goods_name:string;
+  goods_icon:string;
+  resourse:string;
+}
+
+table PhotoGoodsTable {
+  datas:[PhotoGoodsData];
+}
+
+root_type PhotoGoodsTable;

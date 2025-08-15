@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table StageEventTipsData {
+  id:int;
+  tips_type:int;
+  cfg1:int;
+  cfg2_length:int;
+  icon_type:int;
+  condition:int;
+  title:string;
+  desc:string;
+}
+
+table StageEventTipsTable {
+  datas:[StageEventTipsData];
+}
+
+root_type StageEventTipsTable;

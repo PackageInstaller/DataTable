@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table NpcConversationData {
+  id:int;
+  card_id:int;
+  name:string;
+  min_relation:int;
+  max_relation:int;
+  city:int;
+  day_time:int;
+  weather:int;
+  pre_mission:int;
+  necessary_mission:int;
+  event_type:int;
+  rate:int;
+  conversation:int;
+}
+
+table NpcConversationTable {
+  datas:[NpcConversationData];
+}
+
+root_type NpcConversationTable;

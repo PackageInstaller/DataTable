@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table ComboSkillSpData {
+  id:int;
+  skill_id:int;
+  character_id_length:int;
+}
+
+table ComboSkillSpTable {
+  datas:[ComboSkillSpData];
+}
+
+root_type ComboSkillSpTable;

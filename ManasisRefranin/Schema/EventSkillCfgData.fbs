@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table EventSkillCfgData {
+  id:int;
+  type:int;
+  value:int;
+  icon:string;
+  skillname:string;
+  eff_hold_time:int;
+}
+
+table EventSkillCfgTable {
+  datas:[EventSkillCfgData];
+}
+
+root_type EventSkillCfgTable;

@@ -1,0 +1,34 @@
+namespace ProjectA.Data;
+
+table CardProficientData {
+  id:int;
+  card_id:int;
+  level:int;
+  attribute1:int;
+  attribute_value1:int;
+  attribute2:int;
+  attribute_value2:int;
+  attribute3:int;
+  attribute_value3:int;
+  attribute4:int;
+  attribute_value4:int;
+  passive_skill_add:int;
+  passive_skill_show:int;
+  skill_base_id_after:int;
+  show_sub_level:int;
+  cost_gold:int;
+  cost_item_id1:int;
+  cost_item_value1:int;
+  cost_item_id2:int;
+  cost_item_value2:int;
+  cost_item_id3:int;
+  cost_item_value3:int;
+  cost_item_id4:int;
+  cost_item_value4:int;
+}
+
+table CardProficientTable {
+  datas:[CardProficientData];
+}
+
+root_type CardProficientTable;

@@ -1,0 +1,22 @@
+namespace ProjectA.Data;
+
+table EquipLyricsData {
+  id:int;
+  store:int;
+  is_enchant:int;
+  name:string;
+  desc:string;
+  icon:string;
+  type:int;
+  subtype:int;
+  value_min:int;
+  value_max:int;
+  level:int;
+  rate:int;
+}
+
+table EquipLyricsTable {
+  datas:[EquipLyricsData];
+}
+
+root_type EquipLyricsTable;

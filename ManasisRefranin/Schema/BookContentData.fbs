@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table BookContentData {
+  item_id:int;
+  book_id:int;
+  order:int;
+  name:string;
+  content:string;
+  gain_desc:string;
+  jump_id:int;
+}
+
+table BookContentTable {
+  datas:[BookContentData];
+}
+
+root_type BookContentTable;

@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table DutyGreatSuccessData {
+  id:int;
+  card_id:int;
+  increase_rate:int;
+}
+
+table DutyGreatSuccessTable {
+  datas:[DutyGreatSuccessData];
+}
+
+root_type DutyGreatSuccessTable;

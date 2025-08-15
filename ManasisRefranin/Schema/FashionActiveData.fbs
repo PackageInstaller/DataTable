@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table FashionActiveData {
+  id:int;
+  card_id:int;
+  equipment:int;
+  fashion:int;
+  appreciate:int;
+}
+
+table FashionActiveTable {
+  datas:[FashionActiveData];
+}
+
+root_type FashionActiveTable;

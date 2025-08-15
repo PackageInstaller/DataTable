@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table LessonQuestionData {
+  lesson_id:int;
+  prompt_a:string;
+  prompt_b:string;
+  prompt_c:string;
+  note1:int;
+  note2:int;
+  note3:int;
+}
+
+table LessonQuestionTable {
+  datas:[LessonQuestionData];
+}
+
+root_type LessonQuestionTable;

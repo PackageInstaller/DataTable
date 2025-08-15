@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table PhotoUnlockData {
+  res_id:int;
+  res_type:int;
+  unlocktype:int;
+  unlock_cfg:int;
+  cardid:int;
+}
+
+table PhotoUnlockTable {
+  datas:[PhotoUnlockData];
+}
+
+root_type PhotoUnlockTable;

@@ -1,0 +1,30 @@
+namespace ProjectA.Data;
+
+table ResourcesData {
+  resources_id:int;
+  name:string;
+  item_type_name:string;
+  is_use:int;
+  price:int;
+  show_in_back:int;
+  backpack:int;
+  sub_backpack:int;
+  is_sell:int;
+  super_limit:int;
+  type:int;
+  rare:int;
+  bg_color:int;
+  icon_id:string;
+  text:string;
+  gain_info_length:int;
+  quickly_buy:int;
+  intro_info:int;
+  show_hold:int;
+  is_abbr:int;
+}
+
+table ResourcesTable {
+  datas:[ResourcesData];
+}
+
+root_type ResourcesTable;

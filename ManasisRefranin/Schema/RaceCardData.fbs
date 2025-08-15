@@ -1,0 +1,32 @@
+namespace ProjectA.Data;
+
+table RaceCardData {
+  role_id:int;
+  spd1:int;
+  spd2:int;
+  spd3:int;
+  spd_add:int;
+  acc:int;
+  acc_add:int;
+  sta:int;
+  sta_add:int;
+  skill:int;
+  combo_up:int;
+  combo_up2:int;
+  prefect_add:int;
+  stun_time:int;
+  speed_up_show:int;
+  miss_show:int;
+  stun_show:int;
+  action_to_spd:int;
+  dsc:string;
+  spd_ui_value:int;
+  acc_ui_value:int;
+  sta_ui_value:int;
+}
+
+table RaceCardTable {
+  datas:[RaceCardData];
+}
+
+root_type RaceCardTable;

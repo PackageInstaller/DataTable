@@ -1,0 +1,26 @@
+namespace ProjectA.Data;
+
+table CrystalSkillData {
+  id:int;
+  skill_id:int;
+  level:int;
+  skill_name:string;
+  skillinfo:string;
+  passive_skill_id:int;
+  subtype1:int;
+  display_type1:int;
+  value_type1:int;
+  value1:int;
+  grow_value1:int;
+  subtype2:int;
+  display_type2:int;
+  value_type2:int;
+  value2:int;
+  grow_value2:int;
+}
+
+table CrystalSkillTable {
+  datas:[CrystalSkillData];
+}
+
+root_type CrystalSkillTable;

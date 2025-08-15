@@ -1,0 +1,27 @@
+namespace ProjectA.Data;
+
+table SDDiyInfoData {
+  id:int;
+  type_name:string;
+  diy_type:int;
+  diy_type_name:string;
+  type_sort:int;
+  retrieve_type:int;
+  retrieve_cfg:string;
+  icon_id:string;
+  rare:int;
+  bg_color:int;
+  sex_cfg:int;
+  begin_color:int;
+  unlock_type:string;
+  unsnatch_type:int;
+  gain_id_length:int;
+  preview_diy_length:int;
+  version_id:int;
+}
+
+table SDDiyInfoTable {
+  datas:[SDDiyInfoData];
+}
+
+root_type SDDiyInfoTable;

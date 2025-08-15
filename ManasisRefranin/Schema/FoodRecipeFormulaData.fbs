@@ -1,0 +1,36 @@
+namespace ProjectA.Data;
+
+table FoodRecipeFormulaData {
+  recipe_id:int;
+  recipe_base_id:int;
+  name:string;
+  desc:string;
+  icon:string;
+  rare:int;
+  bg_color:int;
+  recipe_type:int;
+  is_show:bool;
+  order:int;
+  require_level:int;
+  exp:int;
+  first_exp:int;
+  product_type:int;
+  failed_product_id:int;
+  product_id:int;
+  material_type1:int;
+  material_id1:int;
+  material_num1:int;
+  material_type2:int;
+  material_id2:int;
+  material_num2:int;
+  material_type3:int;
+  material_id3:int;
+  material_num3:int;
+  version_id:int;
+}
+
+table FoodRecipeFormulaTable {
+  datas:[FoodRecipeFormulaData];
+}
+
+root_type FoodRecipeFormulaTable;

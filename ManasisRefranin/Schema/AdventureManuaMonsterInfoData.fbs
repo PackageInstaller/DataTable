@@ -1,0 +1,28 @@
+namespace ProjectA.Data;
+
+table AdventureManuaMonsterInfoData {
+  monster_id:int;
+  name:string;
+  animation_name:string;
+  scale:int;
+  rotate_length:int;
+  offset_length:int;
+  monsterace:string;
+  drop_item_length:int;
+  drop_crystal_length:int;
+  earth:int;
+  water:int;
+  fire:int;
+  wind:int;
+  light:int;
+  dark:int;
+  slash:int;
+  strike:int;
+  stab:int;
+}
+
+table AdventureManuaMonsterInfoTable {
+  datas:[AdventureManuaMonsterInfoData];
+}
+
+root_type AdventureManuaMonsterInfoTable;

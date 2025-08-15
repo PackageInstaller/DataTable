@@ -1,0 +1,27 @@
+namespace ProjectA.Data;
+
+table EquipGrowCostData {
+  id:int;
+  position:int;
+  exp:int;
+  cost_coin:int;
+  equip_id:int;
+  rare:int;
+  level:int;
+  cost_gold:int;
+  cost_item_id1:int;
+  cost_item_value1:int;
+  cost_item_id2:int;
+  cost_item_value2:int;
+  cost_item_id3:int;
+  cost_item_value3:int;
+  cost_item_id4:int;
+  cost_item_value4:int;
+  reform_length:int;
+}
+
+table EquipGrowCostTable {
+  datas:[EquipGrowCostData];
+}
+
+root_type EquipGrowCostTable;

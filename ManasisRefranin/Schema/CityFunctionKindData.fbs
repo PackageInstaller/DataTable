@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table CityFunctionKindData {
+  id:int;
+  order:int;
+  name:string;
+}
+
+table CityFunctionKindTable {
+  datas:[CityFunctionKindData];
+}
+
+root_type CityFunctionKindTable;

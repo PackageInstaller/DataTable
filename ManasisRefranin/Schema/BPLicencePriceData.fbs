@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table BPLicencePriceData {
+  bp_licence_type:int;
+  recharge_id:string;
+  bp_licence_price:int;
+  bp_licence_item_name:string;
+}
+
+table BPLicencePriceTable {
+  datas:[BPLicencePriceData];
+}
+
+root_type BPLicencePriceTable;

@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table GraphicSettingsData {
+  id:int;
+  graphic_setting_type:int;
+  options:int;
+  value:int;
+}
+
+table GraphicSettingsTable {
+  datas:[GraphicSettingsData];
+}
+
+root_type GraphicSettingsTable;

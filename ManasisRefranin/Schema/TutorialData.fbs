@@ -1,0 +1,41 @@
+namespace ProjectA.Data;
+
+table TutorialData {
+  id:int;
+  name:string;
+  is_head:int;
+  is_end_point:int;
+  is_server_end:int;
+  is_wait_function_tips:int;
+  group_id:int;
+  next_id:int;
+  order:int;
+  show_jump:bool;
+  top_ui:string;
+  trigger_type:int;
+  trigger_sub_type:string;
+  delay:int;
+  display_delay:int;
+  tutorial_type:int;
+  tutorial_sub_type:int;
+  copy_target:string;
+  tutorial_action_name:int;
+  scroll_to_index:int;
+  book_tutorial_group:int;
+  speaker_icon:string;
+  desc:string;
+  dialog_pos:string;
+  icon_id:int;
+  need_time_pause:int;
+  fx_name:string;
+  fx_pos:string;
+  fx_offset:string;
+  extra_fx_index:int;
+  extra_fx_offset_length:int;
+}
+
+table TutorialTable {
+  datas:[TutorialData];
+}
+
+root_type TutorialTable;

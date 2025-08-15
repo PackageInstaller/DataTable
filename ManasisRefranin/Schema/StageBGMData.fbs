@@ -1,0 +1,25 @@
+namespace ProjectA.Data;
+
+table StageBGMData {
+  id:int;
+  scence:string;
+  event_id:int;
+  time:int;
+  is_uibgm:bool;
+  furniture:int;
+  is_day_night_soft_blend:bool;
+  normal_bgm:string;
+  normal_bgm_volume:float;
+  battle_bgm:string;
+  battle_bgm_volume:float;
+  boss_battle_bgm:string;
+  boss_battle_bg_molume:float;
+  camp_bgm:string;
+  camp_bgm_volume:float;
+}
+
+table StageBGMTable {
+  datas:[StageBGMData];
+}
+
+root_type StageBGMTable;

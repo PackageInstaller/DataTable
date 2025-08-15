@@ -1,0 +1,22 @@
+namespace ProjectA.Data;
+
+table RechargeCNData {
+  id:int;
+  quick_id:string;
+  order:int;
+  img:string;
+  item_name:string;
+  price_cn:int;
+  resource_type:int;
+  resource_id:int;
+  resource_num:int;
+  first_type:int;
+  first_id:int;
+  first_num:int;
+}
+
+table RechargeCNTable {
+  datas:[RechargeCNData];
+}
+
+root_type RechargeCNTable;

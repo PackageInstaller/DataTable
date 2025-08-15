@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table GrowFundLvRewardData {
+  id:int;
+  level:int;
+  free_reward:string;
+  paied_reward:string;
+}
+
+table GrowFundLvRewardTable {
+  datas:[GrowFundLvRewardData];
+}
+
+root_type GrowFundLvRewardTable;

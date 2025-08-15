@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table GameStartCfgData {
+  id:int;
+  card_id:int;
+  relation_min:int;
+  relation_max:int;
+  pre_mission_id:int;
+  special_order:int;
+  rate:int;
+  scene_id:string;
+  prefab_id:string;
+}
+
+table GameStartCfgTable {
+  datas:[GameStartCfgData];
+}
+
+root_type GameStartCfgTable;

@@ -1,0 +1,41 @@
+namespace ProjectA.Data;
+
+table PassiveSkillData {
+  id:int;
+  order:int;
+  card_id:int;
+  name:string;
+  description:string;
+  ifshow:int;
+  show_in_ability:bool;
+  from_system:int;
+  from_system_text:string;
+  condition:int;
+  condition_parameter1:int;
+  condition_parameter2:int;
+  condition_parameter3:int;
+  condition_parameter4:int;
+  condition_parameter5_length:int;
+  target:int;
+  skill_type:int;
+  kind_type:int;
+  rate:int;
+  skill_parameter1:int;
+  skill_parameter2:int;
+  skill_parameter3:int;
+  skill_parameter4:int;
+  skill_parameter5:string;
+  skill_parameter6_length:int;
+  break_affect:int;
+  cool_down:int;
+  cool_down_reset:bool;
+  skill_icon:string;
+  is_main:int;
+  is_show_in_battle:bool;
+}
+
+table PassiveSkillTable {
+  datas:[PassiveSkillData];
+}
+
+root_type PassiveSkillTable;

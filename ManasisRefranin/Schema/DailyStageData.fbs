@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table DailyStageData {
+  stage_type:int;
+  img:string;
+  icon:string;
+  bg:string;
+  stage_name:string;
+  stage_group:int;
+  daily_access_limit:int;
+  access_item_id:int;
+  open_day_length:int;
+  close_desc:string;
+}
+
+table DailyStageTable {
+  datas:[DailyStageData];
+}
+
+root_type DailyStageTable;

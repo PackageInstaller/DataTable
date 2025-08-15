@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table EquipBreakUpData {
+  id:int;
+  rare:int;
+  level:int;
+  resource_type:int;
+  resource_num:int;
+}
+
+table EquipBreakUpTable {
+  datas:[EquipBreakUpData];
+}
+
+root_type EquipBreakUpTable;

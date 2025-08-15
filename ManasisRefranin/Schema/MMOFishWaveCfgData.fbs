@@ -1,0 +1,24 @@
+namespace ProjectA.Data;
+
+table MMOFishWaveCfgData {
+  wave_id:int;
+  basefish_num:int;
+  add_fish_rate0:int;
+  add_fish_rate1:int;
+  add_fish_rate2:int;
+  add_fish_rate3:int;
+  min_first_qte_time:int;
+  max_first_qte_time:int;
+  min_qte_time:int;
+  max_qte_time:int;
+  duration_time:int;
+  min_rest_time:int;
+  max_rest_time:int;
+  wave_score:int;
+}
+
+table MMOFishWaveCfgTable {
+  datas:[MMOFishWaveCfgData];
+}
+
+root_type MMOFishWaveCfgTable;

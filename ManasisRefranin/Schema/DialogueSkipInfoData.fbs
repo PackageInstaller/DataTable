@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table DialogueSkipInfoData {
+  id:int;
+  dialogue_id:int;
+  conversation_id:int;
+  title_name:string;
+  skip_time:int;
+  text:string;
+  dialogue_entry_id:int;
+}
+
+table DialogueSkipInfoTable {
+  datas:[DialogueSkipInfoData];
+}
+
+root_type DialogueSkipInfoTable;

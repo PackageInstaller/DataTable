@@ -1,0 +1,12 @@
+namespace ProjectA.Data;
+
+table StringData {
+  id:int;
+  desc:string;
+}
+
+table StringTable {
+  datas:[StringData];
+}
+
+root_type StringTable;

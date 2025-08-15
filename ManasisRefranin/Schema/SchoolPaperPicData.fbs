@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table SchoolPaperPicData {
+  id:int;
+  unlock_type:int;
+  type_cfg:int;
+  priority:int;
+  use_pic:int;
+}
+
+table SchoolPaperPicTable {
+  datas:[SchoolPaperPicData];
+}
+
+root_type SchoolPaperPicTable;

@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table CardBeginningCfgData {
+  card_id:int;
+  name:string;
+  fashion:int;
+  weapon:int;
+  weapenfashion:int;
+  skill_id_length:int;
+  base_skill_point:int;
+}
+
+table CardBeginningCfgTable {
+  datas:[CardBeginningCfgData];
+}
+
+root_type CardBeginningCfgTable;

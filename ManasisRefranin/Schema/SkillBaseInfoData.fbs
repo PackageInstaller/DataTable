@@ -1,0 +1,36 @@
+namespace ProjectA.Data;
+
+table SkillBaseInfoData {
+  skill_id:int;
+  skill_base_id:int;
+  npc_id:int;
+  type:int;
+  type_name:string;
+  icon_id:string;
+  talenticon_id:string;
+  cardproficienticon_id:string;
+  order:int;
+  name:string;
+  skill_max_level:int;
+  summarize:string;
+  description:string;
+  cfg0_length:int;
+  cfg1_length:int;
+  cfg2_length:int;
+  cfg3_length:int;
+  cfg4_length:int;
+  cfg5_length:int;
+  cfg6_length:int;
+  cfg7_length:int;
+  cfg8_length:int;
+  cfg9_length:int;
+  proficient_level:int;
+  parent:int;
+  showtype:int;
+}
+
+table SkillBaseInfoTable {
+  datas:[SkillBaseInfoData];
+}
+
+root_type SkillBaseInfoTable;

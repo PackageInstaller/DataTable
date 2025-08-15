@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table ComboSkillData {
+  id:int;
+  character_id:int;
+  cutin_camera:string;
+}
+
+table ComboSkillTable {
+  datas:[ComboSkillData];
+}
+
+root_type ComboSkillTable;

@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table MysteryBoxGroupData {
+  id:int;
+  name:string;
+  order:int;
+  first_reward:int;
+  reward:int;
+  group_icon:string;
+  list_order:int;
+}
+
+table MysteryBoxGroupTable {
+  datas:[MysteryBoxGroupData];
+}
+
+root_type MysteryBoxGroupTable;

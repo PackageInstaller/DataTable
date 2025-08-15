@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table PetEffectInfoData {
+  id:int;
+  npc_id:int;
+  relation_level:int;
+  effect_id:int;
+  string_id:int;
+  relation_add:int;
+  add_limit:int;
+  is_simple:bool;
+}
+
+table PetEffectInfoTable {
+  datas:[PetEffectInfoData];
+}
+
+root_type PetEffectInfoTable;

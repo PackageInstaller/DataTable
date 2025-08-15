@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table PrePhotoTriggerData {
+  id:int;
+  map_id:string;
+  trigger_id:int;
+  p1_act:string;
+  p2_act:string;
+  p3_act:string;
+  save_rate:int;
+}
+
+table PrePhotoTriggerTable {
+  datas:[PrePhotoTriggerData];
+}
+
+root_type PrePhotoTriggerTable;

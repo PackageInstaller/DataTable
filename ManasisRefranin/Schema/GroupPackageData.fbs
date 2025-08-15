@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table GroupPackageData {
+  id:int;
+  event_id:int;
+  order:int;
+  price_length:int;
+  reward_id:int;
+  pachage_icon:string;
+  pachage_name:string;
+  extra_reward1:int;
+  extra_limit1:int;
+  extra_reward2:int;
+  extra_limit2:int;
+  extra_reward3:int;
+  extra_limit3:int;
+}
+
+table GroupPackageTable {
+  datas:[GroupPackageData];
+}
+
+root_type GroupPackageTable;

@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table CameraNoiseData {
+  id:int;
+  settings:string;
+  frequency:float;
+  amplitude:float;
+  during:float;
+  is_force:bool;
+}
+
+table CameraNoiseTable {
+  datas:[CameraNoiseData];
+}
+
+root_type CameraNoiseTable;

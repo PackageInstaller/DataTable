@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table CampPropData {
+  id:int;
+  level_id:int;
+  prop_type:int;
+  last_mission:int;
+}
+
+table CampPropTable {
+  datas:[CampPropData];
+}
+
+root_type CampPropTable;

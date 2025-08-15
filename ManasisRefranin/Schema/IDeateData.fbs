@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table IDeateData {
+  id:int;
+  ideate_id:int;
+  trigger_type:int;
+  trigger_cfg1:int;
+  trigger_cfg2_length:int;
+  formula_type:int;
+  formula_id:int;
+  desc:string;
+}
+
+table IDeateTable {
+  datas:[IDeateData];
+}
+
+root_type IDeateTable;

@@ -1,0 +1,24 @@
+namespace ProjectA.Data;
+
+table GuildNewPlayerAddData {
+  role_level:int;
+  is_balance:bool;
+  event_id:int;
+  event_id2:int;
+  attribute1:int;
+  attribute_value1:int;
+  attribute2:int;
+  attribute_value2:int;
+  attribute3:int;
+  attribute_value3:int;
+  attribute4:int;
+  attribute_value4:int;
+  attribute5:int;
+  attribute_value5:int;
+}
+
+table GuildNewPlayerAddTable {
+  datas:[GuildNewPlayerAddData];
+}
+
+root_type GuildNewPlayerAddTable;

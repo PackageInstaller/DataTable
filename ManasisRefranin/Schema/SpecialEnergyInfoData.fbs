@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table SpecialEnergyInfoData {
+  energy_id:int;
+  energy_ui_type:int;
+  special_energy_type:int;
+  energy_buff_id_length:int;
+  val1:string;
+  val2:string;
+  val3_length:int;
+  val4_length:int;
+}
+
+table SpecialEnergyInfoTable {
+  datas:[SpecialEnergyInfoData];
+}
+
+root_type SpecialEnergyInfoTable;

@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table CollectEventContentData {
+  id:int;
+  event_id:int;
+  group_id:int;
+  group_reward_id:int;
+  group_name:string;
+}
+
+table CollectEventContentTable {
+  datas:[CollectEventContentData];
+}
+
+root_type CollectEventContentTable;

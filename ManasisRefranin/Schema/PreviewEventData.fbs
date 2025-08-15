@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table PreviewEventData {
+  event_id:int;
+  card_id:int;
+  video_show:string;
+  auto_show:int;
+  bg:string;
+  share_pic:string;
+  reward_type:int;
+  reward_id:int;
+  reward_num:int;
+}
+
+table PreviewEventTable {
+  datas:[PreviewEventData];
+}
+
+root_type PreviewEventTable;

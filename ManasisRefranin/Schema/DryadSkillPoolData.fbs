@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table DryadSkillPoolData {
+  id:int;
+  skill_pool_id:int;
+  skill_id:int;
+  rate:int;
+}
+
+table DryadSkillPoolTable {
+  datas:[DryadSkillPoolData];
+}
+
+root_type DryadSkillPoolTable;

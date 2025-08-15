@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table RelayPackData {
+  id:int;
+  event_id:int;
+  reward_stage:int;
+  prerequisite:int;
+  price:int;
+  recharge_id:string;
+  reward_id:int;
+  img:string;
+  name:string;
+  preview_jump_id:int;
+  preview_area:string;
+}
+
+table RelayPackTable {
+  datas:[RelayPackData];
+}
+
+root_type RelayPackTable;

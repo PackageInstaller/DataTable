@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table WorldMapRegionData {
+  region_id:int;
+  region_name:string;
+  strong_hold_id:int;
+  strong_hold_name:string;
+  strong_hold_icon:string;
+  unlock_mission_id:int;
+  mini_map:string;
+  mini_map_scale:int;
+  mini_map_offset_length:int;
+  scence_name:string;
+  bgi_map_open:int;
+}
+
+table WorldMapRegionTable {
+  datas:[WorldMapRegionData];
+}
+
+root_type WorldMapRegionTable;

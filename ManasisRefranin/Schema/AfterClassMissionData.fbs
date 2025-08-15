@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table AfterClassMissionData {
+  group_id:int;
+  mission_id:int;
+  mission_order:int;
+  type:int;
+  cfg1:int;
+  cfg2_length:int;
+  name:string;
+  mission_reward_id:int;
+  points:int;
+}
+
+table AfterClassMissionTable {
+  datas:[AfterClassMissionData];
+}
+
+root_type AfterClassMissionTable;

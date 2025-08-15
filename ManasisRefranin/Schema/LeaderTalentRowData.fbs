@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table LeaderTalentRowData {
+  row_id:int;
+  desc:string;
+  require_level:int;
+  require_main_mission:int;
+  color:string;
+}
+
+table LeaderTalentRowTable {
+  datas:[LeaderTalentRowData];
+}
+
+root_type LeaderTalentRowTable;

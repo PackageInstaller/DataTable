@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table LessonMissionConfigData {
+  lesson_id:int;
+  group_id:int;
+  outside_lessons_length:int;
+  lesson_local_pos_length:int;
+}
+
+table LessonMissionConfigTable {
+  datas:[LessonMissionConfigData];
+}
+
+root_type LessonMissionConfigTable;

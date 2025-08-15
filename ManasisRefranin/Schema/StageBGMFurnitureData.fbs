@@ -1,0 +1,25 @@
+namespace ProjectA.Data;
+
+table StageBGMFurnitureData {
+  id:int;
+  bgm_file:string;
+  bpm:float;
+  rare:int;
+  name:string;
+  item_desc:string;
+  pic:string;
+  pic_icon:string;
+  desc:string;
+  un_lock_desc:string;
+  is_default:bool;
+  event_id:int;
+  material_type4:int;
+  material_id4:int;
+  material_num4:int;
+}
+
+table StageBGMFurnitureTable {
+  datas:[StageBGMFurnitureData];
+}
+
+root_type StageBGMFurnitureTable;

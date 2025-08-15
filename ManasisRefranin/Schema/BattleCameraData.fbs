@@ -1,0 +1,35 @@
+namespace ProjectA.Data;
+
+table BattleCameraData {
+  id:int;
+  normal_fov:int;
+  normal_depth:float;
+  normal_depth_min:float;
+  normal_depth_max:float;
+  attack_fov:int;
+  attack_depth:float;
+  attack_depth_min:float;
+  attack_depth_max:float;
+  dodge_fov:int;
+  dodge_depth:float;
+  dodge_depth_min:float;
+  dodge_depth_max:float;
+  skill_fov:int;
+  skill_depth:float;
+  skill_depth_min:float;
+  skill_depth_max:float;
+  skill_start_fov:int;
+  skill_start_depth:float;
+  skill_start_depth_min:float;
+  skill_start_depth_max:float;
+  qte_fov:int;
+  qte_depth:float;
+  qte_depth_min:float;
+  qte_depth_max:float;
+}
+
+table BattleCameraTable {
+  datas:[BattleCameraData];
+}
+
+root_type BattleCameraTable;

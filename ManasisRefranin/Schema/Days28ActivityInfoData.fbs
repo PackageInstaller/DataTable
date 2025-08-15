@@ -1,0 +1,27 @@
+namespace ProjectA.Data;
+
+table Days28ActivityInfoData {
+  id:int;
+  list_bg:string;
+  name:string;
+  event_detail:string;
+  select_ssr_array_length:int;
+  show_reward1_id:int;
+  show_reward2_id:int;
+  show_reward3_id:int;
+  secret_reward_id:int;
+  message_to_player:string;
+  stage2_unluck_time:int;
+  stage3_unluck_time:int;
+  stage4_unluck_time:int;
+  order:int;
+  duration_days:int;
+  select_time:int;
+  default_select:int;
+}
+
+table Days28ActivityInfoTable {
+  datas:[Days28ActivityInfoData];
+}
+
+root_type Days28ActivityInfoTable;

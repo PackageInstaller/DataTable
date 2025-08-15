@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table EventStageData {
+  id:int;
+  event_id:int;
+  type:int;
+  stage_id:int;
+  locktip:string;
+  typetip:string;
+  name:string;
+  typeicon:string;
+  reward_length:int;
+}
+
+table EventStageTable {
+  datas:[EventStageData];
+}
+
+root_type EventStageTable;

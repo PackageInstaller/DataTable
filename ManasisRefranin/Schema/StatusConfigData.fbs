@@ -1,0 +1,40 @@
+namespace ProjectA.Data;
+
+table StatusConfigData {
+  id:int;
+  name:string;
+  from:int;
+  effect_id:int;
+  buff_type:int;
+  debuff_type:int;
+  target:int;
+  srcattr:int;
+  tarattr:int;
+  type:string;
+  over_lying:int;
+  over_lying_limit:int;
+  original_layer_num:int;
+  attenuate_way:int;
+  attenuate_count:int;
+  clear_able:bool;
+  is_good:bool;
+  value_type:int;
+  time:float;
+  time_level:int;
+  num1:int;
+  num2:int;
+  num3:int;
+  num4:int;
+  num5:int;
+  immue_argue:int;
+  change_info:string;
+  change_icon:string;
+  is_play_se:bool;
+  next_status_id:int;
+}
+
+table StatusConfigTable {
+  datas:[StatusConfigData];
+}
+
+root_type StatusConfigTable;

@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table AccumulatingDebuffExpandData {
+  id:int;
+  stage_monster_id:int;
+  status_id_length:int;
+}
+
+table AccumulatingDebuffExpandTable {
+  datas:[AccumulatingDebuffExpandData];
+}
+
+root_type AccumulatingDebuffExpandTable;

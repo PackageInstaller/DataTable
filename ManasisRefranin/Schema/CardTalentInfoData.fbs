@@ -1,0 +1,25 @@
+namespace ProjectA.Data;
+
+table CardTalentInfoData {
+  id:int;
+  cardid:int;
+  talent_module_id:int;
+  talent_id:int;
+  name:string;
+  desc:string;
+  icon:string;
+  effect_color:int;
+  type:int;
+  require_id:int;
+  require_num:int;
+  value_type:int;
+  atrr1_info:int;
+  atrr1_info_value:int;
+  passive_skill:int;
+}
+
+table CardTalentInfoTable {
+  datas:[CardTalentInfoData];
+}
+
+root_type CardTalentInfoTable;

@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table AdventureResultData {
+  id:int;
+  card_id:int;
+  timeline_id:string;
+}
+
+table AdventureResultTable {
+  datas:[AdventureResultData];
+}
+
+root_type AdventureResultTable;

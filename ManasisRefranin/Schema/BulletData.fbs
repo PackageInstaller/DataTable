@@ -1,0 +1,50 @@
+namespace ProjectA.Data;
+
+table BulletData {
+  id:int;
+  se:string;
+  attach_script:string;
+  life_time:float;
+  is_burst:bool;
+  max_destroy_time:bool;
+  burst_id:string;
+  burst_type:int;
+  inner_circle_radius:int;
+  burst_range:float;
+  burst_range2:float;
+  burst_height:float;
+  burst_interval:float;
+  burst_count:int;
+  burst_shake:int;
+  is_effect_delay:bool;
+  random_target:int;
+  val1:float;
+  val2:float;
+  val3:float;
+  val4:float;
+  val5:string;
+  val6:string;
+  val7:string;
+  val8:string;
+  val9:float;
+  val10:float;
+  val11:float;
+  float_val_ary1_length:int;
+  int_val_ary1_length:int;
+  int_val_ary2_length:int;
+  immue_argue:int;
+  is_warn:bool;
+  warn_time_length:int;
+  check_stage_type_length:int;
+  is_destroy_burst:bool;
+  is_use_owner_scale:bool;
+  noise_name:string;
+  noise_cfg_length:int;
+  stage_check_cfg_length:int;
+}
+
+table BulletTable {
+  datas:[BulletData];
+}
+
+root_type BulletTable;

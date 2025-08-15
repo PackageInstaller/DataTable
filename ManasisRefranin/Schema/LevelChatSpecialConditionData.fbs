@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table LevelChatSpecialConditionData {
+  chat_id:int;
+  present_card_length:int;
+  absent_card_length:int;
+  weather:int;
+  relation_level:int;
+  stage_id:int;
+  repeat_type:int;
+  date:string;
+}
+
+table LevelChatSpecialConditionTable {
+  datas:[LevelChatSpecialConditionData];
+}
+
+root_type LevelChatSpecialConditionTable;

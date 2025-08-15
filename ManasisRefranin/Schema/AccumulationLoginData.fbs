@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table AccumulationLoginData {
+  id:int;
+  event_id:int;
+  order:int;
+  event_name:string;
+  bg:string;
+  close_btn:string;
+  icon:string;
+  require_level:int;
+  login_time:int;
+  is_important:int;
+  reward_id:int;
+}
+
+table AccumulationLoginTable {
+  datas:[AccumulationLoginData];
+}
+
+root_type AccumulationLoginTable;

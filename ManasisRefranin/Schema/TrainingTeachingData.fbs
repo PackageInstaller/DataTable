@@ -1,0 +1,28 @@
+namespace ProjectA.Data;
+
+table TrainingTeachingData {
+  id:int;
+  training_id:int;
+  monster_group_id:int;
+  mission_group_id:int;
+  remove_buff:int;
+  mission_task_type:int;
+  hp:int;
+  is_break:int;
+  count:int;
+  parameter1_length:int;
+  parameter2:int;
+  parameter3:int;
+  parameter4_length:int;
+  parameter5:int;
+  parameter6:bool;
+  training_tutorial:int;
+  training_explain_des:string;
+  training_task_des:string;
+}
+
+table TrainingTeachingTable {
+  datas:[TrainingTeachingData];
+}
+
+root_type TrainingTeachingTable;

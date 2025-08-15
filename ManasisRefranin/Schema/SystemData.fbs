@@ -1,0 +1,26 @@
+namespace ProjectA.Data;
+
+table SystemData {
+  id:int;
+  system_name:string;
+  is_show:int;
+  have_tutorial:bool;
+  icon_name:string;
+  small_icon_name:string;
+  unlock_level:int;
+  unlock_mission_id:int;
+  is_notice:int;
+  order:int;
+  desc:string;
+  block_desc:string;
+  rednode_npc:int;
+  closeshow:int;
+  move_building_length:int;
+  is_open_ui:bool;
+}
+
+table SystemTable {
+  datas:[SystemData];
+}
+
+root_type SystemTable;

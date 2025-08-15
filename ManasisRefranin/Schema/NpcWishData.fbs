@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table NpcWishData {
+  id:int;
+  npc_id:int;
+  relation_itemtype:int;
+  relation_item_id:int;
+  name:string;
+  number:int;
+  relationlevel:int;
+  relationpoint:int;
+  gift_value:int;
+  rate:int;
+  voice_sub_type:int;
+}
+
+table NpcWishTable {
+  datas:[NpcWishData];
+}
+
+root_type NpcWishTable;

@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table BookInfoData {
+  id:int;
+  book_name:string;
+  groupid:int;
+  group_name:string;
+  order:int;
+  img:string;
+  author:string;
+  pre_summary:string;
+  summary:string;
+}
+
+table BookInfoTable {
+  datas:[BookInfoData];
+}
+
+root_type BookInfoTable;

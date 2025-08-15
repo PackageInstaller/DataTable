@@ -1,0 +1,30 @@
+namespace ProjectA.Data;
+
+table MailInfoData {
+  mail_id:int;
+  sender:int;
+  target_type:int;
+  target_cfg1:int;
+  target_cfg2:int;
+  target_cfg3:int;
+  target_cfg4:int;
+  target_cfg5:int;
+  delay_time:int;
+  title:string;
+  is_task_mail:int;
+  delete_time:int;
+  icon:string;
+  describe:string;
+  mail_picture:string;
+  mail_audio:string;
+  mail_animation:string;
+  reward_id:int;
+  mail_letter_picture:string;
+  mail_letter_border_color:string;
+}
+
+table MailInfoTable {
+  datas:[MailInfoData];
+}
+
+root_type MailInfoTable;

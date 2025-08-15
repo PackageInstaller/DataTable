@@ -1,0 +1,24 @@
+namespace ProjectA.Data;
+
+table CityFunctionData {
+  id:int;
+  kind:int;
+  order:int;
+  name:string;
+  des:string;
+  location:string;
+  pic:string;
+  type:int;
+  relate_id:int;
+  jump_type:int;
+  jump_id:int;
+  school_position:int;
+  desert_position:int;
+  is_close:int;
+}
+
+table CityFunctionTable {
+  datas:[CityFunctionData];
+}
+
+root_type CityFunctionTable;

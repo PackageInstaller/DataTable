@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table CardFriendshipData {
+  id:int;
+  card_base_id:int;
+  relation_level:int;
+  level_desc:string;
+  relation_exp:int;
+  atk_percent:int;
+  hp_percent:int;
+}
+
+table CardFriendshipTable {
+  datas:[CardFriendshipData];
+}
+
+root_type CardFriendshipTable;

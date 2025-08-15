@@ -1,0 +1,28 @@
+namespace ProjectA.Data;
+
+table MemoryCrystalStoryData {
+  id:int;
+  memory_crystal_id:int;
+  name:string;
+  story_num:int;
+  storytype:int;
+  mission_id:int;
+  unlock_type1:int;
+  unlock_cfg1:int;
+  unlock_type2:int;
+  unlock_cfg2:int;
+  dialogue_id:int;
+  conversation_id:int;
+  reward_id:int;
+  item_type:int;
+  item_id:int;
+  show_num:int;
+  dialogue_bg:string;
+  start_tips:int;
+}
+
+table MemoryCrystalStoryTable {
+  datas:[MemoryCrystalStoryData];
+}
+
+root_type MemoryCrystalStoryTable;

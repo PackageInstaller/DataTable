@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table IntroInfoData {
+  id:int;
+  intro_id:int;
+  is_monster_info:bool;
+  img:string;
+  intro_title:string;
+  intro_desc:string;
+  order:int;
+  title:string;
+  desc:string;
+  icon:string;
+  jump_id:int;
+}
+
+table IntroInfoTable {
+  datas:[IntroInfoData];
+}
+
+root_type IntroInfoTable;

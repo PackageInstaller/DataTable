@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table FashionCameraData {
+  id:int;
+  type:int;
+  card_base_id:int;
+  far_size:int;
+  far_pos_y:int;
+  near_size:int;
+  near_pos_y:int;
+  default_size:int;
+  default_pos_y:int;
+  default_rotaion_y:int;
+}
+
+table FashionCameraTable {
+  datas:[FashionCameraData];
+}
+
+root_type FashionCameraTable;

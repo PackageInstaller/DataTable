@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table GiftInfoData {
+  gift_id:int;
+  title:string;
+  reward_id:int;
+}
+
+table GiftInfoTable {
+  datas:[GiftInfoData];
+}
+
+root_type GiftInfoTable;

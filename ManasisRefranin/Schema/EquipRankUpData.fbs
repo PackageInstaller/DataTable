@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table EquipRankUpData {
+  id:int;
+  rare:int;
+  rank:int;
+  max_level:int;
+  cost_resource1_length:int;
+  cost_resource2_length:int;
+  cost_resource3_length:int;
+}
+
+table EquipRankUpTable {
+  datas:[EquipRankUpData];
+}
+
+root_type EquipRankUpTable;

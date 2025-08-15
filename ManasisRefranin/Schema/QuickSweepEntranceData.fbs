@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table QuickSweepEntranceData {
+  id:int;
+  name:string;
+  picture:string;
+  kindtype:int;
+}
+
+table QuickSweepEntranceTable {
+  datas:[QuickSweepEntranceData];
+}
+
+root_type QuickSweepEntranceTable;

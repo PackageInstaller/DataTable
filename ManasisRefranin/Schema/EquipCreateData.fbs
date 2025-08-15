@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table EquipCreateData {
+  id:int;
+  equip_id:int;
+  show_type:int;
+  require_type1:int;
+  require_id1:int;
+  require_type2:int;
+  require_id2:int;
+  require_type3:int;
+  require_id3:int;
+}
+
+table EquipCreateTable {
+  datas:[EquipCreateData];
+}
+
+root_type EquipCreateTable;

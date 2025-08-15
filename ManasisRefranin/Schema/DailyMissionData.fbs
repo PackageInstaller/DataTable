@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table DailyMissionData {
+  mission_id:int;
+  mission_order:int;
+  mission_type:int;
+  type:int;
+  cfg1:int;
+  cfg2_length:int;
+  name:string;
+  mission_reward_id:int;
+  activity_points:int;
+  minlevel:int;
+  maxlevel:int;
+  jump_id:int;
+  event_id:int;
+}
+
+table DailyMissionTable {
+  datas:[DailyMissionData];
+}
+
+root_type DailyMissionTable;

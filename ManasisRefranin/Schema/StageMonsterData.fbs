@@ -1,0 +1,85 @@
+namespace ProjectA.Data;
+
+table StageMonsterData {
+  id:int;
+  stage_id:int;
+  spwanpoint_id:int;
+  is_event_monster:int;
+  sub_spawn_index:int;
+  summon_id:int;
+  path_id:int;
+  monster_id:int;
+  time:int;
+  enemy_type:int;
+  affix_length:int;
+  level:int;
+  hp:int;
+  attack:int;
+  defense:int;
+  crit_rate:int;
+  critical_damage:int;
+  block_rate:int;
+  block_damage:int;
+  dodge_rate:int;
+  chop_block:int;
+  hit_block:int;
+  prick_block:int;
+  fire_block:int;
+  water_block:int;
+  wind_block:int;
+  soil_block:int;
+  light_block:int;
+  dark_block:int;
+  fire_res:int;
+  water_res:int;
+  wind_res:int;
+  soil_res:int;
+  light_res:int;
+  dark_res:int;
+  speed:int;
+  super_armor:int;
+  super_armor_percent_mark_length:int;
+  super_armor_restore_time:int;
+  weight:int;
+  hit_situation:int;
+  freeze:int;
+  range:int;
+  angle:int;
+  sleep:int;
+  stable_intensity:int;
+  drop1_id:int;
+  limit_drop_id:int;
+  role_exp:int;
+  card_exp:int;
+  phase_id:int;
+  scale:int;
+  trigger:int;
+  camp:int;
+  necessary_mission:int;
+  death_camera:string;
+  aggressive_type:int;
+  camera_type:int;
+  camera_weight:int;
+  chop_limit_length:int;
+  hit_limit_length:int;
+  prick_limit_length:int;
+  fire_limit_length:int;
+  water_limit_length:int;
+  wind_limit_length:int;
+  soil_limit_length:int;
+  light_limit_length:int;
+  dark_limit_length:int;
+  freeze_limit_length:int;
+  stun_limit_length:int;
+  chain_limit_length:int;
+  group:int;
+  born_buff_length:int;
+  record_id:int;
+  behaviortree:int;
+}
+
+table StageMonsterTable {
+  datas:[StageMonsterData];
+}
+
+root_type StageMonsterTable;

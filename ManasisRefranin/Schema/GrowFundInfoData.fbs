@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table GrowFundInfoData {
+  id:int;
+  name:string;
+  order:int;
+  price_type:string;
+  price:int;
+  recharge_id:string;
+  channal:int;
+}
+
+table GrowFundInfoTable {
+  datas:[GrowFundInfoData];
+}
+
+root_type GrowFundInfoTable;

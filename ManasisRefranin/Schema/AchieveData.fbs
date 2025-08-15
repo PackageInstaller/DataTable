@@ -1,0 +1,22 @@
+namespace ProjectA.Data;
+
+table AchieveData {
+  achievement_id:int;
+  sub_kind_id:int;
+  pre_achievement_id:int;
+  img:string;
+  achievement_name:string;
+  achievement_desc:string;
+  achievement_type:int;
+  cfg1:int;
+  cfg2_length:int;
+  order:int;
+  reward_id:int;
+  jump_id:int;
+}
+
+table AchieveTable {
+  datas:[AchieveData];
+}
+
+root_type AchieveTable;

@@ -1,0 +1,63 @@
+namespace ProjectA.Data;
+
+table MemoryCrystalData {
+  id:int;
+  name:string;
+  memory_crystal_type_name:string;
+  type:int;
+  desc:string;
+  story:string;
+  rare:int;
+  bg_color:int;
+  story_type:bool;
+  belong:int;
+  mission_id:int;
+  icon:string;
+  bigicon:string;
+  pic:string;
+  thumbnail:string;
+  spine_name:string;
+  release_pic:string;
+  zoom:int;
+  axis_x:int;
+  axis_y:int;
+  axis_xin_detail:int;
+  axis_yin_detail:int;
+  cost_item_id:int;
+  crystal_skill_id_length:int;
+  atrr1_info:int;
+  atrr1_info_value:int;
+  atrr1_grow_value:int;
+  atrr2_info:int;
+  atrr2_info_value:int;
+  atrr2_grow_value:int;
+  atrr3_info:int;
+  atrr3_info_value:int;
+  atrr3_grow_value:int;
+  isbroadcast:int;
+  exp:int;
+  base_max_level:int;
+  backpack:int;
+  sub_backpack_length:int;
+  illusrator:string;
+  is_story:int;
+  story_belong_length:int;
+  recommend_card:int;
+  is_illustratedbook:bool;
+  illustratedbook_display:int;
+  is_overlay:bool;
+  super_limit:int;
+  coin_type_num_length:int;
+  reward_type:int;
+  reward_id:int;
+  reward_num:int;
+  deposition_flag:bool;
+  deposite_reward_id:int;
+  version_id:int;
+}
+
+table MemoryCrystalTable {
+  datas:[MemoryCrystalData];
+}
+
+root_type MemoryCrystalTable;

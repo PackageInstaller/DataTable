@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table EventPointRewardData {
+  id:int;
+  event_point_id:int;
+  event_point_value:int;
+  activity_reward_id:int;
+}
+
+table EventPointRewardTable {
+  datas:[EventPointRewardData];
+}
+
+root_type EventPointRewardTable;

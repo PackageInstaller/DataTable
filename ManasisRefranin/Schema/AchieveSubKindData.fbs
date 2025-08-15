@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table AchieveSubKindData {
+  id:int;
+  kind_id:int;
+  sub_kind_id:int;
+  sub_kind_name:string;
+  order:int;
+  open_type:int;
+  open_cfg:int;
+}
+
+table AchieveSubKindTable {
+  datas:[AchieveSubKindData];
+}
+
+root_type AchieveSubKindTable;

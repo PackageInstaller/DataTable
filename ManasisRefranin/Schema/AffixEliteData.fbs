@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table AffixEliteData {
+  id:int;
+  affix_id:int;
+  name:string;
+  introduction:string;
+  icon:string;
+  passive_skill:int;
+  scale:int;
+  effect:string;
+  effect_root:string;
+  shader:int;
+  shader_part:string;
+}
+
+table AffixEliteTable {
+  datas:[AffixEliteData];
+}
+
+root_type AffixEliteTable;

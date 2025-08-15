@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table PairsGameItemData {
+  id:int;
+  name:string;
+  type:int;
+  limit:int;
+  icon:string;
+  dsc:string;
+}
+
+table PairsGameItemTable {
+  datas:[PairsGameItemData];
+}
+
+root_type PairsGameItemTable;

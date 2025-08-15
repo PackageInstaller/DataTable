@@ -1,0 +1,25 @@
+namespace ProjectA.Data;
+
+table DryadInfoData {
+  id:int;
+  name:string;
+  rare:int;
+  bg_color:int;
+  desc:string;
+  skill_type1:int;
+  skillcfg1:int;
+  skill_type2:int;
+  skillcfg2:int;
+  skill_type3:int;
+  skillcfg3:int;
+  icon:string;
+  img:string;
+  big_img:string;
+  version_id:int;
+}
+
+table DryadInfoTable {
+  datas:[DryadInfoData];
+}
+
+root_type DryadInfoTable;

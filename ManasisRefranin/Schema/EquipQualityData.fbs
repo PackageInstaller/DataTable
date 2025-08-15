@@ -1,0 +1,12 @@
+namespace ProjectA.Data;
+
+table EquipQualityData {
+  equip_level:int;
+  require_quality:int;
+}
+
+table EquipQualityTable {
+  datas:[EquipQualityData];
+}
+
+root_type EquipQualityTable;

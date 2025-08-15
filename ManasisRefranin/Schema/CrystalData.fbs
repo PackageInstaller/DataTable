@@ -1,0 +1,22 @@
+namespace ProjectA.Data;
+
+table CrystalData {
+  id:int;
+  name:string;
+  rare:int;
+  element:int;
+  cost_element_type:int;
+  icon_id:string;
+  skill_id:int;
+  skill_icon:string;
+  skill_name:string;
+  skill_info:string;
+  initial_lock_status:int;
+  unlock_text:string;
+}
+
+table CrystalTable {
+  datas:[CrystalData];
+}
+
+root_type CrystalTable;

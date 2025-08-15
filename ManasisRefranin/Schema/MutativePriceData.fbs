@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table MutativePriceData {
+  id:int;
+  resource_id:int;
+  argument:int;
+  cost_resource_type:int;
+  cost_resource_id:int;
+  cost_num:int;
+  gacha_bg:string;
+}
+
+table MutativePriceTable {
+  datas:[MutativePriceData];
+}
+
+root_type MutativePriceTable;

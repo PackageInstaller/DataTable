@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table AffixRandomData {
+  id:int;
+  group_id:int;
+  affix_id:int;
+  weight:int;
+}
+
+table AffixRandomTable {
+  datas:[AffixRandomData];
+}
+
+root_type AffixRandomTable;

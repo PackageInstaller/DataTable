@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table DropTypeData {
+  id:int;
+  type:int;
+  kind_type:int;
+  num:int;
+  prefab:string;
+}
+
+table DropTypeTable {
+  datas:[DropTypeData];
+}
+
+root_type DropTypeTable;

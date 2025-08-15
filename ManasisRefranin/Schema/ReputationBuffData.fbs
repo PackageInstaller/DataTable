@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table ReputationBuffData {
+  buff_id:int;
+  buff_type:int;
+  buffcfg1:int;
+  buffcfg2:int;
+  rp_desc:string;
+}
+
+table ReputationBuffTable {
+  datas:[ReputationBuffData];
+}
+
+root_type ReputationBuffTable;

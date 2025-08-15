@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table NewYearDrawItemData {
+  id:int;
+  draweventid:int;
+  lottype:int;
+  lotname:string;
+  lotcontent_length:int;
+  lotreward:int;
+}
+
+table NewYearDrawItemTable {
+  datas:[NewYearDrawItemData];
+}
+
+root_type NewYearDrawItemTable;

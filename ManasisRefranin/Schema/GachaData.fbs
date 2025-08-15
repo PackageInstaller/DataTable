@@ -1,0 +1,42 @@
+namespace ProjectA.Data;
+
+table GachaData {
+  id:int;
+  name:string;
+  guarantee_gacha_times:int;
+  common_desc:string;
+  guarantee_desc:string;
+  order:int;
+  title_name:string;
+  title_name_color:string;
+  title_banner:string;
+  banner:string;
+  bg:string;
+  video:string;
+  drop_up_card_length:int;
+  drop_up_crystal_length:int;
+  type:int;
+  gacha_resource_type1_length:int;
+  gacha_resource_type2_length:int;
+  gacha_resource_type3_length:int;
+  gacha_resource_type:int;
+  gacha_resource_id:int;
+  daily_pay_gacha_cost:int;
+  gacha_ten_timesmutative_id:int;
+  gacha_times:int;
+  gacha_once_cost:int;
+  gacha_ten_times_cost:int;
+  ten_times_gacha_desc:string;
+  drop_desc_index:int;
+  drop_desc:string;
+  gilding_prob:int;
+  gilding_limit_time:int;
+  training_jump:int;
+  training_id:int;
+}
+
+table GachaTable {
+  datas:[GachaData];
+}
+
+root_type GachaTable;

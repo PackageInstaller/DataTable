@@ -1,0 +1,22 @@
+namespace ProjectA.Data;
+
+table EquipEnchantCostData {
+  id:int;
+  equip_id:int;
+  enchant_number:int;
+  cost_gold:int;
+  cost_item_id1:int;
+  cost_item_value1:int;
+  cost_item_id2:int;
+  cost_item_value2:int;
+  cost_item_id3:int;
+  cost_item_value3:int;
+  cost_item_id4:int;
+  cost_item_value4:int;
+}
+
+table EquipEnchantCostTable {
+  datas:[EquipEnchantCostData];
+}
+
+root_type EquipEnchantCostTable;

@@ -1,0 +1,26 @@
+namespace ProjectA.Data;
+
+table ElementSkillData {
+  id:int;
+  name:string;
+  icon:string;
+  type:int;
+  passive_skill:int;
+  cfg:int;
+  cfg2:int;
+  cfg3:int;
+  target_length:int;
+  bufftime:int;
+  desc:string;
+  intl_cd:int;
+  refresh_cd:int;
+  buff_id:int;
+  acount_type:int;
+  acount_value:int;
+}
+
+table ElementSkillTable {
+  datas:[ElementSkillData];
+}
+
+root_type ElementSkillTable;

@@ -1,0 +1,44 @@
+namespace ProjectA.Data;
+
+table LessonData {
+  lesson_id:int;
+  lesson_id_name:string;
+  lesson_type:int;
+  lesson_level:int;
+  is_advance:int;
+  is_compulsory:int;
+  teacher_id:int;
+  teacher_name:string;
+  confirm_action:string;
+  text_position_length:int;
+  order:int;
+  prelesson_length:int;
+  finish_num:int;
+  target_type_length:int;
+  target_cfg1_length:int;
+  target_cfg2_length:int;
+  guild_area_length:int;
+  guide_cfg_length:int;
+  role_exp:int;
+  base_score:int;
+  score_cfg1_length:int;
+  score_cfg2_length:int;
+  score_cfg3_length:int;
+  reward_id:int;
+  good_reward_id:int;
+  better_reward_id:int;
+  best_reward_id:int;
+  classroom_cfg:int;
+  necessary_card_length:int;
+  classroom_position:int;
+  desc_before_class:string;
+  desc_after_class:string;
+  target_desc:string;
+  class_performance:string;
+}
+
+table LessonTable {
+  datas:[LessonData];
+}
+
+root_type LessonTable;

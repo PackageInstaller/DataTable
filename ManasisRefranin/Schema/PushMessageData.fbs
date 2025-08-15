@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table PushMessageData {
+  id:int;
+  type:int;
+  title:string;
+  content:string;
+  config:string;
+  is_active:int;
+}
+
+table PushMessageTable {
+  datas:[PushMessageData];
+}
+
+root_type PushMessageTable;

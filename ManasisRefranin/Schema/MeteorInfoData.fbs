@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table MeteorInfoData {
+  id:int;
+  type:int;
+  drop_id:int;
+  probability:int;
+  vfx:string;
+  blink_vfx:string;
+  continue_time:int;
+  click_times:int;
+}
+
+table MeteorInfoTable {
+  datas:[MeteorInfoData];
+}
+
+root_type MeteorInfoTable;

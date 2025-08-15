@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table MMOFishData {
+  mmo_fish_id:int;
+  prefab_id:string;
+  score:int;
+  fish_type:int;
+}
+
+table MMOFishTable {
+  datas:[MMOFishData];
+}
+
+root_type MMOFishTable;

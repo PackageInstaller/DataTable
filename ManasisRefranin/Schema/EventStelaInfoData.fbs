@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table EventStelaInfoData {
+  id:int;
+  event_id:int;
+  explore_type:int;
+  explore_value:int;
+  puzzles_type:int;
+  puzzles_value:int;
+  area_id:int;
+  position_id:int;
+  collection_id:int;
+  prefab_id:string;
+  type:int;
+  drop_id:int;
+  stela_drop_id:int;
+}
+
+table EventStelaInfoTable {
+  datas:[EventStelaInfoData];
+}
+
+root_type EventStelaInfoTable;

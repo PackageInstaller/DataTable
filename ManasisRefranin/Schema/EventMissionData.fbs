@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table EventMissionData {
+  id:int;
+  event_id:int;
+  release_time:string;
+  type:int;
+  mission_id:int;
+  stage_id:int;
+  typeicon:string;
+  dialogue_id:int;
+  re_play_timeline:string;
+  review_scence:int;
+}
+
+table EventMissionTable {
+  datas:[EventMissionData];
+}
+
+root_type EventMissionTable;

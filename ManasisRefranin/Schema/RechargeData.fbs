@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table RechargeData {
+  id:int;
+  midas_id:string;
+  type:int;
+  order:int;
+  img:string;
+  item_name:string;
+  price:string;
+  resource_type:int;
+  resource_id:int;
+  resource_num:int;
+  first_type:int;
+  first_id:int;
+  first_num:int;
+}
+
+table RechargeTable {
+  datas:[RechargeData];
+}
+
+root_type RechargeTable;

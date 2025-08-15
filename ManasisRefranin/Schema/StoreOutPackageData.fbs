@@ -1,0 +1,34 @@
+namespace ProjectA.Data;
+
+table StoreOutPackageData {
+  id:int;
+  package_name:string;
+  is_cash:bool;
+  cash_type:string;
+  re_charge_id:string;
+  item_type1:int;
+  item_id1:int;
+  item_price1:int;
+  package_reward:int;
+  package_countdown:int;
+  is_reload:bool;
+  is_reout:bool;
+  package_unlock_condition:int;
+  unlock_cfg1:int;
+  package_unlock_condition2:int;
+  unlock_cfg2:int;
+  package_unlock_condition3:int;
+  unlock_cfg3:int;
+  package_unlock_condition4:int;
+  unlock_cfg4:int;
+  discount_rate:int;
+  package_des:string;
+  package_ui:string;
+  package_banner:string;
+}
+
+table StoreOutPackageTable {
+  datas:[StoreOutPackageData];
+}
+
+root_type StoreOutPackageTable;

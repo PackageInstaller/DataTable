@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table AttributeData {
+  id:int;
+  attr_name:string;
+  name:string;
+  attr_icon:string;
+  type:int;
+  order:int;
+  is_show:int;
+  is_desc:int;
+  desc:string;
+}
+
+table AttributeTable {
+  datas:[AttributeData];
+}
+
+root_type AttributeTable;

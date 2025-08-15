@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table RaceDailyMissionData {
+  mission_id:int;
+  mission_order:int;
+  type:int;
+  cfg1:int;
+  cfg2_length:int;
+  name:string;
+  mission_reward_id:int;
+  jump_id:int;
+}
+
+table RaceDailyMissionTable {
+  datas:[RaceDailyMissionData];
+}
+
+root_type RaceDailyMissionTable;

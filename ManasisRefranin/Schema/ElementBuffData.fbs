@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table ElementBuffData {
+  buff_id:int;
+  buffname:string;
+  buffdesc:string;
+  buff_icon:string;
+  show_counter:bool;
+  order:int;
+  show_num_change:int;
+  show_num_color:string;
+  show_text:string;
+}
+
+table ElementBuffTable {
+  datas:[ElementBuffData];
+}
+
+root_type ElementBuffTable;

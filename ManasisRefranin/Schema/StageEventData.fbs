@@ -1,0 +1,31 @@
+namespace ProjectA.Data;
+
+table StageEventData {
+  stage_event_id:int;
+  type:int;
+  stage_id:int;
+  spawn_point_id:int;
+  monster_id_length:int;
+  collection_position_id:int;
+  collection_id:int;
+  npc_position_id:int;
+  npc_id:int;
+  collection_drop_up_type:int;
+  collection_drop_up_times:int;
+  mission_group_id:int;
+  perview_reward_id:int;
+  title:string;
+  desc:string;
+  target_ti_tle:string;
+  target_desc:string;
+  priority:int;
+  finish_type:int;
+  time:int;
+  jump_id:int;
+}
+
+table StageEventTable {
+  datas:[StageEventData];
+}
+
+root_type StageEventTable;

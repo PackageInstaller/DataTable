@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table EquipCreateTypeData {
+  id:int;
+  type:int;
+  card_id:int;
+  equip_type_name:string;
+  equip_type_desc:string;
+  equip_type_icon:string;
+  equip_choose_icon:string;
+}
+
+table EquipCreateTypeTable {
+  datas:[EquipCreateTypeData];
+}
+
+root_type EquipCreateTypeTable;

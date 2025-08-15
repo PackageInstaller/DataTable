@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table StoreRandomShopData {
+  id:int;
+  category_id:int;
+  category_space_id:int;
+  auto_reset_cycle:int;
+  daily_manual_reset_times:int;
+  resource_type:int;
+  resource_cfg1:int;
+  resource_cfg2:int;
+  resource_cfg3:int;
+}
+
+table StoreRandomShopTable {
+  datas:[StoreRandomShopData];
+}
+
+root_type StoreRandomShopTable;
