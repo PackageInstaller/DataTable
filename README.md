@@ -20,3 +20,4 @@
 |    WitchSpring    |    魔女之泉    |   国际服 Xml (单机游戏，好玩)   |
 |       Embers       |      辉烬      |            国服 Json            |
 |   StarResonance   |    星痕共鸣    |            国服 Json            |
+|  ManasisRefranin  |    麻辣鸡丝    |            国服 Json            |

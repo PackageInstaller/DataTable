@@ -1,0 +1,44 @@
+{
+    "datas": [
+        {
+            "id": 200001,
+            "stage_id": 20000001,
+            "weather_type": 100,
+            "min_second": 60,
+            "max_second": 90,
+            "rate": 100
+        },
+        {
+            "id": 200101,
+            "stage_id": 20010001,
+            "weather_type": 100,
+            "min_second": 30,
+            "max_second": 60,
+            "rate": 100
+        },
+        {
+            "id": 200102,
+            "stage_id": 20010001,
+            "weather_type": 200,
+            "min_second": 30,
+            "max_second": 60,
+            "next_weather": 200101
+        },
+        {
+            "id": 200301,
+            "stage_id": 20030001,
+            "weather_type": 100,
+            "min_second": 60,
+            "max_second": 90,
+            "rate": 100
+        },
+        {
+            "id": 200302,
+            "stage_id": 20030001,
+            "weather_type": 200,
+            "min_second": 30,
+            "max_second": 60,
+            "next_weather": 200301
+        }
+    ]
+}
