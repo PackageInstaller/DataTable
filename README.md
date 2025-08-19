@@ -22,3 +22,4 @@
 |   StarResonance   |    星痕共鸣    |            国服 Json            |
 |  ManasisRefranin  |    麻辣鸡丝    |            国服 Json            |
 |    ModelWarGirl    |   高能手办团   |           国服 LuaJIT           |
+|     OZRewrite     |   OZRewrite   |        国际服 CSV + Json        |
