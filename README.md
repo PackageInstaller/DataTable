@@ -8,7 +8,7 @@
 |      EverSoul      |    永恒灵魂    | 国际服 + 日服 Json，会定期上传 |
 |   GirlsCreationR   |      草画      | Dmm Json，带全资产自动检查更新 |
 |     LostSword     |    失落之剑    | 韩服 Json，带数据表自动检查更新 |
-| MirrenStarLegends |    千年之旅    |        国服关服前数据表        |
+| MirrenStarLegends |    千年之旅    |            国服 Csv            |
 |     MonmusuTDx     |   魔物娘TDx   | Dmm Json，带全资产自动检查更新 |
 | MuvLuvGirlsGardenX | MuvLuv少女庭院 | Dmm Json，带全资产自动检查更新 |
 |   OtogiFrontierR   |      童话      | Dmm Json，带全资产自动检查更新 |
