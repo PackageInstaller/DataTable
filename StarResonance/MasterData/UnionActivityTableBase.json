@@ -1,0 +1,89 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "FunctionId": 500151,
+        "SeasonId": 1,
+        "Type": 1,
+        "Sort": 1,
+        "Name": "协会狩猎",
+        "LabelPic": "ui/atlas/union_activelist/union_activelist_img_bg_08",
+        "BackGroundPic": "ui/background/seasonact/activity_unionhunt",
+        "Label": 2,
+        "Condition": [
+            [
+                30,
+                1,
+                1
+            ],
+            [
+                36,
+                100
+            ]
+        ],
+        "OpenCost": [],
+        "TimerId": 251,
+        "ActDes": "与协会的战友一起组队前往猎场进行狩猎，完成共同的目标，获取挑战奖励！",
+        "RecommendNum": "推荐人数：组队",
+        "Time": "每周五、六、日10:00-24:00",
+        "PreviewAward": 20500300,
+        "OpenSoonTimerId": 253,
+        "HelpId": 30060,
+        "TreasureChest": [
+            [
+                40,
+                20500600
+            ],
+            [
+                70,
+                20500610
+            ],
+            [
+                100,
+                20500620
+            ]
+        ],
+        "CounterId": 4,
+        "QuickJumpType": 6,
+        "QuickJumpParam": [
+            2
+        ]
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "FunctionId": 900200,
+        "SeasonId": 1,
+        "Type": 2,
+        "Sort": 2,
+        "Name": "协会战舞",
+        "LabelPic": "ui/atlas/union_activelist/union_activelist_img_bg_09",
+        "BackGroundPic": "ui/background/seasonact/activity_zhanwu",
+        "Label": 2,
+        "Condition": [
+            [
+                30,
+                1,
+                1
+            ],
+            [
+                36,
+                100
+            ]
+        ],
+        "OpenCost": [],
+        "TimerId": 500,
+        "ActDes": "在协会活动中心的舞台上展示你的卓越舞姿吧！获得奖励的同时，还能为参与狩猎的战友们提供增益！",
+        "RecommendNum": "推荐人数：单人/组队",
+        "Time": "每周五19:30-19:55",
+        "PreviewAward": 20500700,
+        "OpenSoonTimerId": 501,
+        "HelpId": 500200,
+        "TreasureChest": [],
+        "CounterId": 24,
+        "QuickJumpType": 6,
+        "QuickJumpParam": [
+            1
+        ]
+    }
+}

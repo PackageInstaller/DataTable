@@ -50,7 +50,6 @@ class DotNetBinaryReader:
         return h, dr, rc, cc
 
 def process(id, od):
-    pc = 0
     for ro, _, files in os.walk(id):
         for fn in files:
             if fn.endswith(".txt"):
@@ -66,7 +65,6 @@ def process(id, od):
                     w = csv.writer(f_out)
                     w.writerow(h)
                     w.writerows(r)
-                pc += 1
 
 if __name__ == "__main__":
     process("Table", "MasterData")
