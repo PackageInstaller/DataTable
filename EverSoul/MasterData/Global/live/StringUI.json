@@ -3411,9 +3411,9 @@
     {
       "no": 427,
       "kr": "편성 변경 불가 ({0}초)",
-      "en": "Cannot change team ({0}:{1}:{2})",
+      "en": "Cannot change team ({0} sec)",
       "ja": "編成変更不可 ({0}:{1}:{2})",
-      "zh_tw": "無法變更編制（{0}:{1}:{2}）",
+      "zh_tw": "無法變更編制（{0}秒）",
       "zh_cn": ""
     },
     {
@@ -8619,7 +8619,7 @@
     {
       "no": 10060,
       "kr": "영지 입장 시, 매일 영지 코인 <color=\"#2d9b00\">{0}</color> 획득",
-      "en": "Entering town, Obtain <color=\"#2d9b00\">{0}</color> Town Coins every day",
+      "en": "Obtain <color=\"#2d9b00\">{0}</color> Town Coins every day upon entering Town",
       "ja": "領地入場時、毎日領地コイン<color=\"#2d9b00\">{0}</color>獲得",
       "zh_tw": "進入領地時，每日獲得<color=\"#2d9b00\">{0}</color>領地硬幣",
       "zh_cn": ""
@@ -12875,25 +12875,25 @@
     {
       "no": 11419,
       "kr": "미리암(잔영) 획득",
-      "en": "",
+      "en": "Acquire Miriam (Afterimage)",
       "ja": "",
-      "zh_tw": "",
+      "zh_tw": "獲得米里昂（殘影）",
       "zh_cn": ""
     },
     {
       "no": 11420,
       "kr": "미리암(잔영) 에픽+등급 달성",
-      "en": "",
+      "en": "Upgrade Miriam (Afterimage) to Epic+",
       "ja": "",
-      "zh_tw": "",
+      "zh_tw": "達成米里昂（殘影）史詩＋階級",
       "zh_cn": ""
     },
     {
       "no": 11421,
       "kr": "미리암(잔영) 레전더리 등급 달성",
-      "en": "",
+      "en": "Upgrade Miriam (Afterimage) to Legendary",
       "ja": "",
-      "zh_tw": "",
+      "zh_tw": "達成米里昂（殘影）傳說階級",
       "zh_cn": ""
     },
     {
@@ -23114,10 +23114,10 @@
     },
     {
       "no": 21144,
-      "kr": "이벤트 주사위에서 주사위를 사용할 때마다\r\n개당 200 패스 포인트를 획득합니다.",
-      "en": "Each roll on the Event Dice gives you\r\n200 pass points.",
-      "ja": "イベントサイコロでサイコロを使用するたびに\r\n1個当たり100パスポイントを獲得します。",
-      "zh_tw": "在活動使用骰子時，\r\n每一個會獲得200通行證點數。",
+      "kr": "이벤트 주사위에서 주사위를 사용할 때마다\r\n개당 80 패스 포인트를 획득합니다.",
+      "en": "Each roll on the Event Dice gives you\r\n80 pass points.",
+      "ja": "イベントサイコロでサイコロを使用するたびに\r\n1個当たり80パスポイントを獲得します。",
+      "zh_tw": "在活動使用骰子時，\r\n每一個會獲得80通行證點數。",
       "zh_cn": ""
     },
     {
@@ -25206,6 +25206,14 @@
       "en": "Merciless Beat",
       "ja": "Merciless Beat",
       "zh_tw": "Merciless Beat",
+      "zh_cn": ""
+    },
+    {
+      "no": 30203,
+      "kr": "Phantom Trigger",
+      "en": "Phantom Trigger",
+      "ja": "Phantom Trigger",
+      "zh_tw": "Phantom Trigger",
       "zh_cn": ""
     },
     {
@@ -27329,6 +27337,14 @@
       "zh_cn": ""
     },
     {
+      "no": 92088,
+      "kr": "[픽업 소환] 페트라(각혼)",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
       "no": 110609,
       "kr": "CRITICAL",
       "en": "CRITICAL",
@@ -27865,6 +27881,22 @@
       "zh_cn": ""
     },
     {
+      "no": 110676,
+      "kr": "'팬텀’이라 불리던 전설적인 용병 미리암은 새롭게 각성한 페트라가 자신의 강력한 힘을 통제할 수 있도록 특수 훈련을 준비했다. \r\n이를 위해 암즈 훈련장에서 홀로그램으로 구현된 모의 적들을 배치해 실전과 같은 환경을 조성했다.\r\n미리암의 빠르고 강렬한 훈련 리듬을 따라가려면, 페트라도 단단히 각오해야 할 것이다.",
+      "en": "Miriam, who was once a legendary mercenary known as the Phantom, prepared a special training course to help the newly awakened Petra harness her formidable power.\r\nThrough holographic projections, she has filled the Arms training grounds with enemies, simulating a real battlefield.\r\nPetra will have to brace herself to keep up with Miriam's fast and intense training pace.",
+      "ja": "",
+      "zh_tw": "被稱為「魅影」的傳奇傭兵米里昂準備了特殊訓練，為的就是讓重新覺醒的佩特拉能控制自身強大的力量。\r\n為此，她在安茲訓練場中以全息投影配置模擬敵人，營造出實戰般的環境。\r\n要跟上米里昂快速而強烈的訓練節奏，佩特拉也必須做好充分的心理準備。",
+      "zh_cn": ""
+    },
+    {
+      "no": 110677,
+      "kr": "적을 많이 잡으면 잡을수록 더 많은 마나를 획득할 수 있다.\r\n최대한 많은 적을 처치하며 점수를 획득하도록 하자!\r\n(적 처치 시 35,000점 획득 가능)",
+      "en": "The more enemies you bring down, the more Mana will be yours.\r\nDefeat as many as you can to rack up points!\r\n(Defeating the enemy awards 35,000 points.)",
+      "ja": "",
+      "zh_tw": "抓到越多敵人，能獲得越多魔力。\r\n盡可能地擊殺更多敵人以獲得分數！\r\n（擊殺敵人時可獲得35,000分）",
+      "zh_cn": ""
+    },
+    {
       "no": 300001,
       "kr": "대난투! 미궁 올스타즈",
       "en": "Labyrinth All-Stars Brawl!",
@@ -28189,7 +28221,7 @@
       "kr": "<얼티밋 스킬 사용 시>\r\n대상이 지닌 지속 피해의 종류에 따라 1개 당 공격력 400%의 피해를 입힌다. (화상, 중독, 감전, 출혈, 빙결, 저주)",
       "en": "Ultimate skill use:\r\r\nDeals damage equal to 400% of ATK for every type of DoT on the target (Burn, Poison, Shock, Bleed, Frost, and Curse).",
       "ja": "",
-      "zh_tw": "＜使用終極技能時＞\r\r\n依據目標身上的持續傷害種類，每持有一種造成400%的傷害（燒傷、中毒、觸電、出血、凍結、詛咒）",
+      "zh_tw": "＜使用終極技能時＞\r\r\n依據目標身上的持續傷害種類，每持有一種造成攻擊力400%的傷害（燒傷、中毒、觸電、出血、凍結、詛咒）",
       "zh_cn": ""
     },
     {
@@ -32651,41 +32683,41 @@
     {
       "no": 440276,
       "kr": "<color=\"#4794db\">태생 에픽</color> 정령만 파견",
-      "en": "",
+      "en": "Send <color=\"#4794db\">originally Epic</color> Souls only",
       "ja": "",
-      "zh_tw": "",
+      "zh_tw": "僅派遣<color=\"#4794db\">原先是史詩</color>的精靈",
       "zh_cn": ""
     },
     {
       "no": 440277,
       "kr": "모든 정령 파견",
-      "en": "",
+      "en": "Send all Souls",
       "ja": "",
-      "zh_tw": "",
+      "zh_tw": "派遣所有精靈",
       "zh_cn": ""
     },
     {
       "no": 440278,
       "kr": "최대한 <color=\"#4794db\">많은</color> 아르바이트 파견",
-      "en": "",
+      "en": "Send <color=\"#4794db\">maximum</color> number of Souls possible",
       "ja": "",
-      "zh_tw": "",
+      "zh_tw": "盡量派遣<color=\"#4794db\">所有</color>打工",
       "zh_cn": ""
     },
     {
       "no": 440279,
       "kr": "<color=\"#ff3739\">보너스 효율</color> 중시",
-      "en": "",
+      "en": "Focus on <color=\"#ff3739\">bonus efficiency</color>",
       "ja": "",
-      "zh_tw": "",
+      "zh_tw": "重視<color=\"#ff3739\">額外獎勵率</color>",
       "zh_cn": ""
     },
     {
       "no": 440280,
       "kr": "간편 파견 설정",
-      "en": "",
+      "en": "Auto-Deploy Settings",
       "ja": "",
-      "zh_tw": "",
+      "zh_tw": "設定一鍵派遣",
       "zh_cn": ""
     },
     {
@@ -36190,6 +36222,30 @@
       "en": "You cannot proceed with Practice or Challenge if two or more Souls whose levels are synced, including your 5 max level Souls, are the same.\r\r\n\r\r\nPlease check and remove duplicate Souls in the Level Sync Slot.",
       "ja": "最大Lvの精霊5体を含めて、LvシンクロでLvを共有する精霊のうち同じ精霊が2体以上いる場合、練習戦闘や挑戦をすることができません。\r\n\r\nLvシンクロスロットを確認してください。",
       "zh_tw": "包含5個最大等級精靈在內，若同步等級的精靈中有兩個以上相同的精靈，將無法進行練習戰鬥和挑戰。\r\r\n\r\r\n請確認等級同步欄位。",
+      "zh_cn": ""
+    },
+    {
+      "no": 530091,
+      "kr": "악령 토벌 진행 중 다른 화면으로 이동하면, 현재 도전 기록이 초기화됩니다.\r\n이동하시겠습니까?",
+      "en": "Navigating away from the Evil Soul Subjugation screen will reset your current battle attempt.\r\nLeave anyway?",
+      "ja": "",
+      "zh_tw": "若在惡靈討伐進行途中移動至其他畫面，將重置目前挑戰紀錄。\r\n確定要移動嗎？",
+      "zh_cn": ""
+    },
+    {
+      "no": 530092,
+      "kr": "악령 토벌이 정상적으로 종료되지 않아 도전 기록이 초기화 되었습니다.",
+      "en": "Your last battle attempt has been reset due to abnormal closure of Evil Soul Subjugation.",
+      "ja": "",
+      "zh_tw": "惡靈討伐未正常結束，挑戰紀錄已被重置。",
+      "zh_cn": ""
+    },
+    {
+      "no": 530093,
+      "kr": "악령 토벌에서는 정령 프리셋 편집을 이용할 수 없습니다.",
+      "en": "Soul Preset editor is not available for Evil Soul Subjugation.",
+      "ja": "",
+      "zh_tw": "在惡靈討伐中無法使用預設精靈編輯。",
       "zh_cn": ""
     },
     {
@@ -40859,7 +40915,7 @@
     {
       "no": 551012,
       "kr": "오브제 효과로 영지 코인을 {0} 획득했습니다.",
-      "en": "Obtained {0} Town Coin(s) from the object effect.",
+      "en": "Obtained {0} Town Coin(s) from your structures.",
       "ja": "オブジェ効果により、領地コインを{0}獲得しました。",
       "zh_tw": "因物件效果，獲得領地硬幣{0}。",
       "zh_cn": ""
@@ -43558,6 +43614,14 @@
       "en": "<color=\"#2d9b00\">Mephistopheles (Dawn)'s ATK +{0}%</color> when Mephistopheles (Dawn) is placed",
       "ja": "",
       "zh_tw": "配置梅菲斯托佩萊斯（黎明）時，<color=\"#2d9b00\">梅菲斯托佩萊斯（黎明）的攻擊力增加{0}%</color>",
+      "zh_cn": ""
+    },
+    {
+      "no": 552518,
+      "kr": "미리암(잔영) 배치 시 <color=\"#2d9b00\">미리암(잔영)의 공격력 {0}%</color> 증가",
+      "en": "<color=\"#2d9b00\">Miriam (Afterimage)'s ATK +{0}%</color> when Miriam (Afterimage) is placed",
+      "ja": "",
+      "zh_tw": "配置米里昂（殘影）時，<color=\"#2d9b00\">米里昂（殘影）的攻擊力增加{0}%</color>",
       "zh_cn": ""
     },
     {
@@ -59433,6 +59497,14 @@
       "zh_cn": ""
     },
     {
+      "no": 840045,
+      "kr": "이름이 같은 정령의 인연 레벨 효과 중 전투력 버프 공유",
+      "en": "Share the CP buffs from Bond Level effects between Souls of the same name",
+      "ja": "",
+      "zh_tw": "同名精靈會共享好感等級效果中的戰鬥力增益",
+      "zh_cn": ""
+    },
+    {
       "no": 840100,
       "kr": "정령 불러내기",
       "en": "Call Soul",
@@ -64554,7 +64626,7 @@
     },
     {
       "no": 994311,
-      "kr": "악령 토벌은 일주일간 진행됩니다.\r\n매일 1회 도전할 수 있습니다.",
+      "kr": "악령 토벌은 일주일간 진행되며, 전투 횟수는 제한이 없습니다.",
       "en": "Evil Soul Subjugation takes place for a week.\r\r\nYou can challenge it once per day.",
       "ja": "悪霊討伐は一週間行われます。\r\n毎日1回挑戦できます。",
       "zh_tw": "惡靈討伐會進行為期一週。\r\r\n每日可挑戰1次。",
@@ -64570,7 +64642,7 @@
     },
     {
       "no": 994321,
-      "kr": "악령 토벌 도전 시 보스의 레벨을 선택하여 난이도를 조절할 수 있습니다.\r\n난이도를 선택하더라도, 포기 후 레벨을 재설정할 수 있습니다.\r\n레벨 재설정 시 진행 중인 전투 기록이 모두 초기화됩니다.",
+      "kr": "악령 토벌 도전 시 보스의 레벨을 선택하여 난이도를 조절할 수 있습니다.",
       "en": "When challenging, you can choose the boss's level to adjust the level of difficulty.\r\r\nEven upon selecting a specific level, you may abandon the battle to reset it.\r\r\nResetting the level of difficulty will reset all records of the battle in progress.",
       "ja": "悪霊討伐に挑戦時、ボスのLvを選択して難易度を調整できます。\r\n難易度を選択してからも、諦めてLvを再設定できます。\r\nLv再設定時、進行中の戦闘記録がすべてリセットされます。",
       "zh_tw": "挑戰惡靈討伐時，可選擇BOSS等級，調整難易度。\r\r\n即使已選擇難易度，放棄後仍可重新設定等級。\r\r\n重新設定等級時，所有進行中的戰鬥紀錄將重置。",
@@ -64586,10 +64658,10 @@
     },
     {
       "no": 994331,
-      "kr": "도전 시 시작 시 최대 레벨 5명과 레벨 동기화 슬롯에 등록된 정령이 참여합니다.\r\n참여 시 당일 1회 한정으로 정령이 복제되며, 이후 정령의 정보가 변경되어도 악령 토벌에는 적용되지 않습니다.",
-      "en": "When challenging, five Souls with the highest level and the Soul in the Level Sync slot will participate.\r\r\nParticipating Souls can only be cloned once per day, and even when their details change later on, these changes will not be applied to Evil Soul Subjugation.",
+      "kr": "보유한 정령을 편성하여 전투를 진행할 수 있습니다.\r\n도전 기록 초기화 시 정령의 정보를 변경할 수 있습니다.",
+      "en": "Deploy your Souls to engage in battle.\r\nOnce the battle begins, you'll need to reset your attempt if you want to change your Soul configuration.",
       "ja": "挑戦開始時、最大Lvの5人とLvシンクロスロットに登録された精霊が参加します。\r\n参加した精霊は当日1回に限り複製され、その後精霊の情報が変更されても悪霊討伐には適用されません。",
-      "zh_tw": "挑戰時可讓5個最大等級精靈，以及登錄於同步等級的精靈參戰。\r\r\n參戰時，當天僅能複製1次精靈，複製後發生變動的惡靈資訊不會套用於惡靈討伐。",
+      "zh_tw": "可編制持有精靈進行戰鬥。\r\n重置挑戰紀錄後可更改精靈資訊。",
       "zh_cn": ""
     },
     {
@@ -64602,7 +64674,7 @@
     },
     {
       "no": 994341,
-      "kr": "처치 보상은 보스 체력을 모두 감소시켜 처치 시 획득할 수 있습니다.\r\n특정 레벨마다 처치 시 보상이 상승합니다.",
+      "kr": "처치 보상은 보스 체력을 모두 감소시켜 처치 시 획득할 수 있습니다.\r\n특정 레벨을 클리어 시 해당 레벨 이하의 보상을 획득하며, 획득한 레벨 보상은 기간 내 1회 보상입니다.",
       "en": "Can be obtained by depleting the boss's HP completely.\r\r\nThe reward will increase at each specific level.",
       "ja": "退治報酬はボスの体力を全部削って退治すると獲得できます。\r\n特定Lvごとに退治報酬が上昇します。",
       "zh_tw": "耗盡BOSS體力並擊殺時，即可獲得擊殺獎勵。\r\r\n擊殺特殊等級時會提升獎勵。",
@@ -64650,10 +64722,10 @@
     },
     {
       "no": 994421,
-      "kr": "파티 편성 시 최대 9개의 파티를 사용 및 편성할 수 있습니다.\r\n다른 편성에 포함되어 있거나 이미 사용한 파티의 정령은 편성할 수 없습니다.\r\n연습 전투 동기화는 1파티 전투 이후 사용할 수 없습니다.",
-      "en": "You can use and organize up to 9 parties.\r\r\nDoes not apply to Souls that are already included in another team or a party that's already been used.\r\r\nSync Practice cannot be used upon Party 1's battle.",
+      "kr": "파티 편성 시 최대 9개의 파티를 사용 및 편성할 수 있습니다.\r\n다른 편성에 포함되어 있거나 이미 사용한 파티의 정령은 편성할 수 없습니다.",
+      "en": "You can configure and deploy up to 9 parties.\r\nSouls that have already been used or assigned to another party cannot be deployed again.",
       "ja": "パーティー編成時に最大9つのパーティーを使用・編成できます。\r\n他の編成に含まれていたり、すでに使ったパーティーの精霊は編成できません。\r\n練習戦闘同期化はパーティー1の戦闘後は使用できません。",
-      "zh_tw": "編制隊伍時，最多可編制和使用9支隊伍。\r\r\n無法配置已編入其他隊伍或已使用的精靈。\r\r\n在1支隊伍戰鬥後無法使用同步練習戰鬥。",
+      "zh_tw": "編制隊伍時最多可使用及編制9個隊伍。\r\n無法編制已包含在其他編制中或已使用隊伍的精靈。",
       "zh_cn": ""
     },
     {
@@ -68051,9 +68123,9 @@
     {
       "no": 996540,
       "kr": "이벤트 기간 동안 「환영을 꿰뚫는 탄환」 이벤트가 진행됩니다.\r\n미리암(잔영)의 이야기와 함께 다양한 컨텐츠를 즐겨 보세요.\r\n컨텐츠마다 지급되는 보상과 함께 주사위를 획득할 수 있어요.\r\n주사위는 「이벤트 주사위」에서 사용할 수 있으며, 다양한 보상을 획득할 수 있습니다.",
-      "en": "",
+      "en": "The \"Illusion-Piercing Bullet\" event will take place during the event period.\r\r\nEnjoy Miriam (Afterimage)'s story and various activities with new content.\r\r\nEach activity awards dice along with rewards.\r\r\nDice can be rolled on the \"Event Dice\" to win various prizes.",
       "ja": "",
-      "zh_tw": "",
+      "zh_tw": "活動期間將進行「穿透幻影的子彈」。\r\r\n觀看米里昂（殘影）的故事，享受豐富的遊戲內容吧。\r\r\n可透過各遊戲內容獲得獎勵和骰子。\r\r\n可於「活動骰子」使用骰子，獲得豐富獎勵。",
       "zh_cn": ""
     },
     {
