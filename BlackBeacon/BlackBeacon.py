@@ -2,6 +2,8 @@ import lzma
 import sys
 import os
 import io
+import tempfile
+import subprocess
 
 KEY = (
         "8974EA6638CFDBE0F3ED0B283621D6BC31296082D9CCF432B107A03450171E7A"
@@ -35,21 +37,38 @@ def unpack(data: bytes, od: str):
     
     while s.tell() < len(data):
         eb = s.read(4)
-        if len(eb) < 4:
-            break
+        if len(eb) < 4: break
         es = int.from_bytes(eb, 'big')
+        
         fb = bytearray()
         while (c := s.read(1)) != b'\x00':
             if not c: break
             fb.extend(c)
-        if not fb: 
-            continue
-        op = os.path.join(od, fb.decode('utf-8'))
-        os.makedirs(os.path.dirname(op), exist_ok=True)
-        with open(op, 'wb') as f:
-            f.write(s.read(es - (len(fb) + 1)))
+        if not fb: continue
+        fn = fb.decode('utf-8')
+        op = os.path.join(od, fn)
+        of = os.path.dirname(op)
+        os.makedirs(of, exist_ok=True)
+        fd = s.read(es - (len(fb) + 1))
+
+        if fn.endswith('.lua'):
+            tmp = os.path.join(of, "_tmp.lua")
+            with open(tmp, 'wb') as f:
+                f.write(fd)
+            cmd = [
+                "unluac",
+                "--rawstring",
+                tmp,
+                "--output", op
+            ]
+            r = subprocess.run(cmd, check=True, capture_output=True, text=True, encoding='utf-8')
+            if os.path.exists(tmp):
+                os.remove(tmp)
+        else:
+            with open(op, 'wb') as f:
+                f.write(fd)
         cnt += 1
-    print(f"{cnt}")
+    print(cnt)
 
 if __name__ == "__main__":
     od = os.path.join("MasterData", os.path.splitext(os.path.basename(sys.argv[1]))[0])
@@ -57,7 +76,7 @@ if __name__ == "__main__":
         enc = f.read()
     com = rc4(bytes.fromhex(KEY), enc)
     s = com[0:4]
-    print(f"{(s[0] << 24) | (s[2] << 16) | (s[1] << 8) | s[3]}")
+    print((s[0] << 24) | (s[2] << 16) | (s[1] << 8) | s[3])
     props = com[4:9]
     # SetDecoderProperties
     filters = [{'id': lzma.FILTER_LZMA1, 'lc': props[0] % 9, 'lp': (props[0] // 9) % 5, 'pb': props[0] // 45, 'dict_size': int.from_bytes(props[1:5], 'little')}]
