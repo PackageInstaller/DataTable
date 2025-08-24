@@ -23,3 +23,4 @@
 |  ManasisRefranin  |    麻辣鸡丝    |            国服 Json            |
 |    ModelWarGirl    |   高能手办团   |           国服 LuaJIT           |
 |     OZRewrite     |   OZRewrite   |        国际服 CSV + Json        |
+|    BlackBeacon    |    黑色信标    |    国服 Lua，需要自己反编译    |

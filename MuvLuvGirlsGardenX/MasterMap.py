@@ -1,13 +1,20 @@
 # 此文件由脚本自动生成，请勿手动修改。
 
-DELETEDDATAOBJECT_MAP = {
-    0: "TypeName",
-    1: "Id",
-}
-
 ACCOUNTTOKEN_MAP = {
     0: "Type",
     1: "Value",
+    2: "IsMaintenance",
+}
+
+ADDITIONALFORMATERGENERATOR_MAP = {
+    0: "DataObjectArray",
+    1: "FaultArray",
+    2: "DeletedDataObjectArray",
+}
+
+AUTHRESULT_MAP = {
+    0: "Token",
+    1: "IsMaintenance",
 }
 
 AUTHENTICATEDMMCLIENTPAYLOAD_MAP = {
@@ -15,79 +22,8 @@ AUTHENTICATEDMMCLIENTPAYLOAD_MAP = {
     1: "OnetimeToken",
 }
 
-SIGNINPAYLOAD_MAP = {
-    0: "Provider",
-    1: "Parameter1",
-    2: "Parameter2",
-}
-
-STRINGRESULT_MAP = {
-    0: "String",
-}
-
 BOOLEANRESULT_MAP = {
     0: "IsSuccess",
-}
-
-GACHARESULT_MAP = {
-    0: "CandidateCharacterMasterIds",
-    1: "KeepingSlots",
-    2: "ObtainedUserRollCountRewardId",
-    3: "ObtainedSerialCode",
-}
-
-KEEPINGSLOT_MAP = {
-    0: "SlotPosition",
-    1: "CharacterMasterId",
-    2: "IsAcquired",
-}
-
-GACHAPROBABILITYRESULT_MAP = {
-    0: "GachaMasterId",
-    1: "RollCount",
-    2: "CharacterProbabilityResults",
-}
-
-GACHACHARACTERPROBABILITYRESULT_MAP = {
-    0: "CharacterMasterId",
-    1: "CharacterName",
-    2: "Rarity",
-    3: "MasterProbability",
-    4: "ResultCount",
-    5: "ResultProbability",
-}
-
-HOMERESULT_MAP = {
-    0: "DailyRollLeft",
-    1: "UserRollCount",
-    2: "OverallRollCount",
-    3: "IsEffectSkip",
-    4: "CanRecoverRollCountWithTweet",
-    5: "IsWaitingForDecistion",
-    6: "KeepingSlots",
-    7: "ReceivedSerialCodes",
-    8: "LastPerformedRewardRollCount",
-}
-
-RECEIVEDSERIALCODE_MAP = {
-    0: "Order",
-    1: "SerialCode",
-}
-
-IZANAMIENVIRONMENTCONFIGURATION_MAP = {
-    0: "BackendUrl",
-    1: "AssetsUrl",
-    2: "StaticContentUrl",
-    3: "MaintenanceUrl",
-    4: "IsDebugMode",
-    5: "IsAdult",
-    6: "IsOpenPreRegistration",
-    7: "IsMaintenance",
-    8: "MaintenanceUntil",
-}
-
-CHANGEKEEPCHARACTERSPAYLOAD_MAP = {
-    0: "ChangeKeepCharacters",
 }
 
 CHANGEKEEPCHARACTER_MAP = {
@@ -95,14 +31,8 @@ CHANGEKEEPCHARACTER_MAP = {
     1: "CharacterMasterId",
 }
 
-MASTERRESULT_MAP = {
-    0: "IsOpenPreRegistration",
-    1: "Characters",
-    2: "UserRollCountRewards",
-    3: "OverallRollCountRewards",
-    4: "MazeGuarders",
-    5: "GachaCharacters",
-    6: "IsMgMove",
+CHANGEKEEPCHARACTERSPAYLOAD_MAP = {
+    0: "ChangeKeepCharacters",
 }
 
 CHARACTERMASTER_MAP = {
@@ -122,14 +52,96 @@ CHARACTERMASTER_MAP = {
     16: "TeamType",
 }
 
-USERROLLCOUNTREWARDMASTER_MAP = {
-    0: "Id",
-    1: "Count",
+DELETEDDATAOBJECT_MAP = {
+    0: "TypeName",
+    1: "Id",
 }
 
-OVERALLROLLCOUNTREWARDMASTER_MAP = {
+FAULT_MAP = {
+    0: "ErrorCode",
+    1: "Message",
+    2: "StackTrace",
+}
+
+GACHACHARACTERMASTER_MAP = {
     0: "Id",
-    1: "Count",
+    1: "GachaMasterId",
+    2: "CharacterMasterId",
+}
+
+GACHACHARACTERPROBABILITYRESULT_MAP = {
+    0: "CharacterMasterId",
+    1: "CharacterName",
+    2: "Rarity",
+    3: "MasterProbability",
+    4: "ResultCount",
+    5: "ResultProbability",
+}
+
+GACHAMASTER_MAP = {
+    0: "Id",
+    1: "StartDate",
+    2: "EndDate",
+}
+
+GACHAPROBABILITYRESULT_MAP = {
+    0: "GachaMasterId",
+    1: "RollCount",
+    2: "CharacterProbabilityResults",
+}
+
+GACHARESULT_MAP = {
+    0: "CandidateCharacterMasterIds",
+    1: "KeepingSlots",
+    2: "ObtainedUserRollCountRewardId",
+    3: "ObtainedSerialCode",
+}
+
+HOMERESULT_MAP = {
+    0: "DailyRollLeft",
+    1: "UserRollCount",
+    2: "OverallRollCount",
+    3: "IsEffectSkip",
+    4: "CanRecoverRollCountWithTweet",
+    5: "IsWaitingForDecistion",
+    6: "KeepingSlots",
+    7: "ReceivedSerialCodes",
+    8: "LastPerformedRewardRollCount",
+}
+
+IZANAMIENVIRONMENTCONFIGURATION_MAP = {
+    0: "BackendUrl",
+    1: "AssetsUrl",
+    2: "StaticContentUrl",
+    3: "MaintenanceUrl",
+    4: "IsDebugMode",
+    5: "IsAdult",
+    6: "IsOpenPreRegistration",
+    7: "IsMaintenance",
+    8: "MaintenanceUntil",
+}
+
+KEEPINGSLOT_MAP = {
+    0: "SlotPosition",
+    1: "CharacterMasterId",
+    2: "IsAcquired",
+}
+
+MASTERDATAPACKAGE_MAP = {
+    0: "MasterData",
+    1: "Version",
+}
+
+MASTERRESULT_MAP = {
+    0: "IsOpenPreRegistration",
+    1: "Characters",
+    2: "UserRollCountRewards",
+    3: "OverallRollCountRewards",
+    4: "MazeGuarders",
+    5: "GachaCharacters",
+    6: "IsMgMove",
+    7: "IsProbabilityUp",
+    8: "TweetText",
 }
 
 MAZEGUARDERMASTER_MAP = {
@@ -141,41 +153,33 @@ MAZEGUARDERMASTER_MAP = {
     5: "Affiliation",
 }
 
-GACHACHARACTERMASTER_MAP = {
+OVERALLROLLCOUNTREWARDMASTER_MAP = {
     0: "Id",
-    1: "GachaMasterId",
-    2: "CharacterMasterId",
+    1: "Count",
 }
 
-FAULT_MAP = {
-    0: "ErrorCode",
-    1: "Message",
-    2: "StackTrace",
-}
-
-MASTERDATAPACKAGE_MAP = {
-    0: "MasterData",
-    1: "Version",
-}
-
-AUTHRESULT_MAP = {
-    0: "Token",
-}
-
-GACHAMASTER_MAP = {
-    0: "Id",
-    1: "StartDate",
-    2: "EndDate",
-}
-
-ADDITIONALFORMATERGENERATOR_MAP = {
-    0: "DataObjectArray",
-    1: "FaultArray",
-    2: "DeletedDataObjectArray",
+RECEIVEDSERIALCODE_MAP = {
+    0: "Order",
+    1: "SerialCode",
 }
 
 RUNTIMECONFIGURATION_MAP = {
     0: "IsRated",
+}
+
+SIGNINPAYLOAD_MAP = {
+    0: "Provider",
+    1: "Parameter1",
+    2: "Parameter2",
+}
+
+STRINGRESULT_MAP = {
+    0: "String",
+}
+
+USERROLLCOUNTREWARDMASTER_MAP = {
+    0: "Id",
+    1: "Count",
 }
 
 MASTER_RESULT_STRUCTURE = {
@@ -186,4 +190,6 @@ MASTER_RESULT_STRUCTURE = {
     4: ("MazeGuarders", MAZEGUARDERMASTER_MAP),
     5: ("GachaCharacters", GACHACHARACTERMASTER_MAP),
     6: ("IsMgMove", None),
+    7: ("IsProbabilityUp", None),
+    8: ("TweetText", None),
 }

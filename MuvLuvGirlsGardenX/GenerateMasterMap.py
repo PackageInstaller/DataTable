@@ -91,4 +91,4 @@ def generate_map(cs_file_path: str, output_py_path: str):
             print("MasterResult 类未找到或解析不正确")
 
 if __name__ == "__main__":
-    generate_map("types.cs", "MasterMap.py")
+    generate_map("il2cpp.cs", "MasterMap.py")
