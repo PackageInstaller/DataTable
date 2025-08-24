@@ -2,7 +2,6 @@ import lzma
 import sys
 import os
 import io
-import tempfile
 import subprocess
 
 KEY = (
@@ -74,12 +73,16 @@ if __name__ == "__main__":
     od = os.path.join("MasterData", os.path.splitext(os.path.basename(sys.argv[1]))[0])
     with open(sys.argv[1], 'rb') as f:
         enc = f.read()
+    # Game::DecodeScript::DecodeData
+    # key在Game::DecodeScript::cctor
     com = rc4(bytes.fromhex(KEY), enc)
     s = com[0:4]
+    # Game::UnPackLua::eval_b
     print((s[0] << 24) | (s[2] << 16) | (s[1] << 8) | s[3])
     props = com[4:9]
     # SetDecoderProperties
-    filters = [{'id': lzma.FILTER_LZMA1, 'lc': props[0] % 9, 'lp': (props[0] // 9) % 5, 'pb': props[0] // 45, 'dict_size': int.from_bytes(props[1:5], 'little')}]
+    filters = [{'id': lzma.FILTER_LZMA1, 'lc': props[0] % 9, 'lp': (props[0] // 9) % 5, 'pb': props[0] // 45,
+                'dict_size': int.from_bytes(props[1:5], 'little')}]
     if not os.path.exists(od):
         os.makedirs(od)
     # 头部总共9个字节，之后就是纯LZMA压缩数据
