@@ -507,6 +507,19 @@
         ]
     },
     {
+        "id": 15150001,
+        "rarity": 5,
+        "image_index": 1150001,
+        "ml_name": [
+            "熱情アップ大",
+            ""
+        ],
+        "ml_description": [
+            "バトル開始時の熱情[[effects_power]]増加",
+            ""
+        ]
+    },
+    {
         "id": 15160002,
         "rarity": 5,
         "image_index": 1160002,
@@ -1278,7 +1291,7 @@
         "rarity": 5,
         "image_index": 3530004,
         "ml_name": [
-            "入魂時攻撃強化(必殺)",
+            "入魂時攻撃変更・必殺",
             ""
         ],
         "ml_description": [
@@ -1291,11 +1304,11 @@
         "rarity": 5,
         "image_index": 3530005,
         "ml_name": [
-            "入魂時攻撃強化(防御無視)",
+            "入魂時攻撃変更・防御無視",
             ""
         ],
         "ml_description": [
-            "入魂時攻撃に防御無視効果",
+            "<help=empower_attack>入魂時攻撃</help>を範囲内の敵に防御無視の物理ダメージ(物理<help=element>エレメント</help>)を与える効果に変更",
             ""
         ]
     },
@@ -1361,6 +1374,32 @@
         ],
         "ml_description": [
             "入魂時、自身に攻撃[[effects_power]%]増加＜[[effects_turn_1]ターン]＞",
+            ""
+        ]
+    },
+    {
+        "id": 15480013,
+        "rarity": 5,
+        "image_index": 3480013,
+        "ml_name": [
+            "入魂時猛毒完全耐性3T",
+            ""
+        ],
+        "ml_description": [
+            "入魂時、自身が<help=poison>猛毒</help>耐性を得る＜[[effects_turn_1]ターン]＞/精神[[effects_power_2]%]増加",
+            ""
+        ]
+    },
+    {
+        "id": 15480018,
+        "rarity": 5,
+        "image_index": 3480018,
+        "ml_name": [
+            "入魂時睡眠完全耐性3T",
+            ""
+        ],
+        "ml_description": [
+            "入魂時、自身が<help=sleep>睡眠</help>耐性を得る＜[[effects_turn_1]ターン]＞/精神[[effects_power_2]%]増加",
             ""
         ]
     },
@@ -1477,7 +1516,7 @@
             ""
         ],
         "ml_description": [
-            "バトル開始時、自身に不動付与/通常攻撃時、命中対象の防御[[effects_power]%]減少",
+            "バトル開始時、自身に不動付与/通常攻撃時、命中対象の防御[[effects_power]%]減少/ターン開始時、気絶・睡眠・誘惑解除",
             ""
         ]
     },
@@ -1881,6 +1920,45 @@
         ],
         "ml_description": [
             "一定体力以下で攻撃[[effects_power_1]%]増加（重複可）・敏捷[[effects_power_2]%]増加（重複可）・移動[[effects_power_3]]増加（重複可）",
+            ""
+        ]
+    },
+    {
+        "id": 35330042,
+        "rarity": 5,
+        "image_index": 1110011,
+        "ml_name": [
+            "ダメージを受けた時、自身に精神・防御増加（重複可）/ターン開始時、自身に水月付与/一定体力以下で味方全員に幻影付与",
+            ""
+        ],
+        "ml_description": [
+            "ダメージを受けた時、自身に精神・防御[[effects_power_1]%]増加（重複可）/ターン開始時、自身に水月付与/一定体力以下で味方全員に幻影付与",
+            ""
+        ]
+    },
+    {
+        "id": 35330043,
+        "rarity": 5,
+        "image_index": 1330000,
+        "ml_name": [
+            "汎用50%発動ステータスリセット2",
+            ""
+        ],
+        "ml_description": [
+            "一定体力以下で自身のデバフ、弱点付与解除",
+            ""
+        ]
+    },
+    {
+        "id": 35330044,
+        "rarity": 5,
+        "image_index": 1330000,
+        "ml_name": [
+            "追加行動/不動/ターン開始時、自身の攻撃デバフ解除/ダウン時、「グラッジリタリエーション」発動",
+            ""
+        ],
+        "ml_description": [
+            "追加行動/不動/ターン開始時、自身の攻撃デバフ解除/ダウン時、「グラッジリタリエーション」発動",
             ""
         ]
     },
@@ -5330,6 +5408,32 @@
         ]
     },
     {
+        "id": 75130014,
+        "rarity": 5,
+        "image_index": 1390002,
+        "ml_name": [
+            "青属性有利＋（50%）",
+            ""
+        ],
+        "ml_description": [
+            "味方のセルリアン（青）のカーマイン（赤）に対してのダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 74130014,
+        "rarity": 4,
+        "image_index": 1130002,
+        "ml_name": [
+            "エネミーのカーマイン(赤)の攻撃+60%",
+            ""
+        ],
+        "ml_description": [
+            "エネミーのカーマイン(赤)の攻撃+[[effects_power]%]",
+            ""
+        ]
+    },
+    {
         "id": 90130001,
         "rarity": 5,
         "image_index": 1130001,
@@ -6535,6 +6639,45 @@
         ],
         "ml_description": [
             "雷エレメントの攻撃を[[effects_power]%]強化/攻撃[[effects_power_2]%]増加/技法または絶技でオブジェクト召喚時、自身の敏捷[[effects_power_3]%]増加（重複可）＜[[effects_turn_3]ターン]＞・入魂ゲージ[[effects_power_4]]増加",
+            ""
+        ]
+    },
+    {
+        "id": 45020501,
+        "rarity": 5,
+        "image_index": 1080000,
+        "ml_name": [
+            "精髄：【星降る夜の誘惑】",
+            ""
+        ],
+        "ml_description": [
+            "系統：芸道に対してダメージ[[effects_power]%]上昇/器用[[effects_power_2]%]増加/技法または絶技でオブジェクト召喚時、敵全体の精神[[effects_power_3]%]減少＜[[effects_turn_3]ターン]＞",
+            ""
+        ]
+    },
+    {
+        "id": 45031001,
+        "rarity": 5,
+        "image_index": 1150001,
+        "ml_name": [
+            "精髄：【疑心のオルタ】",
+            ""
+        ],
+        "ml_description": [
+            "バトル開始時の熱情[[effects_power]]増加/炎エレメントの攻撃を[[effects_power_2]%]強化/技法または絶技で熱情消費時、自身の攻撃[[effects_power_3]%]増加（重複可）＜[[effects_turn_3]ターン]＞・熱情[[effects_power_4]]増加・入魂ゲージ[[effects_power_5]]増加",
+            ""
+        ]
+    },
+    {
+        "id": 45120401,
+        "rarity": 5,
+        "image_index": 1300002,
+        "ml_name": [
+            "精髄：【春に色めく妖精】",
+            ""
+        ],
+        "ml_description": [
+            "水エレメントの攻撃を[[effects_power]%]強化/攻撃[[effects_power_2]%]増加/技法または絶技でバフ付与時、敵全体の防御[[effects_power_3]%]減少＜[[effects_turn_3]ターン]＞",
             ""
         ]
     }

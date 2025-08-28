@@ -89,7 +89,9 @@
             "EquipmentPresetIndex": 1,
             "ProfileOutlineType": 1,
             "GameChatType": 1,
-            "UnitPracticeNodeType": 1
+            "UnitPracticeNodeType": 1,
+            "HolyRelicCategoryType": 1,
+            "CubeCategoryType": 1
         },
         {
             "EventDaystamps": 2,
@@ -177,7 +179,9 @@
             "EquipmentPresetIndex": 2,
             "ProfileOutlineType": 2,
             "GameChatType": 2,
-            "UnitPracticeNodeType": 2
+            "UnitPracticeNodeType": 2,
+            "HolyRelicCategoryType": 2,
+            "CubeCategoryType": 2
         },
         {
             "EventDaystamps": 3,
@@ -273,6 +277,7 @@
             "DropItemType": 4,
             "EquipmentPart": 4,
             "Job": 4,
+            "GlobalBuffType": 4,
             "ShopType": 4,
             "MazeBuffType": 4,
             "MazeNodeType": 4,
@@ -329,6 +334,7 @@
             "UIIndex": 5,
             "ConditionType": 5,
             "DropItemType": 5,
+            "GlobalBuffType": 5,
             "ShopType": 5,
             "MazeBuffType": 5,
             "MazeNodeType": 5,
@@ -378,6 +384,7 @@
             "ConditionType": 6,
             "ShopType": 6,
             "MazeBuffType": 6,
+            "ProductionType": 6,
             "PeriodType": 6,
             "QuestType": 6,
             "QuestActionType": 6,
@@ -399,6 +406,7 @@
             "SkillActorType": 6,
             "SkillTriggerType": 6,
             "StatCategory2": 6,
+            "TargetType": 6,
             "DetailTarget": 6,
             "ItemConsumeType": 6,
             "RankingIndex": 6,
@@ -640,6 +648,7 @@
             "ZoneType": 16,
             "GuildActivityType": 16,
             "EntryIndex": 16,
+            "AssetType": 16,
             "UnitChatType": 16,
             "UIIndex": 16,
             "ConditionType": 16,
@@ -659,6 +668,7 @@
             "ZoneType": 17,
             "GuildActivityType": 17,
             "EntryIndex": 17,
+            "AssetType": 17,
             "UnitChatType": 17,
             "UIIndex": 17,
             "ConditionType": 17,
@@ -668,7 +678,8 @@
             "HobbyType": 17,
             "StatIndex": 17,
             "SkillCategoryType": 17,
-            "SkillActorType": 17
+            "SkillActorType": 17,
+            "ItemConsumeType": 17
         },
         {
             "SkillSlotIndex": 18,
@@ -824,6 +835,7 @@
         },
         {
             "ZoneType": 30,
+            "UIIndex": 30,
             "ConditionType": 30,
             "ShopType": 30,
             "QuestActionType": 30,
@@ -898,6 +910,7 @@
             "ShopType": 37,
             "QuestActionType": 37,
             "BattleMessage": 37,
+            "HobbyType": 37,
             "StatIndex": 37
         },
         {
@@ -906,6 +919,7 @@
             "ShopType": 38,
             "QuestActionType": 38,
             "BattleMessage": 38,
+            "HobbyType": 38,
             "StatIndex": 38
         },
         {
@@ -914,6 +928,7 @@
             "ShopType": 39,
             "QuestActionType": 39,
             "BattleMessage": 39,
+            "HobbyType": 39,
             "StatIndex": 39
         },
         {
@@ -970,36 +985,42 @@
         {
             "ZoneType": 47,
             "ConditionType": 47,
+            "ShopType": 47,
             "QuestActionType": 47,
             "StatIndex": 47
         },
         {
             "ZoneType": 48,
             "ConditionType": 48,
+            "ShopType": 48,
             "QuestActionType": 48,
             "StatIndex": 48
         },
         {
             "ZoneType": 49,
             "ConditionType": 49,
+            "ShopType": 49,
             "QuestActionType": 49,
             "StatIndex": 49
         },
         {
             "ZoneType": 50,
             "ConditionType": 50,
+            "ShopType": 50,
             "QuestActionType": 50,
             "StatIndex": 50
         },
         {
             "ZoneType": 51,
             "ConditionType": 51,
+            "ShopType": 51,
             "QuestActionType": 51,
             "StatIndex": 51
         },
         {
             "ZoneType": 52,
             "ConditionType": 52,
+            "ShopType": 52,
             "QuestActionType": 52,
             "StatIndex": 52
         },
@@ -1010,23 +1031,28 @@
             "StatIndex": 53
         },
         {
+            "ZoneType": 54,
             "ConditionType": 54,
             "QuestActionType": 54,
             "StatIndex": 54
         },
         {
+            "ZoneType": 55,
             "QuestActionType": 55,
             "StatIndex": 55
         },
         {
+            "ZoneType": 56,
             "QuestActionType": 56,
             "StatIndex": 56
         },
         {
+            "ZoneType": 57,
             "QuestActionType": 57,
             "StatIndex": 57
         },
         {
+            "ZoneType": 58,
             "QuestActionType": 58,
             "StatIndex": 58
         },
@@ -1162,6 +1188,5 @@
         {
             "QuestActionType": 102
         }
-    ],
-    "hash": "s6zVRCMWZDbTOoYJy/bsYT9pippvS6aLvR6iX010Mn4="
+    ]
 }

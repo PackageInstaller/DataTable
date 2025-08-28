@@ -17,7 +17,7 @@
                     "TownActorType": 8,
                     "TownActorInfo": {
                         "$type": "GameDesignData.TownUpgradeStructureActorInfo, Assembly-CSharp",
-                        "MaxLevel": 150,
+                        "MaxLevel": 200,
                         "StructureId": 15,
                         "List": [
                             {
@@ -3920,13 +3920,1313 @@
                                         "Type": 6,
                                         "Index": 1,
                                         "IndexName": "Gold",
-                                        "Num": 1225000
+                                        "Num": 1240000
                                     },
                                     {
                                         "Type": 6,
                                         "Index": 129,
                                         "IndexName": "Wood",
-                                        "Num": 148
+                                        "Num": 158
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1255000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 168
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1270000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 178
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1285000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 188
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1300000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 198
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1315000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 208
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1330000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 218
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1345000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 228
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1360000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 238
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1375000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 248
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1390000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 258
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1405000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 268
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1420000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 278
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1435000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 288
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 8
+                                    },
+                                    {
+                                        "Key": 310,
+                                        "Val": 0.3
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 1450000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 129,
+                                        "IndexName": "Wood",
+                                        "Num": 298
                                     }
                                 ],
                                 "StatList": [
@@ -3954,7 +5254,7 @@
                     "TownActorType": 8,
                     "TownActorInfo": {
                         "$type": "GameDesignData.TownUpgradeStructureActorInfo, Assembly-CSharp",
-                        "MaxLevel": 150,
+                        "MaxLevel": 200,
                         "StructureId": 16,
                         "List": [
                             {
@@ -8859,13 +10159,13 @@
                                         "Type": 6,
                                         "Index": 1,
                                         "IndexName": "Gold",
-                                        "Num": 560000
+                                        "Num": 580000
                                     },
                                     {
                                         "Type": 6,
                                         "Index": 126,
                                         "IndexName": "Stone",
-                                        "Num": 43
+                                        "Num": 49
                                     },
                                     {
                                         "Type": 6,
@@ -8877,7 +10177,1857 @@
                                         "Type": 6,
                                         "Index": 128,
                                         "IndexName": "Mith",
+                                        "Num": 57
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 600000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
                                         "Num": 54
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 72
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 60
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 620000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 59
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 72
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 63
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 640000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 64
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 72
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 66
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 660000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 69
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 72
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 69
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 74
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 74
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 80
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 80
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 86
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 86
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 92
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 92
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 98
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 98
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 104
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 104
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 110
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 110
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 116
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 116
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 122
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 122
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 128
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 128
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 134
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 134
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
+                                    }
+                                ],
+                                "StatList": [
+                                    {
+                                        "Key": 5
+                                    },
+                                    {
+                                        "Key": 7
+                                    }
+                                ],
+                                "InvestList": []
+                            },
+                            {
+                                "PriceList": [
+                                    {
+                                        "Type": 6,
+                                        "Index": 1,
+                                        "IndexName": "Gold",
+                                        "Num": 680000
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 126,
+                                        "IndexName": "Stone",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 127,
+                                        "IndexName": "Steel",
+                                        "Num": 140
+                                    },
+                                    {
+                                        "Type": 6,
+                                        "Index": 128,
+                                        "IndexName": "Mith",
+                                        "Num": 72
                                     }
                                 ],
                                 "StatList": [
@@ -9044,7 +12194,12 @@
                     "PosX": -64.49995,
                     "PosY": -0.700000048,
                     "PosZ": 3.79999876,
-                    "ChatIndex": "Npc_Audrey"
+                    "ChatIndex": "Npc_Audrey",
+                    "TownActorType": 7,
+                    "TownActorInfo": {
+                        "$type": "GameDesignData.TownShopActorInfo, Assembly-CSharp",
+                        "ShopType": 52
+                    }
                 },
                 {
                     "Id": 25,
@@ -9053,7 +12208,7 @@
                     "PosX": -39.9999771,
                     "PosZ": -2.2,
                     "Direction": true,
-                    "ChatIndex": "Npc_Violet",
+                    "ChatIndex": "Npc_Scarlet",
                     "TownActorType": 4
                 },
                 {
@@ -9071,7 +12226,7 @@
                     "UnitIndex": 44,
                     "PosX": -31.5001125,
                     "PosZ": 1.30000019,
-                    "ChatIndex": "Npc_Jessie",
+                    "ChatIndex": "Npc_Violet",
                     "TownActorType": 4
                 },
                 {
@@ -9151,6 +12306,5 @@
                 }
             ]
         }
-    ],
-    "hash": "nDILs/0BvW1sjmBlwumiTrZtMHWMOrm0Z/M3wYbXvvw="
+    ]
 }

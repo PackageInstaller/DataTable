@@ -5253,6 +5253,180 @@
             }
         },
         {
+            "Index": 84,
+            "IndexName": "FairyForest",
+            "Contrast": 0.1,
+            "Brightness": -0.1,
+            "Saturation": -0.2,
+            "Exposure": -0.2,
+            "List": {
+                "1": {
+                    "Index": 1,
+                    "Size": 6000,
+                    "Type": 1,
+                    "List": [
+                        {
+                            "PrefabName": "GhostHouse_Near",
+                            "Pos": {
+                                "x": -30.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        }
+                    ]
+                },
+                "2": {
+                    "Index": 2,
+                    "Size": 6000,
+                    "Type": 2,
+                    "List": [
+                        {
+                            "PrefabName": "GhostHouse_Middle_1",
+                            "Pos": {
+                                "x": -30.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            },
+                            "Order": 2
+                        },
+                        {
+                            "PrefabName": "GhostHouse_Middle_2",
+                            "Pos": {
+                                "x": -30.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "PrefabName": "GhostHouse_Middle_3",
+                            "Pos": {
+                                "x": -30.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "PrefabName": "GhostHouse_Middle_4",
+                            "Pos": {
+                                "x": -30.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        }
+                    ]
+                },
+                "3": {
+                    "Index": 3,
+                    "Size": 6000,
+                    "Type": 3,
+                    "Layer": 1,
+                    "List": [
+                        {
+                            "PrefabName": "GhostHouse_Far_1",
+                            "Pos": {
+                                "x": -30.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        }
+                    ]
+                },
+                "4": {
+                    "Index": 4,
+                    "Size": 6000,
+                    "Type": 3,
+                    "Layer": 20,
+                    "List": [
+                        {
+                            "PrefabName": "GhostHouse_Far_2",
+                            "Pos": {
+                                "x": -30.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        }
+                    ]
+                },
+                "5": {
+                    "Index": 5,
+                    "Size": 6000,
+                    "Type": 3,
+                    "Layer": 80,
+                    "List": [
+                        {
+                            "PrefabName": "GhostHouse_Far_3",
+                            "Pos": {
+                                "x": -30.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        }
+                    ]
+                },
+                "6": {
+                    "Index": 6,
+                    "Size": 6000,
+                    "Type": 3,
+                    "Layer": 100,
+                    "List": [
+                        {
+                            "PrefabName": "GhostHouse_Far_4",
+                            "Pos": {
+                                "x": -30.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        }
+                    ]
+                },
+                "10": {
+                    "Index": 10,
+                    "Size": 6000,
+                    "Type": 4,
+                    "List": [
+                        {
+                            "PrefabName": "GhostHouse_Bg",
+                            "Pos": {
+                                "x": -30.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
             "Index": 29,
             "IndexName": "HomeTown",
             "NumBlock": 1,
@@ -12880,6 +13054,5 @@
                 }
             }
         }
-    ],
-    "hash": "v9j7m4edgEBqhutfpymuUms9OEEqsJO2qegKxBD5HBk="
+    ]
 }

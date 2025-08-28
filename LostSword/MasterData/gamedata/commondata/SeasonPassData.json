@@ -1,6 +1,908 @@
 {
     "DoNotUseThis": [
         {
+            "Index": 16,
+            "TitleTopColor": "5596b0",
+            "TitleBottomColor": "355e6e",
+            "SubTitleColor": "365165",
+            "PriceItem": {
+                "Type": 6,
+                "Index": 3,
+                "Num": 1600
+            },
+            "SortOrder": 9998,
+            "StartTime": "2025-07-17T00:00:00Z",
+            "EndTime": "2025-08-07T00:00:00Z",
+            "NctStartTime": "2099-12-30T00:00:00Z",
+            "NctEndTime": "2099-12-30T00:00:00Z",
+            "RequirePoint": 1000,
+            "QuickAsset": {
+                "Type": 6,
+                "Index": 3,
+                "Num": 100
+            },
+            "ConditionList": {
+                "0": [
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1860,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1861,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1862,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1863,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1864,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1865,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1866,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1867,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1868,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1869,
+                                "Num": 1
+                            }
+                        }
+                    }
+                ]
+            },
+            "RewardList": [
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 42,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 178,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 173,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 136,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 119,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 80
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 120
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 219,
+                                "Num": 2000
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 219,
+                                "Num": 3000
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 122,
+                                "Num": 5
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 122,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 201,
+                                "Num": 5
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 201,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 191,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 191,
+                                "Num": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 61,
+                                "Num": 100
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 62,
+                                "Num": 2
+                            }
+                        ]
+                    }
+                }
+            ],
+            "GlobalExcept": true,
+            "AFEventName": "lostd_beachmerrypath"
+        },
+        {
+            "Index": 15,
+            "TitleTopColor": "aa6055",
+            "TitleBottomColor": "854a41",
+            "SubTitleColor": "733f32",
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 1600
+            },
+            "SortOrder": 9998,
+            "StartTime": "2025-07-24T00:00:00Z",
+            "EndTime": "2025-08-22T00:00:00Z",
+            "NctStartTime": "2099-12-30T00:00:00Z",
+            "NctEndTime": "2099-12-30T00:00:00Z",
+            "RequirePoint": 1000,
+            "EnableQuick": true,
+            "QuickAsset": {
+                "Type": 6,
+                "Index": 3,
+                "Num": 100
+            },
+            "ConditionList": {
+                "0": [
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 11,
+                            "Info": {
+                                "$type": "CommonLibrary.EnemyKillConditionInfo, Assembly-CSharp",
+                                "Num": 1000
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1200,
+                        "ConditionData": {
+                            "Type": 44,
+                            "Info": {
+                                "$type": "CommonLibrary.TrainingOpenConditionInfo, Assembly-CSharp",
+                                "Num": 30
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1200,
+                        "ConditionData": {
+                            "Type": 38,
+                            "Info": {
+                                "$type": "CommonLibrary.SkillStrengthenConditionInfo, Assembly-CSharp",
+                                "Num": 5
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1500,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1860,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 2000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1864,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 3000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1869,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1500,
+                        "ConditionData": {
+                            "Type": 23,
+                            "Info": {
+                                "$type": "CommonLibrary.KillChickenConditionInfo, Assembly-CSharp",
+                                "Num": 20
+                            }
+                        }
+                    }
+                ],
+                "1": [
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 40,
+                            "Info": {
+                                "$type": "CommonLibrary.SummonConditionInfo, Assembly-CSharp",
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 150,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneType": 1,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 24,
+                            "Info": {
+                                "$type": "CommonLibrary.LikeabilityConditionInfo, Assembly-CSharp",
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 46,
+                            "Info": {
+                                "$type": "CommonLibrary.UseItemGroupConditionInfo, Assembly-CSharp",
+                                "GroupType": 1,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 150,
+                        "ConditionData": {
+                            "Type": 2,
+                            "Info": {
+                                "$type": "CommonLibrary.BuyShopConditionInfo, Assembly-CSharp",
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 22,
+                            "Info": {
+                                "$type": "CommonLibrary.ItemUseConditionInfo, Assembly-CSharp",
+                                "ItemIndex": 40,
+                                "Num": 1
+                            }
+                        }
+                    }
+                ],
+                "2": [
+                    {
+                        "Point": 700,
+                        "ConditionData": {
+                            "Type": 1,
+                            "Info": {
+                                "$type": "CommonLibrary.AttendConditionInfo, Assembly-CSharp",
+                                "Num": 3
+                            }
+                        }
+                    },
+                    {
+                        "Point": 500,
+                        "ConditionData": {
+                            "Type": 11,
+                            "Info": {
+                                "$type": "CommonLibrary.EnemyKillConditionInfo, Assembly-CSharp",
+                                "Num": 200
+                            }
+                        }
+                    },
+                    {
+                        "Point": 500,
+                        "ConditionData": {
+                            "Type": 2,
+                            "Info": {
+                                "$type": "CommonLibrary.BuyShopConditionInfo, Assembly-CSharp",
+                                "Num": 10
+                            }
+                        }
+                    },
+                    {
+                        "Point": 700,
+                        "ConditionData": {
+                            "Type": 22,
+                            "Info": {
+                                "$type": "CommonLibrary.ItemUseConditionInfo, Assembly-CSharp",
+                                "ItemIndex": 40,
+                                "Num": 10
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 6,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearMazeConditionInfo, Assembly-CSharp",
+                                "Num": 30
+                            }
+                        }
+                    }
+                ]
+            },
+            "RewardList": [
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 4
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 173,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 50
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 50
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 50
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 5
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                }
+            ],
+            "GlobalExcept": true,
+            "AFEventName": "lostd_beachmerrypath"
+        },
+        {
             "Index": 1,
             "TitleTopColor": "7f5136",
             "TitleBottomColor": "5e3c28",
@@ -13,6 +915,8 @@
             "SortOrder": 9999,
             "StartTime": "2025-01-16T00:00:00Z",
             "EndTime": "2100-12-31T00:00:00Z",
+            "NctStartTime": "2025-08-20T00:00:00Z",
+            "NctEndTime": "2100-12-31T00:00:00Z",
             "RequirePoint": 1000,
             "EnableQuick": true,
             "QuickAsset": {
@@ -764,6 +1668,7 @@
                     }
                 }
             ],
+            "NctAdd": true,
             "AFEventName": "lostd_mission"
         },
         {
@@ -779,6 +1684,8 @@
             "SortOrder": 9998,
             "StartTime": "2025-04-17T00:00:00Z",
             "EndTime": "2025-05-16T00:00:00Z",
+            "NctStartTime": "2025-04-17T00:00:00Z",
+            "NctEndTime": "2025-05-16T00:00:00Z",
             "RequirePoint": 1000,
             "EnableQuick": true,
             "QuickAsset": {
@@ -1343,6 +2250,7 @@
                     }
                 }
             ],
+            "GlobalExcept": true,
             "AFEventName": "lostd_eventdestruction"
         },
         {
@@ -1358,6 +2266,8 @@
             "SortOrder": 9998,
             "StartTime": "2024-02-06T00:00:00Z",
             "EndTime": "2024-03-07T00:00:00Z",
+            "NctStartTime": "2024-02-06T00:00:00Z",
+            "NctEndTime": "2024-03-07T00:00:00Z",
             "RequirePoint": 1000,
             "EnableQuick": true,
             "QuickAsset": {
@@ -1922,7 +2832,954 @@
                     }
                 }
             ],
+            "GlobalExcept": true,
             "AFEventName": "lost_captivate"
+        },
+        {
+            "Index": 13,
+            "TitleTopColor": "4c74bf",
+            "TitleBottomColor": "38569c",
+            "SubTitleColor": "374d80",
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 2000
+            },
+            "SortOrder": 1000,
+            "StartTime": "2024-08-20T00:00:00Z",
+            "EndTime": "2099-01-01T00:00:00Z",
+            "NctStartTime": "2025-08-20T00:00:00Z",
+            "NctEndTime": "2099-01-01T00:00:00Z",
+            "RequirePoint": 1000,
+            "QuickAsset": {
+                "Type": 6,
+                "Index": 3,
+                "Num": 100
+            },
+            "ConditionList": {
+                "0": [
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 10,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 20,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 38,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 48,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 70,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 78,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 227,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 242,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 292,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 334,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 344,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 364,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 393,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 403,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 457,
+                                "ShowZoneCategoryName": true,
+                                "Num": 1
+                            }
+                        }
+                    }
+                ]
+            },
+            "RewardList": [
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 1500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 1500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 1500
+                            }
+                        ]
+                    }
+                }
+            ],
+            "GlobalExcept": true,
+            "NctAdd": true
+        },
+        {
+            "Index": 14,
+            "TitleTopColor": "4c74bf",
+            "TitleBottomColor": "38569c",
+            "SubTitleColor": "374d80",
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 2000
+            },
+            "SortOrder": 999,
+            "StartTime": "2024-08-20T00:00:00Z",
+            "EndTime": "2099-01-01T00:00:00Z",
+            "NctStartTime": "2025-08-20T00:00:00Z",
+            "NctEndTime": "2099-01-01T00:00:00Z",
+            "RequirePoint": 1000,
+            "QuickAsset": {
+                "Type": 6,
+                "Index": 3,
+                "Num": 100
+            },
+            "ConditionList": {
+                "0": [
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 477,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 497,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 517,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 532,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 552,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 575,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 585,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 605,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 641,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 661,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 680,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 700,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 720,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 745,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 765,
+                                "ShowZoneCategoryName": true
+                            }
+                        }
+                    }
+                ]
+            },
+            "RewardList": [
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 1500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 1500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 50
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 1500
+                            }
+                        ]
+                    }
+                }
+            ],
+            "GlobalExcept": true,
+            "NctAdd": true,
+            "BeforePassIndex": 13
         },
         {
             "Index": 2,
@@ -1937,6 +3794,8 @@
             "SortOrder": 1000,
             "StartTime": "2025-01-16T00:00:00Z",
             "EndTime": "2099-01-01T00:00:00Z",
+            "NctStartTime": "2025-01-16T00:00:00Z",
+            "NctEndTime": "2099-01-01T00:00:00Z",
             "RequirePoint": 1000,
             "QuickAsset": {
                 "Type": 6,
@@ -2110,9 +3969,7 @@
                             }
                         }
                     }
-                ],
-                "1": [],
-                "2": []
+                ]
             },
             "RewardList": [
                 {
@@ -2401,6 +4258,8 @@
             "SortOrder": 999,
             "StartTime": "2025-02-06T00:00:00Z",
             "EndTime": "2099-01-01T00:00:00Z",
+            "NctStartTime": "2025-02-06T00:00:00Z",
+            "NctEndTime": "2099-01-01T00:00:00Z",
             "RequirePoint": 1000,
             "QuickAsset": {
                 "Type": 6,
@@ -2574,9 +4433,7 @@
                             }
                         }
                     }
-                ],
-                "1": [],
-                "2": []
+                ]
             },
             "RewardList": [
                 {
@@ -2866,6 +4723,8 @@
             "SortOrder": 999,
             "StartTime": "2025-05-29T00:00:00Z",
             "EndTime": "2099-01-01T00:00:00Z",
+            "NctStartTime": "2025-05-29T00:00:00Z",
+            "NctEndTime": "2099-01-01T00:00:00Z",
             "RequirePoint": 1000,
             "QuickAsset": {
                 "Type": 6,
@@ -3054,9 +4913,7 @@
                             }
                         }
                     }
-                ],
-                "1": [],
-                "2": []
+                ]
             },
             "RewardList": [
                 {
@@ -3346,6 +5203,8 @@
             "SortOrder": 9998,
             "StartTime": "2024-03-20T00:00:00Z",
             "EndTime": "2024-04-18T00:00:00Z",
+            "NctStartTime": "2024-03-20T00:00:00Z",
+            "NctEndTime": "2024-04-18T00:00:00Z",
             "RequirePoint": 1000,
             "EnableQuick": true,
             "QuickAsset": {
@@ -3910,6 +5769,7 @@
                     }
                 }
             ],
+            "GlobalExcept": true,
             "AFEventName": "lostd_eventhappy"
         },
         {
@@ -3925,6 +5785,8 @@
             "SortOrder": 9998,
             "StartTime": "2025-06-12T00:00:00Z",
             "EndTime": "2025-06-12T00:00:00Z",
+            "NctStartTime": "2025-06-12T00:00:00Z",
+            "NctEndTime": "2025-06-12T00:00:00Z",
             "RequirePoint": 1000,
             "EnableQuick": true,
             "QuickAsset": {
@@ -4489,6 +6351,7 @@
                     }
                 }
             ],
+            "GlobalExcept": true,
             "AFEventName": "lostd_journeylightpath"
         },
         {
@@ -4504,6 +6367,8 @@
             "SortOrder": 9998,
             "StartTime": "2025-05-14T00:00:00Z",
             "EndTime": "2025-05-14T00:00:00Z",
+            "NctStartTime": "2025-05-14T00:00:00Z",
+            "NctEndTime": "2025-05-14T00:00:00Z",
             "RequirePoint": 1000,
             "EnableQuick": true,
             "QuickAsset": {
@@ -5068,7 +6933,1169 @@
                     }
                 }
             ],
+            "GlobalExcept": true,
             "AFEventName": "lostd_eventloveheart"
+        },
+        {
+            "Index": 17,
+            "TitleTopColor": "7f5136",
+            "TitleBottomColor": "5e3c28",
+            "SubTitleColor": "803737",
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 1600
+            },
+            "SortOrder": 9998,
+            "StartTime": "2024-02-06T00:00:00Z",
+            "EndTime": "2024-03-07T00:00:00Z",
+            "NctStartTime": "2025-09-03T00:00:00Z",
+            "NctEndTime": "2025-10-01T00:00:00Z",
+            "RequirePoint": 1000,
+            "EnableQuick": true,
+            "QuickAsset": {
+                "Type": 6,
+                "Index": 3,
+                "Num": 100
+            },
+            "ConditionList": {
+                "0": [
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 11,
+                            "Info": {
+                                "$type": "CommonLibrary.EnemyKillConditionInfo, Assembly-CSharp",
+                                "Num": 1000
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1200,
+                        "ConditionData": {
+                            "Type": 44,
+                            "Info": {
+                                "$type": "CommonLibrary.TrainingOpenConditionInfo, Assembly-CSharp",
+                                "Num": 30
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1200,
+                        "ConditionData": {
+                            "Type": 38,
+                            "Info": {
+                                "$type": "CommonLibrary.SkillStrengthenConditionInfo, Assembly-CSharp",
+                                "Num": 5
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1500,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneType": 7,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 2000,
+                        "ConditionData": {
+                            "Type": 12,
+                            "Info": {
+                                "$type": "CommonLibrary.EnterZoneConditionInfo, Assembly-CSharp",
+                                "Type": 4,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 3000,
+                        "ConditionData": {
+                            "Type": 24,
+                            "Info": {
+                                "$type": "CommonLibrary.LikeabilityConditionInfo, Assembly-CSharp",
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1500,
+                        "ConditionData": {
+                            "Type": 23,
+                            "Info": {
+                                "$type": "CommonLibrary.KillChickenConditionInfo, Assembly-CSharp",
+                                "Num": 20
+                            }
+                        }
+                    }
+                ],
+                "1": [
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 40,
+                            "Info": {
+                                "$type": "CommonLibrary.SummonConditionInfo, Assembly-CSharp",
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 150,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneType": 1,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 24,
+                            "Info": {
+                                "$type": "CommonLibrary.LikeabilityConditionInfo, Assembly-CSharp",
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 46,
+                            "Info": {
+                                "$type": "CommonLibrary.UseItemGroupConditionInfo, Assembly-CSharp",
+                                "GroupType": 1,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 150,
+                        "ConditionData": {
+                            "Type": 2,
+                            "Info": {
+                                "$type": "CommonLibrary.BuyShopConditionInfo, Assembly-CSharp",
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 22,
+                            "Info": {
+                                "$type": "CommonLibrary.ItemUseConditionInfo, Assembly-CSharp",
+                                "ItemIndex": 40,
+                                "Num": 1
+                            }
+                        }
+                    }
+                ],
+                "2": [
+                    {
+                        "Point": 700,
+                        "ConditionData": {
+                            "Type": 1,
+                            "Info": {
+                                "$type": "CommonLibrary.AttendConditionInfo, Assembly-CSharp",
+                                "Num": 3
+                            }
+                        }
+                    },
+                    {
+                        "Point": 500,
+                        "ConditionData": {
+                            "Type": 11,
+                            "Info": {
+                                "$type": "CommonLibrary.EnemyKillConditionInfo, Assembly-CSharp",
+                                "Num": 200
+                            }
+                        }
+                    },
+                    {
+                        "Point": 500,
+                        "ConditionData": {
+                            "Type": 2,
+                            "Info": {
+                                "$type": "CommonLibrary.BuyShopConditionInfo, Assembly-CSharp",
+                                "Num": 10
+                            }
+                        }
+                    },
+                    {
+                        "Point": 700,
+                        "ConditionData": {
+                            "Type": 22,
+                            "Info": {
+                                "$type": "CommonLibrary.ItemUseConditionInfo, Assembly-CSharp",
+                                "ItemIndex": 40,
+                                "Num": 10
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 6,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearMazeConditionInfo, Assembly-CSharp",
+                                "Num": 30
+                            }
+                        }
+                    }
+                ]
+            },
+            "RewardList": [
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 4
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 173,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 50
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 50
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 50
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 5
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                }
+            ],
+            "GlobalExcept": true
+        },
+        {
+            "Index": 18,
+            "TitleTopColor": "8573a0",
+            "TitleBottomColor": "6a5c80",
+            "SubTitleColor": "4d3665",
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 1600
+            },
+            "SortOrder": 9998,
+            "StartTime": "2025-08-21T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "NctStartTime": "2099-12-30T00:00:00Z",
+            "NctEndTime": "2099-12-30T00:00:00Z",
+            "RequirePoint": 1000,
+            "EnableQuick": true,
+            "QuickAsset": {
+                "Type": 6,
+                "Index": 3,
+                "Num": 100
+            },
+            "ConditionList": {
+                "0": [
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 11,
+                            "Info": {
+                                "$type": "CommonLibrary.EnemyKillConditionInfo, Assembly-CSharp",
+                                "Num": 1000
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1200,
+                        "ConditionData": {
+                            "Type": 44,
+                            "Info": {
+                                "$type": "CommonLibrary.TrainingOpenConditionInfo, Assembly-CSharp",
+                                "Num": 30
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1200,
+                        "ConditionData": {
+                            "Type": 38,
+                            "Info": {
+                                "$type": "CommonLibrary.SkillStrengthenConditionInfo, Assembly-CSharp",
+                                "Num": 5
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1500,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 2039,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 2000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 2043,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 3000,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 2048,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1500,
+                        "ConditionData": {
+                            "Type": 23,
+                            "Info": {
+                                "$type": "CommonLibrary.KillChickenConditionInfo, Assembly-CSharp",
+                                "Num": 20
+                            }
+                        }
+                    }
+                ],
+                "1": [
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 40,
+                            "Info": {
+                                "$type": "CommonLibrary.SummonConditionInfo, Assembly-CSharp",
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 150,
+                        "ConditionData": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneType": 1,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 24,
+                            "Info": {
+                                "$type": "CommonLibrary.LikeabilityConditionInfo, Assembly-CSharp",
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 46,
+                            "Info": {
+                                "$type": "CommonLibrary.UseItemGroupConditionInfo, Assembly-CSharp",
+                                "GroupType": 1,
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 150,
+                        "ConditionData": {
+                            "Type": 2,
+                            "Info": {
+                                "$type": "CommonLibrary.BuyShopConditionInfo, Assembly-CSharp",
+                                "Num": 1
+                            }
+                        }
+                    },
+                    {
+                        "Point": 200,
+                        "ConditionData": {
+                            "Type": 22,
+                            "Info": {
+                                "$type": "CommonLibrary.ItemUseConditionInfo, Assembly-CSharp",
+                                "ItemIndex": 40,
+                                "Num": 1
+                            }
+                        }
+                    }
+                ],
+                "2": [
+                    {
+                        "Point": 700,
+                        "ConditionData": {
+                            "Type": 1,
+                            "Info": {
+                                "$type": "CommonLibrary.AttendConditionInfo, Assembly-CSharp",
+                                "Num": 3
+                            }
+                        }
+                    },
+                    {
+                        "Point": 500,
+                        "ConditionData": {
+                            "Type": 11,
+                            "Info": {
+                                "$type": "CommonLibrary.EnemyKillConditionInfo, Assembly-CSharp",
+                                "Num": 200
+                            }
+                        }
+                    },
+                    {
+                        "Point": 500,
+                        "ConditionData": {
+                            "Type": 2,
+                            "Info": {
+                                "$type": "CommonLibrary.BuyShopConditionInfo, Assembly-CSharp",
+                                "Num": 10
+                            }
+                        }
+                    },
+                    {
+                        "Point": 700,
+                        "ConditionData": {
+                            "Type": 22,
+                            "Info": {
+                                "$type": "CommonLibrary.ItemUseConditionInfo, Assembly-CSharp",
+                                "ItemIndex": 40,
+                                "Num": 10
+                            }
+                        }
+                    },
+                    {
+                        "Point": 1000,
+                        "ConditionData": {
+                            "Type": 6,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearMazeConditionInfo, Assembly-CSharp",
+                                "Num": 30
+                            }
+                        }
+                    }
+                ]
+            },
+            "RewardList": [
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 4
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 173,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 50
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 50
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 10
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 50
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 40,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 3
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 15
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 2
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 22,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "RewardList": {
+                        "1": [
+                            {
+                                "Type": 6,
+                                "Index": 39,
+                                "Num": 5
+                            }
+                        ],
+                        "2": [
+                            {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 10
+                            }
+                        ]
+                    }
+                }
+            ],
+            "AFEventName": "lostd_nightwwanpath"
         },
         {
             "Index": 5,
@@ -5083,6 +8110,8 @@
             "SortOrder": 9998,
             "StartTime": "2025-03-06T00:00:00Z",
             "EndTime": "0025-03-06T00:00:00Z",
+            "NctStartTime": "2025-03-06T00:00:00Z",
+            "NctEndTime": "0025-03-06T00:00:00Z",
             "RequirePoint": 1000,
             "EnableQuick": true,
             "QuickAsset": {
@@ -5647,6 +8676,7 @@
                     }
                 }
             ],
+            "GlobalExcept": true,
             "AFEventName": "lostd_eventpleasure"
         },
         {
@@ -5662,6 +8692,8 @@
             "SortOrder": 9999,
             "StartTime": "2025-04-17T00:00:00Z",
             "EndTime": "2100-12-31T00:00:00Z",
+            "NctStartTime": "2025-04-17T00:00:00Z",
+            "NctEndTime": "2100-12-31T00:00:00Z",
             "RequirePoint": 1000,
             "EnableQuick": true,
             "QuickAsset": {
@@ -6249,8 +9281,10 @@
                 "Num": 1600
             },
             "SortOrder": 9998,
-            "StartTime": "2024-07-10T00:00:00Z",
-            "EndTime": "2025-08-08T00:00:00Z",
+            "StartTime": "2025-07-10T00:00:00Z",
+            "EndTime": "2025-08-07T00:00:00Z",
+            "NctStartTime": "2025-07-10T00:00:00Z",
+            "NctEndTime": "2025-08-08T00:00:00Z",
             "RequirePoint": 1000,
             "EnableQuick": true,
             "QuickAsset": {
@@ -6815,8 +9849,8 @@
                     }
                 }
             ],
+            "GlobalExcept": true,
             "AFEventName": "lostd_yggdrasilllightpath"
         }
-    ],
-    "hash": "9MJBqrUyppkJqSkUHEihX6tVNcMf8CFqF2oVt5vbR+w="
+    ]
 }

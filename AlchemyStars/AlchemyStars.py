@@ -1,7 +1,6 @@
 import os
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import subprocess
 
 # 多项式 0xEDB88320
 CRC32_TABLE = [

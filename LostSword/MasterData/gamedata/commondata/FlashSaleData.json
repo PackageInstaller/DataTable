@@ -905,7 +905,43 @@
                 "ZoneCategoryIndex": 165
             },
             "AFEventName": "lostd_timechapter52"
+        },
+        {
+            "Index": 27,
+            "Type": 1,
+            "TitleTopColor": "cf647f",
+            "TitleBottomColor": "9b334f",
+            "BoxColor": "c47989",
+            "TextureName": "FS_Pc_CowQueen_01",
+            "Efficiency": 3,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 800
+            },
+            "EndHour": 24,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 800
+                },
+                {
+                    "Type": 6,
+                    "Index": 39,
+                    "Num": 10
+                },
+                {
+                    "Type": 6,
+                    "Index": 201,
+                    "Num": 10
+                }
+            ],
+            "Info": {
+                "$type": "GameDesignData.FlashSaleZoneCategoryInfo, Assembly-CSharp",
+                "ZoneCategoryIndex": 175
+            },
+            "AFEventName": "lostd_timechapter54"
         }
-    ],
-    "hash": "uti1pvRGr6jq2c8JwnWCGYpoPK+0xOzzG7j5DRmPHoE="
+    ]
 }

@@ -190,6 +190,16 @@
         "description": "インスピレーションスキルでダメージを受けた時"
     },
     {
+        "id": 2012,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 18,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "0",
+        "description": "ダウン時"
+    },
+    {
         "id": 2100,
         "timing_bits": 0,
         "condition_bits": 0,
@@ -408,6 +418,46 @@
         "trigger_param2": "2",
         "skill_types": "2|3",
         "description": "主効果回復発動時"
+    },
+    {
+        "id": 4000,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 17,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "2|3|5",
+        "description": "熱情消費時"
+    },
+    {
+        "id": 4001,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 17,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "2",
+        "description": "熱情消費時（技法のみ）"
+    },
+    {
+        "id": 4002,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 17,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "3",
+        "description": "熱情消費時（絶技のみ）"
+    },
+    {
+        "id": 4003,
+        "timing_bits": 0,
+        "condition_bits": 0,
+        "damage_bits": 17,
+        "trigger_param": 0,
+        "trigger_param2": "0",
+        "skill_types": "5",
+        "description": "熱情消費時（支援行動のみ）"
     },
     {
         "id": 10030,

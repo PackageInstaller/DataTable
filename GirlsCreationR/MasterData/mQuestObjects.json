@@ -23,7 +23,8 @@
         "sound_index": 0,
         "flavor_text": "接触すると獲得",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000021,
@@ -49,7 +50,8 @@
         "sound_index": 0,
         "flavor_text": "破壊すると爆発",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000031,
@@ -75,7 +77,8 @@
         "sound_index": 0,
         "flavor_text": "浮遊で移動可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000032,
@@ -101,7 +104,8 @@
         "sound_index": 0,
         "flavor_text": "浮遊で移動可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000041,
@@ -127,7 +131,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000042,
@@ -153,7 +158,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000043,
@@ -179,7 +185,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000051,
@@ -205,7 +212,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000061,
@@ -231,7 +239,8 @@
         "sound_index": 0,
         "flavor_text": "ソウル獲得",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000071,
@@ -257,7 +266,8 @@
         "sound_index": 0,
         "flavor_text": "ソウル大量獲得",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000081,
@@ -283,7 +293,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000121,
@@ -309,7 +320,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000141,
@@ -335,7 +347,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000171,
@@ -361,7 +374,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000181,
@@ -387,7 +401,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000211,
@@ -413,7 +428,8 @@
         "sound_index": 0,
         "flavor_text": "エネミーの攻撃や接触に反応して爆発",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": true
     },
     {
         "id": 32000212,
@@ -437,9 +453,10 @@
         "main_image_index": 3200021,
         "sub_image_index": 0,
         "sound_index": 0,
-        "flavor_text": "攻撃やエネミーの接触に反応して爆発（移動増加効果有）",
+        "flavor_text": "攻撃などで容易に爆発（移動増加）/弾き飛ばし引き寄せ可",
         "through_ally": 0,
-        "through_unit_types": 1
+        "through_unit_types": 1,
+        "force_movable": true
     },
     {
         "id": 32000213,
@@ -463,9 +480,10 @@
         "main_image_index": 3200021,
         "sub_image_index": 0,
         "sound_index": 0,
-        "flavor_text": "攻撃などに反応して爆発（移動増加効果有）/自己複製",
+        "flavor_text": "容易に爆発（移動増加）/弾き飛ばし引き寄せ可/確率で自己複製",
         "through_ally": 0,
-        "through_unit_types": 1
+        "through_unit_types": 1,
+        "force_movable": true
     },
     {
         "id": 32000221,
@@ -491,7 +509,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000231,
@@ -517,7 +536,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000241,
@@ -543,7 +563,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000251,
@@ -569,7 +590,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000261,
@@ -595,7 +617,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000271,
@@ -621,7 +644,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000281,
@@ -647,7 +671,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000291,
@@ -673,7 +698,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000301,
@@ -699,7 +725,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000311,
@@ -725,7 +752,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000321,
@@ -751,7 +779,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000331,
@@ -777,7 +806,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000341,
@@ -803,7 +833,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000351,
@@ -829,7 +860,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32000361,
@@ -855,7 +887,8 @@
         "sound_index": 0,
         "flavor_text": "通り抜け不可/技法で破壊可能/エネミー召喚",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010011,
@@ -881,7 +914,8 @@
         "sound_index": 0,
         "flavor_text": "味方全体に再生付与",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010021,
@@ -907,7 +941,8 @@
         "sound_index": 0,
         "flavor_text": "破壊すると爆発",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010031,
@@ -933,7 +968,8 @@
         "sound_index": 0,
         "flavor_text": "敵全体の防御・精神・器用・敏捷減少",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010041,
@@ -959,7 +995,8 @@
         "sound_index": 0,
         "flavor_text": "破壊すると爆発",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010051,
@@ -985,7 +1022,8 @@
         "sound_index": 0,
         "flavor_text": "味方全体に奮起付与",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010061,
@@ -1011,7 +1049,8 @@
         "sound_index": 0,
         "flavor_text": "味方全体の攻撃・幸運減少",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010081,
@@ -1037,7 +1076,8 @@
         "sound_index": 0,
         "flavor_text": "破壊すると爆発",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010091,
@@ -1063,7 +1103,8 @@
         "sound_index": 0,
         "flavor_text": "味方全体の敏捷・器用減少",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010101,
@@ -1089,7 +1130,8 @@
         "sound_index": 0,
         "flavor_text": "味方全体の防御・精神減少",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010111,
@@ -1115,7 +1157,8 @@
         "sound_index": 0,
         "flavor_text": "破壊すると爆発",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010121,
@@ -1141,7 +1184,8 @@
         "sound_index": 0,
         "flavor_text": "一番体力が低い味方を回復",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010131,
@@ -1167,7 +1211,8 @@
         "sound_index": 0,
         "flavor_text": "一番攻撃が高い味方に攻撃増加",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010141,
@@ -1193,7 +1238,8 @@
         "sound_index": 0,
         "flavor_text": "破壊すると爆発/確率で火傷付与",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010151,
@@ -1219,7 +1265,8 @@
         "sound_index": 0,
         "flavor_text": "一番攻撃が高い敵に攻撃減少",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010161,
@@ -1245,7 +1292,8 @@
         "sound_index": 0,
         "flavor_text": "敵全体の攻撃・幸運減少",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010171,
@@ -1271,7 +1319,8 @@
         "sound_index": 0,
         "flavor_text": "敵全体の攻撃・精神・敏捷減少",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 32010181,
@@ -1297,7 +1346,89 @@
         "sound_index": 0,
         "flavor_text": "味方全体の攻撃増加・忍耐付与",
         "through_ally": 1,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
+    },
+    {
+        "id": 32010191,
+        "name": "ピエタ像（サンドアート）",
+        "type": 1401,
+        "side": 1,
+        "init_place_side": 0,
+        "hp": 40000,
+        "def": 500,
+        "mnd": 500,
+        "duration_turn": 3,
+        "skill_id1": 28500028,
+        "skill_level1": 5,
+        "skill_weight1": 0,
+        "skill_id2": 0,
+        "skill_level2": 0,
+        "skill_weight2": 0,
+        "skill_id3": 0,
+        "skill_level3": 0,
+        "skill_weight3": 0,
+        "main_image_index": 3201019,
+        "sub_image_index": 0,
+        "sound_index": 0,
+        "flavor_text": "味方全体に敏捷増加・一番攻撃が高い味方に気炎付与",
+        "through_ally": 1,
+        "through_unit_types": 0,
+        "force_movable": false
+    },
+    {
+        "id": 32020101,
+        "name": "ソウル（体力バフ）",
+        "type": 1300,
+        "side": 0,
+        "init_place_side": 0,
+        "hp": 10,
+        "def": 10,
+        "mnd": 10,
+        "duration_turn": 0,
+        "skill_id1": 28500031,
+        "skill_level1": 1,
+        "skill_weight1": 0,
+        "skill_id2": 0,
+        "skill_level2": 0,
+        "skill_weight2": 0,
+        "skill_id3": 0,
+        "skill_level3": 0,
+        "skill_weight3": 0,
+        "main_image_index": 3202010,
+        "sub_image_index": 0,
+        "sound_index": 0,
+        "flavor_text": "ソウル獲得/体力増加",
+        "through_ally": 0,
+        "through_unit_types": 0,
+        "force_movable": false
+    },
+    {
+        "id": 32030101,
+        "name": "メガソウル（体力バフ）",
+        "type": 1300,
+        "side": 0,
+        "init_place_side": 0,
+        "hp": 10,
+        "def": 10,
+        "mnd": 10,
+        "duration_turn": 0,
+        "skill_id1": 28500051,
+        "skill_level1": 1,
+        "skill_weight1": 0,
+        "skill_id2": 0,
+        "skill_level2": 0,
+        "skill_weight2": 0,
+        "skill_id3": 0,
+        "skill_level3": 0,
+        "skill_weight3": 0,
+        "main_image_index": 3203010,
+        "sub_image_index": 0,
+        "sound_index": 0,
+        "flavor_text": "ソウル大量獲得/体力増加",
+        "through_ally": 0,
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 33101201,
@@ -1323,7 +1454,8 @@
         "sound_index": 0,
         "flavor_text": "何かの禁忌に触れたのか体が柱化しつつある　※オブジェクト扱い",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 33101321,
@@ -1349,7 +1481,8 @@
         "sound_index": 0,
         "flavor_text": "何かの禁忌に触れたのか体が柱化しつつある　※オブジェクト扱い",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 33105201,
@@ -1375,7 +1508,8 @@
         "sound_index": 0,
         "flavor_text": "何かの禁忌に触れたのか体が柱化しつつある　※オブジェクト扱い",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 33101351,
@@ -1401,7 +1535,8 @@
         "sound_index": 0,
         "flavor_text": "何かの禁忌に触れたのか体が柱化しつつある　※オブジェクト扱い",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 33101311,
@@ -1427,7 +1562,8 @@
         "sound_index": 0,
         "flavor_text": "何かの禁忌に触れたのか体が柱化しつつある　※オブジェクト扱い",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 33101331,
@@ -1453,7 +1589,8 @@
         "sound_index": 0,
         "flavor_text": "何かの禁忌に触れたのか体が柱化しつつある　※オブジェクト扱い",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     },
     {
         "id": 33101341,
@@ -1479,6 +1616,7 @@
         "sound_index": 0,
         "flavor_text": "何かの禁忌に触れたのか体が柱化しつつある　※オブジェクト扱い",
         "through_ally": 0,
-        "through_unit_types": 0
+        "through_unit_types": 0,
+        "force_movable": false
     }
 ]

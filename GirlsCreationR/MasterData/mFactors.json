@@ -1251,18 +1251,18 @@
         "image_index": 3530005,
         "inheritance_group": 1,
         "ml_name": [
-            "入魂時攻撃強化(防御無視)",
+            "入魂時攻撃変更・防御無視",
             ""
         ],
         "ml_description": [
-            "入魂時攻撃に防御無視効果",
+            "<help=empower_attack>入魂時攻撃</help>を範囲内の敵に防御無視の物理ダメージ(物理<help=element>エレメント</help>)を与える効果に変更",
             ""
         ]
     },
     {
         "id": 15480002,
         "rarity": 5,
-        "inheritance_rate": 250,
+        "inheritance_rate": 500,
         "image_index": 3480002,
         "inheritance_group": 0,
         "ml_name": [
@@ -1270,7 +1270,7 @@
             ""
         ],
         "ml_description": [
-            "入魂時、自身に攻撃[[effects_power]%]増加＜[[effects_turn_1]ターン]＞(重複可)",
+            "入魂時、自身に<help=offence>攻撃</help>[[effects_power]%]増加＜[[effects_turn_1]ターン]＞(重複可)",
             ""
         ]
     },
@@ -1285,7 +1285,7 @@
             ""
         ],
         "ml_description": [
-            "入魂時、自身に防御[[effects_power]%]増加＜[[effects_turn_1]ターン]＞(重複可)",
+            "入魂時、自身に<help=defence>防御</help>[[effects_power]%]増加＜[[effects_turn_1]ターン]＞(重複可)",
             ""
         ]
     },
@@ -1300,7 +1300,7 @@
             ""
         ],
         "ml_description": [
-            "入魂時、自身に精神[[effects_power]%]増加＜[[effects_turn_1]ターン]＞(重複可)",
+            "入魂時、自身に<help=will>精神</help>[[effects_power]%]増加＜[[effects_turn_1]ターン]＞(重複可)",
             ""
         ]
     },
@@ -1315,7 +1315,7 @@
             ""
         ],
         "ml_description": [
-            "入魂時、自身に必殺[[effects_power]]増加＜[[effects_turn_1]ターン]＞(重複可)",
+            "入魂時、自身に<help=critical>必殺</help>[[effects_power]]増加＜[[effects_turn_1]ターン]＞(重複可)",
             ""
         ]
     },
@@ -1330,7 +1330,37 @@
             ""
         ],
         "ml_description": [
-            "入魂時、自身に攻撃[[effects_power]%]増加＜[[effects_turn_1]ターン]＞",
+            "入魂時、自身に<help=offence>攻撃</help>[[effects_power]%]増加＜[[effects_turn_1]ターン]＞",
+            ""
+        ]
+    },
+    {
+        "id": 15480013,
+        "rarity": 5,
+        "inheritance_rate": 250,
+        "image_index": 3480013,
+        "inheritance_group": 0,
+        "ml_name": [
+            "入魂時猛毒完全耐性3T",
+            ""
+        ],
+        "ml_description": [
+            "入魂時、自身が<help=poison>猛毒</help>耐性を得る＜[[effects_turn_1]ターン]＞/精神[[effects_power_2]%]増加",
+            ""
+        ]
+    },
+    {
+        "id": 15480018,
+        "rarity": 5,
+        "inheritance_rate": 250,
+        "image_index": 3480018,
+        "inheritance_group": 0,
+        "ml_name": [
+            "入魂時睡眠完全耐性3T",
+            ""
+        ],
+        "ml_description": [
+            "入魂時、自身が<help=sleep>睡眠</help>耐性を得る＜[[effects_turn_1]ターン]＞/精神[[effects_power_2]%]増加",
             ""
         ]
     }

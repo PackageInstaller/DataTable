@@ -2735,7 +2735,7 @@
             "Korea": "치유주문으로 치유 받는 양이 감소합니다. 시전자의 치유감소와 더해지며, 시전자의 치유증가, 받는 자의 받는 치유증가와 상쇄됩니다. 최종 계산된 값은 0 이하로 떨어지지 않습니다.",
             "English": "The amount of healing received from healing spells is reduced. It is cumulative with the caster’s ‘Healing Reduction’ and countered by the caster's ‘Healing Increase,’ as well as the recipient's ‘Healing Received Increase.’ The final calculated value cannot drop below zero.",
             "ChineseCh": "降低治愈咒术的治愈量。可与施法者的治愈降低叠加，并与施法者的治愈提升、接收者的治疗提升相抵消。最终计算值不会低于0。",
-            "ChineseTh": "減少治癒咒語獲得的治癒量。可與施展者的治癒減少效果疊加，被施展者的治癒增加和受治癒者的獲得的治癒增加抵消，最終計算值不會低於0。",
+            "ChineseTh": "減少治癒咒語獲得的治癒量。可與施展者的治癒減少效果疊加，施展者的治癒增加將與受到接受者獲得的治癒增加抵消，最終計算值不會低於0。",
             "Japanese": "回復呪文による回復量が減少します。詠唱者の回復ダウン効果と重複し、詠唱者の回復アップと対象の被回復アップ効果に相殺されます。最終計算値は0以下には下がりません"
         }
     },
@@ -2855,7 +2855,7 @@
             "Korea": "{0} ",
             "English": "{0}",
             "ChineseCh": "{0}",
-            "ChineseTh": "{0}",
+            "ChineseTh": "{0} ",
             "Japanese": "{0}"
         }
     },
@@ -3121,7 +3121,7 @@
             "Korea": "{0}의 {1}% 피해",
             "English": "Inflict damage equal to {1}% of {0}",
             "ChineseCh": "造成{0}{1}%的伤害",
-            "ChineseTh": "造成{0}的{1}%傷害",
+            "ChineseTh": "造成{0}{1}%的傷害",
             "Japanese": "{0}の{1}%ダメージ"
         }
     },
@@ -3131,7 +3131,7 @@
             "Korea": "{0}의 {1}% 회복",
             "English": "Recover {1}% of {0}",
             "ChineseCh": "获得{0}{1}%的恢复",
-            "ChineseTh": "恢復{0}的{1}%",
+            "ChineseTh": "恢復{0}{1}%",
             "Japanese": "{0}の{1}%回復"
         }
     },
@@ -3449,6 +3449,7 @@
         "Key": "TriggerEventNo",
         "Text": {
             "Korea": "없음",
+            "English": "none",
             "ChineseCh": "无",
             "ChineseTh": "無",
             "Japanese": "なし"
@@ -4000,7 +4001,7 @@
             "Korea": "{0}속성에게 공격 시 {1}% 피해 {2}, {3}속성에게 피격 시 {4}% 피해 {5}",
             "English": "Damage is increased by {1}% when attacking an enemy of {0} element, and damage received is reduced by {3}% when attacked by enemies of {2} element.",
             "ChineseCh": "对{0}属性造成的攻击伤害提升{1}%{2}，受到{3}属性的攻击伤害减免{4}%{5}",
-            "ChineseTh": "攻擊{0}屬性時，傷害{2}{1}%、受到{3}屬性攻擊時傷害{5}{4}%。",
+            "ChineseTh": "攻擊{0}屬性時，{2}傷害{1}%、受到{3}屬性攻擊時{5}傷害{4}%。",
             "Japanese": "{0}属性に攻撃時、{1}%ダメージアップ、{2}属性から被撃時、{3}%ダメージ軽減"
         }
     },
@@ -4218,7 +4219,7 @@
         "Key": "ActorSummonTime",
         "Text": {
             "Korea": "{0}초동안 유지되는 소환자와 동일한 레벨의 {1}을/를 소환합니다. 소환물은 {2}%의 생명력을 가집니다.",
-            "English": "Summon a {1} with the same level as the summoner for {0}s. The summon’s HP is equal to {2}% of the summoner’s HP.",
+            "English": "Summon {1} with the same level as the summoner for {0}s. The summon’s HP is equal to {2}% of the summoner’s HP.",
             "ChineseCh": "召唤与召唤者等级相同的{1}，持续{0}秒。召唤物拥有召唤者{2}%的生命值。",
             "ChineseTh": "召喚持續{0}秒與召喚者同樣等級的{1}。獲得召喚物品{2}%的生命力。",
             "Japanese": "{0}秒間持続する召喚者と同レベルの{1}を召喚します。召喚物は{2}%の生命力を持ちます"
@@ -4228,7 +4229,7 @@
         "Key": "ActorSummonHealthTime",
         "Text": {
             "Korea": "{0}초동안 유지되는 소환자와 동일한 레벨의 {1}을/를 소환합니다.",
-            "English": "Summon a {1} with the same level as the summoner for {0}s.",
+            "English": "Summon {1} with the same level as the summoner for {0}s.",
             "ChineseCh": "召唤与召唤者等级相同的{1}，持续{0}秒。",
             "ChineseTh": "召喚持續{0}秒與召喚者同樣等級的{1}。",
             "Japanese": "{0}秒間持続する召喚者と同レベルの{1}を召喚します"
@@ -4750,7 +4751,7 @@
             "Korea": "주문 속성 : ",
             "English": "Spell Type : ",
             "ChineseCh": "咒术属性：",
-            "ChineseTh": "咒語屬性：",
+            "ChineseTh": "咒語屬性： ",
             "Japanese": "呪文属性："
         }
     },
@@ -5158,7 +5159,7 @@
         "Key": "BuffAccumStatAdd",
         "Text": {
             "Korea": "{0} 증가",
-            "English": "Increases by {0}",
+            "English": "Increases the {0}",
             "ChineseCh": "{0}增加",
             "ChineseTh": "增加{0}",
             "Japanese": "{0}アップ"
@@ -5168,7 +5169,7 @@
         "Key": "BuffAccumStatSub",
         "Text": {
             "Korea": "{0} 감소",
-            "English": "Decreases by {0}",
+            "English": "Decreases the {0}",
             "ChineseCh": "{0}减少",
             "ChineseTh": "減少{0}",
             "Japanese": "{0}ダウン"
@@ -5220,7 +5221,7 @@
             "Korea": "대상이 {0}일시, {1}만큼 추가 타격을 {2}회 줍니다.",
             "English": "When the target is {0}, deals additional hit equal to {1} {2} time(s).",
             "ChineseCh": "目标为{0}时，额外追加{2}次，每次{1}点打击伤害。",
-            "ChineseTh": "當目標{0}時，造成{2}次{1}的額外打擊。",
+            "ChineseTh": "當目標為{0}時，造成{2}次{1}的額外打擊。",
             "Japanese": "対象が{0}の場合、{1}の追加ダメージを{2}回与えます"
         }
     },
@@ -5328,7 +5329,7 @@
         "Key": "BuffChangeSkill",
         "Text": {
             "Korea": "{0} 스킬의 최종 피해가 {1}% 증가합니다.",
-            "English": "Damage of {0} is increased by {1}%.",
+            "English": "{0} skill Damage is increased by {1}%.",
             "ChineseCh": "{0}技能的伤害提升{1}%。",
             "ChineseTh": "{0}的技能最終傷害增加{1}%。",
             "Japanese": "{0}スキルダメージが{1}%アップする。"
@@ -5338,7 +5339,7 @@
         "Key": "BuffChangeSkillAll",
         "Text": {
             "Korea": "모든 스킬의 최종 피해가 {0}% 증가합니다.",
-            "English": "Damage of all Skills is increased by {0}%.",
+            "English": "All skills Damage is increased by {0}%.",
             "ChineseCh": "所有技能的伤害提升{0}%。",
             "ChineseTh": "所有技能的最終傷害增加{0}%。",
             "Japanese": "全スキルのダメージが{0}%アップする。"
@@ -5348,7 +5349,7 @@
         "Key": "BuffChangeSkillDec",
         "Text": {
             "Korea": "{0} 스킬의 최종 피해가 {1}% 감소합니다.",
-            "English": "Damage of {0} is Reduce by {1}%.",
+            "English": "{0} skill Damage is Reduce by {1}%.",
             "ChineseCh": "{0}技能的伤害减少{1}%。",
             "ChineseTh": "{0}的技能最終傷害減少{1}%。",
             "Japanese": "{0}スキルダウン{1}%アップする。"
@@ -5358,10 +5359,20 @@
         "Key": "BuffChangeSkillAllDec",
         "Text": {
             "Korea": "모든 스킬의 최종 피해가 {0}% 감소합니다.",
-            "English": "Damage of all Skills is Reduce by {0}%.",
+            "English": "All skills Damage is Reduce by {0}%.",
             "ChineseCh": "所有技能的伤减少升{0}%。",
             "ChineseTh": "所有技能的最終傷害減少{0}%。",
             "Japanese": "全スキルのダメーダウン{0}%アップする。"
+        }
+    },
+    {
+        "Key": "BuffChangeSkillCount",
+        "Text": {
+            "Korea": "{0}회를 사용하면 종료됩니다.",
+            "English": "This effect ends after being used {0} time(s).",
+            "ChineseCh": "使用{0}次后结束。",
+            "ChineseTh": "使用{0}次時結束。",
+            "Japanese": "{0}回使用すると終了します。"
         }
     },
     {
@@ -5611,6 +5622,7 @@
             "Korea": "보스 공격력",
             "English": "Boss Attack",
             "ChineseCh": "领主攻击力",
+            "ChineseTh": "首領攻擊力",
             "Japanese": "ボス攻撃力"
         }
     },
@@ -5620,6 +5632,7 @@
             "Korea": "보스에게 피해를 줍니다. \n공격력이 강할수록 상대의 방어율이 낮아집니다.\n이 값은 감소될 때 최대 50%까지만 감소됩니다.",
             "English": "Inflicts damage to the boss.\nThe higher your attack, the more the enemy’s defense is reduced.\nThis reduction is capped at 50%.",
             "ChineseCh": "对领主造成伤害。\n攻击力越高，对手的防御率越低。\n该数值减少时，最多减少至50%。",
+            "ChineseTh": "對首領造成傷害。\n攻擊力越高，對手的防禦率越低。\n該數值減少時，最多減少至50%。",
             "Japanese": "ボスにダメージを与えます\n攻撃力が高いほど相手の防御率が低くなります\n最大５０％まで低くなります。"
         }
     },
@@ -5629,6 +5642,7 @@
             "Korea": "PVP 공격력",
             "English": "PVP Attack",
             "ChineseCh": "PVP攻击力",
+            "ChineseTh": "PVP攻擊力",
             "Japanese": "PVP攻撃力"
         }
     },
@@ -5638,6 +5652,7 @@
             "Korea": "콜로세움에서 적에게 피해를 줍니다. \n공격력이 강할수록 상대의 방어율이 낮아집니다.\n이 값은 감소될 때 최대 50%까지만 감소됩니다.",
             "English": "Inflicts damage to the enemy in the Colosseum.\nThe higher your attack, the more the enemy’s defense is reduced.\nThis reduction is capped at 50%.",
             "ChineseCh": "在竞技场对敌人造成伤害。\n攻击力越高，对手的防御率越低。\n该数值减少时，最多减少至50%。",
+            "ChineseTh": "於競技場對敵人造成傷害。\n攻擊力越高，對手的防禦率越低。\n該數值減少時，最多減少至50%。",
             "Japanese": "コロシアムで敵にダメージを与えます\n攻撃力が高いほど相手の防御率が低くなります\n最大５０％まで低くなります。"
         }
     },
@@ -5647,6 +5662,7 @@
             "Korea": "화염 대상 피해 증가",
             "English": "Bonus Damage to Fire-Types",
             "ChineseCh": "对火焰属性伤害提升",
+            "ChineseTh": "火焰目標傷害增加",
             "Japanese": "火炎属性対象ダメージアップ"
         }
     },
@@ -5656,6 +5672,7 @@
             "Korea": "화염 속성 적에게 주는 피해가 증가합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Increases damage dealt to Fire-type enemies.\nBonus damage is capped at 50%.",
             "ChineseCh": "对火焰属性敌人伤害提升。\n该数值最高可提升至50%。",
+            "ChineseTh": "對火焰屬性敵人造成的傷害增加。\n該數值最多套用至50%。",
             "Japanese": "火炎属性の敵に与えるダメージがアップします。\n最大５０％まで適用されます。"
         }
     },
@@ -5663,8 +5680,9 @@
         "Key": "FireDeFinPerDef",
         "Text": {
             "Korea": "화염 대상 피해 감소",
-            "English": "Fire-Type Enemy Damage Reduction",
+            "English": "Fire Damage Reduction",
             "ChineseCh": "对火焰属性伤害减免",
+            "ChineseTh": "火焰目標傷害減少",
             "Japanese": "火炎属性対象ダメージダウン"
         }
     },
@@ -5674,6 +5692,7 @@
             "Korea": "화염 속성 적에게 받는 피해가 감소합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Reduces damage received from Fire-type enemies.\nDamage reduction is capped at 50%.",
             "ChineseCh": "对火焰属性敌人伤害减免。\n该数值最高可提升至50%。",
+            "ChineseTh": "對火焰屬性敵人造成的傷害減少。\n該數值最多套用至50%。",
             "Japanese": "火炎属性の敵に与えるダメージがダウンします。\n最大５０％まで適用されます。"
         }
     },
@@ -5683,6 +5702,7 @@
             "Korea": "빙결 대상 피해 증가",
             "English": "Bonus Damage to Frost-Types",
             "ChineseCh": "对冰冻属性伤害提升",
+            "ChineseTh": "冰凍目標傷害增加",
             "Japanese": "氷結属性対象ダメージアップ"
         }
     },
@@ -5692,6 +5712,7 @@
             "Korea": "빙결 속성 적에게 주는 피해가 증가합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Increases damage dealt to Frost-type enemies.\nBonus damage is capped at 50%.",
             "ChineseCh": "对冰冻属性敌人伤害提升。\n该数值最高可提升至50%。",
+            "ChineseTh": "對冰凍屬性敵人造成的傷害增加。\n該數值最多套用至50%。",
             "Japanese": "氷結属性の敵に与えるダメージがアップします。\n最大５０％まで適用されます。"
         }
     },
@@ -5699,8 +5720,9 @@
         "Key": "WaterDeFinPerDef",
         "Text": {
             "Korea": "빙결 대상 피해 감소",
-            "English": "Frost-Type Enemy Damage Reduction",
+            "English": "Frost Damage Reduction",
             "ChineseCh": "对冰冻属性伤害减免",
+            "ChineseTh": "冰凍目標傷害減少",
             "Japanese": "氷結属性対象ダメージダウン"
         }
     },
@@ -5710,6 +5732,7 @@
             "Korea": "빙결 속성 적에게 받는 피해가 감소합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Reduces damage received from Frost-type enemies.\nDamage reduction is capped at 50%.",
             "ChineseCh": "对冰冻属性敌人伤害减免。\n该数值最高可提升至50%。",
+            "ChineseTh": "對冰凍屬性敵人造成的傷害減少。\n該數值最多套用至50%。",
             "Japanese": "氷結属性の敵に与えるダメージがダウンします。\n最大５０％まで適用されます。"
         }
     },
@@ -5719,6 +5742,7 @@
             "Korea": "자연 대상 피해 증가",
             "English": "Bonus Damage to Nature-Types",
             "ChineseCh": "对自然属性伤害提升",
+            "ChineseTh": "自然目標傷害增加",
             "Japanese": "緑属性対象ダメージアップ"
         }
     },
@@ -5728,6 +5752,7 @@
             "Korea": "자연 속성 적에게 주는 피해가 증가합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Increases damage dealt to Nature-type enemies.\nBonus damage is capped at 50%.",
             "ChineseCh": "对自然属性敌人伤害提升。\n该数值最高可提升至50%。",
+            "ChineseTh": "對自然屬性敵人造成的傷害增加。\n該數值最多套用至50%。",
             "Japanese": "緑属性の敵に与えるダメージがアップします。\n最大５０％まで適用されます。"
         }
     },
@@ -5735,8 +5760,9 @@
         "Key": "LeafDeFinPerDef",
         "Text": {
             "Korea": "자연 대상 피해 감소",
-            "English": "Nature-Type Enemy Damage Reduction",
+            "English": "Nature Damage Reduction",
             "ChineseCh": "对自然属性伤害减免",
+            "ChineseTh": "自然目標傷害減少",
             "Japanese": "緑属性対象ダメージダウン"
         }
     },
@@ -5746,6 +5772,7 @@
             "Korea": "자연 속성 적에게 받는 피해가 감소합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Reduces damage received from Nature-type enemies.\nDamage reduction is capped at 50%.",
             "ChineseCh": "对自然属性敌人伤害减免。\n该数值最高可提升至50%。",
+            "ChineseTh": "對自然屬性敵人造成的傷害減少。\n該數值最多套用至50%。",
             "Japanese": "緑属性の敵に与えるダメージがダウンします。\n最大５０％まで適用されます。"
         }
     },
@@ -5755,6 +5782,7 @@
             "Korea": "광휘 대상 피해 증가",
             "English": "Bonus Damage to Radiance-Types",
             "ChineseCh": "对光辉属性伤害提升",
+            "ChineseTh": "光輝目標傷害增加",
             "Japanese": "光輝属性対象ダメージアップ"
         }
     },
@@ -5764,6 +5792,7 @@
             "Korea": "광휘 속성 적에게 주는 피해가 증가합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Increases damage dealt to Radiance-type enemies.\nBonus damage is capped at 50%.",
             "ChineseCh": "对光辉属性敌人伤害提升。\n该数值最高可提升至50%。",
+            "ChineseTh": "對光輝屬性敵人造成的傷害增加。\n該數值最多套用至50%。",
             "Japanese": "光輝属性の敵に与えるダメージがアップします。\n最大５０％まで適用されます。"
         }
     },
@@ -5771,8 +5800,9 @@
         "Key": "LightDeFinPerDef",
         "Text": {
             "Korea": "광휘 대상 피해 감소",
-            "English": "Radiance-Type Enemy Damage Reduction",
+            "English": "Radiance Damage Reduction",
             "ChineseCh": "对光辉属性伤害减免",
+            "ChineseTh": "光輝目標傷害減少",
             "Japanese": "光輝属性対象ダメージダウン"
         }
     },
@@ -5782,6 +5812,7 @@
             "Korea": "광휘 속성 적에게 받는 피해가 감소합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Reduces damage received from Radiance-type enemies.\nDamage reduction is capped at 50%.",
             "ChineseCh": "对光辉属性敌人伤害减免。\n该数值最高可提升至50%。",
+            "ChineseTh": "對光輝屬性敵人造成的傷害減少。\n該數值最多套用至50%。",
             "Japanese": "光輝属性の敵に与えるダメージがダウンします。\n最大５０％まで適用されます。"
         }
     },
@@ -5791,6 +5822,7 @@
             "Korea": "혼돈 대상 피해 증가",
             "English": "Bonus Damage to Chaos-Types",
             "ChineseCh": "对混沌属性伤害提升",
+            "ChineseTh": "混沌目標傷害增加",
             "Japanese": "混沌属性対象ダメージアップ"
         }
     },
@@ -5800,6 +5832,7 @@
             "Korea": "혼돈 속성 적에게 주는 피해가 증가합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Increases damage dealt to Chaos-type enemies.\nBonus damage is capped at 50%.",
             "ChineseCh": "对混沌属性敌人伤害提升。\n该数值最高可提升至50%。",
+            "ChineseTh": "對混沌屬性敵人造成的傷害增加。\n該數值最多套用至50%。",
             "Japanese": "混沌属性の敵に与えるダメージがアップします。\n最大５０％まで適用されます。"
         }
     },
@@ -5807,8 +5840,9 @@
         "Key": "DarkDeFinPerDef",
         "Text": {
             "Korea": "혼돈 대상 피해 감소",
-            "English": "Chaos-Type Enemy Damage Reduction",
+            "English": "Chaos Damage Reduction",
             "ChineseCh": "对混沌属性伤害减免",
+            "ChineseTh": "混沌目標傷害減少",
             "Japanese": "混沌属性対象ダメージダウン"
         }
     },
@@ -5818,6 +5852,7 @@
             "Korea": "혼돈 속성 적에게 받는 피해가 감소합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Reduces damage received from Chaos-type enemies.\nDamage reduction is capped at 50%.",
             "ChineseCh": "对混沌属性敌人伤害减免。\n该数值最高可提升至50%。",
+            "ChineseTh": "對混沌屬性敵人造成的傷害減少。\n該數值最多套用至50%。",
             "Japanese": "混沌属性の敵に与えるダメージがダウンします。\n最大５０％まで適用されます。"
         }
     },
@@ -5827,6 +5862,7 @@
             "Korea": "전격 대상 피해 증가",
             "English": "Bonus Damage to Shock-Types",
             "ChineseCh": "对雷电属性伤害提升",
+            "ChineseTh": "雷電目標傷害增加",
             "Japanese": "電撃属性対象ダメージアップ"
         }
     },
@@ -5836,6 +5872,7 @@
             "Korea": "전격 속성 적에게 주는 피해가 증가합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Increases damage dealt to Shock-type enemies.\nBonus damage is capped at 50%.",
             "ChineseCh": "对雷电属性敌人伤害提升。\n该数值最高可提升至50%。",
+            "ChineseTh": "對雷電屬性敵人造成的傷害增加。\n該數值最多套用至50%。",
             "Japanese": "電撃属性の敵に与えるダメージがアップします。\n最大５０％まで適用されます。"
         }
     },
@@ -5843,8 +5880,9 @@
         "Key": "ElectricDeFinPerDef",
         "Text": {
             "Korea": "전격 대상 피해 감소",
-            "English": "Shock-Type Enemy Damage Reduction",
+            "English": "Shock Damage Reduction",
             "ChineseCh": "对雷电属性伤害减免",
+            "ChineseTh": "雷電目標傷害減少",
             "Japanese": "電撃属性対象ダメージダウン"
         }
     },
@@ -5854,6 +5892,7 @@
             "Korea": "전격 속성 적에게 받는 피해가 감소합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Reduces damage received from Shock-type enemies.\nDamage reduction is capped at 50%.",
             "ChineseCh": "对雷电属性敌人伤害减免。\n该数值最高可提升至50%。",
+            "ChineseTh": "對雷電屬性敵人造成的傷害減少。\n該數值最多套用至50%。",
             "Japanese": "電撃属性の敵に与えるダメージがダウンします。\n最大５０％まで適用されます。"
         }
     },
@@ -5863,6 +5902,7 @@
             "Korea": "신성 대상 피해 증가",
             "English": "Bonus Damage to Holy-Types",
             "ChineseCh": "对神圣属性伤害提升",
+            "ChineseTh": "神聖目標傷害增加",
             "Japanese": "聖属性対象ダメージアップ"
         }
     },
@@ -5872,6 +5912,7 @@
             "Korea": "신성 속성 적에게 주는 피해가 증가합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Increases damage dealt to Holy-type enemies.\nBonus damage is capped at 50%.",
             "ChineseCh": "对神圣属性敌人伤害提升。\n该数值最高可提升至50%。",
+            "ChineseTh": "對神聖屬性敵人造成的傷害增加。\n該數值最多套用至50%。",
             "Japanese": "聖属性の敵に与えるダメージがアップします。\n最大５０％まで適用されます。"
         }
     },
@@ -5879,8 +5920,9 @@
         "Key": "DivineDeFinPerDef",
         "Text": {
             "Korea": "신성 대상 피해 감소",
-            "English": "Holy-Type Enemy Damage Reduction",
+            "English": "Holy Damage Reduction",
             "ChineseCh": "对神圣属性伤害减免",
+            "ChineseTh": "神聖目標傷害減少",
             "Japanese": "聖属性対象ダメージダウン"
         }
     },
@@ -5890,6 +5932,7 @@
             "Korea": "신성 속성 적에게 받는 피해가 감소합니다.\n이 값은 최대 50%까지만 적용됩니다.",
             "English": "Reduces damage received from Holy-type enemies.\nDamage reduction is capped at 50%.",
             "ChineseCh": "对神圣属性敌人伤害减免。\n该数值最高可提升至50%。",
+            "ChineseTh": "對神聖屬性敵人造成的傷害減少。\n該數值最多套用至50%。",
             "Japanese": "聖属性の敵に与えるダメージがダウンします。\n最大５０％まで適用されます。"
         }
     },
@@ -5899,7 +5942,47 @@
             "Korea": "{0}에게 피해를 받을때의 방어율을 나타냅니다.\n내 방어율 = 내 방어력 / (적의 공격력 + 내 방어력)\n방어율은 적에게 받은 대미지에서 방어율 만큼 대미지를 차감하여 받게됩니다.",
             "English": "Indicates the percentage of damage reduced when receiving attacks from [{0}] enemies.\nFormula: Your Defense / (Enemy's Attack + Your Defense)\nDamage is reduced based on this ratio. The higher the ratio, the less damage you take.",
             "ChineseCh": "显示为受到{0}攻击时的防御率。\n我的防御率 = 我的防御力 / (敌方攻击力 + 我的防御力)\n防御率会从敌人造成的伤害中扣除相应比例后再承受。",
+            "ChineseTh": "受到{0}攻擊時，顯示防禦率。\n我的防禦率=我的防禦力/(敵人的攻擊力+我的防禦力)\n防禦率會抵消敵人造成的傷害，抵消量等同於防禦率的數值。",
             "Japanese": "{0}にダメージを受けた時の防御率を表します。 \n自分の防御率 = 自分の防御力 / (敵の攻撃力 + 自分の防御力) \n防御率は敵に受けたダメージに防御率分だけ差し引いて受けます。"
+        }
+    },
+    {
+        "Key": "아군중한명",
+        "Text": {
+            "Korea": "아군 중 한명",
+            "English": "Single Ally",
+            "ChineseCh": "我军中一名",
+            "ChineseTh": "我軍中的一人",
+            "Japanese": "味方一人"
+        }
+    },
+    {
+        "Key": "ActorCheckElementalAttack",
+        "Text": {
+            "Korea": "{0}속성에게 공격 시 {1}% 피해 {2}",
+            "English": "{1}% Damage {2} when attacking {0} enemies.",
+            "ChineseCh": "攻击{0}属性时，伤害{2}{1}%",
+            "ChineseTh": "攻擊{0}屬性時{2}傷害{1}%",
+            "Japanese": "{0}属性に攻撃時、{1}%ダメージ{2}"
+        }
+    },
+    {
+        "Key": "ActorCheckElementalDefense",
+        "Text": {
+            "Korea": "{0}속성에게 피격 시 {1}% 피해 {2}",
+            "English": "{1}% Damage {2} when receiving attacks from {0} enemies.",
+            "ChineseCh": "受到{0}属性攻击时，伤害{2}{1}%",
+            "ChineseTh": "受到{0}屬性攻擊時{2}傷害{1}%",
+            "Japanese": "{0}属性から被撃時、{1}%ダメージ{2}"
+        }
+    },
+    {
+        "Key": "TargetType.FollowerAndMe",
+        "Text": {
+            "Korea": "자신과 소환수",
+            "English": "Self and Summon",
+            "ChineseCh": "自身与召唤兽",
+            "Japanese": "自分と召喚獣"
         }
     }
 ]

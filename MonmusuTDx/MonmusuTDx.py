@@ -80,10 +80,6 @@ def get_app_version_name(session: requests.Session) -> str | None:
 
 
 def get_bundle_version(session: requests.Session, cvr: str) -> str | None:
-    """
-    通过 POST /api/asset_bundle/version 拿到远端资源版本号。
-    只要服务器返回 {"data":{"version": "..."} } 就拼成 ver_xxxxxxx.
-    """
     payload = {"cvr": cvr, "provider": "dmm"}
     try:
         resp = session.post(VERSION_API, json=payload, timeout=10)
