@@ -12714,6 +12714,47 @@
         "Note": "",
         "AwardPreview": []
     },
+    "50008": {
+        "Key": 50008,
+        "QuestId": 50008,
+        "QuestName": "【限时活动】了解技能重置",
+        "QuestDetail": "“技能重置限时活动”开始了，去开拓局找米莉亚了解一下吧。<br><style=\"emph-gn\">任务时限：现在起至2025年9月14日23:59</style>",
+        "QuestType": 84,
+        "QuestStep": 50008001,
+        "AwardId": 31002260,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "100010"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "100011"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/huodong/50001/50001-28",
+        "NpcMarkedByQuest": [
+            [
+                1007808,
+                1007802,
+                21701001
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "70000": {
         "Key": 70000,
         "QuestId": 70000,
@@ -13077,7 +13118,7 @@
     "130008": {
         "Key": 130008,
         "QuestId": 130008,
-        "QuestName": "完成跑酷目标",
+        "QuestName": "完成三圈跑酷目标",
         "QuestDetail": "",
         "QuestType": 15,
         "QuestStep": 130008010,
@@ -28088,6 +28129,76 @@
         "Note": "",
         "AwardPreview": []
     },
+    "900101": {
+        "Key": 900101,
+        "QuestId": 900101,
+        "QuestName": "【采集云朵粒子】",
+        "QuestDetail": "",
+        "QuestType": 15,
+        "QuestStep": 900101001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "13",
+                "9001"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/900101/900101-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "900102": {
+        "Key": 900102,
+        "QuestId": 900102,
+        "QuestName": "【炸弹与狂风】",
+        "QuestDetail": "",
+        "QuestType": 15,
+        "QuestStep": 0,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "13",
+                "9001"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
     "1001201": {
         "Key": 1001201,
         "QuestId": 1001201,
@@ -28557,6 +28668,41 @@
         ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/9200/9200-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "1204001": {
+        "Key": 1204001,
+        "QuestId": 1204001,
+        "QuestName": "完成游戏",
+        "QuestDetail": "",
+        "QuestType": 15,
+        "QuestStep": 1204001007,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "12",
+                "12040"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "13",
+                "12040"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/1204001/1204001-3",
         "NpcMarkedByQuest": [],
         "Note": "",
         "AwardPreview": []

@@ -931,7 +931,7 @@
             67,
             29,
             9,
-            68,
+            69,
             94
         ],
         "BuffTags": [],
@@ -7477,7 +7477,7 @@
         "SkillAttrDes": [
             [
                 "总伤害",
-                "{*skillpara.damageMerge({117240106,117240107},{1,1},\"PVEDamageRadio\",\"up\")*}物理攻击力+{*skillpara.damageMerge({117240106,117240107},{1,1},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({117240106,117240107},{1,1},\"PVEStunnedDamage\",\"un\")*})"
+                "{*skillpara.damageMerge({117240132,117240133},{1,1},\"PVEDamageRadio\",\"up\")*}物理攻击力+{*skillpara.damageMerge({117240132,117240133},{1,1},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({117240132,117240133},{1,1},\"PVEStunnedDamage\",\"un\")*})"
             ]
         ],
         "MaxHorizontalMotionDis": 0,
@@ -7488,7 +7488,9 @@
         "TakeWeaponInSkill": true,
         "NeedScaleCamera": false,
         "SkillLearnBuffs": [],
-        "InstallSkillAddBuffs": []
+        "InstallSkillAddBuffs": [
+            44801
+        ]
     },
     "172501": {
         "Key": 172501,
@@ -12727,7 +12729,7 @@
         "SkillAttrDes": [
             [
                 "总伤害",
-                "{*skillpara.damageMerge({122880101},{10},\"PVEDamageRadio\",\"up\")*}物理攻击力+{*skillpara.damageMerge({122880101},{10},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({122880101},{10},\"PVEStunnedDamage\",\"un\")*})"
+                "{*skillpara.damageMerge({25524003},{10},\"PVEDamageRadio\",\"up\")*}物理攻击力+{*skillpara.damageMerge({25524003},{10},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({25524003},{10},\"PVEStunnedDamage\",\"un\")*})"
             ],
             [
                 "冷却时间",
@@ -16028,10 +16030,6 @@
             [
                 "减免比例",
                 "{*skillpara.effect(\"attrPer\",\"up\")*}生命值上限"
-            ],
-            [
-                "减免上限",
-                "{*skillpara.effect(\"attrPerMax\",\"up\")*}攻击力"
             ],
             [
                 "冷却时间",
@@ -23567,11 +23565,169 @@
         "SkillLearnBuffs": [],
         "InstallSkillAddBuffs": []
     },
+    "554001": {
+        "Key": 554001,
+        "Id": 554001,
+        "Level": 1,
+        "Name": "搭建光侨-召唤云朵",
+        "SkillId": 5540,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [
+            86,
+            87
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "554101": {
+        "Key": 554101,
+        "Id": 554101,
+        "Level": 1,
+        "Name": "体力药剂",
+        "SkillId": 5541,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [
+            140
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "554201": {
+        "Key": 554201,
+        "Id": 554201,
+        "Level": 1,
+        "Name": "召唤额外云朵",
+        "SkillId": 5542,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [
+            86,
+            87
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "554301": {
+        "Key": 554301,
+        "Id": 554301,
+        "Level": 1,
+        "Name": "低重力药剂",
+        "SkillId": 5543,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [
+            140
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "554401": {
+        "Key": 554401,
+        "Id": 554401,
+        "Level": 1,
+        "Name": "召唤游泳池",
+        "SkillId": 5544,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [
+            86,
+            87
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
     "555001": {
         "Key": 555001,
         "Id": 555001,
         "Level": 1,
-        "Name": "生存玩法-黑洞虚拟体",
+        "Name": "空技能槽",
         "SkillId": 5550,
         "SkillDamageDistance": 0,
         "EffectRange": [],
@@ -23581,7 +23737,9 @@
             0,
             0
         ],
-        "Tags": [],
+        "Tags": [
+            140
+        ],
         "BuffTags": [],
         "HitTags": [],
         "EntityTags": [],
@@ -23590,8 +23748,8 @@
         "STRange": [
             0
         ],
-        "IsInBattleState": true,
-        "TakeWeaponInSkill": true,
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
         "NeedScaleCamera": false,
         "SkillLearnBuffs": [],
         "InstallSkillAddBuffs": []
@@ -23600,8 +23758,70 @@
         "Key": 555101,
         "Id": 555101,
         "Level": 1,
-        "Name": "生存玩法-烟雾虚拟体",
+        "Name": "空技能槽",
         "SkillId": 5551,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [
+            140
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "555201": {
+        "Key": 555201,
+        "Id": 555201,
+        "Level": 1,
+        "Name": "空技能槽",
+        "SkillId": 5552,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [
+            140
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "590001": {
+        "Key": 590001,
+        "Id": 590001,
+        "Level": 1,
+        "Name": "生存玩法-黑洞虚拟体",
+        "SkillId": 5900,
         "SkillDamageDistance": 0,
         "EffectRange": [],
         "AiReleaseSkillRange": [
@@ -23625,12 +23845,41 @@
         "SkillLearnBuffs": [],
         "InstallSkillAddBuffs": []
     },
-    "555201": {
-        "Key": 555201,
-        "Id": 555201,
+    "590101": {
+        "Key": 590101,
+        "Id": 590101,
+        "Level": 1,
+        "Name": "生存玩法-烟雾虚拟体",
+        "SkillId": 5901,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "590201": {
+        "Key": 590201,
+        "Id": 590201,
         "Level": 1,
         "Name": "生存玩法-沼泽虚拟体",
-        "SkillId": 5552,
+        "SkillId": 5902,
         "SkillDamageDistance": 0,
         "EffectRange": [],
         "AiReleaseSkillRange": [
@@ -50231,7 +50480,8 @@
             30,
             66,
             69,
-            93
+            93,
+            4
         ],
         "BuffTags": [],
         "HitTags": [],
@@ -95846,6 +96096,35 @@
         ],
         "IsInBattleState": true,
         "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "621000101": {
+        "Key": 621000101,
+        "Id": 621000101,
+        "Level": 1,
+        "Name": "悬浮炸弹自爆",
+        "SkillId": 6210001,
+        "SkillDamageDistance": 5,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
         "NeedScaleCamera": false,
         "SkillLearnBuffs": [],
         "InstallSkillAddBuffs": []

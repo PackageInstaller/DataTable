@@ -162,390 +162,534 @@
     "21": {
         "Key": 21,
         "Id": 21,
-        "AttrId": 11500,
-        "Name": "元素攻击",
+        "AttrId": 12550,
+        "Name": "物理增效",
         "Type": 201,
         "TypeDisplayName": "进攻属性"
     },
     "22": {
         "Key": 22,
         "Id": 22,
-        "AttrId": 12550,
-        "Name": "物理增效",
+        "AttrId": 12570,
+        "Name": "魔法增效",
         "Type": 201,
         "TypeDisplayName": "进攻属性"
     },
     "23": {
         "Key": 23,
         "Id": 23,
-        "AttrId": 12570,
-        "Name": "魔法增效",
+        "AttrId": 11720,
+        "Name": "攻击速度",
         "Type": 201,
         "TypeDisplayName": "进攻属性"
     },
     "24": {
         "Key": 24,
         "Id": 24,
-        "AttrId": 13100,
-        "Name": "元素加成",
+        "AttrId": 11730,
+        "Name": "施法速度",
         "Type": 201,
         "TypeDisplayName": "进攻属性"
     },
     "25": {
         "Key": 25,
         "Id": 25,
-        "AttrId": 11720,
-        "Name": "攻击速度",
+        "AttrId": 12510,
+        "Name": "暴击伤害",
         "Type": 201,
         "TypeDisplayName": "进攻属性"
     },
     "26": {
         "Key": 26,
         "Id": 26,
-        "AttrId": 11730,
-        "Name": "施法速度",
+        "AttrId": 12530,
+        "Name": "幸运一击伤害倍率",
         "Type": 201,
         "TypeDisplayName": "进攻属性"
     },
     "27": {
         "Key": 27,
         "Id": 27,
-        "AttrId": 12510,
-        "Name": "暴击伤害",
-        "Type": 201,
-        "TypeDisplayName": "进攻属性"
+        "AttrId": 11040,
+        "Name": "耐力",
+        "Type": 202,
+        "TypeDisplayName": "生存属性"
     },
     "28": {
         "Key": 28,
         "Id": 28,
-        "AttrId": 12530,
-        "Name": "幸运一击伤害倍率",
-        "Type": 201,
-        "TypeDisplayName": "进攻属性"
+        "AttrId": 11320,
+        "Name": "生命上限",
+        "Type": 202,
+        "TypeDisplayName": "生存属性"
     },
     "29": {
         "Key": 29,
         "Id": 29,
-        "AttrId": 11040,
-        "Name": "耐力",
+        "AttrId": 11350,
+        "Name": "物理防御",
         "Type": 202,
         "TypeDisplayName": "生存属性"
     },
     "30": {
         "Key": 30,
         "Id": 30,
-        "AttrId": 11320,
-        "Name": "生命上限",
+        "AttrId": 11360,
+        "Name": "魔法防御",
         "Type": 202,
         "TypeDisplayName": "生存属性"
     },
     "31": {
         "Key": 31,
         "Id": 31,
-        "AttrId": 11350,
-        "Name": "物理防御",
+        "AttrId": 11420,
+        "Name": "精炼防御",
         "Type": 202,
         "TypeDisplayName": "生存属性"
     },
     "32": {
         "Key": 32,
         "Id": 32,
-        "AttrId": 11360,
-        "Name": "魔法防御",
+        "AttrId": 12560,
+        "Name": "物理削减",
         "Type": 202,
         "TypeDisplayName": "生存属性"
     },
     "33": {
         "Key": 33,
         "Id": 33,
-        "AttrId": 11420,
-        "Name": "精炼防御",
+        "AttrId": 12580,
+        "Name": "魔法削减",
         "Type": 202,
         "TypeDisplayName": "生存属性"
     },
     "34": {
         "Key": 34,
         "Id": 34,
-        "AttrId": 12560,
-        "Name": "物理削减",
+        "AttrId": 12540,
+        "Name": "格挡伤害减免",
         "Type": 202,
         "TypeDisplayName": "生存属性"
     },
     "35": {
         "Key": 35,
         "Id": 35,
-        "AttrId": 12580,
-        "Name": "魔法削减",
-        "Type": 202,
-        "TypeDisplayName": "生存属性"
+        "AttrId": 12740,
+        "Name": "暴击治疗",
+        "Type": 203,
+        "TypeDisplayName": "辅助属性"
     },
     "36": {
         "Key": 36,
         "Id": 36,
-        "AttrId": 13310,
-        "Name": "元素减伤",
-        "Type": 202,
-        "TypeDisplayName": "生存属性"
+        "AttrId": 12720,
+        "Name": "幸运一击治疗倍率",
+        "Type": 203,
+        "TypeDisplayName": "辅助属性"
     },
     "37": {
         "Key": 37,
         "Id": 37,
-        "AttrId": 12540,
-        "Name": "格挡伤害减免",
-        "Type": 202,
-        "TypeDisplayName": "生存属性"
+        "AttrId": 11790,
+        "Name": "治疗强度",
+        "Type": 203,
+        "TypeDisplayName": "辅助属性"
     },
     "38": {
         "Key": 38,
         "Id": 38,
-        "AttrId": 12740,
-        "Name": "暴击治疗",
+        "AttrId": 11800,
+        "Name": "受治疗强度",
         "Type": 203,
         "TypeDisplayName": "辅助属性"
     },
     "39": {
         "Key": 39,
         "Id": 39,
-        "AttrId": 12720,
-        "Name": "幸运一击治疗倍率",
+        "AttrId": 11810,
+        "Name": "护盾强度万分比",
         "Type": 203,
         "TypeDisplayName": "辅助属性"
     },
     "40": {
         "Key": 40,
         "Id": 40,
-        "AttrId": 11790,
-        "Name": "治疗强度",
+        "AttrId": 11820,
+        "Name": "受护盾强度万分比",
         "Type": 203,
         "TypeDisplayName": "辅助属性"
     },
     "41": {
         "Key": 41,
         "Id": 41,
-        "AttrId": 11800,
-        "Name": "受治疗强度",
-        "Type": 203,
-        "TypeDisplayName": "辅助属性"
+        "AttrId": 11500,
+        "Name": "全元素攻击",
+        "Type": 204,
+        "TypeDisplayName": "元素攻击"
     },
     "42": {
         "Key": 42,
         "Id": 42,
-        "AttrId": 11810,
-        "Name": "护盾强度万分比",
-        "Type": 203,
-        "TypeDisplayName": "辅助属性"
+        "AttrId": 11510,
+        "Name": "火元素攻击",
+        "Type": 204,
+        "TypeDisplayName": "元素攻击"
     },
     "43": {
         "Key": 43,
         "Id": 43,
-        "AttrId": 11820,
-        "Name": "受护盾强度万分比",
-        "Type": 203,
-        "TypeDisplayName": "辅助属性"
+        "AttrId": 11520,
+        "Name": "冰元素攻击",
+        "Type": 204,
+        "TypeDisplayName": "元素攻击"
     },
     "44": {
         "Key": 44,
         "Id": 44,
-        "AttrId": 11510,
-        "Name": "火属性攻击",
+        "AttrId": 11530,
+        "Name": "森元素攻击",
         "Type": 204,
         "TypeDisplayName": "元素攻击"
     },
     "45": {
         "Key": 45,
         "Id": 45,
-        "AttrId": 11520,
-        "Name": "水属性攻击",
+        "AttrId": 11540,
+        "Name": "雷元素攻击",
         "Type": 204,
         "TypeDisplayName": "元素攻击"
     },
     "46": {
         "Key": 46,
         "Id": 46,
-        "AttrId": 11530,
-        "Name": "森属性攻击",
+        "AttrId": 11550,
+        "Name": "风元素攻击",
         "Type": 204,
         "TypeDisplayName": "元素攻击"
     },
     "47": {
         "Key": 47,
         "Id": 47,
-        "AttrId": 11540,
-        "Name": "雷属性攻击",
+        "AttrId": 11560,
+        "Name": "岩元素攻击",
         "Type": 204,
         "TypeDisplayName": "元素攻击"
     },
     "48": {
         "Key": 48,
         "Id": 48,
-        "AttrId": 11550,
-        "Name": "风属性攻击",
+        "AttrId": 11570,
+        "Name": "光元素攻击",
         "Type": 204,
         "TypeDisplayName": "元素攻击"
     },
     "49": {
         "Key": 49,
         "Id": 49,
-        "AttrId": 11560,
-        "Name": "岩属性攻击",
+        "AttrId": 11580,
+        "Name": "暗元素攻击",
         "Type": 204,
         "TypeDisplayName": "元素攻击"
     },
     "50": {
         "Key": 50,
         "Id": 50,
-        "AttrId": 11570,
-        "Name": "光属性攻击",
-        "Type": 204,
-        "TypeDisplayName": "元素攻击"
+        "AttrId": 13000,
+        "Name": "全元素强度",
+        "Type": 205,
+        "TypeDisplayName": "元素加成"
     },
     "51": {
         "Key": 51,
         "Id": 51,
-        "AttrId": 11580,
-        "Name": "暗属性攻击",
-        "Type": 204,
-        "TypeDisplayName": "元素攻击"
+        "AttrId": 13100,
+        "Name": "全元素加成",
+        "Type": 205,
+        "TypeDisplayName": "元素加成"
     },
     "52": {
         "Key": 52,
         "Id": 52,
-        "AttrId": 13110,
-        "Name": "火属性加成",
+        "AttrId": 13010,
+        "Name": "火元素强度",
         "Type": 205,
         "TypeDisplayName": "元素加成"
     },
     "53": {
         "Key": 53,
         "Id": 53,
-        "AttrId": 13120,
-        "Name": "水属性加成",
+        "AttrId": 13110,
+        "Name": "火元素加成",
         "Type": 205,
         "TypeDisplayName": "元素加成"
     },
     "54": {
         "Key": 54,
         "Id": 54,
-        "AttrId": 13130,
-        "Name": "森属性加成",
+        "AttrId": 13020,
+        "Name": "冰元素强度",
         "Type": 205,
         "TypeDisplayName": "元素加成"
     },
     "55": {
         "Key": 55,
         "Id": 55,
-        "AttrId": 13140,
-        "Name": "雷属性加成",
+        "AttrId": 13120,
+        "Name": "冰元素加成",
         "Type": 205,
         "TypeDisplayName": "元素加成"
     },
     "56": {
         "Key": 56,
         "Id": 56,
-        "AttrId": 13150,
-        "Name": "风元素加成",
+        "AttrId": 13030,
+        "Name": "森元素强度",
         "Type": 205,
         "TypeDisplayName": "元素加成"
     },
     "57": {
         "Key": 57,
         "Id": 57,
-        "AttrId": 13160,
-        "Name": "岩属性加成",
+        "AttrId": 13130,
+        "Name": "森元素加成",
         "Type": 205,
         "TypeDisplayName": "元素加成"
     },
     "58": {
         "Key": 58,
         "Id": 58,
-        "AttrId": 13170,
-        "Name": "光属性加成",
+        "AttrId": 13040,
+        "Name": "雷元素强度",
         "Type": 205,
         "TypeDisplayName": "元素加成"
     },
     "59": {
         "Key": 59,
         "Id": 59,
-        "AttrId": 13180,
-        "Name": "暗属性加成",
+        "AttrId": 13140,
+        "Name": "雷元素加成",
         "Type": 205,
         "TypeDisplayName": "元素加成"
     },
     "60": {
         "Key": 60,
         "Id": 60,
-        "AttrId": 13320,
-        "Name": "火属性减免",
-        "Type": 206,
-        "TypeDisplayName": "元素减免"
+        "AttrId": 13050,
+        "Name": "风元素强度",
+        "Type": 205,
+        "TypeDisplayName": "元素加成"
     },
     "61": {
         "Key": 61,
         "Id": 61,
-        "AttrId": 13330,
-        "Name": "水属性减免",
-        "Type": 206,
-        "TypeDisplayName": "元素减免"
+        "AttrId": 13150,
+        "Name": "风元素加成",
+        "Type": 205,
+        "TypeDisplayName": "元素加成"
     },
     "62": {
         "Key": 62,
         "Id": 62,
-        "AttrId": 13340,
-        "Name": "森属性减免",
-        "Type": 206,
-        "TypeDisplayName": "元素减免"
+        "AttrId": 13060,
+        "Name": "岩元素强度",
+        "Type": 205,
+        "TypeDisplayName": "元素加成"
     },
     "63": {
         "Key": 63,
         "Id": 63,
-        "AttrId": 13350,
-        "Name": "雷属性减免",
-        "Type": 206,
-        "TypeDisplayName": "元素减免"
+        "AttrId": 13160,
+        "Name": "岩元素加成",
+        "Type": 205,
+        "TypeDisplayName": "元素加成"
     },
     "64": {
         "Key": 64,
         "Id": 64,
+        "AttrId": 13070,
+        "Name": "光元素强度",
+        "Type": 205,
+        "TypeDisplayName": "元素加成"
+    },
+    "65": {
+        "Key": 65,
+        "Id": 65,
+        "AttrId": 13170,
+        "Name": "光元素加成",
+        "Type": 205,
+        "TypeDisplayName": "元素加成"
+    },
+    "66": {
+        "Key": 66,
+        "Id": 66,
+        "AttrId": 13080,
+        "Name": "暗元素强度",
+        "Type": 205,
+        "TypeDisplayName": "元素加成"
+    },
+    "67": {
+        "Key": 67,
+        "Id": 67,
+        "AttrId": 13180,
+        "Name": "暗元素加成",
+        "Type": 205,
+        "TypeDisplayName": "元素加成"
+    },
+    "68": {
+        "Key": 68,
+        "Id": 68,
+        "AttrId": 13200,
+        "Name": "全元素抗性",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "69": {
+        "Key": 69,
+        "Id": 69,
+        "AttrId": 13310,
+        "Name": "全元素减免",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "70": {
+        "Key": 70,
+        "Id": 70,
+        "AttrId": 13210,
+        "Name": "火元素抗性",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "71": {
+        "Key": 71,
+        "Id": 71,
+        "AttrId": 13320,
+        "Name": "火元素减免",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "72": {
+        "Key": 72,
+        "Id": 72,
+        "AttrId": 13220,
+        "Name": "冰元素抗性",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "73": {
+        "Key": 73,
+        "Id": 73,
+        "AttrId": 13330,
+        "Name": "冰元素减免",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "74": {
+        "Key": 74,
+        "Id": 74,
+        "AttrId": 13230,
+        "Name": "森元素抗性",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "75": {
+        "Key": 75,
+        "Id": 75,
+        "AttrId": 13340,
+        "Name": "森元素减免",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "76": {
+        "Key": 76,
+        "Id": 76,
+        "AttrId": 13240,
+        "Name": "雷元素抗性",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "77": {
+        "Key": 77,
+        "Id": 77,
+        "AttrId": 13350,
+        "Name": "雷元素减免",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "78": {
+        "Key": 78,
+        "Id": 78,
+        "AttrId": 13250,
+        "Name": "风元素抗性",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "79": {
+        "Key": 79,
+        "Id": 79,
         "AttrId": 13360,
         "Name": "风元素减免",
         "Type": 206,
         "TypeDisplayName": "元素减免"
     },
-    "65": {
-        "Key": 65,
-        "Id": 65,
+    "80": {
+        "Key": 80,
+        "Id": 80,
+        "AttrId": 13260,
+        "Name": "岩元素抗性",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "81": {
+        "Key": 81,
+        "Id": 81,
         "AttrId": 13370,
-        "Name": "岩属性减免",
+        "Name": "岩元素减免",
         "Type": 206,
         "TypeDisplayName": "元素减免"
     },
-    "66": {
-        "Key": 66,
-        "Id": 66,
+    "82": {
+        "Key": 82,
+        "Id": 82,
+        "AttrId": 13270,
+        "Name": "光元素抗性",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "83": {
+        "Key": 83,
+        "Id": 83,
         "AttrId": 13380,
-        "Name": "光属性减免",
+        "Name": "光元素减免",
         "Type": 206,
         "TypeDisplayName": "元素减免"
     },
-    "67": {
-        "Key": 67,
-        "Id": 67,
+    "84": {
+        "Key": 84,
+        "Id": 84,
+        "AttrId": 13280,
+        "Name": "暗元素抗性",
+        "Type": 206,
+        "TypeDisplayName": "元素减免"
+    },
+    "85": {
+        "Key": 85,
+        "Id": 85,
         "AttrId": 13390,
-        "Name": "暗属性减免",
+        "Name": "暗元素减免",
         "Type": 206,
         "TypeDisplayName": "元素减免"
     },
-    "68": {
-        "Key": 68,
-        "Id": 68,
+    "86": {
+        "Key": 86,
+        "Id": 86,
         "AttrId": 20020,
         "Name": "共鸣能量上限",
         "Type": 207,
         "TypeDisplayName": "其他属性"
     },
-    "69": {
-        "Key": 69,
-        "Id": 69,
+    "87": {
+        "Key": 87,
+        "Id": 87,
         "AttrId": 20120,
         "Name": "战斗状态星元能量回复",
         "Type": 207,

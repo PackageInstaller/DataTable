@@ -878,7 +878,7 @@
         "Text": "霹雳升龙斩",
         "Type": 3,
         "Par": 3401098,
-        "Description": "<style=\"accent-gn\">霹雳连斩</style>的隐藏招式，快速上挑挥砍，对目标造成<style=\"accent-gn\">500%</style>攻击力<style=\"physical\">物理伤害</style>，跟随<style=\"accent-gn\">霹雳连斩</style>技能升级/进阶进行成长。",
+        "Description": "<style=\"accent-gn\">霹雳连斩</style>的隐藏招式，快速上挑挥砍，对目标造成<style=\"accent-gn\">300%</style>攻击力<style=\"physical\">物理伤害</style>，每当攻击速度达到<style=\"accent-gn\">25%</style>|<style=\"accent-gn\">50%</style>|<style=\"accent-gn\">80%</style>时攻击次数+<style=\"accent-gn\">1</style>|+<style=\"accent-gn\">2</style>|+<style=\"accent-gn\">3</style>，跟随<style=\"accent-gn\">霹雳连斩</style>技能升级/进阶进行成长。",
         "ShowRule": 1
     },
     "1099": {
@@ -950,7 +950,7 @@
         "Text": "电荷之种",
         "Type": 3,
         "Par": 3401106,
-        "Description": "最多可以累积<style=\"accent-gn\">20</style>个<style=\"accent-gn\">电荷之种</style>，施放<style=\"accent-gn\">霹雳连斩</style>时消耗<style=\"accent-gn\">8</style>个<style=\"accent-gn\">电荷之种</style>触发<style=\"accent-gn\">雷霆之镰</style>对周围目标造成<style=\"physical\">物理伤害</style>。",
+        "Description": "最多可以累积<style=\"accent-gn\">20</style>个<style=\"accent-gn\">电荷之种</style>，施放<style=\"accent-gn\">霹雳连斩</style>时消耗<style=\"accent-gn\">15</style>个<style=\"accent-gn\">电荷之种</style>触发<style=\"accent-gn\">雷霆之镰</style>对周围目标造成<style=\"physical\">物理伤害</style>。",
         "ShowRule": 1
     },
     "1107": {
@@ -1247,7 +1247,7 @@
         "Text": "扫尾",
         "Type": 3,
         "Par": 3401139,
-        "Description": "对周围<style=\"accent-gn\">5</style>米内目标造成<style=\"accent-gn\">80%</style>攻击力<style=\"physical\">物理伤害</style>，每多命中一个目标伤害+<style=\"accent-gn\">30%</style>，跟随<style=\"accent-gn\">普通攻击</style>技能升级/升阶进行成长。",
+        "Description": "对周围<style=\"accent-gn\">5</style>米内目标造成<style=\"accent-gn\">80%</style>攻击力<style=\"physical\">物理伤害</style>，每多命中一个目标伤害+<style=\"accent-gn\">30%</style>（最高+<style=\"accent-gn\">120%</style>），跟随<style=\"accent-gn\">普通攻击</style>技能升级/升阶进行成长。",
         "ShowRule": 1
     },
     "1140": {
@@ -1337,7 +1337,7 @@
         "Text": "天界雄鹰",
         "Type": 3,
         "Par": 3401149,
-        "Description": "扇起半径<style=\"accent-gn\">5</style>米的风暴，每<style=\"accent-gn\">0</style>.<style=\"accent-gn\">5</style>秒对风暴中有<style=\"accent-gn\">钢制喙</style>标记的目标造成<style=\"accent-gn\">80%</style>攻击力<style=\"magic\">魔法伤害</style>。<style=\"accent-gn\">5</style>秒后，<style=\"accent-gn\">天界雄鹰</style>俯冲到地面，造成<style=\"accent-gn\">500%</style>攻击力<style=\"magic\">魔法伤害</style>。",
+        "Description": "扇起半径<style=\"accent-gn\">5</style>米的风暴，每<style=\"accent-gn\">0</style>.<style=\"accent-gn\">5</style>秒对风暴中有<style=\"accent-gn\">钢制喙</style>标记的目标造成<style=\"accent-gn\">80%</style>攻击力无视防御<style=\"physical\">物理伤害</style>。<style=\"accent-gn\">5</style>秒后，<style=\"accent-gn\">天界雄鹰</style>俯冲到地面，造成<style=\"accent-gn\">500%</style>攻击力无视防御<style=\"physical\">物理伤害</style>。",
         "ShowRule": 1
     },
     "1150": {
@@ -1418,7 +1418,7 @@
         "Text": "龙卷风",
         "Type": 3,
         "Par": 3401158,
-        "Description": "对范围内敌方目标造成<style=\"accent-gn\">350%</style>攻击力<style=\"physical\">物理伤害</style>。",
+        "Description": "对范围内敌方目标造成<style=\"accent-gn\">350%</style>攻击力的<style=\"physical\">物理伤害</style>。伤害会随每次攻击衰减<style=\"accent-gn\">20%</style>，最多可衰减至原始伤害的<style=\"accent-gn\">40%</style>。每个龙卷风独立计算。",
         "ShowRule": 1
     },
     "1159": {
@@ -1787,7 +1787,7 @@
         "Text": "神圣印记",
         "Type": 3,
         "Par": 3401199,
-        "Description": "目标在接下来<style=\"accent-gn\">10</style>秒内每秒受到<style=\"accent-gn\">20%</style>攻击力伤害，同时该目标对你造成伤害时有<style=\"accent-gn\">10%</style>固定几率为回复你生命，回复值等于你生命上限的<style=\"accent-gn\">0.5%</style>。",
+        "Description": "目标在接下来<style=\"accent-gn\">10</style>秒内每秒受到<style=\"accent-gn\">20%</style>攻击力伤害，同时该目标对你造成伤害时有<style=\"accent-gn\">10%</style>固定几率为你回复生命，回复值等于你生命上限的<style=\"accent-gn\">0.5%</style>。",
         "ShowRule": 1
     },
     "1500": {

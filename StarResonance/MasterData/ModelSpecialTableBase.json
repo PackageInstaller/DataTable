@@ -16491,7 +16491,7 @@
         "ModelPrefabDesc": "展示哥布林",
         "Skeleton": "ch_mon_gebulin01-ds_01",
         "Effect": [],
-        "AnimTemplate": "animtpl/ch_f_skeleton",
+        "AnimTemplate": "animtpl/ch_f_skeleton_delta07",
         "RotateCurves": [],
         "Weapon": [],
         "UseHeadIK": false,
@@ -16521,6 +16521,25 @@
         "ModelPrefabDesc": "空悬浮平台",
         "Skeleton": "skm_stk_platform003_a",
         "Effect": [],
+        "AnimTemplate": "",
+        "RotateCurves": [],
+        "Weapon": [],
+        "UseHeadIK": false,
+        "LookAtAngle": 0,
+        "LookAtSpeed": 0,
+        "LookAtDistance": 0,
+        "AnimFadeTemplate": ""
+    },
+    "80049": {
+        "Key": 80049,
+        "ModelPrefabID": 80049,
+        "ModelPrefabDesc": "浮空炸弹",
+        "Skeleton": "prefabs/ch_dummy",
+        "Effect": [
+            [
+                "effect/common_new/env/p_fx_scene_dragonscar_particle_lei"
+            ]
+        ],
         "AnimTemplate": "",
         "RotateCurves": [],
         "Weapon": [],

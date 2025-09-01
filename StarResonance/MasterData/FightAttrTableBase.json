@@ -883,7 +883,7 @@
         "AttrNumType": 0,
         "OfficialName": "幸运",
         "TipTemplate": "幸运{*attr.value*}",
-        "AttrDes": "提高自身触发幸运效果的几率<br>使用职业技能造成非持续性伤害或治疗时，有一定概率触发你所拥有的所有幸运效果。<br>基础幸运一击效果：额外触发一次固定倍率的伤害或治疗，倍率跟随幸运概率的提升而提升。<br>幸运增效：每1%幸运几率提升1%「幸运效果」伤害。",
+        "AttrDes": "提高自身触发幸运效果的几率<br>使用职业技能造成非持续性伤害或治疗时，有一定概率触发你所拥有的所有幸运效果。<br>基础幸运一击效果：额外触发一次固定倍率的伤害或治疗，倍率跟随幸运概率的提升而提升。<br>幸运增效：每1%幸运几率提升1%「幸运效果」伤害和治疗。",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_lucky",
@@ -2282,7 +2282,7 @@
         "AttrNumType": 1,
         "OfficialName": "幸运",
         "TipTemplate": "幸运{*attr.value*}",
-        "AttrDes": "提高自身触发幸运效果的几率<br>使用职业技能造成非持续性伤害或治疗时，有一定概率触发你所拥有的所有幸运效果。<br>基础幸运一击效果：额外触发一次固定倍率的伤害或治疗，倍率跟随幸运概率的提升而提升。<br>幸运增效：每1%幸运几率提升1%「幸运效果」伤害。",
+        "AttrDes": "提高自身触发幸运效果的几率<br>使用职业技能造成非持续性伤害或治疗时，有一定概率触发你所拥有的所有幸运效果。<br>基础幸运一击效果：额外触发一次固定倍率的伤害或治疗，倍率跟随幸运概率的提升而提升。<br>幸运增效：每1%幸运几率提升1%「幸运效果」伤害和治疗。",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_lucky",
@@ -4443,7 +4443,7 @@
         "AttrNumType": 0,
         "OfficialName": "全元素强度",
         "TipTemplate": "全元素强度{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为全元素加成",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -4487,7 +4487,7 @@
         "AttrNumType": 0,
         "OfficialName": "火元素强度",
         "TipTemplate": "火元素强度{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为火元素加成",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -4522,7 +4522,7 @@
         "AttrNumType": 0,
         "OfficialName": "冰元素强度",
         "TipTemplate": "冰元素强度{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为冰元素加成",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -4556,7 +4556,7 @@
         "AttrNumType": 0,
         "OfficialName": "森元素强度",
         "TipTemplate": "森元素强度{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为森元素加成",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -4590,7 +4590,7 @@
         "AttrNumType": 0,
         "OfficialName": "雷元素强度",
         "TipTemplate": "雷元素强度{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为雷元素加成",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -4625,7 +4625,7 @@
         "AttrNumType": 0,
         "OfficialName": "风元素强度",
         "TipTemplate": "风元素强度{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为风元素加成",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -4659,7 +4659,7 @@
         "AttrNumType": 0,
         "OfficialName": "岩元素强度",
         "TipTemplate": "岩元素强度{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为岩元素加成",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -4693,7 +4693,7 @@
         "AttrNumType": 0,
         "OfficialName": "光元素强度",
         "TipTemplate": "光元素强度{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为光元素加成",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -4728,7 +4728,7 @@
         "AttrNumType": 0,
         "OfficialName": "暗元素强度",
         "TipTemplate": "暗元素强度{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为暗元素加成",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -5081,7 +5081,7 @@
         "AttrNumType": 0,
         "OfficialName": "全元素抗性",
         "TipTemplate": "全元素抗性{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为全元素减免",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_def",
@@ -5125,7 +5125,7 @@
         "AttrNumType": 0,
         "OfficialName": "火元素抗性",
         "TipTemplate": "火元素抗性{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为火元素减免",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_def",
@@ -5169,7 +5169,7 @@
         "AttrNumType": 0,
         "OfficialName": "冰元素抗性",
         "TipTemplate": "冰元素抗性{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为冰元素减免",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_def",
@@ -5213,7 +5213,7 @@
         "AttrNumType": 0,
         "OfficialName": "森元素抗性",
         "TipTemplate": "森元素抗性{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为森元素减免",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_def",
@@ -5257,7 +5257,7 @@
         "AttrNumType": 0,
         "OfficialName": "雷元素抗性",
         "TipTemplate": "雷元素抗性{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为雷元素减免",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_def",
@@ -5301,7 +5301,7 @@
         "AttrNumType": 0,
         "OfficialName": "风元素抗性",
         "TipTemplate": "风元素抗性{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为风元素减免",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_def",
@@ -5345,7 +5345,7 @@
         "AttrNumType": 0,
         "OfficialName": "岩元素抗性",
         "TipTemplate": "岩元素抗性{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为岩元素减免",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_def",
@@ -5389,7 +5389,7 @@
         "AttrNumType": 0,
         "OfficialName": "光元素抗性",
         "TipTemplate": "光元素抗性{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为光元素减免",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_def",
@@ -5433,7 +5433,7 @@
         "AttrNumType": 0,
         "OfficialName": "暗元素抗性",
         "TipTemplate": "暗元素抗性{*attr.value*}",
-        "AttrDes": "",
+        "AttrDes": "会转化为暗元素减免",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_def",

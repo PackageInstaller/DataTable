@@ -3276,6 +3276,36 @@
         "IsSyncClient": true,
         "AttrDesc": ""
     },
+    "90217": {
+        "Key": 90217,
+        "Id": 90217,
+        "Name": "霹雳连斩资源管理",
+        "Desc": "霹雳连斩资源管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 5,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90218": {
+        "Key": 90218,
+        "Id": 90218,
+        "Name": "二连矢冷却",
+        "Desc": "二连矢冷却",
+        "AttrType": 103,
+        "LogicType": 1,
+        "AttrParams": [
+            2222
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
     "92000": {
         "Key": 92000,
         "Id": 92000,
@@ -3351,6 +3381,22 @@
         "LogicType": 1,
         "AttrParams": [
             4531
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "92104": {
+        "Key": 92104,
+        "Id": 92104,
+        "Name": "【载具】机械系加速冷却",
+        "Desc": "【载具】机械系加速冷却",
+        "AttrType": 103,
+        "LogicType": 1,
+        "AttrParams": [
+            4601,
+            4512
         ],
         "LowerLimit": -99999,
         "UpperLimit": 99999,

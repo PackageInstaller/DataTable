@@ -1699,6 +1699,31 @@
         "VoiceControlEvent": "",
         "WaitVoiceFinish": false
     },
+    "1049": {
+        "Key": 1049,
+        "Id": 1049,
+        "Content": "当前登录人数过多，请稍后重试",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
     "1050": {
         "Key": 1050,
         "Id": 1050,
@@ -3378,6 +3403,31 @@
         "Key": 2332,
         "Id": 2332,
         "Content": "你当前位置的玩具数量达到上限，请移动到其他空地再召唤玩具",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "2333": {
+        "Key": 2333,
+        "Id": 2333,
+        "Content": "本赛季生活职业专精点获得已达上限，无法继续获得专精点。",
         "Type": 10,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -10378,6 +10428,31 @@
         "Key": 3338,
         "Id": 3338,
         "Content": "副本实体数量异常",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "3339": {
+        "Key": 3339,
+        "Id": 3339,
+        "Content": "前置副本未完成",
         "Type": 10,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -35104,6 +35179,156 @@
         "VoiceControlEvent": "",
         "WaitVoiceFinish": false
     },
+    "150038": {
+        "Key": 150038,
+        "Id": 150038,
+        "Content": "不在活动时间内！",
+        "Type": 10,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "150039": {
+        "Key": 150039,
+        "Id": 150039,
+        "Content": "你的操作次数已达上限，无法再继续操作了！",
+        "Type": 10,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "150040": {
+        "Key": 150040,
+        "Id": 150040,
+        "Content": "您所输入的文本不满足要求！",
+        "Type": 10,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "150041": {
+        "Key": 150041,
+        "Id": 150041,
+        "Content": "战斗状态下无法进行该操作！",
+        "Type": 10,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "150042": {
+        "Key": 150042,
+        "Id": 150042,
+        "Content": "{*val*}道具不足！",
+        "Type": 10,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "150043": {
+        "Key": 150043,
+        "Id": 150043,
+        "Content": "当前职业技能都是1级、0阶，无需重置！",
+        "Type": 10,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
     "150100": {
         "Key": 150100,
         "Id": 150100,
@@ -43529,6 +43754,31 @@
         "VoiceControlEvent": "",
         "WaitVoiceFinish": false
     },
+    "1000655": {
+        "Key": 1000655,
+        "Id": 1000655,
+        "Content": "已达到使用次数上限",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
     "1000720": {
         "Key": 1000720,
         "Id": 1000720,
@@ -50857,9 +51107,9 @@
     "1006061": {
         "Key": 1006061,
         "Id": 1006061,
-        "Content": "大家久等了！游戏马上开始！",
+        "Content": "大家久等了！游戏马上开始！<br>今天的游戏是：123木头人！在不被小伊发现的情况下，抵达终点线！",
         "Type": 30,
-        "DurationTime": 3,
+        "DurationTime": 5,
         "ChatName": "{*npc.name(5004500)*}",
         "Delay": 0,
         "RepeatPlay": [
@@ -50882,9 +51132,9 @@
     "1006062": {
         "Key": 1006062,
         "Id": 1006062,
-        "Content": "今天的游戏是：123木头人！",
-        "Type": 30,
-        "DurationTime": 4,
+        "Content": "游戏开始！",
+        "Type": 60,
+        "DurationTime": 3,
         "ChatName": "{*npc.name(5004500)*}",
         "Delay": 0,
         "RepeatPlay": [
@@ -50907,10 +51157,10 @@
     "1006063": {
         "Key": 1006063,
         "Id": 1006063,
-        "Content": "挑战开始！",
-        "Type": 60,
+        "Content": "游戏结束，一段时间后将自动退出副本。",
+        "Type": 30,
         "DurationTime": 3,
-        "ChatName": "",
+        "ChatName": "{*npc.name(5004500)*}",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -50932,7 +51182,7 @@
     "1006064": {
         "Key": 1006064,
         "Id": 1006064,
-        "Content": "在不被小伊发现的情况下，抵达终点线！",
+        "Content": "在不被小伊发现的情况下，完成两轮往返跑！",
         "Type": 110,
         "DurationTime": 5,
         "ChatName": "",
@@ -50982,7 +51232,7 @@
     "1006066": {
         "Key": 1006066,
         "Id": 1006066,
-        "Content": "成功到达！",
+        "Content": "抵达节点！",
         "Type": 60,
         "DurationTime": 3,
         "ChatName": "",
@@ -51007,10 +51257,10 @@
     "1006067": {
         "Key": 1006067,
         "Id": 1006067,
-        "Content": "第一轮到此为止！下面即将开启第二轮游戏！",
-        "Type": 30,
+        "Content": "抵达终点，你已完成本场游戏！",
+        "Type": 60,
         "DurationTime": 3,
-        "ChatName": "{*npc.name(5004500)*}",
+        "ChatName": "",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -51019,7 +51269,7 @@
         "ShowChannel": [
             99
         ],
-        "FilterRule": false,
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -51032,7 +51282,7 @@
     "1006068": {
         "Key": 1006068,
         "Id": 1006068,
-        "Content": "第二轮游戏马上开始！",
+        "Content": "第二轮游戏开始！",
         "Type": 30,
         "DurationTime": 3,
         "ChatName": "{*npc.name(5004500)*}",
@@ -51082,7 +51332,7 @@
     "1006070": {
         "Key": 1006070,
         "Id": 1006070,
-        "Content": "准备好就出发吧！",
+        "Content": "倒计时结束后开启本轮游戏",
         "Type": 30,
         "DurationTime": 3,
         "ChatName": "{*npc.name(5004500)*}",
@@ -51107,7 +51357,32 @@
     "1006071": {
         "Key": 1006071,
         "Id": 1006071,
-        "Content": "游戏结束！根据完成人数，大家会获得相应的奖励！",
+        "Content": "第二轮游戏结束！",
+        "Type": 30,
+        "DurationTime": 3,
+        "ChatName": "{*npc.name(5004500)*}",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "1006072": {
+        "Key": 1006072,
+        "Id": 1006072,
+        "Content": "游戏结束，一段时间后将自动退出副本。",
         "Type": 30,
         "DurationTime": 3,
         "ChatName": "{*npc.name(5004500)*}",
@@ -52058,6 +52333,81 @@
         "Key": 1042031,
         "Id": 1042031,
         "Content": "{*val*}后可以突破",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "1042032": {
+        "Key": 1042032,
+        "Id": 1042032,
+        "Content": "激活至该节点的最短路径不是唯一，无法快捷加点，请先规划和选择最短路径！",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "1042033": {
+        "Key": 1042033,
+        "Id": 1042033,
+        "Content": "激活<style=\"emph-gn\">{*val*}</style>天赋节点的条件不足，请达成条件后再试。",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "1042034": {
+        "Key": 1042034,
+        "Id": 1042034,
+        "Content": "激活天赋所需的{*val*}不足！",
         "Type": 10,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -103351,6 +103701,456 @@
         "Content": "需要乘骑小猪才能加入游行队伍",
         "Type": 20,
         "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011010": {
+        "Key": 16011010,
+        "Id": 16011010,
+        "Content": "行动开始：请合作捕获空中的全部5个气球吧。",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011011": {
+        "Key": 16011011,
+        "Id": 16011011,
+        "Content": "收集水面上周期生成的云朵粒子，可以获得创建云朵的能力",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011012": {
+        "Key": 16011012,
+        "Id": 16011012,
+        "Content": "小伊给大家准备了一些小道具，可以与小伊交互后获得。",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011013": {
+        "Key": 16011013,
+        "Id": 16011013,
+        "Content": "请小心空中的浮空炸弹",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011014": {
+        "Key": 16011014,
+        "Id": 16011014,
+        "Content": "最多只能获得3个辅助技能，装不下啦",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011015": {
+        "Key": 16011015,
+        "Id": 16011015,
+        "Content": "你收集了1个云朵粒子。",
+        "Type": 20,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011016": {
+        "Key": 16011016,
+        "Id": 16011016,
+        "Content": "收集3个云朵粒子，获得创建云朵的技能！",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011017": {
+        "Key": 16011017,
+        "Id": 16011017,
+        "Content": "小伊很开心，送给你一个辅助技能<style=\"emph-gn\">(体力恢复)</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011018": {
+        "Key": 16011018,
+        "Id": 16011018,
+        "Content": "小伊很开心，送给你一个辅助技能<style=\"emph-gn\">(额外云朵)</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011019": {
+        "Key": 16011019,
+        "Id": 16011019,
+        "Content": "小伊很开心，送给你一个辅助技能<style=\"emph-gn\">(低重力状态)</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011020": {
+        "Key": 16011020,
+        "Id": 16011020,
+        "Content": "小伊很开心，送给你一个辅助技能<style=\"emph-gn\">(召唤泳池)</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011022": {
+        "Key": 16011022,
+        "Id": 16011022,
+        "Content": "已捕获一个气球<style=\"emph-gn\">({*str*}/5)</style>",
+        "Type": 20,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011023": {
+        "Key": 16011023,
+        "Id": 16011023,
+        "Content": "你身上已有创建云朵的技能了，使用后才能再次收集云朵粒子",
+        "Type": 20,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011025": {
+        "Key": 16011025,
+        "Id": 16011025,
+        "Content": "天上刮起了狂风。",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16011026": {
+        "Key": 16011026,
+        "Id": 16011026,
+        "Content": "风渐渐停了。",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16019000": {
+        "Key": 16019000,
+        "Id": 16019000,
+        "Content": "完成副本",
+        "Type": 60,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16019001": {
+        "Key": 16019001,
+        "Id": 16019001,
+        "Content": "未完成副本",
+        "Type": 70,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16019002": {
+        "Key": 16019002,
+        "Id": 16019002,
+        "Content": "{*val*}秒后自动退出",
+        "Type": 80,
+        "DurationTime": 10,
         "ChatName": "",
         "Delay": 0,
         "RepeatPlay": [

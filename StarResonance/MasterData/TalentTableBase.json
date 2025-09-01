@@ -3315,6 +3315,80 @@
         "TalentPointsConsume": 1,
         "FightValue": 26
     },
+    "171": {
+        "Key": 171,
+        "Id": 171,
+        "Des": "雷霆神威",
+        "TalentName": "雷霆神威",
+        "TalentDes": "千雷闪影之意持续期间雷霆之镰会连续触发2次。",
+        "WeaponGroup": 1,
+        "TalentIcon": "ui/atlas/talent_passive_1/taidao170",
+        "TalentType": 4,
+        "TalentLevel": 1,
+        "TalentId": 0,
+        "TalentEffect": [
+            [
+                3,
+                2200730,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "attr"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1020054,
+                1
+            ]
+        ],
+        "TalentPointsConsume": 1,
+        "FightValue": 26
+    },
+    "172": {
+        "Key": 172,
+        "Id": 172,
+        "Des": "霹雳之光",
+        "TalentName": "回溯冥想",
+        "TalentDes": "无穷雷霆之力持续期间，雷印回溯的返还几率翻倍，但是期间雷之印对消耗雷之印的技能伤害增加效果从25%变为10%。",
+        "WeaponGroup": 1,
+        "TalentIcon": "ui/atlas/talent_passive_1/talent_passive_icon_general_dps_sicklespeed",
+        "TalentType": 4,
+        "TalentLevel": 1,
+        "TalentId": 0,
+        "TalentEffect": [
+            [
+                3,
+                2200740,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "attr"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1020054,
+                2
+            ]
+        ],
+        "TalentPointsConsume": 1,
+        "FightValue": 26
+    },
     "200": {
         "Key": 200,
         "Id": 200,
@@ -3742,7 +3816,7 @@
         ],
         "BuffPar": [
             [
-                1500
+                2000
             ]
         ],
         "UnlockConsume": [
@@ -6053,7 +6127,7 @@
         ],
         "BuffPar": [
             [
-                2000
+                10000
             ]
         ],
         "UnlockConsume": [
@@ -14443,7 +14517,7 @@
         "Id": 1129,
         "Des": "驯鹰流",
         "TalentName": "驯鹰流",
-        "TalentDes": "<style=\"accent-gn\">特殊攻击</style>替换成<linktext=1547><style=\"ItemQuality_5\">二连矢</style></linktext>，并增强使用该技能的能力。<br>每秒回复<style=\"accent-gn\">2</style>点<style=\"accent-gn\">光能</style>。<br>可以驯化<style=\"accent-gn\">猎鹰</style>，协助自己进行战斗。<br><br><style=\"accent-gn\">猎鹰</style>始终陪伴自身，当自身<style=\"accent-gn\">职业技能</style>造成暴击伤害时，<style=\"accent-gn\">猎鹰</style>迅速向目标出击，造成自身<style=\"accent-gn\">150%</style>攻击力<style=\"physical\">物理伤害</style>，跟随<style=\"accent-gn\">普通攻击</style>技能升级/进阶进行成长。<br><br><i><style=\"text_third_gray\"><size=20>猎鹰将响应你的攻击，急速和暴击会加强猎鹰的响应频率，猎鹰习得闪电冲击后伤害得到大额提升。</size></style></i>",
+        "TalentDes": "<style=\"accent-gn\">特殊攻击</style>替换成<linktext=1547><style=\"ItemQuality_5\">二连矢</style></linktext>，并增强使用该技能的能力。<br>每秒回复<style=\"accent-gn\">2</style>点<style=\"accent-gn\">光能</style>。<br>每<style=\"accent-gn\">1%</style>急速提供<style=\"accent-gn\">1%</style><linktext=1547><style=\"ItemQuality_5\">二连矢</style></linktext>冷却速度。<br>可以驯化<style=\"accent-gn\">猎鹰</style>，协助自己进行战斗。<br><br><style=\"accent-gn\">猎鹰</style>始终陪伴自身，当自身<style=\"accent-gn\">职业技能</style>造成暴击伤害时，<style=\"accent-gn\">猎鹰</style>迅速向目标出击，造成自身<style=\"accent-gn\">100%</style>攻击力<style=\"physical\">物理伤害</style>，跟随<style=\"accent-gn\">普通攻击</style>技能升级/进阶进行成长。<br><br><i><style=\"text_third_gray\"><size=20>猎鹰将响应你的攻击，急速和暴击会加强猎鹰的响应频率，猎鹰习得闪电冲击后伤害得到大额提升。</size></style></i>",
         "WeaponGroup": 11,
         "TalentIcon": "ui/atlas/talent_passive_11/talent_passive_icon_general_dps_skyhitget",
         "TalentType": 5,

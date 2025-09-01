@@ -15759,7 +15759,7 @@
         "OnceLimit": 9999,
         "RecommendedPrice": 750000,
         "MinPercentage": 20,
-        "MaxPercentage": 75,
+        "MaxPercentage": 50,
         "EachPercentage": 5,
         "Minimum": 187500,
         "Maximum": 3750000,
@@ -15785,35 +15785,113 @@
         ],
         "AutoSaleTime": [
             10,
-            15,
-            20,
-            30,
-            60
+            60,
+            300,
+            600,
+            900,
+            1000,
+            1200,
+            3600,
+            4800
         ],
         "AutoSaleTimeRate": [
-            8,
-            8,
-            6,
             5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            3,
             2
         ],
-        "AutoSaleLimit": 5,
+        "AutoSaleLimit": 25,
         "AutoSaleRate": 100,
         "AutoSaleNum": [
             1,
             1
         ],
         "AutoSalePriceRange": [
-            160,
-            175
+            140,
+            150
         ],
-        "OnceAutoNumLimit": 1999,
+        "OnceAutoNumLimit": 10,
         "RecycleQueue": 0,
         "RecycleRank": 0,
         "RecycleLimit": 0,
         "RecycleNunLimit": [],
         "AdaptChange": [],
-        "HideItem": true
+        "HideItem": false
+    },
+    "1040079": {
+        "Key": 1040079,
+        "ItemID": 1040079,
+        "Index": 10,
+        "Category": 1,
+        "Subcategory": 102,
+        "OnceSaleLimit": 9999,
+        "OnceLimit": 9999,
+        "RecommendedPrice": 120000,
+        "MinPercentage": 20,
+        "MaxPercentage": 50,
+        "EachPercentage": 5,
+        "Minimum": 30000,
+        "Maximum": 600000,
+        "BottomBuyLimit": 1,
+        "CalmTradePeriod": 30,
+        "TaxPercentage": 5,
+        "MonthCardTaxPercentage": 4,
+        "DepositPercentage": 1,
+        "MonthCardDepositPercentage": 0,
+        "DelayedTime": [],
+        "ListingTime": 86400,
+        "Currency": 10002,
+        "Publicity": 1,
+        "PublicityTime": 3600,
+        "OrderLimt": 20,
+        "PriceWatch": 0,
+        "FitterId": [],
+        "AutoSale": 1,
+        "AutoSaleTimeLimit": 10127,
+        "AutoSaleNumLimit": [
+            23,
+            45000
+        ],
+        "AutoSaleTime": [
+            20,
+            30,
+            40,
+            50,
+            60,
+            120,
+            300
+        ],
+        "AutoSaleTimeRate": [
+            2,
+            5,
+            5,
+            2,
+            2,
+            1,
+            2
+        ],
+        "AutoSaleLimit": 369,
+        "AutoSaleRate": 100,
+        "AutoSaleNum": [
+            1,
+            1
+        ],
+        "AutoSalePriceRange": [
+            140,
+            150
+        ],
+        "OnceAutoNumLimit": 10,
+        "RecycleQueue": 0,
+        "RecycleRank": 0,
+        "RecycleLimit": 0,
+        "RecycleNunLimit": [],
+        "AdaptChange": [],
+        "HideItem": false
     },
     "1040144": {
         "Key": 1040144,

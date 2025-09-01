@@ -8788,6 +8788,44 @@
         "SpVariableName": [],
         "IsShowSpVariableProgress": []
     },
+    "900101": {
+        "Key": 900101,
+        "Id": 900101,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 9001,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "等待开始",
+        "IsShowProgress": false,
+        "SpVariable": [],
+        "SpVariableLimit": [],
+        "SpVariableName": [],
+        "IsShowSpVariableProgress": []
+    },
+    "900102": {
+        "Key": 900102,
+        "Id": 900102,
+        "TargetType": 10,
+        "Num": 5,
+        "SceneId": 9001,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "收集空中所有5个气球",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "qiqiu_get_num"
+        ],
+        "SpVariableLimit": [
+            "qiqiu_target_num"
+        ],
+        "SpVariableName": [
+            "已捕获的气球数量"
+        ],
+        "IsShowSpVariableProgress": []
+    },
     "920001": {
         "Key": 920001,
         "Id": 920001,
@@ -9581,14 +9619,10 @@
         "Param": [],
         "TargetPos": "",
         "IsTeamShare": false,
-        "TargetDes": "不被小伊发现，抵达终点线",
+        "TargetDes": "不被小伊发现，完成两轮往返跑",
         "IsShowProgress": false,
-        "SpVariable": [
-            "playernum1"
-        ],
-        "SpVariableLimit": [
-            "playernumMax1"
-        ],
+        "SpVariable": [],
+        "SpVariableLimit": [],
         "SpVariableName": [],
         "IsShowSpVariableProgress": []
     },
@@ -9601,14 +9635,10 @@
         "Param": [],
         "TargetPos": "",
         "IsTeamShare": false,
-        "TargetDes": "不被小伊发现，抵达光桥终点",
+        "TargetDes": "等待退出副本",
         "IsShowProgress": false,
-        "SpVariable": [
-            "playernum2"
-        ],
-        "SpVariableLimit": [
-            "playernumMax2"
-        ],
+        "SpVariable": [],
+        "SpVariableLimit": [],
         "SpVariableName": [],
         "IsShowSpVariableProgress": []
     },

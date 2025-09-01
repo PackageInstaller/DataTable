@@ -113122,6 +113122,43 @@
         "HideTrackBar": false,
         "TargetShareType": 0
     },
+    "50008001": {
+        "Key": 50008001,
+        "QuestStepId": 50008001,
+        "StepParam": [
+            [
+                310,
+                1,
+                8,
+                21701001,
+                50008001
+            ]
+        ],
+        "LuaJump": "",
+        "FailToStep": 0,
+        "CompleteToStep": 0,
+        "CompleteAllStep": [],
+        "NpcTalkChange": [],
+        "QuestItems": [],
+        "StepTips": "",
+        "QuestClickJump": 0,
+        "StepTargetType": 1,
+        "StepTargetCondition": [],
+        "StepTargetPos": [
+            [
+                "2",
+                "4287"
+            ]
+        ],
+        "StepMainTitle": "",
+        "StepTargetInfo": [
+            "找米莉亚了解“技能重置限时活动”"
+        ],
+        "DisableTransport": 0,
+        "FailCheck": [],
+        "HideTrackBar": false,
+        "TargetShareType": 0
+    },
     "70000002": {
         "Key": 70000002,
         "QuestStepId": 70000002,
@@ -155770,6 +155807,42 @@
         "HideTrackBar": false,
         "TargetShareType": 0
     },
+    "900101001": {
+        "Key": 900101001,
+        "QuestStepId": 900101001,
+        "StepParam": [
+            [
+                1,
+                1,
+                0,
+                9001
+            ]
+        ],
+        "LuaJump": "",
+        "FailToStep": 0,
+        "CompleteToStep": 0,
+        "CompleteAllStep": [],
+        "NpcTalkChange": [],
+        "QuestItems": [],
+        "StepTips": "",
+        "QuestClickJump": 0,
+        "StepTargetType": 3,
+        "StepTargetCondition": [],
+        "StepTargetPos": [
+            [
+                "0",
+                "0"
+            ]
+        ],
+        "StepMainTitle": "",
+        "StepTargetInfo": [
+            "收集水面上的云朵粒子，可以获得创建云朵的能力。\n<提示>：搭建云朵时，小心空中的悬浮炸弹"
+        ],
+        "DisableTransport": 0,
+        "FailCheck": [],
+        "HideTrackBar": false,
+        "TargetShareType": 0
+    },
     "1001201001": {
         "Key": 1001201001,
         "QuestStepId": 1001201001,
@@ -160249,5 +160322,221 @@
         "FailCheck": [],
         "HideTrackBar": false,
         "TargetShareType": 2
+    },
+    "1204001002": {
+        "Key": 1204001002,
+        "QuestStepId": 1204001002,
+        "StepParam": [
+            [
+                208,
+                1,
+                12040,
+                17
+            ]
+        ],
+        "LuaJump": "",
+        "FailToStep": 0,
+        "CompleteToStep": 1204001003,
+        "CompleteAllStep": [],
+        "NpcTalkChange": [],
+        "QuestItems": [],
+        "StepTips": "",
+        "QuestClickJump": 0,
+        "StepTargetType": 1,
+        "StepTargetCondition": [],
+        "StepTargetPos": [
+            [
+                "1",
+                "330"
+            ]
+        ],
+        "StepMainTitle": "",
+        "StepTargetInfo": [
+            "当前进度：前往对侧，节点进度(0/4)"
+        ],
+        "DisableTransport": 0,
+        "FailCheck": [],
+        "HideTrackBar": false,
+        "TargetShareType": 0
+    },
+    "1204001003": {
+        "Key": 1204001003,
+        "QuestStepId": 1204001003,
+        "StepParam": [
+            [
+                208,
+                1,
+                12040,
+                326
+            ]
+        ],
+        "LuaJump": "",
+        "FailToStep": 0,
+        "CompleteToStep": 1204001004,
+        "CompleteAllStep": [],
+        "NpcTalkChange": [],
+        "QuestItems": [],
+        "StepTips": "",
+        "QuestClickJump": 0,
+        "StepTargetType": 1,
+        "StepTargetCondition": [],
+        "StepTargetPos": [
+            [
+                "1",
+                "331"
+            ]
+        ],
+        "StepMainTitle": "",
+        "StepTargetInfo": [
+            "当前进度：返回起点，节点进度(1/4)"
+        ],
+        "DisableTransport": 0,
+        "FailCheck": [],
+        "HideTrackBar": false,
+        "TargetShareType": 0
+    },
+    "1204001004": {
+        "Key": 1204001004,
+        "QuestStepId": 1204001004,
+        "StepParam": [
+            [
+                208,
+                1,
+                12040,
+                17
+            ]
+        ],
+        "LuaJump": "",
+        "FailToStep": 0,
+        "CompleteToStep": 1204001006,
+        "CompleteAllStep": [],
+        "NpcTalkChange": [],
+        "QuestItems": [],
+        "StepTips": "",
+        "QuestClickJump": 0,
+        "StepTargetType": 1,
+        "StepTargetCondition": [],
+        "StepTargetPos": [
+            [
+                "1",
+                "330"
+            ]
+        ],
+        "StepMainTitle": "",
+        "StepTargetInfo": [
+            "当前进度：前往对侧，节点进度(2/4)"
+        ],
+        "DisableTransport": 0,
+        "FailCheck": [],
+        "HideTrackBar": false,
+        "TargetShareType": 0
+    },
+    "1204001005": {
+        "Key": 1204001005,
+        "QuestStepId": 1204001005,
+        "StepParam": [
+            [
+                1,
+                1,
+                0,
+                12040
+            ]
+        ],
+        "LuaJump": "",
+        "FailToStep": 0,
+        "CompleteToStep": 0,
+        "CompleteAllStep": [],
+        "NpcTalkChange": [],
+        "QuestItems": [],
+        "StepTips": "",
+        "QuestClickJump": 0,
+        "StepTargetType": 1,
+        "StepTargetCondition": [],
+        "StepTargetPos": [
+            [
+                "0",
+                "0"
+            ]
+        ],
+        "StepMainTitle": "",
+        "StepTargetInfo": [
+            "已完成游戏，可手动退出副本"
+        ],
+        "DisableTransport": 0,
+        "FailCheck": [],
+        "HideTrackBar": false,
+        "TargetShareType": 0
+    },
+    "1204001006": {
+        "Key": 1204001006,
+        "QuestStepId": 1204001006,
+        "StepParam": [
+            [
+                208,
+                1,
+                12040,
+                326
+            ]
+        ],
+        "LuaJump": "",
+        "FailToStep": 0,
+        "CompleteToStep": 1204001005,
+        "CompleteAllStep": [],
+        "NpcTalkChange": [],
+        "QuestItems": [],
+        "StepTips": "",
+        "QuestClickJump": 0,
+        "StepTargetType": 1,
+        "StepTargetCondition": [],
+        "StepTargetPos": [
+            [
+                "1",
+                "331"
+            ]
+        ],
+        "StepMainTitle": "",
+        "StepTargetInfo": [
+            "当前进度：返回起点，节点进度(3/4)"
+        ],
+        "DisableTransport": 0,
+        "FailCheck": [],
+        "HideTrackBar": false,
+        "TargetShareType": 0
+    },
+    "1204001007": {
+        "Key": 1204001007,
+        "QuestStepId": 1204001007,
+        "StepParam": [
+            [
+                208,
+                1,
+                12040,
+                336
+            ]
+        ],
+        "LuaJump": "",
+        "FailToStep": 0,
+        "CompleteToStep": 1204001002,
+        "CompleteAllStep": [],
+        "NpcTalkChange": [],
+        "QuestItems": [],
+        "StepTips": "",
+        "QuestClickJump": 0,
+        "StepTargetType": 1,
+        "StepTargetCondition": [],
+        "StepTargetPos": [
+            [
+                "0",
+                "0"
+            ]
+        ],
+        "StepMainTitle": "",
+        "StepTargetInfo": [
+            "当前进度：--"
+        ],
+        "DisableTransport": 0,
+        "FailCheck": [],
+        "HideTrackBar": false,
+        "TargetShareType": 0
     }
 }
