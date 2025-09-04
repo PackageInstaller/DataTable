@@ -11608,20 +11608,20 @@
             99999999
         ],
         "AutoSaleTime": [
-            300,
-            480,
-            600
+            5,
+            10,
+            14
         ],
         "AutoSaleTimeRate": [
             1,
             1,
             1
         ],
-        "AutoSaleLimit": 68,
+        "AutoSaleLimit": 468,
         "AutoSaleRate": 100,
         "AutoSaleNum": [
-            10,
-            60
+            1,
+            3
         ],
         "AutoSalePriceRange": [
             100,
@@ -11632,53 +11632,7 @@
         "RecycleRank": 0,
         "RecycleLimit": 0,
         "RecycleNunLimit": [],
-        "AdaptChange": [
-            [
-                0,
-                1,
-                0
-            ],
-            [
-                1,
-                10,
-                -200
-            ],
-            [
-                10,
-                20,
-                -160
-            ],
-            [
-                20,
-                30,
-                -120
-            ],
-            [
-                30,
-                40,
-                -80
-            ],
-            [
-                40,
-                50,
-                -40
-            ],
-            [
-                50,
-                70,
-                0
-            ],
-            [
-                70,
-                90,
-                30
-            ],
-            [
-                90,
-                -1,
-                50
-            ]
-        ],
+        "AdaptChange": [],
         "HideItem": false
     },
     "1024001": {
@@ -17228,7 +17182,7 @@
         "OrderLimt": 20,
         "PriceWatch": 0,
         "FitterId": [],
-        "AutoSale": 1,
+        "AutoSale": 0,
         "AutoSaleTimeLimit": 10127,
         "AutoSaleNumLimit": [
             23,

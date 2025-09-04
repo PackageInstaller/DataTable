@@ -7325,7 +7325,9 @@
         "TakeWeaponInSkill": true,
         "NeedScaleCamera": false,
         "SkillLearnBuffs": [],
-        "InstallSkillAddBuffs": []
+        "InstallSkillAddBuffs": [
+            44901
+        ]
     },
     "172001": {
         "Key": 172001,
@@ -19775,103 +19777,83 @@
             ],
             [
                 "冷却时间",
-                "{*skillpara.effectcd*}"
+                "{*skillpara.effectcd*}<br>"
             ],
             [
-                "「剑刃横扫」",
-                "效果"
-            ],
-            [
-                "总伤害",
+                "「剑刃横扫」<br>总伤害",
                 "{*skillpara.damageMerge({31004010200},{3},\"PVEDamageRadio\",\"up\")*}物/魔攻击力+{*skillpara.damageMerge({31004010200},{3},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({31004010200},{3},\"PVEStunnedDamage\",\"un\")*})"
             ],
             [
-                "格挡减伤提升",
+                "「剑刃横扫」格挡减伤提升",
                 "{*skillpara.effect(\"attrPer3914\",\"up\")*}"
             ],
             [
-                "持续时间",
+                "「剑刃横扫」格挡减伤持续时间",
                 "20秒"
             ],
             [
-                "目标防御力降低",
+                "「剑刃横扫」目标防御力降低",
                 "{*skillpara.effect(\"attrAdd3914\",\"un\")*}"
             ],
             [
-                "持续时间",
-                "10秒"
+                "「剑刃横扫」目标防御力降低持续时间",
+                "10秒<br>"
             ],
             [
-                "「乱射」",
-                "效果"
-            ],
-            [
-                "总伤害",
+                "「乱射」<br>总伤害",
                 "{*skillpara.damageMerge({11007300102},{4},\"PVEDamageRadio\",\"up\")*}物/魔攻击力+{*skillpara.damageMerge({11007300102},{4},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({11007300102},{4},\"PVEStunnedDamage\",\"un\")*})"
             ],
             [
-                "幸运提升",
+                "「乱射」幸运提升",
                 "{*skillpara.effect(\"attrAdd3915\",\"un\")*}"
             ],
             [
-                "幸运一击倍率提升",
+                "「乱射」幸运一击倍率提升",
                 "{*skillpara.effect(\"attrPer3915\",\"up\")*}"
             ],
             [
-                "持续时间",
-                "20秒"
+                "「乱射」持续时间",
+                "20秒<br>"
             ],
             [
-                "「怒吼指令」",
-                "效果"
-            ],
-            [
-                "总伤害",
+                "「怒吼指令」<br>总伤害",
                 "{*skillpara.damageMerge({2211006203},{1},\"PVEDamageRadio\",\"up\")*}物/魔攻击力+{*skillpara.damageMerge({2211006203},{1},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({2211006203},{1},\"PVEStunnedDamage\",\"un\")*})"
             ],
             [
-                "力量提升",
+                "「怒吼指令」力量提升",
                 "{*skillpara.effect(\"attrPer3927\",\"up\")*}"
             ],
             [
-                "持续时间",
-                "20秒"
+                "「怒吼指令」持续时间",
+                "20秒<br>"
             ],
             [
-                "「旋风打击」",
-                "效果"
-            ],
-            [
-                "总伤害",
+                "「旋风打击」<br>总伤害",
                 "{*skillpara.damageMerge({110086410103},{10},\"PVEDamageRadio\",\"up\")*}物/魔攻击力+{*skillpara.damageMerge({110086410103},{10},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({110086410103},{10},\"PVEStunnedDamage\",\"un\")*})"
             ],
             [
-                "风元素加成",
+                "「旋风打击」风元素加成",
                 "{*skillpara.effect(\"attrPer3940\",\"up\")*}"
             ],
             [
-                "持续时间",
-                "20秒"
+                "「旋风打击」持续时间",
+                "20秒<br>"
             ],
             [
-                "「流星陨落」",
-                "效果"
-            ],
-            [
-                "总伤害",
+                "「流星陨落」<br>总伤害",
                 "{*skillpara.damageMerge({136990101},{5},\"PVEDamageRadio\",\"up\")*}物/魔攻击力+{*skillpara.damageMerge({136990101},{5},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({136990101},{5},\"PVEStunnedDamage\",\"un\")*})"
             ],
             [
-                "幸运提升",
+                "「流星陨落」幸运提升",
                 "{*skillpara.effect(\"attrAdd3926\",\"un\")*}"
             ],
             [
-                "幸运效果提升",
+                "「流星陨落」幸运效果提升",
                 "{*skillpara.effect(\"attrPer3926\",\"up\")*}"
             ],
             [
-                "持续时间",
-                "20秒"
+                "「流星陨落」持续时间",
+                "20秒<br>"
             ]
         ],
         "MaxHorizontalMotionDis": 0,

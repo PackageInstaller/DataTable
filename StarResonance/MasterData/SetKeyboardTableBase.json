@@ -4,22 +4,18 @@
         "Id": 1,
         "ActionIds": [
             [
-                40
+                23
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "交互",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 25,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1002
-        ],
-        "XBOX": [
-            2002
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -31,91 +27,18 @@
                 1
             ]
         ],
-        "MapCategoryId": 1,
-        "SetDes": "向前移动",
+        "SchemeId": 1,
+        "NameRule": 0,
+        "SetDes": "移动",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 3,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [
+            1,
+            0
+        ],
         "Quickdescription": 0,
-        "PS5": [
-            1009
-        ],
-        "XBOX": [
-            2009
-        ],
-        "ShowList": 0,
-        "GoBack": "0"
-    },
-    "3": {
-        "Key": 3,
-        "Id": 3,
-        "ActionIds": [
-            [
-                59
-            ]
-        ],
-        "MapCategoryId": 1,
-        "SetDes": "向后移动",
-        "KeyboardDes": 1,
-        "FunctionId": 0,
-        "Sort": 4,
-        "ShowSwitch": 0,
-        "Quickdescription": 0,
-        "PS5": [
-            1009
-        ],
-        "XBOX": [
-            2009
-        ],
-        "ShowList": 0,
-        "GoBack": "0"
-    },
-    "4": {
-        "Key": 4,
-        "Id": 4,
-        "ActionIds": [
-            [
-                58
-            ]
-        ],
-        "MapCategoryId": 1,
-        "SetDes": "向左移动",
-        "KeyboardDes": 1,
-        "FunctionId": 0,
-        "Sort": 5,
-        "ShowSwitch": 0,
-        "Quickdescription": 0,
-        "PS5": [
-            1009
-        ],
-        "XBOX": [
-            2009
-        ],
-        "ShowList": 0,
-        "GoBack": "0"
-    },
-    "5": {
-        "Key": 5,
-        "Id": 5,
-        "ActionIds": [
-            [
-                0
-            ]
-        ],
-        "MapCategoryId": 1,
-        "SetDes": "向右移动",
-        "KeyboardDes": 1,
-        "FunctionId": 0,
-        "Sort": 6,
-        "ShowSwitch": 0,
-        "Quickdescription": 0,
-        "PS5": [
-            1009
-        ],
-        "XBOX": [
-            2009
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -124,22 +47,21 @@
         "Id": 6,
         "ActionIds": [
             [
-                3
+                2
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "走/跑切换",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 7,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [
+            1,
+            0
+        ],
         "Quickdescription": 1,
-        "PS5": [
-            1009
-        ],
-        "XBOX": [
-            2009
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -148,22 +70,18 @@
         "Id": 7,
         "ActionIds": [
             [
-                4
+                3
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "跳跃",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 8,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 1,
-        "PS5": [
-            1002
-        ],
-        "XBOX": [
-            2002
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -172,25 +90,18 @@
         "Id": 8,
         "ActionIds": [
             [
-                5
-            ],
-            [
-                57
+                4
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "冲刺",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 9,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 1,
-        "PS5": [
-            1001
-        ],
-        "XBOX": [
-            2001
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -199,24 +110,18 @@
         "Id": 9,
         "ActionIds": [
             [
-                6
+                5
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "环境共鸣能力1",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 10,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1005,
-            1004
-        ],
-        "XBOX": [
-            2005,
-            2004
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -225,24 +130,18 @@
         "Id": 10,
         "ActionIds": [
             [
-                7
+                6
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "环境共鸣能力2",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 11,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1005,
-            1002
-        ],
-        "XBOX": [
-            2005,
-            2002
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -251,22 +150,18 @@
         "Id": 11,
         "ActionIds": [
             [
-                8
+                7
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "普通攻击",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 12,
-        "ShowSwitch": 1,
+        "HideInSettingView": 1,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1003
-        ],
-        "XBOX": [
-            2003
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -275,24 +170,18 @@
         "Id": 12,
         "ActionIds": [
             [
-                9
+                8
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "技能1",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 14,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1007,
-            1003
-        ],
-        "XBOX": [
-            2007,
-            2003
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -301,24 +190,18 @@
         "Id": 13,
         "ActionIds": [
             [
-                10
+                9
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "技能2",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 15,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1007,
-            1001
-        ],
-        "XBOX": [
-            2007,
-            2001
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -327,24 +210,18 @@
         "Id": 14,
         "ActionIds": [
             [
-                11
+                10
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "技能3",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 16,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1007,
-            1002
-        ],
-        "XBOX": [
-            2007,
-            2002
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -353,24 +230,18 @@
         "Id": 15,
         "ActionIds": [
             [
-                109
+                11
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "技能4",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 17,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1007,
-            1004
-        ],
-        "XBOX": [
-            2007,
-            2004
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -379,22 +250,18 @@
         "Id": 17,
         "ActionIds": [
             [
-                113
+                108
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "左切药水",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 22,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1018
-        ],
-        "XBOX": [
-            2018
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -403,25 +270,18 @@
         "Id": 23,
         "ActionIds": [
             [
-                94
-            ],
-            [
-                19
+                17
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "锁定/切换",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 25,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 1,
-        "PS5": [
-            1012
-        ],
-        "XBOX": [
-            2012
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -430,22 +290,18 @@
         "Id": 25,
         "ActionIds": [
             [
-                88
+                51
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "额外技能",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 26,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1006
-        ],
-        "XBOX": [
-            2006
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -454,22 +310,18 @@
         "Id": 26,
         "ActionIds": [
             [
-                21
+                18
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "解除交互",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 27,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1006
-        ],
-        "XBOX": [
-            2006
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -478,18 +330,18 @@
         "Id": 27,
         "ActionIds": [
             [
-                37
+                22
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "任务目标追踪",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 27,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -498,22 +350,18 @@
         "Id": 28,
         "ActionIds": [
             [
-                22
+                19
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "快捷使用任务道具",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 28,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1010
-        ],
-        "XBOX": [
-            2010
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -525,15 +373,15 @@
                 23
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "攀爬下落",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 29,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -545,15 +393,15 @@
                 65
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "天赋技能1",
         "KeyboardDes": 2,
         "FunctionId": 0,
         "Sort": 18,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": ""
     },
@@ -565,15 +413,15 @@
                 66
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "天赋技能2",
         "KeyboardDes": 2,
         "FunctionId": 0,
         "Sort": 19,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": ""
     },
@@ -582,18 +430,18 @@
         "Id": 33,
         "ActionIds": [
             [
-                64
+                40
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "天赋",
         "KeyboardDes": 2,
         "FunctionId": 104200,
         "Sort": 44,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -602,24 +450,18 @@
         "Id": 34,
         "ActionIds": [
             [
-                121
+                77
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "自动战斗",
         "KeyboardDes": 0,
         "FunctionId": 0,
         "Sort": 135,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 1,
-        "PS5": [
-            1007,
-            1010
-        ],
-        "XBOX": [
-            2007,
-            2010
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -628,22 +470,21 @@
         "Id": 101,
         "ActionIds": [
             [
-                25
+                26
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "开/关地图",
         "KeyboardDes": 2,
         "FunctionId": 0,
         "Sort": 31,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [
+            1,
+            0
+        ],
         "Quickdescription": 2,
-        "PS5": [
-            1020
-        ],
-        "XBOX": [
-            2014
-        ],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -652,22 +493,21 @@
         "Id": 102,
         "ActionIds": [
             [
-                27
+                29
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "聊天",
         "KeyboardDes": 2,
         "FunctionId": 0,
         "Sort": 33,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [
+            1,
+            0
+        ],
         "Quickdescription": 0,
-        "PS5": [
-            1020
-        ],
-        "XBOX": [
-            2014
-        ],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -676,18 +516,18 @@
         "Id": 103,
         "ActionIds": [
             [
-                119
+                69
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "快捷聊天",
         "KeyboardDes": 2,
         "FunctionId": 0,
         "Sort": 33,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -696,18 +536,18 @@
         "Id": 104,
         "ActionIds": [
             [
-                28
+                30
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "人物",
         "KeyboardDes": 2,
         "FunctionId": 200001,
         "Sort": 34,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 3,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -716,18 +556,18 @@
         "Id": 105,
         "ActionIds": [
             [
-                134
+                84
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "协会",
         "KeyboardDes": 2,
         "FunctionId": 500100,
         "Sort": 35,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 2,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -739,15 +579,15 @@
                 33
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "组队",
         "KeyboardDes": 2,
         "FunctionId": 101001,
         "Sort": 39,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 3,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -756,18 +596,18 @@
         "Id": 107,
         "ActionIds": [
             [
-                30
+                32
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "背包",
         "KeyboardDes": 2,
         "FunctionId": 100101,
         "Sort": 37,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 2,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -776,22 +616,18 @@
         "Id": 108,
         "ActionIds": [
             [
-                39
+                36
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "综合菜单",
         "KeyboardDes": 2,
         "FunctionId": 200000,
         "Sort": 38,
-        "ShowSwitch": 1,
+        "HideInSettingView": 1,
+        "CanChange": [],
         "Quickdescription": 3,
-        "PS5": [
-            1013
-        ],
-        "XBOX": [
-            2013
-        ],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -800,18 +636,18 @@
         "Id": 109,
         "ActionIds": [
             [
-                110
+                61
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "推荐活动",
         "KeyboardDes": 2,
         "FunctionId": 800502,
         "Sort": 30,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 3,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -820,18 +656,18 @@
         "Id": 111,
         "ActionIds": [
             [
-                35
+                34
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "赛季中心",
         "KeyboardDes": 2,
         "FunctionId": 800500,
         "Sort": 40,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 3,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -840,24 +676,18 @@
         "Id": 112,
         "ActionIds": [
             [
-                36
+                35
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "退出副本",
         "KeyboardDes": 2,
         "FunctionId": 100401,
         "Sort": 41,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 3,
-        "PS5": [
-            1005,
-            1013
-        ],
-        "XBOX": [
-            2005,
-            2013
-        ],
         "ShowList": 1,
         "GoBack": ""
     },
@@ -869,15 +699,15 @@
                 63
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "商城",
         "KeyboardDes": 2,
         "FunctionId": 800800,
         "Sort": 43,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -886,24 +716,18 @@
         "Id": 115,
         "ActionIds": [
             [
-                123
+                73
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "呼出/关闭快捷轮盘",
         "KeyboardDes": 1,
         "FunctionId": 102250,
         "Sort": 137,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 2,
-        "PS5": [
-            1005,
-            1010
-        ],
-        "XBOX": [
-            2005,
-            2010
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -912,18 +736,18 @@
         "Id": 116,
         "ActionIds": [
             [
-                49
+                37
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "呼出鼠标",
         "KeyboardDes": 0,
         "FunctionId": 0,
         "Sort": 1,
-        "ShowSwitch": 1,
+        "HideInSettingView": 1,
+        "CanChange": [],
         "Quickdescription": 1,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": ""
     },
@@ -932,22 +756,18 @@
         "Id": 117,
         "ActionIds": [
             [
-                80
+                44
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "道具快捷使用",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 45,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1010
-        ],
-        "XBOX": [
-            2010
-        ],
         "ShowList": 1,
         "GoBack": ""
     },
@@ -956,24 +776,18 @@
         "Id": 118,
         "ActionIds": [
             [
-                26
+                28
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "任务",
         "KeyboardDes": 2,
         "FunctionId": 600100,
         "Sort": 32,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1006,
-            1018
-        ],
-        "XBOX": [
-            2006,
-            2018
-        ],
         "ShowList": 1,
         "GoBack": "1"
     },
@@ -982,24 +796,18 @@
         "Id": 119,
         "ActionIds": [
             [
-                83
+                47
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "大招",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 18,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1007,
-            1008
-        ],
-        "XBOX": [
-            2007,
-            2008
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -1008,22 +816,18 @@
         "Id": 120,
         "ActionIds": [
             [
-                84
+                48
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "特技",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 13,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1004
-        ],
-        "XBOX": [
-            2004
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1032,22 +836,18 @@
         "Id": 121,
         "ActionIds": [
             [
-                14
+                13
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "使用药水1",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 23,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1016
-        ],
-        "XBOX": [
-            2016
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -1056,22 +856,18 @@
         "Id": 122,
         "ActionIds": [
             [
-                114
+                109
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "右切药水",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 24,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1019
-        ],
-        "XBOX": [
-            2019
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -1080,24 +876,18 @@
         "Id": 123,
         "ActionIds": [
             [
-                86
+                50
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "共鸣技能2",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 21,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1005,
-            1001
-        ],
-        "XBOX": [
-            2005,
-            2001
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -1106,24 +896,18 @@
         "Id": 124,
         "ActionIds": [
             [
-                116
+                66
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "快捷说明",
         "KeyboardDes": 2,
         "FunctionId": 106001,
         "Sort": 45,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 3,
-        "PS5": [
-            1006,
-            1020
-        ],
-        "XBOX": [
-            2006,
-            2014
-        ],
         "ShowList": 1,
         "GoBack": "1"
     },
@@ -1132,22 +916,18 @@
         "Id": 125,
         "ActionIds": [
             [
-                8
+                7
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "抛竿/收竿",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 125,
-        "ShowSwitch": 1,
+        "HideInSettingView": 1,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1003
-        ],
-        "XBOX": [
-            2003
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1155,19 +935,15 @@
         "Key": 126,
         "Id": 126,
         "ActionIds": [],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "拍照时向上平移相机",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 126,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1016
-        ],
-        "XBOX": [
-            2016
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1175,19 +951,15 @@
         "Key": 127,
         "Id": 127,
         "ActionIds": [],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "拍照时向下平移相机",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 127,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1017
-        ],
-        "XBOX": [
-            2017
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1195,19 +967,15 @@
         "Key": 128,
         "Id": 128,
         "ActionIds": [],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "拍照时向左平移相机",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 128,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1018
-        ],
-        "XBOX": [
-            2018
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1215,19 +983,15 @@
         "Key": 129,
         "Id": 129,
         "ActionIds": [],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "拍照时向右平移相机",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 129,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1019
-        ],
-        "XBOX": [
-            2019
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1236,24 +1000,18 @@
         "Id": 130,
         "ActionIds": [
             [
-                85
+                49
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "共鸣技能1",
         "KeyboardDes": 2,
         "FunctionId": 0,
         "Sort": 20,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1005,
-            1003
-        ],
-        "XBOX": [
-            2005,
-            2003
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -1262,24 +1020,18 @@
         "Id": 131,
         "ActionIds": [
             [
-                111
+                62
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "召唤/解除载具幻想",
         "KeyboardDes": 2,
         "FunctionId": 102803,
         "Sort": 131,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1006,
-            1010
-        ],
-        "XBOX": [
-            2006,
-            2010
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -1288,18 +1040,18 @@
         "Id": 132,
         "ActionIds": [
             [
-                115
+                65
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "组队语音切换",
         "KeyboardDes": 0,
         "FunctionId": 0,
         "Sort": 132,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1308,18 +1060,18 @@
         "Id": 133,
         "ActionIds": [
             [
-                118
+                68
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "拒绝邀请",
         "KeyboardDes": 0,
         "FunctionId": 0,
         "Sort": 134,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1328,18 +1080,18 @@
         "Id": 134,
         "ActionIds": [
             [
-                117
+                67
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "同意邀请",
         "KeyboardDes": 0,
         "FunctionId": 0,
         "Sort": 133,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1348,24 +1100,18 @@
         "Id": 135,
         "ActionIds": [
             [
-                120
+                70
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "分线",
         "KeyboardDes": 2,
         "FunctionId": 101010,
         "Sort": 135,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1005,
-            1013
-        ],
-        "XBOX": [
-            2005,
-            2013
-        ],
         "ShowList": 1,
         "GoBack": "1"
     },
@@ -1374,24 +1120,18 @@
         "Id": 136,
         "ActionIds": [
             [
-                122
+                72
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "图文引导",
         "KeyboardDes": 2,
         "FunctionId": 0,
         "Sort": 136,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1007,
-            1013
-        ],
-        "XBOX": [
-            2007,
-            2013
-        ],
         "ShowList": 1,
         "GoBack": "0"
     },
@@ -1400,18 +1140,18 @@
         "Id": 137,
         "ActionIds": [
             [
-                150
+                99
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "自动奔跑",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 137,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 1,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1420,22 +1160,18 @@
         "Id": 138,
         "ActionIds": [
             [
-                132
+                82
             ]
         ],
-        "MapCategoryId": 21,
+        "SchemeId": 4,
+        "NameRule": 0,
         "SetDes": "编辑快捷轮盘",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 138,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1003
-        ],
-        "XBOX": [
-            2003
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1444,22 +1180,18 @@
         "Id": 139,
         "ActionIds": [
             [
-                133
+                83
             ]
         ],
-        "MapCategoryId": 21,
+        "SchemeId": 4,
+        "NameRule": 0,
         "SetDes": "切换快捷轮盘",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 139,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1004
-        ],
-        "XBOX": [
-            2004
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1468,24 +1200,18 @@
         "Id": 140,
         "ActionIds": [
             [
-                29
+                31
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "拍照",
         "KeyboardDes": 2,
         "FunctionId": 102001,
         "Sort": 35,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 2,
-        "PS5": [
-            1006,
-            1013
-        ],
-        "XBOX": [
-            2006,
-            2013
-        ],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -1494,18 +1220,18 @@
         "Id": 141,
         "ActionIds": [
             [
-                135
+                85
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "技能",
         "KeyboardDes": 1,
         "FunctionId": 200500,
         "Sort": 294,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 2,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -1514,18 +1240,18 @@
         "Id": 142,
         "ActionIds": [
             [
-                136
+                86
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "装备",
         "KeyboardDes": 1,
         "FunctionId": 100701,
         "Sort": 295,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 2,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "1"
     },
@@ -1534,24 +1260,18 @@
         "Id": 143,
         "ActionIds": [
             [
-                24
+                21
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "隐藏UI",
         "KeyboardDes": 1,
         "FunctionId": 333334,
         "Sort": 27,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 2,
-        "PS5": [
-            1005,
-            1020
-        ],
-        "XBOX": [
-            2005,
-            2014
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1560,18 +1280,18 @@
         "Id": 144,
         "ActionIds": [
             [
-                138
+                87
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "装备界面查看详情",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 144,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1580,18 +1300,18 @@
         "Id": 145,
         "ActionIds": [
             [
-                139
+                88
             ]
         ],
-        "MapCategoryId": 22,
+        "SchemeId": 5,
+        "NameRule": 0,
         "SetDes": "查看钓鱼等级",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 145,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1600,18 +1320,18 @@
         "Id": 146,
         "ActionIds": [
             [
-                140
+                89
             ]
         ],
-        "MapCategoryId": 22,
+        "SchemeId": 5,
+        "NameRule": 0,
         "SetDes": "钓鱼研究",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 146,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1620,18 +1340,18 @@
         "Id": 147,
         "ActionIds": [
             [
-                141
+                90
             ]
         ],
-        "MapCategoryId": 22,
+        "SchemeId": 5,
+        "NameRule": 0,
         "SetDes": "添加鱼饵",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 147,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1640,18 +1360,18 @@
         "Id": 148,
         "ActionIds": [
             [
-                142
+                91
             ]
         ],
-        "MapCategoryId": 22,
+        "SchemeId": 5,
+        "NameRule": 0,
         "SetDes": "添加鱼竿",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 148,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1660,18 +1380,18 @@
         "Id": 149,
         "ActionIds": [
             [
-                143
+                92
             ]
         ],
-        "MapCategoryId": 22,
+        "SchemeId": 5,
+        "NameRule": 0,
         "SetDes": "点击钓鱼，收杆",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 149,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1680,18 +1400,18 @@
         "Id": 150,
         "ActionIds": [
             [
-                144
+                93
             ]
         ],
-        "MapCategoryId": 22,
+        "SchemeId": 5,
+        "NameRule": 0,
         "SetDes": "钓鱼引导",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 150,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1700,18 +1420,18 @@
         "Id": 151,
         "ActionIds": [
             [
-                145
+                94
             ]
         ],
-        "MapCategoryId": 22,
+        "SchemeId": 5,
+        "NameRule": 0,
         "SetDes": "钓鱼设置",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 151,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1720,18 +1440,18 @@
         "Id": 152,
         "ActionIds": [
             [
-                146
+                95
             ]
         ],
-        "MapCategoryId": 22,
+        "SchemeId": 5,
+        "NameRule": 0,
         "SetDes": "玩家信息",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 152,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1740,18 +1460,18 @@
         "Id": 153,
         "ActionIds": [
             [
-                149
+                98
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "家园编辑器入口",
         "KeyboardDes": 2,
         "FunctionId": 102501,
         "Sort": 153,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1760,18 +1480,18 @@
         "Id": 154,
         "ActionIds": [
             [
-                153
+                100
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "长按导航",
         "KeyboardDes": 2,
         "FunctionId": 102900,
         "Sort": 154,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1780,18 +1500,18 @@
         "Id": 155,
         "ActionIds": [
             [
-                154
+                101
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "聊天频道切换",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 154,
-        "ShowSwitch": 2,
-        "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
+        "HideInSettingView": 2,
+        "CanChange": [],
+        "Quickdescription": 2,
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1800,24 +1520,18 @@
         "Id": 156,
         "ActionIds": [
             [
-                159
+                106
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "任务栏左切",
         "KeyboardDes": 0,
         "FunctionId": 0,
         "Sort": 140,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1005,
-            1018
-        ],
-        "XBOX": [
-            1005,
-            1019
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1826,24 +1540,18 @@
         "Id": 157,
         "ActionIds": [
             [
-                160
+                107
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "任务栏右切",
         "KeyboardDes": 0,
         "FunctionId": 0,
         "Sort": 141,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            2005,
-            2018
-        ],
-        "XBOX": [
-            2005,
-            2019
-        ],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1852,102 +1560,18 @@
         "Id": 158,
         "ActionIds": [
             [
-                62
+                38
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "交互导航",
         "KeyboardDes": 0,
         "FunctionId": 0,
         "Sort": 158,
-        "ShowSwitch": 2,
+        "HideInSettingView": 2,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [
-            1012
-        ],
-        "XBOX": [
-            2012
-        ],
-        "ShowList": 0,
-        "GoBack": "0"
-    },
-    "161": {
-        "Key": 161,
-        "Id": 161,
-        "ActionIds": [
-            [
-                161
-            ]
-        ],
-        "MapCategoryId": 1,
-        "SetDes": "切换至上一个消息发送频道",
-        "KeyboardDes": 0,
-        "FunctionId": 0,
-        "Sort": 161,
-        "ShowSwitch": 2,
-        "Quickdescription": 2,
-        "PS5": [],
-        "XBOX": [],
-        "ShowList": 0,
-        "GoBack": "0"
-    },
-    "162": {
-        "Key": 162,
-        "Id": 162,
-        "ActionIds": [
-            [
-                162
-            ]
-        ],
-        "MapCategoryId": 1,
-        "SetDes": "切换至下一个消息发送频道",
-        "KeyboardDes": 0,
-        "FunctionId": 0,
-        "Sort": 162,
-        "ShowSwitch": 2,
-        "Quickdescription": 2,
-        "PS5": [],
-        "XBOX": [],
-        "ShowList": 0,
-        "GoBack": "0"
-    },
-    "163": {
-        "Key": 163,
-        "Id": 163,
-        "ActionIds": [
-            [
-                163
-            ]
-        ],
-        "MapCategoryId": 1,
-        "SetDes": "查看上一个聊天频道",
-        "KeyboardDes": 0,
-        "FunctionId": 0,
-        "Sort": 163,
-        "ShowSwitch": 2,
-        "Quickdescription": 2,
-        "PS5": [],
-        "XBOX": [],
-        "ShowList": 0,
-        "GoBack": "0"
-    },
-    "164": {
-        "Key": 164,
-        "Id": 164,
-        "ActionIds": [
-            [
-                164
-            ]
-        ],
-        "MapCategoryId": 1,
-        "SetDes": "查看下一个聊天频道",
-        "KeyboardDes": 0,
-        "FunctionId": 0,
-        "Sort": 164,
-        "ShowSwitch": 2,
-        "Quickdescription": 2,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1956,18 +1580,18 @@
         "Id": 286,
         "ActionIds": [
             [
-                124
+                74
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "快捷轮盘1号位",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 286,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1976,18 +1600,18 @@
         "Id": 287,
         "ActionIds": [
             [
-                125
+                75
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "快捷轮盘2号位",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 287,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -1996,18 +1620,18 @@
         "Id": 288,
         "ActionIds": [
             [
-                126
+                76
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "快捷轮盘3号位",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 288,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -2016,18 +1640,18 @@
         "Id": 289,
         "ActionIds": [
             [
-                127
+                77
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "快捷轮盘4号位",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 289,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -2036,18 +1660,18 @@
         "Id": 290,
         "ActionIds": [
             [
-                128
+                78
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "快捷轮盘5号位",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 290,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -2056,18 +1680,18 @@
         "Id": 291,
         "ActionIds": [
             [
-                129
+                79
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "快捷轮盘6号位",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 291,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -2076,18 +1700,18 @@
         "Id": 292,
         "ActionIds": [
             [
-                130
+                80
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "快捷轮盘7号位",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 292,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     },
@@ -2096,18 +1720,18 @@
         "Id": 293,
         "ActionIds": [
             [
-                131
+                81
             ]
         ],
-        "MapCategoryId": 1,
+        "SchemeId": 1,
+        "NameRule": 0,
         "SetDes": "快捷轮盘8号位",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 293,
-        "ShowSwitch": 0,
+        "HideInSettingView": 0,
+        "CanChange": [],
         "Quickdescription": 0,
-        "PS5": [],
-        "XBOX": [],
         "ShowList": 0,
         "GoBack": "0"
     }

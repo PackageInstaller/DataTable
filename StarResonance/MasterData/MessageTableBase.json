@@ -1202,7 +1202,7 @@
     "1029": {
         "Key": 1029,
         "Id": 1029,
-        "Content": "登录异常，请20秒之后再次尝试",
+        "Content": "登录异常，请5分钟之后再次尝试",
         "Type": 10,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -3427,6 +3427,31 @@
     "2333": {
         "Key": 2333,
         "Id": 2333,
+        "Content": "当前不可使用玩具道具",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "2334": {
+        "Key": 2334,
+        "Id": 2334,
         "Content": "本赛季生活职业专精点获得已达上限，无法继续获得专精点。",
         "Type": 10,
         "DurationTime": 2.5,
@@ -19824,6 +19849,31 @@
         "VoiceControlEvent": "",
         "WaitVoiceFinish": false
     },
+    "5021": {
+        "Key": 5021,
+        "Id": 5021,
+        "Content": "战斗幻想/意志的单次分解数量超过上限了！",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
     "5101": {
         "Key": 5101,
         "Id": 5101,
@@ -24954,6 +25004,31 @@
         "VoiceControlEvent": "",
         "WaitVoiceFinish": false
     },
+    "6512": {
+        "Key": 6512,
+        "Id": 6512,
+        "Content": "模组的单次分解数量超过上限了！",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
     "6551": {
         "Key": 6551,
         "Id": 6551,
@@ -27283,6 +27358,31 @@
         "Key": 7060,
         "Id": 7060,
         "Content": "祝福道具数量超出上限！",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7065": {
+        "Key": 7065,
+        "Id": 7065,
+        "Content": "装备的单次分解数量超过上限了！",
         "Type": 10,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -35308,6 +35408,56 @@
         "Key": 150043,
         "Id": 150043,
         "Content": "当前职业技能都是1级、0阶，无需重置！",
+        "Type": 10,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "150044": {
+        "Key": 150044,
+        "Id": 150044,
+        "Content": "您添加用于分解的道具已达单次分解的最高数量限制，不能再继续添加了！",
+        "Type": 10,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "150045": {
+        "Key": 150045,
+        "Id": 150045,
+        "Content": "您添加用于分解的道具已超过单次分解的最高数量限制，无法分解，请分批次进行分解！",
         "Type": 10,
         "DurationTime": 2,
         "ChatName": "",
