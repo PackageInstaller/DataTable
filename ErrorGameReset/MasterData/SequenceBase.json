@@ -1,0 +1,568 @@
+[
+    {
+        "id": 1,
+        "name": "HOME",
+        "type": 0,
+        "parent": 0,
+        "hide_list": [
+            1,
+            2,
+            3
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab002&article000637"
+    },
+    {
+        "id": 101,
+        "name": "劇情",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab019&article000738"
+    },
+    {
+        "id": 102,
+        "name": "選擇主劇情章節",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab019&article000738"
+    },
+    {
+        "id": 103,
+        "name": "選擇主劇情故事",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab019&article000738"
+    },
+    {
+        "id": 104,
+        "name": "選擇CAST",
+        "type": 1,
+        "parent": 101,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab019&article000738"
+    },
+    {
+        "id": 105,
+        "name": "選擇CAST劇情",
+        "type": 1,
+        "parent": 104,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab019&article000738"
+    },
+    {
+        "id": 106,
+        "name": "選擇活動",
+        "type": 1,
+        "parent": 101,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6,
+            8
+        ]
+    },
+    {
+        "id": 107,
+        "name": "其他",
+        "type": 1,
+        "parent": 101,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6,
+            8
+        ]
+    },
+    {
+        "id": 108,
+        "name": "主劇情年表",
+        "type": 1,
+        "parent": 101,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6,
+            8
+        ]
+    },
+    {
+        "id": 201,
+        "name": "CAST",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab003&article000641"
+    },
+    {
+        "id": 202,
+        "name": "CAST",
+        "type": 1,
+        "parent": 201,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab003&article000641"
+    },
+    {
+        "id": 251,
+        "name": "模型",
+        "type": 1,
+        "parent": 901,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab004&article000657"
+    },
+    {
+        "id": 252,
+        "name": "模型",
+        "type": 1,
+        "parent": 901,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab004&article000657"
+    },
+    {
+        "id": 261,
+        "name": "飾品",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab005&article000661"
+    },
+    {
+        "id": 262,
+        "name": "飾品",
+        "type": 1,
+        "parent": 261,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab005&article000661"
+    },
+    {
+        "id": 301,
+        "name": "任務選擇器",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab008&article000685"
+    },
+    {
+        "id": 302,
+        "name": "支線任務",
+        "type": 1,
+        "parent": 301,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab009&article000687"
+    },
+    {
+        "id": 303,
+        "name": "基礎研修",
+        "type": 1,
+        "parent": 310,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab010&article000689"
+    },
+    {
+        "id": 304,
+        "name": "活動",
+        "type": 1,
+        "parent": 301,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab013&article000784"
+    },
+    {
+        "id": 305,
+        "name": "技術部迷宮",
+        "type": 1,
+        "parent": 301,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab012&article000705"
+    },
+    {
+        "id": 306,
+        "name": "董事競技場",
+        "type": 1,
+        "parent": 311,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab011&article000692"
+    },
+    {
+        "id": 307,
+        "name": "代表董事競技場",
+        "type": 1,
+        "parent": 311,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab001&article000632"
+    },
+    {
+        "id": 308,
+        "name": "應用研修",
+        "type": 1,
+        "parent": 310,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab010&article000689"
+    },
+    {
+        "id": 309,
+        "name": "",
+        "type": 1,
+        "parent": 301,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab001&article000632"
+    },
+    {
+        "id": 310,
+        "name": "研修",
+        "type": 1,
+        "parent": 301,
+        "hide_list": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    {
+        "id": 311,
+        "name": "競技場",
+        "type": 1,
+        "parent": 301,
+        "hide_list": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    {
+        "id": 312,
+        "name": "R.A.I.S.",
+        "type": 1,
+        "parent": 301,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab013&article001586"
+    },
+    {
+        "id": 313,
+        "name": "",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    {
+        "id": 401,
+        "name": "開發課",
+        "type": 0,
+        "parent": 0,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab017&article000732"
+    },
+    {
+        "id": 402,
+        "name": "成員資訊",
+        "type": 0,
+        "parent": 401,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab017&article000732"
+    },
+    {
+        "id": 403,
+        "name": "加入開發課",
+        "type": 0,
+        "parent": 401,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab017&article000732"
+    },
+    {
+        "id": 404,
+        "name": "開發課資訊",
+        "type": 0,
+        "parent": 401,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab017&article000732"
+    },
+    {
+        "id": 405,
+        "name": "開發課死鬥場",
+        "type": 1,
+        "parent": 401,
+        "hide_list": [
+            3
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab018&article000792"
+    },
+    {
+        "id": 406,
+        "name": "活動",
+        "type": 1,
+        "parent": 301,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab013&article001000"
+    },
+    {
+        "id": 501,
+        "name": "收藏",
+        "type": 0,
+        "parent": 0,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab021&article000742"
+    },
+    {
+        "id": 601,
+        "name": "轉蛋",
+        "type": 0,
+        "parent": 0,
+        "hide_list": [
+            8
+        ]
+    },
+    {
+        "id": 701,
+        "name": "儲備品兌換所",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab016&article000731"
+    },
+    {
+        "id": 801,
+        "name": "職員業務",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [
+            8
+        ]
+    },
+    {
+        "id": 810,
+        "name": "",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [
+            8
+        ]
+    },
+    {
+        "id": 901,
+        "name": "裝備品",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab004&article000657"
+    },
+    {
+        "id": 1001,
+        "name": "遊戲年表",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab020&article000740"
+    },
+    {
+        "id": 1101,
+        "name": "編組",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab006&article000669"
+    },
+    {
+        "id": 1201,
+        "name": "",
+        "type": 0,
+        "parent": 0,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab002&article000637"
+    },
+    {
+        "id": 1301,
+        "name": "培育協定",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab035&article001708"
+    },
+    {
+        "id": 9001,
+        "name": "選項",
+        "type": 1,
+        "parent": 0,
+        "hide_list": [
+            3
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab032&article000780"
+    },
+    {
+        "id": 9020,
+        "name": "道具一覽",
+        "type": 1,
+        "parent": 9001,
+        "hide_list": [
+            3
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab031&article000774"
+    },
+    {
+        "id": 9021,
+        "name": "同事",
+        "type": 1,
+        "parent": 9001,
+        "hide_list": [
+            3
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab027&article000767"
+    },
+    {
+        "id": 9022,
+        "name": "獎盃一覽",
+        "type": 1,
+        "parent": 9001,
+        "hide_list": [
+            3
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab030&article000773"
+    },
+    {
+        "id": 9023,
+        "name": "稱號一覽",
+        "type": 1,
+        "parent": 9001,
+        "hide_list": [
+            3
+        ],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab029&article000772"
+    },
+    {
+        "id": 10601,
+        "name": "選擇活動劇情",
+        "type": 1,
+        "parent": 106,
+        "hide_list": [
+            3,
+            4,
+            5,
+            6,
+            8
+        ]
+    },
+    {
+        "id": 30201,
+        "name": "主任務",
+        "type": 1,
+        "parent": 301,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab008&article000685"
+    },
+    {
+        "id": 30202,
+        "name": "支線任務（普通）",
+        "type": 1,
+        "parent": 302,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab009&article000687"
+    },
+    {
+        "id": 30203,
+        "name": "支線任務（困難）",
+        "type": 1,
+        "parent": 302,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab009&article000687"
+    },
+    {
+        "id": 30401,
+        "name": "活動任務（普通）",
+        "type": 1,
+        "parent": 304,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab013&article000784"
+    },
+    {
+        "id": 30402,
+        "name": "活動任務（困難）",
+        "type": 1,
+        "parent": 304,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab013&article000784"
+    },
+    {
+        "id": 30410,
+        "name": "活動頭目戰",
+        "type": 1,
+        "parent": 304,
+        "hide_list": [],
+        "help_url": "https://errorgamereset.sega.com/zh/webview/help/index.html?id=tab013&article000784"
+    }
+]

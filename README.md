@@ -23,4 +23,5 @@
 |  ManasisRefranin  |    麻辣鸡丝    |            国服 Json            |
 |    ModelWarGirl    |   高能手办团   |           国服 LuaJIT           |
 |     OZRewrite     |   OZRewrite   |        国际服 CSV + Json        |
-|    BlackBeacon    |    黑色信标    |    国服 Lua    |
+|    BlackBeacon    |    黑色信标    |            国服 Lua            |
+|   ErrorGameReset   |  404错误游戏  |            台服 Json            |
