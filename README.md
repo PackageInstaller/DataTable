@@ -10,7 +10,7 @@
 |     LostSword     |    失落之剑    | 韩服 Json，带数据表自动检查更新 |
 | MirrenStarLegends |    千年之旅    |            国服 Csv            |
 |     MonmusuTDx     |   魔物娘TDx   | Dmm Json，带全资产自动检查更新 |
-| MuvLuvGirlsGardenX | MuvLuv少女庭院 |           Dmm Json          |
+| MuvLuvGirlsGardenX | MuvLuv少女庭院 |            Dmm Json            |
 |   OtogiFrontierR   |      童话      | Dmm Json，带全资产自动检查更新 |
 |    RevivedWitch    |   复苏的魔女   |            国服 Lua            |
 |    SonOfShenyin    |    神隐之子    |            国服 Lua            |
@@ -25,3 +25,4 @@
 |     OZRewrite     |   OZRewrite   |        国际服 CSV + Json        |
 |    BlackBeacon    |    黑色信标    |            国服 Lua            |
 |   ErrorGameReset   |  404错误游戏  |            台服 Json            |
+|    ReverseBlue    |     反向蓝     |            国服 Json            |
