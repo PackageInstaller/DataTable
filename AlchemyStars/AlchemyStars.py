@@ -127,15 +127,14 @@ def process_directory(root: str, key: int, threads: int):
 
 
 if __name__ == "__main__":
-    DECRYPTION_KEY = 0x1343BEB
 
     ap = argparse.ArgumentParser(
         description="luac 解密",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
-    ap.add_argument("input_dir", help="待处理目录")
-    ap.add_argument("-t", "--threads", type=int, default=32,
+    ap.add_argument("i", help="待处理目录")
+    ap.add_argument("-t", type=int, default=32,
                     help="线程数")
     opts = ap.parse_args()
 
-    process_directory(opts.input_dir, DECRYPTION_KEY, opts.threads)
+    process_directory(opts.i, 0x1343BEB, opts.t)
