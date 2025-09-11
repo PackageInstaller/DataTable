@@ -15441,6 +15441,147 @@
         ]
     },
     {
+        "id": 11406001,
+        "type": 1,
+        "rarity": 5,
+        "image_index": "0001",
+        "need_passion": 0,
+        "use_passion": 0,
+        "gain_gauge": 2,
+        "cool_times": "0",
+        "ignore_first_cool_times": 0,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 0,
+        "usable_times": 0,
+        "timeline_id": 11406001,
+        "icon_frame_id": 115,
+        "is_show_range": false,
+        "show_element_type": 1,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            "通常攻撃",
+            ""
+        ],
+        "ml_name2": [
+            ""
+        ],
+        "ml_description": [
+            "威力[[main_effects_power_1]%]",
+            ""
+        ]
+    },
+    {
+        "id": 21406001,
+        "type": 2,
+        "rarity": 5,
+        "image_index": "5000",
+        "need_passion": 130,
+        "use_passion": 0,
+        "gain_gauge": 5,
+        "cool_times": "5",
+        "ignore_first_cool_times": 1,
+        "range_start_point": 1,
+        "range_end_point": 5,
+        "range_ids": "0",
+        "effect_range_id": 132,
+        "usable_times": 0,
+        "timeline_id": 21406001,
+        "icon_frame_id": 115,
+        "is_show_range": true,
+        "show_element_type": 4,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            "異時同図魔法",
+            ""
+        ],
+        "ml_name2": [
+            ""
+        ],
+        "ml_description": [
+            "範囲内の敵に威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（風<help=element>エレメント</help>）/<help=move_position_range>位置移動（範囲）</help>/系統：芸道にダメージ[[side_effects_power_2]%]上昇/攻撃対象が少ないほどダメージ上昇（最大[[side_effects_power_3]%]）/自身に<help=critical>必殺</help>[[side_effects_power_4]]増加＜[[side_effects_turn_4]ターン]＞",
+            ""
+        ]
+    },
+    {
+        "id": 21406002,
+        "type": 2,
+        "rarity": 5,
+        "image_index": "4300",
+        "need_passion": 120,
+        "use_passion": 0,
+        "gain_gauge": 5,
+        "cool_times": "4",
+        "ignore_first_cool_times": 1,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 105,
+        "usable_times": 0,
+        "timeline_id": 21406002,
+        "icon_frame_id": 115,
+        "is_show_range": true,
+        "show_element_type": 4,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            "テンペラーレ",
+            ""
+        ],
+        "ml_name2": [
+            ""
+        ],
+        "ml_description": [
+            "範囲内の敵に威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（風<help=element>エレメント</help>）/<help=move_position>位置移動（直線）</help>/1ターン前に自身が絶技使用していたら威力[[side_effects_power_2]%]上昇/敵撃破時にこの技法の<help=cool_time>クールタイム</help>[[side_effects_power_3]]短縮/<help=absorption>吸収</help>[[side_effects_power_4]%]",
+            ""
+        ]
+    },
+    {
+        "id": 31406001,
+        "type": 3,
+        "rarity": 5,
+        "image_index": "1104",
+        "need_passion": 0,
+        "use_passion": 0,
+        "gain_gauge": 0,
+        "cool_times": "0",
+        "ignore_first_cool_times": 0,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 0,
+        "usable_times": 0,
+        "timeline_id": 31406001,
+        "icon_frame_id": 210,
+        "is_show_range": false,
+        "show_element_type": 0,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            "きっと、",
+            ""
+        ],
+        "ml_name2": [
+            "ハッピーエンド",
+            ""
+        ],
+        "ml_description": [
+            "威力[[main_effects_power_1]%]/自身に最大<help=constitution>体力</help>[[side_effects_power_1]]増加＜[[side_effects_turn_1]ターン]＞/自身に<help=move>移動</help>[[side_effects_power_2]]増加＜[[side_effects_turn_2]ターン]＞/自身に<help=thunderclap>迅雷</help>付与/",
+            ""
+        ]
+    },
+    {
         "id": 11501001,
         "type": 1,
         "rarity": 3,
@@ -16248,6 +16389,147 @@
         ],
         "ml_description": [
             "威力[[main_effects_power_1]%]/系統：芸道にダメージ[[side_effects_power_1]%]上昇/自身と近くの味方1人に<help=offence>攻撃</help>[[side_effects_power_2]%]増加＜[[side_effects_turn_2]ターン]＞(重複可)/",
+            ""
+        ]
+    },
+    {
+        "id": 11507001,
+        "type": 1,
+        "rarity": 5,
+        "image_index": "0001",
+        "need_passion": 0,
+        "use_passion": 0,
+        "gain_gauge": 2,
+        "cool_times": "0",
+        "ignore_first_cool_times": 0,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 0,
+        "usable_times": 0,
+        "timeline_id": 11507001,
+        "icon_frame_id": 115,
+        "is_show_range": false,
+        "show_element_type": 1,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            "通常攻撃",
+            ""
+        ],
+        "ml_name2": [
+            ""
+        ],
+        "ml_description": [
+            "威力[[main_effects_power_1]%]",
+            ""
+        ]
+    },
+    {
+        "id": 21507001,
+        "type": 2,
+        "rarity": 5,
+        "image_index": "5700",
+        "need_passion": 130,
+        "use_passion": 0,
+        "gain_gauge": 5,
+        "cool_times": "5",
+        "ignore_first_cool_times": 1,
+        "range_start_point": 2,
+        "range_end_point": 4,
+        "range_ids": "0",
+        "effect_range_id": 1,
+        "usable_times": 0,
+        "timeline_id": 21507001,
+        "icon_frame_id": 115,
+        "is_show_range": false,
+        "show_element_type": 4,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            "本は鈍器",
+            ""
+        ],
+        "ml_name2": [
+            ""
+        ],
+        "ml_description": [
+            "敵に威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（風<help=element>エレメント</help>）/系統：芸道にダメージ[[side_effects_power_1]%]上昇/1ターン前に自身が絶技使用していたら威力[[side_effects_power_2]%]上昇/自身に<help=cool_time>クールタイム</help>[[side_effects_power_3]]短縮/自身と近くの味方1人に<help=ignite>気炎</help>付与",
+            ""
+        ]
+    },
+    {
+        "id": 21507002,
+        "type": 2,
+        "rarity": 5,
+        "image_index": "5500",
+        "need_passion": 125,
+        "use_passion": 0,
+        "gain_gauge": 5,
+        "cool_times": "5",
+        "ignore_first_cool_times": 1,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 50,
+        "usable_times": 0,
+        "timeline_id": 21507002,
+        "icon_frame_id": 115,
+        "is_show_range": true,
+        "show_element_type": 4,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            "脳力トレーニング",
+            ""
+        ],
+        "ml_name2": [
+            ""
+        ],
+        "ml_description": [
+            "範囲内の敵に威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（風<help=element>エレメント</help>）/系統：芸道にダメージ[[side_effects_power_1]%]上昇/攻撃対象が少ないほどダメージ上昇（最大[[side_effects_power_2]%]）/自身に<help=constitution>体力</help>[[side_effects_power_3]]回復/自身に<help=fire_shield>炎シールド</help>付与[[side_effects_power_4]]",
+            ""
+        ]
+    },
+    {
+        "id": 31507001,
+        "type": 3,
+        "rarity": 5,
+        "image_index": "0805",
+        "need_passion": 0,
+        "use_passion": 0,
+        "gain_gauge": 0,
+        "cool_times": "0",
+        "ignore_first_cool_times": 0,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 0,
+        "usable_times": 0,
+        "timeline_id": 31507001,
+        "icon_frame_id": 210,
+        "is_show_range": false,
+        "show_element_type": 0,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            "心育む",
+            ""
+        ],
+        "ml_name2": [
+            "読み聞かせ",
+            ""
+        ],
+        "ml_description": [
+            "威力[[main_effects_power_1]%]/系統：芸道にダメージ[[side_effects_power_1]%]上昇/命中対象に<help=will>精神</help>[[side_effects_power_2]%]減少＜[[side_effects_turn_2]ターン]＞/",
             ""
         ]
     },
@@ -25890,6 +26172,112 @@
         ]
     },
     {
+        "id": 15082001,
+        "type": 1,
+        "rarity": 5,
+        "image_index": "0001",
+        "need_passion": 0,
+        "use_passion": 0,
+        "gain_gauge": 0,
+        "cool_times": "0",
+        "ignore_first_cool_times": 0,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 40,
+        "usable_times": 0,
+        "timeline_id": 15082001,
+        "icon_frame_id": 115,
+        "is_show_range": true,
+        "show_element_type": 3,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            "通常攻撃",
+            ""
+        ],
+        "ml_name2": [
+            ""
+        ],
+        "ml_description": [
+            "威力[[main_effects_power_1]%]",
+            ""
+        ]
+    },
+    {
+        "id": 25082001,
+        "type": 6,
+        "rarity": 5,
+        "image_index": "1302",
+        "need_passion": 0,
+        "use_passion": 0,
+        "gain_gauge": 0,
+        "cool_times": "0",
+        "ignore_first_cool_times": 0,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 1,
+        "usable_times": 0,
+        "timeline_id": 25082001,
+        "icon_frame_id": 133,
+        "is_show_range": false,
+        "show_element_type": 0,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            "攻撃",
+            ""
+        ],
+        "ml_name2": [
+            ""
+        ],
+        "ml_description": [
+            "<help=move_buff>すれ違いバフ</help>：<help=offence>攻撃</help>",
+            ""
+        ]
+    },
+    {
+        "id": 35082001,
+        "type": 3,
+        "rarity": 5,
+        "image_index": "1120",
+        "need_passion": 0,
+        "use_passion": 0,
+        "gain_gauge": 0,
+        "cool_times": "0",
+        "ignore_first_cool_times": 0,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 128,
+        "usable_times": 0,
+        "timeline_id": 35082001,
+        "icon_frame_id": 310,
+        "is_show_range": true,
+        "show_element_type": 3,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            "犯人は",
+            ""
+        ],
+        "ml_name2": [
+            "あなたでやす！",
+            ""
+        ],
+        "ml_description": [
+            "味方全員に入魂ゲージ[[side_effects_power_1]]増加/範囲内の味方に<help=Protection>加護</help>付与/命中対象に確率で水<help=weakpoint>弱点</help>付与",
+            ""
+        ]
+    },
+    {
         "id": 19300001,
         "type": 1,
         "rarity": 3,
@@ -27894,8 +28282,8 @@
         "gain_gauge": 0,
         "cool_times": "3",
         "ignore_first_cool_times": 1,
-        "range_start_point": 0,
-        "range_end_point": 0,
+        "range_start_point": 1,
+        "range_end_point": 1,
         "range_ids": "0",
         "effect_range_id": 1,
         "usable_times": 0,
@@ -37965,6 +38353,111 @@
         ]
     },
     {
+        "id": 29500227,
+        "type": 2,
+        "rarity": 5,
+        "image_index": "0300",
+        "need_passion": 120,
+        "use_passion": 0,
+        "gain_gauge": 0,
+        "cool_times": "2",
+        "ignore_first_cool_times": 1,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 561,
+        "usable_times": 0,
+        "timeline_id": 29500019,
+        "icon_frame_id": 115,
+        "is_show_range": true,
+        "show_element_type": 1,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            ""
+        ],
+        "ml_name2": [
+            "花園追放",
+            ""
+        ],
+        "ml_description": [
+            "範囲内の敵に威力[[main_effects_power_1]%]の<help=physical_dmg>物理ダメージ</help>（物理<help=element>エレメント</help>）/命中対象を[[side_effects_power_1]]マス<help=knock_back>弾き飛ばし</help>",
+            ""
+        ]
+    },
+    {
+        "id": 29500228,
+        "type": 2,
+        "rarity": 5,
+        "image_index": "1106",
+        "need_passion": 115,
+        "use_passion": 0,
+        "gain_gauge": 0,
+        "cool_times": "2",
+        "ignore_first_cool_times": 1,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 501,
+        "usable_times": 0,
+        "timeline_id": 29500020,
+        "icon_frame_id": 115,
+        "is_show_range": true,
+        "show_element_type": 2,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            ""
+        ],
+        "ml_name2": [
+            "穢れた花粉",
+            ""
+        ],
+        "ml_description": [
+            "範囲内の敵に威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（炎<help=element>エレメント</help>）/命中対象に確率で<help=poison>猛毒</help>付与＜[[side_effects_turn_1]ターン]＞",
+            ""
+        ]
+    },
+    {
+        "id": 29500229,
+        "type": 2,
+        "rarity": 5,
+        "image_index": "4406",
+        "need_passion": 0,
+        "use_passion": 0,
+        "gain_gauge": 0,
+        "cool_times": "0",
+        "ignore_first_cool_times": 1,
+        "range_start_point": 0,
+        "range_end_point": 0,
+        "range_ids": "0",
+        "effect_range_id": 564,
+        "usable_times": 0,
+        "timeline_id": 29500019,
+        "icon_frame_id": 115,
+        "is_show_range": true,
+        "show_element_type": 2,
+        "condition_type": 0,
+        "condition_param1": 0,
+        "condition_param2": 0,
+        "is_seal_protection": false,
+        "ml_name1": [
+            ""
+        ],
+        "ml_name2": [
+            "濁炎の蔦",
+            ""
+        ],
+        "ml_description": [
+            "範囲内の敵に威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（炎<help=element>エレメント</help>）/<help=poison>猛毒</help>状態ならダメージ[[side_effects_power_1]%]上昇",
+            ""
+        ]
+    },
+    {
         "id": 28300001,
         "type": 2,
         "rarity": 3,
@@ -39717,7 +40210,7 @@
             ""
         ],
         "ml_description": [
-            "範囲内の威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（炎<help=element>エレメント</help>）",
+            "範囲内の敵に威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（炎<help=element>エレメント</help>）",
             ""
         ]
     },
@@ -39752,7 +40245,7 @@
             ""
         ],
         "ml_description": [
-            "範囲内の威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（水<help=element>エレメント</help>）",
+            "範囲内の敵に威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（水<help=element>エレメント</help>）",
             ""
         ]
     },
@@ -39787,7 +40280,7 @@
             ""
         ],
         "ml_description": [
-            "範囲内の威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（風<help=element>エレメント</help>）",
+            "範囲内の敵に威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（風<help=element>エレメント</help>）",
             ""
         ]
     },
@@ -39822,7 +40315,7 @@
             ""
         ],
         "ml_description": [
-            "範囲内の威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（雷<help=element>エレメント</help>）",
+            "範囲内の敵に威力[[main_effects_power_1]%]の<help=magical_dmg>特殊ダメージ</help>（雷<help=element>エレメント</help>）",
             ""
         ]
     },

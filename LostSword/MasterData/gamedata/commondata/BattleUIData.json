@@ -89,7 +89,8 @@
             "SortingOrder": 3,
             "BattleUIDataList": [
                 {
-                    "ZoneType": 17
+                    "ZoneType": 17,
+                    "NctAdd": true
                 }
             ]
         },
@@ -104,7 +105,8 @@
                 {
                     "ZoneType": 26,
                     "PrevZoneType": 19,
-                    "OpenStage": 10
+                    "OpenStage": 10,
+                    "NctAdd": true
                 },
                 {
                     "ZoneType": 27,
@@ -122,10 +124,19 @@
                     "GlobalExcept": true
                 },
                 {
-                    "ZoneType": 55
+                    "ZoneType": 59
                 },
                 {
-                    "ZoneType": 58
+                    "ZoneType": 60
+                },
+                {
+                    "ZoneType": 22,
+                    "NctAdd": true,
+                    "GlobalExcept": true
+                },
+                {
+                    "NctAdd": true,
+                    "GlobalExcept": true
                 }
             ]
         }

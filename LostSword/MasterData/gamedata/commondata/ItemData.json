@@ -381,74 +381,42 @@
                         {
                             "Asset": {
                                 "Type": 6,
-                                "Index": 90,
-                                "Num": 2
+                                "Index": 39,
+                                "Num": 10
                             }
                         },
                         {
                             "Asset": {
                                 "Type": 6,
-                                "Index": 196,
-                                "Num": 3
+                                "Index": 42,
+                                "Num": 20
+                            }
+                        }
+                    ]
+                }
+            },
+            "SliderMaxNum": 12
+        },
+        {
+            "Index": 231,
+            "ShowUI": true,
+            "ConsumeInfo": {
+                "Type": 17,
+                "Info": {
+                    "$type": "CommonLibrary.ConsumeInfo+SelectionInfo, Assembly-CSharp",
+                    "ItemList": [
+                        {
+                            "Asset": {
+                                "Type": 6,
+                                "Index": 44,
+                                "Num": 10
                             }
                         },
                         {
                             "Asset": {
                                 "Type": 6,
-                                "Index": 134,
-                                "Num": 4
-                            }
-                        },
-                        {
-                            "Asset": {
-                                "Type": 6,
-                                "Index": 115,
-                                "Num": 2
-                            }
-                        },
-                        {
-                            "Asset": {
-                                "Type": 6,
-                                "Index": 216,
-                                "Num": 1
-                            }
-                        },
-                        {
-                            "Asset": {
-                                "Type": 6,
-                                "Index": 190,
-                                "Num": 3
-                            }
-                        },
-                        {
-                            "Asset": {
-                                "Type": 6,
-                                "Index": 214,
-                                "Num": 1
-                            }
-                        },
-                        {
-                            "Asset": {
-                                "Type": 4,
-                                "Index": 360,
-                                "ItemLevel": 222,
-                                "Num": 1
-                            }
-                        },
-                        {
-                            "Asset": {
-                                "Type": 4,
-                                "Index": 401,
-                                "ItemLevel": 333,
-                                "Num": 1
-                            }
-                        },
-                        {
-                            "Asset": {
-                                "Type": 4,
-                                "Index": 355,
-                                "ItemLevel": 100,
-                                "Num": 1
+                                "Index": 178,
+                                "Num": 20
                             }
                         }
                     ]
@@ -1145,6 +1113,10 @@
             "EndTime": "2025-05-30T00:00:00Z"
         },
         {
+            "Index": 232,
+            "SortingOrder": 9992
+        },
+        {
             "Index": 216,
             "SortingOrder": 9992,
             "StartTime": "2025-07-10T00:00:00Z",
@@ -1184,6 +1156,14 @@
             "Type": 1,
             "Prefab": "FeCoin",
             "SortingOrder": 9988,
+            "ManyDrop": true
+        },
+        {
+            "Index": 230,
+            "Type": 1,
+            "Prefab": "FeCoin",
+            "SortingOrder": 6600,
+            "ShowUI": true,
             "ManyDrop": true
         },
         {
@@ -3058,6 +3038,23 @@
             }
         },
         {
+            "Index": 228,
+            "IndexName": "SmC5",
+            "Type": 1,
+            "Prefab": "Etc",
+            "SortingOrder": 9770,
+            "ShowUI": true,
+            "ApplyUseCondition": true,
+            "ConsumeInfo": {
+                "Type": 18,
+                "UseQuantity": 50,
+                "Info": {
+                    "$type": "CommonLibrary.ConsumeInfo+SummonUnitFragmentInfo, Assembly-CSharp",
+                    "LinkIndex": 38
+                }
+            }
+        },
+        {
             "Index": 44,
             "IndexName": "SmCp",
             "Type": 1,
@@ -3156,6 +3153,23 @@
                 "Info": {
                     "$type": "CommonLibrary.ConsumeInfo+SummonUnitInfo, Assembly-CSharp",
                     "LinkIndex": 23
+                }
+            }
+        },
+        {
+            "Index": 229,
+            "IndexName": "SmP5",
+            "Type": 1,
+            "Prefab": "Etc",
+            "SortingOrder": 9680,
+            "ShowUI": true,
+            "ApplyUseCondition": true,
+            "ConsumeInfo": {
+                "Type": 18,
+                "UseQuantity": 50,
+                "Info": {
+                    "$type": "CommonLibrary.ConsumeInfo+SummonUnitFragmentInfo, Assembly-CSharp",
+                    "LinkIndex": 39
                 }
             }
         },

@@ -507,6 +507,30 @@
                 "Num": 4
             },
             "IsPickUp": true
+        },
+        {
+            "Index": 38,
+            "UnitType": 1,
+            "ChanceIndex": 4,
+            "Num": 1,
+            "Charge": {
+                "Type": 6,
+                "IndexName": "SmC5_Fragment",
+                "Num": 50
+            },
+            "OnlyCharge": true
+        },
+        {
+            "Index": 39,
+            "UnitType": 2,
+            "ChanceIndex": 4,
+            "Num": 1,
+            "Charge": {
+                "Type": 6,
+                "IndexName": "SmP5_Fragment",
+                "Num": 50
+            },
+            "OnlyCharge": true
         }
     ]
 }

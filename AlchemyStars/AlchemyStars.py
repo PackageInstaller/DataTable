@@ -1,6 +1,7 @@
 import os
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import subprocess
 
 # 多项式 0xEDB88320
 CRC32_TABLE = [
@@ -96,16 +97,16 @@ def process_single_file(luac_path: str, key: int) -> str:
             f.write(dec)
 
         src_msg = ""
-        # lua_path = bc_path.rsplit(".", 1)[0] + ".lua"
-        # cmd = ["luadec", "-se", "UTF8", "-d", lua_path, bc_path]
+        lua_path = bc_path.rsplit(".", 1)[0] + ".lua"
+        cmd = ["luadec", "-se", "UTF8", "-d", lua_path, bc_path]
 
-        # try:
-        #     run = subprocess.run(cmd, check=True, capture_output=True)
-        #     with open(lua_path, "wb") as fp:
-        #         fp.write(run.stdout)
-        #     src_msg = f" → {os.path.relpath(lua_path)}"
-        # except subprocess.CalledProcessError as e:
-        #     src_msg = f" (luadec失败:{e.returncode})"
+        try:
+            run = subprocess.run(cmd, check=True, capture_output=True)
+            with open(lua_path, "wb") as fp:
+                fp.write(run.stdout)
+            src_msg = f" → {os.path.relpath(lua_path)}"
+        except subprocess.CalledProcessError as e:
+            src_msg = f" (luadec失败:{e.returncode})"
 
         return f"✓ {os.path.relpath(luac_path)} → {os.path.relpath(bc_path)}{src_msg}"
 

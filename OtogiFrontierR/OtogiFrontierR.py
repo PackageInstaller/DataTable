@@ -182,13 +182,13 @@ def download_assets(assets: list[str], size_map: dict[str, int]):
 
 
 def main():
-    ver = get_environment_ver()
-    webgl_names = download_webgl_manifest()
+    # ver = get_environment_ver()
+    #webgl_names = download_webgl_manifest()
     download_masterdata()
-    patch_names, size_map = download_patch_list(ver)
+    # patch_names, size_map = download_patch_list(ver)
 
-    all_assets = sorted(set(webgl_names + patch_names))
-    download_assets(all_assets, size_map)
+    # all_assets = sorted(set(webgl_names + patch_names))
+    # download_assets(all_assets, size_map)
 
 if __name__ == "__main__":
     main()

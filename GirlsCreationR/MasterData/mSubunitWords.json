@@ -11175,7 +11175,7 @@
         "expression": "unique_1",
         "sound_asset": "stv_4020045_1500",
         "ml_word": [
-            "今年最後の悪戯をどんなのにしようか、考え中でやす！\n年越しの瞬間に、なにか盛大にバーッと……。あれ？\nでもそれだと、年明け最初の悪戯になるんでやすかね？\nうぅ……わからなくなってきたでやす～！",
+            "今年最後の悪戯をどんなのにしようか、考え中でやす！\n年越しの瞬間に、なにか盛大にパーッと……。あれ？\nでもそれだと、年明け最初の悪戯になるんでやすかね？\nうぅ……わからなくなってきたでやす～！",
             "en"
         ],
         "is_random_voice": 0,
@@ -19710,5 +19710,261 @@
         "start_time": "2022-08-01 00:00:00",
         "end_time": "2030-08-01 23:59:59",
         "subunit_id": 4020080
+    },
+    {
+        "id": 1297,
+        "scene_type": 0,
+        "trigger": 5,
+        "motion": "mypage",
+        "expression": "joy",
+        "sound_asset": "stv_4020082_1400",
+        "ml_word": [
+            "今日のうちは、いつものうちと一味違うでやんす！\nだって、悪戯のかわりに推理をするでやすからね～。\nもう自分で事件を起こしたりはしないんで、\n安心してほしいでやす！　たぶん……！",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2022-08-01 00:00:00",
+        "end_time": "2030-08-01 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1298,
+        "scene_type": 0,
+        "trigger": 5,
+        "motion": "mypage",
+        "expression": "joy",
+        "sound_asset": "stv_4020082_1410",
+        "ml_word": [
+            "館長、そこに座りたまえ、でやんす！\nえっと……謎を解き明かそうじゃないか、でやんす！\nうぅん、セキエンさんみたいにカッコよく\n話したいのに、“やんす”が消えないでやんす！",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2022-08-01 00:00:00",
+        "end_time": "2030-08-01 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1299,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "tap1",
+        "expression": "loop",
+        "sound_asset": "stv_4020082_1420",
+        "ml_word": [
+            "ふぅーーーーっ……。\nえへへっ、びっくりしやしたか、館長？\nこのパイプ、シャボン玉が出るように\nうちが改造したんでやすよ～！",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2022-08-01 00:00:00",
+        "end_time": "2030-08-01 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1300,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "tap2",
+        "expression": "loop",
+        "sound_asset": "stv_4020082_1430",
+        "ml_word": [
+            "むぅ……皿を潤すのに、\nいちいち帽子を脱ぐのは面倒でやすねぇ……。\nでもセキエンさん曰く、探偵に帽子は必須とのこと。\nそれなら受け入れるしかないでやんす。",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2022-08-01 00:00:00",
+        "end_time": "2030-08-01 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1301,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "tap3",
+        "expression": "loop",
+        "sound_asset": "stv_4020082_1440",
+        "ml_word": [
+            "事件とあらば、『名探偵』シズクにおまかせでやす！\n……なーんて、冗談でやんす。\nうちはあくまでも『助手』でやす。\nただ、ちょっと言ってみたかっただけでやすよ。",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2022-08-01 00:00:00",
+        "end_time": "2030-08-01 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1302,
+        "scene_type": 0,
+        "trigger": 4,
+        "motion": "elapse",
+        "expression": "loop",
+        "sound_asset": "stv_4020082_1450",
+        "ml_word": [
+            "張り込みのお供は\nあんぱんと牛乳が定番らしいでやすが、\nどうしてでやすかねぇ。\nうちはきゅうりがいいと思いやすけど……。",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2022-08-01 00:00:00",
+        "end_time": "2030-08-01 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1303,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "mypage",
+        "expression": "ease",
+        "sound_asset": "stv_4020045_1460",
+        "ml_word": [
+            "館長！　あけましておめでとうでやす！　えへへ……\nお正月は悪戯の機会が多くて、楽しいでやすね。鏡餅を\nびっくり箱にすり替えたり、書初めのかわりに顔に\n落書きしたり！　もちろんほどほどにするでやすよ～！",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2025-01-01 00:00:00",
+        "end_time": "2025-01-15 12:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1304,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "mypage",
+        "expression": "bashful",
+        "sound_asset": "stv_4020045_1470",
+        "ml_word": [
+            "今日は大切な人にチョコレートをあげる日って聞いたで\nやす。うちが丹精込めて作ったキュウリ型チョコレート\n受け取ってほしいでやす！　激辛のと甘いの、\n見分けがつかないように作るのが大変だったでやす♪",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2025-01-31 13:30:00",
+        "end_time": "2025-02-15 12:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1305,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "mypage",
+        "expression": "joy",
+        "sound_asset": "stv_4020045_1480",
+        "ml_word": [
+            "悪戯したうえにお菓子をもらえるなんて、\nハロウィンは最高でやす！　えっ……お菓子を\nもらったら、悪戯しちゃダメなんでやすか！？\nそんな～！　それを最初に言ってほしいでやんす～！",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2023-10-20 00:00:00",
+        "end_time": "2023-10-31 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1306,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "mypage",
+        "expression": "ease",
+        "sound_asset": "stv_4020045_1490",
+        "ml_word": [
+            "クリスマスは館長と遊びたいでやす～！\nきゅうりを冷やして食べたり、寒中水泳をしたりは、\nどうでやすか？　悪戯はほどほどにするから、\nうちと一緒にいてほしいでやす～！",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2024-12-16 13:30:00",
+        "end_time": "2024-12-26 12:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1307,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "mypage",
+        "expression": "joy",
+        "sound_asset": "stv_4020045_1500",
+        "ml_word": [
+            "今年最後の悪戯をどんなのにしようか、考え中でやす！\n年越しの瞬間に、なにか盛大にパーッと……。あれ？\nでもそれだと、年明け最初の悪戯になるんでやすかね？\nうぅ……わからなくなってきたでやす～！",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2024-12-25 13:30:00",
+        "end_time": "2024-12-31 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1308,
+        "scene_type": 0,
+        "trigger": 7,
+        "motion": "mypage",
+        "expression": "joy",
+        "sound_asset": "stv_4020045_1510",
+        "ml_word": [
+            "館長、誕生日おめでとうでやす！　今日は館長を\n喜ばせるために、いっぱい準備してきたでやすよー！　\nまずはこのびっくり箱を……あわわっ、プレゼントって\n言うつもりだったのに、種明かししちゃったでやすー！",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2022-08-01 00:00:00",
+        "end_time": "2030-08-01 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1309,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "mypage",
+        "expression": "surprise",
+        "sound_asset": "stv_4020082_1520",
+        "ml_word": [
+            "大変でやす！　どこに悪戯を仕掛けたか忘れて、\nびっくり箱を解除できないでやす～！\nさっきから自分で“推理”してるんでやすけど……。\nうぅ～わからないでやす～。",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2022-08-01 00:00:00",
+        "end_time": "2030-08-01 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1310,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "mypage",
+        "expression": "unique_1",
+        "sound_asset": "stv_4020082_1530",
+        "ml_word": [
+            "このパイプからはシャボン玉が出てきやすけど、\n他のものが出てきても面白そうでやすよね！\nみんなを驚かせられそうないいアイデア、\nなんかないでやすかねぇ？",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2022-08-01 00:00:00",
+        "end_time": "2030-08-01 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1311,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "mypage",
+        "expression": "blues",
+        "sound_asset": "stv_4020082_1540",
+        "ml_word": [
+            "う～む……推理をしようと頭をひねると、\n頭のお皿がいつもより早く乾くでやす～！\n館長……申し訳ないでやすが、\n水分補給を手伝ってほしいでやす！",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2022-08-01 00:00:00",
+        "end_time": "2030-08-01 23:59:59",
+        "subunit_id": 4020082
+    },
+    {
+        "id": 1312,
+        "scene_type": 0,
+        "trigger": 3,
+        "motion": "mypage",
+        "expression": "bashful",
+        "sound_asset": "stv_4020082_1550",
+        "ml_word": [
+            "館長もセキエンさんも、うちが探偵に憧れても、\n馬鹿にせずに見守ってくれるでやす……。\nその優しさがとてもあたたかくて……。\nだからふたりとも、うちのとっても大切な人でやす！",
+            "en"
+        ],
+        "is_random_voice": 0,
+        "start_time": "2022-08-01 00:00:00",
+        "end_time": "2030-08-01 23:59:59",
+        "subunit_id": 4020082
     }
 ]

@@ -2168,13 +2168,34 @@
                         "Key": 65543,
                         "Val": 0.30000001192092896
                     }
+                }
+            ]
+        },
+        {
+            "Index": 590,
+            "Type": 4,
+            "Part": 2,
+            "Rank": 5,
+            "NoRandomOption": true,
+            "OptionList": [
+                {
+                    "$type": "CommonLibrary.FixOption, Assembly-CSharp",
+                    "OptionType": 1,
+                    "Stat": {
+                        "Key": 7
+                    }
+                },
+                {
+                    "$type": "CommonLibrary.SkillOption, Assembly-CSharp",
+                    "OptionType": 4,
+                    "SkillIndex": 1319
                 },
                 {
                     "$type": "CommonLibrary.UniqueOption, Assembly-CSharp",
                     "OptionType": 5,
                     "Enable": 7,
                     "Stat": {
-                        "Key": 288,
+                        "Key": 269,
                         "Val": 0.10000000149011612
                     }
                 },
@@ -2257,6 +2278,44 @@
                     "$type": "CommonLibrary.SkillOption, Assembly-CSharp",
                     "OptionType": 4,
                     "SkillIndex": 1126
+                },
+                {
+                    "$type": "CommonLibrary.UniqueOption, Assembly-CSharp",
+                    "OptionType": 6,
+                    "Stat": {
+                        "Key": 274,
+                        "Val": 0.05000000074505806
+                    }
+                },
+                {
+                    "$type": "CommonLibrary.UniqueOption, Assembly-CSharp",
+                    "OptionType": 6,
+                    "Stat": {
+                        "Key": 276,
+                        "Val": 0.05000000074505806
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 591,
+            "Type": 6,
+            "Part": 4,
+            "Rank": 5,
+            "OptionList": [
+                {
+                    "$type": "CommonLibrary.FixOption, Assembly-CSharp",
+                    "OptionType": 1,
+                    "Stat": {
+                        "Key": 8
+                    }
+                },
+                {
+                    "$type": "CommonLibrary.FixOption, Assembly-CSharp",
+                    "OptionType": 1,
+                    "Stat": {
+                        "Key": 7
+                    }
                 },
                 {
                     "$type": "CommonLibrary.UniqueOption, Assembly-CSharp",

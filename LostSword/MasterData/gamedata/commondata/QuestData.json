@@ -4734,6 +4734,98 @@
             ]
         },
         {
+            "Index": 993,
+            "Type": 2,
+            "ConnectionQuest": 980,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 200
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "Difficulty": "Hard",
+                        "ZoneIndex": 2094,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 994,
+            "Type": 2,
+            "ConnectionQuest": 993,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 200
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "Difficulty": "Hard",
+                        "ZoneIndex": 2104,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 995,
+            "Type": 2,
+            "ConnectionQuest": 994,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 200
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "Difficulty": "Hard",
+                        "ZoneIndex": 2114,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 996,
+            "Type": 2,
+            "ConnectionQuest": 995,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 200
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "Difficulty": "Hard",
+                        "ZoneIndex": 2124,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
             "Index": 648,
             "Type": 2,
             "ConnectionQuest": 647,
@@ -7280,6 +7372,98 @@
                         "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
                         "Difficulty": "Hell",
                         "ZoneIndex": 2022,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 997,
+            "Type": 2,
+            "ConnectionQuest": 984,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 300
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "Difficulty": "Hell",
+                        "ZoneIndex": 2094,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 998,
+            "Type": 2,
+            "ConnectionQuest": 997,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 300
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "Difficulty": "Hell",
+                        "ZoneIndex": 2104,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 999,
+            "Type": 2,
+            "ConnectionQuest": 998,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 300
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "Difficulty": "Hell",
+                        "ZoneIndex": 2114,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 1000,
+            "Type": 2,
+            "ConnectionQuest": 999,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 300
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "Difficulty": "Hell",
+                        "ZoneIndex": 2124,
                         "Num": 1
                     }
                 }
@@ -26286,6 +26470,206 @@
                     "Info": {
                         "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
                         "ZoneIndex": 2022,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 985,
+            "Type": 1,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 1
+                },
+                {
+                    "Type": 5,
+                    "Num": 1200000000
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "ZoneIndex": 2089,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 986,
+            "Type": 1,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 500
+                },
+                {
+                    "Type": 5,
+                    "Num": 1200000000
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "ZoneIndex": 2094,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 987,
+            "Type": 1,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 1
+                },
+                {
+                    "Type": 5,
+                    "Num": 1200000000
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "ZoneIndex": 2099,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 988,
+            "Type": 1,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 42,
+                    "Num": 10
+                },
+                {
+                    "Type": 5,
+                    "Num": 1200000000
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "ZoneIndex": 2104,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 989,
+            "Type": 1,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 1
+                },
+                {
+                    "Type": 5,
+                    "Num": 1200000000
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "ZoneIndex": 2109,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 990,
+            "Type": 1,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 191,
+                    "Num": 2
+                },
+                {
+                    "Type": 5,
+                    "Num": 1200000000
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "ZoneIndex": 2114,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 991,
+            "Type": 1,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 1
+                },
+                {
+                    "Type": 5,
+                    "Num": 1200000000
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "ZoneIndex": 2119,
+                        "Num": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Index": 992,
+            "Type": 1,
+            "RewardList": [
+                {
+                    "Type": 6,
+                    "Index": 39,
+                    "Num": 10
+                },
+                {
+                    "Type": 5,
+                    "Num": 1200000000
+                }
+            ],
+            "GoalConditionList": [
+                {
+                    "Type": 7,
+                    "Info": {
+                        "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                        "ZoneIndex": 2124,
                         "Num": 1
                     }
                 }

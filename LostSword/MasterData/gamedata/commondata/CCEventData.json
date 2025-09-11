@@ -462,6 +462,7 @@
                     ]
                 ]
             },
+            "GlobalExcept": true,
             "PersonalEventTag": 1,
             "PersonalEventActivateDay": 100,
             "UseDataTime": true
@@ -830,6 +831,128 @@
                     {
                         "Type": 6,
                         "Index": 8,
+                        "Num": 1
+                    }
+                ]
+            },
+            "GlobalExcept": true
+        },
+        {
+            "Index": 27,
+            "SortOrder": 940,
+            "StartTime": "2000-01-01T00:00:00Z",
+            "EndTime": "2000-01-01T00:00:00Z",
+            "NctStartTime": "2025-09-10T00:00:00Z",
+            "NctEndTime": "2025-09-24T00:00:00Z",
+            "Type": 3,
+            "EventInfo": {
+                "$type": "GameDesignData.CCEventConditionInfo, Assembly-CSharp",
+                "ConditionList": [
+                    {
+                        "Data": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1383,
+                                "Num": 1
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 74,
+                                "Num": 1000
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1387,
+                                "Num": 1
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 3,
+                                "Num": 200
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 7,
+                            "Info": {
+                                "$type": "CommonLibrary.ClearZoneConditionInfo, Assembly-CSharp",
+                                "ZoneIndex": 1392,
+                                "Num": 1
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 73,
+                                "Num": 2
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 1,
+                            "Info": {
+                                "$type": "CommonLibrary.AttendConditionInfo, Assembly-CSharp",
+                                "Num": 3
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 20
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 11,
+                            "Info": {
+                                "$type": "CommonLibrary.EnemyKillConditionInfo, Assembly-CSharp",
+                                "Num": 2000
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 5
+                            }
+                        ]
+                    },
+                    {
+                        "Data": {
+                            "Type": 40,
+                            "Info": {
+                                "$type": "CommonLibrary.SummonConditionInfo, Assembly-CSharp",
+                                "Type": 1,
+                                "Num": 30
+                            }
+                        },
+                        "RewardList": [
+                            {
+                                "Type": 6,
+                                "Index": 46,
+                                "Num": 1
+                            }
+                        ]
+                    }
+                ],
+                "LastRewardList": [
+                    {
+                        "Type": 6,
+                        "Index": 5,
                         "Num": 1
                     }
                 ]
@@ -1447,7 +1570,9 @@
                     }
                 ]
             },
-            "GlobalExcept": true
+            "NctUseSlideBanner": true,
+            "GlobalExcept": true,
+            "NctAdd": true
         },
         {
             "Index": 11,
@@ -1689,7 +1814,9 @@
                     }
                 ]
             },
-            "GlobalExcept": true
+            "NctUseSlideBanner": true,
+            "GlobalExcept": true,
+            "NctAdd": true
         },
         {
             "Index": 21,

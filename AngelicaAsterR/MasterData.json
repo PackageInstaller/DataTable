@@ -2,7 +2,7 @@
     {
         "MasterKey": "version",
         "ResourceId": "version",
-        "Version": "2025.0829.1442"
+        "Version": "2025.0829.1444"
     },
     {
         "Records": [
@@ -102267,7 +102267,7 @@
             "Critical": 10
         },
         "SkillListId": "enemy_skill_list.god_12_babel_boss_04",
-        "PassiveSkillListId": "enemy_passive_skill_list.god_12_babel_boss_04",
+        "PassiveSkillListId": "enemy_passive_skill_list.god_12_babel_boss_03",
         "Trait": [
             1012,
             1214,
@@ -476201,7 +476201,7 @@
         "Records": [
             {
                 "ActionId": "skill_action.82801",
-                "HitEffect": null,
+                "HitEffect": "wait=500",
                 "Timing": 5,
                 "Trait": [],
                 "ActionAttributes": [

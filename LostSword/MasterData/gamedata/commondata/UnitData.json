@@ -884,6 +884,21 @@
             "Nationality": 1
         },
         {
+            "Index": 533,
+            "UnitType": 1,
+            "Element": 6,
+            "ModelName": "Npc_Chicken_03",
+            "SkillList": {
+                "1": [
+                    22
+                ],
+                "2": [
+                    1282
+                ]
+            },
+            "DeadSound": "S_Chicken"
+        },
+        {
             "Index": 466,
             "UnitType": 1,
             "Job": 1,
@@ -1188,6 +1203,70 @@
                 ],
                 "6": [
                     317
+                ]
+            },
+            "Gender": 2,
+            "Category1": 3,
+            "Species": 3,
+            "DeadSound": "V_크리스티나_꺄악",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "4": {
+                    "Scale": 1.0
+                },
+                "5": {
+                    "Scale": 1.0
+                },
+                "6": {
+                    "Scale": 0.8
+                },
+                "9": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 1.0
+                }
+            },
+            "Str": 32,
+            "Dex": 32,
+            "Int": 82,
+            "Con": 56,
+            "Age": 29,
+            "MonthOfBirth": 8,
+            "DayOfBirth": 22,
+            "Height": 168,
+            "Weight": 56,
+            "ThreeSize": "B89D-W59-H93",
+            "HobbyList": [
+                19
+            ],
+            "Nationality": 8
+        },
+        {
+            "Index": 525,
+            "UnitType": 1,
+            "Job": 3,
+            "Rank": 5,
+            "Position": 2,
+            "Element": 2,
+            "ModelName": "Pc_Cristina_01",
+            "SkillList": {
+                "1": [
+                    114
+                ],
+                "6": [
+                    1259
+                ],
+                "5": [
+                    1258
+                ],
+                "4": [
+                    1257
+                ],
+                "2": [
+                    1256
                 ]
             },
             "Gender": 2,
@@ -3045,6 +3124,73 @@
             "Age": 24
         },
         {
+            "Index": 527,
+            "UnitType": 1,
+            "Job": 1,
+            "Rank": 5,
+            "Position": 1,
+            "Element": 4,
+            "ModelName": "Pc_Gawain_01",
+            "SkillList": {
+                "1": [
+                    126
+                ],
+                "2": [
+                    1266
+                ],
+                "3": [
+                    1267
+                ],
+                "4": [
+                    1268
+                ],
+                "5": [
+                    1269
+                ],
+                "6": [
+                    1270
+                ]
+            },
+            "Gender": 2,
+            "Category1": 3,
+            "Species": 3,
+            "DeadSound": "V_가웨인_으흑",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "4": {
+                    "Scale": 1.0,
+                    "PosY": -1.0
+                },
+                "9": {
+                    "Scale": 1.0,
+                    "PosX": 0.4
+                },
+                "5": {
+                    "Scale": 1.0,
+                    "PosY": -0.5
+                },
+                "8": {
+                    "Scale": 1.0
+                }
+            },
+            "Str": 82,
+            "Dex": 42,
+            "Int": 34,
+            "Con": 63,
+            "Age": 24,
+            "MonthOfBirth": 2,
+            "DayOfBirth": 27,
+            "Height": 170,
+            "Weight": 59,
+            "ThreeSize": "B89.5D-W61-H93",
+            "HobbyList": [
+                7
+            ],
+            "Nationality": 2
+        },
+        {
             "Index": 439,
             "UnitType": 1,
             "Job": 1,
@@ -4252,6 +4398,54 @@
             "NoRotate": true
         },
         {
+            "Index": 530,
+            "UnitType": 1,
+            "Job": 1,
+            "Rank": 5,
+            "Position": 1,
+            "Element": 2,
+            "ModelName": "Eb_Ifrit_01",
+            "SkillList": {
+                "1": [
+                    114
+                ],
+                "2": [
+                    1287
+                ],
+                "3": [
+                    1288
+                ],
+                "4": [
+                    1289
+                ],
+                "5": [
+                    1290
+                ],
+                "6": [
+                    1291
+                ]
+            },
+            "Gender": 2,
+            "Category1": 3,
+            "DeadSound": "V_케이_윽",
+            "CostumeList": {
+                "4": {
+                    "CostumeType": 4,
+                    "Nct": true
+                }
+            },
+            "Str": 82,
+            "Dex": 63,
+            "Int": 43,
+            "Con": 99,
+            "Age": 22,
+            "MonthOfBirth": 9,
+            "DayOfBirth": 15,
+            "Height": 174,
+            "Weight": 55,
+            "ThreeSize": "B98H-W58-H97"
+        },
+        {
             "Index": 398,
             "UnitType": 1,
             "Job": 2,
@@ -4859,6 +5053,160 @@
             "Dex": 10,
             "Int": 10,
             "Con": 20
+        },
+        {
+            "Index": 520,
+            "UnitType": 1,
+            "Job": 1,
+            "Rank": 1,
+            "Position": 1,
+            "Element": 5,
+            "ModelName": "Eb_KingSlime_07",
+            "SkillList": {
+                "1": [
+                    17
+                ],
+                "2": [
+                    445
+                ],
+                "4": [
+                    446
+                ],
+                "5": [
+                    610
+                ]
+            },
+            "Category1": 3,
+            "DeadSound": "S_Die_Spider",
+            "Str": 10,
+            "Dex": 10,
+            "Int": 10,
+            "Con": 20
+        },
+        {
+            "Index": 521,
+            "UnitType": 1,
+            "Job": 1,
+            "Rank": 1,
+            "Position": 1,
+            "Element": 1,
+            "ModelName": "Eb_KingSlime_08",
+            "SkillList": {
+                "1": [
+                    526
+                ],
+                "2": [
+                    445
+                ],
+                "4": [
+                    446
+                ],
+                "5": [
+                    376
+                ]
+            },
+            "Category1": 3,
+            "DeadSound": "S_Die_Spider",
+            "Str": 10,
+            "Dex": 10,
+            "Int": 10,
+            "Con": 50
+        },
+        {
+            "Index": 523,
+            "UnitType": 1,
+            "Job": 1,
+            "Rank": 1,
+            "Position": 1,
+            "Element": 1,
+            "ModelName": "Eb_KingSlime_08",
+            "SkillList": {
+                "1": [
+                    526
+                ],
+                "4": [
+                    1261
+                ],
+                "5": [
+                    1262
+                ],
+                "6": [
+                    1265
+                ],
+                "2": [
+                    1260
+                ]
+            },
+            "Category1": 3,
+            "DeadSound": "S_Die_Spider",
+            "Str": 10,
+            "Dex": 10,
+            "Int": 10,
+            "Con": 50
+        },
+        {
+            "Index": 526,
+            "UnitType": 1,
+            "Job": 1,
+            "Rank": 1,
+            "Position": 1,
+            "Element": 1,
+            "ModelName": "Eb_KingSlime_02",
+            "SkillList": {
+                "1": [
+                    526
+                ],
+                "4": [
+                    1261
+                ],
+                "2": [
+                    1260
+                ],
+                "5": [
+                    1263
+                ],
+                "6": [
+                    1264
+                ]
+            },
+            "Category1": 3,
+            "DeadSound": "S_Die_Spider",
+            "Str": 10,
+            "Dex": 10,
+            "Int": 10,
+            "Con": 50
+        },
+        {
+            "Index": 522,
+            "UnitType": 1,
+            "Job": 1,
+            "Rank": 1,
+            "Position": 1,
+            "Element": 1,
+            "ModelName": "Eb_KingSlime_08",
+            "SkillList": {
+                "1": [
+                    526
+                ],
+                "5": [
+                    1245
+                ],
+                "4": [
+                    1244
+                ],
+                "2": [
+                    1243
+                ],
+                "6": [
+                    1246
+                ]
+            },
+            "Category1": 3,
+            "DeadSound": "S_Die_Spider",
+            "Str": 10,
+            "Dex": 10,
+            "Int": 10,
+            "Con": 50
         },
         {
             "Index": 339,
@@ -5551,6 +5899,71 @@
                 ],
                 "6": [
                     606
+                ]
+            },
+            "Gender": 2,
+            "Category1": 3,
+            "Species": 3,
+            "DeadSound": "V_잔다르크_죽음",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "4": {
+                    "Scale": 1.0
+                },
+                "5": {
+                    "Scale": 1.0
+                },
+                "6": {
+                    "Scale": 0.8
+                },
+                "9": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 1.0
+                }
+            },
+            "Str": 32,
+            "Dex": 84,
+            "Int": 48,
+            "Con": 48,
+            "MonthOfBirth": 9,
+            "DayOfBirth": 6,
+            "Height": 172,
+            "Weight": 58,
+            "ThreeSize": "B99I-W64-H97",
+            "HobbyList": [
+                32
+            ]
+        },
+        {
+            "Index": 528,
+            "UnitType": 1,
+            "Job": 2,
+            "Rank": 5,
+            "Position": 2,
+            "Element": 6,
+            "ModelName": "Pc_Lisa_01",
+            "SkillList": {
+                "1": [
+                    22
+                ],
+                "2": [
+                    1271
+                ],
+                "3": [
+                    1272
+                ],
+                "4": [
+                    1273
+                ],
+                "5": [
+                    1274
+                ],
+                "6": [
+                    1275
                 ]
             },
             "Gender": 2,
@@ -6873,6 +7286,74 @@
             "Nationality": 1
         },
         {
+            "Index": 529,
+            "UnitType": 1,
+            "Job": 1,
+            "Rank": 4,
+            "Position": 2,
+            "Element": 1,
+            "ModelName": "Pc_Mordred_01",
+            "SkillList": {
+                "1": [
+                    526
+                ],
+                "2": [
+                    1276
+                ],
+                "3": [
+                    1277
+                ],
+                "4": [
+                    1278
+                ],
+                "5": [
+                    1279,
+                    1283
+                ],
+                "6": [
+                    1280
+                ]
+            },
+            "Gender": 1,
+            "Category1": 3,
+            "Species": 3,
+            "DeadSound": "V_모드레드_죽을때",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "4": {
+                    "Scale": 1.0
+                },
+                "5": {
+                    "Scale": 1.0
+                },
+                "6": {
+                    "Scale": 0.8
+                },
+                "9": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 1.0
+                }
+            },
+            "Str": 18,
+            "Dex": 12,
+            "Int": 12,
+            "Con": 16,
+            "Age": 32,
+            "MonthOfBirth": 3,
+            "DayOfBirth": 29,
+            "Height": 183,
+            "Weight": 79,
+            "HobbyList": [
+                7,
+                4
+            ],
+            "Nationality": 1
+        },
+        {
             "Index": 290,
             "UnitType": 1,
             "Job": 3,
@@ -7249,6 +7730,70 @@
                 ],
                 "6": [
                     310
+                ]
+            },
+            "Gender": 2,
+            "Category1": 3,
+            "Species": 3,
+            "DeadSound": "V_Women_Die_04",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "4": {
+                    "Scale": 1.0
+                },
+                "5": {
+                    "Scale": 1.0
+                },
+                "6": {
+                    "Scale": 0.8
+                },
+                "9": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 1.0
+                }
+            },
+            "Str": 76,
+            "Dex": 32,
+            "Int": 16,
+            "Con": 72,
+            "Age": 23,
+            "MonthOfBirth": 3,
+            "DayOfBirth": 2,
+            "Height": 160,
+            "Weight": 50,
+            "ThreeSize": "B86C-W61-H93",
+            "HobbyList": [
+                3
+            ],
+            "Nationality": 2
+        },
+        {
+            "Index": 524,
+            "UnitType": 1,
+            "Job": 1,
+            "Rank": 5,
+            "Position": 1,
+            "Element": 3,
+            "ModelName": "Pc_Percival_01",
+            "SkillList": {
+                "1": [
+                    120
+                ],
+                "6": [
+                    1255
+                ],
+                "5": [
+                    1254
+                ],
+                "4": [
+                    1253
+                ],
+                "2": [
+                    1252
                 ]
             },
             "Gender": 2,
@@ -10604,6 +11149,36 @@
             "Con": 1
         },
         {
+            "Index": 531,
+            "UnitType": 1,
+            "Element": 4,
+            "ModelName": "Npc_Chicken_01",
+            "SkillList": {
+                "1": [
+                    126
+                ],
+                "2": [
+                    1281
+                ]
+            },
+            "DeadSound": "S_Chicken"
+        },
+        {
+            "Index": 532,
+            "UnitType": 1,
+            "Element": 4,
+            "ModelName": "Npc_Chicken_02",
+            "SkillList": {
+                "1": [
+                    126
+                ],
+                "2": [
+                    1281
+                ]
+            },
+            "DeadSound": "S_Chicken"
+        },
+        {
             "Index": 320,
             "UnitType": 1,
             "Job": 1,
@@ -12112,6 +12687,147 @@
             "Dex": 9,
             "Int": 5,
             "Con": 5
+        },
+        {
+            "Index": 534,
+            "UnitType": 1,
+            "Job": 2,
+            "Rank": 1,
+            "Position": 3,
+            "Element": 4,
+            "ModelName": "En_GoblinFemaleA_01",
+            "SkillList": {
+                "1": [
+                    126
+                ],
+                "2": [
+                    1323
+                ]
+            },
+            "Gender": 2,
+            "Category1": 3,
+            "Species": 2,
+            "DeadSound": "Sv_Goblin_Die",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 0.8
+                },
+                "4": {
+                    "Scale": 0.8,
+                    "PosY": -1.0
+                },
+                "5": {
+                    "Scale": 1.0
+                },
+                "9": {
+                    "Scale": 0.8,
+                    "PosX": 0.35
+                },
+                "10": {
+                    "Scale": 1.0
+                }
+            },
+            "Str": 3,
+            "Dex": 4,
+            "Int": 1,
+            "Con": 4
+        },
+        {
+            "Index": 535,
+            "UnitType": 1,
+            "Job": 3,
+            "Rank": 1,
+            "Position": 3,
+            "Element": 4,
+            "ModelName": "En_GoblinFemaleM_01",
+            "SkillList": {
+                "1": [
+                    126
+                ],
+                "2": [
+                    1324
+                ]
+            },
+            "Gender": 1,
+            "Category1": 3,
+            "Species": 2,
+            "DeadSound": "Sv_Goblin_Die",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 0.8
+                },
+                "4": {
+                    "Scale": 0.8,
+                    "PosY": -1.0
+                },
+                "5": {
+                    "Scale": 1.0
+                },
+                "9": {
+                    "Scale": 0.8,
+                    "PosX": 0.35
+                },
+                "10": {
+                    "Scale": 1.0
+                }
+            },
+            "Str": 3,
+            "Dex": 4,
+            "Int": 1,
+            "Con": 4
+        },
+        {
+            "Index": 536,
+            "UnitType": 1,
+            "Job": 1,
+            "Rank": 1,
+            "Position": 1,
+            "Element": 4,
+            "ModelName": "En_GoblinFemaleW_01",
+            "SkillList": {
+                "1": [
+                    126
+                ],
+                "2": [
+                    1325
+                ]
+            },
+            "Gender": 2,
+            "Category1": 3,
+            "Species": 2,
+            "DeadSound": "Sv_Goblin_Die",
+            "BuffStateList": {
+                "2": {
+                    "Scale": 1.0
+                },
+                "8": {
+                    "Scale": 0.8
+                },
+                "4": {
+                    "Scale": 0.8,
+                    "PosY": -1.0
+                },
+                "5": {
+                    "Scale": 1.0
+                },
+                "9": {
+                    "Scale": 0.8,
+                    "PosX": 0.35
+                },
+                "10": {
+                    "Scale": 1.0
+                }
+            },
+            "Str": 3,
+            "Dex": 4,
+            "Int": 1,
+            "Con": 4
         },
         {
             "Index": 72,
@@ -15439,7 +16155,8 @@
             },
             "CostumeList": {
                 "2": {
-                    "CostumeType": 2
+                    "CostumeType": 2,
+                    "Nct": true
                 }
             },
             "UnitPractice": 36,
@@ -15616,6 +16333,7 @@
             "Element": 5,
             "ModelName": "Pc_Claire_01",
             "Summon": true,
+            "Nct": true,
             "SkillList": {
                 "1": [
                     17
@@ -17189,6 +17907,7 @@
             "Element": 2,
             "ModelName": "Pc_Kei_01",
             "Summon": true,
+            "Nct": true,
             "SkillList": {
                 "1": [
                     114
@@ -17217,7 +17936,8 @@
             "DeadSound": "V_케이_윽",
             "CostumeList": {
                 "4": {
-                    "CostumeType": 4
+                    "CostumeType": 4,
+                    "Nct": true
                 }
             },
             "UnitPractice": 3,
@@ -17559,6 +18279,11 @@
             "Category1": 1,
             "Species": 3,
             "Ability": 58,
+            "CostumeList": {
+                "1": {
+                    "CostumeType": 1
+                }
+            },
             "UnitPractice": 17,
             "Age": 21,
             "MonthOfBirth": 1,
@@ -17580,6 +18305,7 @@
             "Element": 7,
             "ModelName": "Pc_Lua_01",
             "Summon": true,
+            "Nct": true,
             "SkillList": {
                 "1": [
                     525
@@ -18601,6 +19327,7 @@
             "Element": 2,
             "ModelName": "Pc_Ria_01",
             "Summon": true,
+            "Nct": true,
             "SkillList": {
                 "1": [
                     114
@@ -19771,6 +20498,7 @@
             "Element": 3,
             "ModelName": "Pet_Kei_01",
             "Summon": true,
+            "Nct": true,
             "SkillList": {
                 "1": [
                     120
@@ -19948,6 +20676,7 @@
             "Rank": 5,
             "ModelName": "Pet_Lua_01",
             "Summon": true,
+            "Nct": true,
             "SkillList": {
                 "4": [
                     705

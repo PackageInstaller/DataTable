@@ -6402,28 +6402,40 @@
         "Key": "JobTag.Warrior",
         "Text": {
             "Korea": "KNIGHT",
-            "ChineseTh": "KNIGHT"
+            "English": "KNIGHT",
+            "ChineseCh": "KNIGHT",
+            "ChineseTh": "KNIGHT",
+            "Japanese": "KNIGHT"
         }
     },
     {
         "Key": "JobTag.Archer",
         "Text": {
             "Korea": "ARCHER",
-            "ChineseTh": "ARCHER"
+            "English": "ARCHER",
+            "ChineseCh": "ARCHER",
+            "ChineseTh": "ARCHER",
+            "Japanese": "ARCHER"
         }
     },
     {
         "Key": "JobTag.Wizard",
         "Text": {
             "Korea": "WIZARD",
-            "ChineseTh": "WIZARD"
+            "English": "WIZARD",
+            "ChineseCh": "WIZARD",
+            "ChineseTh": "WIZARD",
+            "Japanese": "WIZARD"
         }
     },
     {
         "Key": "JobTag.Healer",
         "Text": {
             "Korea": "HEALER",
-            "ChineseTh": "HEALER"
+            "English": "HEALER",
+            "ChineseCh": "HEALER",
+            "ChineseTh": "HEALER",
+            "Japanese": "HEALER"
         }
     },
     {
@@ -7888,7 +7900,7 @@
             "Korea": "웨이브 종료 시",
             "English": "At the End of the Wave",
             "ChineseCh": "波次结束时",
-            "ChineseTh": "震波結束時",
+            "ChineseTh": "一波攻擊結束時",
             "Japanese": "WAVE終了時"
         }
     },
@@ -8028,7 +8040,7 @@
             "Korea": "적 웨이브 조우 시",
             "English": "At the Start of Battle",
             "ChineseCh": "战斗开始时",
-            "ChineseTh": "遇到敵人震波時",
+            "ChineseTh": "遇到下一波敵人時",
             "Japanese": "戦闘開始時"
         }
     },
@@ -8048,7 +8060,7 @@
             "Korea": "웨이브 시작 시",
             "English": "At the Start of the Wave",
             "ChineseCh": "波次开始时",
-            "ChineseTh": "震波開始時",
+            "ChineseTh": "一波攻擊開始時",
             "Japanese": "WAVE開始時"
         }
     },
@@ -13312,6 +13324,216 @@
         }
     },
     {
+        "Key": "DefEntryIndex.Battle6",
+        "Text": {
+            "Korea": "프리셋6",
+            "English": "Preset 6",
+            "ChineseCh": "预设6",
+            "ChineseTh": "預設6",
+            "Japanese": "プリセット6"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Battle7",
+        "Text": {
+            "Korea": "프리셋7",
+            "English": "Preset 7",
+            "ChineseCh": "预设7",
+            "ChineseTh": "預設7",
+            "Japanese": "プリセット7"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Battle8",
+        "Text": {
+            "Korea": "프리셋8",
+            "English": "Preset 8",
+            "ChineseCh": "预设8",
+            "ChineseTh": "預設8",
+            "Japanese": "プリセット8"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Battle9",
+        "Text": {
+            "Korea": "프리셋9",
+            "English": "Preset 9",
+            "ChineseCh": "预设9",
+            "ChineseTh": "預設9",
+            "Japanese": "プリセット9"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Battle10",
+        "Text": {
+            "Korea": "프리셋10",
+            "English": "Preset 10",
+            "ChineseCh": "预设10",
+            "ChineseTh": "預設10",
+            "Japanese": "プリセット10"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Battle11",
+        "Text": {
+            "Korea": "프리셋11",
+            "English": "Preset 11",
+            "ChineseCh": "预设11",
+            "ChineseTh": "預設11",
+            "Japanese": "プリセット11"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Battle12",
+        "Text": {
+            "Korea": "프리셋12",
+            "English": "Preset 12",
+            "ChineseCh": "预设12",
+            "ChineseTh": "預設12",
+            "Japanese": "プリセット12"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Battle13",
+        "Text": {
+            "Korea": "프리셋13",
+            "English": "Preset 13",
+            "ChineseCh": "预设13",
+            "ChineseTh": "預設13",
+            "Japanese": "プリセット13"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Battle14",
+        "Text": {
+            "Korea": "프리셋14",
+            "English": "Preset 14",
+            "ChineseCh": "预设14",
+            "ChineseTh": "預設14",
+            "Japanese": "プリセット14"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Battle15",
+        "Text": {
+            "Korea": "프리셋15",
+            "English": "Preset 15",
+            "ChineseCh": "预设15",
+            "ChineseTh": "預設15",
+            "Japanese": "プリセット15"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Maze",
+        "Text": {
+            "Korea": "미궁",
+            "English": "Labyrinth",
+            "ChineseCh": "迷宫",
+            "ChineseTh": "迷宮",
+            "Japanese": "迷宮"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Star1",
+        "Text": {
+            "Korea": "별의 프리셋1",
+            "English": "Star’s Preset 1",
+            "ChineseCh": "星辰预设1",
+            "ChineseTh": "星辰預設1",
+            "Japanese": "星のプリセット1"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Star2",
+        "Text": {
+            "Korea": "별의 프리셋2",
+            "English": "Star’s Preset 2",
+            "ChineseCh": "星辰预设2",
+            "ChineseTh": "星辰預設2",
+            "Japanese": "星のプリセット2"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Star3",
+        "Text": {
+            "Korea": "별의 프리셋3",
+            "English": "Star’s Preset 3",
+            "ChineseCh": "星辰预设3",
+            "ChineseTh": "星辰預設3",
+            "Japanese": "星のプリセット3"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Star4",
+        "Text": {
+            "Korea": "별의 프리셋4",
+            "English": "Star’s Preset 4",
+            "ChineseCh": "星辰预设4",
+            "ChineseTh": "星辰預設4",
+            "Japanese": "星のプリセット4"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Star5",
+        "Text": {
+            "Korea": "별의 프리셋5",
+            "English": "Star’s Preset 5",
+            "ChineseCh": "星辰预设5",
+            "ChineseTh": "星辰預設5",
+            "Japanese": "星のプリセット5"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Star6",
+        "Text": {
+            "Korea": "별의 프리셋1",
+            "English": "Star’s Preset 1",
+            "ChineseCh": "星辰预设1",
+            "ChineseTh": "星辰預設1",
+            "Japanese": "星のプリセット1"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Star7",
+        "Text": {
+            "Korea": "별의 프리셋2",
+            "English": "Star’s Preset 2",
+            "ChineseCh": "星辰预设2",
+            "ChineseTh": "星辰預設2",
+            "Japanese": "星のプリセット2"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Star8",
+        "Text": {
+            "Korea": "별의 프리셋3",
+            "English": "Star’s Preset 3",
+            "ChineseCh": "星辰预设3",
+            "ChineseTh": "星辰預設3",
+            "Japanese": "星のプリセット3"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Star9",
+        "Text": {
+            "Korea": "별의 프리셋4",
+            "English": "Star’s Preset 4",
+            "ChineseCh": "星辰预设4",
+            "ChineseTh": "星辰預設4",
+            "Japanese": "星のプリセット4"
+        }
+    },
+    {
+        "Key": "DefEntryIndex.Star10",
+        "Text": {
+            "Korea": "별의 프리셋5",
+            "English": "Star’s Preset 5",
+            "ChineseCh": "星辰预设5",
+            "ChineseTh": "星辰預設5",
+            "Japanese": "星のプリセット5"
+        }
+    },
+    {
         "Key": "알을깨주세요",
         "Text": {
             "Korea": "알을 깨주세요!",
@@ -16187,7 +16409,7 @@
             "Korea": "※일반 탭 설명\n\n「보스 레이드」\n보스 레이드는 요일별로 바뀌는 보스를 상대하며\n입힌 대미지 만큼 점수를 기록하는 콘텐츠입니다.\n\n보스 레이드는 매일 3회 도전할 수 있으며,\n1회만 도전하고 소탕을 통해 스킵할 수 있습니다.\n\n보스 레이드는 매일 정산되는 \n개인 랭킹과 길드 랭킹이 존재하며,\n일간 랭킹의 점수는 월간 랭킹으로 이월되어\n매월 1일에 순위 보상을 받을 수 있습니다.\n\n보스 레이드에서 얻는 레이드 코인으로 \n귀중한 아이템들을 교환할 수 있습니다.\n\n연습 전투를 통해 횟수를 소모하지 않고\n점수 테스트를 할 수 있습니다.\n\n매일 점수 집계 기간인 23:50~00:10 까지는\n도전이 불가능합니다.\n\n\n「콜로세움」\n콜로세움은 다른 유저와의 경쟁을 통해 등급과 승점을 올리는 콘텐츠입니다.\n입장에 필요한 콜로세움 티켓은 60분에 1장씩 충전되며, 최대 20장 충전됩니다.\n\n\n「미궁」\n미궁을 탐색하며 다양한 보상을 획득할 수 있는 콘텐츠입니다.\n매주 월요일 마다 초기화됩니다.\n\n\n「오베론의 탑」\n오베론의 탑은 각 층에 위치한 보스를 쓰러뜨리며 다음 층에 도전하는 콘텐츠입니다.\n보스들은 1회성으로 한번 클리어하면 끝입니다.\n\n\n「세계수의 균열」\n세계수의 균열은 \"오베론의 탑\"을 정복하면 등장하는 탑 콘텐츠입니다.\n각 층에 위치한 보스를 쓰러뜨리며 다음 층에 도전하는 형태이며 보스들은 1회성으로 한번 클리어하면 끝입니다.\n\n\n「별의 윤회」 \n별의 윤회는 두 파티를 편성하여 각각의 \n보스를 상대하고 점수를 갱신하는 콘텐츠입니다.\n\n별의 윤회는 격주로 진행되며 기록한 점수에 맞는 보상을 획득하고\n모든 모험 지역에서 높은 점수를 갱신하여 랭킹으로 경쟁할 수 있습니다.\n\n격주로 진행되며 진행 기간동안은 몇번이든 재도전할 수 있습니다.",
             "English": "Tabs Info\n\n「Boss Raid」\n\nIn the Boss Raid, players face bosses that change daily and earn points based on the damage dealt.\n\nYou can do the Boss Raid 3 times a day and skip with “Sweeps” after completing 1 challenge.\n\nThere are individual and guild rankings that reset daily, with the daily scores carrying over to the monthly rankings. On the 1st of each month, rewards are given based on the monthly ranking.\n\nRaid coins earned from the Boss Raid can be exchanged for valuable items.\n\nYou can test your score without consuming attempts through practice battles.\n\nChallenges are unavailable during the score tally period from 23:50 to 00:10 every day.\n\n\n「Colosseum」\n\nIn the Colosseum, you compete against other players to increase your rank and points.\nThe Colosseum tickets needed for entry recharge at a rate of one per 30 minutes, with a maximum of 20 tickets stored.\n\n\n「Labyrinth」\nIn the Labyrinth, you can explore and earn various rewards.\nIt resets every Monday.\n\n\n「Oberon’s Tower」\nIn Oberon’s Tower, you defeat bosses on each floor to challenge the next.\nEach boss is a one-time challenge—once defeated, it's complete.",
             "ChineseCh": "※ 普通页签说明\n\n「单人突袭」\n领主突袭是与每周轮换的领主进行战斗，\n根据造成的伤害量来记录分数的玩法。\n\n每天可以挑战3次领主突袭，\n可以只挑战1次，然后通过扫荡来跳过。\n\n领主突袭有每日结算的\n个人排名和公会排名，\n每日排名的分数会累计到月度排名，\n每月1号可以领取排名奖励。\n\n通过领主突袭获得的突袭币\n可以兑换珍贵的道具。\n\n通过练习战斗，可以在不消耗次数的情况下\n测试伤害。\n\n每日分数结算期间(23:50~00:10)\n无法挑战。\n\n\n「竞技场」\n竞技场是通过与其他玩家竞争来提升等级和胜点分的玩法。\n进入竞技场所需的竞技场票券每60分钟补充1张，最多可补充20张。\n\n\n「迷宫」\n迷宫是可以探索并获得各种奖励的玩法。\n每周一重置。\n\n\n「奥伯龙之塔」\n奥伯龙之塔是逐层击败领主，挑战更高层的玩法。\n每层的领主都是一次性的，通关一次就结束了。",
-            "ChineseTh": "※ 一般分頁說明\n\n「首領突襲」\n為透過與每天出現的不同首領對戰，\n根據造成的傷害記錄分數的遊戲戰鬥內容。\n\n首領突襲每天可挑戰3次，\n並可在挑戰1次後直接進行掃蕩。\n\n首領突襲中分為每日計算的\n個人排名與公會排名，\n且每日排名的分數將計入每月排名中，\n可在每個月1號獲得排名獎勵。\n\n可用首領突襲獲得的突襲幣\n兌換為珍貴的道具。\n\n可透過練習戰鬥，\n在不消耗次數的情況下測試分數。\n\n在每日分數結算期間22:50~23:10(UTC+8)\n將無法進行挑戰。\n\n\n「競技場」\n為透過與其他玩家的競爭提升級別與勝分的遊戲戰鬥內容。\n用於進入的競技場票券60分鐘補充1次，最多可補充20次。\n\n\n「迷宮」\n為透過迷宮探勘獲得各種獎勵的遊戲戰鬥內容。\n於每週一重置。\n\n\n「奧伯隆之塔」\n為透過打倒各樓層首領，挑戰下一樓層首領的遊戲戰鬥內容。\n首領只會出現1次，通過後將無法重新挑戰。",
+            "ChineseTh": "※ 一般分頁說明\n\n「首領突襲」\n為透過與每天出現的不同首領對戰，\n根據造成的傷害記錄分數的遊戲戰鬥內容。\n\n首領突襲每天可挑戰3次，\n並可在挑戰1次後直接進行掃蕩。\n\n首領突襲中分為每日計算的\n個人排名與公會排名，\n且每日排名的分數將計入每月排名中，\n可在每個月1號獲得排名獎勵。\n\n可用首領突襲獲得的突襲幣\n兌換為珍貴的道具。\n\n可透過練習戰鬥，\n在不消耗次數的情況下測試分數。\n\n在每日分數結算期間23:50~00:10\n將無法進行挑戰。\n\n\n「競技場」\n為透過與其他玩家的競爭提升級別與勝分的遊戲戰鬥內容。\n用於進入的競技場票券60分鐘補充1次，最多可補充20次。\n\n\n「迷宮」\n為透過迷宮探勘獲得各種獎勵的遊戲戰鬥內容。\n於每週一重置。\n\n\n「奧伯隆之塔」\n為透過打倒各樓層首領，挑戰下一樓層首領的遊戲戰鬥內容。\n首領只會出現1次，通過後將無法重新挑戰。",
             "Japanese": "※一般タブの詳細\n\n「ボスレイド」\n\nボスレイドは曜日ごとに異なるボスと戦い\n与えたダメージに応じてスコアを獲得できるコンテンツです\n\nボスレイドには毎日3回まで挑戦でき、\n1回だけクリアすると掃討機能で戦闘をスキップできます\n\nボスレイドのランキングは毎日集計され\n個人ランキングとギルドランキングがあります\nデイリーランキングのスコアはマンスリーランキングに反映され\n毎日ランキング報酬が配布されます\n\nボスレイドで獲得したレイドコインは\n希少なアイテムと交換できますす\n\n模擬戦闘では参加回数を消費せず\n達成可能なスコアをテストできます\n\nスコアが集計される毎日23:50～00:10の間は\nボスレイドに挑戦できません\n\n\n「コロッセウム」\nコロッセウムは他のプレイヤーと競い合い、ランクとスコアを上げるコンテンツです\n入場に必要なコロッセウムチケットは60分に1枚ずつチャージされ、最大20枚まで所持できます\n\n\n「迷宮」\n迷宮を探索し、様々な報酬を手に入れられるコンテンツです\n迷宮は毎週月曜日にリセットされます\n\n\n「オーベロンの塔」\nオーベロンの塔は各層のボスを倒して次の層へ進むコンテンツです\n各ボスは一度倒すと再挑戦できません"
         }
     },
@@ -17254,13 +17476,21 @@
     {
         "Key": "DefZoneType.EventHarmony",
         "Text": {
-            "ChineseTh": "0"
+            "Korea": "솔직하지 못한 소녀들의 하모니",
+            "English": "Harmony of Dishonest Girls",
+            "ChineseCh": "口是心非少女们的合奏",
+            "ChineseTh": "傲嬌少女的和聲",
+            "Japanese": "不器用な少女たちのハーモニー"
         }
     },
     {
         "Key": "DefZoneType.EventSakura",
         "Text": {
-            "ChineseTh": "0"
+            "Korea": "벚꽃 데이트 대작전!",
+            "English": "Cherry Blossom Date Operation!",
+            "ChineseCh": "樱花约会大作战！",
+            "ChineseTh": "櫻花約會大作戰！",
+            "Japanese": "桜デート大作戦！"
         }
     },
     {
@@ -18419,7 +18649,7 @@
             "Korea": "추가 코스튬",
             "English": "Bonus Costume",
             "ChineseCh": "追加时装",
-            "ChineseTh": "新增服裝",
+            "ChineseTh": "額外服裝",
             "Japanese": "追加コスチューム"
         }
     },
@@ -18989,7 +19219,7 @@
             "Korea": "계정 사용이 제한되었습니다. 공식 웹사이트의 '고객 지원'을 통해 문의해 주십시오.",
             "English": "Account access is restricted. Please contact Customer Support via the official website.",
             "ChineseCh": "账号使用受限。请通过官网的“客服咨询”进行咨询。",
-            "ChineseTh": "帳號使用受限，請至官網「顧客服務」洽詢。",
+            "ChineseTh": "您的帳號已被限制使用，請透過官網「顧客支援」進行諮詢",
             "Japanese": "アカウントの使用が制限されました。公式サイトの「カスタマーサポート」までお問い合わせください"
         }
     },
@@ -19277,7 +19507,7 @@
         "Key": "소환권다이아대체문구",
         "Text": {
             "Korea": "소환권 {0}장이 부족하여 다이아 {1}개로 대체됩니다. 계속 진행하시겠습니까?",
-            "English": "You do not have enough subpoenas to {0} and will be replaced by {1} diamonds. Do you want to proceed?",
+            "English": "You don’t have enough Summon Tickets ({0}). {1} Diamonds will be used instead. Do you want to continue?",
             "ChineseCh": "{0}张传唤权不足，将被{1}颗钻石代替。 确定要继续吗？",
             "ChineseTh": "缺少{0}張召喚券，將以{1}個鑽石替代。要繼續進行嗎？",
             "Japanese": "召喚権{0}枚が不足しているため、ダイヤ{1}個に置き換えられます。 続行しますか？"
@@ -19616,7 +19846,11 @@
     {
         "Key": "서비스불가지역",
         "Text": {
-            "Korea": "서비스 지역이 아닙니다."
+            "Korea": "서비스 지역이 아닙니다.",
+            "English": "This service is not available in your region.",
+            "ChineseCh": "非服务区域。",
+            "ChineseTh": "您所在的國家不支援本服務。",
+            "Japanese": "サービス対象外の地域です"
         }
     },
     {
@@ -19625,6 +19859,7 @@
             "Korea": "블랙 바니 마켓",
             "English": "Black Bunny Market",
             "ChineseCh": "黑色兔兔市场",
+            "ChineseTh": "黑兔商店",
             "Japanese": "ブラックバニーマーケット"
         }
     },
@@ -19634,6 +19869,7 @@
             "Korea": "불꽃놀이는 여름의 추억",
             "English": "Fireworks and Summer Memories",
             "ChineseCh": "烟花是夏日的回忆",
+            "ChineseTh": "夏日回憶的煙火",
             "Japanese": "花火は、夏の思い出"
         }
     },
@@ -19643,6 +19879,7 @@
             "Korea": "유령 저택",
             "English": "Haunted Manor",
             "ChineseCh": "幽灵宅邸",
+            "ChineseTh": "幽靈宅邸",
             "Japanese": "お化け屋敷"
         }
     },
@@ -19652,6 +19889,7 @@
             "Korea": "일괄 구매",
             "English": "Bulk Purchase",
             "ChineseCh": "批量购买",
+            "ChineseTh": "批次購買",
             "Japanese": "一括購入"
         }
     },
@@ -19661,6 +19899,7 @@
             "Korea": "일괄 선택/해제",
             "English": "Select All",
             "ChineseCh": "一键选择/取消",
+            "ChineseTh": "批次選擇/解除",
             "Japanese": "一括選択/解除"
         }
     },
@@ -19670,6 +19909,7 @@
             "Korea": "총 구매 금액",
             "English": "Total Purchase",
             "ChineseCh": "总购买金额",
+            "ChineseTh": "總購買金額",
             "Japanese": "総購入金額"
         }
     },
@@ -19679,6 +19919,7 @@
             "Korea": "매일 단기 탐색 무료 횟수 {0}회 증가",
             "English": "Increases daily free Quick Expedition attempts by {0}",
             "ChineseCh": "每日免费快速探查次数增加{0}次",
+            "ChineseTh": "每日快速探勘免費次數增加{0}次。",
             "Japanese": "毎日、短期探査の無料回数が{0}回アップ"
         }
     },
@@ -19688,6 +19929,7 @@
             "Korea": "{0}에서 장비 획득 확률 {1}% 증가",
             "English": "{1}% increased equipment drop rate at {0}",
             "ChineseCh": "在{0}中装备获得概率提升{1}%",
+            "ChineseTh": "於{0}獲得裝備的機率增加{1}%",
             "Japanese": "{0}での装備獲得率が{1}%アップ"
         }
     },
@@ -19697,6 +19939,7 @@
             "Korea": "30일 동안 혜택 적용",
             "English": "Benefits Apply for 30 Days",
             "ChineseCh": "福利持续30天",
+            "ChineseTh": "30天內套用福利",
             "Japanese": "30日間、特典が適用"
         }
     },
@@ -19706,6 +19949,7 @@
             "Korea": "기간이 만료되는 월정액 혜택을 확인해보세요!",
             "English": "Your Monthly Subscription benefits are about to expire!",
             "ChineseCh": "查看即将到期的月卡福利吧！",
+            "ChineseTh": "快去確認一下到期的月票福利吧！",
             "Japanese": "まもなく有効期限を迎える月額特典があります。ご確認ください！"
         }
     },
@@ -19715,6 +19959,7 @@
             "Korea": "다시 이용을 원하시다면 언제든 구매하실 수 있습니다!",
             "English": "You can repurchase at any time if you'd like to continue!",
             "ChineseCh": "如需再次使用，随时可购买！",
+            "ChineseTh": "若想再次使用，可隨時進行購買！",
             "Japanese": "再度ご利用される場合は、いつでもご購入いただけます！"
         }
     },
@@ -19744,6 +19989,7 @@
             "Korea": "폭죽 코인",
             "English": "Firework Coin",
             "ChineseCh": "烟花币",
+            "ChineseTh": "煙火幣",
             "Japanese": "花火コイン"
         }
     },
@@ -19763,6 +20009,7 @@
             "Korea": "매일 단기 탐색 유료 횟수 {0}회 증가",
             "English": "Increases daily Paid Quick Expedition attempts by {0}",
             "ChineseCh": "每日付费快速探查次数增加{0}次",
+            "ChineseTh": "每日快速探勘付費次數增加{0}次。",
             "Japanese": "毎日、短期探査の有償回数が{0}回アップ"
         }
     },
@@ -19772,6 +20019,7 @@
             "Korea": "일괄 구매 가능한 상품이 없습니다.",
             "English": "There are no items available for bulk purchase",
             "ChineseCh": "暂无可批量购买的商品。",
+            "ChineseTh": "沒有可批次購買的商品。",
             "Japanese": "一括購買できる商品がありません。"
         }
     },
@@ -19781,6 +20029,7 @@
             "Korea": "선택한 항목 중에는 주의가 필요한 상품이 포함되어 있습니다.\n일괄 구매를 진행하시겠습니까?",
             "English": "One or more of the selected items require caution.\nDo you wish to proceed with the bulk purchase?",
             "ChineseCh": "所选项目中包含需要注意的商品。\n是否继续批量购买？",
+            "ChineseTh": "選擇的項目中包含須留意購買事項的商品。\n要進行購買嗎？",
             "Japanese": "選択した項目に注意が必要な商品が含まれています。\n一括購買を進めますか？"
         }
     },
@@ -19790,6 +20039,7 @@
             "Korea": "보상 선택",
             "English": "Reward Selection",
             "ChineseCh": "选择奖励",
+            "ChineseTh": "選擇獎勵",
             "Japanese": "報酬選択"
         }
     },
@@ -19799,6 +20049,7 @@
             "Korea": "획득할 아이템의 수량을 선택해주세요.",
             "English": "Please select the quantity of items to acquire.",
             "ChineseCh": "请选择要获取的道具数量。",
+            "ChineseTh": "請選擇要獲得的道具數量。",
             "Japanese": "獲得するアイテムの数量を選択してください。"
         }
     },
@@ -19808,6 +20059,7 @@
             "Korea": "선택한 수량이 없습니다.",
             "English": "No quantity has been selected.",
             "ChineseCh": "未选择数量。",
+            "ChineseTh": "尚未選擇數量。",
             "Japanese": "選択できた数量がいません。"
         }
     },
@@ -19817,6 +20069,7 @@
             "Korea": "아이템 보유 수량만큼 원하는 구성품을 선택하여 획득할 수 있습니다.",
             "English": "You can select and obtain items based on the number you own.",
             "ChineseCh": "可根据持有的道具数量选择所需道具进行获取。",
+            "ChineseTh": "可根據道具持有數量，選擇獲得想要的內容物。",
             "Japanese": "アイテム保有数量ほど欲しい構成品を選択し、獲得できます。"
         }
     },
@@ -19826,6 +20079,7 @@
             "Korea": "구매에 필요한 재화가 부족합니다.",
             "English": "You do not have enough currency to complete the purchase.",
             "ChineseCh": "购买所需的货币不足。",
+            "ChineseTh": "購買所需的財貨不足。",
             "Japanese": "購買に必要な通貨が足りません。"
         }
     },
@@ -19835,6 +20089,7 @@
             "Korea": "선택된 상품이 없습니다.",
             "English": "No item has been selected.",
             "ChineseCh": "未选择商品。",
+            "ChineseTh": "沒有選擇的商品。",
             "Japanese": "選択した商品がありません。"
         }
     },
@@ -19844,6 +20099,7 @@
             "Korea": "Google결제 계정 변경",
             "English": "Change Google Payment Account",
             "ChineseCh": "更换Google支付账号",
+            "ChineseTh": "Google付款帳號變更",
             "Japanese": "Google購買アカウント変更"
         }
     },
@@ -19853,6 +20109,7 @@
             "Korea": "보유하지 않은 캐릭터는\n코스튬을 장착할 수 없습니다.",
             "English": "You cannot equip a costume on a character you do not own.",
             "ChineseCh": "未拥有该角色，无法穿戴时装。",
+            "ChineseTh": "未持有的角色無法穿戴服裝。",
             "Japanese": "保有しないキャラクタのコスチュームは装着できません。"
         }
     },
@@ -19872,6 +20129,7 @@
             "Korea": "검색 결과 없음",
             "English": "No search results found",
             "ChineseCh": "无搜索结果",
+            "ChineseTh": "沒有查詢結果。",
             "Japanese": "検索結果なし"
         }
     },
@@ -19881,6 +20139,7 @@
             "Korea": "Guest 계정 탈퇴 처리가 완료되었습니다. 다시 로그인해 주세요.",
             "English": "Guest account has been deleted. Please log in again.",
             "ChineseCh": "Guest账号注销已完成，请重新登录。",
+            "ChineseTh": "訪客帳號已成功退出，請重新登入。",
             "Japanese": "ゲストアカウント削除が完了されました。再びログインしてください。"
         }
     },
@@ -19890,6 +20149,7 @@
             "Korea": "정보 수집 방식이 변경되어\n게임을 재시작합니다.",
             "English": "The method of collecting information has been updated.\nThe game will now restart to apply the changes.",
             "ChineseCh": "信息收集方式已变更\n游戏即将重启。",
+            "ChineseTh": "變更資訊蒐集方式，\n將重啟遊戲。",
             "Japanese": "情報収集方法が変更されたため\nゲームを再起動します。"
         }
     },
@@ -19899,6 +20159,7 @@
             "Korea": "심해",
             "English": "Abyss",
             "ChineseCh": "深海",
+            "ChineseTh": "深海",
             "Japanese": "深海"
         }
     },
@@ -19918,6 +20179,7 @@
             "Korea": "백조의 극장",
             "English": "Swan's Theater",
             "ChineseCh": "天鹅剧场",
+            "ChineseTh": "天鵝劇場",
             "Japanese": "白鳥の劇場"
         }
     },
@@ -19927,15 +20189,17 @@
             "Korea": "블랙 로즈",
             "English": "Black Rose",
             "ChineseCh": "黑玫瑰",
+            "ChineseTh": "黑玫瑰",
             "Japanese": "ブラックローズ"
         }
     },
     {
         "Key": "오드리상점경고1",
         "Text": {
-            "Korea": "이미 해당 장비를 가지고 있습니다.\n해당 장비는 한 개만 소유할 있습니다.",
+            "Korea": "이미 해당 장비를 가지고 있습니다.\n해당 장비는 한 개만 소유할 수 있습니다.",
             "English": "You already own this equipment.\nIt’s one of a kind, you can only carry one.",
             "ChineseCh": "已拥有该装备。\n该装备只能持有一件。",
+            "ChineseTh": "已持有該裝備。\n該裝備可持有數量僅限1個。",
             "Japanese": "すでに装備を持っています。\nその装備は一つだけ所有できます。"
         }
     },
@@ -19945,6 +20209,7 @@
             "Korea": "결제 내역이 확인되지 않습니다.",
             "English": "No purchase history found.",
             "ChineseCh": "未查询到支付记录。",
+            "ChineseTh": "無法確認付費內容",
             "Japanese": "決済内容が確認できません。"
         }
     },
@@ -19954,6 +20219,7 @@
             "Korea": "소환에 필요한 아이템이 부족합니다.",
             "English": "You don’t have enough items to summon.",
             "ChineseCh": "召唤所需道具不足。",
+            "ChineseTh": "召喚所需的道具不足。",
             "Japanese": "召喚に必要なアイテムが不足しています。"
         }
     },
@@ -19963,7 +20229,118 @@
             "Korea": "발레",
             "English": "Ballet",
             "ChineseCh": "芭蕾",
+            "ChineseTh": "芭蕾",
             "Japanese": "バレエ"
+        }
+    },
+    {
+        "Key": "캐릭터미보유문구",
+        "Text": {
+            "Korea": "캐릭터 미보유",
+            "English": "Character Not Owned",
+            "ChineseCh": "未拥有角色",
+            "ChineseTh": "未持有角色",
+            "Japanese": "キャラクター未保有"
+        }
+    },
+    {
+        "Key": "DefShopType.Costume",
+        "Text": {
+            "Korea": "코스튬",
+            "English": "Costume",
+            "ChineseCh": "时装",
+            "ChineseTh": "服裝",
+            "Japanese": "コスチューム"
+        }
+    },
+    {
+        "Key": "DefShopType.Limited_250904",
+        "Text": {
+            "Korea": "로엔의 해변 상점",
+            "English": "Lohen's Beach Shop",
+            "ChineseCh": "罗恩的海边商店",
+            "ChineseTh": "羅恩海邊商店",
+            "Japanese": "ローエンのビーチショップ"
+        }
+    },
+    {
+        "Key": "DefShopType.Limited_SpecialShop",
+        "Text": {
+            "Korea": "스페셜 상점",
+            "English": "Special Shop",
+            "ChineseCh": "特殊商店",
+            "ChineseTh": "特殊商店",
+            "Japanese": "スペシャルショップ"
+        }
+    },
+    {
+        "Key": "DefShopType.EventSummer_250904",
+        "Text": {
+            "Korea": "썸머 코인",
+            "English": "Summer Coin",
+            "ChineseCh": "夏日币",
+            "ChineseTh": "夏日幣",
+            "Japanese": "サマーコイン"
+        }
+    },
+    {
+        "Key": "코스튬상점구매불가",
+        "Text": {
+            "Korea": "해당 코스튬은 현재 구매할 수 없습니다.",
+            "English": "This costume is currently unavailable for purchase.",
+            "ChineseCh": "该时装当前无法购买。",
+            "ChineseTh": "目前無法購買該服裝。",
+            "Japanese": "このコスチュームは現在購入できません"
+        }
+    },
+    {
+        "Key": "DefZoneType.EventBeast",
+        "Text": {
+            "Korea": "수상한 무인도",
+            "English": "Mysterious Island",
+            "ChineseCh": "可疑的无人岛",
+            "ChineseTh": "可疑的無人島",
+            "Japanese": "怪しい無人島"
+        }
+    },
+    {
+        "Key": "DefZoneType.EventEgg",
+        "Text": {
+            "Korea": "황금 달걀",
+            "English": "Golden Egg",
+            "ChineseCh": "黄金鸡蛋",
+            "ChineseTh": "金雞蛋",
+            "Japanese": "黄金の卵"
+        }
+    },
+    {
+        "Key": "보유중",
+        "Text": {
+            "Korea": "보유 중",
+            "English": "Owned",
+            "ChineseCh": "已拥有",
+            "ChineseTh": "持有中",
+            "Japanese": "保有中"
+        }
+    },
+    {
+        "Key": "인도자레벨제한",
+        "Text": {
+            "Korea": "인도자 레벨 {0}이상이 되어야 합니다.",
+            "English": "Requires Swordbringer Lv.{0}",
+            "ChineseCh": "引路者等级需要达到{0}级以上。",
+            "ChineseTh": "引導者等級須達到{0}以上。",
+            "Japanese": "導く者レベル{0}以上になる必要があります"
+        }
+    },
+    {
+        "Key": "DefShopType.NCT00",
+        "Text": {
+            "Korea": "이벤트 상점",
+            "English": "Event Shop",
+            "ChineseCh": "活动商店",
+            "ChineseTh": "活動商店",
+            "Japanese": "イベントショップ"
         }
     }
 ]

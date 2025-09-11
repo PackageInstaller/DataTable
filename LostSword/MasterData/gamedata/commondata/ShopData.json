@@ -190,6 +190,26 @@
             "ConditionZone": 1200
         },
         {
+            "Index": 671,
+            "Type": 52,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 93,
+                "Num": 10
+            },
+            "PeriodType": 3,
+            "BuyCount": 1,
+            "ItemList": [
+                {
+                    "Type": 4,
+                    "Index": 527,
+                    "Num": 1,
+                    "ItemLevel": 150
+                }
+            ],
+            "ConditionEquipment": 527
+        },
+        {
             "Index": 120,
             "Type": 5,
             "Priority": 30,
@@ -471,7 +491,7 @@
         },
         {
             "Index": 571,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -491,7 +511,7 @@
         },
         {
             "Index": 225,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 1,
@@ -511,7 +531,7 @@
         },
         {
             "Index": 487,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -531,7 +551,7 @@
         },
         {
             "Index": 416,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -551,7 +571,7 @@
         },
         {
             "Index": 485,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -571,7 +591,7 @@
         },
         {
             "Index": 594,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -590,7 +610,7 @@
         },
         {
             "Index": 430,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -610,7 +630,7 @@
         },
         {
             "Index": 508,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -630,7 +650,7 @@
         },
         {
             "Index": 384,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 1,
@@ -650,7 +670,7 @@
         },
         {
             "Index": 385,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 1,
@@ -670,7 +690,7 @@
         },
         {
             "Index": 507,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 1,
@@ -690,7 +710,7 @@
         },
         {
             "Index": 486,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 1,
@@ -709,8 +729,27 @@
             "NctAdd": true
         },
         {
+            "Index": 665,
+            "Type": 53,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 800
+            },
+            "BuyCount": 1,
+            "ItemList": [
+                {
+                    "Type": 3,
+                    "Index": 508,
+                    "CostumeType": 1,
+                    "Num": 1
+                }
+            ],
+            "IsOnceAtTime": true
+        },
+        {
             "Index": 595,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -729,7 +768,7 @@
         },
         {
             "Index": 282,
-            "Type": 16,
+            "Type": 53,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -1546,7 +1585,6 @@
         },
         {
             "Index": 592,
-            "Type": 50,
             "Priority": 184,
             "NCTPriority": 184,
             "PriceItem": {
@@ -3131,6 +3169,402 @@
             "NctAdd": true
         },
         {
+            "Index": 672,
+            "Type": 56,
+            "Priority": 187,
+            "NCTPriority": 187,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 100
+            },
+            "BuyCount": 20,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 37,
+                    "Num": 1
+                }
+            ]
+        },
+        {
+            "Index": 647,
+            "Type": 56,
+            "Priority": 192,
+            "NCTPriority": 192,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 1500
+            },
+            "BuyCount": 4,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 191,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 648,
+            "Type": 56,
+            "Priority": 194,
+            "NCTPriority": 194,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 300
+            },
+            "BuyCount": 2,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 170,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 649,
+            "Type": 56,
+            "Priority": 193,
+            "NCTPriority": 193,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 50
+            },
+            "BuyCount": 20,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 172,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 650,
+            "Type": 56,
+            "Priority": 191,
+            "NCTPriority": 191,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 300
+            },
+            "BuyCount": 10,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 122,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 651,
+            "Type": 56,
+            "Priority": 184,
+            "NCTPriority": 184,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 1,
+                "Num": 50000
+            },
+            "PeriodType": 1,
+            "BuyCount": 2,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 232,
+                    "Num": 1
+                }
+            ]
+        },
+        {
+            "Index": 652,
+            "Type": 56,
+            "Priority": 182,
+            "NCTPriority": 182,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 1
+            },
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 74,
+                    "Num": 10
+                }
+            ]
+        },
+        {
+            "Index": 653,
+            "Type": 56,
+            "Priority": 186,
+            "NCTPriority": 186,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 50
+            },
+            "BuyCount": 50,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 654,
+            "Type": 56,
+            "Priority": 185,
+            "NCTPriority": 185,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 50
+            },
+            "BuyCount": 50,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 22,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 655,
+            "Type": 56,
+            "Priority": 189,
+            "NCTPriority": 189,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 50
+            },
+            "BuyCount": 20,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 184,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 656,
+            "Type": 56,
+            "Priority": 190,
+            "NCTPriority": 190,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 50
+            },
+            "BuyCount": 50,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 40,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 657,
+            "Type": 56,
+            "Priority": 200,
+            "NCTPriority": 200,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 150
+            },
+            "BuyCount": 15,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 44,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 658,
+            "Type": 56,
+            "Priority": 199,
+            "NCTPriority": 199,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 75
+            },
+            "BuyCount": 15,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 178,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 659,
+            "Type": 56,
+            "Priority": 195,
+            "NCTPriority": 195,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 50
+            },
+            "BuyCount": 100,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 61,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 660,
+            "Type": 56,
+            "Priority": 196,
+            "NCTPriority": 196,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 1500
+            },
+            "BuyCount": 2,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 62,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 661,
+            "Type": 56,
+            "Priority": 198,
+            "NCTPriority": 198,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 150
+            },
+            "BuyCount": 15,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 39,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 662,
+            "Type": 56,
+            "Priority": 197,
+            "NCTPriority": 197,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 75
+            },
+            "BuyCount": 15,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 42,
+                    "Num": 1
+                }
+            ],
+            "HideSoldOut": true
+        },
+        {
+            "Index": 663,
+            "Type": 56,
+            "Priority": 183,
+            "NCTPriority": 183,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 20
+            },
+            "PeriodType": 1,
+            "BuyCount": 1,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 70,
+                    "Num": 1
+                }
+            ]
+        },
+        {
+            "Index": 673,
+            "Type": 56,
+            "Priority": 188,
+            "NCTPriority": 188,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 300
+            },
+            "BuyCount": 10,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 201,
+                    "Num": 1
+                }
+            ]
+        },
+        {
+            "Index": 664,
+            "Type": 56,
+            "Priority": 184,
+            "NCTPriority": 184,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 230,
+                "Num": 20
+            },
+            "PeriodType": 1,
+            "BuyCount": 1,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 141,
+                    "Num": 1
+                }
+            ]
+        },
+        {
             "Index": 460,
             "Type": 45,
             "Priority": 193,
@@ -4464,6 +4898,42 @@
             "NctAdd": true
         },
         {
+            "Index": 645,
+            "Type": 11,
+            "Priority": 201,
+            "NCTPriority": 201,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 12,
+                "Num": 2500
+            },
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 228,
+                    "Num": 5
+                }
+            ]
+        },
+        {
+            "Index": 646,
+            "Type": 11,
+            "Priority": 200,
+            "NCTPriority": 200,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 12,
+                "Num": 1250
+            },
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 229,
+                    "Num": 5
+                }
+            ]
+        },
+        {
             "Index": 199,
             "Type": 11,
             "Priority": 197,
@@ -4877,7 +5347,7 @@
         {
             "Index": 156,
             "Type": 2,
-            "NCTPriority": 99,
+            "NCTPriority": 60,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -4908,7 +5378,7 @@
         {
             "Index": 157,
             "Type": 2,
-            "NCTPriority": 97,
+            "NCTPriority": 50,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -4939,7 +5409,7 @@
         {
             "Index": 158,
             "Type": 2,
-            "NCTPriority": 95,
+            "NCTPriority": 40,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -4970,7 +5440,7 @@
         {
             "Index": 166,
             "Type": 2,
-            "NCTPriority": 93,
+            "NCTPriority": 30,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -5006,7 +5476,7 @@
         {
             "Index": 509,
             "Type": 2,
-            "NCTPriority": 98,
+            "NCTPriority": 90,
             "Cash": true,
             "Sku": "lostd_swordbless1",
             "BuyCount": 1,
@@ -5068,7 +5538,7 @@
             "Index": 47,
             "Type": 2,
             "Priority": 100,
-            "NCTPriority": 96,
+            "NCTPriority": 80,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -5120,7 +5590,7 @@
             "Index": 46,
             "Type": 2,
             "Priority": 100,
-            "NCTPriority": 96,
+            "NCTPriority": 80,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -5168,7 +5638,7 @@
             "Index": 45,
             "Type": 2,
             "Priority": 100,
-            "NCTPriority": 96,
+            "NCTPriority": 80,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -9130,7 +9600,7 @@
                     "Num": 10
                 }
             ],
-            "StepUpPrevIndex": 315,
+            "StepUpPrevIndex": 667,
             "StepUpNextIndex": 317,
             "NctAdd": true,
             "AFEventName": "lostd_stepprointermediate100",
@@ -9192,7 +9662,7 @@
                     "Num": 50
                 }
             ],
-            "StepUpPrevIndex": 376,
+            "StepUpPrevIndex": 668,
             "NctAdd": true,
             "AFEventName": "lostd_steppromaster100",
             "HideSoldOut": true
@@ -13907,7 +14377,7 @@
             "PeriodType": 4,
             "BuyCount": 3,
             "StartTime": "2025-08-21T00:00:00Z",
-            "EndTime": "2025-09-05T00:00:00Z",
+            "EndTime": "2025-08-21T00:00:00Z",
             "ItemList": [
                 {
                     "Type": 6,
@@ -13946,7 +14416,7 @@
             "PeriodType": 4,
             "BuyCount": 3,
             "StartTime": "2025-08-21T00:00:00Z",
-            "EndTime": "2025-09-05T00:00:00Z",
+            "EndTime": "2025-08-21T00:00:00Z",
             "ItemList": [
                 {
                     "Type": 6,
@@ -13979,7 +14449,7 @@
             "NCTPriority": 11,
             "PeriodType": 4,
             "BuyCount": 1,
-            "StartTime": "2025-08-21T00:00:00Z",
+            "StartTime": "2024-08-21T00:00:00Z",
             "EndTime": "2025-09-05T00:00:00Z",
             "ItemList": [
                 {
@@ -14009,7 +14479,7 @@
             },
             "PeriodType": 4,
             "BuyCount": 1,
-            "StartTime": "2025-08-21T00:00:00Z",
+            "StartTime": "2024-08-21T00:00:00Z",
             "EndTime": "2025-09-05T00:00:00Z",
             "ItemList": [
                 {
@@ -14042,7 +14512,7 @@
             },
             "PeriodType": 4,
             "BuyCount": 1,
-            "StartTime": "2025-08-21T00:00:00Z",
+            "StartTime": "2024-08-21T00:00:00Z",
             "EndTime": "2025-09-05T00:00:00Z",
             "ItemList": [
                 {
@@ -14085,7 +14555,7 @@
             },
             "PeriodType": 4,
             "BuyCount": 1,
-            "StartTime": "2025-08-21T00:00:00Z",
+            "StartTime": "2024-08-21T00:00:00Z",
             "EndTime": "2025-09-05T00:00:00Z",
             "ItemList": [
                 {
@@ -14133,7 +14603,7 @@
             },
             "PeriodType": 4,
             "BuyCount": 3,
-            "StartTime": "2025-08-21T00:00:00Z",
+            "StartTime": "2024-08-21T00:00:00Z",
             "EndTime": "2025-09-05T00:00:00Z",
             "ItemList": [
                 {
@@ -14181,7 +14651,7 @@
             },
             "PeriodType": 4,
             "BuyCount": 3,
-            "StartTime": "2025-08-21T00:00:00Z",
+            "StartTime": "2024-08-21T00:00:00Z",
             "EndTime": "2025-09-05T00:00:00Z",
             "ItemList": [
                 {
@@ -14224,7 +14694,7 @@
             },
             "PeriodType": 4,
             "BuyCount": 1,
-            "StartTime": "2025-08-21T00:00:00Z",
+            "StartTime": "2024-08-21T00:00:00Z",
             "EndTime": "2025-09-05T00:00:00Z",
             "ItemList": [
                 {
@@ -14277,7 +14747,7 @@
             },
             "PeriodType": 4,
             "BuyCount": 1,
-            "StartTime": "2025-08-21T00:00:00Z",
+            "StartTime": "2024-08-21T00:00:00Z",
             "EndTime": "2025-09-05T00:00:00Z",
             "ItemList": [
                 {
@@ -14320,7 +14790,7 @@
             },
             "PeriodType": 4,
             "BuyCount": 5,
-            "StartTime": "2025-08-21T00:00:00Z",
+            "StartTime": "2024-08-21T00:00:00Z",
             "EndTime": "2025-09-05T00:00:00Z",
             "ItemList": [
                 {
@@ -14369,7 +14839,7 @@
             "PeriodType": 4,
             "BuyCount": 3,
             "StartTime": "2025-08-21T00:00:00Z",
-            "EndTime": "2025-09-05T00:00:00Z",
+            "EndTime": "2025-08-21T00:00:00Z",
             "ItemList": [
                 {
                     "Type": 6,
@@ -14408,7 +14878,7 @@
             "PeriodType": 4,
             "BuyCount": 3,
             "StartTime": "2025-08-21T00:00:00Z",
-            "EndTime": "2025-09-05T00:00:00Z",
+            "EndTime": "2025-08-21T00:00:00Z",
             "ItemList": [
                 {
                     "Type": 6,
@@ -14445,15 +14915,651 @@
             "HideSoldOut": true
         },
         {
-            "Index": 556,
+            "Index": 630,
+            "Type": 1,
+            "Priority": 5,
+            "NCTPriority": 5,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 2400
+            },
+            "PeriodType": 4,
+            "BuyCount": 3,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 2400
+                },
+                {
+                    "Type": 6,
+                    "Index": 44,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 22,
+                    "Num": 15
+                }
+            ],
+            "AFEventName": "lostd_whiteshell01",
+            "HideSoldOut": true
+        },
+        {
+            "Index": 631,
+            "Type": 1,
+            "Priority": 3,
+            "NCTPriority": 3,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 7200
+            },
+            "PeriodType": 4,
+            "BuyCount": 3,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 7200
+                },
+                {
+                    "Type": 6,
+                    "Index": 44,
+                    "Num": 60
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 60
+                },
+                {
+                    "Type": 6,
+                    "Index": 22,
+                    "Num": 45
+                }
+            ],
+            "AFEventName": "lostd_whiteshell02",
+            "HideSoldOut": true
+        },
+        {
+            "Index": 632,
+            "Type": 54,
+            "Priority": 11,
+            "NCTPriority": 11,
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 153,
+                    "Num": 1
+                },
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 100
+                }
+            ],
+            "FreePrice": true,
+            "AFEventName": "lostd_loengift",
+            "HideSoldOut": true
+        },
+        {
+            "Index": 633,
+            "Type": 54,
+            "Priority": 9,
+            "NCTPriority": 9,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 400
+            },
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 400
+                },
+                {
+                    "Type": 6,
+                    "Index": 44,
+                    "Num": 5
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 5
+                }
+            ],
+            "AFEventName": "lostd_beachinvite"
+        },
+        {
+            "Index": 634,
+            "Type": 54,
+            "Priority": 6,
+            "NCTPriority": 6,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 2400
+            },
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 2400
+                },
+                {
+                    "Type": 6,
+                    "Index": 39,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 42,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 40,
+                    "Num": 30
+                }
+            ],
+            "AFEventName": "lostd_blackpearl01"
+        },
+        {
+            "Index": 635,
+            "Type": 54,
+            "Priority": 5,
+            "NCTPriority": 5,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 7200
+            },
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 7200
+                },
+                {
+                    "Type": 6,
+                    "Index": 39,
+                    "Num": 60
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 60
+                },
+                {
+                    "Type": 6,
+                    "Index": 170,
+                    "Num": 5
+                },
+                {
+                    "Type": 6,
+                    "Index": 62,
+                    "Num": 4
+                },
+                {
+                    "Type": 6,
+                    "Index": 37,
+                    "Num": 60
+                }
+            ],
+            "AFEventName": "lostd_blackswan02"
+        },
+        {
+            "Index": 636,
+            "Type": 54,
+            "Priority": 8,
+            "NCTPriority": 8,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 1600
+            },
+            "PeriodType": 4,
+            "BuyCount": 3,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 1600
+                },
+                {
+                    "Type": 6,
+                    "Index": 178,
+                    "Num": 30
+                },
+                {
+                    "Type": 6,
+                    "Index": 40,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 122,
+                    "Num": 10
+                },
+                {
+                    "Type": 6,
+                    "Index": 37,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 22,
+                    "Num": 10
+                }
+            ],
+            "AFEventName": "lostd_nightbeachmeet"
+        },
+        {
+            "Index": 637,
+            "Type": 54,
+            "Priority": 7,
+            "NCTPriority": 7,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 3200
+            },
+            "PeriodType": 4,
+            "BuyCount": 3,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 3200
+                },
+                {
+                    "Type": 6,
+                    "Index": 44,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 178,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 50
+                },
+                {
+                    "Type": 6,
+                    "Index": 40,
+                    "Num": 20
+                }
+            ],
+            "AFEventName": "lostd_waveoath"
+        },
+        {
+            "Index": 638,
+            "Type": 54,
+            "Priority": 4,
+            "NCTPriority": 4,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 8000
+            },
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 8000
+                },
+                {
+                    "Type": 6,
+                    "Index": 5,
+                    "Num": 1
+                },
+                {
+                    "Type": 6,
+                    "Index": 39,
+                    "Num": 30
+                },
+                {
+                    "Type": 6,
+                    "Index": 42,
+                    "Num": 30
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 30
+                },
+                {
+                    "Type": 6,
+                    "Index": 122,
+                    "Num": 10
+                },
+                {
+                    "Type": 6,
+                    "Index": 37,
+                    "Num": 60
+                }
+            ],
+            "AFEventName": "lostd_nightbeachdate"
+        },
+        {
+            "Index": 639,
+            "Type": 54,
             "Priority": 10,
             "NCTPriority": 10,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 3,
+                "Num": 2400
+            },
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 2000
+                },
+                {
+                    "Type": 6,
+                    "Index": 40,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 191,
+                    "Num": 1
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 10
+                },
+                {
+                    "Type": 6,
+                    "Index": 22,
+                    "Num": 10
+                }
+            ],
+            "AFEventName": "lostd_beachwalk"
+        },
+        {
+            "Index": 640,
+            "Type": 54,
+            "Priority": 8,
+            "NCTPriority": 8,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 1600
+            },
+            "PeriodType": 4,
+            "BuyCount": 5,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 1600
+                },
+                {
+                    "Type": 6,
+                    "Index": 186,
+                    "Num": 2
+                },
+                {
+                    "Type": 6,
+                    "Index": 184,
+                    "Num": 10
+                },
+                {
+                    "Type": 6,
+                    "Index": 40,
+                    "Num": 30
+                },
+                {
+                    "Type": 6,
+                    "Index": 122,
+                    "Num": 5
+                },
+                {
+                    "Type": 6,
+                    "Index": 37,
+                    "Num": 20
+                }
+            ],
+            "AFEventName": "lostd_shellrefine"
+        },
+        {
+            "Index": 641,
+            "Type": 1,
+            "Priority": 2,
+            "NCTPriority": 2,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 3,
+                "Num": 1200
+            },
+            "PeriodType": 4,
+            "BuyCount": 3,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 191,
+                    "Num": 1
+                },
+                {
+                    "Type": 6,
+                    "Index": 201,
+                    "Num": 5
+                },
+                {
+                    "Type": 6,
+                    "Index": 22,
+                    "Num": 10
+                },
+                {
+                    "Type": 6,
+                    "Index": 184,
+                    "Num": 15
+                }
+            ],
+            "AFEventName": "lostd_swanemblem",
+            "HideSoldOut": true
+        },
+        {
+            "Index": 642,
+            "Type": 54,
+            "Priority": 9,
+            "NCTPriority": 9,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 8000
+            },
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 8000
+                },
+                {
+                    "Type": 6,
+                    "Index": 180,
+                    "Num": 1
+                },
+                {
+                    "Type": 6,
+                    "Index": 191,
+                    "Num": 8
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 120
+                },
+                {
+                    "Type": 6,
+                    "Index": 22,
+                    "Num": 50
+                },
+                {
+                    "Type": 6,
+                    "Index": 61,
+                    "Num": 300
+                }
+            ],
+            "AFEventName": "lostd_nightvip"
+        },
+        {
+            "Index": 643,
+            "Type": 55,
+            "Priority": 5,
+            "NCTPriority": 5,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
                 "Num": 800
             },
+            "PeriodType": 4,
+            "BuyCount": 5,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 800
+                },
+                {
+                    "Type": 6,
+                    "Index": 231,
+                    "Num": 1
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 37,
+                    "Num": 10
+                },
+                {
+                    "Type": 6,
+                    "Index": 122,
+                    "Num": 5
+                }
+            ],
+            "AFEventName": "lostd_specialpack01",
+            "HideSoldOut": true
+        },
+        {
+            "Index": 644,
+            "Type": 55,
+            "Priority": 5,
+            "NCTPriority": 5,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 1600
+            },
+            "PeriodType": 4,
             "BuyCount": 3,
+            "StartTime": "2025-09-04T00:00:00Z",
+            "EndTime": "2025-09-19T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 1600
+                },
+                {
+                    "Type": 6,
+                    "Index": 219,
+                    "Num": 4000
+                },
+                {
+                    "Type": 6,
+                    "Index": 191,
+                    "Num": 3
+                },
+                {
+                    "Type": 6,
+                    "Index": 201,
+                    "Num": 20
+                }
+            ],
+            "AFEventName": "lostd_specialpack02",
+            "HideSoldOut": true
+        },
+        {
+            "Index": 556,
+            "Type": 1,
+            "Priority": 10,
+            "NCTPriority": 60,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 800
+            },
+            "PeriodType": 4,
+            "BuyCount": 3,
+            "StartTime": "2025-08-27T00:00:00Z",
+            "EndTime": "2025-09-04T00:00:00Z",
             "ItemList": [
                 {
                     "Type": 6,
@@ -14471,19 +15577,18 @@
                     "Num": 20
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage21",
             "HideSoldOut": true
         },
         {
             "Index": 557,
+            "Type": 48,
             "Priority": 10,
             "NCTPriority": 10,
-            "PriceItem": {
-                "Type": 6,
-                "Index": 125,
-                "Num": 4000
-            },
+            "Cash": true,
+            "Sku": "lostd_mycardpackage1_ncshop2",
             "BuyCount": 1,
             "ItemList": [
                 {
@@ -14499,12 +15604,12 @@
                 {
                     "Type": 6,
                     "Index": 44,
-                    "Num": 10
+                    "Num": 20
                 },
                 {
                     "Type": 6,
                     "Index": 178,
-                    "Num": 10
+                    "Num": 20
                 },
                 {
                     "Type": 6,
@@ -14517,12 +15622,15 @@
                     "Num": 5
                 }
             ],
+            "LocalizedPrice": "1150",
+            "NctAdd": true,
             "GlobalExcept": true,
-            "AFEventName": "lostd_eventpackage19",
+            "AFEventName": "lostd_mycardpackage1_ncshop2",
             "HideSoldOut": true
         },
         {
             "Index": 558,
+            "Type": 1,
             "Priority": 10,
             "NCTPriority": 10,
             "PriceItem": {
@@ -14545,7 +15653,7 @@
                 {
                     "Type": 6,
                     "Index": 39,
-                    "Num": 25
+                    "Num": 40
                 },
                 {
                     "Type": 6,
@@ -14568,10 +15676,153 @@
             "HideSoldOut": true
         },
         {
+            "Index": 627,
+            "Type": 48,
+            "Priority": 10,
+            "NCTPriority": 10,
+            "Cash": true,
+            "Sku": "lostd_mycardpackage1_ncshop3",
+            "BuyCount": 1,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 4000
+                },
+                {
+                    "Type": 6,
+                    "Index": 8,
+                    "Num": 1
+                },
+                {
+                    "Type": 6,
+                    "Index": 39,
+                    "Num": 30
+                },
+                {
+                    "Type": 6,
+                    "Index": 42,
+                    "Num": 30
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 15
+                },
+                {
+                    "Type": 6,
+                    "Index": 122,
+                    "Num": 5
+                },
+                {
+                    "Type": 6,
+                    "Index": 37,
+                    "Num": 30
+                }
+            ],
+            "LocalizedPrice": "1150",
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "AFEventName": "lostd_mycardpackage1_ncshop3",
+            "HideSoldOut": true
+        },
+        {
+            "Index": 628,
+            "Type": 48,
+            "Priority": 10,
+            "NCTPriority": 10,
+            "Cash": true,
+            "Sku": "lostd_mycardpackage1_ncshop4",
+            "BuyCount": 3,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 4000
+                },
+                {
+                    "Type": 6,
+                    "Index": 178,
+                    "Num": 100
+                },
+                {
+                    "Type": 6,
+                    "Index": 40,
+                    "Num": 35
+                },
+                {
+                    "Type": 6,
+                    "Index": 37,
+                    "Num": 35
+                },
+                {
+                    "Type": 6,
+                    "Index": 122,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 22,
+                    "Num": 25
+                }
+            ],
+            "LocalizedPrice": "1150",
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "AFEventName": "lostd_mycardpackage1_ncshop4",
+            "HideSoldOut": true
+        },
+        {
+            "Index": 629,
+            "Type": 48,
+            "Priority": 10,
+            "NCTPriority": 10,
+            "Cash": true,
+            "Sku": "lostd_mycardpackage1_ncshop5",
+            "BuyCount": 3,
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 4000
+                },
+                {
+                    "Type": 6,
+                    "Index": 44,
+                    "Num": 40
+                },
+                {
+                    "Type": 6,
+                    "Index": 178,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 22,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 37,
+                    "Num": 20
+                }
+            ],
+            "LocalizedPrice": "1150",
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "AFEventName": "lostd_mycardpackage1_ncshop5",
+            "HideSoldOut": true
+        },
+        {
             "Index": 510,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 81,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -14608,7 +15859,6 @@
                     "Num": 40
                 }
             ],
-            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage1"
         },
@@ -14616,7 +15866,7 @@
             "Index": 511,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 80,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -14653,7 +15903,6 @@
                     "Num": 120
                 }
             ],
-            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage2"
         },
@@ -14678,7 +15927,6 @@
                     "Num": 100
                 }
             ],
-            "NctAdd": true,
             "GlobalExcept": true,
             "FreePrice": true,
             "AFEventName": "lostd_Merlingift",
@@ -14687,6 +15935,7 @@
         {
             "Index": 513,
             "Type": 1,
+            "NCTPriority": 50,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -14731,6 +15980,7 @@
         {
             "Index": 514,
             "Type": 1,
+            "NCTPriority": 40,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -14989,7 +16239,7 @@
             "Index": 520,
             "Type": 2,
             "Priority": 11,
-            "NCTPriority": 11,
+            "NCTPriority": 100,
             "PeriodType": 4,
             "BuyCount": 1,
             "StartTime": "2025-08-27T00:00:00Z",
@@ -15006,6 +16256,7 @@
                     "Num": 100
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "FreePrice": true,
             "AFEventName": "lostd_Clairegift",
@@ -15015,7 +16266,7 @@
             "Index": 521,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 31,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15052,6 +16303,7 @@
                     "Num": 3
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage9"
         },
@@ -15059,7 +16311,7 @@
             "Index": 522,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 30,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15096,18 +16348,23 @@
                     "Num": 5
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage10"
         },
         {
             "Index": 523,
             "Type": 1,
+            "NCTPriority": 89,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
                 "Num": 400
             },
+            "PeriodType": 4,
             "BuyCount": 1,
+            "StartTime": "2025-08-27T00:00:00Z",
+            "EndTime": "2025-09-04T00:00:00Z",
             "ItemList": [
                 {
                     "Type": 6,
@@ -15135,6 +16392,7 @@
                     "Num": 40
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage7",
             "HideSoldOut": true
@@ -15142,12 +16400,16 @@
         {
             "Index": 524,
             "Type": 1,
+            "NCTPriority": 88,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
                 "Num": 1600
             },
+            "PeriodType": 4,
             "BuyCount": 1,
+            "StartTime": "2025-08-27T00:00:00Z",
+            "EndTime": "2025-09-04T00:00:00Z",
             "ItemList": [
                 {
                     "Type": 6,
@@ -15170,6 +16432,7 @@
                     "Num": 30
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage8",
             "HideSoldOut": true
@@ -15178,7 +16441,7 @@
             "Index": 596,
             "Type": 1,
             "Priority": 10,
-            "NCTPriority": 10,
+            "NCTPriority": 70,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15225,6 +16488,7 @@
                     "Num": 60
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage22"
         },
@@ -15232,7 +16496,7 @@
             "Index": 525,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 81,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15264,6 +16528,7 @@
                     "Num": 15
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage11"
         },
@@ -15271,7 +16536,7 @@
             "Index": 526,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 80,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15303,6 +16568,7 @@
                     "Num": 45
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage12"
         },
@@ -15310,7 +16576,7 @@
             "Index": 527,
             "Type": 2,
             "Priority": 11,
-            "NCTPriority": 11,
+            "NCTPriority": 100,
             "PeriodType": 4,
             "BuyCount": 1,
             "StartTime": "2025-09-03T00:00:00Z",
@@ -15327,15 +16593,17 @@
                     "Num": 100
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "FreePrice": true,
+            "AFEventName": "lostd_Riagift",
             "HideSoldOut": true
         },
         {
             "Index": 528,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 31,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15372,13 +16640,15 @@
                     "Num": 3
                 }
             ],
-            "GlobalExcept": true
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "AFEventName": "lostd_eventpackage13"
         },
         {
             "Index": 529,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 30,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15415,17 +16685,220 @@
                     "Num": 5
                 }
             ],
-            "GlobalExcept": true
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "AFEventName": "lostd_eventpackage14"
+        },
+        {
+            "Index": 667,
+            "Type": 1,
+            "Priority": 100,
+            "NCTPriority": 72,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 400
+            },
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-03T00:00:00Z",
+            "EndTime": "2025-10-02T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 400
+                },
+                {
+                    "Type": 6,
+                    "Index": 44,
+                    "Num": 4
+                },
+                {
+                    "Type": 6,
+                    "Index": 178,
+                    "Num": 4
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 10
+                },
+                {
+                    "Type": 6,
+                    "Index": 22,
+                    "Num": 10
+                }
+            ],
+            "StepUpNextIndex": 668,
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "AFEventName": "lostd_eventpackage49",
+            "HideSoldOut": true
+        },
+        {
+            "Index": 668,
+            "Type": 1,
+            "Priority": 100,
+            "NCTPriority": 72,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 2400
+            },
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-03T00:00:00Z",
+            "EndTime": "2025-10-02T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 2400
+                },
+                {
+                    "Type": 6,
+                    "Index": 44,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 178,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 171,
+                    "Num": 5
+                },
+                {
+                    "Type": 6,
+                    "Index": 40,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 122,
+                    "Num": 10
+                }
+            ],
+            "StepUpPrevIndex": 667,
+            "StepUpNextIndex": 669,
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "AFEventName": "lostd_eventpackage50",
+            "HideSoldOut": true
+        },
+        {
+            "Index": 669,
+            "Type": 1,
+            "Priority": 100,
+            "NCTPriority": 72,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 8000
+            },
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-03T00:00:00Z",
+            "EndTime": "2025-10-02T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 8000
+                },
+                {
+                    "Type": 6,
+                    "Index": 5,
+                    "Num": 1
+                },
+                {
+                    "Type": 6,
+                    "Index": 44,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 178,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 170,
+                    "Num": 3
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 50
+                },
+                {
+                    "Type": 6,
+                    "Index": 40,
+                    "Num": 20
+                },
+                {
+                    "Type": 6,
+                    "Index": 37,
+                    "Num": 50
+                }
+            ],
+            "StepUpPrevIndex": 668,
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "AFEventName": "lostd_eventpackage51",
+            "HideSoldOut": true
+        },
+        {
+            "Index": 670,
+            "Type": 1,
+            "Priority": 9,
+            "NCTPriority": 73,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 400
+            },
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-03T00:00:00Z",
+            "EndTime": "2025-10-02T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 400
+                },
+                {
+                    "Type": 6,
+                    "Index": 44,
+                    "Num": 5
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 5
+                }
+            ],
+            "NctAdd": true,
+            "GlobalExcept": true,
+            "AFEventName": "lostd_eventpackage52"
         },
         {
             "Index": 597,
             "Type": 1,
+            "NCTPriority": 75,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
                 "Num": 3200
             },
+            "PeriodType": 4,
             "BuyCount": 3,
+            "StartTime": "2025-09-03T00:00:00Z",
+            "EndTime": "2025-09-11T00:00:00Z",
             "ItemList": [
                 {
                     "Type": 6,
@@ -15458,18 +16931,23 @@
                     "Num": 20
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage24"
         },
         {
             "Index": 598,
             "Type": 1,
+            "NCTPriority": 74,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
                 "Num": 3200
             },
+            "PeriodType": 4,
             "BuyCount": 3,
+            "StartTime": "2025-09-03T00:00:00Z",
+            "EndTime": "2025-09-11T00:00:00Z",
             "ItemList": [
                 {
                     "Type": 6,
@@ -15502,6 +16980,7 @@
                     "Num": 10
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage25"
         },
@@ -15509,7 +16988,7 @@
             "Index": 530,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 81,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15541,6 +17020,7 @@
                     "Num": 15
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage5"
         },
@@ -15548,7 +17028,7 @@
             "Index": 531,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 80,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15580,6 +17060,7 @@
                     "Num": 45
                 }
             ],
+            "NctAdd": true,
             "GlobalExcept": true,
             "AFEventName": "lostd_eventpackage6"
         },
@@ -15698,7 +17179,7 @@
             "Index": 599,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 81,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15737,7 +17218,7 @@
             "Index": 600,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 80,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15776,7 +17257,7 @@
             "Index": 601,
             "Type": 2,
             "Priority": 11,
-            "NCTPriority": 11,
+            "NCTPriority": 100,
             "PeriodType": 4,
             "BuyCount": 1,
             "StartTime": "2025-09-10T00:00:00Z",
@@ -15802,7 +17283,7 @@
             "Index": 602,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 31,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15846,7 +17327,7 @@
             "Index": 603,
             "Type": 1,
             "Priority": 5,
-            "NCTPriority": 5,
+            "NCTPriority": 30,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15890,7 +17371,7 @@
             "Index": 604,
             "Type": 1,
             "Priority": 10,
-            "NCTPriority": 10,
+            "NCTPriority": 75,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,
@@ -15941,10 +17422,44 @@
             "AFEventName": "lostd_eventpackage23"
         },
         {
+            "Index": 666,
+            "Type": 1,
+            "Priority": 9,
+            "NCTPriority": 76,
+            "PriceItem": {
+                "Type": 6,
+                "Index": 125,
+                "Num": 400
+            },
+            "PeriodType": 4,
+            "BuyCount": 1,
+            "StartTime": "2025-09-10T00:00:00Z",
+            "EndTime": "2025-09-18T00:00:00Z",
+            "ItemList": [
+                {
+                    "Type": 6,
+                    "Index": 3,
+                    "Num": 400
+                },
+                {
+                    "Type": 6,
+                    "Index": 44,
+                    "Num": 5
+                },
+                {
+                    "Type": 6,
+                    "Index": 173,
+                    "Num": 5
+                }
+            ],
+            "GlobalExcept": true,
+            "AFEventName": "lostd_eventpackage53"
+        },
+        {
             "Index": 150,
             "Type": 2,
             "Priority": 900,
-            "NCTPriority": 94,
+            "NCTPriority": 70,
             "BuyCount": 1,
             "ItemList": [
                 {
@@ -16036,7 +17551,7 @@
             "Index": 153,
             "Type": 1,
             "Priority": 10,
-            "NCTPriority": 10,
+            "NCTPriority": 90,
             "PriceItem": {
                 "Type": 6,
                 "Index": 125,

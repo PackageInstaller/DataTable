@@ -2534,6 +2534,16 @@
             }
         }
     },
+    "AudreyShop_10": {
+        "Text": {
+            "Name": {
+                "Korea": "질투의 비수",
+                "English": "Stiletto of Jealousy",
+                "ChineseCh": "嫉妒的匕首",
+                "Japanese": "嫉妬のナイフ"
+            }
+        }
+    },
     "Avalon": {
         "Text": {
             "Name": {
@@ -4844,7 +4854,7 @@
                 "Korea": "스톤헨지의 축복",
                 "English": "Blessing of Stonehenge",
                 "ChineseCh": "巨石阵的祝福",
-                "ChineseTh": "巨石阵的祝福",
+                "ChineseTh": "巨石陣的祝福",
                 "Japanese": "ストーンヘンジの祝福"
             }
         }
@@ -5328,7 +5338,7 @@
                 "Korea": "스톤헨지의 축복",
                 "English": "Blessing of Stonehenge",
                 "ChineseCh": "巨石阵的祝福",
-                "ChineseTh": "巨石阵的祝福",
+                "ChineseTh": "巨石陣的祝福",
                 "Japanese": "ストーンヘンジの祝福"
             }
         }
@@ -5722,10 +5732,32 @@
     "Box_Select_Sm": {
         "Text": {
             "Explain": {
-                "Korea": "[FBD29B][sub]설명[/sub][-]\n캐릭터 소환권 또는 펫 소환권을 선택하여 획득할 수 있는 상자입니다."
+                "Korea": "[FBD29B][sub]설명[/sub][-]\n캐릭터 소환권 또는 펫 소환권을 선택하여 획득할 수 있는 상자입니다.",
+                "English": "[FBD29B][sub]Description[/sub][-]\nA chest that lets you choose and obtain either a Character Summon Ticket or a Pet Summon Ticket.",
+                "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n可选择获得角色召唤券或宠物召唤券的宝箱。",
+                "Japanese": "[FBD29B][sub]詳細[/sub][-]\nキャラクター召喚券またはペット召喚券を選んで獲得できる箱"
             },
             "Name": {
-                "Korea": "소환권 선택 상자"
+                "Korea": "소환권 선택 상자",
+                "English": "Summon Selection Chest",
+                "ChineseCh": "召唤券自选箱",
+                "Japanese": "召喚券BOX"
+            }
+        }
+    },
+    "Box_Select_SmCp": {
+        "Text": {
+            "Explain": {
+                "Korea": "[FBD29B][sub]설명[/sub][-]\n픽업 캐릭터 소환권 또는 픽업 펫 소환권을 선택하여 획득할 수 있는 상자입니다.",
+                "English": "[FBD29B][sub]Description[/sub][-]\nA chest that lets you choose and obtain either a Pickup Character Summon Ticket or a Pickup Pet Summon Ticket.",
+                "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n可选择获得抽取角色召唤券或抽取宠物召唤券的宝箱。",
+                "Japanese": "[FBD29B][sub]詳細[/sub][-]\nキャラ選択召喚券またはペット選択召喚券を選んで獲得できる箱"
+            },
+            "Name": {
+                "Korea": "픽업 소환권 선택 상자",
+                "English": "Pickup Summon Selection Chest",
+                "ChineseCh": "抽取召唤券自选箱",
+                "Japanese": "選択召喚券BOX"
             }
         }
     },
@@ -9086,7 +9118,7 @@
                 "Korea": "케이 추가 코스튬",
                 "English": "Bonus Kay Costume",
                 "ChineseCh": "凯伊追加时装",
-                "ChineseTh": "凱伊新增服裝",
+                "ChineseTh": "凱伊額外服裝",
                 "Japanese": "ケイ追加コスチューム"
             }
         }
@@ -9121,6 +9153,16 @@
                 "ChineseCh": "兰斯洛特比基尼时装",
                 "ChineseTh": "蘭斯洛特泳衣服裝",
                 "Japanese": "ランスロット水着コスチューム"
+            }
+        }
+    },
+    "Costume_Pc_Lohengrin_01_Bikini": {
+        "Text": {
+            "Name": {
+                "Korea": "로엔그린 비키니 코스튬",
+                "English": "Lohengrin Bikini Costume",
+                "ChineseCh": "罗恩格林比基尼时装",
+                "Japanese": "ローエングリン ビキニコスチューム"
             }
         }
     },
@@ -9856,6 +9898,16 @@
             }
         }
     },
+    "Dc_EventBeast_01": {
+        "Text": {
+            "Name": {
+                "Korea": "수상한 무인도",
+                "English": "Mysterious Desert Island",
+                "ChineseCh": "可疑的无人岛",
+                "Japanese": "怪しい無人島"
+            }
+        }
+    },
     "Dc_EventBeauty_01": {
         "Text": {
             "Name": {
@@ -9886,6 +9938,23 @@
                 "ChineseCh": "没有适合女巫的国家",
                 "ChineseTh": "魔女無容身之處",
                 "Japanese": "魔女のための国などない"
+            }
+        }
+    },
+    "Dc_EventEgg": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀"
+            }
+        }
+    },
+    "Dc_EventEgg_01": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀",
+                "English": "Golden Egg",
+                "ChineseCh": "黄金鸡蛋",
+                "Japanese": "黄金の卵"
             }
         }
     },
@@ -9928,7 +9997,7 @@
         "Text": {
             "Name": {
                 "Korea": "불꽃놀이는 여름의 추억",
-                "English": "Fireworks and Summer Memories ",
+                "English": "Fireworks and Summer Memories",
                 "ChineseCh": "烟花是夏日的回忆",
                 "Japanese": "花火は夏の思い出"
             }
@@ -10887,6 +10956,16 @@
             }
         }
     },
+    "Dc_Zone_56": {
+        "Text": {
+            "Name": {
+                "Korea": "염제",
+                "English": "Flame Emperor",
+                "ChineseCh": "炎帝",
+                "Japanese": "炎帝"
+            }
+        }
+    },
     "Dia": {
         "Text": {
             "Explain": {
@@ -11211,6 +11290,17 @@
             }
         }
     },
+    "E_250827_Nct_01": {
+        "Text": {
+            "Name": {
+                "Korea": "수제 초콜릿",
+                "English": "Handmade Chocolate",
+                "ChineseCh": "手工巧克力",
+                "ChineseTh": "手工巧克力",
+                "Japanese": "手作りチョコレート"
+            }
+        }
+    },
     "E_AbArmor": {
         "Text": {
             "Explain": {
@@ -11229,7 +11319,36 @@
             }
         }
     },
+    "E_AbArmor_Nct": {
+        "Text": {
+            "Explain": {
+                "Korea": "봉인된 앱솔루트 픽스 아머",
+                "English": "Sealed Absolute Armor",
+                "ChineseCh": "封印的绝对盔甲",
+                "ChineseTh": "封印的絕對貼身盔甲",
+                "Japanese": "封印されたアブソリュート・フィックス・アーマー"
+            },
+            "Name": {
+                "Korea": "봉인된 앱솔루트 픽스 아머",
+                "English": "Sealed Absolute Armor",
+                "ChineseCh": "封印的绝对盔甲",
+                "ChineseTh": "封印的絕對貼身盔甲",
+                "Japanese": "封印されたアブソリュート・フィックス・アーマー"
+            }
+        }
+    },
     "E_E29_Ac_5": {
+        "Text": {
+            "Name": {
+                "Korea": "질투의 비수",
+                "English": "Stiletto of Jealousy",
+                "ChineseCh": "嫉妒的匕首",
+                "ChineseTh": "嫉妒匕首",
+                "Japanese": "嫉妬のナイフ"
+            }
+        }
+    },
+    "E_E29_Ac_5_NCT": {
         "Text": {
             "Name": {
                 "Korea": "질투의 비수",
@@ -11749,6 +11868,16 @@
             }
         }
     },
+    "Eb_Chicken_01": {
+        "Text": {
+            "Name": {
+                "Korea": "칠흑의 눈, 검계",
+                "English": "Oblivion, the Dark Eye",
+                "ChineseCh": "漆黑之眼，黑鸡",
+                "Japanese": "漆黒の眼・剣界"
+            }
+        }
+    },
     "Eb_Chimera_01": {
         "Text": {
             "Name": {
@@ -11867,6 +11996,16 @@
                 "ChineseCh": "克里斯蒂娜",
                 "ChineseTh": "克里斯汀娜",
                 "Japanese": "クリスティーナ"
+            }
+        }
+    },
+    "Eb_CristinaSR_01": {
+        "Text": {
+            "Name": {
+                "Korea": "진홍의 크리스티나",
+                "English": "Crimson Cristina",
+                "ChineseCh": "唐红的克里斯蒂娜",
+                "Japanese": "真紅のクリスティーナ"
             }
         }
     },
@@ -12315,6 +12454,16 @@
             }
         }
     },
+    "Eb_GawainST_01": {
+        "Text": {
+            "Name": {
+                "Korea": "질풍의 가웨인",
+                "English": "Gale Gawain",
+                "ChineseCh": "疾风的加文",
+                "Japanese": "疾風のガウェイン"
+            }
+        }
+    },
     "Eb_General_01": {
         "Text": {
             "Name": {
@@ -12579,6 +12728,16 @@
             }
         }
     },
+    "Eb_Ifrit_01": {
+        "Text": {
+            "Name": {
+                "Korea": "염제",
+                "English": "Flame Emperor",
+                "ChineseCh": "炎帝",
+                "Japanese": "炎帝"
+            }
+        }
+    },
     "Eb_Isabel_01": {
         "Text": {
             "Name": {
@@ -12755,6 +12914,57 @@
             }
         }
     },
+    "Eb_KingSlime_10": {
+        "Text": {
+            "Name": {
+                "Korea": "라이트 킹 슬라임",
+                "English": "Light King Slime",
+                "ChineseCh": "曜之史莱姆王",
+                "Japanese": "ライト・キング・スライム"
+            }
+        }
+    },
+    "Eb_KingSlime_11": {
+        "Text": {
+            "Name": {
+                "Korea": "진 · 베디비어를 삼킨 킹 슬라임",
+                "English": "King Slime: NEO Gobbler",
+                "ChineseCh": "吞噬了真·贝迪维尔的史莱姆王",
+                "Japanese": "ネオ・ベディヴィアを飲み込んだキング・スライム"
+            }
+        }
+    },
+    "Eb_KingSlimeSR_01": {
+        "Text": {
+            "Name": {
+                "Korea": "진 · 베디비어를 삼킨 킹 슬라임",
+                "English": "King Slime: NEO Gobbler",
+                "ChineseCh": "吞噬了真·贝迪维尔的史莱姆王",
+                "Japanese": "ネオ・ベディヴィアを飲み込んだキング・スライム"
+            }
+        }
+    },
+    "Eb_KingSlimeSR_02": {
+        "Text": {
+            "Name": {
+                "Korea": "모르가나를 삼킨 킹 슬라임",
+                "English": "King Slime Devouring Morgana",
+                "ChineseCh": "吞掉莫甘娜的史莱姆王",
+                "ChineseTh": "吞噬莫甘娜的史萊姆王",
+                "Japanese": "モルガナを飲み込んだキング・スライム"
+            }
+        }
+    },
+    "Eb_KingSlimeST_01": {
+        "Text": {
+            "Name": {
+                "Korea": "진 · 베디비어를 삼킨 킹 슬라임",
+                "English": "King Slime: NEO Gobbler",
+                "ChineseCh": "吞噬了真·贝迪维尔的史莱姆王",
+                "Japanese": "ネオ・ベディヴィアを飲み込んだキング・スライム"
+            }
+        }
+    },
     "Eb_Kirke_01": {
         "Text": {
             "Name": {
@@ -12894,6 +13104,16 @@
                 "ChineseCh": "莉莎",
                 "ChineseTh": "麗莎",
                 "Japanese": "リサ"
+            }
+        }
+    },
+    "Eb_LisaST_01": {
+        "Text": {
+            "Name": {
+                "Korea": "교란의 리사",
+                "English": "Trickster Lisa",
+                "ChineseCh": "扰乱的莉莎",
+                "Japanese": "撹乱のリサ"
             }
         }
     },
@@ -13193,6 +13413,16 @@
             }
         }
     },
+    "Eb_MordredST_01": {
+        "Text": {
+            "Name": {
+                "Korea": "불사의 모드레드",
+                "English": "Undying Mordred",
+                "ChineseCh": "不死的莫德雷德",
+                "Japanese": "不死のモードレッド"
+            }
+        }
+    },
     "Eb_Morgana_01": {
         "Text": {
             "Name": {
@@ -13267,6 +13497,16 @@
                 "ChineseCh": "帕西瓦尔",
                 "ChineseTh": "珀西瓦爾",
                 "Japanese": "パーシーベル"
+            }
+        }
+    },
+    "Eb_PercivalSR_01": {
+        "Text": {
+            "Name": {
+                "Korea": "철벽의 퍼시벌",
+                "English": "Ironwall Percival",
+                "ChineseCh": "铁壁的帕西瓦尔",
+                "Japanese": "鉄壁のパーシーベル"
             }
         }
     },
@@ -15512,6 +15752,28 @@
             }
         }
     },
+    "En_Chicken_01": {
+        "Text": {
+            "Name": {
+                "Korea": "암탉",
+                "English": "Hen",
+                "ChineseCh": "母鸡",
+                "ChineseTh": "母雞",
+                "Japanese": "メンドリ"
+            }
+        }
+    },
+    "En_Chicken_02": {
+        "Text": {
+            "Name": {
+                "Korea": "수탉",
+                "English": "Rooster",
+                "ChineseCh": "公鸡",
+                "ChineseTh": "公雞",
+                "Japanese": "雄鶏"
+            }
+        }
+    },
     "En_CowGirl_01": {
         "Text": {
             "Name": {
@@ -16092,6 +16354,36 @@
                 "ChineseCh": "哥布林长老",
                 "ChineseTh": "長老哥布林",
                 "Japanese": "エルダー・ゴブリン"
+            }
+        }
+    },
+    "En_GoblinFemaleA_01": {
+        "Text": {
+            "Name": {
+                "Korea": "암컷 고블린 궁수",
+                "English": "Female Goblin Archer",
+                "ChineseCh": "雌性哥布林弓箭手",
+                "Japanese": "メスのゴブリンアーチャー"
+            }
+        }
+    },
+    "En_GoblinFemaleM_01": {
+        "Text": {
+            "Name": {
+                "Korea": "암컷 고블린 주술사",
+                "English": "Female Goblin Shaman",
+                "ChineseCh": "雌性哥布林咒术师",
+                "Japanese": "メスのゴブリンシャーマン"
+            }
+        }
+    },
+    "En_GoblinFemaleW_01": {
+        "Text": {
+            "Name": {
+                "Korea": "암컷 고블린",
+                "English": "Female Goblin",
+                "ChineseCh": "雌性哥布林",
+                "Japanese": "メスのゴブリン"
             }
         }
     },
@@ -20705,6 +20997,50 @@
             }
         }
     },
+    "Epic_HardClear_112": {
+        "Text": {
+            "Name": {
+                "Korea": "하드의 난관이 인도자를 만들었다 112",
+                "English": "The Hardship of Hard Mode Forged the Swordbringer 112",
+                "ChineseCh": "困难造就引路者112",
+                "ChineseTh": "艱困的難關造就了引導者112",
+                "Japanese": "ハードモードという試練が導く者を生み出した 112"
+            }
+        }
+    },
+    "Epic_HardClear_113": {
+        "Text": {
+            "Name": {
+                "Korea": "하드의 난관이 인도자를 만들었다 113",
+                "English": "The Hardship of Hard Mode Forged the Swordbringer 113",
+                "ChineseCh": "困难造就引路者113",
+                "ChineseTh": "艱困的難關造就了引導者113",
+                "Japanese": "ハードモードという試練が導く者を生み出した 113"
+            }
+        }
+    },
+    "Epic_HardClear_114": {
+        "Text": {
+            "Name": {
+                "Korea": "하드의 난관이 인도자를 만들었다 114",
+                "English": "The Hardship of Hard Mode Forged the Swordbringer 114",
+                "ChineseCh": "困难造就引路者114",
+                "ChineseTh": "艱困的難關造就了引導者114",
+                "Japanese": "ハードモードという試練が導く者を生み出した 114"
+            }
+        }
+    },
+    "Epic_HardClear_115": {
+        "Text": {
+            "Name": {
+                "Korea": "하드의 난관이 인도자를 만들었다 115",
+                "English": "The Hardship of Hard Mode Forged the Swordbringer 115",
+                "ChineseCh": "困难造就引路者115",
+                "ChineseTh": "艱困的難關造就了引導者115",
+                "Japanese": "ハードモードという試練が導く者を生み出した 115"
+            }
+        }
+    },
     "Epic_HardClear_12": {
         "Text": {
             "Name": {
@@ -21923,6 +22259,50 @@
                 "ChineseCh": "喂，前方可是地狱啊111",
                 "ChineseTh": "喂，前方是地獄111",
                 "Japanese": "おい、この先は地獄だぞ 111"
+            }
+        }
+    },
+    "Epic_HellClear_112": {
+        "Text": {
+            "Name": {
+                "Korea": "어이, 그 앞은 지옥이다 112",
+                "English": "Hey, That Path Leads to Hell 112",
+                "ChineseCh": "喂，前方可是地狱啊112",
+                "ChineseTh": "喂，前方是地獄112",
+                "Japanese": "おい、この先は地獄だぞ 112"
+            }
+        }
+    },
+    "Epic_HellClear_113": {
+        "Text": {
+            "Name": {
+                "Korea": "어이, 그 앞은 지옥이다 113",
+                "English": "Hey, That Path Leads to Hell 113",
+                "ChineseCh": "喂，前方可是地狱啊113",
+                "ChineseTh": "喂，前方是地獄113",
+                "Japanese": "おい、この先は地獄だぞ 113"
+            }
+        }
+    },
+    "Epic_HellClear_114": {
+        "Text": {
+            "Name": {
+                "Korea": "어이, 그 앞은 지옥이다 114",
+                "English": "Hey, That Path Leads to Hell 114",
+                "ChineseCh": "喂，前方可是地狱啊114",
+                "ChineseTh": "喂，前方是地獄114",
+                "Japanese": "おい、この先は地獄だぞ 114"
+            }
+        }
+    },
+    "Epic_HellClear_115": {
+        "Text": {
+            "Name": {
+                "Korea": "어이, 그 앞은 지옥이다 115",
+                "English": "Hey, That Path Leads to Hell 115",
+                "ChineseCh": "喂，前方可是地狱啊115",
+                "ChineseTh": "喂，前方是地獄115",
+                "Japanese": "おい、この先は地獄だぞ 115"
             }
         }
     },
@@ -26517,6 +26897,16 @@
             }
         }
     },
+    "Episode_Lohengrin_Bikini": {
+        "Text": {
+            "Name": {
+                "Korea": "호숫가의 광상곡",
+                "English": "Rhapsody by the Lake",
+                "ChineseCh": "湖畔狂想曲",
+                "Japanese": "湖畔のラプソディ"
+            }
+        }
+    },
     "Episode_Lua_01": {
         "Text": {
             "Name": {
@@ -27456,6 +27846,22 @@
             }
         }
     },
+    "ETicketSummer": {
+        "Text": {
+            "Explain": {
+                "Korea": "[FBD29B][sub]설명[/sub][-]\n수상한 무인도 던전 소탕에 필요한 티켓\n[FBD29B][sub]소탕[/sub][-]\n전투 - 이벤트 탭 - 수상한 무인도 선택",
+                "English": "[FBD29B][sub]Description[/sub][-]\nTicket required for sweeping the \"Mysterious Island\" dungeon.\n[FBD29B][sub]Sweep[/sub][-]\nBattle - Event - Mysterious Island",
+                "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n讨伐“可疑的无人岛”副本所需的票券\n[FBD29B][sub]扫荡[/sub][-]\n战斗 - 活动页签 - 选择“可疑的无人岛”",
+                "Japanese": "[FBD29B][sub]詳細[/sub][-]\n「怪しい無人島」ダンジョン掃討に必要なチケット\n[FBD29B][sub]掃討[/sub][-]\n戦闘 - イベントタブ - 「怪しい無人島」を選択"
+            },
+            "Name": {
+                "Korea": "썸머 티켓",
+                "English": "Summer Ticket",
+                "ChineseCh": "夏日票券",
+                "Japanese": "サマーチケット"
+            }
+        }
+    },
     "ETicketVa": {
         "Text": {
             "Name": {
@@ -27562,6 +27968,22 @@
             }
         }
     },
+    "Ev_SummerCoin": {
+        "Text": {
+            "Explain": {
+                "Korea": "[FBD29B][sub]설명[/sub][-]\n이벤트 전투에서 얻을 수 있는 썸머 코인\n이벤트 상점에서 다양한 상품으로 바꾸거나 제작에 사용된다\n[FBD29B][sub]획득처[/sub][-]\n전투 - 이벤트",
+                "English": "[FBD29B][sub]Description[/sub][-]\nCoins earned from event battles.\nCan be exchanged for various items at the event shop or used in crafting.\n[FBD29B][sub]Sources[/sub][-]\nBattle - Event",
+                "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n可在活动战斗中获得的夏日币\n可在活动商店兑换各种商品或用于制作\n[FBD29B][sub]获取途径[/sub][-]\n战斗 - 活动",
+                "Japanese": "[FBD29B][sub]詳細[/sub][-]\nイベント戦闘で入手できるサマーコイン\nイベントショップで様々な商品と交換したり、製作に使用されます。\n[FBD29B][sub]獲得先[/sub][-]\n戦闘 - イベント"
+            },
+            "Name": {
+                "Korea": "썸머 코인",
+                "English": "Summer Coin",
+                "ChineseCh": "夏日币",
+                "Japanese": "サマーコイン"
+            }
+        }
+    },
     "Ev_VacationCoin": {
         "Text": {
             "Explain": {
@@ -27586,7 +28008,7 @@
                 "Korea": "[FBD29B][sub]설명[/sub][-]\n이벤트 전투에서 얻을 수 있는 초콜릿 모양 코인\n이벤트 상점에서 다양한 상품으로 바꾸거나 제작에 사용된다.\n[FBD29B][sub]획득처[/sub][-]\n스톤헨지\n전투 - 이벤트",
                 "English": "[FBD29B][sub]Description[/sub][-]\nChocolate-shaped coin obtained in event battles.\nCan be exchanged for various items at the event shop or used in crafting.\n[FBD29B][sub]Sources[/sub][-]\nStonehenge\nBattle - Event",
                 "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n通过活动战斗获得的巧克力硬币。\n可在活动商店中兑换各种商品或用于制作。\n[FBD29B][sub]获得途径[/sub][-]\n巨石阵\n战斗 - 活动",
-                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n可透過活動戰鬥獲得的巧克力模樣硬幣。\n可於活動商店兌換成各種商品或用於製作。\n[FBD29B][sub]獲得處[/sub][-]\n巨石陣\n戰鬥-活動",
+                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n可透過活動戰鬥獲得的巧克力模樣硬幣。\n可於活動商店兌換成各種商品或用於製作。\n[FBD29B][sub]獲得處[/sub][-]\n戰鬥-活動",
                 "Japanese": "[FBD29B][sub]詳細[/sub][-]\nイベントバトルで獲得できるチョコ型のコイン\nイベントショップでアイテムと交換したり、製作素材として使用できる\n[FBD29B][sub]獲得先[/sub][-]\nストーンヘンジ\n戦闘＞イベント"
             },
             "Name": {
@@ -27816,6 +28238,17 @@
             }
         }
     },
+    "Event_Att_HellWay": {
+        "Text": {
+            "Explain": null,
+            "Name": {
+                "Korea": "지옥의 길",
+                "English": "The Path to Hell",
+                "ChineseCh": "地狱之路",
+                "Japanese": "地獄の道"
+            }
+        }
+    },
     "Event_Att_NewUser": {
         "Text": {
             "Explain": {
@@ -27888,6 +28321,22 @@
             }
         }
     },
+    "Event_Att14_Halloween25": {
+        "Text": {
+            "Explain": {
+                "Korea": "[574A41]이벤트 기간 동안 [4975C8]출석[-]하고 [4975C8]선물[-]받아가세요![-]",
+                "English": "[574A41]Log in during the event period [4975C8]to check in[-] and [4975C8]claim your rewards![-]",
+                "ChineseCh": "[574A41]活动期间[4975C8]签到[-]并领取[4975C8]礼物[-]吧！[-]",
+                "Japanese": "[574A41]イベント期間中に[4975C8]ログイン[-]して[4975C8]プレゼント[-]を受け取ろう！[-]"
+            },
+            "Name": {
+                "Korea": "트릭 오어 체크!",
+                "English": "Trick or Check-in!",
+                "ChineseCh": "不给糖就签到！",
+                "Japanese": "トリック・オア・チェック！"
+            }
+        }
+    },
     "Event_Con_Beginning": {
         "Text": {
             "Explain": {
@@ -27922,6 +28371,17 @@
                 "ChineseTh": "超越試煉",
                 "Japanese": "試練を乗り越えて"
             }
+        }
+    },
+    "Event_Con_ChosenKing": {
+        "Text": {
+            "Name": {
+                "Korea": "신이 선택한 왕",
+                "English": "The Chosen King",
+                "ChineseCh": "神选之王",
+                "Japanese": "神に選ばれし王"
+            },
+            "Explain": null
         }
     },
     "Event_Con_Devine": {
@@ -28475,6 +28935,106 @@
             }
         }
     },
+    "EventBeast_01": {
+        "Text": {
+            "Name": {
+                "Korea": "수상한 무인도 1화",
+                "English": "Mysterious Island Ep.1",
+                "ChineseCh": "可疑的无人岛 第1话",
+                "Japanese": "怪しい無人島 第1話"
+            }
+        }
+    },
+    "EventBeast_02": {
+        "Text": {
+            "Name": {
+                "Korea": "수상한 무인도 2화",
+                "English": "Mysterious Island Ep.2",
+                "ChineseCh": "可疑的无人岛 第2话",
+                "Japanese": "怪しい無人島 第2話"
+            }
+        }
+    },
+    "EventBeast_03": {
+        "Text": {
+            "Name": {
+                "Korea": "수상한 무인도 3화",
+                "English": "Mysterious Island Ep.3",
+                "ChineseCh": "可疑的无人岛 第3话",
+                "Japanese": "怪しい無人島 第3話"
+            }
+        }
+    },
+    "EventBeast_04": {
+        "Text": {
+            "Name": {
+                "Korea": "수상한 무인도 4화",
+                "English": "Mysterious Island Ep.4",
+                "ChineseCh": "可疑的无人岛 第4话",
+                "Japanese": "怪しい無人島 第4話"
+            }
+        }
+    },
+    "EventBeast_05": {
+        "Text": {
+            "Name": {
+                "Korea": "수상한 무인도 5화",
+                "English": "Mysterious Island Ep.5",
+                "ChineseCh": "可疑的无人岛 第5话",
+                "Japanese": "怪しい無人島 第5話"
+            }
+        }
+    },
+    "EventBeast_06": {
+        "Text": {
+            "Name": {
+                "Korea": "수상한 무인도 6화",
+                "English": "Mysterious Island Ep.6",
+                "ChineseCh": "可疑的无人岛 第6话",
+                "Japanese": "怪しい無人島 第6話"
+            }
+        }
+    },
+    "EventBeast_07": {
+        "Text": {
+            "Name": {
+                "Korea": "수상한 무인도 7화",
+                "English": "Mysterious Island Ep.7",
+                "ChineseCh": "可疑的无人岛 第7话",
+                "Japanese": "怪しい無人島 第7話"
+            }
+        }
+    },
+    "EventBeast_08": {
+        "Text": {
+            "Name": {
+                "Korea": "수상한 무인도 8화",
+                "English": "Mysterious Island Ep.8",
+                "ChineseCh": "可疑的无人岛 第8话",
+                "Japanese": "怪しい無人島 第8話"
+            }
+        }
+    },
+    "EventBeast_09": {
+        "Text": {
+            "Name": {
+                "Korea": "수상한 무인도 9화",
+                "English": "Mysterious Island Ep.9",
+                "ChineseCh": "可疑的无人岛 第9话",
+                "Japanese": "怪しい無人島 第9話"
+            }
+        }
+    },
+    "EventBeast_10": {
+        "Text": {
+            "Name": {
+                "Korea": "수상한 무인도 10화",
+                "English": "Mysterious Island Ep.10",
+                "ChineseCh": "可疑的无人岛 第10话",
+                "Japanese": "怪しい無人島 第10話"
+            }
+        }
+    },
     "EventBeauty_01": {
         "Text": {
             "Name": {
@@ -28802,6 +29362,106 @@
                 "ChineseCh": "魔女无所依第10话",
                 "ChineseTh": "魔女無容身之處第10話",
                 "Japanese": "魔女のための国はない 第10話"
+            }
+        }
+    },
+    "EventEgg_01": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀 1화",
+                "English": "Golden Egg Ep.1",
+                "ChineseCh": "黄金鸡蛋 第1话",
+                "Japanese": "黄金の卵 第1話"
+            }
+        }
+    },
+    "EventEgg_02": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀 2화",
+                "English": "Golden Egg Ep.2",
+                "ChineseCh": "黄金鸡蛋 第2话",
+                "Japanese": "黄金の卵 第2話"
+            }
+        }
+    },
+    "EventEgg_03": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀 3화",
+                "English": "Golden Egg Ep.3",
+                "ChineseCh": "黄金鸡蛋 第3话",
+                "Japanese": "黄金の卵 第3話"
+            }
+        }
+    },
+    "EventEgg_04": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀 4화",
+                "English": "Golden Egg Ep.4",
+                "ChineseCh": "黄金鸡蛋 第4话",
+                "Japanese": "黄金の卵 第4話"
+            }
+        }
+    },
+    "EventEgg_05": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀 5화",
+                "English": "Golden Egg Ep.5",
+                "ChineseCh": "黄金鸡蛋 第5话",
+                "Japanese": "黄金の卵 第5話"
+            }
+        }
+    },
+    "EventEgg_06": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀 6화",
+                "English": "Golden Egg Ep.6",
+                "ChineseCh": "黄金鸡蛋 第6话",
+                "Japanese": "黄金の卵 第6話"
+            }
+        }
+    },
+    "EventEgg_07": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀 7화",
+                "English": "Golden Egg Ep.7",
+                "ChineseCh": "黄金鸡蛋 第7话",
+                "Japanese": "黄金の卵 第7話"
+            }
+        }
+    },
+    "EventEgg_08": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀 8화",
+                "English": "Golden Egg Ep.8",
+                "ChineseCh": "黄金鸡蛋 第8话",
+                "Japanese": "黄金の卵 第8話"
+            }
+        }
+    },
+    "EventEgg_09": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀 9화",
+                "English": "Golden Egg Ep.9",
+                "ChineseCh": "黄金鸡蛋 第9话",
+                "Japanese": "黄金の卵 第9話"
+            }
+        }
+    },
+    "EventEgg_10": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 달걀 10화",
+                "English": "Golden Egg Ep.10",
+                "ChineseCh": "黄金鸡蛋 第10话",
+                "Japanese": "黄金の卵 第10話"
             }
         }
     },
@@ -31753,6 +32413,225 @@
                 "ChineseCh": "魅魔森林",
                 "ChineseTh": "魅魔森林",
                 "Japanese": "サキュバスの森"
+            }
+        }
+    },
+    "EventSummer_250904_Astone": {
+        "Text": {
+            "Name": {
+                "Korea": "미스틱 스톤",
+                "English": "Mystic Stone",
+                "ChineseCh": "神秘石",
+                "ChineseTh": "神祕石",
+                "Japanese": "ミスティックストーン"
+            }
+        }
+    },
+    "EventSummer_250904_Bell": {
+        "Text": {
+            "Name": {
+                "Korea": "제야의 종",
+                "English": "Bell of the Old Year",
+                "ChineseCh": "除夕之钟",
+                "ChineseTh": "除夕鐘鈴",
+                "Japanese": "除夜の鐘"
+            }
+        }
+    },
+    "EventSummer_250904_Box_LegendGift": {
+        "Text": {
+            "Name": {
+                "Korea": "전설 선물 상자",
+                "English": "Legendary Gift Box",
+                "ChineseCh": "传说级礼物盒",
+                "ChineseTh": "傳說禮物箱",
+                "Japanese": "レジェンダリープレゼントBOX"
+            }
+        }
+    },
+    "EventSummer_250904_Box_RareGift": {
+        "Text": {
+            "Name": {
+                "Korea": "희귀 선물 상자",
+                "English": "Rare Gift Box",
+                "ChineseCh": "稀有级礼物盒",
+                "ChineseTh": "稀有禮物箱",
+                "Japanese": "ユニークプレゼントBOX"
+            }
+        }
+    },
+    "EventSummer_250904_ChargeStone": {
+        "Text": {
+            "Name": {
+                "Korea": "황금 나침반 : 스톤헨지",
+                "English": "Golden Compass: Stonehenge",
+                "ChineseCh": "黄金指南针：巨石阵",
+                "ChineseTh": "黃金羅盤：巨石陣",
+                "Japanese": "黄金の羅針盤：ストーンヘンジ"
+            }
+        }
+    },
+    "EventSummer_250904_ETicketSummer": {
+        "Text": {
+            "Name": {
+                "Korea": "썸머 티켓",
+                "English": "Summer Ticket",
+                "ChineseCh": "夏日票券",
+                "Japanese": "サマーチケット"
+            }
+        }
+    },
+    "EventSummer_250904_Exp1": {
+        "Text": {
+            "Name": {
+                "Korea": "경험치 북 10개",
+                "English": "Basic Book of Experience x10",
+                "ChineseCh": "初级经验书10个",
+                "ChineseTh": "經驗值10個",
+                "Japanese": "下級経験値ブック x10"
+            }
+        }
+    },
+    "EventSummer_250904_ExpBoxA": {
+        "Text": {
+            "Name": {
+                "Korea": "경험치 상자",
+                "English": "XP Box",
+                "ChineseCh": "经验值宝箱",
+                "ChineseTh": "經驗值寶箱",
+                "Japanese": "経験値BOX"
+            }
+        }
+    },
+    "EventSummer_250904_GoldBoxA": {
+        "Text": {
+            "Name": {
+                "Korea": "골드 상자",
+                "English": "Gold Box",
+                "ChineseCh": "金币宝箱",
+                "ChineseTh": "金幣箱",
+                "Japanese": "ゴールドBOX"
+            }
+        }
+    },
+    "EventSummer_250904_Ref1": {
+        "Text": {
+            "Name": {
+                "Korea": "재련석",
+                "English": "Refining Stone",
+                "ChineseCh": "精炼石",
+                "ChineseTh": "重鑄石",
+                "Japanese": "製錬石"
+            }
+        }
+    },
+    "EventSummer_250904_SmB1": {
+        "Text": {
+            "Name": {
+                "Korea": "보스 소환권 : 스톤헨지",
+                "English": "Boss Summon Ticket: Stonehenge",
+                "ChineseCh": "领主召唤券：巨石阵",
+                "ChineseTh": "首領召喚券：巨石陣",
+                "Japanese": "ボス召喚券：ストーンヘンジ"
+            }
+        }
+    },
+    "EventSummer_250904_SmCp": {
+        "Text": {
+            "Name": {
+                "Korea": "픽업 캐릭터 소환권",
+                "English": "Pickup Character Summon Ticket",
+                "ChineseCh": "抽取角色召唤券",
+                "ChineseTh": "特選角色召喚券",
+                "Japanese": "キャラ選択召喚券"
+            }
+        }
+    },
+    "EventSummer_250904_SmPp": {
+        "Text": {
+            "Name": {
+                "Korea": "픽업 펫 소환권",
+                "English": "Pickup Pet Summon Ticket",
+                "ChineseCh": "抽取宠物召唤券",
+                "ChineseTh": "特選寵物召喚券",
+                "Japanese": "ペット選択召喚券"
+            }
+        }
+    },
+    "EventSummer_250904_Soul": {
+        "Text": {
+            "Name": {
+                "Korea": "소울",
+                "English": "Soul",
+                "ChineseCh": "灵魂",
+                "ChineseTh": "靈魂",
+                "Japanese": "ソウル"
+            }
+        }
+    },
+    "EventSummer_250904_Soul2": {
+        "Text": {
+            "Name": {
+                "Korea": "레어 소울",
+                "English": "Rare Soul",
+                "ChineseCh": "稀有灵魂",
+                "ChineseTh": "稀有靈魂",
+                "Japanese": "レアソウル"
+            }
+        }
+    },
+    "EventSummer_250904_SummonC": {
+        "Text": {
+            "Name": {
+                "Korea": "캐릭터 소환권",
+                "English": "Character Summon Ticket",
+                "ChineseCh": "角色召唤券",
+                "ChineseTh": "角色召喚券",
+                "Japanese": "キャラ召喚券"
+            }
+        }
+    },
+    "EventSummer_250904_SummonP": {
+        "Text": {
+            "Name": {
+                "Korea": "펫 소환권",
+                "English": "Pet Summon Ticket",
+                "ChineseCh": "宠物召唤券",
+                "ChineseTh": "寵物召喚券",
+                "Japanese": "ペット召喚券"
+            }
+        }
+    },
+    "EventSummer_250904_TicketB": {
+        "Text": {
+            "Name": {
+                "Korea": "보스 레이드 입장권",
+                "English": "Boss Raid Ticket",
+                "ChineseCh": "单人突袭门票",
+                "ChineseTh": "首領突襲入場券",
+                "Japanese": "ソロレイド入場券"
+            }
+        }
+    },
+    "EventSummer_250904_TicketOC": {
+        "Text": {
+            "Name": {
+                "Korea": "옵션 변환 티켓",
+                "English": "Stat Reroll Ticket",
+                "ChineseCh": "词条转换券",
+                "ChineseTh": "效果變換票券",
+                "Japanese": "オプション変換チケット"
+            }
+        }
+    },
+    "EventSummer_250904_TicketR": {
+        "Text": {
+            "Name": {
+                "Korea": "룰렛 티켓",
+                "English": "Roulette Ticket",
+                "ChineseCh": "轮盘券",
+                "ChineseTh": "輪盤券",
+                "Japanese": "ルーレットチケット"
             }
         }
     },
@@ -36464,6 +37343,77 @@
                 "ChineseCh": "后方支援",
                 "ChineseTh": "後方支援",
                 "Japanese": "後方サポート"
+            }
+        }
+    },
+    "Gb_StarRebirth_Season012_01": {
+        "Text": {
+            "Name": {
+                "Korea": "성급한 주문",
+                "English": "Rash Spell",
+                "ChineseCh": "急速咒术",
+                "Japanese": "せっかちな呪文"
+            }
+        }
+    },
+    "Gb_StarRebirth_Season012_01_01": {
+        "Text": {
+            "Name": {
+                "Korea": "성급한 주문",
+                "English": "Rash Spell",
+                "ChineseCh": "急速咒术",
+                "Japanese": "せっかちな呪文"
+            },
+            "Explain": {
+                "Korea": "마법사에게 적용",
+                "English": "Applied to Wizards",
+                "ChineseCh": "适用于法师",
+                "ChineseTh": "對魔法師套用",
+                "Japanese": "魔法使いに適用"
+            }
+        }
+    },
+    "Gb_StarRebirth_Season012_01_02": {
+        "Text": {
+            "Name": {
+                "Korea": "성급한 주문",
+                "English": "Rash Spell",
+                "ChineseCh": "急速咒术",
+                "Japanese": "せっかちな呪文"
+            }
+        }
+    },
+    "Gb_StarRebirth_Season012_02": {
+        "Text": {
+            "Name": {
+                "Korea": "비장의 한방",
+                "English": "Trump Card",
+                "ChineseCh": "珍藏的绝招",
+                "Japanese": "秘蔵の一撃"
+            },
+            "Explain": {
+                "Korea": "모든 캐릭터 적용",
+                "English": "Applied to all characters",
+                "ChineseCh": "适用于所有角色",
+                "ChineseTh": "對所有角色套用",
+                "Japanese": "全キャラクターに適用"
+            }
+        }
+    },
+    "Gb_StarRebirth_Season012_03": {
+        "Text": {
+            "Name": {
+                "Korea": "선봉장",
+                "English": "Vanguard",
+                "ChineseCh": "先锋",
+                "Japanese": "先鋒将"
+            },
+            "Explain": {
+                "Korea": "기사에게 적용",
+                "English": "Applies to Knights",
+                "ChineseCh": "适用于骑士",
+                "ChineseTh": "對騎士套用",
+                "Japanese": "騎士に適用"
             }
         }
     },
@@ -42078,7 +43028,29 @@
             }
         }
     },
+    "N_DragonArmor_Nct": {
+        "Text": {
+            "Name": {
+                "Korea": "드래곤 아머",
+                "English": "Dragon Armor",
+                "ChineseCh": "龙鳞护甲",
+                "ChineseTh": "龍之鎧甲",
+                "Japanese": "ドラゴンアーマー"
+            }
+        }
+    },
     "N_DragonB": {
+        "Text": {
+            "Name": {
+                "Korea": "드래곤 킬러",
+                "English": "Dragon Killer",
+                "ChineseCh": "屠龙者",
+                "ChineseTh": "屠龍殺手",
+                "Japanese": "ドラゴンキラー"
+            }
+        }
+    },
+    "N_DragonB_Nct": {
         "Text": {
             "Name": {
                 "Korea": "드래곤 킬러",
@@ -42100,7 +43072,29 @@
             }
         }
     },
+    "N_DragonM_Nct": {
+        "Text": {
+            "Name": {
+                "Korea": "드래곤 버스터",
+                "English": "Dragon Buster",
+                "ChineseCh": "龙之破坏者",
+                "ChineseTh": "屠龍爆刃",
+                "Japanese": "ドラゴンバスター"
+            }
+        }
+    },
     "N_DragonW": {
+        "Text": {
+            "Name": {
+                "Korea": "드래곤 슬레이어",
+                "English": "Dragon Slayer",
+                "ChineseCh": "屠龙者",
+                "ChineseTh": "屠龍劍",
+                "Japanese": "ドラゴンスレイヤー"
+            }
+        }
+    },
+    "N_DragonW_Nct": {
         "Text": {
             "Name": {
                 "Korea": "드래곤 슬레이어",
@@ -42860,6 +43854,16 @@
                 "ChineseCh": "兰斯洛特",
                 "ChineseTh": "蘭斯洛特",
                 "Japanese": "ランスロット"
+            }
+        }
+    },
+    "Npc_Lohengrin_01_Bikini": {
+        "Text": {
+            "Name": {
+                "Korea": "로엔그린",
+                "English": "Lohengrin",
+                "ChineseCh": "罗恩格林",
+                "Japanese": "ローエングリン"
             }
         }
     },
@@ -46049,6 +47053,170 @@
             }
         }
     },
+    "P250821_13": {
+        "Text": {
+            "Name": {
+                "Korea": "스페셜 패키지 Ⅰ"
+            }
+        }
+    },
+    "P250821_14": {
+        "Text": {
+            "Name": {
+                "Korea": "스페셜 패키지 Ⅱ"
+            }
+        }
+    },
+    "P250904_00": {
+        "Text": {
+            "Name": {
+                "Korea": "하얀 조개 패키지 Ⅰ",
+                "English": "White Seashell Pack I",
+                "ChineseCh": "白贝壳礼包 Ⅰ",
+                "Japanese": "白い貝殻パックⅠ"
+            }
+        }
+    },
+    "P250904_01": {
+        "Text": {
+            "Name": {
+                "Korea": "하얀 조개 패키지 Ⅱ",
+                "English": "White Seashell Pack II",
+                "ChineseCh": "白贝壳礼包 Ⅱ",
+                "Japanese": "白い貝殻パックⅡ"
+            }
+        }
+    },
+    "P250904_02": {
+        "Text": {
+            "Name": {
+                "Korea": "로엔의 선물",
+                "English": "Lohen’s Gift",
+                "ChineseCh": "罗恩的赠礼",
+                "Japanese": "ローエンの贈り物"
+            }
+        }
+    },
+    "P250904_03": {
+        "Text": {
+            "Name": {
+                "Korea": "해변의 초대 패키지",
+                "English": "Beach Invitation Pack",
+                "ChineseCh": "海边邀约礼包",
+                "Japanese": "ビーチの招待パック"
+            }
+        }
+    },
+    "P250904_04": {
+        "Text": {
+            "Name": {
+                "Korea": "검은 진주 패키지 Ⅰ",
+                "English": "Black Pearl Pack I",
+                "ChineseCh": "黑珍珠礼包 Ⅰ",
+                "Japanese": "黒真珠パックⅠ"
+            }
+        }
+    },
+    "P250904_05": {
+        "Text": {
+            "Name": {
+                "Korea": "검은 진주 패키지 Ⅱ",
+                "English": "Black Pearl Pack II",
+                "ChineseCh": "黑珍珠礼包 Ⅱ",
+                "Japanese": "黒真珠パックⅡ"
+            }
+        }
+    },
+    "P250904_06": {
+        "Text": {
+            "Name": {
+                "Korea": "밤의 해변 만남 패키지",
+                "English": "Night Beach Encounter Pack",
+                "ChineseCh": "夜晚沙滩相遇礼包",
+                "Japanese": "夜のビーチ出会いパック"
+            }
+        }
+    },
+    "P250904_07": {
+        "Text": {
+            "Name": {
+                "Korea": "파도의 서약 패키지",
+                "English": "Oath of the Waves Pack",
+                "ChineseCh": "海浪誓约礼包",
+                "Japanese": "波の誓約パック"
+            }
+        }
+    },
+    "P250904_08": {
+        "Text": {
+            "Name": {
+                "Korea": "밤의 해변 데이트 팩",
+                "English": "Night Beach Date Pack",
+                "ChineseCh": "夜晚沙滩约会礼包",
+                "Japanese": "夜のビーチデートパック"
+            }
+        }
+    },
+    "P250904_09": {
+        "Text": {
+            "Name": {
+                "Korea": "해변 데이트 패키지",
+                "English": "Beach Date Pack",
+                "ChineseCh": "海边约会礼包",
+                "Japanese": "ビーチデートパック"
+            }
+        }
+    },
+    "P250904_10": {
+        "Text": {
+            "Name": {
+                "Korea": "조개 연마 패키지",
+                "English": "Shell Polishing Pack",
+                "ChineseCh": "贝壳研磨礼包",
+                "Japanese": "貝殻研磨パック"
+            }
+        }
+    },
+    "P250904_11": {
+        "Text": {
+            "Name": {
+                "Korea": "백조의 유혹 패키지",
+                "English": "Temptation of the Swan Pack",
+                "ChineseCh": "天鹅的诱惑礼包",
+                "Japanese": "白鳥の誘惑パック"
+            }
+        }
+    },
+    "P250904_12": {
+        "Text": {
+            "Name": {
+                "Korea": "밤의 VIP 패키지",
+                "English": "Nighttime VIP Pack",
+                "ChineseCh": "黑夜VIP礼包",
+                "Japanese": "夜のVIPパック"
+            }
+        }
+    },
+    "P250904_13": {
+        "Text": {
+            "Name": {
+                "Korea": "스페셜 패키지 Ⅰ",
+                "English": "Special Pack I",
+                "ChineseCh": "特殊礼包 Ⅰ",
+                "Japanese": "スペシャルパックⅠ"
+            }
+        }
+    },
+    "P250904_14": {
+        "Text": {
+            "Name": {
+                "Korea": "스페셜 패키지 Ⅱ",
+                "English": "Special Pack II",
+                "ChineseCh": "特殊礼包 Ⅱ",
+                "Japanese": "スペシャルパックⅡ"
+            }
+        }
+    },
     "Party_01": {
         "Text": {
             "Name": {
@@ -46269,7 +47437,7 @@
                 "Korea": "클레어",
                 "English": "Claire",
                 "ChineseCh": "克莱尔",
-                "ChineseTh": "克萊兒",
+                "ChineseTh": "請跟我一起祈禱吧！",
                 "Japanese": "クレア"
             }
         }
@@ -46629,6 +47797,17 @@
                 "Japanese": "エバ"
             },
             "PickUp": {
+                "Korea": "에바",
+                "English": "Eva",
+                "ChineseCh": "艾娃",
+                "ChineseTh": "艾娃",
+                "Japanese": "エバ"
+            }
+        }
+    },
+    "Pc_Eva_02": {
+        "Text": {
+            "Name": {
                 "Korea": "에바",
                 "English": "Eva",
                 "ChineseCh": "艾娃",
@@ -47057,7 +48236,7 @@
         "Text": {
             "Cv": {
                 "Korea": "김보나",
-                "ChineseTh": "林慕青"
+                "ChineseTh": "林沛苓"
             },
             "Explain": {
                 "Korea": "\"단순히 힘이 중요한 게 아냐, 엘리. 잘봐!\"\n\n어린 시절, 케이는 왕국의 공주인 엘리자베스와 함께 아버지 엑터에게 수련을 받았다. 친절한 엘리자베스와 스스럼 없는 사이가 된 케이는 엘리자베스를 좋아했고 둘의 우정은 깊어갔다.\n\n케이는 엘리자베스보다 1~2살 밖에 많지 않았지만, 그녀의 발육은 오해를 사기 충분했다.\n\n수련이 이어지던 어느 날, 케이와 엘리자베스는 집으로 돌아가는 길에 고블린들의 습격을 받았다. 고블린들은 케이를 붙잡아 옷을 찢고 그녀를 범하려 했다. 절망에 빠진 그 순간, 엘리자베스가 붉은 빛을 뿜어내며 고블린들을 순식간에 불태워버렸다. 나중에 케이는 그것이 붉은 용의 가호라는 것을 깨달았다.\n\n시간이 지나면서 케이는 엘리자베스의 무술 실력을 뛰어넘었지만, 엘리자베스의 붉은 용의 힘, 즉 마력이 부족함을 깨닫게 됐고 그 힘을 갈망하게 되었다. 아무리 수련해도 벽에 부딪히자 케이는 가출을 결심했다. 붉은 용의 인정을 받아 자신도 가호를 받고 싶었던 것이다.\n\n수년이 지나 브리타니아 대륙의 동쪽 섬에서, 케이는 붉은 용이 있다고 생각한 동굴을 발견했다. 그러나 그녀가 봉인을 풀자, 붉은 용이 아닌 염제, 즉 화염의 군주가 깨어났다. 삽시간에 그 힘은 케이에게 깃들었고, 그녀는 염제를 세상밖으로 내보내지 않기 위해 혼신의 힘을 다했다.\n\n\"소녀여, 이 힘으로 넌 네가 얻고자 하는 것을 얻을 수 있을 것이다.\"\n\n\"아니, 네 힘은 파괴와 학살을 불러올 뿐이야. 네가 세상 밖으로 나가게 둘 순 없어. 내가 죽더라도.\"\n\n케이는 10년 이상 염제와 싸웠고 마침내 염제는 그녀와 융합되었다.\n\n무리하게 염제를 몸에 가둔 탓에 시한부가 된 그녀는 고향의 품에서 편안하게 잠들기 위해 집에 돌아왔다.\n\n'우서왕이 죽었다!'\n\n'엘리자베스는 실종됐다!'\n\n'엑터는 항전하다가 죽었다'\n\n황폐해진 자신의 가문을 보고서야 그녀는 깨달았다.\n그녀가 아직 죽을 때가 아니라는 것을.",
@@ -48553,6 +49732,16 @@
             }
         }
     },
+    "Pet_Eva_02": {
+        "Text": {
+            "Name": {
+                "Korea": "해방된 에바",
+                "English": "Unleashed Eva",
+                "ChineseCh": "解放的艾娃",
+                "Japanese": "解き放たれたエバ"
+            }
+        }
+    },
     "Pet_Galahad_01": {
         "Text": {
             "Name": {
@@ -48933,6 +50122,7 @@
                 "Korea": "제대로 조교해드리죠!",
                 "English": "Let me teach you a lesson!",
                 "ChineseCh": "让我好好调教你们吧！",
+                "ChineseTh": "莉莉絲",
                 "Japanese": "君のこと、調教しちゃうね！"
             }
         }
@@ -51720,6 +52910,22 @@
             }
         }
     },
+    "Pf_OL_StarRebirth": {
+        "Text": {
+            "Explain": {
+                "Korea": "『별의 윤회』에서 랭킹 1 ~ 50위 에게 주어지는 테두리.\n[sub][ccb456]* 별의 윤회 기간마다 지급 및 삭제됩니다.[/sub][-]",
+                "English": "A frame awarded to players ranked 1st–50th in 『Star Reincarnation』.\n[sub][ccb456]* Removed or reissued each season based on rankings.[/sub][-]",
+                "ChineseCh": "授予『星辰轮回』中排名1~50位的玩家的边框。\n[sub][ccb456]* 每个星辰轮回活动期间发放及回收。[/sub][-]",
+                "Japanese": "『星の輪廻』でランキング1～50位に贈られるフレーム。\n[sub][ccb456]*星の輪廻の期間ごとに付与・削除されます。[/sub][-]"
+            },
+            "Name": {
+                "Korea": "별의 순례자",
+                "English": "Star Voyager",
+                "ChineseCh": "星之巡礼者",
+                "Japanese": "星の巡礼者"
+            }
+        }
+    },
     "Pf_OL_Tiamat_01": {
         "Text": {
             "Explain": {
@@ -52863,8 +54069,10 @@
         "Text": {
             "Name": {
                 "Korea": "금색 캐릭터 전설 확정 패키지",
-                "ChineseCh": "金色角色傳說必中包",
-                "ChineseTh": "金色角色傳說必中包"
+                "English": "★5 Character Gold Pack",
+                "ChineseCh": "金色角色传说必得礼包",
+                "ChineseTh": "金色角色傳說必中包",
+                "Japanese": "金色キャラ・レジェンダリー確定パック"
             }
         }
     },
@@ -52872,8 +54080,10 @@
         "Text": {
             "Name": {
                 "Korea": "금색 펫 전설 확정 패키지",
-                "ChineseCh": "金色寵物傳說必中包",
-                "ChineseTh": "金色寵物傳說必中包"
+                "English": "★5 Pet Gold Pack",
+                "ChineseCh": "金色宠物传说必得礼包",
+                "ChineseTh": "金色寵物傳說必中包",
+                "Japanese": "金色ペット・レジェンダリー確定パック"
             }
         }
     },
@@ -52881,8 +54091,10 @@
         "Text": {
             "Name": {
                 "Korea": "가을 파트너 패키지",
-                "ChineseCh": "秋日夥伴禮包",
-                "ChineseTh": "秋日夥伴禮包"
+                "English": "Autumn Partner Pack",
+                "ChineseCh": "秋日伙伴礼包",
+                "ChineseTh": "秋日夥伴禮包",
+                "Japanese": "秋のパートナーパック"
             }
         }
     },
@@ -52890,8 +54102,10 @@
         "Text": {
             "Name": {
                 "Korea": "가을 피크닉 패키지",
-                "ChineseCh": "秋天野餐禮包",
-                "ChineseTh": "秋天野餐禮包"
+                "English": "Autumn Picnic Pack",
+                "ChineseCh": "秋日野餐礼包",
+                "ChineseTh": "秋天野餐禮包",
+                "Japanese": "秋のピクニックパック"
             }
         }
     },
@@ -52899,8 +54113,10 @@
         "Text": {
             "Name": {
                 "Korea": "가을 픽업 패키지",
-                "ChineseCh": "秋日特選禮包",
-                "ChineseTh": "秋日特選禮包"
+                "English": "Autumn Pickup Pack",
+                "ChineseCh": "秋日抽取礼包",
+                "ChineseTh": "秋日特選禮包",
+                "Japanese": "秋のピックアップパック"
             }
         }
     },
@@ -53135,12 +54351,57 @@
             }
         }
     },
+    "PNC250903_06": {
+        "Text": {
+            "Name": {
+                "Korea": "검술 입문 패키지",
+                "English": "Swordsmanship Beginner Pack",
+                "ChineseCh": "剑术入门礼包",
+                "ChineseTh": "劍術入門禮包",
+                "Japanese": "剣術入門パック"
+            }
+        }
+    },
+    "PNC250903_07": {
+        "Text": {
+            "Name": {
+                "Korea": "검술 수련 패키지",
+                "English": "Swordsmanship Training Pack",
+                "ChineseCh": "剑术修炼礼包",
+                "ChineseTh": "劍術修煉禮包",
+                "Japanese": "剣術修行パック"
+            }
+        }
+    },
+    "PNC250903_08": {
+        "Text": {
+            "Name": {
+                "Korea": "검술 마스터 패키지",
+                "English": "Swordsmanship Master Pack",
+                "ChineseCh": "剑术大师礼包",
+                "ChineseTh": "劍術大師禮包",
+                "Japanese": "剣術マスターパック"
+            }
+        }
+    },
+    "PNC250903_09": {
+        "Text": {
+            "Name": {
+                "Korea": "검의 서약 패키지",
+                "English": "Oath of the Sword Pack",
+                "ChineseCh": "剑之誓约礼包",
+                "ChineseTh": "劍之誓約禮包",
+                "Japanese": "剣の誓約パック"
+            }
+        }
+    },
     "PNC250903_51": {
         "Text": {
             "Name": {
                 "Korea": "로열 소드 패키지",
                 "English": "Royal Sword Pack",
                 "ChineseCh": "皇家之剑礼包",
+                "ChineseTh": "皇家之劍禮包",
                 "Japanese": "ロイヤルソードパック"
             }
         }
@@ -53268,6 +54529,237 @@
                 "English": "Magical Girl Pack",
                 "ChineseCh": "魔导少女礼包",
                 "Japanese": "魔導少女パック"
+            }
+        }
+    },
+    "PNC250910_57": {
+        "Text": {
+            "Name": {
+                "Korea": "마도 낭만 패키지",
+                "English": "Arcane Romance Pack",
+                "ChineseCh": "魔导浪漫礼包",
+                "ChineseTh": "魔導浪漫禮包",
+                "Japanese": "魔導ロマンパック"
+            }
+        }
+    },
+    "PNC250910_58": {
+        "Text": {
+            "Name": {
+                "Korea": "마도 오의 패키지",
+                "English": "Arcane Secrets Pack",
+                "ChineseCh": "魔导奥义礼包",
+                "Japanese": "魔道奥義パック"
+            }
+        }
+    },
+    "PNC250910_59": {
+        "Text": {
+            "Name": {
+                "Korea": "수호 소녀 패키지",
+                "English": "Guardian Maiden Pack",
+                "ChineseCh": "守护少女礼包",
+                "Japanese": "守護少女パック"
+            }
+        }
+    },
+    "PNC250910_71": {
+        "Text": {
+            "Name": {
+                "Korea": "가을날의 캐릭터 전설 확정 패키지",
+                "English": "Autumn Legendary Character Pack",
+                "ChineseCh": "秋日角色传说必得礼包",
+                "Japanese": "秋の日キャラ・レジェンダリー確定パック"
+            }
+        }
+    },
+    "PNC250910_72": {
+        "Text": {
+            "Name": {
+                "Korea": "로맨틱 파트너 패키지",
+                "English": "Romantic Partner Pack",
+                "ChineseCh": "浪漫伙伴礼包",
+                "Japanese": "ロマンチックパートナーパック"
+            }
+        }
+    },
+    "PNC250910_73": {
+        "Text": {
+            "Name": {
+                "Korea": "로맨틱 피크닉 패키지",
+                "English": "Romantic Picnic Pack",
+                "ChineseCh": "浪漫野餐礼包",
+                "Japanese": "ロマンチックピクニックパック"
+            }
+        }
+    },
+    "PNC250910_74": {
+        "Text": {
+            "Name": {
+                "Korea": "로맨틱 소풍 패키지",
+                "English": "Romantic Outing Pack",
+                "ChineseCh": "浪漫郊游礼包",
+                "Japanese": "ロマンチック遠足パック"
+            }
+        }
+    },
+    "PNC250910_75": {
+        "Text": {
+            "Name": {
+                "Korea": "로맨틱 특선 패키지",
+                "English": "Romantic Special Pack",
+                "ChineseCh": "浪漫特选礼包",
+                "Japanese": "ロマンチック特選パック"
+            }
+        }
+    },
+    "PNC250917_01": {
+        "Text": {
+            "Name": {
+                "Korea": "원탁의 기사 수호 패키지I",
+                "English": "Round Table Guardian Pack I",
+                "ChineseCh": "圆桌骑士守护礼包 I",
+                "Japanese": "円卓の騎士守護パックI"
+            }
+        }
+    },
+    "PNC250917_02": {
+        "Text": {
+            "Name": {
+                "Korea": "원탁의 기사 수호 패키지II",
+                "English": "Round Table Guardian Pack II",
+                "ChineseCh": "圆桌骑士守护礼包 II",
+                "Japanese": "円卓の騎士守護パックII"
+            }
+        }
+    },
+    "PNC250917_03": {
+        "Text": {
+            "Name": {
+                "Korea": "갤러해드의 마음",
+                "English": "Galahad’s Heart",
+                "ChineseCh": "加拉哈德的心意",
+                "Japanese": "ガラハッドの想い"
+            }
+        }
+    },
+    "PNC250917_04": {
+        "Text": {
+            "Name": {
+                "Korea": "기사의 길 패키지I",
+                "English": "Knight’s Path Pack I",
+                "ChineseCh": "骑士之路礼包 I",
+                "Japanese": "騎士の道パックI"
+            }
+        }
+    },
+    "PNC250917_05": {
+        "Text": {
+            "Name": {
+                "Korea": "기사의 길 패키지II",
+                "English": "Knight’s Path Pack II",
+                "ChineseCh": "骑士之路礼包 II",
+                "Japanese": "騎士の道パックII"
+            }
+        }
+    },
+    "PNC250917_06": {
+        "Text": {
+            "Name": {
+                "Korea": "방패 소녀 패키지",
+                "English": "Shield Maiden Pack",
+                "ChineseCh": "护盾少女礼包",
+                "Japanese": "盾の少女パック"
+            }
+        }
+    },
+    "PNC250917_07": {
+        "Text": {
+            "Name": {
+                "Korea": "기사의 맹세 패키지",
+                "English": "Knight’s Oath Pack",
+                "ChineseCh": "骑士誓言礼包",
+                "Japanese": "騎士の誓いパック"
+            }
+        }
+    },
+    "PNC250924_01": {
+        "Text": {
+            "Name": {
+                "Korea": "추분 소풍 패키지I",
+                "English": "Autumn Equinox Outing Pack I",
+                "ChineseCh": "秋分郊游礼包 I",
+                "Japanese": "秋分の遠足パックI"
+            }
+        }
+    },
+    "PNC250924_02": {
+        "Text": {
+            "Name": {
+                "Korea": "가을날의 아회 패키지",
+                "English": "Autumn Banquet Pack",
+                "ChineseCh": "秋日雅会礼包",
+                "Japanese": "秋の日雅会パック"
+            }
+        }
+    },
+    "PNC250924_03": {
+        "Text": {
+            "Name": {
+                "Korea": "리사의 유혹",
+                "English": "Lisa’s Temptation",
+                "ChineseCh": "莉莎的诱惑",
+                "Japanese": "リサの誘惑"
+            }
+        }
+    },
+    "PNC250924_04": {
+        "Text": {
+            "Name": {
+                "Korea": "따뜻한 가을 마음 패키지I",
+                "English": "Warm Autumn Heart Pack I",
+                "ChineseCh": "暖秋心意礼包 I",
+                "Japanese": "ぽかぽか秋心パックI"
+            }
+        }
+    },
+    "PNC250924_05": {
+        "Text": {
+            "Name": {
+                "Korea": "따뜻한 가을 마음 패키지II",
+                "English": "Warm Autumn Heart Pack II",
+                "ChineseCh": "暖秋心意礼包 II",
+                "Japanese": "ぽかぽか秋心パックII"
+            }
+        }
+    },
+    "PNC250924_06": {
+        "Text": {
+            "Name": {
+                "Korea": "가을 데이트 패키지",
+                "English": "Autumn Date Pack",
+                "ChineseCh": "秋日约会礼包",
+                "Japanese": "秋のデートパック"
+            }
+        }
+    },
+    "PNC250924_07": {
+        "Text": {
+            "Name": {
+                "Korea": "초가을의 시간 패키지",
+                "English": "Early Autumn Time Pack",
+                "ChineseCh": "初秋时光礼包",
+                "Japanese": "初秋の時間パック"
+            }
+        }
+    },
+    "PNC250924_08": {
+        "Text": {
+            "Name": {
+                "Korea": "추분 소풍 패키지II",
+                "English": "Autumn Equinox Outing Pack II",
+                "ChineseCh": "秋分郊游礼包 II",
+                "Japanese": "秋分の遠足パックII"
             }
         }
     },
@@ -54046,10 +55538,10 @@
     "RaidBoxA": {
         "Text": {
             "Explain": {
-                "Korea": "[FBD29B][sub]설명[/sub][-]\n매주 보스 레이드 랭킹 결과에 따라 주어지는 보물 상자.\n[FBD29B][sub]획득처[/sub][-]\n보스 레이드 랭킹 보상",
+                "Korea": "[FBD29B][sub]설명[/sub][-]\n보스 레이드 랭킹 결과에 따라 주어지는 보물 상자.\n[FBD29B][sub]획득처[/sub][-]\n보스 레이드 랭킹 보상",
                 "English": "[FBD29B][sub]Description[/sub][-]\nWeekly treasure box awarded based on boss raid ranking results.\n[FBD29B][sub]Sources[/sub][-]\nBoss Raid Ranking Rewards",
                 "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n可根据每周领主突袭排名结果获得的宝箱。\n[FBD29B][sub]获得途径[/sub][-]\n领主突袭排名奖励",
-                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n根據每週首領突襲排名結果發放的寶箱。\n[FBD29B][sub]獲得處[/sub][-]\n首領突襲排名獎勵",
+                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n根據首領突襲排名結果發放的寶箱。[FBD29B]\n[sub]獲得處[/sub][-]\n首領突襲排名獎勵",
                 "Japanese": "[FBD29B][sub]詳細[/sub][-]\n毎週のボスレイドのランキング結果によって支給される宝箱\n[FBD29B][sub]獲得先[/sub][-]\nボスレイドランキング報酬"
             },
             "Name": {
@@ -54064,10 +55556,10 @@
     "RaidBoxB": {
         "Text": {
             "Explain": {
-                "Korea": "[FBD29B][sub]설명[/sub][-]\n매주 보스 레이드 랭킹 결과에 따라 주어지는 보물 상자.\n[FBD29B][sub]획득처[/sub][-]\n보스 레이드 랭킹 보상",
+                "Korea": "[FBD29B][sub]설명[/sub][-]\n보스 레이드 랭킹 결과에 따라 주어지는 보물 상자.\n[FBD29B][sub]획득처[/sub][-]\n보스 레이드 랭킹 보상",
                 "English": "[FBD29B][sub]Description[/sub][-]\nWeekly treasure box awarded based on boss raid ranking results.\n[FBD29B][sub]Sources[/sub][-]\nBoss Raid Ranking Rewards",
                 "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n可根据每周领主突袭排名结果获得的宝箱。\n[FBD29B][sub]获得途径[/sub][-]\n领主突袭排名奖励",
-                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n根據每週首領突襲排名結果發放的寶箱。\n[FBD29B][sub]獲得處[/sub][-]\n首領突襲排名獎勵",
+                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n根據首領突襲排名結果發放的寶箱。[FBD29B]\n[sub]獲得處[/sub][-]\n首領突襲排名獎勵",
                 "Japanese": "[FBD29B][sub]詳細[/sub][-]\n毎週のボスレイドのランキング結果によって支給される宝箱\n[FBD29B][sub]獲得先[/sub][-]\nボスレイドランキング報酬"
             },
             "Name": {
@@ -54082,10 +55574,10 @@
     "RaidBoxC": {
         "Text": {
             "Explain": {
-                "Korea": "[FBD29B][sub]설명[/sub][-]\n매주 보스 레이드 랭킹 결과에 따라 주어지는 보물 상자.\n[FBD29B][sub]획득처[/sub][-]\n보스 레이드 랭킹 보상",
+                "Korea": "[FBD29B][sub]설명[/sub][-]\n보스 레이드 랭킹 결과에 따라 주어지는 보물 상자.\n[FBD29B][sub]획득처[/sub][-]\n보스 레이드 랭킹 보상",
                 "English": "[FBD29B][sub]Description[/sub][-]\nWeekly treasure box awarded based on boss raid ranking results.\n[FBD29B][sub]Sources[/sub][-]\nBoss Raid Ranking Rewards",
                 "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n可根据每周领主突袭排名结果获得的宝箱。\n[FBD29B][sub]获得途径[/sub][-]\n领主突袭排名奖励",
-                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n根據每週首領突襲排名結果發放的寶箱。\n[FBD29B][sub]獲得處[/sub][-]\n首領突襲排名獎勵",
+                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n根據首領突襲排名結果發放的寶箱。[FBD29B]\n[sub]獲得處[/sub][-]\n首領突襲排名獎勵",
                 "Japanese": "[FBD29B][sub]詳細[/sub][-]\n毎週のボスレイドのランキング結果によって支給される宝箱\n[FBD29B][sub]獲得先[/sub][-]\nボスレイドランキング報酬"
             },
             "Name": {
@@ -54100,10 +55592,10 @@
     "RaidBoxD": {
         "Text": {
             "Explain": {
-                "Korea": "[FBD29B][sub]설명[/sub][-]\n매주 보스 레이드 랭킹 결과에 따라 주어지는 보물 상자.\n[FBD29B][sub]획득처[/sub][-]\n보스 레이드 랭킹 보상",
+                "Korea": "[FBD29B][sub]설명[/sub][-]\n보스 레이드 랭킹 결과에 따라 주어지는 보물 상자.\n[FBD29B][sub]획득처[/sub][-]\n보스 레이드 랭킹 보상",
                 "English": "[FBD29B][sub]Description[/sub][-]\nWeekly treasure box awarded based on boss raid ranking results.\n[FBD29B][sub]Sources[/sub][-]\nBoss Raid Ranking Rewards",
                 "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n可根据每周领主突袭排名结果获得的宝箱。\n[FBD29B][sub]获得途径[/sub][-]\n领主突袭排名奖励",
-                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n根據每週首領突襲排名結果發放的寶箱。\n[FBD29B][sub]獲得處[/sub][-]\n首領突襲排名獎勵",
+                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n根據首領突襲排名結果發放的寶箱。[FBD29B]\n[sub]獲得處[/sub][-]\n首領突襲排名獎勵",
                 "Japanese": "[FBD29B][sub]詳細[/sub][-]\n毎週のボスレイドのランキング結果によって支給される宝箱\n[FBD29B][sub]獲得先[/sub][-]\nボスレイドランキング報酬"
             },
             "Name": {
@@ -54118,10 +55610,10 @@
     "RaidBoxS": {
         "Text": {
             "Explain": {
-                "Korea": "[FBD29B][sub]설명[/sub][-]\n매주 보스 레이드 랭킹 결과에 따라 주어지는 보물 상자.\n[FBD29B][sub]획득처[/sub][-]\n보스 레이드 랭킹 보상",
+                "Korea": "[FBD29B][sub]설명[/sub][-]\n보스 레이드 랭킹 결과에 따라 주어지는 보물 상자.\n[FBD29B][sub]획득처[/sub][-]\n보스 레이드 랭킹 보상",
                 "English": "[FBD29B][sub]Description[/sub][-]\nWeekly treasure box awarded based on boss raid ranking results.\n[FBD29B][sub]Sources[/sub][-]\nBoss Raid Ranking Rewards",
                 "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n可根据每周领主突袭排名结果获得的宝箱。\n[FBD29B][sub]获得途径[/sub][-]\n领主突袭排名奖励",
-                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n根據每週首領突襲排名結果發放的寶箱。\n[FBD29B][sub]獲得處[/sub][-]\n首領突襲排名獎勵",
+                "ChineseTh": "[FBD29B][sub]說明[/sub][-]\n根據首領突襲排名結果發放的寶箱。[FBD29B]\n[sub]獲得處[/sub][-]\n首領突襲排名獎勵",
                 "Japanese": "[FBD29B][sub]詳細[/sub][-]\n毎週のボスレイドのランキング結果によって支給される宝箱\n[FBD29B][sub]獲得先[/sub][-]\nボスレイドランキング報酬"
             },
             "Name": {
@@ -55192,6 +56684,306 @@
             }
         }
     },
+    "S_Tower_021": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 21층",
+                "English": "Abyss 21F",
+                "ChineseCh": "深海第21层",
+                "Japanese": "深海21F"
+            }
+        }
+    },
+    "S_Tower_022": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 22층",
+                "English": "Abyss 22F",
+                "ChineseCh": "深海第22层",
+                "Japanese": "深海22F"
+            }
+        }
+    },
+    "S_Tower_023": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 23층",
+                "English": "Abyss 23F",
+                "ChineseCh": "深海第23层",
+                "Japanese": "深海23F"
+            }
+        }
+    },
+    "S_Tower_024": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 24층",
+                "English": "Abyss 24F",
+                "ChineseCh": "深海第24层",
+                "Japanese": "深海24F"
+            }
+        }
+    },
+    "S_Tower_025": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 25층",
+                "English": "Abyss 25F",
+                "ChineseCh": "深海第25层",
+                "Japanese": "深海25F"
+            }
+        }
+    },
+    "S_Tower_026": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 26층",
+                "English": "Abyss 26F",
+                "ChineseCh": "深海第26层",
+                "Japanese": "深海26F"
+            }
+        }
+    },
+    "S_Tower_027": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 27층",
+                "English": "Abyss 27F",
+                "ChineseCh": "深海第27层",
+                "Japanese": "深海27F"
+            }
+        }
+    },
+    "S_Tower_028": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 28층",
+                "English": "Abyss 28F",
+                "ChineseCh": "深海第28层",
+                "Japanese": "深海28F"
+            }
+        }
+    },
+    "S_Tower_029": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 29층",
+                "English": "Abyss 29F",
+                "ChineseCh": "深海第29层",
+                "Japanese": "深海29F"
+            }
+        }
+    },
+    "S_Tower_030": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 30층",
+                "English": "Abyss 30F",
+                "ChineseCh": "深海第30层",
+                "Japanese": "深海30F"
+            }
+        }
+    },
+    "S_Tower_031": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 31층",
+                "English": "Abyss 31F",
+                "ChineseCh": "深海第31层",
+                "Japanese": "深海31F"
+            }
+        }
+    },
+    "S_Tower_032": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 32층",
+                "English": "Abyss 32F",
+                "ChineseCh": "深海第32层",
+                "Japanese": "深海32F"
+            }
+        }
+    },
+    "S_Tower_033": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 33층",
+                "English": "Abyss 33F",
+                "ChineseCh": "深海第33层",
+                "Japanese": "深海33F"
+            }
+        }
+    },
+    "S_Tower_034": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 34층",
+                "English": "Abyss 34F",
+                "ChineseCh": "深海第34层",
+                "Japanese": "深海34F"
+            }
+        }
+    },
+    "S_Tower_035": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 35층",
+                "English": "Abyss 35F",
+                "ChineseCh": "深海第35层",
+                "Japanese": "深海35F"
+            }
+        }
+    },
+    "S_Tower_036": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 36층",
+                "English": "Abyss 36F",
+                "ChineseCh": "深海第36层",
+                "Japanese": "深海36F"
+            }
+        }
+    },
+    "S_Tower_037": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 37층",
+                "English": "Abyss 37F",
+                "ChineseCh": "深海第37层",
+                "Japanese": "深海37F"
+            }
+        }
+    },
+    "S_Tower_038": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 38층",
+                "English": "Abyss 38F",
+                "ChineseCh": "深海第38层",
+                "Japanese": "深海38F"
+            }
+        }
+    },
+    "S_Tower_039": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 39층",
+                "English": "Abyss 39F",
+                "ChineseCh": "深海第39层",
+                "Japanese": "深海39F"
+            }
+        }
+    },
+    "S_Tower_040": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 40층",
+                "English": "Abyss 40F",
+                "ChineseCh": "深海第40层",
+                "Japanese": "深海40F"
+            }
+        }
+    },
+    "S_Tower_041": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 41층",
+                "English": "Abyss 41F",
+                "ChineseCh": "深海第41层",
+                "Japanese": "深海41F"
+            }
+        }
+    },
+    "S_Tower_042": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 42층",
+                "English": "Abyss 42F",
+                "ChineseCh": "深海第42层",
+                "Japanese": "深海42F"
+            }
+        }
+    },
+    "S_Tower_043": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 43층",
+                "English": "Abyss 43F",
+                "ChineseCh": "深海第43层",
+                "Japanese": "深海43F"
+            }
+        }
+    },
+    "S_Tower_044": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 44층",
+                "English": "Abyss 44F",
+                "ChineseCh": "深海第44层",
+                "Japanese": "深海44F"
+            }
+        }
+    },
+    "S_Tower_045": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 45층",
+                "English": "Abyss 45F",
+                "ChineseCh": "深海第45层",
+                "Japanese": "深海45F"
+            }
+        }
+    },
+    "S_Tower_046": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 46층",
+                "English": "Abyss 46F",
+                "ChineseCh": "深海第46层",
+                "Japanese": "深海46F"
+            }
+        }
+    },
+    "S_Tower_047": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 47층",
+                "English": "Abyss 47F",
+                "ChineseCh": "深海第47层",
+                "Japanese": "深海47F"
+            }
+        }
+    },
+    "S_Tower_048": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 48층",
+                "English": "Abyss 48F",
+                "ChineseCh": "深海第48层",
+                "Japanese": "深海48F"
+            }
+        }
+    },
+    "S_Tower_049": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 49층",
+                "English": "Abyss 49F",
+                "ChineseCh": "深海第49层",
+                "Japanese": "深海49F"
+            }
+        }
+    },
+    "S_Tower_050": {
+        "Text": {
+            "Name": {
+                "Korea": "심해 50층",
+                "English": "Abyss 50F",
+                "ChineseCh": "深海第50层",
+                "Japanese": "深海50F"
+            }
+        }
+    },
     "S1_Sh_3": {
         "Text": {
             "Name": {
@@ -55346,6 +57138,22 @@
             }
         }
     },
+    "S45_Ar_5": {
+        "Text": {
+            "Name": {
+                "Korea": "아그네스의 분노",
+                "English": "Wrath of Agnes",
+                "ChineseCh": "阿格尼丝之怒",
+                "Japanese": "アグネスの怒り"
+            },
+            "Explain": {
+                "Korea": "염제 아그네스의 불꽃이 형상화된 갑옷. 그녀의 분노는 윤회의 날이 도래할 때까지, 결코 사그라지지 않을 것이다.\n\n[AAB7B7]'어째서.. 당신이 이런 짓을..!' - ????[-]",
+                "English": "Armor forged from the flames of Ifrit Agnes. Her wrath shall never fade, not until the cycle begins anew.\n\n[AAB7B7]“Why... why would you do such a thing...?!” – ????[-]",
+                "ChineseCh": "炎帝阿格尼丝的火焰所化成的盔甲。她的愤怒，直到轮回之日到来为止，绝不会平息。\n\n[AAB7B7]“为什么…你要做这种事…！” - ？？？？[-]",
+                "Japanese": "炎帝アグネスの炎が形となった鎧。その怒りは、輪廻の刻が訪れるその日まで、決して鎮まることはない。\n\n[AAB7B7]「なぜ…あなたが、こんなことを…！」 - ？？？？[-]"
+            }
+        }
+    },
     "S45_Ma_5": {
         "Text": {
             "Name": {
@@ -55365,6 +57173,16 @@
                 "ChineseCh": "雷鸣之心",
                 "ChineseTh": "閃電心臟",
                 "Japanese": "雷の心臓"
+            }
+        }
+    },
+    "S45_Ru_5_01": {
+        "Text": {
+            "Name": {
+                "Korea": "염제의 기억",
+                "English": "Memories of Flame",
+                "ChineseCh": "炎帝的记忆",
+                "Japanese": "炎帝の記憶"
             }
         }
     },
@@ -56988,6 +58806,16 @@
             }
         }
     },
+    "Sk_Ab_Eva02": {
+        "Text": {
+            "Name": {
+                "Korea": "마력 순환",
+                "English": "Cycle of Mana",
+                "ChineseCh": "魔力循环",
+                "Japanese": "魔力循環"
+            }
+        }
+    },
     "Sk_Ab_Fin": {
         "Text": {
             "Name": {
@@ -57557,6 +59385,40 @@
             }
         }
     },
+    "Sk_Bs_BleedAttack_Pa_03": {
+        "Text": {
+            "Name": {
+                "Korea": "공격 시 출혈 II",
+                "English": "Bleed on Attack II",
+                "ChineseCh": "攻击时出血 Ⅱ",
+                "Japanese": "攻撃時出血Ⅱ"
+            }
+        }
+    },
+    "Sk_Bs_BleedAttack_Pa_04": {
+        "Text": {
+            "Name": {
+                "Korea": "출혈 추가 피해 II",
+                "English": "Additional Bleed Damage II",
+                "ChineseCh": "额外出血伤害 Ⅱ",
+                "Japanese": "出血追加ダメージⅡ"
+            }
+        }
+    },
+    "Sk_Bs_BleedExpert_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "출혈 전문가 I"
+            }
+        }
+    },
+    "Sk_Bs_BleedExpert_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "출혈 전문가 II"
+            }
+        }
+    },
     "Sk_Bs_BloodSucking_Pa_01": {
         "Text": {
             "Explain": {
@@ -57614,22 +59476,58 @@
     "Sk_Bs_BurnAttack_Pa_01": {
         "Text": {
             "Name": {
-                "Korea": "공격 시 화상",
-                "English": "Burned on Hit",
-                "ChineseCh": "攻击时灼烧",
-                "ChineseTh": "攻擊時灼傷",
-                "Japanese": "攻撃時やけど"
+                "Korea": "공격 시 화상 I",
+                "English": "Burned on Hit I",
+                "ChineseCh": "攻击时灼烧 Ⅰ",
+                "ChineseTh": "攻擊時灼傷I",
+                "Japanese": "攻撃時やけどⅠ"
             }
         }
     },
     "Sk_Bs_BurnAttack_Pa_02": {
         "Text": {
             "Name": {
-                "Korea": "화상 추가 피해",
-                "English": "Additional Burn Damage",
-                "ChineseCh": "额外灼烧伤害",
-                "ChineseTh": "灼傷額外傷害",
-                "Japanese": "やけど追加与ダメージ"
+                "Korea": "화상 추가 피해 I",
+                "English": "Additional Burn Damage I",
+                "ChineseCh": "额外灼烧伤害 Ⅰ",
+                "ChineseTh": "灼傷額外傷害I",
+                "Japanese": "やけど追加与ダメージⅠ"
+            }
+        }
+    },
+    "Sk_Bs_BurnAttack_Pa_03": {
+        "Text": {
+            "Name": {
+                "Korea": "공격 시 화상 II",
+                "English": "Burned on Hit II",
+                "ChineseCh": "攻击时灼烧 Ⅱ",
+                "ChineseTh": "攻擊時灼傷II",
+                "Japanese": "攻撃時やけどⅡ"
+            }
+        }
+    },
+    "Sk_Bs_BurnAttack_Pa_04": {
+        "Text": {
+            "Name": {
+                "Korea": "화상 추가 피해 II",
+                "English": "Additional Burn Damage II",
+                "ChineseCh": "额外灼烧伤害 Ⅱ",
+                "ChineseTh": "灼傷額外傷害II",
+                "Japanese": "やけど追加与ダメージⅡ"
+            }
+        }
+    },
+    "Sk_Bs_BurnExpert_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "화상 전문가 I"
+            }
+        }
+    },
+    "Sk_Bs_BurnExpert_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "화상 전문가 II"
             }
         }
     },
@@ -57856,22 +59754,58 @@
     "Sk_Bs_ElectricAttack_Pa_01": {
         "Text": {
             "Name": {
-                "Korea": "공격 시 감전",
-                "English": "Shock on Hit",
-                "ChineseCh": "攻击时触电",
-                "ChineseTh": "攻擊時觸電",
-                "Japanese": "攻撃時感電"
+                "Korea": "공격 시 감전 I",
+                "English": "Shock on Hit I",
+                "ChineseCh": "攻击时触电 Ⅰ",
+                "ChineseTh": "攻擊時觸電I",
+                "Japanese": "攻撃時感電Ⅰ"
             }
         }
     },
     "Sk_Bs_ElectricAttack_Pa_02": {
         "Text": {
             "Name": {
-                "Korea": "감전 추가 피해",
-                "English": "Additional Shock Damage",
-                "ChineseCh": "额外触电伤害",
-                "ChineseTh": "觸電額外傷害",
-                "Japanese": "感電追加被ダメージ"
+                "Korea": "감전 추가 피해 I",
+                "English": "Additional Shock Damage I",
+                "ChineseCh": "额外触电伤害 Ⅰ",
+                "ChineseTh": "觸電額外傷害I",
+                "Japanese": "感電追加被ダメージⅠ"
+            }
+        }
+    },
+    "Sk_Bs_ElectricAttack_Pa_03": {
+        "Text": {
+            "Name": {
+                "Korea": "공격 시 감전 II",
+                "English": "Shock on Hit II",
+                "ChineseCh": "攻击时触电 Ⅱ",
+                "ChineseTh": "攻擊時觸電II",
+                "Japanese": "攻撃時感電Ⅱ"
+            }
+        }
+    },
+    "Sk_Bs_ElectricAttack_Pa_04": {
+        "Text": {
+            "Name": {
+                "Korea": "감전 추가 피해 II",
+                "English": "Additional Shock Damage II",
+                "ChineseCh": "额外触电伤害 Ⅱ",
+                "ChineseTh": "觸電額外傷害II",
+                "Japanese": "感電追加被ダメージⅡ"
+            }
+        }
+    },
+    "Sk_Bs_ElectricExpert_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "감전 전문가 I"
+            }
+        }
+    },
+    "Sk_Bs_ElectricExpert_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "감전 전문가 II"
             }
         }
     },
@@ -57977,22 +59911,58 @@
     "Sk_Bs_FearAttack_Pa_01": {
         "Text": {
             "Name": {
-                "Korea": "공격 시 공포",
-                "English": "Fear on Hit",
-                "ChineseCh": "攻击时恐怖",
-                "ChineseTh": "攻擊時恐怖",
-                "Japanese": "攻撃時恐怖"
+                "Korea": "공격 시 공포 I",
+                "English": "Fear on Hit I",
+                "ChineseCh": "攻击时恐怖 Ⅰ",
+                "ChineseTh": "攻擊時恐怖I",
+                "Japanese": "攻撃時恐怖Ⅰ"
             }
         }
     },
     "Sk_Bs_FearAttack_Pa_02": {
         "Text": {
             "Name": {
-                "Korea": "공포 추가 피해",
-                "English": "Additional Fear Damage",
-                "ChineseCh": "额外恐怖伤害",
-                "ChineseTh": "恐怖額外傷害",
-                "Japanese": "恐怖追加与ダメージ"
+                "Korea": "공포 추가 피해 I",
+                "English": "Additional Fear Damage I",
+                "ChineseCh": "额外恐怖伤害 Ⅰ",
+                "ChineseTh": "恐怖額外傷害I",
+                "Japanese": "恐怖追加与ダメージⅠ"
+            }
+        }
+    },
+    "Sk_Bs_FearAttack_Pa_03": {
+        "Text": {
+            "Name": {
+                "Korea": "공격 시 공포 II",
+                "English": "Fear on Hit II",
+                "ChineseCh": "攻击时恐怖 Ⅱ",
+                "ChineseTh": "攻擊時恐怖II",
+                "Japanese": "攻撃時恐怖Ⅱ"
+            }
+        }
+    },
+    "Sk_Bs_FearAttack_Pa_04": {
+        "Text": {
+            "Name": {
+                "Korea": "공포 추가 피해 II",
+                "English": "Additional Fear Damage II",
+                "ChineseCh": "额外恐怖伤害 Ⅱ",
+                "ChineseTh": "恐怖額外傷害II",
+                "Japanese": "恐怖追加与ダメージⅡ"
+            }
+        }
+    },
+    "Sk_Bs_FearExpert_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "공포 전문가 I"
+            }
+        }
+    },
+    "Sk_Bs_FearExpert_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "공포 전문가 II"
             }
         }
     },
@@ -58250,22 +60220,44 @@
     "Sk_Bs_IceAttack_Pa_01": {
         "Text": {
             "Name": {
-                "Korea": "공격 시 빙결",
-                "English": "Frost on Hit",
-                "ChineseCh": "攻击时冰冻",
-                "ChineseTh": "攻擊時冰凍",
-                "Japanese": "攻撃時氷結"
+                "Korea": "공격 시 빙결 I",
+                "English": "Frost on Hit I",
+                "ChineseCh": "攻击时冰冻 Ⅰ",
+                "ChineseTh": "攻擊時冰凍I",
+                "Japanese": "攻撃時氷結Ⅰ"
             }
         }
     },
     "Sk_Bs_IceAttack_Pa_02": {
         "Text": {
             "Name": {
-                "Korea": "빙결 추가 피해",
-                "English": "Additional Frost Damage",
-                "ChineseCh": "额外冰冻伤害",
-                "ChineseTh": "冰凍額外傷害",
-                "Japanese": "氷結追加被ダメージ"
+                "Korea": "빙결 추가 피해 I",
+                "English": "Additional Frost Damage I",
+                "ChineseCh": "额外冰冻伤害 Ⅰ",
+                "ChineseTh": "冰凍額外傷害I",
+                "Japanese": "氷結追加被ダメージⅠ"
+            }
+        }
+    },
+    "Sk_Bs_IceAttack_Pa_03": {
+        "Text": {
+            "Name": {
+                "Korea": "공격 시 빙결 II",
+                "English": "Frost on Hit II",
+                "ChineseCh": "攻击时冰冻 Ⅱ",
+                "ChineseTh": "攻擊時冰凍II",
+                "Japanese": "攻撃時氷結Ⅱ"
+            }
+        }
+    },
+    "Sk_Bs_IceAttack_Pa_04": {
+        "Text": {
+            "Name": {
+                "Korea": "빙결 추가 피해 II",
+                "English": "Additional Frost Damage II",
+                "ChineseCh": "额外冰冻伤害 Ⅱ",
+                "ChineseTh": "冰凍額外傷害II",
+                "Japanese": "氷結追加被ダメージⅡ"
             }
         }
     },
@@ -58277,6 +60269,20 @@
                 "ChineseCh": "冰霜攻击",
                 "ChineseTh": "寒霜攻擊",
                 "Japanese": "霜の攻撃"
+            }
+        }
+    },
+    "Sk_Bs_IceExpert_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "빙결 전문가 I"
+            }
+        }
+    },
+    "Sk_Bs_IceExpert_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "빙결 전문가 II"
             }
         }
     },
@@ -58510,22 +60516,58 @@
     "Sk_Bs_PoisonAttack_Pa_01": {
         "Text": {
             "Name": {
-                "Korea": "공격 시 중독",
-                "English": "Poisoned on Hit",
-                "ChineseCh": "攻击时中毒",
-                "ChineseTh": "攻擊時中毒",
-                "Japanese": "攻撃時中毒"
+                "Korea": "공격 시 중독 I",
+                "English": "Poisoned on Hit I",
+                "ChineseCh": "攻击时中毒 Ⅰ",
+                "ChineseTh": "攻擊時中毒I",
+                "Japanese": "攻撃時中毒Ⅰ"
             }
         }
     },
     "Sk_Bs_PoisonAttack_Pa_02": {
         "Text": {
             "Name": {
-                "Korea": "중독 추가 피해",
-                "English": "Additional Poison Damage",
-                "ChineseCh": "额外中毒伤害",
-                "ChineseTh": "中毒額外傷害",
-                "Japanese": "中毒追加与ダメージ"
+                "Korea": "중독 추가 피해 I",
+                "English": "Additional Poison Damage I",
+                "ChineseCh": "额外中毒伤害 Ⅰ",
+                "ChineseTh": "中毒額外傷害I",
+                "Japanese": "中毒追加与ダメージⅠ"
+            }
+        }
+    },
+    "Sk_Bs_PoisonAttack_Pa_03": {
+        "Text": {
+            "Name": {
+                "Korea": "공격 시 중독 II",
+                "English": "Poisoned on Hit II",
+                "ChineseCh": "攻击时中毒 Ⅱ",
+                "ChineseTh": "攻擊時中毒II",
+                "Japanese": "攻撃時中毒Ⅱ"
+            }
+        }
+    },
+    "Sk_Bs_PoisonAttack_Pa_04": {
+        "Text": {
+            "Name": {
+                "Korea": "중독 추가 피해 II",
+                "English": "Additional Poison Damage II",
+                "ChineseCh": "额外中毒伤害 Ⅱ",
+                "ChineseTh": "中毒額外傷害II",
+                "Japanese": "中毒追加与ダメージⅡ"
+            }
+        }
+    },
+    "Sk_Bs_PoisonExpert_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "중독 전문가 I"
+            }
+        }
+    },
+    "Sk_Bs_PoisonExpert_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "중독 전문가 II"
             }
         }
     },
@@ -58653,22 +60695,58 @@
     "Sk_Bs_RestrictAttack_Pa_01": {
         "Text": {
             "Name": {
-                "Korea": "공격 시 속박",
-                "English": "Root on Hit",
-                "ChineseCh": "攻击时束缚",
-                "ChineseTh": "攻擊時束縛",
-                "Japanese": "攻撃時拘束"
+                "Korea": "공격 시 속박 I",
+                "English": "Root on Hit I",
+                "ChineseCh": "攻击时束缚 Ⅰ",
+                "ChineseTh": "攻擊時束縛I",
+                "Japanese": "攻撃時拘束Ⅰ"
             }
         }
     },
     "Sk_Bs_RestrictAttack_Pa_02": {
         "Text": {
             "Name": {
-                "Korea": "속박 추가 피해",
-                "English": "Additional Root Damage",
-                "ChineseCh": "额外束缚伤害",
-                "ChineseTh": "束縛額外傷害",
-                "Japanese": "拘束追加ダメージ"
+                "Korea": "속박 추가 피해 I",
+                "English": "Additional Root Damage I",
+                "ChineseCh": "额外束缚伤害 Ⅰ",
+                "ChineseTh": "束縛額外傷害I",
+                "Japanese": "拘束追加ダメージⅠ"
+            }
+        }
+    },
+    "Sk_Bs_RestrictAttack_Pa_03": {
+        "Text": {
+            "Name": {
+                "Korea": "공격 시 속박 II",
+                "English": "Root on Hit II",
+                "ChineseCh": "攻击时束缚 Ⅱ",
+                "ChineseTh": "攻擊時束縛II",
+                "Japanese": "攻撃時拘束Ⅱ"
+            }
+        }
+    },
+    "Sk_Bs_RestrictAttack_Pa_04": {
+        "Text": {
+            "Name": {
+                "Korea": "속박 추가 피해 II",
+                "English": "Additional Root Damage II",
+                "ChineseCh": "额外束缚伤害 Ⅱ",
+                "ChineseTh": "束縛額外傷害II",
+                "Japanese": "拘束追加ダメージⅡ"
+            }
+        }
+    },
+    "Sk_Bs_RestrictExpert_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "속박 전문가 I"
+            }
+        }
+    },
+    "Sk_Bs_RestrictExpert_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "속박 전문가 II"
             }
         }
     },
@@ -58740,22 +60818,89 @@
     "Sk_Bs_StartSpurt_Pa_01": {
         "Text": {
             "Name": {
-                "Korea": "초반 스퍼트",
-                "English": "Early Surge",
-                "ChineseCh": "起步冲刺",
-                "ChineseTh": "基礎加速",
-                "Japanese": "ファーストスパート"
+                "Korea": "초반 스퍼트 II",
+                "English": "Early Surge II",
+                "ChineseCh": "起步冲刺 II",
+                "ChineseTh": "基礎加速II",
+                "Japanese": "ファーストスパートII"
+            }
+        }
+    },
+    "Sk_Bs_StartSpurt_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "초반 스퍼트 I",
+                "English": "Early Surge I",
+                "ChineseCh": "起步冲刺 I",
+                "ChineseTh": "基礎加速I",
+                "Japanese": "ファーストスパートI"
+            }
+        }
+    },
+    "Sk_Bs_StartSpurt_Pa_03": {
+        "Text": {
+            "Name": {
+                "Korea": "초반 스퍼트 III",
+                "English": "Early Surge III",
+                "ChineseCh": "起步冲刺 III",
+                "ChineseTh": "基礎加速III",
+                "Japanese": "ファーストスパートIII"
+            }
+        }
+    },
+    "Sk_Bs_StoneAttack_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "공격 시 석화 I",
+                "English": "Stun on Hit I",
+                "ChineseCh": "攻击时昏厥Ⅰ",
+                "Japanese": "攻撃時スタンI"
             }
         }
     },
     "Sk_Bs_StoneAttack_Pa_02": {
         "Text": {
             "Name": {
-                "Korea": "석화 추가 피해",
-                "English": "Additional Petrify Damage",
-                "ChineseCh": "额外石化伤害",
-                "ChineseTh": "石化額外傷害",
-                "Japanese": "石化追加与ダメージ"
+                "Korea": "석화 추가 피해 I",
+                "English": "Additional Petrify Damage I",
+                "ChineseCh": "额外石化伤害 Ⅰ",
+                "ChineseTh": "石化額外傷害I",
+                "Japanese": "石化追加与ダメージⅠ"
+            }
+        }
+    },
+    "Sk_Bs_StoneAttack_Pa_03": {
+        "Text": {
+            "Name": {
+                "Korea": "공격 시 석화 II",
+                "English": "Petrify on Hit I",
+                "ChineseCh": "攻击时石化Ⅰ",
+                "Japanese": "攻撃時石化I"
+            }
+        }
+    },
+    "Sk_Bs_StoneAttack_Pa_04": {
+        "Text": {
+            "Name": {
+                "Korea": "석화 추가 피해 II",
+                "English": "Additional Petrify Damage II",
+                "ChineseCh": "额外石化伤害 Ⅱ",
+                "ChineseTh": "石化額外傷害II",
+                "Japanese": "石化追加与ダメージⅡ"
+            }
+        }
+    },
+    "Sk_Bs_StoneExpert_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "석화 전문가 I"
+            }
+        }
+    },
+    "Sk_Bs_StoneExpert_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "석화 전문가 II"
             }
         }
     },
@@ -58773,22 +60918,56 @@
     "Sk_Bs_StunAttack_Pa_01": {
         "Text": {
             "Name": {
-                "Korea": "강타",
-                "English": "Smash",
-                "ChineseCh": "强击",
-                "ChineseTh": "強擊",
-                "Japanese": "強打"
+                "Korea": "공격 시 기절 I",
+                "English": "Stun on Attack I",
+                "ChineseCh": "攻击时昏厥I",
+                "Japanese": "攻撃時スタンI"
             }
         }
     },
     "Sk_Bs_StunAttack_Pa_02": {
         "Text": {
             "Name": {
-                "Korea": "기절 추가 피해",
-                "English": "Additional Stun Damage",
-                "ChineseCh": "额外昏厥伤害",
-                "ChineseTh": "眩暈額外傷害",
-                "Japanese": "スタン追加ダメージ"
+                "Korea": "기절 추가 피해 I",
+                "English": "Additional Stun Damage I",
+                "ChineseCh": "额外昏厥伤害 Ⅰ",
+                "ChineseTh": "眩暈額外傷害I",
+                "Japanese": "スタン追加ダメージⅠ"
+            }
+        }
+    },
+    "Sk_Bs_StunAttack_Pa_03": {
+        "Text": {
+            "Name": {
+                "Korea": "공격 시 기절 II",
+                "English": "Stun on Hit II",
+                "ChineseCh": "攻击时昏厥Ⅱ",
+                "Japanese": "攻撃時スタンII"
+            }
+        }
+    },
+    "Sk_Bs_StunAttack_Pa_04": {
+        "Text": {
+            "Name": {
+                "Korea": "기절 추가 피해 II",
+                "English": "Additional Stun Damage II",
+                "ChineseCh": "额外昏厥伤害 Ⅱ",
+                "ChineseTh": "眩暈額外傷害II",
+                "Japanese": "スタン追加ダメージⅡ"
+            }
+        }
+    },
+    "Sk_Bs_StunExpert_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "기절 전문가 I"
+            }
+        }
+    },
+    "Sk_Bs_StunExpert_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "기절 전문가 II"
             }
         }
     },
@@ -58806,11 +60985,11 @@
     "Sk_Bs_Undying_Pa_01": {
         "Text": {
             "Name": {
-                "Korea": "최후의 발악",
-                "English": "Last Stand",
-                "ChineseCh": "最后怒吼",
-                "ChineseTh": "最後的掙扎",
-                "Japanese": "最後の足掻き"
+                "Korea": "최후의 발악 II",
+                "English": "Last Stand II",
+                "ChineseCh": "最后怒吼 Ⅱ",
+                "ChineseTh": "最後的掙扎II",
+                "Japanese": "最後の足掻きⅡ"
             }
         }
     },
@@ -58844,6 +61023,28 @@
                 "ChineseCh": "死亡抵抗Ⅲ",
                 "ChineseTh": "死亡抵抗III",
                 "Japanese": "死亡耐性Ⅲ"
+            }
+        }
+    },
+    "Sk_Bs_Undying_Pa_05": {
+        "Text": {
+            "Name": {
+                "Korea": "최후의 발악 I",
+                "English": "Last Stand I",
+                "ChineseCh": "最后怒吼I",
+                "ChineseTh": "最後的掙扎I",
+                "Japanese": "最後の足掻きI"
+            }
+        }
+    },
+    "Sk_Bs_Undying_Pa_06": {
+        "Text": {
+            "Name": {
+                "Korea": "최후의 발악 III",
+                "English": "Last Stand III",
+                "ChineseCh": "最后怒吼III",
+                "ChineseTh": "最後的掙扎III",
+                "Japanese": "最後の足掻きIII"
             }
         }
     },
@@ -59532,6 +61733,16 @@
             }
         }
     },
+    "Sk_Eb_Chicken_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "칠흑멸진각",
+                "English": "Oblivion Kick",
+                "ChineseCh": "漆黑灭尽脚",
+                "Japanese": "漆黒滅陣脚"
+            }
+        }
+    },
     "Sk_Eb_Chimera_Ac_01": {
         "Text": {
             "Name": {
@@ -59883,6 +62094,61 @@
                 "ChineseCh": "粉碎防具",
                 "ChineseTh": "粉碎防具",
                 "Japanese": "防具粉砕"
+            }
+        }
+    },
+    "Sk_Eb_CristinaSR_Ac_01": {
+        "Text": {
+            "Name": {
+                "Korea": "파이어볼",
+                "English": "Fireball",
+                "ChineseCh": "火球术",
+                "ChineseTh": "火球",
+                "Japanese": "ファイアボール"
+            }
+        }
+    },
+    "Sk_Eb_CristinaSR_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "왕실 마법",
+                "English": "Royal Magic",
+                "ChineseCh": "王室魔法",
+                "ChineseTh": "王室魔法",
+                "Japanese": "王家の魔法"
+            }
+        }
+    },
+    "Sk_Eb_CristinaSR_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "화염 마법의 대가",
+                "English": "Master of Flame Magic",
+                "ChineseCh": "火焰魔法大师",
+                "Japanese": "火炎魔法の大家"
+            },
+            "Explain": {
+                "Korea": "크리스티나가 적 타격 시 모든 스킬 최종 피해 및 공격력 증가 중첩을 획득 한다. 이 중첩은 최대 100회 중첩 된다.",
+                "English": "When Cristina hits an enemy, she gains a stack that increases all skill final damage and Attack. This effect can stack up to 100 times.",
+                "ChineseCh": "克里斯蒂娜攻击敌人时，获得所有技能最终伤害及攻击力提升的叠加效果。该效果最多可叠加100次。",
+                "Japanese": "クリスティーナが敵を攻撃すると、すべてのスキル最終ダメージと攻撃力がアップする重複を獲得する。最大100回まで重複する。"
+            }
+        }
+    },
+    "Sk_Eb_CristinaSR_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "방화",
+                "English": "Arson",
+                "ChineseCh": "纵火",
+                "ChineseTh": "防火",
+                "Japanese": "放火"
+            },
+            "Explain": {
+                "Korea": "크리스티나가 기본 공격, 파이러볼로 피해를 입힐 시 대상에게 화상을 부여 한다.",
+                "English": "When Cristina deals damage with a Basic Attack or Fireball, she inflicts Burn on the target.",
+                "ChineseCh": "克里斯蒂娜使用普通攻击、火球术造成伤害时，对目标单位赋予灼烧效果。",
+                "Japanese": "クリスティーナが通常攻撃またはファイアボールでダメージを与えると、対象にやけどを付与する。"
             }
         }
     },
@@ -60921,6 +63187,83 @@
             }
         }
     },
+    "Sk_Eb_GawainST_Ac_01": {
+        "Text": {
+            "Name": {
+                "Korea": "녹풍난무",
+                "English": "Green Gale Frenzy",
+                "ChineseCh": "绿风乱舞",
+                "ChineseTh": "綠風亂舞",
+                "Japanese": "緑風乱舞"
+            }
+        }
+    },
+    "Sk_Eb_GawainST_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "브리타니아 검법",
+                "English": "Britannia Swordsmanship",
+                "ChineseCh": "布里塔尼亚剑法",
+                "ChineseTh": "布里塔尼亞劍法",
+                "Japanese": "ブリタニアの剣法"
+            }
+        }
+    },
+    "Sk_Eb_GawainST_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "쇄도",
+                "English": "Surge",
+                "ChineseCh": "一击必杀",
+                "ChineseTh": "奔騰",
+                "Japanese": "殺到"
+            }
+        }
+    },
+    "Sk_Eb_GawainST_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "결의",
+                "English": "Resolution",
+                "ChineseCh": "决意",
+                "ChineseTh": "決心",
+                "Japanese": "決意"
+            }
+        }
+    },
+    "Sk_Eb_GawainST_Pa_02_01": {
+        "Text": {
+            "Name": {
+                "Korea": "결의",
+                "English": "Resolution",
+                "ChineseCh": "决意",
+                "ChineseTh": "決心",
+                "Japanese": "決意"
+            }
+        }
+    },
+    "Sk_Eb_GawainST_Pa_02_02": {
+        "Text": {
+            "Name": {
+                "Korea": "결의",
+                "English": "Resolution",
+                "ChineseCh": "决意",
+                "ChineseTh": "決心",
+                "Japanese": "決意"
+            }
+        }
+    },
+    "Sk_Eb_GawainST_Ut_01": {
+        "Text": {
+            "Name": {
+                "Korea": "질풍무쌍",
+                "English": "Tempest Strike",
+                "ChineseCh": "疾风无双",
+                "ChineseTh": "疾風無雙",
+                "Japanese": "疾風無双"
+            }
+        }
+    },
     "Sk_Eb_General_Ac_01": {
         "Text": {
             "Name": {
@@ -61061,6 +63404,79 @@
                 "ChineseCh": "骑兵攻击",
                 "ChineseTh": "騎兵攻擊",
                 "Japanese": "騎馬攻撃"
+            }
+        }
+    },
+    "Sk_Eb_IfritST_Ac_01": {
+        "Text": {
+            "Name": {
+                "Korea": "살기 방출",
+                "English": "Killing Intent",
+                "ChineseCh": "散发杀气",
+                "Japanese": "殺気放出"
+            }
+        }
+    },
+    "Sk_Eb_IfritST_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "흑요석 창술",
+                "English": "Obsidian Spearmanship",
+                "ChineseCh": "黑曜石枪术",
+                "ChineseTh": "黑曜石槍術",
+                "Japanese": "黒曜石の槍術"
+            }
+        }
+    },
+    "Sk_Eb_IfritST_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "통제불능",
+                "English": "Uncontrollable",
+                "ChineseCh": "失控",
+                "Japanese": "制御不能"
+            }
+        }
+    },
+    "Sk_Eb_IfritST_Pa_01_01": {
+        "Text": {
+            "Name": {
+                "Korea": "통제불능",
+                "English": "Uncontrollable",
+                "ChineseCh": "失控",
+                "Japanese": "制御不能"
+            }
+        }
+    },
+    "Sk_Eb_IfritST_Pa_01_02": {
+        "Text": {
+            "Name": {
+                "Korea": "통제불능",
+                "English": "Uncontrollable",
+                "ChineseCh": "失控",
+                "Japanese": "制御不能"
+            }
+        }
+    },
+    "Sk_Eb_IfritST_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "불사",
+                "English": "Immortality",
+                "ChineseCh": "不死",
+                "ChineseTh": "不死",
+                "Japanese": "不死"
+            }
+        }
+    },
+    "Sk_Eb_IfritST_Ut_01": {
+        "Text": {
+            "Name": {
+                "Korea": "타올라라!",
+                "English": "Burn to ashes!",
+                "ChineseCh": "燃烧吧！",
+                "ChineseTh": "燃燒吧！",
+                "Japanese": "燃え盛れ！"
             }
         }
     },
@@ -61336,6 +63752,130 @@
                 "ChineseCh": "突击",
                 "ChineseTh": "突擊",
                 "Japanese": "突撃"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSR_Ac_01": {
+        "Text": {
+            "Name": {
+                "Korea": "슬라임 스매시",
+                "English": "Slime Smash",
+                "ChineseCh": "史莱姆斩击",
+                "ChineseTh": "史萊姆破擊",
+                "Japanese": "スライム・スマッシュ"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSR_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "슬라임 어택",
+                "English": "Slime Attack",
+                "ChineseCh": "史莱姆攻击",
+                "ChineseTh": "史萊姆攻擊",
+                "Japanese": "スライム・アタック"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSR_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "빵빵한 부속물",
+                "English": "Plump Slime",
+                "ChineseCh": "鼓鼓囊囊的附着物",
+                "Japanese": "ぷるぷるボディ"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSR_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "탱탱한 부속물",
+                "English": "Firm Slime",
+                "ChineseCh": "Q弹的附着物",
+                "Japanese": "ぷにぷにボディ"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSR_Pa_03": {
+        "Text": {
+            "Name": {
+                "Korea": "부식성 점액",
+                "English": "Corrosive Slime",
+                "ChineseCh": "腐蚀性黏液",
+                "Japanese": "腐食性粘液"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSR_Pa_04": {
+        "Text": {
+            "Name": {
+                "Korea": "반발성 점액",
+                "English": "Reactive Slime",
+                "ChineseCh": "弹力黏液",
+                "Japanese": "反発性粘液"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSt_Ac_01": {
+        "Text": {
+            "Name": {
+                "Korea": "슬라임 스매시",
+                "English": "Slime Smash",
+                "ChineseCh": "史莱姆斩击",
+                "ChineseTh": "史萊姆破擊",
+                "Japanese": "スライム・スマッシュ"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSt_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "슬라임 어택",
+                "English": "Slime Attack",
+                "ChineseCh": "史莱姆攻击",
+                "ChineseTh": "史萊姆攻擊",
+                "Japanese": "スライム・アタック"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSt_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "세계수의 기운",
+                "English": "Energy of the World Tree",
+                "ChineseCh": "世界之树的气息",
+                "Japanese": "世界樹の気運"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSt_Pa_01_01": {
+        "Text": {
+            "Name": {
+                "Korea": "세계수의 기운",
+                "English": "Energy of the World Tree",
+                "ChineseCh": "世界之树的气息",
+                "Japanese": "世界樹のエネルギー"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSt_Pa_01_02": {
+        "Text": {
+            "Name": {
+                "Korea": "세계수의 기운",
+                "English": "Energy of the World Tree",
+                "ChineseCh": "世界之树的气息",
+                "Japanese": "世界樹のエネルギー"
+            }
+        }
+    },
+    "Sk_Eb_KingSlimeSt_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "부식성 점액",
+                "English": "Corrosive Slime",
+                "ChineseCh": "腐蚀性黏液",
+                "Japanese": "腐食性粘液"
             }
         }
     },
@@ -61822,6 +64362,74 @@
                 "ChineseCh": "嫉妒的印记",
                 "ChineseTh": "嫉妒標記",
                 "Japanese": "嫉妬のささやき"
+            }
+        }
+    },
+    "Sk_Eb_LisaST_Ac_01": {
+        "Text": {
+            "Name": {
+                "Korea": "핏빛 흉터",
+                "English": "Bloodstained Scar",
+                "ChineseCh": "血色伤疤",
+                "ChineseTh": "血色傷痕",
+                "Japanese": "血色の傷跡"
+            }
+        }
+    },
+    "Sk_Eb_LisaST_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "그림자 비수",
+                "English": "Stiletto of Shadow",
+                "ChineseCh": "影刃",
+                "ChineseTh": "暗影匕首",
+                "Japanese": "影のナイフ"
+            }
+        }
+    },
+    "Sk_Eb_LisaST_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "질투의 표식",
+                "English": "Whispers of Jealousy",
+                "ChineseCh": "嫉妒的印记",
+                "ChineseTh": "嫉妒標記",
+                "Japanese": "嫉妬のささやき"
+            },
+            "Explain": {
+                "Korea": "리사가 적 타격 시 징표를 1개 누적시키며, 징표를 통한 추가 피해 발생 시 징표가 초기화 된다.",
+                "English": "When Lisa lands an attack on an enemy, the target becomes marked, gaining a stack of Envy. The stacks reset once the additional damage is triggered.",
+                "ChineseCh": "莉莎攻击敌人时，会叠加1层【印记】。触发【印记】追击伤害时，【印记】会被重置。",
+                "ChineseTh": "麗莎打擊敵人時，將累積1個印記，並透過印記造成額外傷害時，印記重置。",
+                "Japanese": "リサが敵を打撃すると刻印を1つ累積させる。刻印による追加ダメージが発生すると刻印がリセットされる"
+            }
+        }
+    },
+    "Sk_Eb_LisaST_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "질투의 사도",
+                "English": "Apostle of Envy",
+                "ChineseCh": "嫉妒的使徒",
+                "ChineseTh": "嫉妒使徒",
+                "Japanese": "嫉妬の使徒"
+            },
+            "Explain": {
+                "Korea": "리사가 질투의 표식으로 피해를 입힐 시 피해 감소 무시, 공격 속도 증가 중첩을 획득 한다.",
+                "English": "When Lisa inflicts damage with Stack of Envy, she gains a stack that increases Ignore Damage Reduction and Attack Speed.",
+                "ChineseCh": "莉莎用“嫉妒的印记”造成伤害时，获得无视伤害减免、攻击速度提升的叠加效果。",
+                "Japanese": "リサが「嫉妬のささやき」でダメージを与えると、ダメージ軽減無視、攻撃速度がアップする重複を獲得する。"
+            }
+        }
+    },
+    "Sk_Eb_LisaST_Ut_01": {
+        "Text": {
+            "Name": {
+                "Korea": "질투의 향연",
+                "English": "Feast of Jealousy",
+                "ChineseCh": "嫉妒的盛宴",
+                "ChineseTh": "嫉妒饗宴",
+                "Japanese": "嫉妬の宴会"
             }
         }
     },
@@ -62704,6 +65312,71 @@
             }
         }
     },
+    "Sk_Eb_MordredST_Ac_01": {
+        "Text": {
+            "Name": {
+                "Korea": "연타",
+                "English": "Rapid Strike",
+                "ChineseCh": "连击",
+                "ChineseTh": "連擊",
+                "Japanese": "連撃"
+            }
+        }
+    },
+    "Sk_Eb_MordredST_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "팬드래건 창술",
+                "English": "Pendragon Spearmanship",
+                "ChineseCh": "潘德拉贡枪术",
+                "ChineseTh": "潘德拉貢槍術",
+                "Japanese": "ペンドラゴンの槍術"
+            }
+        }
+    },
+    "Sk_Eb_MordredST_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "불사",
+                "English": "Immortality",
+                "ChineseCh": "不死",
+                "ChineseTh": "不死",
+                "Japanese": "不死"
+            }
+        }
+    },
+    "Sk_Eb_MordredST_Pa_01_01": {
+        "Text": {
+            "Name": {
+                "Korea": "최후의 불씨",
+                "English": "Last Ember",
+                "ChineseCh": "最后的火种",
+                "Japanese": "最後の火種"
+            }
+        }
+    },
+    "Sk_Eb_MordredST_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "일기토",
+                "English": "Single Combat",
+                "ChineseCh": "一骑讨",
+                "ChineseTh": "單挑",
+                "Japanese": "一騎討ち"
+            }
+        }
+    },
+    "Sk_Eb_MordredST_Ut_01": {
+        "Text": {
+            "Name": {
+                "Korea": "롱고미니아드",
+                "English": "Rhongomyniad",
+                "ChineseCh": "伦戈米尼亚德",
+                "ChineseTh": "先鋒之槍",
+                "Japanese": "ロンゴミニアード"
+            }
+        }
+    },
     "Sk_Eb_Morgana_Ut_01": {
         "Text": {
             "Name": {
@@ -63001,6 +65674,49 @@
                 "ChineseCh": "粉碎旋风",
                 "ChineseTh": "粉碎漩渦",
                 "Japanese": "粉砕の渦"
+            }
+        }
+    },
+    "Sk_Eb_PercivalSR_Ac_01": {
+        "Text": {
+            "Name": {
+                "Korea": "철벽의 의지",
+                "English": "Iron Will",
+                "ChineseCh": "铁壁的意志",
+                "Japanese": "鉄壁の意志"
+            }
+        }
+    },
+    "Sk_Eb_PercivalSR_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "브리타니아 검법",
+                "English": "Britannia Swordsmanship",
+                "ChineseCh": "布里塔尼亚剑法",
+                "ChineseTh": "布里塔尼亞劍法",
+                "Japanese": "ブリタニアの剣法"
+            }
+        }
+    },
+    "Sk_Eb_PercivalSR_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "수호",
+                "English": "Protection",
+                "ChineseCh": "守护",
+                "ChineseTh": "守護",
+                "Japanese": "守護"
+            }
+        }
+    },
+    "Sk_Eb_PercivalSR_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "금강",
+                "English": "Adamantine",
+                "ChineseCh": "金刚",
+                "ChineseTh": "金剛",
+                "Japanese": "金剛"
             }
         }
     },
@@ -64254,6 +66970,16 @@
             }
         }
     },
+    "Sk_En_Chicken_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "쪼쪼 어택",
+                "English": "Rapid Pecks",
+                "ChineseCh": "啧啧攻击",
+                "Japanese": "ツンツンアタック"
+            }
+        }
+    },
     "Sk_En_CowGirl_At_01": {
         "Text": {
             "Name": {
@@ -64416,6 +67142,39 @@
                 "ChineseCh": "初级剑术",
                 "ChineseTh": "下級劍術",
                 "Japanese": "下級剣術"
+            }
+        }
+    },
+    "Sk_En_GoblinFemaleA_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "하급 궁술",
+                "English": "Basic Archery",
+                "ChineseCh": "初级弓术",
+                "ChineseTh": "下級弓術",
+                "Japanese": "下級弓術"
+            }
+        }
+    },
+    "Sk_En_GoblinFemaleM_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "하급 주술",
+                "English": "Basic Enchantment",
+                "ChineseCh": "初级咒术",
+                "ChineseTh": "下級咒術",
+                "Japanese": "下級呪術"
+            }
+        }
+    },
+    "Sk_En_GoblinFemaleW_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "하급 단검술",
+                "English": "Basic Dagger Art",
+                "ChineseCh": "初级短剑术",
+                "ChineseTh": "下級短劍術",
+                "Japanese": "下級ナイフ術"
             }
         }
     },
@@ -65320,6 +68079,36 @@
                 "ChineseCh": "帝国剑法",
                 "ChineseTh": "帝國劍法",
                 "Japanese": "帝国の剣法"
+            }
+        }
+    },
+    "Sk_Eq_AgnesArmor": {
+        "Text": {
+            "Name": {
+                "Korea": "이터널 플레임",
+                "English": "Eternal Flame",
+                "ChineseCh": "永恒烈焰",
+                "Japanese": "エターナル・フレイム"
+            }
+        }
+    },
+    "Sk_Eq_AgnesArmor_01": {
+        "Text": {
+            "Name": {
+                "Korea": "이터널 플레임",
+                "English": "Eternal Flame",
+                "ChineseCh": "永恒烈焰",
+                "Japanese": "エターナル・フレイム"
+            }
+        }
+    },
+    "Sk_Eq_AgnesArmor_02": {
+        "Text": {
+            "Name": {
+                "Korea": "이터널 플레임",
+                "English": "Eternal Flame",
+                "ChineseCh": "永恒烈焰",
+                "Japanese": "エターナル・フレイム"
             }
         }
     },
@@ -66918,6 +69707,105 @@
                 "ChineseCh": "湖之幻象·审判",
                 "ChineseTh": "湖水型態：審判",
                 "Japanese": "湖の形：審判"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_Ac_01": {
+        "Text": {
+            "Name": {
+                "Korea": "라이트닝 스매쉬",
+                "English": "Lightning Smash",
+                "ChineseCh": "闪电碎击",
+                "Japanese": "ライトニング・スマッシュ"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_Ac_01_01": {
+        "Text": {
+            "Name": {
+                "Korea": "라이트닝 스매쉬"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_Ac_01_02": {
+        "Text": {
+            "Name": {
+                "Korea": "라이트닝 스매쉬"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_At_01": {
+        "Text": {
+            "Name": {
+                "Korea": "라이트닝 쇼크",
+                "English": "Lightning Shock",
+                "ChineseCh": "闪电冲击",
+                "Japanese": "ライトニング・ショック"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_Pa_01": {
+        "Text": {
+            "Name": {
+                "Korea": "자극",
+                "English": "Stimulation",
+                "ChineseCh": "刺激",
+                "Japanese": "刺激"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_Pa_01_01": {
+        "Text": {
+            "Name": {
+                "Korea": "자극"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_Pa_01_02": {
+        "Text": {
+            "Name": {
+                "Korea": "자극"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_Pa_02": {
+        "Text": {
+            "Name": {
+                "Korea": "성배의 정령",
+                "English": "Spirit of the Grail",
+                "ChineseCh": "圣杯的精魄",
+                "Japanese": "聖杯の精霊"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_Pa_02_01": {
+        "Text": {
+            "Name": {
+                "Korea": "성배의 정령"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_Pa_02_02": {
+        "Text": {
+            "Name": {
+                "Korea": "성배의 정령"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_Pa_02_03": {
+        "Text": {
+            "Name": {
+                "Korea": "성배의 정령"
+            }
+        }
+    },
+    "Sk_Pc_Eva02_Ut_01": {
+        "Text": {
+            "Name": {
+                "Korea": "파이널 레퀴엠",
+                "English": "Final Requiem",
+                "ChineseCh": "最终安魂曲",
+                "Japanese": "ファイナル・レクイエム"
             }
         }
     },
@@ -69806,6 +72694,16 @@
             }
         }
     },
+    "Sk_Pet_Eva_02": {
+        "Text": {
+            "Name": {
+                "Korea": "마력 과부하",
+                "English": "Mana Overload",
+                "ChineseCh": "魔力过载",
+                "Japanese": "魔力暴走"
+            }
+        }
+    },
     "Sk_Pet_Galahad_01": {
         "Text": {
             "Name": {
@@ -70311,7 +73209,6 @@
                 "Korea": "에린이 궁극기 사용 시 모든 아군의 추가 피해가 증가한다.",
                 "English": "When Erin uses her Ultimate, all allies gain Additional Damage.",
                 "ChineseCh": "阿莲使用终极技能时，所有我方单位的额外伤害提升。",
-                "ChineseTh": " [FBD29B][sub]条件[/sub][-]",
                 "Japanese": "エリンが必殺技を使用時、全味方の追加ダメージがアップする。"
             }
         }
@@ -70779,10 +73676,16 @@
     "SmC5_Fragment": {
         "Text": {
             "Explain": {
-                "Korea": "[FBD29B][sub]설명[/sub][-]\n50개를 모아 사용하면 ★5 캐릭터를 확정적으로 소환할 수 있다.\n[FBD29B][sub]효과[/sub][-]\n캐릭터 소환\n[FBD29B][sub]등급[/sub][-]\n★5\n\n\n[sub][ccb456]* 상세 확률 정보는 『공식카페 → 확률 정보』 게시판에서 확인이 가능합니다.[/sub][-]"
+                "Korea": "[FBD29B][sub]설명[/sub][-]\n50개를 모아 사용하면 ★5 캐릭터를 확정적으로 소환할 수 있다.\n[FBD29B][sub]효과[/sub][-]\n캐릭터 소환\n[FBD29B][sub]등급[/sub][-]\n★5\n\n\n[sub][ccb456]* 상세 확률 정보는 『공식카페 → 확률 정보』 게시판에서 확인이 가능합니다.[/sub][-]",
+                "English": "[FBD29B][sub]Description[/sub][-]\nCollect 50 to guarantee a ★5 Character Summon.\n[FBD29B][sub]Effect[/sub][-]\nCharacter Summon\n[FBD29B][sub]Grade[/sub][-]\n★5",
+                "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n集齐50个后使用，即可必得一位★5角色。\n[FBD29B][sub]效果[/sub][-]\n角色召唤\n[FBD29B][sub]级别[/sub][-]\n★5",
+                "Japanese": "[FBD29B][sub]詳細[/sub][-]\n50個集めて使用すると、★5キャラクターを確定で召喚できる\n[FBD29B][sub]効果[/sub][-]\nキャラクターを召喚する\n[FBD29B][sub]ランク[/sub][-]\n★5\n\n\n"
             },
             "Name": {
-                "Korea": "계승되는 운명"
+                "Korea": "계승되는 운명",
+                "English": "Fated Legacy",
+                "ChineseCh": "传承之命",
+                "Japanese": "受け継がれる運命"
             }
         }
     },
@@ -70897,10 +73800,16 @@
     "SmP5_Fragment": {
         "Text": {
             "Explain": {
-                "Korea": "[FBD29B][sub]설명[/sub][-]\n50개를 모아 사용하면 ★5 펫을 확정적으로 소환할 수 있다.\n[FBD29B][sub]효과[/sub][-]\n펫 소환\n[FBD29B][sub]등급[/sub][-]\n★5\n\n\n[sub][ccb456]* 상세 확률 정보는 『공식카페 → 확률 정보』 게시판에서 확인이 가능합니다.[/sub][-]"
+                "Korea": "[FBD29B][sub]설명[/sub][-]\n50개를 모아 사용하면 ★5 펫을 확정적으로 소환할 수 있다.\n[FBD29B][sub]효과[/sub][-]\n펫 소환\n[FBD29B][sub]등급[/sub][-]\n★5\n\n\n[sub][ccb456]* 상세 확률 정보는 『공식카페 → 확률 정보』 게시판에서 확인이 가능합니다.[/sub][-]",
+                "English": "[FBD29B][sub]Description[/sub][-] \nCollect 50 to guarantee a ★5 Pet Summon. \n[FBD29B][sub]Effect[/sub][-] \nPet Summon \n[FBD29B][sub]Grade[/sub][-] \n★5",
+                "ChineseCh": "[FBD29B][sub]说明[/sub][-]\n集齐50个后使用，即可必得一只★5宠物。\n[FBD29B][sub]效果[/sub][-]\n宠物召唤\n[FBD29B][sub]级别[/sub][-]\n★5",
+                "Japanese": "[FBD29B][sub]詳細[/sub][-]\n50個集めて使用すると、★5ペットを確定で召喚できる\n[FBD29B][sub]効果[/sub][-]\nペットを召喚する\n[FBD29B][sub]ランク[/sub][-]\n★5\n\n\n"
             },
             "Name": {
-                "Korea": "계승되는 의지"
+                "Korea": "계승되는 의지",
+                "English": "Inherited Will",
+                "ChineseCh": "传承之志",
+                "Japanese": "受け継がれる意志"
             }
         }
     },
@@ -71192,6 +74101,17 @@
             }
         }
     },
+    "SP_ArrowWay": {
+        "Text": {
+            "Name": {
+                "Korea": "화살의 길",
+                "English": "Path of Arrows",
+                "ChineseCh": "箭矢之路",
+                "ChineseTh": "箭語之路",
+                "Japanese": "矢の道"
+            }
+        }
+    },
     "SP_BeachMerryPath": {
         "Text": {
             "Name": {
@@ -71346,6 +74266,17 @@
                 "ChineseCh": "湖畔的爱恋",
                 "ChineseTh": "湖水的愛戀",
                 "Japanese": "湖の"
+            }
+        }
+    },
+    "SP_MagicToolWay": {
+        "Text": {
+            "Name": {
+                "Korea": "마도의 길",
+                "English": "Way of the Arcane",
+                "ChineseCh": "魔导之路",
+                "ChineseTh": "魔導之路",
+                "Japanese": "魔導の道"
             }
         }
     },
@@ -75985,6 +78916,94 @@
             }
         }
     },
+    "StageC_5605": {
+        "Text": {
+            "Name": {
+                "Korea": "Stage 56-05 클리어",
+                "English": "Clear Stage 56-05",
+                "ChineseCh": "通关Stage 56-05",
+                "ChineseTh": "通過Stage 56-05",
+                "Japanese": "ステージ56-05クリア"
+            }
+        }
+    },
+    "StageC_5610": {
+        "Text": {
+            "Name": {
+                "Korea": "Stage 56-10 클리어",
+                "English": "Clear Stage 56-10",
+                "ChineseCh": "通关Stage 56-10",
+                "ChineseTh": "通過Stage 56-10",
+                "Japanese": "ステージ56-10クリア"
+            }
+        }
+    },
+    "StageC_5615": {
+        "Text": {
+            "Name": {
+                "Korea": "Stage 56-15 클리어",
+                "English": "Clear Stage 56-15",
+                "ChineseCh": "通关Stage 56-15",
+                "ChineseTh": "通過Stage 56-15",
+                "Japanese": "ステージ56-15クリア"
+            }
+        }
+    },
+    "StageC_5620": {
+        "Text": {
+            "Name": {
+                "Korea": "Stage 56-20 클리어",
+                "English": "Clear Stage 56-20",
+                "ChineseCh": "通关Stage 56-20",
+                "ChineseTh": "通過Stage 56-20",
+                "Japanese": "ステージ56-20クリア"
+            }
+        }
+    },
+    "StageC_5625": {
+        "Text": {
+            "Name": {
+                "Korea": "Stage 56-25 클리어",
+                "English": "Clear Stage 56-25",
+                "ChineseCh": "通关Stage 56-25",
+                "ChineseTh": "通過Stage 56-25",
+                "Japanese": "ステージ56-25クリア"
+            }
+        }
+    },
+    "StageC_5630": {
+        "Text": {
+            "Name": {
+                "Korea": "Stage 56-30 클리어",
+                "English": "Clear Stage 56-30",
+                "ChineseCh": "通关Stage 56-30",
+                "ChineseTh": "通過Stage 56-30",
+                "Japanese": "ステージ56-30クリア"
+            }
+        }
+    },
+    "StageC_5635": {
+        "Text": {
+            "Name": {
+                "Korea": "Stage 56-35 클리어",
+                "English": "Clear Stage 56-35",
+                "ChineseCh": "通关Stage 56-35",
+                "ChineseTh": "通過Stage 56-35",
+                "Japanese": "ステージ56-35クリア"
+            }
+        }
+    },
+    "StageC_5640": {
+        "Text": {
+            "Name": {
+                "Korea": "Stage 56-40 클리어",
+                "English": "Clear Stage 56-40",
+                "ChineseCh": "通关Stage 56-40",
+                "ChineseTh": "通過Stage 56-40",
+                "Japanese": "ステージ56-40クリア"
+            }
+        }
+    },
     "StarRebirth_01": {
         "Text": {
             "Name": {
@@ -76162,6 +79181,72 @@
         }
     },
     "StarRebirth_W10_03_02": {
+        "Text": {
+            "Name": {
+                "Korea": "별의 궤적 Ⅱ전투",
+                "English": "Star’s Trajectory ⅡBattle",
+                "ChineseCh": "星辰轨迹 Ⅱ战斗",
+                "ChineseTh": "星辰軌跡II戰鬥",
+                "Japanese": "星の軌跡 Ⅱバトル"
+            }
+        }
+    },
+    "StarRebirth_W12_01_01": {
+        "Text": {
+            "Name": {
+                "Korea": "별의 탄생 Ⅰ전투",
+                "English": "Star’s BirthⅠBattle",
+                "ChineseCh": "星辰诞生Ⅰ战斗",
+                "ChineseTh": "星辰誕生I戰鬥",
+                "Japanese": "星の誕生Ⅰバトル"
+            }
+        }
+    },
+    "StarRebirth_W12_01_02": {
+        "Text": {
+            "Name": {
+                "Korea": "별의 탄생 Ⅱ전투",
+                "English": "Star’s Birth ⅡBattle",
+                "ChineseCh": "星辰诞生 Ⅱ战斗",
+                "ChineseTh": "星辰誕生II戰鬥",
+                "Japanese": "星の誕生 Ⅱバトル"
+            }
+        }
+    },
+    "StarRebirth_W12_02_01": {
+        "Text": {
+            "Name": {
+                "Korea": "별의 흔적 Ⅰ전투",
+                "English": "Star’s VestigeⅠBattle",
+                "ChineseCh": "星辰痕迹Ⅰ战斗",
+                "ChineseTh": "星辰痕跡I戰鬥",
+                "Japanese": "星の痕跡Ⅰバトル"
+            }
+        }
+    },
+    "StarRebirth_W12_02_02": {
+        "Text": {
+            "Name": {
+                "Korea": "별의 흔적 Ⅱ전투",
+                "English": "Star’s Vestige ⅡBattle",
+                "ChineseCh": "星辰痕迹 Ⅱ战斗",
+                "ChineseTh": "星辰痕跡II戰鬥",
+                "Japanese": "星の痕跡 Ⅱバトル"
+            }
+        }
+    },
+    "StarRebirth_W12_03_01": {
+        "Text": {
+            "Name": {
+                "Korea": "별의 궤적 Ⅰ전투",
+                "English": "Star’s TrajectoryⅠBattle",
+                "ChineseCh": "星辰轨迹Ⅰ战斗",
+                "ChineseTh": "星辰軌跡I戰鬥",
+                "Japanese": "星の軌跡Ⅰバトル"
+            }
+        }
+    },
+    "StarRebirth_W12_03_02": {
         "Text": {
             "Name": {
                 "Korea": "별의 궤적 Ⅱ전투",
@@ -81574,7 +84659,7 @@
         "Text": {
             "Explain": {
                 "Korea": "[FBD29B][sub]설명[/sub][-]\n사용 시 랜덤 부위의 210레벨 템페스트 장비를 얻을 수 있다.",
-                "English": "[FBD29B][sub]Description[/sub][-]\nGrants a random Lv.210 Tempest Equipment upon",
+                "English": "[FBD29B][sub]Description[/sub][-]\nGrants a random Lv.200 Tempest Equipment upon use.",
                 "ChineseCh": "使用后可随机获得一件210级风暴套装装备。",
                 "Japanese": "使用すると、210レベルのテンペスト装備（ランダム）を獲得できる。"
             },
@@ -93414,6 +96499,406 @@
         }
     },
     "Z55_20": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_01": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_02": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_03": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_04": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_05": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_06": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_07": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_08": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_09": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_10": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_11": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_12": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_13": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_14": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_15": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_16": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_17": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_18": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_19": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_20": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_21": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_22": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_23": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_24": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_25": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_26": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_27": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_28": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_29": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_30": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_31": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_32": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_33": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_34": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_35": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_36": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_37": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_38": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_39": {
+        "Text": {
+            "Name": {
+                "Korea": "수도원 북쪽 숲",
+                "English": "North Forest of the Monastery",
+                "ChineseCh": "修道院北侧森林",
+                "Japanese": "修道院 北の森"
+            }
+        }
+    },
+    "Z56_40": {
         "Text": {
             "Name": {
                 "Korea": "수도원 북쪽 숲",
