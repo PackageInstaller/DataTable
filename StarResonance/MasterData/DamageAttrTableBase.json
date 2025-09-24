@@ -56447,7 +56447,7 @@
         "Name": "焚心以火",
         "DamageType": 2,
         "TypeEnum": 873001,
-        "DamageScript": "",
+        "DamageScript": "SpAttack",
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
         "PVELoopTime": -1,
@@ -58375,7 +58375,7 @@
         "Name": "寒冰之触",
         "DamageType": 2,
         "TypeEnum": 882101,
-        "DamageScript": "MAttack",
+        "DamageScript": "SpAttack",
         "PVEDamageRadio": [
             0
         ],
@@ -58772,7 +58772,7 @@
         "TypeEnum": 882304,
         "DamageScript": "MstSpSkillAttack",
         "PVEDamageRadio": [
-            30000
+            10000
         ],
         "PVEFixedParameter": [
             1000
@@ -60255,6 +60255,27 @@
         "Tags": [],
         "BehitLightIsOpen": false
     },
+    "299801103": {
+        "Key": 299801103,
+        "Id": 299801103,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 998011,
+        "DamageScript": "SpAttack",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": -1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
     "299817101": {
         "Key": 299817101,
         "Id": 299817101,
@@ -60263,6 +60284,69 @@
         "DamageType": 2,
         "TypeEnum": 998171,
         "DamageScript": "Attack",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299822101": {
+        "Key": 299822101,
+        "Id": 299822101,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 998221,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299831101": {
+        "Key": 299831101,
+        "Id": 299831101,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 998311,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299831103": {
+        "Key": 299831103,
+        "Id": 299831103,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 998311,
+        "DamageScript": "",
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -60285,6 +60369,241 @@
         "TypeEnum": 998381,
         "DamageScript": "",
         "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": -1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299841003": {
+        "Key": 299841003,
+        "Id": 299841003,
+        "Level": 0,
+        "Name": "荆棘反伤",
+        "DamageType": 2,
+        "TypeEnum": 998410,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299846103": {
+        "Key": 299846103,
+        "Id": 299846103,
+        "Level": 0,
+        "Name": "攻击力+25%，每秒生命-1%",
+        "DamageType": 2,
+        "TypeEnum": 998461,
+        "DamageScript": "SpAttack",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": -1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299851103": {
+        "Key": 299851103,
+        "Id": 299851103,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 998511,
+        "DamageScript": "SpAttack",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": -1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299852003": {
+        "Key": 299852003,
+        "Id": 299852003,
+        "Level": 0,
+        "Name": "泰坦拳风",
+        "DamageType": 2,
+        "TypeEnum": 998520,
+        "DamageScript": "SpAttack",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299853104": {
+        "Key": 299853104,
+        "Id": 299853104,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 998531,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299864003": {
+        "Key": 299864003,
+        "Id": 299864003,
+        "Level": 0,
+        "Name": "水晶反伤",
+        "DamageType": 2,
+        "TypeEnum": 998640,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299895203": {
+        "Key": 299895203,
+        "Id": 299895203,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 998952,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": -1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299896004": {
+        "Key": 299896004,
+        "Id": 299896004,
+        "Level": 0,
+        "Name": "源初-全能",
+        "DamageType": 2,
+        "TypeEnum": 998960,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299897203": {
+        "Key": 299897203,
+        "Id": 299897203,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 998972,
+        "DamageScript": "SpAttack",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299898401": {
+        "Key": 299898401,
+        "Id": 299898401,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 998984,
+        "DamageScript": "AutoAttack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299898403": {
+        "Key": 299898403,
+        "Id": 299898403,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 998984,
+        "DamageScript": "AutoAttack",
+        "PVEDamageRadio": [
+            8000
+        ],
         "PVEFixedParameter": [],
         "PVELoopTime": -1,
         "PVEStunnedDamage": [],
@@ -60346,7 +60665,7 @@
         "Name": "",
         "DamageType": 2,
         "TypeEnum": 999031,
-        "DamageScript": "",
+        "DamageScript": "SpAttack",
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -60430,6 +60749,71 @@
         "Name": "",
         "DamageType": 2,
         "TypeEnum": 999079,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299998903": {
+        "Key": 299998903,
+        "Id": 299998903,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 999989,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299999003": {
+        "Key": 299999003,
+        "Id": 299999003,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 999990,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "299999104": {
+        "Key": 299999104,
+        "Id": 299999104,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 999991,
         "DamageScript": "",
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
@@ -68824,7 +69208,7 @@
         "Name": "",
         "DamageType": 3,
         "TypeEnum": 920002,
-        "DamageScript": "",
+        "DamageScript": "SpAttack",
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -68845,7 +69229,7 @@
         "Name": "",
         "DamageType": 3,
         "TypeEnum": 920003,
-        "DamageScript": "",
+        "DamageScript": "SpAttack",
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -68866,7 +69250,7 @@
         "Name": "",
         "DamageType": 3,
         "TypeEnum": 920004,
-        "DamageScript": "",
+        "DamageScript": "SpAttack",
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -68887,7 +69271,7 @@
         "Name": "",
         "DamageType": 3,
         "TypeEnum": 920005,
-        "DamageScript": "",
+        "DamageScript": "SpAttack",
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -68933,7 +69317,7 @@
         "TypeEnum": 920007,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            40000
+            50000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -68956,7 +69340,7 @@
         "TypeEnum": 920008,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            40000
+            60000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -68979,7 +69363,7 @@
         "TypeEnum": 920009,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            40000
+            70000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69002,7 +69386,7 @@
         "TypeEnum": 920010,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            40000
+            80000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69140,7 +69524,7 @@
         "TypeEnum": 920016,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            5000
+            20000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69163,7 +69547,7 @@
         "TypeEnum": 920017,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            5500
+            25000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69186,7 +69570,7 @@
         "TypeEnum": 920018,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            6000
+            30000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69209,7 +69593,7 @@
         "TypeEnum": 920019,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            6500
+            35000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69232,7 +69616,7 @@
         "TypeEnum": 920020,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            7000
+            40000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69255,7 +69639,7 @@
         "TypeEnum": 920021,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            50000
+            100000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69278,7 +69662,7 @@
         "TypeEnum": 920022,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            55000
+            150000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69301,7 +69685,7 @@
         "TypeEnum": 920023,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            60000
+            200000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69324,7 +69708,7 @@
         "TypeEnum": 920024,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            65000
+            250000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69347,7 +69731,7 @@
         "TypeEnum": 920025,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            70000
+            300000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -69369,7 +69753,9 @@
         "DamageType": 3,
         "TypeEnum": 920026,
         "DamageScript": "Attack",
-        "PVEDamageRadio": [],
+        "PVEDamageRadio": [
+            10000
+        ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
         "PVEStunnedDamage": [],
@@ -69395,6 +69781,236 @@
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "392002800": {
+        "Key": 392002800,
+        "Id": 392002800,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 920028,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "392002900": {
+        "Key": 392002900,
+        "Id": 392002900,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 920029,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "392003000": {
+        "Key": 392003000,
+        "Id": 392003000,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 920030,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            5000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "392003100": {
+        "Key": 392003100,
+        "Id": 392003100,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 920031,
+        "DamageScript": "AutoAttack",
+        "PVEDamageRadio": [
+            100000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "392003200": {
+        "Key": 392003200,
+        "Id": 392003200,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 920032,
+        "DamageScript": "AutoAttack",
+        "PVEDamageRadio": [
+            500000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "392003300": {
+        "Key": 392003300,
+        "Id": 392003300,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 920033,
+        "DamageScript": "AutoAttack",
+        "PVEDamageRadio": [
+            250000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "392003400": {
+        "Key": 392003400,
+        "Id": 392003400,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 920034,
+        "DamageScript": "AutoAttack",
+        "PVEDamageRadio": [
+            50000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "392003500": {
+        "Key": 392003500,
+        "Id": 392003500,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 920035,
+        "DamageScript": "AutoAttack",
+        "PVEDamageRadio": [
+            250000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "392003600": {
+        "Key": 392003600,
+        "Id": 392003600,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 920036,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "1122010101": {
+        "Key": 1122010101,
+        "Id": 1122010101,
+        "Level": 1,
+        "Name": "木人普攻",
+        "DamageType": 1,
+        "TypeEnum": 12201,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            40000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
         "PVEStunnedDamage": [],
         "PVEExtinctionDamage": 0,
         "PartDamageRadio": [],
@@ -69616,7 +70232,9 @@
             9,
             68,
             88,
-            30
+            30,
+            93,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -69670,7 +70288,9 @@
             9,
             68,
             88,
-            29
+            29,
+            93,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -69724,7 +70344,9 @@
             9,
             68,
             88,
-            28
+            28,
+            93,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -69778,7 +70400,9 @@
             9,
             68,
             88,
-            31
+            31,
+            93,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -69832,7 +70456,9 @@
             9,
             68,
             88,
-            33
+            33,
+            93,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -69886,7 +70512,9 @@
             9,
             68,
             88,
-            30
+            30,
+            93,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -69940,7 +70568,9 @@
             9,
             68,
             88,
-            32
+            32,
+            93,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -69994,7 +70624,9 @@
             9,
             68,
             88,
-            35
+            35,
+            93,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -70048,7 +70680,9 @@
             9,
             68,
             88,
-            34
+            34,
+            93,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -70102,7 +70736,9 @@
             9,
             68,
             88,
-            34
+            34,
+            93,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -70156,7 +70792,9 @@
             9,
             68,
             88,
-            28
+            28,
+            93,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -75425,6 +76063,27 @@
         "PVEFixedParameter": [
             500
         ],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "3100010500": {
+        "Key": 3100010500,
+        "Id": 3100010500,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 1000105,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
         "PVELoopTime": 0,
         "PVEStunnedDamage": [],
         "PVEExtinctionDamage": 0,
@@ -83970,6 +84629,29 @@
         "Tags": [],
         "BehitLightIsOpen": false
     },
+    "11010110101": {
+        "Key": 11010110101,
+        "Id": 11010110101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 101011,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
     "11011010102": {
         "Key": 11011010102,
         "Id": 11011010102,
@@ -84132,6 +84814,52 @@
             69,
             94
         ],
+        "BehitLightIsOpen": false
+    },
+    "11011200101": {
+        "Key": 11011200101,
+        "Id": 11011200101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 101120,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            6000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "11011200102": {
+        "Key": 11011200102,
+        "Id": 11011200102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 101120,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            6000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
         "BehitLightIsOpen": false
     },
     "11012010102": {
@@ -96222,6 +96950,29 @@
         "PVEStunnedDamage": [
             0
         ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "11411050101": {
+        "Key": 11411050101,
+        "Id": 11411050101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 141105,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
         "PVEExtinctionDamage": 0,
         "PartDamageRadio": [],
         "AbnormalDamage": [],
@@ -113493,7 +114244,11 @@
         "TypeEnum": 920011,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            30000
+            60000,
+            70000,
+            80000,
+            90000,
+            100000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 1,
@@ -113516,7 +114271,11 @@
         "TypeEnum": 920011,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            30000
+            60000,
+            70000,
+            80000,
+            90000,
+            100000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 1,
@@ -113539,7 +114298,11 @@
         "TypeEnum": 920011,
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
-            30000
+            60000,
+            70000,
+            80000,
+            90000,
+            100000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 1,
@@ -113701,6 +114464,512 @@
         "DamageScript": "AutoAttack",
         "PVEDamageRadio": [
             40000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201010101": {
+        "Key": 19201010101,
+        "Id": 19201010101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920101,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            5000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201020101": {
+        "Key": 19201020101,
+        "Id": 19201020101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920102,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            4000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201020102": {
+        "Key": 19201020102,
+        "Id": 19201020102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920102,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            4000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201020103": {
+        "Key": 19201020103,
+        "Id": 19201020103,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920102,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            4000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201020104": {
+        "Key": 19201020104,
+        "Id": 19201020104,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920102,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            4000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201040101": {
+        "Key": 19201040101,
+        "Id": 19201040101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920104,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            30000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201050101": {
+        "Key": 19201050101,
+        "Id": 19201050101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920105,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            8000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201050102": {
+        "Key": 19201050102,
+        "Id": 19201050102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920105,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            8000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201050103": {
+        "Key": 19201050103,
+        "Id": 19201050103,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920105,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            8000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201060104": {
+        "Key": 19201060104,
+        "Id": 19201060104,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920106,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            15000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201060105": {
+        "Key": 19201060105,
+        "Id": 19201060105,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920106,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            15000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201060106": {
+        "Key": 19201060106,
+        "Id": 19201060106,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920106,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            25000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201060107": {
+        "Key": 19201060107,
+        "Id": 19201060107,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920106,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            5000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201070102": {
+        "Key": 19201070102,
+        "Id": 19201070102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920107,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            15000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201080103": {
+        "Key": 19201080103,
+        "Id": 19201080103,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920108,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            3000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201080104": {
+        "Key": 19201080104,
+        "Id": 19201080104,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920108,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            3000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19202010101": {
+        "Key": 19202010101,
+        "Id": 19202010101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920201,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            5000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19202020101": {
+        "Key": 19202020101,
+        "Id": 19202020101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920202,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            6000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19202020102": {
+        "Key": 19202020102,
+        "Id": 19202020102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920202,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            6000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19202020103": {
+        "Key": 19202020103,
+        "Id": 19202020103,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920202,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            6000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19202030102": {
+        "Key": 19202030102,
+        "Id": 19202030102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920203,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            6000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19202100101": {
+        "Key": 19202100101,
+        "Id": 19202100101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920210,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            15000
         ],
         "PVEFixedParameter": [],
         "PVELoopTime": 1,
@@ -126700,15 +127969,11 @@
         "TypeEnum": 1700750,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            10000
+            15000
         ],
-        "PVEFixedParameter": [
-            0
-        ],
+        "PVEFixedParameter": [],
         "PVELoopTime": 1,
-        "PVEStunnedDamage": [
-            0
-        ],
+        "PVEStunnedDamage": [],
         "PVEExtinctionDamage": 0,
         "PartDamageRadio": [],
         "AbnormalDamage": [],
@@ -126732,7 +127997,7 @@
         "PVEFixedParameter": [
             0
         ],
-        "PVELoopTime": 1,
+        "PVELoopTime": 6,
         "PVEStunnedDamage": [
             0
         ],
@@ -127009,7 +128274,8 @@
             66,
             46,
             9,
-            68
+            68,
+            94
         ],
         "BehitLightIsOpen": false
     },
@@ -127279,6 +128545,144 @@
             46,
             9
         ],
+        "BehitLightIsOpen": false
+    },
+    "117008510101": {
+        "Key": 117008510101,
+        "Id": 117008510101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 1700851,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            5000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "117008520101": {
+        "Key": 117008520101,
+        "Id": 117008520101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 1700852,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            20000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "117008530105": {
+        "Key": 117008530105,
+        "Id": 117008530105,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 1700853,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "117008550102": {
+        "Key": 117008550102,
+        "Id": 117008550102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 1700855,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            15000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "117008560101": {
+        "Key": 117008560101,
+        "Id": 117008560101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 1700856,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            8000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "117008560102": {
+        "Key": 117008560102,
+        "Id": 117008560102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 1700856,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            8000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
         "BehitLightIsOpen": false
     },
     "117010010102": {
@@ -144696,6 +146100,48 @@
         "Tags": [],
         "BehitLightIsOpen": false
     },
+    "154032150101": {
+        "Key": 154032150101,
+        "Id": 154032150101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 5403215,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "154032200101": {
+        "Key": 154032200101,
+        "Id": 154032200101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 5403220,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
     "154033010101": {
         "Key": 154033010101,
         "Id": 154033010101,
@@ -146763,7 +148209,7 @@
         "PVEDamageRadio": [
             3000,
             6000,
-            6000
+            15000
         ],
         "PVEFixedParameter": [
             500
@@ -146794,7 +148240,7 @@
         "PVEDamageRadio": [
             3000,
             6000,
-            6000
+            15000
         ],
         "PVEFixedParameter": [
             500
@@ -147308,6 +148754,121 @@
         "Tags": [
             67
         ],
+        "BehitLightIsOpen": false
+    },
+    "11011230103": {
+        "Key": 11011230103,
+        "Id": 11011230103,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 101123,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 3,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "117007110101": {
+        "Key": 117007110101,
+        "Id": 117007110101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 1700711,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            15000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "19201090101": {
+        "Key": 19201090101,
+        "Id": 19201090101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 920109,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "11011240101": {
+        "Key": 11011240101,
+        "Id": 11011240101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 101124,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false
+    },
+    "110076100101": {
+        "Key": 110076100101,
+        "Id": 110076100101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 1007610,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            15000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
         "BehitLightIsOpen": false
     }
 }

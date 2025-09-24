@@ -4662,6 +4662,14 @@
         "IconPath": "ui/atlas/npc/talk_icon_chat",
         "FunctionOrder": []
     },
+    "720010": {
+        "Key": 720010,
+        "Id": 720010,
+        "Name": "开始灵舞",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
     "720100": {
         "Key": 720100,
         "Id": 720100,
@@ -4690,6 +4698,22 @@
         "Key": 721007,
         "Id": 721007,
         "Name": "离开小猪骑士巡游",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "721008": {
+        "Key": 721008,
+        "Id": 721008,
+        "Name": "获取<style=\"emph-gn\">丰收食物</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "721009": {
+        "Key": 721009,
+        "Id": 721009,
+        "Name": "获取<style=\"emph-gn\">神奇食物</style>",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_chat",
         "FunctionOrder": []
@@ -4766,6 +4790,86 @@
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
     },
+    "732005": {
+        "Key": 732005,
+        "Id": 732005,
+        "Name": "获取",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "732006": {
+        "Key": 732006,
+        "Id": 732006,
+        "Name": "获取丰收食物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "732100": {
+        "Key": 732100,
+        "Id": 732100,
+        "Name": "祈福1次哗啦啦长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732101": {
+        "Key": 732101,
+        "Id": 732101,
+        "Name": "祈福10次哗啦啦长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732102": {
+        "Key": 732102,
+        "Id": 732102,
+        "Name": "祈福1次空空长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732103": {
+        "Key": 732103,
+        "Id": 732103,
+        "Name": "祈福10次空空长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732104": {
+        "Key": 732104,
+        "Id": 732104,
+        "Name": "祈福1次白狼灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732105": {
+        "Key": 732105,
+        "Id": 732105,
+        "Name": "祈福10次白狼灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732106": {
+        "Key": 732106,
+        "Id": 732106,
+        "Name": "祈福1次树菇长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732107": {
+        "Key": 732107,
+        "Id": 732107,
+        "Name": "祈福10次树菇长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
     "739001": {
         "Key": 739001,
         "Id": 739001,
@@ -4774,10 +4878,18 @@
         "IconPath": "ui/atlas/npc/talk_icon_battle",
         "FunctionOrder": []
     },
+    "739002": {
+        "Key": 739002,
+        "Id": 739002,
+        "Name": "匹配【千梦织灵】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
     "920001": {
         "Key": 920001,
         "Id": 920001,
-        "Name": "升级暴击",
+        "Name": "【2训练币】暴击+400",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_chat",
         "FunctionOrder": []
@@ -4785,7 +4897,7 @@
     "920002": {
         "Key": 920002,
         "Id": 920002,
-        "Name": "升级急速",
+        "Name": "【2训练币】急速+400",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_chat",
         "FunctionOrder": []
@@ -4793,7 +4905,7 @@
     "920003": {
         "Key": 920003,
         "Id": 920003,
-        "Name": "升级幸运",
+        "Name": "【2训练币】幸运+400",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_chat",
         "FunctionOrder": []
@@ -4801,7 +4913,7 @@
     "920004": {
         "Key": 920004,
         "Id": 920004,
-        "Name": "升级精通",
+        "Name": "【2训练币】精通+400",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_chat",
         "FunctionOrder": []
@@ -4809,7 +4921,7 @@
     "920005": {
         "Key": 920005,
         "Id": 920005,
-        "Name": "升级额外技能",
+        "Name": "【5训练币】升级技能",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_chat",
         "FunctionOrder": []
@@ -4825,7 +4937,7 @@
     "920010": {
         "Key": 920010,
         "Id": 920010,
-        "Name": "获得词条",
+        "Name": "【5训练币】购买词条",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_chat",
         "FunctionOrder": []
@@ -4833,7 +4945,127 @@
     "920011": {
         "Key": 920011,
         "Id": 920011,
-        "Name": "获得（替换）技能",
+        "Name": "【5训练币】购买技能",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920101": {
+        "Key": 920101,
+        "Id": 920101,
+        "Name": "【3梦尘】购买词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920102": {
+        "Key": 920102,
+        "Id": 920102,
+        "Name": "【5梦尘】购买词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920103": {
+        "Key": 920103,
+        "Id": 920103,
+        "Name": "【10梦尘】购买词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920104": {
+        "Key": 920104,
+        "Id": 920104,
+        "Name": "【20梦尘】购买词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920105": {
+        "Key": 920105,
+        "Id": 920105,
+        "Name": "【30梦尘】购买词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920106": {
+        "Key": 920106,
+        "Id": 920106,
+        "Name": "【10梦尘】购买技能",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920107": {
+        "Key": 920107,
+        "Id": 920107,
+        "Name": "【20梦尘】升级技能",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920108": {
+        "Key": 920108,
+        "Id": 920108,
+        "Name": "【2梦尘】攻击+30 ",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920109": {
+        "Key": 920109,
+        "Id": 920109,
+        "Name": "【2梦尘】生命+1000、物理防御+300",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920110": {
+        "Key": 920110,
+        "Id": 920110,
+        "Name": "进入梦境",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920111": {
+        "Key": 920111,
+        "Id": 920111,
+        "Name": "【2梦尘】暴击+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920112": {
+        "Key": 920112,
+        "Id": 920112,
+        "Name": "【2梦尘】急速+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920113": {
+        "Key": 920113,
+        "Id": 920113,
+        "Name": "【2梦尘】幸运+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920114": {
+        "Key": 920114,
+        "Id": 920114,
+        "Name": "【2梦尘】精通+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920115": {
+        "Key": 920115,
+        "Id": 920115,
+        "Name": "选择初始词条",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_chat",
         "FunctionOrder": []
@@ -5308,6 +5540,14 @@
         "Name": "激活事件【击破腐化核心】",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1600001": {
+        "Key": 1600001,
+        "Id": 1600001,
+        "Name": "点燃祭台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
         "FunctionOrder": []
     },
     "2000101": {

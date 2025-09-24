@@ -1277,7 +1277,7 @@
     "1032": {
         "Key": 1032,
         "Id": 1032,
-        "Content": "你的账号因存在违规行为，已被暂时封停",
+        "Content": "你的账号因存在违规行为，已被封停处理。",
         "Type": 10,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -20399,6 +20399,31 @@
         "VoiceControlEvent": "",
         "WaitVoiceFinish": false
     },
+    "5128": {
+        "Key": 5128,
+        "Id": 5128,
+        "Content": "战斗状态下，不能进行此操作！",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
     "5151": {
         "Key": 5151,
         "Id": 5151,
@@ -27954,6 +27979,31 @@
         "VoiceControlEvent": "",
         "WaitVoiceFinish": false
     },
+    "7262": {
+        "Key": 7262,
+        "Id": 7262,
+        "Content": "队伍中有人本周期未达到此层数，无法重新开始副本",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
     "7271": {
         "Key": 7271,
         "Id": 7271,
@@ -32183,6 +32233,106 @@
         "Key": 122035,
         "Id": 122035,
         "Content": "寻找头顶带有虚蚀之种的怪物并击杀时有概率获得",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "122036": {
+        "Key": 122036,
+        "Id": 122036,
+        "Content": "通过丰收祭主题商店“丰收市集”兑换获得",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "122037": {
+        "Key": 122037,
+        "Id": 122037,
+        "Content": "参与日常玩法、丰收祭主题活动可获得秋祭司的馈赠",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "122038": {
+        "Key": 122038,
+        "Id": 122038,
+        "Content": "参与丰收祭主题活动“灵舞”获得",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "122039": {
+        "Key": 122039,
+        "Id": 122039,
+        "Content": "通过大师之证进度奖励获得",
         "Type": 10,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -51357,7 +51507,7 @@
     "1006065": {
         "Key": 1006065,
         "Id": 1006065,
-        "Content": "被小伊发现了！回到起点重新开始！",
+        "Content": "被小伊发现了！传送回检查点！",
         "Type": 110,
         "DurationTime": 5,
         "ChatName": "",
@@ -51536,6 +51686,31 @@
         "Type": 30,
         "DurationTime": 3,
         "ChatName": "{*npc.name(5004500)*}",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "1006073": {
+        "Key": 1006073,
+        "Id": 1006073,
+        "Content": "最多只能获得2个辅助技能，装不下啦",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -65959,7 +66134,7 @@
         "Id": 2000245,
         "Content": "能力失效了…前方…有什么…在等着我…",
         "Type": 30,
-        "DurationTime": 3,
+        "DurationTime": 5,
         "ChatName": "{*me.name*}",
         "Delay": 0,
         "RepeatPlay": [
@@ -84382,7 +84557,7 @@
     "9200000": {
         "Key": 9200000,
         "Id": 9200000,
-        "Content": "训练币数量不足",
+        "Content": "<style=\"emph-gn\">梦尘</style>数量不足",
         "Type": 110,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -84407,7 +84582,7 @@
     "9200001": {
         "Key": 9200001,
         "Id": 9200001,
-        "Content": "自身急速值+40%，战斗中移动每秒损失5%生命",
+        "Content": "自身<style=\"emph-gn\">急速</style>+20%，战斗中<style=\"emph-gn\">移动每秒损失</style>8%生命",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "引擎过载（诅咒）",
@@ -84432,7 +84607,7 @@
     "9200002": {
         "Key": 9200002,
         "Id": 9200002,
-        "Content": "每100急速值，减少终极技能1%冷却时间（上限25%）",
+        "Content": "每200点<style=\"emph-gn\">急速值</style>，减少<style=\"emph-gn\">终极技能</style>1%的冷却时间（上限25%）",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "奥义充能",
@@ -84457,7 +84632,7 @@
     "9200003": {
         "Key": 9200003,
         "Id": 9200003,
-        "Content": "击杀目标，减少专精技能10%剩余冷却时间",
+        "Content": "<style=\"emph-gn\">击杀</style>敌人，减少<style=\"emph-gn\">专精技能</style>10%的冷却时间",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "循环加速",
@@ -84482,7 +84657,7 @@
     "9200004": {
         "Key": 9200004,
         "Id": 9200004,
-        "Content": "释放特殊攻击，减少专精技能0.5秒剩余冷却时间",
+        "Content": "释放<style=\"emph-gn\">特殊攻击</style>，减少<style=\"emph-gn\">专精技能</style>0.5秒的冷却时间",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "时光沙漏",
@@ -84507,7 +84682,7 @@
     "9200005": {
         "Key": 9200005,
         "Id": 9200005,
-        "Content": "每轮战斗前40秒暴伤+100%，后20秒转变为生命上限-30%",
+        "Content": "每轮战斗<style=\"emph-gn\">前40秒暴伤</style>+50%<br><style=\"emph-gn\">后20秒</style>转变为<style=\"emph-gn\">生命上限</style>-30%",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "弑神时刻（诅咒）",
@@ -84532,7 +84707,7 @@
     "9200006": {
         "Key": 9200006,
         "Id": 9200006,
-        "Content": "击杀目标，暴伤+10%（上限30%）持续5秒",
+        "Content": "<style=\"emph-gn\">击杀</style>敌人，<style=\"emph-gn\">暴伤</style>+10%（上限30%），持续5秒",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "无限火力",
@@ -84557,7 +84732,7 @@
     "9200007": {
         "Key": 9200007,
         "Id": 9200007,
-        "Content": "对80%以上血量目标暴伤+80%",
+        "Content": "对血量80%以上的敌人，造成<style=\"emph-gn\">暴伤</style>+60%",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "雷神之怒",
@@ -84582,7 +84757,7 @@
     "9200008": {
         "Key": 9200008,
         "Id": 9200008,
-        "Content": "暴击叠加自身「死神印记」，20层时暴伤+20%持续5秒",
+        "Content": "<style=\"emph-gn\">暴击</style>叠加自身<style=\"emph-gn\">「死神印记」</style><br>印记20层时<style=\"emph-gn\">暴伤</style>+20%，持续5秒",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "死神宣告",
@@ -84607,7 +84782,7 @@
     "9200009": {
         "Key": 9200009,
         "Id": 9200009,
-        "Content": "增加自身精通值3%的攻击",
+        "Content": "增加自身<style=\"emph-gn\">精通值</style>3%的攻击力",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "武器专家",
@@ -84632,7 +84807,7 @@
     "9200010": {
         "Key": 9200010,
         "Id": 9200010,
-        "Content": "增加自身精通值200%的生命上限",
+        "Content": "增加自身<style=\"emph-gn\">精通值</style>200%的生命上限",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "生存专家",
@@ -84657,7 +84832,7 @@
     "9200011": {
         "Key": 9200011,
         "Id": 9200011,
-        "Content": "增加自身精通值30%的暴击值",
+        "Content": "增加自身<style=\"emph-gn\">精通值</style>30%的暴击值",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "暴击专家",
@@ -84682,7 +84857,7 @@
     "9200012": {
         "Key": 9200012,
         "Id": 9200012,
-        "Content": "增加自身精通值30%的幸运值",
+        "Content": "增加自身<style=\"emph-gn\">精通值</style>30%的幸运值",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "命运专家",
@@ -84707,7 +84882,7 @@
     "9200013": {
         "Key": 9200013,
         "Id": 9200013,
-        "Content": "增加自身精通值30%的急速值",
+        "Content": "增加自身<style=\"emph-gn\">精通值</style>30%的急速值",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "迅捷专家",
@@ -84732,10 +84907,10 @@
     "9200014": {
         "Key": 9200014,
         "Id": 9200014,
-        "Content": "攻击造成幸运一击时触发「落雷」，造成45%攻击力的伤害，冷却1秒",
+        "Content": "攻击造成<style=\"emph-gn\">幸运一击</style>触发<style=\"emph-gn\">「落雷」</style><br>落雷造成<style=\"emph-gn\">攻击力</style>45%的伤害，冷却1秒",
         "Type": 30,
         "DurationTime": 5,
-        "ChatName": "雷云密布",
+        "ChatName": "幸运-雷云密布",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -84757,10 +84932,10 @@
     "9200015": {
         "Key": 9200015,
         "Id": 9200015,
-        "Content": "攻击造成幸运一击时触发「剑刃风暴」，造成45%攻击力的伤害，冷却1秒",
+        "Content": "攻击造成<style=\"emph-gn\">幸运一击</style>触发<style=\"emph-gn\">「剑刃风暴」</style><br>剑刃造成<style=\"emph-gn\">攻击力</style>45%的伤害，冷却1秒",
         "Type": 30,
         "DurationTime": 5,
-        "ChatName": "剑刃风暴",
+        "ChatName": "幸运-剑刃风暴",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -84782,10 +84957,10 @@
     "9200016": {
         "Key": 9200016,
         "Id": 9200016,
-        "Content": "攻击造成幸运一击时触发「燃爆」，造成45%攻击力的伤害，冷却1秒",
+        "Content": "攻击造成<style=\"emph-gn\">幸运一击</style>触发<style=\"emph-gn\">「燃爆」</style><br>爆炸造成<style=\"emph-gn\">攻击力</style>45%的伤害，冷却1秒",
         "Type": 30,
         "DurationTime": 5,
-        "ChatName": "燃爆一击",
+        "ChatName": "幸运-燃爆一击",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -84807,10 +84982,10 @@
     "9200017": {
         "Key": 9200017,
         "Id": 9200017,
-        "Content": "攻击造成幸运一击时触发「闪电链」，造成1%生命值上限的伤害，冷却1秒",
+        "Content": "攻击造成<style=\"emph-gn\">幸运一击</style>触发<style=\"emph-gn\">「闪电链」</style><br>闪电造成<style=\"emph-gn\">生命值上限</style>1%的伤害，冷却1秒",
         "Type": 30,
         "DurationTime": 5,
-        "ChatName": "连锁闪电",
+        "ChatName": "幸运-连锁闪电",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -84832,7 +85007,7 @@
     "9200018": {
         "Key": 9200018,
         "Id": 9200018,
-        "Content": "每10秒切换「鸿运/厄运」状态<br>鸿运：幸运值+100%，厄运：幸运值-50%",
+        "Content": "每10秒切换<style=\"emph-gn\">「鸿运/厄运」</style>状态<br><style=\"emph-gn\">鸿运</style>：幸运值+100%，<style=\"emph-gn\">厄运</style>：幸运值-50%",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "命运轮转（诅咒）",
@@ -84857,7 +85032,7 @@
     "9200019": {
         "Key": 9200019,
         "Id": 9200019,
-        "Content": "攻击造成幸运一击时秒杀非精英敌人",
+        "Content": "攻击造成<style=\"emph-gn\">幸运一击</style>时，秒杀<style=\"emph-gn\">非精英</style>的敌人",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "天命裁决",
@@ -84882,7 +85057,7 @@
     "9200020": {
         "Key": 9200020,
         "Id": 9200020,
-        "Content": "攻击+50%，攻击敌人会消耗2.5%生命<br>如果生命值低至1点，则触发禁疗效果",
+        "Content": "<style=\"emph-gn\">攻击力</style>+20%，若生命值>30%，<style=\"emph-gn\">攻击时消耗</style>自身2.5%生命值",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "狂血契约（诅咒）",
@@ -84907,10 +85082,10 @@
     "9200021": {
         "Key": 9200021,
         "Id": 9200021,
-        "Content": "每损失3%生命值，增加1%攻击力",
+        "Content": "每损失1%<style=\"emph-gn\">生命值</style>，增加0.3%<style=\"emph-gn\">攻击力</style>，每持有一个「血怒」词条额外增加0.3%",
         "Type": 30,
         "DurationTime": 5,
-        "ChatName": "血怒转化",
+        "ChatName": "血怒-转化",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -84932,10 +85107,10 @@
     "9200022": {
         "Key": 9200022,
         "Id": 9200022,
-        "Content": "攻击造成幸运一击时触发「燃爆」，造成自身已损生命3%伤害",
+        "Content": "攻击造成<style=\"emph-gn\">幸运一击</style>触发<style=\"emph-gn\">「气爆」</style><br>爆炸造成<style=\"emph-gn\">自身已损生命</style>3%伤害，冷却1秒",
         "Type": 30,
         "DurationTime": 5,
-        "ChatName": "血气爆发",
+        "ChatName": "血怒-血气爆发",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -84957,10 +85132,10 @@
     "9200023": {
         "Key": 9200023,
         "Id": 9200023,
-        "Content": "生命低于30%后，攻击伤害的10%转化为护盾",
+        "Content": "生命低于30%后，攻击<style=\"emph-gn\">伤害</style>10%转化为<style=\"emph-gn\">护盾</style>",
         "Type": 30,
         "DurationTime": 5,
-        "ChatName": "力挽狂澜",
+        "ChatName": "血怒-力挽狂澜",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -84982,7 +85157,7 @@
     "9200024": {
         "Key": 9200024,
         "Id": 9200024,
-        "Content": "濒死触发「无敌」和「加速」，持续3秒，冷却20秒",
+        "Content": "<style=\"emph-gn\">濒死</style>触发<style=\"emph-gn\">「无敌」</style>和<style=\"emph-gn\">「加速」</style>，持续3秒，冷却20秒",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "绝境神行",
@@ -85007,10 +85182,10 @@
     "9200025": {
         "Key": 9200025,
         "Id": 9200025,
-        "Content": "若10秒内未受到攻击，施法治疗量+25%",
+        "Content": "满血持续10秒后，造成<style=\"emph-gn\">伤害和施加治疗量</style>+15%",
         "Type": 30,
         "DurationTime": 5,
-        "ChatName": "自然恩典",
+        "ChatName": "无伤-自然恩典",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -85032,10 +85207,10 @@
     "9200026": {
         "Key": 9200026,
         "Id": 9200026,
-        "Content": "若10秒内未受到攻击，自身移速+40%",
+        "Content": "满血持续10秒后，自身<style=\"emph-gn\">移速和攻速</style>+20%",
         "Type": 30,
         "DurationTime": 5,
-        "ChatName": "自由之翼",
+        "ChatName": "无伤-自由之翼",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -85057,10 +85232,10 @@
     "9200027": {
         "Key": 9200027,
         "Id": 9200027,
-        "Content": "若10秒内未受到攻击，自身攻击+15%",
+        "Content": "满血持续10秒后，自身<style=\"emph-gn\">攻击</style>+15%",
         "Type": 30,
         "DurationTime": 5,
-        "ChatName": "杀意凝聚",
+        "ChatName": "无伤-杀意凝聚",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -85082,7 +85257,7 @@
     "9200028": {
         "Key": 9200028,
         "Id": 9200028,
-        "Content": "自身获得「霸体」增益，移速-40%<br>每10秒自动释放一次「嘲讽」",
+        "Content": "自身获得<style=\"emph-gn\">「霸体」</style>增益，移速-40%<br>每10秒自动释放一次<style=\"emph-gn\">「嘲讽」</style>",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "统御王座（诅咒）",
@@ -85107,7 +85282,7 @@
     "9200029": {
         "Key": 9200029,
         "Id": 9200029,
-        "Content": "攻击造成幸运一击时触发「空间力场」持续8秒，冷却15秒<br>力场中敌人无法移动，易伤+10%",
+        "Content": "<style=\"emph-gn\">幸运一击</style>触发<style=\"emph-gn\">「空间力场」</style>持续8秒，冷却15秒<br>力场中敌人<style=\"emph-gn\">无法移动</style>，<style=\"emph-gn\">易伤</style>+10%",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "空间力场",
@@ -85132,7 +85307,7 @@
     "9200030": {
         "Key": 9200030,
         "Id": 9200030,
-        "Content": "周围敌人减速60%",
+        "Content": "周围敌人<style=\"emph-gn\">减速</style>60%",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "寒冰蔓延",
@@ -85157,7 +85332,7 @@
     "9200031": {
         "Key": 9200031,
         "Id": 9200031,
-        "Content": "对治疗目标周围造成200%治疗量的伤害",
+        "Content": "对<style=\"emph-gn\">治疗目标</style>周围造成200%治疗量的<style=\"emph-gn\">伤害</style>",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "圣焰冲击",
@@ -85182,7 +85357,7 @@
     "9200032": {
         "Key": 9200032,
         "Id": 9200032,
-        "Content": "自身攻击-50%，与10m内最近的队友产生连接，使其攻击+20%",
+        "Content": "自身攻击-15%，与10m内最近的<style=\"emph-gn\">队友</style>产生连接<br>使队友的<style=\"emph-gn\">攻击</style>+30%",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "力量链接（诅咒）",
@@ -85207,7 +85382,7 @@
     "9200033": {
         "Key": 9200033,
         "Id": 9200033,
-        "Content": "10米内的队友，资源恢复+100%",
+        "Content": "10米内的队友，<style=\"emph-gn\">资源恢复</style>+100%",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "能量光环",
@@ -85232,7 +85407,7 @@
     "9200034": {
         "Key": 9200034,
         "Id": 9200034,
-        "Content": "10米内的队友，每10秒获得生命上限20%的护盾",
+        "Content": "10米内的队友，每10秒获得<style=\"emph-gn\">生命上限</style>20%的护盾",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "庇护光环",
@@ -85257,7 +85432,7 @@
     "9200035": {
         "Key": 9200035,
         "Id": 9200035,
-        "Content": "10米内的敌人，易伤+10%",
+        "Content": "10米内的敌人，<style=\"emph-gn\">易伤</style>+10%",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "削弱光环",
@@ -85282,7 +85457,7 @@
     "9200036": {
         "Key": 9200036,
         "Id": 9200036,
-        "Content": "每携带1个诅咒词条，生命上限+25%",
+        "Content": "每携带1个诅咒词条，<style=\"emph-gn\">生命上限</style>+25%",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "不朽契约（诅咒）",
@@ -85307,7 +85482,7 @@
     "9200037": {
         "Key": 9200037,
         "Id": 9200037,
-        "Content": "10m内每个敌人死亡，自身生命上限+0.1%",
+        "Content": "10m内每个敌人死亡，自身<style=\"emph-gn\">生命上限</style>+0.1%",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "泰坦进化",
@@ -85332,7 +85507,7 @@
     "9200038": {
         "Key": 9200038,
         "Id": 9200038,
-        "Content": "每3秒造成生命上限2.5%的范围伤害",
+        "Content": "每3秒造成<style=\"emph-gn\">生命上限</style>20%的范围伤害",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "撼地重击",
@@ -85357,7 +85532,7 @@
     "9200039": {
         "Key": 9200039,
         "Id": 9200039,
-        "Content": "增加自身生命上限0.3%的攻击力",
+        "Content": "增加自身<style=\"emph-gn\">生命上限</style>0.3%的攻击力",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "巨人之握",
@@ -85382,7 +85557,7 @@
     "9200040": {
         "Key": 9200040,
         "Id": 9200040,
-        "Content": "攻击造成幸运一击时获得生命上限10%的护盾",
+        "Content": "攻击造成<style=\"emph-gn\">幸运一击</style>获得<style=\"emph-gn\">生命上限</style>20%的护盾",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "巨人铠甲",
@@ -85407,7 +85582,7 @@
     "9200041": {
         "Key": 9200041,
         "Id": 9200041,
-        "Content": "受击反弹生命上限0.4%的范围伤害",
+        "Content": "受击反弹<style=\"emph-gn\">生命上限</style>10%的范围伤害",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "荆棘反伤",
@@ -85429,13 +85604,813 @@
         "VoiceControlEvent": "",
         "WaitVoiceFinish": false
     },
+    "9200042": {
+        "Key": 9200042,
+        "Id": 9200042,
+        "Content": "使用终极技能时，<style=\"emph-gn\">所有技能冷却时间</style>加速100%，<style=\"emph-gn\">战斗资源</style>恢复+100%，持续20秒",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "时空超载",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200043": {
+        "Key": 9200043,
+        "Id": 9200043,
+        "Content": "<style=\"emph-gn\">幸运伤害</style>提高30%，伤害效果根据携带「幸运」词条的数量进行翻倍",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "鸿运加身",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200044": {
+        "Key": 9200044,
+        "Id": 9200044,
+        "Content": "接下来3轮战斗<style=\"emph-gn\">幸运</style>-50%<br>之后每轮战斗<style=\"emph-gn\">幸运伤害</style>+50%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "长夜破晓（诅咒）",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200045": {
+        "Key": 9200045,
+        "Id": 9200045,
+        "Content": "攻击时触发<style=\"emph-gn\">「血战」</style>攻击力+20%，期间不会死亡，持续3秒",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "血怒-血战",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200046": {
+        "Key": 9200046,
+        "Id": 9200046,
+        "Content": "<style=\"emph-gn\">攻击力</style>+25%，每秒对自身造成<style=\"emph-gn\">生命上限</style>1%的伤害",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "战意流星（诅咒）",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200047": {
+        "Key": 9200047,
+        "Id": 9200047,
+        "Content": "<style=\"emph-gn\">12米内</style>的敌人不会造成伤害，对12米内敌人的伤害提高10%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "绝对领域·内",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200048": {
+        "Key": 9200048,
+        "Id": 9200048,
+        "Content": "<style=\"emph-gn\">12米外</style>的敌人不会造成伤害，对12米内敌人的伤害提高10%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "绝对领域·外",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200049": {
+        "Key": 9200049,
+        "Id": 9200049,
+        "Content": "满血持续10秒后，<style=\"emph-gn\">元素增伤</style>+10%<br>每携带一个<style=\"emph-gn\">「无伤」</style>词条额外+10%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "无伤-无暇精进",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200050": {
+        "Key": 9200050,
+        "Id": 9200050,
+        "Content": "<style=\"emph-gn\">受击</style>时减少<style=\"emph-gn\">所有技能</style>冷却1秒",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "动感节拍",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200051": {
+        "Key": 9200051,
+        "Id": 9200051,
+        "Content": "<style=\"emph-gn\">生命上限</style>+100%，每秒对自身造成<style=\"emph-gn\">生命上限</style>1%的伤害",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "天体衰变(诅咒)",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200052": {
+        "Key": 9200052,
+        "Id": 9200052,
+        "Content": "攻击时，额外造成敌人<style=\"emph-gn\">当前生命值</style>0.2%的伤害",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "泰坦重拳",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200053": {
+        "Key": 9200053,
+        "Id": 9200053,
+        "Content": "造成治疗时<style=\"emph-gn\">存贮治疗值</style>，造成<style=\"emph-gn\">专精技能</style>伤害时，额外<style=\"emph-gn\">附加存贮值</style>的伤害（最大可附加自身主属性100倍的伤害）",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "盈满圣杯",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200054": {
+        "Key": 9200054,
+        "Id": 9200054,
+        "Content": "10米内的队友，攻击力+20%<br>范围内每有一个<style=\"emph-gn\">职责</style>，额外伤害+20%（额外上限80%）",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "全职光环",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200055": {
+        "Key": 9200055,
+        "Id": 9200055,
+        "Content": "每5秒对10米内的敌人造成<style=\"emph-gn\">眩晕</style>，持续1秒",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "震荡光环",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200056": {
+        "Key": 9200056,
+        "Id": 9200056,
+        "Content": "造成伤害时，离目标<style=\"emph-gn\">越远</style>伤害越高(最高+100%)",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "火力半径",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200057": {
+        "Key": 9200057,
+        "Id": 9200057,
+        "Content": "职业技能释放1秒内，<style=\"emph-gn\">攻击力</style>+100%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "火力快打",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200058": {
+        "Key": 9200058,
+        "Id": 9200058,
+        "Content": "每击杀10个敌人，额外获得1<style=\"emph-gn\">代币（梦尘）</style><br>每击杀100个敌人，额外获得5<style=\"emph-gn\">代币（梦尘）</style>",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "赏金猎人",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200059": {
+        "Key": 9200059,
+        "Id": 9200059,
+        "Content": "每轮战斗结束时，有概率提升5%<style=\"emph-gn\">攻击力和生命上限</style>",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "战利品",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200060": {
+        "Key": 9200060,
+        "Id": 9200060,
+        "Content": "每释放10次<style=\"emph-gn\">特殊攻击</style>, 永久提高1%额外<style=\"emph-gn\">治疗量</style>（额外上限100%）",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "赐福之矛",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200061": {
+        "Key": 9200061,
+        "Id": 9200061,
+        "Content": "每持有1代币（梦尘）, <style=\"emph-gn\">攻击力，物理防御, 生命上限</style>+2%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "金币之力",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200062": {
+        "Key": 9200062,
+        "Id": 9200062,
+        "Content": "每携带1个<style=\"emph-gn\">诅咒词条</style>，<style=\"emph-gn\">物理防御</style>+10%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "水晶契约（诅咒）",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200063": {
+        "Key": 9200063,
+        "Id": 9200063,
+        "Content": "增加自身<style=\"emph-gn\">生命上限</style>3%的<style=\"emph-gn\">物理防御</style>",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "巨人装甲",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200064": {
+        "Key": 9200064,
+        "Id": 9200064,
+        "Content": "受击反弹<style=\"emph-gn\">物理防御</style>400%的范围伤害",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "水晶反伤",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200080": {
+        "Key": 9200080,
+        "Id": 9200080,
+        "Content": "物理增效+50%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "物理圣剑",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200081": {
+        "Key": 9200081,
+        "Id": 9200081,
+        "Content": "魔法增效+50%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "魔法圣剑",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200082": {
+        "Key": 9200082,
+        "Id": 9200082,
+        "Content": "每次释放专精技能提高0.5% <style=\"emph-gn\">专精技能的伤害和治疗</style><br>最高可叠200层,叠满后额外附加50%<style=\"emph-gn\">专精技能的伤害和治疗</style>",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "专精百炼",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200083": {
+        "Key": 9200083,
+        "Id": 9200083,
+        "Content": "每次释放特殊攻击提高0.5% <style=\"emph-gn\">特殊攻击的伤害和治疗</style><br>最高可叠200层,叠满后额外附加50%<style=\"emph-gn\">特殊攻击的伤害和治疗</style>",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "特攻百炼",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200095": {
+        "Key": 9200095,
+        "Id": 9200095,
+        "Content": "每轮战斗结束后，<style=\"emph-gn\">精通</style>+3%<br>每秒对周围造成自身<style=\"emph-gn\">100%魔法攻击力的伤害</style>，额外附加1秒内100%<style=\"emph-gn\">治疗量的伤害</style>",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "源初-精通",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200096": {
+        "Key": 9200096,
+        "Id": 9200096,
+        "Content": "每轮战斗结束后，<style=\"emph-gn\">全能</style>+3%<br>攻击命中后对自身周围5米内目标造成一次<style=\"emph-gn\">物理防御力</style>1500%的伤害（每1秒至多触发1次）",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "源初-全能",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200097": {
+        "Key": 9200097,
+        "Id": 9200097,
+        "Content": "每轮战斗结束后，<style=\"emph-gn\">急速</style>+3%<br>攻击时，根据自身急速百分比，概率触发「双倍伤害」",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "源初-急速",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200098": {
+        "Key": 9200098,
+        "Id": 9200098,
+        "Content": "幸运一击可触发<style=\"emph-gn\">「毒刺」「乱射」「强压之雷」「炽炎战斧」「流星陨落」</style><br>每轮战斗结束后，幸运率+3%，按照自身当前幸运率提高幸运伤害加成",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "源初-幸运",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200099": {
+        "Key": 9200099,
+        "Id": 9200099,
+        "Content": "每轮战斗结束后，<style=\"emph-gn\">暴击率</style>+3%<br>暴击率大于50%的部分转化为两倍的暴击伤害",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "源初-暴击",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
     "9200101": {
         "Key": 9200101,
         "Id": 9200101,
-        "Content": "召唤环绕火球，每秒造成自身护盾值一定比例+生命值上限极低比例的伤害",
+        "Content": "召唤灵魂火焰，每秒造成自身<style=\"emph-gn\">生命值上限10%</style>的伤害",
         "Type": 30,
         "DurationTime": 5,
-        "ChatName": "环绕火球",
+        "ChatName": "魂火环绕",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -85482,7 +86457,7 @@
     "9200103": {
         "Key": 9200103,
         "Id": 9200103,
-        "Content": "召唤陨石砸向目标，造成自身已损失生命值一定比例+生命值上限一定比例的伤害",
+        "Content": "召唤陨石砸向目标，造成<style=\"emph-gn\">自身已损失生命值</style>一定比例和<style=\"emph-gn\">生命值上限</style>一定比例的伤害",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "灭世陨石",
@@ -85507,7 +86482,7 @@
     "9200104": {
         "Key": 9200104,
         "Id": 9200104,
-        "Content": "发射在敌间弹跳的魂火，每次弹跳提高伤害加成",
+        "Content": "发射在敌间弹跳的魂火，每次<style=\"emph-gn\">弹跳提高伤害</style>加成",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "弹跳魂弹",
@@ -85532,7 +86507,7 @@
     "9200105": {
         "Key": 9200105,
         "Id": 9200105,
-        "Content": "强化下一个技能，增加攻击力",
+        "Content": "强化下一个技能，增加<style=\"emph-gn\">攻击力</style>",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "洞察弱点",
@@ -85557,7 +86532,7 @@
     "9200106": {
         "Key": 9200106,
         "Id": 9200106,
-        "Content": "获得短暂的无敌效果，期间提升攻击和移速",
+        "Content": "获得短暂的<style=\"emph-gn\">无敌</style>效果，期间提升<style=\"emph-gn\">攻击</style>和<style=\"emph-gn\">移速</style>",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "我是传奇",
@@ -85582,7 +86557,7 @@
     "9200107": {
         "Key": 9200107,
         "Id": 9200107,
-        "Content": "召唤一个吸引敌人的黑洞，对其造成减速和伤害",
+        "Content": "召唤一个<style=\"emph-gn\">吸引敌人</style>的黑洞，对其造成减速",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "引力黑洞",
@@ -85607,7 +86582,7 @@
     "9200108": {
         "Key": 9200108,
         "Id": 9200108,
-        "Content": "投掷出一把飞斧，飞行期间撞墙反弹",
+        "Content": "投掷出一把飞刃，飞行期间<style=\"emph-gn\">撞墙反弹</style>",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "回旋利刃",
@@ -85657,7 +86632,7 @@
     "9200110": {
         "Key": 9200110,
         "Id": 9200110,
-        "Content": "发射光轮，造成自身属性固定值总量一定比例的伤害（急速、暴击、幸运、精通)",
+        "Content": "发射光轮，造成<style=\"emph-gn\">自身属性总量</style>一定比例的伤害<br>（急速、暴击、幸运、精通)",
         "Type": 30,
         "DurationTime": 5,
         "ChatName": "三分光轮",
@@ -85704,10 +86679,35 @@
         "VoiceControlEvent": "",
         "WaitVoiceFinish": false
     },
+    "9200112": {
+        "Key": 9200112,
+        "Id": 9200112,
+        "Content": "召唤卡尼曼的<style=\"emph-gn\">神射手</style>前来助战<br>持续治疗给射手增加驻场时间",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "卡尼曼射手",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
     "9200201": {
         "Key": 9200201,
         "Id": 9200201,
-        "Content": "特训开始！",
+        "Content": "净化梦魇开始！",
         "Type": 20,
         "DurationTime": 3,
         "ChatName": "",
@@ -85732,7 +86732,7 @@
     "9200202": {
         "Key": 9200202,
         "Id": 9200202,
-        "Content": "目标完成，获得训练币*5！",
+        "Content": "目标完成，获得梦尘*5！",
         "Type": 60,
         "DurationTime": 3,
         "ChatName": "",
@@ -85832,7 +86832,7 @@
     "9200206": {
         "Key": 9200206,
         "Id": 9200206,
-        "Content": "限时击杀成功！特训继续！",
+        "Content": "限时击杀成功！请选择奖励，选购限时30秒！",
         "Type": 60,
         "DurationTime": 3,
         "ChatName": "",
@@ -85857,10 +86857,10 @@
     "9200207": {
         "Key": 9200207,
         "Id": 9200207,
-        "Content": "请在准备时间内，消耗训练币，自由搭配属性、词条、技能",
+        "Content": "请在准备时间内，消耗<style=\"emph-gn\">梦尘</style>提升能力<br>升级<style=\"emph-gn\">属性</style>，自由搭配<style=\"emph-gn\">词条</style>和<style=\"emph-gn\">技能</style>",
         "Type": 30,
         "DurationTime": 10,
-        "ChatName": "训练所管理员",
+        "ChatName": "秋祭司",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -85872,7 +86872,7 @@
         "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
-        "Interrupt": 0,
+        "Interrupt": 1,
         "Audio": "",
         "CountTime": 0,
         "VoiceEventName": "",
@@ -85882,7 +86882,7 @@
     "9200208": {
         "Key": 9200208,
         "Id": 9200208,
-        "Content": "本轮战斗还剩10秒！",
+        "Content": "本轮梦魇净化还剩10秒！",
         "Type": 110,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -85907,7 +86907,7 @@
     "9200209": {
         "Key": 9200209,
         "Id": 9200209,
-        "Content": "本轮战斗训练结束！",
+        "Content": "本轮梦魇净化结束！",
         "Type": 120,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -86107,7 +87107,7 @@
     "9200217": {
         "Key": 9200217,
         "Id": 9200217,
-        "Content": "<style=\"emph-gn\">获得{*str*}枚训练币！</style>",
+        "Content": "<style=\"emph-gn\">获得{*str*}粒梦尘！</style>",
         "Type": 11,
         "DurationTime": 3,
         "ChatName": "",
@@ -86132,7 +87132,7 @@
     "9200218": {
         "Key": 9200218,
         "Id": 9200218,
-        "Content": "<style=\"emph-gn\">获得攻击力+{*str*}，生命上限+4000！</style>",
+        "Content": "<style=\"emph-gn\">获得攻击力+{*str*}，耐力+30！</style>",
         "Type": 11,
         "DurationTime": 3,
         "ChatName": "",
@@ -86157,7 +87157,7 @@
     "9200219": {
         "Key": 9200219,
         "Id": 9200219,
-        "Content": "恭喜通过特训考核！",
+        "Content": "梦境净化完成！",
         "Type": 120,
         "DurationTime": 6,
         "ChatName": "",
@@ -86182,7 +87182,7 @@
     "9200220": {
         "Key": 9200220,
         "Id": 9200220,
-        "Content": "欢迎来到<style=\"emph-gn\">神龙枷所：适格者特训</style>",
+        "Content": "进入了卡尼曼人的<style=\"emph-gn\">先祖梦境</style>……<br>净化这里的梦魇吧，勇士！",
         "Type": 30,
         "DurationTime": 3,
         "ChatName": "",
@@ -86207,7 +87207,7 @@
     "9200221": {
         "Key": 9200221,
         "Id": 9200221,
-        "Content": "<style=\"emph-gn\">杀敌等级升至{*str*}级！</style>",
+        "Content": "<style=\"emph-gn\">净化等级升至{*str*}级！</style>",
         "Type": 11,
         "DurationTime": 3,
         "ChatName": "",
@@ -86321,6 +87321,631 @@
         ],
         "FilterRule": false,
         "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200226": {
+        "Key": 9200226,
+        "Id": 9200226,
+        "Content": "进入限时奖励阶段，选购限时30秒！",
+        "Type": 120,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200227": {
+        "Key": 9200227,
+        "Id": 9200227,
+        "Content": "选购时间剩余10秒！",
+        "Type": 120,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200228": {
+        "Key": 9200228,
+        "Id": 9200228,
+        "Content": "请选择一个“源初词条”，限时60秒",
+        "Type": 30,
+        "DurationTime": 10,
+        "ChatName": "秋祭司",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200229": {
+        "Key": 9200229,
+        "Id": 9200229,
+        "Content": "攻击等级已到达满级",
+        "Type": 110,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200230": {
+        "Key": 9200230,
+        "Id": 9200230,
+        "Content": "生命等级已到达满级",
+        "Type": 110,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9200231": {
+        "Key": 9200231,
+        "Id": 9200231,
+        "Content": "获得<style=\"emph-gn\">源初词条</style>",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201000": {
+        "Key": 9201000,
+        "Id": 9201000,
+        "Content": "训练币数量不足",
+        "Type": 110,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201201": {
+        "Key": 9201201,
+        "Id": 9201201,
+        "Content": "特训开始！",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201202": {
+        "Key": 9201202,
+        "Id": 9201202,
+        "Content": "目标完成，获得训练币*5！",
+        "Type": 60,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201206": {
+        "Key": 9201206,
+        "Id": 9201206,
+        "Content": "限时击杀成功！特训继续！",
+        "Type": 60,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201207": {
+        "Key": 9201207,
+        "Id": 9201207,
+        "Content": "请在准备时间内，消耗训练币，自由搭配属性、词条、技能",
+        "Type": 30,
+        "DurationTime": 10,
+        "ChatName": "训练所管理员",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201208": {
+        "Key": 9201208,
+        "Id": 9201208,
+        "Content": "本轮战斗还剩10秒！",
+        "Type": 110,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201209": {
+        "Key": 9201209,
+        "Id": 9201209,
+        "Content": "本轮战斗训练结束！",
+        "Type": 120,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201217": {
+        "Key": 9201217,
+        "Id": 9201217,
+        "Content": "<style=\"emph-gn\">获得{*str*}枚训练币！</style>",
+        "Type": 11,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "UI_Event_ItemGet_S",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201218": {
+        "Key": 9201218,
+        "Id": 9201218,
+        "Content": "<style=\"emph-gn\">获得攻击力+{*str*}，生命上限+4000！</style>",
+        "Type": 11,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "UI_Event_ItemGet_S",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201219": {
+        "Key": 9201219,
+        "Id": 9201219,
+        "Content": "恭喜通过特训考核！",
+        "Type": 120,
+        "DurationTime": 6,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201220": {
+        "Key": 9201220,
+        "Id": 9201220,
+        "Content": "欢迎来到<style=\"emph-gn\">神龙枷所：适格者特训</style>",
+        "Type": 30,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201221": {
+        "Key": 9201221,
+        "Id": 9201221,
+        "Content": "<style=\"emph-gn\">杀敌等级升至{*str*}级！</style>",
+        "Type": 11,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201300": {
+        "Key": 9201300,
+        "Id": 9201300,
+        "Content": "消耗<style=\"emph-gn\">梦尘</style>*3",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201301": {
+        "Key": 9201301,
+        "Id": 9201301,
+        "Content": "消耗<style=\"emph-gn\">梦尘</style>*5",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201302": {
+        "Key": 9201302,
+        "Id": 9201302,
+        "Content": "消耗<style=\"emph-gn\">梦尘</style>*10",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201303": {
+        "Key": 9201303,
+        "Id": 9201303,
+        "Content": "消耗<style=\"emph-gn\">梦尘</style>*20",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201304": {
+        "Key": 9201304,
+        "Id": 9201304,
+        "Content": "消耗<style=\"emph-gn\">梦尘</style>*30",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201305": {
+        "Key": 9201305,
+        "Id": 9201305,
+        "Content": "消耗<style=\"emph-gn\">梦尘</style>*2",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "9201306": {
+        "Key": 9201306,
+        "Id": 9201306,
+        "Content": "成功击退灾厄之主！获得大量杀敌经验！",
+        "Type": 60,
+        "DurationTime": 3.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": true,
         "TypewriterEffect": false,
         "Interrupt": 0,
         "Audio": "",
@@ -96754,6 +98379,31 @@
         "VoiceControlEvent": "",
         "WaitVoiceFinish": false
     },
+    "16000101": {
+        "Key": 16000101,
+        "Id": 16000101,
+        "Content": "祖灵的絮语随风而至，随信捎来月相的流转。<br>我族的第一勇士，近来可好？<br><br>在你离开的这些日子里，族人们已重新修补好了飓风摧折的屋舍，<br>禁地也因你寻回了钥匙而再度敞开……<br><br>可每当归灵河水中映照出完整的月亮时，总会有孩子来追问我和父亲大人。<br>“什么时候还能再见到那位驱散飓风的第一勇士？”<br><br>真挚的追问每每令我语塞，只能在处理部落事务的间隙，<br>试图从月相中捕捉你在远方的景象。<br><br>此刻提笔时，族人们正筹备着一个重要的日子——丰收祭，<br>助祭们正在将特制的油脂涂抹在木桩上，祭台已经初现轮廓。<br>这不仅是族人们表达对祖灵感激的盛大典礼，<br>这场祭典，正是部落经历磨难后，能再次让族人们重展笑容的契机。<br><br>而你——令部落重获新生的英雄，我族的第一勇士。<br>难道不来一起共饮族人们新酿的特饮，品尝独属卡尼曼人的丰收宴吗？<br>或者……<br>和我比比，谁能把灰契捏成更古怪的形状？<br><br>——卡尼曼大祭司 · 罗罗拉<br>于弦月升起时<br><br>（信的底部有一行反复涂抹的小字）<br>你会来的，对吧。",
+        "Type": 100,
+        "DurationTime": -1,
+        "ChatName": "丰收祭邀请函",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
     "16001001": {
         "Key": 16001001,
         "Id": 16001001,
@@ -103761,6 +105411,306 @@
             99
         ],
         "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010013": {
+        "Key": 16010013,
+        "Id": 16010013,
+        "Content": "<style=\"emph-gn\">灵舞</style>开始，持续积累活动积分",
+        "Type": 20,
+        "DurationTime": 5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010014": {
+        "Key": 16010014,
+        "Id": 16010014,
+        "Content": "灵舞结束，活动积分结束",
+        "Type": 20,
+        "DurationTime": 5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010050": {
+        "Key": 16010050,
+        "Id": 16010050,
+        "Content": "最多只能装载1个技能，不能再装载新技能了",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010051": {
+        "Key": 16010051,
+        "Id": 16010051,
+        "Content": "最多只能装载2个技能，不能再装载新技能了",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010052": {
+        "Key": 16010052,
+        "Id": 16010052,
+        "Content": "最多只能装载3个技能，不能再装载新技能了",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010053": {
+        "Key": 16010053,
+        "Id": 16010053,
+        "Content": "最多只能装载4个技能，不能再装载新技能了",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010060": {
+        "Key": 16010060,
+        "Id": 16010060,
+        "Content": "当前技能槽没有技能",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010061": {
+        "Key": 16010061,
+        "Id": 16010061,
+        "Content": "你获得一个技能<style=\"emph-gn\">(弹弹球)</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010062": {
+        "Key": 16010062,
+        "Id": 16010062,
+        "Content": "你获得一个技能<style=\"emph-gn\">(自爆)</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010063": {
+        "Key": 16010063,
+        "Id": 16010063,
+        "Content": "你获得一个技能<style=\"emph-gn\">(烟雾弹)</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010064": {
+        "Key": 16010064,
+        "Id": 16010064,
+        "Content": "你获得一个技能<style=\"emph-gn\">(黑洞)</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "16010065": {
+        "Key": 16010065,
+        "Id": 16010065,
+        "Content": "你获得一个技能<style=\"emph-gn\">(冰雪射线)</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,

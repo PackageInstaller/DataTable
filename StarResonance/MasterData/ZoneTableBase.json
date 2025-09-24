@@ -1367,7 +1367,16 @@
         "Name": "跑酷-空中目标",
         "ModelID": 50002,
         "EffectPath": "effect/common_new/tips/p_fx_circle_hpy",
-        "StatusInfo": [],
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
         "StatusTransition": [],
         "DefaultState": 0,
         "InteractionTemplate": [],
@@ -1385,7 +1394,16 @@
         "Name": "跑酷-地面目标",
         "ModelID": 50001,
         "EffectPath": "effect/common_new/env/parkour/p_fx_wuping_xingbiao",
-        "StatusInfo": [],
+        "StatusInfo": [
+            [
+                0,
+                0
+            ],
+            [
+                1,
+                2
+            ]
+        ],
         "StatusTransition": [],
         "DefaultState": 0,
         "InteractionTemplate": [],

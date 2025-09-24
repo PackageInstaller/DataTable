@@ -4705,7 +4705,7 @@
         "Key": 100804,
         "Id": 100804,
         "RedSignKey": "",
-        "FunctionId": 300301,
+        "FunctionId": 0,
         "CloseCheck": [],
         "LoseCheck": [],
         "ChildrenID": [
@@ -6553,7 +6553,9 @@
             82000005,
             82000006,
             82000007,
-            82000008
+            82000008,
+            82000009,
+            82000010
         ],
         "ShowType": [
             0
@@ -6706,6 +6708,125 @@
         "FunctionId": 820009,
         "CloseCheck": [],
         "LoseCheck": [],
+        "ChildrenID": [],
+        "ShowType": [
+            0
+        ],
+        "Arguments": "",
+        "OffSet": [
+            3,
+            -30,
+            -20
+        ],
+        "PCOffSet": [],
+        "ServerType": 0
+    },
+    "82000009": {
+        "Key": 82000009,
+        "Id": 82000009,
+        "RedSignKey": "",
+        "FunctionId": 820011,
+        "CloseCheck": [],
+        "LoseCheck": [],
+        "ChildrenID": [],
+        "ShowType": [
+            0
+        ],
+        "Arguments": "",
+        "OffSet": [
+            3,
+            -30,
+            -20
+        ],
+        "PCOffSet": [],
+        "ServerType": 0
+    },
+    "82000010": {
+        "Key": 82000010,
+        "Id": 82000010,
+        "RedSignKey": "",
+        "FunctionId": 820018,
+        "CloseCheck": [],
+        "LoseCheck": [
+            1,
+            3,
+            0
+        ],
+        "ChildrenID": [
+            82000011,
+            82000012
+        ],
+        "ShowType": [
+            0
+        ],
+        "Arguments": "",
+        "OffSet": [
+            3,
+            -30,
+            -20
+        ],
+        "PCOffSet": [],
+        "ServerType": 0
+    },
+    "82000011": {
+        "Key": 82000011,
+        "Id": 82000011,
+        "RedSignKey": "",
+        "FunctionId": 820018,
+        "CloseCheck": [],
+        "LoseCheck": [
+            1,
+            3,
+            0
+        ],
+        "ChildrenID": [],
+        "ShowType": [
+            0
+        ],
+        "Arguments": "",
+        "OffSet": [
+            3,
+            5,
+            5
+        ],
+        "PCOffSet": [],
+        "ServerType": 0
+    },
+    "82000012": {
+        "Key": 82000012,
+        "Id": 82000012,
+        "RedSignKey": "",
+        "FunctionId": 820018,
+        "CloseCheck": [],
+        "LoseCheck": [
+            1,
+            3,
+            0
+        ],
+        "ChildrenID": [],
+        "ShowType": [
+            0
+        ],
+        "Arguments": "",
+        "OffSet": [
+            3,
+            -100,
+            -50
+        ],
+        "PCOffSet": [],
+        "ServerType": 0
+    },
+    "82000013": {
+        "Key": 82000013,
+        "Id": 82000013,
+        "RedSignKey": "",
+        "FunctionId": 819302,
+        "CloseCheck": [],
+        "LoseCheck": [
+            2,
+            3,
+            0
+        ],
         "ChildrenID": [],
         "ShowType": [
             0

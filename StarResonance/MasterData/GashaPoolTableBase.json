@@ -443,6 +443,228 @@
             10005
         ]
     },
+    "1005": {
+        "Key": 1005,
+        "Id": 1005,
+        "Name": "熠熠星光夜",
+        "GashaType": 1,
+        "OpenType": 0,
+        "FunctionId": 800820,
+        "Work": 1,
+        "TimerId": 80103,
+        "Note": "非绑池",
+        "Sort": 1005,
+        "Bind": [
+            7,
+            0
+        ],
+        "Cost": [
+            1070018,
+            1
+        ],
+        "CostSecond": [
+            1070018,
+            10
+        ],
+        "MallItemId": 811034,
+        "Limit": 2000,
+        "LimitRefreshTimer": 10102,
+        "Banner": [
+            [
+                "ui/textures/gasha/gasha_panel_06",
+                "ui/textures/gasha/gasha_banner_fashion_3"
+            ],
+            [
+                "ui/textures/gasha/gasha_panel_06",
+                "ui/textures/gasha/gasha_banner_fashion_3"
+            ],
+            [
+                "ui/prefabs/gasha/gasha_fashion_banner_tpl_3"
+            ]
+        ],
+        "BannerTitle": "ui/textures/gasha/gasha_fashion_04",
+        "BannerTips": "限定时装",
+        "Sticker": [
+            "ui/atlas/gasha/gasha_tab_fishing_3_on",
+            "ui/atlas/gasha/gasha_tab_fishing_3_off"
+        ],
+        "StickerEffect": "ui_sfx_niudan_tab_002",
+        "Show": 1,
+        "Cutscene": [
+            [
+                50200301,
+                50200302,
+                50200303,
+                50200303
+            ],
+            [
+                50200304,
+                50200305,
+                50200306,
+                50200306
+            ]
+        ],
+        "Quality": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "AwardPackageGroup": [
+            50002380,
+            50002370,
+            50002360,
+            50002351
+        ],
+        "QualityTitle": [
+            "普通奖品预览",
+            "中级奖品预览",
+            "高级奖品预览",
+            "珍稀奖品预览"
+        ],
+        "GashaIconPreview": [
+            "item_icons_gasha_01",
+            "item_icons_gasha_02",
+            "item_icons_gasha_04",
+            "item_icons_gasha_05"
+        ],
+        "GashaProbabilityDesc": [
+            "基础概率86.00%",
+            "基础概率12.00%",
+            "基础概率1.85%（含保底综合概率3.68%）",
+            "基础概率0.15%（含保底综合概率1.54%）"
+        ],
+        "IfWish": 0,
+        "WishItem": [],
+        "WishPercent": 0,
+        "WishNum": 0,
+        "WishLimit": 0,
+        "WishLimitTime": 0,
+        "ResonancePrefab": "",
+        "ShareGuarantee": 1,
+        "ShopFunc": 800812,
+        "ShopIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_218",
+        "PoolDesc": "在本次扭蛋活动中：<br>获取<color=#FF8000>【珍稀扭蛋】</color>的基础概率为<color=#ffe2af>0.15%</color>，综合概率(含保底)为<color=#ffe2af>1.54%</color>，最多<color=#ffe2af>80</color>次扭蛋必定能通过保底获取<color=#FF8000>【珍稀扭蛋】</color>，当获得<color=#FF8000>【珍稀扭蛋】</color>时，将获得：<color=#FF8000>熠熠星光夜套装礼盒</color><br><br>获取<color=#eed335>【高级扭蛋】</color>的基础概率为<color=#ffe2af>1.85%</color>，综合概率(含保底)为<color=#ffe2af>3.68%</color>，最多<color=#ffe2af>30</color>次扭蛋必定能通过保底获取<color=#eed335>【高级扭蛋】</color>或以上品质的道具。当通过保底获取<color=#eed335>【高级扭蛋】</color>或以上品质的道具时，有<color=#ffe2af>99.85%</color>的概率为<color=#eed335>【高级扭蛋】</color>，有<color=#ffe2af>0.15%</color>的概率为<color=#FF8000>【珍稀扭蛋】</color>，当获得<color=#eed335>【高级扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#eed335>喵露克斯臻享卡</color> <color=#ffe2af>60.00%</color><br>    <color=#eed335>趴趴蒂娜·头饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>趴趴奥尔维拉·头饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>迷途夜·背饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>明晰梦·背饰</color> <color=#ffe2af>10.00%</color><br>※通过非绑的喵露克斯扭蛋币所获得的<color=#FF8000>【珍稀扭蛋】</color>与<color=#eed335>【高级扭蛋】</color>中的道具可上架交易所进行出售，且其中的外观道具在本次扭蛋活动结束后暂无其他获取途径<br>※当前为“时装扭蛋”活动。在该活动中，未获取的<color=#FF8000>【珍稀扭蛋】</color>的累计扭蛋次数、<color=#eed335>【高级扭蛋】</color>或以上品质的道具的累计扭蛋次数不会随“时装扭蛋”活动更新而重置，与其他扭蛋的扭蛋次数保底相互独立计算，互不影响<br><br>获取<color=#ab85f6>【中级扭蛋】</color>的基础概率为<color=#ffe2af>12.00%</color>，当获取<color=#ab85f6>【中级扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#ab85f6>悠长假期·上衣</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>悠长假期·下装</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>好天气·上衣</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>好天气·下装</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>柯基玩偶·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>小猪帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>猫头鹰帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>童心发圈·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>玫瑰花·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>假发帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>小伊帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>叹号·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>箭头·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>悠长假期·鞋子</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>搞怪眼镜·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>好梦眼罩·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>织雪瞳蔽·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>马赛克眼镜·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>胡子·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>白胡子·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>高级材料·任选礼盒</color> <color=#ffe2af>10.09%</color><br>    <color=#ab85f6>调色剂X3</color> <color=#ffe2af>11.53%</color><br>    <color=#ab85f6>喵露克斯礼遇卡小礼盒</color> <color=#ffe2af>11.53%</color><br>※当获取重复的外观时，将会自动转化为一定数量的<color=#9cb9ef>喵露克斯礼遇卡</color><br><br>获取<color=#9cb9ef>【普通扭蛋】</color>的基础概率为<color=#ffe2af>86.00%</color>，当获取<color=#9cb9ef>【普通扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#9cb9ef>玩具·泡泡棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·水花魔法X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·仙女棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·幽灵玩具X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·暗影粒子X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·漂浮泡泡X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·可爱雕塑X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·威武雕塑X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·黄色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·青色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·绿色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·紫色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·手持礼花X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·可爱看书X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>治愈芳香·等级2</color> <color=#ffe2af>7.94%</color><br>    <color=#9cb9ef>中级材料·任选礼盒</color> <color=#ffe2af>7.94%</color><br>    <color=#9cb9ef>喵露克斯礼遇卡</color> <color=#ffe2af>23.81%</color><br>    <color=#9cb9ef>基础材料·任选礼盒</color> <color=#ffe2af>15.87%</color><br>",
+        "BannerVideo": [
+            "shop/cs_fashion_suit07",
+            "shop/cs_fashion_suit07"
+        ],
+        "Currency": [
+            1070018,
+            10003
+        ]
+    },
+    "1006": {
+        "Key": 1006,
+        "Id": 1006,
+        "Name": "熠熠星光夜",
+        "GashaType": 1,
+        "OpenType": 0,
+        "FunctionId": 800820,
+        "Work": 1,
+        "TimerId": 80103,
+        "Note": "绑定池",
+        "Sort": 1006,
+        "Bind": [
+            7,
+            1
+        ],
+        "Cost": [
+            1070030,
+            1
+        ],
+        "CostSecond": [
+            1070030,
+            10
+        ],
+        "MallItemId": 0,
+        "Limit": 2000,
+        "LimitRefreshTimer": 10102,
+        "Banner": [
+            [
+                "ui/textures/gasha/gasha_panel_06",
+                "ui/textures/gasha/gasha_banner_fashion_3"
+            ],
+            [
+                "ui/textures/gasha/gasha_panel_06",
+                "ui/textures/gasha/gasha_banner_fashion_3"
+            ],
+            [
+                "ui/prefabs/gasha/gasha_fashion_banner_tpl_3"
+            ]
+        ],
+        "BannerTitle": "ui/textures/gasha/gasha_fashion_04",
+        "BannerTips": "限定时装",
+        "Sticker": [
+            "ui/atlas/gasha/gasha_tab_fishing_3_on",
+            "ui/atlas/gasha/gasha_tab_fishing_3_off"
+        ],
+        "StickerEffect": "ui_sfx_niudan_tab_002",
+        "Show": 1,
+        "Cutscene": [
+            [
+                50200301,
+                50200302,
+                50200303,
+                50200303
+            ],
+            [
+                50200304,
+                50200305,
+                50200306,
+                50200306
+            ]
+        ],
+        "Quality": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "AwardPackageGroup": [
+            50002380,
+            50002370,
+            50002400,
+            50002390
+        ],
+        "QualityTitle": [
+            "普通奖品预览",
+            "中级奖品预览",
+            "高级奖品预览",
+            "珍稀奖品预览"
+        ],
+        "GashaIconPreview": [
+            "item_icons_gasha_01",
+            "item_icons_gasha_02",
+            "item_icons_gasha_04",
+            "item_icons_gasha_05"
+        ],
+        "GashaProbabilityDesc": [
+            "基础概率86.00%",
+            "基础概率12.00%",
+            "基础概率1.85%（含保底综合概率3.68%）",
+            "基础概率0.15%（含保底综合概率1.54%）"
+        ],
+        "IfWish": 0,
+        "WishItem": [],
+        "WishPercent": 0,
+        "WishNum": 0,
+        "WishLimit": 0,
+        "WishLimitTime": 0,
+        "ResonancePrefab": "",
+        "ShareGuarantee": 2,
+        "ShopFunc": 800812,
+        "ShopIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_218",
+        "PoolDesc": "在本次扭蛋活动中：<br>获取<color=#FF8000>【珍稀扭蛋】</color>的基础概率为<color=#ffe2af>0.15%</color>，综合概率(含保底)为<color=#ffe2af>1.54%</color>，最多<color=#ffe2af>80</color>次扭蛋必定能通过保底获取<color=#FF8000>【珍稀扭蛋】</color>，当获得<color=#FF8000>【珍稀扭蛋】</color>时，将获得：<color=#FF8000>熠熠星光夜套装礼盒</color><br><br>获取<color=#eed335>【高级扭蛋】</color>的基础概率为<color=#ffe2af>1.85%</color>，综合概率(含保底)为<color=#ffe2af>3.68%</color>，最多<color=#ffe2af>30</color>次扭蛋必定能通过保底获取<color=#eed335>【高级扭蛋】</color>或以上品质的道具。当通过保底获取<color=#eed335>【高级扭蛋】</color>或以上品质的道具时，有<color=#ffe2af>99.85%</color>的概率为<color=#eed335>【高级扭蛋】</color>，有<color=#ffe2af>0.15%</color>的概率为<color=#FF8000>【珍稀扭蛋】</color>，当获得<color=#eed335>【高级扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#eed335>喵露克斯臻享卡</color> <color=#ffe2af>60.00%</color><br>    <color=#eed335>趴趴蒂娜·头饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>趴趴奥尔维拉·头饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>迷途夜·背饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>明晰梦·背饰</color> <color=#ffe2af>10.00%</color><br>※通过非绑的喵露克斯扭蛋币所获得的<color=#FF8000>【珍稀扭蛋】</color>与<color=#eed335>【高级扭蛋】</color>中的道具可上架交易所进行出售，且其中的外观道具在本次扭蛋活动结束后暂无其他获取途径<br>※当前为“时装扭蛋（绑定）”活动。在该活动中，未获取的<color=#FF8000>【珍稀扭蛋】</color>的累计扭蛋次数、<color=#eed335>【高级扭蛋】</color>或以上品质的道具的累计扭蛋次数会一直累计于“时装扭蛋（绑定）”活动中，与其他扭蛋的扭蛋次数保底相互独立计算，互不影响<br><br>获取<color=#ab85f6>【中级扭蛋】</color>的基础概率为<color=#ffe2af>12.00%</color>，当获取<color=#ab85f6>【中级扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#ab85f6>悠长假期·上衣</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>悠长假期·下装</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>好天气·上衣</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>好天气·下装</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>柯基玩偶·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>小猪帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>猫头鹰帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>童心发圈·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>玫瑰花·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>假发帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>小伊帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>叹号·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>箭头·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>悠长假期·鞋子</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>搞怪眼镜·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>好梦眼罩·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>织雪瞳蔽·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>马赛克眼镜·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>胡子·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>白胡子·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>高级材料·任选礼盒</color> <color=#ffe2af>10.09%</color><br>    <color=#ab85f6>调色剂X3</color> <color=#ffe2af>11.53%</color><br>    <color=#ab85f6>喵露克斯礼遇卡小礼盒</color> <color=#ffe2af>11.53%</color><br>※当获取重复的外观时，将会自动转化为一定数量的<color=#9cb9ef>喵露克斯礼遇卡</color><br><br>获取<color=#9cb9ef>【普通扭蛋】</color>的基础概率为<color=#ffe2af>86.00%</color>，当获取<color=#9cb9ef>【普通扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#9cb9ef>玩具·泡泡棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·水花魔法X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·仙女棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·幽灵玩具X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·暗影粒子X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·漂浮泡泡X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·可爱雕塑X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·威武雕塑X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·黄色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·青色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·绿色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·紫色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·手持礼花X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·可爱看书X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>治愈芳香·等级2</color> <color=#ffe2af>7.94%</color><br>    <color=#9cb9ef>中级材料·任选礼盒</color> <color=#ffe2af>7.94%</color><br>    <color=#9cb9ef>喵露克斯礼遇卡</color> <color=#ffe2af>23.81%</color><br>    <color=#9cb9ef>基础材料·任选礼盒</color> <color=#ffe2af>15.87%</color><br>",
+        "BannerVideo": [
+            "shop/cs_fashion_suit07",
+            "shop/cs_fashion_suit07"
+        ],
+        "Currency": [
+            1070030,
+            10005
+        ]
+    },
     "2001": {
         "Key": 2001,
         "Id": 2001,
@@ -881,6 +1103,228 @@
         "BannerVideo": [
             "vehicle/cs_vehicle_motorboat",
             "vehicle/cs_vehicle_motorboat"
+        ],
+        "Currency": [
+            1070030,
+            10005
+        ]
+    },
+    "2005": {
+        "Key": 2005,
+        "Id": 2005,
+        "Name": "律动音浪",
+        "GashaType": 2,
+        "OpenType": 0,
+        "FunctionId": 800820,
+        "Work": 1,
+        "TimerId": 80103,
+        "Note": "非绑池",
+        "Sort": 2005,
+        "Bind": [
+            8,
+            0
+        ],
+        "Cost": [
+            1070018,
+            1
+        ],
+        "CostSecond": [
+            1070018,
+            10
+        ],
+        "MallItemId": 811034,
+        "Limit": 2000,
+        "LimitRefreshTimer": 10102,
+        "Banner": [
+            [
+                "ui/textures/gasha/gasha_panel_06",
+                "ui/textures/gasha/gasha_banner_vehicle_3"
+            ],
+            [
+                "ui/textures/gasha/gasha_panel_06",
+                "ui/textures/gasha/gasha_banner_vehicle_3"
+            ],
+            [
+                "ui/prefabs/gasha/gasha_vehicle_banner_tpl_3"
+            ]
+        ],
+        "BannerTitle": "ui/textures/gasha/gasha_vehicle_04",
+        "BannerTips": "限定载具",
+        "Sticker": [
+            "ui/atlas/gasha/gasha_tab_vehicle_3_on",
+            "ui/atlas/gasha/gasha_tab_vehicle_3_off"
+        ],
+        "StickerEffect": "ui_sfx_niudan_tab_001",
+        "Show": 1,
+        "Cutscene": [
+            [
+                50200301,
+                50200302,
+                50200303,
+                50200303
+            ],
+            [
+                50200304,
+                50200305,
+                50200306,
+                50200306
+            ]
+        ],
+        "Quality": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "AwardPackageGroup": [
+            50002440,
+            50002430,
+            50002420,
+            50002410
+        ],
+        "QualityTitle": [
+            "普通奖品预览",
+            "中级奖品预览",
+            "高级奖品预览",
+            "珍稀奖品预览"
+        ],
+        "GashaIconPreview": [
+            "item_icons_gasha_01",
+            "item_icons_gasha_02",
+            "item_icons_gasha_04",
+            "item_icons_gasha_05"
+        ],
+        "GashaProbabilityDesc": [
+            "基础概率86.00%",
+            "基础概率12.00%",
+            "基础概率1.85%（含保底综合概率3.68%）",
+            "基础概率0.15%（含保底综合概率1.54%）"
+        ],
+        "IfWish": 0,
+        "WishItem": [],
+        "WishPercent": 0,
+        "WishNum": 0,
+        "WishLimit": 0,
+        "WishLimitTime": 0,
+        "ResonancePrefab": "",
+        "ShareGuarantee": 3,
+        "ShopFunc": 800812,
+        "ShopIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_218",
+        "PoolDesc": "在本次扭蛋活动中：<br>获取<color=#FF8000>【珍稀扭蛋】</color>的基础概率为<color=#ffe2af>0.15%</color>，综合概率(含保底)为<color=#ffe2af>1.54%</color>，最多<color=#ffe2af>80</color>次扭蛋必定能通过保底获取<color=#FF8000>【珍稀扭蛋】</color>，当获得<color=#FF8000>【珍稀扭蛋】</color>时，将获得：<color=#FF8000>律动音浪</color><br><br>获取<color=#eed335>【高级扭蛋】</color>的基础概率为<color=#ffe2af>1.85%</color>，综合概率(含保底)为<color=#ffe2af>3.68%</color>，最多<color=#ffe2af>30</color>次扭蛋必定能通过保底获取<color=#eed335>【高级扭蛋】</color>或以上品质的道具。当通过保底获取<color=#eed335>【高级扭蛋】</color>或以上品质的道具时，有<color=#ffe2af>99.85%</color>的概率为<color=#eed335>【高级扭蛋】</color>，有<color=#ffe2af>0.15%</color>的概率为<color=#FF8000>【珍稀扭蛋】</color>，当获得<color=#eed335>【高级扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#eed335>喵露克斯臻享卡</color> <color=#ffe2af>60.00%</color><br>    <color=#eed335>趴趴蒂娜·头饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>趴趴奥尔维拉·头饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>迷途夜·背饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>明晰梦·背饰</color> <color=#ffe2af>10.00%</color><br>※通过非绑的喵露克斯扭蛋币所获得的<color=#FF8000>【珍稀扭蛋】</color>与<color=#eed335>【高级扭蛋】</color>中的道具可上架交易所进行出售，且其中的外观道具在本次扭蛋活动结束后暂无其他获取途径<br>※当前为“载具扭蛋”活动。在该活动中，未获取的<color=#FF8000>【珍稀扭蛋】</color>的累计扭蛋次数、<color=#eed335>【高级扭蛋】</color>或以上品质的道具的累计扭蛋次数会一直累计于“载具扭蛋”活动中，与其他扭蛋的扭蛋次数保底相互独立计算，互不影响<br><br>获取<color=#ab85f6>【中级扭蛋】</color>的基础概率为<color=#ffe2af>12.00%</color>，当获取<color=#ab85f6>【中级扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#ab85f6>悠长假期·上衣</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>悠长假期·下装</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>好天气·上衣</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>好天气·下装</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>柯基玩偶·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>小猪帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>猫头鹰帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>童心发圈·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>玫瑰花·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>假发帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>小伊帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>叹号·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>箭头·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>悠长假期·鞋子</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>搞怪眼镜·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>好梦眼罩·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>织雪瞳蔽·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>马赛克眼镜·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>胡子·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>白胡子·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>高级材料·任选礼盒</color> <color=#ffe2af>10.09%</color><br>    <color=#ab85f6>调色剂X3</color> <color=#ffe2af>11.53%</color><br>    <color=#ab85f6>喵露克斯礼遇卡小礼盒</color> <color=#ffe2af>11.53%</color><br>※当获取重复的外观时，将会自动转化为一定数量的<color=#9cb9ef>喵露克斯礼遇卡</color><br><br>获取<color=#9cb9ef>【普通扭蛋】</color>的基础概率为<color=#ffe2af>86.00%</color>，当获取<color=#9cb9ef>【普通扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#9cb9ef>玩具·泡泡棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·水花魔法X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·仙女棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·幽灵玩具X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·暗影粒子X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·漂浮泡泡X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·可爱雕塑X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·威武雕塑X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·黄色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·青色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·绿色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·紫色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·手持礼花X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·可爱看书X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>治愈芳香·等级2</color> <color=#ffe2af>7.94%</color><br>    <color=#9cb9ef>中级材料·任选礼盒</color> <color=#ffe2af>7.94%</color><br>    <color=#9cb9ef>喵露克斯礼遇卡</color> <color=#ffe2af>23.81%</color><br>    <color=#9cb9ef>基础材料·任选礼盒</color> <color=#ffe2af>15.87%</color><br>",
+        "BannerVideo": [
+            "vehicle/cs_vehicle_stage",
+            "vehicle/cs_vehicle_stage"
+        ],
+        "Currency": [
+            1070018,
+            10003
+        ]
+    },
+    "2006": {
+        "Key": 2006,
+        "Id": 2006,
+        "Name": "律动音浪",
+        "GashaType": 2,
+        "OpenType": 0,
+        "FunctionId": 800820,
+        "Work": 1,
+        "TimerId": 80103,
+        "Note": "绑定池",
+        "Sort": 2006,
+        "Bind": [
+            8,
+            1
+        ],
+        "Cost": [
+            1070030,
+            1
+        ],
+        "CostSecond": [
+            1070030,
+            10
+        ],
+        "MallItemId": 0,
+        "Limit": 2000,
+        "LimitRefreshTimer": 10102,
+        "Banner": [
+            [
+                "ui/textures/gasha/gasha_panel_06",
+                "ui/textures/gasha/gasha_banner_vehicle_3"
+            ],
+            [
+                "ui/textures/gasha/gasha_panel_06",
+                "ui/textures/gasha/gasha_banner_vehicle_3"
+            ],
+            [
+                "ui/prefabs/gasha/gasha_vehicle_banner_tpl_3"
+            ]
+        ],
+        "BannerTitle": "ui/textures/gasha/gasha_vehicle_04",
+        "BannerTips": "限定载具",
+        "Sticker": [
+            "ui/atlas/gasha/gasha_tab_vehicle_3_on",
+            "ui/atlas/gasha/gasha_tab_vehicle_3_off"
+        ],
+        "StickerEffect": "ui_sfx_niudan_tab_001",
+        "Show": 1,
+        "Cutscene": [
+            [
+                50200301,
+                50200302,
+                50200303,
+                50200303
+            ],
+            [
+                50200304,
+                50200305,
+                50200306,
+                50200306
+            ]
+        ],
+        "Quality": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "AwardPackageGroup": [
+            50002440,
+            50002430,
+            50002460,
+            50002450
+        ],
+        "QualityTitle": [
+            "普通奖品预览",
+            "中级奖品预览",
+            "高级奖品预览",
+            "珍稀奖品预览"
+        ],
+        "GashaIconPreview": [
+            "item_icons_gasha_01",
+            "item_icons_gasha_02",
+            "item_icons_gasha_04",
+            "item_icons_gasha_05"
+        ],
+        "GashaProbabilityDesc": [
+            "基础概率86.00%",
+            "基础概率12.00%",
+            "基础概率1.85%（含保底综合概率3.68%）",
+            "基础概率0.15%（含保底综合概率1.54%）"
+        ],
+        "IfWish": 0,
+        "WishItem": [],
+        "WishPercent": 0,
+        "WishNum": 0,
+        "WishLimit": 0,
+        "WishLimitTime": 0,
+        "ResonancePrefab": "",
+        "ShareGuarantee": 4,
+        "ShopFunc": 800812,
+        "ShopIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_218",
+        "PoolDesc": "在本次扭蛋活动中：<br>获取<color=#FF8000>【珍稀扭蛋】</color>的基础概率为<color=#ffe2af>0.15%</color>，综合概率(含保底)为<color=#ffe2af>1.54%</color>，最多<color=#ffe2af>80</color>次扭蛋必定能通过保底获取<color=#FF8000>【珍稀扭蛋】</color>，当获得<color=#FF8000>【珍稀扭蛋】</color>时，将获得：<color=#FF8000>律动音浪</color><br><br>获取<color=#eed335>【高级扭蛋】</color>的基础概率为<color=#ffe2af>1.85%</color>，综合概率(含保底)为<color=#ffe2af>3.68%</color>，最多<color=#ffe2af>30</color>次扭蛋必定能通过保底获取<color=#eed335>【高级扭蛋】</color>或以上品质的道具。当通过保底获取<color=#eed335>【高级扭蛋】</color>或以上品质的道具时，有<color=#ffe2af>99.85%</color>的概率为<color=#eed335>【高级扭蛋】</color>，有<color=#ffe2af>0.15%</color>的概率为<color=#FF8000>【珍稀扭蛋】</color>，当获得<color=#eed335>【高级扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#eed335>喵露克斯臻享卡</color> <color=#ffe2af>60.00%</color><br>    <color=#eed335>趴趴蒂娜·头饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>趴趴奥尔维拉·头饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>迷途夜·背饰</color> <color=#ffe2af>10.00%</color><br>    <color=#eed335>明晰梦·背饰</color> <color=#ffe2af>10.00%</color><br>※通过非绑的喵露克斯扭蛋币所获得的<color=#FF8000>【珍稀扭蛋】</color>与<color=#eed335>【高级扭蛋】</color>中的道具可上架交易所进行出售，且其中的外观道具在本次扭蛋活动结束后暂无其他获取途径<br>※当前为“载具扭蛋（绑定）”活动。在该活动中，未获取的<color=#FF8000>【珍稀扭蛋】</color>的累计扭蛋次数、<color=#eed335>【高级扭蛋】</color>或以上品质的道具的累计扭蛋次数会一直累计于“载具扭蛋（绑定）”活动中，与其他扭蛋的扭蛋次数保底相互独立计算，互不影响<br><br>获取<color=#ab85f6>【中级扭蛋】</color>的基础概率为<color=#ffe2af>12.00%</color>，当获取<color=#ab85f6>【中级扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#ab85f6>悠长假期·上衣</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>悠长假期·下装</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>好天气·上衣</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>好天气·下装</color> <color=#ffe2af>1.73%</color><br>    <color=#ab85f6>柯基玩偶·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>小猪帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>猫头鹰帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>童心发圈·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>玫瑰花·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>假发帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>小伊帽子·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>叹号·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>箭头·头饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>悠长假期·鞋子</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>搞怪眼镜·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>好梦眼罩·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>织雪瞳蔽·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>马赛克眼镜·面饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>胡子·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>白胡子·嘴饰</color> <color=#ffe2af>3.75%</color><br>    <color=#ab85f6>高级材料·任选礼盒</color> <color=#ffe2af>10.09%</color><br>    <color=#ab85f6>调色剂X3</color> <color=#ffe2af>11.53%</color><br>    <color=#ab85f6>喵露克斯礼遇卡小礼盒</color> <color=#ffe2af>11.53%</color><br>※当获取重复的外观时，将会自动转化为一定数量的<color=#9cb9ef>喵露克斯礼遇卡</color><br><br>获取<color=#9cb9ef>【普通扭蛋】</color>的基础概率为<color=#ffe2af>86.00%</color>，当获取<color=#9cb9ef>【普通扭蛋】</color>时，将按对应概率随机获取以下道具的其中一个：<br>    <color=#9cb9ef>玩具·泡泡棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·水花魔法X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·仙女棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·幽灵玩具X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·暗影粒子X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·漂浮泡泡X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·可爱雕塑X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·威武雕塑X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·黄色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·青色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·绿色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·紫色应援棒X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·手持礼花X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>玩具·可爱看书X3</color> <color=#ffe2af>3.17%</color><br>    <color=#9cb9ef>治愈芳香·等级2</color> <color=#ffe2af>7.94%</color><br>    <color=#9cb9ef>中级材料·任选礼盒</color> <color=#ffe2af>7.94%</color><br>    <color=#9cb9ef>喵露克斯礼遇卡</color> <color=#ffe2af>23.81%</color><br>    <color=#9cb9ef>基础材料·任选礼盒</color> <color=#ffe2af>15.87%</color><br>",
+        "BannerVideo": [
+            "vehicle/cs_vehicle_stage",
+            "vehicle/cs_vehicle_stage"
         ],
         "Currency": [
             1070030,

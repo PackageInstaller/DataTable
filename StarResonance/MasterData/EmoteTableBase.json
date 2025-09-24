@@ -1674,7 +1674,7 @@
         "Icon": "ui/atlas/emote_icon/emo_icon_action_prayer",
         "IsShow": "0",
         "Emote": [
-            "emo_prayer"
+            "emo_prayer（不可投，资源被用过了）"
         ]
     },
     "9063": {
@@ -2558,7 +2558,7 @@
         "Key": 9110,
         "Id": 9110,
         "FaceDataId": [],
-        "Name": "人鱼歌姬",
+        "Name": "溯梦绮想曲·幻夜",
         "EmoteType": 1,
         "Type": 1,
         "Accessory": [
@@ -2567,8 +2567,8 @@
         "Movable": false,
         "MovableFunctionId": 0,
         "CornerMark": 0,
-        "Icon": "ui/atlas/emote_icon/emo_icon_action_run",
-        "IsShow": "0",
+        "Icon": "ui/atlas/emote_icon/emo_icon_action_skinmermaid_perform01",
+        "IsShow": "",
         "Emote": [
             "skinmermaid_perform01"
         ]
@@ -3584,20 +3584,19 @@
         "Key": 9164,
         "Id": 9164,
         "FaceDataId": [],
-        "Name": "部落舞",
+        "Name": "舞蹈·围炉",
         "EmoteType": 2,
         "Type": 1,
         "Accessory": [
-            2,
-            2
+            0
         ],
         "Movable": false,
         "MovableFunctionId": 0,
         "CornerMark": 1,
-        "Icon": "ui/atlas/emote_icon/emo_icon_action_skinnoble_perform01",
-        "IsShow": "0",
+        "Icon": "ui/atlas/emote_icon/emo_icon_action_tribedance01",
+        "IsShow": "",
         "Emote": [
-            "emo_tribedance01"
+            "emo_tribedance01_loop"
         ]
     },
     "9165": {
@@ -3693,6 +3692,25 @@
         "IsShow": "0",
         "Emote": [
             "emo_ecstaticcute04"
+        ]
+    },
+    "9170": {
+        "Key": 9170,
+        "Id": 9170,
+        "FaceDataId": [],
+        "Name": "熠熠星光夜·余梦",
+        "EmoteType": 2,
+        "Type": 1,
+        "Accessory": [
+            0
+        ],
+        "Movable": false,
+        "MovableFunctionId": 0,
+        "CornerMark": 1,
+        "Icon": "ui/atlas/emote_icon/emo_icon_action_skinidol_perform01",
+        "IsShow": "",
+        "Emote": [
+            "skinidol_perform01"
         ]
     },
     "9900": {

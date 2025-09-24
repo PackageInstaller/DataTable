@@ -13185,6 +13185,468 @@
         "Note": "",
         "AwardPreview": []
     },
+    "160001": {
+        "Key": 160001,
+        "QuestId": 160001,
+        "QuestName": "丰收祭的开幕",
+        "QuestDetail": "卡尼曼部落正在举行盛大的丰收祭，身为第一勇士，或许是时候回去看看了。<br><style=\"emph-gn\">任务时限：先祖之路活动期间</style>",
+        "QuestType": 87,
+        "QuestStep": 160001001,
+        "AwardId": 70030110,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "30"
+            ],
+            [
+                "18",
+                "40017"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40117"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/160001/160001-3",
+        "NpcMarkedByQuest": [
+            [
+                1008720,
+                16000002,
+                16000102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "160002": {
+        "Key": 160002,
+        "QuestId": 160002,
+        "QuestName": "先祖之路伊始",
+        "QuestDetail": "先祖之路是卡尼曼丰收祭的重要仪式，向负责仪式的秋祭司询问仪式的具体过程吧。<br><style=\"emph-gn\">任务时限：先祖之路活动期间</style>",
+        "QuestType": 87,
+        "QuestStep": 160002001,
+        "AwardId": 70030120,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "160001",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40017"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40117"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/160001/160001-4",
+        "NpcMarkedByQuest": [
+            [
+                1008720,
+                16000002,
+                16000102,
+                16000001
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "160003": {
+        "Key": 160003,
+        "QuestId": 160003,
+        "QuestName": "唤醒代表白狼图腾的息壤",
+        "QuestDetail": "前往卡尼曼部落中的息壤，完成息壤唤醒仪式。<br><style=\"emph-gn\">任务时限：先祖之路活动期间</style>",
+        "QuestType": 87,
+        "QuestStep": 160003002,
+        "AwardId": 70030130,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(160002)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40017"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40117"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/160001/160001-5",
+        "NpcMarkedByQuest": [
+            [
+                1008720,
+                16000002,
+                16000102,
+                16000001,
+                16000301
+            ],
+            [
+                16000302
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "160004": {
+        "Key": 160004,
+        "QuestId": 160004,
+        "QuestName": "唤醒代表蛇图腾的息壤",
+        "QuestDetail": "前往卡尼曼旧址附近的息壤，完成息壤唤醒仪式。<br><style=\"emph-gn\">任务时限：先祖之路活动期间</style>",
+        "QuestType": 87,
+        "QuestStep": 160004002,
+        "AwardId": 70030140,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(160002)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40112"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40117"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/160001/160001-6",
+        "NpcMarkedByQuest": [
+            [
+                1008720,
+                16000002,
+                16000102,
+                16000001,
+                16000301,
+                16000401
+            ],
+            [
+                16000302,
+                16000402,
+                16000403
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "160005": {
+        "Key": 160005,
+        "QuestId": 160005,
+        "QuestName": "唤醒代表鸟图腾的息壤",
+        "QuestDetail": "前往登陆战遗迹附近的息壤，完成息壤唤醒仪式。<br><style=\"emph-gn\">任务时限：先祖之路活动期间</style>",
+        "QuestType": 87,
+        "QuestStep": 160005002,
+        "AwardId": 70030150,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(160002)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40113"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40117"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/160001/160001-7",
+        "NpcMarkedByQuest": [
+            [
+                1008720,
+                16000002,
+                16000102,
+                16000001,
+                16000301,
+                16000401,
+                16000501
+            ],
+            [
+                16000302,
+                16000402,
+                16000403,
+                16000502
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "160006": {
+        "Key": 160006,
+        "QuestId": 160006,
+        "QuestName": "唤醒代表镜图腾的息壤",
+        "QuestDetail": "前往维尔古城附近的息壤，完成息壤唤醒仪式。<br><style=\"emph-gn\">任务时限：先祖之路活动期间</style>",
+        "QuestType": 87,
+        "QuestStep": 160006002,
+        "AwardId": 70030160,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(160002)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40114"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40117"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/160001/160001-8",
+        "NpcMarkedByQuest": [
+            [
+                1008720,
+                16000002,
+                16000102,
+                16000001,
+                16000301,
+                16000401,
+                16000501,
+                16000601
+            ],
+            [
+                16000302,
+                16000402,
+                16000403,
+                16000502,
+                16000602
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "160007": {
+        "Key": 160007,
+        "QuestId": 160007,
+        "QuestName": "唤醒代表羊图腾的息壤",
+        "QuestDetail": "前往阿斯特里斯城门附近的息壤，完成息壤唤醒仪式。<br><style=\"emph-gn\">任务时限：先祖之路活动期间</style>",
+        "QuestType": 87,
+        "QuestStep": 160007002,
+        "AwardId": 70030170,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(160002)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40115"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40117"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/160001/160001-9",
+        "NpcMarkedByQuest": [
+            [
+                1008720,
+                16000002,
+                16000102,
+                16000001,
+                16000301,
+                16000401,
+                16000501,
+                16000601,
+                16000701
+            ],
+            [
+                16000302,
+                16000402,
+                16000403,
+                16000502,
+                16000602,
+                16000702
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "160008": {
+        "Key": 160008,
+        "QuestId": 160008,
+        "QuestName": "唤醒代表壶图腾的息壤",
+        "QuestDetail": "前往风啸的峡谷中的息壤，完成息壤唤醒仪式。<br><style=\"emph-gn\">任务时限：先祖之路活动期间</style>",
+        "QuestType": 87,
+        "QuestStep": 160008002,
+        "AwardId": 70030180,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(160002)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40116"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40117"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/160001/160001-10",
+        "NpcMarkedByQuest": [
+            [
+                1008720,
+                16000002,
+                16000102,
+                16000001,
+                16000301,
+                16000401,
+                16000501,
+                16000601,
+                16000701,
+                16000801
+            ],
+            [
+                16000302,
+                16000402,
+                16000403,
+                16000502,
+                16000602,
+                16000702,
+                16000802,
+                16000803
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "160009": {
+        "Key": 160009,
+        "QuestId": 160009,
+        "QuestName": "【每周】丰收祭物资提交",
+        "QuestDetail": "共庆丰收祭，贮藏丰饶！将珍贵的粮食与鲜果送入部落仓库，完成这项光荣的传统后，秋祭司将为您献上特别的馈赠。<br><style=\"emph-gn\">任务时限：秋祭司的算筹活动期间</style>",
+        "QuestType": 86,
+        "QuestStep": 160009001,
+        "AwardId": 70030010,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40017"
+            ],
+            [
+                "1",
+                "30"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40117"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/160001/160001-42",
+        "NpcMarkedByQuest": [
+            [
+                1008720,
+                16000002,
+                16000102,
+                16000001,
+                16000301,
+                16000401,
+                16000501,
+                16000601,
+                16000701,
+                16000801,
+                16000004
+            ],
+            [
+                16000302,
+                16000402,
+                16000403,
+                16000502,
+                16000602,
+                16000702,
+                16000802,
+                16000803
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "170000": {
         "Key": 170000,
         "QuestId": 170000,
@@ -13347,7 +13809,12 @@
         "PreQuest": [],
         "PreQuestLogic": "(170018)",
         "MustPreQuest": [],
-        "AccessLimit": [],
+        "AccessLimit": [
+            [
+                "1",
+                "55"
+            ]
+        ],
         "AccpetType": [
             0
         ],
@@ -14261,7 +14728,7 @@
         "AccessLimit": [
             [
                 "1",
-                "25"
+                "40"
             ]
         ],
         "AccpetType": [
@@ -28668,6 +29135,41 @@
         ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/9200/9200-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "1009201": {
+        "Key": 1009201,
+        "QuestId": 1009201,
+        "QuestName": "节日狩猎：千梦织灵之夜",
+        "QuestDetail": "节日狩猎：千梦织灵之夜",
+        "QuestType": 100,
+        "QuestStep": 1009201001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "12",
+                "9201"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "13",
+                "9201"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/9201/9201-3",
         "NpcMarkedByQuest": [],
         "Note": "",
         "AwardPreview": []

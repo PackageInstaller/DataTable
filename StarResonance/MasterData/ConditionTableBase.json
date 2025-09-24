@@ -838,5 +838,25 @@
         "RefreshNum": "当前副本有N个同协会的玩家",
         "FailureMessage": 0,
         "ShowPurview": ""
+    },
+    "104": {
+        "Key": 104,
+        "Type": 104,
+        "Param": "当前副本中检测是否队长",
+        "ImplStatus": 0,
+        "Example": "",
+        "RefreshNum": "场地标记检测当前是否是队长，只有队长可以摆放场景标记",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "106": {
+        "Key": 106,
+        "Type": 106,
+        "Param": "爬塔最高层数是否小于当前给定层数",
+        "ImplStatus": 0,
+        "Example": "106=5",
+        "RefreshNum": "玩家当前爬塔最大层数是否大于等于5层，大于等于则返回正确",
+        "FailureMessage": 0,
+        "ShowPurview": ""
     }
 }

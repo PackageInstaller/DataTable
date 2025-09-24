@@ -2405,7 +2405,7 @@
         "IsBlend": false,
         "IsUpper": false,
         "LookAtBodyWeight": 0.3,
-        "UnlockItem": 1072052,
+        "UnlockItem": 1072117,
         "CameraIds": [
             54,
             55
@@ -3319,7 +3319,7 @@
     "9164": {
         "Key": 9164,
         "Id": 9164,
-        "ActionEffect": "emo_tribedance01",
+        "ActionEffect": "emo_tribedance01_loop",
         "IsBlend": false,
         "IsUpper": false,
         "LookAtBodyWeight": 0.3,
@@ -3328,8 +3328,8 @@
             54,
             55
         ],
-        "Sync": false,
-        "AllowUpperBodyOnly": true,
+        "Sync": true,
+        "AllowUpperBodyOnly": false,
         "Audio": "",
         "IKType": 1
     },
@@ -3415,6 +3415,23 @@
         ],
         "Sync": false,
         "AllowUpperBodyOnly": true,
+        "Audio": "",
+        "IKType": 1
+    },
+    "9170": {
+        "Key": 9170,
+        "Id": 9170,
+        "ActionEffect": "skinidol_perform01",
+        "IsBlend": false,
+        "IsUpper": false,
+        "LookAtBodyWeight": 0.3,
+        "UnlockItem": 1072116,
+        "CameraIds": [
+            54,
+            55
+        ],
+        "Sync": false,
+        "AllowUpperBodyOnly": false,
         "Audio": "",
         "IKType": 1
     },
@@ -6586,6 +6603,23 @@
         "LookAtBodyWeight": 0.3,
         "UnlockItem": 0,
         "CameraIds": [],
+        "Sync": false,
+        "AllowUpperBodyOnly": false,
+        "Audio": "",
+        "IKType": 1
+    },
+    "4010100": {
+        "Key": 4010100,
+        "Id": 4010100,
+        "ActionEffect": "emo_tribedance01_loop",
+        "IsBlend": false,
+        "IsUpper": false,
+        "LookAtBodyWeight": 0.3,
+        "UnlockItem": 0,
+        "CameraIds": [
+            54,
+            55
+        ],
         "Sync": false,
         "AllowUpperBodyOnly": false,
         "Audio": "",

@@ -6398,7 +6398,7 @@
     "3363": {
         "Key": 3363,
         "Id": 3363,
-        "Priority": 3363,
+        "Priority": 3365,
         "GuideGroup": 31,
         "ShowConditionType": [
             2
@@ -6407,8 +6407,8 @@
         "ShowConditionValue": "union_join_window",
         "IfShowcheck": true,
         "CheckCompletion": false,
-        "TriggerConditionType": "503",
-        "TriggerConditionValue": "union_join_window",
+        "TriggerConditionType": "516",
+        "TriggerConditionValue": "3365",
         "CompletionConditionType": "518",
         "CompletionConditionValue": "",
         "AutoCompleteConditionType": "",
@@ -6454,6 +6454,44 @@
         "AutoCompleteTime": 5,
         "IsShowUIFrame": true,
         "TextAround": "点击这里可以创建协会",
+        "TextShowDirection": [
+            1,
+            0
+        ],
+        "TextMiddle": "",
+        "KeyboardId": [],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [],
+        "Pcchoice": 0,
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3365": {
+        "Key": 3365,
+        "Id": 3365,
+        "Priority": 3363,
+        "GuideGroup": 31,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "union_join_window",
+        "IfShowcheck": true,
+        "CheckCompletion": false,
+        "TriggerConditionType": "503",
+        "TriggerConditionValue": "union_join_window",
+        "CompletionConditionType": "515",
+        "CompletionConditionValue": "",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": true,
+        "TextAround": "点击这里可以筛选协会",
         "TextShowDirection": [
             1,
             0

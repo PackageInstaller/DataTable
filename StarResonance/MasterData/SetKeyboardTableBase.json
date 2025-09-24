@@ -450,7 +450,7 @@
         "Id": 34,
         "ActionIds": [
             [
-                77
+                71
             ]
         ],
         "SchemeId": 1,
@@ -1500,12 +1500,12 @@
         "Id": 155,
         "ActionIds": [
             [
-                101
+                113
             ]
         ],
         "SchemeId": 1,
         "NameRule": 0,
-        "SetDes": "聊天频道切换",
+        "SetDes": "聊天频道左切",
         "KeyboardDes": 1,
         "FunctionId": 0,
         "Sort": 154,
@@ -1572,6 +1572,149 @@
         "HideInSettingView": 2,
         "CanChange": [],
         "Quickdescription": 0,
+        "ShowList": 0,
+        "GoBack": "0"
+    },
+    "159": {
+        "Key": 159,
+        "Id": 159,
+        "ActionIds": [
+            [
+                60
+            ],
+            [
+                63
+            ]
+        ],
+        "SchemeId": 3,
+        "NameRule": 0,
+        "SetDes": "镜头移动",
+        "KeyboardDes": 0,
+        "FunctionId": 0,
+        "Sort": 159,
+        "HideInSettingView": 2,
+        "CanChange": [],
+        "Quickdescription": 0,
+        "ShowList": 0,
+        "GoBack": "0"
+    },
+    "160": {
+        "Key": 160,
+        "Id": 160,
+        "ActionIds": [
+            [
+                58
+            ]
+        ],
+        "SchemeId": 3,
+        "NameRule": 0,
+        "SetDes": "镜头平移",
+        "KeyboardDes": 0,
+        "FunctionId": 0,
+        "Sort": 160,
+        "HideInSettingView": 2,
+        "CanChange": [],
+        "Quickdescription": 0,
+        "ShowList": 0,
+        "GoBack": "0"
+    },
+    "161": {
+        "Key": 161,
+        "Id": 161,
+        "ActionIds": [
+            [
+                57
+            ]
+        ],
+        "SchemeId": 3,
+        "NameRule": 0,
+        "SetDes": "隐藏界面",
+        "KeyboardDes": 0,
+        "FunctionId": 0,
+        "Sort": 161,
+        "HideInSettingView": 2,
+        "CanChange": [],
+        "Quickdescription": 0,
+        "ShowList": 0,
+        "GoBack": "0"
+    },
+    "162": {
+        "Key": 162,
+        "Id": 162,
+        "ActionIds": [
+            [
+                56
+            ]
+        ],
+        "SchemeId": 3,
+        "NameRule": 0,
+        "SetDes": "拍摄",
+        "KeyboardDes": 0,
+        "FunctionId": 0,
+        "Sort": 162,
+        "HideInSettingView": 2,
+        "CanChange": [],
+        "Quickdescription": 0,
+        "ShowList": 0,
+        "GoBack": "0"
+    },
+    "163": {
+        "Key": 163,
+        "Id": 163,
+        "ActionIds": [
+            [
+                96
+            ]
+        ],
+        "SchemeId": 3,
+        "NameRule": 0,
+        "SetDes": "左弹窗隐藏",
+        "KeyboardDes": 0,
+        "FunctionId": 0,
+        "Sort": 163,
+        "HideInSettingView": 2,
+        "CanChange": [],
+        "Quickdescription": 0,
+        "ShowList": 0,
+        "GoBack": "0"
+    },
+    "164": {
+        "Key": 164,
+        "Id": 164,
+        "ActionIds": [
+            [
+                97
+            ]
+        ],
+        "SchemeId": 3,
+        "NameRule": 0,
+        "SetDes": "右弹窗隐藏",
+        "KeyboardDes": 0,
+        "FunctionId": 0,
+        "Sort": 164,
+        "HideInSettingView": 2,
+        "CanChange": [],
+        "Quickdescription": 0,
+        "ShowList": 0,
+        "GoBack": "0"
+    },
+    "165": {
+        "Key": 165,
+        "Id": 165,
+        "ActionIds": [
+            [
+                114
+            ]
+        ],
+        "SchemeId": 1,
+        "NameRule": 0,
+        "SetDes": "聊天频道右切",
+        "KeyboardDes": 1,
+        "FunctionId": 0,
+        "Sort": 165,
+        "HideInSettingView": 2,
+        "CanChange": [],
+        "Quickdescription": 2,
         "ShowList": 0,
         "GoBack": "0"
     },

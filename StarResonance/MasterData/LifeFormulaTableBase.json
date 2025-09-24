@@ -1379,7 +1379,12 @@
         "Des": "学会制作充满诱惑的饵料",
         "Icon": "ui/atlas/life_formula/life_cook/lifeformula_fishbait_dishes_01",
         "NeedPoint": 1,
-        "UnlockCondition": [],
+        "UnlockCondition": [
+            [
+                45,
+                9999
+            ]
+        ],
         "Attribute": [],
         "NextNodes": []
     },
