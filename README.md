@@ -26,3 +26,4 @@
 |    BlackBeacon    |    黑色信标    |            国服 Lua            |
 |   ErrorGameReset   |  404错误游戏  |            台服 Json            |
 |    ReverseBlue    |     反向蓝     |            国服 Json            |
+|    GoddessOrder    |    女神秘令    |           国际服 Json           |
