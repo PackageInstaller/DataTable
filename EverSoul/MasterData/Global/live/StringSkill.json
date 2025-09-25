@@ -11970,10 +11970,10 @@
     },
     {
       "no": 27189,
-      "kr": "피해를 입은 만큼 공격력 및 방어력 증가, 디버프에 저항력 보유",
-      "en": "ATK and DEF increase based on damage received, resistant to debuffs",
+      "kr": "피해를 입은 만큼 공격력 및 방어력 증가",
+      "en": "ATK and DEF increase based on damage received",
       "ja": "",
-      "zh_tw": "受到多少傷害就增加攻擊力與防禦力，對減益效果持有抵抗力",
+      "zh_tw": "受到多少傷害就增加攻擊力與防禦力",
       "zh_cn": ""
     },
     {
@@ -16827,7 +16827,7 @@
     {
       "no": 27796,
       "kr": "방어력 <value>%, 페트라(각혼)의 보호를 받는 상태가 되었다.",
-      "en": "DEF <value>% under Petra (Awakened Soul)'s protection.",
+      "en": "DEF +<value>% under Petra (Awakened Soul)'s protection.",
       "ja": "work in progress",
       "zh_tw": "防禦力<value>%，處於受到佩特拉（覺魂）保護的狀態",
       "zh_cn": ""
@@ -17011,73 +17011,297 @@
     {
       "no": 27819,
       "kr": "치유 억제",
-      "en": "Healing inhibition",
+      "en": "Healing Suppression",
       "ja": "work in progress",
-      "zh_tw": "癒合抑制",
+      "zh_tw": "治癒抑制",
       "zh_cn": ""
     },
     {
       "no": 27820,
       "kr": "모든 회복 효과가 <value>% 감소한다.",
-      "en": "All recovery effects are reduced by <value>%.",
+      "en": "All Recovery effects are decreased by <value>%.",
       "ja": "work in progress",
-      "zh_tw": "所有恢復效果均減少<value>%。",
+      "zh_tw": "所有恢復效果減少<value>%",
       "zh_cn": ""
     },
     {
       "no": 27821,
       "kr": "저주의 흉터",
-      "en": "Scar of the Curse",
+      "en": "Scar of Curse",
       "ja": "work in progress",
-      "zh_tw": "詛咒之痕",
+      "zh_tw": "詛咒的傷痕",
       "zh_cn": ""
     },
     {
       "no": 27822,
       "kr": "받는 최종 피해가 <value>% 증가한다.",
-      "en": "Final damage taken increases by <value>%.",
+      "en": "Total damage received is increased by <value>%.",
       "ja": "work in progress",
-      "zh_tw": "最終受到的傷害增加<value>%。",
+      "zh_tw": "所受最終傷害增加<value>%",
       "zh_cn": ""
     },
     {
       "no": 27823,
-      "kr": "work in progress",
-      "en": "work in progress",
+      "kr": "솟구치는 증오",
+      "en": "Soaring Hatred",
       "ja": "work in progress",
-      "zh_tw": "work in progress",
+      "zh_tw": "湧現的憎恨",
       "zh_cn": ""
     },
     {
       "no": 27824,
-      "kr": "work in progress",
-      "en": "work in progress",
+      "kr": "2초마다 <증오> 중첩을 받는 상태가 되었다!",
+      "en": "Gaining a stack of \"Hatred\" every 2 sec!",
       "ja": "work in progress",
-      "zh_tw": "work in progress",
+      "zh_tw": "每2秒獲得一次＜憎恨＞疊加狀態！",
       "zh_cn": ""
     },
     {
       "no": 27825,
-      "kr": "work in progress",
-      "en": "work in progress",
+      "kr": "증오",
+      "en": "Hatred",
       "ja": "work in progress",
-      "zh_tw": "work in progress",
+      "zh_tw": "憎恨",
       "zh_cn": ""
     },
     {
       "no": 27826,
-      "kr": "work in progress",
-      "en": "work in progress",
+      "kr": "벨라나에게 추가 피해를 받는 상태가 되었다!",
+      "en": "Receiving additional damage from Velanna!",
       "ja": "work in progress",
-      "zh_tw": "work in progress",
+      "zh_tw": "處於受到貝拉納額外傷害的狀態！",
       "zh_cn": ""
     },
     {
       "no": 27827,
-      "kr": "work in progress",
-      "en": "work in progress",
+      "kr": "높새바람",
+      "en": "Snow Eater",
       "ja": "work in progress",
-      "zh_tw": "work in progress",
+      "zh_tw": "焚風",
+      "zh_cn": ""
+    },
+    {
+      "no": 27828,
+      "kr": "자신 주변 범위에 피해를 입히는 상태가 되었다!",
+      "en": "Dealing damage to the surrounding area!",
+      "ja": "",
+      "zh_tw": "處於對自身周遭範圍造成傷害的狀態！",
+      "zh_cn": ""
+    },
+    {
+      "no": 27829,
+      "kr": "하늬바람",
+      "en": "Westerly",
+      "ja": "",
+      "zh_tw": "西風",
+      "zh_cn": ""
+    },
+    {
+      "no": 27830,
+      "kr": "해당 효과가 있는 동안 기본 공격이 대상의 마나를 감소시킨다!",
+      "en": "Basic attack decreases the target's Mana while this is active!",
+      "ja": "",
+      "zh_tw": "該效果持續期間，基本攻擊會減少目標的魔力！",
+      "zh_cn": ""
+    },
+    {
+      "no": 27831,
+      "kr": "불굴의 의지",
+      "en": "Indomitable Will",
+      "ja": "",
+      "zh_tw": "不屈不撓的意志",
+      "zh_cn": ""
+    },
+    {
+      "no": 27832,
+      "kr": "5초 뒤 체력을 20% 회복하며 전투에 복귀한다.",
+      "en": "Returns to battle in 5 sec with 20% HP.",
+      "ja": "",
+      "zh_tw": "5秒後恢復20%體力並返回戰鬥",
+      "zh_cn": ""
+    },
+    {
+      "no": 27833,
+      "kr": "절대 방어 작전",
+      "en": "Operation Impenetrable Defense",
+      "ja": "",
+      "zh_tw": "絕對防禦作戰",
+      "zh_cn": ""
+    },
+    {
+      "no": 27834,
+      "kr": "5초 마다 체력을 10% 회복한다.",
+      "en": "Recovers 10% HP every 5 sec.",
+      "ja": "",
+      "zh_tw": "每5秒恢復10%體力",
+      "zh_cn": ""
+    },
+    {
+      "no": 27835,
+      "kr": "회복량 감소",
+      "en": "Recovery Decrease",
+      "ja": "",
+      "zh_tw": "恢復量減少",
+      "zh_cn": ""
+    },
+    {
+      "no": 27836,
+      "kr": "중첩 당 회복량 <value>%",
+      "en": "Recovery <value>% per stack",
+      "ja": "",
+      "zh_tw": "每疊加恢復量<value>%",
+      "zh_cn": ""
+    },
+    {
+      "no": 27837,
+      "kr": "심판 집행",
+      "en": "Judgment Execution",
+      "ja": "",
+      "zh_tw": "審判執行",
+      "zh_cn": ""
+    },
+    {
+      "no": 27838,
+      "kr": "카넬리안의 일반 공격이 강화된다.",
+      "en": "Judgment Execution description",
+      "ja": "",
+      "zh_tw": "審判執行說明",
+      "zh_cn": ""
+    },
+    {
+      "no": 27839,
+      "kr": "단죄",
+      "en": "Retribution",
+      "ja": "",
+      "zh_tw": "定罪",
+      "zh_cn": ""
+    },
+    {
+      "no": 27840,
+      "kr": "5중첩 시 카넬리안의 단죄의 칼날 대상이 된다.",
+      "en": "Retribution description",
+      "ja": "",
+      "zh_tw": "定罪說明",
+      "zh_cn": ""
+    },
+    {
+      "no": 27841,
+      "kr": "집행",
+      "en": "Executioner",
+      "ja": "",
+      "zh_tw": "執行者",
+      "zh_cn": ""
+    },
+    {
+      "no": 27842,
+      "kr": "가속 +4%, 받는 피해 -2%, 마나 회복량 +4%",
+      "en": "Executioner description",
+      "ja": "",
+      "zh_tw": "執行者說明",
+      "zh_cn": ""
+    },
+    {
+      "no": 27843,
+      "kr": "집행자의 권능",
+      "en": "Executioner's Authority",
+      "ja": "",
+      "zh_tw": "執行者的權能",
+      "zh_cn": ""
+    },
+    {
+      "no": 27844,
+      "kr": "가속 +40%, 받는 피해 -20%, 마나 회복량 -40%",
+      "en": "Executioner's Authority Level 1&2 description",
+      "ja": "",
+      "zh_tw": "執行者的權能說明第1、2等級",
+      "zh_cn": ""
+    },
+    {
+      "no": 27845,
+      "kr": "가속 +40%, 가하는 피해 +15%, 받는 피해 -20%, 마나 회복량 -40%",
+      "en": "Executioner's Authority Level 3 description",
+      "ja": "",
+      "zh_tw": "執行者的權能說明第3等級",
+      "zh_cn": ""
+    },
+    {
+      "no": 27846,
+      "kr": "폭풍의 시",
+      "en": "Storm Stanzas",
+      "ja": "",
+      "zh_tw": "暴風之詩",
+      "zh_cn": ""
+    },
+    {
+      "no": 27847,
+      "kr": "공격력이 50%, 가속이 30% 증가한다.",
+      "en": "Increases ATK by 50% and Speed by 30%.",
+      "ja": "",
+      "zh_tw": "攻擊力增加50%、加速增加30%",
+      "zh_cn": ""
+    },
+    {
+      "no": 27848,
+      "kr": "선봉 대장",
+      "en": "Spearhead",
+      "ja": "",
+      "zh_tw": "先發隊長",
+      "zh_cn": ""
+    },
+    {
+      "no": 27849,
+      "kr": "최대 체력이 50% 증가하고 받는 피해가 20% 감소한다.",
+      "en": "Increases max HP by 50% and decreases total damage received by 20%.",
+      "ja": "",
+      "zh_tw": "體力上限增加50%、所受傷害減少20%",
+      "zh_cn": ""
+    },
+    {
+      "no": 27850,
+      "kr": "권능 부여",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 27851,
+      "kr": "가속이 +<value>, 마나 회복량 -<value>",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 27852,
+      "kr": "",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 27853,
+      "kr": "",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 27854,
+      "kr": "",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 27855,
+      "kr": "",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
       "zh_cn": ""
     },
     {
@@ -19942,6 +20166,14 @@
       "en": "Lizelotte's Speed +100.",
       "ja": "リゼロッテの加速が100増加する。",
       "zh_tw": "莉澤洛特加速增加100",
+      "zh_cn": ""
+    },
+    {
+      "no": 56023,
+      "kr": "5초 마다 아군이 자신의 최대 체력 10% 만큼 회복하지만, 아군이 전투 불능 상태가 될 때 마다 아군의 모든 회복 효과가 20% 감소한다.",
+      "en": "Allies recover 10% of max HP every 5 sec, but every ally incapacitation decreases all allies' Recovery by 20%.",
+      "ja": "",
+      "zh_tw": "每5秒友軍恢復自身體力上限的10%，但每當友軍進入無法戰鬥狀態時，友軍的所有恢復效果減少20%",
       "zh_cn": ""
     },
     {
@@ -25243,7 +25475,7 @@
     {
       "no": 234162,
       "kr": "페트라(각혼)이 전장에 있는 동안 전투 시작 시점에 가장 공격력이 높은 적의 가하는 피해가 <416602.VALUE> 감소하는 <color=#FFFFFF><약화의 증표></color>를 영구적으로 부여한다.",
-      "en": "Petra (Awakened Soul) begins the battle by inflicting the enemy with the highest ATK with <color=#FFFFFF>\"Token of Debilitation\"</color> which permanently decreases damage dealt by <416602.VALUE> as long as Petra (Awakened Soul) is on the battlefield.",
+      "en": "Petra (Awakened Soul) begins the battle by inflicting the enemy with the highest ATK with <color=#FFFFFF>\"Token of Debilitation,\"</color> which permanently decreases damage dealt by <416602.VALUE> as long as Petra (Awakened Soul) is on the battlefield.",
       "ja": "work in progress",
       "zh_tw": "佩特拉（覺魂）在戰場上的期間，永久賦予戰鬥開始時攻擊力最高的敵人<color=#FFFFFF>＜弱化的信物＞</color>，使其造成傷害減少<416602.VALUE>",
       "zh_cn": ""
@@ -25267,9 +25499,9 @@
     {
       "no": 234165,
       "kr": "감소하는 가하는 피해가 <416642.VALUE>로 변경된다.\r\n<color=#FFFFFF><약화의 증표></color>를 보유한 대상이 전투 불능 상태가 될 경우 모든 적에게 <416649.DURATION>초 동안 <color=#FFFFFF><침묵></color> 상태를 부여한다.",
-      "en": "Damage dealt decrease changes to <416642.VALUE>.\r\nIf the target with <color=#FFFFFF>\"Token of Debilitation\"</color> becomes incapacitated, inflicts <color=#FFFFFF>\"Silence\"</color> on all enemies for <416649.DURATION> sec.",
+      "en": "Damage dealt decrease changes to <416642.VALUE>.\r\r\nIf the target with <color=#FFFFFF>\"Token of Debilitation\"</color> becomes incapacitated, inflicts <color=#FFFFFF>\"Silence\"</color> on all enemies for <416649.DURATION> sec.",
       "ja": "work in progress",
-      "zh_tw": "變更為造成傷害減少<416642.VALUE>。\r\n當持有<color=#FFFFFF>＜弱化的信物＞</color>目標進入無法戰鬥狀態，則賦予所有敵人<416649.DURATION>秒的<color=#FFFFFF>＜沉默＞</color>狀態",
+      "zh_tw": "變更為造成傷害減少<416642.VALUE>。\r\r\n當持有<color=#FFFFFF>＜弱化的信物＞</color>目標進入無法戰鬥狀態，則賦予所有敵人<416649.DURATION>秒的<color=#FFFFFF>＜沉默＞</color>狀態",
       "zh_cn": ""
     },
     {
@@ -25291,9 +25523,9 @@
     {
       "no": 234168,
       "kr": "감소하는 가하는 피해가 <416672.VALUE>로 변경된다.\r\n페트라(각혼)이 전장에 있는 동안 <color=#FFFFFF><약화의 증표></color>를 보유한 대상의 가속이 <416676.VALUE> 감소하는 효과가 추가된다.",
-      "en": "Damage dealt decrease changes to <416672.VALUE>.\r\nAs long as Petra (Awakened Soul) is on the battlefield, <color=#FFFFFF>\"Token of Debilitation\"</color> also decreases the target's Speed by <416676.VALUE>.",
+      "en": "Damage dealt decrease changes to <416672.VALUE>.\r\r\nAs long as Petra (Awakened Soul) is on the battlefield, <color=#FFFFFF>\"Token of Debilitation\"</color> also decreases the target's Speed by <416676.VALUE>.",
       "ja": "work in progress",
-      "zh_tw": "變更為造成傷害減少<416672.VALUE>。\r\n新增佩特拉（覺魂）在戰場上的期間，持有<color=#FFFFFF>＜弱化的信物＞</color>目標加速減少<416676.VALUE>的效果",
+      "zh_tw": "變更為造成傷害減少<416672.VALUE>。\r\r\n新增佩特拉（覺魂）在戰場上的期間，持有<color=#FFFFFF>＜弱化的信物＞</color>目標加速減少<416676.VALUE>的效果",
       "zh_cn": ""
     },
     {
@@ -25638,6 +25870,70 @@
       "en": "This sword was a gift from the god of the heavens to his son as he set out to govern the world of humans.\r\nWith this sword in hand, the hero is said to have led his people with wisdom.",
       "ja": "",
       "zh_tw": "天神送給前往統治人間的兒子的劍。\r\n據說收到這把劍的英雄巧妙治理了人間。",
+      "zh_cn": ""
+    },
+    {
+      "no": 235061,
+      "kr": "심판의 칼날",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 235062,
+      "kr": "카넬리안의 기본 공격이 공격력 <506610.VALUE>의 추가 피해를 입힌다.\r\n대상이 <color=#FFFFFF><저주></color> 상태인 경우 공격력 <506612.VALUE>의 추가 피해를 입히고 <506613.DURATION>초 동안 대상의 방어력을 <506613.VALUE> 감소시킨다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 235063,
+      "kr": "기본 공격의 추가 피해가 <506620.VALUE>, <color=#FFFFFF><저주></color> 상태인 경우 추가 피해가 <506622.VALUE>로 변경된다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 235064,
+      "kr": "기본 공격의 추가 피해가 <506630.VALUE>, <color=#FFFFFF><저주></color> 상태인 경우 추가 피해가 <506632.VALUE>로 변경된다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 235065,
+      "kr": "기본 공격의 추가 피해가 <506640.VALUE>, <color=#FFFFFF><저주></color> 상태인 경우 추가 피해가 <506642.VALUE>로 변경된다.\r\n기본 공격 시 부여하는 <color=#FFFFFF><집행></color> 중첩이 <color=#FFFFFF>2</color>중첩으로 변경된다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 235066,
+      "kr": "기본 공격의 추가 피해가 <506650.VALUE>, <color=#FFFFFF><저주></color> 상태인 경우 추가 피해가 <506652.VALUE>로 변경된다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 235067,
+      "kr": "기본 공격의 추가 피해가 <506660.VALUE>, <color=#FFFFFF><저주></color> 상태인 경우 추가 피해가 <506662.VALUE>로 변경된다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
+      "no": 235068,
+      "kr": "기본 공격의 추가 피해가 <506670.VALUE>, <color=#FFFFFF><저주></color> 상태인 경우 추가 피해가 <506672.VALUE>로 변경된다.\r\n<color=#FFFFFF><집행자의 권능></color> 상태에서 반드시 치명타가 발생하는 기본 공격이 <color=#FFFFFF>2</color>번째 사용하는 기본 공격으로 변경된다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
       "zh_cn": ""
     },
     {
@@ -30121,6 +30417,54 @@
       "zh_cn": ""
     },
     {
+      "no": 345061,
+      "kr": "처단",
+      "en": "Reckoning",
+      "ja": "",
+      "zh_tw": "處決",
+      "zh_cn": ""
+    },
+    {
+      "no": 345062,
+      "kr": "단죄의 칼날",
+      "en": "Blades of Retribution",
+      "ja": "",
+      "zh_tw": "定罪之刃",
+      "zh_cn": ""
+    },
+    {
+      "no": 345063,
+      "kr": "심판의 낙인",
+      "en": "Searing Judgment",
+      "ja": "",
+      "zh_tw": "審判的烙印",
+      "zh_cn": ""
+    },
+    {
+      "no": 345064,
+      "kr": "집행자의 권능",
+      "en": "Executioner's Authority",
+      "ja": "",
+      "zh_tw": "執行者的權能",
+      "zh_cn": ""
+    },
+    {
+      "no": 345065,
+      "kr": "판결 집행",
+      "en": "Sentence Execution",
+      "ja": "",
+      "zh_tw": "判決執行",
+      "zh_cn": ""
+    },
+    {
+      "no": 345069,
+      "kr": "권능 부여",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
+      "zh_cn": ""
+    },
+    {
       "no": 346011,
       "kr": "심판의 무게",
       "en": "Weight of Judgment",
@@ -30777,6 +31121,38 @@
       "zh_cn": ""
     },
     {
+      "no": 348191,
+      "kr": "거슬려",
+      "en": "So Annoying",
+      "ja": "",
+      "zh_tw": "真礙眼",
+      "zh_cn": ""
+    },
+    {
+      "no": 348192,
+      "kr": "이리 오거라",
+      "en": "Come Here",
+      "ja": "",
+      "zh_tw": "給我過來",
+      "zh_cn": ""
+    },
+    {
+      "no": 348193,
+      "kr": "눈을 뜨거라",
+      "en": "Open Your Eyes",
+      "ja": "",
+      "zh_tw": "睜開眼睛",
+      "zh_cn": ""
+    },
+    {
+      "no": 348195,
+      "kr": "인간의 왕",
+      "en": "Ruler of Humans",
+      "ja": "",
+      "zh_tw": "人類主宰者",
+      "zh_cn": ""
+    },
+    {
       "no": 348201,
       "kr": "빙글빙글",
       "en": "Round and Round",
@@ -30878,6 +31254,158 @@
       "en": "Thorn Release",
       "ja": "棘の発散",
       "zh_tw": "發散尖刺",
+      "zh_cn": ""
+    },
+    {
+      "no": 348281,
+      "kr": "광란의 춤",
+      "en": "Wild Dance",
+      "ja": "",
+      "zh_tw": "狂躁之舞",
+      "zh_cn": ""
+    },
+    {
+      "no": 348282,
+      "kr": "솟구치는 증오",
+      "en": "Soaring Hatred",
+      "ja": "",
+      "zh_tw": "湧現的憎恨",
+      "zh_cn": ""
+    },
+    {
+      "no": 348283,
+      "kr": "회전하는 광기",
+      "en": "Swirling Frenzy",
+      "ja": "",
+      "zh_tw": "迴轉的狂氣",
+      "zh_cn": ""
+    },
+    {
+      "no": 348284,
+      "kr": "들끓는 집착",
+      "en": "Seething Obsession",
+      "ja": "",
+      "zh_tw": "狂躁執著",
+      "zh_cn": ""
+    },
+    {
+      "no": 348291,
+      "kr": "저미는 바람의 칼날",
+      "en": "Cutting Wind Blades",
+      "ja": "",
+      "zh_tw": "風切之刃",
+      "zh_cn": ""
+    },
+    {
+      "no": 348292,
+      "kr": "높새바람",
+      "en": "Snow Eater",
+      "ja": "",
+      "zh_tw": "焚風",
+      "zh_cn": ""
+    },
+    {
+      "no": 348293,
+      "kr": "하늬바람",
+      "en": "Westerly",
+      "ja": "",
+      "zh_tw": "西風",
+      "zh_cn": ""
+    },
+    {
+      "no": 348294,
+      "kr": "끝없는 마력",
+      "en": "Endless Mana",
+      "ja": "",
+      "zh_tw": "無盡魔力",
+      "zh_cn": ""
+    },
+    {
+      "no": 348301,
+      "kr": "집중 포화",
+      "en": "Concentrated Barrage",
+      "ja": "",
+      "zh_tw": "集中砲火",
+      "zh_cn": ""
+    },
+    {
+      "no": 348302,
+      "kr": "곡사 포격",
+      "en": "Indirect Fire",
+      "ja": "",
+      "zh_tw": "榴彈砲擊",
+      "zh_cn": ""
+    },
+    {
+      "no": 348303,
+      "kr": "지원 영역 활성",
+      "en": "Support Zone Activation",
+      "ja": "",
+      "zh_tw": "啟用支援領域",
+      "zh_cn": ""
+    },
+    {
+      "no": 348311,
+      "kr": "징벌",
+      "en": "Punishment",
+      "ja": "",
+      "zh_tw": "懲罰",
+      "zh_cn": ""
+    },
+    {
+      "no": 348312,
+      "kr": "이계의 단두대",
+      "en": "Guillotine From Another Realm",
+      "ja": "",
+      "zh_tw": "異世界斷頭台",
+      "zh_cn": ""
+    },
+    {
+      "no": 348313,
+      "kr": "파멸의 톱니",
+      "en": "Cogs of Doom",
+      "ja": "",
+      "zh_tw": "毀滅齒輪",
+      "zh_cn": ""
+    },
+    {
+      "no": 348314,
+      "kr": "종언의 검극",
+      "en": "Blade Tip of the Apocalypse",
+      "ja": "",
+      "zh_tw": "終焉劍戟",
+      "zh_cn": ""
+    },
+    {
+      "no": 348321,
+      "kr": "생사의 순환",
+      "en": "Cycle of Life and Death",
+      "ja": "",
+      "zh_tw": "生死輪迴",
+      "zh_cn": ""
+    },
+    {
+      "no": 348322,
+      "kr": "죽음의 룬",
+      "en": "Rune of Death",
+      "ja": "",
+      "zh_tw": "死亡符文",
+      "zh_cn": ""
+    },
+    {
+      "no": 348323,
+      "kr": "생명의 룬",
+      "en": "Rune of Life",
+      "ja": "",
+      "zh_tw": "生命符文",
+      "zh_cn": ""
+    },
+    {
+      "no": 348324,
+      "kr": "야성의 힘",
+      "en": "Feral Power",
+      "ja": "",
+      "zh_tw": "野性之力",
       "zh_cn": ""
     },
     {
@@ -31006,6 +31534,38 @@
       "en": "Sea Bathing",
       "ja": "海水浴",
       "zh_tw": "海水浴",
+      "zh_cn": ""
+    },
+    {
+      "no": 348471,
+      "kr": "뱀을 막는 방패",
+      "en": "Anti-Serpent Shield",
+      "ja": "",
+      "zh_tw": "擋蛇盾牌",
+      "zh_cn": ""
+    },
+    {
+      "no": 348481,
+      "kr": "보호의 깃발",
+      "en": "Banner of Protection",
+      "ja": "",
+      "zh_tw": "保護旗幟",
+      "zh_cn": ""
+    },
+    {
+      "no": 348496,
+      "kr": "지축을 뒤흔드는 주먹",
+      "en": "Ground-Shaking Fist",
+      "ja": "",
+      "zh_tw": "驚天動地之拳",
+      "zh_cn": ""
+    },
+    {
+      "no": 348506,
+      "kr": "성검 발산",
+      "en": "Sacred Sword Surge",
+      "ja": "",
+      "zh_tw": "發射聖劍",
       "zh_cn": ""
     },
     {
@@ -31654,6 +32214,22 @@
       "en": "Scar of Curse",
       "ja": "work in progress",
       "zh_tw": "詛咒的傷痕",
+      "zh_cn": ""
+    },
+    {
+      "no": 349092,
+      "kr": "폭풍의 시",
+      "en": "Storm Stanzas",
+      "ja": "",
+      "zh_tw": "暴風之詩",
+      "zh_cn": ""
+    },
+    {
+      "no": 349093,
+      "kr": "선봉 대장",
+      "en": "Spearhead",
+      "ja": "",
+      "zh_tw": "先發隊長",
       "zh_cn": ""
     },
     {
@@ -35755,9 +36331,9 @@
     {
       "no": 354162,
       "kr": "가장 가까운 적을 향로로 내려쳐 공격력 <416210.VALUE>의 피해를 입히고 <416212.DURATION>초 동안 2초 마다 공격력 <416212.VALUE>의 피해를 입는 <color=#FFFFFF><저주></color> 상태로 만든다.\r\n만약 대상이 <color=#FFFFFF><저주></color> 상태일 경우 공격력 <416214.VALUE>의 저주 속성 피해를 입히는 칼을 떨어뜨리고 가속을 <416215.DURATION>초 동안 <416215.VALUE> 감소 시킨다.",
-      "en": "Slams the incense burner down at the nearest enemy, dealing damage equal to <416210.VALUE> of ATK and inflicting <color=#FFFFFF>\"Curse\"</color> on them, which deals DoT equal to <416212.VALUE> of ATK every 2 sec for <416212.DURATION> sec.\r\nIf the target is already inflicted with <color=#FFFFFF>\"Curse\"</color> she drops a blade that deals Curse-type damage equal to <416214.VALUE> of ATK and decreases their Speed by <416215.VALUE> for <416215.DURATION> sec.",
+      "en": "Slams the incense burner down at the nearest enemy, dealing damage equal to <416210.VALUE> of ATK and inflicting <color=#FFFFFF>\"Curse\"</color> on them, which deals DoT equal to <416212.VALUE> of ATK every 2 sec for <416212.DURATION> sec.\r\r\nIf the target is already inflicted with <color=#FFFFFF>\"Curse,\"</color> she drops a blade that deals Curse-type damage equal to <416214.VALUE> of ATK and decreases their Speed by <416215.VALUE> for <416215.DURATION> sec.",
       "ja": "work in progress",
-      "zh_tw": "將香爐砸向最接近的敵人，造成攻擊力<416210.VALUE>的傷害，並使其在<416212.DURATION>秒內處於<color=#FFFFFF>＜詛咒＞</color>狀態，每2秒受到攻擊力<416212.VALUE>的傷害。\r\n如果目標處於<color=#FFFFFF>＜詛咒＞</color>狀態，則掉落一把造成攻擊力<416214.VALUE>詛咒屬性傷害的刀，並在<416215.DURATION>秒內使加速減少<416215.VALUE>",
+      "zh_tw": "將香爐砸向最接近的敵人，造成攻擊力<416210.VALUE>的傷害，並使其在<416212.DURATION>秒內處於<color=#FFFFFF>＜詛咒＞</color>狀態，每2秒受到攻擊力<416212.VALUE>的傷害。\r\r\n如果目標處於<color=#FFFFFF>＜詛咒＞</color>狀態，則掉落一把造成攻擊力<416214.VALUE>詛咒屬性傷害的刀，並在<416215.DURATION>秒內使加速減少<416215.VALUE>",
       "zh_cn": ""
     },
     {
@@ -35771,25 +36347,25 @@
     {
       "no": 354164,
       "kr": "페트라(각혼)이 전장에 있는 동안 전투 시작 시점에 가장 공격력이 높은 아군 정령의 방어력을 영구적으로 <416413.VALUE> 증가 시키는 <color=#FFFFFF><보호의 증표></color>를 부여한다.\r\n\r\n<color=#FFFFFF><보호의 증표></color>를 보유한 아군의 체력이 <color=#FFFFFF>50%</color> 이하로 내려갈 경우, 1회에 한해 해당 아군에게 <416417.DURATION>초 동안 유지되는 <color=#FFFFFF><무적></color> 효과를 부여하고 <color=#FFFFFF><보호의 증표></color>를 제거한다.\r\n\r\n이와 동시에 페트라(각혼)이 해당 아군의 위치로 낙하하여 대상 주변 3m내 모든 아군에게 페트라(각혼)의 최대 체력 <416610.VALUE>만큼 피해를 흡수하는 영구적인 보호막을 부여하고, 범위 내 적에게는 공격력 <416611.VALUE>의 저주 피해를 입히고 <416612.DURATION>초 동안 <color=#FFFFFF><침묵></color> 상태를 부여한다.",
-      "en": "Petra (Awakened Soul) begins the battle by granting the ally with the highest ATK <color=#FFFFFF>\"Token of Protection\"</color> which permanently increases DEF by <416413.VALUE> as long as Petra (Awakened Soul) is on the battlefield.\r\n\r\nIf the HP of the ally with <color=#FFFFFF>\"Token of Protection\"</color> falls to <color=#FFFFFF>50%</color> or below, Petra (Awakened Soul) grants this ally <color=#FFFFFF>\"Invulnerable\"</color> for <416417.DURATION> sec and cancels <color=#FFFFFF>\"Token of Protection\"</color>. This effect only triggers once in a battle.\r\n\r\nAt the same time, Petra (Awakened Soul) drops to the position of this ally, granting a permanent shield that absorbs damage equal to <416610.VALUE> of her max HP to all allies within 3m while also dealing Curse damage equal to <416611.VALUE> of ATK to enemies within the same radius and inflicting <color=#FFFFFF>\"Silence\"</color> on them for <416612.DURATION> sec.",
+      "en": "Petra (Awakened Soul) begins the battle by granting the ally with the highest ATK <color=#FFFFFF>\"Token of Protection,\"</color> which permanently increases DEF by <416413.VALUE> as long as Petra (Awakened Soul) is on the battlefield.\r\r\n\r\r\nIf the HP of the ally with <color=#FFFFFF>\"Token of Protection\"</color> falls to <color=#FFFFFF>50%</color> or below, Petra (Awakened Soul) grants this ally <color=#FFFFFF>\"Invulnerable\"</color> for <416417.DURATION> sec and cancels <color=#FFFFFF>\"Token of Protection\"</color>. This effect only triggers once in a battle.\r\r\n\r\r\nAt the same time, Petra (Awakened Soul) drops to the position of this ally, granting a permanent shield that absorbs damage equal to <416610.VALUE> of her max HP to all allies within 3m while also dealing Curse damage equal to <416611.VALUE> of ATK to enemies within the same radius and inflicting <color=#FFFFFF>\"Silence\"</color> on them for <416612.DURATION> sec.",
       "ja": "work in progress",
-      "zh_tw": "佩特拉（覺魂）在戰場上的期間，賦予戰鬥開始時攻擊力最高的友軍精靈<color=#FFFFFF>＜保護的信物＞</color>，使防禦力永久增加<416413.VALUE>。\r\n\r\n當持有<color=#FFFFFF>＜保護的信物＞</color>的友軍體力降至<color=#FFFFFF>50%</color>以下時，賦予該友軍持續<416417.DURATION>秒的<color=#FFFFFF>＜無敵＞</color>效果，僅限1次，並移除<color=#FFFFFF>＜保護的信物＞</color>。\r\n\r\n同時，佩特拉（覺魂）會降落到該友軍的位置，賦予目標周遭3m內的所有友軍永久防護罩，吸收相當佩特拉（覺魂）體力上限<416610.VALUE>的傷害，並對範圍內敵人造成攻擊力<416611.VALUE>的詛咒傷害，賦予<416612.DURATION>秒的<color=#FFFFFF>＜沉默＞</color>狀態",
+      "zh_tw": "佩特拉（覺魂）在戰場上的期間，賦予戰鬥開始時攻擊力最高的友軍精靈<color=#FFFFFF>＜保護的信物＞</color>，使防禦力永久增加<416413.VALUE>。\r\r\n\r\r\n當持有<color=#FFFFFF>＜保護的信物＞</color>的友軍體力降至<color=#FFFFFF>50%</color>以下時，賦予該友軍持續<416417.DURATION>秒的<color=#FFFFFF>＜無敵＞</color>效果，僅限1次，並移除<color=#FFFFFF>＜保護的信物＞</color>。\r\r\n\r\r\n同時，佩特拉（覺魂）會降落到該友軍的位置，賦予目標周遭3m內的所有友軍永久防護罩，吸收相當佩特拉（覺魂）體力上限<416610.VALUE>的傷害，並對範圍內敵人造成攻擊力<416611.VALUE>的詛咒傷害，賦予<416612.DURATION>秒的<color=#FFFFFF>＜沉默＞</color>狀態",
       "zh_cn": ""
     },
     {
       "no": 354165,
       "kr": "망혼검을 소환하여 가장 공격력이 높은 적에게 공격력 <416510.VALUE>의 피해를 입히고 대상에게 <416514.DURATION>초 마다 마나가 <416515.VALUE> 감소하는 <color=#FFFFFF><망혼></color> 효과를 부여한다.\r\n이후 대상 주변 2.5m 범위에 <416511.DURATION>초 동안 유지되는 망혼 지대를 생성하여 2초마다 해당 위치에 있는 적에게 공격력 <416512.VALUE>의 저주 속성 피해를 입히고, <416517.DURATION>초 동안 공격력과 방어력이 <416517.VALUE> 감소하는 효과를 부여한다.",
-      "en": "Summons a Wretched Soul's Blade, dealing damage equal to <416510.VALUE> of ATK to the enemy with the highest ATK and inflicting them with <color=#FFFFFF>\"Wretched Soul\"</color>, which decreases their Mana by <416515.VALUE> every <416514.DURATION> sec.\r\nThen, she creates a Wretched Soul Zone with a 3.5m radius around the target for <416511.DURATION> sec, which deals Curse-type DoT equal to <416512.VALUE> of ATK every 2 sec to all enemies within it and decreases their ATK and DEF by <416517.VALUE> for <416517.DURATION> sec.",
+      "en": "Summons a Wretched Soul's Blade, dealing damage equal to <416510.VALUE> of ATK to the enemy with the highest ATK and inflicting them with <color=#FFFFFF>\"Wretched Soul,\"</color>, which decreases their Mana by <416515.VALUE> every <416514.DURATION> sec.\r\r\nThen, she creates a Wretched Soul Zone with a 2.5m radius around the target for <416511.DURATION> sec, which deals Curse-type DoT equal to <416512.VALUE> of ATK every 2 sec to all enemies within it and decreases their ATK and DEF by <416517.VALUE> for <416517.DURATION> sec.",
       "ja": "work in progress",
-      "zh_tw": "召喚亡魂劍，對攻擊力最高的敵人造成攻擊力<416510.VALUE>的傷害，並賦予目標每<416514.DURATION>秒魔力減少<416515.VALUE>的<color=#FFFFFF>＜亡魂＞</color>效果。\r\n之後在目標周圍3.5m範圍內生成持續<416511.DURATION>秒的亡魂地帶，每2秒對該位置的敵人造成攻擊力<416512.VALUE>的詛咒屬性傷害，並賦予攻擊力和防禦力減少<416517.VALUE>的效果，持續<416517.DURATION>秒",
+      "zh_tw": "召喚亡魂劍，對攻擊力最高的敵人造成攻擊力<416510.VALUE>的傷害，並賦予目標每<416514.DURATION>秒魔力減少<416515.VALUE>的<color=#FFFFFF>＜亡魂＞</color>效果。\r\r\n之後在目標周圍2.5m範圍內生成持續<416511.DURATION>秒的亡魂地帶，每2秒對該位置的敵人造成攻擊力<416512.VALUE>的詛咒屬性傷害，並賦予攻擊力和防禦力減少<416517.VALUE>的效果，持續<416517.DURATION>秒",
       "zh_cn": ""
     },
     {
       "no": 354169,
       "kr": "리더 정령이 메인 스킬 사용 시 가장 공격력이 높은 적에게 저주의 검을 떨어뜨려 공격력 <416911.VALUE>의 저주 속성 피해를 입힌다.",
-      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy, dealing Curse-type damage equal to <416911.VALUE> of ATK.",
+      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy with the highest ATK, dealing Curse-type damage equal to <416911.VALUE> of ATK.",
       "ja": "work in progress",
-      "zh_tw": "隊長精靈使用主要技能時，對敵人降下詛咒之劍，造成攻擊力<416911.VALUE>的詛咒屬性傷害",
+      "zh_tw": "隊長精靈使用主要技能時，對攻擊力最高的敵人降下詛咒之劍，造成攻擊力<416911.VALUE>的詛咒屬性傷害",
       "zh_cn": ""
     },
     {
@@ -35982,6 +36558,54 @@
       "en": "Increases ATK by <504912.VALUE> when battle begins if all 5 lead Souls are of different types.",
       "ja": "",
       "zh_tw": "戰鬥開始時，若隊長精靈是以5名不同類型組成，攻擊力增加<504912.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 355061,
+      "kr": "카넬리안이 깃털 형태의 칼날을 소환하여 가장 공격력이 높은 적 주변 3.5m 범위 내 모든 적에게 공격력 <506110.VALUE>의 피해를 입힌다.\r\n대상이 <color=#FFFFFF><저주></color> 상태인 경우 <506113.VALUE>의 추가 피해를 입히고 <506114.DURATION>초 동안 기절시킨다.\r\n이후 카넬리안이 <color=#FFFFFF><단죄></color> 중첩과 관계 없이 <color=#FFFFFF><단죄의 칼날></color>을 사용한다.",
+      "en": "Carnelian summons feather-shaped blades, dealing damage equal to <506110.VALUE> of ATK to all enemies within 3.5m of the enemy with the highest ATK and placing <color=#FFFFFF>1</color> stack of \"Retribution\" on them.\r\r\nDeals additional damage equal to <506112.VALUE> of ATK to targets inflicted with <color=#FFFFFF>\"Burn.\"</color> Deals additional damage equal to <506113.VALUE> of ATK to targets inflicted with <color=#FFFFFF>\"Curse\"</color> and stuns them for <506114.DURATION> sec.",
+      "ja": "",
+      "zh_tw": "卡內莉安召喚羽毛形態的刀刃，對攻擊力最高的敵人周圍3.5m範圍內所有敵人造成攻擊力<506110.VALUE>的傷害，並賦予<color=#FFFFFF>1</color>層＜定罪＞效果。\r\r\n目標處於<color=#FFFFFF>＜燒傷＞</color>狀態時，造成<506112.VALUE>的額外傷害，處於<color=#FFFFFF>＜詛咒＞</color>狀態時，造成<506113.VALUE>的額外傷害並使其暈眩<506114.DURATION>秒",
+      "zh_cn": ""
+    },
+    {
+      "no": 355062,
+      "kr": "카넬리안이 기본 공격 시 자신에게 <color=#FFFFFF><단죄></color> 효과를 <color=#FFFFFF>1</color>중첩 부여하며, <color=#FFFFFF><단죄></color> <color=#FFFFFF>5</color>중첩이 되면 <color=#FFFFFF><단죄의 칼날></color>을 사용하고 중첩을 모두 제거한다. \r\n\r\n카넬리안이 가장 공격력이 높은 적을 대상으로 폭 3m 직선 범위의 적에게 단죄의 칼날을 날려 공격력 <506210.VALUE>의 피해를 입히고 적을 밀어낸다.\r\n이후 대상이 보유한 디버프 수 만큼 대상에게 공격력 <506211.VALUE>의 추가 피해를 입힌다. (최대 5중첩)",
+      "en": "If any enemy on the battlefield has 5 or more stacks of \"Retribution,\" Carnelian's next skill on the rotation is changed to \"Blades of Retribution.\"\r\r\n\r\r\nCarnelian hurls Blades of Retribution toward the enemy with 5 or more stacks of \"Retribution,\" dealing damage equal to 200% of ATK to enemies within a 3m wide and 12m long area and knocking them back.\r\r\n(If there are multiple enemies with 5 or more stacks of \"Retribution,\" she targets whoever is the nearest of them.)\r\r\nThen, she removes all \"Retribution\" stacks from enemies within range and deals additional damage equal to 50% of ATK for every removed stack to the target.",
+      "ja": "",
+      "zh_tw": "戰場上存在具有＜定罪＞效果5疊加以上的敵人時，卡內莉安的下一個行動將變為＜定罪之刃＞。\r\r\n\r\r\n卡內莉安對具有＜定罪＞效果5疊加以上的敵人為目標，向寬幅3m、長12m範圍內的敵人投擲定罪之刃，造成攻擊力200%的傷害並將敵人擊退。\r\r\n（若具有＜定罪＞效果5疊加以上的敵人較多，則以最接近的敵人為目標。）\r\r\n之後解除範圍內敵人的所有＜定罪＞疊加，並根據解除的數量對目標造成攻擊力50%的額外傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 355063,
+      "kr": "카넬리안이 <color=#FFFFFF><단죄의 칼날></color>을 사용한 후 <color=#FFFFFF><심판의 낙인></color>을 사용한다.\r\n\r\n카넬리안이 모든 적에게 심판의 낙인을 내려 공격력 <506310.VALUE>의 피해를 입히고, <506311.DURATION>초 동안 공격력을 <506311.VALUE> 감소시킨다.\r\n대상이 디버프를 보유하고 있다면 <506312.DURATION>초 동안 가속을 <506312.VALUE> 감소시킨다.",
+      "en": "Carnelian uses \"Searing Judgment\" after \"Blades of Retribution.\"\r\r\n\r\r\nCarnelian delivers Searing Judgment on all enemies, dealing damage equal to 250% of ATK and decreasing their ATK by 20% for 12 sec.\r\r\nDamage changes to 400% against targets with \"Sentence of the End.\"",
+      "ja": "",
+      "zh_tw": "卡內莉安在使用＜定罪之刃＞後使用＜審判的烙印＞。\r\r\n\r\r\n卡內莉安對所有敵人施加審判的烙印，造成攻擊力250%的傷害，並在12秒內將攻擊力減少20%。\r\r\n若目標持有＜末日宣告＞，則傷害量變更為400%",
+      "zh_cn": ""
+    },
+    {
+      "no": 355064,
+      "kr": "카넬리안의 기본 공격은 자신에게 <color=#FFFFFF><집행></color> 효과를 <color=#FFFFFF>1</color>중첩 부여한다. <color=#FFFFFF><집행></color> 중첩 당 영구적으로 자신의 가속이 <506016.VALUE> 증가하고, 받는 피해가 <506018.VALUE> 감소하지만, 마나 회복량이 <506017.VALUE> 감소한다. (최대 10중첩)\r\n\r\n<color=#FFFFFF><집행></color> 중첩이 <color=#FFFFFF>10</color> 중첩이 될 경우 <color=#FFFFFF><집행자의 권능></color> 상태가 되어 기본 공격 시 <color=#E67373>150%</color>의 피해를 입히며, <color=#FFFFFF>4</color>번째 사용하는 기본 공격은 반드시 치명타가 발생하고 피해량이 <color=#E67373>300%</color>로 변경된다.",
+      "en": "Carnelian's normal attack deals damage equal to 150% of ATK to the nearest enemy and permanently places 1 stack of \"Retribution\" on them (up to 5 stacks).\r\r\nThen, she permanently gains 1 stack of \"Executioner,\" which increases Speed by 3% and decreases Mana Recovery by 3% per stack (up to 10 stacks).\r\r\n\r\r\nWhen \"Executioner\" reaches 10 stacks, she consumes all \"Executioner\" stacks and permanently gains \"Executioner's Authority,\" which increases Speed by 40% and decreases Mana Recovery by 40%.\r\r\n(She no longer gains \"Executioner\" stacks.)\r\r\nWhile \"Executioner's Authority\" is active, Carnelian's normal attack grants her 1 stack of \"Judgment Execution.\" Her normal attack at 4 stacks of \"Judgment Execution\" consumes all \"Judgment Execution\" stacks, which guarantees the attack to land as a critical hit and also deals additional damage equal to 300% of ATK.",
+      "ja": "",
+      "zh_tw": "卡內莉安的普通攻擊對最近的敵人造成攻擊力150%的傷害，並永久賦予目標＜定罪＞效果1疊加。（最多5疊加）\r\r\n之後，對自身永久賦予每疊加加速增加3%、魔力恢復量減少3%的＜執行者＞效果1疊加。（最多10疊加）\r\r\n\r\r\n當＜執行者＞效果達到10疊加時，移除所有＜執行者＞疊加，並永久賦予自身加速增加40%、魔力恢復量減少40%的＜執行者的權能＞效果。\r\r\n（不再賦予＜執行者＞效果。）\r\r\n卡內莉安在＜執行者的權能＞狀態下普通攻擊時，對自身賦予＜審判執行＞效果1疊加，當＜審判執行＞達到4疊加時，普通攻擊不再賦予＜審判執行＞，而是移除所有＜審判執行＞疊加，該攻擊必定為暴擊並造成攻擊力300%的額外傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 355065,
+      "kr": "카넬리안이 응축된 에너지를 방출하여 가장 공격력이 높은 적 주변 3.5m 범위 내 모든 적에게 공격력 <506510.VALUE>의 피해를 입히고 <506511.DURATION>초 동안 대상의 가하는 피해를 <506511.VALUE> 감소시킨다.\r\n이후 대상을 <506513.DURATION>초 동안 2초마다 공격력 <506513.VALUE>의 피해를 입는 <color=#FFFFFF><저주></color> 상태로 만든다.",
+      "en": "Carnelian releases condensed energy, dealing damage equal to 500% of ATK to all enemies within 3.5m of the enemy with the highest ATK and decreasing their damage dealt by 20% for 16 sec.\r\r\nThen, she inflicts \"Burn\" and \"Curse\" on them, with each of them dealing DoT equal to 50% of ATK every 2 sec for 16 sec.",
+      "ja": "",
+      "zh_tw": "卡內莉安釋放凝聚的能量，對攻擊力最高的敵人周圍3.5m範圍內的所有敵人造成攻擊力500%的傷害，並在16秒內將目標的造成傷害減少20%。\r\r\n之後使目標分別進入16秒內每2秒受到攻擊力50%傷害的＜燒傷＞狀態和＜詛咒＞狀態",
+      "zh_cn": ""
+    },
+    {
+      "no": 355069,
+      "kr": "리더 정령의 가속이 <506910.VALUE> 증가하고, 마나 회복량이 <506911.VALUE> 감소한다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
       "zh_cn": ""
     },
     {
@@ -36641,6 +37265,38 @@
       "zh_cn": ""
     },
     {
+      "no": 358191,
+      "kr": "케이린의 기본 공격은 가장 체력이 낮은 적을 대상으로 어둠의 광선을 내려 공격력 100%의 피해를 입힌다.",
+      "en": "Kayrin's basic attack sends down a beam of darkness upon the enemy with the lowest HP, dealing damage equal to 100% of ATK.",
+      "ja": "",
+      "zh_tw": "凱林的基本攻擊會以體力最低的敵人為目標，發射黑暗光線，造成攻擊力100%的傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 358192,
+      "kr": "케이린이 가장 먼 적을 대상을 속박하고 끌고와 공격력 100%의 피해를 입히고 멀리 밀쳐낸다.",
+      "en": "Kayrin binds the farthest enemy, pulling them in to deal damage equal to 100% of ATK, and then knocks them back.",
+      "ja": "",
+      "zh_tw": "凱林束縛最遠的敵人並拉近，造成攻擊力100%的傷害，並將其推開",
+      "zh_cn": ""
+    },
+    {
+      "no": 358193,
+      "kr": "케이린이 모든 아군에게 자신의 힘을 나눠주어 12초 동안 모든 아군의 공격력이 20% 증가한다.",
+      "en": "Kayrin bestows her strength upon all allies, increasing their ATK by 20% for 12 sec.",
+      "ja": "",
+      "zh_tw": "凱林將自身力量分給所有友軍，使所有友軍的攻擊力增加20%，持續12秒",
+      "zh_cn": ""
+    },
+    {
+      "no": 358195,
+      "kr": "모든 직접 공격과 대부분의 상태이상을 면역하는 대신 흑기사, 릴리트, 비비안, 벨라나, 아이라가 받는 모든 피해를 자신의 피해로 전환하여 받는다.",
+      "en": "Immune to all direct attacks and most debuffs, but all damage received by the Dark Knight, Lilith, Vivienne, Velanna, and Aira is transferred to her instead.",
+      "ja": "",
+      "zh_tw": "對所有直接攻擊和大多數狀態異常免疫，但會將黑騎士、莉莉絲、薇薇安、貝拉納、艾拉的所有所受傷害轉為自身的傷害",
+      "zh_cn": ""
+    },
+    {
       "no": 358201,
       "kr": "페트라가 빠른 속도로 회전하며 자신의 4m 범위 내 모든 적을 대상으로 공격력 <color=#E67373>400%</color>의 저주 속성 피해를 입힌다.\r\n만약 대상에게 보호막이 있을 경우 공격력 <820110.VALUE>의 저주 속성 피해로 변경된다.",
       "en": "Petra unleashes a rapid spin attack, dealing Curse damage equal to <color=#E67373>400%</color> of ATK to all enemies within 4m.\r\nCurse damage changes to <820110.VALUE> of ATK against shielded targets.",
@@ -36742,6 +37398,158 @@
       "en": "Deals damage equal to <826211.VALUE> of ATK in a 4m long, 90 degree conical area to the nearest enemy.",
       "ja": "一番近い敵を対象に、長さ4m、90度の円錐形の範囲に攻撃力の<826211.VALUE>のダメージを与える。",
       "zh_tw": "以最接近的敵人為目標，對其長4m、90度的圓角範圍造成攻擊力<826211.VALUE>的傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 358281,
+      "kr": "가장 가까운 적을 대상으로 길이 5m, 180도 범위를 난도질 해 공격력 <828110.VALUE>의 피해를 입히고 \r\n대상이 보유 중인 <color=#FFFFFF><증오></color> 중첩 수에 따라 공격력 <828111.VALUE>의 추가 피해를 입힌다. (최대 8중첩)",
+      "en": "Slashes at the nearest enemy, dealing damage equal to <828110.VALUE> of ATK in a 5m, 180-degree arc.\r\r\nAlso deals additional damage equal to <828111.VALUE> of ATK per <color=#FFFFFF>\"Hatred\"</color> stack on the target (up to 8 stacks).",
+      "ja": "",
+      "zh_tw": "以距離最近的敵人為目標，在長度5m、180度範圍內進行亂刀攻擊，造成攻擊力<828110.VALUE>的傷害，\r\r\n根據目標持有的<color=#FFFFFF>＜憎恨＞</color>疊加數，追加攻擊力<828111.VALUE>的額外傷害。（上限8疊加）",
+      "zh_cn": ""
+    },
+    {
+      "no": 358282,
+      "kr": "지면을 꿰뚫는 검을 소환하여 자신 주변 2.5m범위에 공격력 <828210.VALUE>의 피해를 입히고, 대상에게 <color=#FFFFFF><솟구치는 증오></color> 효과를 <828211.DURATION>초 동안 부여한다.\r\n<color=#FFFFFF><솟구치는 증오></color>는 2초 마다 대상에게 <color=#FFFFFF><증오></color> 중첩을 1중첩 부여한다.",
+      "en": "Summons a ground-piercing sword, dealing damage equal to <828210.VALUE> of ATK to a 2.5m radius and inflicting <color=#FFFFFF>\"Soaring Hatred\"</color> on the targets for <828211.DURATION> sec.\r\r\n<color=#FFFFFF>\"Soaring Hatred\"</color> places 1 stack of <color=#FFFFFF>\"Hatred\"</color> on the target every 2 sec.",
+      "ja": "",
+      "zh_tw": "召喚貫穿地面的劍，對自身周圍2.5m範圍內造成攻擊力<828210.VALUE>的傷害，並賦予目標<color=#FFFFFF>＜湧現的憎恨＞</color>效果，持續<828211.DURATION>秒。\r\r\n<color=#FFFFFF>＜湧現的憎恨＞</color>每2秒賦予目標1疊加的<color=#FFFFFF>＜憎恨＞</color>",
+      "zh_cn": ""
+    },
+    {
+      "no": 358283,
+      "kr": "몸을 휘감는 검을 소환해 주변 2.5m범위 내 모든 적을 대상으로 공격력 <828310.VALUE>의 피해를 입히고 대상에게 <color=#FFFFFF><증오></color> 1중첩을 부여한다.",
+      "en": "Summons a sword that spirals around the body, dealing damage equal to <828310.VALUE> of ATK to all enemies within a 2.5m radius and placing 1 stack of <color=#FFFFFF>\"Hatred\"</color> on them.",
+      "ja": "",
+      "zh_tw": "召喚纏繞身體的劍，對周圍2.5m範圍內所有敵人造成攻擊力<828310.VALUE>的傷害，並賦予目標1疊加的<color=#FFFFFF>＜憎恨＞</color>",
+      "zh_cn": ""
+    },
+    {
+      "no": 358284,
+      "kr": "벨라나의 검이 적의 피를 탐한다.\r\n2초마다 자신 주변 3m내 모든 적에게 공격력 <828411.VALUE>의 출혈 속성 피해를 입힌다.",
+      "en": "Velanna's sword thirsts for enemy blood.\r\r\nDeals Bleeding DoT equal to <828411.VALUE> of ATK to all enemies within a 3m radius every 2 sec.",
+      "ja": "",
+      "zh_tw": "貝拉納的劍渴望敵人的鮮血。\r\r\n每2秒對自身周圍3m內所有敵人造成攻擊力<828411.VALUE>的出血屬性傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 358291,
+      "kr": "바람의 칼날을 만들어 날린다. 가장 가까운 적을 대상으로 폭 1.5m 직선 범위에 공격력 <829110.VALUE>의 피해를 입히고, 대상의 마나를 <829111.VALUE> 만큼 감소 시킨다.",
+      "en": "Conjures blades of wind and throws them toward the nearest enemy. Deals damage equal to <829111.VALUE> of ATK in a 1.5m wide straight line and decreases the target's Mana by <829110.VALUE>.",
+      "ja": "",
+      "zh_tw": "製造並發射風之刃。以距離最近的敵人為目標，在寬1.5m的直線範圍內造成攻擊力<829110.VALUE>的傷害，並減少目標的魔力<829111.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 358292,
+      "kr": "가장 가까운 적을 대상으로 바람을 일으켜 <829210.DURATION>초 동안 유지되는 <color=#FFFFFF><높새바람></color> 효과를 부여해 대상과 대상 주변 2.5m내 적에게 2초마다 공격력 <829211.VALUE>의 피해를 입힌다.",
+      "en": "Conjures wind around the nearest enemy, inflicting <color=#FFFFFF>\"Snow Eater\"</color> on the target and enemies within 2.5m from the target, which deals DoT equal to <829211.VALUE> of ATK every 2 sec for <829210.DURATION> sec.",
+      "ja": "",
+      "zh_tw": "以距離最近的敵人為目標，掀起持續<829210.DURATION>秒的<color=#FFFFFF>＜焚風＞</color>效果，對目標及目標周圍2.5m內的敵人每2秒造成攻擊力<829211.VALUE>的傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 358293,
+      "kr": "바람의 힘을 모아 자신에게 <color=#FFFFFF><하늬바람></color> 중첩 3중첩을 부여하고, <color=#FFFFFF><하늬바람></color>이 있을 때 사용하는 기본 공격은 <하늬바람> 1중첩을 소모하여 대상의 마나를 <829010.VALUE> 만큼 감소시킨다.",
+      "en": "Gathering the power of wind, she gains 3 stacks of <color=#FFFFFF>\"Westerly.\"</color> While <color=#FFFFFF>\"Westerly\"</color> is active, her basic attack consumes 1 stack of \"Westerly\" and decreases her target's Mana by <829010.VALUE>.",
+      "ja": "",
+      "zh_tw": "聚集風之力，賦予自身<color=#FFFFFF>＜西風＞</color>3疊加，當持有<color=#FFFFFF>＜西風＞</color>時，使用的基本攻擊會消耗＜西風＞1疊加，並減少目標魔力<829010.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 358294,
+      "kr": "비비안의 마력이 끝없이 샘솟아 비비안의 마나 회복량이 <829410.VALUE> 증가한다.",
+      "en": "Vivienne's Mana flows endlessly, increasing her Mana Recovery by <829410.VALUE>.",
+      "ja": "",
+      "zh_tw": "薇薇安的魔力源源不絕地湧現，薇薇安的魔力恢復量增加<829410.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 358301,
+      "kr": "자신의 부속 유닛을 사용해 가장 가까운 적을 대상으로 대상 및 대상 주변 3m내 모든 적을 집중 사격하여 공격력 <830110.VALUE>의 피해를 입힌다.",
+      "en": "Lilith uses her attachment unit to aim at the nearest enemy, unleashing concentrated fire on the target and all enemies within 3m to deal damage equal to <830110.VALUE> of ATK.",
+      "ja": "",
+      "zh_tw": "使用自身的附屬裝置，以距離最近的敵人為目標，對目標及目標周圍3m內的所有敵人進行集中射擊，造成攻擊力<830110.VALUE>的傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 358302,
+      "kr": "가장 먼 적을 대상으로 대상 주변 3.5m내 모든 적을 포격하여 공격력 <830210.VALUE>의 피해를 입히고 범위 내 모든 적에게 <830211.DURATION>초 동안 <color=#FFFFFF><침묵></color> 상태를 부여한다.",
+      "en": "Lilith unleashes a bombardment on the farthest enemy, dealing damage equal to <830210.VALUE> of ATK to the target and all enemies within 3.5m and inflicting <color=#FFFFFF>\"Silence\"</color> on them for <830211.DURATION> sec.",
+      "ja": "",
+      "zh_tw": "以距離最遠的敵人為目標，對目標周圍3.5m內的所有敵人進行砲擊，造成攻擊力<830210.VALUE>的傷害，並賦予範圍內所有敵人<830211.DURATION>秒的<color=#FFFFFF>＜沉默＞</color>狀態",
+      "zh_cn": ""
+    },
+    {
+      "no": 358303,
+      "kr": "가장 먼 아군을 대상으로 지원 영역을 전개하여 <color=#FFFFFF>10</color>초 동안 3.5m 범위 내 모든 적의 받는 회복량이 <830310.VALUE> 감소한다.",
+      "en": "Lilith spreads a support area around the farthest ally, decreasing the Recovery of all enemies within a 3.5m radius by <830310.VALUE> for <color=#FFFFFF>10</color> sec.",
+      "ja": "",
+      "zh_tw": "以距離最遠的友軍為目標，展開支援領域，<color=#FFFFFF>10</color>秒內減少3.5m範圍內所有敵人的所受恢復量<830310.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 358311,
+      "kr": "흑기사의 모든 기본 공격은 가장 먼 적을 대상으로 폭3m, 직선 범위에 공격력 <831110.VALUE>의 피해를 입힌다.",
+      "en": "The Dark Knight's basic attack targets the farthest enemy, dealing damage equal to <831110.VALUE> of ATK in a straight 3m wide area.",
+      "ja": "",
+      "zh_tw": "黑騎士的所有基本攻擊以最遠的敵人為目標，在3m的直線範圍內造成攻擊力<831110.VALUE>的傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 358312,
+      "kr": "모든 적을 대상으로 이계의 검을 소환해 찔러 넣어 <831210.DURATION>초 동안 2초마다 공격력 <831210.VALUE>의 피해를 입히는 <color=#FFFFFF><출혈></color> 상태를 부여한다.",
+      "en": "Summons a sword from another realm and thrusts it, inflicting <color=#FFFFFF>\"Bleeding\"</color> on all enemies, which deals DoT equal to <831210.VALUE> of ATK every 2 sec for <831210.DURATION> sec.",
+      "ja": "",
+      "zh_tw": "以所有敵人為目標，召喚異世界的劍刺入，賦予<color=#FFFFFF>＜出血＞</color>狀態，<831210.DURATION>秒內每2秒造成攻擊力<831210.VALUE>的傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 358313,
+      "kr": "가장 먼 적을 대상으로 회전하는 검기를 폭 3m 직선으로 발사하여 공격력 <831310.VALUE>의 피해를 입히고 받는 회복량이 <831311.DURATION>초 동안 <831311.VALUE> 감소한다.",
+      "en": "Unleashes a spinning sword blast toward the farthest enemy, dealing damage equal to <831310.VALUE> of ATK to all enemies in a straight 3m wide area and decreasing their Recovery by <831311.VALUE> for <831311.DURATION> sec.",
+      "ja": "",
+      "zh_tw": "以最遠的敵人為目標，在直線3m範圍上發射旋轉的劍氣，造成攻擊力<831310.VALUE>的傷害，並在<831311.DURATION>秒內減少所受恢復量<831311.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 358314,
+      "kr": "모든 적을 대상으로 검기를 날려 공격력 <831410.VALUE>의 피해를 입힌다.",
+      "en": "Releases a sword blast, dealing damage equal to <831410.VALUE> of ATK to all enemies.",
+      "ja": "",
+      "zh_tw": "以所有敵人為目標發射劍氣，造成攻擊力<831410.VALUE>的傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 358321,
+      "kr": "가장 가까운 적을 대상으로 공격력 <832110.VALUE>의 피해를 입히고, 대상의 체력이 80% 이상일 경우 피해량이 <color=#E67373>200%</color>로 변경된다.",
+      "en": "Deals damage equal to <832110.VALUE> of ATK to the nearest enemy. Damage changes to <color=#E67373>200%</color> if the target's HP is 80% or more.",
+      "ja": "",
+      "zh_tw": "以最近的敵人為目標，造成攻擊力<832110.VALUE>的傷害，若目標體力在80%以上，則傷害量變更為<color=#E67373>200%</color>",
+      "zh_cn": ""
+    },
+    {
+      "no": 358322,
+      "kr": "죽음의 룬을 활성화시켜 가장 가까운 적에게 공격력 <832210.VALUE>의 피해를 입히고 대상을 <832211.DURATION>초 동안 기절시킨다.",
+      "en": "Activates the Rune of Death, dealing damage equal to <832210.VALUE> of ATK to the nearest enemy and stunning them for <832211.DURATION> sec.",
+      "ja": "",
+      "zh_tw": "啟用死亡符文，對最近的敵人造成攻擊力<832210.VALUE>的傷害，並使目標暈眩<832211.DURATION>秒",
+      "zh_cn": ""
+    },
+    {
+      "no": 358323,
+      "kr": "생명의 룬을 활성화시켜 가장 가까운 적에게 공격력 <832310.VALUE>의 피해를 입히고 대상 최대 체력의 <832311.VALUE> 만큼 추가 피해를 입힌다.",
+      "en": "Activates the Rune of Life, dealing damage equal to <832310.VALUE> of ATK to the nearest enemy and additional damage equal to <832311.VALUE> of the target's max HP.",
+      "ja": "",
+      "zh_tw": "啟用生命符文，對最近的敵人造成攻擊力<832310.VALUE>的傷害，並造成目標體力上限<832311.VALUE>的額外傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 358324,
+      "kr": "내면에 잠재 되어 있는 야성의 힘을 끌어내어 자신의 마나 회복 속도가 <832410.VALUE> 증가한다.",
+      "en": "Draws upon her inner Feral Power, increasing her Mana Recovery Rate by <832410.VALUE>.",
+      "ja": "",
+      "zh_tw": "引出內心潛藏的野性之力，自身的魔力恢復速度增加<832410.VALUE>",
       "zh_cn": ""
     },
     {
@@ -36870,6 +37678,38 @@
       "en": "Increases own Mana by <846211.VALUE> and increases Speed by <846212.VALUE> for <846212.DURATION> seconds.",
       "ja": "自分のマナを<846211.VALUE>増加させ、<846212.DURATION>秒間加速を<846212.VALUE>増加させる。",
       "zh_tw": "自身魔力增加<846211.VALUE>、在<846212.DURATION>秒內，加速增加<846212.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 358471,
+      "kr": "벨라나와의 전투가 종료될 때까지 자신에게 부여된 <증오> 중첩이 10중첩 미만일 경우, 영구적으로 모든 아군의 가하는 피해를 <847110.VALUE> 증가 시키는 메인 스킬을 사용한다.\r\n만약 전투 중 <증오> 중첩이 10중첩이 될 경우 클로이는 벨라나의 공격을 견디지 못해 쓰러진다.",
+      "en": "Until the battle against Velanna is over, when Chloe has fewer than 10 stacks of \"Hatred,\" her main skill permanently increases all allies' damage dealt by <847110.VALUE>.\r\r\nIf Chloe's \"Hatred\" reaches 10 stacks during battle, she fails to withstand Velanna's attacks and collapses.",
+      "ja": "",
+      "zh_tw": "與貝拉納的戰鬥結束前，若自身的＜憎恨＞疊加未達10層，則使用主要技能，永久增加所有友軍的造成傷害<847110.VALUE>。\r\r\n若戰鬥中＜憎恨＞疊加達到10層，克羅伊將無法承受貝拉納的攻擊而倒下",
+      "zh_cn": ""
+    },
+    {
+      "no": 358481,
+      "kr": "비비안과의 전투가 종료될 때 영구적으로 모든 아군의 가하는 피해가 <848110.VALUE> 증가한다,",
+      "en": "When the battle against Vivienne ends, all allies' damage dealt is permanently increased by <848110.VALUE>.",
+      "ja": "",
+      "zh_tw": "與薇薇安的戰鬥結束時，永久增加所有友軍的造成傷害<848110.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 358496,
+      "kr": "지축을 뒤흔드는 강력한 주먹으로 내리 찍어 케이린을 제외한 모든 적이 받는 최종 피해를 <849610.VALUE> 증가 시키고 얼티밋 게이지를 최대로 회복한다.",
+      "en": "Slams down with a powerful, ground-shaking fist, increasing the total damage received of all enemies except Kayrin by <849610.VALUE> and fully restoring the Ultimate Gauge.",
+      "ja": "",
+      "zh_tw": "以驚天動地的強力拳頭重擊，除凱林外的所有敵人所受最終傷害增加<849610.VALUE>，並將終極計量條恢復至上限",
+      "zh_cn": ""
+    },
+    {
+      "no": 358506,
+      "kr": "케이린을 제외한 모든 적을 대상으로 깊은 상처를 남겨 영구적으로 가하는 피해를 <850610.VALUE>감소 시킨다.",
+      "en": "Leaves a deep cut on all enemies except Kayrin, permanently decreasing their damage dealt by <850610.VALUE>.",
+      "ja": "",
+      "zh_tw": "除了凱林以外，對所有敵人造成深刻傷害，並永久使其造成傷害減少<850610.VALUE>",
       "zh_cn": ""
     },
     {
@@ -37521,6 +38361,22 @@
       "zh_cn": ""
     },
     {
+      "no": 359092,
+      "kr": "레인저 클래스 정령의 공격력이 50%, 가속이 30% 증가한다.",
+      "en": "Increases ATK by 50% and Speed by 30% for all Ranger Souls.",
+      "ja": "",
+      "zh_tw": "遊俠職業精靈的攻擊力增加50%，加速增加30%",
+      "zh_cn": ""
+    },
+    {
+      "no": 359093,
+      "kr": "전투 시작 시 최대 체력이 가장 높은 아군이 전열에 위치한 경우, 영구적으로 해당 아군의 최대 체력이 50% 증가하고 받는 피해가 20% 감소하는 효과를 부여한다.",
+      "en": "If battle begins with the ally with the highest max HP in the front row, this ally's max HP is increased by 50% and total damage received is decreased by 20% permanently.",
+      "ja": "",
+      "zh_tw": "戰鬥開始時，若體力上限最高的友軍位於前排，則永久增加該友軍的體力上限50%，並減少所受傷害20%",
+      "zh_cn": ""
+    },
+    {
       "no": 359311,
       "kr": "가장 가까운 적과 주변 3m 범위에 공격력의 <931111.VALUE>만큼 피해를 입히고, <931112.DURATION>초 동안 공격력의 <931112.VALUE>씩 피해를 입는 화상 상태로 만든다.",
       "en": "Deals damage equal to <931111.VALUE> of ATK to the nearest enemy and 3m around it, and makes it burn, dealing damage equal to <931112.VALUE> of ATK for <931112.DURATION> seconds.",
@@ -37939,7 +38795,7 @@
     {
       "no": 359643,
       "kr": "<color=#FFFFFF>2</color>초간의 발도 준비 후 혈월을 베어내 가장 가까운 적의 머리 위로 비처럼 떨어 뜨려 공격력 <964311.VALUE>의 출혈 속성 피해를 입힌다.\r\n\r\n만약 대상이 <color=#FFFFFF><출혈></color> 상태일 경우 <964312.DURATION>초 동안 받는 최종 피해가 <964312.VALUE> 증가하는 <color=#FFFFFF><잔앵></color>  효과를 부여한다.\r\n\r\n추가로, 해당 스킬을 사용하는 동안 피에 물든 검귀는 모든 그로기 감소 효과에 면역된다.",
-      "en": "After <color=#FFFFFF>2</color> sec of preparing for Sword Drawing, she slashes the Blood Moon and lets it rain down upon the head of the nearest enemy, dealing Bleeding-type damage equal to <964311.VALUE> of ATK.\r\r\n\r\r\nIf the target is already inflicted with <color=#FFFFFF>\"Bleeding\"</color> this attack also inflicts <color=#FFFFFF>\"Lingering Cherry Blossoms\"</color> which increases their total damage received by <964312.VALUE> for <964312.DURATION> sec.\r\r\n\r\r\nAlso, while using this skill, the Blood-Soaked Sword Demon is immune to all Daze Gauge Reduction effects.",
+      "en": "After <color=#FFFFFF>2</color> sec of preparing for Sword Drawing, she slashes the Blood Moon and lets it rain down upon the head of the nearest enemy, dealing Bleeding-type damage equal to <964311.VALUE> of ATK.\r\r\n\r\r\nIf the target is already inflicted with <color=#FFFFFF>\"Bleeding,\"</color> this attack also inflicts <color=#FFFFFF>\"Lingering Cherry Blossoms,\"</color> which increases their total damage received by <964312.VALUE> for <964312.DURATION> sec.\r\r\n\r\r\nAlso, while using this skill, the Blood-Soaked Sword Demon is immune to all Daze Gauge Reduction effects.",
       "ja": "work in progress",
       "zh_tw": "在<color=#FFFFFF>2</color>秒的拔刀準備後斬下血月，在最接近的敵人頭上降下血雨，造成攻擊力<964311.VALUE>的出血屬性傷害。\r\r\n\r\r\n如果目標處於<color=#FFFFFF>＜出血＞</color>狀態，則賦予其在<964312.DURATION>秒內所受最終傷害增加<964312.VALUE>的<color=#FFFFFF>＜殘櫻＞</color>效果。\r\r\n\r\r\n另外，使用該技能期間，血染劍鬼對所有無力減少效果免疫",
       "zh_cn": ""
@@ -37947,9 +38803,9 @@
     {
       "no": 359644,
       "kr": "<color=#FFFFFF>2</color>초간의 발도 준비 후 5명의 적을 랜덤한 순서로 베어 <color=#FFFFFF><혈월낙인></color> 효과를 부여한다. 단, 적이 5명 미만일 경우 중첩이 낮은 대상부터 남은 횟수 만큼 이를 반복한다.\r\n\r\n모든 횟수를 소진한 후 납도하여 각 대상에게 부여된 <color=#FFFFFF><혈월낙인></color> 1중첩 당 공격력 <color=#E67373>180%</color>의 출혈 속성 피해를 입히고 해당 효과를 제거한다. \r\n\r\n추가로, 해당 스킬을 사용하는 동안 피에 물든 검귀는 모든 그로기 감소 효과에 면역된다.",
-      "en": "After <color=#FFFFFF>2</color> sec of preparing for Sword Drawing, she slashes 5 enemies in a random order and inflicts <color=#FFFFFF>\"Blood Moon Stigma\"</color> on them. If there are fewer than 5 enemies around, the remaining strikes are repeated on those with fewer stacks until all slashes are delivered.\r\n\r\nOnce all strikes have been unleashed, she proceeds to Sword Sheathing, dealing Bleeding-type damage equal to <color=#E67373>180%</color> of ATK per <color=#FFFFFF>\"Blood Moon Stigma\"</color> stack on each enemy, consuming those stacks.\r\n\r\nAlso, while using this skill, the Blood-Soaked Sword Demon is immune to all Daze Gauge Reduction effects.",
+      "en": "After <color=#FFFFFF>2</color> sec of preparing for Sword Drawing, she slashes 5 enemies in a random order and inflicts <color=#FFFFFF>\"Blood Moon Stigma\"</color> on them. If there are fewer than 5 enemies around, the remaining strikes are repeated on those with fewer stacks until all slashes are delivered.\r\r\n\r\r\nOnce all strikes have been unleashed, she proceeds to Sword Sheathing, dealing Bleeding-type damage equal to <color=#E67373>180%</color> of ATK per <color=#FFFFFF>\"Blood Moon Stigma\"</color> stack on each enemy, consuming those stacks.\r\r\n\r\r\nAlso, while using this skill, the Blood-Soaked Sword Demon is immune to all Daze Gauge Reduction effects.",
       "ja": "work in progress",
-      "zh_tw": "在<color=#FFFFFF>2</color>秒的拔刀準備後，以隨機順序砍擊5名敵人，賦予<color=#FFFFFF>＜血月烙印＞</color>效果。但若敵人少於5名，則從疊加較低的目標開始，反覆輪流砍擊直到剩餘次數耗盡。\r\n\r\n消耗所有次數後收刀，對每個目標賦予的<color=#FFFFFF>＜血月烙印＞</color>每1疊加造成攻擊力<color=#E67373>180%</color>的出血屬性傷害，並移除該效果。\r\n\r\n另外，使用該技能期間，血染劍鬼對所有無力減少效果免疫",
+      "zh_tw": "在<color=#FFFFFF>2</color>秒的拔刀準備後，以隨機順序砍擊5名敵人，賦予<color=#FFFFFF>＜血月烙印＞</color>效果。但若敵人未滿5名，則從疊加較低的目標開始，反覆輪流砍擊直到剩餘次數耗盡。\r\r\n\r\r\n消耗所有次數後收刀，對每個目標賦予的<color=#FFFFFF>＜血月烙印＞</color>每1疊加造成攻擊力<color=#E67373>180%</color>的出血屬性傷害，並移除該效果。\r\r\n\r\r\n另外，使用該技能期間，血染劍鬼對所有無力減少效果免疫",
       "zh_cn": ""
     },
     {
@@ -41539,9 +42395,9 @@
     {
       "no": 364169,
       "kr": "리더 정령이 메인 스킬 사용 시 가장 공격력이 높은 적에게 저주의 검을 떨어뜨려 공격력 <416921.VALUE>의 저주 속성 피해를 입힌다.",
-      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy, dealing Curse-type damage equal to <416921.VALUE> of ATK.",
+      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy with the highest ATK, dealing Curse-type damage equal to <416921.VALUE> of ATK.",
       "ja": "work in progress",
-      "zh_tw": "隊長精靈使用主要技能時，對敵人降下詛咒之劍，造成攻擊力<416921.VALUE>的詛咒屬性傷害",
+      "zh_tw": "隊長精靈使用主要技能時，對攻擊力最高的敵人降下詛咒之劍，造成攻擊力<416921.VALUE>的詛咒屬性傷害",
       "zh_cn": ""
     },
     {
@@ -41734,6 +42590,54 @@
       "en": "Increases ATK by <504922.VALUE> when battle begins if all 5 lead Souls are of different types.",
       "ja": "",
       "zh_tw": "戰鬥開始時，若隊長精靈是以5名不同類型組成，攻擊力增加<504922.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 365061,
+      "kr": "피해량이 <506120.VALUE>로, <color=#FFFFFF><저주></color> 상태인 경우 추가 피해가 <506123.VALUE>로 변경된다.",
+      "en": "Damage changes to 400%. Additional damage to targets under \"Burn\" changes to 200%. Additional damage to targets under \"Curse\" changes to 100%.",
+      "ja": "",
+      "zh_tw": "傷害量變更為400%，處於＜燒傷＞狀態時額外傷害變更為200%，處於＜詛咒＞狀態時額外傷害變更為100%",
+      "zh_cn": ""
+    },
+    {
+      "no": 365062,
+      "kr": "피해량이 <506220.VALUE>로, 추가 피해량이 <506221.VALUE>로 변경된다.",
+      "en": "Damage changes to 300%, and additional damage changes to 75%.",
+      "ja": "",
+      "zh_tw": "變更為造成300%的傷害、造成75%的額外傷害",
+      "zh_cn": ""
+    },
+    {
+      "no": 365063,
+      "kr": "피해량이 <506320.VALUE>로, 감소하는 공격력이 <506321.VALUE>로 변경된다.",
+      "en": "Damage changes to 300%. Damage against targets with \"Sentence of the End\" changes to 500%.\r\r\nATK decrease changes to 25%.",
+      "ja": "",
+      "zh_tw": "變更為造成300%的傷害、＜末日宣告＞目標的傷害量變更為500%。\r\r\n攻擊力變更為減少25%",
+      "zh_cn": ""
+    },
+    {
+      "no": 365064,
+      "kr": "<color=#FFFFFF><집행자의 권능></color> 상태의 기본 공격 피해량이 <color=#E67373>175%</color>로, <color=#FFFFFF>4</color>번째 기본 공격의 피해량이 <color=#E67373>350%</color> 로 변경된다.",
+      "en": "Normal attack damage changes to 175%. Additional damage at 4 stacks of \"Judgment Execution\" changes to 350%.",
+      "ja": "",
+      "zh_tw": "普通攻擊的傷害量變更為175%、＜審判執行＞4疊加時的額外傷害量變更為350%",
+      "zh_cn": ""
+    },
+    {
+      "no": 365065,
+      "kr": "피해량이 <506520.VALUE>, <color=#FFFFFF><저주></color>의 피해량이 <506523.VALUE>로 변경되고, 감소하는 가하는 피해가 <506521.VALUE>로 변경된다.",
+      "en": "Damage changes to 600%. \"Burn\" and \"Curse\" DoT changes to 60%. Damage dealt decrease changes to 25%.",
+      "ja": "",
+      "zh_tw": "傷害量變更為600%，＜燒傷＞和＜詛咒＞的傷害量變更為60%，減少的造成傷害變更為25%",
+      "zh_cn": ""
+    },
+    {
+      "no": 365069,
+      "kr": "리더 정령의 가속이 <506920.VALUE> 증가하고, 마나 회복량이 <506921.VALUE> 감소한다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
       "zh_cn": ""
     },
     {
@@ -45651,9 +46555,9 @@
     {
       "no": 374162,
       "kr": "피해량이 <416230.VALUE>로, <color=#FFFFFF><저주></color> 상태일 때 속성 피해량이 <416234.VALUE>로, \r\n감소하는 가속이 <416235.VALUE>로 변경된다.",
-      "en": "Damage changes to <416230.VALUE>. Curse-type damage when the target is already inflicted with <color=#FFFFFF>\"Curse\"</color> changes to <416234.VALUE>,\r\nand Speed decrease changes to <416235.VALUE>.",
+      "en": "Damage changes to <416230.VALUE>. Curse-type damage when the target is already inflicted with <color=#FFFFFF>\"Curse\"</color> changes to <416234.VALUE>,\r\r\nand Speed decrease changes to <416235.VALUE>.",
       "ja": "work in progress",
-      "zh_tw": "變更為造成<416230.VALUE>的傷害，在<color=#FFFFFF>＜詛咒＞</color>狀態下的屬性傷害量變更為<416234.VALUE>，\r\n減少的加速變更為<416235.VALUE>",
+      "zh_tw": "變更為造成<416230.VALUE>的傷害，在<color=#FFFFFF>＜詛咒＞</color>狀態下的屬性傷害量變更為<416234.VALUE>，\r\r\n減少的加速變更為<416235.VALUE>",
       "zh_cn": ""
     },
     {
@@ -45683,9 +46587,9 @@
     {
       "no": 374169,
       "kr": "리더 정령이 메인 스킬 사용 시 가장 공격력이 높은 적에게 저주의 검을 떨어뜨려 공격력 <416931.VALUE>의 저주 속성 피해를 입힌다.",
-      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy, dealing Curse-type damage equal to <416931.VALUE> of ATK.",
+      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy with the highest ATK, dealing Curse-type damage equal to <416931.VALUE> of ATK.",
       "ja": "work in progress",
-      "zh_tw": "隊長精靈使用主要技能時，對敵人降下詛咒之劍，造成攻擊力<416931.VALUE>的詛咒屬性傷害",
+      "zh_tw": "隊長精靈使用主要技能時，對攻擊力最高的敵人降下詛咒之劍，造成攻擊力<416931.VALUE>的詛咒屬性傷害",
       "zh_cn": ""
     },
     {
@@ -45878,6 +46782,54 @@
       "en": "Increases ATK by <504932.VALUE> when battle begins if all 5 lead Souls are of different types.",
       "ja": "",
       "zh_tw": "戰鬥開始時，若隊長精靈是以5名不同類型組成，攻擊力增加<504932.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 375061,
+      "kr": "피해량이 <506130.VALUE>로, <color=#FFFFFF><저주></color> 상태인 경우 추가 피해가 <506133.VALUE>로 변경된다.",
+      "en": "Damage changes to 500%. Additional damage to targets under \"Burn\" changes to 250%. Additional damage to targets under \"Curse\" changes to 125%.\r\r\nPlaces 2 stacks of \"Retribution\" on targets within range.",
+      "ja": "",
+      "zh_tw": "傷害量變更為500%，處於＜燒傷＞狀態時額外傷害變更為250%，處於＜詛咒＞狀態時額外傷害變更為125%。\r\r\n範圍內賦予目標的＜定罪＞疊加變更為2層",
+      "zh_cn": ""
+    },
+    {
+      "no": 375062,
+      "kr": "피해량이 <506230.VALUE>로, 추가 피해량이 <506231.VALUE>로 변경된다.\r\n범위 내 적의 이로운 효과를 <color=#FFFFFF>1</color>개 제거하는 효과가 추가된다.",
+      "en": "Damage changes to 400%, and additional damage changes to 100%.\r\r\nAlso cancels a positive effect from enemies within range.",
+      "ja": "",
+      "zh_tw": "變更為造成400%的傷害、造成100%的額外傷害。\r\r\n額外追加解除範圍內敵人1個增益效果",
+      "zh_cn": ""
+    },
+    {
+      "no": 375063,
+      "kr": "피해량이 <506330.VALUE>로, 감소하는 공격력이 <506331.VALUE>로 변경된다.\r\n대상이 디버프를 보유하고 있다면 <506333.DURATION>초 동안 <color=#FFFFFF><침묵></color> 상태로 만드는 효과가 추가된다.",
+      "en": "Damage changes to 350%. Damage against targets with \"Sentence of the End\" changes to 600%.\r\r\nATK decrease changes to 30%. Also inflicts Bind on all enemies for 6 sec.",
+      "ja": "",
+      "zh_tw": "變更為造成350%的傷害、＜末日宣告＞目標的傷害量變更為600%。\r\r\n攻擊力變更為減少30%，並增加使所有敵人進入6秒束縛狀態的效果",
+      "zh_cn": ""
+    },
+    {
+      "no": 375064,
+      "kr": "<color=#FFFFFF><집행자의 권능></color> 상태의 기본 공격 피해량이 <color=#E67373>200%</color>로, <color=#FFFFFF>4</color>번째 기본 공격의 피해량이 <color=#E67373>400%</color>% 로 변경된다.\r\n<color=#FFFFFF><집행자의 권능></color> 상태에서 자신의 가하는 피해가 <506436.VALUE> 증가하는 효과가 추가된다.",
+      "en": "Normal attack damage changes to 200%. Additional damage at 4 stacks of \"Judgment Execution\" changes to 400%.\r\r\n\"Executioner's Authority\" also increases her damage dealt by 12%.",
+      "ja": "",
+      "zh_tw": "普通攻擊的傷害量變更為200%、＜審判執行＞4疊加時的額外傷害量變更為400%。\r\r\n追加在＜執行者的權能＞狀態下，自身造成傷害增加12%的效果",
+      "zh_cn": ""
+    },
+    {
+      "no": 375065,
+      "kr": "피해량이 <506530.VALUE>, <color=#FFFFFF><저주></color>의 피해량이 <506533.VALUE>로 변경되고, 감소하는 가하는 피해가 <506531.VALUE>로 변경된다.\r\n대상이 이미 <color=#FFFFFF><저주></color> 상태인 경우, 공격력 <506535.VALUE>의 추가 피해를 입힌다.",
+      "en": "Damage changes to 700%. \"Burn\" and \"Curse\" DoT changes to 70%. Damage dealt decrease changes to 30%.\r\r\nAlso deals additional damage equal to 200% of ATK to targets already under \"Burn\" or \"Curse\" for each effect.",
+      "ja": "",
+      "zh_tw": "傷害量變更為700%，＜燒傷＞和＜詛咒＞的傷害量變更為70%，減少的造成傷害變更為30%。\r\r\n目標已經處於＜燒傷＞或＜詛咒＞狀態時，分別追加攻擊力200%的額外傷害效果",
+      "zh_cn": ""
+    },
+    {
+      "no": 375069,
+      "kr": "리더 정령의 가속이 <506930.VALUE> 증가하고, 마나 회복량이 <506931.VALUE> 감소한다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
       "zh_cn": ""
     },
     {
@@ -49411,9 +50363,9 @@
     {
       "no": 384169,
       "kr": "리더 정령이 메인 스킬 사용 시 가장 공격력이 높은 적에게 저주의 검을 떨어뜨려 공격력 <416941.VALUE>의 저주 속성 피해를 입힌다.",
-      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy, dealing Curse-type damage equal to <416941.VALUE> of ATK.",
+      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy with the highest ATK, dealing Curse-type damage equal to <416941.VALUE> of ATK.",
       "ja": "work in progress",
-      "zh_tw": "隊長精靈使用主要技能時，對敵人降下詛咒之劍，造成攻擊力<416941.VALUE>的詛咒屬性傷害",
+      "zh_tw": "隊長精靈使用主要技能時，對攻擊力最高的敵人降下詛咒之劍，造成攻擊力<416941.VALUE>的詛咒屬性傷害",
       "zh_cn": ""
     },
     {
@@ -49614,6 +50566,14 @@
       "en": "Increases ATK by <504942.VALUE> when battle begins if all 5 lead Souls are of different types.",
       "ja": "",
       "zh_tw": "戰鬥開始時，若隊長精靈是以5名不同類型組成，攻擊力增加<504942.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 385069,
+      "kr": "리더 정령의 가속이 <506940.VALUE> 증가하고, 마나 회복량이 <506941.VALUE> 감소한다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
       "zh_cn": ""
     },
     {
@@ -50715,9 +51675,9 @@
     {
       "no": 394169,
       "kr": "리더 정령이 메인 스킬 사용 시 가장 공격력이 높은 적에게 저주의 검을 떨어뜨려 공격력 <416951.VALUE>의 저주 속성 피해를 입힌다.",
-      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy, dealing Curse-type damage equal to <416951.VALUE> of ATK.",
+      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy with the highest ATK, dealing Curse-type damage equal to <416951.VALUE> of ATK.",
       "ja": "work in progress",
-      "zh_tw": "隊長精靈使用主要技能時，對敵人降下詛咒之劍，造成攻擊力<416951.VALUE>的詛咒屬性傷害",
+      "zh_tw": "隊長精靈使用主要技能時，對攻擊力最高的敵人降下詛咒之劍，造成攻擊力<416951.VALUE>的詛咒屬性傷害",
       "zh_cn": ""
     },
     {
@@ -50750,6 +51710,14 @@
       "en": "Increases ATK by <504952.VALUE> when battle begins if all 5 lead Souls are of different types.",
       "ja": "",
       "zh_tw": "戰鬥開始時，若隊長精靈是以5名不同類型組成，攻擊力增加<504952.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 395069,
+      "kr": "리더 정령의 가속이 <506950.VALUE> 증가하고, 마나 회복량이 <506951.VALUE> 감소한다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
       "zh_cn": ""
     },
     {
@@ -51347,9 +52315,9 @@
     {
       "no": 404169,
       "kr": "리더 정령이 메인 스킬 사용 시 가장 공격력이 높은 적에게 저주의 검을 떨어뜨려 공격력 <416961.VALUE>의 저주 속성 피해를 입힌다.",
-      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy, dealing Curse-type damage equal to <416961.VALUE> of ATK.",
+      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy with the highest ATK, dealing Curse-type damage equal to <416961.VALUE> of ATK.",
       "ja": "work in progress",
-      "zh_tw": "隊長精靈使用主要技能時，對敵人降下詛咒之劍，造成攻擊力<416961.VALUE>的詛咒屬性傷害",
+      "zh_tw": "隊長精靈使用主要技能時，對攻擊力最高的敵人降下詛咒之劍，造成攻擊力<416961.VALUE>的詛咒屬性傷害",
       "zh_cn": ""
     },
     {
@@ -51382,6 +52350,14 @@
       "en": "Increases ATK by <504962.VALUE> when battle begins if all 5 lead Souls are of different types.",
       "ja": "",
       "zh_tw": "戰鬥開始時，若隊長精靈是以5名不同類型組成，攻擊力增加<504962.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 405069,
+      "kr": "리더 정령의 가속이 <506960.VALUE> 증가하고, 마나 회복량이 <506961.VALUE> 감소한다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
       "zh_cn": ""
     },
     {
@@ -51979,9 +52955,9 @@
     {
       "no": 414169,
       "kr": "리더 정령이 메인 스킬 사용 시 가장 공격력이 높은 적에게 저주의 검을 떨어뜨려 공격력 <416971.VALUE>의 저주 속성 피해를 입힌다.",
-      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy, dealing Curse-type damage equal to <416971.VALUE> of ATK.",
+      "en": "When the lead Soul uses her main skill, drops the Cursed Blade on the enemy with the highest ATK, dealing Curse-type damage equal to <416971.VALUE> of ATK.",
       "ja": "work in progress",
-      "zh_tw": "隊長精靈使用主要技能時，對敵人降下詛咒之劍，造成攻擊力<416971.VALUE>的詛咒屬性傷害",
+      "zh_tw": "隊長精靈使用主要技能時，對攻擊力最高的敵人降下詛咒之劍，造成攻擊力<416971.VALUE>的詛咒屬性傷害",
       "zh_cn": ""
     },
     {
@@ -52014,6 +52990,14 @@
       "en": "Increases ATK by <504972.VALUE> when battle begins if all 5 lead Souls are of different types.",
       "ja": "",
       "zh_tw": "戰鬥開始時，若隊長精靈是以5名不同類型組成，攻擊力增加<504972.VALUE>",
+      "zh_cn": ""
+    },
+    {
+      "no": 415069,
+      "kr": "리더 정령의 가속이 <506970.VALUE> 증가하고, 마나 회복량이 <506971.VALUE> 감소한다.",
+      "en": "",
+      "ja": "",
+      "zh_tw": "",
       "zh_cn": ""
     },
     {
@@ -57979,9 +58963,9 @@
     {
       "no": 3514024,
       "kr": "<color=#FFFFFF><래빗 홀></color> 스킬과 <color=#FFFFFF><블러드 버니></color> 스킬에 명중된 적은 캐럿의 시선 <color=#FFFFFF>1</color>중첩이 부여된다. 캐럿의 시선은 <1402410.DURATION>초 동안 지속되며 최대 4중첩까지 부여되고 해제할 수 없다.\r\n캐럿의 시선 중첩 수에 따라 <color=#FFFFFF><커스 오브 캐럿></color>스킬과 <color=#FFFFFF><캘러미티 캐럿></color> 스킬에 명중된 적에게 추가적인 효과를 부여한다.\r\n가넷이 전장에 있는 동안 모든 아군의 흡혈 능력치가 <color=#EDA900>10%</color> 증가한다.",
-      "en": "<color=#FFFFFF>\"Rabbit Hole\"</color> and <color=#FFFFFF>\"Bloody Bunny\"</color> inflict <color=#FFFFFF>1</color> stack of Carrot Stare on their hit enemies. Carrot Stare lasts for <1402410.DURATION> sec, stacks up to 4 times, and cannot be canceled.\r\n<color=#FFFFFF>\"Curse of Carrot\"</color> and<color=#FFFFFF>\"Calamity Carrot\"</color> apply additional effects on their hit targets based on their Carrot Stare stacks.\r\nWhile Garnet is on the battlefield, all allies' Life Steal is increased by <color=#EDA900>10%</color>.",
+      "en": "<color=#FFFFFF>\"Rabbit Hole\"</color> and <color=#FFFFFF>\"Bloody Bunny\"</color> inflict <color=#FFFFFF>1</color> stack of Carrot Stare on their hit enemies. Carrot Stare lasts for <1402410.DURATION> sec, stacks up to 4 times, and cannot be canceled.\r\r\n<color=#FFFFFF>\"Curse of Carrot\"</color> and<color=#FFFFFF>\"Calamity Carrot\"</color> apply additional effects on their hit targets based on their Carrot Stare stacks.\r\r\nWhile Garnet is on the battlefield, all allies' Life Steal is increased by <color=#EDA900>10%</color>.",
       "ja": "",
-      "zh_tw": "對被<color=#FFFFFF>＜兔子洞＞</color>和<color=#FFFFFF>＜血腥兔子＞</color>技能命中的敵人賦予克拉凝視<color=#FFFFFF>1</color>疊加。克拉凝視持續<1402410.DURATION>秒，最多可賦予4疊加且無法解除。\r\n根據克拉凝視疊加數，針對被<color=#FFFFFF>＜克拉詛咒＞</color>和<color=#FFFFFF>＜厄運克拉＞</color>技能命中的敵人賦予額外效果。\r\n佳妮特在戰場上時，所有友軍的噬血能力值增加<color=#EDA900>10%</color>",
+      "zh_tw": "被<color=#FFFFFF>＜兔子洞＞</color> 技能和<color=#FFFFFF>＜血腥兔子＞</color>技能命中的敵人，將賦予克拉凝視<color=#FFFFFF>1層</color>。克拉凝視持續<1402410.DURATION>秒，最多可疊加至4層，且無法被解除。\r\r\n依據克拉凝視的疊加數量，命中<color=#FFFFFF>＜克拉詛咒＞</color>技能和<color=#FFFFFF>＜厄運克拉＞</color>技能的敵人，將會賦予額外效果。\r\r\n當佳妮特在戰場上時，所有友軍的噬血能力值增加<color=#EDA900>10%</color>。",
       "zh_cn": ""
     },
     {
@@ -59563,9 +60547,9 @@
     {
       "no": 3614024,
       "kr": "증가하는 흡혈 능력치가 <color=#EDA900>13%</color>로 변경된다.",
-      "en": "Life Steal increase changes to <color=#EDA900>13%</color>",
+      "en": "Life Steal increase changes to <color=#EDA900>13%</color>.",
       "ja": "",
-      "zh_tw": "噬血能力值變更為增加<color=#EDA900>13%</color>",
+      "zh_tw": "變更為噬血能力值增加<color=#EDA900>13%</color>",
       "zh_cn": ""
     },
     {
@@ -60651,9 +61635,9 @@
     {
       "no": 3714024,
       "kr": "증가하는 흡혈 능력치가 <color=#EDA900>15%</color>로 변경된다.",
-      "en": "Life Steal increase changes to <color=#EDA900>15%</color>",
+      "en": "Life Steal increase changes to <color=#EDA900>15%</color>.",
       "ja": "",
-      "zh_tw": "噬血能力值變更為增加<color=#EDA900>15%</color>",
+      "zh_tw": "變更為噬血能力值增加<color=#EDA900>15%</color>",
       "zh_cn": ""
     },
     {
@@ -67230,6 +68214,14 @@
       "en": "To set a fine example as a drill sergeant, Claudia is determined to maintain composure at all times. She becomes immune to all crowd control and movement effects.",
       "ja": "クラウディアは教官として手本を示すため、乱れた姿を見せないことを誓った。行動阻害と移動効果を無効化にする。",
       "zh_tw": "克勞迪婭決定身為教官要以身作則，不能展現散漫的樣子。對集體控制效果及移動效果免疫",
+      "zh_cn": ""
+    },
+    {
+      "no": 35140010,
+      "kr": "전투 중 1회에 한해 체력이 <color=#FFFFFF>30%</color> 이하로 내려가면 자신의 마나를 모두 감소시킨 뒤 <1400975.DURATION>초 동안 기절 상태가 되며 공격받지 않는 상태가 된다.\r\n<1400975.DURATION>초 뒤 체력을 <1400978.VALUE> 회복하며 전투에 복귀하지만, 받는 피해가 영구적으로 <1400979.VALUE> 증가한다.\r\n한번의 공격으로 죽음에 이르는 피해를 받는 경우 해당 효과는 발동하지 않는다.",
+      "en": "One time during battle, if her HP falls to <color=#FFFFFF>30%</color> or lower, she exhausts all Mana, entering a stunned state for <1400975.DURATION> sec, during which she can't be attacked.\r\r\nAfter those <1400975.DURATION> sec, she returns to battle with <1400978.VALUE> HP, but her total damage received is permanently increased by <1400979.VALUE>.\r\r\nThis effect does not trigger if a single attack deals fatal damage to her.",
+      "ja": "",
+      "zh_tw": "戰鬥中僅限1次，當體力降至<color=#FFFFFF>30%</color>以下時，將自身的魔力全部減少，並在<1400975.DURATION>秒內進入暈眩狀態且不會受到攻擊。\r\r\n<1400975.DURATION>秒後恢復體力<1400978.VALUE>並重返戰鬥，但所受傷害永久增加<1400979.VALUE>。\r\r\n若因一次攻擊而受到致命傷害，則不會觸發該效果",
       "zh_cn": ""
     },
     {
