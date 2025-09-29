@@ -1,0 +1,41 @@
+﻿-- chunkname: @/Users/baioo/builds/866EVqtU/3/spacex/spacex-client/UnityProj/Assets/Scripts/Lua/logic/common/datadef/UIComponentType.lua
+
+module("logic.common.datadef.UIComponentType", package.seeall)
+
+RawImage = typeof(UnityEngine.UI.RawImage)
+Image = typeof(UnityEngine.UI.Image)
+InputField = typeof(UnityEngine.UI.InputField)
+Text = typeof(UnityEngine.UI.Text)
+TMPText = typeof(TMPro.TMP_Text)
+Button = typeof(UnityEngine.UI.Button)
+RectTransform = typeof(UnityEngine.RectTransform)
+ScrollRect = typeof(UnityEngine.UI.ScrollRect)
+GridLayoutGroup = typeof(UnityEngine.UI.GridLayoutGroup)
+VerticalLayoutGroup = typeof(UnityEngine.UI.VerticalLayoutGroup)
+LayoutElement = typeof(UnityEngine.UI.LayoutElement)
+Outline = typeof(UnityEngine.UI.Outline)
+DropdownApapter = typeof(Astral.DropdownApapter)
+UIClickTrigger = Astral.UIClickTrigger.Get
+ContentSizeFitter = typeof(UnityEngine.UI.ContentSizeFitter)
+RectMask2D = typeof(UnityEngine.UI.RectMask2D)
+ButtonAdapter = Astral.ButtonAdapter.Get
+InputFieldAdapter = Astral.InputFieldAdapter.Get
+SliderAdapter = Astral.SliderAdapter.Get
+ImageBigBG = Astral.ImageBigBG.Get
+ScrollRectAdapter = Astral.ScrollRectAdapter.Get
+SpaceXToggle = typeof(SpaceXToggle)
+SpaceXToggleGroup = typeof(SpaceXToggleGroup)
+EmptyRaycast = typeof(UnityEngine.UI.EmptyRaycast)
+HorizontalOrVerticalLayoutGroup = typeof(UnityEngine.UI.HorizontalOrVerticalLayoutGroup)
+LayoutGroup = typeof(UnityEngine.UI.LayoutGroup)
+LoopListView2 = typeof(SuperScrollView.LoopListView2)
+LoopGridView = typeof(SuperScrollView.LoopGridView)
+LoopStaggeredGridView = typeof(SuperScrollView.LoopStaggeredGridView)
+BigBGLocalizationLua = Astral.BigBGLocalizationLua.Get
+Scrollbar = typeof(UnityEngine.UI.Scrollbar)
+PageView = typeof(PageView)
+Dropdown = typeof(UnityEngine.UI.Dropdown)
+SpaceXDropDown = typeof(SpaceXDropDown)
+TextMeshProUGUI = typeof(TMPro.TextMeshProUGUI)
+TextLocalization = typeof(Astral.TextLocalization)
+Slider = typeof(UnityEngine.UI.Slider)

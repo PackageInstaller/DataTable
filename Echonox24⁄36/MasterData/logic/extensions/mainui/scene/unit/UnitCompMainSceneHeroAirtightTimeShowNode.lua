@@ -1,0 +1,64 @@
+﻿-- chunkname: @/Users/baioo/builds/866EVqtU/3/spacex/spacex-client/UnityProj/Assets/Scripts/Lua/logic/extensions/mainui/scene/unit/UnitCompMainSceneHeroAirtightTimeShowNode.lua
+
+module("logic.extensions.mainui.scene.unit.UnitCompMainSceneHeroAirtightTimeShowNode", package.seeall)
+
+local M = class("UnitCompMainSceneHeroAirtightTimeShowNode", UnitComponentBase)
+
+function M:ctor(unit)
+	M.super.ctor(self, unit)
+end
+
+function M:onInit()
+	self:onReset()
+	self:setEvent(true)
+end
+
+function M:onDestroy()
+	self:onReset()
+	self:setEvent(false)
+end
+
+function M:isDestroyed()
+	if self._unit then
+		return self._unit:isDestroyed()
+	end
+
+	return true
+end
+
+function M:onReset()
+	self:setEvent(false)
+	self:clear()
+end
+
+function M:onReuse()
+	self:setEvent(true)
+end
+
+function M:clear()
+	return
+end
+
+function M:setEvent(add)
+	if add then
+		self._unit:addInnerEventListener(UnitActionType.MeshModelLoaded, self._handleOnMeshModelLoaded, self)
+	else
+		self._unit:removeInnerEventListener(UnitActionType.MeshModelLoaded, self._handleOnMeshModelLoaded, self)
+	end
+end
+
+function M:_handleOnMeshModelLoaded()
+	self:clear()
+
+	local modelId = self._unit:getModelId()
+	local pointId = self._unit:getPointId()
+	local animationPlayer = self._unit.meshModel:getAnimationPlayer()
+
+	if animationPlayer and not goutil.isNil(animationPlayer) then
+		local airtightTimeShowNode = Astral.SimpleLuaComponentContainer.Add(animationPlayer.gameObject, UnitCompHeroAirtightTimeShowNode)
+
+		airtightTimeShowNode:setInfo(animationPlayer.gameObject, modelId, pointId == MainPerformEnum.ElementPointAdjutant)
+	end
+end
+
+return M

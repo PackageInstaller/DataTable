@@ -1,0 +1,26 @@
+﻿-- chunkname: @/Users/baioo/builds/866EVqtU/3/spacex/spacex-client/UnityProj/Assets/Scripts/Lua/logic/extensions/airworkshop/view/statistics/AirWorkShopChallengeStatisticsTipsPresentor.lua
+
+module("logic.extensions.airworkshop.view.statistics.AirWorkShopChallengeStatisticsTipsPresentor", package.seeall)
+
+local M = class("AirWorkShopChallengeStatisticsTipsPresentor", ViewPresentor)
+
+function M:ctor()
+	M.super.ctor(self)
+end
+
+function M:dependWhatResources()
+	return {
+		ResName.Attack_challenge_schema_statistics_tips
+	}
+end
+
+function M:buildViews()
+	local views = {}
+
+	table.insert(views, AirWorkShopChallengeStatisticsTips.New())
+	table.insert(views, BlurBgView.New())
+
+	return views
+end
+
+return M

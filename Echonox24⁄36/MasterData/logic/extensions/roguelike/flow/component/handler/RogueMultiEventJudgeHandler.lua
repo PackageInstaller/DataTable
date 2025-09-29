@@ -1,0 +1,257 @@
+﻿-- chunkname: @/Users/baioo/builds/866EVqtU/3/spacex/spacex-client/UnityProj/Assets/Scripts/Lua/logic/extensions/roguelike/flow/component/handler/RogueMultiEventJudgeHandler.lua
+
+module("logic.extensions.roguelike.flow.component.handler.RogueMultiEventJudgeHandler", package.seeall)
+
+local M = class("RogueMultiEventJudgeHandler", IRogueJudgeHandler)
+local PATTERN = RoguelikeConst.DICE_PATTERN
+
+function M:getExtraResult()
+	local result
+	local bigSuccess = RoguelikeConfig.instance:getConstByName("MultEventBigSuccess").numValue
+	local bigFail = 0
+	local trigger, params = RogueMgr.instance:getRogueFlow().model:getConditionEffect("BigSuccessAddition")
+	local addition = 0
+
+	if trigger then
+		addition = tonumber(params)
+	end
+
+	addition = addition + RoguelikeModel.instance:getBigSuccessAdd()
+
+	if math.random(1, 1000) < bigSuccess + addition then
+		result = RoguelikeConst.ROGUE_EXTRA_TYPE.BIG_SUCCESS
+
+		self._mgr.flow.model:setExtraResult(result)
+
+		return result
+	end
+
+	if bigFail > math.random(1, 1000) then
+		result = RoguelikeConst.ROGUE_EXTRA_TYPE.BIG_FAIL
+
+		self._mgr.flow.model:setExtraResult(result)
+
+		return result
+	end
+
+	return result
+end
+
+function M:judgeDice()
+	local extraResult = self._mgr.flow.model:getExtraResult()
+	local roleProp = self._mgr.flow.model:getCurRoleMo()
+
+	if extraResult == RoguelikeConst.ROGUE_EXTRA_TYPE.BIG_SUCCESS then
+		for idx2, dice2 in ipairs(self._mgr._curRoundCombatDice) do
+			GlobalDispatcher:dispatchEvent(EventType.ROGUE_MATCH_DICE, 0, dice2:getId(), RoguelikeConst.DICE_MATCH_TYPE.DICE_WALL)
+		end
+
+		self._mgr._curRoundCombatDice = {}
+
+		self._mgr.flow.model:setExtraResult(nil)
+		self._mgr.flow.model:setRoundFinish(true)
+		self._mgr.flow.model:setJudgeResult(true)
+		self:onChallengeSuccess()
+		RogueMgr.instance:getModel():getCurRoleSpine():play(RoguelikeConst.ROGUE_MONSTER_ANI.SKILL, false, true)
+
+		return false
+	elseif extraResult == RoguelikeConst.ROGUE_EXTRA_TYPE.BIG_FAIL then
+		local dice = RogueDiceMo.New(RoguelikeConst.ROGUE_DICE_TYPE.COMBAT)
+		local index = dice:getRandomUpIndex()
+
+		dice:setUpIndex(self._mgr.flow.model:getCurEventProp())
+		table.insert(self._mgr._curRoundCombatDice, dice)
+		GlobalDispatcher:dispatchEvent(EventType.ROGUE_ADD_EXTRA_COMBAT_DICE, dice, #self._mgr._curRoundCombatDice)
+		self._mgr.flow.model:setExtraResult(nil)
+	end
+
+	local matchDiceCount = 0
+
+	function matchDice()
+		if #self._mgr._curRoundCombatDice == 0 or #self._mgr._curRoundPlayerDice == 0 then
+			return false
+		end
+
+		for idx, dice1 in ipairs(self._mgr._curRoundPlayerDice) do
+			for idx2, dice2 in ipairs(self._mgr._curRoundCombatDice) do
+				if dice1:getUpPattern() == dice2:getUpPattern() then
+					print("同图案匹配到", dice2:getUpPattern())
+
+					local isNoahCamp = RoguelikeModel.instance:getCampId() == GameEnum.CampEnum.Noah
+					local isKnowledge = dice2:getUpPattern() == PATTERN.KNOWLEDGE
+
+					if isKnowledge and isNoahCamp and (roleProp:getCampId() == GameEnum.CampEnum.Noah or roleProp:getCampId() == GameEnum.CampEnum.StarrySkyChurch) then
+						self:execEffect(10001067)
+					end
+
+					GlobalDispatcher:dispatchEvent(EventType.ROGUE_MATCH_DICE, dice1:getId(), dice2:getId(), RoguelikeConst.DICE_MATCH_TYPE.DICE_WALL)
+					table.remove(self._mgr._curRoundPlayerDice, idx)
+					table.remove(self._mgr._curRoundCombatDice, idx2)
+
+					matchDiceCount = matchDiceCount + 1
+
+					return true
+				end
+			end
+		end
+
+		return false
+	end
+
+	local matchTime2 = 0
+
+	while matchDice() and matchTime2 < 10 do
+		matchTime2 = matchTime2 + 1
+
+		if #self._mgr._curRoundCombatDice <= 0 then
+			self._mgr.flow.model:setRoundFinish(true)
+			self._mgr.flow.model:setJudgeResult(true)
+			self:onChallengeSuccess()
+
+			local format, isTitle = RoguelikeConfig.getBroadCast("Broadcast_Event_Match_Dice")
+			local msg = string.format(format, matchDiceCount)
+
+			GlobalDispatcher:dispatchEvent(EventType.ROGUE_ROUND_BROAD_CAST, msg, isTitle)
+
+			local format2, isTitle2 = RoguelikeConfig.getBroadCast("Broadcast_Event_Success")
+			local msg2 = string.format(format2)
+
+			GlobalDispatcher:dispatchEvent(EventType.ROGUE_ROUND_BROAD_CAST, msg2, isTitle2)
+
+			return true
+		end
+	end
+
+	local format, isTitle = RoguelikeConfig.getBroadCast("Broadcast_Event_Match_Dice")
+	local msg = string.format(format, matchDiceCount)
+
+	GlobalDispatcher:dispatchEvent(EventType.ROGUE_ROUND_BROAD_CAST, msg, isTitle)
+
+	if #self._mgr._curRoundCombatDice <= 0 then
+		self._mgr.flow.model:setRoundFinish(true)
+		print("挑战胜利")
+		self._mgr.flow.model:setJudgeResult(true)
+		self:onChallengeSuccess()
+
+		return true
+	end
+
+	if self._mgr.flow.model:checkIsLastOne() then
+		self._mgr.flow.stateMgr:addRoundIndex()
+
+		if #self._mgr._curRoundCombatDice > 0 then
+			print("挑战失败")
+			self:reduceRoleHp()
+			self._mgr.flow.model:setRoundFinish(true)
+			self._mgr.flow.model:setJudgeResult(false)
+
+			local format2, isTitle2 = RoguelikeConfig.getBroadCast("Broadcast_Event_Fail")
+			local msg2 = string.format(format2)
+
+			GlobalDispatcher:dispatchEvent(EventType.ROGUE_ROUND_BROAD_CAST, msg2, isTitle2)
+		end
+	end
+
+	return true
+end
+
+function M:skipJudge(isWin, callback)
+	if isWin then
+		self:saveJudgeArchive(true)
+		self:onChallengeSuccess(callback)
+	end
+end
+
+function M:onChallengeSuccess(callback)
+	local replyCo = RogueMgr.instance:getModel():getCurReplyCo()
+
+	if replyCo then
+		if RogueMgr.instance:getIsClientMode() then
+			-- block empty
+		else
+			local effectId = replyCo.successEffect
+
+			if effectId ~= nil then
+				if callback then
+					callback()
+				end
+			elseif callback then
+				callback()
+			end
+
+			RogueMgr.instance:getRogueFlow().model:setInSettlement(true)
+		end
+	else
+		print("找不到应对配置")
+	end
+end
+
+function M:reduceRoleHp()
+	local replyCo = RogueMgr.instance:getModel():getCurReplyCo()
+
+	if replyCo then
+		if RogueMgr.instance:getIsClientMode() then
+			local attack = replyCo.difficulty
+			local roleProp = self._mgr.flow.model:getCurRoleMo()
+
+			roleProp:reduceHp(attack)
+		else
+			local effectId = replyCo.failEffect
+
+			if effectId ~= nil then
+				-- block empty
+			else
+				print("没有配置失败效果", replyCo.id)
+			end
+		end
+	else
+		print("找不到应对配置")
+	end
+end
+
+function M:saveJudgeArchive(isJudged, isIgnoreQuick)
+	if RogueMgr.instance:getIsClientMode() then
+		return
+	end
+
+	if isJudged then
+		RogueMgr.instance:getStateMgr():syncExtraPatterns()
+	end
+
+	local type = self._mgr.flow.model:getCurEventType()
+	local roomId = RoguelikeModel.instance:getCurRoomId()
+	local replyCo = RogueMgr.instance:getModel():getCurReplyCo()
+
+	if not replyCo then
+		return
+	end
+
+	local enemyId = replyCo.id
+	local eventId = RogueMgr.instance:getModel():getCurEventId()
+	local enemyOuterHp = #self._mgr._curRoundCombatDice
+	local combatDices = self._mgr._curRoundCombatDice
+	local enemyInnerHp = replyCo.difficulty + RogueMgr.instance:getModel():getEventChangeDifficulty()
+
+	enemyInnerHp = math.max(1, enemyInnerHp)
+
+	local round = self._mgr.flow.stateMgr:getRoundIndex()
+	local heroId = self._mgr.flow.model:getCurRoleMo():getRoleId()
+	local monsterDiceFaceNO = RoguelikeExtension_pb.FaceNO()
+	local pattern = self._mgr.flow.model:getCurEventProp()
+
+	monsterDiceFaceNO.face = RoguelikeUtil.instance:convertCAttrType2SType(pattern)
+	monsterDiceFaceNO.num = #combatDices
+
+	local enemyFace = monsterDiceFaceNO
+	local selectedAttr = pattern
+	local roleDices = self._mgr._curRoundPlayerDice
+	local curDiceRoleId = self._mgr:getCurDiceRoleId()
+	local selfFaces = curDiceRoleId == heroId and roleDices or {}
+	local totalFaces = RogueMgr.instance:getStateMgr():getTotalExtraFaces()
+	local tmpExtraFaces = RogueMgr.instance:getStateMgr():getTmpExtraFaces()
+	local archiveNO = RoguelikeAgent.instance:generateArchive(type, roomId, enemyId, enemyOuterHp, enemyInnerHp, round, heroId, enemyFace, selectedAttr, selfFaces, isJudged, eventId, nil, nil, totalFaces, tmpExtraFaces)
+
+	RoguelikeAgent.instance:sendJudgeArchiveRequest(archiveNO, isIgnoreQuick)
+end
+
+return M

@@ -27,3 +27,4 @@
 |   ErrorGameReset   |  404错误游戏  |            台服 Json            |
 |    ReverseBlue    |     反向蓝     |            国服 Json            |
 |    GoddessOrder    |    女神秘令    |           国际服 Json           |
+|   Echonox 24/36   |    时序残响    |           国服 LuaJIT           |

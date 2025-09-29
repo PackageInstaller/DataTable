@@ -1,0 +1,325 @@
+﻿-- chunkname: @/Users/baioo/builds/866EVqtU/3/spacex/spacex-client/UnityProj/Assets/Scripts/Lua/logic/config/t_dice_attr.lua
+
+module("logic.config.t_dice_attr", package.seeall)
+
+local title = {
+	id = 1,
+	part = 2,
+	group = 3,
+	icon = 5,
+	isFilter = 6,
+	desc = 4
+}
+local dataList = {
+	{
+		111,
+		1,
+		1,
+		"普攻伤害+%",
+		"citiao_6",
+		1
+	},
+	{
+		112,
+		1,
+		1,
+		"物理伤害+%",
+		"citiao_10",
+		1
+	},
+	{
+		113,
+		1,
+		1,
+		"[tag_追击]伤害+%",
+		"citiao_12",
+		1
+	},
+	{
+		114,
+		1,
+		1,
+		"[tag_振荡]伤害+%",
+		"citiao_13",
+		1
+	},
+	{
+		121,
+		1,
+		2,
+		"特殊技伤害+%",
+		"citiao_2",
+		1
+	},
+	{
+		122,
+		1,
+		2,
+		"法术伤害+%",
+		"citiao_11",
+		1
+	},
+	{
+		123,
+		1,
+		2,
+		"[tag_超感]伤害+%",
+		"citiao_16",
+		1
+	},
+	{
+		124,
+		1,
+		2,
+		"[tag_锁定]伤害+%",
+		"citiao_2",
+		1
+	},
+	{
+		131,
+		1,
+		3,
+		"限制技伤害+%",
+		"citiao_8",
+		1
+	},
+	{
+		132,
+		1,
+		3,
+		"[tag_负理智]时伤害+%",
+		"citiao_2",
+		1
+	},
+	{
+		133,
+		1,
+		3,
+		"[tag_弧光]伤害+%",
+		"citiao_14",
+		1
+	},
+	{
+		134,
+		1,
+		3,
+		"[tag_锥刺]伤害+%",
+		"citiao_15",
+		1
+	},
+	{
+		211,
+		2,
+		1,
+		"受到物理伤害-%",
+		"citiao_24",
+		1
+	},
+	{
+		212,
+		2,
+		1,
+		"受到法术伤害-%",
+		"citiao_25",
+		1
+	},
+	{
+		213,
+		2,
+		1,
+		"受到近战攻击伤害-%",
+		"citiao_26",
+		1
+	},
+	{
+		214,
+		2,
+		1,
+		"受到远程攻击伤害-%",
+		"citiao_27",
+		1
+	},
+	{
+		221,
+		2,
+		2,
+		"受到普攻伤害-%",
+		"citiao_21",
+		1
+	},
+	{
+		222,
+		2,
+		2,
+		"限制技伤害+%",
+		"citiao_2",
+		1
+	},
+	{
+		223,
+		2,
+		2,
+		"被克制时受伤-%",
+		"citiao_58",
+		1
+	},
+	{
+		224,
+		2,
+		2,
+		"不被克制时受伤-%",
+		"citiao_59",
+		1
+	},
+	{
+		231,
+		2,
+		3,
+		"受到蓝色单位伤害-%",
+		"citiao_28",
+		1
+	},
+	{
+		232,
+		2,
+		3,
+		"受到绿色单位伤害-%",
+		"citiao_29",
+		1
+	},
+	{
+		233,
+		2,
+		3,
+		"受到红色单位伤害-%",
+		"citiao_30",
+		1
+	},
+	{
+		234,
+		2,
+		3,
+		"受到无色单位伤害-%",
+		"citiao_31",
+		1
+	},
+	{
+		311,
+		3,
+		1,
+		"受到[buff_破甲]单位伤害-%",
+		"citiao_2",
+		1
+	},
+	{
+		312,
+		3,
+		1,
+		"受到[buff_瓦解]单位伤害-%",
+		"citiao_2",
+		1
+	},
+	{
+		313,
+		3,
+		1,
+		"受到[buff_衰退]单位伤害-%",
+		"citiao_2",
+		1
+	},
+	{
+		314,
+		3,
+		1,
+		"受到[buff_锋刃]单位伤害-%",
+		"citiao_2",
+		1
+	},
+	{
+		321,
+		3,
+		2,
+		"[tag_低血]时伤害+%",
+		"citiao_18",
+		1
+	},
+	{
+		322,
+		3,
+		2,
+		"满血时伤害+%",
+		"citiao_69",
+		1
+	},
+	{
+		323,
+		3,
+		2,
+		"对[buff_锋刃]单位伤害+%",
+		"citiao_2",
+		1
+	},
+	{
+		324,
+		3,
+		2,
+		"对[buff_破甲]单位伤害+%",
+		"citiao_2",
+		1
+	},
+	{
+		331,
+		3,
+		3,
+		"对[buff_瓦解]单位伤害+%",
+		"citiao_2",
+		1
+	},
+	{
+		332,
+		3,
+		3,
+		"对[buff_衰退]单位伤害+%",
+		"citiao_2",
+		1
+	},
+	{
+		333,
+		3,
+		3,
+		"治疗加成+%",
+		"citiao_1",
+		1
+	},
+	{
+		334,
+		3,
+		3,
+		"受治疗加成+%",
+		"citiao_5",
+		1
+	}
+}
+local t_dice_attr = {}
+
+t_dice_attr.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		else
+			error(string.format("the field name [%s] is nonexist!", key))
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	t_dice_attr[v[1]] = v
+
+	setmetatable(v, mt)
+end
+
+return t_dice_attr
