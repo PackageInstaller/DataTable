@@ -40176,6 +40176,75 @@
       "penetration": 1
     },
     {
+      "no": 255010,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 255010.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 255011,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 255011.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 255012,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 255012.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 255013,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 255013.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 255014,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 255014.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 255020,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 255020.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 255021,
+      "function_key": 9,
+      "target_key": 1216,
+      "value": 0.5,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
       "no": 301001,
       "function_key": 40,
       "is_ally": 1,
@@ -83177,8 +83246,9 @@
       "no": 506010,
       "function_key": 1,
       "target_key": 2100,
-      "value": 1.5,
+      "value": 0.5,
       "condition_type": 1,
+      "condition_id_1": 506013,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83193,22 +83263,14 @@
       "penetration": 1
     },
     {
-      "no": 506012,
-      "function_key": 33,
-      "target_key": 2100,
-      "condition_type": 1,
-      "condition_id_1": 506011,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
       "no": 506013,
       "function_key": 30,
       "is_ally": 1,
       "target_key": 1100,
       "value": 506013.0,
-      "condition_type": 1,
+      "condition_type": 2,
       "condition_id_1": 506013,
+      "condition_id_2": 5060131,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83217,7 +83279,7 @@
       "function_key": 23,
       "is_ally": 1,
       "target_key": 1100,
-      "value": 506013.0,
+      "value": 5060131.0,
       "condition_type": 1,
       "condition_id_1": 506011,
       "fx_path": "none",
@@ -83226,7 +83288,8 @@
     {
       "no": 506015,
       "function_key": 30,
-      "target_key": 2100,
+      "is_ally": 1,
+      "target_key": 1100,
       "value": 506015.0,
       "condition_type": 1,
       "fx_path": "none",
@@ -83255,11 +83318,23 @@
       "penetration": 1
     },
     {
+      "no": 506018,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506018.0,
+      "condition_type": 1,
+      "condition_id_1": 506016,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
       "no": 506020,
       "function_key": 1,
       "target_key": 2100,
-      "value": 1.75,
+      "value": 0.75,
       "condition_type": 1,
+      "condition_id_1": 506023,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83274,22 +83349,14 @@
       "penetration": 1
     },
     {
-      "no": 506022,
-      "function_key": 33,
-      "target_key": 2100,
-      "condition_type": 1,
-      "condition_id_1": 506021,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
       "no": 506023,
       "function_key": 30,
       "is_ally": 1,
       "target_key": 1100,
       "value": 506023.0,
-      "condition_type": 1,
+      "condition_type": 2,
       "condition_id_1": 506023,
+      "condition_id_2": 5060131,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83298,7 +83365,7 @@
       "function_key": 23,
       "is_ally": 1,
       "target_key": 1100,
-      "value": 506023.0,
+      "value": 5060131.0,
       "condition_type": 1,
       "condition_id_1": 506021,
       "fx_path": "none",
@@ -83308,8 +83375,9 @@
       "no": 506030,
       "function_key": 1,
       "target_key": 2100,
-      "value": 2.0,
+      "value": 1.0,
       "condition_type": 1,
+      "condition_id_1": 506033,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83324,22 +83392,14 @@
       "penetration": 1
     },
     {
-      "no": 506032,
-      "function_key": 33,
-      "target_key": 2100,
-      "condition_type": 1,
-      "condition_id_1": 506031,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
       "no": 506033,
       "function_key": 30,
       "is_ally": 1,
       "target_key": 1100,
       "value": 506033.0,
-      "condition_type": 1,
+      "condition_type": 2,
       "condition_id_1": 506033,
+      "condition_id_2": 5060131,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83348,7 +83408,7 @@
       "function_key": 23,
       "is_ally": 1,
       "target_key": 1100,
-      "value": 506033.0,
+      "value": 5060131.0,
       "condition_type": 1,
       "condition_id_1": 506031,
       "fx_path": "none",
@@ -83358,27 +83418,8 @@
       "no": 506110,
       "function_key": 1,
       "target_key": 2208,
-      "value": 3.0,
+      "value": 4.0,
       "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506111,
-      "function_key": 30,
-      "target_key": 2208,
-      "value": 506015.0,
-      "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506112,
-      "function_key": 1,
-      "target_key": 2208,
-      "value": 1.5,
-      "condition_type": 1,
-      "condition_id_1": 53011001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83386,9 +83427,9 @@
       "no": 506113,
       "function_key": 1,
       "target_key": 2208,
-      "value": 0.75,
+      "value": 2.0,
       "condition_type": 1,
-      "condition_id_1": 53061000,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83398,27 +83439,17 @@
       "target_key": 2208,
       "value": 506114.0,
       "condition_type": 1,
-      "condition_id_1": 53061000,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506116,
-      "function_key": 30,
-      "target_key": 2208,
-      "value": 506116.0,
-      "condition_type": 1,
-      "condition_id_1": 5060191,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
     {
       "no": 506117,
       "function_key": 36,
-      "target_key": 1208,
-      "value": 506117.0,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 3.0,
       "condition_type": 1,
-      "condition_id_1": 5060192,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83426,27 +83457,8 @@
       "no": 506120,
       "function_key": 1,
       "target_key": 2208,
-      "value": 4.0,
+      "value": 5.0,
       "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506121,
-      "function_key": 30,
-      "target_key": 2208,
-      "value": 506015.0,
-      "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506122,
-      "function_key": 1,
-      "target_key": 2208,
-      "value": 2.0,
-      "condition_type": 1,
-      "condition_id_1": 53011001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83454,9 +83466,9 @@
       "no": 506123,
       "function_key": 1,
       "target_key": 2208,
-      "value": 1.0,
+      "value": 3.0,
       "condition_type": 1,
-      "condition_id_1": 53061000,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83466,27 +83478,17 @@
       "target_key": 2208,
       "value": 506124.0,
       "condition_type": 1,
-      "condition_id_1": 53061000,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506126,
-      "function_key": 30,
-      "target_key": 2208,
-      "value": 506126.0,
-      "condition_type": 1,
-      "condition_id_1": 5060191,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
     {
       "no": 506127,
       "function_key": 36,
-      "target_key": 1208,
+      "is_ally": 1,
+      "target_key": 1100,
       "value": 3.0,
       "condition_type": 1,
-      "condition_id_1": 5060192,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83494,27 +83496,8 @@
       "no": 506130,
       "function_key": 1,
       "target_key": 2208,
-      "value": 5.0,
+      "value": 6.0,
       "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506131,
-      "function_key": 30,
-      "target_key": 2208,
-      "value": 506015.0,
-      "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506132,
-      "function_key": 1,
-      "target_key": 2208,
-      "value": 2.5,
-      "condition_type": 1,
-      "condition_id_1": 53011001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83522,9 +83505,9 @@
       "no": 506133,
       "function_key": 1,
       "target_key": 2208,
-      "value": 1.25,
+      "value": 4.0,
       "condition_type": 1,
-      "condition_id_1": 53061000,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83534,35 +83517,16 @@
       "target_key": 2208,
       "value": 506134.0,
       "condition_type": 1,
-      "condition_id_1": 53061000,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506136,
-      "function_key": 30,
-      "target_key": 2208,
-      "value": 506136.0,
-      "condition_type": 1,
-      "condition_id_1": 506213,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
     {
       "no": 506137,
       "function_key": 36,
-      "target_key": 1208,
+      "is_ally": 1,
+      "target_key": 1100,
       "value": 3.0,
-      "condition_type": 1,
-      "condition_id_1": 5060192,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506138,
-      "function_key": 30,
-      "target_key": 2208,
-      "value": 506015.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -83630,7 +83594,8 @@
     {
       "no": 506216,
       "function_key": 23,
-      "target_key": 1353,
+      "is_ally": 1,
+      "target_key": 1100,
       "value": 506015.0,
       "condition_type": 1,
       "fx_path": "none",
@@ -83699,7 +83664,8 @@
     {
       "no": 506226,
       "function_key": 23,
-      "target_key": 1353,
+      "is_ally": 1,
+      "target_key": 1100,
       "value": 506015.0,
       "condition_type": 1,
       "fx_path": "none",
@@ -83768,7 +83734,8 @@
     {
       "no": 506236,
       "function_key": 23,
-      "target_key": 1353,
+      "is_ally": 1,
+      "target_key": 1100,
       "value": 506015.0,
       "condition_type": 1,
       "fx_path": "none",
@@ -83787,7 +83754,7 @@
       "no": 506310,
       "function_key": 1,
       "target_key": 1208,
-      "value": 2.5,
+      "value": 4.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -83803,33 +83770,21 @@
     },
     {
       "no": 506312,
-      "function_key": 1,
-      "target_key": 1208,
-      "value": 1.5,
-      "condition_type": 1,
-      "condition_id_1": 506312,
-      "condition_id_2": 506322,
-      "condition_id_3": 506332,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506313,
       "function_key": 30,
       "target_key": 1208,
-      "value": 506313.0,
+      "value": 506312.0,
       "condition_type": 1,
-      "condition_id_1": 506215,
+      "condition_id_1": 506211,
       "fx_path": "none",
       "penetration": 1
     },
     {
       "no": 506314,
-      "function_key": 36,
-      "target_key": 1208,
-      "value": 3.0,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506314.0,
       "condition_type": 1,
-      "condition_id_1": 5060192,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83837,7 +83792,7 @@
       "no": 506320,
       "function_key": 1,
       "target_key": 1208,
-      "value": 2.5,
+      "value": 5.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -83852,14 +83807,12 @@
       "penetration": 1
     },
     {
-      "no": 506322,
-      "function_key": 1,
-      "target_key": 1208,
-      "value": 1.5,
+      "no": 506324,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506324.0,
       "condition_type": 1,
-      "condition_id_1": 506312,
-      "condition_id_2": 506322,
-      "condition_id_3": 506332,
       "fx_path": "none",
       "penetration": 1
     },
@@ -83867,7 +83820,7 @@
       "no": 506330,
       "function_key": 1,
       "target_key": 1208,
-      "value": 2.5,
+      "value": 6.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -83882,22 +83835,20 @@
       "penetration": 1
     },
     {
-      "no": 506332,
-      "function_key": 1,
-      "target_key": 1208,
-      "value": 1.5,
-      "condition_type": 1,
-      "condition_id_1": 506312,
-      "condition_id_2": 506322,
-      "condition_id_3": 506332,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
       "no": 506333,
       "function_key": 30,
       "target_key": 1208,
       "value": 506333.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506334,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506334.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -83975,6 +83926,40 @@
       "penetration": 1
     },
     {
+      "no": 506417,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506417.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506418,
+      "function_key": 28,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506419.0,
+      "duration": 999.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506419,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506419.0,
+      "condition_type": 1,
+      "condition_id_1": 506011,
+      "condition_id_2": 506021,
+      "condition_id_3": 506031,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
       "no": 506420,
       "function_key": 28,
       "is_ally": 1,
@@ -84032,6 +84017,16 @@
       "is_ally": 1,
       "target_key": 1100,
       "value": 506416.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506427,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506427.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84109,10 +84104,20 @@
       "penetration": 1
     },
     {
+      "no": 506437,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506437.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
       "no": 506510,
       "function_key": 1,
       "target_key": 2208,
-      "value": 5.0,
+      "value": 6.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84122,15 +84127,6 @@
       "function_key": 30,
       "target_key": 2208,
       "value": 506511.0,
-      "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506512,
-      "function_key": 30,
-      "target_key": 2208,
-      "value": 506512.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84148,7 +84144,7 @@
       "no": 506520,
       "function_key": 1,
       "target_key": 2208,
-      "value": 6.0,
+      "value": 7.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84158,15 +84154,6 @@
       "function_key": 30,
       "target_key": 2208,
       "value": 506521.0,
-      "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506522,
-      "function_key": 30,
-      "target_key": 2208,
-      "value": 506522.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84184,7 +84171,7 @@
       "no": 506530,
       "function_key": 1,
       "target_key": 2208,
-      "value": 7.0,
+      "value": 8.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84199,15 +84186,6 @@
       "penetration": 1
     },
     {
-      "no": 506532,
-      "function_key": 30,
-      "target_key": 2208,
-      "value": 506532.0,
-      "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
       "no": 506533,
       "function_key": 30,
       "target_key": 2208,
@@ -84217,22 +84195,12 @@
       "penetration": 1
     },
     {
-      "no": 506534,
-      "function_key": 1,
-      "target_key": 2208,
-      "value": 2.0,
-      "condition_type": 1,
-      "condition_id_1": 53011001,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
       "no": 506535,
       "function_key": 1,
       "target_key": 2208,
-      "value": 2.0,
+      "value": 5.0,
       "condition_type": 1,
-      "condition_id_1": 53061000,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84240,16 +84208,7 @@
       "no": 506610,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.4,
-      "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506611,
-      "function_key": 1,
-      "target_key": 2100,
-      "value": 0.3,
+      "value": 0.9,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84258,8 +84217,9 @@
       "no": 506612,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.2,
+      "value": 0.45,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84269,6 +84229,7 @@
       "target_key": 2100,
       "value": 506613.0,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84276,16 +84237,7 @@
       "no": 506620,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.5,
-      "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506621,
-      "function_key": 1,
-      "target_key": 2100,
-      "value": 0.375,
+      "value": 1.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84294,8 +84246,9 @@
       "no": 506622,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.25,
+      "value": 0.5,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84305,6 +84258,7 @@
       "target_key": 2100,
       "value": 506623.0,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84312,16 +84266,7 @@
       "no": 506630,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.6,
-      "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506631,
-      "function_key": 1,
-      "target_key": 2100,
-      "value": 0.45,
+      "value": 1.1,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84330,8 +84275,9 @@
       "no": 506632,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.3,
+      "value": 0.55,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84341,6 +84287,7 @@
       "target_key": 2100,
       "value": 506633.0,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84348,16 +84295,7 @@
       "no": 506640,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.7,
-      "condition_type": 1,
-      "fx_path": "none",
-      "penetration": 1
-    },
-    {
-      "no": 506641,
-      "function_key": 1,
-      "target_key": 2100,
-      "value": 0.525,
+      "value": 1.2,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84366,8 +84304,9 @@
       "no": 506642,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.35,
+      "value": 0.6,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84377,6 +84316,7 @@
       "target_key": 2100,
       "value": 506643.0,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84403,19 +84343,21 @@
       "penetration": 1
     },
     {
-      "no": 506650,
-      "function_key": 1,
-      "target_key": 2100,
-      "value": 0.8,
+      "no": 506646,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506018.0,
       "condition_type": 1,
+      "condition_id_1": 506016,
       "fx_path": "none",
       "penetration": 1
     },
     {
-      "no": 506651,
+      "no": 506650,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.6,
+      "value": 1.3,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84424,8 +84366,9 @@
       "no": 506652,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.4,
+      "value": 0.65,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84435,6 +84378,7 @@
       "target_key": 2100,
       "value": 506653.0,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84461,19 +84405,21 @@
       "penetration": 1
     },
     {
-      "no": 506660,
-      "function_key": 1,
-      "target_key": 2100,
-      "value": 0.9,
+      "no": 506656,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506018.0,
       "condition_type": 1,
+      "condition_id_1": 506016,
       "fx_path": "none",
       "penetration": 1
     },
     {
-      "no": 506661,
+      "no": 506660,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.675,
+      "value": 1.4,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84482,8 +84428,9 @@
       "no": 506662,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.45,
+      "value": 0.7,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84493,6 +84440,7 @@
       "target_key": 2100,
       "value": 506663.0,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84519,19 +84467,21 @@
       "penetration": 1
     },
     {
-      "no": 506670,
-      "function_key": 1,
-      "target_key": 2100,
-      "value": 1.0,
+      "no": 506666,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506018.0,
       "condition_type": 1,
+      "condition_id_1": 506016,
       "fx_path": "none",
       "penetration": 1
     },
     {
-      "no": 506671,
+      "no": 506670,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.75,
+      "value": 1.5,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -84540,8 +84490,9 @@
       "no": 506672,
       "function_key": 1,
       "target_key": 2100,
-      "value": 0.5,
+      "value": 0.75,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84551,6 +84502,7 @@
       "target_key": 2100,
       "value": 506673.0,
       "condition_type": 1,
+      "condition_id_1": 53061001,
       "fx_path": "none",
       "penetration": 1
     },
@@ -84577,13 +84529,153 @@
       "penetration": 1
     },
     {
-      "no": 506676,
+      "no": 506678,
       "function_key": 30,
       "is_ally": 1,
       "target_key": 1100,
-      "value": 506013.0,
+      "value": 506018.0,
       "condition_type": 1,
-      "condition_id_1": 506013,
+      "condition_id_1": 506016,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506910,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506910.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506911,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506911.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506920,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506920.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506921,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506921.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506930,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506930.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506931,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506931.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506940,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506940.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506941,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506941.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506950,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506950.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506951,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506951.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506960,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506960.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506961,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506961.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506970,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506970.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 506971,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 506971.0,
+      "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
     },
@@ -109606,6 +109698,7 @@
       "target_key": 1208,
       "value": 848110.0,
       "condition_type": 1,
+      "condition_id_1": 848110,
       "fx_path": "none",
       "penetration": 1
     },
@@ -110103,6 +110196,426 @@
       "delay": 2.0
     },
     {
+      "no": 854010,
+      "function_key": 1,
+      "target_key": 2100,
+      "value": 1.4,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854110,
+      "function_key": 1,
+      "target_key": 1320,
+      "value": 2.4,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854210,
+      "function_key": 1,
+      "target_key": 1208,
+      "value": 2.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854410,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854410.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854411,
+      "function_key": 30,
+      "target_key": 1208,
+      "value": 854411.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854412,
+      "function_key": 30,
+      "target_key": 1208,
+      "value": 854412.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854413,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854413.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854414,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854414.0,
+      "condition_type": 1,
+      "condition_id_1": 854414,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854415,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854415.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854416,
+      "function_key": 30,
+      "target_key": 1208,
+      "value": 854416.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854417,
+      "function_key": 30,
+      "target_key": 1208,
+      "value": 854417.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854418,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854418.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854419,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854419.0,
+      "condition_type": 1,
+      "condition_id_1": 854419,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854420,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854420.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854421,
+      "function_key": 30,
+      "target_key": 1208,
+      "value": 854421.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854422,
+      "function_key": 30,
+      "target_key": 1208,
+      "value": 854422.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854423,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854423.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854424,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854424.0,
+      "condition_type": 1,
+      "condition_id_1": 854424,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854425,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854425.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854426,
+      "function_key": 30,
+      "target_key": 1208,
+      "value": 854426.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854427,
+      "function_key": 30,
+      "target_key": 1208,
+      "value": 854427.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854428,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854428.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 854429,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 854429.0,
+      "condition_type": 1,
+      "condition_id_1": 854429,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859110,
+      "function_key": 1,
+      "target_key": 2100,
+      "value": 3.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859111,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 859111.0,
+      "condition_type": 1,
+      "condition_id_1": 859111,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859120,
+      "function_key": 38,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 859120.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859121,
+      "function_key": 1,
+      "target_key": 1208,
+      "value": 1.6,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859122,
+      "function_key": 30,
+      "target_key": 1208,
+      "value": 859122.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859123,
+      "function_key": 39,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 1.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1,
+      "delay": 4.0
+    },
+    {
+      "no": 859124,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 859124.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859310,
+      "function_key": 38,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 859310.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1,
+      "delay": 1.0
+    },
+    {
+      "no": 859311,
+      "function_key": 1,
+      "target_key": 1307,
+      "value": 1.6,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859312,
+      "function_key": 30,
+      "target_key": 1307,
+      "value": 859312.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859313,
+      "function_key": 39,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 1.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1,
+      "delay": 4.0
+    },
+    {
+      "no": 859314,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 859314.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859410,
+      "function_key": 1,
+      "target_key": 2100,
+      "value": 1.6,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859510,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 859510.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859511,
+      "function_key": 30,
+      "target_key": 1208,
+      "value": 859511.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859512,
+      "function_key": 30,
+      "target_key": 1208,
+      "value": 859512.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859513,
+      "function_key": 1,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 0.8,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 859514,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 859514.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 860210,
+      "function_key": 28,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 860213.0,
+      "duration": 999.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 860213,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1208,
+      "value": 860213.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
       "no": 861111,
       "function_key": 30,
       "is_ally": 1,
@@ -110118,6 +110631,17 @@
       "is_ally": 1,
       "target_key": 1100,
       "value": 861112.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 861210,
+      "function_key": 28,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 861214.0,
+      "duration": 999.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -110148,6 +110672,16 @@
       "is_ally": 1,
       "target_key": 1100,
       "value": 861213.0,
+      "condition_type": 1,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 861214,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1208,
+      "value": 861214.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -113296,7 +113830,7 @@
       "function_key": 13,
       "is_ally": 1,
       "target_key": 1100,
-      "value": 0.2,
+      "value": 0.1,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -138223,7 +138757,7 @@
       "function_key": 1,
       "target_key": 2100,
       "value": 1.0,
-      "condition_type": 1,
+      "condition_type": 2,
       "condition_id_1": 140020,
       "condition_id_2": 140022,
       "fx_path": "none",
@@ -138252,7 +138786,7 @@
       "function_key": 1,
       "target_key": 2100,
       "value": 4.5,
-      "condition_type": 1,
+      "condition_type": 2,
       "condition_id_1": 140020,
       "condition_id_2": 140022,
       "fx_path": "none",
@@ -138301,7 +138835,7 @@
       "function_key": 1,
       "target_key": 2100,
       "value": 3.0,
-      "condition_type": 1,
+      "condition_type": 2,
       "condition_id_1": 140020,
       "condition_id_2": 140022,
       "fx_path": "none",
@@ -138656,7 +139190,7 @@
       "function_key": 13,
       "is_ally": 1,
       "target_key": 1100,
-      "value": 0.1,
+      "value": 0.2,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
@@ -165232,6 +165766,17 @@
       "penetration": 1
     },
     {
+      "no": 5060131,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 5060131.0,
+      "condition_type": 1,
+      "condition_id_1": 5060131,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
       "no": 5060191,
       "function_key": 30,
       "target_key": 2100,
@@ -165248,6 +165793,42 @@
       "value": 3.0,
       "condition_type": 1,
       "condition_id_1": 5060192,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 5066761,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 5066761.0,
+      "condition_type": 2,
+      "condition_id_1": 506013,
+      "condition_id_2": 5060131,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 5066762,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 5066762.0,
+      "condition_type": 2,
+      "condition_id_1": 506023,
+      "condition_id_2": 5060131,
+      "fx_path": "none",
+      "penetration": 1
+    },
+    {
+      "no": 5066763,
+      "function_key": 30,
+      "is_ally": 1,
+      "target_key": 1100,
+      "value": 5066763.0,
+      "condition_type": 2,
+      "condition_id_1": 506033,
+      "condition_id_2": 5060131,
       "fx_path": "none",
       "penetration": 1
     },
@@ -166755,7 +167336,7 @@
       "no": 5301011,
       "function_key": 1,
       "target_key": 2100,
-      "value": 1.5,
+      "value": 1.0,
       "condition_type": 1,
       "fx_path": "none",
       "penetration": 1
