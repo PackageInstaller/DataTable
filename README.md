@@ -28,3 +28,4 @@
 |    ReverseBlue    |     反向蓝     |            国服 Json            |
 |    GoddessOrder    |    女神秘令    |           国际服 Json           |
 |   Echonox 24/36   |    时序残响    |           国服 LuaJIT           |
+|     StarSavior     |    星之救援    |           国际服 Json           |
