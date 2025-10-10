@@ -1,0 +1,131 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_ACCIDENT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 2.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_17.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "ONE_5",
+      "UnitPos": "POS3",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "…훈련 중, 사고가 일어나 버렸다.",
+      "UnitTalk_JPN": "…トレーニング中、事故が起きてしまった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "바쁜 일정을 소화하느라 훈련 장비의 정비가 소홀했던 것이 원인이었다.",
+      "UnitTalk_JPN": "忙しい日程をこなすあまり、トレーニング装備の整備がおろそかになっていたことが原因だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_MEDICAL_OFFICE.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "급히 의무실을 찾아갔더니, 한동안 안정을 취해야 한다는 진료 결과를 받았다.",
+      "UnitTalk_JPN": "急いで医務室を訪ねたところ、しばらく安静にする必要があるという診断結果を受けた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "[EVENT_RANDOM_ACCIDENT_01]",
+      "UnitTalk_JPN": "「EVENT_RANDOM_ACCIDENT_01」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_RANDOM_ACCIDENT_02]",
+      "UnitTalk_JPN": "「EVENT_RANDOM_ACCIDENT_02」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_RANDOM_ACCIDENT_03]",
+      "UnitTalk_JPN": "「EVENT_RANDOM_ACCIDENT_03」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "당분간은 충분한 휴식을 취할 수 있는 일정을 구상하자…",
+      "UnitTalk_JPN": "当分は十分な休息が取れるスケジュールを組み立てよう…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "안녕하십니까, 단장님!",
+      "UnitTalk_JPN": "ご機嫌いかがですか、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "UNS_UI_TOUCH",
+      "UnitTalk_KOR": "모나스티르 공국의 기사단장, 샤를! 여정의 마지막 최종 평가전 준비 완료했습니다!",
+      "UnitTalk_JPN": "モナスティル公国の騎士団長、シャルル！「救援の旅」最終試験の準備は整いました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "얼굴이 밝아 보이네.",
+          "JumpAnchorStringId_JPN": "顔色がいいね"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네! 어제는 잠도 잘 잤고!",
+      "UnitTalk_JPN": "はいっ！昨日はぐっすり眠れて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "저번에 알려주셨던 식당에서 맛있는 저녁 만찬도 제공해 주셔서…",
+      "UnitTalk_JPN": "この前に教えて頂いたレストランから、夕食も提供して頂きまして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "식사도 든든히 했습니다!",
+      "UnitTalk_JPN": "食事もがっつり済ませました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "최종 평가전 전날이라고 하니까 다들 응원의 이야기와 선물을 주셔서…조금 곤란할 정도였습니다만!",
+      "UnitTalk_JPN": "最終試験の前日と申したら、みな応援の言葉とプレゼントをくださいまして…ちょっと困るくらいでしたが！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "덕분에 푹 쉬고 지금은 최고의 컨디션입니다!",
+      "UnitTalk_JPN": "おかげさまで十分に休めて、今は最高のコンディションです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "사람들에게 존경받는 기사단장이 되었군.",
+          "JumpAnchorStringId_JPN": "みんなに尊敬される騎士団長になれたね"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그… 그런 걸까요?",
+      "UnitTalk_JPN": "そ…そうでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아직도 제 몸가짐이나 매너, 말투는 더 고쳐나가야 한다고 생각합니다만…",
+      "UnitTalk_JPN": "まだ私の身だしなみ、礼儀作法、言葉遣いは改善していくべきと思いますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "이전과는 다르게, 앞으로는 더 잘해 나갈 수 있는 자신감이 생겼으니까요.",
+      "UnitTalk_JPN": "以前とは違って、これからは上手にやっていけそうな自信ができましたので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "사람들을 지키고, 언제나 굳건히 서서 버틸 수 있는 기사단장이 되도록, 최선을 다하겠습니다!",
+      "UnitTalk_JPN": "人々を護り、いつも傍で支えられる騎士団長になれますよう、全力で頑張ります！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "그리고… 모나스티르뿐 아니라, 단장님의 옆을 지키는 기사가 될 수 있도록…!",
+      "UnitTalk_JPN": "そして…モナスティルだけでなく、団長の隣から護る騎士になれるように…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응?",
+          "JumpAnchorStringId_JPN": "ん？"
+        }
+      ]
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…앗.",
+      "UnitTalk_JPN": "…あ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아아아니! 방금 건 아무것도 아니에요! 신경 쓰지 마세요 신경 쓰지 마세요!",
+      "UnitTalk_JPN": "いえいえ！さっきのは何でもありません！気にしないでっ、気にしないでください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "그, 그냥 각오였습니다! 각오!",
+      "UnitTalk_JPN": "た、単なる覚悟です！覚悟！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " …준비되셨나요 단장님?",
+      "UnitTalk_JPN": " …準備はできましたか、団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "시간이 되었나?",
+          "JumpAnchorStringId_JPN": "そろそろ時間かな？"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 네, 지금부터 별의 구원자 계승 시험 <color=#F7BE45>[여정]</color>.",
+      "UnitTalk_JPN": " では、これより星の救援者・継承試験<color=#F7BE45>「救援の旅」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 그 최종시험을 시작하겠습니다.",
+      "UnitTalk_JPN": " 最終試験を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 시험상대는 <color=#F7BE45>[알데바란의 집행자 길레]</color>.",
+      "UnitTalk_JPN": " 対戦相手は<color=#F7BE45>「アルデバランの執行者・ギーレ」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " <color=#F7BE45>[디랙의 우물]</color>이 투영을 개시합니다.",
+      "UnitTalk_JPN": " <color=#F7BE45>「ディラックの井戸」</color>が投影を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "모나스티르 공국의 기사단장 샤를!",
+      "UnitTalk_JPN": "モナスティル公国の騎士団長、シャルル！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "마지막 최종 평가전! 최선을 다해 임하겠습니다!",
+      "UnitTalk_JPN": "最終試験！全力で参ります！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "갑니다!",
+      "UnitTalk_JPN": "行きます！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "ANGRY"
+    }
+  ]
+}

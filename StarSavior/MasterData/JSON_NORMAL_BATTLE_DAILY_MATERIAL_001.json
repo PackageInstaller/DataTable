@@ -1,0 +1,75 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_SWORD_BLUE_DAILY_00",
+            "ChangeAdjustType": "NUAT_MOON",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_HP": -6000
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_BLUE_DAILY_00",
+            "ChangeAdjustType": "NUAT_MOON",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_HP": -6000
+            }
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_SWORD_BLUE_DAILY_00",
+            "ChangeAdjustType": "NUAT_MOON",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_HP": -6000
+            }
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_BLUE_DAILY_00",
+            "ChangeAdjustType": "NUAT_MOON",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_HP": -6000
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_VETERAN_BARON_BLACK_BOSS_DAILY_GOLD_00",
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_MOON",
+            "IsBoss": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -5000,
+              "NST_NV_RATE_HP": -5000
+            }
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_BLUE_DAILY_00",
+            "ChangeAdjustType": "NUAT_MOON",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_HP": -6000
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

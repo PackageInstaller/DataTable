@@ -1,0 +1,900 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "이걸로 <color=#F7BE45>여정</color>도 끝인가… ",
+      "UnitTalk_JPN": "これで<color=#F7BE45>救援の旅</color>も終わりか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "후후! 이 몸의 능력이면 <color=#F7BE45>여정</color> 쯤이야 간단히 통과할 줄은 알았지만 그래도 후련하구나!",
+      "UnitTalk_JPN": "フフ！わがはいであれば、<color=#F7BE45>救援の旅</color>など簡単なものとは知っていたが、せーせーするのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그래도 네가 아니었다면… 조금 더 힘들었을지 모른다.",
+      "UnitTalk_JPN": "だがしかし、お主がいなければ…もうちょっとだけ大変だったかも知れぬ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "어딘가에서 실수를 했을 수도 있고, <color=#F7BE45>실마리</color>를 잡지 못했을지도 모르지.",
+      "UnitTalk_JPN": "どこかでしくじったかも知れないし、<color=#F7BE45>手掛かり</color>を掴めなかったかもしれないのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아마 <color=#F7BE45>대재단사</color>로 향하는 길에서 빙글빙글 헤매지 않았을까?",
+      "UnitTalk_JPN": "おそらく<color=#F7BE45>大仕立屋</color>への道のりで、ぐるぐると迷っていたんだろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내가 없었더라도 잘 해냈을 거야.",
+          "JumpAnchorStringId_JPN": "一人でも上手くやれたさ。"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "뭐, 그랬을 수도 있고! 흐하하!",
+      "UnitTalk_JPN": "そうかも知れないのだ！フハハ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "그래도 중요한 건! 지금은 내 곁에 단장, 네가 있다는 사실이다.",
+      "UnitTalk_JPN": "でも大切なことは！今わがはいの傍にいる団長、お主がいることだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "앞으로도 잘 부탁한다. 나의 <color=#F7BE45>필연</color>이여.",
+      "UnitTalk_JPN": "これからもよろしくなのだ。わがはいの<color=#F7BE45>必然</color>よ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나도 잘 부탁해.",
+          "JumpAnchorStringId_JPN": "こちらこそよろしく。"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그런 의미에서! 나중에 <color=#F7BE45>용의 계곡</color>에 함께 가보는 건 어떠냐?!",
+      "UnitTalk_JPN": "そういうわけで！後で<color=#F7BE45>竜の谷</color>に一緒に行ってみないか？！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>용의 계곡</color>을?",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>竜の谷</color>に？"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래. 인간에게는 더할 나위 없는 영광이지.",
+      "UnitTalk_JPN": "そうなのだ。人間にとって、これ以上の光栄はないのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "용족의 명예로운 손님이 되어야만 초대받을 수 있는 곳이니까. ",
+      "UnitTalk_JPN": "誉れ高い竜族の来賓こそが、立ち入れる場所だからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…그런데 <color=#F7BE45>대재단사</color>가 되기 전까지는 돌아가지 않겠다고 큰소리 쳐놨는데 어쩌지…?",
+      "UnitTalk_JPN": "…しかし<color=#F7BE45>大仕立屋</color>になるまで、戻らんと大きな口を叩いておいたのだが…どうしよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>대재단사</color>가 되면 되지.",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>大仕立屋</color>になればいい。"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그게 그리 쉬운 일이 아니란 말이다…",
+      "UnitTalk_JPN": "そう簡単な話ではないのだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "<color=#F7BE45>특별한 기술</color>에 대해 아직 많이 알아봐야 하기도 하고, 무엇보다 아직 <color=#F7BE45>벨라</color>는 찾지도 못했잖으냐.",
+      "UnitTalk_JPN": "<color=#F7BE45>特別な技</color>についても、まだ調べる事も多いし、何よりまだ<color=#F7BE45>ベラ</color>すらも見つからんではないか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "계획이 있어.",
+          "JumpAnchorStringId_JPN": "考えがある。"
+        }
+      ]
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "계획?",
+      "UnitTalk_JPN": "考え？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그 <color=#F7BE45>후드 쓴 녀석</color>부터 찾아보는 거야.",
+          "JumpAnchorStringId_JPN": "その<color=#F7BE45>フードを被ったやつ</color>を探すんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>벨라</color>를 구해다 줬다는 사람.",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>ベラ</color>を取ってきてくれた人。"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…아아!",
+      "UnitTalk_JPN": "…ああ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "그래. 그 녀석부터 차근차근 되짚어가면 되겠구나!",
+      "UnitTalk_JPN": "そうなのだ。そいつから辿ればいいのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "천재냐? 단장은!",
+      "UnitTalk_JPN": "天才か？団長は！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "흠! 하지만 아주 기나긴 여정이 될지도 모른다. 고작 1년간의 지난 <color=#F7BE45>여정</color>과는 달리 말이야.",
+      "UnitTalk_JPN": "ふむ！しかし、長い旅路になるかも知れないのだ。たった1年の<color=#F7BE45>救援の旅</color>とは違ってな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "단장은 인간인 주제에 몇 년이나 나와 함께 할 수 있을지 걱정이다!",
+      "UnitTalk_JPN": "人間に過ぎない団長は、何年をわがはいと共にいられるか心配なのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래도 몇 십 년 정도는 가능하지 않을까?",
+          "JumpAnchorStringId_JPN": "おそらく何十年はいけるかな？"
+        }
+      ]
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "크하하! 수명이 다할 때까지 말이냐?",
+      "UnitTalk_JPN": "クハハ！その寿命が尽きるまでか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "좋아! 그럼 그 안에 꼭 찾아야겠구나.",
+      "UnitTalk_JPN": "良し！その間には何としても見つけるのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 잠시 그녀의 환한 얼굴을 바라보았다.",
+      "UnitTalk_JPN": "私は、しばらく彼女の眩しい笑顔を見つめていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "수많은 시련과 상처를 딛고 마침내 <color=#F7BE45>[여정]</color>의 끝에 도달한 자.",
+      "UnitTalk_JPN": "幾多の試練と痛みを克服し、ついに<color=#F7BE45>「救援の旅」</color>の終わりに到達した者。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀의 앞에는 더욱 많은 고난과 어려움이 기다리고 있을 것이다.",
+      "UnitTalk_JPN": "彼女には、更なる苦悩と困難が待ち受けているはずだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 나는 믿는다.",
+      "UnitTalk_JPN": "しかし、私は信じている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀는 분명 나를 뛰어넘을…",
+      "UnitTalk_JPN": "彼女はきっと、私を超える…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "최고의 <color=#F7BE45>[구원자]</color>가 될 것이라는 걸.",
+      "UnitTalk_JPN": "最高の<color=#F7BE45>「救援者」</color>になれるということを。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 눈부신 모습에… 나는 잠시 눈을 감았다.",
+      "UnitTalk_JPN": "その眩しい姿に…私はそっと瞳を閉じた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.2
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…축하드립니다. 구원자님.",
+      "UnitTalk_JPN": "…おめでとうございます。救援者様。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이걸로 구원자님은 <color=#F7BE45>[여정]</color> 최종 시험을 통과하셨습니다.",
+      "UnitTalk_JPN": "これにて救援者様は<color=#F7BE45>「救援の旅」</color>の最終試験をクリアしました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "한가지 알려드릴 좋은 소식이 있습니다.",
+      "UnitTalk_JPN": "1つ、良いお知らせがあります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "구원자님이 신청하신 <color=#F7BE45>알리시아</color>님과의 면담 요청이 관측사 평의회 정식 안건으로 올라갔습니다.",
+      "UnitTalk_JPN": "救援者さまが申請されていた、<color=#F7BE45>アリシア</color>様との面談が議案として通りました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "관측사 평의회와 <color=#F7BE45>알리시아</color>님의 승인이 나면, 그토록 바라시던 <color=#F7BE45>알리시아</color>님과의 면담이 가능해질지도…",
+      "UnitTalk_JPN": "評議会と<color=#F7BE45>アリシア</color>様が承認されれば、待ち望んでおられた面談が可能になるかと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "MUSIC_CUTSCENE_08.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "구원자님…?",
+      "UnitTalk_JPN": "救援者さま？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_08.mp3",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "이상한 말인줄은 안다. ",
+      "UnitTalk_JPN": "変な事を言ってるのは承知で聞くのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "나도 내가 모르는 새에 스스로 <color=#F7BE45>마룡</color>이 되어버린 건지 의심스러울 정도니까.",
+      "UnitTalk_JPN": "自分も知らない内に<color=#F7BE45>魔竜</color>と化してしまったのでは、と疑ってくらいだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만 물어야겠다. 내 옆에 누군가 있지 않았나?",
+      "UnitTalk_JPN": "しかし、聞かねばならぬ。わがはいの隣に誰かいなかったか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "…그럴리가요. 처음부터 저희 둘 밖에 없었는데요.",
+      "UnitTalk_JPN": "…あり得ない話です。最初から私たち二人しかいませんでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…요상한 일이군. ",
+      "UnitTalk_JPN": "…変なのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "분명히… 있었다. 나의 <color=#F7BE45>필연</color>이 말이다.",
+      "UnitTalk_JPN": "確かに…いたのだ。わがはいの<color=#F7BE45>必然</color>がな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "미안하지만, 면담 요청은 보류다.",
+      "UnitTalk_JPN": "悪いけど、面談は後回しなのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "예? ",
+      "UnitTalk_JPN": "はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "더 급한 일이 생겼거든. ",
+      "UnitTalk_JPN": "もっと急用ができたのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "나의 <color=#F7BE45>이상</color>을 이루기 위해 필요한 사람을 찾으러 가야겠다. ",
+      "UnitTalk_JPN": "わがはいの<color=#F7BE45>理想</color>を叶えるべく、必要な者を捜しに行く。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "클레어에게도 작별인사를 부탁하지.",
+      "UnitTalk_JPN": "クレアにも別れの挨拶を頼むのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "자, 잠깐만요 구원자님!",
+      "UnitTalk_JPN": "ま、待ってください、救援者さま！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.2
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그 오랜 세월 찾아 헤맸던 <color=#F7BE45>단서</color>가… 어쩌면 너일지도 모르겠구나.",
+      "UnitTalk_JPN": "悠々たる時の中、求めた<color=#F7BE45>手掛かり</color>は…お主なのかも知れない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "찾아내겠다. ",
+      "UnitTalk_JPN": "見つけ出してやるのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "찾아내서 너에게 완성된 부적, 아니 멋들어진 옷을 선물하마. ",
+      "UnitTalk_JPN": "見つけ出して完成したお守り、いや、カッコいい服をプレゼントしてやろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "걱정마라! 네게 어울리는, 끝내주는 작품으로 완성해서 선물할 테니!",
+      "UnitTalk_JPN": "心配するな！お主に似合う、傑作を完成して贈ってやるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_SHOOTING_STAR_01.prefab"
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 순간 또 하나의 새로운 별빛이 점화되었다.",
+      "UnitTalk_JPN": "今この瞬間、新たな星の煌めきが加わった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 찬란한 불꽃은 아카이브에 기록되어 우주의 어둠을 비추리라.",
+      "UnitTalk_JPN": "その眩い輝きは、アーカイブに記録され<r=そら>宇宙</r>の闇を照らすであろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "관측 종료.",
+      "UnitTalk_JPN": "観測終了。",
+      "TalkTime": 0.03
+    }
+  ]
+}

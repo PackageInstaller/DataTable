@@ -1,0 +1,202 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_CHARIOT_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_2.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_06.mp3"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": false,
+      "WaitTime": 2.5
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "끝없는 대지를 달렸다.",
+      "UnitTalk_JPN": "果てしない大地を駆け抜けた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세찬 바람이 동반된 황야를 질주하는 동색 전차, 두 마리의 철갑마.",
+      "UnitTalk_JPN": "激しい風を伴った荒野を疾走する同色の戦車、二頭の鉄甲馬。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "빛이 들지 않는 모래폭풍 속에서도 끊임없이 다리와 바퀴를 움직인다.",
+      "UnitTalk_JPN": "光が届かない砂嵐の中でも、絶え間なく脚と車輪を動かす。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "얼마나 오랜 시간을 헤매었는지 기억 나지 않는다.",
+      "UnitTalk_JPN": "どれほど長い間彷徨ったのか、記憶にない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어째서 달리기 시작했는지 떠오르지 않는다.",
+      "UnitTalk_JPN": "なぜ走り始めたのか思い出せない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그래서, 달린다.",
+      "UnitTalk_JPN": "だから、走る。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이유는 알 수 없지만 이 여정의 끝에 다다르면 모든 궁금증이 해소될 걸 알기에.",
+      "UnitTalk_JPN": "理由はわからないが、この旅の果てに辿り着けば、全ての疑問が解けることを知っているから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "끝없는 대지를 달린다.",
+      "UnitTalk_JPN": "果てしない大地を走る。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.7
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 1.5
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정일지에 보관한 아르카나에 빛이 스며든다.",
+      "UnitTalk_JPN": "旅の日誌に保管したアルカナに光が染み込む。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_CHARIOT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 인연에 별의 축복이 깃들었다.",
+      "UnitTalk_JPN": "私と<color=#F7BE45>[CHARACTER_NAME]</color>の絆に、星の祝福が宿った。",
+      "TalkTime": 0.03
+    }
+  ]
+}

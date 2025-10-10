@@ -1,0 +1,79 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MUTANT_MASK_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하하! 성공이야. ",
+      "UnitTalk_JPN": "あはは！成功したの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "단장, 키라가 해냈어. ",
+      "UnitTalk_JPN": "団長、キラできたの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "역시 단장이 옆에 있으면 뭐든 잘 풀리네. ",
+      "UnitTalk_JPN": "やっぱり団長がそばにいると何でも上手くいくの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "그러니까 단장… ",
+      "UnitTalk_JPN": "だから、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "키라 옆에 꼭 붙어 있어야 해…? ",
+      "UnitTalk_JPN": "絶対キラのそばを離れないでね…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "알았지? ",
+      "UnitTalk_JPN": "わかった？",
+      "TalkTime": 0.03
+    }
+  ]
+}

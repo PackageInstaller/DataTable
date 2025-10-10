@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_05",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_05",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다른 구원자와 이야기를 하며, 다나는 자신이 <color=#F7BE45>여정</color>을 계속할 자격이 있는지 고민하게 됐다.",
+      "UnitTalk_JPN": "他の救援者たちと話をしながら、ダーナは自分が<color=#F7BE45>旅</color>を続ける資格があるかどうか悩んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

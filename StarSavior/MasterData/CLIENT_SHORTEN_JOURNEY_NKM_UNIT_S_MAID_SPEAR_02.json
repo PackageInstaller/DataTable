@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_SPEAR_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_REQUEST.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어는 원칙과 계획을 중요시한다.",
+      "UnitTalk_JPN": "クレアは原則と計画を重視する。",
+      "TalkTime": 0.03
+    }
+  ]
+}

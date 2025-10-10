@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_03", //기록자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_03", //추적자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_03", //기록자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_03", //경멸자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_OPERATION_03", //저주의 경멸자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_03", //경멸자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          }
+        ]
+      }
+    ]
+  }
+}

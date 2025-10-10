@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_06",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_06",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "내기를 통해서 클라리사가 다시 한번 진심으로 여정에 도전할 수 있게, 계기를 부여했다.",
+      "UnitTalk_JPN": "賭けを通じてクラリッサが再び心から旅に挑戦できるよう、きっかけを与えた。",
+      "TalkTime": 0.03
+    }
+  ]
+}

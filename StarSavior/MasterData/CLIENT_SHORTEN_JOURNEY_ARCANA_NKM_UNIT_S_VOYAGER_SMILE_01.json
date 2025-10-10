@@ -1,0 +1,117 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_SMILE_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_SMILE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_PUBLIC.png",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_SMILE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고양이를 좋아하지 않는다는 스마일에게 아세라는 고양이를 만져보라고 권유했다.",
+      "UnitTalk_JPN": "猫が嫌いだと言うスマイルに、アセラは猫を触ってみるよう勧めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "조심스럽게 머리를 쓰다듬어봐.",
+          "JumpAnchorStringId_JPN": "慎重に頭を撫でてみて。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "지금이야! 아세라처럼 배를 만져!",
+          "JumpAnchorStringId_JPN": "今だ！アセラのように腹を撫でて！",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일은 성공적으로 고양이를 쓰다듬으며 시간을 보냈다.",
+      "UnitTalk_JPN": "スマイルは無事に猫を撫でながら時間を過ごした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고양이는 스마일을 깨물고 도망가 버렸다...",
+      "UnitTalk_JPN": "猫はスマイルをかじって逃げ去ってしまった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_SMILE_01",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_SMILE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

@@ -1,0 +1,556 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
+    "UseJourneyStartAnim": true,
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_CLOTH_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 3,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_JUMP.wav"
+            ]
+          },
+          {
+            "EventFrame": 24,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SWORD.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START_FOCUS",
+        "StartOffsetZ": -2.5,
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_FOOT_STEP_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MACHINE.wav"
+            ]
+          },
+          {
+            "EventFrame": 57,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SWORD_SLASH_BIG.wav"
+            ]
+          },
+          {
+            "EventFrame": 116,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SWORD_SLASH_BIG_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 141,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_ATTACK_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SWORD_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "NoRootMoveZ": false,
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 20,
+            "EventEndFrame": 25,
+            "EventMoveTarget": "NEMT_TARGET",
+            "OffsetFront": -1.5
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 85,
+            "EventEndFrame": 95,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 38,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 55,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 3,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_LIGHTNING.wav"
+            ]
+          },
+          {
+            "EventFrame": 23,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_STEP_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 29,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SWEEP.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SLASH.wav"
+            ]
+          },
+          {
+            "EventFrame": 53,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SLASH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 86,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_STEP.wav"
+            ]
+          },
+          {
+            "EventFrame": 97,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_STEP_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 102,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SWORD_03.wav"
+            ]
+          },
+          // {
+          //   "EventFrame": 0,
+          //   "UseNovaBurst": true,
+          //   "listSoundName": [
+          //     "SFX_BATTLE_COMMON_NOVA_BURST_ACTIVE_02.wav"
+          //   ]
+          // }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_SPECIAL_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 23,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SWORD_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "NoRootMoveZ": false,
+        "InternalCameraEndAnimFrame": 110,
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 20,
+            "EventEndFrame": 30,
+            "EventMoveTarget": "NEMT_TARGET",
+            "OffsetFront": -1.65
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 79,
+            "EventEndFrame": 90,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 45,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_LIGHTNING_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_DASH.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SLASH_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 77,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_STEP.wav"
+            ]
+          },
+          {
+            "EventFrame": 91,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_STEP_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 102,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SWORD_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_HYPER_READY",
+        "MapFadeEvents": [],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_LIGHTNING_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 26,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SWORD_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "IsLoop": true,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_HYPER_LOOP.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "FormationMyTeam": "",
+          "FormationEnemy": "SFT_NORMAL_LINE"
+        },
+        "listNoInternalCameraUpdate": [
+          {
+            "StartFrame": 85,
+            "EndFrame": 90
+          }
+        ],
+        "MoveEvents": [
+          {
+            "IsInstant": true,
+            "UseAnimTime": true,
+            "EventFrame": 0,
+            "EventMoveTarget": "NEMT_TARGET_X"
+          }
+        ],
+        "ShowEvents": [
+          {
+            "EventFrame": 248,
+            "ShowOffTarget": true
+          }
+        ],
+        "CameraCrashEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 220,
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 1
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 128,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 153,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeDef": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 168,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeDef": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 184,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeDef": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 215,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeDef": 0.1,
+            "ReAttackCount": 3,
+            "ReAttackGap": 0.15,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 230,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeDef": 0.1,
+            "ReAttackCount": 10,
+            "ReAttackGap": 0.05,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_LIGHTNING_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SWORD_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 39,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_CHARGE.wav"
+            ]
+          },
+          {
+            "EventFrame": 74,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_DASH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 129,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_CRASH.wav"
+            ]
+          },
+          {
+            "EventFrame": 142,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_CRASH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 167,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_CRASH_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 184,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_EXPLOSION.wav"
+            ]
+          },
+          {
+            "EventFrame": 218,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_EXPLOSION_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 262,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SWORD_07.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_NOVA_BURST",
+        "VfxNovaBurstFrame": 60,
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SHINE.wav"
+            ]
+          },
+          {
+            "EventFrame": 9,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_NOVA_BURST_ACTIVE.wav"
+            ]
+          },
+          {
+            "EventFrame": 54,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SHINE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 57,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_NOVA_BURST_IMPACT.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_SWORD_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 34,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_BODY_FALL.wav"
+            ]
+          },
+          {
+            "EventFrame": 43,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_WIN",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_WHOOSH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_WHOOSH_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 52,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_WEAPON.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_LOSE",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_GUNBLADE_CLOTH.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

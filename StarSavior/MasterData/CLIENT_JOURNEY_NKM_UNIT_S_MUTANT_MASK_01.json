@@ -1,0 +1,1342 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAZA.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정 단원을 만나기 위해 약속 장소인 광장에 나왔다. ",
+      "UnitTalk_JPN": "旅の団員に会うため、待ち合わせ場所である広場に来た。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마스크를 쓰고 있는 소녀 하나가 주변을 두리번거리고 있는 걸 발견했다.",
+      "UnitTalk_JPN": "周囲をきょろきょろと見回しているマスク姿の少女がいる。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "네가 키라구나?",
+          "JumpAnchorStringId_JPN": "君がキラだね？"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…아, 안녕. ",
+      "UnitTalk_JPN": "…は、初めましてなの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "키라가 갈라진 목소리로 대답했다.",
+      "UnitTalk_JPN": "キラがかすれた声で答えた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "아… 감기 걸렸냐고? 아니야. ",
+      "UnitTalk_JPN": "あ…これは風邪を引いたわけじゃないの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "다른… 사람하고 말하는 게 너무 오랜만이라 그런가 봐.",
+      "UnitTalk_JPN": "誰かと…話すのは本当に久しぶりで、それでこんな声なの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "듣기 안 좋은 목소리지? 미안해. ",
+      "UnitTalk_JPN": "変な声だよね？ごめんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니야. 괜찮아.",
+          "JumpAnchorStringId_JPN": "いや。大丈夫だよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BUTTON.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "키라가 손에 든 무언가를 뚫어져라 쳐다보며 버튼을 누르고 있다. ",
+      "UnitTalk_JPN": "キラが手に持っている何かをじっと見つめながらボタンを押している。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "슬쩍 다가가 말을 걸어본다. ",
+      "UnitTalk_JPN": "こっそり近づいて話しかけてみる。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건 뭐야?",
+          "JumpAnchorStringId_JPN": "それは何？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…?!",
+      "UnitTalk_JPN": "…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "너, 너무 가까이 오지…! ",
+      "UnitTalk_JPN": "あ、あんまり近くにこ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WIND.wav"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "-않는 게 좋을 것 같아…",
+      "UnitTalk_JPN": "…ないほうがいいと思うの…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "…미안. ",
+      "UnitTalk_JPN": "…ごめん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "말실수할 뻔했네… ",
+      "UnitTalk_JPN": "余計なこと言いそうになったの…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "말실수?",
+          "JumpAnchorStringId_JPN": "余計なこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…아. 아무것도 아니야. ",
+      "UnitTalk_JPN": "…あ。何でもないの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "키라는… 원래 이렇게 혼잣말을 자주 하거든.",
+      "UnitTalk_JPN": "キラは…こうやってよく独り言を言うのが癖なの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "단장은 신경 쓰지 않아도 돼.  ",
+      "UnitTalk_JPN": "団長は気にしなくていいの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BUTTON.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "이건… 그냥 장난감이야. ",
+      "UnitTalk_JPN": "これは…ただのオモチャなの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "불안해질 때면 여기 있는 버튼들을 눌러. ",
+      "UnitTalk_JPN": "不安になる時はこのボタンを押すの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "그럼 조금 마음이 편안해지거든.",
+      "UnitTalk_JPN": "そしたら少し気持ちが落ち着くの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "애도 아니고 장난감이나 만지작거리는 거… 바보 같지?",
+      "UnitTalk_JPN": "いい歳してオモチャをいじくりまわして…バカみたいでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "나도 알고 있어. 미안. ",
+      "UnitTalk_JPN": "キラもわかってるの。ごめん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 자꾸 미안하다고 하는거야?",
+          "JumpAnchorStringId_JPN": "どうしてごめんばっかり言うの？"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아… 자꾸 미안하다고만 해서 미안. ",
+      "UnitTalk_JPN": "あ…ごめんって言ってごめん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "핫…? 또 미안하다고 해버렸네… ",
+      "UnitTalk_JPN": "あれっ？またごめんって言っちゃった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "답답하지? 이런 이상한 애가 단원이 되어버리다니.",
+      "UnitTalk_JPN": "イライラするでしょ？こんな変な子が団員になっちゃって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "…괜찮다면 조금만 참아 줘. ",
+      "UnitTalk_JPN": "でも…少しだけ我慢してほしいの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "어차피 나 같은 건 금방 여정에서 탈락할 테니까.",
+      "UnitTalk_JPN": "どうせキラなんか、途中で脱落すると思うの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "…왜 나 같은 게 <color=#F7BE45>여정</color>의 단원으로 뽑혀버린 걸까?",
+      "UnitTalk_JPN": "…どうしてキラなんかが<color=#F7BE45>旅</color>の団員に選ばれちゃったんだろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "잘하는 거 하나 없는 키라 말고 더 어울리는 사람들이 잔뜩 있을 텐데…",
+      "UnitTalk_JPN": "何の取柄もないキラじゃなくて、もっと相応しい人たちがいっぱいいたはずなのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐든 해봐야 아는 거지! ",
+          "JumpAnchorStringId_JPN": "なんでもやってみないことにはわからないさ！"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…으응. 말은 고맙지만.",
+      "UnitTalk_JPN": "…うん。そう言ってもらえるのは嬉しいけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "키라는 키라가 제일 잘 아는걸. ",
+      "UnitTalk_JPN": "キラのことはキラが一番よくわかってるの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "키라는 작은 목소리로 중얼거리며 자리에 쪼그려 앉았다. ",
+      "UnitTalk_JPN": "キラは、小声でもごもごと呟きながら、その場にしゃがみ込んだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀가 벤치 아래쪽을 향해 손을 내밀자, 까만 고양이 하나가 어슬렁어슬렁 다가온다. ",
+      "UnitTalk_JPN": "彼女がベンチの下に手を伸ばすと、一匹の黒猫がのそのそと近づいて来た。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_ANIMAL_CAT.wav"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고양이는 새침한 표정으로 키라의 손에 머리를 가져다 댔다. ",
+      "UnitTalk_JPN": "猫はすました表情のままキラの手に頭を近づけた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "키라보다는 이 야옹이가 훨씬 세상에 도움이 될 게 분명해.",
+      "UnitTalk_JPN": "キラよりも、この猫ちゃんの方がよっぽど世界の役に立つはずなの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "키라는… 이 아이처럼 귀엽지도 않고. ",
+      "UnitTalk_JPN": "キラは…この子みたいに可愛くもないし。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "날쌔지도 않은 데다 날카로운 발톱도 없거든. ",
+      "UnitTalk_JPN": "素早くもないし、鋭い爪もないの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "으읏…! 그건 물면 안 돼… !",
+      "UnitTalk_JPN": "ううっ…！それは噛んじゃダメなの…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "키라의 주변을 맴돌던 고양이가 가방에 달려있던 인형 하나를 물고 달아나기 시작했다.  ",
+      "UnitTalk_JPN": "キラの周りをぐるぐる回っていた猫が、カバンについていた人形を一つ咥えて逃げ出した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아, 내 <color=#F7BE45>곰탱구리 인형</color>…!",
+      "UnitTalk_JPN": "あっ、キラの<color=#F7BE45>くまぽこ人形</color>…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "멈춰…!!!",
+      "UnitTalk_JPN": "待って…！！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "돌아와!",
+      "UnitTalk_JPN": "戻ってきて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_DARK_75.wav"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "UnitTalk_KOR": "전속력으로 도망치던 고양이가 별안간 제자리에서 공중제비를 돌며 떠올랐다. ",
+      "UnitTalk_JPN": "全速力で逃げていた猫が突然、その場で宙返りをして浮かびあがった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…?!",
+          "JumpAnchorStringId_JPN": "…！？"
+        }
+      ]
+    },
+    {
+      "Uid": 111,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기괴한 자세로 날아온 고양이가 키라의 품에 안겼다. ",
+      "UnitTalk_JPN": "奇妙な姿勢でこちらに飛んできた猫が、キラの腕の中に飛び込んだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_ANIMAL_CAT.wav"
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_12.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "으으… 조심하려고 했는데… ",
+      "UnitTalk_JPN": "うう…気をつけようと思ったのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "또 저질러 버렸네. ",
+      "UnitTalk_JPN": "またやっちゃったの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "미안해 야옹아. 일부러 그런 건 아니- 앗! 아, 아앗…?! ",
+      "UnitTalk_JPN": "ごめんね、猫ちゃん。わざとじゃな…あっ！あ、ああっ…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "다, 단장도 옆에 있었지? 미안해! ",
+      "UnitTalk_JPN": "だ、団長も一緒にいたよね？ごめんなさい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "키라는 불안한 표정으로 내 몸을 구석구석 살폈다.",
+      "UnitTalk_JPN": "キラは不安そうな顔で私の体を隅々まで調べた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "다치진 않았어? 불편한 곳은?",
+      "UnitTalk_JPN": "怪我はしてない？具合が悪いところは？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "혹시 심장이 아프다던가? ",
+      "UnitTalk_JPN": "もしかして心臓が痛いとか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "숨이 잘 안 쉬어진다던가?",
+      "UnitTalk_JPN": "息が苦しいとか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "몸, 움직일 수 있겠어? 마음대로 움직일 수 있는 거야? ",
+      "UnitTalk_JPN": "体、動かせそう？思いどおりに動ける？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응, 아무렇지 않은데?",
+          "JumpAnchorStringId_JPN": "うん、なんともないよ？"
+        }
+      ]
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "멀쩡하다고?",
+      "UnitTalk_JPN": "平気なの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…어째서? 분명 <color=#F7BE45>언령</color>에 영향을 받았을 거리였는데…",
+      "UnitTalk_JPN": "…どうしてなの？確実に<color=#F7BE45>言霊</color>の影響を受ける距離だったのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잘 모르겠지만…",
+          "JumpAnchorStringId_JPN": "よくわからないけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…방금 내가 다쳤어야 되는 거야?",
+          "JumpAnchorStringId_JPN": "…今のは、私が怪我をするべきだったのかな？"
+        }
+      ]
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그, 그건 아니야. ",
+      "UnitTalk_JPN": "そ、それは違うの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "단장이 다치길 바란건 절대 아니야.",
+      "UnitTalk_JPN": "団長に怪我させたかったわけじゃないの、本当なの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…다행이다.",
+      "UnitTalk_JPN": "…よかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "후우… ",
+      "UnitTalk_JPN": "ふう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…단장은 <color=#F7BE45>언령</color>이라는 말, 들어본 적 있어? ",
+      "UnitTalk_JPN": "…団長は<color=#F7BE45>言霊</color>って言葉、聞いたことある？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "언령?",
+          "JumpAnchorStringId_JPN": "言霊？"
+        }
+      ]
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응. <color=#F7BE45>말</color>에 힘이 담기는 능력.",
+      "UnitTalk_JPN": "うん。<color=#F7BE45>言葉</color>に力を込める能力。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "키라가 가지고 있는 능력이야.",
+      "UnitTalk_JPN": "キラが持ってる能力なの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "키라가 <color=#F7BE45>이렇게 되라</color>라고 말하면, 실제로 그 힘이 영향을 끼쳐.",
+      "UnitTalk_JPN": "キラが<color=#F7BE45>こうなれ</color>って言うと、実際にそうなるの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "이런 힘이 왜 나한테 왔는지, 언제부터 이랬는지는 잘 모르겠어.",
+      "UnitTalk_JPN": "どうしてこんな力がキラにあるのか、いつからだったのかは…よくわからないの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "어떻게 다루는 건지도 잘 모르고.",
+      "UnitTalk_JPN": "どうやって扱うのかもよくわかんないの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "내가 원하지 않을 때도 제 멋대로 발동되어 버리거든. <color=#F7BE45>언령</color>이란 거.",
+      "UnitTalk_JPN": "キラが望んでない時も勝手に発動しちゃうの。<color=#F7BE45>言霊</color>って。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "어렸을 적부터 쭉 그랬어. ",
+      "UnitTalk_JPN": "小さい時からずっとそうだったの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "그래서 말을 할 때마다 무서워.",
+      "UnitTalk_JPN": "だから、言葉を発する時はいつも怖いの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "조금이라도 말실수를 하면 주변 사람들을 다치게 해버려. ",
+      "UnitTalk_JPN": "ちょっとでも口が滑っちゃうと、周りの人たちを傷つけちゃうの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "기분 나쁜 능력이지? ",
+      "UnitTalk_JPN": "気持ち悪い能力でしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "키라도 알아. 다들 그렇게 말했거든.",
+      "UnitTalk_JPN": "キラもわかってるの。みんなそう言ってたから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "기분 나쁘지 않아.",
+          "JumpAnchorStringId_JPN": "気持ち悪くないよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그, 그래…? 그치만… ",
+      "UnitTalk_JPN": "そ、そうなの…？でも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "키라는 위험하고 불길한 존재야. ",
+      "UnitTalk_JPN": "キラは危険で不吉な存在なの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그러니까 단장도 내 옆에 있으면 안 돼. ",
+      "UnitTalk_JPN": "だから、団長もキラのそばにいちゃダメなの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "이번에는 운이 좋아서 단장이 다치지 않았지만…",
+      "UnitTalk_JPN": "今回は、運がよかったから団長は怪我しなかったけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "잠깐이라도 방심해서 말 실수를 하게 되면 단장도 위험해지고 말걸. ",
+      "UnitTalk_JPN": "少しでもキラが油断しちゃったら、団長も危険な目にあうと思うの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "당연히 훈련도 단장이 원하는대로 진행하기 어려울 거야.",
+      "UnitTalk_JPN": "当然トレーニングも団長の思いどおりにはいかないとおもうの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "…응. 단장에게 미움받아도 어쩔 수 없네. ",
+      "UnitTalk_JPN": "…うん。団長に嫌われても仕方ないよね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "전부 내 능력 탓이니까. ",
+      "UnitTalk_JPN": "全部キラの能力が悪いの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "걱정 마!",
+          "JumpAnchorStringId_JPN": "心配しないで！"
+        }
+      ]
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "으응…? ",
+      "UnitTalk_JPN": "うん…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여정 단장으로서 어떻게든 방법을 찾아볼 테니까.",
+          "JumpAnchorStringId_JPN": "旅の団長として、なんとか方法を見つけてみるから。"
+        }
+      ]
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…아하하. ",
+      "UnitTalk_JPN": "…あはは。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "고마워. 단장. ",
+      "UnitTalk_JPN": "ありがとう、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "말 뿐이라고 해도… 키라, 힘이 조금 날지도. ",
+      "UnitTalk_JPN": "そう言ってくれただけでも…キラ、ちょっと元気出たかもなの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어두웠던 키라의 표정이 조금이나마 밝아지는 것이 느껴졌다. ",
+      "UnitTalk_JPN": "暗かったキラの顔が少しだけ明るくなるのがわかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>언령</color>이라는 특수한 능력을 가진 여정 단원이라… ",
+      "UnitTalk_JPN": "<color=#F7BE45>言霊</color>という特殊な能力を持つ旅の団員か…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어떤 방법으로 훈련하는 것이 좋을지 고민해봐야겠다. ",
+      "UnitTalk_JPN": "どんな方法で鍛えたらいいのか、考えてみないといけない。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

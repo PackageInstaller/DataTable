@@ -1,0 +1,105 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00H_RANDOM_WEATHER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00C_RANDOM_WEATHER",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_18.mp3",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00C_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "창문 틈 사이로 찬바람이 스며들어 두꺼운 이불을 덮어도 한기가 좀처럼 가시지 않았다. 이럴 때는…",
+      "UnitTalk_JPN": "窓の隙間から冷たい風が入り込み、厚い布団をかけても寒気がなかなか消えなかった。こんな時は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00C_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "핫팩을 사용한다.",
+          "JumpAnchorStringId_JPN": "カイロを使う。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "어떻게든 버텨본다.",
+          "JumpAnchorStringId_JPN": "何とか耐えてみる。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00C_RANDOM_WEATHER",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00C_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 포근하게 숙면을 취할 수 있었다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、ぐっすり眠ることができたようだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00C_RANDOM_WEATHER",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00C_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "밤새 이불 속에서 끙끙댄 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 깊은 잠을 이루지 못해 다음 날까지 피로가 누적된 모습이었다.",
+      "UnitTalk_JPN": "一晩中布団の中でうめき声を上げていた<color=#F7BE45>[CHARACTER_NAME]</color>は深い眠りにつけず、翌日まで疲労が蓄積した様子だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

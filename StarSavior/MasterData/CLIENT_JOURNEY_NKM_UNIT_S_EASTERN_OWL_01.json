@@ -1,0 +1,1109 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "훈련장에 도착해서 한참을 기다렸지만 아무도 나타나지 않았다.",
+      "UnitTalk_JPN": "訓練場に到着してしばらく待ったが、誰も現れなかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무언가 잘못된 것이 있는지 연락관에게 확인하러 돌아가려 할 때였다.",
+      "UnitTalk_JPN": "何か問題があったのか、連絡官に確認しに戻ろうとしたときだった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "왠 베개? 아니 새? 아무튼 처음보는 생명체가 뒹굴뒹굴 굴러왔다.",
+      "UnitTalk_JPN": "まくら…？いや、鳥なのか？とにかく見慣れない生き物がゴロゴロと転がってきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SERIOUS",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS3",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "꾸룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "으응? 벌써 약속시간이라고…?",
+      "UnitTalk_JPN": "んん～？もう約束の時間なの…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하암… 그럴 리가 없잖아…",
+      "UnitTalk_JPN": "ふわぁぁ…そんなはずないよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "분명 아직 1시간 정도는 남았을 거야. ",
+      "UnitTalk_JPN": "あと一時間くらいはあるはずだよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "그러니까 조금만 더 잘게…",
+      "UnitTalk_JPN": "だから、あとちょっとだけ寝るねぇ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "꾸룩! 꾸룩!",
+      "UnitTalk_JPN": "クルッ！クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…확실하다고? 시계도 확인했고?",
+      "UnitTalk_JPN": "…ちゃんと時計を確認しろって？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "으응… 알았어… 토토가 그렇다면 그런 거겠지…",
+      "UnitTalk_JPN": "うーん…分かったよ…トトがそう言うなら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그럼 5분만 더 잘게…",
+      "UnitTalk_JPN": "あと5分だけ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "꾸꾸룩! 꾸룩꾸룩!!",
+      "UnitTalk_JPN": "クルッ！クルックルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "아야! 아야! 머리 잡아뜯지 마!!",
+      "UnitTalk_JPN": "いたっ、痛いよぉ～！髪の毛をつつかないで！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여자아이랑… 움직이는 베개…?",
+          "JumpAnchorStringId_JPN": "女の子と…動くまくら…？"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitTalk_KOR": "꾸룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "으음, 베개는 아닌가… 그럼 몬스터?",
+          "JumpAnchorStringId_JPN": "ううーん…まくらじゃなくて…モンスターかな？"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "꾸루룩! 꾸룩!!",
+      "UnitTalk_JPN": "クルッ！クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 뭐지? 아무래도 새는 아닌 것 같은데…",
+          "JumpAnchorStringId_JPN": "違うのか？鳥ではなさそうだけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "꾸룩! 꾸루룩!!",
+      "UnitTalk_JPN": "クルッ！クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "흐아암… 새 맞아.",
+      "UnitTalk_JPN": "ふぁぁぁ～…鳥だよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "평범한 새는 아니지만…",
+      "UnitTalk_JPN": "普通の鳥じゃないけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "소녀는 긴 하품을 하고는 정체불명의 생명체… 아니 새에 이끌려 내게 다가왔다.",
+      "UnitTalk_JPN": "少女は長いあくびをした後、正体不明の生物…いや、鳥に導かれるように私に近づいてきた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_2",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitQuickSet": true,
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "아, 혹시 그쪽이 오늘 만나기로 한 단장인가 보네.",
+      "UnitTalk_JPN": "あ、もしかして、あの人が今日会う約束の団長かな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "그것 봐, 토토. 안 늦는다고 했잖아.",
+      "UnitTalk_JPN": "ほら、トト。間に合ったでしょ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하암… 그럼 오늘은 일단 인사했으니까 들어가서 쉬는 건 어때?",
+      "UnitTalk_JPN": "ふわぁ…じゃあ、挨拶も終わったし、戻って休んでもいいかな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "자기소개는 내일이나… 다음주쯤 하는 걸로?",
+      "UnitTalk_JPN": "自己紹介は明日か…来週あたりにしてさ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "꾸루룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "사, 사형과 사저에게 이를 거라고?",
+      "UnitTalk_JPN": "し、師兄と師姉に告げ口するぞって？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "그, 그건 좀 곤란한데… 아빠도 알게 될 거고…",
+      "UnitTalk_JPN": "そ、それはダメだよ…父さんにもバレちゃうし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "할 수 없지… 풍월당은 예의를 중시하니까.",
+      "UnitTalk_JPN": "仕方ない…風月堂は礼儀を重んじるから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "내 소개부터 할게, 단장.",
+      "UnitTalk_JPN": "ボクから自己紹介をするね、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "나는 바다 너머 동쪽 대륙의 풍월당이라는 곳에서 온 세르팡이야.",
+      "UnitTalk_JPN": "ボクは海の向こう、東の大陸の風月堂という場所から来たセルパン。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그리고 이쪽은 내 애완… ",
+      "UnitTalk_JPN": "そしてこちらはボクのペッ… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "꾸룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…파트너 토토.",
+      "UnitTalk_JPN": "…相棒のトト。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "앞으로 잘 부탁해, 단장.",
+      "UnitTalk_JPN": "これからよろしくね、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "근데 너무 길게 말을 했더니 배가 고프네…",
+      "UnitTalk_JPN": "たくさん話したら、お腹がすいちゃった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "혹시 과자나 주스 같은 건 없어?",
+      "UnitTalk_JPN": "団長、お菓子とかジュース持ってない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "참고로 난 갓 짜낸 오렌지 주스를 좋아해.",
+      "UnitTalk_JPN": "ちなみにボクは搾りたてのオレンジジュースが好き。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…여기 왜 온건지는 알지?",
+          "JumpAnchorStringId_JPN": "どうしてここに来たか、分かってるよね？"
+        }
+      ]
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아… 알지, 알지.",
+      "UnitTalk_JPN": "もちろんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "<color=#F7BE45>여정</color>인가 하는 시험을 통과하러 온 거잖아.",
+      "UnitTalk_JPN": "<color=#F7BE45>救援の旅</color>とかいう試験をクリアするために来たんでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "근데… 그거 내가 오고 싶어서 온 건 아니거든.",
+      "UnitTalk_JPN": "でも、ボクが来たかったから来たわけではないんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러면?",
+          "JumpAnchorStringId_JPN": "そうなの？"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SERPENT"
+      ],
+      "UnitTalk_KOR": "어느 날씨 좋고 시원한 바람이 불던 오후였어.",
+      "UnitTalk_JPN": "天気がよくて、涼しい風が吹いている午後だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SERPENT"
+      ],
+      "UnitTalk_KOR": "난 점심을 먹고 대청마루에서 기분 좋게 잠들어 있었지.",
+      "UnitTalk_JPN": "昼食を食べたボクは、縁側で気持ちよく昼寝をしていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SERPENT"
+      ],
+      "UnitTalk_KOR": "근데 그 사이에 이 녀석이 덜컥 <color=#F7BE45>여정</color> 초대장에 서명을 해버린 거야.",
+      "UnitTalk_JPN": "ところがその間に、この子が<color=#F7BE45>旅</color>の招待状に署名をしちゃったんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "덕분에 억지로 여기까지 오게 됐어.",
+      "UnitTalk_JPN": "おかげでここにいるってわけ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "꾸룩꾸룩.",
+      "UnitTalk_JPN": "クルッ！クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응, 괜찮아.",
+      "UnitTalk_JPN": "あぁ、大丈夫だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "좀 귀찮긴 했지만 확실히 고향보다 맛있는 간식이 많았으니까.",
+      "UnitTalk_JPN": "めんどくさいけど、故郷より美味しいお菓子も多いしね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "그리고 매일 새벽마다 수련 때문에 깨우는 사형이랑 사저들이 없기도 하고.",
+      "UnitTalk_JPN": "それに、修行のために毎朝起こしにくる師兄と師姉もいないし。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그런데 단장.",
+      "UnitTalk_JPN": "ところで、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "초대장에 보니까 여정을 완주하면 NOA에서 정기적으로 지원금이 나온다고 하던데.",
+      "UnitTalk_JPN": "招待状を見たら、旅をクリアすればNOAから定期的に支援金が出るって書いてあったの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "그거 거짓말은 아니겠지?",
+      "UnitTalk_JPN": "これは、本当だよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어… 연락관에게 물어볼게.",
+          "JumpAnchorStringId_JPN": "それは…連絡官に確認してみるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응, 부탁해. ",
+      "UnitTalk_JPN": "うん、よろしく。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "난 이번에 한탕 크게 해서 평생 용돈 걱정 없이 사는 게 목표 거든.",
+      "UnitTalk_JPN": "ボクはここで大儲けして、一生お小遣いの心配なく暮らすのが目標なんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "걱정하진 마. 훈련은 여기 토토가 나 대신 열심히 할 테니까… ",
+      "UnitTalk_JPN": "心配しなくていいよ。訓練はここのトトが、ボクの代わりに頑張るから… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아얏!",
+      "UnitTalk_JPN": "いたっ！",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "꾸루룩!!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "아, 알았어… 나도 하면 되잖아…",
+      "UnitTalk_JPN": "分かってるよ…トトも一緒にしようよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "그럼 자기소개도 끝났으니까… 오늘은 좀 잘게. 하아아암~",
+      "UnitTalk_JPN": "じゃあ、自己紹介も終わったし…今日はもう寝るね。ふわぁぁ～",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "훈련은… 내일부터…",
+      "UnitTalk_JPN": "訓練は…明日から…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SERPENT"
+      ],
+      "UnitTalk_KOR": "…쿠울.",
+      "UnitTalk_JPN": "…ぐぅ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TOTO"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "꾸룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "……",
+          "JumpAnchorStringId_JPN": "……"
+        }
+      ]
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "말이 끝나자마자 선 채로 잠이 든 세르팡과 날개를 파닥거리는 토토.",
+      "UnitTalk_JPN": "そう言い終わるとすぐに立ったまま眠ってしまったセルパンと、羽をばたつかせるトト。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 무심코 하늘을 올려다보았다.",
+      "UnitTalk_JPN": "私は思わず空を見上げた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정 단원으로 선정되는 기준은 대체 뭘까. 앞으로 우리는 잘해 나갈 수 있을까.",
+      "UnitTalk_JPN": "団員に選ばれる基準はいったい何なのだろうか。これから私たちはうまくやっていけるのだろうか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "머릿속의 고민과는 별개로 더 없이 화창한 하늘이었다.",
+      "UnitTalk_JPN": "頭の中の悩みとは裏腹に、頭上ではこれ以上ないほどの晴れ間が広がっていた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CameraOffset": "DEFAULT"
+    }
+  ]
+}

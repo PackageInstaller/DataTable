@@ -1,0 +1,497 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_03_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_STREET",
+      "StartBgmFileName": "MUSIC_MONASTIR.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "길을 걷고 있는데 전단지를 돌리던 소녀가 말을 걸어왔다.",
+      "UnitTalk_JPN": "歩いていると、チラシ配りの少女に声をかけられた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "앗! 안녕하세요!",
+      "UnitTalk_JPN": "あっ！こんにちは！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "혹시… 이번에 <color=#F7BE45>[알리시아]</color> 님께서 영입하셨다던 <color=#F7BE45>[여정 단장]</color> 님이신가요?",
+      "UnitTalk_JPN": "あの…<color=#F7BE45>「アリシア」</color>様が任命された、<color=#F7BE45>「旅の団長」</color>さんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나를 알아?",
+          "JumpAnchorStringId_JPN": "私のことを知っているの？"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "역시! 캔들 스퀘어에 상품을 납품하러 갔을 때 멀리서 본 적이 있거든요.",
+      "UnitTalk_JPN": "やっぱり！キャンドル・スクエアに納品しに行ったとき、遠くからお見かけしたことがあるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "제 이름은 리세트!",
+      "UnitTalk_JPN": "わたしの名前はリセット！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "이곳 성운도시의 <color=#F7BE45>[아포칼립스 상단]</color> 지부를 맡고 있어요.",
+      "UnitTalk_JPN": "<color=#F7BE45>「アポカリプス商会」</color>のNOA店を担当しています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아포칼립스 상단?",
+          "JumpAnchorStringId_JPN": "アポカリプス商会？"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 누군가에게 들었던 기억이 떠오른다.",
+      "UnitTalk_JPN": "ふと、誰かの言葉が頭をよぎった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "누구에게 들었는지는 모르겠지만 분명…",
+      "UnitTalk_JPN": "誰かは分からないが、たしかに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "AutoHighlight": "LIGHT",
+      "FilterType": "CFT_SEPIASTATIC"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.2
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "CURRENT_TOWN_STREET",
+      "CutsceneClear": "CLEARALL",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "별이 떨어져도 영업한다는 그곳?",
+          "JumpAnchorStringId_JPN": "星が落ちても営業してるっていう、あそこのこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "앗! 맞아요! 저희 상단에 대해 잘 알고 계시네요.",
+      "UnitTalk_JPN": "あっ、そうです！よくご存知ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그동안 여기저기 홍보하러 다닌 노력이 효과가 있었나 봐요!",
+      "UnitTalk_JPN": "これまで、あちこちで宣伝した努力が実りましたぁ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "특히 올해는 <color=#F7BE45>[여정]</color> 시험이 다시 시작된다고 해서 특별한 상품들을 입고하고 있답니다.",
+      "UnitTalk_JPN": "特に今年は…<color=#F7BE45>「救援の旅」</color>の試験が再開されるということで、特別な商品をご用意しているんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "분명 단장님께 도움이 되는 물건도 있을 거예요!",
+      "UnitTalk_JPN": "きっと、団長さんのお役に立つものもあるはずです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "맞다! 이번에 개시된 <color=#F7BE45>[여정]</color> 기념으로 특별한 상품도 들어올 예정이에요!",
+      "UnitTalk_JPN": "そうだ！<color=#F7BE45>「救援の旅」</color>を記念して、スペシャルな商品も入荷する予定なんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "여기, 제가 만든 전단지예요! 한 번 읽어 보세요!",
+      "UnitTalk_JPN": "はいっ、リセットお手製のチラシです！ぜひ確認してみてくださいね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "흐음…",
+          "JumpAnchorStringId_JPN": "ふーん…"
+        }
+      ]
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그리고… 우웅… 그러니까…",
+      "UnitTalk_JPN": "あとは…えぇっと…うーん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아! 맞다!",
+      "UnitTalk_JPN": "あっ、そうだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>[여정]</color> 관련 상품은 평가전 일정에 맞춰서 입고되고 있어요.",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>関連の商品は、試験の日程に合わせて入荷しています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그러니까 잊지 말고 꼭 들러 주세요!",
+      "UnitTalk_JPN": "ですので、お忘れなくぜひお立ち寄りくださいね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알겠어. 고마워.",
+          "JumpAnchorStringId_JPN": "うん、ありがとう。"
+        }
+      ]
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "헤헤, 감사합니다!",
+      "UnitTalk_JPN": "エヘヘ、ありがとうございます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_WHOOSH_11.wav",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여기, 약속해 주신 보답으로 창고에서 찾은 <color=#F7BE45>[아르카나]</color>를 드릴게요.",
+      "UnitTalk_JPN": "約束してくださったお礼に、倉庫で見つけた<color=#F7BE45>「アルカナ」</color>を差しあげます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "저한테는 평범한 수집품이지만, <color=#F7BE45>[여정]</color> 중인 단장님께는 도움이 될 거예요!",
+      "UnitTalk_JPN": "私にとってはガラクタでも…<color=#F7BE45>「救援の旅」</color>に参加中の団長さんなら、これが役立つと思うんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[여정]</color>에 도움이 되는 물건이 있다면 들러 볼 필요가 있겠지.",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>に役立つ物があるなら、足を運んだ方が良さそうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "평가전이 열리기 전까지 <color=#F7BE45>[의뢰]</color>로 충분한 자금을 확보해 두자!",
+      "UnitTalk_JPN": "試験が始まるまで、<color=#F7BE45>「依頼」</color>で十分な資金を確保しておこう！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

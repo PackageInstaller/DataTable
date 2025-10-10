@@ -1,0 +1,756 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "후후. 오늘의 훈련도 성공적으로 마무리…",
+      "UnitTalk_JPN": "ふふ。今日の訓練も上手くいっ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.1,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HUNGRY_1.wav",
+      "UnitTalk_KOR": "꼬르륵!",
+      "UnitTalk_JPN": "ぐうぅ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "배고파?",
+          "JumpAnchorStringId_JPN": "お腹すいた？"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "훈련을 열심히 한 결과!",
+      "UnitTalk_JPN": "訓練に励んだ結果！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.1,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HUNGRY_2.wav",
+      "UnitTalk_KOR": "꼬르륵!",
+      "UnitTalk_JPN": "ぐうぅ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…입니다. ",
+      "UnitTalk_JPN": "…です。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "점심, 안 먹었어?",
+          "JumpAnchorStringId_JPN": "お昼ごはん、食べてないの？"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "큼! 크흠! ",
+      "UnitTalk_JPN": "ンン！コホン！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "사실은 어제저녁 이후에 아무것도…",
+      "UnitTalk_JPN": "実は、昨日の夕食から何も…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "영양 보충이 부족하면 곤란한데.",
+          "JumpAnchorStringId_JPN": "栄養補給はしっかりしないと。"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "불가피한 사정이 있었다…랄까요.",
+      "UnitTalk_JPN": "やむを得ない事情があった…とでも言いましょうか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "불가피한 사정?",
+          "JumpAnchorStringId_JPN": "やむを得ない事情？"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그게…",
+      "UnitTalk_JPN": "それが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "기사단에서  나오는 개인 경비를 삭감 당했습니다.",
+      "UnitTalk_JPN": "騎士団に、個人経費を減らされてしまいましたの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "기사단에서 <color=#F7BE45>빌린</color> 자금을 회수할 때까지 50%만 지급하겠다고…",
+      "UnitTalk_JPN": "騎士団から<color=#F7BE45>借りた</color>資金を回収するまで、経費は50％だけ支給すると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그래서 어쩔 수 없이 요 며칠간 하루 한 끼만 먹고 있죠.",
+      "UnitTalk_JPN": "そこで、ここ数日は仕方なく一日一食の生活をしているのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어제 디저트를 사 먹는 걸 본 것 같은데…",
+          "JumpAnchorStringId_JPN": "昨日、デザートを買って食べてなかったっけ…"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "음? 디저트는 식사가 아니지 않습니까.",
+      "UnitTalk_JPN": "むむ？デザートは食事ではないでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "<color=#F7BE45>통치학</color> 서적에 보면 국민들은 빵만으로 살 수 없는 법이라고 나와 있습니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>統治学</color>の書籍を見れば、国民はパンだけで生きられないと書かれております。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "<color=#F7BE45>디저트</color>의 중요함을 알려주는 경구죠.",
+      "UnitTalk_JPN": "<color=#F7BE45>デザート</color>の重要さを教えてくれる警句なのですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아닌 것 같은데…",
+          "JumpAnchorStringId_JPN": "違うと思うけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "말이 나와서 말인데 전 공국을 사랑하지만 공국의 디저트는 솔직히 별로입니다.",
+      "UnitTalk_JPN": "ところで…わたくしは公国を愛していますが、公国のデザートは正直、イマイチです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "더구나 기사단 부단장이 만들어 주는 간식을 가장한 괴식은 정말이지 끔찍하죠.",
+      "UnitTalk_JPN": "それに、騎士団の副団長が作ってくれるおやつ…を称したとんでもない食べ物は、本当にひどいのですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그러니 NOA에 온 지금 제가 디저트를 사 먹지 않는 건 이론적으로 <color=#F7BE45>기회비용의 낭비</color>라 할 수 있습니다.",
+      "UnitTalk_JPN": "そのため…NOAに来た今、わたくしがデザートを食べないのは、理論的に<color=#F7BE45>機会損失</color>と言えるでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "벌꿀사탕 판 돈은 다 어쩌고?",
+          "JumpAnchorStringId_JPN": "ミツアメを売ったお金はどうなったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "아 그건…",
+      "UnitTalk_JPN": "あっ、それは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "이번에 공국 농사 작황이 어렵다고 해서 전부 지원금으로 보냈습니다.",
+      "UnitTalk_JPN": "公国の農業が難しい状況にあったため、すべて支援金として送りました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "국민들은 빵만으론 살 수 없지만 빵이 없어도 살 수 없으니까요.",
+      "UnitTalk_JPN": "国民はパンだけでは生きられないけど、パンがなくても生きられないからです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…대단한데? 정말 착한 일을 했는 걸.",
+          "JumpAnchorStringId_JPN": "…すごいよ。心優しいことをしたんだね？"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "차, 착하다니!",
+      "UnitTalk_JPN": "こ、心優しいですって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "오해 마시죠. 전 피도 눈물도 없는 차가운 사업가입니다!",
+      "UnitTalk_JPN": "誤解はなさらぬように。わたくしは、血も涙もない冷たい事業家なのですっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "이번 일은… 그러니까…",
+      "UnitTalk_JPN": "今回のことは…その…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래요, 재투자! 재투자를 한 거죠!",
+      "UnitTalk_JPN": "そうです、再投資！再投資をしたのですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "브랜드 이미지 구축이랄까요?",
+      "UnitTalk_JPN": "ブランドイメージの構築といいますか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HUNGRY_2.wav",
+      "UnitTalk_KOR": "꼬르르르륵!",
+      "UnitTalk_JPN": "ぐうううぅぅ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "프레이의 배에서 우렁찬 소리가 들려온다. ",
+      "UnitTalk_JPN": "フレイのお腹から、地響きのような音が聞こえた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무래도 이대로 훈련을 진행하는 건 무리다. ",
+      "UnitTalk_JPN": "どうやら、このまま訓練を続けるのは難しそうだ。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이쯤 하고 뭐라도 먹으러 가자.",
+          "JumpAnchorStringId_JPN": "訓練はこれぐらいにして、何か食べに行こう。"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "지금까지 제가 한 말을 듣긴 하셨습니까?",
+      "UnitTalk_JPN": "わたくしの話を聞いていなかったのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "돈이 없다니까요?",
+      "UnitTalk_JPN": "お金がないんですってば。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮아. 요리라면 조금 자신 있거든.",
+          "JumpAnchorStringId_JPN": "大丈夫。料理には自信があるから。"
+        }
+      ]
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…정말입니까? ",
+      "UnitTalk_JPN": "…本当ですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "…큼! 크흠! 착각하지는 마세요.",
+      "UnitTalk_JPN": "…ンン！コホン！誤解はなさらないように。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "절대로 음식을 만들어 준다고 해서 신이 난 건 아닙니다.",
+      "UnitTalk_JPN": "料理を作ってくれるからと言って、舞い上がっている訳ではありませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "<color=#F7BE45>여정</color>의 완수를 향해 한 걸음 나아갈 기회를 얻어서 기쁜 겁니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>旅</color>のクリアに、また一歩近づくチャンスを得られたことに対して喜んでいるのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.1,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HUNGRY_1.wav",
+      "UnitTalk_KOR": "꼬르륵!",
+      "UnitTalk_JPN": "ぐうぅ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아, 아무튼! ",
+      "UnitTalk_JPN": "と、とにかくっ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "기왕 이렇게 된 거, 당분간은 계속 신세를 좀 지겠습니다.",
+      "UnitTalk_JPN": "こうなった以上、しばらくはお世話になります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "대신 제 이름으로 채권 증서를 써드리죠. ",
+      "UnitTalk_JPN": "代わりに、私の名前で債権証明書を発行して差し上げますわね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "사업이 잘 진행되면 이자까지 쳐서 갚을 테니까요!",
+      "UnitTalk_JPN": "ビジネスが上手くいけば、利子まで上乗せして返しますからっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "채권 증서가 뭔데?",
+          "JumpAnchorStringId_JPN": "債権証明書って何なの？"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장은 교양은 있는 것 같은데 경제적인 상식은 매우 부족하군요.",
+      "UnitTalk_JPN": "団長…教養はあるのに、経済的な常識には疎いようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "식사를 하면서 제가 최신 경제에 대한 강의를 들려드리겠습니다.",
+      "UnitTalk_JPN": "食事しながら、わたくしが経済について講義して差し上げましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "다 도움이 되는 내용이니까 꼭 메모해 두세요.",
+      "UnitTalk_JPN": "すべて役立つ内容なのですから、必ずメモしてくださいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "우선 채권이 뭐냐면…",
+      "UnitTalk_JPN": "まず、債権が何かというと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "프레이의 신난 모습을 보며 나도 즐겁게 그녀의 강의를 들어주었다.",
+      "UnitTalk_JPN": "嬉しそうなフレイの姿に、私も楽しく講義を聞いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물론 무슨 내용인지 전혀 이해는 가지 않았지만…",
+      "UnitTalk_JPN": "もちろん、何が何だか理解はできなかったけど…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

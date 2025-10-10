@@ -1,0 +1,1000 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FIELD_PLAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마을 어귀를 지나다가, 비현실적인 광경을 보게 되었다.",
+      "UnitTalk_JPN": "村の入口を通り過ぎる時、非現実的な光景を目の当たりにした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitTalk_KOR": "…꾸륵!",
+      "UnitTalk_JPN": "…クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "커다란 <color=#F7BE45>냄비</color>라고밖에 말할 수 없는 물건에, 물이 가득 담겨 있고, 그 냄비는 장작불 위에 올려져 있었다.",
+      "UnitTalk_JPN": "水がたっぷりと入った巨大な<color=#F7BE45>鍋</color>のようなものが、薪の火にかけられていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 <color=#F7BE45>냄비</color> 안에는 익숙한 모습의 동물이 기분 좋은 얼굴을 하며…",
+      "UnitTalk_JPN": "そして<color=#F7BE45>鍋</color>の中には、見慣れた動物が気持ちよさそうに…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…토토를 끓이고 있잖아-?!",
+          "JumpAnchorStringId_JPN": "…トトが煮込まれてるー！？"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "꾸루룩?",
+      "UnitTalk_JPN": "クルルッ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "끓이고 있다뇨! 위험한 오해를 불러일으키는 발언은 삼가시죠!",
+      "UnitTalk_JPN": "煮込むだなんて！誤解を招くような発言は控えてくださいな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "프, 프레이?",
+          "JumpAnchorStringId_JPN": "フ、フレイ？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하지만 이건 누가 봐도 요리를 하는-",
+          "JumpAnchorStringId_JPN": "でも、これは誰が見ても料理でー"
+        }
+      ]
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그러니까! 오해 살 수 있는 발언은 그만해주세요!",
+      "UnitTalk_JPN": "もう！誤解されるようなことは言わないこと！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "저는 지금 봉황님께 목욕의 시간을 드리고 있는 중이니까요!",
+      "UnitTalk_JPN": "わたくしは今、鳳凰さまのお風呂タイムのお手伝いをしているのですから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "목…욕?",
+          "JumpAnchorStringId_JPN": "お…風呂？"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "꾸루룩~ 꾸룩~",
+      "UnitTalk_JPN": "クルル～クルッ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "토토는 냄비… 아니, 철제 욕조에 머리와 몸을 기댄 채 기분 좋은 소리를 내고 있었다.",
+      "UnitTalk_JPN": "トトは鍋…じゃなくて、浴槽にもたれかかり、気持ちよさような声を出していた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "프레이가 왜 토토를 목욕시키는 건데?",
+          "JumpAnchorStringId_JPN": "フレイが何でトトをお風呂に入れてるの？"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 세르팡은 어디있는데?",
+          "JumpAnchorStringId_JPN": "というか、セルパンは？"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "세르팡님은!",
+      "UnitTalk_JPN": "セルパン様は！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "잠시, 카페 스트레가에서 오래 머무실 예정입니다.",
+      "UnitTalk_JPN": "しばらく、カフェ・ストレガに滞在される予定ですの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "수상해!",
+          "JumpAnchorStringId_JPN": "怪しい！"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐가 수상하죠? 모나스티르에도 환상종에 대한 전설은 전해지고 있어요.",
+      "UnitTalk_JPN": "何が怪しいのですか？モナスティルにも幻獣に関する伝説が伝えられているのですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "위대한 봉황이 될 존재와 친밀함을 쌓아둬서 나쁠 건 전혀 없으니까요.",
+      "UnitTalk_JPN": "偉大な鳳凰になるであろうトト様と、親しくしておいて損はありませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런데 왜 세르팡을 떼어놓고…",
+          "JumpAnchorStringId_JPN": "でも、なんでセルパンを引き離して…"
+        }
+      ]
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하필 목욕을…?",
+          "JumpAnchorStringId_JPN": "わざわざお風呂に…？"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "경외심을 담은 호의일 뿐입니다.",
+      "UnitTalk_JPN": "敬意の念を込めた、好意に過ぎませんわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "토토~! 어딨어, 토토~?",
+      "UnitTalk_JPN": "トト～！どこにいるのぉ、トト～？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아, 여기 있었구나!",
+      "UnitTalk_JPN": "あっ、ここにいたんだね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "꾸룩! 꾸루룩!",
+      "UnitTalk_JPN": "クルッ！クルルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "뭣! 한정 디저트 5개 세트를 벌써 다 먹었다고?",
+      "UnitTalk_JPN": "なにっ！期間限定スイーツ5個セットをもう平らげたっていうの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그럴리가 있어? 내가 아무리 디저트를 좋아해도 그걸 어떻게 한 번에 다 먹어.",
+      "UnitTalk_JPN": "まさかぁ。いくらボクがスイーツ好きだからって、一気には食べられないよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "남은 건 이렇게 싸서 가지고 왔지.",
+      "UnitTalk_JPN": "残った分は、こうやってお持ち帰りにしたんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "크윽, 이런 실수를! 제가 샤를에게 너무 익숙해져 있었군요…!",
+      "UnitTalk_JPN": "くうっ、まさかの失態ね！シャルルに慣れてしまっていたせいだわ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그런데…",
+      "UnitTalk_JPN": "それより…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "꾸룩-",
+      "UnitTalk_JPN": "クルッー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…토토가 요리되고 있잖아-!!",
+      "UnitTalk_JPN": "…トトが料理されてるー！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "역시!!",
+          "JumpAnchorStringId_JPN": "やっぱり！！"
+        }
+      ]
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "목욕입니다!",
+      "UnitTalk_JPN": "お風呂ですから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 81,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "USN_UI_REST"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "후우, 할 수 없군요.",
+      "UnitTalk_JPN": "ふぅ、仕方がないですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "봉황의 깃털에는 인간의 과학이 아직 밝혀내지 못한 몸에 이로운 여러 가지 효능이 있다고 하죠.",
+      "UnitTalk_JPN": "鳳凰の羽には…人間の科学ではまだ解明できていない、体に良い様々な効能があるそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "목욕 후의 생활 폐수는 함부로 버리면 안 되니까, 재활용 겸 모두에게 이로운 방법으로 제가 처리하려고 했었는데…",
+      "UnitTalk_JPN": "お風呂の生活排水も、むやみに流してしまってはいけませんから…再利用かつ、皆が得する方法で処理しようとしていただけで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…봉황 우려낸 물을 팔려고 했다는 거군",
+          "JumpAnchorStringId_JPN": "…さては、その水を売ろうとしてたでしょ。"
+        }
+      ]
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "너무해-! 우리 토토를 이용해서 돈을 벌려고 하다니!",
+      "UnitTalk_JPN": "ひどい！トトを利用して金儲けしようとするなんて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "생각해 보니 문제가 있는 발상이었습니다.",
+      "UnitTalk_JPN": "今思うと、問題のある発想でしたわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "본인의 허락을 받지 않고 무단으로 판매를 하려 한건… 제가 너무 성급하고 생각이 짧았습니다.",
+      "UnitTalk_JPN": "本人の許可を得ずに販売しようとしたのは…わたくしが軽率で、配慮が足りませんでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "정중히 사과드립니다, 토토님, 세르팡님.",
+      "UnitTalk_JPN": "大変申し訳ないのですわ。トト様、セルパン様。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "꾸룩 꾸루룩!",
+      "UnitTalk_JPN": "クルッ、クルルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "뭐, 뭐어… 토토는 목욕하면서 기분 좋았다고 하니까…",
+      "UnitTalk_JPN": "ま、まぁ…トトもお風呂が気持ちよかったみたいだから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…그리고 허가받지 않은 식품이나 건강 보조품의 판매도 문제가 될 소지가 있군요.",
+      "UnitTalk_JPN": "…そして、未許可の食品や健康サプリメントは、販売の際に問題になる可能性があるのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그게 생각나서 포기하는 거지?",
+          "JumpAnchorStringId_JPN": "…それを思い出して、諦めたんだよね？"
+        }
+      ]
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그런데… 만약 토토의 목욕 물을 팔게되면.",
+      "UnitTalk_JPN": "でも…もしトトのおふろ水を売るとしたら。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…!",
+      "UnitTalk_JPN": "…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "꾸룩?",
+      "UnitTalk_JPN": "クルッ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…그게… 얼마에 팔려?",
+      "UnitTalk_JPN": "その…いくらで売れるの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "꾸르륵?!",
+      "UnitTalk_JPN": "クルルッ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "궁금하신가요! 제가 예상한 수익은 이 정도…! 거기서 양을 좀 더 늘이거나 희석하면 여기까지…!",
+      "UnitTalk_JPN": "気になるのですね！わたくしの予想収益は、これぐらいで…！水の量を増やしたり、希釈すればここまで…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "오! 오오…!",
+      "UnitTalk_JPN": "おっ！おぉ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "이 정도면 매일매일 카페 스트레가의 디저트를 먹을 수 있겠어-!",
+      "UnitTalk_JPN": "これなら、毎日カフェ・ストレガでスイーツを食べれそう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그렇죠? 그렇죠!",
+      "UnitTalk_JPN": "そうでしょ！そうなのですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "꾸루루룩!!",
+      "UnitTalk_JPN": "クルルルッ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "으아, 으앗 따거, 토토! 농담, 농담이야!",
+      "UnitTalk_JPN": "うっ、うあっ、熱いよトト！冗談だって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "전 농담이 아니, 따거워-!! 쪼지 마세요! 그만! 그만!",
+      "UnitTalk_JPN": "わたくしは冗談ではー熱ッ！！そんな渋らなくても！や、やめてっ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "분노한 토토의 격렬한 부리 공격을 피해 둘은 비명을 지르며 사라졌다.",
+      "UnitTalk_JPN": "怒ったトトの強烈なくちばし攻撃を避け、二人は悲鳴を上げながら去って行った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "NOA의 상점가에 봉황의 건강수가 나오는 일은 아마 없을 것 같다.",
+      "UnitTalk_JPN": "NOAの商店街に、鳳凰の健康水が並ぶ日はきっと来ないだろう。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN"
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

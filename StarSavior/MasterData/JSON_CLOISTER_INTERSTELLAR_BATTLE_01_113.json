@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_INTERSTELLAR_05", //감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_INTERSTELLAR_05", //포식자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_INTERSTELLAR_05", //감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_INTERSTELLAR_05", //감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_CLOISTER_INTERSTELLAR_05", //살육의 포식자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_STAR" //서브 속성 타입※※※※※※※※※※※※
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_INTERSTELLAR_05", //감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          }
+        ]
+      }
+    ]
+  }
+}

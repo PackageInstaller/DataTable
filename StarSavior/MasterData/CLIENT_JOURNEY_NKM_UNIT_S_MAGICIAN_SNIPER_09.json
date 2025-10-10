@@ -1,0 +1,527 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으음~",
+      "UnitTalk_JPN": "う～ん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "긴장했어?",
+          "JumpAnchorStringId_JPN": "緊張してる？"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "응? 내가?",
+      "UnitTalk_JPN": "んん？あたしが？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하핫! 그럴 리 없잖아.",
+      "UnitTalk_JPN": "あははっ！そんなわけないじゃん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "그냥, 언제 말할지 고민하고 있었어.",
+      "UnitTalk_JPN": "ただ、いつ話そうかなって迷ってたの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "저번에 <color=#F7BE45>고양이의 최후</color>가 속설이라고 말해줬잖아?",
+      "UnitTalk_JPN": "この前、<color=#F7BE45>猫の最期</color>は根拠のない迷信だって教えてくれたでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "단장의 말이 맞았어.",
+      "UnitTalk_JPN": "団長さんが正しかったよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "고향에 편지를 보냈는데 옆집 아저씨가 소식을 보내주셨거든.",
+      "UnitTalk_JPN": "故郷に手紙を送ったらね、隣の家のおじさんから連絡があったの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아버지가 다시 사냥을 시작했어.",
+      "UnitTalk_JPN": "パパ、また狩りを始めたんだって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "옛날처럼 총은 쓰지 않지만 함정을 설치하고 다니신다고 해.",
+      "UnitTalk_JPN": "昔みたいに銃は使わないけど、罠を仕掛けたりしてるんだってさ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "위대한 사냥꾼이 곧 돌아올 것 같아.",
+      "UnitTalk_JPN": "もうすぐ偉大なハンターが戻ってくるよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋은 소식이네.",
+          "JumpAnchorStringId_JPN": "いい知らせだね。"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "아하핫! 그렇지. 하지만 해결되지 않은 일이 많이 남아있어.",
+      "UnitTalk_JPN": "あははっ！そうだよね？でも、まだやるべきことは山積みなんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>시험</color>도 통과해야 하고, <color=#F7BE45>여정</color>도 완주해야 하고.",
+      "UnitTalk_JPN": "<color=#F7BE45>試験</color>を通過して、<color=#F7BE45>旅</color>を成し遂げて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "우리 부족의 숙명…",
+      "UnitTalk_JPN": "それに、アルク族の運命…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "그리고 이미 빛을 잃은 사람들의 시력을 회복할 방법도 찾아야 하지.",
+      "UnitTalk_JPN": "すでに光を失ってしまった人たちの、視力を取り戻す方法も見つけないと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "갈 길이 멀어.",
+      "UnitTalk_JPN": "長い道のりになりそうだね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하지만 괜찮아.",
+      "UnitTalk_JPN": "でも、大丈夫。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "단장이 그랬지? 해결책을 찾을 때까지 같이 있어주겠다고.",
+      "UnitTalk_JPN": "団長さんが言ってくれたでしょ？解決策が見つかるまで一緒にいてくれるって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "외롭지는 않을 것 같아서 다행이네~",
+      "UnitTalk_JPN": "おかげで寂しくないよ、助かっちゃうな～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "찾을 때까지 같이 있을게.",
+          "JumpAnchorStringId_JPN": "見つかるまで一緒にいるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "약속했으니까.",
+          "JumpAnchorStringId_JPN": "約束したから。"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…우와.",
+      "UnitTalk_JPN": "…わわっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하핫! 그렇지, 그렇게 말하겠지.",
+      "UnitTalk_JPN": "あははっ！そうだね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "단장은 성실한 사람이니까.",
+      "UnitTalk_JPN": "団長さんは誠実な人だから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "아무리 부끄러운 말이라도 진지한 표정으로 이야기하네.",
+      "UnitTalk_JPN": "どんなに恥ずかしいことでも、真剣な顔で言ってくれるんだよね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "내가 다 쑥스러워졌어.",
+      "UnitTalk_JPN": "あたしが照れちゃったよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…그러고 보니 <color=#F7BE45>여정</color>이 끝나면 뭘 할지 얘기 안 했네.",
+      "UnitTalk_JPN": "そういえば、<color=#F7BE45>旅</color>が終わったら何をするか言ってなかったよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "나는 고향에 다녀오려고. 같이 갈래?",
+      "UnitTalk_JPN": "あたしは、故郷に帰ろうと思ってるの。団長さんも一緒にどう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아버지랑 간만에 만나기도 하고… 그리고…",
+      "UnitTalk_JPN": "パパに久しぶりに会って…それで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "미리 인사드리는 게 단장한테도 좋지 않겠어?",
+      "UnitTalk_JPN": "先に挨拶しておいた方が、団長さんにとっても良いでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응?",
+          "JumpAnchorStringId_JPN": "えっ？"
+        }
+      ]
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SERIOUS",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "…준비되셨나요 단장님?",
+      "UnitTalk_JPN": "…準備はできましたか、団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "시간이 되었나?",
+          "JumpAnchorStringId_JPN": "もう時間かな？"
+        }
+      ]
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "네, 지금부터 별의 구원자 계승 시험 <color=#F7BE45>[여정]</color>.",
+      "UnitTalk_JPN": "では、これより星の救援者・継承試験<color=#F7BE45>「救援の旅」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그 최종시험을 시작하겠습니다.",
+      "UnitTalk_JPN": "最終試験を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "시험상대는 <color=#F7BE45>[알데바란의 집행자 길레]</color>.",
+      "UnitTalk_JPN": "対戦相手は<color=#F7BE45>「アルデバランの執行者・ギーレ」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[디랙의 우물]</color>이 투영을 개시합니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ディラックの井戸」</color>が投影を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "마지막 사냥이네.",
+      "UnitTalk_JPN": "最後の狩りだね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여기까지 와서 빈손으로 돌아가면 섭섭하지. 안 그래?",
+      "UnitTalk_JPN": "ここまで来て、手ぶらで帰るわけにはいかないよ。ね、団長さん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "매번 말했듯이 말이지.",
+      "UnitTalk_JPN": "いつも言ってるけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "나는 한번 노린 사냥감은 절대 놓치지 않거든.",
+      "UnitTalk_JPN": "あたしは、一度狙った獲物は絶対に逃さないの。",
+      "TalkTime": 0.03
+    }
+  ]
+}

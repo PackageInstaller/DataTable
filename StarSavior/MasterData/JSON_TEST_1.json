@@ -1,0 +1,29 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_SLIME_SPHERE_BLUE_00",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_SLIME_ANGEL_YELLOW_BOSS_EASY_01",
+            "AllSkillAvailable": true,
+            "IsBoss": true
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_SLIME_SPHERE_BLUE_00",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

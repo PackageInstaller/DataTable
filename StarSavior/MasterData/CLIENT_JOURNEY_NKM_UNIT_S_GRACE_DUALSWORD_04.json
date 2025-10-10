@@ -1,0 +1,1085 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아침부터 서신을 하나 받았다.",
+      "UnitTalk_JPN": "朝から一通の手紙が届いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고급스러운 편지지에는 에핀델이 오늘 하루 자리를 비운다고 적혀 있었다.",
+      "UnitTalk_JPN": "高級感のある便箋には、エピンデルが今日一日留守にすると書かれていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "사유는 개인 사정.",
+      "UnitTalk_JPN": "理由は私事都合。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_REQUEST.png"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": " 예, 저도 비슷한 편지를 받긴 했습니다만…",
+      "UnitTalk_JPN": "はい、私にも同じような手紙が届きましたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 아침부터 지금까지 숙소에서 나간 인원은 확인하지 못했습니다.",
+      "UnitTalk_JPN": "朝から今まで、宿から出た人はいません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "정보 고마워.",
+          "JumpAnchorStringId_JPN": "そうか、ありがとう。"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "그런데 저…",
+      "UnitTalk_JPN": "しかし、団長…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "아침 청소 중 에핀델 님의 방문 앞을 지났었습니다.",
+      "UnitTalk_JPN": "朝の掃除中に、エピンデル様の部屋の前を通り過ぎたのですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그 때 기침 소리… 같은 걸 들었던 것 같습니다만…",
+      "UnitTalk_JPN": "そのとき、咳をする音…のようなのが聞こえたような気がします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "기침 소리?",
+          "JumpAnchorStringId_JPN": "咳…？"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "네, 하지만 방문을 두드렸을 때 대답은 없었습니다.",
+      "UnitTalk_JPN": "はい、でもドアをノックしても返事はありませんでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "잘못 들은 것일 수도 있지만, 일단 말씀은 드리는 게 좋을 것 같아서요.",
+      "UnitTalk_JPN": "聞き間違いかもしれませんが、一応報告させていただきました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알겠어.",
+          "JumpAnchorStringId_JPN": "分かった。"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_COMMON_CORRIDOR_DOOR.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitTalk_KOR": "에핀델의 개인실로 향했다.",
+      "UnitTalk_JPN": "エピンデルの部屋に向かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "인기척은 없었지만, 문 앞에 서서 조용히 기다리고 있자니…",
+      "UnitTalk_JPN": "人気はないようだが、ドア前に立って静かに待っていると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "…콜록.",
+      "UnitTalk_JPN": "ゲホッ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "역시.",
+      "UnitTalk_JPN": "やっぱり。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "에핀델, 있지?",
+          "JumpAnchorStringId_JPN": "エピンデル、いるんだろ？"
+        }
+      ]
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "안에 있는 거 알아. 들어갈게.",
+          "JumpAnchorStringId_JPN": "中にいるのは分かってる。入るよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_1.wav",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "자, 잠깐, 머, 멋대로 들어오지…! ",
+      "UnitTalk_JPN": "ま、待ってください！勝手にっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": " …",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": "이러시면 곤란한데요, 단장 귀하.  ",
+      "UnitTalk_JPN": "困ります、団長。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": " 모든 침묵이 허락은 아니라는 걸 굳이 상기시켜 드려야 할까요?",
+      "UnitTalk_JPN": "返事をしなかったらからといって必ずしも許可になるわけではないということを、団長はご存じないのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "몸은 좀 괜찮아?",
+          "JumpAnchorStringId_JPN": "大丈夫？"
+        }
+      ]
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": " 보시다시피 멀쩡해요.",
+      "UnitTalk_JPN": "ご覧の通り問題ありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "얼굴이 새빨간데?",
+          "JumpAnchorStringId_JPN": "顔が赤いけど？"
+        }
+      ]
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": " …",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "침대 시트도 푹 젖었고.",
+          "JumpAnchorStringId_JPN": "シーツも濡れてる。"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": " 그건… 방 온도가…",
+      "UnitTalk_JPN": "それは…部屋の温度が…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.2,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": " …콜록.",
+      "UnitTalk_JPN": "ゲホッ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "에핀델의 이마에 손을 댔다.",
+      "UnitTalk_JPN": "エピンデルのおでこに手を当てた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "불덩어리잖아.",
+          "JumpAnchorStringId_JPN": "ものすごく熱いよ？"
+        }
+      ]
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": " …",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": " …하아, 인정하겠습니다. 자기관리에 실패했어요.",
+      "UnitTalk_JPN": "…はぁ、認めます。自己管理に失敗しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 귀하께 들킬 정도일 줄은 몰랐는데, 이래서야 보라매의 이름이 울겠네요.",
+      "UnitTalk_JPN": "まさか団長にバレるとは思いませんでしたが…これではオルランの若鷹の名が泣いてしまいますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 나한테 들키면 안 되는데?",
+          "JumpAnchorStringId_JPN": "どうしてバレたくなかったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": " …",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "개인실 안을 둘러봤다.",
+      "UnitTalk_JPN": "部屋の中を見回した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "깔끔하고 살풍경했다.",
+      "UnitTalk_JPN": "すっきりとしていて、殺風景な部屋だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "편지도, 주변 정리도 다 네가 한 거지?",
+          "JumpAnchorStringId_JPN": "手紙も、部屋の片付けも全部自分でやってるんだろ？"
+        }
+      ]
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "CameraOffset": "TWIN_6",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "그게 무슨 상관이죠?",
+      "UnitTalk_JPN": "それが何の関係があるんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "명문 귀족가의 따님이잖아.",
+          "JumpAnchorStringId_JPN": "君は名門貴族のお嬢さんじゃないか。"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 아픈데도 다 혼자 하는 거야?",
+          "JumpAnchorStringId_JPN": "どうして具合が悪いのに、一人で我慢しようとするの？"
+        }
+      ]
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": " …",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " …매는 언제나 홀로 날죠.",
+      "UnitTalk_JPN": "……鷹はいつでも一人で飛ぶのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": " 사냥할 때도, 폭풍이 몰아칠 때도.",
+      "UnitTalk_JPN": "狩りをする時も、嵐が吹き荒れる時も。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": " 하늘의 제왕이 굳이 무리에 끼어들 필요가 없으니까요.",
+      "UnitTalk_JPN": "天の帝王が、群れをなす必要はありませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 그뿐이랍니다.",
+      "UnitTalk_JPN": "それだけです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그뿐일 것 같지는 않았다.",
+      "UnitTalk_JPN": "それだけではないような気がした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 지금은 아픈 아이를 몰아붙일 때가 아니다.",
+      "UnitTalk_JPN": "しかし、病気の子を問い詰めても仕方がない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "밥은 먹었어?",
+          "JumpAnchorStringId_JPN": "ご飯は食べた？"
+        }
+      ]
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 네?",
+      "UnitTalk_JPN": "えっ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": " 아뇨, 시장기가 없어서…",
+      "UnitTalk_JPN": "いいえ、あまり食欲がなくて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": " 네? 포타주요? 그걸 어디서…?",
+      "UnitTalk_JPN": "ポタージュですか？そんなもの、どこから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": " …직접 만드실 거라고요?",
+      "UnitTalk_JPN": "…団長がお作りになったんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알았으면 얼른 다시 누워.",
+          "JumpAnchorStringId_JPN": "いいから、早く横になって。"
+        }
+      ]
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": " 네? 자, 잠깐만요, 밀지 마- ",
+      "UnitTalk_JPN": "はい？ちょ、ちょっと！押さないで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.25,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_MOVEMENT_09.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_EPINDEL"
+      ],
+      "UnitTalk_KOR": "윽!",
+      "UnitTalk_JPN": "うぐっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": " 이게 무슨 무례한…!",
+      "UnitTalk_JPN": "なんと無礼な…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "난 함께 사냥하는 매를 본 적이 있어.",
+          "JumpAnchorStringId_JPN": "私は、仲間と狩りをする鷹を見たことがあるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": " …네?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "옛날 일이긴 하지만.",
+          "JumpAnchorStringId_JPN": "ずいぶん昔だけど。"
+        }
+      ]
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "싸우지도 않고 함께 하늘을 맴돌더라.",
+          "JumpAnchorStringId_JPN": "争うこともなく、一緒に飛んでいた。"
+        }
+      ]
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "같이 다닌다고 딱히 약하거나 초라해 보이진 않았어.",
+          "JumpAnchorStringId_JPN": "仲間といたって、弱かったり、みすぼらしく見えたりはしなかった。"
+        }
+      ]
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그 정도 핑계로는 안 돼?",
+          "JumpAnchorStringId_JPN": "この程度では、君の気持ちは変わらないかな？"
+        }
+      ]
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": "될 리가 있나요.",
+      "UnitTalk_JPN": "変わるはずないでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitTalk_KOR": "귀하께서 보신 건…",
+      "UnitTalk_JPN": "団長が見たのは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응?",
+          "JumpAnchorStringId_JPN": "うん？"
+        }
+      ]
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " …아닙니다. 아무것도.",
+      "UnitTalk_JPN": "…いいえ、何でもありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "에핀델은 더 말하지 않고 얌전히 누웠다.",
+      "UnitTalk_JPN": "エピンデルはそれ以上何も言わず、おとなしく横になった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고분고분해진 에핀델을 간호하며 하루를 보냈다.",
+      "UnitTalk_JPN": "その後は、おとなしくなったエピンデルを看病しながら一日を過ごした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.2
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EPINDEL"
+      ],
+      "UnitTalk_KOR": "귀하께서 보신 건…",
+      "UnitTalk_JPN": "団長が見たのは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EPINDEL"
+      ],
+      "UnitTalk_KOR": "반려를 맞이한 매인걸요…",
+      "UnitTalk_JPN": "伴侶を見つけた鷹ですから…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD"
+    }
+  ]
+}

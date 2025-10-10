@@ -1,0 +1,230 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_KNIGHT.txt",
+    "UiStates": [],
+    "UnitHudHeight": 2.35,
+    "BattleStates": [
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_74.wav"
+            ]
+          },
+          {
+            "EventFrame": 22,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_ARMOR_32.wav"
+            ]
+          },
+          {
+            "EventFrame": 36,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_CROSSBOW_17.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 11,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_CROSSBOW_15.wav"
+            ]
+          },
+          {
+            "EventFrame": 27,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_CROSSBOW_16.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 22,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VETERAN_GUN_SILVER_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 16,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VETERAN_GUN_SILVER_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 46,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VETERAN_GUN_SILVER_ATK_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 29,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VETERAN_GUN_SILVER_SPECIAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VETERAN_GUN_SILVER_SPECIAL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VETERAN_GUN_SILVER_SPECIAL_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VETERAN_GUN_SILVER_SPECIAL_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "PlayNextCineCamFrame": 35,
+        "ZoomBlurMaxTime": 0,
+        "ZoomBlurTime": 3.0,
+        "EndFadeOut": true,
+        "PlaySkillCutIn": false,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowUnitHudOffEnemy": false,
+          "ShowUnitHudOnEnemy": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 55,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VETERAN_GUN_SILVER_HYPER.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VETERAN_GUN_SILVER_HYPER_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 82,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VETERAN_GUN_SILVER_HYPER_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_KNIGHT_09.wav"
+              },
+              {
+                "EventFrame": 37,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_KNIGHT_10.wav"
+              }
+            ]
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_ARMOR_31.wav"
+            ]
+          },
+          {
+            "EventFrame": 11,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WEAPON_DROP_12.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_77.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_78.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

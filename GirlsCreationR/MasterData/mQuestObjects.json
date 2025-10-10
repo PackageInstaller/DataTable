@@ -594,7 +594,7 @@
         "force_movable": false
     },
     {
-        "id": 32000261,
+        "id": 32000252,
         "name": "召冥門",
         "type": 1400,
         "side": 1,
@@ -621,7 +621,7 @@
         "force_movable": false
     },
     {
-        "id": 32000271,
+        "id": 32000253,
         "name": "召冥門",
         "type": 1400,
         "side": 1,
@@ -648,7 +648,7 @@
         "force_movable": false
     },
     {
-        "id": 32000281,
+        "id": 32000254,
         "name": "召冥門",
         "type": 1400,
         "side": 1,
@@ -675,7 +675,7 @@
         "force_movable": false
     },
     {
-        "id": 32000291,
+        "id": 32000255,
         "name": "召冥門",
         "type": 1400,
         "side": 1,
@@ -702,7 +702,7 @@
         "force_movable": false
     },
     {
-        "id": 32000301,
+        "id": 32000256,
         "name": "召冥門",
         "type": 1400,
         "side": 1,
@@ -729,7 +729,7 @@
         "force_movable": false
     },
     {
-        "id": 32000311,
+        "id": 32000257,
         "name": "召冥門",
         "type": 1400,
         "side": 1,
@@ -756,7 +756,7 @@
         "force_movable": false
     },
     {
-        "id": 32000321,
+        "id": 32000258,
         "name": "召冥門",
         "type": 1400,
         "side": 1,
@@ -783,7 +783,7 @@
         "force_movable": false
     },
     {
-        "id": 32000331,
+        "id": 32000259,
         "name": "召冥門",
         "type": 1400,
         "side": 1,
@@ -810,7 +810,7 @@
         "force_movable": false
     },
     {
-        "id": 32000341,
+        "id": 320002510,
         "name": "召冥門",
         "type": 1400,
         "side": 1,
@@ -837,7 +837,7 @@
         "force_movable": false
     },
     {
-        "id": 32000351,
+        "id": 320002511,
         "name": "召冥門",
         "type": 1400,
         "side": 1,
@@ -864,7 +864,7 @@
         "force_movable": false
     },
     {
-        "id": 32000361,
+        "id": 320002512,
         "name": "召冥門",
         "type": 1400,
         "side": 1,
@@ -953,6 +953,33 @@
         "hp": 10000,
         "def": 10,
         "mnd": 10,
+        "duration_turn": 3,
+        "skill_id1": 28500002,
+        "skill_level1": 1,
+        "skill_weight1": 0,
+        "skill_id2": 0,
+        "skill_level2": 0,
+        "skill_weight2": 0,
+        "skill_id3": 0,
+        "skill_level3": 0,
+        "skill_weight3": 0,
+        "main_image_index": 3201003,
+        "sub_image_index": 0,
+        "sound_index": 0,
+        "flavor_text": "敵全体の防御・精神・器用・敏捷減少",
+        "through_ally": 1,
+        "through_unit_types": 0,
+        "force_movable": false
+    },
+    {
+        "id": 32010032,
+        "name": "地獄の門＋",
+        "type": 1401,
+        "side": 1,
+        "init_place_side": 0,
+        "hp": 40000,
+        "def": 500,
+        "mnd": 500,
         "duration_turn": 3,
         "skill_id1": 28500002,
         "skill_level1": 1,

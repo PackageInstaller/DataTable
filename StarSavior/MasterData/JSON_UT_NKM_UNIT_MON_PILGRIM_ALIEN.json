@@ -1,0 +1,89 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UnitHudHeight": 3.6,
+    "UseRespawnFocus": false,
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY"
+      },
+      {
+        "StateName": "USN_START"
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,          
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "FormationEnemy": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 67,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 80,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.5,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "FormationMyTeam": "",
+          "FormationEnemy": "SFT_CENTER_TARGET_ONLY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 158,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.5,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING"
+      }
+    ]
+  }
+}

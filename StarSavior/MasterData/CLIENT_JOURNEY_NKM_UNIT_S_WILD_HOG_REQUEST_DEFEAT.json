@@ -1,0 +1,238 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WILD_HOG_REQUEST_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "실패라, 실패란 말이지...",
+      "UnitTalk_JPN": "…失敗しちゃった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "쳇... 쪽팔리게 돼 버렸네.",
+      "UnitTalk_JPN": "ちいっ…恥かいちまったな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "안 돼. 이대로는 그냥 못 넘어가겠어.",
+      "UnitTalk_JPN": "ダメだ、このままジッとしてる訳にはいかねぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "단장, 지금이라도 가서 한 번 더 결판을 내자.",
+      "UnitTalk_JPN": "団長。まだ遅くねぇよ、ちゃんとケリつけに行こうぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이번에야말로 본때를 보여 주는 거야!",
+      "UnitTalk_JPN": "今度こそ実力を見せてやるぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "기회는 다음에도 있어.",
+          "JumpAnchorStringId_JPN": "またチャンスがあるよ。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "이거라도 마시고 기분 풀어.",
+          "JumpAnchorStringId_JPN": "これでも飲んで、機嫌直そう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "...",
+      "UnitTalk_JPN": "...",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하여간... 뭘 먹고 컸길래 그렇게 덤덤한 거야.",
+      "UnitTalk_JPN": "ったく…一体なにを食べて育てば、そんな落ち着いてられんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하긴, 단장 말이 맞아.",
+      "UnitTalk_JPN": "ま、確かに団長の言う通りだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "져 버린 레이스를 다시 붙어 보자고 해 봤자 구차하기만 하겠지.",
+      "UnitTalk_JPN": "負けちまったレースにしがみついてても、惨めなだけだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "좋아. 다음에 의뢰가 들어올 때는 마음 단단히 먹고 날려 버리겠어.",
+      "UnitTalk_JPN": "よっしゃあ。次に依頼を受けた時は、気を引き締めてぶっ飛ばしてやるぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "할리가 평소의 여유를 되찾은 모양이다.",
+      "UnitTalk_JPN": "ハーレーは、いつもの余裕を取り戻したようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 17,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "다음은 너무 늦어. 아무리 생각해도 분하다고.",
+      "UnitTalk_JPN": "それだと遅すぎんだよ。こんなの、悔しすぎるぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "아, 젠장...",
+      "UnitTalk_JPN": "はぁ、ちくしょ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "머리 좀 식혀야겠어. 잠깐 혼자 있게 해 줘.",
+      "UnitTalk_JPN": "頭を冷やしてくる。しばらく一人にしてくれ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "할리의 어깨가 힘없이 축 늘어져 있었다...",
+      "UnitTalk_JPN": "ハーレーは、肩をがっくりと落としていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 22,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "뭐야? 활력 포션?",
+      "UnitTalk_JPN": "なんだ？活力ポーションか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "평소에도 이런 걸 가지고 다니는 거냐, 넌.",
+      "UnitTalk_JPN": "団長、いつもこんなの持ち歩いてんのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "괜히 신경 쓰게 한 것 같은데...",
+      "UnitTalk_JPN": "気を遣わせちまったみたいだな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후우, 좋아. 다음번엔 정신 차리고 제대로 하자고.",
+      "UnitTalk_JPN": "ふぅ、よっしゃあ。気を取り直して、次こそは上手くやってやる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "할리가 스스로 흥분을 가라앉혀서 다행이었다...!",
+      "UnitTalk_JPN": "ハーレーが自ら冷静になってくれて良かった…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

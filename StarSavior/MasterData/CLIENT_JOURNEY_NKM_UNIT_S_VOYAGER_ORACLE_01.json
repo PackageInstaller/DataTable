@@ -1,0 +1,1858 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아스트로 생텀을 나와 훈련장에 도착했지만, 만나기로 한 여정 단원의 모습이 보이지 않았다.",
+      "UnitTalk_JPN": "アストロ・サンクタムを出て訓練場に着いたものの、約束をしていた団員の姿は見えなかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "훈련장 앞의 거리로 나와 기다리고 있던 중이었는데…",
+      "UnitTalk_JPN": "前の通りに出て、団員を待っていると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CAR_BRAKE.wav",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "와와와왓-!",
+      "UnitTalk_JPN": "わわわわーっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "당신! 당신이 여정 단장이지?",
+      "UnitTalk_JPN": "ねぇ！キミが旅の団長だよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "미안해, 내가 좀 늦었네!",
+      "UnitTalk_JPN": "ゴメン、ちょっと遅れちゃって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아무튼 일단 들어가자, 빨리!",
+      "UnitTalk_JPN": "とにかく、中に入ろ！はやく！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MALE"
+      ],
+      "UnitTalk_KOR": "거기서-! 이 사기꾼-!",
+      "UnitTalk_JPN": "おい、待て！このペテン師め！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "네가 오늘 만나기로 한 여정 단원이야?",
+          "JumpAnchorStringId_JPN": "君が今日、約束してた旅の団員かな？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그런데 저 뒤에 누가 쫓아오는 것 같은데…",
+          "JumpAnchorStringId_JPN": "でも、後ろから誰か追ってきてるみたいだけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "그래 그러니까 얼른…! 이 아니라!",
+      "UnitTalk_JPN": "そうなの、だから早く…！じゃなくて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "기분 탓이야, 기분 탓! 모르는 사람이야, 응 그렇고말고!",
+      "UnitTalk_JPN": "気のせいだよ、気のせい！知らない人だし、うん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "자자, 들어가자! 어서~!",
+      "UnitTalk_JPN": "さぁさぁ、中に入ろ！はやく～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "붉은 옷을 입은 소녀에게 이끌려서 훈련장 안으로 들어갔다.",
+      "UnitTalk_JPN": "赤い服を着た少女に導かれ、訓練場の中に入った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "닫히는 문 저 너머로 고함치는 소리가 들려왔다.",
+      "UnitTalk_JPN": "閉まったドアの向こう側から、怒鳴り声が聞こえてくる。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_1.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_RECRUIT.png"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "휴우! 끈질기네, 참.",
+      "UnitTalk_JPN": "ふぅ！しつこいなぁ、もう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼 늦어서 미안.",
+      "UnitTalk_JPN": "とにかく、遅れてゴメンね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "지각할 생각은 없었는데 약간의 사고가 있어서 말야.",
+      "UnitTalk_JPN": "遅刻するつもりはなかったんだけど、ちょっと色々あってさ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "내 이름은 <color=#F7BE45>루나</color>라고 해.",
+      "UnitTalk_JPN": "アタシは<color=#F7BE45>「ルナ」</color>っていうの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "꿈의 대마녀 <color=#F7BE45>마기</color>님의 수제자이자! 달의 지팡이를 물려받은 점성술사이고!",
+      "UnitTalk_JPN": "夢の大魔女<color=#F7BE45>「マギ」</color>様の一番弟子で！月の杖を受け継いだ占星術師よ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "라비스타 최고의 예언자이기도 하지!",
+      "UnitTalk_JPN": "ラビスターNo.1の予言者でもあるんだから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "앞으로 잘 부탁해, 단장!",
+      "UnitTalk_JPN": "これからよろしくね、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아까 쫓아오던 사람은…?",
+          "JumpAnchorStringId_JPN": "さっき追って来てた人は…？"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "아하하, 신경 쓰지 마, 신경 쓰지 마.",
+      "UnitTalk_JPN": "あはは、気にしない気にしないっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그냥 약간의 오해와 사고가 있었던 것뿐-",
+      "UnitTalk_JPN": "ちょいとした誤解とハプニングがねー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BRAWL.wav",
+      "UnitTalk_KOR": "훈련장 문 너머 왠지 어수선한 분위기가 점점 커지고 있었다.",
+      "UnitTalk_JPN": "訓練場の扉の向こうが、さらに騒がしくなってきた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무언가 불만을 말하는 목소리가 하나둘… 많아지고 있었다.",
+      "UnitTalk_JPN": "何か不満を訴える声が…大きくなってるみたいだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "당황해하는 클레어의 목소리도 어렴풋이 들려왔다.",
+      "UnitTalk_JPN": "慌てるクレアの声も、うっすらと聞こえて来た。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…무슨 일이지?",
+          "JumpAnchorStringId_JPN": "…なんだろう？"
+        }
+      ]
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "다, 단장-! 잠깐 잠깐-! 그거 열면 안-!",
+      "UnitTalk_JPN": "だ、だんちょー！待って待ってー！そこは開けちゃダー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_1.wav"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 137,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "CameraOffset": "TRIPLE_1",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 138,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitMotion": "ANGRY_LOOP",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_W",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 141,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 4.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_LOANSHARK_A"
+      ],
+      "UnitTalk_KOR": "잡았다, 이 사기꾼!",
+      "UnitTalk_JPN": "捕まえたぞ、このペテン師め！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitNameString": [
+        "SI_LOANSHARK_B"
+      ],
+      "UnitTalk_KOR": "도망갈 수 있으리라 생각했나!",
+      "UnitTalk_JPN": "逃げられるとでも思ったか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_W",
+      "UnitNameString": [
+        "SI_LOANSHARK_C"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "오늘까지 갚기로 한 돈 어딨어!",
+      "UnitTalk_JPN": "今日までに返すって約束した金、はやく出せ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "히, 히이익-",
+      "UnitTalk_JPN": "ヒ、ヒェーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "여러분, 여기는 <color=#F7BE45>여정</color> 관계자들만 들어올 수 있는 공간입니다.",
+      "UnitTalk_JPN": "皆さん、ここは<color=#F7BE45>「救援の旅」</color>関係者のみが入れる空間です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "아무나 들어오면 안 됩니다! 통제를 따라주세요!",
+      "UnitTalk_JPN": "関係者以外は立ち入り禁止です！ルールに従ってください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_LOANSHARK_A"
+      ],
+      "CameraOffset": "TRIPLE_1",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "시끄러워! 저 여자가 내 돈을 떼어먹었다고!",
+      "UnitTalk_JPN": "うるさい！この女が借金を踏み倒したんだぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitNameString": [
+        "SI_LOANSHARK_B"
+      ],
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "내 돈도!",
+      "UnitTalk_JPN": "私のお金もよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_W",
+      "UnitNameString": [
+        "SI_LOANSHARK_C"
+      ],
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "우리 돈도 2주째 갚지 않았어!",
+      "UnitTalk_JPN": "俺らも、もう2週間待ってんだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐어…?",
+          "JumpAnchorStringId_JPN": "えっ…？"
+        }
+      ]
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무래도 루나에게 돈을 빌려주고 받지 못한 사람들인 것 같았다.",
+      "UnitTalk_JPN": "どうやら、ルナからお金を返してもらえていない人たちのようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "ONE_4",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아, 아니야! 분명 갚겠다고 했잖아!",
+      "UnitTalk_JPN": "ち、ちがうの！絶対返すって言ったじゃん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "절대 일부러 도망치거나 한 건 아니라고!",
+      "UnitTalk_JPN": "わざと逃げたんじゃないってば！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "돈을 갚겠다는 마음에는 지금도 한치의 거짓도 없어!",
+      "UnitTalk_JPN": "お金を返したいって気持ちは、噓偽りなく今もあるし！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "단지…!",
+      "UnitTalk_JPN": "ただ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PEOPLECROWD"
+      ],
+      "CameraOffset": "TRIPLE_1",
+      "UnitTalk_KOR": "단지?",
+      "UnitTalk_JPN": "ただ？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "ONE_4",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "단지…",
+      "UnitTalk_JPN": "ただ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "언제 갚느냐 하는 사소한 문제가 남아있다는 것에 대해서 우리 좀 더 이야기를…",
+      "UnitTalk_JPN": "いつ返すかっていう些細な問題が残ってて…そのことに関して…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "…해보면 어떨까요?",
+      "UnitTalk_JPN": "…話し合ってみるのはどう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BRAWL.wav",
+      "UnitNameString": [
+        "SI_PEOPLECROWD"
+      ],
+      "CameraOffset": "TRIPLE_1",
+      "UnitTalk_KOR": "무슨 말도 안 되는 소리야!!",
+      "UnitTalk_JPN": "ダメに決まってる！！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "루나의 말도 안 되는 변명에 소란은 더욱 커져갔다.",
+      "UnitTalk_JPN": "ルナのありえない言い訳に、騒動はさらに大きくなった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_LOANSHARK_A"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "이런 부적격자가 <color=#F7BE45>여정</color>에 참가하는 구원자라고?",
+      "UnitTalk_JPN": "こんなヤツが<color=#F7BE45>「救援の旅」</color>に参加する救援者だっていうのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitNameString": [
+        "SI_LOANSHARK_B"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이건 NOA에 정식으로 항의하겠어!",
+      "UnitTalk_JPN": "NOAに抗議してやるわ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_W",
+      "UnitNameString": [
+        "SI_LOANSHARK_C"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이런 사람을 <color=#F7BE45>여정</color>에 초대해도 되는 거야? 이봐요, 확실히 말해보쇼!",
+      "UnitTalk_JPN": "こんなのを<color=#F7BE45>「救援の旅」</color>に招待していいのか？答えてみろよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "하아…",
+      "UnitTalk_JPN": "はぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "흥분한 사람들은 클레어를 비롯해서 누가 나오든 따지고 들 기세로 물러서지 않고 있었다.",
+      "UnitTalk_JPN": "クレアをはじめとする誰が出てきても、興奮した人々は騒ぎ立てて退かなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "으음… 무난히 따돌릴 수 있을 줄 알았는데…",
+      "UnitTalk_JPN": "うーん…上手いこと撒けると思ったんだけどなー…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이렇게 된 이상 할 수 없지.",
+      "UnitTalk_JPN": "こうなった以上、仕方ないかぁ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "루나가 고개를 끄덕이며 뭔가를 결심한 듯 앞으로 나섰다.",
+      "UnitTalk_JPN": "ルナは頷くと、何かを決心したかのように前に出た。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "ONE_4",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "미안해, 단장.",
+      "UnitTalk_JPN": "ごめんね、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "내가 책임지고 사람들을 진정시킬게.",
+      "UnitTalk_JPN": "ルナが責任をもって、みんなを静かにさせるよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "루나…?",
+          "JumpAnchorStringId_JPN": "ルナ…？"
+        }
+      ]
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BRAWL.wav",
+      "UnitTalk_KOR": "루나가 사람들 앞으로 나서자 흥분한 목소리들은 더욱 커졌다.",
+      "UnitTalk_JPN": "ルナが前に出ると、人々の声はさらに大きくなった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "당장에라도 루나에게 달려들 것 같은 일촉즉발의 순간…",
+      "UnitTalk_JPN": "今にもルナに飛び掛かりそうな、一触即発の瞬間…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_07.wav",
+      "UnitTalk_KOR": "루나는 무릎을 훈련장 바닥에 꿇었다.",
+      "UnitTalk_JPN": "ルナは訓練場の床にひざまずいた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "여러분!",
+      "UnitTalk_JPN": "みなさん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "그리고 바닥에 머리를 댈 정도로 크게 엎드리며 사람들에게 <color=#F7BE45>사죄의 자세</color>를 취했다.",
+      "UnitTalk_JPN": "そして…顔が床につきそうなほどにひれ伏し、<color=#F7BE45>「謝罪の姿勢」</color>を取った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "정말 죄송합니다, 여러분.",
+      "UnitTalk_JPN": "皆さん、本当にすみませんでした。",
+      "TalkTime": 0.03,
+      "EndFxLoopControl": "NCSC_STOP"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "예기치 못한 루나의 모습에 목소리를 높이던 사람들도 순간 조용해졌다.",
+      "UnitTalk_JPN": "予想外のルナの姿に、声を荒げていた人々も静かになった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "분명 저에게는 완벽한 상환계획이 있었으나…",
+      "UnitTalk_JPN": "私にも完璧な計画がありましたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "거스를 수 없는 거대한 운명의 흐름에 따라, 그 계획에 차질이 생겼습니다.",
+      "UnitTalk_JPN": "逆らえない巨大な運命によって、その計画に支障が出てしまいました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "하지만 중요한 것은 결코 여러분의 돈을 떼어먹지 않겠다는 저의 꺾이지 않는 마음이라고 생각합니다.",
+      "UnitTalk_JPN": "しかし大事なのは…みなさんのお金を踏み倒すつもりはないという、私の気持ちだと思います。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "부디 한 번만 믿어 주신다면 빠른 시일 내에 돈을 갚을 수 있을지도…",
+      "UnitTalk_JPN": "どうか一度だけ信じていただければ、早いうちにお金を返済できる…かも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 143,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 144,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_W",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_LOANSHARK_A"
+      ],
+      "CameraOffset": "TRIPLE_1",
+      "UnitTalk_KOR": "그걸 어떻게 믿어!",
+      "UnitTalk_JPN": "そんなの信じられるか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitTalk_KOR": "그 소리를 기다렸다는 듯, 루나가 벌떡 몸을 일으켰다.",
+      "UnitTalk_JPN": "そのセリフを待っていたかのように、ルナは跳ね起きた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "그렇죠! 믿기 힘드시겠죠!",
+      "UnitTalk_JPN": "そうでしょ！信じられないでしょ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "저 같아도 믿기 힘들 테니까요…!",
+      "UnitTalk_JPN": "ルナでも、こんなの信じられないもん…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그래서!",
+      "UnitTalk_JPN": "そこで！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여러분들이 믿을 수 있는 분을 모셨습니다!",
+      "UnitTalk_JPN": "みなさんが信頼できる方をお連れしましたーっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PEOPLECROWD"
+      ],
+      "CameraOffset": "TRIPLE_1",
+      "UnitTalk_KOR": "믿을 수 있는 분?",
+      "UnitTalk_JPN": "信頼できる方？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그렇습니다! 여기 계신 이 <color=#F7BE45>여정 단장</color>님께서!",
+      "UnitTalk_JPN": "そうなのですっ！ここにおわす<color=#F7BE45>「旅の団長」</color>様が！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "오늘부터 제 빚 보증인이 되어 주실 겁니다!",
+      "UnitTalk_JPN": "今日からルナの連帯保証人になってくれるのです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WIND_02.wav",
+      "UnitTalk_KOR": "차가운 바람이 훈련장에 모인 사람들을 훑고 지나갔다.",
+      "UnitTalk_JPN": "冷たい風が、訓練場に集まった人々の間を吹き抜けた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "난 방금 내가 들은 말이 무슨 뜻인지 이해가 되지 않아서 굳어 있었다.",
+      "UnitTalk_JPN": "私は、今聞いた言葉を理解できずに固まっていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…뭐?",
+          "JumpAnchorStringId_JPN": "…なんですと？"
+        }
+      ]
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그러니까, 여기 계신 여정 단장님이, 제 빚을 대신 갚을…",
+      "UnitTalk_JPN": "だから、ここにいる団長がルナの借金を代わりに返…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 아니 보증을 서 주신다! 그 말이죠. 네. 아무렴요.",
+      "UnitTalk_JPN": "じ、じゃなくて、保証してくれるの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "빚의 보증이라니?",
+      "UnitTalk_JPN": "借金の保証って？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그게 대체 무슨 의미지? 내가 생각하고 있는 그거 맞나?",
+      "UnitTalk_JPN": "一体どういう意味だろう？言葉通り、あの保証のこと…？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "루나가 만약 돈을 갚지 않으면 내가 갚아야 한다는, 그런 의미의…?",
+      "UnitTalk_JPN": "ルナがもしお金を返さなかったら、私が返すことになるっていう…？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…마",
+          "JumpAnchorStringId_JPN": "…そ"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "말도 안 되는 소리를-!",
+          "JumpAnchorStringId_JPN": "そんなバカな！"
+        }
+      ]
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "부탁해, 단장! 폐는 끼치지 않을 테니 보증 좀!",
+      "UnitTalk_JPN": "お願い、団長！迷惑はかけないから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "사람에겐 절대 해서는 안 되는 일이라는 게 있어-!",
+          "JumpAnchorStringId_JPN": "人としてこんなことしちゃダメだよ！"
+        }
+      ]
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "제발! 부탁이야! 대신 단장이 시키는 거라면 뭐든지 할게!",
+      "UnitTalk_JPN": "お願い！代わりに、団長の言うこと何でも聞くから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "흑… 흐흑, 개처럼 짖으라면 짖고! 땅을 기라면 기어다니고!",
+      "UnitTalk_JPN": "ううっ…犬みたいに吠えろって言われたら吠えるし！地面を這えって言われたら這うし！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그, 그리고… 원한다면 더 심한 일도…",
+      "UnitTalk_JPN": "そ、それに…お望みなら、もっと辛いことも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "음, 아니 생각해 보니 그 정도까진 못할 것 같네.",
+      "UnitTalk_JPN": "うーん。やっぱ、それ以上のことはムリかも。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아무튼 제발…!!",
+      "UnitTalk_JPN": "とにかく、お願い…！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "멋대로 날 이상한 사람으로 만들지 마!",
+          "JumpAnchorStringId_JPN": "勝手に変な人扱いしないでよ！"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그나저나 대체 빚이 얼마 길래?",
+          "JumpAnchorStringId_JPN": "そもそも、いくら借金してるの？"
+        }
+      ]
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그게 대략…",
+      "UnitTalk_JPN": "それが、えっと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.7
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "누군가가 금전 관련으로 도움을 요청할 때, 상식을 뛰어넘는 금액이라면 간단히 거절하고 포기할 것이다.",
+      "UnitTalk_JPN": "誰かに金銭的なお願いをする時…常識外れな金額を提示すれば、すぐに断られてしまうだろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 <color=#F7BE45>어라? 생각보다 그렇게 많지는 않네?</color>라는 절묘한 정도의 금액에…",
+      "UnitTalk_JPN": "しかし、<color=#F7BE45>お？思ったより多くないな？</color>と思わせる絶妙な金額に…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>못 도와줄 정도는 아닌 것도 같고…?</color> 라는 생각이 드는 순간.",
+      "UnitTalk_JPN": "<color=#F7BE45>助けられないほどではないかも…？</color>と思う瞬間。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TRIPLE_1",
+      "UnitTalk_KOR": "바로 그게 <color=#F7BE45>나락으로 빠져들어가는 길의 시작이라는 것</color>을, 그때의 나는 알지 못했다.",
+      "UnitTalk_JPN": "それが<color=#F7BE45>地獄への第一歩ということ</color>を、その時の私は知らずにいた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_LOANSHARK_A"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "여정 단장… 그러니까 보이저 구원단의 단장이 보증인이 되어준다고?",
+      "UnitTalk_JPN": "旅の団長…つまり、ボイジャー救援団の団長が、保証人になってくれるのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitNameString": [
+        "SI_LOANSHARK_B"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…흥, 그게 사실이라면, 사정을 못 봐줄 것도 없지.",
+      "UnitTalk_JPN": "…フンッ。それなら、今日のところは見逃してあげてもいいけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_W",
+      "UnitNameString": [
+        "SI_LOANSHARK_C"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그러니까 저 분홍머리 여자가 사라지기라도 하면, 단장님이 빚을 갚아준다는 거지?",
+      "UnitTalk_JPN": "あのピンク髪の女が行方をくらませたりでもしたら、団長が借金を返してくれるってことだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_LOANSHARK_A"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이봐, 단장 양반! 다음 달에 갚을 돈은 캔들 스퀘어에 전달해 두겠어!",
+      "UnitTalk_JPN": "おい、団長！来月の返済分、キャンドル・スクエアに伝えておくぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "모두들 내가 빚 보증인이 된 것을 납득한 것으로 보였다. 그러니까… 나만 빼고 말이다.",
+      "UnitTalk_JPN": "皆、私が保証人になることを納得してるみたいだ。…私を除いて、だけど。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 145,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8
+    },
+    {
+      "Uid": 146,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitTalk_KOR": "소란을 일으키던 사람들은 하나둘 캔들 스퀘어를 떠났다.",
+      "UnitTalk_JPN": "騒ぎ立てていた人々は、1人2人とキャンドル・スクエアを去っていった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "남은 것은 나를 안쓰러운 눈으로 바라보는 클레어와, 어딘지 모르게 산뜻한 표정의 루나뿐이었다.",
+      "UnitTalk_JPN": "残ったのは…私を可哀そうな目で見つめるクレアと、どこかすっきりとした表情のルナだけだった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 149,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.8
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "휴, 겨우 처리했네.",
+      "UnitTalk_JPN": "ふぅ、やっと静かになったねー。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "자, 어때? 내가 말한 대로 책임지고 처리했지?",
+      "UnitTalk_JPN": "ねぇ、どうだった？ルナが言った通り、責任取って場を収めたでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "네가 뭘 책임졌다는 건데?!",
+          "JumpAnchorStringId_JPN": "何の責任も取ってないよね！？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "전부 나한테 떠넘겼잖아?!",
+          "JumpAnchorStringId_JPN": "ぜんぶ私に押し付けただけなんだけど！？"
+        }
+      ]
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "지, 진정해 단장! 내 생명의 은인! 나의 보증인!",
+      "UnitTalk_JPN": "お、落ち着いて、団長！ルナの命の恩人よ！ルナの保証人よ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "나 열심히 할 테니까! 너무 걱정하지 말고!",
+      "UnitTalk_JPN": "ルナ、一生懸命やるから！そんなに心配しないで！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하나만 묻자.",
+          "JumpAnchorStringId_JPN": "一つだけ聞くけど…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "대체 어쩌다 빚을 진 거야…?",
+          "JumpAnchorStringId_JPN": "なんで借金があるの…？"
+        }
+      ]
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아~ 그건-",
+      "UnitTalk_JPN": "あ～、それはー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "저기, 길 건너 카지노에서…",
+      "UnitTalk_JPN": "あの、向かい側にあるカジノで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "카지노?!",
+          "JumpAnchorStringId_JPN": "カジノ！？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "도박이라는 소리잖아!",
+          "JumpAnchorStringId_JPN": "ギャンブルってことだよね！"
+        }
+      ]
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하하, 앞으로의 1년은 단장에게 배팅할 생각이니까!",
+      "UnitTalk_JPN": "あはは、これから一年は団長にベットするつもりだからっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "잘 부탁해, 단장!",
+      "UnitTalk_JPN": "よろしくね、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "말도 안 되는 루나와의 첫 만남은 그렇게 시작되었다.",
+      "UnitTalk_JPN": "ルナとの滅茶苦茶な出会いは、こうして始まった。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

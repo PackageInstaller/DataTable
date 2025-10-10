@@ -1,0 +1,55 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_OPERATION_01",
+            "SpecialSkillAvailable": true,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          }
+        ]
+      }
+    ]
+  }
+}

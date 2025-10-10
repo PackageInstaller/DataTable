@@ -1,0 +1,450 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_36_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "안녕하세요 단장님.",
+      "UnitTalk_JPN": "こんにちは、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "합숙 훈련을 다녀온 여독은 다 풀리셨나요?",
+      "UnitTalk_JPN": "合宿トレーニングから戻った疲れは、もう取れましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "전 휴가의… 아니, 합숙 훈련의 여운이 아직 남아 있거든요.",
+      "UnitTalk_JPN": "私は休暇の…いえ、合宿トレーニングの余韻がまだ残っているんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "푹 쉬었어.",
+          "JumpAnchorStringId_JPN": "たっぷり休んだよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후, 다행입니다.",
+      "UnitTalk_JPN": "ふふ、それは良かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "오늘은 상부에서 내려온 다음 평가전 내용을 알려드리겠습니다.",
+      "UnitTalk_JPN": "本日は上層部から下りてきた次期試験の内容をお知らせします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "드디어 다음 평가전이네.",
+          "JumpAnchorStringId_JPN": "いよいよ次の試験ですね。"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "네, 다음 평가전은 <color=#F7BE45>[공허 평가전]</color>입니다.",
+      "UnitTalk_JPN": "はい、次の試験は<color=#F7BE45>「空虚試験」</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "공허체에 대해 들어 보신 적 있으신가요?",
+      "UnitTalk_JPN": "空虚体について聞いたことはありますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이름 정도는… 자세한 건 잘 몰라.",
+          "JumpAnchorStringId_JPN": "名前くらいは…詳細はよく知らない。"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "…그렇군요.",
+      "UnitTalk_JPN": "…そうでしたか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 조금 더 자세히 알려드릴 필요가 있겠네요.",
+      "UnitTalk_JPN": "ではもう少し詳しくご説明する必要がありそうですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "단장님, 구원자란 무엇일까요?",
+      "UnitTalk_JPN": "団長、救援者とは何でしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…별의 힘을 사용하는 자?",
+          "JumpAnchorStringId_JPN": "…星の力を使う者？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그렇습니다.",
+      "UnitTalk_JPN": "その通りです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "과거 <color=#F7BE45>[별의 구원자]</color>가 세상에 흩뿌린 <color=#F7BE45>[별의 힘]</color>을 타고난 자를 구원자라고 부르죠.",
+      "UnitTalk_JPN": "かつて<color=#F7BE45>「星の救援者」</color>が世界に散らばした<color=#F7BE45>「星の力」</color>を生まれながらに持つ者を救援者と呼びます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만 그뿐만은 아닙니다.",
+      "UnitTalk_JPN": "しかしそれだけではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "구원자란 <color=#F7BE45>[라비스타]</color>를 수호하는 자를 부르는 말이기도 합니다.",
+      "UnitTalk_JPN": "救援者とは、<color=#F7BE45>「ラビスター」</color>を守る者を指す言葉でもあります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그렇다면… 구원자는 무엇으로부터 라비스타를 수호하는 걸까요?",
+      "UnitTalk_JPN": "では…救援者は一体何からラビスターを守っているのでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건…",
+          "JumpAnchorStringId_JPN": "それは…"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_20.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "공허체, 공허의 별…",
+      "UnitTalk_JPN": "空虚体、空虚の星…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "각자 이름은 다르지만 결국 <color=#F7BE45>[공허로부터 비롯된 존재]</color>.",
+      "UnitTalk_JPN": "それぞれの名は違えど、結局は<color=#F7BE45>「空虚から生まれた存在」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그들로부터 라비스타를 수호하는 자를 우리는 구원자라 부릅니다.",
+      "UnitTalk_JPN": "彼らからラビスターを守る者を、我々は救援者と呼びます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇다면…",
+          "JumpAnchorStringId_JPN": "では…"
+        }
+      ]
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "네, <color=#F7BE45>[공허체]</color>란 이 세계의 적이자…",
+      "UnitTalk_JPN": "ええ、<color=#F7BE45>「空虚体」</color>とはこの世界の敵であり…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[여정]</color>을 진행하는 궁극적인 목표입니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>を進める究極の目標です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그리고 이번 <color=#F7BE45>[공허 평가전]</color>은 단장님과 여정 단원이 <color=#F7BE45>[공허체]</color>와 싸울 능력이 있는지 검증하는 시험입니다.",
+      "UnitTalk_JPN": "そして今回の<color=#F7BE45>「空虚試験」</color>は、団長と旅の団員が<color=#F7BE45>「空虚体」</color>と戦う能力があるかを検証する試験です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어쩐지 좀 긴장되는데.",
+          "JumpAnchorStringId_JPN": "なんだか少し緊張するな。"
+        }
+      ]
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "당연하죠.",
+      "UnitTalk_JPN": "当然です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "공허체는 라비스타에 자생하는 마수들과는 전혀 다릅니다.",
+      "UnitTalk_JPN": "空虚体はラビスターに自生する魔獣たちとは全く異なります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그들은 식어가는 바깥 우주 저편에서 넘어온 자들.",
+      "UnitTalk_JPN": "彼らは冷えていく外宇宙の彼方から渡ってきた者たち。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "끝없는 추위와 허기에 시달리며 그 고통을 달래기 위해 빛과 온기를 가진 모든 것을 파괴하고 삼키는 자들이라고 알려져 있습니다.",
+      "UnitTalk_JPN": "果てしない寒さと飢えに苛まれ、その苦痛を和らげるために光と温もりを帯びたあらゆるものを破壊し、飲み込む者たちとして知られています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "지금까지와는 비교할 수 없을 정도로 강력하고 위험한 적들이죠.",
+      "UnitTalk_JPN": "これまでとは比べものにならないほど強力で危険な敵です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "철저히 대비하지 않으면 반드시 곤경에 처할 거예요.",
+      "UnitTalk_JPN": "徹底的に備えなければ必ず窮地に陥るでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "평가전 전까지, 필요한 모든 걸 준비해 두시기를 권유 드립니다.",
+      "UnitTalk_JPN": "試験まで、必要なものは全て準備しておくことをお勧めします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 단장님. 평가전 때 뵙겠습니다.",
+      "UnitTalk_JPN": "それでは団長。試験でお会いしましょう。",
+      "TalkTime": 0.03
+    }
+  ]
+}

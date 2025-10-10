@@ -1,0 +1,252 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_DEVIL_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_2.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_06.mp3"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": false,
+      "WaitTime": 2.5
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오셨군요, 기다리고 있었습니다.",
+      "UnitTalk_JPN": "おいでになりましたか、お待ちしておりました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…아닙니다. 그렇게 오래 기다리지는 않았습니다.",
+      "UnitTalk_JPN": "…いえ、それほど長くは待っていませんでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "재촉하는 걸로 느껴졌다면 사과드리죠. 죄송합니다.",
+      "UnitTalk_JPN": "お急ぎに感じられたならお詫びします。申し訳ありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "솔직히, 근래에 당신과 만나는 일이 가장 기대됩니다. 전날부터 설렌답니다.",
+      "UnitTalk_JPN": "正直、最近あなたと会うことが一番楽しみです。前日から胸が高鳴っています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "믿기십니까?",
+      "UnitTalk_JPN": "信じられますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이곳에 의자가 있기 전부터, 아니 사람이 살기 전부터, 아니… 좀 더 거슬러 올라가면…",
+      "UnitTalk_JPN": "ここに椅子が置かれる前から、いや人が住む前から、いや…もっと遡れば…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그래.",
+      "UnitTalk_JPN": "そう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "인간이 탄생하기 전부터 살아온 제게 이런 감정이 남아있을 줄은 저조차 몰랐습니다.",
+      "UnitTalk_JPN": "人間が誕生する前から生きてきた私に、こんな感情が残っているとは私自身も知りませんでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "한순간의 변덕이 이토록 즐거운 유열이 될 줄이야…",
+      "UnitTalk_JPN": "一瞬の気まぐれがこれほど楽しい余韻になるとは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 자리를 빌려 말씀드리겠습니다. 진심으로 감사드립니다.",
+      "UnitTalk_JPN": "この場を借りて申し上げます。心から感謝いたします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "자, 그럼 계약을 갱신해볼까요?",
+      "UnitTalk_JPN": "さあ、それでは契約を更新しましょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "말씀해 주시죠. 이전에 당신이 겪은 여정을, 앞으로의 계획을.",
+      "UnitTalk_JPN": "お聞かせください。これまであなたが経験した旅路を、これからの計画を。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "합당한 대가를, 저 역시 지불하겠습니다. 이것이 우리가 맺은 계약이니까요.",
+      "UnitTalk_JPN": "相応の代償を、私もお支払いします。これが私たちが結んだ契約ですから。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.7
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 1.5
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정일지에 보관한 아르카나에 빛이 스며든다.",
+      "UnitTalk_JPN": "旅の日誌に保管したアルカナに光が染み込む。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEVIL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 인연에 별의 축복이 깃들었다.",
+      "UnitTalk_JPN": "私と<color=#F7BE45>[CHARACTER_NAME]</color>の絆に、星の祝福が宿った。",
+      "TalkTime": 0.03
+    }
+  ]
+}

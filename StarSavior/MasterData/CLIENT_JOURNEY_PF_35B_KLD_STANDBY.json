@@ -1,0 +1,383 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_35B_KLD_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_TRAIN_STATION.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "안녕하세요 단장님!",
+      "UnitTalk_JPN": "こんにちは、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "곧 출발 시간입니다. 짐은 잘 챙기셨나요?",
+      "UnitTalk_JPN": "まもなく出発時間です。荷物はちゃんと準備できましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응, 그런데 얼굴이 좋아 보이네.",
+          "JumpAnchorStringId_JPN": "うん、でも顔色がいいね。"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "어머, 단장님이 보기에도 그런가요?",
+      "UnitTalk_JPN": "あら、団長にもそう見えるんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "실은 저도 몰랐는데 이곳 온천이 피부 미용이 아주 좋다더라고요.",
+      "UnitTalk_JPN": "実は私も知らなかったんですが、ここの温泉は美肌効果が高いんですって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "어차피 밖으로 나갈 일도 별로 없으니 합숙 기간동안 온천에서 살다시피 했죠.",
+      "UnitTalk_JPN": "どうせ外に出ることもあまりないので、合宿期間中は温泉で暮らすようにしていました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "어때요? 5살은 더 어려진 것 같지 않나요?",
+      "UnitTalk_JPN": "どうですか？5歳はもっと若くなったと思いませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그거 다행이네.",
+          "JumpAnchorStringId_JPN": "…それは良かった。"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후후, 아무리 생각해도 칼라이드 온천은 저평가 되어 있는 것 같아요.",
+      "UnitTalk_JPN": "ふふ、どう考えてもカライド温泉は過小評価されているみたいですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "저부터도 이곳에 처음 왔을 땐 막막했으니까요.",
+      "UnitTalk_JPN": "私自身も初めてここに来た時は途方に暮れましたから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만 이렇게 효능 좋은 온천이 있는 걸 알게 된 이상 그냥 있을 수는 없죠.",
+      "UnitTalk_JPN": "でも、こんなに効能の良い温泉があることを知った以上、ただ見過ごすわけにはいきません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "칼라이드 상회 쪽 사람들과 협의해서 <color=#F7BE45>[칼라이드 온천 입욕제]</color>를 만들기로 했답니다.",
+      "UnitTalk_JPN": "カライド商会の方々と協議して、<color=#F7BE45>「カライド温泉入浴剤」</color>を作ることに決めたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "이걸 NOA로 가지고 가기만 하면 전 떼돈을 벌 수 있을 거예요!",
+      "UnitTalk_JPN": "これをNOAに持っていくだけで、私は大金を稼げるはず！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…리사, 우리 <color=#F7BE45>[여정]</color>에도 관심이 있는 것 맞지?",
+          "JumpAnchorStringId_JPN": "…リサ、私たちも<color=#F7BE45>「救援の旅」</color>に興味があるんでしょ？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "어머, 무슨 말을 그렇게 섭섭하게 하시는 거죠? 단장님.",
+      "UnitTalk_JPN": "あら、どうしてそんな寂しいことをおっしゃるの？団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "제 본업은 분명 성운관측기관의 3급 관측사이자 <color=#F7BE45>[여정]</color> 관리를 위해 파견된 <color=#F7BE45>[보이저 구원단]</color>의 <color=#F7BE45>[연락관]</color>이랍니다.",
+      "UnitTalk_JPN": "私の本職は、明らかに星雲観測機関の3級観測士であり、<color=#F7BE45>「救援の旅」</color>の管理のために派遣された<color=#F7BE45>「ボイジャー救援団」</color>の<color=#F7BE45>「連絡官」</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "저도 나름대로 제 역할에 긍지를 가지고 있다고요.",
+      "UnitTalk_JPN": "私もそれなりに自分の役割に誇りを持っているんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나름대로라…",
+          "JumpAnchorStringId_JPN": "それなりに…"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "하지만… 꿈은 꿈이고 현실은 현실인 법.",
+      "UnitTalk_JPN": "でも…夢は夢で現実は現実というもの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "노후 준비란 건 젊었을 때 해야 하는 거잖아요?",
+      "UnitTalk_JPN": "老後の準備って若い時にすべきことですよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "전 남는 시간을 조금 할애해서 약간의 보험을 들어 둔 거죠.",
+      "UnitTalk_JPN": "私は余った時間を少し割いて、少しの保険をかけておいただけです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "딱 그 정도의 일이랍니다.",
+      "UnitTalk_JPN": "まさにその程度のことでしかないんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "흐으으으음…!",
+          "JumpAnchorStringId_JPN": "ふぅぅぅぅむ…！"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "자, 자, 쓸데없는 오해는 곤란해요 단장님.",
+      "UnitTalk_JPN": "さあさあ、余計な誤解は困りますよ、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "여기 입욕제 샘플 몇 개 드릴 테니까 오늘 저녁에는 뜨거운 물에 몸이라도 푹 담그세요.",
+      "UnitTalk_JPN": "ここに入浴剤のサンプルをいくつか差し上げますから、今夜は熱いお湯に体をたっぷり浸けてください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…돌아가면 아마 지금보다는 조금 더 벅찬 일이 기다리고 있을 테니까요.",
+      "UnitTalk_JPN": "…戻ったら、おそらく今よりは少しばかり大変な仕事が待っているでしょうから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리사는 내게 입욕제를 건넨 후 일등석 객실로 사라졌다.",
+      "UnitTalk_JPN": "リサは私に入浴剤を渡すと、一等室の客室へと消えていった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩐지 그녀가 마지막에 내뱉은 경고가 익숙했다.",
+      "UnitTalk_JPN": "どうも彼女が最後に吐いた警告が、どこか懐かしい気がした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 오늘은 그저 뜨거운 목욕을 즐기도록 하자.",
+      "UnitTalk_JPN": "しかし今日はただ熱いお風呂を楽しむことにしよう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[여정]</color>의 끝은 아직 멀었으니까.",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>の終わりはまだ遠いのだから。",
+      "TalkTime": 0.03
+    }
+  ]
+}

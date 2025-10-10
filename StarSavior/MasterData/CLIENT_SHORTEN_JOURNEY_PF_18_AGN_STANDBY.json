@@ -1,0 +1,114 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_18_AGN_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_18_AGN_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_INFINITE_CORRIDOR_01.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_18_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고대종의 흔적을 찾아 미궁의 심층부로 내려가는데, 통로가 커다란 바위에 막혀 있었다.",
+      "UnitTalk_JPN": "古代種の痕跡を見つけようと、迷宮の深層部へ降りていくと…通路が大きな岩で塞がれていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_18_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "돈으로 해결하자.",
+          "JumpAnchorStringId_JPN": "金で解決しよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "크레인을 직접 몰면 어떨까?",
+          "JumpAnchorStringId_JPN": "クレーンを自分で操縦するのはどうだろう？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "우회로를 찾아야겠어",
+          "JumpAnchorStringId_JPN": "迂回路を探さねば",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_18_AGN_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_18_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "크레인을 동원해 통로를 가로막고 있던 암석을 치우는 데 성공했다!",
+      "UnitTalk_JPN": "クレーンを動員して通路を塞いでいた岩石を取り除くことに成功した！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_18_AGN_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_18_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "부단한 연습 끝에 <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 크레인을 조종해서 암석을 치웠다!",
+      "UnitTalk_JPN": "地道な練習の末、<color=#F7BE45>[CHARACTER_NAME]</color>とクレーンを操縦して岩石をどかした！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_18_AGN_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_18_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "현장반장에게 받은 지도를 토대로 우회로를 찾아냈지만, 시간이 많이 소요됐다…",
+      "UnitTalk_JPN": "現場班長から受け取った地図をもとに迂回路を見つけたが、時間がかかってしまった…",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "실패해버렸군요…",
+      "UnitTalk_JPN": "失敗してしまいました…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "서부 탈환대의 돌격대원으로서 수치스러운 결과…!",
+      "UnitTalk_JPN": "西部奪還隊の切り込み隊長として、なんと情けない結果…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "그러니 벌을 받겠습니다.",
+      "UnitTalk_JPN": "ということで、罰を受けます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "채찍? 몽둥이? 깃털?",
+      "UnitTalk_JPN": "ムチでも、こん棒でも、羽根でも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "단장님이 선택해주십시오. 저는 뭐든 환영입니다!",
+      "UnitTalk_JPN": "団長殿にお任せします。私は何でも大歓迎です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괘, 괜찮아! 다음에 열심히 하자!",
+          "JumpAnchorStringId_JPN": "だ、大丈夫だ！また次、頑張ろう！",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "이것 마시고 기운 내.",
+          "JumpAnchorStringId_JPN": "これでも飲んで、元気出して。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…네?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "그걸로 끝? 벌은 안 받나요?",
+      "UnitTalk_JPN": "これで終わりですか？罰は？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아. 방치 플레이라고 생각하면 그것대로 나름 괜찮군요.",
+      "UnitTalk_JPN": "あっ。放置プレイだと思えば、それはそれで悪くないかもしれませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "자신만의 세계로 들어간 베스타를 데리고 돌아왔다.",
+      "UnitTalk_JPN": "自分の世界に入り込んでしまったベスタを連れて、宿へと戻った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…아무 처벌도 없다는 말씀이십니까?",
+      "UnitTalk_JPN": "…何の処罰もないということですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "정말 아무것도요?",
+      "UnitTalk_JPN": "本当に何も？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "단장님은… 가끔은 조금 가혹하시군요…",
+      "UnitTalk_JPN": "団長殿は…時に、とても残酷なのですね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "처벌이 없어서 시무룩해진 베스타를 데리고 돌아왔다…",
+      "UnitTalk_JPN": "罰がないことにしょんぼりしているベスタを連れて、宿へと戻った…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "지금 필요한 건 당근이 아니라 채찍입니다만…",
+      "UnitTalk_JPN": "今必要なのは、アメではなくムチですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "아니, 오히려 다음에 더욱 강한 채찍이 기다리고 있다고 생각하면 그것 나름대로…",
+      "UnitTalk_JPN": "いや、むしろ次こそはもっと強いムチが待っていると思えば、それはそれで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…음.",
+      "UnitTalk_JPN": "…むむ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "실례, 흥분해서 코피가 나와버렸군요.",
+      "UnitTalk_JPN": "失礼、興奮して鼻血が出てしまいました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…활력 포션을 마신 베스타는 금방 코피가 멎었다.",
+      "UnitTalk_JPN": "…ベスタは活力ポーションを飲むと、すぐに鼻血が止まった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

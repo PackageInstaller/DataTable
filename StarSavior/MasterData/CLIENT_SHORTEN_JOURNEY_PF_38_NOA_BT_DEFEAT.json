@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_38_NOA_BT_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "공허체 토벌에 실패했다…",
+      "UnitTalk_JPN": "空虚体の討伐に失敗した…",
+      "TalkTime": 0.03
+    }
+  ]
+}

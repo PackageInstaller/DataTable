@@ -1,0 +1,31 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_3_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_02",
+            "ChangeAdjustType": "NUAT_ORDER",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_APOSTLE_GILLE_BOSS_EASY_01",
+            "IsBoss": true,
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_02",
+            "ChangeAdjustType": "NUAT_ORDER",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1742 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "CameraOffset": "TWIN_1"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "단원과의 첫 만남을 기다리던 중, 골목 어귀에서 소란스러운 소리가 들려왔다.",
+      "UnitTalk_JPN": "団員と初めて会う約束をした日。指定の場所で待っていると、路地裏の方から大声が聞こえてきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": -2.0,
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이거 어떡할 거냐? 책임질 수 있어, 꼬맹이?",
+      "UnitTalk_JPN": "おいおい、どうしてくれんだぁ？責任取ってくれんだよなぁ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "UnitTalk_KOR": "어… 읏…! 그게…",
+      "UnitTalk_JPN": "えっ…うぅっ…！それは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitTalk_KOR": "이게 얼마짜리 옷인지는 알고나 있는 거냐, 아앙?",
+      "UnitTalk_JPN": "この服、いくらしたと思ってんだよ。あぁん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D",
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "보아하니 어디 시골 촌구석에서 올라온 것 같다만… ",
+      "UnitTalk_JPN": "よーく見たら、クソ田舎から出てきたばっかみてぇだな。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D",
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitTalk_KOR": "눈을 똑바로 뜨고 조심히 다녀야 할 거 아니야? ",
+      "UnitTalk_JPN": "その目は飾りか？ちゃんと周りを見ろってんだ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "죄, 죄송합니다…! 제가 어떻게든 보상할 테니까…!",
+      "UnitTalk_JPN": "す、すみません…！お詫びします、何でもしますから…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "한 무리의 불량배들에게 둘러싸인 채 곤란해하고 있는 작은 몸집의 소녀는…",
+      "UnitTalk_JPN": "不良に囲まれ、困惑した表情で立ちすくむ小柄な少女は…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "인상착의를 보아, 리사에게 들은 <color=#F7BE45>여정 단원</color>임이 분명했다. ",
+      "UnitTalk_JPN": "リサから聞いた、<color=#F7BE45>旅の団員</color>の特徴と一致した。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…어떻게든 보상한다고? 푸힛! ",
+      "UnitTalk_JPN": "…何でもするって？フヒッ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitTalk_KOR": "좋아. 그럼 보상을 한번 받으러 가볼까? ",
+      "UnitTalk_JPN": "よし、じゃあお詫びしてもらおうかな。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D",
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "일단 저기 조용한 곳에서 천천히 이야기해 보자고. ",
+      "UnitTalk_JPN": "静かなとこで、じっくり話そうぜ？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "불량배들은 소녀를 윽박지르며 으슥한 골목길로 끌고 들어갔다. ",
+      "UnitTalk_JPN": "不良は少女を脅しつけ、人気のない路地へと連れ去った。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "역시, 따라가 봐야겠지.",
+      "UnitTalk_JPN": "追いかけないと。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "여, 여기 돈이요…",
+      "UnitTalk_JPN": "お、お金です…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "NOA에서는 정말, 세탁비가 이렇게 비싼가요?",
+      "UnitTalk_JPN": "本当に、NOAのクリーニング代はこんなにも高いのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "CameraOffset": "TWIN_1",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "앙? 우릴 지금 의심하는 거야? 이것도 많이 봐준 거라고. ",
+      "UnitTalk_JPN": "あぁん？俺らを疑ってんのか？これでもまけてやってんだぞ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "쳇, 깎아주려 했는데 기분이 나빠져서 전부 받아야겠어. ",
+      "UnitTalk_JPN": "チッ、気が変わった。そんな態度なら、全部いただかねぇとな。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "돈은 이게 전부예요…! ",
+      "UnitTalk_JPN": "これで全部なんです…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "뭐야, 여기 주머니가 묵직해 보이는데?",
+      "UnitTalk_JPN": "じゃあそのポケットには何が入ってんだよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D",
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitTalk_KOR": "어쭈, 거짓말로 속여 넘기려던 거야? 이게 맞으려고…!",
+      "UnitTalk_JPN": "へぇ～、オレらを騙そうってんのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "죄송해요…! 아아…! 나머지도 다 드릴 테니 제발…!",
+      "UnitTalk_JPN": "すみません…！あぁ…！残りもお渡ししますから、どうか…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "좋은 말로 할 때 그 주머니 모두 넘기고…",
+      "UnitTalk_JPN": "いいから、早く寄越しやが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitTalk_KOR": "나는 있는 힘껏 땅을 향해 검을 휘둘러 큰 소음과 함께 자욱한 흙먼지를 일으켰다.",
+      "UnitTalk_JPN": "私はありったけの力を込め、剣を地面に叩きつけた。鈍い音と共に、濛々とした砂埃が視界を覆い尽くす。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "쿨럭쿨럭! 뭐, 뭐얏-! 어떤 놈이냐! ",
+      "UnitTalk_JPN": "ゴホッゴホッ！な、なんだ！誰だよ！ ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_9",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "읏…?",
+      "UnitTalk_JPN": "うっ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "...",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "누, 누구신지는 모르겠지만...",
+      "UnitTalk_JPN": "ど、どなたか存じ上げませんが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "휴우… 감사해요. 덕분에 살았네요! ",
+      "UnitTalk_JPN": "ふぅ…ありがとうございました。おかげで助かりました！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하마터면 얼마 되지도 않는 돈을 전부 빼앗길 뻔했지 뭐예요. ",
+      "UnitTalk_JPN": "もう少しで、なけなしのお金まで奪われてしまうところでした。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "역시… NOA같은 도회지에서는 항상 정신을 똑바로 차리고 다녀야 한다더니…",
+      "UnitTalk_JPN": "やはり…NOAのような都会では、常に用心しないといけませんね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "치잇… 잘도 방해를!",
+      "UnitTalk_JPN": "チッ…邪魔しやがったな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D",
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이봐, 형씨. 알량한 정의감에 나선 거라면 후회할 거야.",
+      "UnitTalk_JPN": "おい、そこのお前。くだらねぇ正義感で首ツッコむと、後悔することになるぞ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D",
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitTalk_KOR": "객기를 부리다가 험한 꼴을 보는 수가 있다고.",
+      "UnitTalk_JPN": "調子乗ってっと、痛い目を見ることになるからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아앗, 그러고 보니 그 옷차림, 여정 단장님이셨군요!",
+      "UnitTalk_JPN": "あぁっ！その服装は、旅の団長さんですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "이런 우연이…! 저는 이번에 여정 단원으로 선발된 리디아라고 해요.",
+      "UnitTalk_JPN": "こんな偶然が…！私は旅の団員として選抜された、リディアと申します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장님…! 저 좀 도와-",
+      "UnitTalk_JPN": "団長さん…！私のこと、助けて──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭔가 오해가 있는 모양인데…",
+          "JumpAnchorStringId_JPN": "何か誤解してるみたいだけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…오해?",
+      "UnitTalk_JPN": "…誤解？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내가 구하려고 한 건 너희들이야.",
+          "JumpAnchorStringId_JPN": "私が助けようとしているのは、君たちの方だ。"
+        }
+      ]
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D",
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitTalk_KOR": "그게 무슨…?",
+      "UnitTalk_JPN": "どういう意味だ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_03.mp3",
+      "UnitTalk_KOR": "험악한 표정으로 다가오던 불량배들을 향해, 고개를 들어 머리 위쪽을 가리켰다. ",
+      "UnitTalk_JPN": "険しい表情で近づいてくる不良たちに、私は頭上を見るように合図した。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "건물 옥상에 설치되어 있던 낡은 물탱크가 끔찍한 쇳소리를 내며 위태롭게 기울더니- ",
+      "UnitTalk_JPN": "建物の屋上にある古い貯水タンクが不吉な金属音を響かせると、今にも落ちそうなほどに傾き始めた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHOOSH_SWORD_66.wav",
+      "UnitTalk_KOR": "끼이익-!",
+      "UnitTalk_JPN": "ギィィィ──！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EXPLOSION.wav"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "불량배들의 바로 옆으로 굉음을 내며 떨어졌다.",
+      "UnitTalk_JPN": "貯水タンクは、不良の真横に轟音を立てて落下した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 2.0,
+      "BgCrashTime": 0.1,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "히, 히익?!",
+      "UnitTalk_JPN": "ヒ、ヒィーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D",
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "주, 죽을 뻔했잖아! ",
+      "UnitTalk_JPN": "し、死ぬとこだったじゃねぇか！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아직 안 끝났어.",
+          "JumpAnchorStringId_JPN": "まだ終わってない。"
+        }
+      ]
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_METAL_CAN_02.wav",
+      "UnitTalk_KOR": "끼이익-!",
+      "UnitTalk_JPN": "ギィィィ──！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_1",
+      "UnitTalk_KOR": "맞은편 건물에 있던 화분과 장식물, 잡동사니 따위도 불량배들을 향해 떨어지기 시작했다. ",
+      "UnitTalk_JPN": "向かいの建物にあった植木鉢や飾り、ありとあらゆるガラクタまでもが、彼らを目がけて降り注ぎ始めた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EXPLOSION.wav"
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.7,
+      "BgCrashTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EXPLOSION_02.wav"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "힉! 히이이익! ",
+      "UnitTalk_JPN": "ヒッ！ヒェーーッ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D",
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitTalk_KOR": "도, 도망쳐어!!!",
+      "UnitTalk_JPN": "に、逃げろぉ！！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_BULLY2_MALE_D"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "멀어져가는 불량배들을 보며 리디아의 입술이 달싹거린다. ",
+      "UnitTalk_JPN": "遠ざかっていく不良を見るリディアの唇が、かすかに動いた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "목소리는 들리지 않았지만 모양을 통해 미루어 짐작하자면 그건… ",
+      "UnitTalk_JPN": "声は聞こえなかったが、口の動きで何を言ったのか理解できた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "…정말. 도움이 안 되시네.",
+      "UnitTalk_JPN": "…まったく、使えない人ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "어머나, 정말 큰일 날 뻔했네요...!",
+      "UnitTalk_JPN": "あら、本当に危なかったですね…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "아무리 나쁜 분들이라고 해도… 하마터면 크게 다칠 뻔했네요.",
+      "UnitTalk_JPN": "いくら悪い人だとしても…もう少しで大怪我を負ってしまうところでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "골목길 위에 이런 위험한 물건들이 있을 줄이야…",
+      "UnitTalk_JPN": "路地裏の建物に、こんな危険なものがあったなんて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_03.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_9",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "단장님이 아니었다면 저분들은-",
+      "UnitTalk_JPN": "団長さんがいらっしゃらなかったら、あの方たちは──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 139,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "건물 옥상에서 <color=#F7BE45>우연히</color> 바람에 날려 떨어진 물건들에 머리를 맞았겠죠?",
+      "UnitTalk_JPN": "屋上から<color=#F7BE45>偶然</color>落ちてきたものが、頭にぶつかっていたでしょうね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아아~ 상상만 해도 끔찍해라… ",
+      "UnitTalk_JPN": "うぅ～、想像しただけでも怖い… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무슨 속셈이야?",
+          "JumpAnchorStringId_JPN": "何が狙いだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "속셈이라니, 그게 무슨 소리세요? ",
+      "UnitTalk_JPN": "狙いだなんて、どういう意味ですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무것도 모른다는 표정을 짓는 리디아.",
+      "UnitTalk_JPN": "リディアは、何も知らないという表情を浮かべている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav",
+      "UnitTalk_KOR": "그녀의 등 뒤로, 검붉은색의 무언가가 빠른 속도로 빨려 들어가고 있었다.",
+      "UnitTalk_JPN": "そしてリディアの背中の方に、赤黒い何かが吸い込まれていった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "등 뒤에 있는 그거. ",
+          "JumpAnchorStringId_JPN": "背中の後ろにいるやつ。 "
+        }
+      ]
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그걸로 옥상의 물건을 떨어트렸지?",
+          "JumpAnchorStringId_JPN": "それを使って、屋上からものを落としたのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_9",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "어라, 보셨어요?",
+      "UnitTalk_JPN": "あら、見ていたんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "…언제부터?",
+      "UnitTalk_JPN": "…いつから？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이 골목에 들어왔을 때부터.",
+          "JumpAnchorStringId_JPN": "この路地に入った時から。"
+        }
+      ]
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "가방 안에서 나온 검은 그림자가 벽을 타고 올라가서 옥상위로 물건들을 늘여놓고 있었다.",
+      "UnitTalk_JPN": "カバンから飛び出した黒い影は、壁を伝い、屋上にものを並べ始めた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 145,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "정확히 불량배들의 머리 위로 떨어지도록.",
+      "UnitTalk_JPN": "正確に、不良の頭の上に落とせる位置へと。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "역시… 아무나 <color=#F7BE45>여정 단장</color>으로 뽑히는 건 아니군요…? ",
+      "UnitTalk_JPN": "やっぱり…誰でも<color=#F7BE45>旅の団長</color>になれる訳ではないんですね…？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…흐응. 저는 모르는 일이라고 하면 믿으실 건가요?",
+      "UnitTalk_JPN": "…ふ～ん。私には関係のないことだって言ったら、信じてくれますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니. ",
+          "JumpAnchorStringId_JPN": "いや。 "
+        }
+      ]
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…칫. ",
+      "UnitTalk_JPN": "…ちっ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "…눈치가 빠르시네요. 필요 이상으로 상냥하시고. ",
+      "UnitTalk_JPN": "…察しがいいですね。それに、必要以上に優しい。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래요 그래. 제가 떨어트린 거 맞아요. ",
+      "UnitTalk_JPN": "はいはい、そうです。私が落としましたよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "멍청한 시골 소녀인 척을 조금 해주니까 시비를 걸어오더라고요.",
+      "UnitTalk_JPN": "バカな田舎娘のフリをしてあげたら、難癖をつけてきたんですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그래서 역으로 상황을 써먹어볼까 했죠. ",
+      "UnitTalk_JPN": "だから逆手にとって、この状況を利用してやろうって思いました。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "이런 골목에서 일어난 일이라면 어차피 발견돼도 사고로 보일 테니까 딱 좋고.",
+      "UnitTalk_JPN": "こんな路地裏で起こったことです。発見されたとしてもどうせ事故で片づけられるでしょうし、好都合ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장님. 방해라구요, 방해.",
+      "UnitTalk_JPN": "団長さん。邪魔しないでもらえませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐…?",
+          "JumpAnchorStringId_JPN": "なに…？"
+        }
+      ]
+    },
+    {
+      "Uid": 146,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "어리숙해 보이는 사람에게 시비를 걸어서 돈을 뺏는 녀석들이예요.",
+      "UnitTalk_JPN": "弱い人に因縁をつけて、金を巻き上げるような奴らです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "아마 내일만 되어도 또 정신 못 차리고 이 근처에 나타나서 어슬렁거릴걸요?",
+      "UnitTalk_JPN": "どうせ明日になったら、凝りもせずこの辺りをうろついてるはずですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "몇 군데 부러지는 교훈을 얻는 쪽이 훨씬 좋았을 텐데.",
+      "UnitTalk_JPN": "何本か骨を折って、痛い目に遭うべきだったんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리디아는 못마땅하다는 듯 팔짱을 끼고 입을 비쭉거렸다. ",
+      "UnitTalk_JPN": "リディアは不満げに腕を組み、口を尖らせた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 149,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "굳이 그렇게까지 할 필요는...",
+          "JumpAnchorStringId_JPN": "そこまでしなくても…"
+        }
+      ]
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "어라… 단장님. ",
+      "UnitTalk_JPN": "あら…団長さん。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "그럼… 굳이 그렇게까지 하면 안 될 이유는 있었나요?",
+      "UnitTalk_JPN": "だったら…そこまでしてはいけない理由でもあるんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "게다가, 못 보셨나요? ",
+      "UnitTalk_JPN": "それに、見えていなかったんですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "녀석들 허리춤에는 칼이 하나씩 달려있었다구요.",
+      "UnitTalk_JPN": "奴らは、腰にナイフをぶら下げていたんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…!",
+          "JumpAnchorStringId_JPN": "…！"
+        }
+      ]
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "확실히, 그것까지는 확인하지 못했다. ",
+      "UnitTalk_JPN": "そこまでは確認出来ていなかった。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리디아의 말이 사실이라면 그 불량배들은 흉기까지 사용하는 악질. ",
+      "UnitTalk_JPN": "リディアの言葉が本当なら、凶器まで使うような悪党だ。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리디아는 다른 피해자가 발생하기 전에 크게 혼쭐을 내주려던 것이다.",
+      "UnitTalk_JPN": "リディアは他の被害者が出る前に、懲らしめてやるつもりだったのだろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 150,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그 말대로… 내가 너무 물렀을지도 모르겠네.",
+          "JumpAnchorStringId_JPN": "確かに…私が甘すぎたのかもしれない。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "다른 사람들을 생각해서 확실히 잡는 편이 나았을지도.",
+          "JumpAnchorStringId_JPN": "他の人のためにも、確実に捕まえておいた方が良かったかも。"
+        }
+      ]
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "다른 사람들이요…?",
+      "UnitTalk_JPN": "他の人、ですか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…?",
+          "JumpAnchorStringId_JPN": "…？"
+        }
+      ]
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_9",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "갑자기 무슨 소리를 하시는 거예요?",
+      "UnitTalk_JPN": "突然、何をおっしゃるんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "제가 말하려던 건, <color=#F7BE45>누군가를 때릴 생각이라면, 맞을 준비도 해둬라.</color>",
+      "UnitTalk_JPN": "私が言いたかったのは、<color=#F7BE45>誰かを殴るなら、殴られる覚悟を持て</color>ということです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "서부에서는 당연한 원칙이거든요. ",
+      "UnitTalk_JPN": "西部では、当然の決まりですから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "말하자면, <color=#F7BE45>정당방위</color> 같은 거랄까?",
+      "UnitTalk_JPN": "言ってしまえば、<color=#F7BE45>正当防衛</color>のようなものですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…응?",
+          "JumpAnchorStringId_JPN": "…えっ？"
+        }
+      ]
+    },
+    {
+      "Uid": 152,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "남에게 돈을 빼앗을 생각을 했으면, 빼앗길 각오도 했어야죠.",
+      "UnitTalk_JPN": "誰かからお金を奪うなら、奪われる覚悟を持たないと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS9",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "제가 필요했던 건 그 멍청이들의 지갑이었는데… 단장님 때문에 날아가 버렸네요.",
+      "UnitTalk_JPN": "私が奪おうとしたのは、あの馬鹿どもの財布だったのに…まったく、団長さんのせいで台無しです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "그러니까 정리해 보자면 우리의 <color=#F7BE45>여정 단원</color>은… ",
+      "UnitTalk_JPN": "つまり、私の<color=#F7BE45>旅の団員</color>は… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "시비를 걸어오는 불량배를 짓뭉개고 그 돈을 역으로 뺏으려 했다는 소리인가…?",
+      "UnitTalk_JPN": "因縁をつけてきた不良を叩きのめし、逆に金を奪おうとしていた、ということか…？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 156,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "활동 자금은 많으면 많을수록 좋은 거니까요.",
+      "UnitTalk_JPN": "活動資金は、多いに越したことはないですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 157,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "어차피 저 녀석들 수중에 있는 돈이라고 해봤자, 누군가에게서 뺏은 돈이잖아요?",
+      "UnitTalk_JPN": "どうせあんな奴らが持っているお金なんて、誰かから奪ったものじゃないですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "제가 가져가서 좀 더 좋은 곳에 쓰는 게 돈에게도 좋은 일일 거라고요.",
+      "UnitTalk_JPN": "それなら私がいただいて、もっと有意義なことに使ってあげた方が、お金も報われますしね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "으으… 기껏 완벽한 전략을 짜뒀는데…",
+      "UnitTalk_JPN": "うぅ…せっかく完璧な戦略を練ってたのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "예상외의 대답에 당황하고 있는 나를 올려다보며, 리디아는 생긋 미소를 지었다.",
+      "UnitTalk_JPN": "想定外の返事に困惑している私を見上げ、リディアはにこっと微笑んだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "…그래도 한동안은 착한 아이로 보이고 싶었는데, 그것도 완전히 망한 것 같네요.",
+      "UnitTalk_JPN": "…しばらくはいい子ちゃんでいたかったのに、その計画も狂っちゃいました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "이래서야 무슨 변명을 해도 안 통하겠죠?",
+      "UnitTalk_JPN": "こうなってしまっては、もうどんな言い訳も通用しませんよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후후! 뭐, 아무튼. 이미 끝난 일이니까 어쩔 수 없죠. ",
+      "UnitTalk_JPN": "ふふ！とにかく、もう過ぎたことですから。仕方ありませんね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "에이에이~ 뭘 그렇게 심각한 표정을 하고 계세요? ",
+      "UnitTalk_JPN": "もぉ～、どうしてそんな深刻な顔してるんですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "결국 아무 일도 없었던 거랑 다름없잖아요? ",
+      "UnitTalk_JPN": "結局、何もなかったのと同じじゃないですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "앞으로 일 년 동안 잘 부탁드릴게요, 단장님~!",
+      "UnitTalk_JPN": "これから一年間、よろしくお願いしますね。団長さん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…리디아는 정말 <color=#F7BE45>아무 일도 없었던 것처럼</color> 생긋 웃었다.",
+      "UnitTalk_JPN": "…リディアは本当に<color=#F7BE45>何もなかった</color> かのように、にこっと笑った。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 132,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

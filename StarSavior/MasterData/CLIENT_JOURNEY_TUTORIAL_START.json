@@ -1,0 +1,123 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_TUTORIAL_START",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTORIAL_START",
+      "WaitClick": false,
+      "WaitTime": 0.001,
+      "StartBgmFileName": "MUSIC_NOA.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTORIAL_START",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_JOURNEY_PF_OF_STAR_01_NOA_1.prefab"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTORIAL_START",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이곳은 별의 운행을 관측하며 세상을 수호하는 곳.",
+      "UnitTalk_JPN": "ここは星の動きを観測し、世界を守護する場所。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTORIAL_START",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[성운 관측기관 NOA]</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>「星雲観測機関NOA」</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTORIAL_START",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_JOURNEY_PF_OF_STAR_01_NOA_2.prefab",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTORIAL_START",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘 새로운 구원자가 별의 인도를 받아 이곳에 도착했다.",
+      "UnitTalk_JPN": "今日、新たな救援者が星の導きによってここに辿り着いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTORIAL_START",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아직은 실력도, 경험도 부족하지만…",
+      "UnitTalk_JPN": "まだ実力も、経験も足りないが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTORIAL_START",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고난과 시련을 넘어 여정의 끝에서 그 동경하던 전설.",
+      "UnitTalk_JPN": "苦難と試練を乗り越え、旅の果てに憧れていた伝説。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTORIAL_START",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[별의 구원자]</color>의 이름을 계승 받기 위해…",
+      "UnitTalk_JPN": "<color=#F7BE45>「星の救援者」</color>の名を受け継ぐために…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTORIAL_START",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInTime": 0.2,
+      "BgFileName": "ILLUST_BG_WHITE.png",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTORIAL_START",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "BgChangeTime": 1.0
+    }
+  ]
+}

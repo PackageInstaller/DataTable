@@ -1,0 +1,229 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_TUTO_08_NOA_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "CameraOffset": "TWIN_6",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS7",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitPos": "POS8",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "…놀랍군요.",
+      "UnitTalk_JPN": "…驚きました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "신입 구원자의 전투평가에서 이 정도 실력을 본 건 처음입니다.",
+      "UnitTalk_JPN": "新人救援者の基礎試験で、これほどの力量を見せられたのは初めてです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 과연, 알리시아님께서 직접 영입하실 만한 자격은 있다는 거네.",
+      "UnitTalk_JPN": "さすが、アリシア様が直々に選ばれた理由はあったということ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " ...그쪽이 제법 기대되는 신입이라는 걸 인정할게.",
+      "UnitTalk_JPN": "…そちらが中々期待できる新人というのは認めてやるわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": " 언젠가 당신들의 유품을 수습할 날을 위해 가장 아름다운 비석을 준비해 두겠어.",
+      "UnitTalk_JPN": "いつかあなたたちの遺品を整理する日のために、\n最も美しい墓石を用意してあげるから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "저 사회성 결여된 비석 마니아가 하는 말은 신경 쓰지 마시기 바랍니다.",
+      "UnitTalk_JPN": "あの社会性欠如の墓石マニアが言うことは気にしないでください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "훌륭한 사람의 장례는 최고의 정성을 들여 치러야 한다는 의미의…",
+      "UnitTalk_JPN": "認めた人の葬式は、最大限の誠意を込めて執り行うべきだ、という意味で…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "…자기 딴에는 좋은 뜻으로 하는 말이긴 하니까요.",
+      "UnitTalk_JPN": "…本人は善意で言っているのですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…하아. 생각해보니 저라면 못 참을 것 같긴 하군요.",
+      "UnitTalk_JPN": "…いや、考えてみると私でも我慢できそうにありませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼, 이걸로 기초 평가전은 끝인가?",
+          "JumpAnchorStringId_JPN": "で、基礎試験はこれで終わり？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "NORMAL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네, 전투평가 결과는 합격입니다.",
+      "UnitTalk_JPN": "はい、基礎試験の結果は合格です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "캔들 스퀘어는 이제부터 정식으로 보이저 구원단의 활동을 승인하겠습니다.",
+      "UnitTalk_JPN": "キャンドル・スクエアは今後、正式にボイジャー救援団の活動を承認いたします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_08_NOA_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "당신의 여정에 별의 축복이 함께하기를.",
+      "UnitTalk_JPN": "あなたの旅に、星の祝福があらんことを。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,675 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_26_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_BRIDGE.png",
+      "StartBgmFileName": "MUSIC_CENTRAL.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 아! 어서 오세요, 손님!",
+      "UnitTalk_JPN": " あっ！いらっしゃいませ、お客様！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 앗, 아니지. 잠시만요. 이럴 때는 그러니까…",
+      "UnitTalk_JPN": " じ、じゃなかった…こういう時は、えっと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "편하게 대해 줘.",
+          "JumpAnchorStringId_JPN": "もっと気楽にしていいよ。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "가게 밖이잖아.",
+          "JumpAnchorStringId_JPN": "店の外だし。"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": " 으므…! 리세트는 그럴 수 없어요!",
+      "UnitTalk_JPN": " うぅむ…！リセットには、そんなことできません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 가게 밖에서도 가게 안에서도 손님은 손님이니까요!",
+      "UnitTalk_JPN": " 店の中でも外でも、お客様はお客様ですから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 그리고 버릇이 되어 버려서… 헤헤…",
+      "UnitTalk_JPN": " それに、癖になってしまって…エヘヘ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "리세트가 편하다면 그걸로 괜찮아.",
+          "JumpAnchorStringId_JPN": "リセットが楽ならそれでいいよ。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그런데 오늘은 웬일이야?",
+          "JumpAnchorStringId_JPN": "ところで、今日はどうしたんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": " 상단에서 리세트가 열심히 일한다고 휴가를 주셨거든요.",
+      "UnitTalk_JPN": " リセットが一生懸命働いていると、商会からお休みをいただいたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 매달 이달의 우수사원을 놓치지 않은 결과예요!",
+      "UnitTalk_JPN": " 毎月、「今月の優秀社員」を逃さなかった結果です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": " 하지만 리세트는 이번이 첫 휴가거든요.",
+      "UnitTalk_JPN": " でも、リセットにとって初めてのお休みなので…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 그래서 어떻게 지내야 하는지 전혀 모르겠어요…",
+      "UnitTalk_JPN": " どう過ごせばいいのか分からないんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "평소에 하고 싶은 건 없었어?",
+          "JumpAnchorStringId_JPN": "何かやりたいこととかなかったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": " 하고 싶은 거요?",
+      "UnitTalk_JPN": " やりたいこと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 그럼… 솜사탕이요.",
+      "UnitTalk_JPN": " じゃあ…綿あめです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "솜사탕?",
+          "JumpAnchorStringId_JPN": "綿あめ？"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 네. 저번에 꼬마 손님들이 들고 다니는 걸 봤어요.",
+      "UnitTalk_JPN": " はい。この前、小さなお客様たちが持ってるのを見かけたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": " 푹신푹신하고 가벼워 보이는 게 입안에 넣으면 사르르 녹아내릴 거 같아서… 하으으…",
+      "UnitTalk_JPN": " ふわふわで、口に入れたら溶けちゃいそうで…はわわ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 무척 먹고 싶었지만 꾹 참았어요. 리세트는 점장 겸 점원이라 가게를 봐야 하니까요.",
+      "UnitTalk_JPN": " すごく食べたかったのですが、ぐっと我慢したんです。リセットは店長兼店員なので、店番をしないといけませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 지금 먹으러 가자.",
+          "JumpAnchorStringId_JPN": "じゃあ、今から食べに行こう。"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": " 정말요? 손님은 솜사탕을 어디서 파는지도 아세요?",
+      "UnitTalk_JPN": " 本当ですか？お客様は、綿あめがどこで売っているのかご存知なんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "찾으러 다니는 시간도 즐거울 거야.",
+          "JumpAnchorStringId_JPN": "探し回る時間も楽しいはずだよ。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "여기서 가까운 데 있어.",
+          "JumpAnchorStringId_JPN": "ここから近いところにあるよ。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 그렇네요! 여기저기 돌아다니면서 라이벌 가게들을 정탐하는 시간인 거예요! ",
+      "UnitTalk_JPN": " そうですね！あちこち回って、ライバル店も偵察しないと！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 좋아요! 어서 가요, 손님!",
+      "UnitTalk_JPN": " よし！行きましょう、お客様！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET_SUNSET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": " 솜사탕을 구실로 한 도시 탐험은 해 질 무렵이 되어서야 끝났다.",
+      "UnitTalk_JPN": " 綿あめを口実にした探検は、日が暮れる頃にようやく終わった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": " NOA는 정말 커다란 도시네요. 돌아다니는 내내 깜짝깜짝 놀랐어요.",
+      "UnitTalk_JPN": " NOAは本当に大きな街ですね。歩き回っている間、ずっとびっくりしっぱなしでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 스텔라레인저도 정말 재밌었고요. 어린 손님들이 왜 그렇게 찾는지 공부가 됐어요.",
+      "UnitTalk_JPN": " ステラーレンジャーもすごく面白かったです。小さなお客様たちがどうして夢中になっているのか、勉強になりました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 음… 그리고…",
+      "UnitTalk_JPN": " うーん…あとは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 정말 맛있어요, 이 솜사탕!",
+      "UnitTalk_JPN": " この綿あめ、本当においしいですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 손님도 드셔 보세요! 제가 떼어 드릴게요!",
+      "UnitTalk_JPN": " お客様もどうぞ召し上がってください！私がちぎってあげます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": " 자, 아아~",
+      "UnitTalk_JPN": " さぁ、あーん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아아~",
+          "JumpAnchorStringId_JPN": "あーん。"
+        }
+      ]
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": " 달콤한 맛이 입 안 가득 퍼졌다.",
+      "UnitTalk_JPN": " 甘い味が、口いっぱいに広がった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": " 앗, 벌써 가게 근처까지 왔네요.",
+      "UnitTalk_JPN": " あっ、もうお店の近くまで来てしまいましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 여기서부터는 저 혼자 돌아가도 돼요! 오늘 정말 감사했어요, 손님!",
+      "UnitTalk_JPN": " ここからは一人で帰れます！今日は本当にありがとうございました、お客様！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 그럼 다음에 또 봐요!",
+      "UnitTalk_JPN": " じゃあ、またお会いましょーう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.25,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": " 리세트가 보이지 않을 때까지 손을 흔들어 줬다.",
+      "UnitTalk_JPN": " リセットが見えなくなるまで、手を振った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET_NIGHT.png"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": " 그렇게 돌아가는 길에, 아주 낡고 고풍스러운 열쇠를 발견했다.",
+      "UnitTalk_JPN": " そして帰り道、古びた鍵を見つけた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": " 누군가 떨어뜨리고 간 걸까? 혹시 모르니 우선은 가져가기로 하자.",
+      "UnitTalk_JPN": " 誰かが落としたのだろうか？念のため、持って帰ることにしよう。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 58,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": " 그럴 수가! 그동안 상권 분석에 너무 소홀했나 봐요!",
+      "UnitTalk_JPN": " そんなぁ！これまで、商圏分析をおろそかにしすぎていたようです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": " 얼른 가 봐요, 손님! 늦었다간 솜사탕이 전부 날아가 버릴지도 몰라요!",
+      "UnitTalk_JPN": " 早く行きましょう、お客様！遅れたら、綿あめが全部売り切れてしまうかもしれません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": " 리세트는 솜사탕을 두 개 사서 기어코 하나를 쥐여 줬다.",
+      "UnitTalk_JPN": " リセットは綿あめを二つ買って、無理やり一つを握らせてくれた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_26_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": " 짧은 시간이었지만 리세트는 확실히 야무진 아이라는 걸 알 수 있었다…",
+      "UnitTalk_JPN": " 短い時間だったが、リセットはしっかりした子だということが分かった…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

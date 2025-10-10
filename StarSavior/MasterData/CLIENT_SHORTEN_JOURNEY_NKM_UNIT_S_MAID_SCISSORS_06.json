@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_SCISSORS_06",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_06",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛이 의상을 선물했다. 입고 싶은 디자인은 결코 아니다…",
+      "UnitTalk_JPN": "スカーレットが衣装をプレゼントしてくれた。着たいデザインとは程遠い…",
+      "TalkTime": 0.03
+    }
+  ]
+}

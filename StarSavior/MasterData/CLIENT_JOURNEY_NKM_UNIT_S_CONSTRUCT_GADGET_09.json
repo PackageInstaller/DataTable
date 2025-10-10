@@ -1,0 +1,363 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "이상해…",
+      "UnitTalk_JPN": "おかしい…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐가 이상해?",
+          "JumpAnchorStringId_JPN": "どうしたんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "기분, 이상해. 현장 마지막 날 같아…",
+      "UnitTalk_JPN": "おかしな気分。現場の最終日みたい…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "마지막 날은 중요해. 페트라, 마르실이 그랬어.",
+      "UnitTalk_JPN": "最終日は大事。ペトラとマルシルが言ってた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "마지막에는 일한 만큼 받아야 해.",
+      "UnitTalk_JPN": "働いた分、ちゃんともらわないとダメ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "의뢰인이 돈이 없다고 배짱 부리면 어디에 묻어버릴까, 셋이서 그런 얘기했어.",
+      "UnitTalk_JPN": "いつも3人で話してるの。依頼人がお金ないって言い出したら、どこに埋めようって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…이번에는 그럴 일 없을 거야.",
+          "JumpAnchorStringId_JPN": "…心配いらないよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "응. 알았어. 믿어.",
+      "UnitTalk_JPN": "うん、分かった。信じる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…응?",
+      "UnitTalk_JPN": "…うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "불안하지 않냐고? 뭐가?",
+      "UnitTalk_JPN": "不安じゃないのかって？何が？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "마지막 시험…?",
+      "UnitTalk_JPN": "最終試験…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아니? 전혀. 불안하지 않아.",
+      "UnitTalk_JPN": "ううん、全然。不安じゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "단장이 할 수 있다고 말했으니까.",
+      "UnitTalk_JPN": "団長が、わたしならできるって言ってくれたから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "그리고 내가 원하는 게 무엇인지 찾았으니까.",
+      "UnitTalk_JPN": "それに、自分の望みを見つけたから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이번에는 내가 단장이 원하는 걸 들어주고 싶어.",
+      "UnitTalk_JPN": "今度は、わたしが団長の望みを叶えてあげたい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "단장. 다시 한번 물어볼게.",
+      "UnitTalk_JPN": "もう一回聞く。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "원하는 게 뭐야?",
+      "UnitTalk_JPN": "団長の望みは何？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "타냐가 여정을 통과했으면 좋겠어.",
+          "JumpAnchorStringId_JPN": "ターニャが旅をクリアすることだよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래. 알았어.",
+      "UnitTalk_JPN": "うん。分かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "단장이 원하는 거. 내가 이뤄줄게. 응.",
+      "UnitTalk_JPN": "団長の望み。わたしが叶えてあげる。うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…준비되셨나요 단장님?",
+      "UnitTalk_JPN": "…準備はできましたか、団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "시간이 되었나?",
+          "JumpAnchorStringId_JPN": "もう時間かな？"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "네, 지금부터 별의 구원자 계승 시험 <color=#F7BE45>여정</color>.",
+      "UnitTalk_JPN": "では、これより星の救援者・継承試験<color=#F7BE45>「救援の旅」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그 최종시험을 시작하겠습니다.",
+      "UnitTalk_JPN": "最終試験を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "시험상대는 <color=#F7BE45>알데바란의 집행자 길레</color>.",
+      "UnitTalk_JPN": "対戦相手は<color=#F7BE45>「アルデバランの執行者・ギーレ」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>디랙의 우물</color>이 투영을 개시합니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ディラックの井戸」</color>が投影を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "페트라 조합에서는 마지막 날에 튀김을 먹어.",
+      "UnitTalk_JPN": "ペトラ組合では、最終日に天ぷらを食べる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "끝나면 튀김 먹자, 단장.",
+      "UnitTalk_JPN": "終わったら天ぷら食べよう、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "지금까지 먹었던 튀김보다 맛있는 튀김을 만들어 줄게. 약속. 응.",
+      "UnitTalk_JPN": "これまでで一番おいしい天ぷら、わたしが作ってあげる。うん。",
+      "TalkTime": 0.03
+    }
+  ]
+}

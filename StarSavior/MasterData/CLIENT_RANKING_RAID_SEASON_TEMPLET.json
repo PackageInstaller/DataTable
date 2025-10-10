@@ -1,0 +1,31 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: RANKING_RAID/RANKING_RAID_SEASON_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "RankingRaidSeasonId" : 9999,
+          "PlayableIntervalId" : "DATE_RANKING_RAID_TEST_01",
+          "IntervalId" : "DATE_RANKING_RAID_REWARD_TEST_01",
+          "ReqCountItemId" : 408,
+          "ReqCountItemValue" : 1,
+          "PointRewardGroupId" : 9999,
+          "RankingRewardGroupId" : 9999,
+          "RankingRaidGroup" : 
+          [
+            {
+              "RaidGroupId" : 10501
+            },
+
+            {
+              "RaidGroupId" : 10502
+            },
+
+            {
+              "RaidGroupId" : 10503
+            }
+          ]
+        }
+    ]
+}

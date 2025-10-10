@@ -1,0 +1,114 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_19_AGN_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_19_AGN_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_INFINITE_CORRIDOR_01.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_19_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "미궁을 탐사하던 도중 고대종의 공격을 받았다!",
+      "UnitTalk_JPN": "迷宮を探索中、古代種の攻撃を受けた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_19_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "지형지물을 활용해 따돌리자.",
+          "JumpAnchorStringId_JPN": "地形を利用してかわそう。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "침착하게 방어를 굳히자.",
+          "JumpAnchorStringId_JPN": "落ち着いて防御を固めよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "상층부로 도망치자.",
+          "JumpAnchorStringId_JPN": "上層部へ逃げよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_19_AGN_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_19_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 좁고 복잡하게 얽힌 통로로 피신해 살아남았다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と一緒に、狭く複雑に絡み合った通路へ避難し、生き延びた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_19_AGN_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_19_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>에게 침착하게 수비로 일관하도록 지시해 살아남았다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>に冷静に守備に徹するよう指示して生き延びた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_19_AGN_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_19_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 무작정 상층부로 이어지는 통로로 달려 살아남았다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と一緒に、がむしゃらと上層部へと続く通路へ駆け込み、生き延びた。",
+      "TalkTime": 0.03
+    }
+  ]
+}

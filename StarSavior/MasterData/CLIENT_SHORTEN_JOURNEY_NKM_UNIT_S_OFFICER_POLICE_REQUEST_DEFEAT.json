@@ -1,0 +1,108 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_OFFICER_POLICE_REQUEST_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰를 실패한 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 기분 풀 겸 도넛 가게에 가자고 제안한다.",
+      "UnitTalk_JPN": "依頼に失敗した<color=#F7BE45>[CHARACTER_NAME]</color>は、気分転換にドーナツ屋に行こうと提案してきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "같이 가자.",
+          "JumpAnchorStringId_JPN": "そうしよう！",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "활력 포션을 건넨다.",
+          "JumpAnchorStringId_JPN": "活力ポーションを渡す。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>안나</color>와 함께 실패 기념 뒷풀이를 하러 떠났다.",
+      "UnitTalk_JPN": "<color=#F7BE45>アンナ</color>と一緒に、失敗記念の打ち上げに出かけた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 가게가 오늘은 문을 닫았던 것 같은데, 아니었으면 좋겠다...",
+      "UnitTalk_JPN": "あの店は、今日休みだったような気がする…勘違いだったらいいんだが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 비싼 포션을 나눠 마시고, 공범이 됐다며 웃었다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、高価なポーションを一緒に飲んで共犯になったと笑った。",
+      "TalkTime": 0.03
+    }
+  ]
+}

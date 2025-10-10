@@ -1,0 +1,182 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_DEATH_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_2.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_06.mp3"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": false,
+      "WaitTime": 2.5
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는, 누군가에게는 친근하며,",
+      "UnitTalk_JPN": "私は、誰かにとっては親しみやすく、",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "누군가에게는 불쾌하다.",
+      "UnitTalk_JPN": "誰かにとっては不快だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "누군가에게는 불청객이며,",
+      "UnitTalk_JPN": "誰かにとっては招かれざる客であり、",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "누군가에게는 귀빈이다.",
+      "UnitTalk_JPN": "誰かにとっては貴賓である。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 죽음. 모든 이들의 마지막을 찾아가는 자.",
+      "UnitTalk_JPN": "私は死。すべての者の最期へと向かう者。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그대에게는 내가 어떤 존재로 비치는가?",
+      "UnitTalk_JPN": "あなたには私はどんな存在として映っているのか？",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.7
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 1.5
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정일지에 보관한 아르카나에 빛이 스며든다.",
+      "UnitTalk_JPN": "旅の日誌に保管したアルカナに光が染み込む。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_DEATH_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 인연에 별의 축복이 깃들었다.",
+      "UnitTalk_JPN": "私と<color=#F7BE45>[CHARACTER_NAME]</color>の絆に、星の祝福が宿った。",
+      "TalkTime": 0.03
+    }
+  ]
+}

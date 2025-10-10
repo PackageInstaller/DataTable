@@ -1,0 +1,103 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UiStates": [],
+    "BuffEffectPosition": {
+      "HEAD": 3.8,
+      "BODY": 1.6
+    },
+    "UnitBuffEffectScale": 1.8,
+    "UnitHudHeight": 4,
+    "UseRespawnFocus": true,
+    "BattleStates": [
+      {
+        "StateName": "USN_ATTACK",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          //"FormationEnemy": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 95,
+            "ReActType": "NRT_DAMAGE_A",
+            //"StopTimeDef": 0.15,
+            //"CameraCrashGap": 0.2,
+            //"CameraCrashTime": 0.4,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationEnemy": "SFT_NORMAL_LINE"
+        },
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 0,
+            "ShowOffEnemy": true
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 153,
+            "ShowOnEnemy": true
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": false,
+            "EventFrame": 160,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectHeight": "BVH_ZERO"
+            },
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            }
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationEnemy": "SFT_NORMAL_LINE"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 148,
+            "ReActType": "NRT_DAMAGE_A",
+            //"CameraCrashGap": 0.2,
+            //"CameraCrashTime": 0.3,
+            "ReAttackCount": 8,
+            "ReAttackGap": 0.15,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "DyingStateTimeChangeStateTime": 8,
+        "DyingStateTimeChangeState": "USN_DIE"
+      }
+    ]
+  }
+}

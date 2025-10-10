@@ -1,0 +1,302 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_LPU_POST_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": " 으아, 결국 왔어요. 결국 마지막이네요, 단장님!",
+      "UnitTalk_JPN": "うわぁ、団長。ついにここまで来ましたね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그 동안 고생 많았어.",
+          "JumpAnchorStringId_JPN": "うん、よく頑張ったよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 이제 이 관문만 넘으면 크루저가... 소중한 저의 퍼스트 카가...!",
+      "UnitTalk_JPN": "あとはこの難関さえ乗り越えれば、クルーザーが…初めてのマイカーが…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그 쪽이었구나…",
+          "JumpAnchorStringId_JPN": "そっちか…"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": " 으으, 엄청 떨리네요.",
+      "UnitTalk_JPN": "ううっ、緊張します…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 혹시 팁 같은 게 있을까요, 단장님?",
+      "UnitTalk_JPN": "団長、なにかアドバイスをいただけませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": " 분명 마지막 시험이니까, 다른 시험과는 비교가 안 되게 어려울 텐데…",
+      "UnitTalk_JPN": "きっと最終試験だから、他の試験とは比べ物にならないほど難しいはず…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "상대가 네 화물을 훔쳤다고 생각해.",
+          "JumpAnchorStringId_JPN": "相手がベラの荷物を盗んだって考えるんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": " …네?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그리고 나머지는 네 몸에 맡겨.",
+          "JumpAnchorStringId_JPN": "あとは君の身体に任せればいいと思う。"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": " 지, 진짜 그걸로 되는 건가요?",
+      "UnitTalk_JPN": "ほ、本当にそんなのでいいんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "당연하지.",
+          "JumpAnchorStringId_JPN": "もちろんだよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "너 자신을 믿어.",
+          "JumpAnchorStringId_JPN": "自分を信じて。"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": " …",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " …에헤헤, 이상하게 긴장이 조금 풀린 것 같아요.",
+      "UnitTalk_JPN": "えへへ、なんだか少し緊張が解けました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 네, 알겠습니다, 단장님!",
+      "UnitTalk_JPN": "分かりました、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": " 빼앗긴 소포를 되찾을 각오로 싸울게요! ",
+      "UnitTalk_JPN": "奪われた小包を取り戻す覚悟で戦います！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "준비되셨나요?",
+      "UnitTalk_JPN": "準備はできましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "됐어.",
+          "JumpAnchorStringId_JPN": "バッチリだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "지금부터 별의 구원자 계승 시험 <color=#F7BE45>[여정]</color>,",
+      "UnitTalk_JPN": "こ、これより星の救援者・継承試験<color=#F7BE45>「救援の旅」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 그 최종시험을 시작하겠습니다.",
+      "UnitTalk_JPN": "最終試験を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": " 시험상대는 <color=#F7BE45>[알데바란의 집행자 길레]</color>.",
+      "UnitTalk_JPN": "対戦相手は<color=#F7BE45>「アルデバランの執行者・ギーレ」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " <color=#F7BE45>[디랙의 우물]</color>이 투영을 개시합니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ディラックの井戸」</color>が投影を開始します。",
+      "TalkTime": 0.03
+    }
+  ]
+}

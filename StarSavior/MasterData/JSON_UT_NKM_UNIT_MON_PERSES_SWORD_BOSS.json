@@ -1,0 +1,260 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UiStates": [],
+    "UnitHudHeight": 4.8,
+    "HyperMoveModelRootZ": -0.4,
+    "BuffEffectPosition": {
+      "HEAD": 4.2,
+      "BODY": 2.3
+    },
+    "UnitBuffEffectScale": 2,
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_VOICE_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_SWORD.wav"
+            ]
+          },
+          {
+            "EventFrame": 36,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_SWORD_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "ShowFullHudTime": 0,
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffEnemy": true,
+          "ShowOffMyTeam": true,
+          "ShowOnTarget": true,
+          "FormationEnemy": "SFT_CENTER_TARGET_ONLY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 90,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 0.4,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_CURSE.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_VOICE.wav"
+            ]
+          },
+          {
+            "EventFrame": 26,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_CURSE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 47,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_CURSE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 64,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_CRASH.wav"
+            ]
+          },
+          {
+            "EventFrame": 75,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_SLASH.wav"
+            ]
+          },
+          {
+            "EventFrame": 121,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_ARMOR.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": true,
+        "SeeTarget": false,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "ShowOnSelf": true,
+          "FormationMyTeam": "SFT_FULL_MY_TEAM_WIDE"
+        },
+        "NonAttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 64,
+            "ReActType": "NRT_NO_ACTION",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            },
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_CURSE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 7,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_VOICE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 42,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_CURSE_05.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 115,
+            "ReActType": "NRT_DAMAGE_A",
+            "ReAttackCount": 4,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.2,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 120,
+            "ShowOffEnemy": true,
+            "ShowUnitHudOnEnemy": true
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 7,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_SWORD_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 9,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_VOICE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 33,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_SWORD_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 52,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_SWORD_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 80,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_SWORD_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 115,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_EXPLOSION.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "DyingStateTimeChangeStateTime": 4.3,
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_CRASH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_VOICE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 47,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          },
+          {
+            "EventFrame": 49,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PERSES_SWORD_BOSS_ARMOR_02.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

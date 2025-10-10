@@ -1,0 +1,303 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_11A_NOA_BT_READY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAZA.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "단장님! 이런 데서 뵙네요!",
+      "UnitTalk_JPN": "団長！こんなところでお会いするなんて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "앗? 혹시 단장님도 캔들 스퀘어에 붙은 공고를 보고 오셨어요?",
+      "UnitTalk_JPN": "あっ！もしかして団長も、キャンドル・スクエアの告知を見て来られたんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "공고라니?",
+          "JumpAnchorStringId_JPN": "告知って？"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "에헷, 모르겠다는 반응이시네요.",
+      "UnitTalk_JPN": "てへっ！ご存じないみたいですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "사실은 말이죠…",
+      "UnitTalk_JPN": "実はですね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_CLOTH_01.wav",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "안나가 목소리를 낮추길래 귀를 가까이 가져다 댔다.",
+      "UnitTalk_JPN": "アンナが声を潜めたので、耳を近づけた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "으왓?! 다, 단장님! 거리 유지! 거리 유지!",
+      "UnitTalk_JPN": "うへぇ！？だ、団長！距離を！距離を保ってくださいよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_CLOTH_01.wav",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "휴우… 그렇게 거침없이 밀어붙이고 싶으실 때는 사전에 신고해 주세요.",
+      "UnitTalk_JPN": "ふぅ…そんなぐいぐい来るときは、事前に言ってください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "심장에 좋지 않다구요…?",
+      "UnitTalk_JPN": "心臓に悪いんですよ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "조심할게...?",
+          "JumpAnchorStringId_JPN": "よく分からないけど、気をつけます…"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "크흠, 흠. 감사합니다.",
+      "UnitTalk_JPN": "コホン。ありがとうございます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "사실은 말이죠, 지하수로를 관리하는 인부분들한테서 슬라임을 봤다는 신고가 계속 들어오고 있어요.",
+      "UnitTalk_JPN": "実はですね…地下水路を管理する方々から、スライムを見たという通報が相次いでいるんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "심지어 최근에는 빈도가 엄청 늘어나기까지!",
+      "UnitTalk_JPN": "しかも最近は、頻度がすごく増えているんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "이건 역시 위험한 냄새가 풍긴단 말이죠.",
+      "UnitTalk_JPN": "やっぱり、危険な匂いがプンプンしますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "이대로 지하가 슬라임 소굴이 되었다간 시민들이 위험에 빠질지도 몰라요.",
+      "UnitTalk_JPN": "このまま地下がスライムの巣窟になれば、市民が危険に陥るかもしれません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "하지만 타운가드 사람들만으로는 NOA 구석구석까지 수색하는 건 물리적으로 무리!",
+      "UnitTalk_JPN": "でも…タウンガードだけじゃ、NOAの隅々まで捜索するのは物理的に無理で！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "그래서 캔들 스퀘어를 통해 수색을 도와 줄 구원단을 모집 중이다… 라는 거예요!",
+      "UnitTalk_JPN": "そこでキャンドル・スクエアを通じて、捜索を手伝ってくれる救援団を募集している…というわけです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitTalk_KOR": "작전 브리핑 곧 시작하겠습니다!",
+      "UnitTalk_JPN": "作戦会議、まもなく開始します！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "앗 넵, 금방 갈게요!",
+      "UnitTalk_JPN": "あっ、はい！すぐ行きます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그러니까 흥미가 있으시면 의뢰를 수락해 주시길 바랄게요, 단장님!",
+      "UnitTalk_JPN": "なので、もし興味があれば依頼を受けてみてくださいね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "<color=#F7BE45>[토벌 의뢰]</color>는 실패한다고 해서 여정에 지장을 주지는 않으니까요. 성공 보상도 드려요!",
+      "UnitTalk_JPN": "<color=#F7BE45>「討伐依頼」</color>は、失敗しても救援の旅に支障が出る訳ではありません。成功報酬もお渡しします！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "치안은 시민 모두의 적극적인 협력으로 이루어지는 거니까요!",
+      "UnitTalk_JPN": "治安は、市民みんなの積極的な協力によって守られているんですからねっ！",
+      "TalkTime": 0.03
+    }
+  ]
+}

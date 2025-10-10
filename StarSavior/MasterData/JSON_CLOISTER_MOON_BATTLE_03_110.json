@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_05",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_05",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_05",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_05",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_FALLEN_DUALSWORD_BLACK_BOSS_CM_11",
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": true, // 몰락자 기믹
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_05",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          }
+        ]
+      }
+    ]
+  }
+}

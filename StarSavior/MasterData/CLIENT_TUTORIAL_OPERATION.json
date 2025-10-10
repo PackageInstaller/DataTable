@@ -1,0 +1,508 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: TUTORIAL_OPERATION",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "TUTORIAL_OPERATION",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN_DESTROYED.png",
+      "StartBgmFileName": "MUSIC_OPERATION_LOBBY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE.wav",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_TOWNGUARD_B"
+      ],
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_RED",
+      "UnitNameString": [
+        "SI_NPC_TOWNGUARD"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "돌아가 주세요! 현재 상업 지구는 통행이 금지되었습니다! ",
+      "UnitTalk_JPN": "戻ってください！ただいま商業地区は通行が禁止されております！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "대피한 시민 분들은 이쪽으로 와 주십시오!",
+      "UnitTalk_JPN": "避難された市民の皆様は、こちらへお越しください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "로베르타님!",
+      "UnitTalk_JPN": "ロベルタさん！  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_2"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "여기 계셨군요. 약속 장소에 안 오셔서 한참 찾아다녔다고요. ",
+      "UnitTalk_JPN": "ここにいらっしゃったんですね。\n待ち合わせ場所にいなかったので、ずいぶん探しましたよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "미안미안. 좀 늦어 버렸네.",
+      "UnitTalk_JPN": "ごめんごめん。ちょっと遅れてしまったね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "윽, 술 냄새… 또 혼자 잔뜩 드셨군요.",
+      "UnitTalk_JPN": "うっ、酒の匂い…また一人でたくさん飲まれたんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "아니, 딱 한 잔만 하겠다는 게 그만.",
+      "UnitTalk_JPN": "いやあ、一杯だけのつもりが、つい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "TUTORIAL_OPERATION",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "아, 당신이 이번에 새로 부임한 <color=#F7BE45>[여정 단장]</color>이지?",
+      "UnitTalk_JPN": "やあ、あんたが新しく赴任した<color=#F7BE45>「旅の団長」</color>でしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "TUTORIAL_OPERATION",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "NOA 궤도 수색대 팀장, <color=#F7BE45>로베르타</color>다. 잘 부탁해.",
+      "UnitTalk_JPN": "NOA軌道捜索隊のリーダー、<color=#F7BE45>ロベルタ</color>よ。よろしく。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "궤도 수색대는 관측사 평의회 <color=#F7BE45>[폴라리스]</color> 산하의 현장 대응 조직입니다.",
+      "UnitTalk_JPN": "軌道捜索隊は、観測士評議会<color=#F7BE45>「ポラリス」</color>傘下の現場対応組織です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[폴라리스]</color>가 관측한 재난에 대비하는 팀이죠.",
+      "UnitTalk_JPN": "<color=#F7BE45>「<r=ポラリス>観測士評議会</r>」</color>が観測した災害に備えるチームです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "TUTORIAL_OPERATION",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "지금 네 눈앞에 보이는 것처럼 말이야.",
+      "UnitTalk_JPN": "今、目の前で見ている通りね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_2"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "TUTORIAL_OPERATION",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "그러고 보니 <color=#F7BE45>[작전]</color>에 대해 알려 주기로 했었지?",
+      "UnitTalk_JPN": "そういえば、<color=#F7BE45>「作戦」</color>について教えることになってたよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "TUTORIAL_OPERATION",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "마침 잘됐네. 백 번 말하는 것보다는 한 번 경험하는 게 더 나을 테니까.",
+      "UnitTalk_JPN": "ちょうど良かった。百見は一行にしかず、というしね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "TUTORIAL_OPERATION",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>[작전]</color>은 NOA의 공식 토벌 임무를 부르는 통칭이야.",
+      "UnitTalk_JPN": "<color=#F7BE45>「作戦」</color>とは通称、NOAの公式討伐任務のことを言うわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "TUTORIAL_OPERATION",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "우리가 살고 있는 이 별, 라비스타에는 다양한 위협이 도사리지.",
+      "UnitTalk_JPN": "私たちが暮らすこの星、ラビスターには様々な脅威が潜んでいる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "TUTORIAL_OPERATION",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "무법자, 마수, 마력적인 재난…",
+      "UnitTalk_JPN": "無法者、魔獣、魔力的な災害…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "TUTORIAL_OPERATION",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그 중에서도 NOA가 가장 경계하는 건 바깥 우주에서 오는 위협.",
+      "UnitTalk_JPN": "中でもNOAが最も警戒するのは外宇宙からの脅威。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "TUTORIAL_OPERATION",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "바로 공허체다.",
+      "UnitTalk_JPN": "すなわち<r=ヴォイドボーン>空虚体</r>よ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "DRAMA_PLANET_LABISTA.prefab",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ROBERTA"
+      ],
+      "UnitTalk_KOR": "강력한 공허체들은 알리시아님이 세운 신성장벽에 진입을 저지당하게 돼 있어.",
+      "UnitTalk_JPN": "強力な<r=ヴォイドボーン>空虚体</r>はアリシア様が築いた<r=ホーリーワード>神聖なる防壁</r>によって侵入を阻まれている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ROBERTA"
+      ],
+      "UnitTalk_KOR": "하지만 상대적으로 약한 공허체들이 신성장벽의 틈을 비집고 들어오기도 하거든.",
+      "UnitTalk_JPN": "しかし、比較的弱い空虚体は防壁の隙間をかいくぐって侵入することもあるのでね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ROBERTA"
+      ],
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "잔챙이 같아 보여도 방심하면 곤란해.",
+      "UnitTalk_JPN": "雑魚のように見えても油断は禁物よ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ROBERTA"
+      ],
+      "UnitTalk_KOR": "녀석들은 주위의 물질을 흡수해 성장하거나 증식하니까.",
+      "UnitTalk_JPN": "奴らは周囲の物質を吸収して成長したり増殖したりするから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ROBERTA"
+      ],
+      "UnitTalk_KOR": "암흑시대 이후 일어난 여러 굵직한 재난들 중 상당수도 낙하한 뒤 오랫동안 방치됐던 공허체가 원인이었거든.",
+      "UnitTalk_JPN": "暗黒時代以降に起きた数々の重大災害の多くも、\n落下後に長期間放置された<r=ヴォイドボーン>空虚体</r>が原因だったのよ。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN_DESTROYED.png",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "CameraOffset": "ONE_2",
+      "UnitPos": "POS2",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "CameraOffset": "ONE_2",
+      "UnitTalk_KOR": "비슷한 사태가 일어나지 않게 하려면 침공 때마다 많은 인원이 나서야겠지?",
+      "UnitTalk_JPN": "再発を防ぐには、攻め込まれるたび多くの人手が必要になるわよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "그래서 공허체와 관련된 사건은 NOA가 모든 구원단을 동원하고 있어.",
+      "UnitTalk_JPN": "だから虚空体がらみの事件には、NOAが全ての救援団を動員している。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "적극적인 참여를 독려하기 위해서 지원금도 잔뜩 주고 있고.",
+      "UnitTalk_JPN": "積極的な参加を促すため、支援金もたっぷり与えているし。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_2"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "열심히 참여하면 눈먼 지원금을 잔뜩 타 갈 수 있다니까?",
+      "UnitTalk_JPN": "頑張れば意外とぼろ儲けできるってもんよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "진지하게 좀 해 주세요, 로베르타!",
+      "UnitTalk_JPN": "もう真面目にやってください！ロベルタ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하하, 구원단을 꾸려 나가는 입장에서는 가장 중요한 정보잖아.",
+      "UnitTalk_JPN": "はは、救援団を率いる立場としては最も重要な情報じゃないか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FOOTSTEP_HIGHHEELS.wav",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "팀장님, 대화 중에 죄송하지만 타운가드로부터의 전언입니다.",
+      "UnitTalk_JPN": "リーダー、会話中に失礼ですが、タウンガードからの伝言です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "시민 대피 완료. 이후 대응은 <color=#F7BE45>[작전]</color>에 준거하여 진행. 이상입니다.",
+      "UnitTalk_JPN": "市民の避難は完了。以降の対応は<color=#F7BE45>「作戦」</color>に準じて進行。以上です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "좋아. 실전에 대해서는 설명해 줄 필요 없겠지, 단장?",
+      "UnitTalk_JPN": "よし。実戦についての説明は必要ないでしょ？団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "그럼 시민들의 즐거운 쇼핑을 방해하는 녀석들을 혼쭐 내 주러 가자고.",
+      "UnitTalk_JPN": "じゃあ市民の楽しいショッピングを邪魔する奴らを懲らしめに参りましょう。",
+      "TalkTime": 0.03
+    }
+  ]
+}

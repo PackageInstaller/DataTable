@@ -1,0 +1,1461 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_COMMON_CORRIDOR_DOOR.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잠긴 방문 앞에서 호주머니에 손을 넣었는데…",
+      "UnitTalk_JPN": "鍵のかかったドアの前で、ポケットに手を入れたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…응?",
+          "JumpAnchorStringId_JPN": "…ん？"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어?!",
+          "JumpAnchorStringId_JPN": "あれ！？"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "열쇠의 감촉이 느껴지지 않았다.",
+      "UnitTalk_JPN": "そこに鍵はなかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그래서.",
+      "UnitTalk_JPN": "それで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "왔던 길을 돌아가도 열쇠는 보이지 않고…",
+      "UnitTalk_JPN": "来た道を辿っても鍵は見つからず…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "형편 좋게 열쇠가게는 전부 휴일…",
+      "UnitTalk_JPN": "よりによって鍵屋はどこも休み…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "예비 열쇠는 안 만들어 뒀고 남아있는 객실도 없다?",
+      "UnitTalk_JPN": "予備の鍵もねぇし、空いてる部屋もねぇってか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "실화냐…?",
+      "UnitTalk_JPN": "マジかよ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "거짓말 같지만 전부 사실이야.",
+          "JumpAnchorStringId_JPN": "嘘みたいな話だけど、全部本当なんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "하아…",
+      "UnitTalk_JPN": "はぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "단장, 첫 날에도 사람들한테 떠밀려서 현장에 왔지?",
+      "UnitTalk_JPN": "初めて会った日も、トラックに無理やり乗せられて現場まで来たんだったよな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그때는 웃어 넘겼는데 뭐냐고. 불운 속성이냐? 뭐, 비운의 여주인공 같은 거?",
+      "UnitTalk_JPN": "あの時は笑い飛ばしたが…もしかして不幸体質なのか？悲劇のヒロインみたいな感じでよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "휴일이긴 한데…",
+      "UnitTalk_JPN": "今日は休みだが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "좋아.",
+      "UnitTalk_JPN": "よし。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "방안에 들어간 마르실이 얇은 철사와 공구를 챙겨서 나왔다.",
+      "UnitTalk_JPN": "マルシルは部屋から、細いワイヤーと工具を持って出てきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "TalkAppend": true,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "안내해. 어디야?",
+      "UnitTalk_JPN": "案内してくれ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…열어줄 생각이냐고?",
+      "UnitTalk_JPN": "…開けてくれるのか、だと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "핫! 당연한 걸 물어보고 자빠졌어. 아니면 내가 왜 이러고 나왔겠냐?",
+      "UnitTalk_JPN": "はっ、当然のことを聞くんじゃねぇよ！この格好を見りゃ分かんだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그것 때문에 나를 찾아온 거잖아?",
+      "UnitTalk_JPN": "それに、そのためにワシに会いに来たんじゃねぇか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "맡겨둬.",
+      "UnitTalk_JPN": "任せとけ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "페트라가 문 따는 건 옆에서 많이 봐왔으니까.",
+      "UnitTalk_JPN": "ペトラが鍵を開けるのを、横で何回も見てんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_COMMON_CORRIDOR_DOOR.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "못해먹겠네!",
+      "UnitTalk_JPN": "やってらんねぇ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "10분도 안 됐는데…!",
+          "JumpAnchorStringId_JPN": "まだ10分も経ってないよ…！"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "간단할 줄 알았는데 뭐야?! 어렵잖아!",
+      "UnitTalk_JPN": "簡単そうに見えて、こんなに難しいのかよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "이음새가 안 보여서 가져온 공구도 못 쓰고! 짜증나네!",
+      "UnitTalk_JPN": "中の構造が見えないせいで、工具も使えねぇ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하는 수 없지…!",
+      "UnitTalk_JPN": "仕方ねぇな…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐?! 렌치로 내려치면 안돼!",
+          "JumpAnchorStringId_JPN": "ちょっと、レンチで壊そうとしてない！？"
+        }
+      ]
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "비켜! 한 방이면 끝나니까!",
+      "UnitTalk_JPN": "どけ！一発で終わらせてやるから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…아앙?! 다른 투숙객들에게 민폐?",
+      "UnitTalk_JPN": "…あぁん？他の客に迷惑だと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "알게 뭐야! 내 속이 터지겠는데!",
+      "UnitTalk_JPN": "そんなこと知るか！ワシには関係ねぇよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내리치려는 건 내 방 문이야!",
+          "JumpAnchorStringId_JPN": "私の部屋のドアだし！"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "비켜! 안 비켜?!",
+      "UnitTalk_JPN": "おい、どけよ！邪魔するつもりか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 2.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "렌치로 방문 손잡이를 내려치려는 마르실을 뜯어 말렸다.",
+      "UnitTalk_JPN": "レンチを構えたマルシルを、なんとかドアから引き離した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "아아~! 답답하네!",
+      "UnitTalk_JPN": "あぁ～！もう、じれってぇんだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "내일까지 기다린다 치자. 그러면 열쇠공을 불러서 문을 딸 수 있겠지.",
+      "UnitTalk_JPN": "たしかに明日まで待てば、鍵屋を呼んでドアを開けられるだろうな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그 전에는 어떻게 할 건데?",
+      "UnitTalk_JPN": "でも、それまでどうするつもりだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "오늘 어디서 잘 건데?",
+      "UnitTalk_JPN": "今日はどこで寝んだよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "…벤치 위에서? 헛소리하고 자빠졌어! 입 돌아가고 싶냐?!",
+      "UnitTalk_JPN": "…ベンチだと！？バカなこと言ってんじゃねぇよ、死にてぇのか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "하는 수 없구만…",
+      "UnitTalk_JPN": "仕方ねぇな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "너.",
+      "UnitTalk_JPN": "お前。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "우리 집에서 자고 가.",
+      "UnitTalk_JPN": "うちで寝てけ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "네?",
+          "JumpAnchorStringId_JPN": "はい？"
+        }
+      ]
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "빈손으로 가기 그래서 요리를 대접하기로 하고 마르실과 함께 장을 봤다.",
+      "UnitTalk_JPN": "手ぶらで行くのも申し訳ないので、料理をご馳走することになった。そして、マルシルと一緒に買い出しに出かけた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "헤에… 요리도 할 줄 아냐? 대단하네.",
+      "UnitTalk_JPN": "へえ…料理もできんのか？すげぇな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "나는 요리 못하거든.",
+      "UnitTalk_JPN": "ワシは、料理はこれっきしなんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "현장에서 일하고 오면 몸이 피곤하니까. 보통 밖에서 사 먹어.",
+      "UnitTalk_JPN": "現場から帰ってきたら、クタクタだからな。いつも買ったもんを食べてんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아무튼 잘 됐네! 덕분에 식비 굳었잖냐.",
+      "UnitTalk_JPN": "ま、とにかくよかったぜ！おかげで食費が浮いたしな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…응? 정말 자고 가도 되냐고?",
+      "UnitTalk_JPN": "…ん？本当に泊まってもいいのかだと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "새삼스럽게 왜 또 물어? 자도 되니까 자고 가라고 했지.",
+      "UnitTalk_JPN": "今さら何言ってんだ？いいって言ってるだろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하루 이틀 본 사이도 아니고 네가 나쁜 녀석이 아니라는 건 알아.",
+      "UnitTalk_JPN": "初対面でもないし、お前が悪いやつじゃないってことは分かってる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "그러니까 걱정하지 말고… 응? 잠깐.",
+      "UnitTalk_JPN": "だから心配すんなって…ん？待てよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "…바닥에 옷, 내가 치웠던가?",
+      "UnitTalk_JPN": "…床の服、片づけたっけ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "방에 냄새는… 보이면 곤란한 물건은…",
+      "UnitTalk_JPN": "部屋の匂いは…見られちゃ困るもんは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그보다 내 방에 남자가 들어오는 거, 이번이 처음인데…?",
+      "UnitTalk_JPN": "それより、ワシの部屋に男が入るのは…初めてだな…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "방금 뭐라고 그랬어?",
+          "JumpAnchorStringId_JPN": "今なんて言ったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아니! 아무것도 아니야, 이 자식아!",
+      "UnitTalk_JPN": "いやいや！何でもねぇよ、こんにゃろぉ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "시끄러! 조용히 해! 입 다 물어! 가만히 있어!",
+      "UnitTalk_JPN": "うるせぇ！静かにしてろ！口を閉じて、大人しくしてやがれ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "보자보자 하니까 내가 만만해 보이냐?! 아앙?! 한번 해볼래?!",
+      "UnitTalk_JPN": "てめぇ、ワシを舐めんなよ！あぁん！？一発やってみるか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "딱 한 번 물어봤을 뿐인데…!",
+          "JumpAnchorStringId_JPN": "そこまで言わなくても…！"
+        }
+      ]
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT2_MALE_D",
+      "UnitNameString": [
+        "SI_PERSON_B"
+      ],
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT2_MALE_S",
+      "UnitNameString": [
+        "SI_PERSON_A"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SURPRISE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "이봐! 사탕 떨어지겠어, 수레 좀 천천히 끌어!",
+      "UnitTalk_JPN": "おい！キャンディーが落ちるだろ。カートをもっとゆっくり押せ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT2_MALE_D",
+      "UnitNameString": [
+        "SI_PERSON_B"
+      ],
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "끄윽…! 그러니까 적당히 실어야지…!",
+      "UnitTalk_JPN": "くっ…！これは積みすぎだよ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT2_MALE_S",
+      "UnitNameString": [
+        "SI_PERSON_A"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "조금만 참아! 곧 신년 축제잖아.",
+      "UnitTalk_JPN": "もう少しだけの辛抱だ！もうすぐ新年祭だからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT2_MALE_S",
+      "UnitNameString": [
+        "SI_PERSON_A"
+      ],
+      "UnitTalk_KOR": "그날이 떼돈 벌 기회라는 건 너도 알잖아? 오늘만 힘내자고!",
+      "UnitTalk_JPN": "その日が大金を稼げるチャンスだって知ってるだろ？今日だけ頑張ろうぜ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT2_MALE_D",
+      "UnitNameString": [
+        "SI_PERSON_B"
+      ],
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "그건 그렇지만… 으윽…!",
+      "UnitTalk_JPN": "それはそうだけど…ううっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitQuickSet": true,
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "곧 있으면 신년 축제라.",
+      "UnitTalk_JPN": "もうすぐ新年祭か。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…뭔지 아냐고? 아니, 전부터 자꾸 약올리네?! 쥐어 터지고 싶어!?",
+      "UnitTalk_JPN": "…新年祭を知ってるのかだと？てめぇ、ちょいちょいワシをバカにするよな！？ぶっ飛ばされてぇのか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "들어 봤어! 가봤던 적이 없을 뿐이지.",
+      "UnitTalk_JPN": "聞いたことぐらいあんだよ！行ったことねぇだけだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "성수기 때는 일당이 비싸니까.",
+      "UnitTalk_JPN": "繁忙期は日当がいいからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "또래 애들이 축제를 즐길 때, 나는 현장에서 일하고 있었어.",
+      "UnitTalk_JPN": "同い年のガキたちが祭りを楽しんでる間、ワシは現場で働いてた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그래도… 그런가…",
+      "UnitTalk_JPN": "それでも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "언젠가는 나도… 한 번쯤은…",
+      "UnitTalk_JPN": "いつかはワシも…一回くらいは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하! 내가 무슨 소리를 하는 거야.",
+      "UnitTalk_JPN": "はっ！なに言ってんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "잊어버려. 아무것도 아니니까.",
+      "UnitTalk_JPN": "忘れてくれ。なんでもねぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…축제에 같이 가자고?",
+      "UnitTalk_JPN": "…祭りに一緒に行こうだと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "갑자기 왜 이래? 됐어. 그냥 해본 소리였다니까.",
+      "UnitTalk_JPN": "急に何なんだよ。忘れてくれって言ったろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마르실이 나를 도와줬으니까.",
+          "JumpAnchorStringId_JPN": "マルシルが私のこと助けてくれたから。"
+        }
+      ]
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…아앙?",
+      "UnitTalk_JPN": "…あぁん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나도 돕고 싶어.",
+          "JumpAnchorStringId_JPN": "だから、私も助けてあげたい。"
+        }
+      ]
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "무슨 헛소리야? 내가 뭘 도와줬는데.",
+      "UnitTalk_JPN": "ワシがいつお前を助けたってんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "나는 하룻밤 숙소를 제공하고 너는 나한테 요리를 해준다. 이건 거래야.",
+      "UnitTalk_JPN": "ワシが一晩寝る場所を提供する代わりに、お前が料理する。これは取引じゃねぇか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "도움을 주고받는, 그런 간지럽고 시시껄렁한 게 아니라고.",
+      "UnitTalk_JPN": "助け合いみたいな、そんなくだらねーもんじゃねぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…뭐야?",
+      "UnitTalk_JPN": "…なんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "갑자기 왜 웃어?",
+      "UnitTalk_JPN": "なんで笑ってんだよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그걸 사람들은 도움을 주고받는다고 해.",
+          "JumpAnchorStringId_JPN": "世間では、これを助け合いって言うんだよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하! 뭐래?",
+      "UnitTalk_JPN": "はっ！なんだと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "맘대로 생각해. 나도 마음대로 생각할 테니까.",
+      "UnitTalk_JPN": "お前の好きなように考えてろ。ワシもそうするからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…그건 그렇고 아까 했던 말.",
+      "UnitTalk_JPN": "…それはそうとして、さっき言ってたことだが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "생각이 바뀌었어.",
+      "UnitTalk_JPN": "気が変わった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "하룻밤 재워주는 건데 한끼 식사로는 교환비가 안 맞잖냐.",
+      "UnitTalk_JPN": "一晩寝かせてやるのに、メシだけじゃ割りに合わねぇだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "마침 신년 축제가 열리고… 나도 거기 한번 가보려 하는데…",
+      "UnitTalk_JPN": "ちょうど新年祭も開かれることだし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "축제는 처음이니까. 안내해 줄 사람이 필요해.",
+      "UnitTalk_JPN": "祭りは初めてだから、案内してくれねぇか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "착각하지 마라? 이건 거래니까.",
+      "UnitTalk_JPN": "勘違いすんなよ？これは取引だからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "그날 시간 비워 놔. 알겠어?",
+      "UnitTalk_JPN": "その日は空けといてくれ。いいな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…뭐야? 또 왜 웃어?",
+      "UnitTalk_JPN": "…なんでまた笑ってんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "실실 웃으면서 따라오지 마! 표정 안 풀어!?",
+      "UnitTalk_JPN": "おい、笑うな！へらへらしながらついて来るんじゃねぇ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "뭐해?! 배고프니까 빨리 와!",
+      "UnitTalk_JPN": "ほら、腹減ったから早く行くぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩐지 발걸음이 빨라진 마르실을 따라 숙소로 돌아갔다.",
+      "UnitTalk_JPN": "なぜか早足になったマルシルの後を追い、宿へと向かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그날 마르실의 숙소로 들어가기 전에 오랜 시간 동안 복도에서 대기했고…",
+      "UnitTalk_JPN": "そして、廊下でかなりの時間待った後…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "예상보다 훨씬 살풍경한 방에서 마르실과 함께 신년 축제에 대해 이야기하다 잠들었다.",
+      "UnitTalk_JPN": "想像以上に殺風景な部屋で、マルシルと新年祭について語らいながら眠りについた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_06",
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

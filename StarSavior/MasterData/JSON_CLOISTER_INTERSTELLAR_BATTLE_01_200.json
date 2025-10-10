@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_INTERSTELLAR_06", //모방자 : 기사
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_INTERSTELLAR_06", //감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_INTERSTELLAR_06", //모방자 : 기사
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_INTERSTELLAR_06", //모방자 : 기사
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_WITNESS_COFFIN_BLACK_BOSS_CI_20", //공허목도자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_STAR" //서브 속성 타입※※※※※※※※※※※※
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_INTERSTELLAR_06", //모방자 : 기사
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          }
+        ]
+      }
+    ]
+  }
+}

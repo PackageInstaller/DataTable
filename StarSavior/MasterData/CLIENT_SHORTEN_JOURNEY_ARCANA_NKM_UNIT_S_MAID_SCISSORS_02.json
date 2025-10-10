@@ -1,0 +1,104 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAZA.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛은 상점가에서 열리는 팬케이크 많이 먹기 대회에 참가했다.",
+      "UnitTalk_JPN": "スカーレットは商店街で開催されるパンケーキ早食い大会に参加した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "스칼렛을 응원한다.",
+          "JumpAnchorStringId_JPN": "スカーレットを応援する。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "샤를을 응원한다.",
+          "JumpAnchorStringId_JPN": "シャルルを応援する。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "응원을 받은 스칼렛은 용기를 얻어 속도를 내기 시작했다.",
+      "UnitTalk_JPN": "応援を受けたスカーレットは勇気を得てスピードを上げ始めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "배신감을 느낀 스칼렛은 눈에서 불꽃을 튀기며 팬케이크를 먹기 시작했다.",
+      "UnitTalk_JPN": "裏切られたと感じたスカーレットは、目から火花を散らしながらパンケーキを食べ始めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

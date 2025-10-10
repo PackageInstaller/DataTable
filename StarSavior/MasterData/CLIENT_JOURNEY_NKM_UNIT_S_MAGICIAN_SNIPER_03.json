@@ -1,0 +1,1372 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HIGHLAND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "코코, 어디 갔어?",
+      "UnitTalk_JPN": "ココ、どこにいるのー？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "식사 가져왔어, 코코야.",
+      "UnitTalk_JPN": "ごはんだよ、ココ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRLSFRIEND"
+      ],
+      "UnitTalk_KOR": "저기, 클라리사…",
+      "UnitTalk_JPN": "ねぇ、クラリッサ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "응?",
+      "UnitTalk_JPN": "んん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRLSFRIEND"
+      ],
+      "UnitTalk_KOR": "코코, 며칠 전부터 몸이 안 좋았지…?",
+      "UnitTalk_JPN": "ココ、最近元気なさそうだったよね…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "응. 아무것도 안 먹었어.",
+      "UnitTalk_JPN": "うん、なにも食べてくれないの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "그래서 오늘은 진짜 맛있는 걸로 가져왔잖아!",
+      "UnitTalk_JPN": "だから今日は、ホントにおいしいのを持ってきたよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "그런데 어디 갔지? 코코~",
+      "UnitTalk_JPN": "でも、どこ行ったんだろう？ココ～？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRLSFRIEND"
+      ],
+      "UnitTalk_KOR": "히잉… 설마…",
+      "UnitTalk_JPN": "ぐすっ…もしかして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRLSFRIEND"
+      ],
+      "UnitTalk_KOR": "엄마한테 들었어.",
+      "UnitTalk_JPN": "お母さんが言ってたの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRLSFRIEND"
+      ],
+      "UnitTalk_KOR": "고양이들은 자신의 마지막을 직감하면…",
+      "UnitTalk_JPN": "ねこは、バイバイの時が近づくと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_MAGICIAN_SNIPER_01.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3",
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitTalk_KOR": "냥.",
+      "UnitTalk_JPN": "ニャッ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_STAINCAT"
+      ],
+      "UnitTalk_KOR": "…냥.",
+      "UnitTalk_JPN": "…ニャッ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitTalk_KOR": "냐앙~",
+      "UnitTalk_JPN": "ニャーン。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_STAINCAT"
+      ],
+      "UnitTalk_KOR": "…샤아—!",
+      "UnitTalk_JPN": "…シャーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitTalk_KOR": "하악질을 해? 내가 준 사료가 얼마인데.",
+      "UnitTalk_JPN": "あれ、威嚇してる？ねぇ、いくら貢いだと思ってんの～？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitTalk_KOR": "얻어먹고 입 싹 닦으면 그만이라는 거야?",
+      "UnitTalk_JPN": "食べ終わったらもう用済みってカンジ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_STAINCAT"
+      ],
+      "UnitTalk_KOR": "샤아아아!",
+      "UnitTalk_JPN": "シャーーーーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitTalk_KOR": "후우… 이것만큼은 안 하려 했는데.",
+      "UnitTalk_JPN": "ふぅ…これだけはやらないでおこうって思ってたのになぁ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitTalk_KOR": "두 눈 똑바로 뜨고 잘 봐.",
+      "UnitTalk_JPN": "目を見開いて、しっかり見てるのよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitTalk_KOR": "카노푸스 경비대에서도 극찬 받은 고양이 흉내를 지금…!",
+      "UnitTalk_JPN": "カノプス警備隊でも絶賛された、ネコの真似っ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_MAGICIAN_SNIPER_02.png",
+      "BgAniScale": true,
+      "BgOffsetScale": [
+        "1.8",
+        "1.8",
+        "1.8"
+      ]
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgAniPos": true,
+      "BgPos": [
+        "-300",
+        "-700"
+      ],
+      "BgEase": "Linear"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "UnitTalk_KOR": "무언가를 시작하려던 클라리사와 눈이 마주쳤다.",
+      "UnitTalk_JPN": "何かを始めようとしていたクラリッサと目が合った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgAniPos": true,
+      "BgPos": [
+        "0",
+        "0"
+      ],
+      "BgEase": "Linear"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgAniScale": true,
+      "BgOffsetScale": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitTalk_KOR": "…단장?",
+      "UnitTalk_JPN": "…団長さん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "왜 여기 있어?",
+      "UnitTalk_JPN": "えっと、どうしてここにいるの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitTalk_KOR": "약초를 채집하러 나왔다고? 아, 그래.",
+      "UnitTalk_JPN": "薬草を採取しに来たの？そっかそっか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…봤어?",
+      "UnitTalk_JPN": "…見てた？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭘?",
+          "JumpAnchorStringId_JPN": "何のこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "봤구나?",
+      "UnitTalk_JPN": "見てたんでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…응.",
+          "JumpAnchorStringId_JPN": "…うん。"
+        }
+      ]
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLARISSA"
+      ],
+      "UnitTalk_KOR": "언제부터?",
+      "UnitTalk_JPN": "いつから？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>냥</color>부터…",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>ニャッ</color>から…"
+        }
+      ]
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_PUBLIC.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE_LOOP",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "…아하핫!",
+      "UnitTalk_JPN": "…あははっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "즐거웠어, 단장. 하지만 미안해.",
+      "UnitTalk_JPN": "楽しかったよ、団長さん。でも、ゴメンね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "POS3_2X",
+      "UnitTalk_KOR": "목격자는 살려 보낼 수 없거든.",
+      "UnitTalk_JPN": "目撃者は、生きたまま帰せないの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_UI_INVENTORY_EQUP_SELECT.wav",
+      "CameraOffset": "ONE_3",
+      "UnitTalk_KOR": "총을 장전하는 클라리사를 말리느라 한동안 실랑이를 벌였다.",
+      "UnitTalk_JPN": "銃に弾を込めるクラリッサを止めるのに、一苦労した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SERIOUS",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_STAINCAT"
+      ],
+      "UnitTalk_KOR": "고롱고롱~",
+      "UnitTalk_JPN": "ゴロゴロ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "방금까지 하악질 했으면서 받을 건 다 받아먹네. 앙큼하게.",
+      "UnitTalk_JPN": "さっきまでシャーシャー言ってたくせに…ちゃっかり全部食べてるんだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "응? 키우는 고양이냐고?",
+      "UnitTalk_JPN": "んん？飼ってるネコかって？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하핫! 아니, 만난지 얼마 안됐어.",
+      "UnitTalk_JPN": "あははっ！違うんだ、まだ出会ったばっかりなの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "눈에 염증이 있는지 여기에만 앉아있더라고.",
+      "UnitTalk_JPN": "どうも目に炎症があるみたいで、ずっとここに座ってるんだよね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "몸이 회복될 때까지 먹이를 챙겨주고 있어.",
+      "UnitTalk_JPN": "回復するまで、ごはんをあげようと思って。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…이름? 안 붙여줬는데.",
+      "UnitTalk_JPN": "…名前？つけてないけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "괜히 붙였다가 정들면 곤란하잖아?",
+      "UnitTalk_JPN": "情が移っちゃったら困るでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "고양이를 좋아하냐고?",
+      "UnitTalk_JPN": "ネコが好きなのかって？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "아니, 그냥 그래.",
+      "UnitTalk_JPN": "ううん、別に普通だよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "타고난 사냥꾼이라는 별명은 맘에 들어. 하지만 습성이 싫어.",
+      "UnitTalk_JPN": " 生まれながらのハンターって別名は好きだけどね。でも、習性は嫌いなの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "마지막에는 아무도 없는 곳에 가서 혼자 숨을 거두잖아?",
+      "UnitTalk_JPN": "ネコって…最期は誰もいないところで、ひっそり死を待つでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고양이한테 그런 습성이 있어?",
+          "JumpAnchorStringId_JPN": "猫にそんな習性があるのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "글쎄? 나도 다른 사람한테 들은 이야기야.",
+      "UnitTalk_JPN": "さぁね？あたしも他の人から聞いただけ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "어쨌든 고양이를 좋아하지는 않아.",
+      "UnitTalk_JPN": "とにかく、別にネコが好きなワケじゃないよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "…그나저나 괘씸하네.",
+      "UnitTalk_JPN": "…それにしても、本当気に入らないわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "먹이도 여러 번 줬는데 아직도 하악질이라니.",
+      "UnitTalk_JPN": "何回もごはんあげてるのに、まだシャーシャー威嚇するなんて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_STAINCAT"
+      ],
+      "UnitTalk_KOR": "냐앙.",
+      "UnitTalk_JPN": "ニャーン。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응?",
+          "JumpAnchorStringId_JPN": "んん？"
+        }
+      ]
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "뭐야? 왜 이래?",
+      "UnitTalk_JPN": "なになに？どうしたの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "단장한테는 얌전하게 행동하네?",
+      "UnitTalk_JPN": "団長さんの前だと大人しいんだね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혹시.",
+          "JumpAnchorStringId_JPN": "もしかして…"
+        }
+      ]
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "약초를 채집하다가 얻은 열매를 클라리사에게 건네줬다.",
+      "UnitTalk_JPN": "先ほど採取した実を、クラリッサに渡した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그러자 고양이가 클라리사에게 다가가 몸을 비볐다.",
+      "UnitTalk_JPN": "すると猫はクラリッサに近づき、体をスリスリとこすりつけ始めた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_STAINCAT"
+      ],
+      "UnitTalk_KOR": "냐아~!",
+      "UnitTalk_JPN": "ニャ～！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "뭐야, 단장? 방금 뭘 준 거야?",
+      "UnitTalk_JPN": "どういうこと？これ、何なの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "개다래나무 열매.",
+          "JumpAnchorStringId_JPN": "マタタビの実。"
+        }
+      ]
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아까 약초를 채집하면서 얻었어.",
+          "JumpAnchorStringId_JPN": "さっき薬草を採取している時に、見つけたんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_STAINCAT"
+      ],
+      "UnitTalk_KOR": "냐아.",
+      "UnitTalk_JPN": "ニャーン。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…뭐야.",
+      "UnitTalk_JPN": "…へぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "너, 이렇게 애교 부릴 줄도 알았어? 처음 보는 모습이네.",
+      "UnitTalk_JPN": "可愛いとこもあるんだね。こんな姿、初めて見たよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이 녀석, 요 녀석!",
+      "UnitTalk_JPN": "はいはい、よしよし。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_STAINCAT"
+      ],
+      "UnitTalk_KOR": "고롱~ 고롱~",
+      "UnitTalk_JPN": "ゴロゴロ、ゴロゴロ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "아하핫! 얘 얼굴 좀 봐.",
+      "UnitTalk_JPN": "あははっ！見てよ、この顔。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "세상 편해 보이네.",
+      "UnitTalk_JPN": "悩みなんてなさそうな顔してる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "맞지? 단장도 얘 보고 있지?",
+      "UnitTalk_JPN": "団長さんもそう思わない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…응?",
+      "UnitTalk_JPN": "…んん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "단장, 왜 흐뭇한 미소를 짓고 있어?",
+      "UnitTalk_JPN": "なにその顔。ニコニコしちゃってさ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "뭐? 내가 처음 보는 얼굴을 하고 있다고?",
+      "UnitTalk_JPN": "えっ？あたしがこんな顔してるの、初めて見たって？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "…아하핫!",
+      "UnitTalk_JPN": "…あははっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "에잇.",
+      "UnitTalk_JPN": "よいしょっと！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_03.wav",
+      "CameraOffset": "TWIN_6",
+      "UnitTalk_KOR": "클라리사가 고양이를 들어올려 이쪽의 머리 위에 올려 놨다.",
+      "UnitTalk_JPN": "クラリッサは猫を持ち上げると、私の頭の上に乗せた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "떨어뜨리지 않게 조심해? 얼굴 할퀼지도 몰라.",
+      "UnitTalk_JPN": "落とさないように気をつけるんだよー？顔を引っかかれちゃうかもしれないしね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "그럼 안녕.",
+      "UnitTalk_JPN": "じゃっ、またね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어디 가?!",
+          "JumpAnchorStringId_JPN": "ちょっと！？"
+        }
+      ]
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이래봬도 많이 바쁜 몸이거든.",
+      "UnitTalk_JPN": "こう見えても、あたしって忙しいんだよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "볼일이 있어서 미안, 단장. 내일 봐!",
+      "UnitTalk_JPN": "用事があるからもう行くねー！また明日！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내려주고 가!",
+          "JumpAnchorStringId_JPN": "降ろしてくれー！"
+        }
+      ]
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 1.0,
+      "UnitNameString": [
+        "SI_STAINCAT"
+      ],
+      "UnitTalk_KOR": "샤아—!",
+      "UnitTalk_JPN": "シャーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "개다래나무 열매 없이 고양이를 진정시키느라 고생했다.",
+      "UnitTalk_JPN": "マタタビがなかったため、猫を落ち着かせるのに一苦労した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클라리사가 고양이를 돌봐주고 있다지만, 이것도 인연이겠지.",
+      "UnitTalk_JPN": "クラリッサが世話をしているようだが…これも何かの縁かもしれない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다음에는 도서관에 가서 고양이 돌보는 법을 조사해봐야겠다.",
+      "UnitTalk_JPN": "今度、図書館で猫の飼い方について調べてみよう。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT",
+      "FilterType": "CFT_NORMAL"
+    }
+  ]
+}

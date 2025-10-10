@@ -1,0 +1,61 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: DICTIONARY_STORY_TAB_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryTabId" : 1000001,
+          "StoryTabType" : "STT_MAIN_STORY",
+          "UnlockValue" : 1001000001,
+          "OrderList" : 0,
+          "StoryTabName" : "SI_END_OF_THE_STARLIGHT",
+          "StoryTabSubName" : "SI_EPISODE_NUMBER@@0",
+          "StoryTabTitleImg" : "PF_TITLE_MS_EP_00.prefab",
+          "StoryTabThumbnail" : "T_MS_BG_S_VOYAGER_STRANIS.png",
+          "StoryTabPrefab" : "MS_BG_S_VOYAGER_STRANIS.prefab",
+          "StoryTabListPrefab" : "L_MS_BG_S_VOYAGER_STRANIS.prefab",
+          "StoryGroupId" : 1000001
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryTabId" : 1001001,
+          "StoryTabType" : "STT_MAIN_STORY",
+          "UnlockValue" : 1001001001,
+          "OrderList" : 1,
+          "StoryTabName" : "SI_LAVISTAR",
+          "StoryTabSubName" : "SI_EPISODE_NUMBER@@1",
+          "StoryTabTitleImg" : "PF_TITLE_MS_EP_01.prefab",
+          "StoryTabThumbnail" : "T_MS_BG_S_EP_01.png",
+          "StoryTabPrefab" : "MS_BG_S_EP_01.prefab",
+          "StoryTabListPrefab" : "L_MS_BG_S_EP_01.prefab",
+          "StoryGroupId" : 1001001
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryTabId" : 1,
+          "StoryTabType" : "STT_JOURNEY_SCENARIO_STORY",
+          "UnlockValue" : 1,
+          "OrderList" : 0,
+          "StoryTabName" : "SI_VOYAGER_CORPS",
+          "StoryTabSubName" : "SI_PATHFINDER_OF_STARLIGHT",
+          "StoryTabThumbnail" : "T_MS_BG_ACV_SUBCULTURE.png",
+          "StoryTabPrefab" : "MS_BG_ACV_SUBCULTURE.prefab",
+          "StoryTabListPrefab" : "L_MS_BG_ACV_SUBCULTURE.prefab",
+          "StoryGroupId" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryTabId" : 2,
+          "StoryTabType" : "STT_JOURNEY_SCENARIO_STORY",
+          "UnlockValue" : 1,
+          "OrderList" : 1,
+          "StoryTabName" : "SI_VOYAGER_CORPS",
+          "StoryTabSubName" : "SI_PATHFINDER_OF_STARLIGHT",
+          "StoryTabThumbnail" : "T_MS_BG_ACV_SUBCULTURE.png",
+          "StoryTabPrefab" : "MS_BG_ACV_SUBCULTURE.prefab",
+          "StoryTabListPrefab" : "L_MS_BG_ACV_SUBCULTURE.prefab",
+          "StoryGroupId" : 2
+        }
+    ]
+}

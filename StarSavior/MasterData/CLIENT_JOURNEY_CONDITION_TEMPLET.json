@@ -1,0 +1,37 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: JOURNEY_CONDITION_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ConditionBuffId" : 1011,
+          "ConditionNum" : 1,
+          "BuffId" : "BI_CONDITION_WORST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ConditionBuffId" : 1011,
+          "ConditionNum" : 2,
+          "BuffId" : "BI_CONDITION_BAD"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ConditionBuffId" : 1011,
+          "ConditionNum" : 4,
+          "BuffId" : "BI_CONDITION_GOOD"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ConditionBuffId" : 1011,
+          "ConditionNum" : 5,
+          "BuffId" : "BI_CONDITION_BEST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ConditionBuffId" : 1012,
+          "ConditionNum" : 1,
+          "BuffId" : "BI_CONDITION_BAD"
+        }
+    ]
+}

@@ -1,0 +1,212 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_MONSTER.txt",
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_SPAWN.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_SPAWN.wav"
+            ]
+          },
+          {
+            "EventFrame": 19,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_SPAWN_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true, 
+            "EventFrame": 4,
+            "EventEndFrame": 18,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 55,
+            "EventEndFrame": 68,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 37,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 7,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 55,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_ATK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 77,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_ATK_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": false,
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 38,
+            "EventEndFrame": 45,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 85,
+            "EventEndFrame": 93,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 47,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 53,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 64,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_SPECIAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_SPECIAL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 45,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_SPECIAL_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 53,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_SPECIAL_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 63,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_SPECIAL_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 86,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_SPECIAL_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 109,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_SPECIAL_07.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_DYING.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_DYING_02.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

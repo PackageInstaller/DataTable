@@ -1,0 +1,172 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_CHEER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "메이드의 격려를 듣고, 최근 <color=#F7BE45>[여정]</color>의 성과가 부족하다는 데까지 생각이 미쳤다. 어떻게 해야 할까?",
+      "UnitTalk_JPN": "メイドの励ましを聞き、最近の<color=#F7BE45>[救援の旅]</color>の成果が不足していることに思い至った。どうすればよいだろうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하는 만큼 성과가 나올 것이라고 믿자!",
+          "JumpAnchorStringId_JPN": "努力した分だけ成果は出るはずだと信じよう！",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "조금만 더 해 보자.",
+          "JumpAnchorStringId_JPN": "もう少し頑張ってみよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "지금으로도 충분해.",
+          "JumpAnchorStringId_JPN": "今で十分だ。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "위기감을 가지고 훈련에 몰입한 결과, 눈에 띄는 성취가 있었다!",
+      "UnitTalk_JPN": "危機感を持ってトレーニングに没頭した結果、目に見える成果があった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 15,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "지나치게 무리해 버렸다... 당분간은 주의하도록 하자.",
+      "UnitTalk_JPN": "やりすぎてしまった…しばらくは注意しよう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 17,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "평소보다 고되긴 하지만, 만족스러운 결과를 얻었다.",
+      "UnitTalk_JPN": "普段よりきついけれど、満足のいく結果を得た。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 19,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "페이스를 흐트러뜨리지 않는 것도 중요하다.",
+      "UnitTalk_JPN": "ペースを乱さないことも重要だ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

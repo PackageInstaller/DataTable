@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_04",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_04",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_PUBLIC.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "훈련이 끝난 뒤, 다나는 <color=#F7BE45>로로카</color>를 외치며 사람들을 돕고 다닌다.",
+      "UnitTalk_JPN": "トレーニングが終わった後、ダーナは<color=#F7BE45>ロロカ</color>を叫びながら人々を助け回っている。",
+      "TalkTime": 0.03
+    }
+  ]
+}

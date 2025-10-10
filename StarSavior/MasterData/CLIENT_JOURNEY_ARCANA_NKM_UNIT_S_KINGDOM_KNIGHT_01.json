@@ -1,0 +1,1234 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어느 날, 샤를과 함께 시내를 돌아다니던 중이었다.",
+      "UnitTalk_JPN": "シャルルと一緒に街を見て回っていた時のことである。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "앗, 단장님. 잠시만요.",
+      "UnitTalk_JPN": "あっ、団長殿、少しお待ちください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응?",
+          "JumpAnchorStringId_JPN": "ん？"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "저기 있는 사람들… 뭔가…",
+      "UnitTalk_JPN": "あそこにいる人たち…なんだか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "잠시만 가볼게요-!",
+      "UnitTalk_JPN": "ちょっと行ってみますー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그릇을 80%나 할인해서 판다구요?",
+      "UnitTalk_JPN": "お皿を80％も安くしてくださるのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "물론이지요! 원래 물건을 팔던 곳이 망해버려서, 싸게 재고정리 중입니다.",
+      "UnitTalk_JPN": "もちろんです！長年世話になった取引先が廃業してしまいまして、売り尽くしセール中でございます。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "파격의 80% 할인! 지금 아니면 만날 수 없는 기회!",
+      "UnitTalk_JPN": "破格の80%セール！今だけのチャンスですよ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그렇네요… 당장 그릇이 필요하진 않았는데… ",
+      "UnitTalk_JPN": "そうですね、お皿が今すぐは必要ないかもしれませんが… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "사두면 다 언젠가 쓰지 않겠습니까? 자아, 자아…",
+      "UnitTalk_JPN": "買っておくといずれ使うものですよ、はい。さあさあ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "잠깐-!",
+      "UnitTalk_JPN": "とぉーっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "어?",
+      "UnitTalk_JPN": "あれ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "힉?",
+      "UnitTalk_JPN": "ひぃ？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "거기 상인! 잠깐 기다리시오!",
+      "UnitTalk_JPN": "そこの商人！お待ちなさい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "무, 무슨 일이십니까요, 헤, 헤헤…",
+      "UnitTalk_JPN": "な、何のことでしょうか、へ、へへ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "80% 할인이라고 하셨소?",
+      "UnitTalk_JPN": "80%セールだと申したか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "그, 그으렇습죠오?",
+      "UnitTalk_JPN": "そ、そうですねぇ、はい。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "80% 할인했다는 그릇 가격이 왜 어제 팔던 정상 가격보다 비싼 것이오?",
+      "UnitTalk_JPN": "80%セール中であるのに、昨日の通常価格より高いのは何故か？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "네에?",
+      "UnitTalk_JPN": "はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "으… 으그그극… 그… 그건…",
+      "UnitTalk_JPN": "う…うぐぐっ…そ…それは…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "발뺌하려 해도 소용없소! 어제 지나가다가 본 그릇이니까.",
+      "UnitTalk_JPN": "言い逃れしようとも無駄である！昨日通りすがりに見かけた皿なのだからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "저 그릇에 볶음국수를 담아서 먹으면 보기도 좋고 맛도 좋겠네…",
+      "UnitTalk_JPN": "あの皿に焼きそばを乗せると、見た目も良いし美味しそうだな—",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "…하고 생각했던 그 그릇이니까!",
+      "UnitTalk_JPN": "…と思っていた皿だからな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "죄, 죄송합니다-! 잘못했습니다-!",
+      "UnitTalk_JPN": "も、申し訳ありませんー！お許しをー！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "DEFAULT",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "도와주셔서 감사합니다. 전 카노푸스 경비대의 다나라고 해요.",
+      "UnitTalk_JPN": "助けていただいて感謝です。わたし、カノプス警備隊のダーナといいます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "모나스티르 공국 기사단의 기사단장, 샤를이라고 하오!",
+      "UnitTalk_JPN": "モナスティル公国の騎士団長、シャルルと申す！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "어쩜! 기사단장님이라 그렇게 늠름하고 정의로우셨군요!",
+      "UnitTalk_JPN": "あらま！凛々しくて正義感の強いお方と思っていたら、騎士団長さまでしたの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "후, 후후, 그, 그렇게 보였소? 후후, 헤헤헤…",
+      "UnitTalk_JPN": "ふ、ふふ、そ、そう見えました？ふふ、えへへ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "엄청 싸게 판다고 써 붙여놓고 원래 가격보다 비싸게 파는 수법이었군요. 하마터면 속을 뻔했네요.",
+      "UnitTalk_JPN": "すごく安そうに売るように見せかけて、本来の価格よりも高く売る寸法でしたか。あやうく騙されるところでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "휴우, 도시 생활은 아직 조심해서 알아가야 할 게 많군요.",
+      "UnitTalk_JPN": "はぁ、都会での生活は気を付ける事が多いですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "도시 생활…?",
+      "UnitTalk_JPN": "都会での生活…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네, 제가 있던 카노푸스 산맥은 도심에서 멀리 떨어져 있는 외진 곳이거든요.",
+      "UnitTalk_JPN": "はい、わたしが暮らしていたカノプス山脈は、都会からかけ離れた場所にあるのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "그래서 이렇게 사람이 많은 곳은 살면서 처음…",
+      "UnitTalk_JPN": "ですから、こう人が多い場所は初めて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 나도!",
+      "UnitTalk_JPN": "あ、あたしも！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "저도 모나스티르의 시골 출신이거든요!",
+      "UnitTalk_JPN": "私もモナスティルの田舎出身なんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "오오!",
+      "UnitTalk_JPN": "おお！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "도시에 처음 왔을 때 진-짜 적응 안 됐었는데!",
+      "UnitTalk_JPN": "都会に出たばかりの頃は、ほんっとうに慣れなかったわ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "사람들이 하는 말 곧이곧대로 들었다가 덤터기도 쓰고!",
+      "UnitTalk_JPN": "都会人の言う通りにしたら、カモにされたり！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "바가지도 쓰고!",
+      "UnitTalk_JPN": "ぼったくりにも遭ったり！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "난리도 아니었어요-!",
+      "UnitTalk_JPN": "大変だったよー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "저도요!",
+      "UnitTalk_JPN": "私もです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그래서 아까 분위기를 보고 팍! 느낌이 왔죠. 저놈 사기꾼이다!",
+      "UnitTalk_JPN": "おかげさまで、さっきのやり取りを見てピーンときたのです。あいつは悪徳商人だと！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "역시-!",
+      "UnitTalk_JPN": "やっぱりー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "조심해야 돼요! 사기꾼 놈들은 어떻게 그렇게 순박한 사람들을 잘 알아보는지!",
+      "UnitTalk_JPN": "気を付けないと駄目ですよ！奴らは田舎者の見分けるのが上手なので！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "맞아요, 맞아요!  저도 늘 조심하려고 하는데 잘 안돼요!",
+      "UnitTalk_JPN": "そう、そうなのです！わたしも気を付けようとは思ってはいるんですが、なかなか思うようにいきません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래도 생활하고 몇 년 되다 보니까 도시 생활도 좋은 부분이 많다는 걸 알게 되고…",
+      "UnitTalk_JPN": "それでも何年か住んでる内に、都会暮らしも良い点が多くあると知りまして—",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "북적거리는 시내도, 떠들썩한 상점가도 익숙해졌지만…",
+      "UnitTalk_JPN": "賑やかな街も、活気のある商店街にも慣れましたけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "네, 가끔은 고향의 느긋함이 그리워질 때가 있죠.",
+      "UnitTalk_JPN": "はい、たまには故郷の、のどかな風景が恋しくなりますよね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네에… 그렇죠…",
+      "UnitTalk_JPN": "はい…そうですよね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "말해놓고 보니 갑자기 엄마… 보고 싶어지네…",
+      "UnitTalk_JPN": "話してたら、急にお母さんに…会いたくなって—",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "엄마, 아빠, 동생들…",
+      "UnitTalk_JPN": "お母さん、お父さん、兄弟たち…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "기사단장님? 괜찮으세요?",
+      "UnitTalk_JPN": "騎士団長さま？大丈夫ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…핫?!",
+      "UnitTalk_JPN": "…はっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "이, 이런, 또 칠칠맞은 모습을…!",
+      "UnitTalk_JPN": "こ、これはまた、だらしないところを…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "으흠! 흠! 흠흠!",
+      "UnitTalk_JPN": "コホン！あ、あー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "괘, 괜찮소!",
+      "UnitTalk_JPN": "だ、大丈夫である！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "갑자기 옛날 생각이 나서 그만… 무례를 범했구려!",
+      "UnitTalk_JPN": "少し、昔のことを思い出したため、つい…無礼を働いてしまった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "무례라뇨, 만나서 너무 반가웠어요.",
+      "UnitTalk_JPN": "無礼なんて、逢えて嬉しかったです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "저, 저도요. 아니, 저도 그렇소!",
+      "UnitTalk_JPN": "わ、私も。いえ、吾輩もそうでありました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그, 그럼 조심해서 돌아가시오! 나는 갑자기 바쁜 일이 생각나서 이만!",
+      "UnitTalk_JPN": "で、ではお気をつけて帰りなされ！吾輩は急用を思い出したので、これで！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네, 감사했어요! 기사님도 조심해서 돌아가세요-!",
+      "UnitTalk_JPN": "はい、ありがとうございました！騎士さまもお気をつけてー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "고, 고맙소!",
+      "UnitTalk_JPN": "あ、ありがとう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "샤를은 붉게 달아오른 얼굴을 숨기며 허둥지둥 어디론가 달려가기 시작했다.",
+      "UnitTalk_JPN": "シャルルは赤く火照った顔を隠しながら、どこかへと慌てて走りだした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뛰어가는 샤를을 부른다.",
+          "JumpAnchorStringId_JPN": "逃げるシャルルを呼ぶ。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "샤를이 돌아오길 기다린다.",
+          "JumpAnchorStringId_JPN": "シャルルが戻ってくるのを待つ。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "히익, 다, 단장님!",
+      "UnitTalk_JPN": "ヒィィ、だ、団長殿！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "봐버리셨죠! 제 칠칠맞은 모습을 다 봐버리신 거죠!",
+      "UnitTalk_JPN": "見ましたよね！私のだらしない姿、全部見ちゃったんですよね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "늘 보는 모습인데 뭘.",
+          "JumpAnchorStringId_JPN": "なに、いつもの事じゃないか。"
+        }
+      ]
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "으앙-! 따라오지 마세요-!",
+      "UnitTalk_JPN": "うわーん！ついて来ないでくださいー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 99,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CameraOffset": "ONE_1",
+      "CameraEase": "OutElastic",
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잠시 길에 서서 샤를이 돌아오기를 기다렸다.",
+      "UnitTalk_JPN": "しばらく道端に立って、シャルルが戻ってくるのを待った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "샤를은 몇 분 지나지 않아 조금 기운 빠진 발걸음으로 돌아왔다.",
+      "UnitTalk_JPN": "シャルルはほどなくして、どこか力の抜けた足取りで戻ってきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "죄, 죄송합니다, 단장님… 기다리셨죠?",
+      "UnitTalk_JPN": "す、すみません、団長…取り乱してしまいました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "하마터면 길거리 한복판에서 가족 생각으로 울어버릴 뻔했습니다…",
+      "UnitTalk_JPN": "危うく道の真ん中で、家族のことを思って泣きそうになってしまいました…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "으으, 강인한 기사단장의 길은 멀고도 험하군요…!",
+      "UnitTalk_JPN": "うう、強き騎士団長の道は、遠く険しいものですね…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "돌아가면 바로 가족들에게 편지를 쓰겠다는 샤를과 대화하며 그날의 외출은 마무리되었다.",
+      "UnitTalk_JPN": "帰ったらすぐに家族に手紙を書くと言うシャルルと話しながら、その日の外出は終わった。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

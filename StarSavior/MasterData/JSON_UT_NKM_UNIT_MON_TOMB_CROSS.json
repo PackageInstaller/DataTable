@@ -1,0 +1,156 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_TOMB.txt",
+    "UiStates": [],
+    "UnitHudHeight": 1.9,
+    "BuffEffectPosition": {
+      "HEAD": 1.7
+    },
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_ROCK_DEBRIS_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_ROCK_DEBRIS_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 19,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_41.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_ROCK_DEBRIS_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_12.wav"
+            ]
+          },
+          {
+            "EventFrame": 41,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_42.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 42,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TOMB_CROSS_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 42,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TOMB_CROSS_ATK_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "AnimName": "BATTLE_ATTACK",
+        "UseInternalCamera": false,
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 42,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TOMB_CROSS_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 42,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TOMB_CROSS_ATK_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_ROCK_DEBRIS_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_14.wav"
+            ]
+          },
+          {
+            "EventFrame": 26,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_44.wav"
+            ]
+          },
+          {
+            "EventFrame": 41,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

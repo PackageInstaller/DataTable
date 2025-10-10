@@ -1,0 +1,46 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_B",
+        "MapCameraType": "NMCT_NORMAL_BATTLE",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_WAND_GREEN_01",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_SWORD_BLUE_01",
+            "AllSkillAvailable": true
+          }
+        ]
+      },
+      {
+        "MapCameraType": "NMCT_RAID_BATTLE_01",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_RAID_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_MAINSTORY_00",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_S_TEST_DUMMY_04",
+            "IsBoss": true,
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_MAINSTORY_00",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

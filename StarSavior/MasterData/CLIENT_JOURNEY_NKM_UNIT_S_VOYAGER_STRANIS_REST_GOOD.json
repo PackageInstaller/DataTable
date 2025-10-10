@@ -1,0 +1,207 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "THINK2",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아세라가 아침부터 뭔가를 골똘히 생각하고 있었다.",
+      "UnitTalk_JPN": "朝からアセラが何やら真剣に考えごとをしている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮아? 무슨 일 있어?",
+          "JumpAnchorStringId_JPN": "大丈夫？どうしたの？"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 단장…",
+      "UnitTalk_JPN": "あ、団長…  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "응… 사실은…",
+      "UnitTalk_JPN": "うん…実は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "...최고로 기분 좋은 꿈을 꿨거든!",
+      "UnitTalk_JPN": "…最高に気持ちいい夢を見たんだ！  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "한 발짝 걸을 때마다 새로운 마을, 새로운 인연, 새로운 모험…!",
+      "UnitTalk_JPN": "一歩踏み出すたびに、新しい街、新しい出会い、新しい冒険…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "여태까지 꿨던 꿈과 여행 중 제일 신났어!",
+      "UnitTalk_JPN": "今まで見た夢とか旅行の中で一番楽しかった！  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아! 그러고 보니 같이 다녔던 동료가 단장이랑 비슷하게 생겼던 것 같아.",
+      "UnitTalk_JPN": "あ！そういえば一緒にいた仲間が団長と似ていたかも。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "걱정했잖아…!",
+          "JumpAnchorStringId_JPN": "なんだ、心配したじゃないか…！  "
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하하! 미안, 미안. 고민하는 걸로 보였나 보네.",
+      "UnitTalk_JPN": "はは！ごめん、ごめん。悩んでいるように見えちゃったよね。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래도 걱정 마. 어느 때보다 푹 자고 일어났으니까.",
+      "UnitTalk_JPN": "でも心配しなくて大丈夫。いつもよりぐっすり寝て起きたから。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "…좋아, 결정!",
+      "UnitTalk_JPN": "…よし、決めた！  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "꿈보다 더 즐거운 하루를 위해! 오늘도 힘차게 출발이야!",
+      "UnitTalk_JPN": "夢よりもっと楽しい1日にするために！今日も張り切って行くわ！  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "아세라는 평소보다 훨씬 밝게 웃었다.",
+      "UnitTalk_JPN": "アセラはいつもより、はるかに明るい笑顔を見せた。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘은 왠지 행운이 가득한 날이 될 것 같은 예감이 든다.",
+      "UnitTalk_JPN": "今日はなんだかラッキーな日になりそうだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REST_GOOD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

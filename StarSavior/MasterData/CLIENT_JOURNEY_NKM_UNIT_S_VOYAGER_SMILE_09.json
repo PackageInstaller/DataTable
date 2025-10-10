@@ -1,0 +1,373 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "늦었잖아, 스마일.",
+          "JumpAnchorStringId_JPN": "遅いよ、スマイル。"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "미안.",
+      "UnitTalk_JPN": "ごめん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "마지막 실험을 하느라 시간 감각을 상실.",
+      "UnitTalk_JPN": "最後の実験をしてたら、時間感覚を喪失。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마지막 실험?",
+          "JumpAnchorStringId_JPN": "最後の実験？"
+        }
+      ]
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장의 가설을 검증.",
+      "UnitTalk_JPN": "団長の仮説を検証。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "특별한 사람과 함께라면 특별한 감정이 발생.",
+      "UnitTalk_JPN": "特別な人と一緒なら、特別な感情が発生。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "특별한 감정이야말로 웃음의 원천.",
+      "UnitTalk_JPN": "特別な感情こそ、笑いの源。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "스마일 캣 1호와 2호를 통해 증명된 사실임.",
+      "UnitTalk_JPN": "スマイルキャット1号と2号を通して、証明された事実。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "하지만 다른 형태의 인공생명체인 본인에게도 적용되는지 확인이 필요.",
+      "UnitTalk_JPN": "でも、他の形態の人工生命体である私にも、適用されるのか確認が必要。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래서 어젯밤부터 조금 전까지 특별한 사람의 사진을 집중해서 관찰.",
+      "UnitTalk_JPN": "だから一晩中、特別な人の写真を集中して観察。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "언니의 사진을 보고 있었다는 뜻이구나.",
+          "JumpAnchorStringId_JPN": "お姉さんの写真を見てたんだね。"
+        }
+      ]
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "효과는 좀 있었어?",
+          "JumpAnchorStringId_JPN": "効果はあった？"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "…응.",
+      "UnitTalk_JPN": "…うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "실험 결과는 긍정적. 유의미한 관련성 확인.",
+      "UnitTalk_JPN": "実験結果は肯定的。有意義な関連性を確認。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋아. 그러면 기운 내서 끝내 버리자.",
+          "JumpAnchorStringId_JPN": "よし。だったら、気合を入れて終わらせちゃおう。"
+        }
+      ]
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이 여정을.",
+          "JumpAnchorStringId_JPN": "この旅を。"
+        }
+      ]
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "끝이 아니야.",
+      "UnitTalk_JPN": "終わりじゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물론 끝이 아니다.",
+      "UnitTalk_JPN": "もちろん終わりじゃない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일이 웃을 수 있도록 소중한 사람을 찾아 주기로 했으니까.",
+      "UnitTalk_JPN": "スマイルが笑えるように、大切な人を探してあげる約束をしたんだから。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "함께.",
+      "UnitTalk_JPN": "一緒に。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래, 당연히 끝이 아니지.",
+          "JumpAnchorStringId_JPN": "うん。もちろん終わりじゃないよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "단장, 일부 사실관계의 정정 필요.",
+      "UnitTalk_JPN": "団長。一部、事実関係の修正が必要。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "저기… 내가 어제부터 보고 있던 건…",
+      "UnitTalk_JPN": "えっと…私が昨日から見てたのは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "…준비되셨나요 단장님?",
+      "UnitTalk_JPN": "…準備はできましたか、団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "스마일, 뭐라고 했어?",
+          "JumpAnchorStringId_JPN": "スマイル、何て言ったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "으응, 아무것도 아님.",
+      "UnitTalk_JPN": "ううん、何でもない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "본인은 준비 끝!",
+      "UnitTalk_JPN": "私は準備完了！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "네, 지금부터 별의 구원자 계승 시험 <color=#F7BE45>[여정]</color>.",
+      "UnitTalk_JPN": "では、これより星の救援者・継承試験<color=#F7BE45>「救援の旅」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그 최종시험을 시작하겠습니다.",
+      "UnitTalk_JPN": "最終試験を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "시험상대는 <color=#F7BE45>[알데바란의 집행자 길레]</color>.",
+      "UnitTalk_JPN": "対戦相手は<color=#F7BE45>「アルデバランの執行者・ギーレ」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[디랙의 우물]</color>이 투영을 개시합니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ディラックの井戸」</color>が投影を開始します。",
+      "TalkTime": 0.03
+    }
+  ]
+}

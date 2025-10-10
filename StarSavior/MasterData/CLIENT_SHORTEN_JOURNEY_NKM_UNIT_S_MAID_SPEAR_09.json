@@ -1,0 +1,27 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_SPEAR_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "평가전을 앞두고 클레어는 자신을 있는 그대로 인정하는 법을 배우게 해준 단장에게 감사를 표한다.",
+      "UnitTalk_JPN": "試験を前に、クレアはありのままの自分を認めてくれた団長に感謝の意を表す。",
+      "TalkTime": 0.03
+    }
+  ]
+}

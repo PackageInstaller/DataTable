@@ -1,0 +1,29 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_2_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_RED_01",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_VOIDER_HORN_BLACK_BOSS_EASY_01",
+            "IsBoss": true,
+            "SpecialSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_RED_01",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

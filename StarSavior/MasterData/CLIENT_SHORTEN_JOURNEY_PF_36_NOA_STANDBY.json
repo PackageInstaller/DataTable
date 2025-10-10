@@ -1,0 +1,27 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_36_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_36_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리사에게 구원자, 그리고 앞으로 상대해야 할 공허체란 무엇인지에 대해 들었다. 다음 평가전은 공허체 토벌이다.",
+      "UnitTalk_JPN": "リサから救援者、そしてこれから対峙すべき空虚体について聞いた。次の試験は空虚体討伐だ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

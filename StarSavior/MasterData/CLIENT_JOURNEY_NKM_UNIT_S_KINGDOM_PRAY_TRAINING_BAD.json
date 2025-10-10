@@ -1,0 +1,389 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "읏…!",
+      "UnitTalk_JPN": "うっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "살짝 미끄러졌습니다.",
+      "UnitTalk_JPN": "少し滑ってしまったのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "오늘은 여기서 그만하자.",
+          "JumpAnchorStringId_JPN": "今日はここまでにしよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "훈련, 계속할 수 있지?",
+          "JumpAnchorStringId_JPN": "訓練、まだ続けられるよね？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "활력 포션을 건네준다.",
+          "JumpAnchorStringId_JPN": "活力ポーションを渡す。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "흠. 좋은 의견입니다. ",
+      "UnitTalk_JPN": "ふむ。良い意見ですわね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "적절한 휴식을 취할 줄 아는 것도 훌륭한 사업가의 덕목이죠.  ",
+      "UnitTalk_JPN": "一流の事業家たちは、適度に休むことも心得ていますから。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그럼 남은 시간은…",
+      "UnitTalk_JPN": "じゃあ、残りの時間は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "다음 사업 구상이나 짜봐야 하나…?",
+      "UnitTalk_JPN": "次のビジネスでも構想した方がいいかしら…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "혼잣말을 중얼거리던 프레이는 가벼운 발걸음으로 훈련장을 나섰다. ",
+      "UnitTalk_JPN": "ひとりごとを言うフレイは、軽い足取りで訓練場を出た。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…뭐죠? ",
+      "UnitTalk_JPN": "…どうしてなのですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "단장이라면 한번 다시 해보자! 라고 해야 하는 거 아니었나요?",
+      "UnitTalk_JPN": "団長なら、もう一回やってみよう！と言うべきではないのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "뭐, 여유가 생기는 건 좋은 일이지만…",
+      "UnitTalk_JPN": "余裕ができるのは良いことですけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "프레이는 뭔가 후련하지 않은 듯한 눈치로 마지못해 휴식을 취했다.",
+      "UnitTalk_JPN": "フレイは納得いかなさそうな顔で、仕方なく休息を取った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…칫. 얄짤없는 게 꼭 우리 기사단장 같네.",
+      "UnitTalk_JPN": "…ちっ。騎士団長と同じで、容赦ないのね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "예? 아닙니다. 그냥 혼잣말이에요.",
+      "UnitTalk_JPN": "はい？いえ、ただのひとりごとです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐, 크게 다친 것도 아니고 계속 하죠. ",
+      "UnitTalk_JPN": "大きな怪我をした訳ではないですし、続けましょう。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "프레이는 먼지를 툭툭 털고 일어났다. ",
+      "UnitTalk_JPN": "フレイは埃を払い、立ち上がった。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "크게 다친 것은 아니었는지, 훈련은 큰 문제 없이 진행할 수 있었다.",
+      "UnitTalk_JPN": "大きな怪我ではなかったからか、問題なく訓練を続けられた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "엄청 크게 다친 건 아니니 문제는 없어요.",
+      "UnitTalk_JPN": "大きな怪我ではないですし、問題ありませんわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "그래도…",
+      "UnitTalk_JPN": "でも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "매번 무리하게 몰아붙이는 것도 좋지 않다구요?",
+      "UnitTalk_JPN": "いつも無理させるのも良くないのですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "리스크 관리의 중요성…! 이랄까요?",
+      "UnitTalk_JPN": "リスク管理の重要性…！とでもいいましょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "훈련은 무사히 끝마쳤지만, 조금 지친 탓인지 그 효율은 좋지 못했다.",
+      "UnitTalk_JPN": "訓練は無事に終わったが…疲れが出たせいか、効率は良くなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "<color=#F7BE45>활력 포션</color>인가요?",
+      "UnitTalk_JPN": "<color=#F7BE45>活力ポーション</color>ですって？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "잘 마실게요.",
+      "UnitTalk_JPN": "頂戴しますわね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…잠깐.",
+      "UnitTalk_JPN": "…お待ちを。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "기가 막힌 사업 아이템이 하나 떠올랐습니다. ",
+      "UnitTalk_JPN": "素晴らしい事業アイデアを思いついたのです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "이 <color=#F7BE45>활력 포션</color>에 유명 구원자의 얼굴을 인쇄해서 판매하는… ",
+      "UnitTalk_JPN": "この<color=#F7BE45>活力ポーション</color>に、有名な救援者の顔をプリントして販売すれば… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "어어? 귀는 왜 막으시는 겁니까?!",
+      "UnitTalk_JPN": "ええっ？どうして耳を塞ぐのですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

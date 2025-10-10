@@ -1,0 +1,83 @@
+﻿{
+  "$schema": "../../../../../DataSchema/EffectNode.jsonc",
+  "_Version": 4,
+  "Data": {
+    "EffectNodeStates": [
+      /////////////////////////////영역 전개/////////////////////////////////////
+      {//공용 영역 전개 : 개방
+        "EffectNodePrefabName": "VFX_DOMAIN_OPEN",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_GUNBLADE_BREAK_SKILL_DOMAIN_OPEN.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {//공용 영역 전개 : 종료
+        "EffectNodePrefabName": "VFX_DOMAIN_CLOSE",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_GUNBLADE_BREAK_SKILL_DOMAIN_CLOSE.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+
+      {//공용 아군 영역 전개 : 개방
+        "EffectNodePrefabName": "VFX_ALLY_DOMAIN_OPEN",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_GUNBLADE_BREAK_SKILL_DOMAIN_OPEN.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {//공용 아군 영역 전개 : 종료
+        "EffectNodePrefabName": "VFX_ALLY_DOMAIN_CLOSE",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_GUNBLADE_BREAK_SKILL_DOMAIN_CLOSE.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      
+      {//공용 적군 영역 전개 : 개방
+        "EffectNodePrefabName": "VFX_ENEMY_DOMAIN_OPEN",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_GUNBLADE_BREAK_SKILL_DOMAIN_OPEN.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {//공용 적군 영역 전개 : 종료
+        "EffectNodePrefabName": "VFX_ENEMY_DOMAIN_CLOSE",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_GUNBLADE_BREAK_SKILL_DOMAIN_CLOSE.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      }
+    ]    
+  }
+}

@@ -1,0 +1,26 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: ATTENDANCE_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "IntervalID" : "DATE_LOADING_ILLUST_01",
+          "AttendanceId" : 1,
+          "AttendanceResources" : "ATTENDANCE_SYSTEM_MONTH.prefab",
+          "AttendanceName" : "SI_ATTENDANCE_NAME_1",
+          "AttendanceDesc" : "SI_ATTENDANCE_DESC_1",
+          "AttendanceMailTitle" : "SI_ATTENDANCE_MAIL_TITLE_1",
+          "AttendanceMailDesc" : "SI_ATTENDANCE_MAIL_DESC_1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AttendanceId" : 1001,
+          "AttendanceResources" : "ATTENDANCE_SYSTEM_MONTH.prefab",
+          "AttendanceName" : "SI_ATTENDANCE_NAME_1",
+          "AttendanceDesc" : "SI_ATTENDANCE_DESC_1",
+          "AttendanceMailTitle" : "SI_ATTENDANCE_MAIL_TITLE_1",
+          "AttendanceMailDesc" : "SI_ATTENDANCE_MAIL_DESC_1"
+        }
+    ]
+}

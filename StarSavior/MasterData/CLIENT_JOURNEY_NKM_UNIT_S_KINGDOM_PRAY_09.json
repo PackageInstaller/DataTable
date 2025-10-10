@@ -1,0 +1,432 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "드디어 마지막이군요.",
+      "UnitTalk_JPN": "ついにここまで来ましたわね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "이번 시험만 통과하면 끝이라니…",
+      "UnitTalk_JPN": "この試験をクリアするだけで終わりだなんて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "처음 단장을 만났을 때만 해도, 분명 중간에 그만둘 거라고 생각했습니다. ",
+      "UnitTalk_JPN": "団長に初めて出会った頃は、きっと途中でやめるだろうと思っていました。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "<color=#F7BE45>구원자</color>의 힘이 제게 필요하다는 생각은 없었으니까요.",
+      "UnitTalk_JPN": "<color=#F7BE45>救援者</color>の力が、わたくしに必要なものだとは思わなかったからです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하지만 여기까지 왔지.",
+          "JumpAnchorStringId_JPN": "でも、ここまで来たね。"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그렇습니다.",
+      "UnitTalk_JPN": "そうなのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "하지만 좋은 사업가가 되려면 다양한 경험과 시도가 필요하다는 걸 단장이 가르쳐 줬습니다.",
+      "UnitTalk_JPN": "良い事業家になるためには…色んな経験や挑戦が必要だということを、団長が教えてくれました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "그리고 이 <color=#F7BE45>여정</color>이 결국 제 꿈을 이루기 위한 발판이 된다는 것도요.",
+      "UnitTalk_JPN": "そして、この<color=#F7BE45>救援の旅</color>が、わたくしの夢を叶えるための礎になるということもです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장이 없었다면 전 여기까지 올 수 없었을 겁니다.",
+      "UnitTalk_JPN": "団長がいなければ、わたくしはここまでたどり着けなかったでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "그러니까…",
+      "UnitTalk_JPN": "だから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "음… ",
+      "UnitTalk_JPN": "うーん… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "다, 단장님에 대한 제 평가를 2점 올려드리겠습니다.",
+      "UnitTalk_JPN": "だ、団長の評価を、2点プラスして差し上げます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "기뻐하세요! 제가 합계 3점이나 되는 평가를 한 사람은 단장님이 처음이니까요!",
+      "UnitTalk_JPN": "光栄に思うことです！わたくしが合計3点をあげたのは、団長が初めてなのですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나도 덕분에 즐거웠어.",
+          "JumpAnchorStringId_JPN": "私も、フレイのおかげで楽しかったよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "큼! 크흠! ",
+      "UnitTalk_JPN": "ンン！コホン！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.1,
+      "BgCrashTime": 0.1,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "아무튼!",
+      "UnitTalk_JPN": "とにかくっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>여정</color>이 끝나면 단장은 어떻게 할 생각이죠?",
+      "UnitTalk_JPN": "<color=#F7BE45>旅</color>を終えた後、団長はどうするおつもりですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "글쎄.",
+          "JumpAnchorStringId_JPN": "どうだろうね。"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "예정이 없다면, 은퇴하고 공국으로 오시죠. ",
+      "UnitTalk_JPN": "もし予定がなければ、引退してぜひ公国に来てください。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "제가 즉위하는 즉시 재정부 장관으로 임명해 드리겠습니다. ",
+      "UnitTalk_JPN": "わたくしが即位すれば、すぐに財務大臣に任命して差し上げますの。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "단장은 분명히 <color=#F7BE45>돈</color>을 버는 일에 재능이 있습니다! ",
+      "UnitTalk_JPN": "団長は確かに、<color=#F7BE45>お金</color>を稼ぐ才能があるのですから！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "그 천부적인 감각에 조금만 공부를 하시면 훌륭한 관료가 될 거라구요!",
+      "UnitTalk_JPN": "その生まれもった才能に、少しだけ勉強をすれば…立派な官僚になれるはずですっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "즉위…?",
+          "JumpAnchorStringId_JPN": "即位…？"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.1,
+      "BgCrashTime": 0.1,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아, 아무튼! ",
+      "UnitTalk_JPN": "と、とにかくっ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "꼭이에요. 꼭. ",
+      "UnitTalk_JPN": "絶対ですよ。絶対。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "공국에는 단장 같은 사람이 필요하니까. ",
+      "UnitTalk_JPN": "公国には、団長のような人が必要なのです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래.",
+          "JumpAnchorStringId_JPN": "分かったよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후! 약속한 겁니다?",
+      "UnitTalk_JPN": "ふふ！約束ですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "그럼 가죠. 마지막 시험을 향해.",
+      "UnitTalk_JPN": "それでは、参りましょう。最終試験に。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "준비되셨나요?",
+      "UnitTalk_JPN": "準備はできましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그럼 지금부터 별의 구원자 계승 시험 <color=#F7BE45>[여정]</color>.",
+      "UnitTalk_JPN": "では、これより星の救援者・継承試験<color=#F7BE45>「救援の旅」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그 최종시험을 시작하겠습니다.",
+      "UnitTalk_JPN": "最終試験を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "시험상대는 <color=#F7BE45>[알데바란의 집행자 길레]</color>.",
+      "UnitTalk_JPN": "対戦相手は<color=#F7BE45>「アルデバランの執行者・ギーレ」</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[디랙의 우물]</color>이 투영을 개시합니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ディラックの井戸」</color>が投影を開始します。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CAFE_01.png",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리디아는 상대방의 감정을 이용해서 이익을 얻는 걸 아무렇지 않게 생각한다.",
+      "UnitTalk_JPN": "リディアは相手の感情を利用して利益を得ることを何とも思わない。",
+      "TalkTime": 0.03
+    }
+  ]
+}

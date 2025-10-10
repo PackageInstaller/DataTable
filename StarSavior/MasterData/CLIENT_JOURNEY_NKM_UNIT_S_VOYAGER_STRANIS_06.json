@@ -1,0 +1,1390 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_12.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이걸로 오늘 훈련은 끝이야.",
+          "JumpAnchorStringId_JPN": "今日の訓練はこれで終わりだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "아… 벌써 끝났나?",
+      "UnitTalk_JPN": "あっ…もう終わり？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "고마워 단장… 들어갈게…",
+      "UnitTalk_JPN": "ありがとう、団長…わたしは戻るね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.8
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "지난번 몰래 나간 토벌전에서 다친 이후로 그녀는 기운이 없다.",
+      "UnitTalk_JPN": "彼女は、こっそり出た討伐で怪我をしてから元気がない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나를 대하는 것도 이전보다 조심스럽다.",
+      "UnitTalk_JPN": "私への態度も、以前より遠慮がちだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "역시 세게 넘어졌군…",
+          "JumpAnchorStringId_JPN": "やはり大きく転んでしまったか…"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "평소의 아세라를 생각하면 머지않아 다시 일어서리라 생각하지만, 여정의 시간은 짧다.",
+      "UnitTalk_JPN": "アセラの性格を考えると近いうちに立ち直るだろうが、旅の時間は短い。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그때까지 그냥 기다릴 수는 없지.",
+      "UnitTalk_JPN": "それまで、ただ待つわけにはいかない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_KNOCK.wav"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아세라, 안에 있어?",
+          "JumpAnchorStringId_JPN": "アセラ、中にいる？"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "…누구세요?",
+      "UnitTalk_JPN": "…どちら様ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "다, 단장?",
+      "UnitTalk_JPN": "だ、団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_1.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "BgChangeTime": 1.0
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "아…",
+      "UnitTalk_JPN": "あっ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혹시 저녁 먹었어?",
+          "JumpAnchorStringId_JPN": "夕飯は食べた？"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아세라의 숙소에 오는 길에 사 온 간단한 식재료를 들어 보였다.",
+      "UnitTalk_JPN": "ここに来るまでに買ってきた食材を見せた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후아, 잘 먹었다.",
+      "UnitTalk_JPN": "ふぁ～、ごちそうさまでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "고마워, 단장. 단장은 정말 요리를 잘하네.",
+      "UnitTalk_JPN": "ありがとう、団長。団長って本当に料理上手だね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 치우는 건 내가 할게. 단장은 그냥 앉아 있어.",
+      "UnitTalk_JPN": "あっ、わたしが片付けるから。団長は座ってて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "으음, 저번에 분명 차도 사 왔는데… 어디에 뒀었더라…",
+      "UnitTalk_JPN": "うーん、確かこの前お茶も買ったはず…どこに置いたっけ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기분 탓일까. 저번에 왔을 때보다 숙소 분위기가 좀 더 어수선하게 느껴지는 건…",
+      "UnitTalk_JPN": "気のせいか。前に来たときより部屋の中が少し散らかっているように見えるが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "에헤헤, 집이 조금… 지저분하지? 요새 이런저런 일이 있다 보니…",
+      "UnitTalk_JPN": "えへへ、部屋が少し…散らかってるよね？最近いろいろあって…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "치워주는 사람이 없으면 정말 금세 어지럽혀진다니까…",
+      "UnitTalk_JPN": "掃除する人がいないと、すぐ散らかっちゃうんだよね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아세라가 끓여준 차를 앞에 두고 마주 앉은 채로 얼마의 시간이 흘렀다.",
+      "UnitTalk_JPN": "アセラが入れたお茶を前に、向かい合って座ったあと。少しの時間が流れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…고마워, 단장. 오늘 와줘서.",
+      "UnitTalk_JPN": "…ありがとう、団長。今日は来てくれて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "처음에 집에서 나왔을 때는 잔소리하는 사람 없이 혼자 있다는 게 너무 좋았는데…",
+      "UnitTalk_JPN": "最初に家から出た時は、小言を言う人もいないし、一人暮らしがすっごく楽しかったんだけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "요새는 혼자 있다 보면 계속 부정적인 생각만 하게 되더라.",
+      "UnitTalk_JPN": "最近は1人でいると、ずっとマイナスなことばかり考えちゃって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "가출… 한 거 맞지?",
+          "JumpAnchorStringId_JPN": "家出…したんだな？"
+        }
+      ]
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "으응, 전에 얘기해 버렸지…?",
+      "UnitTalk_JPN": "うん、この前言っちゃった通り…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "잘 넘겼다고 생각했는데 역시 놓치지 않았구나.",
+      "UnitTalk_JPN": "上手く誤魔化せたかなって思ってたけど、やっぱりちゃんと聞いてたんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "우리 집은 NOA에도 나름 영향력이 있는 귀족 가문이야.",
+      "UnitTalk_JPN": "わたしの家は、NOAの中でもそれなりに影響力のある貴族の家系なの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그래서인지 내가 구원자가 되고 싶어 하는 걸 늘 달가워하지 않았어.",
+      "UnitTalk_JPN": "そのせいか、救援者になりたいって思いは反対された。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "위험하고 험한 일이라고, 나는 그런 일 하지 않아도 된다고 했지.",
+      "UnitTalk_JPN": "危険なことだって、わたしはそんなことしなくていいって言われたわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하지만 구원자가 되어서 누군가를 도와주고 라비스타를 지키는 건…",
+      "UnitTalk_JPN": "でも救援者になって誰かを助け、ラビスターを守るのは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "어렸을 때부터 변하지 않는 꿈이었으니까.",
+      "UnitTalk_JPN": "子どもの頃からずっと変わらない、わたしの夢だから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여정의 초대장을 받은 그날, 바로 짐을 챙겨서 집을 나왔지.",
+      "UnitTalk_JPN": "旅の招待状を受けとったその日、すぐに荷物を持って家を出たの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "집에서 보낸 사람들이 쫓아왔을 때는 이미 여정 등록을 완료한 뒤였어, 하하.",
+      "UnitTalk_JPN": "家から送られてきた使いの者が追いついた頃には、すでに旅の登録を終えた後だったの、ははっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아세라다운 행동력이었군.",
+          "JumpAnchorStringId_JPN": "アセラらしい行動力だ。"
+        }
+      ]
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "말하기 부끄럽지만…",
+      "UnitTalk_JPN": "言葉にするのは恥ずかしいけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "처음 여정을 시작할 때만 해도…",
+      "UnitTalk_JPN": "最初、旅を始めたとき…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그리고 지난번 실패 이전까지만 해도.",
+      "UnitTalk_JPN": "それに、この前失敗するまで",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "난 내가 특별하다고 생각했어.",
+      "UnitTalk_JPN": "わたしは自分が特別だと思ってた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "남들보다 재능 있고 더 잘 한다고 생각했어.",
+      "UnitTalk_JPN": "他の人よりも才能があって、上手くやれると思った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 그렇게 해야만 별의 구원자 같은 존재가 될 수 있다고 믿었어.",
+      "UnitTalk_JPN": "それでこそ、星の救援者みたいな存在になれるって信じてたの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그래서 아무리 열심히 해도 훈련의 진도를 더 빠르게 해주지 않는 단장이… 조금 답답하다고 생각하기도 했지.",
+      "UnitTalk_JPN": "だからいくら頑張っても、訓練のレベルをなかなか上げてくれない団長が…少しもどかしかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "하지만 스스로의 위치를 착각했던 건 나야. 정확히 판단한 게 단장이었고.",
+      "UnitTalk_JPN": "でも自分のことを勘違いしていたのはわたしで…団長の判断が正しかったわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그걸… 머리로는 알게 되었는데, 아직 완전히 받아들이진 못한 것 같아.",
+      "UnitTalk_JPN": "頭ではわかっているのに…まだ完全には受け入れられていないみたい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "내가 생각한 것보다 나는 대단하지 않았고, 목표로 했던 별의 구원자가 정말로 별처럼 멀리 있다고 느껴지기 시작했거든.",
+      "UnitTalk_JPN": "自分が思っていたほどに、わたしはすごい存在でもないし…目標としていた星の救援者は、本当に星のように遠くにいるってことに、気づき始めたの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "…그래서 최근 들어 조금 흔들리는 것은 사실이야.",
+      "UnitTalk_JPN": "…だから最近、少し悩んでることも事実よ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "여정을 포기할까 하는 생각까지도…",
+      "UnitTalk_JPN": "旅を諦めようかなって、思ったり…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건-",
+          "JumpAnchorStringId_JPN": "それは—"
+        }
+      ]
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "응, 그럴 리 없잖아! 나도 무슨 바보 같은 생각이야! 하면서 바로 머릿속에서 날려버렸다니까.",
+      "UnitTalk_JPN": "うん、そんなことするわけない！わたしも、何バカなこと考えてるの！ってすぐ頭の中から消し去っちゃったんだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하지만 순간 내가 그런 생각을 했다는 걸 깨닫고…",
+      "UnitTalk_JPN": "でも、一瞬でも自分がそんなこと考えてたってことに気づいて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "…깜짝 놀랐었어.",
+      "UnitTalk_JPN": "…ビックリしちゃったの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그랬구나…",
+          "JumpAnchorStringId_JPN": "そうだったんだ…"
+        }
+      ]
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…단장, 단장도 혹시… 이럴 때 있었어?",
+      "UnitTalk_JPN": "…団長、もしかして団長も…こんな経験あった？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "단장은… 어떻게 했어?",
+      "UnitTalk_JPN": "団長は…そんな時、どうしてた？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어떻게 했냐고 해도…",
+          "JumpAnchorStringId_JPN": "どうしてたって言われても…"
+        }
+      ]
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나 역시 아세라가 생각하는 것만큼 역경을 잘 이겨내는 믿음직한 단장은 아닌데.",
+      "UnitTalk_JPN": "自分とて、アセラが思うような逆境を乗り越えた頼もしい団長ではないが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…하지만 여기서 나도 잘 모른다고 정직하게 대답하는 건 좋은 선택은 아니겠지.",
+      "UnitTalk_JPN": "…でも、ここで正直に答えるのは良い選択ではないだろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitTalk_KOR": "아세라는 나에게 도움을 요청하고 있다.",
+      "UnitTalk_JPN": "アセラは私に助けを求めている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "지금의 아세라에게 도움이 될 만한 말이 뭐가 있을까.",
+      "UnitTalk_JPN": "今のアセラのためになるような言葉…何があるだろうか。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "예전에 이런 이야기를 들었는데…",
+          "JumpAnchorStringId_JPN": "昔、こんな話を聞いたことがある…"
+        }
+      ]
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응?",
+      "UnitTalk_JPN": "ん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득, 어디선가 들었던 말이 나도 모르게 입 밖으로 나왔다.",
+      "UnitTalk_JPN": "ふと、どこかで聞いたことのある言葉が口から出た。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혼자서 가면 빨리 갈 수 있다.",
+          "JumpAnchorStringId_JPN": "一人なら早く進める。"
+        }
+      ]
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…음?",
+      "UnitTalk_JPN": "…ううん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하지만 멀리 가고 싶다면...",
+          "JumpAnchorStringId_JPN": "しかし遠くまで行きたければ"
+        }
+      ]
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "함께 가라.",
+          "JumpAnchorStringId_JPN": "ともに進め。"
+        }
+      ]
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "말해놓고 보니 왠지 혼자 멋 부리며 말한 느낌이 강렬하게 밀려왔다.",
+      "UnitTalk_JPN": "急に、かっこつけたみたいになってしまった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_WIND.wav",
+      "UnitTalk_KOR": "명언 한 줄로 힘든 마음을 다잡을 수 있다면 누군들 그렇게 고생하겠어…!",
+      "UnitTalk_JPN": "言葉一つで心を癒すことができたら、誰も苦労なんてしないだろう…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "숨 막힐 듯한 침묵의 분위기가 이어진다.",
+      "UnitTalk_JPN": "息が詰まるような沈黙が続いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니 그러니까 이건-",
+          "JumpAnchorStringId_JPN": "いや、だからこれは—"
+        }
+      ]
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "힘들 때는 서로서로 도움을…",
+          "JumpAnchorStringId_JPN": "辛いときはお互い助け合って…"
+        }
+      ]
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "…어?",
+      "UnitTalk_JPN": "…おっ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내가 좀 더 도움이 되도록…",
+          "JumpAnchorStringId_JPN": "私がもっと力になれるよう…"
+        }
+      ]
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "단장, 별의 구원자 이야기 잘 모른다고 하지 않았어?",
+      "UnitTalk_JPN": "団長、星の救援者の話は詳しくないんじゃなかった？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…응?",
+          "JumpAnchorStringId_JPN": "…うん？"
+        }
+      ]
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "별의 구원자가 했다고 알려진 말 중에 비슷한 이야기가 있어…",
+      "UnitTalk_JPN": "星の救援者の言葉にも、似たものがあるの…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "<color=#F7BE45>빠르게 뛰었지만 별은 너무 높이 있었다</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>速く走ったが、星はあまりにも高すぎた</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "<color=#F7BE45>동료들과 함께했기에 별에 도달할 수 있었다</color>…",
+      "UnitTalk_JPN": "<color=#F7BE45>仲間と一緒にいたから、星にたどり着くことができた</color>…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그",
+          "JumpAnchorStringId_JPN": "…そ"
+        }
+      ]
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그…그래! 그런 의미지!",
+          "JumpAnchorStringId_JPN": "そ…そう！そんなところ！"
+        }
+      ]
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "좋은 사람이었구나 별의 구원자-!",
+      "UnitTalk_JPN": "いい人だったんだな、星の救援者は！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "자칫 잘못하면 아세라가 아니라 나의 멘탈이 위험했던 순간이었다.",
+      "UnitTalk_JPN": "一歩間違えばアセラではなく、私のメンタルが危機であった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나도 그냥 어디서 듣고…",
+          "JumpAnchorStringId_JPN": "私もどこかで聞いただけで…"
+        }
+      ]
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "지금까지는 빠르게 가는 것만 생각했어.",
+      "UnitTalk_JPN": "今までは速く進むことばかり考えてた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "멀리 있어도 나는 그만큼 빠르니까 금방 갈 거라고 자만했던 거야.",
+      "UnitTalk_JPN": "遠くても、速く進めばすぐに届くってうぬぼれてたんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "하지만 이번에 확실히 알게 되었어.",
+      "UnitTalk_JPN": "でもこれで、はっきり分かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "내가 꿈꾸는 목표가 얼마나 멀리 있는지.",
+      "UnitTalk_JPN": "わたしが夢見る目標が、どれだけ遠くにいるのか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "…그리고 그렇게 멀리 있다는 걸 알아도, 거기에 닿고 싶다는 마음은 변하지 않는다는 걸.",
+      "UnitTalk_JPN": "…それに、遥か遠くにいることを知っても、目指したいって気持ちに変わりがないことも。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "아직도 난 끝까지 가고 싶어.",
+      "UnitTalk_JPN": "やっぱり、わたしは最後まで行きたい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…함께 해줄 거지, 단장?",
+      "UnitTalk_JPN": "一緒にいてくれるよね？団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "물론이지.",
+          "JumpAnchorStringId_JPN": "もちろん。"
+        }
+      ]
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "돌아오는 길. 아세라는 이전과 같이 밝은 모습으로 내게 손을 흔들며 배웅을 해줬다.",
+      "UnitTalk_JPN": "帰り道。アセラは以前のように明るい姿で、手を振り見送ってくれた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "내일의 훈련은 기대가 된다.",
+      "UnitTalk_JPN": "明日の訓練が楽しみだ。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    }
+  ]
+}

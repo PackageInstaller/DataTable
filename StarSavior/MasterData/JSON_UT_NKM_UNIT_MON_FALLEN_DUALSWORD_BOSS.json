@@ -1,0 +1,491 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UiStates": [],
+    "BuffEffectPosition": {
+      "HEAD": 2.8,
+      "BODY": 1.9
+    },
+    "UnitBuffEffectScale": 1.8,
+    "UnitHudHeight": 4,
+    "UseRespawnFocus": true,
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_FOCUS_INFO_READY.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START_FOCUS",
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_VOICE_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_SPELL_DARK_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 47,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_ARMOR.wav"
+            ]
+          },
+          {
+            "EventFrame": 61,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_WHOOSH_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 90,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_WHOOSH_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 98,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_ARMOR_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 120,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_ARMOR_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 139,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_ARMOR_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_SPELL_DARK_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 27,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_SPELL_DARK_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 55,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_WHOOSH_06.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "FormationEnemy": "SFT_CENTER_TARGET_ONLY"
+        },
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 31,
+            "EventEndFrame": 39,
+            "EventMoveTarget": "NEMT_TARGET",
+            "OffsetFront": -1.3
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 85,
+            "EventEndFrame": 96,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 42,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 49,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_SPELL_DARK.wav"
+            ]
+          },
+          {
+            "EventFrame": 19,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_SPELL_DARK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_VOICE.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_HIT.wav"
+            ]
+          },
+          {
+            "EventFrame": 46,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_HIT_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 76,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 103,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_BODYFALL.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ONLY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 69,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 71,
+            "ReActType": "NRT_DAMAGE_A",
+            //"StopTimeDef": 0.15,
+            //"CameraCrashGap": 0.2,
+            //"CameraCrashTime": 0.4,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 76,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 78,
+            "ReActType": "NRT_DAMAGE_A",
+            //"StopTimeDef": 0.15,
+            //"CameraCrashGap": 0.2,
+            //"CameraCrashTime": 0.4,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 92,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 94,
+            "ReActType": "NRT_DAMAGE_A",
+            //"StopTimeDef": 0.15,
+            //"CameraCrashGap": 0.2,
+            //"CameraCrashTime": 0.4,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 129,
+            "ReActType": "NRT_DAMAGE_B",
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.5,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 3,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_SPELL_DARK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_VOICE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_SPELL_DARK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 54,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_WHOOSH_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 63,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_HIT_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 68,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_HIT_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 72,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_HIT_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 75,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_HIT_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 94,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_WHOOSH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 103,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_VOICE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 120,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_WHOOSH_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 130,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_HIT_07.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "FormationEnemy": "SFT_NORMAL_LINE"
+        },
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 101,
+            "ShowOnEnemy": true
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 128,
+            "ReActType": "NRT_DAMAGE_A",
+            //"StopTimeAtk": 0.1,
+            //"StopTimeDef": 0.1,
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.5,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_VOICE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_SPELL_DARK_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 22,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_SWORD_SCRAPE.wav"
+            ]
+          },
+          {
+            "EventFrame": 58,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_SPELL_DARK_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 61,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_VOICE_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 81,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_WHOOSH_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 101,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_WHOOSH_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 106,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_VOICE_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 125,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_HIT_08.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        //"DyingStateTimeChangeStateTime": 8,
+        //"DyingStateTimeChangeState": "USN_DIE",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_SPELL_DARK_10.wav"
+            ]
+          },
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_VOICE_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_BODYFALL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 47,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          },
+          {
+            "EventFrame": 48,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_FALLEN_DUALSWORD_BLACK_BODYFALL_03.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

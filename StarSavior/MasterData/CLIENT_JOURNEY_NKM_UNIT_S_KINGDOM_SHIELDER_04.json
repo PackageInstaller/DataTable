@@ -1,0 +1,1012 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OPFIELD_NIGHT.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "CameraOffset": "TRIPLE_2"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "카르멘이 숨기고 있는 것이 무엇인지 조사하던 나는 그녀가 매일 밤 외출을 나간다는 첩보를 받았다. ",
+      "UnitTalk_JPN": "隠し事について調査していた私は、カルメンが毎晩出かけているという情報を手に入れた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "정보의 출처는 그녀가 머무는 숙소의 옆집 주민이었으니 믿을만한 것이었다. ",
+      "UnitTalk_JPN": "情報の出所はカルメンの隣の部屋に住む住民で、信用できるものだった。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "혹여나 들키지 않도록 멀찍이 떨어진 채 그녀의 뒤를 쫓아 도착한 곳은 어느 널찍한 공터. ",
+      "UnitTalk_JPN": "私はバレないように、遠くからカルメンの跡をつけた。そして到着したのは、広い空き地だった。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "간단히 준비 운동을 마친 카르멘은 곧바로 방패와 검을 휘두르기 시작했다. ",
+      "UnitTalk_JPN": "カルメンは軽く準備運動を済ませると、すぐに盾と剣を振り回し始めた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_WHOOSH_SWORD_02.wav"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_WHOOSH_SWORD_66.wav"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 1.0
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "아니야… 조금 더 빠르게! 하압…!",
+      "UnitTalk_JPN": "こうじゃない…もっと速く！はぁっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "일련의 연계 동작을 마친 그녀는 거친 숨을 몰아쉬며 품에서 무언가를 꺼내 벌컥벌컥 들이켠다. ",
+      "UnitTalk_JPN": "一連の動作を終えたカルメンは、荒い息遣いで懐から何かを取り出すと、ゴクゴクと飲み干した。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OPFIELD_NIGHT.png",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.8
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후우…",
+      "UnitTalk_JPN": "ふぅ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "바람이 불어오고, 흐드러진 은발이 달빛을 받아 반짝이는 모습이 마치 한 폭의 그림 같다.",
+      "UnitTalk_JPN": "風でふわりとなびく銀髪が、月の光に照らされ輝く様子は、まるで絵のようだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…문제는 바람 탓에 흙먼지가 이쪽으로 날려온다는 점이다. ",
+      "UnitTalk_JPN": "…問題は、風のせいで砂埃がこっちに飛んできたということ。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "코끝이 간질거리지만 참아야 한다… ",
+      "UnitTalk_JPN": "鼻がムズムズするが、我慢しないと… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "으, 으…",
+      "UnitTalk_JPN": "は、は…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "으에에취!",
+          "JumpAnchorStringId_JPN": "ハクショーン！"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…?",
+      "UnitTalk_JPN": "…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "나를 발견한 그녀의 눈이 동그랗게 커졌다.",
+      "UnitTalk_JPN": "私を見つけたカルメンの目は、まん丸になった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…콜록콜록!",
+      "UnitTalk_JPN": "…げほっ、げほっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "다, 단장님이 여기를 어떻게…?",
+      "UnitTalk_JPN": "だ、団長さんがどうしてここに…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "매일 밤이면 네가 숙소를 나선다는 이야기를 들었거든.",
+          "JumpAnchorStringId_JPN": "毎晩、宿を出てどこかに行ってるって話を聞いたから。"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후. 그러니까 절 몰래 미행하셨다는 말씀이시군요. ",
+      "UnitTalk_JPN": "ふふっ。つまり、こっそりと私を尾行していたということですね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "크흠! 아니지. ",
+          "JumpAnchorStringId_JPN": "コホン！それは違うよ。 "
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여정 단장으로서 여정 단원이 숨기고 있는 게 무엇인지 조사하는 건 당연한 일이라고.",
+          "JumpAnchorStringId_JPN": "旅の団長として、団員が何を隠してるのか調査するのは当然のことだし。"
+        }
+      ]
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "후후. 당황하시긴. 정곡을 찔리셨나봐요? ",
+      "UnitTalk_JPN": "ふふっ。慌てるなんて、図星なのでしょう？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그런데, 숨기다니요?",
+      "UnitTalk_JPN": "でも、隠し事だなんて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이렇게 밤에 몰래 훈련하러 나온 것 말이야.",
+          "JumpAnchorStringId_JPN": "夜遅くにこっそり訓練してることだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "후후. 오해랍니다. ",
+      "UnitTalk_JPN": "ふふっ。誤解ですよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "저는 그저 잠이 오지 않아서 가볍게 몸을 움직이러 왔을 뿐이거든요. ",
+      "UnitTalk_JPN": "私はただ眠れなくて、軽く体を動かしに来ただけなのですから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…오늘 낮에 했던 훈련도 충분히 힘든 훈련이었어.",
+          "JumpAnchorStringId_JPN": "…昼のトレーニングも、十分きついメニューだったのに。"
+        }
+      ]
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "몸을 너무 혹사시키는 건 아무것도 하지 않는 것만 못할 때가 많아.",
+          "JumpAnchorStringId_JPN": "体を酷使しすぎるよりも、休んだ方が良いこともあるんだぞ。"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "걱정해 주시는 건 감사해요. ",
+      "UnitTalk_JPN": "心配してくださって、ありがとうございます。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "하지만 전 정말 괜찮은걸요. ",
+      "UnitTalk_JPN": "でも、私は本当に大丈夫なんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "기사단의 <color=#F7BE45>극기 주간 훈련</color>에는 사흘 밤낮을 자지 않고 행군하는 훈련도 있답니다. ",
+      "UnitTalk_JPN": "騎士団の<color=#F7BE45>猛特訓週間</color>では、三日三晩寝ずに歩き続けることもあるのですよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건 매일 하는 게 아니잖아…",
+          "JumpAnchorStringId_JPN": "でも、それは毎日するものじゃないし…"
+        }
+      ]
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "게다가 아무리 짙게 쌓인 피로도 이 전투 광기 수프… ",
+      "UnitTalk_JPN": "それに…どんなに疲れていても、この戦闘狂スープ… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "아, 아니 <color=#F7BE45>피로 회복 수프</color> 한 잔이면 말끔히 사라진답니다. ",
+      "UnitTalk_JPN": "じ、じゃなくて、<color=#F7BE45>疲労回復スープ</color>を一杯飲めば、疲れも消え去るんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭔가 무서운 이름을 들은 것 같은데.",
+          "JumpAnchorStringId_JPN": "何か、怖い言葉が聞こえてきたけど。"
+        }
+      ]
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후. 잘못 들으셨나 봐요. <color=#F7BE45>피로 회복 수프</color>가 맞아요. ",
+      "UnitTalk_JPN": "ふふっ。聞き間違えでしょう。<color=#F7BE45>疲労回復スープ</color>です。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>피로 회복 수프</color>?",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>疲労回復スープ</color>？"
+        }
+      ]
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "네. 모나스티르 공국 기사단 전통의 비방으로 만든 약재 수프죠.",
+      "UnitTalk_JPN": "はい。モナスティル公国の騎士団に代々伝わる、秘伝の薬膳スープです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_CHIME_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "사흘 동안 전력 행군을 해서 쓰러진 병사도 이거 한 입이면 단숨에 전투태세로 만들 수 있답니다.",
+      "UnitTalk_JPN": "三日間、全力で行軍して倒れた兵士も…一口飲めば、一瞬にして戦闘態勢を取ることもできるんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "설명을 들으니까 처음 들은 이름이 더 어울리는 것 같아.",
+          "JumpAnchorStringId_JPN": "やっぱり、最初に聞いたスープ名の方が合ってそうだけど。"
+        }
+      ]
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아뇨. <color=#F7BE45>피로 회복 수프</color>예요.",
+      "UnitTalk_JPN": "いえ。<color=#F7BE45>疲労回復スープ</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "한번 드셔보시겠어요? ",
+      "UnitTalk_JPN": "一度飲まれてみますか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "부담가지실 필요 없어요. 저희 기사단 보급품 중에는 가장 남아도는 물건이니까요.",
+      "UnitTalk_JPN": "遠慮なさらないでくださいね。騎士団の補給品の中でも、最も余っているものですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "원하시면 제가 직접 먹여드릴 수도 있답니다. 후후",
+      "UnitTalk_JPN": "お望みであれば、私が飲ませてあげますよ。ふふっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "사양할게…",
+          "JumpAnchorStringId_JPN": "遠慮しとくよ…"
+        }
+      ]
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "사양하지 말고 한 모금만 드셔 보세요. ",
+      "UnitTalk_JPN": "そんなこと言わずに、一口だけ飲んでみましょう？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "자, 아 하세요~! ",
+      "UnitTalk_JPN": "さぁ、アーンしてくださいね～！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "웁! 우웁…!",
+          "JumpAnchorStringId_JPN": "ウッ！オエッ…！"
+        }
+      ]
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.6
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "UnitTalk_KOR": "<color=#F7BE45>피로 회복 수프</color>의 맛은 끔찍했다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>疲労回復スープ</color>の味は、恐ろしいものだった。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "도대체 무슨 맛인지 짐작도 가지 않는 알싸한 향. ",
+      "UnitTalk_JPN": "何味なのか見当もつかないようなピリッとした香り。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "게다가 정체 모를 건더기가 씹히는 경험은 최악이라 해도 좋을 정도다.",
+      "UnitTalk_JPN": "その上、正体不明の具を噛んだ時の食感は、最悪と言ってもいい程だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 놀랍게도 온몸이 한결 가벼워지는 느낌이 들었다. ",
+      "UnitTalk_JPN": "でも驚くことに、全身が軽くなるのを感じた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.8
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "어떤가요, 단장님?",
+      "UnitTalk_JPN": "どうですか、団長さん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "인정하고 싶지 않지만… 효과가 있네.",
+          "JumpAnchorStringId_JPN": "認めたくないけど…効果はあるみたいだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "후후. 그렇다니까요.",
+      "UnitTalk_JPN": "ふふっ。言ったでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "자. <color=#F7BE45>피로 회복 수프</color>도 마셨으니 저는 조금 더 움직여야겠어요.  ",
+      "UnitTalk_JPN": "さぁ、<color=#F7BE45>疲労回復スープ</color>も飲んだことですし、私はもう少し動かないと。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장님은 이제 돌아가셔서 푹 주무세요. ",
+      "UnitTalk_JPN": "団長さんは先に戻って、ゆっくりお休みになってくださいね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "저는 아직 멀쩡하니 걱정하지 않으셔도 된답니다. ",
+      "UnitTalk_JPN": "私はまだ元気なので、心配いりませんよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "함께 해줄게. 혼자는 외로우니까.",
+          "JumpAnchorStringId_JPN": "一緒にやろう。一人だと寂しいし。"
+        }
+      ]
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후후. 좋아요. ",
+      "UnitTalk_JPN": "ふふっ。いいでしょう。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그럼 우리 숙면을 위해서 힘내봐요.",
+      "UnitTalk_JPN": "それでは、ぐっすり眠れるように頑張ってみましょうか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_WHOOSH_SWORD_02.wav"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_WHOOSH_SWORD_02.wav"
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_WHOOSH_SWORD_66.wav"
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_SWORD_SLASH_BIG_06.wav"
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.3
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2_NIGHT.png"
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "달밤에 훈련으로 땀을 흘린 덕분일까.",
+      "UnitTalk_JPN": "月夜の下で訓練し、汗をかいたせいか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그날 밤은 돌아오자마자 그대로 곯아떨어졌다. ",
+      "UnitTalk_JPN": "部屋に戻るや否や、そのまま寝てしまった。 ",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OPFIELD_NIGHT.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

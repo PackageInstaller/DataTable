@@ -1,0 +1,372 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_16_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아, 이제 오셨네요. 단장님.",
+      "UnitTalk_JPN": "あっ、いらっしゃいましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "한참이나 기다렸다고요.",
+      "UnitTalk_JPN": "ずいぶんお待ちしたんですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "기분이 좋아 보이네.",
+          "JumpAnchorStringId_JPN": "ご機嫌そうだな。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "난방비 문제는 잘 해결했어?",
+          "JumpAnchorStringId_JPN": "暖房費の問題は解決したの？"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 그거 말이죠.",
+      "UnitTalk_JPN": "あぁ、その件ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "실은 이번에 NOA 중앙 은행에서 청년 생활 지원을 위한 대출 상품이 새로 생겼거든요.",
+      "UnitTalk_JPN": "実は…NOA中央銀行で、若者向けの生活支援ローンが新しくできたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "저렴한 금리로 50년간 분할상환이 가능하다고 해서 계약하기로 했죠.",
+      "UnitTalk_JPN": "低金利で50年間の分割払いが可能だということで、契約することにしました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "덕분에 이젠 난방비 걱정 없이 하루에 세 번씩 목욕을 한답니다.",
+      "UnitTalk_JPN": "おかげで今は暖房費も気にせず、一日三回もお風呂に入れているんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "이게 인생이죠!",
+      "UnitTalk_JPN": "これぞ人生です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "저렴한 금리? 얼만데?",
+          "JumpAnchorStringId_JPN": "低金利って、いくらなの？"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "저, 저렴한… 연 복리 17 퍼센트 정도…",
+      "UnitTalk_JPN": "えっと…年利17％ぐらいで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 아하하! 말하고 보니 조금 비싸 보이는 느낌도 있네요.",
+      "UnitTalk_JPN": "あ、あはは！少し高く聞こえるかもしれませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "하지만 NOA 행정법상 최고 이자율보다는 조금 싸다고요.",
+      "UnitTalk_JPN": "でも、NOA行政法上の最高金利よりは少し安いんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "360개월 할부에 50년 대출…",
+          "JumpAnchorStringId_JPN": "360回払いの50年ローン…"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "괜찮아요! 우울한 과거는 어둠 속에 묻고 밝은 미래로 떠나는 것이 청년의 특권이니까요!",
+      "UnitTalk_JPN": "大丈夫です！憂鬱な過去は闇に葬り、明るい未来へ旅立つのが若者の特権ですから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그런 의미에서 여행 준비는 잘 해오셨죠?",
+      "UnitTalk_JPN": "という訳で、遠征の準備はしっかりされましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여행이라니?",
+          "JumpAnchorStringId_JPN": "遠征って？"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": " 네? 분명 지난번에 여행에 대한 공지를…",
+      "UnitTalk_JPN": " えっ？この前、遠征に関するお話を…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…까먹고 말씀 안 드렸구나.",
+      "UnitTalk_JPN": "…忘れていましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 생각해 보니 그렇게 중요한 건 아닌 것 같네요!",
+      "UnitTalk_JPN": " でも、それほど重要なことでもないですし！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "괜찮아요. 원래 인생이란 예측하지 못한 사건의 연속이니까요.",
+      "UnitTalk_JPN": "大丈夫です。人生とは、予期せぬ出来事の連続ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "중요한 문제가 맞는 것 같은데…",
+          "JumpAnchorStringId_JPN": "いや、重要なことだと思うけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "자, 자! 사소한 건 신경 쓰지 마시고 어서 역으로 가죠!",
+      "UnitTalk_JPN": "さぁさぁ！細かいことは気にせず、早く駅へ向かいましょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 저희를 태울 <color=#F7BE45>[플라티나 익스프레스]</color> 특급열차가 곧 출발할 예정이니까요.",
+      "UnitTalk_JPN": " 私たちが乗る<color=#F7BE45>「プラチナエクスプレス」</color>特急列車が、まもなく出発しますよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 다음 평가전인 <color=#F7BE45>[원정 평가전]</color>은 고대의 역사가 살아 숨 쉬는 장소.",
+      "UnitTalk_JPN": " 次の試験である<color=#F7BE45>「遠征試験」</color>は、古代の歴史が息づく場所…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": " <color=#F7BE45>[유적도시 아가논]</color>에서 진행됩니다!",
+      "UnitTalk_JPN": " <color=#F7BE45>「遺跡都市アガノン」</color>で行われます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "출발 시간에 늦지 않게 서두르세요! 자세한 설명은 도착해서 말씀드릴 테니까!",
+      "UnitTalk_JPN": "出発時間に遅れないよう急ぎましょう！詳しい説明は到着してからお話しますね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_16_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐! 잠깐만!",
+          "JumpAnchorStringId_JPN": "ちょっと！待ってくれー！"
+        }
+      ]
+    }
+  ]
+}

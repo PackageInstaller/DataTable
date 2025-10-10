@@ -1,0 +1,230 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_ENCOUNTER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 7,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_DOWNTOWN"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_RED",
+      "UnitNameString": [
+        "SI_NPC_TOWNGUARD"
+      ]
+    },
+    {
+      "Uid": 15,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "시가지에 슬라임이 대량 증식했다! 타운 가드가 대피령을 내렸는데 어떻게 할까?",
+      "UnitTalk_JPN": "街にスライムが大量発生！タウンガードが避難命令を出したが、どうする？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "슬라임을 몰아내자.",
+          "JumpAnchorStringId_JPN": "スライムを追い出そう。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "대피를 돕자.",
+          "JumpAnchorStringId_JPN": "避難を助けよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "얽히지 말자.",
+          "JumpAnchorStringId_JPN": "絡まれないようにしよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_DOWNTOWN",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_5",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "퇴치를 끝마쳤을 때는 온몸이 점액 투성이가 되었다.",
+      "UnitTalk_JPN": "退治を終えた時には全身が粘液まみれになっていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_5",
+      "UnitPos": "POS2",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고된 하루였지만 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 무언가 깨달은 모양이다!",
+      "UnitTalk_JPN": "厳しい一日だったが、<color=#F7BE45>[CHARACTER_NAME]</color>は何かを悟ったようだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 43,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_DOWNTOWN",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_5",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 길을 잘못 들어온 시민들을 다른 길로 안내해 줬다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、道に迷った市民たちを別の道へ案内した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_5",
+      "UnitPos": "POS2",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "타운 가드를 도와 준 대가로 보상을 받았다!",
+      "UnitTalk_JPN": "タウンガードを助けた見返りとして報酬をもらった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 58,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_DOWNTOWN",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "대피하는 인파에 시달리느라 고생했다….",
+      "UnitTalk_JPN": "避難する人々に悩まされて苦労した…",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마지막 시험을 앞두고, 클라리사는 여정이 끝나면 같이 아버지를 뵈러 갈 것을 권유했다.",
+      "UnitTalk_JPN": "最終試験を前に、クラリッサは旅が終わったら一緒に父に会いに行こうと勧めた。",
+      "TalkTime": 0.03
+    }
+  ]
+}

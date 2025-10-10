@@ -1,0 +1,1168 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "StartBgmFileName": "MUSIC_BATTLE_NORMAL_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "단장님, 위험합니다!",
+      "UnitTalk_JPN": "団長殿、危ない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_METAL_04.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…큭!",
+      "UnitTalk_JPN": "…くっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "하압!",
+      "UnitTalk_JPN": "はぁっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "BgFlashBang": 0.6,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_HIT_12.wav",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_MON_SLIME_RED"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_SLIME_RED",
+      "UnitTalk_KOR": "뀨잉!",
+      "UnitTalk_JPN": "キューッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BOING_02.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MON_SLIME_RED"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고마워. 덕분에 살았어.",
+          "JumpAnchorStringId_JPN": "ありがとう、助かったよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "아닙니다. 별말씀을.",
+      "UnitTalk_JPN": "いえ、とんでもございません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그런데 예상보다 수가 많군요.",
+      "UnitTalk_JPN": "しかし、思ったよりも数が多いですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "NOA 근교에 슬라임이 이상 증식했다고는 들었지만 규격 외 수준입니다.",
+      "UnitTalk_JPN": "NOA近郊でスライムが異常繁殖しているという話は聞いていましたが、これは規格外です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 레이븐 월에 밀려오던 마수들에 비하면 별거 아니죠.",
+      "UnitTalk_JPN": "しかし、レイヴン・ウォールに押し寄せてきた魔獣に比べれば大したことありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "계속 전진하겠습니다.",
+      "UnitTalk_JPN": "このまま進みましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "서부 탈환대에서 돌격대원으로 활약한 만큼 베스타는 실전에서 뛰어난 솜씨를 뽐냈다.",
+      "UnitTalk_JPN": "西部奪還隊で切り込み隊長として活躍していたこともあり、ベスタは実戦で優れた腕前を発揮した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 뭔가…",
+      "UnitTalk_JPN": "でも、なんだか…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "단장님? 무슨 생각 중이십니까?",
+      "UnitTalk_JPN": "団長殿？何か考えごとでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니야, 기분 탓이겠지. 계속해서 가자!",
+          "JumpAnchorStringId_JPN": "いや、きっと気のせいだ。先に進もう！"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FIELD_PLAIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_MON_SLIME_BLUE",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BOING_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MON_SLIME_BLUE",
+      "UnitTalk_KOR": "뀨잉!",
+      "UnitTalk_JPN": "キューッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "뒤에서 새로운 슬라임이…!",
+      "UnitTalk_JPN": "後ろからまたスライムが…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_07.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "제가 막겠습니다!",
+      "UnitTalk_JPN": "私が食い止めます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고마워!",
+          "JumpAnchorStringId_JPN": "ありがとう！"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "UnitStrId": "NKM_UNIT_NPC_MON_SLIME_GREEN",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BOING_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MON_SLIME_GREEN",
+      "UnitTalk_KOR": "뀨잉!",
+      "UnitTalk_JPN": "キューッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_16.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이 공격은 제가 받아내겠습니다!",
+      "UnitTalk_JPN": "私が攻撃を受け止めます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내가 막아도 됐는데…?",
+          "JumpAnchorStringId_JPN": "私がやってもいいんだけど…？"
+        }
+      ]
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FIELD_PLAIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_MON_SLIME_YELLOW",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BOING_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MON_SLIME_YELLOW",
+      "UnitTalk_KOR": "뀨와아앙!",
+      "UnitTalk_JPN": "キュイーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_20.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "크윽! 하아… 하아…!",
+      "UnitTalk_JPN": "くっ！はぁ…はぁ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…?",
+          "JumpAnchorStringId_JPN": "…？"
+        }
+      ]
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "단장님, 할 이야기가 있다니 무슨 일입니까?",
+      "UnitTalk_JPN": "団長殿、お話とは一体何でしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "새로운 전술이라도 떠오르셨습니까?",
+      "UnitTalk_JPN": "新しい戦術でも思いつかれたのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 기분 탓일지도 모르겠지만…",
+          "JumpAnchorStringId_JPN": "いや、気のせいかもしれないけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…제가 일부러 모든 공격을 받아내고 있는 것 같다고요?",
+      "UnitTalk_JPN": "…わざとすべての攻撃を受けているように見える…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "꼭 그렇지만은 않습니다.",
+      "UnitTalk_JPN": "必ずしもそういうわけではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "방금 그 침묵은 뭔데?",
+          "JumpAnchorStringId_JPN": "今の間はなんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "으음…",
+      "UnitTalk_JPN": "うーん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "역시 단장님의 눈은 속일 수 없군요.",
+      "UnitTalk_JPN": "やはり、団長殿の目はごまかせませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_12.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장님. 제가 왜 무기로 방패를 선택했는지 얘기한 적 있습니까?",
+      "UnitTalk_JPN": "団長殿。私がなぜ武器に盾を選んだのか、お話したことがありましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "…훈련병 때 있었던 일입니다.",
+      "UnitTalk_JPN": "…訓練兵の頃の出来事です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAYING_FIELD.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BRAWL.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 1.0,
+      "UnitNameString": [
+        "SI_RECRUIT_A"
+      ],
+      "UnitTalk_KOR": "131… 132…!",
+      "UnitTalk_JPN": "131…132…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitNameString": [
+        "SI_RECRUIT_A"
+      ],
+      "UnitTalk_KOR": "크윽!",
+      "UnitTalk_JPN": "くっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRAINING_HELPER"
+      ],
+      "UnitTalk_KOR": "나약한 녀석! 고작 팔굽혀펴기 132개로 뻗는 건가!",
+      "UnitTalk_JPN": "まったく、情けないぞ！たかが腕立て伏せ132回でへばるのか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRAINING_HELPER"
+      ],
+      "UnitTalk_KOR": "저기 훈련병을 봐라! 벌써 200개도 더 하고 있다!",
+      "UnitTalk_JPN": "あそこの訓練兵を見ろ！もう200回以上やってるぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "232… 233…… 234……!",
+      "UnitTalk_JPN": "232…233……234……！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_RECRUIT_A"
+      ],
+      "UnitTalk_KOR": "입소 동기인데 어디서부터 차이가 난 거지…?",
+      "UnitTalk_JPN": "同期なのに、どこで差がついたんだ…？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_RECRUIT_B"
+      ],
+      "UnitTalk_KOR": "뒤처질 수 없지! 우리도 따라가자!",
+      "UnitTalk_JPN": "負けてられない！私たちも追いつかないと！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "254… 255……!",
+      "UnitTalk_JPN": "254…255……！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "(…처음 알았어.)",
+      "UnitTalk_JPN": "(…初めて知った。)",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "(견딜 만한 고통은…)",
+      "UnitTalk_JPN": "(耐えられるほどの苦痛は…)",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_18.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BRAWL.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "NORMAL",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HEARTSOUND_1.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "쾌감과 비슷하더군요.",
+      "UnitTalk_JPN": "快感に似ているのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "그래서 방패를 들었습니다. 고통을 조절할 수 있으니까요.",
+      "UnitTalk_JPN": "そこで私は、盾を選びました。苦痛をコントロールできるからです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런 것까지 설명하지 마!",
+          "JumpAnchorStringId_JPN": "そこまで説明しなくていいから！"
+        }
+      ]
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "다른 누구에게도 들려주지 않았던 이야기인데…",
+      "UnitTalk_JPN": "誰にも話したことがなかったんです…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이 사실을 알고 있는 사람은 단장님뿐입니다.",
+      "UnitTalk_JPN": "このことを知っているのは、団長殿だけですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알고 싶지 않았다고…",
+          "JumpAnchorStringId_JPN": "知りたくなかったよ…"
+        }
+      ]
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…응?",
+      "UnitTalk_JPN": "…ん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "단장님! 조심하십시오, 머리 위에!",
+      "UnitTalk_JPN": "団長殿、危ない！上です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BOING_02.wav",
+      "UnitNameString": [
+        "SI_SLIME"
+      ],
+      "UnitTalk_KOR": "뀨잉!",
+      "UnitTalk_JPN": "キューッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이런…!",
+          "JumpAnchorStringId_JPN": "しまった…！"
+        }
+      ]
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_METAL_04.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "흐읍!",
+      "UnitTalk_JPN": "ふぅっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…요격에는 성공했지만.",
+      "UnitTalk_JPN": "迎撃には成功しましたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "파편이 여기저기 튀었군요. 괜찮으십니까, 단장님?",
+      "UnitTalk_JPN": "あちこちに飛び散ってしまいましたね。団長殿、大丈夫ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "머리부터 발끝까지 슬라임의 점액으로 뒤덮여서…",
+      "UnitTalk_JPN": "全身、スライムの粘液まみれですね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…갑자기 코피는 왜 흘리는데?",
+          "JumpAnchorStringId_JPN": "…なんで鼻血が出てるんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…후우.",
+      "UnitTalk_JPN": "…ふう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "감사합니다. 단장님.",
+      "UnitTalk_JPN": "ありがとうございます、団長殿。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 감사하는데!?",
+          "JumpAnchorStringId_JPN": "お礼を言われるようなことはしてないけど！？"
+        }
+      ]
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "NORMAL",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "돌아오는 길에 눈이 마주칠 때마다 베스타는 코피를 흘렸다.",
+      "UnitTalk_JPN": "帰り道、目が合うたびにベスタは鼻血を出していた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…숙소로 돌아오자마자 깨끗이 씻었다.",
+      "UnitTalk_JPN": "…宿に戻るなり、粘液をきれいに洗い流した。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

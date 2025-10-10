@@ -1,0 +1,193 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/AutoSkillTemplet.jsonc",
+  "_Version": 1, 
+  "Data": [
+    {
+      "Id": 1, //스킬 사용 기본 규칙(디폴트)
+      "SkillConditions": [
+        {
+          "Condition": {},
+          "TargetConditionId": 1
+        }
+      ]
+    },
+    {
+      "Id": 2, // 회복 스킬에 사용할 기본 규칙
+      "SkillConditions": [
+        {
+          "Condition": {
+            "AllyHpRateLessThan": 7500 //아군이 75% 이하가 존재할 경우
+          },
+          "TargetConditionId": 2 //회복 기본 타겟팅 순서
+        }
+      ]
+    },
+    {
+      "Id": 3, // 부활 및 회복 스킬에 사용할 규칙
+      "SkillConditions": [
+        {
+          "Condition": {
+            "AllyDie": true //사망한 아군이 존재할 경우
+          },
+          "TargetConditionId": 3
+        },
+        {
+          "Condition": {
+            "AllyHpRateLessThan": 7500 //아군이 75% 이하가 존재할 경우
+          },
+          "TargetConditionId": 2 //회복 기본 타겟팅 순서
+        }
+      ]
+    },
+    {
+      "Id": 4, // 랜덤 타겟
+      "SkillConditions": [
+        {
+          "Condition": {            
+          },
+          "TargetConditionId": 4
+        }        
+      ]
+    },
+    {
+      "Id": 5, // 자신이 아닌 아군 우선 타겟(세이라, 샤를 같은 유닛)
+      "SkillConditions": [
+        {
+          "Condition": {            
+          },
+          "TargetConditionId": 5
+        }        
+      ]
+    },
+    {
+      "Id": 6, // 자신이 가장 최근에 때린 유닛 우선 타겟
+      "SkillConditions": [
+        {
+          "Condition": {            
+          },
+          "TargetConditionId": 6
+        }        
+      ]
+    },
+    {
+      "Id": 7, //트리거 유닛 타겟 지정(트리거 유닛 미존재 시 발동X)
+      "SkillConditions": [
+        {
+          "Condition": {
+            "ExistTriggerUnit" : true
+          },
+          "TargetConditionId": 7 //트리거 유닛
+        }
+      ]
+    },
+    {
+      "Id": 8, //자신을 마지막으로 공격한 대상 추적
+      "SkillConditions": [
+        {
+          "Condition": {
+          },
+          "TargetConditionId": 17
+        }
+      ]
+    },
+    {
+      "Id": 9, //생명력이 가장 낮은 유닛 추적
+      "SkillConditions": [
+        {
+          "Condition": {
+          },
+          "TargetConditionId": 16
+        }
+      ]
+    },
+    {
+      "Id": 10, //공격력이 가장 높은 유닛 추적
+      "SkillConditions": [
+        {
+          "Condition": {
+          },
+          "TargetConditionId": 11
+        }
+      ]
+    },
+    {
+      "Id": 11, //행동 게이지가 가장 높은 유닛 추적
+      "SkillConditions": [
+        {
+          "Condition": {
+          },
+          "TargetConditionId": 18
+        }
+      ]
+    },
+    ///////////////////////////////몬스터////////////////////////////////////
+    {
+      "Id": 1001, //몬스터 스킬 사용 기본 규칙(디폴트)
+      "SkillConditions": [
+        {
+          "Condition": {},
+          "TargetConditionId": 1001
+        }
+      ]
+    },
+    {
+      "Id": 1002, //전위 100%(데모라이기스, 공허조율자)
+      "SkillConditions": [
+        {
+          "Condition": {},
+          "TargetConditionId": 1002
+        }
+      ]
+    },
+    {
+      "Id": 1003, //후위 100%(공허징벌자)
+      "SkillConditions": [
+        {
+          "Condition": {},
+          "TargetConditionId": 1003
+        }
+      ]
+    },
+    {
+      "Id": 1004, //특정 디버프 보유 유닛 타겟 지정(공허징벌자)
+      "SkillConditions": [
+        {
+          "Condition": {},
+          "TargetConditionId": 1004
+        }
+      ]
+    },
+    {
+      "Id": 1005, //특정 버프 보유 상태일 대 동작 (봄버)
+      "SkillConditions": [
+        { 
+          "Condition": {
+            "SelfSpecificBuff": ["BI_DOLL_BOMBER_1"]//SelfSpecificBuff
+          },
+          "TargetConditionId": 1
+        }
+      ]
+    },
+    ///////////////////////////////테스트////////////////////////////////////
+    {
+      "Id": 9901, //리더 유닛 타겟 지정
+      "SkillConditions": [
+        {
+          "Condition": {
+          },
+          "TargetConditionId": 9901 //리더 유닛
+        }
+      ]
+    },
+    // {
+    //   "Id": 9902, //특정 버프 제외 유닛 타겟 지정
+    //   "SkillConditions": [
+    //     {
+    //       "Condition": {
+    //       },
+    //       "TargetConditionId": 9902 //특정 버프 제외 유닛 타겟 지정
+    //     }
+    //   ]
+    // }
+  ]
+}

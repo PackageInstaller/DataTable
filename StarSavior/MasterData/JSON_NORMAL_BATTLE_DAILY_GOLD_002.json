@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_SHIELD_RED_DAILY_00",
+            "ChangeAdjustType": "NUAT_SUN",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_CROSSBOW_RED_DAILY_00",
+            "ChangeAdjustType": "NUAT_SUN",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_SHIELD_RED_DAILY_00",
+            "ChangeAdjustType": "NUAT_SUN",
+            "AllSkillAvailable": true
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_SHIELD_RED_DAILY_00",
+            "ChangeAdjustType": "NUAT_SUN",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_VETERAN_SHIELD_GOLD_BOSS_DAILY_MATERIAL_00",
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_SUN",
+            "IsBoss": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_SHIELD_RED_DAILY_00",
+            "ChangeAdjustType": "NUAT_SUN",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WEST_ROD_REQUEST_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰를 실패한 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 자신과 잘 맞지 않는 의뢰였다고 한다.",
+      "UnitTalk_JPN": "依頼に失敗した<color=#F7BE45>[CHARACTER_NAME]</color>は、自分とは合わない依頼だったと言う。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "다음에는 성공할 거야.",
+          "JumpAnchorStringId_JPN": "次は上手くいくよ。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "이거 마시고 기운 차려.",
+          "JumpAnchorStringId_JPN": "これでも飲んで、元気出して。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "실패에도 불구하고 <color=#F7BE45>[CHARACTER_NAME]</color>의 기분은 그리 나쁘지 않아 보인다.",
+      "UnitTalk_JPN": "失敗したにも関わらず、<color=#F7BE45>[CHARACTER_NAME]</color>の機嫌はそう悪くなさそうだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>는 의뢰에 실패한 것이 마음에 걸리는 듯 하다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、失敗したことが心に引っかかっているようだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 포션을 받고 고마움을 표했다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、ポーションを受け取ると感謝の気持ちを表した。",
+      "TalkTime": 0.03
+    }
+  ]
+}

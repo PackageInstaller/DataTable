@@ -1,0 +1,310 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UiStates": [],
+    "UnitHudHeight": 2.8,
+    "BuffEffectPosition": {
+      "HEAD": 2.65,
+      "BODY": 1.2
+    },
+    "UnitBuffEffectScale": 2,
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_INFO.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_GROUND.wav"
+            ]
+          },
+          {
+            "EventFrame": 36,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STEP.wav"
+            ]
+          },
+          {
+            "EventFrame": 56,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STEP_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 58,
+            "EventEndFrame": 64,
+            "EventMoveTarget": "NEMT_TARGET"
+            //"OffsetFront": -0.2
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 100,
+            "EventEndFrame": 114,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 67,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 12,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STEP_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_FIST.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_VOICE.wav"
+            ]
+          },
+          {
+            "EventFrame": 56,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_PUNCH.wav"
+            ]
+          },
+          {
+            "EventFrame": 93,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_GROUND_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 108,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STEP_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 136,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STEP_05.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "SeeTarget": false,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "ShowOnSelf": true,
+          "FormationMyTeam": "SFT_FULL_MY_TEAM_WIDE"
+        },
+        "NonAttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 65,
+            "ReActType": "NRT_NO_ACTION",
+            "EffectData": {
+              "EffectName": "VFX_BUFF_CMN_UP_GOLD.prefab",
+              "EffectHeight": "BVH_BODY"
+            },
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_FIRE.wav"
+            ]
+          },
+          {
+            "EventFrame": 18,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 19,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_VOICE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 52,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_SHIELD.wav"
+            ]
+          },
+          {
+            "EventFrame": 74,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STEP_06.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "PlayNextCineCamFrame": 94,
+        "ZoomBlurMaxTime": 0,
+        "ZoomBlurTime": 2.5,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY",
+          "ShowUnitHudOffEnemy": false,
+          "ShowUnitHudOnEnemy": true
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 104,
+            "ReActType": "NRT_DAMAGE_A",
+            "ReAttackCount": 4,
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STEP_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 50,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STEP_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 64,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_WHOOSH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 90,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_IMPACT.wav"
+            ]
+          },
+          {
+            "EventFrame": 109,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_HIT.wav"
+            ]
+          },
+          {
+            "EventFrame": 115,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_HIT_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 119,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_HIT_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 168,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STEP_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 181,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STEP_10.wav"
+            ]
+          },
+          {
+            "EventFrame": 181,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STEP_10.wav"
+            ]
+          },
+          {
+            "EventFrame": 194,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_GROUND_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_STONE_IMPACT.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_VOICE.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_TANKER_STONE_BLACK_ELITE_GROUND_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

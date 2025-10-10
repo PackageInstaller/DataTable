@@ -1,0 +1,133 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_05A_NOA_BT_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_DEFEAT",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "단장님, 도망친 약탈자들은 치안국이 처리했다고 합니다.",
+      "UnitTalk_JPN": "団長。逃げたレイダーは、治安局が処理したそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "마차가 파손됐지만 카페 스트레가에 입고될 식재료는 무사히 회수되었다는군요.",
+      "UnitTalk_JPN": "馬車は破損しましたが、カフェ・ストレガに納品される食材は無事に回収されたとのことです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "단장님이 시간을 벌어 주신 덕분입니다.",
+      "UnitTalk_JPN": "団長が時間を稼いでくださったおかげですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "만약 단장님이 의뢰를 받아들이지 않으셨다면, 치안국이 도착하기 전에 약탈자들이 모두 뿔뿔이 흩어졌을 테니까요.",
+      "UnitTalk_JPN": "もし団長が依頼を受けてくださらなかったら…治安局が到着する前に、レイダーはみな散り散りになっていたでしょうから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "별의 구원자의 <color=#F7BE45>[여정]</color>은 곧, 곤경에 처한 이들을 도우면서 쌓인 발걸음이라고 하죠.",
+      "UnitTalk_JPN": "星の救援者の<color=#F7BE45>「救援の旅」</color>は、まさに窮地に陥った人々を助けることで、刻まれた足跡だと言われています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "비록 이번에는 힘에 부치는 일이었지만, 단장님의 마음가짐은 <color=#F7BE45>[여정]</color>에 걸맞다고 생각합니다.",
+      "UnitTalk_JPN": "たとえ今回は手に余るものであったとしても、団長の心構えは<color=#F7BE45>「救援の旅」</color>にふさわしいものだと思います。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "크흠… 저도 모르게 사담이 길어졌군요.",
+      "UnitTalk_JPN": "ふむ…つい余談が長くなってしまいましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "그럼 이만 물러가겠습니다. 앞으로도 분발해 주시길.",
+      "UnitTalk_JPN": "それでは、失礼します。引き続き頑張ってくださいね。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 11,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3"
+    }
+  ]
+}

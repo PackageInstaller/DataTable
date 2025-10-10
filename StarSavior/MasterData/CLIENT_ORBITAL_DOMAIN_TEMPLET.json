@@ -1,0 +1,67 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: ORBITAL_DOMAIN_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "DomainId" : 11,
+          "DomainStrId" : "DOMAIN_GUNBLADE_TUTORIAL",
+          "DomainIcon" : "ICON_ORBITAL_ARRAY_GUNBLADE.png",
+          "DomainName" : "SI_TACTICAL_COMMAND",
+          "DomainDesc" : "DOMAIN_GUNBLADE_TUTORIAL_DESC",
+          "DomainFeedbackDesc" : "DOMAIN_GUNBLADE_TUTORIAL_FEEDBACK_DESC",
+          "DomainMapStrId" : "MAP_BATTLE_DOMAIN_COMMON",
+          "CharmList" : [7001001, 7001002]
+        },
+        {
+          "DomainId" : 21,
+          "DomainStrId" : "DOMAIN_GUNBLADE_JOURNEY",
+          "DomainIcon" : "ICON_ORBITAL_ARRAY_GUNBLADE.png",
+          "DomainName" : "SI_TACTICAL_COMMAND",
+          "DomainDesc" : "DOMAIN_GUNBLADE_JOURNEY_DESC",
+          "DomainFeedbackDesc" : "DOMAIN_GUNBLADE_JOURNEY_FEEDBACK_DESC",
+          "DomainMapStrId" : "MAP_BATTLE_DOMAIN_COMMON",
+          "CharmList" : [7101001, 7101002]
+        },
+        {
+          "DomainId" : 101,
+          "DomainStrId" : "DOMAIN_VOYAGER_GUNBLADE",
+          "DomainIcon" : "ICON_ORBITAL_ARRAY_VOYAGER_GUNBLADE.png",
+          "DomainName" : "SI_STRATEGIC_COMMAND",
+          "DomainDesc" : "DOMAIN_VOYAGER_GUNBLADE_DESC",
+          "DomainFeedbackDesc" : "DOMAIN_VOYAGER_GUNBLADE_FEEDBACK_DESC",
+          "DomainMapStrId" : "MAP_BATTLE_DOMAIN_COMMON",
+          "CharmList" : [7202001, 7202002, 7202003]
+        },
+        {
+          "DomainId" : 102,
+          "DomainStrId" : "DOMAIN_LISA",
+          "DomainIcon" : "ICON_ORBITAL_ARRAY_LISA.png",
+          "DomainName" : "SI_STARLIGHT_HORIZON",
+          "DomainDesc" : "DOMAIN_LISA_DESC",
+          "DomainFeedbackDesc" : "DOMAIN_LISA_FEEDBACK_DESC",
+          "DomainMapStrId" : "MAP_BATTLE_DOMAIN_LISA",
+          "CharmList" : [7201001, 7201002]
+        },
+        {
+          "DomainId" : 103,
+          "DomainStrId" : "DOMAIN_OMEGA",
+          "DomainIcon" : "ICON_ORBITAL_ARRAY_OMEGA.png",
+          "DomainName" : "SI_CHEAT_MATRIX",
+          "DomainDesc" : "DOMAIN_OMEGA_DESC",
+          "DomainFeedbackDesc" : "DOMAIN_OMEGA_FEEDBACK_DESC",
+          "DomainMapStrId" : "MAP_BATTLE_DOMAIN_OMEGA",
+          "CharmList" : [7204001, 7204002, 7204003]
+        },
+        {
+          "DomainId" : 104,
+          "DomainStrId" : "DOMAIN_ALICIA",
+          "DomainIcon" : "ICON_ORBITAL_ARRAY_ALICIA.png",
+          "DomainName" : "SI_WITCH_BLESSING",
+          "DomainDesc" : "DOMAIN_ALICIA_DESC",
+          "DomainFeedbackDesc" : "DOMAIN_ALICIA_FEEDBACK_DESC",
+          "DomainMapStrId" : "MAP_BATTLE_DOMAIN_ALICIA",
+          "CharmList" : [7203001, 7203002, 7203003]
+        }
+    ]
+}

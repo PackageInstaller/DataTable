@@ -1,0 +1,252 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_14_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 단장님! 단장님! 한참 찾았잖아요!",
+      "UnitTalk_JPN": " 団長、団長！ずいぶんと探しましたよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": " 좋은 소식이라고요! 얼른 기뻐할 준비를 하세요!",
+      "UnitTalk_JPN": " 良いニュースです！さぁ、喜ぶ準備をしてください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜? 위에서 지원금이라도 나왔어?",
+          "JumpAnchorStringId_JPN": "どうしたんだ？支援金でも出たの？"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": " …무슨 그런 비현실적인 농담을 하시나요?",
+      "UnitTalk_JPN": " …そんな非現実的な冗談を言うんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 제 연봉도 3년째 동결 중인데…",
+      "UnitTalk_JPN": " 年収だって、3年連続で上がってないのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 후우… 올해는 물가도 많이 올랐는데… 쇼핑 할부금도 아직…",
+      "UnitTalk_JPN": " ふぅ…今年は物価もかなり上がったし…買い物のローンもまだ残ってるし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 우울한 이야기는 그만두죠.",
+      "UnitTalk_JPN": " 暗い話はこれくらいにしておきましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 아무튼 좋은 소식입니다!",
+      "UnitTalk_JPN": " とにかく、良いニュースです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 오늘부터 관측사 평의회 <color=#F7BE45>[폴라리스]</color>에서 추천한 <color=#F7BE45>[동료]</color>가 합류할 예정입니다.",
+      "UnitTalk_JPN": " 今日から、<color=#F7BE45>「<r=ポラリス>観測士評議会</r>」</color>の推薦で、<color=#F7BE45>「仲間」</color>が加わることになりました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 동료에 대해서는 알고 계신가요?",
+      "UnitTalk_JPN": " 仲間についてはご存知ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "음… 들어본 것 같긴 한데",
+          "JumpAnchorStringId_JPN": "うーん…聞いたことはあるけど。"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 다행이네요.",
+      "UnitTalk_JPN": " それなら良かったです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 앞으로의 <color=#F7BE45>[여정]</color>은 점점 더 위험해질 거예요.",
+      "UnitTalk_JPN": " これから<color=#F7BE45>「救援の旅」</color>は、ますます危険になっていきます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 혼자서는 극복하기 어려운 시련도 나타나겠죠.",
+      "UnitTalk_JPN": " 一人では乗り越えられない試練もあるでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 하지만 좋은 동료와 함께한다면 분명 여정의 끝에 도달할 가능성도 커질 거예요!",
+      "UnitTalk_JPN": " ですが仲間と一緒なら、旅の終着点に到達できる可能性も高まるはずです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 그 옛날 <color=#F7BE45>[별의 구원자]</color>도 훌륭한 동료들이 있었기에 세상을 구할 수 있었다고 하니까요.",
+      "UnitTalk_JPN": " <color=#F7BE45>「星の救援者」</color>も、素晴らしい仲間がいたからこそ世界を救うことができたのですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래, 기대가 되는걸",
+          "JumpAnchorStringId_JPN": "うん、楽しみだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": " 좋아요! 얼른 가시죠!",
+      "UnitTalk_JPN": " さぁ、早く行きましょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_14_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 새로 합류할 동료분이 기다리고 계신답니다.",
+      "UnitTalk_JPN": " 新しい仲間が待っていますよ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

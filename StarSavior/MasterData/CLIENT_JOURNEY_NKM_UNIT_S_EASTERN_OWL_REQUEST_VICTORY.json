@@ -1,0 +1,73 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_EASTERN_OWL_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "당연한 결과지~",
+      "UnitTalk_JPN": "当然の結果だね～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "토토랑 내가 얼마나 열심히 훈련했는데. 그렇지, 토토?",
+      "UnitTalk_JPN": "ボクたち、すごく頑張ったもんね！そうでしょ、トト！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "꾸룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "단장, 돌아가자.",
+      "UnitTalk_JPN": "帰ろう、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "잘했으니까 주스 사줄 거지? 기대하고 있을게, 고마워!",
+      "UnitTalk_JPN": "頑張ったからジュース買ってくれるよね？楽しみにしてる！ありがとう！",
+      "TalkTime": 0.03
+    }
+  ]
+}

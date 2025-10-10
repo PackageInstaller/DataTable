@@ -1,0 +1,1959 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_DEEP_FIELD_ENTRANCE.png",
+      "StartBgmFileName": "MUSIC_BATTLE_NORMAL_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "준비됐냐?",
+      "UnitTalk_JPN": "準備はいいか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "물론.",
+          "JumpAnchorStringId_JPN": "バッチリだよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아앙~?! 안 들리잖냐! 더 크게!",
+      "UnitTalk_JPN": "あぁん！？聞こえねぇよ、もっと大きな声で！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "준비됐냐?!",
+      "UnitTalk_JPN": "準備はいいか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "물론!",
+          "JumpAnchorStringId_JPN": "バッチリです！！"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "신성한 의식, 시작!",
+      "UnitTalk_JPN": "神聖なる儀式、始め！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "안전!",
+      "UnitTalk_JPN": "安全確認～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋아! 좋아! 좋아!",
+          "JumpAnchorStringId_JPN": "ヨシ、ヨシ、ヨシ！"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "좋아! 작업 개시!",
+      "UnitTalk_JPN": "よっしゃ、作業開始だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PERSON_A"
+      ],
+      "UnitTalk_KOR": "뭐야? 아침부터 왜 이리 소란스러워?",
+      "UnitTalk_JPN": "なんだ？朝から騒がしいな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PERSON_B"
+      ],
+      "UnitTalk_KOR": "못 들었어? 저 아가씨랑 단장이 공짜로 집을 보수해준다는데.",
+      "UnitTalk_JPN": "聞いてないの？あのお嬢さんと団長が、無料で家の補修をしてくれるそうよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_CONSTRUCT_WRENCH_02.png"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PERSON_A"
+      ],
+      "UnitTalk_KOR": "뭐? 갑자기? 우리 동네 집들이 다른 곳보다 오래 되긴 했지만…",
+      "UnitTalk_JPN": "どういう風の吹き回しだ？たしかにこの地域には古い家が多いが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PERSON_A"
+      ],
+      "UnitTalk_KOR": "이런다고 우리가 돈이나 물건을 주는 것도 아닌데, 왜 도와주는 거야?",
+      "UnitTalk_JPN": "無料だなんて…見返りもないのに、どうして助けてくれるんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PERSON_B"
+      ],
+      "UnitTalk_KOR": "몰라? 지나가면서 듣기로는 무슨…",
+      "UnitTalk_JPN": "私も詳しくは…通りがかりに聞いた話だと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PERSON_B"
+      ],
+      "UnitTalk_KOR": "거래, 라고 하던데.",
+      "UnitTalk_JPN": "取引らしいけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MARSIL"
+      ],
+      "UnitTalk_KOR": "단장! 발포 콘크리트, 타카건, 6M 금속 파이프!",
+      "UnitTalk_JPN": "団長！発泡ウレタンに、タッカー、6Mの金属パイプだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여기!",
+          "JumpAnchorStringId_JPN": "持ってきたよ！"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MARSIL"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "골조 상황은 어때? 보수하지 않아도 돼?",
+      "UnitTalk_JPN": "骨組みの状態はどうだ？補修しなくても大丈夫そうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MARSIL"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…중간 기둥이 녹슬었다고?",
+      "UnitTalk_JPN": "…真ん中の柱が錆びてるだと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MARSIL"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "알았어, 내가 가서 볼게!",
+      "UnitTalk_JPN": "分かった、ワシが確認してみる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "좋아, 수리 끝!",
+      "UnitTalk_JPN": "よし、作業完了！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PERSON_A"
+      ],
+      "UnitTalk_KOR": "곧 무너질 것 같은 집을 20분도 안 돼서 고쳤어…?",
+      "UnitTalk_JPN": "今にも崩れそうな家を、20分足らずで直すなんて…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PERSON_B"
+      ],
+      "UnitTalk_KOR": "굉장해…! 이봐, 우리 집도 부탁해도 될까?! 사례할게!",
+      "UnitTalk_JPN": "すごいわ…！ねぇ、私の家も頼めるかしら！？もちろん謝礼はするわ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "됐어, 넣어둬.",
+      "UnitTalk_JPN": "いや、いらねぇよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "그런 거 없어도 오늘 여기 있는 집들 몽땅 보수해줄 테니까 기다리고 있어.",
+      "UnitTalk_JPN": "謝礼なんか貰わなくても、今日中にこの辺の家はぜんぶ補修してやるから待ってな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "단장, 공구 챙겼지? 준비됐으면 다음 집으로 가자.",
+      "UnitTalk_JPN": "団長、工具は片づけたか？準備が済んだら次の家に向かうぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_TOPVIEW.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "CameraOffset": "DEFAULT",
+      "UnitTalk_KOR": "그렇게 마르실과 함께 NOA 변두리 지역에 있는 오래되고 낡은 집들을 보수하고 다녔다.",
+      "UnitTalk_JPN": "こうしてマルシルと一緒に、NOAの外れにある古い家を補修して回った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "드디어 끝났나…",
+          "JumpAnchorStringId_JPN": "ついに終わったのか…"
+        }
+      ]
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "헹! 엄살은. 받아.",
+      "UnitTalk_JPN": "へんっ！大げさだな。受け取れ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "10가지 당근을 갈아서 만든 스페셜 당근 주스야. 목 마르지?",
+      "UnitTalk_JPN": "10種類のにんじんをすりおろして作ったスペシャルジュースだ。喉、乾いてるだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…응?",
+      "UnitTalk_JPN": "…ん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "갑자기 왜 사람들을 도와주냐고? 하! 말했잖아.",
+      "UnitTalk_JPN": "なんで急に人助けをする気になったのか、だと？はっ！前に言っただろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이건 거래야.",
+      "UnitTalk_JPN": "これは取引なんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "페트라 조합의 로고가 박힌 옷을 입고 집을 고쳐주면 어떻게 되겠어?",
+      "UnitTalk_JPN": "ペトラ組合の服を着たやつが、家を直してくれたらどう思う？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "앞으로 거기서 식사하거나 잠들 때마다 페트라 조합이 생각나겠지?",
+      "UnitTalk_JPN": "そこで生活するやつらは、事あるごとにペトラ組合を思い出すだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "엄청나지 않냐? 굉장히 효과적인 홍보잖냐!",
+      "UnitTalk_JPN": "すげぇ宣伝だとは思わねぇか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "그러니까 도와준 게 아니야. 거래지!",
+      "UnitTalk_JPN": "だからこれは人助けじゃねぇ。取引ってことだぁ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "억지…!",
+          "JumpAnchorStringId_JPN": "すごいこじつけだ…！"
+        }
+      ]
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아앙~?! 왜? 뭐! 불만 있냐?!",
+      "UnitTalk_JPN": "あぁん、不満なのかよ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "그리고, 뭐… 한 가지 이유가 더 있는데…",
+      "UnitTalk_JPN": "それに…もう一つ理由があんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응?",
+          "JumpAnchorStringId_JPN": "うん？"
+        }
+      ]
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "우리 집도 여기 있는 집들이랑 비슷했거든.",
+      "UnitTalk_JPN": "この辺の家は、ワシの実家にそっくりなんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "겨울에 추워서 가족들끼리 껴안고 잠들었지.",
+      "UnitTalk_JPN": "冬は寒くて、家族で身を寄せ合って寝なきゃならねぇ。そんな家だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "집이 허름하면 얼마나 고생하는지 누구보다 내가 제일 잘 알아.",
+      "UnitTalk_JPN": "ボロい家で過ごす辛さは、誰よりもよく分かってる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "뭐… 그렇다고.",
+      "UnitTalk_JPN": "ま…そんなとこだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "얼굴이 빨개진 마르실이 주스를 마시며 자신이 보수한 집들을 올려다봤다.",
+      "UnitTalk_JPN": "顔を赤くしたマルシルは…ジュースを飲みながら、自分が補修した家々を見上げた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마르실은 상냥하네.",
+          "JumpAnchorStringId_JPN": "優しいね、マルシルは。"
+        }
+      ]
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.1,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WATER_SPRAY_01.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "푸흡!",
+      "UnitTalk_JPN": "ブフゥーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "켈룩, 콜록! 이, 이 자식…!",
+      "UnitTalk_JPN": "げほっ、ごほっ！こんにゃろぉ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "전에도 그렇고! 이번에도 그렇고!",
+      "UnitTalk_JPN": "てめぇってやつは、毎回毎回…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "사람이 방심할 때 낯간지러운 소리 지껄이지 말라니까?! 위험한 녀석이네, 이거!",
+      "UnitTalk_JPN": "人が油断してる時に、こっ恥ずかしいこと言うんじゃねぇよ！ったく、マジもんの要注意人物だな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "새로운 공격 방법이냐?! 아앙?! 해보자는 거냐!",
+      "UnitTalk_JPN": "まさか、新しい戦法なのか？あぁん！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "누나!",
+      "UnitTalk_JPN": "お姉さん！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "응?",
+      "UnitTalk_JPN": "ん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffset": "ONE_5",
+      "UnitQuickSet": true,
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "누나가 우리 집을 고쳐줬다고 들었어. 맞지?",
+      "UnitTalk_JPN": "お姉さんが、僕の家を直してくれたんでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "오, 오빠…",
+      "UnitTalk_JPN": "お、おにいちゃん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "이리 와. 고쳐줘서 고맙다고 직접 말하고 싶다며?",
+      "UnitTalk_JPN": "ほら、おいで。直してくれてありがとうって伝えたいんだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저기… 고, 고마워, 언니.",
+      "UnitTalk_JPN": "あの…ありがとう、おねえちゃん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ]
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "…핫.",
+      "UnitTalk_JPN": "…はっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "몇 살이야?",
+      "UnitTalk_JPN": "何歳だ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "손가락 하나, 둘… 다섯 살!",
+      "UnitTalk_JPN": "えっとね、いち、に…5さい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "오빠랑 친해?",
+      "UnitTalk_JPN": "お兄ちゃんとは仲良しか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "응… 오빠랑 진짜 친해! 히히!",
+      "UnitTalk_JPN": "うん…すっごく仲良しだよ！えへへっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "그래? 소년, 너는?",
+      "UnitTalk_JPN": "そうか。少年、お前もそう思うのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitPos": "POS4",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "헤헤. 당연히 친하죠.",
+      "UnitTalk_JPN": "へへっ、もちろんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "저희 집에서는 제가 장남이니까요. 동생들이랑 전부 친해요.",
+      "UnitTalk_JPN": "僕は長男だから。兄弟みんなと仲良しです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…기특하네.",
+      "UnitTalk_JPN": "…えらいな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "받아.",
+      "UnitTalk_JPN": "ほら、受け取れ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "네? 이렇게 많은 돈을 어째서…?",
+      "UnitTalk_JPN": "えっ、こんなたくさんのお金…どうして？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그냥 주는 거 아니야.",
+      "UnitTalk_JPN": "タダであげるんじゃねぇよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "거래야.",
+      "UnitTalk_JPN": "取引だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "거래…?",
+      "UnitTalk_JPN": "取引…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "나중에 커서 어른이 되면 네가 부모님, 동생들을 잘 챙겨줘.",
+      "UnitTalk_JPN": "大人になったら…お前が家族のことを支えてやってくれ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "사회에 나와서 일하면 있지.",
+      "UnitTalk_JPN": "社会に出て、働いてたら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "가끔씩 힘들 때도 있고, 지쳐서 주저앉고 싶을 때도 있을 거야.",
+      "UnitTalk_JPN": "時にはつらいことも、疲れ果ててへこたれそうになることもあるはずだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그래도 네가 장남이니까. 미래의 가장이니까.",
+      "UnitTalk_JPN": "それでもお前は長男だ。家族を守ってやるんだぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "눈이 올 때는 따뜻하고… 날이 무더울 때는 시원한…",
+      "UnitTalk_JPN": "雪が降る日には暖かく…暑い日には涼しく…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "가족에게 튼튼한 집 같은 존재가 되어줘.",
+      "UnitTalk_JPN": "家族にとって、安心できる家のような存在にならなきゃいけねぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "되게 어렵고 쉽지 않은 길이 되겠지만…",
+      "UnitTalk_JPN": "簡単な道のりじゃねぇとは思うが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네가 장남이니까. 해내야만 해.",
+      "UnitTalk_JPN": "お前は長男だ。やり遂げねぇといけねぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "할 수 있겠어?",
+      "UnitTalk_JPN": "できるか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "누나…",
+      "UnitTalk_JPN": "お姉さん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "안 들려! 그게 네 각오의 전부야?!",
+      "UnitTalk_JPN": "聞こえねぇな！お前の覚悟はそんな小せぇもんなのかぁ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "더 크게!",
+      "UnitTalk_JPN": "もっと大きい声で！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "읏…! 네, 누나!",
+      "UnitTalk_JPN": "うっ…！はい、お姉さん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "반드시! 반드시 그렇게 할게요!",
+      "UnitTalk_JPN": "必ず！僕がやり遂げます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…하핫! 보기 좋은 표정이잖냐!",
+      "UnitTalk_JPN": "…ははっ！いい顔じゃねぇか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "좋아, 그렇다면 거래 성립이다!",
+      "UnitTalk_JPN": "よし、取引成立だな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "가족한테 잘해줘.",
+      "UnitTalk_JPN": "家族を守ってやれよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ]
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "그런데…",
+      "UnitTalk_JPN": "でもでも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "엉?",
+      "UnitTalk_JPN": "あぁん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "언니랑 옆에 있는 사람, 친해 보여. 나랑 오빠처럼.",
+      "UnitTalk_JPN": "おねえちゃんと、隣にいる人…あたしたちみたいに仲が良いんだね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "둘이 사귀어?",
+      "UnitTalk_JPN": "もしかして、かっぷる？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…아앙?!",
+      "UnitTalk_JPN": "…あぁん！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ]
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "무, 무무무, 무무무무무무슨! 나, 나랑 단장이랑…?!",
+      "UnitTalk_JPN": "ま、ままま、ままままままさか！ワ、ワシと団長が…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "여, 연애는 말이야! 가질 거 다 가진 여유로운 놈들이나 하는 놀이라고?!",
+      "UnitTalk_JPN": "れ、恋愛なんてな！余裕のあるやつらの遊びみてぇなもんなんだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "뭐, 뭐어… 나중에 여유가 있어지면 혹시 또 모르지만… 지금은…",
+      "UnitTalk_JPN": "ま、まぁ…将来ワシにも余裕ができたら、考えないこともないが…ごにょごにょ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 우리는 절대 연인 같은 게 아니야!",
+          "JumpAnchorStringId_JPN": "ううん、私たちはそんな関係じゃないよ！"
+        }
+      ]
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…응?!",
+      "UnitTalk_JPN": "…ん！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "진짜…? 신기해. 친해 보였는데.",
+      "UnitTalk_JPN": "ほんとに…？すごく仲が良さそうなのに。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "그, 그런가요? 의외네요…",
+      "UnitTalk_JPN": "そ、そうなんですね。意外です…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "설명해줘, 마르실! 그렇지?",
+          "JumpAnchorStringId_JPN": "マルシルからも説明してよ！"
+        }
+      ]
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "연애는 시시껄렁한 오락 같은 거잖아! 맞지?",
+          "JumpAnchorStringId_JPN": "恋愛は、くだらない娯楽みたいなものなんだろ？"
+        }
+      ]
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아니?! 그건…! 내가 그렇게 말하긴 했지만…!",
+      "UnitTalk_JPN": "いや…！？それは…たしかにそう言ったことはあるが…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "싫은 티를 팍팍 내긴 했지만, 크윽… 쓸데없이 배려심만 좋아서는…!",
+      "UnitTalk_JPN": "嫌な素振りは見せたが、クソッ…余計な優しさが裏目に出てるぞ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "그, 그래…",
+      "UnitTalk_JPN": "あ、ああ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "그렇지, 응… 맞아…",
+      "UnitTalk_JPN": "そうだな…ははっ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH"
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HUNGRY_1.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응?",
+      "UnitTalk_JPN": "ん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "히히! 오빠, 나 배에서 소리 울려. 배고파.",
+      "UnitTalk_JPN": "えへへ！おにいちゃん、あたしお腹すいた。もうペコペコだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저녁 먹을 시간이네. 집으로 돌아가자.",
+      "UnitTalk_JPN": "もう夕飯の時間だな。帰ろっか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "안녕! 잘 있어! 나중에 또 봐~",
+      "UnitTalk_JPN": "バイバーイ、またね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "거래, 꼭 지킬게요! 감사합니다!",
+      "UnitTalk_JPN": "取引、必ず守るよ！ありがとう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_03.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그, 그래! 얼른 들어가.",
+      "UnitTalk_JPN": "あ、ああ！気をつけて帰れよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "우리도 슬슬 돌아갈까?",
+          "JumpAnchorStringId_JPN": "私たちも帰ろうか？"
+        }
+      ]
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "…그래.",
+      "UnitTalk_JPN": "…そうだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OPFIELD.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 139,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "외곽 변두리에서 빠져나와 NOA 거리를 지나가는데…",
+      "UnitTalk_JPN": "郊外を出て、NOAに差し掛かると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 140,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.1,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_17.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "쳇!",
+      "UnitTalk_JPN": "ちぇっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아파!",
+          "JumpAnchorStringId_JPN": "痛っ！"
+        }
+      ]
+    },
+    {
+      "Uid": 142,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "아! 있었냐?",
+      "UnitTalk_JPN": "あぁん？いたのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "미안, 미안. 앞에 아무것도 없는 줄 알았지 뭐냐?",
+      "UnitTalk_JPN": "悪いな、横に誰もいねぇと思ってたぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_18.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…으랴아아아앗!",
+      "UnitTalk_JPN": "…う～りゃああああっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "방금 기합 넣어서 차지 않았어?!",
+          "JumpAnchorStringId_JPN": "今、本気で蹴っただろ！"
+        }
+      ]
+    },
+    {
+      "Uid": 146,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "어째서인지 화가 잔뜩 난 마르실에게 다리를 걷어차이며 돌아왔다.",
+      "UnitTalk_JPN": "なぜか怒り心頭のマルシルに、足を蹴られながら宿へと戻った。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 147,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_WRENCH_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

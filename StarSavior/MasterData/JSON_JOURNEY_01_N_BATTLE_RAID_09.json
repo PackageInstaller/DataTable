@@ -1,0 +1,38 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "SkipProgressWithHistory": false,
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_2_BOSS_A",
+        "BattleEvents": [
+          {
+            "OnWaveStart": {},
+            "PlayProgress": {
+              "ProgressId": 50009
+             }
+          }
+        ],
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_CROSSBOW_BLUE_04",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_VETERAN_SHIELD_GOLD_BOSS_NORMAL_01",
+            "IsBoss": true, 
+            "SpecialSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_CROSSBOW_GREEN_04",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

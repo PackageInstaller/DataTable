@@ -1,0 +1,407 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: TUTORIAL_CUBE_PALACE",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 38,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_REQUEST.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 오빠! 오빠! 좋은 소식이야!",
+      "UnitTalk_JPN": "あ、お兄ちゃん！お兄ちゃん！いい知らせだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "큐브 팰리스가 정신을 차렸나 봐. 반성했나 봐.",
+      "UnitTalk_JPN": "キューブパレスが正気に戻ったみたい。反省したのかな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "그래서 제대로 오빠를 도와주라고 했어!",
+      "UnitTalk_JPN": "だからちゃんと兄ちゃんを助けるように言ったの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "자, 큐브! 안녕하세요- 해!",
+      "UnitTalk_JPN": "はい、キューブ！こんにちはー挨拶！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "SL",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "대기 모드 종료. 대화 인터페이스 기동.",
+      "UnitTalk_JPN": "待機モード終了。会話インターフェース起動。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "식별명 단장에게 큐브 팰리스 입장 권한을 부여합니다.",
+      "UnitTalk_JPN": "識別名「団長」にキューブパレス入場権限を付与します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "오빠도 큐브 팰리스 안에서 놀 수 있다는 뜻이야!",
+      "UnitTalk_JPN": "お兄ちゃんもキューブパレスの中で遊べるってことだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "정정. 본 기기는 놀이용이 아니라 가상훈련용 시뮬레이터입니다.",
+      "UnitTalk_JPN": "訂正。本機は遊戯用ではなく仮想訓練用シミュレーターです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "안에서 싸우면 되는 거야?",
+          "JumpAnchorStringId_JPN": "中で戦えばいいの？"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "헤헤, 맞아!",
+      "UnitTalk_JPN": "えへへ、そう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "복제체들이랑 콰쾅! 쾅! 하면 있지? 파워업 코인이 쏟아질 거야!",
+      "UnitTalk_JPN": "<r=コピー>複製体</r>たちとドカン！ババン！とすればね？パワーアップコインが手に入るんだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "그게 있으면 현실에서도 파워업할 수 있어!",
+      "UnitTalk_JPN": "それがあれば現実でもパワーアップできるの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "정정. 파워업 코인이 아닌 전투 데이터입니다.",
+      "UnitTalk_JPN": "訂正。パワーアップコインではなく戦闘データです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "복제체들을 격파할 때마다, 복제체와의 전투로 누적된 데이터를 획득할 수 있습니다.",
+      "UnitTalk_JPN": "複製体を撃破するたびに、複製体との戦闘で蓄積されたデータを獲得できます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "복제체가 정확히 뭐야?",
+          "JumpAnchorStringId_JPN": "複製体って正確には何？"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응! 큐브 팰리스가 만드는 상상 친구들이야!",
+      "UnitTalk_JPN": "うん！キューブパレスが作る想像上の友達だよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "아빠가 외롭지 말라고 달아준 거 아닐까? 오메가도 큐브도 엄청 외로웠으니까.",
+      "UnitTalk_JPN": "パパが寂しくないようにと付けてくれたのかな？オメガもキューブもすごく寂しかったから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "…정정. <color=#F7BE45>복제체</color>는 본 기기의 상상 친구가 아닙니다.",
+      "UnitTalk_JPN": "…訂正。<color=#F7BE45>複製体</color>は本装置の想像上の友達ではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "정식 명칭은 <color=#F7BE45>[기록 기반 질량형 투영체]</color>로, 본 기의 데이터베이스에 기록된 인물 및 전대 문명의 병기를 가소 질료로 투영한 것입니다.",
+      "UnitTalk_JPN": "正式名称は<color=#F7BE45>「記録基盤質量型投影体」</color>であり、本機のデータベースに記録された人物及び前代文明の兵器を可塑質料で投影したものです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "효율적인 훈련을 위해 전투력은 원본 대비 120%, 살의는 원본 대비 980% 증폭되었습니다.",
+      "UnitTalk_JPN": "効率的な訓練のため、戦闘力は原型比120%、殺意は原型比980%増幅されております。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "복제체를 통해 실전과 동등한 강도의 훈련이 가능해집니다. ",
+      "UnitTalk_JPN": "複製体を通じて実戦と同レベルでの訓練が可能となります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "쉽지 않겠네…",
+          "JumpAnchorStringId_JPN": "難しそうだな…"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "괜찮아, 오빠! 오메가가 치트 코드를 여기저기 숨겨놨어!",
+      "UnitTalk_JPN": "大丈夫、お兄ちゃん！オメガがチートコードをあちこちに隠しておいたんだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "큐브도 있지? 강한 복제체를 만들려면 머리를 엄청 써야 돼. 그걸 연산 등급이라고 해.",
+      "UnitTalk_JPN": "キューブもね？強い複製体を作るにはすごく頭を使うんだ。それを演算等級って言うの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "연산 등급이 올라가면 큐브도 정신없을 거야.",
+      "UnitTalk_JPN": "演算等級が上がるとキューブも頭がぐるぐる回るはず。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "그때 몰래 치트 코드를 켜서 꽈과광! 하면 쉽게 이길 수 있을 거야!",
+      "UnitTalk_JPN": "その時こっそりチートコードを起動してばばんー！とすれば楽に勝てるよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "…항의. 전부 들립니다.",
+      "UnitTalk_JPN": "…抗議。全部聞こえてます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SPECIAL2",
+      "UnitTalk_KOR": "헤헤, 들렸어?",
+      "UnitTalk_JPN": "えへへ、聞こえた？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 오빠가 지는 건 보기 싫은걸.",
+      "UnitTalk_JPN": "でもお兄ちゃんが負けるのを見たくないもん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "반론. 큐브 팰리스 내에서 패배해도, 그전까지 얻은 데이터는 사라지지 않습니다.",
+      "UnitTalk_JPN": "反論。キューブパレス内で敗北しても、それまでに得たデータは消えません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "따라서 오메가의 행위는 비효율, 비능률적입니...",
+      "UnitTalk_JPN": "したがってオメガの行為は非効率、非能率的であり…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.6,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "괜찮아, 큐브! 분명히 이게 더 재밌을 거야!",
+      "UnitTalk_JPN": "大丈夫、キューブ！絶対にこっちの方が面白いから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "아, 들어가서 한번 해보자! 오메가가 시범도 보여줄게!",
+      "UnitTalk_JPN": "あ、入って一回やってみよ！オメガが見本を見せるあげる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "자, 큐브! 문 열어줘!",
+      "UnitTalk_JPN": "さあ、キューブ！ドアを開けて！",
+      "TalkTime": 0.03
+    }
+  ]
+}

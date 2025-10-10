@@ -1,0 +1,220 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오오, 인간 단장! 잘 만났군!",
+      "UnitTalk_JPN": "おお、人間の団長よ！ちょうど良かったのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "이 몸이 푹 쉬었는지 한번 물어보거라!",
+      "UnitTalk_JPN": "昨日は良く眠れたか聞くのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "푹 쉬었어?",
+          "JumpAnchorStringId_JPN": "よく眠れたかい？"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하하하! 보면 모르겠느냐. 이 몸, 엄청나게 푹 쉬었다!",
+      "UnitTalk_JPN": "わっはっは！見ればわからんか。わがはい、ぐっすり寝れたのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "기분 좋은 꿈이었지.",
+      "UnitTalk_JPN": "おお…団長よ…あれは、いい夢だった…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "먼 훗날, 이 몸은 <color=#F7BE45>대재단사</color>가 되어 있었다.",
+      "UnitTalk_JPN": "遠い日に、わがはいは<color=#F7BE45>大仕立屋</color>になっていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "역시 이 몸은 <color=#F7BE45>대재단사</color>가 될 운명을 타고난 건가…! 흐하하!",
+      "UnitTalk_JPN": "案の定、わがはいは<color=#F7BE45>大仕立屋</color>になる運命なのだ…！フハハ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그것 말고도… 으음…",
+      "UnitTalk_JPN": "それ以外でも…ぬぅん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 그래?",
+          "JumpAnchorStringId_JPN": "どうかしたの？"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "이 몸이 작업하는 걸 누가 옆에서 지켜보고 있었는데… 굉장히 친한 느낌이…",
+      "UnitTalk_JPN": "作業中のわがはいを、誰か隣で見ていたのだが…とても親しい感じが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "누구지 그건?",
+      "UnitTalk_JPN": "誰だったのだ、あれは？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐, 꿈이니까 중요하지 않겠지.",
+      "UnitTalk_JPN": "まぁ、夢だし考えてもしょうがないのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그보다, 이거 받아라. 이번에 만든 손수건 중에서 가장 잘 나온 작품이다!",
+      "UnitTalk_JPN": "それより受け取るが良い。この度作ったハンカチの中で、最も出来がいいやつなのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "너에게만 특별히 주도록 하지. 감사하도록!",
+      "UnitTalk_JPN": "特別に、お主だけにあげるとしよう。感謝するのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고마워",
+          "JumpAnchorStringId_JPN": "ありがとう。"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이미 스칼렛이 준 손수건이 들어있는 안주머니에 하나 더 조심스럽게 보관했다.",
+      "UnitTalk_JPN": "内ポケットには前にくれたハンカチがあったが、その上にもう1枚重ねた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘도 즐거운 날이 될 것 같은 기분이다.",
+      "UnitTalk_JPN": "今日も楽しい一日になりそうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

@@ -1,0 +1,505 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_37_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 앗, 손님이셨군요… 어서 오세요.",
+      "UnitTalk_JPN": " あっ、お客様…いらっしゃいませ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 오늘은 어떤 물건이 필요하세요…?",
+      "UnitTalk_JPN": " 本日はどんなものをお探しですか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "평소보다 기운이 없어 보이네.",
+          "JumpAnchorStringId_JPN": "今日は元気なさそうだね。"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": " 네… 내일부터 아포칼립스 상단 NOA 지점은 폐점될 테니까요…",
+      "UnitTalk_JPN": " はい…明日、アポカリプス商会のNOA支店は閉店することになりまして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 리세트한테는 너무나 가혹한 현실이에요…",
+      "UnitTalk_JPN": " リセットにとっては、あまりにも残酷な現実です…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "폐점이라고?",
+          "JumpAnchorStringId_JPN": "閉店って？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "장사는 항상 잘되지 않았어?",
+          "JumpAnchorStringId_JPN": "商売繁盛してたのに？"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 흑흑, 그게…",
+      "UnitTalk_JPN": " ううっ、それが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": " 오늘까지 정산을 마치고 본사에 연락해야 하는데, 열쇠를 잃어버려서 금고를 열 수가 없어요.",
+      "UnitTalk_JPN": " 今日までに決算を終えて本社に連絡しなければならないのに、鍵をなくして金庫を開けられないんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": " 혼자 쓰는 거라고 꼬박꼬박 확인하지 않은 리세트의 잘못이에요…",
+      "UnitTalk_JPN": " 一人で使うものだからと、きちんと確認しなかったリセットの過ちです…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혹시 금고 열쇠라는 게 이거야?",
+          "JumpAnchorStringId_JPN": "もしかして金庫の鍵ってこれ？",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "솜씨 좋은 기술자를 부르는 건 어때?",
+          "JumpAnchorStringId_JPN": "腕のいい技術者を呼んでみるのはどう？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "네! 맞아요, 손님!",
+      "UnitTalk_JPN": "はい！その通りです、お客様！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "틀림없어요. 리세트의 금고 열쇠예요.",
+      "UnitTalk_JPN": "間違いありません。リセットの金庫の鍵です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "미안. 네 열쇠가 아닌 줄 알았어.",
+          "JumpAnchorStringId_JPN": "ごめん。君の鍵じゃないと思ってた。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "너무 고풍스러운 디자인이라.",
+          "JumpAnchorStringId_JPN": "あまりにも古風なデザインで。"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아뇨, 미안해하지 않으셔도 돼요! 오히려 제가 고맙다고 해야죠!",
+      "UnitTalk_JPN": "いえ、お詫びいただく必要はありません！むしろ私が感謝すべきです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 열쇠의 디자인은… 집안에서 쓰던 걸 물려받아서 그래요.",
+      "UnitTalk_JPN": "それに鍵のデザインは…家の中で使っていたものを譲り受けたからなんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "저희 집은 원래 귀족이었거든요. 이건 할머니가 쓰시다 저한테 물려 주신 거예요.",
+      "UnitTalk_JPN": "私の家は元々貴族だったんです。これは祖母が使っていたものを私に譲ってくれたものです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "손님, 잠시만 여기서 기다려 주세요! 금방 다녀올게요!",
+      "UnitTalk_JPN": "お客様、少しここでお待ちください！すぐ戻ります！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_WIND_02.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리세트가 후닥닥 지하실로 뛰어 내려가더니, 잠시 후 서류를 한 아름 들고 돌아왔다.",
+      "UnitTalk_JPN": "リセットがバタバタと地下室へ駆け下りると、しばらくして書類を抱えて戻ってきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이건 제가 감사의 의미로 드리는 선물이에요!",
+      "UnitTalk_JPN": "これは感謝の気持ちを込めて差し上げる贈り物です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이건…",
+          "JumpAnchorStringId_JPN": "これは…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "돼지 저금통?",
+          "JumpAnchorStringId_JPN": "貯金箱？"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "네. 제가 어릴 때 사업 자금을 모으려고 채우던 저금통이에요.",
+      "UnitTalk_JPN": "はい。私が子供の頃、事業資金を貯めるために貯めていた貯金箱です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "이 저금통을 가득 채웠을 때 처음 점장이 됐거든요. ",
+      "UnitTalk_JPN": "この貯金箱をいっぱいにした時、初めて店長になったんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "손님도 이 저금통과 함께라면, 리세트처럼 꿈을 이루실 수 있을 거예요!",
+      "UnitTalk_JPN": "お客様もこの貯金箱と一緒なら、リセットのように夢を叶えられるはずですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "저금통에 손을 올리자, 리세트의 꿈이 깃들었는지 따스한 기운이 전해져 온다…",
+      "UnitTalk_JPN": "貯金箱に手を置くと、リセットの夢が宿ったのか温かい気が伝わってくる…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그렇네요! 오래된 금고라 자물쇠 장인에게는 식은 죽 먹기일 거예요!",
+      "UnitTalk_JPN": "そうですね！古い金庫ですから、錠前職人にとっては朝飯前でしょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "실수 때문에 당황해서 그런 간단한 해결책도 못 떠올리다니…",
+      "UnitTalk_JPN": "ミスで慌てて、そんな簡単な解決策も思いつかなかったなんて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "미래의 사업가로서 꼭 고쳐야 할 버릇이에요.",
+      "UnitTalk_JPN": "未来のビジネスマンとして、必ず直すべき癖です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런 건가…?",
+          "JumpAnchorStringId_JPN": "そういうことか…？"
+        }
+      ]
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼요, 손님! 사업가는 빈틈이 없어야 하거든요!",
+      "UnitTalk_JPN": "もちろんです、お客様！事業家には隙があってはいけませんからね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "잠시만 기다려 주세요! NOA에서 제일 솜씨 좋은 기술자분을 모셔 올 테니까요!",
+      "UnitTalk_JPN": "少々お待ちください！NOAで一番腕の良い技術者をお呼びしますから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_WIND_02.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리세트는 종종걸음으로 가게를 뛰쳐나갔다.",
+      "UnitTalk_JPN": "リセットは小走りに店を飛び出した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_37_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "덕분에 리세트가 돌아오기 전까지 가게를 대신 봐 주게 되었다…",
+      "UnitTalk_JPN": "おかげでリセットが戻るまで店を代わりに見てくれることになった…",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,429 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UseRespawnFocus": false,
+    "UiStates": [],
+    "UnitBuffEffectScale": 1.5,
+    "BattleStates": [
+      {
+        "StateName": "USN_START",
+        "CameraCrashEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 10,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.7
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
+            ]
+          },
+          {
+            "EventFrame": 45,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_FOOTSTEP.wav"
+            ]
+          },
+          {
+            "EventFrame": 50,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE_04.wav"
+              }
+            ]
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_DYING.wav"
+            ]
+          },
+          {
+            "EventFrame": 50,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_DYING_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_FOCUS_INFO_READY.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 17,
+            "EventEndFrame": 22,
+            "EventMoveTarget": "NEMT_TARGET",
+            "OffsetFront": -1.4
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 94,
+            "EventEndFrame": 109,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 43,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
+            ]
+          },
+          {
+            "EventFrame": 12,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_HORN_BLACK_HIT.wav"
+            ]
+          },
+          {
+            "EventFrame": 55,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 65,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
+            ]
+          },
+          {
+            "EventFrame": 90,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 105,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL.wav"
+            ]
+          },
+          {
+            "EventFrame": 120,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
+            ]
+          },
+          {
+            "EventFrame": 132,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 60,
+            "EventEndFrame": 65,
+            "EventMoveTarget": "NEMT_TARGET",
+            "OffsetFront": -0.95
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 180,
+            "EventEndFrame": 195,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 79,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 96,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_HORN_BLACK_SPELL_DARK.wav"
+            ]
+          },
+          {
+            "EventFrame": 55,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 73,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_HORN_BLACK_HIT_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 90,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_HORN_BLACK_HIT_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 140,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
+            ]
+          },
+          {
+            "EventFrame": 147,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 180,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 192,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL.wav"
+            ]
+          },
+          {
+            "EventFrame": 215,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
+            ]
+          },
+          {
+            "EventFrame": 220,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 147,
+                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE_05.wav"
+              }
+            
+            ]
+          }
+        ],
+      },
+      {
+        "StateName": "USN_HYPER",
+        "InternalCameraShowUI": true,
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 76,
+            "EventEndFrame": 86,
+            "EventMoveTarget": "NEMT_TARGET",
+            "OffsetFront": -1.7
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 156,
+            "EventEndFrame": 171,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 103,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_HORN_BLACK_SPELL_DARK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 30,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 45,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
+            ]
+          },
+          {
+            "EventFrame": 73,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_HORN_BLACK_SPELL_DARK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 95,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_HORN_BLACK_HIT_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 135,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_HORN_BLACK_MOVEMENT.wav"
+            ]
+          },
+          {
+            "EventFrame": 154,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 172,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL.wav"
+            ]
+          },
+          {
+            "EventFrame": 200,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
+            ]
+          },
+          {
+            "EventFrame": 205,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 135,
+                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE.wav"
+              }
+            ]
+          }
+        ],
+      }
+    ]
+  }
+}

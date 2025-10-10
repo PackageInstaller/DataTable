@@ -1,0 +1,121 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00E_RANDOM_FIND",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 28,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "외부 탐사에서 가져온 석상의 칼에서 알 수 없는 빛이 흘러나오고 있다.",
+      "UnitTalk_JPN": "外部探査から持ち帰った石像の剣から、不可解な光が漏れ出している。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "석상의 꽃을 집어든다.",
+          "JumpAnchorStringId_JPN": "石像の花を手に取る。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그대로 놔둔다.",
+          "JumpAnchorStringId_JPN": "そのまま置いておく。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 31,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "\r\n",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
+      "UnitTalk_KOR": "석상의 칼에 담긴 힘이 몸 안으로 흘러 들어왔다.\r\n",
+      "UnitTalk_JPN": "石像の剣に込められた力が体内に流れ込んできた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "\r\n",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 34,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "\r\n",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "도리어 석상의 칼에게 힘을 빼앗긴 느낌이다.",
+      "UnitTalk_JPN": "むしろ石像の剣に力を奪われたような感覚だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "\r\n",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 37,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "\r\n",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잠깐 밝은 빛을 내더니, 이내 잠잠해졌다.",
+      "UnitTalk_JPN": "一瞬、明るい光を放ったが、すぐに静かになった。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,370 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WILD_HOG_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흐음, 여기가 마지막 시련을 겪는 곳이야?",
+      "UnitTalk_JPN": "ふぅん…ここが最終試験を受ける場所か？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "꽤 수수하네. 바닥에서 불길 정도는 솟구칠 줄 알았는데.",
+      "UnitTalk_JPN": "かなり地味なんだな。てっきり、地面から炎が噴き上がるような場所だと思ってたぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "긴장되지는 않아?",
+          "JumpAnchorStringId_JPN": "緊張はしてない？"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "긴장? 어째서?",
+      "UnitTalk_JPN": "緊張？なんで緊張すんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "데이브, 너 긴장되냐?",
+      "UnitTalk_JPN": "デイヴ、お前は緊張してるか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_1.wav",
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "크응?",
+      "UnitTalk_JPN": "クゥン？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "들었지? 여기만 넘어가면 골인 지점이잖아.",
+      "UnitTalk_JPN": "聞いただろ？ここを乗り越えれば、ゴール地点だしな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "긴장될 리가 없지. 피가 끓어오른다면 몰라도.",
+      "UnitTalk_JPN": "緊張する訳ねぇよ。むしろ血が沸き立つぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "굉장하네.",
+          "JumpAnchorStringId_JPN": "すごいな。"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그러는 단장이야말로 벌써 이 다음을 보고 있는 것 같은데.",
+      "UnitTalk_JPN": "そう言う団長こそ、もう次のことを考えてるだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "마음은 알겠지만 지금은 눈앞에 닥친 고비를 넘는 데 최선을 다하라고.",
+      "UnitTalk_JPN": "気持ちは分かるが、今は目の前にそびえ立つ山を超えるのに集中しようぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럴지도 모르겠네.",
+          "JumpAnchorStringId_JPN": "そうだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "할리는 여정을 완주하면 하고 싶은 것 없어?",
+          "JumpAnchorStringId_JPN": "ハーレーは旅を終えた後、何かしたいことはある？"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "하고 싶은 것?",
+      "UnitTalk_JPN": "したいこと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "흐음, 대륙 최고의 레이스를 정복했으니까…",
+      "UnitTalk_JPN": "ふぅん。大陸一のレースを征服した後なら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "역시 내가 달릴 새로운 길을 찾는 거려나.",
+      "UnitTalk_JPN": "やっぱり、走るための新たな道を探すことだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "만약 더 달릴 길이 없다면?",
+          "JumpAnchorStringId_JPN": "もし、これ以上走る道がなかったら？"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그런 가정은 의미 없어. 평생 달려도 어림없을 테니까.",
+      "UnitTalk_JPN": "そんな仮定、意味ないぞ。一生走り続けたってできねぇことなんだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "지금도 보라고. 여기가 종착지일 리 없잖아.",
+      "UnitTalk_JPN": "今も見てみろよ。ここが終着点なわけないだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "아직 살날이 한참 남았는데 말이야.",
+      "UnitTalk_JPN": "まだ人生は長いんだからよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "인생도 레이스라던 할리의 말이 떠오른다.",
+      "UnitTalk_JPN": "人生もレースだと言っていた、ハーレーの言葉が頭に浮かんだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래도 너라면 충분히 가능할 것 같은데.",
+          "JumpAnchorStringId_JPN": "でも、ハーレーならきっとできるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "푸하하하! 아부하는 거야, 지금?",
+      "UnitTalk_JPN": "ぷはははっ！ゴマでもすってるつもりかぁ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "좀 부끄럽긴 해도… 단장한테 들으니까 나쁘진 않네.",
+      "UnitTalk_JPN": "ちと恥ずかしいが…団長に言われるなんて、悪い気はしねぇな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "뭐, 만약 아무리 찾아도 더 달릴 길이 없다면…",
+      "UnitTalk_JPN": "もしどれだけ道を探しても、これ以上走る道がなかったら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그때는 내가 최고로 멋진 길을 준비해 둬야지.",
+      "UnitTalk_JPN": "その時は、俺が最高にかっけー道を準備してやらねぇと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "뒤따라올 녀석들을 위해서 말이야. <color=#F7BE45>별의 구원자</color>처럼.",
+      "UnitTalk_JPN": "後に続く奴らのためだ。<color=#F7BE45>星の救援者</color>みたいにな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "멋지네.",
+          "JumpAnchorStringId_JPN": "かっこいいね。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "응원할게, 할리.",
+          "JumpAnchorStringId_JPN": "応援するよ、ハーレー。"
+        }
+      ]
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "흥. 내가 달리는 걸 구경만 할 셈이야?",
+      "UnitTalk_JPN": "ふん。俺が走ってるのを見てるつもりか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "한가하게 쉬고 있을 시간 없어. 계속 달려 보자고, <color=#F7BE45>친구</color>.",
+      "UnitTalk_JPN": "ぼーっと休んでる暇なんてねぇ。<color=#F7BE45>ダチ</color>よ、一緒に走り続けようぜ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "준비는 끝나셨나요?",
+      "UnitTalk_JPN": "準備はできましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그럼 지금부터 별의 구원자 계승 시험 <color=#F7BE45>[여정]</color>.",
+      "UnitTalk_JPN": "では、これより星の救援者・継承試験<color=#F7BE45>「救援の旅」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그 최종 시련을 시작하겠습니다.",
+      "UnitTalk_JPN": "最終試験を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "상대는 <color=#F7BE45>[알데바란의 집행자 길레]</color>.",
+      "UnitTalk_JPN": "対戦相手は<color=#F7BE45>「アルデバランの執行者・ギーレ」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[디랙의 우물]</color>이 투영을 개시합니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ディラックの井戸」</color>が投影を開始します。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_MONSTER.txt",
+    "UiStates": [],
+    "UnitHudHeight": 3,
+    "UnitRadius": 2.5,
+    "UnitBuffEffectScale": 2, 
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPAWN_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPAWN.wav"
+            ]
+          },
+          {
+            "EventFrame": 41,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPAWN_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 56,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPAWN_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 26,
+            "EventEndFrame": 48,
+            "OffsetFront": -2.4,
+            "EventMoveTarget": "NEMT_TARGET",
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 122,
+            "EventEndFrame": 135,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 102,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 36,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 49,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_ATK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 55,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_ATK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 72,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_ATK_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 101,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_ATK_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 133,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_ATK_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 159,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_ATK_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 175,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_ATK_09.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "FormationEnemy": "SFT_CENTER_TARGET_ONLY"
+        },
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 29,
+            "EventEndFrame": 49,
+            "OffsetFront": -2.2,
+            "EventMoveTarget": "NEMT_TARGET"
+          }
+          // {
+          //   "UseAnimTime": true,
+          //   "EventFrame": 140,
+          //   "EventEndFrame": 154,
+          //   "EventMoveTarget": "NEMT_SELF"
+          // }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 53,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 71,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 95,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 116,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 9,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPECIAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPECIAL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 48,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPECIAL_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 65,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPECIAL_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 87,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPECIAL_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 103,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPECIAL_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 113,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPECIAL_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 149,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPECIAL_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 196,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPECIAL_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 213,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_SPECIAL_10.wav"
+            ]
+          },
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "UseInternalCamera": true,
+        "UseEnemyTargetCamera": true,
+        "BattleMapSceneName": "",
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,          
+          "ShowUnitHudOffEnemy": false,
+          "ShowUnitHudOnEnemy": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 64,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_PLUMP_HAMMER_BLACK_HYP.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 86,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_PLUMP_HAMMER_BLACK_HYP.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 100,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_PLUMP_HAMMER_BLACK_HYP.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 126,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_PLUMP_HAMMER_BLACK_HYP.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 144,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_PLUMP_HAMMER_BLACK_HYP.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        // "SoundEvents": [
+        //   {
+        //     "EventFrame": 0,
+        //     "listSoundName": [
+        //       "SFX_BT_UNIT_MON_VOIDREAPER_SCYTHE_SPELL_DARK.wav"
+        //     ]
+        //   },
+        // ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_31.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_11.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SCYTHE_FALL_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 48,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_12.wav"
+            ]
+          },
+          {
+            "EventFrame": 48,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_DYING.wav"
+            ]
+          },
+          {
+            "EventFrame": 34,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PLUMP_HAMMER_DYING_02.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

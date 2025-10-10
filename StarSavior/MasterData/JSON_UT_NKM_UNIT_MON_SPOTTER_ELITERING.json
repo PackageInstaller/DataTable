@@ -1,0 +1,71 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
+    //"UnitHudHeight": 3.9,
+    "BuffEffectPosition": {
+      //"HEAD": 3.5,
+      //"BODY": 1
+    },
+    "UnitBuffEffectScale": 1.4,
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+      },
+      {
+        "StateName": "USN_START",
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 24,
+            "ReActType": "NRT_DAMAGE_A",
+            //"CameraCrashGap": 0.1,
+            //"CameraCrashTime": 0.3,
+            //"ReAttackCount": 4,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "EndFadeOut": true,
+        "PlayNextCineCamFrame": 60,
+        "ZoomBlurMaxTime": 0,
+        "ZoomBlurTime": 2.5,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY",
+          "ShowUnitHudOffEnemy": false,
+          "ShowUnitHudOnEnemy": true
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 57,
+            "ReActType": "NRT_DAMAGE_A",
+            //"CameraCrashGap": 0.2,
+            //"CameraCrashTime": 0.4,
+            //"ReAttackCount": 4,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+      }
+    ]
+  }
+}

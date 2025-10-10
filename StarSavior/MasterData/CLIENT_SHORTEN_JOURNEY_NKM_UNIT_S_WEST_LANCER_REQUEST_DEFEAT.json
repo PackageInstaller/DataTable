@@ -1,0 +1,108 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰를 실패한 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 벌을 받길 원한다.",
+      "UnitTalk_JPN": "依頼に失敗した<color=#F7BE45>[CHARACTER_NAME]</color>は罰を受けたがっている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괘, 괜찮아! 다음에 열심히 하자!",
+          "JumpAnchorStringId_JPN": "だ、大丈夫だ！また次、頑張ろう！",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "이것 마시고 기운 내.",
+          "JumpAnchorStringId_JPN": "これでも飲んで、元気出して。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "방치 플레이로 착각하며 자신만의 세계로 들어간 <color=#F7BE45>[CHARACTER_NAME]</color>(을)를 데리고 돌아왔다.",
+      "UnitTalk_JPN": "放置プレイと勘違いし、自分の世界に入り込んでしまった<color=#F7BE45>[CHARACTER_NAME]</color>を連れて、宿へと戻った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "처벌이 없어서 시무룩해진 <color=#F7BE45>[CHARACTER_NAME]</color>(을)를 데리고 돌아왔다…",
+      "UnitTalk_JPN": "罰がないことにしょんぼりしている<color=#F7BE45>[CHARACTER_NAME]</color>を連れて、宿へと戻った…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 활력 포션을 마시자 코피가 멎었다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は活力ポーションを飲むと、すぐに鼻血が止まった。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,874 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_06_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_DOWNTOWN",
+      "StartBgmFileName": "MUSIC_CENTRAL.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[기초 평가전]</color>을 앞두고 <color=#F7BE45>[아포칼립스 상단]</color>에 방문했다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「基礎試験」</color>を控え、<color=#F7BE45>「アポカリプス商会」</color>を訪れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "손님! 잠시만요.",
+      "UnitTalk_JPN": "お客様！少々お待ちくださいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "이 물건들 설마 직접 들고 가실 건 아니죠?",
+      "UnitTalk_JPN": "まさか…この荷物、ぜんぶご自分で運ぶつもりではありませんよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "트럭은 부르셨나요?",
+      "UnitTalk_JPN": "トラックは呼ばれましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "…아뇨, 이제부터 불러야 해요.",
+      "UnitTalk_JPN": "…いえ、これから呼ぼうかと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래요? 다행이네요!",
+      "UnitTalk_JPN": "そうですか？それなら良かったです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "일정 금액 이상 구매한 고객님께는 배송 서비스가 지원되거든요.",
+      "UnitTalk_JPN": "一定金額以上のお買い上げで、配送サービスをご提供しているんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "주소만 알려주시면 저희가 가져다드릴게요.",
+      "UnitTalk_JPN": "ご住所を教えていただければ、お荷物をお届けします！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "정말인가요? 고마워요.",
+      "UnitTalk_JPN": "本当ですか？ありがとうございます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "역시 대륙 최고의 상단답네요.",
+      "UnitTalk_JPN": "さすが大陸一の商会ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "헤헤, VIP 고객님께 이 정도 서비스는 당연하죠.",
+      "UnitTalk_JPN": "エヘヘ。VIPのお客様に、これぐらいのサービスは当然ですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "어디 보자… 대형 트럭으로 열 대 정도면 충분하겠네요.",
+      "UnitTalk_JPN": "どれどれ…この量なら、大型トラックが10台あれば十分ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아참. 깨지지 않게 잘 부탁드려요.",
+      "UnitTalk_JPN": "あっ、壊れないようにお願いしますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "걱정하지 마세요! 360개월 할부, 맞죠?",
+      "UnitTalk_JPN": "もちろんです！360回払いでよろしかったですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "그럼 다음에 또 방문 부탁드립니다!",
+      "UnitTalk_JPN": "それでは、またのご来店をお待ちしております！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "안녕하세요, 단장님. <color=#F7BE45>[여정]</color>에 필요한 물건을 찾으러 오셨나 보죠?",
+      "UnitTalk_JPN": "こんにちは、団長。<color=#F7BE45>「救援の旅」</color>に必要な物を買いにいらっしゃったんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 저거요? 후후, 별거 아니랍니다.",
+      "UnitTalk_JPN": "あっ、あれのことですか？ふふっ、大したことありませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "여태까지 열심히 살아온 저를 위한 작은 선물이죠.",
+      "UnitTalk_JPN": "これまで頑張ってきた私への、ちょっとしたご褒美です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…360개월 할부라고?",
+          "JumpAnchorStringId_JPN": "…360回払いって？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "모, 몰라요! 쇼핑은 숙녀의 사생활이라고요!",
+      "UnitTalk_JPN": "な、何のことですか？レディの買い物事情に、踏み込まないでください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그럼… 전 가보겠습니다…",
+      "UnitTalk_JPN": "それでは…私はこれで失礼します…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "열심히 하면… 이번 생엔 다 갚을 수 있겠지…",
+      "UnitTalk_JPN": "頑張れば…今世のうちに全部払えるはず…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "있을까…?",
+      "UnitTalk_JPN": "…払えるかしら……？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FOOTSTEP_HIGHHEELS_03.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "말없이 돌아서는 리사의 뒷모습이 왠지 모르게 쓸쓸해 보였다.",
+      "UnitTalk_JPN": "黙って立ち去るリサの後ろ姿は、どこか寂しげに見えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "정말 저희 상점에 방문해 주셨네요! 고마워요, 단장님!",
+      "UnitTalk_JPN": "本当にお越しくださったんですね！ありがとうございます、団長さん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그런데… 잠시만 기다려 주시겠어요?",
+      "UnitTalk_JPN": "ですが…少々お待ちいただけますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "VIP 고객님이 주문한 물건을 트럭에 실어야 하거든요!",
+      "UnitTalk_JPN": "VIPのお客様が注文された商品を、トラックに積み込まないといけないんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "영─차!",
+      "UnitTalk_JPN": "よいしょー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리세트는 리사가 주문한 상자들을 혼자서 씩씩하게 옮기고 있다.",
+      "UnitTalk_JPN": "リセットは、リサが注文した荷物を一人でせっせと運んでいる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이럴 때는…",
+      "UnitTalk_JPN": "こういう時は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "도와주자.",
+          "JumpAnchorStringId_JPN": "手伝ってあげよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "잠시 기다리자.",
+          "JumpAnchorStringId_JPN": "少し待とう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "[PF_OF_STAR_STORE_01]",
+      "UnitTalk_JPN": "「PF_OF_STAR_STORE_01」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "UnitTalk_KOR": "리세트와 함께 배송해야 할 상자를 트럭에 실었다.",
+      "UnitTalk_JPN": "リセットと一緒に、配送すべき箱をトラックに積み込んだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "고맙습니다! 여러분 덕분에 배송을 빨리 보낼 수 있었어요!",
+      "UnitTalk_JPN": "ありがとうございます！皆さんのおかげで、早く配送準備を終わらせることができました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "저 혼자 했으면 분명 배송이 사흘은 늦어졌을 거예요!",
+      "UnitTalk_JPN": "わたし一人だったら、きっと配送が3日は遅れていたはずです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으음… 하지만 <color=#F7BE45>[아포칼립스 상단]</color>이 대가를 치르지 않고 도움을 받는다는 건 있을 수 없는 일!",
+      "UnitTalk_JPN": "うーん…ですが<color=#F7BE45>「アポカリプス商会」</color>として、ただで助けていただく訳にはいきません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_JINGLE.wav",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여기 리세트가 준비한 <color=#F7BE45>[일일 아르바이트생 자격증]</color>을 드릴게요! ",
+      "UnitTalk_JPN": "こちら、リセットが用意した<color=#F7BE45>「デイリーアルバイター認定証」</color>をお渡しします！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "이것만 있으면 저희 상단에서 물건을 구매하실 때 직원 할인가로 구매하실 수 있을 거예요!",
+      "UnitTalk_JPN": "これさえあれば、当商会でお買い上げの際に、従業員価格が適用されるんですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "엄청난 혜택이죠? 엣헴!",
+      "UnitTalk_JPN": "すごい特典ですよね？えっへん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼 앞으로도 잘 부탁드려요, 손님!",
+      "UnitTalk_JPN": "それでは、今後ともごひいきにお願いしますね！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리세트는 혼자서도 열심히 리사가 주문한 상자들을 트럭에 실었다.",
+      "UnitTalk_JPN": "リセットは一人で、リサが注文した荷物を黙々とトラックに積み込んだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "양에 비해 빠르게 처리했지만… 그래도 시간이 훌쩍 지나가 버렸다.",
+      "UnitTalk_JPN": "量に比べて作業は早かったものの…それでもあっという間に時間が過ぎてしまった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "휴우! 이제야 끝났네.",
+      "UnitTalk_JPN": "ふぅ！やっと終わった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "너무 늦었죠? 죄송해요. 단장님.",
+      "UnitTalk_JPN": "お待たせしてしまいましたね？すみません、団長さん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어린데 굉장하네.",
+          "JumpAnchorStringId_JPN": "小さいのに、すごいね。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "대단한 끈기야.",
+          "JumpAnchorStringId_JPN": "とてつもない根性だ。"
+        }
+      ]
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "우후후, 이 정도야 당연하죠!",
+      "UnitTalk_JPN": "うふふ、これくらい当然ですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "리세트의 꿈은 <color=#F7BE45>[아포칼립스 상단]</color>의 회장님이거든요.",
+      "UnitTalk_JPN": "リセットの夢は、<color=#F7BE45>「アポカリプス商会」</color>の会長ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "그런 높은 자리에 오르려면 성실, 또 성실해야 하니까요!",
+      "UnitTalk_JPN": "高い地位に就くためには、とにかく誠実でないといけません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "자, 그럼 영업을 시작하겠습니다!",
+      "UnitTalk_JPN": "さあ、それでは営業再開です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "오늘은 어떤 물건을 찾으러 오셨나요, 손님?",
+      "UnitTalk_JPN": "どのような商品をお探しですか？",
+      "TalkTime": 0.03
+    }
+  ]
+}

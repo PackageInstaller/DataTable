@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "대형사고를 막은 루그였지만, 고통을 느끼지 못하는 루그에게 보내는 사람들의 시선은 싸늘하다.",
+      "UnitTalk_JPN": "大事故を防いだルーだったが、苦痛を感じないルーに対する人々の視線は冷たい。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "불찰…! 이런 실수를…!",
+      "UnitTalk_JPN": "不覚です…！こんなミスを…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "오늘은 여기서 그만...",
+          "JumpAnchorStringId_JPN": "今日はここまでにし…"
+        }
+      ]
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "안 됩니다.",
+      "UnitTalk_JPN": "いけません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "오늘 훈련은 반드시 오늘 마쳐야 합니다. 안 그러면 내일 계획에 지장이 생깁니다.",
+      "UnitTalk_JPN": "今日の訓練は、必ず今日終えなければなりません。そうしないと、明日の計画に支障が出てしまいますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "다시 시작하시죠. 저는 문제 없습니다.",
+      "UnitTalk_JPN": "再開しましょう。私は大丈夫ですので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무리하다 다쳐. 그만하자.",
+          "JumpAnchorStringId_JPN": "無理したら怪我するよ。もう辞めよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "…정말 괜찮겠어?",
+          "JumpAnchorStringId_JPN": "…本当にできる？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "활력 포션을 건네준다.",
+          "JumpAnchorStringId_JPN": "活力ポーションを渡す。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "생각해 보니… 단장님의 말씀에도 일리가 있군요.",
+      "UnitTalk_JPN": "考えてみると…団長の言葉にも一理がありますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "무리한 훈련을 진행하다가 부상이라도 발생한다면…",
+      "UnitTalk_JPN": "無理に訓練を続けて、怪我でもしたら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "다음 일정에 지장이 생기니까요. ",
+      "UnitTalk_JPN": "次のスケジュールに支障が出てしまいます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "알겠습니다. 오늘 훈련은 여기서 중단할게요.",
+      "UnitTalk_JPN": "分かりました。今日の訓練はここまでにします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "남은 시간 동안 클레어는 다음 일정을 확인하며 휴식을 취했다.",
+      "UnitTalk_JPN": "残った時間、クレアは次のスケジュールを確認しながらゆっくり休んだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그렇지만… 큭…! 알겠습니다, 단장님 말씀에 따르죠…",
+      "UnitTalk_JPN": "しかし…クッ…！分かりました、団長の指示に従います…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어가 아쉬워하는 게 눈에 보였지만 다음 훈련을 기약하기로 했다.",
+      "UnitTalk_JPN": "クレアは残念そうにしていたが、今日の訓練はここまでにした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "네. 걱정하지 않으셔도 됩니다.",
+      "UnitTalk_JPN": "はい。心配なさらないでください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "그럼, 훈련 계획표에 따라 계속 진행하겠습니다.",
+      "UnitTalk_JPN": "それでは、スケジュール表に沿って訓練を続けます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "걱정과 달리, 클레어는 나머지 훈련을 훌륭하게 소화했다.",
+      "UnitTalk_JPN": "心配とは裏腹に、クレアは残りの訓練を立派にやり遂げた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "정말 힘들면 그땐 단장님에게 말씀드리겠습니다. 지금은 정말 괜찮습니다.",
+      "UnitTalk_JPN": "本当に辛ければ、その時は団長にお伝えします。今は本当に大丈夫ですので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어의 강력한 의지에 훈련을 계속 진행했지만, 성과는 그리 좋지 않았다.",
+      "UnitTalk_JPN": "クレアの強い意志に沿って訓練を続けたが、良い成果は得られなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>활력 포션</color>…",
+      "UnitTalk_JPN": "<color=#F7BE45>活力ポーション</color>…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "확실히, 몸 상태가 한결 나아진 것 같습니다.",
+      "UnitTalk_JPN": "確かに、体調がずいぶんと良くなりました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "감사합니다. 단장님.",
+      "UnitTalk_JPN": "ありがとうございます、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SPEAR_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어는 산뜻한 미소를 지었다.",
+      "UnitTalk_JPN": "クレアは明るい笑顔を見せた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

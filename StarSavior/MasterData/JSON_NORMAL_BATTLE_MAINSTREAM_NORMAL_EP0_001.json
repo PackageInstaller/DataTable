@@ -1,0 +1,62 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_3_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_MAINSTORY_00",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_MAINSTORY_00",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_MAINSTORY_00",
+            "AllSkillAvailable": true
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_3_BOSS_A",
+        // "TeamASpawnList": [
+        //   {
+        //     "SpawnPosIndex": 0,
+        //     "UnitStrId": "NKM_UNIT_S_VOYAGER_SMILE",
+        //     "AllSkillAvailable": true
+        //   },
+        //   {
+        //     "SpawnPosIndex": 2,
+        //     "UnitStrId": "NKM_UNIT_S_VOYAGER_ORACLE",
+        //     "AllSkillAvailable": true
+        //   }
+        // ],
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_MAINSTORY_00",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_USURPER_CHAIR_BLACK_BOSS_MAINSTORY_00",
+            "IsBoss": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false            
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_MAINSTORY_00",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

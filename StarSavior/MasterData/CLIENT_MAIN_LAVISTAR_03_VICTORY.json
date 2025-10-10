@@ -1,0 +1,1405 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_LAVISTAR_03_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 132,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "MOVIE_MAIN_LAVISTAR_04_RIFT_CLOSED.mp4"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": false,
+      "WaitTime": 0.001,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.001,
+      "BgFileName": "ILLUST_BG_BLACK.png"
+    },
+    {
+      "Uid": 128,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN_DESTROYED.png"
+    },
+    {
+      "Uid": 134,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 1,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "우와아~! 구조해 주셔서 감사합니다!",
+      "UnitTalk_JPN": "わはぁ～！助けてくださってありがとうございました！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_009.wav"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "전 NOA의 관측사인 리사라고 해요.",
+      "UnitTalk_JPN": "私はNOAの観測士、リサです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_010.wav"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "갑자기 하늘에서 공허체들이 떨어졌을 때는 정말 끝이라고 생각했지 뭐예요?",
+      "UnitTalk_JPN": "突然空から<r=ヴォイドボーン>空虚体</r>が落ちてきた時は、人生終了かと思いました…。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_011.wav"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "지난달에 아포칼립스 상단에 주문해 둔 신상 가방도 아직 못 받았는데…",
+      "UnitTalk_JPN": "こないだ、アポカリプス商会で注文した新作バッグも届いてないのに…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_012.wav"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "제가 얼마나 절망적인 기분이었을지 이해하시죠?",
+      "UnitTalk_JPN": "私がどんなに絶望したか、分かりますか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_013.wav"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…이 세계에도 쇼핑 중독인 사람이 있구나.",
+          "JumpAnchorStringId_JPN": "自分の命より買った商品の心配をするなんて…この世界にも、変わった人はいるんだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그나저나 단둘이서 균열군주를 저렇게 쉽게 처리하다니…",
+      "UnitTalk_JPN": "それにしても、たった二人で<r=リフトロード>亀裂の君主</r>を倒しちゃうなんて…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_014.wav"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "분명 두 분 다 이름 있는 구원자분들이시겠죠?",
+      "UnitTalk_JPN": "さぞ有名な救援者の方とお見受けしますが？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_015.wav"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "아니, 같이 계신 걸 보니 구원단이시겠군요!",
+      "UnitTalk_JPN": "いや、ご一緒のところを見ると、救援団の方々なのでしょう！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_016.wav"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "혹시… 그쪽 구원단에 능력 있는 연락관이 한 명 필요하지 않으세요?",
+      "UnitTalk_JPN": "あの…つかぬことをお尋ねしますが、連絡官を募集していたりしませんか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_017.wav"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "구원단이 크게 성장하려면 NOA의 행정 지원을 받기 위한 연락관 한 명은 필수죠.",
+      "UnitTalk_JPN": "救援団を大きく成長させるには、NOAの行政支援を受けるための連絡官が一人は必要です。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_018.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "특히 관측사 출신 연락관이라면 모든 부분에서 우대를 받을 수 있답니다.",
+      "UnitTalk_JPN": "特に、観測士出身の連絡官であれば、様々な面で優遇を受けることができます。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_019.wav"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "마침 제가 대기 발령… 아, 아니 조금 시간이 비어서 말이죠.",
+      "UnitTalk_JPN": "私、ちょうど待命処分…あっ、いえ、少し時間が空いておりましてですね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_020.wav"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "원하신다면 도움을 드릴 수도 있을 것 같은데…",
+      "UnitTalk_JPN": "お望みであれば、力をお貸しできるかと…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_021.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "굳이 자랑하려는 건 아니지만 이래 봬도 특채 시험 딱 두 번 만에 관측사 면허를 딴 인재랍니다.",
+      "UnitTalk_JPN": "自慢ではありませんが…こう見えて、観測士の特別採用試験に、たった2回で合格したんです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_022.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "오, 대단한데?",
+      "UnitTalk_JPN": "それはすごいわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "대단한 거야?",
+          "JumpAnchorStringId_JPN": "そうなのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응, NOA의 1급 관측사 면허 시험은 엄청 어려운 걸로 유명해.",
+      "UnitTalk_JPN": "うん。NOAの1級観測士の試験は、かなり難しいことで有名なの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 129,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "두 번 만에 합격했으면 꽤 자랑스러워할 만 하지.",
+      "UnitTalk_JPN": "たった2回で合格しちゃうなんて、確かに自慢できるわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "그러고 보니 1급 관측사는 NOA 최고 행정기관인 <color=#F7BE45>[관측사 평의회]</color>의 의원이기도 하잖아?",
+      "UnitTalk_JPN": "そういえば、1級観測士はNOAの最高機関、<color=#F7BE45>「<r=ポラリス>観測士評議会</r>」</color>の議員も兼ねていたわよね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "과연… 보기보다 대단한 사람이었구나. 그래서 구조 임무가…",
+      "UnitTalk_JPN": "やっぱり…見た目よりすごい人だったのね。それで救助任務が…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그…",
+      "UnitTalk_JPN": "あの…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_023.wav"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응?",
+      "UnitTalk_JPN": "どうしたの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "1급은 아니고요…",
+      "UnitTalk_JPN": "1級ではなくて…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_024.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 그럼 2급 관측사인가 보네!",
+      "UnitTalk_JPN": "あっ、2級観測士だったのね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "2급도 대단하지. NOA의 행정실무를 책임지는 베테랑들이니까.",
+      "UnitTalk_JPN": "2級もすごいわよ。NOAの行政実務を司るベテランなんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "경력이 쌓이면 1급으로 승진할 수도 있고.",
+      "UnitTalk_JPN": "経歴を積めば、1級に昇進できるかもしれないしね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "아니…",
+      "UnitTalk_JPN": "いえ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_025.wav"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "3급… 관측사… 인데요…",
+      "UnitTalk_JPN": "3級…観測士…なんですが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_026.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아… 3급.",
+      "UnitTalk_JPN": "あっ…3級…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "<color=#F7BE45>[아…]</color> 라고 했죠, 방금! 분명 <color=#F7BE45>[아… 3급]</color>이라고 했어!",
+      "UnitTalk_JPN": "<color=#F7BE45>「あっ…」</color>とおっしゃいましたね、今！確かに、<color=#F7BE45>「あっ…3級…」</color>って言いましたよね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_027.wav"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "어떤 의미의 <color=#F7BE45>[아…]</color>였는지 굳이 말하진 마세요! 말 안 해도 알 것 같으니까!",
+      "UnitTalk_JPN": "弁解しなくても結構ですっ！言わなくても分かりますから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_028.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아, 아니야. 3급도 훌륭하다고…",
+      "UnitTalk_JPN": "い、いえ、3級もすごいわよ…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "동정하지 마세요! 실망한 거 다 보이니까!",
+      "UnitTalk_JPN": "無意味なフォローはやめてください！ガッカリしたのが見え見えです！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_029.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응? 에이, 그런 거에 왜 실망을 하겠어?",
+      "UnitTalk_JPN": "まさか、そんなことでガッカリするわけないでしょ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "애초에 나도 정식 구원자가 아니라 지망생인걸.",
+      "UnitTalk_JPN": "そもそも、わたしだって正式な救援者じゃなくって、志望者なんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…네?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_030.wav"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "지망생?",
+      "UnitTalk_JPN": "志望者？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_031.wav"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "응. 방금 전에 NOA에 도착해서 정식 구원자 등록을 요청했는데…",
+      "UnitTalk_JPN": "そうよ。さっきNOAに到着して、救援者として正式に登録しようとしたんだけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "조금… 행정적인 문제가 있어서… 아직 등록을 하지 못했거든.",
+      "UnitTalk_JPN": "ちょっと…手続きに色々と問題があって…まだ登録できていないの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "아… 아아…",
+      "UnitTalk_JPN": "あっ…ああ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_032.wav"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "드디어 그럴싸한 구원단에 연락관으로 스카우트될 찬스라고 생각 했는데에…!",
+      "UnitTalk_JPN": "ついに、まともな救援団からスカウトされるチャンスだと思ったのにぃ…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_033.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "당분간은 계속 대기 발령 상태로 잔심부름이나 해야 할 팔자구나…",
+      "UnitTalk_JPN": "しばらくは待命処分のまま、雑用でもしないといけないんですね…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_034.wav"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "하아… 대기 발령 중에는 급여도 70%밖에 안 나오는데…",
+      "UnitTalk_JPN": "はぁ…待命処分の間は、お給料も70％しかもらえないのに…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_035.wav"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "월세랑 할부금 갚고 나면… 다음 달도 적자구나…",
+      "UnitTalk_JPN": "家賃と、分割ローンを払ったら…来月も赤字…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_036.wav"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "하아… 실망시켜서 미안해.",
+      "UnitTalk_JPN": "えっと…ガッカリさせてごめん。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_016.wav"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아니에요, 두 분이 싸우는 모습을 봤을 땐 당연히 실력 있는 구원자라고 생각했으니까요…",
+      "UnitTalk_JPN": "いえ、勘違いした私が悪いんです。すごい実力を持ったお二人だったので、てっきり凄腕の救援者かと…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_037.wav"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그러니까 말야! 실력으로는 문제가 없는데!",
+      "UnitTalk_JPN": "そうでしょ！実力的には問題ないのに！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_017.wav"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "이해할 수 없는 제약에 발목이 잡혀 있다고!",
+      "UnitTalk_JPN": "意味のわからない制約に、足を引っ張られてるのよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_018.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "으음- 이 부분은 나중에 NOA가 되었든 관측사 평의회가 되었든 반드시 따지고 가겠어…!",
+      "UnitTalk_JPN": "よし…このことは、NOAでも観測士評議会でも、絶対問い詰めてあげるんだから…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_019.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "휴우, 아무튼 슬슬 이동할까? 여기에 계속 남아 있으면 위험해.",
+      "UnitTalk_JPN": "…ふぅ。とにかく、そろそろ移動した方がよさそうね。ここにいるのは危険よ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_020.wav"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "언제 공허체들이 더 낙하할지 모르니까.",
+      "UnitTalk_JPN": "いつ空虚体が落ちてくるか分からないし。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_021.wav"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "어… 음…",
+      "UnitTalk_JPN": "あっ…ちょっといいですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_038.wav"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "왜 그래? 뭔가 빠트린 물건이라도 있어?",
+      "UnitTalk_JPN": "何かしら？落とし物でもした？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_022.wav"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그게 아니라…",
+      "UnitTalk_JPN": "そうではなく…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_039.wav"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하하, 저기 실은… 제가 아주 중요한 임무를 하나 맡고 있거든요.",
+      "UnitTalk_JPN": "えーと…実は私、とても重要な任務を受けておりまして。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_040.wav"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "여기에 온 것도 그것 때문이고요.",
+      "UnitTalk_JPN": "ここに来たのもそのためなんです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_041.wav"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "중요한 임무?",
+          "JumpAnchorStringId_JPN": "重要な任務？"
+        }
+      ]
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "네, 아주 중요한 임무예요.",
+      "UnitTalk_JPN": "はい、とても重要な任務です。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_042.wav"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "무려 그 알리시아님이 직! 접! 하달하신 임무니까요!",
+      "UnitTalk_JPN": "なんとあのアリシア様から、直！接！下された任務ですから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_043.wav"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "헤에, 여기서도 알리시아님의 이야기가…!",
+      "UnitTalk_JPN": "アリシア様から…！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_023.wav"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…그런데, 아까 대기 발령 중이라고 하지 않았어? 알리시아님이 직접 임무를 내릴 정도면…",
+      "UnitTalk_JPN": "…でも、さっきは待命処分を受けたって言ってなかった？アリシア様が直々に任務を下すほどなら…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_024.wav"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "대기 발령자라고 하지 마세요! 인생의 실패자 같잖아!",
+      "UnitTalk_JPN": "待命処分とか言わないでください！人生の負け犬みたいじゃない！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_044.wav"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그리고 대기 발령 중인 상황을 뒤집기 위해서라도!",
+      "UnitTalk_JPN": "とにかく、この行き詰まった状況から逆転するためにも！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_045.wav"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "저한텐 중요한 심부름이라고요!",
+      "UnitTalk_JPN": "私にとっては重要なおつかいなんです！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_046.wav"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아, 그래. 미안…",
+          "JumpAnchorStringId_JPN": "そ、そうか。ごめん…"
+        }
+      ]
+    },
+    {
+      "Uid": 131,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "여하튼 그래서 말인데…",
+      "UnitTalk_JPN": "とにかくですね…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_047.wav"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아, 아직 공허체들이 완전히 사라진 상황은 아닌 것 같으니-",
+      "UnitTalk_JPN": "あっ、まだ空虚体が完全にいなくなったわけではないようですのでー",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_048.wav"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "제 임무를 조금만 도와주시면 안 될까요?",
+      "UnitTalk_JPN": "私の任務を、少し手伝ってはいただけませんか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_049.wav"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "여러분 정도의 실력이라면 아주 간단한 일일 거예요.",
+      "UnitTalk_JPN": "お二人の実力なら、とっても簡単なことだと思います。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_050.wav"
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건…",
+          "JumpAnchorStringId_JPN": "それは…"
+        }
+      ]
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "내가 답할 수 있는 요청이 아니었기에, 아세라를 바라보았다.",
+      "UnitTalk_JPN": "私が答えていいことでもなかったため、アセラに視線を向ける。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "난 어디까지나 도움을 주기 위해서 동행했던 거고, 처음 목표였던 관측사 구조는 무사히 끝마쳤으니까.",
+      "UnitTalk_JPN": "私はあくまでも、アセラを手助けするために同行しただけだ。当初の目的だった観測士の救助も終わったし、後はアセラの判断に任せよう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…미안, 그건 어려울 것 같아.",
+      "UnitTalk_JPN": "…ごめん、それは難しいかな。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_025.wav"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "네? 하지만 이건 정말 중요한 임무라고요!",
+      "UnitTalk_JPN": "え…？でも、本当に重要な任務なんです！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_051.wav"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "말했듯이 난 아직 구원자 지망생일 뿐이야.",
+      "UnitTalk_JPN": "さっきも言ったように、わたしはまだ正式な救援者じゃなくて、ただの志望者なの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_026.wav"
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "지금은 캔들 스퀘어의 임시 협조 요청을 받아서 당신을 구하러 왔지만…",
+      "UnitTalk_JPN": "今はキャンドル・スクエアから臨時協力要請を受けて、あなたのことを助けにきたけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_027.wav"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "이 이상 멋대로 NOA와 관련된 임무 활동을 했다간…",
+      "UnitTalk_JPN": "これ以上勝手に、NOAに関係のある任務活動をしていたら…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_028.wav"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "규정 위반으로 정식 구원자 등록이 거절될 수도 있으니까…",
+      "UnitTalk_JPN": "規定違反で、正式に救援者として登録できなくなるかもしれないし…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_029.wav"
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아세라의 목소리에 힘이 없었다.",
+      "UnitTalk_JPN": "アセラの声には、申し訳なさがにじんでいた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아까 공허균열도 그냥 지나치려면 다른 이에게 대응을 맡기고 지나칠 수 있었지만, 그러지 않았다.",
+      "UnitTalk_JPN": "先ほど<r=ヴォイドリフト>空虚の亀裂</r>を発見した時も、アセラは進んで対処しようとした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아마 여기 리사라는 관측사의 도움 요청도 마찬가지로, 반드시 들어주고 싶었을 거다.",
+      "UnitTalk_JPN": "おそらく、このリサという観測士の頼みも聞いてあげたかったに違いない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "도움을 요청하는 사람이 있다면 적극적으로 도우려 하는 사람.",
+      "UnitTalk_JPN": "助けを求める者を前にすれば、積極的に手を差し伸べる人。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그게 짧은 시간이지만 아세라를 보고 느꼈던 인상이었다.",
+      "UnitTalk_JPN": "短い時間だが、アセラを見ていて感じた印象だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇기 때문에 자신의 일이 아닌 데도, 거절하는 목소리에 힘이 없는 거겠지, 라고 생각한 그 순간.",
+      "UnitTalk_JPN": "だから…リサの力のなれないことに、歯痒さを感じているのだろう。そう思った瞬間。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아세라의 눈빛이 번뜩이는 것이 보였다.",
+      "UnitTalk_JPN": "アセラは、何かひらめいたように表情を輝かせた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 눈빛은…",
+      "UnitTalk_JPN": "この瞳は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아까 혼인신고서를 손에 쥐고 있을 때의 그 눈빛…?!",
+      "UnitTalk_JPN": "さっき、婚姻届を握り締めていた時と同じ…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만…",
+      "UnitTalk_JPN": "でも…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_030.wav"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "네…?",
+      "UnitTalk_JPN": "え…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_052.wav"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "하지만!",
+      "UnitTalk_JPN": "でも！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_031.wav"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "세상엔 언제나 예외라는 게 있는 법… 아니겠어?",
+      "UnitTalk_JPN": "世の中には、どんなことにも例外があるものよ…そうでしょ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_032.wav"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "내가 알기로 NOA의 관측사는 필요할 경우 현장 권한으로 구원자 등록 절차를 진행할 수 있다고 하던데.",
+      "UnitTalk_JPN": "わたしの知る限りでは…NOAの観測士は必要に応じて、現場の権限で救援者の登録手続きをすることができるわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_033.wav"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "네? 아니 그건… 물론 그런 규정이 있긴 한데…",
+      "UnitTalk_JPN": "そ、それは…もちろん、そのような規定があるにはありますが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_053.wav"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그러면 당신이 여기서 나를…",
+      "UnitTalk_JPN": "ということは、あなたがここでわたしを…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_034.wav"
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "아니, 내친김에 우리 둘을 정식 구원자로 인정해 준다면 행정상의 문제는 모두 사라지는 거야!",
+      "UnitTalk_JPN": "いえ、どうせなら…わたしたち二人を正式に救援者として認めてくれたら、色々な問題がぜんぶなくなるのよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_035.wav"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "우리는 구원자 등록을 해서 좋고, 당신은 임무를 완수할 수 있어서 좋고.",
+      "UnitTalk_JPN": "わたしたちは救援者として登録できるし、あなたは任務を遂行できる。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_036.wav"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "어때? 멋진 해결책 아니야?",
+      "UnitTalk_JPN": "…どう？いい解決策じゃない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_037.wav"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나까지?!",
+          "JumpAnchorStringId_JPN": "私もだって！？"
+        }
+      ]
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잠깐, 난 구원자라는 게 뭔지 아직도 모른다고!",
+      "UnitTalk_JPN": "待ってくれ、私は救援者が何なのかまだ分かっていないんだぞ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하지만… 하지만 저 같은 말단이 그런 일을 했다간…",
+      "UnitTalk_JPN": "でも…私みたいな下っ端がそんなことをしたら…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_054.wav"
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "분명 권한 남용으로 엄청난 잔소리를 듣고 시말서를 써야 할 텐데…",
+      "UnitTalk_JPN": "きっと職権濫用ですごく怒られて、始末書を書かされることに…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_055.wav"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 그래? 그럼 어쩔 수 없네.",
+      "UnitTalk_JPN": "あっ、そう？じゃあ仕方がないわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_038.wav"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "임무 같은 건 포기하고 얌전히 안전지대로 돌아갈 수밖에.",
+      "UnitTalk_JPN": "任務は諦めて、おとなしく安全なところに避難しなさい。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_039.wav"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하아… NOA 행정법상 3급 관측사는 고용 보장도 안 되는 걸로 알고 있는데…",
+      "UnitTalk_JPN": "…聞いた話では、NOAの行政法上、3級観測士は雇用保障もないらしいわね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_040.wav"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "알리시아님이 직접 내린 임무의 실패라…",
+      "UnitTalk_JPN": "アリシア様が直々に下された任務を失敗したら…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_041.wav"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "어떤 대가가 기다리고 있을지 조금만 생각을 해보면-",
+      "UnitTalk_JPN": "どんな末路を辿ることになるか、少し考えてみれば分かるんじゃない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_042.wav"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_056.wav"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "아, 알았어요.",
+      "UnitTalk_JPN": "わ、わかりましたっ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_057.wav"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응? 뭐라고?",
+      "UnitTalk_JPN": "え？なんて？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_043.wav"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "알았어! 알았다고요! 해 주면 되잖아요! 해 주면!",
+      "UnitTalk_JPN": "わかった！わかりましたってば！登録してあげればいいんでしょう？登録してあげれば！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_058.wav"
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "정말이지? 분명히 말했다?",
+      "UnitTalk_JPN": "本当？二言はなしよ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_044.wav"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "좋아! 거래 성립!",
+      "UnitTalk_JPN": "よし！契約成立ね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_045.wav"
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐…",
+          "JumpAnchorStringId_JPN": "ちょっと…"
+        }
+      ]
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하아… 대신 임무는 확실히 마무리해야 해요.",
+      "UnitTalk_JPN": "はぁ…その代わり、任務はちゃんと完遂してくださいね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_059.wav"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "응, 응! 물론이지.",
+      "UnitTalk_JPN": "うんうん！もちろんよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_046.wav"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그럼 따라와요. 길을 안내할 테니까요.",
+      "UnitTalk_JPN": "それでは、ついてきてください。ご案内します。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_060.wav"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐만…",
+          "JumpAnchorStringId_JPN": "待ってくれ…"
+        }
+      ]
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아무래도 가는 길에도 공허체들이 꽤 있을 것 같지만…",
+      "UnitTalk_JPN": "道中にも、空虚体がかなりたくさんいそうね…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_047.wav"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "방금 정식으로 등록이 완료된 <color=#F7BE45>[구원자]</color>, 아세라님에게 맡겨!",
+      "UnitTalk_JPN": "でも<color=#F7BE45>「救援者」</color>として正式に登録された、このアセラ様に任せて！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_048.wav"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "아, <color=#F7BE45>[PLAYER_NAME]</color>도 축하해! 내 덕분에 구원자가 된 거 잊으면 안 된다?",
+      "UnitTalk_JPN": "あっ、<color=#F7BE45>[PLAYER_NAME]</color>もおめでとう！救援者になれたのはわたしのおかげだってこと、忘れないでね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_049.wav"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 출발하자!",
+      "UnitTalk_JPN": "それじゃあ、出発よ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_04_UNIT_S_VOYAGER_STRANIS_050.wav"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "그 말을 남긴 아세라는 리사의 손을 잡아끌고 달려가기 시작했다.",
+      "UnitTalk_JPN": "そう言ってアセラは、リサの手を取り走り出した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "도움을 바라는 목소리를 거절하지 않는 따듯한 마음씨.",
+      "UnitTalk_JPN": "助けを求める人を見過ごさない、温かい心。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…를 뛰어넘는, 목표를 이루기 위한 무서운 추진력과 결단력.",
+      "UnitTalk_JPN": "…を超える、目標を叶えるための驚異的な行動力と決断力。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "조금이지만 아세라에 대해 더 알게 되었음을 느끼면서, 나도 그 뒤를 쫓았다.",
+      "UnitTalk_JPN": "少しではあるが、アセラのことを知れたようだ。私も彼女を追いかけるとしよう。",
+      "TalkTime": 0.03
+    }
+  ]
+}

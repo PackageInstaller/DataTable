@@ -1,0 +1,392 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "후후. 긴장되시나요? ",
+      "UnitTalk_JPN": "ふふっ。緊張されていますか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "너도 사실은 긴장하고 있는 거 아니야?",
+          "JumpAnchorStringId_JPN": "カルメンこそ、本当は緊張してるんじゃない？"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "전혀요. 이번에는 진심이에요. ",
+      "UnitTalk_JPN": "全くです。これは本心ですよ？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "더 이상 스스로를 속이지 않으려구요. ",
+      "UnitTalk_JPN": "もう、自分に嘘はつかないつもりですから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장님 앞에서는 더더욱요. 후후.",
+      "UnitTalk_JPN": "団長さんの前では、なおさらです。ふふっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "덕분에 많이 성장한 것 같아요. 외적으로도, 내적으로도요.",
+      "UnitTalk_JPN": "おかげさまで、たくさん成長できました。肉体的にも、精神的にも。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "되돌아보면 단장님께 신세를 많이 진 것 같네요. ",
+      "UnitTalk_JPN": "振り返ってみると、団長さんには本当にお世話になりました。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "도움이 필요하시면 얼마든지 말씀해 주세요. ",
+      "UnitTalk_JPN": "私に何かお手伝いできることがあれば、いつでもおっしゃってくださいね？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "다른 사람도 아니고 단장님의 부탁이라면 음…",
+      "UnitTalk_JPN": "他の人ならともかく、団長さんのお願いなら、んー…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…뭐든 들어드릴지도?",
+      "UnitTalk_JPN": "…何でも聞いちゃうかも。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐, 뭐든…?",
+          "JumpAnchorStringId_JPN": "な、何でも…？"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "후후. 농담이에요 농담. ",
+      "UnitTalk_JPN": "ふふっ、冗談ですよ、冗談。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "역시 단장님은 당황할 때가 가장 귀엽다니까요.",
+      "UnitTalk_JPN": "やっぱり団長さんは、慌てた時が一番かわいいんですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…놀리지 마.",
+          "JumpAnchorStringId_JPN": "…からかわないでくれる？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후후… ",
+      "UnitTalk_JPN": "ふふっ… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장님. 저, 생각해봤는데요. ",
+      "UnitTalk_JPN": "団長さん…私、考えてみたんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "기사단 복귀를 조금 늦추는 건 어떨까요?",
+      "UnitTalk_JPN": "騎士団への復帰を、少し遅らせるのはどうでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "<color=#F7BE45>여정</color>은 끝이지만 당분간 구원단 활동을 하면서 조금 더 성장하고 싶어요.",
+      "UnitTalk_JPN": "<color=#F7BE45>救援の旅</color>は終わりますが…しばらくは救援団の活動をしながら、もう少し成長したいのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "조금은 사소하지만… 사람들을 도우면서 라비스타의 다양한 도시를 돌아다니는 것도 괜찮을 것 같거든요.",
+      "UnitTalk_JPN": "人々を手助けしながら、ラビスターの色んな街を巡るのも良いと思ったんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "이 참에 쌓아 둔 휴가를 써버리는 것도 나쁘지 않겠죠.",
+      "UnitTalk_JPN": "この際、溜まっている休暇を使ってしまうのも悪くないでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "단장님과 함께라면…",
+      "UnitTalk_JPN": "団長さんと一緒なら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "그것도 좋겠다는 생각이 들었어요. ",
+      "UnitTalk_JPN": "それも良いなと思ったのです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "네가 원한다면.",
+          "JumpAnchorStringId_JPN": "カルメンが望むなら。"
+        }
+      ]
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후. 거절하지 않으시네요. 벌써부터 기대되는 걸요?",
+      "UnitTalk_JPN": "ふふっ、断らないのですね。期待してしまいますよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그럼, 가볼까요? 저희의 마지막 <color=#F7BE45>[여정]</color>을 향해서요.",
+      "UnitTalk_JPN": "では、行きましょうか。私たちの<color=#F7BE45>旅</color>の終わりに向かって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래.",
+          "JumpAnchorStringId_JPN": "行こう。"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "네, 지금부터 별의 구원자 계승 시험 <color=#F7BE45>[여정]</color>.",
+      "UnitTalk_JPN": "では、これより星の救援者・継承試験<color=#F7BE45>「救援の旅」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그 최종시험을 시작하겠습니다.",
+      "UnitTalk_JPN": "最終試験を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "시험상대는 <color=#F7BE45>[알데바란의 집행자 길레]</color>.",
+      "UnitTalk_JPN": "対戦相手は<color=#F7BE45>「アルデバランの執行者・ギーレ」</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[디랙의 우물]</color>이 투영을 개시합니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ディラックの井戸」</color>が投影を開始します。",
+      "TalkTime": 0.03
+    }
+  ]
+}

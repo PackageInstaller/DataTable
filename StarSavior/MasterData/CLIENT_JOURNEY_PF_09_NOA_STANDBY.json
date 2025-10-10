@@ -1,0 +1,440 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_09_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰를 해결하러 가던 길에 사람들이 모여 있었다.",
+      "UnitTalk_JPN": "依頼を解決するために向かう道中で、人だかりを見かけた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이 검으로 말할 것 같으면 별의 구원자가 사용했다던 바로 그 전설적인 무기!",
+      "UnitTalk_JPN": "この剣はですね！星の救援者が使っていたという、あの伝説の武器！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…의 설계를 참고해 만든 우리 공업소의 걸작입니다! 험지를 탐험하는 분들께 최고의 친구죠!",
+      "UnitTalk_JPN": "…を参考に作った、我が工房の傑作です！険しい地を探検される方々にとって、最高の相棒となるでしょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "UnitTalk_KOR": "만약 가격을 보고 실망하셨더라도 걱정 마세요!",
+      "UnitTalk_JPN": "もしお値段を見てがっかりされた方も、ご安心を！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "UnitTalk_KOR": "이 바위에 꽂힌 검을 뽑은 분께는 그 힘과 배짱을 높이 사서 무료로 증정해 드리니까요!",
+      "UnitTalk_JPN": "この岩に刺さった剣を引き抜いた方には…その力と度胸を高く評価し、無料で差し上げます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_FIXED_CHALLENGE_01_01]",
+      "UnitTalk_JPN": "「EVENT_FIXED_CHALLENGE_01_01」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "별의 구원자와 관련 없어 보이지만, 품질은 무척 뛰어나 보인다.",
+      "UnitTalk_JPN": "星の救援者とは関係なさそうだが、品質は非常に優れているようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여기서는…",
+      "UnitTalk_JPN": "どうしようか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "한 자루 구입한다.",
+          "JumpAnchorStringId_JPN": "購入する。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "취약부를 찾아낸다.",
+          "JumpAnchorStringId_JPN": "弱点を探す。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "정석으로 도전한다.",
+          "JumpAnchorStringId_JPN": "挑戦する。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        },
+        {
+          "Uid": 4,
+          "JumpAnchorStringId_KOR": "지나쳐 간다.",
+          "JumpAnchorStringId_JPN": "通り過ぎる。",
+          "JumpAnchorId": "REWARD_ANCHOR_4"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "만약의 상황에 대비해 쓸 만한 장비를 구비해 두는 편이 좋을 것이다.",
+      "UnitTalk_JPN": "万が一の事態に備え、使える装備は揃えておいた方が良いだろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하하! 첫 손님이시군요!",
+      "UnitTalk_JPN": "ハハッ！最初のお客様ですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "UnitTalk_KOR": "저희 제품을 믿어 주셔서 감사합니다! 특별히 할인가로 모셔 드리죠!",
+      "UnitTalk_JPN": "我々の製品を信じてくださり、ありがとうございます！特別に割引させていただきますね！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>에게 바위에 인위적인 틈새가 있다는 이야기를 들었다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が、岩に人工的な隙間があることを教えてくれた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "틈새를 따라 당기자, 검은 놀랄 만큼 부드럽게 뽑혀 나왔다.",
+      "UnitTalk_JPN": "隙間に沿って引っ張ると、剣は驚くほどスムーズに抜けた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "오… 오오…! 굉장합니다! 이렇게 쉽게 뽑다니!",
+      "UnitTalk_JPN": "お…おお…！すごい！こんな簡単に引き抜くなんて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "직원이 감탄에 찬 표정으로 검을 건네 줬다.",
+      "UnitTalk_JPN": "店員は感嘆した表情で、剣を手渡してくれた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 힘을 주자, 깊숙이 박힌 검이 천천히 올라왔다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が力を込めると、深く刺さっていた剣がゆっくりと身を現わした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "오오, 성공! 성공입니다!",
+      "UnitTalk_JPN": "おぉ、成功だ！成功です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이렇게 한 자루가 훌륭한 주인을 찾았군요. 다른 도전자 분은 안 계십니까?",
+      "UnitTalk_JPN": "こうして、一振が素晴らしい主を見つけましたね。他に、挑戦者はいらっしゃいませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "직원이 참여를 유도하며 검을 건네 줬다.",
+      "UnitTalk_JPN": "店員は、参加を促しながら剣を手渡してくれた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_4",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>와 함께 의뢰를 해결하러 서둘렀다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と依頼を解決するために急いだ。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

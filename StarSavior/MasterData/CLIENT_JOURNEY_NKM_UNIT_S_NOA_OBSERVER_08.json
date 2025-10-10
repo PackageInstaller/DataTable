@@ -1,0 +1,1521 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "ILLUST_BG_FISHING_SPOT_NIGHT.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "어때요, 단장님? 뭐가 보여요?",
+      "UnitTalk_JPN": "団長、どうですか？見えてませんよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아무것도 안 보여.",
+          "JumpAnchorStringId_JPN": "何も見えない。"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "그런가요? 다행이다.",
+      "UnitTalk_JPN": "そうですか？なら良かったです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BIRD_FLY_05.wav",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그럼 천천히 걸어… 우왓?! 깜짝이야!",
+      "UnitTalk_JPN": "ではゆっくり進んで…わわっ！？びっくりした！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "뭔가요? 새가 갑자기 날아와서 깜짝 놀랐어요!",
+      "UnitTalk_JPN": "急に鳥が飛んできました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮아?",
+          "JumpAnchorStringId_JPN": "大丈夫？"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "앗! 돌아보지 마세요, 단장님! 깜짝이벤트가 실패한다고요!",
+      "UnitTalk_JPN": "あっ、振り返ってはいけませんよ！サプライズ失敗になっちゃいます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "절대로! 반드시!",
+      "UnitTalk_JPN": "絶対に！絶対にですっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "두 눈 꼭 감고 있어야 해요. 아셨죠?",
+      "UnitTalk_JPN": "両目をぎゅっと閉じててください。いいですね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "일단… 알겠어.",
+          "JumpAnchorStringId_JPN": "…分かった。"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav",
+      "UnitTalk_KOR": "약속한 장소에 도착하자마자 나루에게 눈을 가려진 채 한참을 걸었다.",
+      "UnitTalk_JPN": "約束の場所に着くとナルに目隠しをされ、しばらく歩き続けた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "싱그러운 풀향기보다 투명한 물내음이 짙어졌을 때…",
+      "UnitTalk_JPN": "青々とした緑の香りより、澄んだ水の香りが強くなった時…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "됐다! 이제 눈 뜨셔도 돼요.",
+      "UnitTalk_JPN": "着きました！目を開けてもいいですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "여기가 바로…",
+      "UnitTalk_JPN": "ここが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "단장님을 위한 깜짝 이벤트 장소! NOA에서 제일 비싼 낚시터랍니다!",
+      "UnitTalk_JPN": "団長のためのサプライズ会場！NOAで最もお高い釣り場です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "주변에 아무도 없네?",
+          "JumpAnchorStringId_JPN": "誰もいないけど？"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "히힛! 당연하죠! 오늘 하루 제가 통째로 빌렸거든요.",
+      "UnitTalk_JPN": "にししっ、当然です！今日は貸切ですから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…예상보다 많은 돈이 들어갔지만.",
+      "UnitTalk_JPN": "…想像以上のお値段でしたけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장님에게 드리는 선물 겸 방정식의 무한한 가능성을 입증한 기념으로! 화끈하게 썼습니다!",
+      "UnitTalk_JPN": "団長へのプレゼントとして、そして方程式の無限なる可能性を立証した記念として！パーッと使っちゃいました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "특별한 물고기라도 잡게?",
+          "JumpAnchorStringId_JPN": "特別な魚を釣ろうってこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "히힛! 그렇죠~ 보통 낚시터에 오면 낚시할 거라고 생각하죠~",
+      "UnitTalk_JPN": "にししっ！そうですよね～、普通は釣り場に来たら釣りをすると思いますよね～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "하지만 초천재 엘리트인 제가 평범하게 낚시하려고 여기 왔을까요?",
+      "UnitTalk_JPN": "でも、私は違うんです！超天才エリートですから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "곧 있으면… 아!",
+      "UnitTalk_JPN": "もうすぐ…あっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "보세요, 단장님! 저기!",
+      "UnitTalk_JPN": "見てください、団長！あそこです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_NIGHT.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "UnitTalk_KOR": "나루가 가리킨 하늘을 올려다보자, 어디선가 불어온 바람이 구름을 밀어냈고.",
+      "UnitTalk_JPN": "ナルが指差す方を見上げると、どこからか吹いてきた風が雲を押し流した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "곧이어 환하게 빛나는 별무리들이 모습을 드러냈다.",
+      "UnitTalk_JPN": "ほどなくして、明るく輝く星の群れが姿を現した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고…",
+      "UnitTalk_JPN": "そして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_NOA_OBSERVER_02.png"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "수면이 빛나고 있어…?",
+          "JumpAnchorStringId_JPN": "水面が輝いてる…？"
+        }
+      ]
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "히힛! 이곳엔 별빛을 받으면 빛나는 플랑크톤이 살거든요.",
+      "UnitTalk_JPN": "にししっ！ここには、星灯りを浴びると光るプランクトンが生息してるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "엄청나죠~? 굉장하죠~?",
+      "UnitTalk_JPN": "すごいでしょ～？きれいでしょ～？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "이 낚시터가 NOA에서 제일 비싼 이유 중 하나랍니다!",
+      "UnitTalk_JPN": "これこそ、この釣り場がNOAで最もお高い理由の一つだそうです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "보세요. 저기.",
+      "UnitTalk_JPN": "あっちも見てください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "반짝이는 플랑크톤들이 꼭 은하수 같지 않나요?",
+      "UnitTalk_JPN": "キラキラ光るプランクトン、まるで天の川のみたいじゃないですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "그리고 하늘에 별들! 반짝반짝! 아름답죠?",
+      "UnitTalk_JPN": "そして、空の星！キラキラ輝いて綺麗ですよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "와! 저거, 플레이아데스성단이에요!",
+      "UnitTalk_JPN": "わぁ！プレアデス星団ですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "보이세요? 저기가 메로페 성운인데 가장 밝은 부분이랍니다!",
+      "UnitTalk_JPN": "見えますか？あそこがメローペ星雲で、一番輝いてる部分です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "저건 겨울의 대 삼각형! 프로키온, 시리우스, 베텔게우스를 이으면 만들 수 있어요.",
+      "UnitTalk_JPN": "あれは冬の大三角形！プロキオン、シリウス、ベテルギウスから成っているんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "한번 이어 보시겠어요? 이렇게…",
+      "UnitTalk_JPN": "さぁ、三つの星を結んでみましょう？こういう風に…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "한동안 하늘의 별들을 가리키며 설명을 계속하던 나루가 정면에서 바라봐왔다.",
+      "UnitTalk_JPN": "空に浮かぶ星を指差しながら説明を続けていたナルが、まっすぐと私を見つめてきた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…어떠세요, 단장님?",
+      "UnitTalk_JPN": "…どうでしたか？団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "즐거우신가요?",
+      "UnitTalk_JPN": "楽しんでいただけましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "지금까지 저는 단장님한테 받기만 했으니까…",
+      "UnitTalk_JPN": "これまで、団長には助けてもらってばかりでしたから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "덕분에 방정식을 완성할 수 있었으니까…",
+      "UnitTalk_JPN": "おかげで、方程式を完成させることもできましたし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "보답하기 위해서 오늘 이 자리를 준비해 봤어요.",
+      "UnitTalk_JPN": "お返しがしたくて、こうして準備してみたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "저는 폴라리스 관측사니까. 별에 관한 지식은 남들보다 자신 있으니까.",
+      "UnitTalk_JPN": "私はポラリスの観測士ですから、星に関する知識なら人一倍自信があります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "이곳에서 별을 보여드리고, 또 제가 아는 지식을 단장님에게 알려드리고 싶었어요.",
+      "UnitTalk_JPN": "団長と一緒に星を見ながら、色んなことをお伝えしたくて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 129,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FISHING_SPOT_NIGHT.png"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…히힛.",
+      "UnitTalk_JPN": "…にししっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "마음에 드시나요?",
+      "UnitTalk_JPN": "お気に召されましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 조금 부담스러운데…",
+          "JumpAnchorStringId_JPN": "いや、ちょっと重いかも…"
+        }
+      ]
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…그런가요?",
+      "UnitTalk_JPN": "…そうですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "그렇다면 다행… 아니?! 잠시만!",
+      "UnitTalk_JPN": "だったら良かっ…ええっ！？待ってくださいよぅ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "잠깐만요! 지금은 여운에 젖을 타이밍 아닌가요?",
+      "UnitTalk_JPN": "ちょっと！今は余韻に浸るタイミングじゃないんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "부담스럽다니요! 이유를 말해보세요! 초천재 엘리트인 제가 얼마나 열심히 준비했는데!",
+      "UnitTalk_JPN": "重いだなんて！理由を教えてください！超天才エリートの私が頑張って準備したのにぃ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "낚시터를 통째로 빌린 부분부터 조금…",
+          "JumpAnchorStringId_JPN": "釣り場を貸し切った時点でもう…"
+        }
+      ]
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "처음부터잖아요!",
+      "UnitTalk_JPN": "最初からじゃないですか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아, 알겠어요! 취소, 취소예요!",
+      "UnitTalk_JPN": "わ、分かりましたよ。取り消します！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "나중에 다른 이벤트를 준비할 테니까! 오늘은 이만 해산! 철수!",
+      "UnitTalk_JPN": "今度また、違うイベントを準備しますから！今日はこれにて撤収！解散ですぅ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래도.",
+          "JumpAnchorStringId_JPN": "でも…"
+        }
+      ]
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "즐겁다고 생각해.",
+          "JumpAnchorStringId_JPN": "楽しかったよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "UnitTalk_KOR": "별빛을 받아 빛나는 플랑크톤. 모르고 올려다보던 별들에 담긴 의미.",
+      "UnitTalk_JPN": "星灯りを浴びて輝くプランクトン。夜空に広がる星に込められた意味。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "모두 처음이지만 즐거운 기억으로 새겨지고 있다.",
+      "UnitTalk_JPN": "どれも初めての経験だったが、楽しい思い出として胸に刻まれた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…정말이요?",
+      "UnitTalk_JPN": "…本当ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "진짜죠? 거짓말 아니죠? 괜히 마음에 없는 말하는 거 아니죠?",
+      "UnitTalk_JPN": "嘘じゃなくて、本当に楽しんでもらえましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "그렇다면 나루의 깜짝이벤트, 대성공이네요!",
+      "UnitTalk_JPN": "だったら、サプライズは大成功ですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "히힛…!",
+      "UnitTalk_JPN": "にししっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "단장님.",
+      "UnitTalk_JPN": "団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "단장님은 저에게 꼭 필요한 사람이에요.",
+      "UnitTalk_JPN": "団長は、私にとってなくてはならない人なんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "저의 부족한 부분, 모자란 부분을 채워 주시는 단 하나뿐인 존재.",
+      "UnitTalk_JPN": "私の未熟なところを補ってくれる、唯一の存在ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "그러니까… 앞으로도 제가 NOA 제1관측사가 될 때까지…",
+      "UnitTalk_JPN": "だから、これからも…私がNOAの第一観測士になる時まで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "곁에서 절 도와주셨으면 해요.",
+      "UnitTalk_JPN": "傍にいてくれたら、嬉しいです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "약속해 주시겠어요?",
+      "UnitTalk_JPN": "約束してくれますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나루가 진지한 눈빛으로 바라봐왔다.",
+      "UnitTalk_JPN": "ナルは真剣な眼差しで、こちらを見つめている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 모습을 보고 나 역시 진지하게 고개를 끄덕였다.",
+      "UnitTalk_JPN": "その姿を見て、私はしっかりと頷いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "약속할게.",
+          "JumpAnchorStringId_JPN": "約束する。"
+        }
+      ]
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_03.wav",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "네, 증거 확보.",
+      "UnitTalk_JPN": "はい、証拠確保。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…방금 무슨 소리야?",
+          "JumpAnchorStringId_JPN": "…今の、何の音？"
+        }
+      ]
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "녹음기 버튼 소리예요.",
+      "UnitTalk_JPN": "録音機のボタンを押す音です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "열 길 물속은 알 수 있어도 한 치 사람 마음은 알 수 없다잖아요?",
+      "UnitTalk_JPN": "心変わりは人の世の常、って言うでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "히힛! 팀장님한테 배웠어요. 물적 증거 확보는 필수라고!",
+      "UnitTalk_JPN": "にししっ！リーダーから教わったんです。物的証拠の確保は必須だって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 이렇게 감동을 파괴한다고?!",
+          "JumpAnchorStringId_JPN": "感動のシーンが台無しなんだけど…！？"
+        }
+      ]
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "왜 이러세요? 먼저 감동을 파괴한 건 단장님이시잖아요.",
+      "UnitTalk_JPN": "どうしてですか？最初に感動をぶち壊したのは、団長ですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "제가 얼마나 열심히 준비한 이벤트인데! 부담스럽다고 해서 대충격이었다고요!",
+      "UnitTalk_JPN": "一生懸命準備したのに！重いとか言われて、大ショックでした！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "히힛! 순순히 받아들이세요, 단장님.",
+      "UnitTalk_JPN": "にししっ！大人しく受け入れることですね、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "대신 제가 NOA 최고의 자리에 오르면…",
+      "UnitTalk_JPN": "その代わり、私がNOAの最高権力者まで上り詰めたら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "그때 NOA 절반을 단장님에게 드릴게요!",
+      "UnitTalk_JPN": "NOAの半分を、団長に差し上げます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어딘가의 마왕이냐고…",
+          "JumpAnchorStringId_JPN": "魔王みたいなこと言ってるな…"
+        }
+      ]
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "히힛!",
+      "UnitTalk_JPN": "にししっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…가까이 오세요, 단장님.",
+      "UnitTalk_JPN": "…もっと近くに来てください、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "아직 들려드리지 못한 이야기가 저 하늘의 별만큼 많이 남았답니다.",
+      "UnitTalk_JPN": "お話したいことが、あの星々みたいに無数にあるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "계속할게요?",
+      "UnitTalk_JPN": "続けますよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_NIGHT.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 후, 나루의 설명을 들으면서 밤하늘에 담긴 별들을 올려다봤다.",
+      "UnitTalk_JPN": "その後もナルの説明を聞きながら、夜空に浮かぶ星々を眺めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "평소보다 별이 가깝게 느껴지는 밤이었다.",
+      "UnitTalk_JPN": "いつもよりも、星を身近に感じた夜だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러고 보니",
+          "JumpAnchorStringId_JPN": "そういえば…"
+        }
+      ]
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "완성된 방정식의 이름은 뭐야?",
+          "JumpAnchorStringId_JPN": "あの方程式の名前は？"
+        }
+      ]
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "네…?",
+      "UnitTalk_JPN": "はい…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "맞다! 방정식 이름을 짓는 걸 깜빡하고 있었어요!",
+      "UnitTalk_JPN": "そうだ！方程式に名前をつけるのを忘れてました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "저 같은 천재가 이런 실수를…!",
+      "UnitTalk_JPN": "天才ナルが、このようなミスをっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "인생 최대의 불찰!",
+      "UnitTalk_JPN": "人生最大の不覚！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇게 자책할 것까지야…",
+          "JumpAnchorStringId_JPN": "そんな大げさな…"
+        }
+      ]
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "음… 음…",
+      "UnitTalk_JPN": "うーん…うーーん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "…그래.",
+      "UnitTalk_JPN": "…よし。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "정했어요.",
+      "UnitTalk_JPN": "決めました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NARU"
+      ],
+      "UnitTalk_KOR": "제가 만든 방정식의 이름은…",
+      "UnitTalk_JPN": "私の方程式の名前は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>당신과 나와 별의 방정식</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>あなたと私の星の方程式</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "Q. E. D.",
+      "UnitTalk_JPN": "Q.E.D.",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 126,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FISHING_SPOT_NIGHT.png"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

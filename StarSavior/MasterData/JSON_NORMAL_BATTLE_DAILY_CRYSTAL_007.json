@@ -1,0 +1,76 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_DOLL_BOMBER_BLACK_DAILY_04",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_PLUMP_HAMMER_BLACK_ELITE_DAILY_04",
+            "IsElite": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_ORDER",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000
+            }
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_DOLL_BOMBER_BLACK_DAILY_04",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000
+            }
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_RED_DAILY_04",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_CRUNNADUN_AXE_BLACK_BOSS_DAILY_CRYSTAL_07",
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_ORDER",
+            "IsBoss": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_RED_DAILY_04",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

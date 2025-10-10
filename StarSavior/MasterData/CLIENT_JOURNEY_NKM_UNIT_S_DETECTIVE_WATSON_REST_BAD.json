@@ -1,0 +1,205 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하암… 아… 단장님…! ",
+      "UnitTalk_JPN": "ふぁ～。あっ…団長さん…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "좋은… 하암… 아침이에요…",
+      "UnitTalk_JPN": "おはよう…ふぁ～…ございます…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…네? 오늘 졸려 보인다구요…?",
+      "UnitTalk_JPN": "…はい？眠そうに見えますか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "에헤헤… 사실 어제 기다리던 신작 추리 소설이 나와서… ",
+      "UnitTalk_JPN": "えへへ…実は昨日、楽しみにしていた推理小説が発売されて… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "그걸 읽다가 밤을 새워버렸거든요. ",
+      "UnitTalk_JPN": "その本を読んでいたら、朝になってしまいました。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그래서… 하암… 오늘은 너무 졸려-",
+      "UnitTalk_JPN": "それで…ふぁ～…今日はとっても眠たー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "조, 조심해-!",
+          "JumpAnchorStringId_JPN": "あ、危ない！"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고개를 꾸벅거리던 릴리가 균형을 잃고 넘어지려던 순간.",
+      "UnitTalk_JPN": "眠気でコクコクと揺れていたリリーが、バランスを崩して倒れそうになった瞬間。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "갑자기 엄청난 몸놀림으로 자세를 바로잡았다. ",
+      "UnitTalk_JPN": "突然、見事な身のこなしで姿勢を持ち直した。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…후. 넘어질 뻔했네. ",
+      "UnitTalk_JPN": "…ふぅ。倒れるところだった。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "쯧. 조심성 없게. ",
+      "UnitTalk_JPN": "まったく、不用意極まりないな。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "리, 릴리…?",
+          "JumpAnchorStringId_JPN": "リ、リリー…？"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하암… 으음? 응? 단장님, 저 방금 졸았나요? ",
+      "UnitTalk_JPN": "ふぁ～…うん？あれっ？わたし、寝ぼけてましたか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "에헤헤… 졸아버렸다. ",
+      "UnitTalk_JPN": "えへへ…寝ぼけちゃってた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리는 부끄럽다는 듯이 머리를 긁적거렸다. ",
+      "UnitTalk_JPN": "リリーは恥ずかしそうに頭をかいている。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩐지 토끼 씨의 미간이 조금 구겨진 것처럼 보인다. ",
+      "UnitTalk_JPN": "…何だか、ウサギさんの顔はいつもより険しい気がする。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

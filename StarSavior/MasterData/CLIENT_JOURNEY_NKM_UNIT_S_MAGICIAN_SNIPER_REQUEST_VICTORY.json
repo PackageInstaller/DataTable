@@ -1,0 +1,59 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "대성공!",
+      "UnitTalk_JPN": "大成功！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "전리품으로는 약간의 명예와 단장의 신뢰 정도인가?",
+      "UnitTalk_JPN": "戦利品は、少しの名誉と団長さんの信頼ってカンジかな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "UnitTalk_KOR": "만족스러운 성과야.",
+      "UnitTalk_JPN": "成果としては十分だね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_SNIPER_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "아하핫! 다음에도 잘 부탁해, 단장.",
+      "UnitTalk_JPN": "あははっ！次も頼んだよ、団長さん！",
+      "TalkTime": 0.03
+    }
+  ]
+}

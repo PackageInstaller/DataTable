@@ -1,0 +1,524 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_32B_KLD_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_KALAID.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "칼라이드 주민들과 함께 축제 준비를 하던 중이었다",
+      "UnitTalk_JPN": "カライドの住民たちと一緒に祭りの準備をしていたところだった",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_FEMALE",
+      "UnitNameString": [
+        "SI_SPAOWNER"
+      ],
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "휴우… 이거 곤란하게 됐네…",
+      "UnitTalk_JPN": "はあ…これは困ったな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무슨 문제라도 있습니까?",
+          "JumpAnchorStringId_JPN": "何か問題でも？"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_FEMALE",
+      "UnitNameString": [
+        "SI_SPAOWNER"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "지난번에 몰려왔던 마수들 중에 계속 이 주위를 어슬렁거리는 녀석들이 있어.",
+      "UnitTalk_JPN": "先月押し寄せた魔獣たちの中に、今もこの辺りをうろついている奴らがいる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_FEMALE",
+      "UnitNameString": [
+        "SI_SPAOWNER"
+      ],
+      "UnitTalk_KOR": "노천 온천이 우리 칼라이드의 자랑인데, 이래서야 너무 위험해.",
+      "UnitTalk_JPN": "露天温泉は我らカライドの誇りなのに、これじゃ危険すぎる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_FEMALE",
+      "UnitNameString": [
+        "SI_SPAOWNER"
+      ],
+      "UnitTalk_KOR": "몇 번이나 몰아냈는데 아예 자리를 잡았는지 쉽게 움직이지 않더구먼…",
+      "UnitTalk_JPN": "何度追い払っても、すっかり居座ったのか、なかなか動こうとしないんだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_3",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "[EVENT_FIXED_KALAID_02_01]",
+      "UnitTalk_JPN": "「EVENT_FIXED_KALAID_02_01」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_FIXED_KALAID_02_02]",
+      "UnitTalk_JPN": "「EVENT_FIXED_KALAID_02_02」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>의 이야기를 듣고 마수들을 쫓아낼 방법을 생각해 보는데…",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>の話を聞き、魔獣たちを追い出す方法を考えてみるが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "미끼로 유인한다면 어떨까?",
+          "JumpAnchorStringId_JPN": "餌で誘い出したらどうだろうか？",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "떠나지 않는 이유를 찾아보자.",
+          "JumpAnchorStringId_JPN": "去らない理由を探ってみよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "주민들과 힘을 합친다.",
+          "JumpAnchorStringId_JPN": "住民たちと力を合わせる。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기름진 고깃덩이를 사서 가까운 숲으로 마수들을 유인했다.",
+      "UnitTalk_JPN": "脂の乗った肉塊を買って、近くの森へ魔獣たちを誘い込んだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_KALAID.png"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_FEMALE",
+      "UnitNameString": [
+        "SI_SPAOWNER"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "자네들 생각이 맞았어. 숨겨 뒀던 새끼들까지 데리고 숲으로 떠났다는군.",
+      "UnitTalk_JPN": "君たちの考えは正しかった。隠していた子たちまで連れて森へ去ったそうだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_FEMALE",
+      "UnitNameString": [
+        "SI_SPAOWNER"
+      ],
+      "UnitTalk_KOR": "그 일대는 먹이도 풍부하니까 당분간은 괜찮을 거야.",
+      "UnitTalk_JPN": "その一帯は餌も豊富だから、当分は大丈夫だろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "약간의 투자로 마수들을 몰아내는 데 성공했다!",
+      "UnitTalk_JPN": "わずかな投資で魔獣たちを追い出すことに成功した！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_KALAID.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "주변을 수색하니, 미처 다 자라지 않은 마수들을 찾았다.",
+      "UnitTalk_JPN": "周辺を捜索すると、まだ成長しきっていない魔獣たちを見つけた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_FEMALE",
+      "UnitNameString": [
+        "SI_SPAOWNER"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 새끼들이 있어서 이 근방에 계속 머물렀던 거구만.",
+      "UnitTalk_JPN": "ああ、子たちがいたからこの辺りに留まっていたのか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_FEMALE",
+      "UnitNameString": [
+        "SI_SPAOWNER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "새끼들을 다른 곳으로 옮기면 다른 마수들도 냄새를 맡고 올 거야.",
+      "UnitTalk_JPN": "子たちを別の場所に移動させれば、他の魔獣たちも匂いを嗅ぎつけて来るだろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_FEMALE",
+      "UnitNameString": [
+        "SI_SPAOWNER"
+      ],
+      "UnitTalk_KOR": "서두르지. 사람 냄새가 묻지 않게 조심하고.",
+      "UnitTalk_JPN": "急ぐな。人の匂いが付かないよう気をつけろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "큰 충돌 없이 마수들은 그들의 보금자리를 옮긴 모양이다!",
+      "UnitTalk_JPN": "大きな衝突もなく魔獣たちは巣を移したようだ！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_KALAID.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "이 마수 녀석들! 썩 꺼지지 못해!",
+      "UnitTalk_JPN": "この魔獣どもめ！早く消え失せろ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "한 놈씩 모두 손 봐주마!",
+      "UnitTalk_JPN": "一匹残らず始末してやる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "TWIN_6",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 45,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마수들을 몰아내는 데는 성공했지만, 시간을 많이 쓰고 말았다…",
+      "UnitTalk_JPN": "魔獣たちを追い出すのは成功したが、時間をかなり使ってしまった…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

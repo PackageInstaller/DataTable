@@ -1,0 +1,140 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_05B_NOA_BT_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05B_NOA_BT_DEFEAT",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05B_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "…괜찮아? 아까 약탈자에게 깔리는 걸 봤는데.",
+      "UnitTalk_JPN": "…大丈夫か？さっき、レイダーに踏みつけられてるのを見たぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05B_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후, 약탈자들은 걱정 말라고! 이 트리쉬님이 깔끔히 처리했거든!",
+      "UnitTalk_JPN": "ふふ、レイダーのことなら心配するな！このトリッシュ様がキレイに片付けておいたからな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05B_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "역시나 이런 고난이도 의뢰는 초일류 헌터가 나서줘야 한다니까?",
+      "UnitTalk_JPN": "やっぱ高難易度の依頼は、超一流のハンターが引き受けるべきだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05B_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "음. 그래도 너무 풀이 죽지는 말라고!",
+      "UnitTalk_JPN": "まぁ、あんま落ち込むなよな！"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05B_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "너희가 발을 묶어준 덕분에 약탈자들이 멀리 가지 못했거든.",
+      "UnitTalk_JPN": "お前たちが足止めしてくれてたおかげで、アイツらは遠くに逃げられなかったんだからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05B_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "마차는 좀 파손됐지만 카페 스트레가에 입고될 식재료도 무사히 회수되었고.",
+      "UnitTalk_JPN": "馬車は少し壊れてるが、カフェ・ストレガに届ける食材も無事に回収できたぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05B_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "어때, 보기보다 쉽지 않지?",
+      "UnitTalk_JPN": "どうだ、思ってたより簡単じゃなかっただろ？"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05B_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "일류 헌터 특…! 의뢰 수준이 자기랑 맞는지 한눈에 파악함!",
+      "UnitTalk_JPN": "一流ハンターたる者…！依頼のレベルが自分に合っているのか、一目で把握すべし！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05B_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "그래도 너희들, 재능은 있는 것 같으니까 다음엔 적당한 의뢰를 잘 찾아보라고!",
+      "UnitTalk_JPN": "でも、才能はあるみたいだからな。次は自分に合った依頼を選ぶんだぜ！",
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 11,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3"
+    }
+  ]
+}

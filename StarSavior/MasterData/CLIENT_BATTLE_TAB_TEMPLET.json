@@ -1,0 +1,474 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BATTLE_TAB_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11001,
+          "OrderList" : 1,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_NOA_DOWNTOWN_00.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_NOA_DOWNTOWN_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_NOA_DOWNTOWN",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_01"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11002,
+          "OrderList" : 2,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_GRASSLAND_01.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_MEADOW_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_GRAY_GRASSLAND_LAKE",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11003,
+          "OrderList" : 3,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_STARDUST_FORTRESS_01.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_STARDUST_FORTRESS_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_UNDERGROUND_WATERWAY",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_03"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11004,
+          "OrderList" : 4,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_NOA_PLAZA_00.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_NOA_DOWNTOWN_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_NOA_TOWNHALL",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_04"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11005,
+          "OrderList" : 5,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_GRASSLAND_02.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_MEADOW_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_GRAY_GRASSLAND_PLAIN",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_05"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11006,
+          "OrderList" : 6,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_AGANON_00.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_AGANON_ANCIENT_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_AGANON_SQUARE",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_06"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11007,
+          "OrderList" : 7,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_NOA_DOWNTOWN_02.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_NOA_DOWNTOWN_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_NOA_ALLEY",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_07"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11008,
+          "OrderList" : 8,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_TRAINSTATION_00.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_NOA_DOWNTOWN_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_NOA_NEBULA_STATION_1",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_08"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11009,
+          "OrderList" : 9,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_GRASSLAND_00.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_MEADOW_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_NOA_GRAY_PLAIN_1",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_09"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11010,
+          "OrderList" : 10,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_MEADOW_00.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_MEADOW_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_GRAY_GRASSLAND_WIND_RUIN",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_10"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11011,
+          "OrderList" : 11,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_STARDUST_FORTRESS_00.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_STARDUST_FORTRESS_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_STARDUST_FORTRESS",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_11"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 11012,
+          "OrderList" : 12,
+          "BattleContentsId" : 1,
+          "BattleTabType" : "NORMAL",
+          "BattleTabThumbnail" : "UI_MS_OPERATION_THUMB_AGANON_01.png",
+          "BattleTabBackground" : "UI_OPERATION_BG_AGANON_ANCIENT_00.prefab",
+          "BattleTabBgm" : "MUSIC_OPERATION_LOBBY.mp3",
+          "BattleTabName" : "SI_AGANON_GROUND_RUIN",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_OPERATION_SECTOR_12"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 1000001,
+          "OrderList" : 0,
+          "BattleContentsId" : 100,
+          "BattleTabType" : "NORMAL",
+          "BattleTabTitleImg" : "PF_TITLE_MS_EP_00.prefab",
+          "BattleTabThumbnail" : "T_MS_BG_S_EP_00.png",
+          "BattleTabBackground" : "MS_BG_S_EP_00.prefab",
+          "BattleTabListPrefab" : "L_MS_BG_S_EP_00.prefab",
+          "BattleTabBgm" : "MUSIC_ASTRO_SANCTUM.mp3",
+          "BattleTabName" : "SI_END_OF_THE_STARLIGHT",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_MAIN_STORY_NORMAL_0"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 1001001,
+          "OrderList" : 1,
+          "BattleContentsId" : 100,
+          "BattleTabType" : "NORMAL",
+          "BattleTabTitleImg" : "PF_TITLE_MS_EP_01.prefab",
+          "BattleTabThumbnail" : "T_MS_BG_S_EP_01.png",
+          "BattleTabBackground" : "MS_BG_S_EP_01.prefab",
+          "BattleTabListPrefab" : "L_MS_BG_S_EP_01.prefab",
+          "BattleTabBgm" : "MUSIC_LAVISTAR.mp3",
+          "BattleTabName" : "SI_LAVISTAR",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_MAIN_STORY_NORMAL_1",
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 1001000004
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10101,
+          "OrderList" : 1,
+          "BattleContentsId" : 101,
+          "BattleTabType" : "NORMAL",
+          "IsOverlap" : true,
+          "BattleTabIcon" : "UI_REGULAR_QUEST_ICON_01.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_R_CITY_PATROL.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_DAILY_GOLD",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_DAILY_GOLD",
+          "BattleTabRewardData" : 
+          [
+            {
+              "BattleTabRewardType" : "RT_NORMAL_ITEM",
+              "BattleTabReward" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10102,
+          "OrderList" : 2,
+          "BattleContentsId" : 101,
+          "BattleTabType" : "NORMAL",
+          "IsOverlap" : true,
+          "BattleTabIcon" : "UI_REGULAR_QUEST_ICON_02.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_R_BASE_INVESTIGATE.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_DAILY_CRYSTAL",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_DAILY_CRYSTAL",
+          "BattleTabRewardData" : 
+          [
+            {
+              "BattleTabRewardType" : "RT_NORMAL_ITEM",
+              "BattleTabReward" : 201
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10103,
+          "OrderList" : 3,
+          "BattleContentsId" : 101,
+          "BattleTabType" : "NORMAL",
+          "IsOverlap" : true,
+          "BattleTabIcon" : "UI_REGULAR_QUEST_ICON_03.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_R_RUIN_EXPLORE.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_DAILY_MATERIAL",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_DAILY_MATERIAL",
+          "BattleTabRewardData" : 
+          [
+            {
+              "BattleTabRewardType" : "RT_NORMAL_ITEM",
+              "BattleTabReward" : 901
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10201,
+          "OrderList" : 1,
+          "BattleContentsId" : 102,
+          "BattleTabType" : "NORMAL",
+          "IsOverlap" : true,
+          "BattleTabIcon" : "UI_SPECIAL_RAID_ICON_01.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_S_TWISTED_EMOTIONS.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_TWISTED_EMOTIONS",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_DAILY_EXPLORE_1",
+          "BattleTabEquipSetOptionData" : 
+          [
+            {
+              "BattleTabEquipSetOption" : "5"
+            },
+
+            {
+              "BattleTabEquipSetOption" : "6"
+            },
+
+            {
+              "BattleTabEquipSetOption" : "7"
+            },
+
+            {
+              "BattleTabEquipSetOption" : "8"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10202,
+          "OrderList" : 2,
+          "BattleContentsId" : 102,
+          "BattleTabType" : "NORMAL",
+          "IsOverlap" : true,
+          "BattleTabIcon" : "UI_SPECIAL_RAID_ICON_02.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_S_FROSTY_ASSAULT.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_FROSTY_ASSAULT",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_DAILY_EXPLORE_2",
+          "BattleTabEquipSetOptionData" : 
+          [
+            {
+              "BattleTabEquipSetOption" : "1"
+            },
+
+            {
+              "BattleTabEquipSetOption" : "2"
+            },
+
+            {
+              "BattleTabEquipSetOption" : "3"
+            },
+
+            {
+              "BattleTabEquipSetOption" : "4"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10203,
+          "OrderList" : 3,
+          "BattleContentsId" : 102,
+          "BattleTabType" : "NORMAL",
+          "IsOverlap" : true,
+          "BattleTabIcon" : "UI_SPECIAL_RAID_ICON_03.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_S_FORGOTTEN_OATH.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_FORGOTTEN_OATH",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_DAILY_EXPLORE_3",
+          "BattleTabEquipSetOptionData" : 
+          [
+            {
+              "BattleTabEquipSetOption" : "9"
+            },
+
+            {
+              "BattleTabEquipSetOption" : "10"
+            },
+
+            {
+              "BattleTabEquipSetOption" : "11"
+            },
+
+            {
+              "BattleTabEquipSetOption" : "12"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10301,
+          "OrderList" : 0,
+          "BattleContentsId" : 103,
+          "BattleTabType" : "CLOISTER_NORMAL",
+          "BattleTabIcon" : "URA_NORMAL.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_S_FORGOTTEN_OATH.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_INFINITE_CLOISTER",
+          "BattleTabDesc" : "SI_INTERSTELLAR_CLOISTER_DSEC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10302,
+          "OrderList" : 1,
+          "BattleContentsId" : 103,
+          "BattleTabType" : "CLOISTER_SUN",
+          "UsableWeekDays" : ["MON", "THU", "SUN"],
+          "BattleTabIcon" : "URA_SUN.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_S_FORGOTTEN_OATH.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_SUN_CLOISTER",
+          "BattleTabDesc" : "SI_INTERSTELLAR_CLOISTER_DSEC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10303,
+          "OrderList" : 2,
+          "BattleContentsId" : 103,
+          "BattleTabType" : "CLOISTER_MOON",
+          "UsableWeekDays" : ["TUE", "FRI", "SUN"],
+          "BattleTabIcon" : "URA_MOON.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_S_FORGOTTEN_OATH.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_MOON_CLOISTER",
+          "BattleTabDesc" : "SI_INTERSTELLAR_CLOISTER_DSEC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10304,
+          "OrderList" : 3,
+          "BattleContentsId" : 103,
+          "BattleTabType" : "CLOISTER_STAR",
+          "UsableWeekDays" : ["WED", "SAT", "SUN"],
+          "BattleTabIcon" : "URA_STAR.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_S_FORGOTTEN_OATH.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_STAR_CLOISTER",
+          "BattleTabDesc" : "SI_INTERSTELLAR_CLOISTER_DSEC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10305,
+          "OrderList" : 4,
+          "BattleContentsId" : 103,
+          "BattleTabType" : "CLOISTER_ORDER",
+          "UsableWeekDays" : ["THU", "SUN"],
+          "BattleTabIcon" : "URA_ORDER.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_S_FORGOTTEN_OATH.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_ORDER_CLOISTER",
+          "BattleTabDesc" : "SI_INTERSTELLAR_CLOISTER_DSEC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10306,
+          "OrderList" : 5,
+          "BattleContentsId" : 103,
+          "BattleTabType" : "CLOISTER_CHAOS",
+          "UsableWeekDays" : ["FRI", "SUN"],
+          "BattleTabIcon" : "URA_CHAOS.png",
+          "BattleTabThumbnail" : "T_CAMPAIGN_S_FORGOTTEN_OATH.png",
+          "BattleTabBackground" : "UI_BATTLE_TAB_BG_01.png",
+          "BattleTabName" : "SI_CHAOS_CLOISTER",
+          "BattleTabDesc" : "SI_INTERSTELLAR_CLOISTER_DSEC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10401,
+          "OrderList" : 1,
+          "BattleContentsId" : 104,
+          "BattleTabType" : "NORMAL",
+          "BattleTabIcon" : "UI_CUBE_BATTLE_CATEGORY_ICON_01.png",
+          "BattleTabThumbnail" : "UI_CUBE_BATTLE_CATEGORY_THUMB_01.png",
+          "BattleTabName" : "SI_CUBE_MATERIAL_1",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_CUBE_MATERIAL_1",
+          "TopBarItemViewerData" : 
+          [
+            {
+              "TopBarItemViewer" : "401"
+            },
+
+            {
+              "TopBarItemViewer" : "101"
+            },
+
+            {
+              "TopBarItemViewer" : "103"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10501,
+          "OrderList" : 1,
+          "BattleContentsId" : 105,
+          "BattleTabType" : "NORMAL",
+          "BattleTabIcon" : "UI_COSMO_BOSS_PF_DEMORAIGIS_CORE_BLACK_01.prefab",
+          "BattleTabThumbnail" : "UI_COSMO_BOSS_DEMORAIGIS_CORE_BLACK_01.png",
+          "BattleTabName" : "SI_DEMORAIGIS",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_COSMO_GATE_1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10502,
+          "OrderList" : 1,
+          "BattleContentsId" : 105,
+          "BattleTabType" : "NORMAL",
+          "BattleTabIcon" : "UI_COSMO_BOSS_PF_DUMMY_03.prefab",
+          "BattleTabThumbnail" : "UI_COSMO_BOSS_DUMMY_03.png",
+          "BattleTabName" : "SI_MOGULUS",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_COSMO_GATE_3"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleTabID" : 10503,
+          "OrderList" : 1,
+          "BattleContentsId" : 105,
+          "BattleTabType" : "NORMAL",
+          "BattleTabIcon" : "UI_COSMO_BOSS_PF_DUMMY_01.prefab",
+          "BattleTabThumbnail" : "UI_COSMO_BOSS_DUMMY_01.png",
+          "BattleTabName" : "SI_BOSS_GILLE",
+          "BattleTabDesc" : "SI_BATTLE_TAB_DESC_COSMO_GATE_2"
+        }
+    ]
+}

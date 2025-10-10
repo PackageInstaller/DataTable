@@ -1,0 +1,103 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00B_RANDOM_WEATHER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00B_RANDOM_WEATHER",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "StartFxSoundName": "AMB_12.wav"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00B_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아침부터 갑자기 비가 내리기 시작했다.",
+      "UnitTalk_JPN": "朝から突然、雨が降り始めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00B_RANDOM_WEATHER",
+      "WaitClick": false,
+      "WaitTime": 1.25,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00B_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ADVENTURER_A"
+      ],
+      "UnitTalk_KOR": "다들 어서 들어와!",
+      "UnitTalk_JPN": "さぁ、早く中に入るんだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00B_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EXPLORER_A"
+      ],
+      "UnitTalk_KOR": "휴우… 신발 안쪽까지 다 젖어 버렸어.",
+      "UnitTalk_JPN": "ふう…靴の中までびしゃ濡れだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00B_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_02_01]",
+      "UnitTalk_JPN": "「EVENT_RANDOM_WEATHER_02_01」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00B_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_02_02]",
+      "UnitTalk_JPN": "「EVENT_RANDOM_WEATHER_02_02」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00B_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "결국 일정은 취소하고 하루 종일 로비에서 시간을 보내게 되었다…",
+      "UnitTalk_JPN": "結局、予定はキャンセルして、一日中ロビーで過ごすことになった…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

@@ -1,0 +1,1139 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_REQUEST.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그날 이후 프레이는 약간 풀 죽은 표정으로 말이 없었다.",
+      "UnitTalk_JPN": "その日以降…フレイは少ししょんぼりとした様子で、口を開かなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 드디어 기운을 얻은 듯 내게 말을 걸었다. ",
+      "UnitTalk_JPN": "でも…ついに元気になったのか、私に声をかけてきた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그 사기꾼에게 속은 뒤로 전 오랫동안 반성했습니다.",
+      "UnitTalk_JPN": "あの詐欺師に騙されてから、わたくしはしばらく反省していましたの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "확실히 이번 일은 제 실책이라 할 수 있겠지요.",
+      "UnitTalk_JPN": "今回の件は確かに、わたくしの過ちでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만… 이 세상만사 나쁜 일이 있으면 좋은 일도 있는 법.",
+      "UnitTalk_JPN": "ですが…世の中、悪いことがあれば良いこともあるものです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "비록 사기를 당하긴 했지만 얻은 것도 있습니다.",
+      "UnitTalk_JPN": "詐欺には遭ってしまいましたが、得たものもあるでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "행동하기 전에 깊이 생각하는 습관 같은 거?",
+          "JumpAnchorStringId_JPN": "行動する前に、深く考える習慣とか？"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.2,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "무슨 헛소리를 하는 겁니까?",
+      "UnitTalk_JPN": "戯言はやめてくださいますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "생각 따위를 하다 보면 중요한 시기를 놓친다는 건 사업의 상식입니다.",
+      "UnitTalk_JPN": "あれこれ考えているうちに、重要なタイミングを逃してしまうというのは…ビジネスにおける常識なのですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼 <color=#F7BE45>마법 장판</color>은 사기였지만… 그것 말고도 남은 것이 하나 있습니다.",
+      "UnitTalk_JPN": "とにかく、<color=#F7BE45>魔法のカーペット</color>は詐欺でしたが…ひとつ残ったものがあります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "설마…",
+          "JumpAnchorStringId_JPN": "まさか…"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그렇습니다.",
+      "UnitTalk_JPN": "そうですとも。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "바로 <color=#F7BE45>피라미드 판매법</color>이죠.",
+      "UnitTalk_JPN": "ずばり、<color=#F7BE45>ピラミッド商法</color>ですっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "이 판매 시스템의 가진 놀라운 잠재력은 여전히 존재하고 있습니다.",
+      "UnitTalk_JPN": "この販売システムは、今でも驚くべき潜在力を持っているんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하지만 그거 사기꾼이 알려준 거잖아.",
+          "JumpAnchorStringId_JPN": "でも、詐欺師が教えてくれたものでしょ？"
+        }
+      ]
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후우… 아직도 모르시겠습니까?",
+      "UnitTalk_JPN": "ふぅ…まだ分からないのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "시스템에는 죄가 없다는 것을요.",
+      "UnitTalk_JPN": "システム自体には、罪がないということを。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "저에게 그 가짜 마법 장판을 팔아 치운 놈은 용서할 수 없지만…",
+      "UnitTalk_JPN": "わたくしに、偽・魔法のカーペットを売りつけた詐欺師は許せませんが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그건 어디까지나 사람의 문제!",
+      "UnitTalk_JPN": "それはあくまでも、その人が問題だっただけ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "같이 팔아서 같이 번다! 이 얼마나 정의롭고 아름다운 시스템입니까. ",
+      "UnitTalk_JPN": "共に売り、共に稼ぐ！なんと真っすぐで、美しいシステムなのでしょう。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "<color=#F7BE45>피라미드 판매법</color>에는 죄가 없습니다! ",
+      "UnitTalk_JPN": "<color=#F7BE45>ピラミッド商法</color>には罪がありません！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "항상 인간 놈들이 문제인 거죠!",
+      "UnitTalk_JPN": "いつも人間が問題なのです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아 그래…",
+          "JumpAnchorStringId_JPN": "そ、そっか…"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래서 오늘 피라미드의 첫 주춧돌이 될 파트너를 초대했습니다.",
+      "UnitTalk_JPN": "そこで…今日は、ピラミッドの最初の礎となる相棒をお呼びしました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 마침 도착한 모양이군요.",
+      "UnitTalk_JPN": "あっ、ちょうどいらっしゃいましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장님. 절 급히 부르셨다고 들었어요.",
+      "UnitTalk_JPN": "団長。急用で、私のことをお呼びされていたそうですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "중요한 이야기라는 게 어떤 걸까요?",
+      "UnitTalk_JPN": "大事な話とは、一体何でしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "리사…?",
+          "JumpAnchorStringId_JPN": "リサ…？"
+        }
+      ]
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "오늘 연락관 님을 호출한 건 접니다.",
+      "UnitTalk_JPN": "今日、連絡官をお呼びしたのはわたくしです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "자, 거기 서 있지 말고 일단 앉으시죠.",
+      "UnitTalk_JPN": "さぁ、まずはお掛けください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "네? 절 부른게 단장님이 아니라 프레이님이라구요?",
+      "UnitTalk_JPN": "はい？私を呼んだのは、団長ではなくフレイ様だったのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아 일단 앉아 보세요. 잔말 마시고.",
+      "UnitTalk_JPN": "もう。あれこれ言わずに、まずはお座りになって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_KINGDOM_PRAY_01.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다짜고짜 리사를 자리에 앉힌 프레이는 간이 설명회를 열었다. ",
+      "UnitTalk_JPN": "いきなりリサを座らせたフレイは、簡単な説明会を開いた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "프레이가 열정적으로 설명을 이어가자, 리사의 얼굴이 차츰 상기되어갔다.",
+      "UnitTalk_JPN": "フレイの情熱的な説明が続くと、リサの顔が次第に赤くなっていった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.2
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitNameString": [
+        "SI_LISA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그러니까… ",
+      "UnitTalk_JPN": "つまり… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LISA"
+      ],
+      "UnitTalk_KOR": "사업에 참가할 회원을 많이 모집할수록 점점 더 큰 수익이 난다는 거죠?",
+      "UnitTalk_JPN": "ビジネスに参加する会員が集まれば集まるほど、大きな利益を生むということでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PRAY"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그렇죠!",
+      "UnitTalk_JPN": "その通りですっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PRAY"
+      ],
+      "UnitTalk_KOR": "역시 엘리트는 달라도 뭔가 다르군요. ",
+      "UnitTalk_JPN": "さすが、エリートは違いますわね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PRAY"
+      ],
+      "UnitTalk_KOR": "최신식 사업 메커니즘을 단번에 이해하시다니…",
+      "UnitTalk_JPN": "最新のビジネスメカニズムを、たった一度の説明で理解されるなんて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PRAY"
+      ],
+      "UnitTalk_KOR": "평소에도 경제 감각을 날카롭게 연마하고 계신가 보네요.",
+      "UnitTalk_JPN": "普段から経済のセンスを磨かれているようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LISA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후… 자랑은 아니지만 뭐 조금…",
+      "UnitTalk_JPN": "ふふっ…自慢ではありませんが、少し…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitNameString": [
+        "SI_LISA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아무튼 당장 투자할게요!",
+      "UnitTalk_JPN": "とにかく、今すぐ投資します！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LISA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이거라면 제 360개월 할부도 한 번에 해결 가능하겠어요!",
+      "UnitTalk_JPN": "これなら…あと360回残っている分割払いも、一度で解決できそうです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PRAY"
+      ],
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "탁월한 선택이로군요.",
+      "UnitTalk_JPN": "素晴らしい決断ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PRAY"
+      ],
+      "UnitTalk_KOR": "그러면 초기 투자금은 어떻게…?",
+      "UnitTalk_JPN": "それでは、初期投資金は…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_POP.wav",
+      "UnitNameString": [
+        "SI_LISA"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "580개월 할부로 진행하겠습니다! ",
+      "UnitTalk_JPN": "580回払いでお願いします！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런데…",
+          "JumpAnchorStringId_JPN": "でも…"
+        }
+      ]
+    },
+    {
+      "Uid": 90,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_REQUEST.png",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 89,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "또 뭡니까?",
+      "UnitTalk_JPN": "また、何なのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그거 수익이 나려면 회원을 얼마나 모아야 하지?",
+          "JumpAnchorStringId_JPN": "それって、収益を出すには会員をどれぐらい集めないといけないの？"
+        }
+      ]
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그야… 투자금을 회수하려면…",
+      "UnitTalk_JPN": "それは…投資金を回収するには…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "기대수익에 단계별 회원 수를 곱하면… 대충….",
+      "UnitTalk_JPN": "期待収益に、段階ごとの会員数を掛けて…ざっと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "흠… ",
+      "UnitTalk_JPN": "うーん… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_18.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이 숫자라면… 라비스타 전체 인구를 넘을 것 같은데요?",
+      "UnitTalk_JPN": "この数字だと…ラビスターの人口を超えてしまいますよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…이거 현실성이 있는 건가요?",
+      "UnitTalk_JPN": "…これ、本当に実現可能なのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…아.",
+      "UnitTalk_JPN": "…あっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "역시 저출산이 문제였어!",
+      "UnitTalk_JPN": "やっぱり、少子化が問題だったんだわ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "어쩔 수 없군요.",
+      "UnitTalk_JPN": "仕方ありませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "본 사업을 진행하기 전에 우선적으로 펜팔 데이팅 사업을 진행하겠습니다.",
+      "UnitTalk_JPN": "本ビジネスを始める前に、まずはデートアプリビジネスを展開します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래서 출산율을 올려 잠재적 고객을 확보하는 거죠!",
+      "UnitTalk_JPN": "そして出生率を上げて、潜在顧客を確保するのです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "NR",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "생각해 보니 다른 지출 계획이 있는 걸 깜박했네요.",
+      "UnitTalk_JPN": "そういえば、他にも出費の予定があるのを忘れていました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "안타깝지만 이번 사업에 투자하는 건 없던 일로 할게요.",
+      "UnitTalk_JPN": "残念ですが、今回の投資はなかったことにしてください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 전 이만.",
+      "UnitTalk_JPN": "では、失礼しますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_CARTOON_05.wav",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA"
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "자, 잠깐만! 잠깐만요!",
+      "UnitTalk_JPN": "ちょ、ちょっと！お待ちになって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "제게는 아직 12가지의 놀라운 사업 아이템이…!!",
+      "UnitTalk_JPN": "わたくしには、まだ12の驚くべき事業アイデアが…！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으으! 거의 넘어 왔었는데! ",
+      "UnitTalk_JPN": "うぅ！もうちょっとだったのに！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "단장님! 왜 자꾸 제 사업에 훼방을 놓는 거죠?!",
+      "UnitTalk_JPN": "団長！どうしてわたくしのビジネスを邪魔するのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그냥 평범하고 정직한 사업을 하는 건 어때?",
+          "JumpAnchorStringId_JPN": "真面目に、平凡なビジネスをするのはどうかな？"
+        }
+      ]
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…평범한 사업이라고요? ",
+      "UnitTalk_JPN": "…平凡なビジネスですって？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "그런 걸로는 안 됩니다.",
+      "UnitTalk_JPN": "そんなものでは、いけませんの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그런 푼돈으로는 아무것도 할 수 없어요…",
+      "UnitTalk_JPN": "そんなはした金を稼いでも、何もできないのです…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼! 저는 새 사업을 구상하러 가야겠어요. ",
+      "UnitTalk_JPN": "とにかく！わたくしは新たなビジネスを構想してきます。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "프레이는 씩씩거리며 돌아갔다. ",
+      "UnitTalk_JPN": "フレイはふんふんと鼻息を荒げながら戻って行った。 ",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3"
+    }
+  ]
+}

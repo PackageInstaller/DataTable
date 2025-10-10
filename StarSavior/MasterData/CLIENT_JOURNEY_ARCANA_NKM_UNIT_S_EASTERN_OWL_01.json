@@ -1,0 +1,1310 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정에 필요한 물품을 구매하기 위해 광장을 지나는 길이었다.",
+      "UnitTalk_JPN": "旅に必要な物資を購入するため、広場を歩いていると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "끈질기기는…!",
+      "UnitTalk_JPN": "しつこいのだ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "돌아가라, 인간 꼬마! 그리고 새! 부탁해도 소용없다!",
+      "UnitTalk_JPN": "帰るのだ、人間の小童と鳥よ！いくら頼んでも無駄なのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "이 몸의 <color=#F7BE45>테일리온</color>은 아무거나 만들지 않는다!",
+      "UnitTalk_JPN": "わがはいの<color=#F7BE45>テイリオン</color>が何でもかんでも作ると思うな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS7",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "후우…",
+      "UnitTalk_JPN": "ふぅ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "이것만큼은 쓰지 않으려 했는데…",
+      "UnitTalk_JPN": "これだけは使わないって思ってたけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "POS7_2X",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "토토! 그거야!",
+      "UnitTalk_JPN": "トト！いくよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "CameraOffset": "POS8_2X",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "꾸룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_12.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "뭐, 뭐냐?!",
+      "UnitTalk_JPN": "な、どうしたのだ…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "왜 갑자기 엎드리는 거지? 무슨 의미가 있는 거냐?!",
+      "UnitTalk_JPN": "どうして急にうつ伏せになったのだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…아니?!",
+      "UnitTalk_JPN": "…えっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_16.wav",
+      "UnitTalk_KOR": "바닥에 엎드린 세르팡, 토토는 두 다리를 수직으로 뻗었다.",
+      "UnitTalk_JPN": "地面に腹ばいになったセルパンとトトは、両足を垂直に伸ばした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "땅을 밀어내는 팔. 하늘을 향해 솟은 다리.",
+      "UnitTalk_JPN": "そして、両手と両足をピンと地面に突き立て、天高くお尻を上げた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "흠잡을 데 없이 완벽한 황금 삼각형이었다.",
+      "UnitTalk_JPN": "非の打ち所のない三角形だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.8
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…느껴지는군!",
+      "UnitTalk_JPN": "なんと…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "이 몸과 <color=#F7BE45>테일리온</color>을 진심으로 공경하고 있는 건가…!",
+      "UnitTalk_JPN": "わがはいと<color=#F7BE45>テイリオン</color>を心から尊敬しているというのか…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "예의가 뭔지 아는 녀석들이군. 좋다, 일어나라!",
+      "UnitTalk_JPN": "礼というものをよく分かっているではないか！いいだろう、オモテを上げるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "뭐 때문에 찾아왔다고 그랬지?",
+      "UnitTalk_JPN": "それで、何の用でわがはいを訪ねてきたのだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "…NOA에서 솜씨가 뛰어난 재단사를 찾고 있었어.",
+      "UnitTalk_JPN": "…NOAの優秀な仕立屋を探しているんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "캔들 스퀘어에 물어봤더니 당신을 얘기했지.",
+      "UnitTalk_JPN": "キャンドル・スクエアで尋ねたら、アナタが適任だって言うから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "캬하하하! 당연하지!",
+      "UnitTalk_JPN": "ハハハ！当然なのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "위대한 용족 <color=#F7BE45>벨라르미니</color> 일족의 후예이자 차기 <color=#F7BE45>대재단사</color>가 될 이 몸!",
+      "UnitTalk_JPN": "わがはい、偉大なる竜族<color=#F7BE45>ベラルミニ</color>一族の末裔であり、次期<color=#F7BE45>大仕立屋</color>となるスカーレット様とは、わがはいの事なのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "ONE_3",
+      "UnitTalk_KOR": "스칼렛 님보다 뛰어난 재단사는 NOA. 아니, 라비스타 어디에도 없다!",
+      "UnitTalk_JPN": "このスカーレット様よりも優れた仕立屋は、NOA…いいや、ラビスター中を探しても、どこにもいないのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "…그래서 부탁하려고 왔어.",
+      "UnitTalk_JPN": "…だからお願いをしに来たんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "<color=#F7BE45>완벽한 베개</color>를 만들어줘!",
+      "UnitTalk_JPN": "<color=#F7BE45>完璧なまくら</color>を作ってほしいの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "꾸룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "완벽한 베개…?",
+      "UnitTalk_JPN": "完璧な…まくら？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "그래, 맞아!",
+      "UnitTalk_JPN": "うん、そうだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "여름에는 시원하고, 겨울에는 따뜻하고.",
+      "UnitTalk_JPN": "夏は涼しく、冬は暖かく～",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "솜처럼 부드러우면서도 대나무처럼 튼튼한 베개.",
+      "UnitTalk_JPN": "綿のようにフワフワで、竹のように丈夫なまくら！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "한번 머리에 대면 즉시 잠들어버리는 베개!",
+      "UnitTalk_JPN": "頭をうずめたら、すぐに眠れるまくら！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "<color=#F7BE45>완벽한 베개</color>를 만들고 싶어!",
+      "UnitTalk_JPN": "そんな<color=#F7BE45>完璧なまくら</color>を作りたいんだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "꾸룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS8",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "흐음…",
+      "UnitTalk_JPN": "ふむ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "베개는 나도 직접 만들어봤어.",
+      "UnitTalk_JPN": "実はボクも作ってみたんだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그리고 뼈저리게 깨달았지. 나는 수선 솜씨가 부족하다는 걸…!",
+      "UnitTalk_JPN": "そして痛感したんだ…ボクには技術が足りないことをっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "연습하면 나아지겠지.",
+      "UnitTalk_JPN": "練習すれば、いつかは上手になると思うけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "하지만 얼마나 오랜 시간이 걸릴지 모르잖아?",
+      "UnitTalk_JPN": "でも、すごく時間がかかるでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그때 생각났어! 못하는 건 잘하는 사람한테 맡기면 그만이라고!",
+      "UnitTalk_JPN": "だから考えたんだ！上手な人に頼もうって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "부탁할게. 내가 모아온 최고급 재료들이야.",
+      "UnitTalk_JPN": "はいっ！これはボクが集めた最高級の材料だよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "<color=#F7BE45>완벽한 베개</color>를 만들어줘, <color=#F7BE45>대재단사</color>…!",
+      "UnitTalk_JPN": "<color=#F7BE45>完璧なまくら</color>を作って！<color=#F7BE45>大仕立屋</color>さん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitPos": "POS8",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "꾸룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "호오…",
+      "UnitTalk_JPN": "ほう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "최상급 원단, 최첨단 보충재…",
+      "UnitTalk_JPN": "最高級の生地に、最先端の中材…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "그야말로 최고의 재료들만 가져왔구나.",
+      "UnitTalk_JPN": "まさに最高のものを集めてきたのだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "좋다! 용족을 공경하는 인간은 간만에 봤으니까. 소원을 들어주지.",
+      "UnitTalk_JPN": "フハハ！いいだろう！竜族を尊敬する人間は久しぶりだ！わがはいがお主の望みを叶えてやるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "<color=#F7BE45>완벽한 베개</color>를 만들어주마!",
+      "UnitTalk_JPN": "<color=#F7BE45>完璧なまくら</color>とやらを作ってやるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS7",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "에헤헤! 잘 부탁해!",
+      "UnitTalk_JPN": "えへへ！よろしくね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "꾸룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "좋아, 완성이다!",
+      "UnitTalk_JPN": "よし、できたのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "받아라!",
+      "UnitTalk_JPN": "受け取るのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitPos": "POS8",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS7",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "…응?",
+      "UnitTalk_JPN": "…うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…꾸룩?",
+      "UnitTalk_JPN": "…クルッ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "체인이랑 스파이크 장식…? 내가 가져오지 않은 건데…?",
+      "UnitTalk_JPN": "チェーンにスパイクの飾り…？こんなのボク、持ってきてないよ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "인간 꼬마와 새의 마음이 기특해서 말이지…",
+      "UnitTalk_JPN": "人間の小童と鳥の健気な思いに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "이 몸도 전력으로 응해준 거다.",
+      "UnitTalk_JPN": "わがはいも全力で応えたのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그뿐 만이 아니다. 아래를 살펴봐라!",
+      "UnitTalk_JPN": "それだけではない！これを見るのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "외피가 바닥까지 내려왔어…? 아니, 이건 마치…!",
+      "UnitTalk_JPN": "まくらカバーがとっても大きいけど…？これはまるで…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그렇다…",
+      "UnitTalk_JPN": "そうなのだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "<color=#F7BE45>완벽한 베개</color>는 입을 수 있는 베개!",
+      "UnitTalk_JPN": "<color=#F7BE45>完璧なまくら</color>とは、着ることができるまくらなのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "입으면 언제 어디서든 잘 수 있지. 그야말로 완벽하지 않느냐?",
+      "UnitTalk_JPN": "これさえあれば、いつでも眠ることができるのだ！どうだ、すごかろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "캬하하하! 어서 입어봐라!",
+      "UnitTalk_JPN": "ハッハー！さっそく着てみるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SERPENT"
+      ],
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TOTO"
+      ],
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "어떠냐? 소감이!",
+      "UnitTalk_JPN": "どうなのだ！？感想を言ってみるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.1,
+      "BgCrashTime": 1.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "…눈물?",
+      "UnitTalk_JPN": "…涙？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "눈물이 나올 만큼 기뻤던 건가! 이해한다.",
+      "UnitTalk_JPN": "泣くほど嬉しかったのだな！フハハ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SERPENT"
+      ],
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TOTO"
+      ],
+      "UnitTalk_KOR": "…꾸후루룩.",
+      "UnitTalk_JPN": "クルルルッ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SERPENT"
+      ],
+      "UnitTalk_KOR": "…차라리 내가 만들 걸.",
+      "UnitTalk_JPN": "…これだったら、ボクが作ったやつのがましだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "뭣이?!",
+      "UnitTalk_JPN": "なにっ…！？",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN",
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_OWL_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

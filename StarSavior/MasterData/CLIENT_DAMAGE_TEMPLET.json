@@ -1,0 +1,2349 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: DAMAGE_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_GUNBLADE_ATTACK",
+          "AtkFactor" : 6500,
+          "DefFactor" : 5000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_GUNBLADE_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_GUNBLADE_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_STRANIS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_STRANIS_SPECIAL",
+          "AtkFactor" : 20000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_STRANIS_HYPER",
+          "AtkFactor" : 26500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_SMILE_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_SMILE_SPECIAL",
+          "AtkFactor" : 16000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_SMILE_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_ATTACK",
+          "AtkFactor" : 12000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_SPECIAL",
+          "AtkFactor" : 20000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_HYPER",
+          "AtkFactor" : 26500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAID_SPEAR_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAID_SPEAR_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAID_SPEAR_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAID_SCISSORS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAID_SCISSORS_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAID_SCISSORS_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_KINGDOM_KNIGHT_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_KINGDOM_KNIGHT_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_KINGDOM_SHIELDER_ATTACK",
+          "AtkFactor" : 5000,
+          "HpFactor" : 350
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_KINGDOM_SHIELDER_SPECIAL",
+          "AtkFactor" : 7000,
+          "HpFactor" : 480
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_KINGDOM_SHIELDER_HYPER",
+          "AtkFactor" : 9000,
+          "HpFactor" : 600
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_KINGDOM_PRAY_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_NIGHTMARE_REAPER_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_NIGHTMARE_REAPER_HYPER",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_STELLAR_THIEF_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_STELLAR_THIEF_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_STELLAR_THIEF_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_INCOGNITA_FLOWER_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_INCOGNITA_FLOWER_HYPER",
+          "AtkFactor" : 9500,
+          "DefFactor" : 6000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_EASTERN_OWL_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_EASTERN_OWL_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAGICIAN_DRUID_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAGICIAN_DRUID_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAGICIAN_DRUID_HYPER",
+          "AtkFactor" : 26500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAGICIAN_SNIPER_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAGICIAN_SNIPER_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MAGICIAN_SNIPER_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_SAINTESS_DEMON_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_SAINTESS_DEMON_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_SAINTESS_DEMON_HYPER",
+          "AtkFactor" : 26500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_SAINTESS_ELF_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_RECON_AMULET_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_RECON_AMULET_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_RECON_AMULET_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_GRACE_DUALSWORD_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_GRACE_DUALSWORD_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_WEST_ROD_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_WEST_ROD_SPECIAL",
+          "AtkFactor" : 20000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_WEST_ROD_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_WILD_HOG_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_WILD_HOG_SPECIAL",
+          "AtkFactor" : 7650,
+          "TurnSpeedFactor" : 1000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_WILD_HOG_HYPER",
+          "AtkFactor" : 22500,
+          "TurnSpeedFactor" : 1000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_CONSTRUCT_BOMB_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_CONSTRUCT_BOMB_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_CONSTRUCT_BOMB_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_INDEPENDENT_DRAGON_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_INDEPENDENT_DRAGON_SPECIAL",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_INDEPENDENT_DRAGON_HYPER",
+          "AtkFactor" : 21000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_WEST_LANCER_ATTACK",
+          "AtkFactor" : 5000,
+          "HpFactor" : 350
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_WEST_LANCER_SPECIAL",
+          "AtkFactor" : 7000,
+          "HpFactor" : 480
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_WEST_LANCER_HYPER",
+          "AtkFactor" : 9000,
+          "HpFactor" : 600
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_CONSTRUCT_GADGET_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_CONSTRUCT_GADGET_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_CONSTRUCT_GADGET_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MUTANT_MASK_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MUTANT_MASK_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_MUTANT_MASK_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_OFFICER_POLICE_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_OFFICER_POLICE_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_DETECTIVE_WATSON_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_DETECTIVE_WATSON_HYPER",
+          "AtkFactor" : 26500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_CONSTRUCT_WRENCH_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_CONSTRUCT_WRENCH_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_CONSTRUCT_WRENCH_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_LPU_POST_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_NOA_OBSERVER_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_NOA_OBSERVER_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_NOA_OBSERVER_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_R_STAR_PLAYER_ATTACK",
+          "AtkFactor" : 7000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_R_STAR_PLAYER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_R_STAR_PLAYER_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_R_VOYAGER_GUNBLADE_SWORD_ATTACK",
+          "AtkFactor" : 7000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_R_VOYAGER_GUNBLADE_SWORD_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_GUNBLADE_TUTORIAL_00_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_GUNBLADE_TUTORIAL_00_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_GUNBLADE_TUTORIAL_00_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_STRANIS_TUTORIAL_00_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_STRANIS_TUTORIAL_00_SPECIAL",
+          "AtkFactor" : 20000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_STRANIS_TUTORIAL_00_HYPER",
+          "AtkFactor" : 26500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_SMILE_TUTORIAL_00_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_SMILE_TUTORIAL_00_SPECIAL",
+          "AtkFactor" : 20000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_SMILE_TUTORIAL_00_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_TUTORIAL_00_ATTACK",
+          "AtkFactor" : 15000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_TUTORIAL_00_SPECIAL",
+          "AtkFactor" : 20000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_TUTORIAL_00_HYPER",
+          "AtkFactor" : 26500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_APOSTLE_GILLE_TUTORIAL_00_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_APOSTLE_GILLE_TUTORIAL_00_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_APOSTLE_GILLE_TUTORIAL_00_HYPER",
+          "AtkFactor" : 28000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_STALKER_SKELETON_TUTORIAL_00_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_STALKER_SKELETON_TUTORIAL_00_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_STRIKER_TUTORIAL_01_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_STRIKER_TUTORIAL_01_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_SPEAR_TUTORIAL_01_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_SPEAR_TUTORIAL_01_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_SPEAR_TUTORIAL_01_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_BELL_TUTORIAL_01_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_BELL_TUTORIAL_01_SPECIAL",
+          "AtkFactor" : 20000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_BELL_TUTORIAL_01_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_STRANIS_MAINSTORY_00_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_STRANIS_MAINSTORY_00_SPECIAL",
+          "AtkFactor" : 20000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_STRANIS_MAINSTORY_00_HYPER",
+          "AtkFactor" : 26500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_SMILE_MAINSTORY_00_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_SMILE_MAINSTORY_00_SPECIAL",
+          "AtkFactor" : 20000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_SMILE_MAINSTORY_00_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_MAINSTORY_00_ATTACK",
+          "AtkFactor" : 15000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_MAINSTORY_00_SPECIAL",
+          "AtkFactor" : 20000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_MAINSTORY_00_HYPER",
+          "AtkFactor" : 26500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_STRIKER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_STRIKER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_STRIKER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_RANGER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_RANGER_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_RANGER_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_CASTER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_CASTER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_CASTER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_ASSASSIN_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_ASSASSIN_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_ASSASSIN_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_DEFENDER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_DEFENDER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_DEFENDER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_STRIKER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_STRIKER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_STRIKER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_CASTER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_CASTER_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_CASTER_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_ASSASSIN_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_ASSASSIN_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_ASSASSIN_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_SUPPORTER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KNIGHT_DEFENDER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KNIGHT_DEFENDER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KNIGHT_DEFENDER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KNIGHT_STRIKER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KNIGHT_STRIKER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KNIGHT_STRIKER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KNIGHT_RANGER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KNIGHT_RANGER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KNIGHT_RANGER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KNIGHT_SUPPORTER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_DEFENDER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_DEFENDER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_DEFENDER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_STRIKER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_STRIKER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_STRIKER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_RANGER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_RANGER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_RANGER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_CASTER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_CASTER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_CASTER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_ASSASSIN_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_ASSASSIN_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_ASSASSIN_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_SUPPORTER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_SUPPORTER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_DEFENDER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_DEFENDER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_DEFENDER_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_ASSASSIN_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_ASSASSIN_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_ASSASSIN_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WATCHER_SHARP_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WATCHER_SHARP_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_EYE_OCTAGON_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_EYE_OCTAGON_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_TOMB_CROSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_TOMB_CROSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEAPON_BLADE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEAPON_BLADE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_TURRET_CRYSTAL_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_TURRET_CRYSTAL_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CRACK_DARKNESS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CRACK_DARKNESS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MONUMENT_OBELISK_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MONUMENT_OBELISK_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CORROSIVE_CRYSTAL_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CORROSIVE_CRYSTAL_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HOURGLASS_STARDUST_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HOURGLASS_STARDUST_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_STALKER_SKELETON_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_STALKER_SKELETON_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SLIME_SPHERE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SLIME_SPHERE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DOLL_KNIFE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DOLL_KNIFE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DOLL_MAGE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DOLL_MAGE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DOLL_BOMBER_ATTACK",
+          "AtkFactor" : 1
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DOLL_BOMBER_SPECIAL",
+          "AtkFactor" : 30000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CASINO_FIGHTER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CASINO_FIGHTER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CASINO_PISTOL_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CASINO_PISTOL_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CASINO_SHOTGUN_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CASINO_SHOTGUN_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_TANKER_STONE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WIZARD_MARBLE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WIZARD_MARBLE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MONOLITH_PRIEST_BLACK_OP_05_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SAVAGE_STRIKER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SAVAGE_STRIKER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SAVAGE_RANGER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SAVAGE_RANGER_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SAVAGE_ASSASSIN_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SAVAGE_ASSASSIN_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_ARCHON_SPEAR_EQUIP3_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_ARCHON_SPEAR_EQUIP3_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DRONE_SPARROW_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DRONE_WOODPECKER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DRONE_WOODPECKER_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDKNIGHT_SWORD_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDKNIGHT_SWORD_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDMAID_SHIELD_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDMAID_SHIELD_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_ARCHON_SPEAR_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_ARCHON_SPEAR_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PROPHET_JELLY_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PROPHET_JELLY_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WANDERER_PRICKLE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WANDERER_PRICKLE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SPOTTER_RING_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SPREADER_BONE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SPREADER_BONE_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CONSIDER_WORM_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CONSIDER_WORM_SPECIAL",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_STRIKER_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_STRIKER_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_STRIKER_ELITE_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_RANGER_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_RANGER_ELITE_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_RANGER_ELITE_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_CASTER_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_CASTER_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_CASTER_ELITE_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_ASSASSIN_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_ASSASSIN_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_ASSASSIN_ELITE_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_STRIKER_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_STRIKER_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_STRIKER_ELITE_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_CASTER_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_CASTER_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_CASTER_ELITE_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WATCHER_SPLINTER_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WATCHER_SPLINTER_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_EYE_SAWTOOTH_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEAPON_SWORD_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEAPON_SWORD_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MONUMENT_TOTEM_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MONUMENT_TOTEM_ELITE_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_STALKER_DEATHBONE_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_STALKER_DEATHBONE_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SERGEANT_SABER_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SERGEANT_SABER_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SERGEANT_GUARDIAN_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SERGEANT_GUARDIAN_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SERGEANT_RIFLE_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SERGEANT_RIFLE_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SERGEANT_AID_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PUPPET_SWORD_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PUPPET_SWORD_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PLUMP_HAMMER_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PLUMP_HAMMER_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_TANKER_IRON_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_TANKER_IRON_ELITE_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WIZARD_HALO_ELITE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WIZARD_HALO_ELITE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WIZARD_HALO_ELITE_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_ARCHIVE_INFORMER_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_ARCHIVE_INFORMER_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_ARCHIVE_INFORMER_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PROPHET_ELITEJELLY_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PROPHET_ELITEJELLY_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PROPHET_ELITEJELLY_HYPER",
+          "AtkFactor" : 26000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WANDERER_ELITEPRICKLE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WANDERER_ELITEPRICKLE_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WANDERER_ELITEPRICKLE_HYPER",
+          "AtkFactor" : 26000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SPOTTER_ELITERING_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SPOTTER_ELITERING_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SPREADER_ELITEBONE_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SPREADER_ELITEBONE_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SPREADER_ELITEBONE_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CONSIDER_ELITEWORM_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CONSIDER_ELITEWORM_SPECIAL",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CONSIDER_ELITEWORM_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SAINTESS_ELF_MAINSTORY_03_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_APOSTLE_GILLE_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_APOSTLE_GILLE_BOSS_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_APOSTLE_GILLE_BOSS_HYPER",
+          "AtkFactor" : 28000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AXE_BLACK_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AXE_BLACK_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AXE_BLACK_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_DEFENDER_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_DEFENDER_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_DEFENDER_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_STRIKER_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_STRIKER_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_STRIKER_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_RANGER_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_RANGER_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_RANGER_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_CASTER_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_CASTER_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_CASTER_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_ASSASSIN_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_ASSASSIN_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_ASSASSIN_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_SUPPORTER_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_SUPPORTER_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_SUPPORTER_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_STRIKER_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_STRIKER_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_STRIKER_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_CASTER_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_CASTER_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_AVENGER_CASTER_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_ALDEBARAN_RULER_BLACK_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_ALDEBARAN_RULER_BLACK_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_BLACK_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_BLACK_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_BLACK_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_CASTER_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_CASTER_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_ASSASSIN_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RAIDER_ASSASSIN_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WATCHER_SPLINTER_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WATCHER_SPLINTER_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_EYE_SAWTOOTH_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEAPON_SWORD_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEAPON_SWORD_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MONUMENT_TOTEM_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MONUMENT_TOTEM_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_STALKER_DEATHBONE_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_STALKER_DEATHBONE_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDREAPER_SCYTHE_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDREAPER_SCYTHE_BOSS_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDREAPER_SCYTHE_BOSS_HYPER",
+          "AtkFactor" : 26000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BODYGUARD_HANDS_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BODYGUARD_HANDS_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BODYGUARD_HANDS_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BUNNY_SCISSORS_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BUNNY_SCISSORS_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BUNNY_SCISSORS_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BUNNY_SPEAR_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BUNNY_SPEAR_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BUNNY_SPEAR_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VETERAN_GUN_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VETERAN_GUN_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VETERAN_GUN_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VETERAN_SHIELD_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VETERAN_SHIELD_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VETERAN_SHIELD_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SLIME_DELEBATON_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SLIME_DELEBATON_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SLIME_DELEBATON_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SLIME_LUMINION_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SLIME_LUMINION_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SLIME_LUMINION_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_MAINSTORY_00_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_MAINSTORY_00_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_MAINSTORY_00_HYPER",
+          "AtkFactor" : 26000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_BLACK_BOSS_MAINSTORY_00_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_BLACK_BOSS_MAINSTORY_00_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_BLACK_BOSS_MAINSTORY_00_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_LANIAKEA_RULER_BLACK_BOSS_MAINSTORY_00_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_LANIAKEA_RULER_BLACK_BOSS_MAINSTORY_00_HYPER",
+          "AtkFactor" : 30000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_MAINSTORY_01_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_MAINSTORY_01_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_MAINSTORY_01_HYPER",
+          "AtkFactor" : 26000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_APOSTLE_GILLE_BOSS_MAINSTORY_01_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_APOSTLE_GILLE_BOSS_MAINSTORY_01_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_APOSTLE_GILLE_BOSS_MAINSTORY_01_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_MAINSTORY_02_ATTACK",
+          "AtkFactor" : 15000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_MAINSTORY_02_SPECIAL",
+          "AtkFactor" : 20000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_S_VOYAGER_ORACLE_MAINSTORY_02_HYPER",
+          "AtkFactor" : 28000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_MAD_BOSS_MAINSTORY_02_ATTACK",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_MAD_BOSS_MAINSTORY_02_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_MAD_BOSS_MAINSTORY_02_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_STELLAR_THIEF_BOSS_MAINSTORY_03_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_STELLAR_THIEF_BOSS_MAINSTORY_03_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_STELLAR_THIEF_BOSS_MAINSTORY_03_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SAINTESS_DEMON_MAINSTORY_03_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SAINTESS_DEMON_MAINSTORY_03_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_SAINTESS_DEMON_MAINSTORY_03_HYPER",
+          "AtkFactor" : 26500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOYAGER_STRANIS_BOSS_MAINSTORY_03_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOYAGER_STRANIS_BOSS_MAINSTORY_03_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOYAGER_STRANIS_BOSS_MAINSTORY_03_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAGICIAN_DRUID_BOSS_CUBE_01_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAGICIAN_DRUID_BOSS_CUBE_01_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAGICIAN_DRUID_BOSS_CUBE_01_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAGICIAN_SNIPER_BOSS_CUBE_01_ATTACK",
+          "AtkFactor" : 8000,
+          "TurnSpeedFactor" : 1200
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAGICIAN_SNIPER_BOSS_CUBE_01_SPECIAL",
+          "AtkFactor" : 9500,
+          "TurnSpeedFactor" : 1400
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAGICIAN_SNIPER_BOSS_CUBE_01_HYPER",
+          "AtkFactor" : 11000,
+          "TurnSpeedFactor" : 1600
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KINGDOM_KNIGHT_BOSS_CUBE_01_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KINGDOM_KNIGHT_BOSS_CUBE_01_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KINGDOM_SHIELDER_BOSS_CUBE_01_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KINGDOM_SHIELDER_BOSS_CUBE_01_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KINGDOM_SHIELDER_BOSS_CUBE_01_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_NOA_OBSERVER_BOSS_CUBE_02_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_NOA_OBSERVER_BOSS_CUBE_02_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_NOA_OBSERVER_BOSS_CUBE_02_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RECON_AMULET_BOSS_CUBE_02_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RECON_AMULET_BOSS_CUBE_02_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_RECON_AMULET_BOSS_CUBE_02_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_NOA_CONSTRUCT_WRENCH_BOSS_CUBE_03_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_NOA_CONSTRUCT_WRENCH_BOSS_CUBE_03_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_NOA_CONSTRUCT_WRENCH_BOSS_CUBE_03_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CONSTRUCT_GADGET_BOSS_CUBE_03_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CONSTRUCT_GADGET_BOSS_CUBE_03_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CONSTRUCT_GADGET_BOSS_CUBE_03_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_ROD_BOSS_CUBE_04_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_ROD_BOSS_CUBE_04_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_ROD_BOSS_CUBE_04_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_BEAMSWORD_BOSS_CUBE_04_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_BEAMSWORD_BOSS_CUBE_04_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_BEAMSWORD_BOSS_CUBE_04_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOYAGER_STRANIS_BOSS_CUBE_05_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOYAGER_STRANIS_BOSS_CUBE_05_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOYAGER_STRANIS_BOSS_CUBE_05_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOYAGER_ORACLE_BOSS_CUBE_05_ATTACK",
+          "AtkFactor" : 16000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOYAGER_ORACLE_BOSS_CUBE_05_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOYAGER_ORACLE_BOSS_CUBE_05_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_SCISSORS_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_SCISSORS_BOSS_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_SCISSORS_BOSS_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_BELL_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_BELL_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_BELL_BOSS_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_TWOHANDER_BOSS_ATTACK",
+          "AtkFactor" : 5500,
+          "HpFactor" : 350
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_TWOHANDER_BOSS_HYPER",
+          "AtkFactor" : 28000,
+          "HpFactor" : 1600
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_SPEAR_BOSS_01_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_SPEAR_BOSS_01_SPECIAL",
+          "AtkFactor" : 9000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_SPEAR_BOSS_01_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KINGDOM_KNIGHT_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KINGDOM_KNIGHT_BOSS_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KINGDOM_SHIELDER_BOSS_ATTACK",
+          "AtkFactor" : 5500,
+          "HpFactor" : 350
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KINGDOM_SHIELDER_BOSS_SPECIAL",
+          "AtkFactor" : 7500,
+          "HpFactor" : 500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_KINGDOM_SHIELDER_BOSS_HYPER",
+          "AtkFactor" : 9500,
+          "HpFactor" : 650
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_BEAMSWORD_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_BEAMSWORD_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_BEAMSWORD_BOSS_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_ROD_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_ROD_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WEST_ROD_BOSS_HYPER",
+          "AtkFactor" : 11500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_CASTER_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_CASTER_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MAID_CASTER_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MOGULUS_CROWN_BLACK_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MOGULUS_CROWN_BLACK_BOSS_SPECIAL",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MOGULUS_CROWN_BLACK_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_SHIELD_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_SHIELD_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_SHIELD_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_HORN_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_HORN_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_HORN_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_GUN_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_GUN_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_GUN_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_ORB_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_ORB_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_ORB_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_DAGGER_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_DAGGER_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_DAGGER_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_CROSS_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VOIDER_CROSS_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WENDIGO_SNOW_BOSS_EQUIP2_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WENDIGO_SNOW_BOSS_EQUIP2_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WENDIGO_SNOW_BOSS_EQUIP2_HYPER",
+          "AtkFactor" : 26000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MOTIVATOR_HANDS_BOSS_EQUIP1_ATTACK",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MOTIVATOR_HANDS_BOSS_EQUIP1_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MOTIVATOR_HANDS_BOSS_EQUIP1_HYPER",
+          "AtkFactor" : 26000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PERSES_SWORD_BOSS_EQUIP3_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PERSES_SWORD_BOSS_EQUIP3_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_FALLEN_DUALSWORD_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_FALLEN_DUALSWORD_BOSS_SPECIAL",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_FALLEN_DUALSWORD_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BELLWETHER_MANE_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BELLWETHER_MANE_BOSS_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BELLWETHER_MANE_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CLOAKING_CLAW_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CLOAKING_CLAW_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_CLOAKING_CLAW_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_COHESION_FLOWER_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_COHESION_FLOWER_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_COHESION_FLOWER_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_USURPER_CHAIR_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_USURPER_CHAIR_BOSS_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_USURPER_CHAIR_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PUNISHER_HANDS_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PUNISHER_HANDS_BOSS_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PUNISHER_HANDS_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PILGRIM_ALIEN_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PILGRIM_ALIEN_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PILGRIM_ALIEN_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_TUNER_CROWN_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_TUNER_CROWN_BOSS_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_TUNER_CROWN_BOSS_HYPER",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WITNESS_COFFIN_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WITNESS_COFFIN_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_WITNESS_COFFIN_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_EXCEED_EYES_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_EXCEED_EYES_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_EXCEED_EYES_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_HYPER",
+          "AtkFactor" : 26000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_GOLEM_HANDS_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_GOLEM_HANDS_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_GOLEM_HANDS_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VETERAN_BARON_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VETERAN_BARON_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_VETERAN_BARON_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_PEACE_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_PEACE_BOSS_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_PEACE_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_MAD_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_MAD_BOSS_SPECIAL",
+          "AtkFactor" : 24000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_HAPPY68_MAD_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_COHESION_FUSION_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_COHESION_FUSION_BOSS_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_COHESION_FUSION_BOSS_HYPER",
+          "AtkFactor" : 11000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_FALLEN_SHIELD_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_FALLEN_SHIELD_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_FALLEN_SHIELD_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PUNISHER_ARMOR_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PUNISHER_ARMOR_BOSS_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PUNISHER_ARMOR_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PLUMP_HAMMER_BOSS_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PLUMP_HAMMER_BOSS_SPECIAL",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_PLUMP_HAMMER_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_EXCEED_UNSEAL_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_EXCEED_UNSEAL_BOSS_SPECIAL",
+          "AtkFactor" : 9500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_EXCEED_UNSEAL_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_SPECIAL",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_HYPER",
+          "AtkFactor" : 26000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BELLWETHER_HORN_BOSS_ATTACK",
+          "AtkFactor" : 8000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BELLWETHER_HORN_BOSS_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_BELLWETHER_HORN_BOSS_HYPER",
+          "AtkFactor" : 32000
+        },
+        {
+          "DTStrID" : "DT_BUFF_BURN",
+          "AtkFactor" : 2000
+        },
+        {
+          "DTStrID" : "DT_BUFF_BLEEDING",
+          "AtkFactor" : 2500
+        },
+        {
+          "DTStrID" : "DT_BUFF_POISON",
+          "AtkFactor" : 0,
+          "HpFactor" : 500
+        },
+        {
+          "DTStrID" : "DT_BUFF_FREEZING",
+          "AtkFactor" : 1500
+        },
+        {
+          "DTStrID" : "DT_BI_COHESION_FLOWER_1",
+          "AtkFactor" : 2000
+        },
+        {
+          "DTStrID" : "DT_BUFF_INSTANT",
+          "AtkFactor" : 10000,
+          "HpFactor" : 100000
+        },
+        {
+          "DTStrID" : "DT_BUFF_SPLIT",
+          "AtkFactor" : 2500
+        },
+        {
+          "DTStrID" : "DT_BUFF_COSMIC",
+          "AtkFactor" : 2500
+        },
+        {
+          "DTStrID" : "DT_BUFF_OBLIVION",
+          "AtkFactor" : 2500
+        },
+        {
+          "DTStrID" : "DT_ORBITAL_ARRAY_GUNBLADE_TUTORIAL",
+          "AllyAllAtkFactor" : 7000,
+          "AllyAllHpFactor" : 4000
+        },
+        {
+          "DTStrID" : "DT_ORBITAL_ARRAY_GUNBLADE_JOURNEY",
+          "AllyAllAtkFactor" : 5500,
+          "AllyAllHpFactor" : 450
+        },
+        {
+          "DTStrID" : "DT_ORBITAL_ARRAY_VOYAGER_GUNBLADE",
+          "AllyAllAtkFactor" : 7500
+        },
+        {
+          "DTStrID" : "DT_ORBITAL_ARRAY_ALICIA",
+          "AllyAllAtkFactor" : 7500
+        },
+        {
+          "DTStrID" : "DT_ORBITAL_ARRAY_LISA",
+          "AllyAllAtkFactor" : 7500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_ATTACK",
+          "AtkFactor" : 6500
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_SPECIAL",
+          "AtkFactor" : 18000
+        },
+        {
+          "DTStrID" : "DT_NKM_UNIT_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_HYPER",
+          "AtkFactor" : 26000
+        }
+    ]
+}

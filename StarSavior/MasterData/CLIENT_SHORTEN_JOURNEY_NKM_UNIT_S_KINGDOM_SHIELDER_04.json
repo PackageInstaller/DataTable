@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OPFIELD_NIGHT.png",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_SHIELDER_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "밤에 몰래 훈련 중인 카르멘을 발견했다. 그녀는 괜찮다며 피로 회복 수프를 권유했다.",
+      "UnitTalk_JPN": "夜中にこっそりトレーニング中のカルメンを見つけた。彼女は大丈夫だと言いながら疲労回復スープを勧めてきた。",
+      "TalkTime": 0.03
+    }
+  ]
+}

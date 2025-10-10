@@ -1,0 +1,1359 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…머리가!",
+      "UnitTalk_JPN": "…頭が！",
+      "TalkTime": 0.03,
+      "AmbientSound": "SFX_CUTSCENE_COMMON_CROWD_NOISE_1.wav"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "머리가 깨질 듯이 아픕니다, 단장님!",
+      "UnitTalk_JPN": "頭が割れるように痛いです、団長殿！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "참아…! 조금만 더 힘내!",
+          "JumpAnchorStringId_JPN": "あともう少しだ…頑張れ！"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "크윽…!",
+      "UnitTalk_JPN": "くっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "으아아아아아아!!",
+      "UnitTalk_JPN": "うあぁぁぁぁぁ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "UnitNameString": [
+        "SI_FASTEAT_EMCEE"
+      ],
+      "UnitTalk_KOR": "베스타 선수! 빠릅니다! 전속력으로 먹어 치우고 있습니다!",
+      "UnitTalk_JPN": "ベスタ選手、早いです！猛スピードで食べ尽くしています！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 1.0,
+      "UnitNameString": [
+        "SI_FASTEAT_EMCEE"
+      ],
+      "UnitTalk_KOR": "남은 빙수 3그릇! 2그릇! 그리고 마지막 한그릇~!",
+      "UnitTalk_JPN": "残ったかき氷はあと3杯！2杯！そして、最後の1杯～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "UnitNameString": [
+        "SI_FASTEAT_EMCEE"
+      ],
+      "UnitTalk_KOR": "완식! 완식~!",
+      "UnitTalk_JPN": "完食！完食～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "UnitNameString": [
+        "SI_FASTEAT_EMCEE"
+      ],
+      "UnitTalk_KOR": "얼음 빙수 빨리 먹기 대회 1위는 베스타 선수가 차지합니다~!",
+      "UnitTalk_JPN": "かき氷早食い大会…見事優勝を勝ち取ったのは、ベスタ選手です～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitNameString": [
+        "SI_ALLPERSON"
+      ],
+      "UnitTalk_KOR": "와아아아아아~!",
+      "UnitTalk_JPN": "わぁぁぁぁ～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "빨리 먹기 대회에서 우승해보기…",
+      "UnitTalk_JPN": "早食い大会で優勝する…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "성공했군요. 만족스럽습니다.",
+      "UnitTalk_JPN": "成功しましたね。大満足です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "다음입니다!",
+      "UnitTalk_JPN": "次、行ってみましょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "USN_UI_REST_START",
+      "AmbientSound": "STOP"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "…이것이 뽑기 게임!",
+      "UnitTalk_JPN": "…これが型抜き！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "정말 설탕으로 만들었군요. 단내가 진동합니다.",
+      "UnitTalk_JPN": "本当に砂糖で作られているのですね。甘い匂いがします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이 모양대로 떼어내면 됩니까?",
+      "UnitTalk_JPN": "この形に沿って抜き取ればいいのでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FESTIVAL_TRADER"
+      ],
+      "UnitTalk_KOR": "그래! 무슨 수를 쓰든 상관없으니 틀모양대로 떼어내면 돼.",
+      "UnitTalk_JPN": "そう！どんな手段を使ってもいいから、型の形通りに外せばいいんだ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그렇다면…",
+      "UnitTalk_JPN": "だったら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "규칙을 들은 베스타가 입에 뽑기 과자를 던져 넣었다.",
+      "UnitTalk_JPN": "ルールを聞くなり、ベスタはカルメ焼きを口に放り込んだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 잠시 후…",
+      "UnitTalk_JPN": "そして、しばらくして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "완성입니다.",
+      "UnitTalk_JPN": "完成です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FESTIVAL_TRADER"
+      ],
+      "UnitTalk_KOR": "아니…!? 대체 어떻게…!",
+      "UnitTalk_JPN": "は…！？一体どうやって…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "틀모양 바깥 부분을 혓바닥으로 핥아 녹였습니다.",
+      "UnitTalk_JPN": "型の外側の部分を舌で舐めて溶かしました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "사탕 1개 정도는 10초면 충분하죠.",
+      "UnitTalk_JPN": "飴一つくらいなら、10秒もあれば十分です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "의외의 재능!",
+          "JumpAnchorStringId_JPN": "意外な才能！"
+        }
+      ]
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAZA.png",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이거면 되겠어?",
+          "JumpAnchorStringId_JPN": "これで満足した？"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "네, 충분합니다.",
+      "UnitTalk_JPN": "はい、満足しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "어렸을 때부터 지금까지 저는 전장에서 살아왔으니까요.",
+      "UnitTalk_JPN": "子どもの頃からずっと、私は戦場で生きてきましたから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "평화로운 도시에서 화려하게 개최된 축제를 즐겨보고 싶었습니다.",
+      "UnitTalk_JPN": "平和な街で華やかに開かれるお祭りを、一度は楽しんでみたかったのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "단장님, 그럼 다음 장소로… 응?",
+      "UnitTalk_JPN": "団長殿、では次の場所へ…むむ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_ASTRO_SANCTUM.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitMotion": "SMILE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS5",
+      "EmotionEffect": "HEART"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "아아, 언니…!",
+      "UnitTalk_JPN": "あぁ、お姉様…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitNameString": [
+        "SI_SHARPLOOK_FEMALE"
+      ],
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "나의 파랑새…!",
+      "UnitTalk_JPN": "私の青い鳥…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "저 두 사람은 저번에…!",
+      "UnitTalk_JPN": "あの二人はこの前の…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "코피! 코피 나고 있어, 베스타!",
+          "JumpAnchorStringId_JPN": "鼻血！鼻血が出てるよ、ベスタ！"
+        }
+      ]
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "흐음……!",
+      "UnitTalk_JPN": "ふむむ……！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "망상을 멈춰!",
+          "JumpAnchorStringId_JPN": "妄想しない！"
+        }
+      ]
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_TOPVIEW_NIGHT.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그후 여러 점포를 돌아다니며 각종 행사를 즐긴 후.",
+      "UnitTalk_JPN": "それから様々な屋台を回り、いくつものイベントを楽しんだ後…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "베스타와 함께 높은 언덕에서 불꽃놀이를 기다렸다.",
+      "UnitTalk_JPN": "私たちは、高い丘の上で花火が始まるのを待った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "인파가 굉장하군요.",
+      "UnitTalk_JPN": "すごい人混みですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "과장하자면 1년 동안 봐온 사람들보다 여기 있는 사람들이 더 많은 것 같습니다.",
+      "UnitTalk_JPN": "大袈裟かもしれませんが…私がこの一年で見かけた人よりも、ここにいる人の方が多い気がします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "불꽃놀이가 시작되려면 기다려야 하는데…",
+          "JumpAnchorStringId_JPN": "花火は、もう少し待たないといけないけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "괜찮습니다. 그게 좋은 겁니다.",
+      "UnitTalk_JPN": "大丈夫です。むしろ、その方が嬉しいです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "주변에 분위기가 느껴지십니까, 단장님? 모두 기대하고 있습니다.",
+      "UnitTalk_JPN": "この雰囲気、団長殿も感じますか？皆が楽しみにしています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "곧 있으면 시작될 불꽃놀이.",
+      "UnitTalk_JPN": "まもなく始まる花火を。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "그 하나를 위해 많은 사람들이 하늘을 올려다보고 있군요.",
+      "UnitTalk_JPN": "一つのものを楽しむために、大勢の人たちが空を見上げているのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 마치 서부 탈환대의 전사들처럼요.",
+      "UnitTalk_JPN": " まるで、西部奪還隊の戦士たちのように。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "서부 탈환이라는 목표를 위해.",
+      "UnitTalk_JPN": "西部奪還という目標のために…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "저, 세레스 대장님, 그리고 리디아님 모두 서부 탈환대에 입대했죠.",
+      "UnitTalk_JPN": "私、セレス隊長、そしてリディア様が西部奪還隊に入隊しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그 일체감…",
+      "UnitTalk_JPN": "あの一体感…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "모두가 같은 목표에 집중하는 시간…",
+      "UnitTalk_JPN": "皆が同じ目標に集中している時間…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "지금 이 분위기, 이 시간, 이 장소가 좋습니다.",
+      "UnitTalk_JPN": "今この瞬間、この雰囲気、この場所、すべてが愛おしいです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_NIGHT.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "베스타가 바라보고 있는 밤하늘을 올려다봤다.",
+      "UnitTalk_JPN": "私はベスタの視線の先にある、夜空を見上げた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하고 싶은 건 전부 다 했어?",
+          "JumpAnchorStringId_JPN": "やりたいこと、全部できた？"
+        }
+      ]
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LANCER"
+      ],
+      "UnitTalk_KOR": "예. 많이 했습니다.",
+      "UnitTalk_JPN": "はい、かなりできました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LANCER"
+      ],
+      "UnitTalk_KOR": "시간, 장소, 다른 여건 때문에 하지 못한 일이 남았지만.",
+      "UnitTalk_JPN": "時間や場所、条件のせいでできなかったこともありますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LANCER"
+      ],
+      "UnitTalk_KOR": "적어도 후회는 남지 않을 것 같습니다.",
+      "UnitTalk_JPN": "少なくとも、悔いは残らないでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "후회할 게 뭐 있어?",
+          "JumpAnchorStringId_JPN": "悔いる必要なんてないよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LANCER"
+      ],
+      "UnitTalk_KOR": "…네?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내년에 하면 되잖아.",
+          "JumpAnchorStringId_JPN": "また来年やればいいんだから。"
+        }
+      ]
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_TOPVIEW_NIGHT.png",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "내년…",
+      "UnitTalk_JPN": "来年…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내년이 아니더라도 5년, 10년.",
+          "JumpAnchorStringId_JPN": "来年じゃなくても、5年後、10年後…"
+        }
+      ]
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그후에도 하면 되니까.",
+          "JumpAnchorStringId_JPN": "そのあとにだって、やればいい。"
+        }
+      ]
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "단장님, 하지만 그건…",
+      "UnitTalk_JPN": "団長殿、しかしそれは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아닙니다. 하마터면 멋없는 소리를 할 뻔했군요.",
+      "UnitTalk_JPN": "いえ、何でもありません。格好悪いことを言ってしまうところでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아…",
+      "UnitTalk_JPN": "あっ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "불꽃…",
+      "UnitTalk_JPN": "花火…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.6
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FIREWORKS_01.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_01.wav",
+      "CutsceneClear": "CLEARALL",
+      "UnitTalk_KOR": "사람들의 환호성에 맞춰 불로 된 꽃이 밤하늘에 피어났고.",
+      "UnitTalk_JPN": "人々の歓声に合わせて、夜空に花火が咲き誇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.4,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_02.wav"
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFlashBang": 0.6,
+      "BgFileName": "ILLUST_BG_FIREWORKS_02.png"
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFlashBang": 0.6,
+      "BgFileName": "ILLUST_BG_FIREWORKS_03.png"
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_02.wav"
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_03.wav",
+      "UnitTalk_KOR": "모든 게 끝나고 난 후에도 베스타와 나는 한참동안 하늘을 올려다봤다.",
+      "UnitTalk_JPN": "祭りが終わったあとも、ベスタと私はしばらく空を見上げていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_TOPVIEW_NIGHT.png",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "불꽃놀이, 어땠어?",
+          "JumpAnchorStringId_JPN": "花火、どうだった？"
+        }
+      ]
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "…굉장하군요.",
+      "UnitTalk_JPN": "…素晴らしかったです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "아직 여운이 채 가시지 않았지만…",
+      "UnitTalk_JPN": "まだ余韻から抜け切れていませんが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "한 번 더.",
+      "UnitTalk_JPN": "もう一度。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "단장님이 말씀하신 것처럼 내년에도 한 번 더 보고 싶어졌습니다.",
+      "UnitTalk_JPN": "団長殿がおっしゃっていたように、来年ももう一度見たいと思いました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내년에 또 오자.",
+          "JumpAnchorStringId_JPN": "来年、また来よう。"
+        }
+      ]
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "…예, 단장님.",
+      "UnitTalk_JPN": "…はい、団長殿。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitTalk_KOR": "그때는 세레스 대장님과 리디아. 그리고 저랑 단장님까지 네 명이겠군요.",
+      "UnitTalk_JPN": "その時は…セレス隊長とリディア様も一緒に、4人で来たいですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "넷이 사이 좋게…",
+      "UnitTalk_JPN": "4人で仲睦まじく…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "음!",
+      "UnitTalk_JPN": "むむ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "말없이 손수건을 건넸다.",
+      "UnitTalk_JPN": "私は黙ってハンカチを差し出した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitTalk_KOR": "내년 축제에는 어떤 점포를 들를지 베스타와 이야기하며 돌아왔다.",
+      "UnitTalk_JPN": "来年はどんな屋台を見て回ろうかと、そんな話をしながらベスタと宿へ戻った。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_LANCER_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_LANCER",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_05A_NOA_BT_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "수고하셨습니다, 단장님.",
+      "UnitTalk_JPN": "お疲れ様でした、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "확실히, 다른 약탈자들보다 규모도 크고 조직적이군요.",
+      "UnitTalk_JPN": "確かに…他のレイダーより規模も大きく、組織的ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그런 약탈자들을 돌파하고 이렇게 마차와 식재료를 되찾아오신 것.",
+      "UnitTalk_JPN": "そんなレイダーを突破し、馬車と食料品を取り戻されたこと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "힘든 여정의 와중에도 구원자로서의 본분을 다한 훌륭한 업적이라고 생각합니다.",
+      "UnitTalk_JPN": "大変な旅の最中にも、救援者としての本分を尽くされた、素晴らしい功績だと思います。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "EmotionEffect": "QMARK"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이건…",
+      "UnitTalk_JPN": "これは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_2.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "소식 들었어요! 저희 마차가 멀쩡하게 돌아왔다면서요?",
+      "UnitTalk_JPN": "聞きましたぞ！馬車が無事に戻ってきたのでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "네. 그리고 약탈자들이 습격한 이유도 짐작이 갑니다.",
+      "UnitTalk_JPN": "はい。そしてレイダーに襲撃された理由も推測がつきました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "정말요? 뭐였죠?",
+      "UnitTalk_JPN": "本当ですか？一体、どういった理由だったんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "약탈자들이 들고 가던 식재료들을 확인해 봤습니다.",
+      "UnitTalk_JPN": "レイダーが持ち去ろうとしていた食材を確認してみました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "베이킹 소다, 소금, 식초… 전부 세탁에 사용할 수 있는 재료들이네요.",
+      "UnitTalk_JPN": "重曹に、塩、酢…すべて洗濯に使える材料です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "어디서 인간의 세탁법을 입수한 모양입니다.",
+      "UnitTalk_JPN": "どこかで、洗濯の仕方を覚えたようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "세탁...이요?",
+      "UnitTalk_JPN": "洗濯…ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitTalk_KOR": "당연히 식량을 노리는 거라고 생각했는데…",
+      "UnitTalk_JPN": "てっきり、食料を狙っているのかと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "생긴 것과 다르게 청결에 신경을 쓴다는 말이 사실이었군요…?",
+      "UnitTalk_JPN": "見かけによらずキレイ好きだという話は、本当だったんですね…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "저기, 단장님이라고 하셨죠? 도와주셔서 정말 감사합니다.",
+      "UnitTalk_JPN": "あの、団長様とおっしゃいましたよね？お助けいただき、本当にありがとうございました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitTalk_KOR": "괜찮으시다면 이걸 받아 주시겠어요? 카페 스트레가를 마음껏 이용할 수 있는 쿠폰이에요.",
+      "UnitTalk_JPN": "よろしければ、これを受け取っていただけませんか？カフェ・ストレガを心ゆくまで楽しめるクーポンだそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitTalk_KOR": "단장님께서는 <color=#F7BE45>[여정]</color>에 참가 중이시라면서요?",
+      "UnitTalk_JPN": "団長様は、<color=#F7BE45>「救援の旅」</color>に参加中だと伺いました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "힘내세요! 단장님처럼 곤경에 처한 사람을 그냥 지나치지 않는 분이라면, 분명 완주하실 수 있을 거예요!",
+      "UnitTalk_JPN": "応援しています！団長様のように困っている人を見捨てない方であれば、きっと完遂できるはずです！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_05A_NOA_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3"
+    }
+  ]
+}

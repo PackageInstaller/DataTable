@@ -1,0 +1,27 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_EASTERN_OWL_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마지막 시험을 앞둔 세르팡은 이전과는 달리 진지하게 시험에 임하기로 다짐했다.",
+      "UnitTalk_JPN": "最終試験を控えたセルパンは、これまでとは違い真剣に試験に臨むことを決意した。",
+      "TalkTime": 0.03
+    }
+  ]
+}

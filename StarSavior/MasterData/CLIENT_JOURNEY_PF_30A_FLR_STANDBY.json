@@ -1,0 +1,364 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_30A_FLR_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND_FLORA.png",
+      "StartBgmFileName": "MUSIC_CANDLE_FLORA.mp3",
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "보세요 단장님! 바다예요!",
+      "UnitTalk_JPN": "見てください、団長！海ですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitTalk_KOR": "말로만 들었지, 저도 바다에 와 보는 건 처음이네요.",
+      "UnitTalk_JPN": "言葉で聞くだけでした、私も海に来るのは初めてです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "뜨거운 햇살! 반짝이는 모래사장! 차갑고 깊은 파도!",
+      "UnitTalk_JPN": "熱い日差し！きらめく砂浜！冷たく深い波！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitTalk_KOR": "단장님도 두근거리지 않나요?",
+      "UnitTalk_JPN": "団長も胸が高鳴りませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "옷차림이 너무 적극적인데…",
+          "JumpAnchorStringId_JPN": "服装が積極的すぎますが…"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후후, 어때요? 이날을 위해 준비한 비장의 수영복입니다!",
+      "UnitTalk_JPN": "ふふ、どうですか？この日のために準備した秘蔵の水着です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이걸로 합숙 훈련 기간 동안 플로라에서 제일 가는 셀럽이 되고 말겠어요.",
+      "UnitTalk_JPN": "これで合宿トレーニング期間中、フローラで一番のセレブになるつもりです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "...놀러 온 게 아니라고 하지 않았어?",
+          "JumpAnchorStringId_JPN": "…遊びに来たんじゃないって言ってなかったっけ？"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 그건 단장님과 여정 단원 이야기고요.",
+      "UnitTalk_JPN": "ああ、それは団長と旅の団員の話です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "전 놀러 온 게 맞습니다!",
+      "UnitTalk_JPN": "私は遊びに来たんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아무튼 바쁘니까 브리핑은 대충 끝내도록 하겠습니다.",
+      "UnitTalk_JPN": "とにかく忙しいのでブリーフィングはざっと終わらせます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "에, 또… 여긴 플로라 시티 캔들 스퀘어 지부입니다. ",
+      "UnitTalk_JPN": "えっと、それから…ここはフローラシティ・キャンドル・スクエア支部です。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "다 아시죠?",
+      "UnitTalk_JPN": "皆さんご存知ですよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitTalk_KOR": "뭐… 이런저런 사소한 건 나중에 매뉴얼 찾아보시면 되고…",
+      "UnitTalk_JPN": "まあ…細かいことは後でマニュアルを見ていただければ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이곳에선 특수훈련 <color=#F7BE45>[비치발리볼]</color>을 진행할 수 있는 시설이 준비되어 있다고 하네요.",
+      "UnitTalk_JPN": "ここでは特殊トレーニング<color=#F7BE45>「ビーチバレー」</color>ができる施設が用意されているそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[비치발리볼]</color>은 강력한 힘을 기를 수 있는 구기 운동입니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ビーチバレー」</color>は、強力な力を養える球技です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitTalk_KOR": "그리고 플로라 시티의 최고 인기 종목이기도 하죠.",
+      "UnitTalk_JPN": "そしてフローラシティで最も人気のある競技でもあります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "다른 곳에서는 진행할 수 없는 훈련이니만큼 한 번은 꼭 도전하시기를 추천 드립니다.",
+      "UnitTalk_JPN": "他では行えないトレーニングですので、ぜひ一度挑戦されることをお勧めします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitTalk_KOR": "나머지는… 뭐 별거 없네요.",
+      "UnitTalk_JPN": "あとは…まあ大したことないですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이봐… 너무 대충이잖아?",
+          "JumpAnchorStringId_JPN": "おい…あまりにも適当じゃないか？"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "괜찮아요. 전 단장님을 믿고 있으니까요.",
+      "UnitTalk_JPN": "大丈夫です。私は団長を信じていますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitTalk_KOR": "분명 제 도움이 없어도 합숙 기간 중에 큰 성취를 얻으실 수 있을 거예요!",
+      "UnitTalk_JPN": "きっと私の助けがなくても合宿期間中に大きな成果を得られるはずです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그럼 전 이만!",
+      "UnitTalk_JPN": "それでは、私はこれで！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "UnitTalk_KOR": "파도와 하나가 되기 위해 떠나겠습니다!",
+      "UnitTalk_JPN": "波と一つになるために旅立ちます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_SWIM_LISA",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "나중에 봐요!",
+      "UnitTalk_JPN": "またね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WATER_SPRAY_02.wav",
+      "CameraOffset": "ONE_5",
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "쏜살같이 달려간 리사가 파도에 휩쓸려 허우적거렸다.",
+      "UnitTalk_JPN": "矢のように駆け出したリサが波に飲み込まれ、もがき苦しんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 확실히 스포츠를 통해 훈련의 능률을 높이는 것은 좋은 발상 같다…",
+      "UnitTalk_JPN": "しかし確かにスポーツを通じてトレーニングの効率を高めるのは良い発想だ…",
+      "TalkTime": 0.03
+    }
+  ]
+}

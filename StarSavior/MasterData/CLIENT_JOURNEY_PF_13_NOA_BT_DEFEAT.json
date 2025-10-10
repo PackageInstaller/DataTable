@@ -1,0 +1,376 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_13_NOA_BT_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STARDUST_FORTRESS_1.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION_11.wav"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION_02.wav"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFlashBang": 1.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 1.5
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.4,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION_18.wav"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_GREEN",
+      "UnitNameString": [
+        "SI_RAIDER_INFERIOR"
+      ],
+      "UnitQuickSet": true,
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "크르륵! 이 녀석들! 별거 아니다! 약하다!",
+      "UnitTalk_JPN": "グルルッ！こいつら！大したことない！弱い！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitQuickSet": true,
+      "UnitPos": "POS2",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "놈들이 약한 것이 아니다! 우리가 강한 것이지!",
+      "UnitTalk_JPN": "奴らが弱いんじゃない！我らが強いのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_GREEN",
+      "UnitNameString": [
+        "SI_RAIDER_INFERIOR"
+      ],
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "그렇다! 족장이 이끄는 한 우린 강하다!",
+      "UnitTalk_JPN": "そうだ！族長がいる限り、俺らは強い！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "들어라, 전사들이여! 우리는 앞으로도 계속 전진할 것이다!",
+      "UnitTalk_JPN": "聞け、戦士たちよ！我らはこれからも前進し続ける！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "별의 심장을 약탈하고! 구원자를 약탈하고!",
+      "UnitTalk_JPN": "星の心臓を略奪し！救援者を略奪し！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "언젠가는 저 하늘의 별들까지 모두 약탈할 것이다!",
+      "UnitTalk_JPN": "いつか、あの空の星々まで略奪してやる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "CameraOffset": "TRIPLE_1",
+      "CameraOffsetTime": "NR",
+      "UnitQuickSet": true,
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "위대한 족장이여! 나, 키리야스가 영원히 따르겠다!",
+      "UnitTalk_JPN": "オレ、キリヤス！偉大な族長にずっとついていく！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_04.mp3"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_SOMEONE_UNKNOWN_MEMORY.prefab"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "관측 종료",
+      "UnitTalk_JPN": "観測終了",
+      "TalkTime": 0.03,
+      "TalkPositionControl": "TALKCENTER"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "임계점 도달 실패",
+      "UnitTalk_JPN": "臨界点への到達に失敗",
+      "TalkTime": 0.03,
+      "TalkPositionControl": "TALKCENTER"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스텔라 아카이브 기록 보존 절차 진행",
+      "UnitTalk_JPN": "ステラーアーカイブに記録を保存",
+      "TalkTime": 0.03,
+      "TalkPositionControl": "TALKCENTER"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFlashBang": 0.5,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.5
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "흐음…",
+      "UnitTalk_JPN": "ふーん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정의 난이도가 생각보다 어려웠던 걸까?",
+      "UnitTalk_JPN": "旅の難易度が、思ったよりも高かったのかしら？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아니면 뭔가 잘못된 선택을 했던 걸까?",
+      "UnitTalk_JPN": "あるいは、何か選択を誤ったのかしら？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무튼 너도 알다시피 이 정도로는 부족해.",
+      "UnitTalk_JPN": "いずれにせよ、これではまだ足りないわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "너에게도, 네가 선택한 아이에게도…",
+      "UnitTalk_JPN": "あなたにとっても、あなたが選んだ子にとっても…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 식어가는 이 우주에게도.",
+      "UnitTalk_JPN": "そして、冷えゆくこの宇宙にとっても。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다음에는 좀 더 나은 결과를 기대할게.",
+      "UnitTalk_JPN": "次は、良い結果を期待しているわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그럼 그때까지 잠시나마 편히 쉬렴.",
+      "UnitTalk_JPN": "それまで、少し休むことね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나의 벗, 나의 계약자…",
+      "UnitTalk_JPN": "私の友、私の契約者…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_13_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 나의… 구원자님.",
+      "UnitTalk_JPN": "そして私の…救援者さま。",
+      "TalkTime": 0.03
+    }
+  ]
+}

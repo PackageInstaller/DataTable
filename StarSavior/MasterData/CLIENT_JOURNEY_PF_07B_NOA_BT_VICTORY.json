@@ -1,0 +1,171 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_07B_NOA_BT_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_07B_NOA_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SERIOUS",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "평가전이 한창이던 중, 에밀리가 돌연 움직임을 멈췄다. 그리고는 무기를 쥔 자신의 손을 물끄러미 바라보기 시작했다.",
+      "UnitTalk_JPN": "試験の真っ最中…エミリーが突然動きを止めた。そして、武器を握る自分の手をじっと見つめ始めた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitTalk_KOR": "흐음…",
+      "UnitTalk_JPN": "ふーん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 그래? 승부는 아직 안 난 것 같은데.",
+          "JumpAnchorStringId_JPN": "どうしたんだ？勝負はまだついてないのに。"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitTalk_KOR": "…아뇨, 승부는 났습니다. 저는 이 이상은 싸울 수 없으므로 여러분의 판정승이 되겠군요.",
+      "UnitTalk_JPN": "…いえ、勝負はつきました。私はこれ以上戦えませんので、皆さんの判定勝ちです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "싸울 수 없다고?",
+          "JumpAnchorStringId_JPN": "戦えないって？"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "더 싸우면 제 안의 무언가가 깨어날 것 같아서 말입니다.",
+      "UnitTalk_JPN": "これ以上戦うと、私の中の何かが目覚めてしまいそうで。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그러니 평가전은 이쯤에서 마치도록 하겠습니다.",
+      "UnitTalk_JPN": "試験は、ここまでにしたいと思います。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "말을 마친 에밀리가 무기를 거둔다. 아무래도 평가전이 끝났다는 말은 정말이었던 모양이다.",
+      "UnitTalk_JPN": "そう言うと、エミリーは武器をしまった。どうやら、試験は本当に終わったらしい。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그나저나 기초 평가전이 이 정도라면, 앞으로가 걱정이네.",
+      "UnitTalk_JPN": "それにしても…基礎試験がこのレベルなら、先が心配だな。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitTalk_KOR": "단장님께서 무슨 생각을 하시는지 알 것 같습니다만, 걱정하실 필요 없습니다.",
+      "UnitTalk_JPN": "団長殿が何を考えておられるかは察しがつきますが、ご心配なく。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitTalk_KOR": "실전에 버금가는 저와의 평가전을 이겨 내신 여러분이라면, 다른 평가전도 문제없이 극복하실 수 있을 거라 생각합니다.",
+      "UnitTalk_JPN": "実戦に匹敵する自分との試験を乗り越えた皆さんなら、他の試験も問題なく通過できると思います。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그나저나 놀랍군요. 대체 어떤 훈련을 했기에 그 짧은 시간 동안 이만큼이나 강해질 수 있던 겁니까?",
+      "UnitTalk_JPN": "それにしても、驚きました。いったいどんなトレーニングをすれば、短期間でここまで強くなれるのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "기회가 된다면, 함께 훈련을 받아보고 싶군요.",
+      "UnitTalk_JPN": "もし機会があれば、一緒にトレーニングをしてみたいものです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 앞으로도 두 분의 <color=#F7BE45>[여정]</color>이 계속되기를 기원하겠습니다.",
+      "UnitTalk_JPN": "それでは、お二人の<color=#F7BE45>「救援の旅」</color>がこれからも続くことを願っています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitTalk_KOR": "이후로도 도움이 필요하시다면, 언제든지 캔들 스퀘어를 방문해 주시기를 바랍니다. 이상으로, 기초 평가전을 종료하겠습니다.",
+      "UnitTalk_JPN": "お困りの際は、いつでもキャンドル・スクエアへお越しください。以上で、基礎試験を終了します。",
+      "TalkTime": 0.03
+    }
+  ]
+}

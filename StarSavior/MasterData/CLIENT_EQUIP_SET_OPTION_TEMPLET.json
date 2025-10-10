@@ -1,0 +1,207 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: EQUIP/EQUIP_SET_OPTION_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 1,
+          "NeedParts" : 4,
+          "SetIconImg" : "ICON_SET_4P_TURN_SPD.png",
+          "SetName" : "SI_EQUIP_SET_NAME_1",
+          "SetDesc" : "SI_EQUIP_SET_DESC_1",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_TURN_SPEED",
+              "SetStatValue" : 15
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 2,
+          "NeedParts" : 2,
+          "SetIconImg" : "ICON_SET_2P_DEF_RATE.png",
+          "SetName" : "SI_EQUIP_SET_NAME_2",
+          "SetDesc" : "SI_EQUIP_SET_DESC_2",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_NV_RATE_DEF",
+              "SetStatValue" : 1000
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 3,
+          "NeedParts" : 2,
+          "SetIconImg" : "ICON_SET_2P_EFFECT_RATE.png",
+          "SetName" : "SI_EQUIP_SET_NAME_3",
+          "SetDesc" : "SI_EQUIP_SET_DESC_3",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_RATE_EFFECT_HIT",
+              "SetStatValue" : 1500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 4,
+          "NeedParts" : 2,
+          "SetIconImg" : "ICON_SET_2P_EFFECT_EVADE.png",
+          "SetName" : "SI_EQUIP_SET_NAME_4",
+          "SetDesc" : "SI_EQUIP_SET_DESC_4",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_RATE_EFFECT_EVADE",
+              "SetStatValue" : 1500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 5,
+          "NeedParts" : 4,
+          "SetIconImg" : "ICON_SET_4P_ATK_RATE.png",
+          "SetName" : "SI_EQUIP_SET_NAME_5",
+          "SetDesc" : "SI_EQUIP_SET_DESC_5",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_NV_RATE_ATK",
+              "SetStatValue" : 2500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 6,
+          "NeedParts" : 4,
+          "SetIconImg" : "ICON_SET_2P_CRI_RATE.png",
+          "SetName" : "SI_EQUIP_SET_NAME_6",
+          "SetDesc" : "SI_EQUIP_SET_DESC_6",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_RATE_CRITICAL",
+              "SetStatValue" : 2000
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 7,
+          "NeedParts" : 2,
+          "SetIconImg" : "ICON_SET_2P_ATK_RATE_EFFECT_EVADE.png",
+          "SetName" : "SI_EQUIP_SET_NAME_7",
+          "SetDesc" : "SI_EQUIP_SET_DESC_7",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_NV_RATE_ATK",
+              "SetStatValue" : 1000
+            },
+
+            {
+              "SetStatType" : "NST_RATE_EFFECT_EVADE",
+              "SetStatValue" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 8,
+          "NeedParts" : 4,
+          "SetIconImg" : "ICON_SET_2P_CRI_RATE_EFFECT_RATE.png",
+          "SetName" : "SI_EQUIP_SET_NAME_8",
+          "SetDesc" : "SI_EQUIP_SET_DESC_8",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_RATE_CRITICAL",
+              "SetStatValue" : 1000
+            },
+
+            {
+              "SetStatType" : "NST_RATE_EFFECT_HIT",
+              "SetStatValue" : 2000
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 9,
+          "NeedParts" : 4,
+          "SetIconImg" : "ICON_SET_4P_HP_RATE.png",
+          "SetName" : "SI_EQUIP_SET_NAME_9",
+          "SetDesc" : "SI_EQUIP_SET_DESC_9",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_NV_RATE_HP",
+              "SetStatValue" : 2500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 10,
+          "NeedParts" : 4,
+          "SetIconImg" : "ICON_SET_4P_CRI_DMG.png",
+          "SetName" : "SI_EQUIP_SET_NAME_10",
+          "SetDesc" : "SI_EQUIP_SET_DESC_10",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "SetStatValue" : 3000
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 11,
+          "NeedParts" : 2,
+          "SetIconImg" : "ICON_SET_4P_HP_RATE_EFFECT_EVADE.png",
+          "SetName" : "SI_EQUIP_SET_NAME_11",
+          "SetDesc" : "SI_EQUIP_SET_DESC_11",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_NV_RATE_HP",
+              "SetStatValue" : 1000
+            },
+
+            {
+              "SetStatType" : "NST_RATE_EFFECT_EVADE",
+              "SetStatValue" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "SetOptionId" : 12,
+          "NeedParts" : 4,
+          "SetIconImg" : "ICON_SET_4P_CRI_DMG_EFFECT_RATE.png",
+          "SetName" : "SI_EQUIP_SET_NAME_12",
+          "SetDesc" : "SI_EQUIP_SET_DESC_12",
+          "SetStat" : 
+          [
+            {
+              "SetStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "SetStatValue" : 1500
+            },
+
+            {
+              "SetStatType" : "NST_RATE_EFFECT_HIT",
+              "SetStatValue" : 2000
+            }
+          ]
+        }
+    ]
+}

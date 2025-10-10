@@ -1,0 +1,1398 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "길을 걷던 중, 낯익은 목소리들이 들려왔다.",
+      "UnitTalk_JPN": "道を歩いていると、聞き慣れた声が聞こえてきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "거기 조금만 더 당겨주세요!",
+      "UnitTalk_JPN": "もうちょっと引っ張ってくださいな！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "으응? 조금만 더? 이만큼? ",
+      "UnitTalk_JPN": "ん？ちょっとって、これくらいか？ ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "너무 올렸잖아요!",
+      "UnitTalk_JPN": "引っ張り過ぎですっ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "아, 귀찮은데 대충 고정하면 안돼?",
+      "UnitTalk_JPN": "もー。めんどくさいし、適当に固定しときゃいいんじゃないのか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "절대 안됩니다! 간판은 저희의 얼굴이나 다름 없다구요.",
+      "UnitTalk_JPN": "絶対にいけませんの！看板はわたくしたちの顔と同じなんですから。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "트리쉬랑 프레이?",
+          "JumpAnchorStringId_JPN": "トリッシュとフレイ？"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitQuickSet": true,
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "으응? 아, 단장이구나? 안녕!",
+      "UnitTalk_JPN": "んん？おっ、団長か？うぃーっす！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장님, 오랜만에 뵙네요. ",
+      "UnitTalk_JPN": "団長、お久しぶりですわね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐하고 있어?",
+          "JumpAnchorStringId_JPN": "何してたの？"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여기 프레이랑 같이 <color=#F7BE45>사업</color>을 하나 시작하기로 해서 말이야! ",
+      "UnitTalk_JPN": "ここでフレイと一緒に、<color=#F7BE45>ビジネス</color>を始めることにしたんだよ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "이 건물 2층에 사무실을 오픈하기로 해서, 간판을 달고 있었어.",
+      "UnitTalk_JPN": "ここの2階に事務所をオープンすることになって、看板を設置してたとこだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그렇습니다! 저희의 야심찬 새 사업이죠.",
+      "UnitTalk_JPN": "そうなのです！まさに、わたくしたちの野心が詰まったビジネスです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "둘이 원래 알던 사이야?",
+          "JumpAnchorStringId_JPN": "二人って、知り合いだったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흠… 그날의 만남은, 운명과도 같은 만남이었달까요. ",
+      "UnitTalk_JPN": "ふむ…あの日の出会いは、運命的なものでしたわ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "언제나와 같이 막대한 부를 가져다줄 새 사업 아이템을 궁리하던 날이었습니다.",
+      "UnitTalk_JPN": "いつものように、膨大な富をもたらす新しい事業アイデアを練っていた日のことでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "명민한 사업가란 항상 시류에 민감한 법.  ",
+      "UnitTalk_JPN": "敏腕な事業家は、常にトレンドに目を光らせるもの。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "최신 유행을 몸소 파악하기 위해 백화점에 방문했었죠. ",
+      "UnitTalk_JPN": "最新の流行を把握すべく、デパートを訪れましたわ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그냥 쇼핑하러 간 거 아니고?",
+          "JumpAnchorStringId_JPN": "それってただのショッピングじゃないの？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "이 세상에 완전한 창조는 없는 법입니다! ",
+      "UnitTalk_JPN": "この世に、完全な創造などないのですっ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "새 사업 아이템을 구상하려면 다른 아이템들을 직접 이용해보며 영감을 얻어야 한다구요!",
+      "UnitTalk_JPN": "新しい事業アイデアを構想するためには、他のものを利用してインスピレーションを得ないといけないんですってば！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "큼! 크흠…! 아무튼! 그곳에서 전 운명과 같이 만나고 말았습니다.",
+      "UnitTalk_JPN": "こ、こほん…！とにかくっ！そこでわたくしは、運命的な出会いを果たしてしまったのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "<color=#F7BE45>아셀루스 협회</color>의 초일류 헌터! 트리쉬를 말이죠!",
+      "UnitTalk_JPN": "そのお相手こそ、<color=#F7BE45>アセルス協会</color>の超一流ハンター！トリッシュです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "음음. 그렇지. 이 몸이 바로 초 일류 헌터란 말씀. ",
+      "UnitTalk_JPN": "うんうん、その通りだ。俺こそが超一流ハンターってわけだぜ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그때! 머릿속에 번쩍하고 떠오르고 만 것입니다. 획기적인 아이디어가!",
+      "UnitTalk_JPN": "その時！ひらめいてしまったのです。画期的なアイデアを！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "제 사업 재능과 트리쉬의 <color=#F7BE45>헌터</color>로서의 능력! ",
+      "UnitTalk_JPN": "わたくしのビジネスにおける才能と、トリッシュの<color=#F7BE45>ハンター</color>としての能力！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그 둘을 합치면 대단한 사업이 나올 거란 걸 말이예요.",
+      "UnitTalk_JPN": "この2つが合わされば、とてつもないビジネスが生まれるという訳です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "마침 잘 찾아온 거지. 나만큼 뛰어난 헌터는 찾아보기 어려우니까.",
+      "UnitTalk_JPN": "本当、ナイスタイミングだったぜ。オレみたいな一流ハンターはなかなかいないからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "획기적인 아이디어가 뭔데?",
+          "JumpAnchorStringId_JPN": "画期的なアイデアって？"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.8,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "POS7_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "이름하여 <color=#F7BE45>프리쉬 특급 심부름센터</color>!",
+      "UnitTalk_JPN": "名付けて<color=#F7BE45>フレッシュ・スぺシャル便利屋</color>！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "특급 심부름센터…?",
+          "JumpAnchorStringId_JPN": "スぺシャル便利屋…？"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이름 그대로야. ",
+      "UnitTalk_JPN": "名前の通りだぜ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "곤란한 문제에 빠진 사람에게 도움을 제공하는 거지.",
+      "UnitTalk_JPN": "困ってる人を助けてあげんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "소정의 의뢰비를 받고 말이죠. ",
+      "UnitTalk_JPN": "もちろん、依頼費はいただきますよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "그러니 <color=#F7BE45>심부름센터</color>라는 이름이 딱 알맞지 않습니까?",
+      "UnitTalk_JPN": "まさに、<color=#F7BE45>便利屋</color>という名前がピッタリでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "어떠신가요, 단장님. 관심이 조금 생겼나요?",
+      "UnitTalk_JPN": "いかがですか、団長？少し興味が湧いてきましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "심부름이라고?",
+          "JumpAnchorStringId_JPN": "便利屋って？"
+        }
+      ]
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "후후… 저희 <color=#F7BE45>프리쉬 특급 심부름센터</color>가 주력으로 삼고 있는 심부름은… ",
+      "UnitTalk_JPN": "ふふ…<color=#F7BE45>フレッシュ・スぺシャル便利屋</color>のメインとなる仕事は… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "그러니까, 공공기관에서는 해결해주지 못하는 문제들이랄까요?",
+      "UnitTalk_JPN": "公共機関では解決できないようなこと、とでも言いましょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "훗. 말하자면 어둠 속에서 사람들을 돕는 다크 히어로…!",
+      "UnitTalk_JPN": "ふっ。言うならば、裏で人助けをするダークヒーロー…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "어떻게 해야 할지 몰라서 발만 동동 구르고 있을 때-",
+      "UnitTalk_JPN": "どうすればいいのか分からなくて、途方に暮れたとき──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "각종 방안을 동원해 문제를 해결해주는 해결사! 란 겁니다.",
+      "UnitTalk_JPN": "様々な方法で問題を解決してくれる、解決屋！ということです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "일류 헌터 특… 수단과 방법 가리지 않음.",
+      "UnitTalk_JPN": "一流ハンターたる者…手段と方法は選ばねぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…수상한데.",
+          "JumpAnchorStringId_JPN": "…怪しいな。"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "수상하다니! 실례입니다!",
+      "UnitTalk_JPN": "怪しいだなんて！失礼ですわね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래서, 정확히 무슨 일을 하는 건데?",
+          "JumpAnchorStringId_JPN": "で、正確には何をする仕事なの？"
+        }
+      ]
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "말씀드렸다시피, <color=#F7BE45>곤란한 문제</color>를 해결해 주는 일입니다.",
+      "UnitTalk_JPN": "お伝えした通り、<color=#F7BE45>困り事</color>を解決して差し上げるのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "예를 들면… 오래전 헤어진, 보고 싶은 사람이 있는데 찾아달라던가?",
+      "UnitTalk_JPN": "例えば…長い間、会えていない人を探してほしいとか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "사람 찾는 건 내 전문이니까. 악명높은 현상 수배범부터 도피한 범죄자까지 가능하지!",
+      "UnitTalk_JPN": "人探しはオレの専門だぜ。悪名高い指名手配犯から、逃亡中の犯罪者まで可能だからな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "새로 들어온 의뢰 중에는… ",
+      "UnitTalk_JPN": "新たに入ってきた依頼の中には…　 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "학창 시절 옆자리 짝을 찾아달라거나 첫사랑을 찾아달라는 정도가 있군요.",
+      "UnitTalk_JPN": "学生時代に隣の席だったクラスメイトや、初恋の人を探してほしいという内容のものがありますわね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "음! 조금 시시한데… 짐승이나 마물을 찾아 달라는 의뢰는 없었어?",
+      "UnitTalk_JPN": "うーん！ちょっと物足りねぇなぁ…野獣とか魔獣を探してほしいって依頼はないのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "짐승… 이라기보단 집 나간 고양이를 찾아달라는 의뢰는 세 건 있네요.",
+      "UnitTalk_JPN": "野獣…ではなく、家から脱走した猫を探してほしいという依頼が3件入っています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 자극적인 맛을 원한다면… 이런 것도 있네요!",
+      "UnitTalk_JPN": "あっ、刺激をお求めなら…こんな依頼もありますの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "뭔데? 위험천만하고 멋있는 의뢰야?",
+      "UnitTalk_JPN": "なんだ？危険でクールな依頼か？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "<color=#F7BE45>바람을 피우는 애인의 뒷조사를 해달라</color>는 내용입니다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>浮気中の恋人の身辺調査をしてほしい</color>という内容です。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흠… 이 의뢰인은 엄청난 부자인가 보네요. 보상으로 적어 보낸 금액이 무려-",
+      "UnitTalk_JPN": "ふむ…この依頼人はかなりの富豪なのでしょうね。報酬として書かれている金額はなんとー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.8,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "뭐야 그게!!! 죄다 멋없는 의뢰뿐이잖아! ",
+      "UnitTalk_JPN": "何だよそれ！！！クールとはほど遠い依頼しかないじゃねぇか！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "내가 아니면 할 수 없는 멋있는 거! 뭐 그런 의뢰는 없는 거야? ",
+      "UnitTalk_JPN": "オレにしかできないような、クールな依頼！そんなのはないのか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "<color=#F7BE45>도시에 숨어있는 엄청난 음모의 배후를 밝혀달라!</color> 뭐 그런 거 말이야.",
+      "UnitTalk_JPN": "<color=#F7BE45>街に隠された巨大な陰謀の黒幕を暴いてくれ！</color>とかさ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…아쉽지만 그런 건 없네요. ",
+      "UnitTalk_JPN": "…残念ですが、そのようなものはありません。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "트리쉬, 아직 사업이 본격적으로 시작하지도 않은 이상, 의뢰를 가릴 처지가 아닙니다!",
+      "UnitTalk_JPN": "トリッシュ。ビジネスが軌道に乗るまでは、依頼を選り好みするものではありませんのよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "분명히 <color=#F7BE45>남들에게 말하기 어려운 곤란한 문제들</color>을 처리하는 사업이라고 했잖아? ",
+      "UnitTalk_JPN": "はっきりと<color=#F7BE45>他人に言えないような困り事</color>を処理するビジネスだって言っただろ？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "확실히 몇 개는 곤란하긴 한데…",
+          "JumpAnchorStringId_JPN": "さっき言ってた中に、一応そういう依頼もあったけどね…"
+        }
+      ]
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "당연히 <color=#F7BE45>비밀스럽고 멋있는 일</color>일 거라고 생각해서 수락한 거라구!",
+      "UnitTalk_JPN": "当然、<color=#F7BE45>秘密めいたクールな仕事</color>だと思ってオッケー出したんだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "고양이 찾기 같은 의뢰는 안 할 거니까 그렇게 알아둬!",
+      "UnitTalk_JPN": "猫を探すような依頼は絶対に受けないからな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "크읏…! 트리쉬, 잘 생각해보시죠! ",
+      "UnitTalk_JPN": "くぅっ…！トリッシュ、よく考えるのです！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "그래! 여기 적힌 보상금! 자그마치 이 액수라구요? 탐나지 않나요?",
+      "UnitTalk_JPN": "そうだわ、ここに書かれてる報酬金よ！この大金、手に入れたくありませんの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "일류 헌터 특!",
+      "UnitTalk_JPN": "一流ハンターたる者！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "POS8_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "돈도 중요하지만, 멋이 더 중요함!",
+      "UnitTalk_JPN": "金も重要だが、クールさの方が重要である！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "휴우… 이럴 게 아니라 단장한테 한번 물어보는 게 어떨까요?",
+      "UnitTalk_JPN": "ふぅ…こうやって言い合いするよりも、団長の意見をお聞きする方が良さそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "좋아! 단장 생각은 어때? 누구 말을 따르는 게 좋을 것 같아?",
+      "UnitTalk_JPN": "よっしゃ！団長はどう思うんだ？どっちの意見に賛成なんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "역시 단장이 생각하기에도 멋있는 의뢰가 들어올 때까지 기다리는 게 맞겠지?",
+      "UnitTalk_JPN": "やっぱり団長なら、クールな依頼が入ってくるまで待った方がいいって思うよな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후우… 그렇게 해서는 기껏 시작한 사업이 굴러가질 않는다구요.",
+      "UnitTalk_JPN": "ふぅ…それでは、せっかく始めたビジネスが上手くいきませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "이미 들어온 의뢰들 먼저 해결하다 보면…",
+      "UnitTalk_JPN": "既に入ってきた依頼をこなしていけば…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "<color=#F7BE45>프리쉬 특급 심부름센터</color>의 이름값이 높아져서 원하는 의뢰를 받을 수 있을거예요!",
+      "UnitTalk_JPN": "<color=#F7BE45>フレッシュ・スぺシャル便利屋</color>も知名度が上がって、お望みの依頼が入ってくるようになるはずですの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…물론, 돈도 많이 벌구요!",
+      "UnitTalk_JPN": "…もちろん、お金も稼げますよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "두 사람은 동시에 부담스러운 눈빛으로 뚫어져라 내 얼굴을 노려보았다.",
+      "UnitTalk_JPN": "二人は、プレッシャーをかけるような目つきで私を睨んでいる。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어떤 대답을 들려줘야 할까?",
+      "UnitTalk_JPN": "なんて答えようかな？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "역시 당장 할 수 있는 일부터 하는 게 좋지 않을까?",
+          "JumpAnchorStringId_JPN": "今すぐできることから始めた方がいいんじゃない？",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "역시 눈앞에 놓인 돈이 전부는 아니지.",
+          "JumpAnchorStringId_JPN": "目の前のお金が全てじゃないよ。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 109,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "역시…! 단장님이라면 일의 우선순위를 알 거라 믿었어요!",
+      "UnitTalk_JPN": "やはり…！団長なら、仕事の優先順位を分かってくれると信じていましたよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "크으으읏… 단장마저 이해하지 못하는 거야?",
+      "UnitTalk_JPN": "くぅぅっ…団長すら理解できないのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "자아, 트리쉬? 이제 그만 고집을 꺾어 주시죠.",
+      "UnitTalk_JPN": "さぁ、トリッシュ？そろそろ折れてくださいな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "저희의 새 사업의 창대한 서막이 이제 막 시작되는-",
+      "UnitTalk_JPN": "わたくしたちの新たなビジネスが今、壮大な幕開けを迎えー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "일류헌터 특…! 어떤 고난이 있어도 자기 신념을 지킴…",
+      "UnitTalk_JPN": "一流ハンターたる者…！どんな困難に直面しても、自分の信念を貫く…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "시시한 의뢰나 해야 하는 거라면 이번 사업은 무효야, 무효!",
+      "UnitTalk_JPN": "つまらねぇ依頼ばっかりなら…このビジネスは無効だ、無効ー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "으으으… 트리쉬! 그러지 말고 잠시만 이성적으로 생각을 해보는 게 어떠신가요!",
+      "UnitTalk_JPN": "うぅぅ…トリッシュ！そんなこと言わずに、冷静に考えてみるのはいかがですか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "읏…! 저, 정말 그렇게 생각하시나요?",
+      "UnitTalk_JPN": "うっ…！ほ、本当にそうお考えなのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "아하하! 역시 단장은 이해해줄 줄 알았어!",
+      "UnitTalk_JPN": "あははっ！やっぱり団長は分かってくれると思ってたぜ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "자, 이걸로 결정!",
+      "UnitTalk_JPN": "さぁ、これで決まりだな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "우리 <color=#F7BE45>프리쉬 특급 심부름센터</color>는 더 멋있는 의뢰가 들어올 때까지 대기야!",
+      "UnitTalk_JPN": "<color=#F7BE45>フレッシュ・スぺシャル便利屋</color>は、クールな依頼が入ってくるまで待機だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "자, 잠시만요…!",
+      "UnitTalk_JPN": "ち、ちょっとお待ちを…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "그럼 우리 사무실 월세는요…! 간판까지 만들어 다느라 생긴 매몰 비용은…!",
+      "UnitTalk_JPN": "それでは、事務所の家賃は…！看板を作るのにかかった<r=サンクコスト>埋没費用</r>はどうするのですか…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이대로 기다기리만 해서는 꼼짝 없이 파산이라구요?!",
+      "UnitTalk_JPN": "このまま待っているだけでは、すぐに破産してしまいますわよ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "모쪼록 두 사람, 잘 해결하길 바랄게.",
+          "JumpAnchorStringId_JPN": "二人でうまく解決するんだよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어째 사업 내용이 아슬아슬한 것들이라 말려야 하나 했지만, 크게 걱정할 필요는 없을 것 같다.",
+      "UnitTalk_JPN": "グレーな事業だったし、止めるべきかと悩んだけど…そこまで心配する必要はなさそうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "며칠 뒤, <color=#F7BE45>프리쉬 특급 심부름센터</color>가 두 창업자 간 의견 불일치로 문을 닫았다는 소문이 들려왔다.  ",
+      "UnitTalk_JPN": "数日後…<color=#F7BE45>フレッシュ・スぺシャル便利屋</color>は創業者間の意見の不一致により、廃業になったという噂を聞いた。  ",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN"
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_STELLAR_THIEF_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

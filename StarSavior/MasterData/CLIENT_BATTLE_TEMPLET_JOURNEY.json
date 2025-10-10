@@ -1,0 +1,1783 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BATTLE_TEMPLET_JOURNEY",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1,
+          "BattleStrID" : "TUTORIAL_A_01_BATTLE_HURDLE_01_BOSS",
+          "SkipCondition" : "BattleWin",
+          "DeckSlotMax" : "BATTLE_SLOT_2",
+          "BattleTempletFileName" : "JSON_TUTORIAL_A_01_BATTLE_HURDLE_01_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CANDLE_GROUND_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_BASIC_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_JOURNEY_01_E_BATTLE_HURDLE_01_BOSS_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_01",
+          "CustomerImg" : "NKM_UNIT_S_MAID_SPEAR_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_CONCIERGE_EVALUATION_BATTLE_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 5,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 1000,
+          "BeforeBattleEventId1" : 890000006,
+          "AfterBattleWinEventId1" : 890000007,
+          "AfterBattleLoseEventId1" : 890000008,
+          "JourneyRewardCoin" : 50,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 18
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 15
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 13,
+          "BattleStrID" : "TUTORIAL_JOURNEY_BATTLE_RAID_01",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_TUTORIAL_JOURNEY_BATTLE_RAID_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_NOA_DOWNTOWN_TYPE_A_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_ALL_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_RAIDER_RAID_REQUEST",
+          "BattleDesc" : "SI_RAIDER_RAID_DESC",
+          "CustomerImg" : "NKM_REQUEST_NPC_FEMALE_01_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_TUTORIAL_JOURNEY_BATTLE_RAID_01_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "HARD",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 12,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 520000,
+          "AfterBattleLoseEventId1" : 510000,
+          "JourneyRewardCoin" : 80,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 15
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110101,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_01_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_01_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CANDLE_GROUND_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_FIRST_EVALUATION",
+          "BattleName" : "SI_BASIC_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_BASIC_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_01",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_HURDLE_01_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 5,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 1030,
+          "AfterBattleWinEventId1" : 1041,
+          "AfterBattleLoseEventId1" : 1042,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110102,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_02_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_02_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_SECOND_EVALUATION",
+          "BattleName" : "SI_RAID_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_RAID_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_02",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_HURDLE_02_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 9,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 1060,
+          "AfterBattleWinEventId1" : 11300,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110103,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_03_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_2",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_03_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_RUIN_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_THIRD_EVALUATION",
+          "BattleName" : "SI_EXPEDITION_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_EXPEDITION_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_02",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_HURDLE_03_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 13,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 1650,
+          "AfterBattleWinEventId1" : 1660,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110104,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_04_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_2",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_04_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CANDLE_GROUND_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_FOURTH_EVALUATION",
+          "BattleName" : "SI_COMPETITION_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_COMPETITION_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_01",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_HURDLE_04_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 17,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 1170,
+          "AfterBattleWinEventId1" : 12700,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110105,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_05_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_05_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_DIRAC_WELL_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_FIFTH_EVALUATION",
+          "BattleName" : "SI_VOID_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_VOID_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_02",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_HURDLE_05_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 23,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 1290,
+          "AfterBattleWinEventId1" : 1301,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 18
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110106,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_06_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_06_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_DIRAC_WELL_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_FINAL_EVALUATION",
+          "BattleName" : "SI_FINAL_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_FINAL_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_03",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_HURDLE_06_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 25,
+          "MusicName" : "MUSIC_GILLE.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 9,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 18
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110151,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_FLORA_01_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_FLORA_01_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_FLORA_GROUND_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_FLORA_EMERGENCY_RAID_REQUEST",
+          "BattleDesc" : "SI_FLORA_EMERGENCY_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_MAID_BLUE_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_FLORA_01_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "HARD",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 20,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 1143,
+          "AfterBattleLoseEventId1" : 1144,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 18
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110152,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_KALAID_01_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_KALAID_01_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_SNOW_FIELD_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_KALRAID_EMERGENCY_RAID_REQUEST",
+          "BattleDesc" : "SI_KALRAID_EMERGENCY_RAID_DESC",
+          "CustomerImg" : "NKM_REQUEST_NPC_MALE_02_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_KALAID_01_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "HARD",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 20,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 1253,
+          "AfterBattleLoseEventId1" : 1254,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 18
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110201,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_RAID_01",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_RAID_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MEADOW_HILL",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_ALL_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_RAIDER_RAID_REQUEST_1",
+          "BattleDesc" : "SI_RAIDER_RAID_DESC",
+          "CustomerImg" : "NKM_REQUEST_NPC_FEMALE_01_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_RAID_01_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "EASY",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 2,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 10510,
+          "AfterBattleLoseEventId1" : 10540,
+          "JourneyRewardCoin" : 20,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110202,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_RAID_02",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_RAID_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_FOREST_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_RAIDER_RAID_REQUEST_2",
+          "BattleDesc" : "SI_RAIDER_RAID_DESC",
+          "CustomerImg" : "NKM_REQUEST_NPC_FEMALE_01_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_RAID_02_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "NORMAL",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 4,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 10520,
+          "AfterBattleLoseEventId1" : 10540,
+          "JourneyRewardCoin" : 40,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110203,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_RAID_03",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_RAID_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_PRAIRIE_HILL_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_RAIDER_RAID_REQUEST_3",
+          "BattleDesc" : "SI_RAIDER_RAID_DESC",
+          "CustomerImg" : "NKM_REQUEST_NPC_FEMALE_01_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_RAID_03_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "HARD",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 8,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 10530,
+          "AfterBattleLoseEventId1" : 10540,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110204,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_RAID_04",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_RAID_04.txt",
+          "BattleMapStrID" : "MAP_BATTLE_NOA_BRIDGE_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_ALL_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_SLIME_RAID_REQUEST_1",
+          "BattleDesc" : "SI_SLIME_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_BLUE_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_RAID_04_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "EASY",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 6,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 821,
+          "AfterBattleLoseEventId1" : 824,
+          "JourneyRewardCoin" : 20,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110205,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_RAID_05",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_RAID_05.txt",
+          "BattleMapStrID" : "MAP_BATTLE_NOA_TRAINSTATION_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_SLIME_RAID_REQUEST_2",
+          "BattleDesc" : "SI_SLIME_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_BLUE_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_RAID_05_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "NORMAL",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 8,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 822,
+          "AfterBattleLoseEventId1" : 824,
+          "JourneyRewardCoin" : 40,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110206,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_RAID_06",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_RAID_06.txt",
+          "BattleMapStrID" : "MAP_BATTLE_NOA_BRIDGE_TYPE_A_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_SLIME_RAID_REQUEST_3",
+          "BattleDesc" : "SI_SLIME_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_BLUE_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_RAID_06_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "HARD",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 12,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 823,
+          "AfterBattleLoseEventId1" : 824,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110207,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_RAID_07",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_RAID_07.txt",
+          "BattleMapStrID" : "MAP_BATTLE_GRASSLAND_NIGHT",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_ALL_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_DESERTER_RAID_REQUEST_1",
+          "BattleDesc" : "SI_DESERTER_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_RED_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_RAID_07_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "EASY",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 14,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 831,
+          "AfterBattleLoseEventId1" : 834,
+          "JourneyRewardCoin" : 20,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110208,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_RAID_08",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_RAID_08.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_TYPE_A_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_DESERTER_RAID_REQUEST_2",
+          "BattleDesc" : "SI_DESERTER_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_RED_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_RAID_08_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "NORMAL",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 16,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 832,
+          "AfterBattleLoseEventId1" : 834,
+          "JourneyRewardCoin" : 40,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 110209,
+          "BattleStrID" : "JOURNEY_01_E_BATTLE_RAID_09",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_RAID_09.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_TYPE_C_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_DESERTER_RAID_REQUEST_3",
+          "BattleDesc" : "SI_DESERTER_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_RED_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_E_BATTLE_RAID_09_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "HARD",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 20,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 833,
+          "AfterBattleLoseEventId1" : 834,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120101,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_01_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_01_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CANDLE_GROUND_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_FIRST_EVALUATION",
+          "BattleName" : "SI_BASIC_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_BASIC_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_01",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_HURDLE_01_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 10,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 1030,
+          "AfterBattleWinEventId1" : 1041,
+          "AfterBattleLoseEventId1" : 1042,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120102,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_02_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_02_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_SECOND_EVALUATION",
+          "BattleName" : "SI_RAID_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_RAID_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_02",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_HURDLE_02_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 15,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 1060,
+          "AfterBattleWinEventId1" : 11310,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120103,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_03_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_2",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_03_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_RUIN_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_THIRD_EVALUATION",
+          "BattleName" : "SI_EXPEDITION_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_EXPEDITION_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_02",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_HURDLE_03_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 20,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 1650,
+          "AfterBattleWinEventId1" : 1660,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120104,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_04_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_2",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_04_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CANDLE_GROUND_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_FOURTH_EVALUATION",
+          "BattleName" : "SI_COMPETITION_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_COMPETITION_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_01",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_HURDLE_04_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 25,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 1170,
+          "AfterBattleWinEventId1" : 12710,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120105,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_05_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_05_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_DIRAC_WELL_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_FIFTH_EVALUATION",
+          "BattleName" : "SI_VOID_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_VOID_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_02",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_HURDLE_05_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 35,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 1290,
+          "AfterBattleWinEventId1" : 1301,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 20
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 18
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120106,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_06_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_06_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_DIRAC_WELL_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_FINAL_EVALUATION",
+          "BattleName" : "SI_FINAL_EVALUATION_BATTLE",
+          "BattleDesc" : "SI_FINAL_EVALUATION_BATTLE_DESC",
+          "AdviceDesc" : "SI_JOURNEY_BATTLE_AD_03",
+          "CustomerImg" : "NKM_UNIT_S_NOA_LISA_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_HURDLE_06_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_EVALUATION.png",
+          "Difficulty" : "BOSS",
+          "BattleTag" : "EVALUATION",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 40,
+          "MusicName" : "MUSIC_GILLE.mp3",
+          "BattlePower" : 2000,
+          "BeforeBattleEventId1" : 9,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 20
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 18
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120151,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_FLORA_01_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_FLORA_01_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_FLORA_GROUND_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_FLORA_EMERGENCY_RAID_REQUEST",
+          "BattleDesc" : "SI_FLORA_EMERGENCY_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_MAID_BLUE_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_FLORA_01_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "HARD",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 30,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 1143,
+          "AfterBattleLoseEventId1" : 1144,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 20
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 18
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120152,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_KALAID_01_BOSS",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_KALAID_01_BOSS.txt",
+          "BattleMapStrID" : "MAP_BATTLE_SNOW_FIELD_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_KALRAID_EMERGENCY_RAID_REQUEST",
+          "BattleDesc" : "SI_KALRAID_EMERGENCY_RAID_DESC",
+          "CustomerImg" : "NKM_REQUEST_NPC_MALE_02_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_KALAID_01_BOSS_DESC",
+          "RequestImage" : "ILLUST_BG_CANDLE_GROUND.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "HARD",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 30,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 1253,
+          "AfterBattleLoseEventId1" : 1254,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 20
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 18
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120201,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_RAID_01",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_RAID_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MEADOW_HILL",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_ALL_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_RAIDER_RAID_REQUEST_1",
+          "BattleDesc" : "SI_RAIDER_RAID_DESC",
+          "CustomerImg" : "NKM_REQUEST_NPC_FEMALE_01_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_RAID_01_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "EASY",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 7,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 10510,
+          "AfterBattleLoseEventId1" : 10540,
+          "JourneyRewardCoin" : 20,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120202,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_RAID_02",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_RAID_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_FOREST_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_RAIDER_RAID_REQUEST_2",
+          "BattleDesc" : "SI_RAIDER_RAID_DESC",
+          "CustomerImg" : "NKM_REQUEST_NPC_FEMALE_01_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_RAID_02_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "NORMAL",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 9,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 10520,
+          "AfterBattleLoseEventId1" : 10540,
+          "JourneyRewardCoin" : 40,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120203,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_RAID_03",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_RAID_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_PRAIRIE_HILL_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_RAIDER_RAID_REQUEST_3",
+          "BattleDesc" : "SI_RAIDER_RAID_DESC",
+          "CustomerImg" : "NKM_REQUEST_NPC_FEMALE_01_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_RAID_03_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "HARD",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 13,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 10530,
+          "AfterBattleLoseEventId1" : 10540,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120204,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_RAID_04",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_RAID_04.txt",
+          "BattleMapStrID" : "MAP_BATTLE_NOA_BRIDGE_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_ALL_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_SLIME_RAID_REQUEST_1",
+          "BattleDesc" : "SI_SLIME_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_BLUE_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_RAID_04_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "EASY",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 12,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 821,
+          "AfterBattleLoseEventId1" : 824,
+          "JourneyRewardCoin" : 20,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120205,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_RAID_05",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_RAID_05.txt",
+          "BattleMapStrID" : "MAP_BATTLE_NOA_TRAINSTATION_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_SLIME_RAID_REQUEST_2",
+          "BattleDesc" : "SI_SLIME_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_BLUE_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_RAID_05_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "NORMAL",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 14,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 822,
+          "AfterBattleLoseEventId1" : 824,
+          "JourneyRewardCoin" : 40,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120206,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_RAID_06",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_1",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_RAID_06.txt",
+          "BattleMapStrID" : "MAP_BATTLE_NOA_BRIDGE_TYPE_A_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_SLIME_RAID_REQUEST_3",
+          "BattleDesc" : "SI_SLIME_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_BLUE_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_RAID_06_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "HARD",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 18,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 823,
+          "AfterBattleLoseEventId1" : 824,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120207,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_RAID_07",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_RAID_07.txt",
+          "BattleMapStrID" : "MAP_BATTLE_GRASSLAND_NIGHT",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_ALL_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_DESERTER_RAID_REQUEST_1",
+          "BattleDesc" : "SI_DESERTER_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_RED_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_RAID_07_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "EASY",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 22,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 831,
+          "AfterBattleLoseEventId1" : 834,
+          "JourneyRewardCoin" : 20,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120208,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_RAID_08",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_RAID_08.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_TYPE_A_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_DESERTER_RAID_REQUEST_2",
+          "BattleDesc" : "SI_DESERTER_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_RED_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_RAID_08_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "NORMAL",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 24,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 832,
+          "AfterBattleLoseEventId1" : 834,
+          "JourneyRewardCoin" : 40,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 120209,
+          "BattleStrID" : "JOURNEY_01_N_BATTLE_RAID_09",
+          "SkipCondition" : "AlwaysSkip",
+          "DeckSlotMax" : "BATTLE_SLOT_3",
+          "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_RAID_09.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_TYPE_C_DAY",
+          "BattleType" : "NBT_PVE_JOURNEY",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_JOURNEY_NORMAL_BATTLE",
+          "BattleName" : "SI_DESERTER_RAID_REQUEST_3",
+          "BattleDesc" : "SI_DESERTER_RAID_DESC",
+          "CustomerImg" : "NKM_UNIT_MON_KNIGHT_RED_ILLUST_UI.png",
+          "CustomerDescStringId" : "SI_JOURNEY_01_N_BATTLE_RAID_09_DESC",
+          "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
+          "BattleIcon" : "BATTLE_ICON_RAID.png",
+          "Difficulty" : "HARD",
+          "BattleTag" : "RAID",
+          "SafePartyCount" : 1,
+          "BattleLevel" : 28,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
+          "BattlePower" : 2000,
+          "AfterBattleWinEventId1" : 833,
+          "AfterBattleLoseEventId1" : 834,
+          "JourneyRewardCoin" : 60,
+          "JourneyRewardExp" : 0,
+          "JourneyRewardPP" : 0,
+          "AllClearMissionItemId" : 0,
+          "AllClearMissionItemCount" : 0,
+          "BattleMissionBonusCoin" : 5,
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 16
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 14
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 12
+            }
+          ]
+        }
+    ]
+}

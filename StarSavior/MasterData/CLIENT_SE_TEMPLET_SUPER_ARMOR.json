@@ -1,0 +1,108 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: SKILL/SE_TEMPLET_SUPER_ARMOR",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 10001,
+          "m_SEStrID" : "COND_UNIT_ARMOR_BREAK_A",
+          "m_SEName" : "SI_ARMOR_DAMAGE@@15",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ARMOR_BREAK_UNIT_EFFECT",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 11001,
+          "m_SEStrID" : "COND_MON_NORMAL_ARMOR_BREAK_A",
+          "m_SEName" : "SI_ARMOR_DAMAGE@@15",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ARMOR_BREAK_MON_NORMAL_EFFECT",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 11002,
+          "m_SEStrID" : "COND_MON_NORMAL_ARMOR_BREAK_B",
+          "m_SEName" : "SI_SPEED_GAUGE_RESET",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ARMOR_BREAK_SPEED_GAUGE_CHANGE_FIX",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 12001,
+          "m_SEStrID" : "COND_MON_ELITE_ARMOR_BREAK_A",
+          "m_SEName" : "SI_ARMOR_DAMAGE@@15",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ARMOR_BREAK_MON_ELITE_EFFECT",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 12002,
+          "m_SEStrID" : "COND_MON_ELITE_ARMOR_BREAK_B",
+          "m_SEName" : "SI_SPEED_GAUGE_RESET",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ARMOR_BREAK_SPEED_GAUGE_CHANGE_FIX",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 13001,
+          "m_SEStrID" : "COND_MON_BOSS_ARMOR_BREAK_A",
+          "m_SEName" : "SI_ARMOR_DAMAGE@@15",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ARMOR_BREAK_MON_BOSS_EFFECT",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 13002,
+          "m_SEStrID" : "COND_MON_BOSS_ARMOR_BREAK_B",
+          "m_SEName" : "SI_SPEED_GAUGE_RESET",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ARMOR_BREAK_SPEED_GAUGE_CHANGE_FIX",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        }
+    ]
+}

@@ -1,0 +1,222 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_11A_NOA_BT_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_DEEP_FIELD_ENTRANCE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "슬라임들을 소탕한 후, 안나와 함께 하수도를 확인했다.",
+      "UnitTalk_JPN": "スライムを一掃した後、アンナと下水道を確認した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "으음... 제가 상상했던 첫 데이트는 이런 건 아니었는데...",
+      "UnitTalk_JPN": "うーん…あたしが想像してた初デートは、こんな感じじゃなかったんですけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐, 불평할 순 없죠!",
+      "UnitTalk_JPN": "まぁ、文句は言えませんね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…어라? 단장님, 저기 보이세요?",
+      "UnitTalk_JPN": "…あれ？団長、あそこ見えますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "위쪽에 거대한 균열이 나 있어요.",
+      "UnitTalk_JPN": "上の方に、巨大な亀裂がありますよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…핫! 그렇다는 건!",
+      "UnitTalk_JPN": "…はっ！もしかして！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "잠시만요, 타운가드! 이쪽으로 모이실게요!",
+      "UnitTalk_JPN": "タウンガード！こっちに集まってくださーい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAZA.png",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "안나는 모인 타운가드와 한참 무엇인가 쑥덕거렸다.",
+      "UnitTalk_JPN": "アンナは集まったタウンガードと、しばらくひそひそ話していた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_11A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "얼마 후...",
+      "UnitTalk_JPN": "しばらくして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "단장님, 단장님! 좋은 소식이에요!",
+      "UnitTalk_JPN": "団長団長！良いニュースです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하수도 위에 있던 커다란 균열 있죠?",
+      "UnitTalk_JPN": "大きな亀裂のこと、覚えてますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "그 너머로 슬라임의 서식지가 가까웠던 모양이에요.",
+      "UnitTalk_JPN": "その向こうが、スライムの棲息地だったみたいなんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "슬라임들이 거기로 빠져서 하수도에 갇힌 셈이죠.",
+      "UnitTalk_JPN": "スライムがそこから落ちて、下水道に閉じ込められていたわけですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "그 균열을 메우면 슬라임들도 더는 빠지지 않을 거예요.",
+      "UnitTalk_JPN": "あの亀裂さえ塞いでしまえば、スライムももう落ちてきません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "에헷! 위험을 없애고 원인까지 찾아냈으니, 완벽한 작전 성공이에요!",
+      "UnitTalk_JPN": "てへっ！危険を取り除いて原因まで突き止めるなんて、作戦成功ですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "정말 감사드려요, 단장님!",
+      "UnitTalk_JPN": "本当にありがとうございました、団長！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 55,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

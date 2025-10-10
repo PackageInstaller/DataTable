@@ -1,0 +1,227 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "좋은 아침, 단장.",
+      "UnitTalk_JPN": "おはよう、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…꿈인가?",
+          "JumpAnchorStringId_JPN": "夢なのか…？"
+        }
+      ]
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "꿈? 무슨 소리야?",
+      "UnitTalk_JPN": "夢？どういうこと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "꾸룩!",
+      "UnitTalk_JPN": "クルッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "…내가 일찍 일어나서 꿈인 줄 알았다구?",
+      "UnitTalk_JPN": ".…ボクが早起きしたから、夢だと思ったの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "너무해~! 나도 일찍 일어날 때는 일찍 일어나거든.",
+      "UnitTalk_JPN": "ひどい～！ボクだって、たまには早起きするんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아주 가끔이지만 말이지.",
+      "UnitTalk_JPN": "本当に、たま～にだけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "그나저나 정말 좋은 꿈이었어~",
+      "UnitTalk_JPN": "それにしても、昨日は本当にいい夢を見たんだよ～",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "솜털 구름에 누워서 마음껏 뒹굴거리는 꿈을 꿨거든.",
+      "UnitTalk_JPN": "ふわふわの雲の中に寝ころんで、思う存分ゴロゴロする夢を見たんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "손을 뻗으면 보석 쿠키, 이슬 주스가 있고 옆에는 토토랑 단장도 자고 있었어.",
+      "UnitTalk_JPN": "手を伸ばせば宝石のクッキーとオレンジジュース。隣にはトトと団長も寝てたよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitTalk_KOR": "정말 만족스러운 꿈이어서 일찍 일어났어.",
+      "UnitTalk_JPN": "本当にいい夢だったから、今朝は自然と目が覚めたの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "오늘은 어떤 간식을 준비했어, 단장?",
+      "UnitTalk_JPN": "今日のおやつはなに？団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "훈련이 끝나면 원하는 걸 사줄게.",
+          "JumpAnchorStringId_JPN": "訓練が終わったら、好きなものを買ってあげるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "에에~ 빨리 먹고 싶은데…",
+      "UnitTalk_JPN": "えぇ～！早く食べたいなぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "하는 수 없나?",
+      "UnitTalk_JPN": "仕方ないね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "간식을 사주겠다는 말에 세르팡이 의욕을 드러냈다.",
+      "UnitTalk_JPN": "おやつを買ってあげるという言葉に、セルパンはやる気を見せた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "오늘은 왠지 행운이 가득한 날이 될 것 같은 예감이 든다.",
+      "UnitTalk_JPN": "今日は何だかいい日になりそうだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_EASTERN_OWL_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_S_NOA_OBSERVER.txt",
+    "UseRespawnFocus": false,
+    "BattleStates": [
+      {
+        "StateName": "USN_ATTACK",
+        "VoiceSeries": []
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "VoiceSeries": []
+      },
+      {
+        "StateName": "USN_HYPER",
+        "PlaySkillCutIn": false,
+        "VoiceSeries": []
+      },
+      {
+        "StateName": "USN_DYING",
+        "VoiceSeries": [],
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SHADOW_UNIT_DIE.wav"
+            ]
+          },
+        ]
+      },
+      {
+        "StateName": "USN_DAMAGE_A",
+        "VoiceSeries": []
+      },
+      {
+        "StateName": "USN_DAMAGE_B",
+        "VoiceSeries": []
+      }
+    ]
+  }
+}

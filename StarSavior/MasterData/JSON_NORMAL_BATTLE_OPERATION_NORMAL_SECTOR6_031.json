@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_01",
+            "IsElite": true,
+            "SpecialSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_HALO_BLACK_ELITE_OPERATION_01",
+            "SpecialSkillAvailable": true,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          }
+        ]
+      }
+    ]
+  }
+}

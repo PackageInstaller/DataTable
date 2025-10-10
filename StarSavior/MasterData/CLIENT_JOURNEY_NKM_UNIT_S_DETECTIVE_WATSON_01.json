@@ -1,0 +1,1823 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "CameraOffset": "TWIN_5"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정 단원을 만나기 위해 리사에게서 안내받은 주소로 향했다.",
+      "UnitTalk_JPN": "旅の団員に会うため、リサに教えてもらった場所へと向かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "받은 주소는 NOA 시내의 한 건물이었다.",
+      "UnitTalk_JPN": "そこは、NOAの街にある建物だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>람파디스 수사 컨설팅</color>이라…",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>ランパディス捜査コンサルティング</color>か…"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "건물 앞에는 꽤 많은 수의 사람들이 줄을 서 있었다.",
+      "UnitTalk_JPN": "建物の前には、かなり多くの人が並んでいる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "1층에 있는 빵집에 가기 위한 줄인 것 같다. ",
+      "UnitTalk_JPN": "みんな、1階にあるパン屋が目当てのようだ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "받은 주소는 2층인데, 1층에 사람들이 줄을 서 있어서 통로가 보이질 않는다. ",
+      "UnitTalk_JPN": "私の目的地は2階なのに、1階に人が並んでいるせいで通路が見えない。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어디로 가야 하지…?",
+      "UnitTalk_JPN": "どこに向かえばいいんだ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "아아앗…! 이거 이거, 너무 반가운 얼굴이잖아?",
+      "UnitTalk_JPN": "おおっ…！これはこれは、久しぶりじゃねぇか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS3",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…?",
+      "UnitTalk_JPN": "…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "아하하! 지나가다가 너무 반가운 얼굴이 보이더라고. 나 기억나지? ",
+      "UnitTalk_JPN": "アハハ！通りすがりに、懐かしい顔が目に入ってよぉ。俺のこと覚えてるだろ？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "아…? 예전에 같이 의뢰를 몇 번…",
+      "UnitTalk_JPN": "あっ…何度か、依頼を一緒に…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그래 그래. 기억하는구나.",
+      "UnitTalk_JPN": "その通りだ、覚えてたんだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "오랜만에 만난 기념으로 부탁 하나 들어줄 수 있어…? ",
+      "UnitTalk_JPN": "久しぶりの再会を記念して、一つ頼みを聞いてくれねぇか…？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "부탁… 이요?",
+      "UnitTalk_JPN": "頼み…ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "아아, 별 건 아니고. 저기 저 친구 보이지?",
+      "UnitTalk_JPN": "あぁ、大したことじゃねぇよ。あそこにいるヤツが見えるか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "저 촌놈이 글쎄 여기 있는 이 빵집, <color=#F7BE45>스트릿 베이커스</color>의 한정 메뉴를 안 먹어 봤다지 뭐냐? ",
+      "UnitTalk_JPN": "田舎者だから、この<color=#F7BE45>ストリート・ベイカース</color>の限定メニューを食べたことねぇって言うんだよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "그래서 말인데, 자리 좀 바꿔 주면 안 될까? ",
+      "UnitTalk_JPN": "そこでなんだが、順番を変わってくれよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그치만… 저도 한정 메뉴를 사려고 아침 일찍부터… ",
+      "UnitTalk_JPN": "でも…わたしも限定メニューを買いたくて、朝早くから… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아아, 넌 이 근처 사니까 다음에 언제든지 먹으면 되잖아 그치?",
+      "UnitTalk_JPN": "はぁ。お前はこの近くに住んでんだから、いつでも食べられるだろ？な？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "… ",
+      "UnitTalk_JPN": "… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "근데, 그 인형은 아직도 들고 다니는 거야?",
+      "UnitTalk_JPN": "っていうか、このぬいぐるみまだ持ち歩いてんのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "지난 약탈자 토벌 의뢰 때 전리품으로 분배받은 인형이었나…?",
+      "UnitTalk_JPN": "この前のレイダー討伐依頼の時に、戦利品として配られたんだったよな…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_RED",
+      "UnitNameString": [
+        "SI_THUG_MERCENARY"
+      ],
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "뭐야, 전리품으로 저런 거적때기를 준 거야?",
+      "UnitTalk_JPN": "何だ、戦利品としてあんなぼろ切れをくれたのか？   ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_RED",
+      "UnitNameString": [
+        "SI_THUG_MERCENARY"
+      ],
+      "UnitTalk_KOR": "푸흡! 이 자식은 진짜 해도 너무하는구만.",
+      "UnitTalk_JPN": "ププッ！そいつはひでぇな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…거적때기가 아니라, <color=#F7BE45>토끼 씨</color>에요. ",
+      "UnitTalk_JPN": "…ぼろ切れじゃなくって、<color=#F7BE45>ウサギさん</color>です。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "으응? ",
+      "UnitTalk_JPN": "あぁ？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>토끼 씨</color>라는 이름이라구요. ",
+      "UnitTalk_JPN": "<color=#F7BE45>ウサギさん</color>っていう名前なんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "…뭐, 그래. 아무튼. 양보 고맙다~!",
+      "UnitTalk_JPN": "…まぁ、それは分かったから。とにかく、変わってくれてサンキューな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_STANDINLINER"
+      ],
+      "UnitTalk_KOR": "이봐요. 여기 다들 줄 서 있는 거 안 보여요? ",
+      "UnitTalk_JPN": "ちょっと。みんな並んでるのが見えないんですか？ ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아하하! 저 이 친구 동룝니다 동료.",
+      "UnitTalk_JPN": "アハハ！この子は友達ですよ、友達。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "이 친구가 저 대신 줄을 서 주고 있었던 것뿐이죠. ",
+      "UnitTalk_JPN": "私の代わりに並んでくれてただけですから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그렇지, 릴리?",
+      "UnitTalk_JPN": "な、リリー？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "불량해보이는 남자가 소녀의 어깨에 손을 올리고 피식거린다. ",
+      "UnitTalk_JPN": "ガラの悪そうな男が、少女の肩に手を乗せてヘラヘラと笑っている。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…아무래도 저 토끼 인형을 안고 있는 소녀가 나의 <color=#F7BE45>여정 단원</color>인 듯 하다. ",
+      "UnitTalk_JPN": "…やっぱり、ウサギのぬいぐるみを抱いている少女が、私の<color=#F7BE45>旅の団員</color>のようだ。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "자세한 사정은 모르겠지만, 그녀의 표정을 보면 곤란해하고 있음은 명백하다.",
+      "UnitTalk_JPN": "詳しい事情は分からないが…彼女の表情を見れば、困っているのは明らかだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "곤경에 빠진 나의 <color=#F7BE45>여정 단원</color>을 보고도 구하지 않으면 안 되겠-",
+      "UnitTalk_JPN": "<color=#F7BE45>旅の団員</color>が困っているのに、団長として手を差し伸べないなんてー",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…네. 그럼 어쩔 수 없죠. 제가 뒤로 갈-",
+      "UnitTalk_JPN": "…仕方ないですよね。わたし、また後ろに並びー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…!",
+      "UnitTalk_JPN": "…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "토, 토끼씨…? ",
+      "UnitTalk_JPN": "ウ、ウサギさん…？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "…구제 불능의 인간 쓰레기라니.",
+      "UnitTalk_JPN": "…どうしようもないゴミクズだなんて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그런 나쁜 말을 쓰면 못 써 토끼 씨.",
+      "UnitTalk_JPN": "悪口は言っちゃダメですよ、ウサギさん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "그 말을 들으면 얼마나 상처받겠어?",
+      "UnitTalk_JPN": "そんなこと言われたら、きっと傷ついちゃいますよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "새치기를 하면서 거짓말도 하는 뻔뻔한 분이지만…",
+      "UnitTalk_JPN": "順番抜かしに、嘘までつくような図々しい方ですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "한정 메뉴가 얼마나 먹고 싶으셨으면 그러셨겠어?",
+      "UnitTalk_JPN": "よっぽど限定メニューが食べたいんでしょうね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "…뭣? 너, 방금 뭐라 그랬어?!",
+      "UnitTalk_JPN": "…あぁっ？お前、いま何て言ったんだよ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "인간 쓰레기???",
+      "UnitTalk_JPN": "ゴミクズ？？？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아앗…! 아, 아니에요.",
+      "UnitTalk_JPN": "あ、あぁっ…！ち、違うんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "제가 한 말이 아니라… 토끼 씨가 한 말이에요!",
+      "UnitTalk_JPN": "わたしじゃなくって…ウサギさんが言ったんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "우리 토끼 씨가 입이 조금 험하거든요.",
+      "UnitTalk_JPN": "ウサギさん、ちょっと言葉遣いが荒くて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "제가 대신 사과할게요.",
+      "UnitTalk_JPN": "わたしが代わりに謝ります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "자. 토끼 씨. 내가 말했지? 듣는 분이 상처받으실 거라구.",
+      "UnitTalk_JPN": "ね、ウサギさん。言ったでしょう？きっと傷ついちゃうって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "얼른 사과하도록 해.",
+      "UnitTalk_JPN": "はやく謝ってくださいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…뭐야 이 녀석?",
+      "UnitTalk_JPN": "…何なんだよコイツ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "날 놀리는 거냐? 아앙?",
+      "UnitTalk_JPN": "俺をからかってんのか？あぁん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "얼굴을 잔뜩 구긴 남자가 릴리에게 손을 뻗으려 한 순간-",
+      "UnitTalk_JPN": "顔をしかめた男が、リリーに手を伸ばそうとした瞬間ー",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.4,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_64.wav",
+      "UnitTalk_KOR": "토끼 인형의 눈이 번쩍 빛난 것처럼 느껴진 후, 릴리가 남자의 팔을 꺾어 올렸다.",
+      "UnitTalk_JPN": "ぬいぐるみの目がピカッと光ったかと思うと、リリーが男の腕をひねり上げた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "으아악-!",
+      "UnitTalk_JPN": "うあぁーっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 안돼!",
+      "UnitTalk_JPN": "ダ、ダメ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…방금 뭐였지?",
+      "UnitTalk_JPN": "…今のは何だったんだ？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리는 깜짝 놀라 인형을 도로 품에 껴안으며 고개를 숙였다.  ",
+      "UnitTalk_JPN": "リリーは驚いたのか、ぬいぐるみをぎゅっと抱きしめながら頭を下げた。  ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "미안해요…! 미안해요 정말! ",
+      "UnitTalk_JPN": "ごめんなさい…！本当にごめんなさい！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "토끼 씨...",
+      "UnitTalk_JPN": "ウサギさん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아무리 화가 나도 함부로 사람을 다치게 하면 나빠!",
+      "UnitTalk_JPN": "いくら怒ってるからって、人を傷つけるなんて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "말도 없이 내 몸을 움직이게 하면 어떡해!",
+      "UnitTalk_JPN": "わたしの体を勝手に動かしちゃダメです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "남자는 꺾인 팔을 부여잡으며 릴리를 겁먹은 눈으로 올려다보았다. ",
+      "UnitTalk_JPN": "男は、折れた腕をしっかりと掴みながら、リリーのことを怯えた目で見上げている。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "제, 제정신이 아니야…! ",
+      "UnitTalk_JPN": "く、狂ってやがる…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_BULLY_MERCENARY"
+      ],
+      "UnitTalk_KOR": "너, 너 두고 보자…! ",
+      "UnitTalk_JPN": "お、お前、覚えておけよ…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_RED"
+    },
+    {
+      "Uid": 200,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "남자는 뒤도 돌아보지 않고 도망쳐버렸다. ",
+      "UnitTalk_JPN": "男は振り返ることなく、逃げて行った。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "토끼 씨. 내가 허락도 안 했는데-",
+      "UnitTalk_JPN": "ウサギさん。わたしの許可もなくー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "뭐어…? 내가 너무 답답해서 어쩔 수 없었다구?",
+      "UnitTalk_JPN": "なに…？もどかしくて、見てられなかったって言うんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "정말… 그래도 그렇지. ",
+      "UnitTalk_JPN": "本当…その通りですよね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "으응… 나를 바보취급하던 나쁜 사람인 건 알지만… ",
+      "UnitTalk_JPN": "うぅん…わたしのこと見下すような、悪い人だってことは分かってたけど… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "토끼 인형을 마주 보며 중얼거리는 모습은… 역시나 평범하지 않다. ",
+      "UnitTalk_JPN": "ウサギのぬいぐるみに向かってぶつぶつと話す姿は…やはり普通ではなかった。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "저기…",
+          "JumpAnchorStringId_JPN": "ちょっといいかな…？"
+        }
+      ]
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "으응? 네? ",
+      "UnitTalk_JPN": "うん？どうされましたか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "네가 릴리야?",
+          "JumpAnchorStringId_JPN": "君がリリー？"
+        }
+      ]
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그런데… 누구세요? ",
+      "UnitTalk_JPN": "そうですが…どなたでしょうか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나는-",
+          "JumpAnchorStringId_JPN": "私はー"
+        }
+      ]
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "NR",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "어, 어엇? 토끼 씨, 내가 맞춰보라고?",
+      "UnitTalk_JPN": "え、ええっ？ウサギさん、当ててみろって言うんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으음… 알았어! 한번 해볼게!",
+      "UnitTalk_JPN": "うぅん…分かりました！やってみますね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "일단 눈에 보이는 건 검은 후드에… 커다랗고 특이하게 생긴 무기.",
+      "UnitTalk_JPN": "まず目に入るのは、黒のフードに…大きくて変わった形の武器。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "거기에 먼저 말을 걸어오신 걸 보면 날 아시는 분이라는 소리고…",
+      "UnitTalk_JPN": "それに…話しかけてきたということは、わたしのことを知ってる方ってことだから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이 모든 조건에 부합하는 인물은!",
+      "UnitTalk_JPN": "このすべての条件に当てはまる人物は！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 165,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_07.wav",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "예전 의뢰때 같이 활동했던 용병분이시죠!",
+      "UnitTalk_JPN": "依頼で一緒に活動したことのある傭兵さんですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아앗?! 토끼 씨, <color=#F7BE45>여정 단장</color>인 게 당연하지 않냐구?",
+      "UnitTalk_JPN": "うえぇっ！？ウサギさん、<color=#F7BE45>旅の団長</color>に決まってるって言うんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 168,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "그러고보니, 그런 것 같기도 하고…?",
+      "UnitTalk_JPN": "そう言われてみれば、そんな気も…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 169,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "정답이야.",
+          "JumpAnchorStringId_JPN": "正解だよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 170,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그렇구나…! 안녕하세요 단장님!",
+      "UnitTalk_JPN": "そうなんですね…！こんにちは、団長さん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "전, 릴리라고 해요. 앞으로 잘 부탁드려요!",
+      "UnitTalk_JPN": "わたし、リリーって言います。これからよろしくお願いします！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "히잉… 너무해 토끼 씨! 나 바보 아니야…!",
+      "UnitTalk_JPN": "ふええん…ひどいですよ、ウサギさん！わたしだって、バカじゃないんですから…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "조금만 시간을 더 줬으면 맞췄을 수도…!",
+      "UnitTalk_JPN": "もうちょっと時間があれば、当てられてたかも…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 174,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "있지… 않을까?",
+      "UnitTalk_JPN": "しれ…ませんよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_BELL_02.wav"
+    },
+    {
+      "Uid": 176,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "오늘 한정 메뉴, 다 팔렸어요! ",
+      "UnitTalk_JPN": "今日の限定メニュー、完売しましたー！ ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 177,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아아앗…?! 벌써 다 팔린거야…?",
+      "UnitTalk_JPN": "えぇっ…！？もう売り切れちゃったの…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 178,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "히잉… 오늘은 꼭 먹으려고 했는데에…",
+      "UnitTalk_JPN": "ふええん…今日は絶対に食べたかったのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 179,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "유명한 곳인가 봐?",
+          "JumpAnchorStringId_JPN": "ここのパン屋、有名なんだね？"
+        }
+      ]
+    },
+    {
+      "Uid": 180,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "설마… <color=#F7BE45>스트릿 베이커스</color>를 모르시나요 단장님?",
+      "UnitTalk_JPN": "まさか…団長さん、<color=#F7BE45>ストリート・ベイカース</color>をご存じないのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 181,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "하루에 단 221개만 구워내는 천상의 맛! 이곳의 한정 메뉴는 인기 폭발이라구요…!",
+      "UnitTalk_JPN": "一日に221個しか販売されない、極上の味！ここの限定メニューは大人気なんですよ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 182,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아침 일찍 줄을 서지 않으면 구하지 못할 정도로요!",
+      "UnitTalk_JPN": "朝早くから並ばないと、買えないほどなんですから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 183,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "으응? 토끼 씨? 크림에게 부탁해서 빵을 몇 개만 빼달라고 하지 그랬냐고?",
+      "UnitTalk_JPN": "うん？ウサギさん？クリームにお願いして、パンを取り置きしてもらえばいいって言うんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 184,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "음… 분명 크림은 상냥하니까 부탁하면 들어주겠지만…",
+      "UnitTalk_JPN": "うーん…クリームは優しいから、きっとお願いは聞いてくれるでしょうけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 185,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그러면 그만큼 다른 사람들이 못 먹게 되는 거잖아?",
+      "UnitTalk_JPN": "そうすると、他の人の分が減ってしまうんですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 186,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "다들 빵을 먹고 싶어서 기다렸을 텐데, 그러면 안 되는 거야!",
+      "UnitTalk_JPN": "みんなパンを食べたくて待っているのに、そんなことしちゃダメですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 187,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리는 <color=#F7BE45>토끼 씨</color>를 마주 보곤 꾸짖듯 말했다.",
+      "UnitTalk_JPN": "リリーは<color=#F7BE45>ウサギさん</color>を叱るように言った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 188,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그… <color=#F7BE45>토끼 씨</color>라고 했나?",
+          "JumpAnchorStringId_JPN": "その…<color=#F7BE45>ウサギさん</color>だっけ？"
+        }
+      ]
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아아, 맞다! ",
+      "UnitTalk_JPN": "あっ、ご挨拶がまだでしたね！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "토끼 씨, 너도 인사해.",
+      "UnitTalk_JPN": "さぁウサギさん、ご挨拶してください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리는 토끼 인형의 고개를 손으로 푹 눌러 숙였다. ",
+      "UnitTalk_JPN": "リリーは、ぬいぐるみの頭を手で押してお辞儀をさせた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "릴리는… 토끼 씨랑 대화가 가능한거야?",
+          "JumpAnchorStringId_JPN": "リリーは…ウサギさんと話せるの？"
+        }
+      ]
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "네. 지금도 말하고 있어요!",
+      "UnitTalk_JPN": "はい、今もウサギさんがお話してます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "토끼 씨가, <color=#F7BE45>일단은 잘 부탁한다</color>라고 하네요. ",
+      "UnitTalk_JPN": "<color=#F7BE45>ひとまずよろしく</color>だそうです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "토끼 씨, 단장님한테 너무 버릇없게 굴면 안 돼!",
+      "UnitTalk_JPN": "ウサギさん、団長さんに失礼な話し方しちゃダメですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "자. 사과드려. 얼른.",
+      "UnitTalk_JPN": "さぁ、はやく謝ってください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리는 짐짓 엄한 표정을 지으며 <color=#F7BE45>토끼 씨</color>의 고개를 숙이게 만들었다. ",
+      "UnitTalk_JPN": "リリーはわざと厳しい表情をして、<color=#F7BE45>ウサギさん</color>の頭を下げさせた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "직접 움직이지는 못하는 거지…?",
+          "JumpAnchorStringId_JPN": "自分で動いたりはできないんだよね…？"
+        }
+      ]
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "아, 토끼 씨는 혼자 움직이지는 못해요!",
+      "UnitTalk_JPN": "あっ、ウサギさんは一人で動くことはできないんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "대신 제 몸을 빌릴 수 있는데… ",
+      "UnitTalk_JPN": "その代わり、わたしの体を借りることができるんですが… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "으으! 가끔씩 자기 마음대로 제 몸을 움직일 때가 있어요.",
+      "UnitTalk_JPN": "うう！たまに、勝手にわたしの体を動かす時があるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "토끼 씨, 또 그러면 안 돼…!",
+      "UnitTalk_JPN": "ウサギさん、もうあんなことしちゃダメ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 189,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…음. 그런 설정이라는 거지? 완벽하게 이해했다.",
+      "UnitTalk_JPN": "…うーん、そういう設定ってことか。完全に理解した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 190,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그런데 단장님 혹시…",
+      "UnitTalk_JPN": "ところで、団長さん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 191,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응?",
+          "JumpAnchorStringId_JPN": "うん？"
+        }
+      ]
+    },
+    {
+      "Uid": 192,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "최근에 몸이 조금 결리거나 하지 않으셨나요?",
+      "UnitTalk_JPN": "最近、身体が凝っていませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 193,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어, 어떻게 알았어?",
+          "JumpAnchorStringId_JPN": "おっ、なんで分かったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 194,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "에헤헤. 토끼씨는 이런 걸 잘 알아내거든요!",
+      "UnitTalk_JPN": "えへへ。ウサギさんはこういうの、よく当てるんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 195,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "단장님의 어깨 높이가 살짝 다르고…",
+      "UnitTalk_JPN": "両肩の高さが少し違うのと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 196,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "신발의 왼쪽 뒷굽이 더 닳아 있대요.",
+      "UnitTalk_JPN": "靴はかかとの左側がすり減ってるそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 197,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "그래서, 아마 신체 밸런스가 맞지 않는 것 같다는 결론을 낸 거죠!",
+      "UnitTalk_JPN": "それで、身体が歪んでいるという結論がでました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 198,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…으응? 토끼 씨?",
+      "UnitTalk_JPN": "…うん？ウサギさん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 199,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "후드 한쪽이 많이 접힌 자국은 스트레칭을 자주 해서 그런 것 같다고?",
+      "UnitTalk_JPN": "よくストレッチをするせいで、フードの片側に折り目ができてるって言うんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…제법 날카로운데?",
+          "JumpAnchorStringId_JPN": "…なかなか鋭いね？"
+        }
+      ]
+    },
+    {
+      "Uid": 146,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "에헤헤. 이래 봬도 람파디스 수사 컨설팅의 보조 조사원이라구요. ",
+      "UnitTalk_JPN": "えへへ。こう見えても、ランパディス捜査コンサルティングの見習い調査員ですから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "꼼꼼한 관찰력은 탐정이 가져야 할 필수 덕목!",
+      "UnitTalk_JPN": "探偵たるもの、鋭い観察力が求められるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…이라고 명탐정 H가 말했는걸요. ",
+      "UnitTalk_JPN": "…と、名探偵Hが言っていたんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런데… <color=#F7BE45>람파디스</color>는 뭘 하는 곳이야?",
+          "JumpAnchorStringId_JPN": "ところで…<color=#F7BE45>ランパディス</color>は何をするところなんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 150,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아앗! 제일 중요한 걸 까먹고 있었네요?",
+      "UnitTalk_JPN": "ああっ！一番大事なことを忘れていましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "으음… 람파디스는… ",
+      "UnitTalk_JPN": "うーん…ランパディスは… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "설명하는 것보다 직접 보여드리는 게 좋으려나…",
+      "UnitTalk_JPN": "説明するよりも、直接お見せした方がいいかな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "다음에 훈련이 끝나면, 같이 사무실에 가기로 해요 단장님!",
+      "UnitTalk_JPN": "今度、訓練終わりに一緒に事務所に行きましょうよ。ね、団長さん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래.",
+          "JumpAnchorStringId_JPN": "そうしよう。"
+        }
+      ]
+    },
+    {
+      "Uid": 155,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 156,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리는 행복한 표정으로 <color=#F7BE45>토끼 씨</color>를 꼬옥 껴안았다. ",
+      "UnitTalk_JPN": "リリーは幸せそうな表情で、<color=#F7BE45>ウサギさん</color>をぎゅっと抱きしめた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 157,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리와 토끼 씨, 그 묘한 관계의 둘을 바라보며 생각이 많아졌다…",
+      "UnitTalk_JPN": "リリーとウサギさん。奇妙な関係の二人を見ていると、色々と考えてしまうな…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 158,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

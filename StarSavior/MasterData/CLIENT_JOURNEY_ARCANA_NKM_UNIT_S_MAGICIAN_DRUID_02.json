@@ -1,0 +1,756 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어느 날, 산책하던 중이었다.",
+      "UnitTalk_JPN": "ある日、散歩をしていた時のことだった。",
+      "UnitTalk_TWN": "某一天，我正在散步時。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "어라?",
+      "UnitTalk_JPN": "あれ？",
+      "UnitTalk_TWN": "咦？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_1.ogg"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "단장님이시네요. 이곳에는 어쩐 일이세요?",
+      "UnitTalk_JPN": "団長！こんなところでお会いするなんて、奇遇ですね。",
+      "UnitTalk_TWN": "是團長呢。您怎麼會在這裡？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_2.ogg"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "아하하! 마침 잘 됐다!",
+      "UnitTalk_JPN": "あはは！ちょうど良かったです！",
+      "UnitTalk_TWN": "啊哈哈！太巧了！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_3.ogg"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "괜찮으시다면 저랑 같이 가시겠어요?",
+      "UnitTalk_JPN": "よければ、わたしについて来てくださいますか？",
+      "UnitTalk_TWN": "如果您不介意的話，願意跟我一起去嗎？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_4.ogg"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "다나의 개인 농장에 오신 것을 환영합니다!",
+      "UnitTalk_JPN": "ダーナの農場へようこそ！",
+      "UnitTalk_TWN": "歡迎來到達娜的私人農場！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_5.ogg"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": " 와아~!",
+      "UnitTalk_JPN": "わああ～！",
+      "UnitTalk_TWN": " 哇～！",
+      "TalkTime": 0.03,
+      "TalkAppend": true,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_6.ogg"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아하하! 꼭 해보고 싶은 말이었어요.",
+      "UnitTalk_JPN": "あはは！一度は言ってみたかったんです。",
+      "UnitTalk_TWN": "啊哈哈！我一直很想說這句話。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_7.ogg"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "이곳에 저 말고 다른 사람이 방문한 건 단장님이 처음이거든요.",
+      "UnitTalk_JPN": "ここに、わたし以外の人が入るのは初めてなんですよ？",
+      "UnitTalk_TWN": "除了我以外，團長是第一個參觀這裡的人呢。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_8.ogg"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혼자 농장을 만들었어?",
+          "JumpAnchorStringId_JPN": "一人で農場を作ったのか？",
+          "JumpAnchorStringId_TWN": "這是你是自己建造的農場嗎？"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네! 제가 만들었어요.",
+      "UnitTalk_JPN": "はい！わたしが作りました。",
+      "UnitTalk_TWN": "對！是我蓋的。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_9.ogg"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "도시의 농작물은 맛있지만 아쉬운 점이 하나 있거든요.",
+      "UnitTalk_JPN": "都会の農作物もおいしいですが、ひとつ残念な点があって…",
+      "UnitTalk_TWN": "城市的農作物雖然好吃，但有一點美中不足。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_10.ogg"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "채소는 땀을 흘려 수확해서 바로 먹는 게 제일 맛있다는 사실!",
+      "UnitTalk_JPN": "野菜は汗を流して、収穫したてを食べるのが一番なんです！",
+      "UnitTalk_TWN": "蔬菜還是要在流汗收成後馬上吃掉才最美味！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_11.ogg"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "아니면 <color=#F7BE45>팜팜</color>도 좋아요. 신선함이 오래 가거든요.",
+      "UnitTalk_JPN": "もしくは、<color=#F7BE45>パムパム</color>でもいいですよ。鮮度が長持ちしますから。",
+      "UnitTalk_TWN": "或者是做成<color=#F7BE45>帕姆帕姆</color>也很棒，因為能保持新鮮狀態很久。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_12.ogg"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>팜팜</color>?",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>パムパム</color>？",
+          "JumpAnchorStringId_TWN": "<color=#F7BE45>帕姆帕姆</color>？"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "참, 드루이드의 전통 요리라고 설명하는 걸 깜빡했네요. 나중에 대접해드릴게요.",
+      "UnitTalk_JPN": "あっ、ドルイドの伝統料理のことです。後でごちそうしますね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_13.ogg"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "어라? 그런데 잡초가 많네요.",
+      "UnitTalk_JPN": "あれ？知らない間に、雑草が…",
+      "UnitTalk_TWN": "咦？不過這裡雜草真多呢。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_14.ogg"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "으음~ 관리가 소홀했나 봐요.",
+      "UnitTalk_JPN": "うーん、管理が行き届いていなかったようです。",
+      "UnitTalk_TWN": "嗯～有點疏於管理了。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_15.ogg"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "잠시만 기다려 주시겠어요? 금방 작업하고 올게요.",
+      "UnitTalk_JPN": "少しだけお待ちいただけますか？すぐに抜いてきますから。",
+      "UnitTalk_TWN": "能請您稍等一下嗎？我馬上去處理。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_16.ogg"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…풀 뽑는 걸 도와주시겠다고요?",
+      "UnitTalk_JPN": "…草むしりを手伝ってくださるのですか？",
+      "UnitTalk_TWN": "…您是說要幫忙拔草嗎？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_17.ogg"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "아뇨, 아뇨, 아뇨! 괜찮아요.",
+      "UnitTalk_JPN": "ううん！大丈夫です。",
+      "UnitTalk_TWN": "不不不！沒關係的。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_18.ogg"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "손님에게 일을 시킬 수는 없죠.",
+      "UnitTalk_JPN": "お客様を働かせるわけにはいきません。",
+      "UnitTalk_TWN": "我不能讓客人做事。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_19.ogg"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "땀을 흘려 수확한 채소가 맛있다고 했지?",
+          "JumpAnchorStringId_JPN": "汗を流して収穫した野菜こそ、おいしいんでしょ？",
+          "JumpAnchorStringId_TWN": "你不是說流汗收成的蔬菜最美味嗎？"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "그건, 그렇지만…",
+      "UnitTalk_JPN": "それはそうですけど…",
+      "UnitTalk_TWN": "雖然是這樣沒錯，但是…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_20.ogg"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하하! 어쩔 수 없네요.",
+      "UnitTalk_JPN": "あはは！仕方ありませんね。",
+      "UnitTalk_TWN": "啊哈哈！沒辦法了。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_21.ogg"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "그렇다면 단장님의 <color=#F7BE45>로로카</color>, 감사히 받아들이겠습니다!",
+      "UnitTalk_JPN": "それなら団長の<color=#F7BE45>ロロカ</color>、ありがたく受け取りますね！",
+      "UnitTalk_TWN": "那我就感謝接受團長的<color=#F7BE45>洛洛卡</color>了！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_22.ogg"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>로로카</color>라면…",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>ロロカ</color>って…",
+          "JumpAnchorStringId_TWN": "<color=#F7BE45>洛洛卡</color>的意思是…"
+        }
+      ]
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "네! <color=#F7BE45>선행</color>, <color=#F7BE45>은혜</color>, <color=#F7BE45>행복</color>. 다양한 의미가 담긴 드루이드의 말이죠.",
+      "UnitTalk_JPN": "<color=#F7BE45>善行</color>、<color=#F7BE45>恩恵</color>、<color=#F7BE45>幸福</color>。色んな意味が込められた、ドルイドの言葉です！",
+      "UnitTalk_TWN": "沒錯！<color=#F7BE45>善行</color>、<color=#F7BE45>恩惠</color>、<color=#F7BE45>幸福</color>。這句話是包含多種意義的德魯伊語。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_23.ogg"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "이 농장에도 <color=#F7BE45>로로카</color>가 가득해요.",
+      "UnitTalk_JPN": "この農場も、<color=#F7BE45>ロロカ</color>でいっぱいです。",
+      "UnitTalk_TWN": "這個農場也充滿著<color=#F7BE45>洛洛卡</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_24.ogg"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "하늘에서 내리는 비, 씨앗을 품은 땅.",
+      "UnitTalk_JPN": "空から降る雨、種を育む大地…",
+      "UnitTalk_TWN": "從天而降的雨水、孕育種子的土地…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_25.ogg"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "결실을 맺은 농작물, 농장을 관리하는 저까지 모두 <color=#F7BE45>로로카</color>로 이어져 있답니다.",
+      "UnitTalk_JPN": "実りを迎えた農作物、農場を管理するわたしまで…すべて<color=#F7BE45>ロロカ</color>で繋がっています。",
+      "UnitTalk_TWN": "結實纍纍的農作物，到管理農場的我，全都被<color=#F7BE45>洛洛卡</color>連結在一起。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_26.ogg"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "아하하! 단장님, 저쪽을 부탁드릴게요.",
+      "UnitTalk_JPN": "あはは！団長は、あちら側をお願いしますね。",
+      "UnitTalk_TWN": "啊哈哈！團長，那邊就拜託您了。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_27.ogg"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "저는 여기서부터 시작하면 중간에서 만나겠죠!",
+      "UnitTalk_JPN": "私はこちら側から始めます。中間でお会いしましょうね！",
+      "UnitTalk_TWN": "我從這裡開始，我們在中間會合吧！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_ARCANA_02_DRUID_28.ogg"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8
+    },
+    {
+      "Uid": 54,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 후, 다나와 함께 농장의 잡초를 뽑고 식사를 대접받았다.",
+      "UnitTalk_JPN": "その後…ダーナと農場の草むしりをしてから、料理をごちそうになった。",
+      "UnitTalk_TWN": "之後，我和達娜一起拔除農場的雜草，並享用了她準備的餐點。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "드루이드의 전통 방식으로 만들어진 야채 절임 <color=#F7BE45>팜팜</color>은 아삭한 식감과 오묘한 맛이 일품이었다.",
+      "UnitTalk_JPN": "ドルイドの伝統料理である野菜の漬物、パムパム。シャキッとした食感に、深みのある味わいで絶品だった。",
+      "UnitTalk_TWN": "以德魯伊傳統方式製作的醃漬蔬菜<color=#F7BE45>帕姆帕姆</color>具有清脆的口感和奇妙的風味，非常美味。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 55,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 58,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN"
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "UnitTalk_TWN": "突然想起了被遺忘的老舊記憶。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "UnitTalk_TWN": "那份記憶化作星光，融入了我和<color=#F7BE45>[CHARACTER_NAME]</color>的旅行。",
+      "TalkTime": 0.03
+    }
+  ]
+}

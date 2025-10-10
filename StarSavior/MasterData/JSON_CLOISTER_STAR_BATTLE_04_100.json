@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_04",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_CLOISTER_04",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_04",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR"
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_04",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_PUNISHER_HANDS_BLACK_BOSS_CST_10",
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_STAR"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_04",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR"
+          }
+        ]
+      }
+    ]
+  }
+}

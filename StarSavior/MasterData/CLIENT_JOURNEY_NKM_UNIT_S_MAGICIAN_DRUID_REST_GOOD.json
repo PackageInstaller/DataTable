@@ -1,0 +1,212 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "하아아아~",
+      "UnitTalk_JPN": "ふぅ～。",
+      "UnitTalk_TWN": "哈啊啊啊～",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_REST_GOOD_DRUID_1.ogg"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무슨 일이야?",
+          "JumpAnchorStringId_JPN": "どうしたんだ？",
+          "JumpAnchorStringId_TWN": "怎麼了？"
+        }
+      ]
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "앗! 단장님, 일어나셨군요.",
+      "UnitTalk_JPN": "あっ、団長！起きられたんですね。",
+      "UnitTalk_TWN": "啊！團長，您起來啦？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_REST_GOOD_DRUID_2.ogg"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "한잔 받으세요. 약차를 끓여 놨답니다.",
+      "UnitTalk_JPN": "はい、どうぞ。薬茶をご用意しておきました。",
+      "UnitTalk_TWN": "您也喝一杯吧。我泡了藥茶。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_REST_GOOD_DRUID_3.ogg"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "후우…",
+      "UnitTalk_JPN": "ふぅ…",
+      "UnitTalk_TWN": "呼…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_REST_GOOD_DRUID_4.ogg"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "좋은 꿈이었어요.",
+      "UnitTalk_JPN": "素敵な夢を見ました。",
+      "UnitTalk_TWN": "我做了個美夢。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_REST_GOOD_DRUID_5.ogg"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "꿈에서 맨발로 숲 속을 걸었어요. 고향 숲 같아서 마음이 포근해지는 곳이었죠.",
+      "UnitTalk_JPN": "夢の中のわたしは、裸足で森の中を歩いていました。故郷の森のようで、心休まる場所だったんです。",
+      "UnitTalk_TWN": "夢裡我赤腳走在森林裡。那裡就像是家鄉的森林，讓人心情舒適。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_REST_GOOD_DRUID_6.ogg"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "마치 고향에서 며칠 푹 쉬다 온 것 같네요…",
+      "UnitTalk_JPN": "まるで、故郷で数日間休んできたような気分です…",
+      "UnitTalk_TWN": "好像在家鄉好好休息了幾天似的…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_REST_GOOD_DRUID_7.ogg"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "지금의 저는 단장님을 업고 달릴 수 있을 만큼 기운이 넘치는 상태!",
+      "UnitTalk_JPN": "今のわたしは、団長をおんぶして走れるくらいに元気いっぱいですよ！",
+      "UnitTalk_TWN": "現在的我充滿活力，甚至能背著團長跑步！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_REST_GOOD_DRUID_8.ogg"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "자! 오셔서 업혀 보시죠, 단장님!",
+      "UnitTalk_JPN": "さあ、団長！どうぞ乗ってください！",
+      "UnitTalk_TWN": "來吧！讓我背您看看吧，團長！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_REST_GOOD_DRUID_9.ogg"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니야, 그러지 마",
+          "JumpAnchorStringId_JPN": "ええい、やめい！",
+          "JumpAnchorStringId_TWN": "不用了，別這樣。"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하하! 사양하지 않으셔도 돼요!",
+      "UnitTalk_JPN": "あはは！遠慮しなくていいんですよ！",
+      "UnitTalk_TWN": "啊哈哈！不要客氣！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_REST_GOOD_DRUID_10.ogg"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "기운이 넘치는 다나를 진정시키고서 바깥으로 향했다.",
+      "UnitTalk_JPN": "元気溢れるダーナを落ち着かせ、外へと向かった。",
+      "UnitTalk_TWN": "我安撫了活力充沛的達娜，然後往外走去。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘은 왠지 행운이 가득한 날이 될 것 같은 예감이 든다.",
+      "UnitTalk_JPN": "今日はなんだかラッキーな日になりそうだ。",
+      "UnitTalk_TWN": "今天感覺會是個幸運的日子。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_GOOD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

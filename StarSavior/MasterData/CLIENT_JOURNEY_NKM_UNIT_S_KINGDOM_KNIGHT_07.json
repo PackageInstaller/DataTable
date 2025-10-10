@@ -1,0 +1,1958 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "NOA의 신년 축제가 시작되었다.",
+      "UnitTalk_JPN": "NOAの新年祭が始まった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "샤를에게 기운을 북돋아 줄 겸, 축제 구경을 같이하기로 했다.",
+      "UnitTalk_JPN": "シャルルを元気づけようと、一緒に祭りを見て回ることにした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "샤를은 아직 시내를 나가는 것을 주저했지만, <color=#F7BE45>나무를 숨기려면 숲에 숨긴다</color>라는 말에 다시 한번 설득되었다.",
+      "UnitTalk_JPN": "シャルルはまだ市内を出歩くことに躊躇っているが、<color=#F7BE45>木を隠すなら森の中</color>の言葉に、またもや説得された。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET_SUNSET.png"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "맛있다-!",
+      "UnitTalk_JPN": "んまぁいー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "얼음 빙수는 언제 먹어도 왜 이렇게 맛있는 걸까요-!",
+      "UnitTalk_JPN": "かき氷は、いつ食べてもこんなに美味しいなんて、不思議ですよねー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "움움움...",
+      "UnitTalk_JPN": "シャリシャリ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "...",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "...단장님, 하나만 더 먹어도 될까요?",
+      "UnitTalk_JPN": "…団長殿、おかわりしても良いでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAZA_SUNSET.png"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "공을 던져서 컵을 쓰러트리면 경품을 준다고요?",
+      "UnitTalk_JPN": "ボールを投げて、コップを倒せば景品をくれるのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "좋아! 저요! 저 해볼게요!",
+      "UnitTalk_JPN": "よし！私！私がやってみます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으앗, 아, 아니지… 흠흠!",
+      "UnitTalk_JPN": "ふぎっ、ち、ちがった…コホン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "모나스티르 공국의 기사단장, 샤를이 도전하겠소!",
+      "UnitTalk_JPN": "モナスティル公国の騎士団長、シャルルが参る！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STREET_STALL_SUNSET.png"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "...단장님, 아까 먹었던 노점의 소세지빵.",
+      "UnitTalk_JPN": "…団長殿、さっき食べた屋台のソーセージパン。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "돌아가서 하나만 더 먹자고 하면... 곤란하실까요?",
+      "UnitTalk_JPN": "戻ってもう1つ食べても…よろしいでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_NIGHT.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇게 함께 축제를 즐기고, 마지막 행사인 로켓 날리기까지 모든 행사가 마무리되었다.",
+      "UnitTalk_JPN": "そんな感じで祭りを楽しみ、最後のイベントであるロケット発射まで、全ての行事を終えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이제 슬슬 돌아가자, 라는 이야기를 꺼내려던 참이었는데…",
+      "UnitTalk_JPN": "そろそろ帰ろうか、と言いかける瞬間—",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_03.mp3"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "불, 불이야-!!",
+      "UnitTalk_JPN": "かっ、火事だー！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "불…?!",
+          "JumpAnchorStringId_JPN": "火事だって…？！"
+        }
+      ]
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "무슨...? 앗, 저기에 불이...!",
+      "UnitTalk_JPN": "なんと…？あっ、あそこに火が…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "샤를이 가리킨 곳을 바라보니, 주택가 사이로 붉은 화염이 치솟고 있었다.",
+      "UnitTalk_JPN": "シャルルが指した方向を向くと、住宅街の間から炎が上がっていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "화재다…! 샤를…!",
+          "JumpAnchorStringId_JPN": "火事だ…！シャルル…！"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "위험하니까 물러서라는 이야기를 하려던 그때.",
+      "UnitTalk_JPN": "危ないから下がれと言おうとしたその時、",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "단장님, 사람들을 대피시키고 소방대와 구조대를 불러주세요!",
+      "UnitTalk_JPN": "団長殿、住民の避難誘導と消防隊、救助隊を呼んでください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "저는 건물에 남아있는 사람들이 없는지 확인하겠습니다!",
+      "UnitTalk_JPN": "私は建物の中に逃げ遅れた人がいるか、確認します！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "구조대를 기다리다가는 늦을 수도 있어요! 부탁드려요!",
+      "UnitTalk_JPN": "救助隊を待っていては、遅れてしまうかもしれません！お願いします！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "내가 막을 새도 없이, 샤를은 이미 저 멀리 뛰어가고 있었다.",
+      "UnitTalk_JPN": "止める間もなく、シャルルは遠くに行ってしまった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아무 일 없어야 할 텐데...!",
+          "JumpAnchorStringId_JPN": "何事も無いと良いんだけど…！"
+        }
+      ]
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET_NIGHT.png",
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_01.mp3"
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "헉헉... ",
+      "UnitTalk_JPN": "はぁはぁ… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "다행히 불길이 크게 번지진 않았구나...! 어, 어라?",
+      "UnitTalk_JPN": "よかった、まだ大きく広がってはないのね…！あ、あれ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "엄청 낡은 건물이라, 조금씩 무너지고 있는데?!",
+      "UnitTalk_JPN": "建物が古いせいか、少しずつ崩れてる？！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_COLLAPSE_02.wav",
+      "UnitTalk_KOR": "쿠쿠쿵!",
+      "UnitTalk_JPN": "バキッ…ガシャン！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PEOPLECROWD"
+      ],
+      "UnitTalk_KOR": "어, 어쩌지! 어떡해!",
+      "UnitTalk_JPN": "ど、どうしよう！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PEOPLECROWD"
+      ],
+      "UnitTalk_KOR": "아직 안에 사람이...!",
+      "UnitTalk_JPN": "まだ中に人が…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "!!",
+      "UnitTalk_JPN": "！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "건물 안에 사람이 있나요?",
+      "UnitTalk_JPN": "建物の中に人がいるんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PEOPLECROWD"
+      ],
+      "UnitTalk_KOR": "1층에 사는 모자가 아직 나오지 못한 것 같아요!",
+      "UnitTalk_JPN": "1階に住んでいる、母と子供がまだ脱出できてないようです！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "좋아요! 제가 들어갈게요! 다른 분들은 건물에서 물러나세요-!",
+      "UnitTalk_JPN": "よし！私が入ります！他の方は建物から離れてくださいー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PEOPLECROWD"
+      ],
+      "UnitTalk_KOR": "위험해-! 곧 무너질지도 모른다고-!",
+      "UnitTalk_JPN": "危ないよー！もうじき壊れるかも知れないんだー！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png"
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "계세요-? 혹시 안에 남아계신 분 계십니까?",
+      "UnitTalk_JPN": "誰かいますかー？まだ残ってる人はいませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "아직 나가지 못한 분 계신가요-?",
+      "UnitTalk_JPN": "出られてない人がいるなら返事してくださいー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_COLLAPSE_01.wav",
+      "UnitTalk_KOR": "쿠쿠쿵!",
+      "UnitTalk_JPN": "バキッ…ガシャン！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "여기요-! 여기 구해주세요-!",
+      "UnitTalk_JPN": "ここですー！ここ、助けてくださいー！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "기다리세요! 지금 가겠습니다!",
+      "UnitTalk_JPN": "待っててください！今行きます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2_NIGHT.png"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "CameraOffset": "TWIN_7",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.8
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "차, 찾았다… 지금 바로 나가셔야 해요!",
+      "UnitTalk_JPN": "み、見つけた…今すぐ出ないと！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_BOYSMOTHER"
+      ],
+      "CameraOffset": "TWIN_7",
+      "UnitTalk_KOR": "아, 알고 있어요. 하지만…",
+      "UnitTalk_JPN": "そ、そうですけど。しかし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "으아앙-! 아파-!",
+      "UnitTalk_JPN": "うわああんー！いたいよー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "ONE_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "벽이 무너지면서 아이 다리가 밑에 깔렸구나...!",
+      "UnitTalk_JPN": "壁が倒れながら、この子の足が挟まったのね…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_BOYSMOTHER"
+      ],
+      "UnitMotion": "SAD",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_BOYSMOTHER"
+      ],
+      "UnitTalk_KOR": "이걸 들어 올려볼 수... 있을까요?",
+      "UnitTalk_JPN": "これを持ち上げることは…できるでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "물론이죠! 하, 하지만 잘못 건드렸다가는...",
+      "UnitTalk_JPN": "もちろんですが！し、しかし下手をすると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_COLLAPSE_02.wav",
+      "UnitTalk_KOR": "쿠구구궁..!",
+      "UnitTalk_JPN": "ゴゴゴゴォ…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_BOYSMOTHER"
+      ],
+      "UnitTalk_KOR": "아, 안돼! 이러다가 천장까지 무너져!",
+      "UnitTalk_JPN": "いけない！このままでは天井まで崩れてしまうわ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_COLLAPSE_01.wav",
+      "UnitTalk_KOR": "콰콰쾅!",
+      "UnitTalk_JPN": "ガシャーン！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "토, 통로쪽 입구가 무너져 내렸어?",
+      "UnitTalk_JPN": "通路側の入り口が崩れた？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아앗, 천장이-!",
+      "UnitTalk_JPN": "あっ、天井がー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "POS7_2X",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "흐읍!!",
+      "UnitTalk_JPN": "はぁっ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_KINGDOM_KNIGHT_03.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_COLLAPSE_01.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_02.mp3",
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "으윽! 으으윽!! 가, 간신히 몸으로 막아내긴…했는데…!",
+      "UnitTalk_JPN": "んぐっ！んぐぐっ！！な、何とか体で止めました…けど…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOYSMOTHER"
+      ],
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "이, 이제 끝이야...",
+      "UnitTalk_JPN": "も、もうおしまいよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "엄마-!",
+      "UnitTalk_JPN": "ママー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "괘, 괜찮아요! 버틸 만하네요, 헤헤! 흐읏!",
+      "UnitTalk_JPN": "だ、大丈夫ですっ！なんとか、耐えられそうです。ははっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOYSMOTHER"
+      ],
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "아아.. 아아아...",
+      "UnitTalk_JPN": "ああ…あああ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOYSMOTHER"
+      ],
+      "UnitTalk_KOR": "구, 구조대가 올 때까지 버, 버틸 수 있을 리가...",
+      "UnitTalk_JPN": "救助隊が来るまで、た、耐えられるはずが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_KINGDOM_KNIGHT_04.png",
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "CameraOffset": "ONE_7",
+      "UnitTalk_KOR": "버틸 수 있습니다! 버틸 수 있어요!",
+      "UnitTalk_JPN": "耐えられます！耐えられますので！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "전 튼튼하거든요! 튼튼한 거 하나만은 장점이거든요! 흐읏!!",
+      "UnitTalk_JPN": "私は頑丈なのです！頑丈さだけが取り柄ですのでっ！はぁっ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "에헤헤, 이, 이 정도 무게라면 앞으로 30분도 거뜬해요! 하! 하!",
+      "UnitTalk_JPN": "あはは、こ、これくらいの重さなら30分もへっちゃらです！は！は！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "흑흑, 엄마-! 으아앙-!",
+      "UnitTalk_JPN": "ぐすっ、ママー！うわーん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_ASTRO_SANCTUM.mp3",
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "걱정 마! 이 누나가... 아니!",
+      "UnitTalk_JPN": "大丈夫っ！お姉ちゃんが…いえ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이 기사님이 꼭 구해줄게!",
+      "UnitTalk_JPN": "この騎士さまが必ず助けてあげる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "기사님...?",
+      "UnitTalk_JPN": "騎士さま…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "으응! 그, 그렇게 보일지 어떨지는 모르겠지만...",
+      "UnitTalk_JPN": "そうだよ？そ、そう見えないかも知れないけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "누나는 모나스티르 기사단의 기사단장이거든!",
+      "UnitTalk_JPN": "お姉ちゃんはモナスティル公国の騎士団長なんだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "곧 구조대가 도착할 거야! 그러니까 포기하지 마!",
+      "UnitTalk_JPN": "じきに救助隊が来るからね！だから諦めないで！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "내가 반드시 버텨줄게! 같이 힘내는 거야! 알았지?",
+      "UnitTalk_JPN": "私が必ず耐えてあげるから！一緒に頑張るんだよ！わかった？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "흐, 흐으으…",
+      "UnitTalk_JPN": "ふ、ふええ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_KINGDOM_KNIGHT_05.png",
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "괜찮아! 자, 봐봐. 이렇게 웃고 있잖아!",
+      "UnitTalk_JPN": "大丈夫だよ！ほら、見て。余裕の笑顔！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "무사히 나가게 될 테니까 걱정하지 마! 알았지?",
+      "UnitTalk_JPN": "無事に出られるから心配しないでね！わかった？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "으, 으응!",
+      "UnitTalk_JPN": "う、うん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "응! 울지 않을게! 기사 누나도 힘내!",
+      "UnitTalk_JPN": "もう泣かないから！騎士のおねえちゃんも頑張って！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "응! ",
+      "UnitTalk_JPN": "うん！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "... 헤헤, 단장님…",
+      "UnitTalk_JPN": "…はは、団長殿…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "그때 하셨던 이야기가… 왠지 지금은 조금…",
+      "UnitTalk_JPN": "あの時に仰ったことが…今なら少し…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "알 것도 같고… 하네요… 흐읍!",
+      "UnitTalk_JPN": "分かる気が…します…はあぁっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.1
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.1
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "..",
+      "UnitTalk_JPN": "..",
+      "TalkTime": 0.1
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "...! 지금 무슨 소리가...?",
+      "UnitTalk_JPN": "…！今なにか声が…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "샤를-! 어디 있어-!",
+          "JumpAnchorStringId_JPN": "シャルルー！どこだー！"
+        }
+      ]
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "단장님! 여기예요-! 여기 있어요-!",
+      "UnitTalk_JPN": "団長殿！ここですー！ここにおりますー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "구조대와 함께 왔다! 조금만 더 버텨!",
+          "JumpAnchorStringId_JPN": "救助隊と来たから！もう少しだけ耐えるんだ！"
+        }
+      ]
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_NIGHT.png"
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "구조대원들이 무너진 돌과 잔해를 치워내고 무사히 샤를과 모자를 구해냈을 때, 샤를은 탈진으로 쓰러지기 직전이었다.",
+      "UnitTalk_JPN": "救助隊員が崩れた石と残骸をどかし、無事シャルルと母と子供を助け出した時、シャルルは脱力しきっていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png"
+    },
+    {
+      "Uid": 139,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 140,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "...헤헤헤.",
+      "UnitTalk_JPN": "…えへへ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "저, 그때 단장님이 얘기하셨던 거…",
+      "UnitTalk_JPN": "あの時、団長殿が話してくれたこと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "내가 왜 기사단장이 되었는지…",
+      "UnitTalk_JPN": "なぜ私が騎士団長になれたか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "내가 기사단장으로서 뭘 잘할 수 있는지…",
+      "UnitTalk_JPN": "私が騎士団長として何を上手にできるか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "조금은 알 것 같아요…",
+      "UnitTalk_JPN": "少しは分かりそうです…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "그때 해 주신 이야기가 아니었으면, 끝까지 버티지 못했을 것 같아요.",
+      "UnitTalk_JPN": "あの時の話がなければ、最後まで耐えられなかったと思います。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이제... 조금은... 자신감이 생긴 것 같네요...",
+      "UnitTalk_JPN": "やっと…少しは…自信がついたみたいです…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "들것에 실린 샤를은 땀과 먼지로 가득한 얼굴 한가득, 만족스러운 미소를 지으며...",
+      "UnitTalk_JPN": "タンカに運ばれるシャルルは、汗と誇りまみれの顔で、満足げな笑みを浮かべながら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "눈을...",
+      "UnitTalk_JPN": "目を…",
+      "TalkTime": 0.1
+    },
+    {
+      "Uid": 149,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "감았다...",
+      "UnitTalk_JPN": "閉じた…",
+      "TalkTime": 0.1
+    },
+    {
+      "Uid": 150,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 151,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_NIGHT.png"
+    },
+    {
+      "Uid": 152,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 153,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "샤를! 눈을 떠! 샤를-!!!",
+          "JumpAnchorStringId_JPN": "シャルル！目を開けろ！シャルルー！！！"
+        }
+      ]
+    },
+    {
+      "Uid": 154,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "샤르으으으으을-!!!!",
+          "JumpAnchorStringId_JPN": "シャルルゥウウー！！！"
+        }
+      ]
+    },
+    {
+      "Uid": 155,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 156,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png"
+    },
+    {
+      "Uid": 157,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 158,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "...",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "단장님... 저... 안 죽었어요…",
+      "UnitTalk_JPN": "団長殿…私…死んでいませんよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그냥 너무 피곤해서… 이제 좀 자려구요…",
+      "UnitTalk_JPN": "今日は疲れすぎて…少し寝ます…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 161,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "미, 미안.",
+          "JumpAnchorStringId_JPN": "ご、ごめん…"
+        }
+      ]
+    },
+    {
+      "Uid": 162,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "오늘은 이만... 쉬겠습니다. 그럼... 단장님?",
+      "UnitTalk_JPN": "今日はこれで…休ませていただきます。では…団長殿？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 163,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES"
+      ],
+      "UnitTalk_KOR": "내일 훈련장에서... 뵙겠습니다...",
+      "UnitTalk_JPN": "明日の訓練場にて…お会いしましょう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 164,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 165,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_NIGHT.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 166,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 167,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "내일, 훈련장에서 보자고…",
+      "UnitTalk_JPN": "明日、訓練場だと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 168,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이전에는 당연히 오전에 못 나올 거라고 생각해서 느지막이 나갔었지.",
+      "UnitTalk_JPN": "以前なら、もちろん午前中は無理かなと思い、ゆっくり出たのだが。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 169,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "내일은 오전 일찍, 훈련장으로 나가야겠다.",
+      "UnitTalk_JPN": "明日は朝早くから、訓練場に顔を出す事にしよう。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 170,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_KNIGHT_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_MEDICAL_OFFICE.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

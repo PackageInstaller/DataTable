@@ -1,0 +1,1255 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_LIBRARY.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "CameraOffset": "TWIN_1"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "훈련 계획에 참고할 만한 책을 찾기 위해 도서관에 방문했을 때였다. ",
+      "UnitTalk_JPN": "トレーニングに役立ちそうな本を読もうと、図書館を訪れた時のことだった。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "한창 책을 찾던 와중, 책장 너머로 익숙한 목소리가 들려왔다. ",
+      "UnitTalk_JPN": "本を探していると、本棚の向こうから聞き覚えのある声がした。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "흐응~ 이건 아니고… ",
+      "UnitTalk_JPN": "う～ん。これでもないし… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "이건 별로 의미 없는 내용만 있고… 다른 건… 어느 칸에 있다고 했더라?",
+      "UnitTalk_JPN": "これは大したことが書かれてないし…他には…どこにあるんだっけ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "급히 책장 너머를 확인해 봤지만, 그곳엔 아무도 없었다. ",
+      "UnitTalk_JPN": "慌てて本棚の向こうを確認してみたが、そこには誰もいなかった。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "뭔가 찾으시는 책이라도 있나요?",
+      "UnitTalk_JPN": "何かお探しですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건 아닙니다만…",
+          "JumpAnchorStringId_JPN": "本を探している訳ではないんですが…"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "방금 분명 리디아 목소리가…",
+          "JumpAnchorStringId_JPN": "確かにリディアの声が…"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "CameraOffset": "ONE_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "리디아요…? 아! ",
+      "UnitTalk_JPN": "リディアですか…？あっ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "UnitTalk_KOR": "그 특이하게 생긴 가방을 멘 분 말이죠? ",
+      "UnitTalk_JPN": "あの、変わったリュックの方でしょう？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알고 계십니까?",
+          "JumpAnchorStringId_JPN": "ご存じですか？"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그럼요, 그저께부터였나…? ",
+      "UnitTalk_JPN": "もちろんです。いつからだったかしら…？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "UnitTalk_KOR": "도서관에 가장 먼저 찾아와서 가장 늦게 돌아가시는 손님인데, 모를 리가 없죠.",
+      "UnitTalk_JPN": "一番乗りで来て、一番遅くまで残っていらっしゃいますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후후, 얼마나 상냥하시고 마음씨 따뜻하신지… ",
+      "UnitTalk_JPN": "ふふっ。すごく優しくて、心温かい方ですよね… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "UnitTalk_KOR": "눈을 마주칠 때마다 밝게 인사해 주시고, 매번 작은 간식거리도 가져주신답니다. ",
+      "UnitTalk_JPN": "目が合うたびに、にこっと微笑んで挨拶してくれるんです。それに、いつもちょっとしたお菓子までくださるんですよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "UnitTalk_KOR": "지금쯤 저쪽 책상에 계실 것 같은데…",
+      "UnitTalk_JPN": "さっきまで、あの机にいらっしゃったと思うんですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "UnitTalk_KOR": "마침 저기 계시네요. ",
+      "UnitTalk_JPN": "あっ、ちょうどいらっしゃいましたね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "음…? 앗, 단장님! 여기서 뵙네요? ",
+      "UnitTalk_JPN": "うん…？あっ、団長さん。こんなところでお会いするなんて。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "책 빌리러 오셨나봐요? ",
+      "UnitTalk_JPN": "本を借りに来られたんですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>상냥하고</color>… <color=#F7BE45>마음씨 따뜻한</color>이라…",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>優しくて</color>…<color=#F7BE45>心温かい</color>か…"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "에이에이~ 그렇게까지 전력을 다해서 부정하실 필요는 없잖아요?",
+      "UnitTalk_JPN": "もぉ～、そんな必死に否定しなくてもいいじゃないですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "그러다가는 저, 상처받아 버릴지도 모른다구요? ",
+      "UnitTalk_JPN": "私、傷ついちゃいますよ？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이 책은 다 뭐야?",
+          "JumpAnchorStringId_JPN": "この本は？"
+        }
+      ]
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아아, 알아볼 게 좀 있어서요. ",
+      "UnitTalk_JPN": "あぁ、調べたいことがあって。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알아볼 거라면…?",
+          "JumpAnchorStringId_JPN": "調べたいこと…？"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "저번에 그 도둑 아저씨한테 받은 돌 때문에요. ",
+      "UnitTalk_JPN": "この前、泥棒のおじさんにもらった石のことです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "<color=#F7BE45>돌은 나훔 광산에서 나온 것이라고 들었다.</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>石はナホム鉱山で採掘されたものだ</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "그때 그 아저씨가 그렇게 말했었죠?",
+      "UnitTalk_JPN": "あのおじさん、そう言ってましたよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그런데 그 광산 말이에요. ",
+      "UnitTalk_JPN": "でも、その鉱山がですね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "아무래도 망해버린 것 같더라구요. ",
+      "UnitTalk_JPN": "どうやら、ダメになっちゃったみたいです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그것도 완전 폭삭.",
+      "UnitTalk_JPN": "それも、完全に。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "흔적도 없이!",
+      "UnitTalk_JPN": "跡形もなく！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "사실 직접 찾아가 볼까 했거든요.",
+      "UnitTalk_JPN": "実を言うと、行ってみようかなって思ってたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "그래서 거기까지 가는 행상인이나 마부를 좀 물색해봤는데…",
+      "UnitTalk_JPN": "鉱山に向かうための、行商人や御者も調べてみたんですけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하나같이 질색을 하면서 내쫓던 거 있죠? ",
+      "UnitTalk_JPN": "全員に嫌な顔をされて、追い返されちゃったんですよ？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내쫓았다고?",
+          "JumpAnchorStringId_JPN": "追い返されたって？"
+        }
+      ]
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "네. 그 근방만 가면 <color=#F7BE45>이상한 일</color>이 일어난다면서 절대 가지 않을 거래요. ",
+      "UnitTalk_JPN": "鉱山に近づけば<color=#F7BE45>奇妙なこと</color>が起こるので、絶対に行かないそうです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "벌써 요 몇 달간 증발하듯 사라진 사람이 한둘이 아니라는 소문도 있던데요?",
+      "UnitTalk_JPN": "ここ数か月間の行方不明者も、一人や二人じゃないそうですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "그래서 그 <color=#F7BE45>나훔 광산</color>이라는 곳에 대해서 좀 알아보던 중이었죠. ",
+      "UnitTalk_JPN": "それで、<color=#F7BE45>ナホム鉱山</color>について調べていたんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "자료를 뒤지다 보면, 뭔가 건질만한 단서가 나오지 않을까요?",
+      "UnitTalk_JPN": "資料を漁れば、何か役立つ手掛かりが見つかると思いませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "아직까진… 별로 특이한 점은 발견되지 않았지만요.",
+      "UnitTalk_JPN": "今のところ…まだ大した情報は見つかっていませんけどね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "기껏해야… 꽤 오래된 광산이라는 것 정도?",
+      "UnitTalk_JPN": "分かったのは…かなり古い鉱山だってことぐらいです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_1.wav"
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "어? ",
+      "UnitTalk_JPN": "あら？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_1",
+      "UnitNameString": [
+        "SI_ORBITAL_RECONMEM"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "<color=#F7BE45>궤도 수색대</color>에서 나왔습니다. 잠시 실례하겠습니다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>軌道捜索隊</color>の者です。少しお時間よろしいですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_1",
+      "UnitNameString": [
+        "SI_ORBITAL_RECONMEM"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>서부 탈환대원</color>이자 <color=#F7BE45>여정 단원</color>이신 리디아 씨, 본인 맞으십니까?",
+      "UnitTalk_JPN": "<color=#F7BE45>西部奪還隊の隊員</color>であり、<color=#F7BE45>旅の団員</color>であるリディアさんでお間違いありませんね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아…? 네…! 제가 리디아에요. ",
+      "UnitTalk_JPN": "えっ…？はい…！私がリディアです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_1",
+      "UnitNameString": [
+        "SI_ORBITAL_RECONMEM"
+      ],
+      "UnitTalk_KOR": "다름이 아니라, 최근 <color=#F7BE45>나훔 광산</color>에 대해 알아보고 다니셨다고…? ",
+      "UnitTalk_JPN": "最近、<color=#F7BE45>ナホム鉱山</color>について調べられているそうですが… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_1",
+      "UnitNameString": [
+        "SI_ORBITAL_RECONMEM"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "혹시, 따로 그 광산에 대해 조사하시는 이유가 있습니까?",
+      "UnitTalk_JPN": "理由をお伺いできますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "헛… 혹시 제가 뭔가 잘못한 건가요…? ",
+      "UnitTalk_JPN": "はっ…私、何かいけないことをしてしまいましたか…？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_1",
+      "UnitNameString": [
+        "SI_ORBITAL_RECONMEM"
+      ],
+      "UnitTalk_KOR": "…그건 리디아 씨의 답변에 따라 달라질 수도 있다고만 말씀드리죠. ",
+      "UnitTalk_JPN": "…それは、リディアさんのご返答次第とだけお伝えしておきましょう。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그게 사실… ",
+      "UnitTalk_JPN": "それが、実は… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "저희 <color=#F7BE45>서부 탈환대</color>의 대원 한 명이 부탁한 게 있거든요.",
+      "UnitTalk_JPN": "<color=#F7BE45>西部奪還隊</color>の隊員に、頼まれていることがあるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "서부가 황폐화되고 나서 떨어져 지내게 된 친척이 있다고-",
+      "UnitTalk_JPN": "西部が荒廃してから、離れ離れになってしまった親戚がいて──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "그 친척이 <color=#F7BE45>나훔 광산</color> 근처에서 살고 있으니까 안부 좀 전해달라고 그했어요. ",
+      "UnitTalk_JPN": "その親戚が<color=#F7BE45>ナホム鉱山</color>の近くに住んでいるため、近況を伝えてほしいと言われたんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래서 그냥 알아본 거예요! 다른 이유는 정말 없었어요.",
+      "UnitTalk_JPN": "それで、調べていました！他に理由はありませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_1",
+      "UnitNameString": [
+        "SI_ORBITAL_RECONMEM"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…하하. 그렇습니까?",
+      "UnitTalk_JPN": "…ははっ、そうですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_1",
+      "UnitNameString": [
+        "SI_ORBITAL_RECONMEM"
+      ],
+      "UnitTalk_KOR": "사실 얼마전에 그 폐광산에서 조금… 불미스러운 사고가 벌어졌습니다.",
+      "UnitTalk_JPN": "実は少し前に、あの廃鉱山で…忌まわしい事故が起こったのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_1",
+      "UnitNameString": [
+        "SI_ORBITAL_RECONMEM"
+      ],
+      "UnitTalk_KOR": "그 과정에서 광산 내 유독한 가스가 밖으로 새어 나왔구요. ",
+      "UnitTalk_JPN": "そして、鉱山内の有毒なガスが外に漏れ出してしまいました。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "저, 정말요?",
+      "UnitTalk_JPN": "ほ、本当ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_1",
+      "UnitNameString": [
+        "SI_ORBITAL_RECONMEM"
+      ],
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "네. 안전을 위해 그 근방은 출입 금지 조치가 되어있습니다.  ",
+      "UnitTalk_JPN": "はい。安全確保のため、鉱山の付近は立ち入り禁止となっています。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_1",
+      "UnitNameString": [
+        "SI_ORBITAL_RECONMEM"
+      ],
+      "UnitTalk_KOR": "그러니… <color=#F7BE45>나훔 광산</color> 근방에는 접근하지 않는 편이 좋습니다. ",
+      "UnitTalk_JPN": "ですので…<color=#F7BE45>ナホム鉱山</color>の辺りには、お近づきにならない方が良いかと。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_1",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…역시. ",
+      "UnitTalk_JPN": "やっぱり… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "이상하죠? ",
+      "UnitTalk_JPN": "おかしいですよね？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어떤 부분이?",
+          "JumpAnchorStringId_JPN": "何が？"
+        }
+      ]
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아잇, 다시 한번 생각해보세요 단장님. ",
+      "UnitTalk_JPN": "もぉ～。よく考えてみてくださいよ、団長さん？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "만약 그 관측사의 말이 사실이라고 해도…",
+      "UnitTalk_JPN": "もしあの観測士の言葉が本当だったとしても…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "기껏해야 이름도 알려지지 않은 작은 광산에서 일어난 사고에요. ",
+      "UnitTalk_JPN": "有名でもない、小さな鉱山で起こった事故です。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "그런 곳에 관심을 조금 가졌다고 궤도 수색대의 관측사가 직접 찾아와서 경고를?",
+      "UnitTalk_JPN": "そんな場所に興味を持ったからって、軌道捜索隊の観測士が直々に警告をしに来ると思いますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "뭔가… 있는 것 같지 않나요?",
+      "UnitTalk_JPN": "何か…あると思いません？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "생각해보니까 그렇네.",
+          "JumpAnchorStringId_JPN": "よく考えてみたら、そうだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무래도 직접 가봐야 할 것 같아요. 그 <color=#F7BE45>나훔 광산</color>이라는 곳. ",
+      "UnitTalk_JPN": "とにかく、実際に行ってみた方がよさそうですね。<color=#F7BE45>ナホム鉱山</color>に。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "<color=#F7BE45>공허의 힘</color>을 지닌 돌이 나왔다는 것도 그렇고… ",
+      "UnitTalk_JPN": "<color=#F7BE45><r=ヴォイド>空虚</r>の力</color>を持つ石が採れたのもそうですし… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "최근에 생긴 사고에 대해서도 좀 알아봐야겠어요. ",
+      "UnitTalk_JPN": "最近起こった事故についても、調べないと。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "제 예상이 맞다면… ",
+      "UnitTalk_JPN": "私の予想が当たれば… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "쿠쿠가 좋아하는 먹잇감을 잔뜩 구할 수 있을 지도 모르겠는데요!",
+      "UnitTalk_JPN": "クゥクゥが好きなごはんが、たっぷり手に入るかもしれません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "위험할 것 같은데.",
+          "JumpAnchorStringId_JPN": "危険だと思う。"
+        }
+      ]
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…무슨 소릴 하시는 거예요 단장님? ",
+      "UnitTalk_JPN": "…何をおっしゃっているんですか、団長さん？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "위험한 건 당연하죠.  ",
+      "UnitTalk_JPN": "当然、危険に決まってますよ。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "다른 것도 아니고 <color=#F7BE45>공허의 힘</color>이라구요? ",
+      "UnitTalk_JPN": "他のものならともかく、<color=#F7BE45>空虚の力</color>ですよ？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "서부 지대를 몽땅 쑥대밭으로 만들어 놓은 강력한 힘이라구요?",
+      "UnitTalk_JPN": "西部一帯をめちゃくちゃにした、強力な力ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "분명, 무시무시하고 강력한 힘일 게 분명하잖아요. ",
+      "UnitTalk_JPN": "きっと、おぞましいものに決まっています。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알면서도 직접 가려는 거야?",
+          "JumpAnchorStringId_JPN": "分かってるのに、行こうとしてるのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "휴우! 단장님도 참. 쓸데없는 걱정이 많으시다니까요. ",
+      "UnitTalk_JPN": "ふぅ！まったく、団長さんったら。無駄に心配しすぎなんですよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "전 멋모르고 날뛰는 어중이 떠중이들이랑은 달라요.",
+      "UnitTalk_JPN": "私は、計画もなく暴れ回るような連中とは違うんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "완벽하게 <color=#F7BE45>공허의 힘</color>을 통제할 수 있다구요. ",
+      "UnitTalk_JPN": "完璧に、<color=#F7BE45>空虚の力</color>をコントロールしてみせますよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "지금 제 등 뒤에 있는 쿠쿠를 한번 보세요. 얼마나 얌전해요?",
+      "UnitTalk_JPN": "ほら、背中にいるクゥクゥを見てくださいよ。お利口さんでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BOX_RATTLE.wav"
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…<color=#F7BE45>정체불명의 힘</color>에 경계심 없이 푹 빠져버린 리디아를 이대로 두어도 괜찮을까? ",
+      "UnitTalk_JPN": "…警戒心も持たず、<color=#F7BE45>正体不明の力</color>に夢中なリディアを、このまま放っておいても良いのだろうか？ ",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

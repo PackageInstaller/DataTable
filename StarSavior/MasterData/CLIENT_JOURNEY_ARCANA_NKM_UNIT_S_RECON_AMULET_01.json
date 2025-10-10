@@ -1,0 +1,1136 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "모처럼 휴일을 맞아 거리를 산책하고 있는데.",
+      "UnitTalk_JPN": "休日を迎え、いつものように街を散歩していると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS7",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "음?",
+      "UnitTalk_JPN": "うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "안녕하십니까, 단장님.",
+      "UnitTalk_JPN": "こんにちは、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "네? 단장님이요? 와! 안녕하세요!",
+      "UnitTalk_JPN": "えっ、団長ですか！わー、こんにちはっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "어디 가고 계셨어요? 산책 중이셨나요?",
+      "UnitTalk_JPN": "どこに向かってたんですか？それともお散歩中でしたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응. 그나저나 의외의 조합이네?",
+          "JumpAnchorStringId_JPN": "散歩だよ。それにしても、意外な組み合わせだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "의외의 조합…?",
+      "UnitTalk_JPN": "意外な組み合わせ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "확실히 그렇게 보일 수도 있겠군요.",
+      "UnitTalk_JPN": "確かに、そう思われてもおかしくありませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "헤헷! 사실 이번에 안전 캠페인 행사가 있거든요.",
+      "UnitTalk_JPN": "てへっ！実は、安全キャンペーンイベントを行うんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "NOA 치안국, 관측사 평의회 <color=#F7BE45>폴라리스</color>에서 공동 주관해요.",
+      "UnitTalk_JPN": "NOA治安局と、<color=#F7BE45><r=ポラリス>観測士評議会</r></color>の共同主催なんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "그래서 어떤 식으로 진행할지 루그 님과 논의하고 있었답니다!",
+      "UnitTalk_JPN": "そこで…どんな風に進めようかと、ルーさんと話し合っていたんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "본래는 팀장님이 참석해야 되지만 어제도 경위서를 작성하는 바람에…",
+      "UnitTalk_JPN": "本来ならリーダーが出席しなければなりませんが、昨日も始末書を作成していたせいで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "부득이하게 제가 대신 오게 됐습니다.",
+      "UnitTalk_JPN": "やむを得ず、私が代わりに参加することになりました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "마침 잘됐군요.",
+      "UnitTalk_JPN": "しかし、ちょうど良かったです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "한 사람이 더 필요했는데 단장님이랑 만나서 정말 다행이에요!",
+      "UnitTalk_JPN": "もう一人必要だったんですが、団長が来てくださって助かりました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "도와주실 거죠? 에헷!",
+      "UnitTalk_JPN": "手伝ってくれますよね？てへっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "부탁드리겠습니다.",
+      "UnitTalk_JPN": "よろしくお願いします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "도움을 요청하는 두 사람을 따라갔다.",
+      "UnitTalk_JPN": "助けを求める二人について行った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "후우…",
+      "UnitTalk_JPN": "ふぅ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "도와주셔서 감사합니다, 단장님.",
+      "UnitTalk_JPN": "ご協力ありがとうございました、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "덕분에 성공적으로 리허설을 마쳤습니다.",
+      "UnitTalk_JPN": "おかげさまで、無事にリハーサルを終えることができました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "앗! 아직 끝나지 않았어요.",
+      "UnitTalk_JPN": "あっ！まだ終わっていませんよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "더 남아있습니까?",
+      "UnitTalk_JPN": "まだ何か残っているのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "헤헷, 네! 타운가드의 멋진 모습을 보여 달라고 NOA 치안국에서 요청했거든요.",
+      "UnitTalk_JPN": "てへっ！タウンガードのカッコいい姿を見せてほしいと、NOA治安局から要請されてるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "맨손으로 범인을 검거하는 장면이 추가됐어요.",
+      "UnitTalk_JPN": "そこで、犯人を素手で取り押さえる演出が追加されました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "행사 때는 타운가드인 제가 제압할 거지만…",
+      "UnitTalk_JPN": "イベントの時は、タウンガードのあたしが取り押さえるつもりですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "오늘은 리허설이니까. 혹시 모르니 다른 역할도 연습해 보죠.",
+      "UnitTalk_JPN": "今日はリハーサルですからね！万が一に備えて、他の役割も練習してみましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "저는 파렴치한 가해자 역할, 단장님은 피해자 역할.",
+      "UnitTalk_JPN": "あたしが悪質な加害者役で、団長が被害者役…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그리고 루그님은 타운가드 역할을 부탁드리겠습니다!",
+      "UnitTalk_JPN": "そしてルーさんは、タウンガード役をお願いします！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "타운가드 역할. 알겠습니다.",
+      "UnitTalk_JPN": "タウンガード役ですね。承知しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "시작할까요? 다들 준비되셨죠?",
+      "UnitTalk_JPN": "それじゃ、始めましょうか！みなさん準備はいいですかー？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그 전에!",
+      "UnitTalk_JPN": "っと、その前に！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…?",
+      "UnitTalk_JPN": "…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "나는 가해자다… 나는 가해자다…",
+      "UnitTalk_JPN": "あたしは加害者…あたしは加害者…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "나는 지금 가해자가 돼서 움직인다…",
+      "UnitTalk_JPN": "あたしは加害者になる…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…뭐해?",
+          "JumpAnchorStringId_JPN": "…何してるんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아앗! 메소드 연기 중에 방해하시면 안 돼요, 단장님.",
+      "UnitTalk_JPN": "ああっ！メソッド演技中に邪魔しちゃいけませんよ、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "리허설에서도 진심을 다하는군요…",
+      "UnitTalk_JPN": "リハーサルでも、全力を尽くすのですね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그렇다면 저도 진지하게 가겠습니다.",
+      "UnitTalk_JPN": "ならば、私も真剣に取り組みます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "나는 가해자… 가해자……",
+      "UnitTalk_JPN": "あたしは加害者…加害者…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…후후.",
+      "UnitTalk_JPN": "…ふふ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "혼자 여기까지 오다니… 꺄악?!",
+      "UnitTalk_JPN": "一人でここまで来るなんて…きゃっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_IMPACT_04.wav",
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SURPRISE",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "추워! 추워요! 온몸에 닭살이 돋았는데요?!",
+      "UnitTalk_JPN": "さ、寒いです！全身に鳥肌が立ったんですけど！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "빙결부입니다. 극한의 한기를 불러일으키죠.",
+      "UnitTalk_JPN": "氷結符です。極限の寒気をもたらします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "단장님, 이리 오십시오.",
+      "UnitTalk_JPN": "団長、こちらへおいでください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "POS7_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "제가 지켜드리겠습니다.",
+      "UnitTalk_JPN": "私がお守りいたします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "루그…!",
+          "JumpAnchorStringId_JPN": "ルー…！"
+        }
+      ]
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아니, 시작 멘트부터 검거하면 어떡해요?! 그리고 맨손 검거라고 분명히 말했는데!",
+      "UnitTalk_JPN": "いやいや、開始早々に取り押さえちゃダメです！それに、素手だって言いましたよ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "타운가드라면 반드시 지켜야 하는 규정까지 전부 어겼어요!",
+      "UnitTalk_JPN": "タウンガードが守るべき規則もぜんぶ破ってますし！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그렇습니까? 처음 듣는군요.",
+      "UnitTalk_JPN": "そうだったのですか？初耳です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 말씀드리지 않았나요? 그럼 넘어가죠.",
+      "UnitTalk_JPN": "あっ、お伝えしてませんでしたっけ？それじゃ、気にしないでください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아무튼 역할 교대예요! 멋있는… 아니, 타운가드 역할은 제가 할게요.",
+      "UnitTalk_JPN": "役割を変えましょう！カッコいい…いえ、タウンガード役はあたしが担当します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그렇다면 제가 파렴치한 가해자 역할이군요. 알겠습니다.",
+      "UnitTalk_JPN": "でしたら、私が悪質な加害者役ですね。承知しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네, 준비됐으면 시작하시죠!",
+      "UnitTalk_JPN": "準備できたら始めましょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "예.",
+      "UnitTalk_JPN": "はい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAPER_TEAR.wav",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "말이 끝난 것과 동시에 루그가 내 코트를 잡아 뜯었다.",
+      "UnitTalk_JPN": "そう言い終わると同時に、ルーが私のコートを掴み破った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SURPRISE",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "POS7_2X",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "벗어.",
+      "UnitTalk_JPN": "脱げ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HEARTSOUND_1.wav",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "……!",
+          "JumpAnchorStringId_JPN": "……！"
+        }
+      ]
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "아니, 진도가 너무 빠르지 않아요!?",
+      "UnitTalk_JPN": "いや、展開が早すぎませんか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "게다가 뭐예요, 대체? 아까부터 저만 두고 둘이서 이상한 기류를…!",
+      "UnitTalk_JPN": "それに何ですか？さっきからあたし抜きで、二人で妙な雰囲気に…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MACHINE_06.wav",
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "POS8_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "나, 나도 낄 거예요!",
+      "UnitTalk_JPN": "あ、あたしも混ぜてくださいー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐? 수갑은 왜 채우는데?",
+          "JumpAnchorStringId_JPN": "ちょっと？何で手錠したの？"
+        }
+      ]
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "NR",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "단장님이 잘못한 거예요! 손목이 탐스럽잖아요!",
+      "UnitTalk_JPN": "魅力的な手首をしてる、団長が悪いんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "수갑을 차기 위해 태어났냐고요, 정말! 못 참겠어요, 저는!",
+      "UnitTalk_JPN": "手錠されるために生まれてきたんですか！？あたしもう我慢できません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그게 무슨 소리인데?!",
+          "JumpAnchorStringId_JPN": "どういう意味！？"
+        }
+      ]
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "가해자가 2명입니까? 역할이 치우친 것 같습니다만…",
+      "UnitTalk_JPN": "加害者が二人ということですか？役割が偏っているようですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "아무튼 계속하겠습니다.",
+      "UnitTalk_JPN": "とにかく、続けます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐만…?!",
+          "JumpAnchorStringId_JPN": "ちょっと…！？"
+        }
+      ]
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "UnitTalk_KOR": "수갑에 묶인 채, 쫓아오는 두 사람으로부터 도망쳤다.",
+      "UnitTalk_JPN": "手錠をされたまま、二人から逃げ回った。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN",
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color></color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color></color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

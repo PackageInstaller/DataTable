@@ -1,0 +1,474 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_27A_NOA_BT_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_04.mp3",
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION_11.wav"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION_02.wav"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 1.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 1.5
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.4,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION_08.wav"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "충격과 함께 눈앞이 잠시 캄캄해졌다.",
+      "UnitTalk_JPN": "衝撃と共に、目の前がしばらく真っ暗になった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "정신을 차리고 보니 나와 여정 단원 모두 바닥에 쓰러져 있었다.",
+      "UnitTalk_JPN": "正気に返ると、私と旅の団員全員が床に倒れていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "후우…",
+      "UnitTalk_JPN": "ふう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "고작 이 정도인가?",
+      "UnitTalk_JPN": "たったこれだけか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…물러!",
+      "UnitTalk_JPN": "…下がれ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": " 이런 실력으로 <color=#F7BE45>[여정]</color>에 도전하려 하는 것은, <color=#F7BE45>오만</color>이다!",
+      "UnitTalk_JPN": " こんな実力で<color=#F7BE45>「救援の旅」</color>に挑戦しようとするとは、<color=#F7BE45>傲慢</color>だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": " 다음에는 더 실력을 갈고닦아 오도록.",
+      "UnitTalk_JPN": " 次はもっと実力を磨いて来い。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "오이오이~",
+      "UnitTalk_JPN": "おいおい~",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "조금 더 재미있는 전개를 보여주지 않을까 기대했는데…",
+      "UnitTalk_JPN": "もう少し面白い展開を見せてくれるかと期待していたのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "조금… 아니 많이 실망이에요, 단장님.",
+      "UnitTalk_JPN": "少し…いや、かなりがっかりです、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "음… 아니죠. 생각해 보면 잘된 일일지도 모르겠네요.",
+      "UnitTalk_JPN": "うーん…いや、考えてみると良かったのかもしれません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "제가 <color=#F7BE45>[포석]</color>을 깔아 둘 필요조차 없는 상대라면… ",
+      "UnitTalk_JPN": "私が<color=#F7BE45>「布石」</color>を敷く必要すらない相手なら… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "이쯤에서 여정을 끝내는 게 나을 테니까요.",
+      "UnitTalk_JPN": "この辺りで旅を終える方が良いのですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "그렇지 않으면… 그래요.",
+      "UnitTalk_JPN": "そうでなければ…そうですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아주아주 험한 일을 겪게 되겠죠. 분명.",
+      "UnitTalk_JPN": "とてつもなく大変な目に遭うでしょう。間違いなく。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_SOMEONE_UNKNOWN_MEMORY.prefab"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "관측 종료",
+      "UnitTalk_JPN": "観測終了",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "임계점 도달 실패",
+      "UnitTalk_JPN": "臨界点への到達に失敗",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스텔라 아카이브 기록 보존 절차 진행",
+      "UnitTalk_JPN": "ステラーアーカイブに記録を保存",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFlashBang": 0.5,
+      "EndBgmFileName": "MUSIC_CUTSCENE_03.mp3",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.5
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "역시… 너무 어려운 시험이었던 것 같네.",
+      "UnitTalk_JPN": "やはり…難しすぎる試験だったようだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 너도 알고 있을 거야.",
+      "UnitTalk_JPN": "でも君も分かっているだろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 정도도 해내지 못한다면… 그다음은 기대할 필요조차 없다는 걸.",
+      "UnitTalk_JPN": "これすら成し遂げられないなら…その先は期待する価値すらないということを。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "너와, 네가 선택한 아이와, 식어가는 이 세계를 위해.",
+      "UnitTalk_JPN": "君と、君が選んだ子と、冷めゆくこの世界のために。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다음에는 좀 더 나은 결과를 기대할게.",
+      "UnitTalk_JPN": "次は、良い結果を期待しているわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그럼 그때까지 잠시나마 편히 쉬렴.",
+      "UnitTalk_JPN": "それまで、少し休むことね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나의 벗, 나의 계약자…",
+      "UnitTalk_JPN": "私の友、私の契約者…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27A_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 나의… 구원자님.",
+      "UnitTalk_JPN": "そして私の…救援者さま。",
+      "TalkTime": 0.03
+    }
+  ]
+}

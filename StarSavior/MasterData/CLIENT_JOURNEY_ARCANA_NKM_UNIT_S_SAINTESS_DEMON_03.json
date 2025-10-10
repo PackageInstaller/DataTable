@@ -1,0 +1,2090 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "훈련장에서 샤를의 훈련을 지도해 주던 어느날….",
+      "UnitTalk_JPN": "訓練場でシャルルを指導していた日のことだった…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FALL_DOWN_04.wav",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "읏차!",
+      "UnitTalk_JPN": "おっと！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "끝났습니다! 기록은 어떻게 나왔나요, 단장님?",
+      "UnitTalk_JPN": "終わりました！記録はどうですか、団長殿？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "기록은 지난번과 비슷해.",
+          "JumpAnchorStringId_JPN": "前回と変わらないね。"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "우으…. 그런가요….",
+      "UnitTalk_JPN": "うぅ…そんな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "오늘에야말로 신기록을 세우겠다고 다짐했는데….",
+      "UnitTalk_JPN": "今日こそは新記録を出すって決めてたのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 역시 새로운 훈련법이 필요한 시기가 아닐까요?",
+      "UnitTalk_JPN": "あっ、やはり新しい訓練法が必要なタイミングなのではありませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "지금도 훈련량은 충분해.",
+          "JumpAnchorStringId_JPN": "今の訓練量でも十分だよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무엇보다 오버 트레이닝을 하게 놔뒀다간 샤를이 인간을 그만둘 것 같다.",
+      "UnitTalk_JPN": "何より…オーバートレーニングをさせると、シャルルは人間をやめてしまいそうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇게 훈련을 이어 나가려 하는데 불청객이 나타났다.",
+      "UnitTalk_JPN": "トレーニングを続けようとしていると、招かれざる客がやって来た。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FOOTSTEP_HIGHHEELS_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 단장~ 오늘도 한가해 보이네?",
+      "UnitTalk_JPN": "あっ、団長～。今日も暇そうね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무슨 일이야, 뮤리엘?",
+          "JumpAnchorStringId_JPN": "ミュリエル、なんで来たの？"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "에이, 왜 그렇게 쌀쌀맞아.",
+      "UnitTalk_JPN": "もう、冷たいわね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "사실은 오늘 NOA 지부의 청소 당번이 나거든.",
+      "UnitTalk_JPN": "実は今日、うちはNOA支部の掃除当番なのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만 미래의 대성녀가 될 내 손에 굳은살이 생기게 할 수는 없잖아?",
+      "UnitTalk_JPN": "でも、未来の大聖女であるうちの手にマメでもできたら困るでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "그래서 좀 더 똑똑한 방법을 찾던 중이었어.",
+      "UnitTalk_JPN": "だから、何か賢い方法がないか探してるところだったのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_2",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "단장님, 혹시 친구 분이신가요?",
+      "UnitTalk_JPN": "団長殿。お友達の方でしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니. 악연이야.",
+          "JumpAnchorStringId_JPN": "いや、悪縁だよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "앗! 혹시 모나스티르 공국의 기사단장님?",
+      "UnitTalk_JPN": "あっ！もしかして、モナスティル公国の騎士団長さま？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "으, 으음?",
+      "UnitTalk_JPN": "う、うーん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "어흠. 그, 그렇소만.",
+      "UnitTalk_JPN": "こほん。さ、さようでござる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "흐응, 얘기는 많이 들었어. 훌륭한 기사단장이라고.",
+      "UnitTalk_JPN": "ふーん、話はよく聞いてるわ。立派な騎士団長だって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오오, 그렇소이까! 빡세게 훈련한 보람이 있었구려!",
+      "UnitTalk_JPN": "おぉ、そうでござるか！バチバチに訓練した甲斐がありましたな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "빡세게?",
+      "UnitTalk_JPN": "バチバチ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "크흠, 흠! 잊으시오!",
+      "UnitTalk_JPN": "こ、こほん！忘れたまえ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_2",
+      "UnitTalk_KOR": "뭐, 아무튼 간에 그런 기사단장님에게 좋은 소식이 있는데.",
+      "UnitTalk_JPN": "まぁ、とにかく騎士団長さまに良い知らせがあるのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "기사단장의 소양과 종교인의 소양이 일치한다는 사실, 알고 있었어?",
+      "UnitTalk_JPN": "騎士団長も宗教家も、必要な素質が一緒だってことは知ってた？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "으음?",
+      "UnitTalk_JPN": "んん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "누가 그런 말을 믿냐….",
+          "JumpAnchorStringId_JPN": "そんなの信じる人いないよ…"
+        }
+      ]
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그 말이 정말이오?!",
+      "UnitTalk_JPN": "その言葉、誠か！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "믿는 사람이 있었다…!",
+      "UnitTalk_JPN": "いた…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "푸후훗♪ 반응을 보니 몰랐나 보네.",
+      "UnitTalk_JPN": "ぷふふっ♪反応を見る限り、知らなかったみたいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "하지만 정말이라니까.",
+      "UnitTalk_JPN": "でも、本当なんだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "매일매일 규칙적인 생활과 식단으로 몸을 가꾸기도 하고,",
+      "UnitTalk_JPN": "毎日、規則正しい食事と生活で体を整えて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "오오…",
+      "UnitTalk_JPN": "おお…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "UnitTalk_KOR": "봉사 활동을 하면서 곤경에 처한 사람들을 돕기도 하고,",
+      "UnitTalk_JPN": "ボランティアをしながら困っている人たちを助けたり…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "오오오…?",
+      "UnitTalk_JPN": "おぉぉ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "UnitTalk_KOR": "수많은 사람들에게 포교 활동을 하면서 웅변 실력도 키울 수 있거든!",
+      "UnitTalk_JPN": "たくさんの人に布教活動をしながら、スピーチ力も鍛えられるの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "오오오오…!",
+      "UnitTalk_JPN": "おぉぉぉ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "UnitTalk_KOR": "딱 오늘 하루만, 무료로 이 모든 것을 체험해 볼 수 있다구?",
+      "UnitTalk_JPN": "たった今日一日だけ、無料でこういうことを体験できるのよね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으음…!",
+      "UnitTalk_JPN": "んー…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장님, 어쩌면 훈련의 새로운 돌파구를 찾은 걸지도 모르겠어요!",
+      "UnitTalk_JPN": "団長殿。トレーニングの新たな突破口を見つけたかもしれません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "푸후훗~ 순진하긴~♪",
+      "UnitTalk_JPN": "ぷふふ～っ、純粋なんだから～♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "마침 잘됐어. 엘리사 대신에 힘 잘 쓰는 부하가 필요했는데.",
+      "UnitTalk_JPN": "ちょうど良かったわ。エリサの代わりに、腕力のある手下が必要だったのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "모나스티르 공국의 기사단장이라면 안성맞춤이지~♪",
+      "UnitTalk_JPN": "モナスティル公国の騎士団長ならぴったりね～♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png"
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "후후후, 그럼 지체 없이 바로 가는 걸로?",
+      "UnitTalk_JPN": "ふふふ。じゃあ、早速向かうわよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "좋아요! 아, 아니, 좋소이다!",
+      "UnitTalk_JPN": "いいですよ！い、いや、良いだろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "단장님, 기다려 주세요!",
+      "UnitTalk_JPN": "団長殿、待っていてください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "단장님이 인정할 만한 멋진 기사단장이 되어 돌아오겠습니다!",
+      "UnitTalk_JPN": "団長殿に認められる、かっこいい騎士団長となり帰ってきます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "말릴 틈도 없이 샤를은 뮤리엘을 따라 쌩 하고 달려 갔다.",
+      "UnitTalk_JPN": "止める間もなく、シャルルはミュリエルの後を追って走っていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "일단…. 뒤를 따라가 보자.",
+      "UnitTalk_JPN": "とにかく…後を追おう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_LIBRARY.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "TWIN_2",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "그러면 기사단장님, 모노리스 교단의 생활을 체험할 준비는 됐어?",
+      "UnitTalk_JPN": "さぁ、騎士団長さま。モノリス教団の生活体験をする準備はできたかしら？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "물론이오. 각오는 되었으니 뭐든 맡겨도 좋소.",
+      "UnitTalk_JPN": "もちろんだ。覚悟はできている、何でも任せたまえ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "좋아. 훌륭한 태도네.",
+      "UnitTalk_JPN": "いいわ、立派な心構えね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그럼 기사단장님이 제일 먼저 할 일은 바로 청소야.",
+      "UnitTalk_JPN": "騎士団長さまが最初にする体験は、ズバリ掃除よ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "EmotionEffect": "QMARK"
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "청소라고요…?",
+      "UnitTalk_JPN": "掃除ですか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "그래. 오늘 중으로 이 건물 바닥을 전~부 닦으면 돼.",
+      "UnitTalk_JPN": "そうよ。今日中にこの建物の床をぜ～んぶ磨けばいいの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "청결한 환경을 유지하면서 체력 단련도 할 수 있으니 일석이조라구.",
+      "UnitTalk_JPN": "清潔な環境を維持しながら、体力の鍛錬にもなるから一石二鳥なのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "앗, 설마 이제 와서 못 하겠다고 하진 않겠지? 응~?",
+      "UnitTalk_JPN": "あっ、まさか今更できないとか言わないわよね？ん～？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON"
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_85.wav",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "처음부터 아주 좋소!",
+      "UnitTalk_JPN": "初手から良い体験ではないか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "DEFAULT",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "설마 기사단장이나 되는 분이 말을 바꾸… 엥?",
+      "UnitTalk_JPN": "まさか騎士団長ともあろう人が約束を…えっ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "처음 기사단원이 되었던 시절이 떠오르는구려.",
+      "UnitTalk_JPN": "騎士団に入団して間もない頃を思い出すでござるな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "그럼 다녀오겠소이다!",
+      "UnitTalk_JPN": "それでは、行ってまいるぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SURPRISE_LOOP",
+      "UnitTalk_KOR": "어, 음…. 저런 반응이 나올 줄은 몰랐는데….",
+      "UnitTalk_JPN": "あっ、うーん…予想外の反応ね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "뭐 상관없나! 기쁜 마음으로 받아들이면 나야 좋지!",
+      "UnitTalk_JPN": "まぁいいわ！快く引き受けてくれたことだし、願ったり叶ったりね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "호오, 저 분은….",
+      "UnitTalk_JPN": "ほぉ、あの方は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "앗, 담당 사제님.",
+      "UnitTalk_JPN": "あっ、司祭様。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "제가 이번에 새로 데려 온 예비 신도예요. 대단하죠?",
+      "UnitTalk_JPN": "私が新しく連れてきたプレ信徒です。すごいでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "네. 예비 신도인데도 청소를 도맡아 하시다니 굉장하시군요.",
+      "UnitTalk_JPN": "そうですね。まだ入団されていないのに掃除を引き受けてくださるとは、素晴らしいお方です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "엣.",
+      "UnitTalk_JPN": "えっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "저런 성실한 태도라면 새로운 성녀가 될 수도 있겠어요.",
+      "UnitTalk_JPN": "あのように真面目な方なら、新たな聖女になれるかもしれませんね。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "뮤리엘 성녀님도 저 분을 본받으시면 좋겠군요.",
+      "UnitTalk_JPN": "ミュリエル様も、あの方を見習うことです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "하?",
+      "UnitTalk_JPN": "は？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_LIBRARY.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SAD",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…라면서, 지부에 도착하자마자 뮤리엘이 하소연했다.",
+      "UnitTalk_JPN": "…だそうで、支部に着くや否やミュリエルの愚痴を聞かされた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "도와 줘, 단장! 갑자기 경쟁자가 늘어나게 생겼다구!",
+      "UnitTalk_JPN": "助けて、団長！突然ライバルが増えちゃったのよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "네가 꼬드긴 거잖아!?",
+          "JumpAnchorStringId_JPN": "ミュリエルが始めたことでしょ！？"
+        }
+      ]
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHOOSH.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "으에에엥! 그치만 저런 인간인 줄 몰랐단 말이야!",
+      "UnitTalk_JPN": "うぇぇぇん！だって、あんな人間だって知らなかったんだもん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "단장이 데려가 주면 안 돼? 단장 말은 들을 거 아냐!",
+      "UnitTalk_JPN": "団長が連れて帰ってくれない？団長の言うことなら聞くでしょ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "뮤리엘 성녀!",
+      "UnitTalk_JPN": "ミュリエル殿！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "ONE_3",
+      "UnitPos": "POS3",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "흐익!",
+      "UnitTalk_JPN": "ヒィッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "앗, 단장님도 오셨군요!",
+      "UnitTalk_JPN": "あっ、団長殿もいらっしゃったのですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "제 훈련을 보러 여기까지 와 주시다니…. 감동 받았어요!",
+      "UnitTalk_JPN": "トレーニングの様子を見に、ここまで来てくださるなんて…感動しました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "처, 청소는 다 끝낸 거야?",
+      "UnitTalk_JPN": "そ、掃除をぜんぶ終わらせたの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "음. 그렇소이다. 부끄럽지만 한 번 확인해 주시겠소?",
+      "UnitTalk_JPN": "うむ、さようでござる。恐縮だが、共に確認願えるか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_05.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "진짜다…. 바닥에 먼지 한 톨 없어….",
+      "UnitTalk_JPN": "本当ね…床にホコリ一つないわ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "설마 이 내가 스스로 강력한 경쟁자를 불러들인 건가…?",
+      "UnitTalk_JPN": "まさかうち自らが、強力なライバルを連れて来ちゃったっていうの…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "큭! 인정할 수 없어!",
+      "UnitTalk_JPN": "くぅ！認められないわ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "다음 체험은 경전 받아쓰기야!",
+      "UnitTalk_JPN": "次の体験は、聖書の書き写しよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "경전… 받아쓰기…?",
+      "UnitTalk_JPN": "聖書の…書き写し…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "맞아. 아무리 기사단장님이라도 지루해서 달아나고 싶어질걸? 푸후후~♪",
+      "UnitTalk_JPN": "そうよ。いくら騎士団長さまでも、つまらなくて逃げ出したくなるはずよ？ぷふふ～♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "오오….",
+      "UnitTalk_JPN": "おぉ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "집중력과 인내심을 기르는 훈련이로군. 확실히 난관이구려.",
+      "UnitTalk_JPN": "集中力と忍耐力を鍛える訓練か。確かに、一筋縄ではいかないだろうぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "맡겨 주시오! 이 샤를, 기필코 해내 보겠소이다!",
+      "UnitTalk_JPN": "お任せあれ！このシャルル、必ずやり遂げてみせよう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "샤를은 그대로 경전을 받아들고 떠나갔다….",
+      "UnitTalk_JPN": "シャルルは聖書を受け取り、去っていった…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_LIBRARY.png"
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 이튿날.",
+      "UnitTalk_JPN": "そして翌日。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "푸풉, 이 시간까지 안 나타나는 걸 보면 질려서 도망친 게 분명해.",
+      "UnitTalk_JPN": "ぷぷっ。まだ現れないってことは、飽きて逃げちゃったってことね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "역시 내 예상대로야♪",
+      "UnitTalk_JPN": "やっぱりうちの予想通りだったわ♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "정말 그럴까?",
+          "JumpAnchorStringId_JPN": "本当にそうかな？"
+        }
+      ]
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "흐응, 단장은 기사단장님이 해낼 거라고 믿어?",
+      "UnitTalk_JPN": "ふーん、団長は騎士団長さまがやり切るって思ってるの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "우리 교단의 경전은 두껍고 재미없기로 악명이 자자하다구.",
+      "UnitTalk_JPN": "モノリス教団の聖書は、分厚くて面白くないことで悪名高いのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "나만 해도 세 장만 읽으면 졸음이 쏟아지는걸.",
+      "UnitTalk_JPN": "うちでも、3ページ読んだら眠気に襲われるんだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "다 했소이다!",
+      "UnitTalk_JPN": "やり遂げたでござる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "뭐어?!",
+      "UnitTalk_JPN": "えぇ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_CLOTH_16.wav"
+    },
+    {
+      "Uid": 139,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 140,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_2",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 141,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 142,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_CLOTH_16.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "마, 말도 안 돼. 하루만에 이걸 다 옮겨 썼다고…?",
+      "UnitTalk_JPN": "あ、ありえないわ。一日でぜんぶ書き写したの…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "으음, 연설문을 쓰고 고치던 경험 덕분인 것 같소이다!",
+      "UnitTalk_JPN": "うーん、演説原稿を書いたり修正したりした経験が活きたようでござるな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "물론 시…. 시금…. 시…?",
+      "UnitTalk_JPN": "もちろん、飲み食い…じゃなくて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "식음.",
+          "JumpAnchorStringId_JPN": "飲食。"
+        }
+      ]
+    },
+    {
+      "Uid": 146,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아! 식음을 전폐하고 밤새도록 받아 적었지만 말이오!",
+      "UnitTalk_JPN": "あっ！飲食もせず、徹夜で書き移し続けたのである！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "큿…! 크으으읏…!",
+      "UnitTalk_JPN": "くっ…！くぅぅぅっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 149,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "색다른 훈련이라 무척 인상 깊었소이다.",
+      "UnitTalk_JPN": "変わった訓練で、とても印象深かったぞよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "매일 이런 생활을 하다니 성직자들도 대단하구려.",
+      "UnitTalk_JPN": "毎日こんな生活をしているなんて、聖職者も大したものだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "그래서 다음 체험은 무엇이오?",
+      "UnitTalk_JPN": "さぁ、次の体験はなんぞ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "도….",
+      "UnitTalk_JPN": "いけ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "도? 빈민들을 위해 도랑을 파는 것이오?",
+      "UnitTalk_JPN": "いけ？貧しい人のために池を掘ってあげるのでござるか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.75,
+      "BgCrashTime": 0.75,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "돌아가아아아앗!",
+      "UnitTalk_JPN": "出ていけぇぇぇっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "네, 네? 갑자기 왜 그러세요?",
+      "UnitTalk_JPN": "は、はい？突然どうされたのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 156,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "설마 제가 뭔가 잘못한 거라도…!",
+      "UnitTalk_JPN": "何か私が失態でも…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 157,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "듣고 싶지 않아! 너 같이 성실한 녀석은 내 교단에 필요없어!",
+      "UnitTalk_JPN": "もう話したくない！あんたみたいな真面目なやつ、うちの教団に必要ないのよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 158,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "얼른 가! 가 버리라고! 어서!",
+      "UnitTalk_JPN": "はやく出て行ってよ！はやく！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "아, 알겠습니다…. 아니, 알겠소…!",
+      "UnitTalk_JPN": "わ、分かりました…いや、合点承知…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_2.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "뮤리엘이 샤를의 등을 떠밀어서 지부 밖으로 내보냈다.",
+      "UnitTalk_JPN": "ミュリエルがシャルルの背中を押し、支部の外へと追い出した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 161,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "휴우…. 하마터면 큰일날 뻔했네.",
+      "UnitTalk_JPN": "ふぅ…危うく大変なことになるところだったわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "무슨 큰일 말인가요?",
+      "UnitTalk_JPN": "大変なこととは？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 163,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 담당 사제님. 별일 아니에요. 방금 막 미래의 경쟁자를….",
+      "UnitTalk_JPN": "あっ、司祭様。大したことではないんです。ついさっき、未来のライバルを…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 164,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "으엑?!",
+      "UnitTalk_JPN": "うぇっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 165,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "다른 종교를 폄훼한 걸로도 모자라 이번에는 신도를 내쫓아내다니….",
+      "UnitTalk_JPN": "他宗教を侮辱するだけでは飽き足らず、信徒まで追い出すとは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 166,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "더 이상 묵과할 수 없겠군요. 대교구에 꼭 알리도록 하겠습니다.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 167,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "아, 아니! 잠시만요! 사제님? 사제님!",
+      "UnitTalk_JPN": "い、いや！待ってください！司祭様？司祭様ー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 168,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "결국 뮤리엘은 경전 한 권을 다 필사할 때까지 외출이 금지됐다고 한다….",
+      "UnitTalk_JPN": "結局、ミュリエルは聖書一冊を書き写し終わるまで外出が禁止されたそうだ…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 169,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 170,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 171,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 172,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 173,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 174,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

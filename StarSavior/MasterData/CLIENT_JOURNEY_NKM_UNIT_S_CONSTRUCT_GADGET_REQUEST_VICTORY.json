@@ -1,0 +1,76 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "이걸로 끝?",
+      "UnitTalk_JPN": "これで終わり？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "…응. 단장도 수고 많았어.",
+      "UnitTalk_JPN": "…うん。団長もおつかれさま。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "돌아가면 튀김 먹자. 재료, 준비해줘.",
+      "UnitTalk_JPN": "帰ったら天ぷら食べよう。団長、材料の用意をおねがい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "라비스타 대륙에서 가장 맛있는 튀김.",
+      "UnitTalk_JPN": "ラビスター大陸で、一番おいしい天ぷら、",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "내가 만들어 줄게. 응.",
+      "UnitTalk_JPN": "わたしが作ってあげる。うん。",
+      "TalkTime": 0.03
+    }
+  ]
+}

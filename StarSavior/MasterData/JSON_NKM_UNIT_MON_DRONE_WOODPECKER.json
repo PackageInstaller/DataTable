@@ -1,0 +1,174 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_WEAPON.txt",
+    "UnitHudHeight": 2.0,
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_WHOOSH.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_SPAWN.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 39,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 14,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_RELOAD.wav"
+            ]
+          },
+          {
+            "EventFrame": 19,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_BLAST.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_EXPLOSION.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "PlayNextCineCamFrame": 45,
+        "EndFadeOut": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowUnitHudOffEnemy": false,
+          "ShowUnitHudOnEnemy": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 57,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 60,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 62,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 65,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 32,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_RELOAD_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 44,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_BLAST_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 55,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_EXPLOSION_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_FALL.wav"
+            ]
+          },
+          {
+            "EventFrame": 32,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_EXPLOSION_03.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

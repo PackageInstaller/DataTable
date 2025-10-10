@@ -1,0 +1,1021 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "UnitTalk_KOR": "스칼렛의 훈련은 매번 예정보다 일찍 끝난다. ",
+      "UnitTalk_JPN": "スカーレットの訓練は、いつも予定より早く終わる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이미 육체적으로는 흠잡을 데 없이 완성되어 있기 때문이다. ",
+      "UnitTalk_JPN": "肉体的には既に完成されているからだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물론 자잘한 실수 같은 부분이 없는 건 아니라 그 부분을 위주로 지도는 하고 있지만…",
+      "UnitTalk_JPN": "もちろん細かなミスがない訳ではなく、その部分を重点的に指導はしているが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문제는 다른 곳에 있다.",
+      "UnitTalk_JPN": "問題は別のところにある。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS3",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "아 심심하다.",
+      "UnitTalk_JPN": "あ～暇だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아 심심해!",
+      "UnitTalk_JPN": "ああ～暇なのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "아 심심하다고!!",
+      "UnitTalk_JPN": "暇だ暇だ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "심심하단 말이다 인간 단장! 놀아줘라!",
+      "UnitTalk_JPN": "暇なのだ、人間の団長！遊んでくれなのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잠시라도 가만히 쉬는 걸 버티질 못하기 때문이다.",
+      "UnitTalk_JPN": "少しもじっとしていられないのである。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 잠시도 가만히 있지를 못하는 거야…",
+          "JumpAnchorStringId_JPN": "少しはじっとしてられないのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "원래 내 나이대의 용족은 거의 이렇다!",
+      "UnitTalk_JPN": "わがはいの年頃の竜族はこうなのだ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "ON"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "<color=#F7BE45>용족이란 어려서는 흥미를 좇고 커서는 이상을 좇는다</color>라는 말. 들어본 적 있나, 인간 단장?",
+      "UnitTalk_JPN": "<color=#F7BE45>『竜族は、幼き日々は好奇心を追い、成熟すると理想を追う』</color>という言葉を聞いたことあるか？人間の団長よ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "처음 들어. <color=#F7BE45>이상</color>이 뭔데?",
+          "JumpAnchorStringId_JPN": "初めて聞いた。<color=#F7BE45>理想</color>とは何なの？"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "용족이라면 누구나 가지고 있는, <color=#F7BE45>일생일대의 이뤄야 할 목표</color>. 그게 <color=#F7BE45>이상</color>이다.",
+      "UnitTalk_JPN": "竜族なら誰もが持つ、<color=#F7BE45>人生の目標</color>。それが<color=#F7BE45>理想</color>なのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "대개 같은 일족이라면 같은 <color=#F7BE45>이상</color>을 갖지. ",
+      "UnitTalk_JPN": "通常、同じ一族であれば、同じ<color=#F7BE45>理想</color>を持つのが一般的だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "<color=#F7BE45>보르기노스</color> 일족은 <color=#F7BE45>전설의 보석</color>을 세공하기 위해 몰두하고 <color=#F7BE45>곤자가</color> 일족은 <color=#F7BE45>마법의 극의</color>를 찾겠다는 제각각의 <color=#F7BE45>이상</color>이 있어. ",
+      "UnitTalk_JPN": "<color=#F7BE45>ボルギノス</color>一族は、<color=#F7BE45>伝説の宝石</color>を加工すること。<color=#F7BE45>ゴンザーガ一</color>族は<color=#F7BE45>魔法の極意</color>を見つけるなど、それぞれ目指す<color=#F7BE45>理想</color>があるのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "너도 알다시피 우리 <color=#F7BE45>벨라르미니</color> 일족은 <color=#F7BE45>재단사</color>의 일족. 모두가 <color=#F7BE45>대재단사</color>가 되겠다는 <color=#F7BE45>이상</color>을 품고 있지!",
+      "UnitTalk_JPN": "お主も知ってる通り、われら<color=#F7BE45>ベラルミニ</color>一族は<color=#F7BE45>仕立屋</color>の一族。みなが<color=#F7BE45>大仕立屋</color>になるという<color=#F7BE45>理想</color>を持っておる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "뭐, 방법이야 다르지만 나 또한 <color=#F7BE45>벨라르미니</color>의 일원이니 마찬가지고 말이다. 흐하하!",
+      "UnitTalk_JPN": "まぁ、手段は異なれど、わがはいとて<color=#F7BE45>ベラルミニ</color>の一員なのだしな。フハハ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 용족이라고 태어날 때부터 <color=#F7BE45>이상</color>을 가지고 태어나는 건 아니거든. ",
+      "UnitTalk_JPN": "しかし竜族とは言え、生まれながら<color=#F7BE45>理想</color>を持っている訳ではないのでな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "대신 어린 용은 재미있어 보이는 일, 흥미로운 일에 정신을 못 차리지.",
+      "UnitTalk_JPN": "代わりに幼い竜は、面白そうな事に目がないのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "하지만 <color=#F7BE45>흥미</color>나 <color=#F7BE45>이상</color>이나 맥락은 같아. 인간 단장. ",
+      "UnitTalk_JPN": "しかし、<color=#F7BE45>興味</color>や<color=#F7BE45>理想</color>も元をたどれば同じものなのだ。人間の団長よ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "장수족의 숙명인 <color=#F7BE45>마모</color>를 피하기 위한 나름의 대책이라고 할까? ",
+      "UnitTalk_JPN": "長寿族の宿命とも言える、<color=#F7BE45>摩耗</color>を避けるための対策といえるかな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>마모</color>라…",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>摩耗</color>か…"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아무리 강대한 용족이라고 해도 말이야, 오랜 세월을 살아가다 보면 시간에 닳아 해지기 마련.",
+      "UnitTalk_JPN": "いくら強大な竜族といえどな、長い時を生きていれば色々と擦り減っていくものだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "특히 이 튼튼한 몸보다 정신이 빠르게 닳아가지!",
+      "UnitTalk_JPN": "特に、この強靭な肉体より、精神の消耗が激しくてな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "<color=#F7BE45>마모</color>에 빠진 용족은 결국 나라는 자아를 잃고 <color=#F7BE45>마룡</color>이 되어버리거든. ",
+      "UnitTalk_JPN": "<color=#F7BE45>摩耗</color>状態に陥った竜族は、最終的に自我を失い、<color=#F7BE45>魔竜</color>と化してしまう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "<color=#F7BE45>마룡</color>은 같은 용족도 제어하기 어려운 골칫덩이지.",
+      "UnitTalk_JPN": "<color=#F7BE45>魔竜</color>は同じ竜族とて制御が難しい厄介な存在だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그리하여 위대한 선조 용족들은 고민에 빠졌던 것이다!",
+      "UnitTalk_JPN": "ゆえに偉大な先祖たちは悩んだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "<color=#F7BE45>마모</color>를 막기 위해서는 어떻게 해야 하는가! ",
+      "UnitTalk_JPN": "<color=#F7BE45>摩耗</color>を防ぐには、どうすべきか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그 결론이 <color=#F7BE45>흥미</color>와 <color=#F7BE45>이상</color>인가.",
+          "JumpAnchorStringId_JPN": "その結論が<color=#F7BE45>興味</color>と<color=#F7BE45>理想</color>か…"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛은 고개를 크게 끄덕거렸다.",
+      "UnitTalk_JPN": "スカーレットは大きく頷いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>흥미롭고 강렬한 기억은 나를 지탱하는 든든한 기둥이요.</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>心を惹きつける強烈な記憶は、自分を支える柱となろう。</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "<color=#F7BE45>이상은 내가 가야 할 길을 명확히 밝혀주는 길잡이라.</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>理想とは、我が進む道を照らす道しるべである。</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "…라고 아빠가 말하는 걸 들은 적이 있다! 크하하! ",
+      "UnitTalk_JPN": "…とパパが言ってたのを聞いた！クハハ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "어때, 조금은 용족에 대한 이해가 늘었느냐?",
+      "UnitTalk_JPN": "どうなのだ、少しは竜族を理解できたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "응? 나는 왜 <color=#F7BE45>이상</color>과 <color=#F7BE45>흥미</color> 둘 다 좇느냐고?  ",
+      "UnitTalk_JPN": "うん？お前はなぜ<color=#F7BE45>理想</color>と<color=#F7BE45>興味</color>、両方を追うかって？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그야 내가 나이에 비해 성숙한 용이기 때문인게 당연하지 않으냐?",
+      "UnitTalk_JPN": "わがはいが実年齢に比べ、成熟した竜だからに決まっておろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러니까 용족 기준으로 너는 어린애란 거지?",
+          "JumpAnchorStringId_JPN": "だから竜族からすると、お前は子供ということだな？"
+        }
+      ]
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "틀렸다!",
+      "UnitTalk_JPN": "違うのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "어떤 해츨링이 이렇게 위풍당당한 자태를 뽐내겠느냐!",
+      "UnitTalk_JPN": "ドラゴンの子供がこう、威風堂々とした姿を誇示できる訳なかろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "게다가 브레스를 뿜을 수 있는 순간, 다 컸다고 봐야지. 크하하!",
+      "UnitTalk_JPN": "それとブレスを吐くことこそ、成竜の証なのだ。ワッーハッハッハ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "이 몸의 강력한 <color=#F7BE45>켈베론 빔</color>을 보면 누구든 놀라서 넘어지고 말 거다!",
+      "UnitTalk_JPN": "わがはいの強力な<color=#F7BE45>ケルベロンビーム</color>を見ると、誰もが腰を抜かすであろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "켈베론은 누군데.",
+          "JumpAnchorStringId_JPN": "ケルベロンって誰なの。"
+        }
+      ]
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "음! 지난번에 인간 꼬마가 알려준 낭만적인 흑염룡의 이름이야.",
+      "UnitTalk_JPN": "この前、小童が教えてくれたロマンチックな黒炎竜の名前だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "난 그 녀석이 제법 마음에 들었다. 그래서 이름을 한번 지어 봤지. ",
+      "UnitTalk_JPN": "わがはいは奴が気に入った。それで名前を付けてみたのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "어때, 위엄 있지 않으냐? 이름부터 멋있어서 한번 보고 싶으냐?",
+      "UnitTalk_JPN": "どうだ、すごかろう？名前からカッコいいし見てみたかろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "크하하! 어쩔 수 없네. 자, 눈 크게 뜨고 감상하거라!",
+      "UnitTalk_JPN": "クハハ！仕方ないな！さあ、目を見開くが良い！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "흐읍-!",
+      "UnitTalk_JPN": "スゥッー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ENERGY_FIRE_02.wav",
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>켈베론 빔</color>!",
+      "UnitTalk_JPN": "<color=#F7BE45>ケルベロンビーム</color>！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_MAID_SCISSORS_01.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.2
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛은 가슴을 크게 부풀리고는 있는 힘껏 입김을 불었다.",
+      "UnitTalk_JPN": "胸を大きく膨らましては、思いきり息を吹きかけた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartBgmFileName": "MUSIC_CUTSCENE_18.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIRE.wav"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgCrash": 0.1,
+      "BgCrashTime": 0.1,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_18.wav"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 스칼렛의 입에서 나온 것은 화려한 불꽃이 아니라 힘없이 새어 나오는 연기다.",
+      "UnitTalk_JPN": "しかし、スカーレットの口から出たのは激しい炎ではなく、煙が少し出ただけだった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.1,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIRE.wav",
+      "UnitTalk_KOR": "푸쉬쉬…",
+      "UnitTalk_JPN": "プシュシュ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이게 <color=#F7BE45>켈베론 빔</color>…",
+          "JumpAnchorStringId_JPN": "これが…<color=#F7BE45>ケルベロンビーム</color>…"
+        }
+      ]
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFileName": "ILLUST_BG_JOURNEY_MAID_SCISSORS_02.png",
+      "BgChangeTime": 0.5
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "아, 아니야!",
+      "UnitTalk_JPN": "ち、違う！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "이건 어젯밤에 아이스크림을 너무 많이 먹어서 그래! ",
+      "UnitTalk_JPN": "昨日アイスを食べすぎたのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "진짜다!",
+      "UnitTalk_JPN": "本当なのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…믿어줄게.",
+          "JumpAnchorStringId_JPN": "…信じてやるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.4,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "전혀 안 믿고 있잖아!",
+      "UnitTalk_JPN": "ぜんっぜん信じてないであろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "지, 진짜라니까아!",
+      "UnitTalk_JPN": "ほ、本当なのだぁ～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "그래, 이 위엄 있게 자란 뿔을 보란 말이야!",
+      "UnitTalk_JPN": "そう、この凛々しい角を見るのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "브레스가 아니라도 이 훌륭한 뿔을 보면 이 몸이 얼마나 대단한 용족인지…",
+      "UnitTalk_JPN": "ブレスでなくても、この立派な角をみれば、どれだけ優れた竜族なのか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이것도 가짜는 아니겠지?",
+          "JumpAnchorStringId_JPN": "これも偽物なのでは？"
+        }
+      ]
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "으으…! 야! 함부로 만지지 마!",
+      "UnitTalk_JPN": "ぐぬぬぅ…！おい！勝手に触るでない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "용의 분노를 맛보고 싶은 거냐앗!",
+      "UnitTalk_JPN": "竜の怒りを味わいたいかっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "화가 잔뜩 나 씩씩거리는 스칼렛을, 팬케이크를 구워 주는 것으로 달랬다.",
+      "UnitTalk_JPN": "ぷんぷん怒っているスカーレットを、パンケーキで宥めた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "음. 용의 분노를 맛보는 것보다는 팬케이크를 맛보는 편이 여러모로 좋지. ",
+      "UnitTalk_JPN": "そうさ、竜の怒りよりは、パンケーキを味わう方がよほど良い。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛에게 두 번째로 맛있는 팬케이크라는 칭찬을 받았다. ",
+      "UnitTalk_JPN": "スカーレットには2番目にうまいパンケーキと評価された。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "첫 번째가 아니란 점이 조금 아쉽다. ",
+      "UnitTalk_JPN": "1番目でないのが少し残念だ。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

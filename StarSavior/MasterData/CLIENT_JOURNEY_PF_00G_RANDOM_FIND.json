@@ -1,0 +1,1237 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00G_RANDOM_FIND",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "식사를 마치고, 오늘의 훈련 일정을 확인하는 중이었는데….",
+      "UnitTalk_JPN": "食事を終え、今日のトレーニングスケジュールを確認していたところだった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "EmotionEffect": "THINK2",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…아까부터 모퉁이 뒤에서 무시할 수 없는 시선이 느껴졌다.",
+      "UnitTalk_JPN": "…さっきから角の向こうから無視できない視線を感じていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "우리한테 뭔가 할 얘기가 있어?",
+          "JumpAnchorStringId_JPN": "何か話があるの？"
+        }
+      ]
+    },
+    {
+      "Uid": 99,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "므후훗. 들켰군요.",
+      "UnitTalk_JPN": "むふっ。バレたか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "그 날카로운 눈썰미… 과연 제가 인정한 남자답습니다, <color=#F7BE45>[여정 단장]</color> 공.",
+      "UnitTalk_JPN": "その鋭い観察力…さすが私が認めた男らしいですね、<color=#F7BE45>「旅の団長」</color>ゴン。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아는 척하면 안 되는 사람이었던 것 같다…",
+      "UnitTalk_JPN": "知ったかぶりしてはいけない人物だったようだ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…무슨 일로 오셨는지?",
+          "JumpAnchorStringId_JPN": "…何のご用でいらっしゃったのですか？"
+        }
+      ]
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "소생의 이름은 아이다 슐라이츠.",
+      "UnitTalk_JPN": "小生の名はアイーダ・シュライツ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "귀공이 소유한 <color=#F7BE45>[정체불명의 유물]</color>에 용무가 있어 왔다… 랄까나요.",
+      "UnitTalk_JPN": "貴公が所有する<color=#F7BE45>「正体不明の遺物」</color>に用事があって来た…というかね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "돌아가.",
+          "JumpAnchorStringId_JPN": "帰れ。"
+        }
+      ]
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "자자자잠시! 단장 공!",
+      "UnitTalk_JPN": "ちょっと待って！団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "그렇게 서두르지 말고 소생의 얘기를 한 번 들어 보시죠.",
+      "UnitTalk_JPN": "そんなに急がずに、私の話を一度聞いてみてください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "소생은 연금술사!",
+      "UnitTalk_JPN": "私は錬金術師です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "평소처럼 연구에 매진하던 중, 발견하고 만 것입니다.",
+      "UnitTalk_JPN": "普段のように研究に没頭していたところ、発見してしまったのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "공께서 가지고 계신 <color=#F7BE45>[정체불명의 유물]</color>에 숨겨진 힘을!",
+      "UnitTalk_JPN": "公が所持されている<color=#F7BE45>「正体不明の遺物」</color>に秘められた力を！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그 유물이 뭔지 안다는 거야?",
+          "JumpAnchorStringId_JPN": "その遺物が何か知っているというのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "쯧. 쯧. 쯧.",
+      "UnitTalk_JPN": "ちっ、ちっ、ちっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "유물의 정체는 불명입니다.",
+      "UnitTalk_JPN": "遺物の正体は不明です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "하지만 그 안에 봉인된 <color=#F7BE45>[금단의 힘]</color>을 끌어낼 방법은 알고 있습니다.",
+      "UnitTalk_JPN": "しかし、その中に封印された<color=#F7BE45>「禁断の力」</color>を引き出す方法は知っています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "금단의…!",
+          "JumpAnchorStringId_JPN": "禁断の…！"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "힘…!",
+          "JumpAnchorStringId_JPN": "力…！"
+        }
+      ]
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오글거리지만, 귀가 솔깃한 이름이다!",
+      "UnitTalk_JPN": "うっ、うっ、うっ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "자, 어떻습니까? 단장 공?",
+      "UnitTalk_JPN": "さて、いかがでしょうか？団長公？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "소생과 함께 그 힘을 확인해 보시는 건?",
+      "UnitTalk_JPN": "私と共にその力を確かめてみませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…설명에 따르면, <color=#F7BE45>[정체불명의 유물]</color>은 충격에 반응하는 모양이다.",
+      "UnitTalk_JPN": "…説明によれば、<color=#F7BE45>「正体不明の遺物」</color>は衝撃に反応するらしい。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 때리면 되는 건가?",
+          "JumpAnchorStringId_JPN": "では、叩けばいいのでしょうか？"
+        }
+      ]
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "그렇습니다.",
+      "UnitTalk_JPN": "その通りです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "물론 유물은 귀공의 것.",
+      "UnitTalk_JPN": "もちろん遺物は貴公のもの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "어떻게 취급할지는 공께 달려 있다고 해도 과언이 아니겠지요.",
+      "UnitTalk_JPN": "どう扱うかは公に委ねられていると言っても過言ではないでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "므후훗!",
+      "UnitTalk_JPN": "ムフッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST",
+      "UnitPos": "POS7",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "단원과 눈빛을 교환했다.",
+      "UnitTalk_JPN": "団員と目配せを交わした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여기서는…",
+      "UnitTalk_JPN": "どうしようか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "적당한 힘으로 충격을 가한다.",
+          "JumpAnchorStringId_JPN": "適度な力で衝撃を与える。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "강력한 공격을 퍼붓는다.",
+          "JumpAnchorStringId_JPN": "強力な攻撃を浴びせる。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "유물은 소중히 간직해야 한다.",
+          "JumpAnchorStringId_JPN": "遺物は大切に保管すべきだ。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 134,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_SLASH_BIG_04.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 137,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 유물에 공격을 가했다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が遺物に攻撃を加えた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "유물이 파손되지 않을 정도의 절묘한 힘 조절이다.",
+      "UnitTalk_JPN": "遺物が破損しない程度の絶妙な力加減だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "오오!",
+      "UnitTalk_JPN": "おお！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장 공도 보셨지요? 유물에서 방출된 엄청난 에너지가 단원 공에게 흘러 들어가는 순간을!",
+      "UnitTalk_JPN": "団長、ご覧になりましたか？遺物から放出された膨大なエネルギーが団員に流れ込む瞬間を！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "충격량이 메커니즘의 핵심이라는 제 추측이 보란 듯이 들어맞았군요.",
+      "UnitTalk_JPN": "衝撃量がメカニズムの核心だという私の推測が見事に的中しましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "무후훗…!",
+      "UnitTalk_JPN": "むふふ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY"
+    },
+    {
+      "Uid": 146,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_65.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아이다는 기분 나쁜 웃음소리와 함께 사라졌다…",
+      "UnitTalk_JPN": "アイーダは不気味な笑い声を残して消えた…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 148,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 유물의 힘을 흡수해 한층 강해졌다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は遺物の力を吸収し、さらに強くなった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitPos": "POS7",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 173,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_SLASH_BIG_04.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 174,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 175,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 유물에 공격을 가했다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が遺物に攻撃を加えた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 176,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "유물이 파손되지 않을 정도의 절묘한 힘 조절이다.",
+      "UnitTalk_JPN": "遺物が破損しない程度の絶妙な力加減だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_DARK_75.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 151,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS6",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "맥 빠지는 소리와 함께, <color=#F7BE45>[CHARACTER_NAME]</color>의 몸이 휘청거렸다.",
+      "UnitTalk_JPN": "気絶するような音とともに、<color=#F7BE45>[CHARACTER_NAME]</color>の体がよろめいた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어떻게 된 거야?",
+          "JumpAnchorStringId_JPN": "どうしたんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흐음…. 아무래도 유물이 단원 공의 힘을 역으로 흡수해 버린 모양이군요.",
+      "UnitTalk_JPN": "うーん…どうやら遺物が、団員公の力を逆に吸収してしまったようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "안타깝지만… 뭐, 이건 이것대로 제가 예측한 범위 내에 있다고 할 수 있죠. ",
+      "UnitTalk_JPN": "残念ですが…まあ、これはこれで私が予測した範囲内と言えるでしょう。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "한동안 고생하면 괜찮아질 겁니다! 무후훗!",
+      "UnitTalk_JPN": "しばらく苦労すれば大丈夫でしょう！ムフフ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "거기 서!",
+          "JumpAnchorStringId_JPN": "待て！"
+        }
+      ]
+    },
+    {
+      "Uid": 157,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_65.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY"
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "추궁당할 줄 예상했는지, 아이다는 쏜살같이 도망가 버렸다…!",
+      "UnitTalk_JPN": "追及されると予想していたのか、アイーダは矢のように逃げ去ってしまった…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 158,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS6",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 한동안 휴식이 필요해 보인다….",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>はしばらく休息が必要そうだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 177,
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE_02.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 178,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 179,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 유물에 공격을 가했다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が遺物に攻撃を加えた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 180,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "유물이 어떻게 되든 상관없다는 듯한 위력이다…!",
+      "UnitTalk_JPN": "遺物がどうなろうと構わないという威力だ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 181,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 1.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 182,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 183,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 184,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "무후훗. 충격에 반응한다는 제 가설은 적중했군요.",
+      "UnitTalk_JPN": "むふっ。衝撃に反応するという私の仮説は的中したようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 185,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "하지만 위력에 따라 반응이 달라지는 모양입니다, 이거.",
+      "UnitTalk_JPN": "しかし威力によって反応が変わるようですね、これは。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 228,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "잠재되어 있던 힘의 전부를 일깨우진 못했나 보군요, 무흐흣!",
+      "UnitTalk_JPN": "潜在していた力の全てを目覚めさせられなかったようだな、むっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 188,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY"
+    },
+    {
+      "Uid": 189,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 190,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아이다는 기분 나쁜 웃음소리와 함께 사라졌다…",
+      "UnitTalk_JPN": "アイーダは不気味な笑い声を残して消えた…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 191,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 192,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 평소보다 몸이 가뿐해진 모양이다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は普段より体が軽くなったようだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 193,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitPos": "POS7",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 212,
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE_02.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 213,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 214,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 유물에 공격을 가했다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が遺物に攻撃を加えた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 215,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "유물이 어떻게 되든 상관없다는 듯한 위력이다…!",
+      "UnitTalk_JPN": "遺物がどうなろうと構わないという威力だ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 198,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DEBRIS_02.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 201,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 203,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "이런 이런…. 유물이 흔적도 없이 사라져 버렸군요.",
+      "UnitTalk_JPN": "あらあら…遺物が跡形もなく消えてしまったようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 204,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이래서야 더 이상의 테스트는 무용. 허무만이 남았군요. ",
+      "UnitTalk_JPN": "これではこれ以上テストは無意味。空虚だけが残りましたね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 205,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "무후훗! 어차피 결과는 단장 공의 몫 아니겠습니까!",
+      "UnitTalk_JPN": "むふっ！どうせ結果は団長公の役目でしょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 206,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이리 안 와?!",
+          "JumpAnchorStringId_JPN": "こっちに来ないのか！？"
+        }
+      ]
+    },
+    {
+      "Uid": 207,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_65.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY"
+    },
+    {
+      "Uid": 209,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS6",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 208,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "붙잡기도 전에 아이다는 바퀴벌레처럼 도망가 버렸다!",
+      "UnitTalk_JPN": "捕まえる間もなく、アイーダはゴキブリのように逃げ去ってしまった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…역시 오래된 유물을 함부로 다루는 것은 내키지 않는다.",
+      "UnitTalk_JPN": "…やはり古い遺物を軽々しく扱うのは気が進まない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 218,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이런 이런…",
+      "UnitTalk_JPN": "まあまあ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 219,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그렇게 나오신다면 저도 더 이상 드릴 말씀이 없군요.",
+      "UnitTalk_JPN": "そうおっしゃるなら、私もこれ以上申し上げることはありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 220,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "좋습니다. 세계의 <color=#F7BE45>[어둠]</color>을 외면하는 것도 방법 중 하나겠죠.",
+      "UnitTalk_JPN": "結構です。世界の<color=#F7BE45>「闇」</color>を無視するのも一つの方法でしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 221,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "무후훗!",
+      "UnitTalk_JPN": "むふっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 225,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 222,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_65.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY"
+    },
+    {
+      "Uid": 223,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 224,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아이다는 찜찜한 소리를 남기고 자취를 감췄다….",
+      "UnitTalk_JPN": "アイーダは気まずそうな声を残して姿を消した…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 226,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 온전한 모습의 유물을 보고 있자니, 선택이 후회되지는 않는다!",
+      "UnitTalk_JPN": "しかし完全な姿の遺物を見ていると、選択を後悔はしない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 227,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

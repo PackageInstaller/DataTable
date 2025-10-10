@@ -1,0 +1,220 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "으에에, 단장니임…",
+      "UnitTalk_JPN": "ふええっ、団長…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 그래?",
+          "JumpAnchorStringId_JPN": "どうしたんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "어제 하루 종일 쫓겨다녔어요…",
+      "UnitTalk_JPN": "昨日、一日中逃げ回っていたんです…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "누구한테?!",
+          "JumpAnchorStringId_JPN": "誰から！？"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "무섭게 생긴 분들이 ‘보물 토끼 사냥제’다 뭐다 하면서 잔뜩!",
+      "UnitTalk_JPN": "怖そうな人たちが、「お宝ウサギ狩猟祭」だか何だか騒ぎながら！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "사람을 무슨 상품 취급했다구요!",
+      "UnitTalk_JPN": "景品扱いされたんですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "이번에야말로 잡고 말겠다니, 제가 무슨 축제 상품인 것처럼!",
+      "UnitTalk_JPN": "今度こそ捕まえるぞ！なんて言いながら…私をまるでお祭りの景品みたいに扱って！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잡혔어? 다친 데는 없어?",
+          "JumpAnchorStringId_JPN": "掴まって怪我しなかった？"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아뇨, 전부 달려서 따돌리긴 했는데요…",
+      "UnitTalk_JPN": "大丈夫です、走って全員振り切ったので…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…고생했어.",
+          "JumpAnchorStringId_JPN": "…大変だったね。"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "인상착의는 기억나?",
+          "JumpAnchorStringId_JPN": "追ってきた人たちの特徴は覚えてる？"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "네에, 몇몇 분은…",
+      "UnitTalk_JPN": "はい、何人かは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "자주 보던 분들이라…",
+      "UnitTalk_JPN": "よくお会いする方々なので…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "베라는 진이 쏙 빠진 표정이다.",
+      "UnitTalk_JPN": "ベラは疲れきった顔をしている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "불량배들은 따로 처리해 두자…",
+      "UnitTalk_JPN": "ベラを追い回した不良は、あとで片づけておこう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REST_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SPECIAL"
+    }
+  ]
+}

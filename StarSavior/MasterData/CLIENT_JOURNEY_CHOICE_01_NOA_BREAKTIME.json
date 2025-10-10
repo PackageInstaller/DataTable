@@ -1,0 +1,309 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_CHOICE_01_NOA_BREAKTIME",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "모처럼 휴일을 맞았지만 따로 할 일이 생각나지 않았다.",
+      "UnitTalk_JPN": "久しぶりの休日を迎えたが、特にやることもなかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>에게 놀러 가자고 제안해 볼까?",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>を誘ってみようかな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "한정 디저트를 먹으러 가자!",
+          "JumpAnchorStringId_JPN": "期間限定スイーツを食べに行こう！",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "새로 나온 영화를 보러 가자!",
+          "JumpAnchorStringId_JPN": "最新の映画を見に行こう！",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "샌드위치를 들고 소풍하러 갈까?",
+          "JumpAnchorStringId_JPN": "サンドイッチを持ってピクニックに行こう！",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        },
+        {
+          "Uid": 4,
+          "JumpAnchorStringId_KOR": "오늘은 이대로 푹 쉬자.",
+          "JumpAnchorStringId_JPN": "今日はこのままゆっくり休もう。",
+          "JumpAnchorId": "REWARD_ANCHOR_4"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CAFE_01.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 <color=#F7BE45>카페 스트레가</color>에서 즐거운 한때를 보냈다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と、<color=#F7BE45>カフェ・ストレガ</color>で楽しい時間を過ごした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "한정 디저트 덕에 몸도 마음도 가벼워진 기분이다.",
+      "UnitTalk_JPN": "期間限定スイーツのおかげで、心も身体も軽くなった気がする。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_THEATER.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 영화관을 나오며 최고의 작품이었다고 이야기했다.",
+      "UnitTalk_JPN": "映画館を出てから、<color=#F7BE45>[CHARACTER_NAME]</color>と最高の作品だったと語り合った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "재미있는 영화를 본 덕분인지 <color=#F7BE45>[CHARACTER_NAME]</color>의 기분이 매우 좋아진 것 같다.",
+      "UnitTalk_JPN": "面白い映画を見たおかげか、<color=#F7BE45>[CHARACTER_NAME]</color>もご機嫌そうだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_PUBLIC.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 따뜻한 햇살을 맞으며 잔디밭에서 함께 샌드위치를 먹었다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と暖かい日差しを浴びながら、芝生の上でサンドイッチを食べた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "즐거운 시간을 보내고 돌아오는 <color=#F7BE45>[CHARACTER_NAME]</color>의 얼굴에는 의욕이 가득해 보였다.",
+      "UnitTalk_JPN": "楽しいひとときを過ごした帰り道、<color=#F7BE45>[CHARACTER_NAME]</color>は意欲に満ち溢れていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "JumpAnchorInfo": "JUMPANCHOR_4",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>도 오늘 같은 날에는 푹 쉬고 싶겠지.",
+      "UnitTalk_JPN": "今日みたいな日は、<color=#F7BE45>[CHARACTER_NAME]</color>もゆっくり休みたいだろうな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다시 눈을 감았다.",
+      "UnitTalk_JPN": "私は再び目を閉じた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_DOWNTOWN",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_CHOICE_01_NOA_BREAKTIME",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5
+    }
+  ]
+}

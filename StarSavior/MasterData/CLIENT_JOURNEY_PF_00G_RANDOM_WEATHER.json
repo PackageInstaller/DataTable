@@ -1,0 +1,255 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00G_RANDOM_WEATHER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00A_RANDOM_WEATHER",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2_NIGHT.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_18.mp3"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "창밖에서 들려오는 벌레 소리, 땀이 마르지 않는 공기…",
+      "UnitTalk_JPN": "窓の外から聞こえる虫の声、まとわりつくような空気…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "숨이 턱턱 막히는 열기가 숙소를 휘감고 있었다.",
+      "UnitTalk_JPN": "息が詰まるような熱気が、宿を包み込んでいた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_JPN": "「EVENT_RANDOM_WEATHER_07_01」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_JPN": "「EVENT_RANDOM_WEATHER_07_02」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이럴 때는…",
+      "UnitTalk_JPN": "こういう時は…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "손선풍기를 사용하자.",
+          "JumpAnchorStringId_JPN": "ハンディファンを使おう。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "어쩔 수 없지. 버텨볼 수밖에.",
+          "JumpAnchorStringId_JPN": "我慢して耐えるしかない。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 36,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "선풍기에서 나오는 바람이 더운 공기를 밀어내고, 기분 좋은 시원함이 퍼졌다.",
+      "UnitTalk_JPN": "扇風機から出る風が熱気を押し出し、心地いい涼しさが広がった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 28,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 쾌적한 잠자리를 보낸 듯하다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、快適な眠りにつけたようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 18,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 35,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "더위에 몸을 이리저리 뒤척이던 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 좀처럼 잠들지 못했다.",
+      "UnitTalk_JPN": "暑さに身を焦がした<color=#F7BE45>[CHARACTER_NAME]</color>は、なかなか寝付けなかったようだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "결국, 다음 날까지 피로가 가시지 않은 듯한 모습이었다…",
+      "UnitTalk_JPN": "結局、翌日まで疲れが取れていない様子だった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

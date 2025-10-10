@@ -1,0 +1,112 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_TUTO_06_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": " 리사의 안내를 받아 도착한 곳에는…",
+      "UnitTalk_JPN": "リサの案内で到着した場所には…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": " 안녕하세요!",
+      "UnitTalk_JPN": "こんにちは！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "NOA 궤도 수색대 소속 관측사, 나루입니다!",
+      "UnitTalk_JPN": "NOA軌道捜索隊所属の観測士、ナルです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "관측사 평의회 <color=#F7BE45>[폴라리스]</color>에서 보이저 구원단에 합류하라는 명령을 받았습니다.",
+      "UnitTalk_JPN": "観測士評議会<color=#F7BE45>「ポラリス」</color>からボイジャー救援団への合流命令を受けました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "잘 부탁드려요!",
+      "UnitTalk_JPN": "よろしくお願いします！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나도 잘 부탁해.",
+          "JumpAnchorStringId_JPN": "こちらこそよろしく。"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_06_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "네! 저만 믿으세요!",
+      "UnitTalk_JPN": "はい！私を信じてください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_06_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "단장님이 여정을 완수할 수 있도록 완벽한 방정식을 만들어드릴게요!",
+      "UnitTalk_JPN": "団長が旅を完遂できるよう、完璧な方程式をお作りいたします！",
+      "TalkTime": 0.03
+    }
+  ]
+}

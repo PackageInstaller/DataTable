@@ -1209,6 +1209,19 @@
         ]
     },
     {
+        "id": 15020001,
+        "rarity": 5,
+        "image_index": 3020001,
+        "ml_name": [
+            "入魂時即行動",
+            ""
+        ],
+        "ml_description": [
+            "入魂後に即時追加行動（毎ターン[[effects_power_1]]回まで）<hidden=effects_power_2>/移動力[[effects_power_2]]増加。1回行動後解除</hidden>",
+            ""
+        ]
+    },
+    {
         "id": 15110001,
         "rarity": 5,
         "image_index": 3110001,
@@ -1972,6 +1985,19 @@
         ],
         "ml_description": [
             "バトル開始時、自身に再生付与/一定体力以下で自身に<help=physical_shield>物理シールド</help>付与/ダメージを受けた時、自身に攻撃・敏捷[[effects_power_4]%]増加（重複可",
+            ""
+        ]
+    },
+    {
+        "id": 35330046,
+        "rarity": 5,
+        "image_index": 1130003,
+        "ml_name": [
+            "バトル開始時、自身に<help=fire_shield>炎シールド</help>付与/一定体力以下で防御[[effects_power_2]%]増加（重複可）",
+            ""
+        ],
+        "ml_description": [
+            "バトル開始時、自身に<help=fire_shield>炎シールド</help>付与・防御[[effects_power_2]%]増加（重複可）/一定体力以下で防御[[effects_power_3]%]増加（重複可）",
             ""
         ]
     },
@@ -5473,6 +5499,32 @@
         ]
     },
     {
+        "id": 75130016,
+        "rarity": 5,
+        "image_index": 1390003,
+        "ml_name": [
+            "緑属性有利＋（50%）",
+            ""
+        ],
+        "ml_description": [
+            "味方のビリジアン（緑）のセルリアン（青）に対してのダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 74130016,
+        "rarity": 4,
+        "image_index": 1130002,
+        "ml_name": [
+            "エネミーのセルリアン(青)の攻撃+60%",
+            ""
+        ],
+        "ml_description": [
+            "エネミーのセルリアン(青)の攻撃+[[effects_power]%]",
+            ""
+        ]
+    },
+    {
         "id": 90130001,
         "rarity": 5,
         "image_index": 1130001,
@@ -6118,7 +6170,7 @@
             ""
         ],
         "ml_description": [
-            "系統：工芸に対してダメージ[[effects_power]%]上昇/敏捷[[effects_power_2]%]増加/技法で味方に威力回復時、味方全員の精神[[effects_power_3]%]増加（重複可）＜[[effects_turn_3]ターン]＞・熱情[[effects_power_4]]増加",
+            "系統：工芸に対してダメージ[[effects_power]%]上昇/敏捷[[effects_power_2]%]増加/技法の威力で体力回復時、味方全員の精神[[effects_power_3]%]増加（重複可）＜[[effects_turn_3]ターン]＞・熱情[[effects_power_4]]増加",
             ""
         ]
     },
@@ -6131,7 +6183,7 @@
             ""
         ],
         "ml_description": [
-            "水エレメントの攻撃を[[effects_power]%]強化/体力[[effects_power_2]%]増加/技法で味方に威力回復時、敵全体の攻撃[[effects_power_3]%]減少＜[[effects_turn_3]ターン]＞",
+            "水エレメントの攻撃を[[effects_power]%]強化/体力[[effects_power_2]%]増加/技法の威力で体力回復時、敵全体の攻撃[[effects_power_3]%]減少＜[[effects_turn_3]ターン]＞",
             ""
         ]
     },
@@ -6651,7 +6703,7 @@
             ""
         ],
         "ml_description": [
-            "与えるダメージ[[effects_power]%]上昇/幸運[[effects_power_2]]増加/技法で味方に威力回復時、味方全員の精神[[effects_power_3]%]増加（重複可）＜[[effects_turn_3]ターン]＞",
+            "与えるダメージ[[effects_power]%]上昇/幸運[[effects_power_2]]増加/技法の威力で体力回復時、味方全員の精神[[effects_power_3]%]増加（重複可）＜[[effects_turn_3]ターン]＞",
             ""
         ]
     },
@@ -6717,6 +6769,45 @@
         ],
         "ml_description": [
             "水エレメントの攻撃を[[effects_power]%]強化/攻撃[[effects_power_2]%]増加/技法または絶技でバフ付与時、敵全体の防御[[effects_power_3]%]減少＜[[effects_turn_3]ターン]＞",
+            ""
+        ]
+    },
+    {
+        "id": 45040601,
+        "rarity": 5,
+        "image_index": 1300002,
+        "ml_name": [
+            "精髄：【酔夢に溺れし鬼娘】",
+            ""
+        ],
+        "ml_description": [
+            "水エレメントの攻撃を[[effects_power]%]強化/攻撃[[effects_power_2]%]増加/技法または絶技でデバフ付与時、自身の攻撃[[effects_power_3]%]増加（重複可）＜[[effects_turn_3]ターン]＞",
+            ""
+        ]
+    },
+    {
+        "id": 45041001,
+        "rarity": 5,
+        "image_index": 1150001,
+        "ml_name": [
+            "精髄：【自責のオルタ】",
+            ""
+        ],
+        "ml_description": [
+            "バトル開始時の熱情[[effects_power]]増加/風エレメントの攻撃を[[effects_power_2]%]強化/技法または絶技で熱情消費時、敵全体の精神・器用・敏捷減少[[effects_power_3]%]減少＜[[effects_turn_3]ターン]＞・自身の熱情[[effects_power_4]]増加",
+            ""
+        ]
+    },
+    {
+        "id": 45060501,
+        "rarity": 5,
+        "image_index": 1080000,
+        "ml_name": [
+            "精髄：【夜を警める銃士】",
+            ""
+        ],
+        "ml_description": [
+            "系統：彫刻に対してダメージ[[effects_power]%]上昇/敏捷[[effects_power_2]%]増加/技法または絶技で体力消費時、味方全員の入魂ゲージ[[effects_power_3]]増加",
             ""
         ]
     }

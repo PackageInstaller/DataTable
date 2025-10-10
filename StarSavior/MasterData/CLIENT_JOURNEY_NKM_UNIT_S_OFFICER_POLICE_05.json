@@ -1,0 +1,1785 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "같이 순찰 나가요, 단장님!",
+      "UnitTalk_JPN": "団長～！一緒にパトロールしに行きましょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "한가롭던 주말 오후.",
+      "UnitTalk_JPN": "のどかな週末の午後。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "갑자기 찾아온 안나가 상쾌하게 웃으며 외쳤다.",
+      "UnitTalk_JPN": "突然やってきたアンナが、爽やかな笑顔で言った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "순찰?",
+          "JumpAnchorStringId_JPN": "パトロール？"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "앗, 순찰 말고 산책요!",
+      "UnitTalk_JPN": "あっ、パトロールじゃなくてお散歩です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "에헷, 입에 붙은 말은 잘 안 떨어지네요.",
+      "UnitTalk_JPN": "てへっ、口癖ってなかなか直りませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "그게 말이에요, 저희는 여정 단장이랑 단원이잖아요?",
+      "UnitTalk_JPN": "えっと、あたしたちって旅の団長と団員の仲じゃないですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "타운가드 식으로 말하자면… 파트너 같은 거죠!",
+      "UnitTalk_JPN": "それをタウンガード流に言えば…相棒なんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "파트너? ",
+          "JumpAnchorStringId_JPN": "相棒？"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네! 그리고 타운가드에서 파트너라는 건 그냥 평범한 동료가 아니예요.",
+      "UnitTalk_JPN": "はい！タウンガードにとって相棒は、ただの仲間ではないんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "말하자면… 영혼의 동반자! ",
+      "UnitTalk_JPN": "言うなれば…ソウルメイト！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "다른 사람에게는 절대 하지 못하는! ",
+      "UnitTalk_JPN": "他の人とは絶対にできないようなことも！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "그런 행동도 할 수 있을 만큼 서로를 믿는 사이란 거죠!",
+      "UnitTalk_JPN": "できちゃうほどに、信頼し合った仲ってことです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어떤 행동?",
+          "JumpAnchorStringId_JPN": "例えばどんなこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…서, 서로 도넛을 먹여준다던가아…?",
+      "UnitTalk_JPN": "…ド、ドーナツを食べさせ合ったり、とか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…타운가드에서는 그러는 거야? ",
+          "JumpAnchorStringId_JPN": "…タウンガードではそんなことするの？"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "에흠흠, 뭐, 말이 그렇다는 거죠!",
+      "UnitTalk_JPN": "コ、コホン！例えばの話をしただけですよっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "그리고 제 경험에 따르면, 파트너끼리 신뢰감을 키우는 가장 좋은 방법이 바로…",
+      "UnitTalk_JPN": "それにあたしの経験から言うと、相棒と信頼を深める一番の方法は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "순찰… 아니, 산책이란 말씀!",
+      "UnitTalk_JPN": "パトロール…じゃなくて、お散歩なんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐, 안될 거야 없긴 하지만…",
+          "JumpAnchorStringId_JPN": "それは構わないけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "헤헷, 네! 그럼 사수인 제가 안내하겠습니다! ",
+      "UnitTalk_JPN": "てへっ！それじゃあ、先輩のあたしがご案内しますね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "ONE_9",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "흐흐흥- 흐흥-",
+      "UnitTalk_JPN": "ふふふん～ふふん～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…안나?",
+          "JumpAnchorStringId_JPN": "…アンナ？"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "네! 단장님!",
+      "UnitTalk_JPN": "はい、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "산책 이렇게 하는 거 맞아…?",
+          "JumpAnchorStringId_JPN": "散歩って…これで合ってる…？"
+        }
+      ]
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "캔들 스퀘어에서 나온 이후, 안나는 줄곧 내 오른팔을 안고 있었다.",
+      "UnitTalk_JPN": "キャンドル・スクエアを出てからずっと、アンナは私の右腕に抱きついたままだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…아주 단단하게 끌어안고 있었다.",
+      "UnitTalk_JPN": "…それも、力いっぱいに。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "앗, 이, 이거 말이죠?",
+      "UnitTalk_JPN": "あっ！こ、このことですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…으음, 하지만 저희 파트너잖아요?",
+      "UnitTalk_JPN": "…んー、だって、あたしたちは相棒でしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE_LOOP",
+      "UnitTalk_KOR": "파트너 사이에 이 정도 거리감은 괜찮지 않을까~ 하고!",
+      "UnitTalk_JPN": "相棒なら、このくらいの距離感でもいいんじゃないかな～って！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런가…",
+          "JumpAnchorStringId_JPN": "そっか…"
+        }
+      ]
+    },
+    {
+      "Uid": 141,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_RED",
+      "UnitNameString": [
+        "SI_MERCENARY_A"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "저거 보십쇼, 타운가드가 대낮에 공공연히…",
+      "UnitTalk_JPN": "あれを見てください。タウンガードが昼間から堂々と…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_MERCENARY_B"
+      ],
+      "UnitTalk_KOR": "아냐, 잘 보라구. ",
+      "UnitTalk_JPN": "いや、ちゃんと見ろ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_MERCENARY_B"
+      ],
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "타운가드 쪽이 남자의 오른팔을 꽉 쥐고 있잖아?",
+      "UnitTalk_JPN": "タウンガードが男の右腕を掴んでるだろう？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_MERCENARY_B"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "타운가드가 연행을 할 때는 항상 상대의 오른팔을 통제하지.",
+      "UnitTalk_JPN": "タウンガードが連行するときは、必ず相手の右腕を制圧するんだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_MERCENARY_B"
+      ],
+      "UnitTalk_KOR": "즉 연애가 아니라 연행 중일 수도 있다는 거야. ",
+      "UnitTalk_JPN": "つまり…あれはイチャイチャしている訳ではなく、連行中の可能性があるということだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_MERCENARY_B"
+      ],
+      "UnitTalk_KOR": "이 NOA에서 겉만 보고 판단해서는 살아남을 수 없어! ",
+      "UnitTalk_JPN": "見た目だけで判断しているようでは、NOAで生き残れないぞ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_RED",
+      "UnitNameString": [
+        "SI_MERCENARY_A"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 그, 그렇군요…",
+      "UnitTalk_JPN": "あ、そ、そうだったんですね…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "……",
+          "JumpAnchorStringId_JPN": "……"
+        }
+      ]
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "흐흥~ 흐흐흥~",
+      "UnitTalk_JPN": "ふんふん～ふんふふん～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "...어라? 도넛 가루 냄새?",
+      "UnitTalk_JPN": "…あれ？ドーナツ粉の匂い？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "아! 그러고 보니 근처에 되게 유명한 제빵집이 있었어요!",
+      "UnitTalk_JPN": "あっ！そういえば、近くにすっごく有名なパン屋さんがあるんですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "스트릿 베이커스라고 들어보셨어요? 거기 도넛이 엄청 유명하거든요!",
+      "UnitTalk_JPN": "ストリート・ベイカースってご存じですか？あそこのドーナツ、とっても有名なんですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "어때요? 몇 개 들고 가실래요?",
+      "UnitTalk_JPN": "どうですか？少し買って帰りませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럴까?",
+          "JumpAnchorStringId_JPN": "そうしようか。"
+        }
+      ]
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_RESTAURANT_MAIN.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 142,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "흐흐흥~ 초코 글레이즈드랑…",
+      "UnitTalk_JPN": "ふんふ～ん、チョコグレーズドに～…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저번에 버터크림 도넛이 맛있다고 하셨지… 아, 스트로베리잼 먼치킨도!",
+      "UnitTalk_JPN": "この前、バタークリームドーナツがおいしいって言ってたはず…あっ、ストロベリージャム・ミニドーナツもいいかも！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "단장님은 몸은 많이 쓰시는데 드시는 양은 별로 많지 않으니까…",
+      "UnitTalk_JPN": "団長は身体を使うわりに、あんまり食べないから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "너무 많이 사는 거 아냐?",
+          "JumpAnchorStringId_JPN": "買いすぎじゃない？"
+        }
+      ]
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE_LOOP",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "에이, 이 정도는 괜찮아요! ",
+      "UnitTalk_JPN": "またまた～！これぐらい、あっという間になくなりますよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "둘이 나눠 먹을 양이기도 하고~ 또 타운가드 할인도 적용되구요!",
+      "UnitTalk_JPN": "二人で食べるんですから～。それに、タウンガード割引もありますしね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "단장님은 얌전히 앉아서 도넛만 받으시면 됩니다!",
+      "UnitTalk_JPN": "団長は大人しく座って、ドーナツを受け取るだけでいいんですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇다면 고맙지만…",
+          "JumpAnchorStringId_JPN": "それはありがたいけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "에헷, 그런 거죠. ",
+      "UnitTalk_JPN": "てへっ、遠慮はいりませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "또 당분간은 달콤한 간식 보기 힘들 테니까요?",
+      "UnitTalk_JPN": "それに、しばらく甘いおやつはお預けになるかもしれませんしね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "...안나야, 그게 무슨 말이니?",
+          "JumpAnchorStringId_JPN": "…どういう意味？"
+        }
+      ]
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "간식은 보기 힘들 거라니?",
+          "JumpAnchorStringId_JPN": "しばらくお預けって？"
+        }
+      ]
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "지금을 돌이키면서 후회할 때가 분명히 올 거란 말이죠?",
+      "UnitTalk_JPN": "きっと今日のことを思い出して、後悔する日が来るということです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "먹을 수 있을 때 먹어둘걸! 하고요.",
+      "UnitTalk_JPN": "食べられる時に食べておけばよかった～！って。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav",
+      "UnitTalk_KOR": "수군… 수군…",
+      "UnitTalk_JPN": "ざわざわ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CITIZEN"
+      ],
+      "UnitTalk_KOR": "당분간 달콤한 건 못 먹을 거라고…? ",
+      "UnitTalk_JPN": "しばらく甘いものを食べられないとか…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CITIZEN"
+      ],
+      "UnitTalk_KOR": "지금 안 먹어두면 나중에 후회한다니…",
+      "UnitTalk_JPN": "今食べておかないと、後悔することになるとか…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CITIZEN"
+      ],
+      "UnitTalk_KOR": "이건… 그거죠? ",
+      "UnitTalk_JPN": "あれって、もしかして…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CITIZEN"
+      ],
+      "UnitTalk_KOR": "범인을 잡아가기 전에 마지막으로 타운가드가 맛있는 거 하나 사 먹이는 그거요.",
+      "UnitTalk_JPN": "犯人を捕まえる前に、最後にタウンガードが美味しいものを食べさせるってやつ？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CITIZEN"
+      ],
+      "UnitTalk_KOR": "그럼 저 멀쩡하게 생긴 사람이…",
+      "UnitTalk_JPN": "じゃあ、あの人が？見た目は普通なのに…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.5,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니야아…!",
+          "JumpAnchorStringId_JPN": "それは私じゃないっ…！"
+        }
+      ]
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "캔들 스퀘어의 훈련 식단은 고단백 건강식이지만, 건강하기만 하다.",
+      "UnitTalk_JPN": "キャンドル・スクエアのトレーニング食は、高タンパクでヘルシーだが、味は少し物足りない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 여정을 진행할수록 간식 먹을 짬이 줄어들지도 모른다!",
+      "UnitTalk_JPN": "それに…旅を続けるうちに、スイーツを楽しむ暇もなくなるかもしれない！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런 뜻으로 말한 거지, 안나?!",
+          "JumpAnchorStringId_JPN": "アンナ、そういう意味だよな！？"
+        }
+      ]
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "에헷, 그럼요!",
+      "UnitTalk_JPN": "てへっ、その通りです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.5,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "추임새 붙이니까 더 수상하잖아…!",
+          "JumpAnchorStringId_JPN": "怪しい…！"
+        }
+      ]
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAZA.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "그 후로도 안나와 함께 여기저기 돌아다녔지만...",
+      "UnitTalk_JPN": "その後もアンナとあちこち歩き回ったが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "UnitTalk_KOR": "왠지 모르게 가는 곳마다 오해를 받는 상황이 반복되었다.",
+      "UnitTalk_JPN": "なぜか行く先々で、誤解される状況が続いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…아니, 오해가 맞긴 맞을까?",
+      "UnitTalk_JPN": "…いや、これは本当に誤解なのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩌면 이건 정말로…",
+      "UnitTalk_JPN": "もしかすると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.8
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ANNAH"
+      ],
+      "UnitTalk_KOR": "…장님?",
+      "UnitTalk_JPN": "…長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장님? 괜찮으세요?",
+      "UnitTalk_JPN": "団長？大丈夫ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐 멍하니 있었어.",
+          "JumpAnchorStringId_JPN": "少しぼーっとしてた。"
+        }
+      ]
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그런데 여기가 어디야?",
+          "JumpAnchorStringId_JPN": "…あれ、ここは？"
+        }
+      ]
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 여기 말이죠!",
+      "UnitTalk_JPN": "あっ、ここはですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "사실은… 한 번쯤 같이 와보고 싶다고 생각해서요. ",
+      "UnitTalk_JPN": "実は…団長と一緒に来てみたかったんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "거대한 건물이 앞에 우뚝 서 있었다.",
+      "UnitTalk_JPN": "目の前には、巨大な建物がそびえ立っている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…어쩐지 일반인이 와서는 안 될 것 같은 분위기가 풀풀 풍겼다.",
+      "UnitTalk_JPN": "…どうにも、一般人が立ち入ってはいけないような雰囲気が漂っていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문 앞의 명패를 읽어보니…",
+      "UnitTalk_JPN": "扉の前の表札を見てみると…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "타운가드 본부?",
+          "JumpAnchorStringId_JPN": "タウンガード本部？"
+        }
+      ]
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "네! 바로 여기가 저희 타운가드 큰집입니다!",
+      "UnitTalk_JPN": "はいっ！ここがタウンガードの本部なんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "체포와 법 집행의 전문가들이 불철주야 정의를 위해 힘쓰고 있는 곳이죠!",
+      "UnitTalk_JPN": "逮捕と法の専門家が、昼夜を問わず、正義のために奮闘している場所なんですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…호, 혹시 타운가드는 평소에 뭐 하고 사는지 궁금하지 않으세요?",
+      "UnitTalk_JPN": "…あ、あの、団長は、タウンガードが普段どんなことをしているのか気になりませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "우리 애들, 아니, 동료들도 단장님을 보면 어엄청 반가워할 텐데!",
+      "UnitTalk_JPN": "あたしの仲間も、団長に会ったらすっごく喜ぶはずです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "구경 정도라면…",
+          "JumpAnchorStringId_JPN": "見学くらいなら…"
+        }
+      ]
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…응?",
+          "JumpAnchorStringId_JPN": "…あれ？"
+        }
+      ]
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장님?",
+      "UnitTalk_JPN": "団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "어쩐지 창백해지신 것 같은데…",
+      "UnitTalk_JPN": "なんだか、顔色が悪いですよ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.8,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런 거였구나…!",
+          "JumpAnchorStringId_JPN": "そういうことだったのか…！"
+        }
+      ]
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…네?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "퍼즐은 모두 맞춰졌다.",
+      "UnitTalk_JPN": "すべてのピースがはまった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 아직도 안나의 용의선상에 올라와 있다.",
+      "UnitTalk_JPN": "私はまだ、アンナの容疑者リストに入ったまま。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 안나는 내가 범인이라는 증거를 찾고 있는 게 분명하다...!",
+      "UnitTalk_JPN": "そしてアンナは、私が犯人である証拠を探しているはず…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나를 끌고 가서 심문하려는 거지!",
+          "JumpAnchorStringId_JPN": "私を連行して、尋問するつもりなんだな！"
+        }
+      ]
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "경찰 영화처럼!",
+          "JumpAnchorStringId_JPN": "映画で見たことあるぞ！"
+        }
+      ]
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "……네?",
+      "UnitTalk_JPN": "……はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장님, 뭔지는 모르겠지만 생각하시는 거랑은 조금 다른… ",
+      "UnitTalk_JPN": "団長。よく分かりませんが、何か勘違いを…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…으왓?!",
+      "UnitTalk_JPN": "…うわぁっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "안나의 양쪽 어깨를 꼭 쥐고 눈을 맞추었다.",
+      "UnitTalk_JPN": "アンナの両肩を掴んで、目を合わせた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "오오오오늘 예상했던 것보다 너너너무 가까워졌는데요?!",
+      "UnitTalk_JPN": "こここここんなに距離が縮まるなんて、予想外なんですけど！？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "안나, 날 믿어 줘!",
+          "JumpAnchorStringId_JPN": "アンナ、信じてくれ！"
+        }
+      ]
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나 진짜로 아니니까!",
+          "JumpAnchorStringId_JPN": "本当に私じゃないんだ！"
+        }
+      ]
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "네, 뭐, 뭔진 몰라도 믿을 테니까 거리 유지 좀…!",
+      "UnitTalk_JPN": "よよよよく分かりませんが、信じます！だから、ちょっと離れてください…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "가, 갑자기 훅 들어오시면 심장에 안 좋다고요…!",
+      "UnitTalk_JPN": "きゅ、急に近づくなんて、心臓に悪いですよ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 안 할 거지?!",
+          "JumpAnchorStringId_JPN": "じゃあ、しないよね！？"
+        }
+      ]
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "그러니까 뭘요?!",
+      "UnitTalk_JPN": "な、何をですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "그러니까… 제가 단장님을 꾀어다가 취조실에 가두고…",
+      "UnitTalk_JPN": "つまり…あたしが団長をおびき寄せて、取調室に閉じ込めてから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "혹시 알몸에 검은 코트만 입고 돌아다녔냐고 추궁할 줄 아셨던 거군요…",
+      "UnitTalk_JPN": "裸に黒いコート一枚でうろついていたのかって、追及されると思ったんですね…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "미안…",
+          "JumpAnchorStringId_JPN": "ごめん…"
+        }
+      ]
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "확실히… 단둘이 취조실에 있는 상황을… 상상 안 해본 건 아니지만…",
+      "UnitTalk_JPN": "正直…二人きりで取調室にいる状況を…想像したことがないわけじゃないですけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하여튼! 그런 건 걱정하지 않으셔도 돼요.",
+      "UnitTalk_JPN": "とにかく！その件は心配いりませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "단장님이 현장에서 알몸으로 붙잡히는 일이라도 생기지 않는 한!",
+      "UnitTalk_JPN": "団長が、裸になって捕まるようなことがない限り！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitTalk_KOR": "취조실로 억지로 끌고 갈 일은 없으니까요.",
+      "UnitTalk_JPN": "無理やり取調室に引きずり込むことはありませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 그럴 생각이면 미리 말해주셔야 해요?",
+      "UnitTalk_JPN": "あっ！もしそのつもりがあるなら、事前に言ってくださいね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "저도 마음의 준비가 좀…",
+      "UnitTalk_JPN": "あたしも心の準備を…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.5,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럴 일 없어!",
+          "JumpAnchorStringId_JPN": "絶対にないから！"
+        }
+      ]
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다행히 안나와의 오해는 풀렸지만...",
+      "UnitTalk_JPN": "幸いにも、アンナの誤解は解けた…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 알몸 코트남 녀석이 붙잡히지 않는 한… 비슷한 일이 계속 생길 것이다.",
+      "UnitTalk_JPN": "だが、あの裸コートの変態が捕まらない限り…同じようなことが続くだろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그런 확신에 가까운 직감이 들었다…",
+      "UnitTalk_JPN": "確信に近い何かを感じた…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 139,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    }
+  ]
+}

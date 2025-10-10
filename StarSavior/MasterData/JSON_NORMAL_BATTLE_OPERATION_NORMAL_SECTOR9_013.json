@@ -1,0 +1,55 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [ 
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_02",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_OPERATION_02",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_02",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_02",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_OPERATION_02",
+            "SpecialSkillAvailable": true,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_02",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          }
+        ]
+      }
+    ]
+  }
+}

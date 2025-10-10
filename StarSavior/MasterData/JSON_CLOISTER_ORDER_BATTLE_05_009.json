@@ -1,0 +1,57 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_01",
+            "IsElite": true,
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS" //메인 속성 타입
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_COHESION_FLOWER_BLACK_BOSS_OPERATION_01",
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_CHAOS" //서브 속성 타입※※※※※※※※※※※※
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS" //메인 속성 타입
+          }
+        ]
+      }
+    ]
+  }
+}

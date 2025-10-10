@@ -1,0 +1,24 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_S_SAINTESS_DEMON", // 몬스터 뮤리엘로 차후 교체 필요
+            "IsBoss": true,
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_S_SAINTESS_ELF", // 몬스터 엘리사로 차후 교체 필요
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

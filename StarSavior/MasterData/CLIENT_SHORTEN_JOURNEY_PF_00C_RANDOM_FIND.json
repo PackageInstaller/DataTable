@@ -1,0 +1,148 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00C_RANDOM_FIND",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "외부 탐사 중, 신비한 석상을 발견했다.",
+      "UnitTalk_JPN": "外部探査中、神秘的な石像を発見した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "두 석상 옆에는 <color=#F7BE45>원하는 바를 얻으려거든, 진실의 말로 기도하라</color>고 적혀 있다. ",
+      "UnitTalk_JPN": "二体の石像の傍らには<color=#F7BE45>望むものを得たいならば、真実の言葉で祈れ</color>と記されていた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "칼을 든 석상에게 기도한다. ",
+          "JumpAnchorStringId_JPN": "剣を持った石像に祈る。 ",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "꽃을 든 석상에게 기도한다.",
+          "JumpAnchorStringId_JPN": "花を持つ石像に祈る。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "기도하지 않는다.",
+          "JumpAnchorStringId_JPN": "祈らない。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_34.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "\r\n",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "신비한 기운이 감돌더니, 석상이 든 칼이 땅에 떨어졌다.",
+      "UnitTalk_JPN": "神秘的な気が漂い、石像が持っていた剣が地面に落ちた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 강한 힘을 느꼈다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は強い力を感じた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 12,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_34.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "\r\n",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "신비한 기운이 감돌더니, 석상이 든 꽃이 땅에 떨어졌다.",
+      "UnitTalk_JPN": "神秘的な気が漂い、石像が持っていた花が地面に落ちた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 강한 힘을 느꼈다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は強い力を感じた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 6,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "석상을 무시하고 탐사를 이어갔다.",
+      "UnitTalk_JPN": "石像を無視して探査を続けた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

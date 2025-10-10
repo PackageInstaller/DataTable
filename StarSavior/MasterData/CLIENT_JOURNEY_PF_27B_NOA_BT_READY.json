@@ -1,0 +1,625 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_27B_NOA_BT_READY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "안녕하세요 단장님.",
+      "UnitTalk_JPN": "こんにちは、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "오늘은 <color=#F7BE45>[경쟁 평가전]</color>이 진행되는 날입니다.",
+      "UnitTalk_JPN": "本日は<color=#F7BE45>「対人試験」</color>が行われる日です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[모나스티르 기사단]</color>의 단원분도 이미 와 계십니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「モナスティル騎士団」</color>の団員の方も、すでに来られております。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_4",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitQuickSet": true,
+      "UnitPos": "POS5",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "안녕하십니까, 단장님!",
+      "UnitTalk_JPN": "ご機嫌いかがですか、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "안녕하세요.",
+      "UnitTalk_JPN": "こんにちは。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "오늘 평가전, 잘 부탁드리겠습니다!",
+      "UnitTalk_JPN": "本日の試験、よろしくお願いいたします！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "처음 만났을 때와 달리, 평범한 말투로 인사를 건네왔다.",
+      "UnitTalk_JPN": "初めて会った時とは違い、普通の口調で挨拶してきた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 말투 말이죠?",
+      "UnitTalk_JPN": "ああ、口調のことですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "사실 요 며칠 평가전 때 만나면 또 어떤 멋진 인사말을 해야 하나 끙끙댔는데…",
+      "UnitTalk_JPN": "実はここ数日、試験で会うたびにまたどんな素敵な挨拶をしようかと悩んでいたのですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "생각해 보니 지금 저에게 중요한 건 말을 잘하는 기사단장으로 보이는 게 아니라…",
+      "UnitTalk_JPN": "考えてみると、今の私にとって大切なのは、言葉を巧みに操る騎士団長に見えることではなく…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "훌륭한 상대가 되어드리는 것이라는 걸 깨달았거든요!",
+      "UnitTalk_JPN": "立派な相手になって差し上げるということだと気づいたんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…계속 끙끙대고 있으니까, 옆의 카르멘이 알려 줬어요…",
+      "UnitTalk_JPN": "…ずっと悩んでいると、隣のカルメンが教えてくれたんです…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "후후, 언제나 여유로운 상태를 유지하는 게 중요하니까요.",
+      "UnitTalk_JPN": "ふふ、常に余裕のある状態を保つことが大切ですからね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "음? 왠지 단장님도 좀 긴장하고 계신 것 같은데요?",
+      "UnitTalk_JPN": "え？なんだか団長も少し緊張されているようですが？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런가?",
+          "JumpAnchorStringId_JPN": "そうかな？"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "겉으로 봐도 어깨가 딱딱하게 굳어 계신걸요.",
+      "UnitTalk_JPN": "外見からも肩がこわばって固まっているのがわかりますよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "직접 평가전을 치르시는 것도 아닌데, 이렇게 긴장하실 필요는 없잖아요.",
+      "UnitTalk_JPN": "直接試験をされるわけでもないのに、そんなに緊張する必要はないでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "자, 릴렉스하시고…",
+      "UnitTalk_JPN": "さあ、リラックスして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "으음, 어깨도 많이 뭉치셨네요. 자, 제가 조금 풀어드릴게요.",
+      "UnitTalk_JPN": "うーん、肩もかなり凝ってますね。さあ、私が少しほぐして差し上げましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "여기를… 이렇게 손으로 자극하면…",
+      "UnitTalk_JPN": "ここを…こう手で刺激すると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "오, 오오…",
+          "JumpAnchorStringId_JPN": "お、おお…"
+        }
+      ]
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "이렇게 부드럽게 문질러 주면 근육과 마음의 긴장이 모두 이완되죠.",
+      "UnitTalk_JPN": "こうやって優しく揉んであげると、筋肉と心の緊張が両方ともほぐれますよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "화, 확실히…",
+          "JumpAnchorStringId_JPN": "はあ、確かに…"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "아, 그거 정말 기분 좋죠? 저도 어제 카르멘이 풀어줬어요!",
+      "UnitTalk_JPN": "ああ、それ本当に気持ちいいですよね？私も昨日カルメンに解いてもらったんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "CameraOffset": "POS5_2X",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "이렇게… 잠깐, 아예 엎드려 보시겠어요?",
+      "UnitTalk_JPN": "こうやって…ちょっと待って、完全にうつ伏せになってみませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "그럼 제가 올라가서…",
+      "UnitTalk_JPN": "じゃあ私が乗って…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LISA"
+      ],
+      "UnitTalk_KOR": "…단장님?",
+      "UnitTalk_JPN": "…団長？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…핫?",
+          "JumpAnchorStringId_JPN": "…はっ？"
+        }
+      ]
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…단장님의 즐거운 시간을 방해하고 싶지는 않은데요…",
+      "UnitTalk_JPN": "…団長の楽しい時間を邪魔したくはないのですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "단장님 뒤쪽에… 평가전을 기다리는 여정 단원이…",
+      "UnitTalk_JPN": "団長の後ろに…試験を待つ旅の団員が…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "[EVENT_FIXED_NOA_ORDEAL_03_01]",
+      "UnitTalk_JPN": "「EVENT_FIXED_NOA_ORDEAL_03_01」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_FIXED_NOA_ORDEAL_03_02]",
+      "UnitTalk_JPN": "「EVENT_FIXED_NOA_ORDEAL_03_02」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_FIXED_NOA_ORDEAL_03_03]",
+      "UnitTalk_JPN": "「EVENT_FIXED_NOA_ORDEAL_03_03」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마, 망했네…",
+          "JumpAnchorStringId_JPN": "ま、やられた…"
+        }
+      ]
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…[CHARACTER_NAME]님… 뭐랄까, 조금 다른 의미로 굉장한 기세가 뿜어져 나오는 것 같네요.",
+      "UnitTalk_JPN": "…[CHARACTER_NAME]さん…何というか、少し違う意味ですごい勢いがみなぎっているようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "저는… 좀 더 뒤로 물러서서…",
+      "UnitTalk_JPN": "私は…もう少し後ろに下がって…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그, 그럼- 경쟁평가전-",
+      "UnitTalk_JPN": "そ、それでは―対人試験―",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "시작하겠습니다-!",
+      "UnitTalk_JPN": "始めます-！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_27B_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHARLES",
+        "SI_CARMEN"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitTalk_KOR": "그럼 잘 부탁드리겠습니다!",
+      "UnitTalk_JPN": "それではよろしくお願いします！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

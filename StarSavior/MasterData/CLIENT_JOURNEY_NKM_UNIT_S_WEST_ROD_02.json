@@ -1,0 +1,1267 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CAFE_01.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "훈련이 끝난 뒤, 리디아와 함께 시내의 아이스크림 가게를 방문했다. ",
+      "UnitTalk_JPN": "トレーニングが終わった後、リディアと街のアイスクリーム屋に向かった。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여러 종류의 아이스크림이 들어있는 진열대 앞에 선 리디아가 눈을 반짝거렸다.",
+      "UnitTalk_JPN": "ショーケースには、色んな種類のアイスクリームが並んでいる。リディアは、目を輝かせた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "우와… NOA에서는 정말로 여러 가지 맛의 아이스크림을 골라 먹을 수 있는 거예요?",
+      "UnitTalk_JPN": "うわぁ…NOAでは、たくさんの種類の中から選べるんですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "말로만 들었지… 정말일줄은 몰랐는데!",
+      "UnitTalk_JPN": "噂には聞いていましたが…本当だったとは！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_ICECREAMSHOP_OWNER"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "어머, 우리 집을 처음 와 본다구? ",
+      "UnitTalk_JPN": "まぁ、初めてのご来店かしら？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_ICECREAMSHOP_OWNER"
+      ],
+      "UnitTalk_KOR": "혹시 다른 지역에서 온 거니? ",
+      "UnitTalk_JPN": "もしかして、他の地域から来たの？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "네. 전 서부 탈환대 대원이거든요. ",
+      "UnitTalk_JPN": "はい。西部奪還隊の隊員なんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "척박한 서부지대에서는 이렇게 달콤하고 맛있는 간식들을 구하기 쉽지 않아요. ",
+      "UnitTalk_JPN": "荒れ果てた西部では、甘くておいしいスイーツはなかなかお目にかかれません。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "딱딱하고 퍽퍽한 건조 전투 식량을 먹는 날이 대부분이니까요. ",
+      "UnitTalk_JPN": "硬くて、パサパサの戦闘糧食を口にする日がほとんどなんですよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "언제든 곧장 전투태세에 돌입할 수 있어야 하니까 어쩔 수 없는 일이죠.  ",
+      "UnitTalk_JPN": "いつでも戦闘態勢に入れるようにしておかないといけませんから。仕方のないことなんです。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_ICECREAMSHOP_OWNER"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그런… 많이 힘들었겠구나…",
+      "UnitTalk_JPN": "そんな…大変な思いをしているのね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_ICECREAMSHOP_OWNER"
+      ],
+      "UnitTalk_KOR": "그래도 NOA에 있는 동안은 맛있는 걸 잔뜩 먹고 가렴.",
+      "UnitTalk_JPN": "せめて、NOAにいる間は美味しいものをたくさん食べるのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네! 으음… 무슨 맛을 고르지…? ",
+      "UnitTalk_JPN": "はい！う～ん…何の味にしようかな…？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "민트 초코맛…? 다크 카카오맛…? 아니지, 둘 다 먹으면 되잖아! ",
+      "UnitTalk_JPN": "チョコミント…？ダークカカオ…？ううん、どっちも食べちゃおう！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "헤헤, 이렇게 행복한 고민은 처음 해봐요. ",
+      "UnitTalk_JPN": "ふふ、こんな幸せな悩みは初めてです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "친한 동료도 함께 왔다면 좋아했을 텐데…! ",
+      "UnitTalk_JPN": "仲良しの仲間も連れてこれたらよかったのになぁ…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "간식거리를 정말 좋아하던 친구거든요.",
+      "UnitTalk_JPN": "甘いものが大好きな子なんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여기 있었다면… 눈이 커다래져서는 다섯 가지 맛을 동시에 먹으려 했을걸요!",
+      "UnitTalk_JPN": "もしここにいたら…目を輝かせて、一気に5つの味を食べようとしてたと思います！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_ICECREAMSHOP_OWNER"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하하! 다음에 올 때 같이 오렴. ",
+      "UnitTalk_JPN": "あははっ！今度連れておいでね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아… 저도 그러고 싶은데, 아쉽게도 그럴 수는 없어요. ",
+      "UnitTalk_JPN": "あっ…そうしたいのは山々なんですが… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_ICECREAMSHOP_OWNER"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으응? ",
+      "UnitTalk_JPN": "うん？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그게… 그 동료는 지난 방어전에서 그만… ",
+      "UnitTalk_JPN": "それが…その仲間は、この前の防衛戦で、もう… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "정말이지, 서부 탈환대원답게 용감하게 싸운 친구였는데…",
+      "UnitTalk_JPN": "西部奪還隊らしく、勇敢に戦って…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_ICECREAMSHOP_OWNER"
+      ],
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "에헤헤, 혹시 제가 너무 어두운 이야기를 했나요? ",
+      "UnitTalk_JPN": "えへへ、暗い話をしてしまいましたね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "저희한테는 그냥 이게 일상이라서 별생각 없이 말했던 건데… ",
+      "UnitTalk_JPN": "私たちにとっては日常なので、つい口にしてしまいました… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "제가 생각이 짧았네요. ",
+      "UnitTalk_JPN": "すみません。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "하지만 걱정하지 마세요…! ",
+      "UnitTalk_JPN": "でも、ご心配なく…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "저희 서부 탈환대는 무슨 일이 있어도 좌절하지 않으니까요. ",
+      "UnitTalk_JPN": "西部奪還隊は、どんなことがあっても挫けませんから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "반드시 고향을 탈환해서 사람들을 다시 행복하게 만들 거예요.",
+      "UnitTalk_JPN": "必ず故郷を奪還して、みんなを幸せにしないと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "그러고 나면, 다른 동료들이랑 맛있는 간식을 잔뜩 먹을 수 있겠죠!",
+      "UnitTalk_JPN": "そうすれば…他の仲間たちも、おいしいスイーツをたくさん食べられるようになるでしょうね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "기대해주세요. ",
+      "UnitTalk_JPN": "楽しみにしていてください。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "그땐, 동료들을 한가득 데리고 또 올 테니까요. ",
+      "UnitTalk_JPN": "その時は、仲間をたくさん連れてきますから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "자, 이제 계산해주세요 사장님. ",
+      "UnitTalk_JPN": "さぁ、お会計をお願いします。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "아이스크림. 얼마였죠?",
+      "UnitTalk_JPN": "アイスクリーム、おいくらでしたっけ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_ICECREAMSHOP_OWNER"
+      ],
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…훌쩍. 누, 눈물이 멈추질 않아서… ",
+      "UnitTalk_JPN": "…ぐすっ。な、涙が止まらないわ… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_ICECREAMSHOP_OWNER"
+      ],
+      "UnitTalk_KOR": "아, 계산은 필요 없단다. ",
+      "UnitTalk_JPN": "お会計は大丈夫よ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_ICECREAMSHOP_OWNER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "오늘 아이스크림은 열심히 싸운 너를 위한 선물로 줄게. ",
+      "UnitTalk_JPN": "一生懸命戦ったあなたへのプレゼントよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_ICECREAMSHOP_OWNER"
+      ],
+      "UnitTalk_KOR": "다음엔 꼭, 동료들을 데려오렴! 알겠지? ",
+      "UnitTalk_JPN": "今度は必ず、仲間も連れておいでね。分かったかしら？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "엣, 에에… 정말 그래도 괜찮은가요? ",
+      "UnitTalk_JPN": "えっ、そんな…本当にいいんですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "음~! 맛있어…! ",
+      "UnitTalk_JPN": "う～ん！おいしい…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장님, 이거 진짜 맛있네요! ",
+      "UnitTalk_JPN": "団長さん、本当においしいですね！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "특히 이 민트 초코! 알싸한 민트 맛이랑 달콤한 초코가 오묘하게 어우러진 맛… ",
+      "UnitTalk_JPN": "特にこのチョコミント！甘いチョコと、爽やかなミントのハーモニー… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "흐응~ 역시 서부의 부실한 간식거리들이랑은 차원이 다르구나…?",
+      "UnitTalk_JPN": "ふ～ん。やっぱり、西部のお粗末なものとは次元が違うのね…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리디아는 행복한 표정으로 아이스크림을 입에 물고 우물거렸다. ",
+      "UnitTalk_JPN": "リディアは幸せそうにアイスクリームを口に含み、もごもごと何か言っている。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장님도 한 입 드실래요? ",
+      "UnitTalk_JPN": "団長さんも一口いかがですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "아, 하세요. 아~",
+      "UnitTalk_JPN": "あーんしてくださいね。はい、あーん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아냐, 리디아. 많이 먹어.",
+          "JumpAnchorStringId_JPN": "いや、リディアが食べていいよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩌면 나는 단편적인 모습만으로 리디아를 오해하고 있었던 게 아닐까?",
+      "UnitTalk_JPN": "もしかしたら私は、断片的な部分だけを見て、リディアのことを誤解していたのかもしれない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "척박한 서부 지대에서 처절한 투쟁을 이어왔던 그녀다. ",
+      "UnitTalk_JPN": "荒れ果てた西部で、壮絶な戦いを続けてきたリディア。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "삶의 방식이 다소 거칠고 냉소적으로 보이는 건 지극히 당연한 일일지도 모른다. ",
+      "UnitTalk_JPN": "荒々しく皮肉めいた生き方に見えるのも、致し方ないことなのかもしれない。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 여전히 그녀의 가슴 속에는 따뜻한 마음이-",
+      "UnitTalk_JPN": "それでも、リディアには温かい心が──",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으음~ 역시, 소문대로 NOA 사람들은 순진하다니까요. ",
+      "UnitTalk_JPN": "う～ん。やっぱり、NOAの人ってお人好しなんですね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…?!",
+          "JumpAnchorStringId_JPN": "…！？"
+        }
+      ]
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "겨우 이런 적당한 이야기 몇 마디로 아이스크림을 공짜로 얻다니! ",
+      "UnitTalk_JPN": "ちょっと適当な話をしただけで、アイスクリームがタダで食べられるなんて！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "후후… 덕분에 활동 자금도 꽤 많이 아꼈네요. ",
+      "UnitTalk_JPN": "ふふ…おかげで、活動資金をかなり節約できました。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "전부 거짓말이었어?!?!",
+          "JumpAnchorStringId_JPN": "ぜんぶ嘘だったのか！？！？"
+        }
+      ]
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "음? 아, 전사한 동료 이야기 말인가요?",
+      "UnitTalk_JPN": "はい？あぁ、戦死した仲間のことですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "흐응~ 그래도 아주 없는 말은 안 했다구요?",
+      "UnitTalk_JPN": "ふ～ん。まぁ、まったくの嘘ではありませんよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "실제로 지난 방어전에서 전사한 대원이 있긴 했으니까.",
+      "UnitTalk_JPN": "前回の防衛戦で、戦死した隊員は本当にいましたから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "딱히 친한 사이는 아니었지만요. 그 녀석, 단 거 싫어하지 않았나…?",
+      "UnitTalk_JPN": "別に、仲がよかった訳ではないですけどね。あいつ、甘いもの嫌いだったっけ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…고향을 탈환하겠다는 포부는?",
+          "JumpAnchorStringId_JPN": "…故郷を奪還したいって気持ちは？"
+        }
+      ]
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "서부에서 태어났다고 전부 고향에 애착을 가져야 하는 건 아니잖아요?",
+      "UnitTalk_JPN": "西部に生まれたからって、全員が故郷を愛さないといけない訳じゃないでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "솔직히 조금 바보 같다고 생각할 때도 있어요. ",
+      "UnitTalk_JPN": "正直、ちょっと馬鹿みたいって思う時もあるんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "뭘 대단한 땅이라고 그렇게들 집착하는 걸까요?",
+      "UnitTalk_JPN": "たかが土地に、あそこまで執着する必要があるんですかね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "망한 건 망한 거고, 새로운 곳에서 새 시작을 하면 될 텐데. ",
+      "UnitTalk_JPN": "失敗は失敗なんです。新しい場所で、また新たに始めればいいものを。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그렇지 않아요? ",
+      "UnitTalk_JPN": "そう思いませんか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "사람들을 행복하게 만들겠다는 꿈은!!!",
+          "JumpAnchorStringId_JPN": "みんなを幸せにするって夢は！！"
+        }
+      ]
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "에에. 그런 걸 어떻게 다 신경 써요? ",
+      "UnitTalk_JPN": "えぇ？そんなこと、いちいち構っていられませんよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "단장님은 이 세상의 불행을 전부 홀로 받아낼 셈인가요? ",
+      "UnitTalk_JPN": "団長さんは、この世の不幸を一人で受け止めるつもりですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "라비스타 전체의 불쌍한 사람들을 구해주려면 몸이 10개가 있어도 부족할걸요?",
+      "UnitTalk_JPN": "ラビスター中の哀れな人を救うには、身体がいくつあっても足りませんよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "남의 감정을 이용하다니…",
+          "JumpAnchorStringId_JPN": "他人の感情を利用するなんて…"
+        }
+      ]
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "휴우! 그게 그렇게 나쁜 짓인가요?",
+      "UnitTalk_JPN": "ふぅ！そんなに悪いことですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그야 당연히-",
+          "JumpAnchorStringId_JPN": "そりゃ、当然──"
+        }
+      ]
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "저는 아이스크림을 공짜로 얻었고-",
+      "UnitTalk_JPN": "私はアイスクリームをタダでもらって──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저분은 본인이 베푼 상냥함에 만족했잖아요? ",
+      "UnitTalk_JPN": "あの方は、自分の善行に満足してたじゃないですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "둘 다 원하는 걸 얻은 해피엔딩인걸요. ",
+      "UnitTalk_JPN": "二人とも願うものが手に入って、ハッピーエンドって訳です。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "전… 어느 부분이 나쁜지 전혀 모르겠는걸요~?",
+      "UnitTalk_JPN": "私には何が悪いのか…サッパリ分かりませんけど？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "원래 세상이란 건 말이죠 단장님. ",
+      "UnitTalk_JPN": "団長さん、世の中っていうものはですね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "서로 속고 속이는 게 당연한 이치라구요.",
+      "UnitTalk_JPN": "お互い騙し合って当然なんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "다들 원하는 걸 얻기 위해 그럴듯한 가면을 쓰고 마음에도 없는 말을 하곤 하잖아요?",
+      "UnitTalk_JPN": "みんな望みを叶えるために、偽りの仮面を被って、心にもないことを言ったりするじゃないですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건…",
+          "JumpAnchorStringId_JPN": "それは…"
+        }
+      ]
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그러는 단장님도, 사실 저한테 뭔가 숨기고 있을지도 모르죠. ",
+      "UnitTalk_JPN": "そういう団長さんも、実は私になにか隠してたりして。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내가 뭔가 숨기고 있다고?",
+          "JumpAnchorStringId_JPN": "私に隠し事があるって言うのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "그거야 저도 모르죠. ",
+      "UnitTalk_JPN": "さぁ、私には分かりませんよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "글쎄요… 단장님은 어떤 비밀을 숨기고 있을까요?",
+      "UnitTalk_JPN": "そうですね…団長さんは、どんな秘密を隠しているんでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "음… 사실 단장님이 외계에서 온 외계인이라던가? ",
+      "UnitTalk_JPN": "う～ん…実は、他の世界から来た宇宙人だったりして。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…?",
+          "JumpAnchorStringId_JPN": "…？"
+        }
+      ]
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "헤헤, 농담이에요 농담~ ",
+      "UnitTalk_JPN": "ふふ。冗談ですよ、冗談～。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "말이 그렇다는 거죠. 말이. ",
+      "UnitTalk_JPN": "ただのたとえ話です。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "어디 그럼… 다음은 어디로 갈까요?",
+      "UnitTalk_JPN": "それじゃ…次はどこに行きましょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "기왕 NOA에 왔을 때 맛있는 것들을 잔뜩 먹어둬야 하는데… ",
+      "UnitTalk_JPN": "せっかくNOAに来たんですし、おいしいものをたくさん食べたいんですけど… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>카페 스트레가</color>에서 달콤한 파르페?",
+      "UnitTalk_JPN": "<color=#F7BE45>カフェ・ストレガ</color>で甘いパフェ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "아니면 그 유명하다는 <color=#F7BE45>스트릿 베이커스</color>에 빵을 사러 가는 건 어때요…?",
+      "UnitTalk_JPN": "それとも、あの有名な<color=#F7BE45>ストリート・ベイカース</color>にパンを買いにいくのはどうですか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리디아는 경쾌한 발걸음으로 앞서 나갔다. ",
+      "UnitTalk_JPN": "リディアは軽い足取りで、前を歩き始めた。 ",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

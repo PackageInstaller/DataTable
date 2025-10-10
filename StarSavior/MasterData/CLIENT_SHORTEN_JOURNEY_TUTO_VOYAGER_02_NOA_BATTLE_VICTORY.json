@@ -1,0 +1,27 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_ASTRO_SANCTUM.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "보이저 구원단의 단장으로 취임했다. 이제부터 여정이 시작된다.",
+      "UnitTalk_JPN": "ボイジャー救援団の団長に就任した。これから旅が始まる。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: CENTRAL/CRAFT_TAB_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "CraftCategoryId" : 10001,
+          "CraftCategoryIcon" : "ICON_CRAFT_EQUIP_DUMMY.png",
+          "CraftCategoryName" : "CRAFT_MAIN_TAB_10001",
+          "CraftTabId" : 11001,
+          "CraftTabName" : "CRAFT_MIDDLE_TAB_10001"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "CraftTabId" : 11002,
+          "CraftTabName" : "CRAFT_MIDDLE_TAB_10002"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "CraftTabId" : 11003,
+          "CraftTabName" : "CRAFT_MIDDLE_TAB_10003"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "CraftCategoryId" : 90001,
+          "CraftCategoryIcon" : "ICON_CRAFT_MATERIAL_DUMMY.png",
+          "CraftCategoryName" : "CRAFT_MAIN_TAB_90001",
+          "CraftTabId" : 91001,
+          "CraftTabName" : "CRAFT_MIDDLE_TAB_90001"
+        }
+    ]
+}

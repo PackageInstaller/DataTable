@@ -1,0 +1,1521 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_LPU_POST_06",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "견학 약속을 잡은 날이 왔다.",
+      "UnitTalk_JPN": "いよいよ会社見学の日だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "헤드헌터의 안내를 받아, 베라와 함께 웰즈 딜리버리 서비스의 아침을 구경해보았다.",
+      "UnitTalk_JPN": "ヘッドハンターの案内を受け、ベラと一緒にウェルズ・デリバリーサービスを見学して回った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_DEEP_FIELD_ENTRANCE.png"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "CameraOffset": "TWIN_7",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": " …어?",
+      "UnitTalk_JPN": "…あれ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 배달부들이 이제야 출근하시네요?",
+      "UnitTalk_JPN": "配達屋のみなさんは、ずいぶん遅く出勤されるんですね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 지금쯤이면 의뢰가 다 사라졌을 텐데…",
+      "UnitTalk_JPN": "この時間だと、もう依頼はなくなってると思うんですけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "UnitNameString": [
+        "SI_HEADHUNTER"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "우리 회사는 배달부 협회와 계약을 맺어서 의뢰를 직접 공급받습니다. ",
+      "UnitTalk_JPN": "弊社は配達屋協会と契約を結び、依頼を直接受けているんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "UnitNameString": [
+        "SI_HEADHUNTER"
+      ],
+      "UnitTalk_KOR": " 자잘한 건 회사가 전부 처리하고, 배달부들은 배달에 집중하는 전문화 분업이죠.",
+      "UnitTalk_JPN": "雑務はすべて会社で処理し、配達屋は配達に専念するという完全分業です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "UnitNameString": [
+        "SI_HEADHUNTER"
+      ],
+      "UnitTalk_KOR": " 그저 물건을 최대한 빠르게 목적지로 옮긴다. 배달부는 거기에만 신경 쓰면 되는 겁니다.",
+      "UnitTalk_JPN": "配達屋に求められるのは、荷物をできるだけ早く目的地まで運ぶこと。それだけです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 그, 그렇구나…",
+      "UnitTalk_JPN": "そ、そうだったんだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAZA.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_3",
+      "UnitTalk_KOR": "장갑과 화기로 중무장한 차량이 여럿 늘어서 있었다.",
+      "UnitTalk_JPN": "装甲と火器で重武装された車両が何台も並んでいた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": " 헉, 이, 이거! ",
+      "UnitTalk_JPN": "こ、これはっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "UnitNameString": [
+        "SI_HEADHUNTER"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " <color=#F7BE45>랜드 포트리스</color> 모델입니다. 베라 양이 예전에 이걸 몰았다고 들었는데요?",
+      "UnitTalk_JPN": "<color=#F7BE45>ランド・フォートレス</color>モデルです。ベラ様も以前乗っていらっしゃったのでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 네, 맞아요!",
+      "UnitTalk_JPN": "そうなんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " …정확히는 스승님의 차였지만요.",
+      "UnitTalk_JPN": "…正確には、師匠の車でしたけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "UnitNameString": [
+        "SI_HEADHUNTER"
+      ],
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 에헤헤, 여기서 보니 엄청 반갑네요…",
+      "UnitTalk_JPN": "えへへ、久しぶりに見ました…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "UnitNameString": [
+        "SI_HEADHUNTER"
+      ],
+      "UnitTalk_KOR": " 이번에 국제 배송 확대 계획을 짜면서 꽤 여러 대를 사들였습니다.",
+      "UnitTalk_JPN": "国際配送の拡大計画のために、今回かなりの台数を購入したんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "UnitNameString": [
+        "SI_HEADHUNTER"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 저희에게 오시면 저 모델이 <color=#F7BE45>베라 양의 첫 차</color>가 될 수 있어요.",
+      "UnitTalk_JPN": "私どもの会社にいらっしゃれば、あの車が<color=#F7BE45>ベラさんにとって初めてのマイカー</color>になるかもしれませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "UnitNameString": [
+        "SI_HEADHUNTER"
+      ],
+      "UnitTalk_KOR": " 작고 허술한 중고차 따위가 아니라요.",
+      "UnitTalk_JPN": "小さくて粗悪な中古車などではなく…です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": " 저의 랜드 포트리스...",
+      "UnitTalk_JPN": "私のランド・フォートレス…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "견학을 마치고 나왔다.",
+      "UnitTalk_JPN": "見学を終え、外に出た。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어땠어, 베라?",
+          "JumpAnchorStringId_JPN": "どうだった？"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": " …으으으음.",
+      "UnitTalk_JPN": "…うむむむ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 여러 생각이 들었는데요…",
+      "UnitTalk_JPN": "いろいろと考えたんですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " …응?",
+      "UnitTalk_JPN": "…あれ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "베라가 문득 거리 한 쪽에 시선을 고정했다.",
+      "UnitTalk_JPN": "ベラはふと、通りに視線を移した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 저기 저 분, 자전거에 웰즈 딜리버리 서비스의 로고가 찍혀 있어요.",
+      "UnitTalk_JPN": "あそこにいる方、自転車にウェルズ・デリバリーサービスのロゴが刻印されていますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "멈춰섰네.",
+          "JumpAnchorStringId_JPN": "止まったよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "저 집에 배달을 하려나봐.",
+          "JumpAnchorStringId_JPN": "あの家に配達するみたいだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": " 하지만 자전거에서 안 내리시는데요?",
+      "UnitTalk_JPN": "でも、自転車から降りませんね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": " 집 정문까지 거리가 조금 있는데, 소포를 어떻게 배달하시려고...",
+      "UnitTalk_JPN": "玄関まで少し距離があるのに、どうやって荷物を届けるんでしょうか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " ...?",
+      "UnitTalk_JPN": "…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_SWOOSH_03.wav",
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": " 으에에엣?!",
+      "UnitTalk_JPN": "ふえええっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "던졌어!",
+          "JumpAnchorStringId_JPN": "投げた！"
+        }
+      ]
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_37.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다음 순간 바람 소리와 함께 베라가 뛰어올랐다. ",
+      "UnitTalk_JPN": "次の瞬間…風と共にベラが舞い上がった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_07.wav",
+      "UnitTalk_KOR": "날아가는 소포를 끌어안고 멋지게 착지했다. ",
+      "UnitTalk_JPN": "そして投げられた荷物をキャッチし、見事に着地した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": " 소, 소포를 마구 던지면 어떻게 해요?!",
+      "UnitTalk_JPN": "に、荷物を投げるなんて、どういうつもりですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 여기 파손주의라고 적혀 있잖아요!",
+      "UnitTalk_JPN": "われもの注意って、ここに書いてあるじゃないですか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": " 유리 제품이기라도 하면...!",
+      "UnitTalk_JPN": "もしガラス製品だったら…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": " 뭐야, 얘는. 소포 주인인가? ",
+      "UnitTalk_JPN": "なんだよコイツ。荷物の受取人か？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitTalk_KOR": " 아니야? 그럼 뭘 그렇게 신경 쓰고 있어?",
+      "UnitTalk_JPN": "違うのか？だったら放っておいてくれよ、他人の荷物だろ？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitTalk_KOR": " 불만 있으면 사무소의 고객 대응팀한테 말해.",
+      "UnitTalk_JPN": "文句があんなら、お客様センターに言ってくれよな。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitTalk_KOR": " 아, 괜히 떠드느라 시간 낭비했네. 할당량 맞춰야 하는데!",
+      "UnitTalk_JPN": "あーあ、コイツのせいで時間を無駄にしちまったよ。ノルマをこなさねぇといけないってのに！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 자, 잠깐만요!",
+      "UnitTalk_JPN": "ちょ、ちょっと待ってください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " ...가버리셨다.",
+      "UnitTalk_JPN": "行っちゃった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OFFICE_01.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "여기가 고객 대응 사무소인가 봐요.",
+      "UnitTalk_JPN": "ここがお客様センターのようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 와아, 사람들이 엄청 많...아요?",
+      "UnitTalk_JPN": "わぁ、人がいっぱい…ですね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": " 어라?",
+      "UnitTalk_JPN": "あれ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_D",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": " 1년 전에 구매한 복숭아를 지금 배달하면 어쩌자는 거예요?!",
+      "UnitTalk_JPN": "一年前に注文した桃を、今頃になって配達するなんてどうかしてるわ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_D",
+      "UnitNameString": [
+        "SI_RECEPTIONIST"
+      ],
+      "UnitTalk_KOR": " 일단 배달됐다는 게 중요한 거 아닐까요? ",
+      "UnitTalk_JPN": "まずは、配達されたという事実が重要なのではないでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_D",
+      "UnitNameString": [
+        "SI_RECEPTIONIST"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 아무리 시간이 걸리더라도, 결국 운명의 상대는 자신에게 온다는 거죠. ",
+      "UnitTalk_JPN": "どんなに時間がかかったとしても…運命の相手というものは、最終的に自分の所にやってくるものです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": " 무슨 싸구려 연애 소설 같은 소리를 하고 있어요?!",
+      "UnitTalk_JPN": "安っぽい恋愛小説みたいなこと言わないでよ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": " 지금 당장 우리 집으로 와서 도로 가져가세요!",
+      "UnitTalk_JPN": "今すぐ私の家に来て、回収してください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_D",
+      "UnitNameString": [
+        "SI_RECEPTIONIST"
+      ],
+      "UnitTalk_KOR": " 앗, 1분 상담 시간 다 지났네요.",
+      "UnitTalk_JPN": "あっ、1分の相談時間を過ぎてしまいましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_D",
+      "UnitNameString": [
+        "SI_RECEPTIONIST"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 다음 분 들어와 주세요-",
+      "UnitTalk_JPN": "お次の方、どうぞ～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": " … ",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "이해할 수가 없어요…",
+      "UnitTalk_JPN": "理解できません…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFileName": "ILLUST_BG_PLAZA.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_7",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": " 자, 잠깐만요, 선생님! ",
+      "UnitTalk_JPN": "あの、待ってください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": " 응?",
+      "UnitTalk_JPN": "なんだね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "차에 화물을 너무 마, 많이 실은 것 같은데요...?",
+      "UnitTalk_JPN": "車に荷物を積み過ぎではないでしょうか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 이대로 출발하셨다가는 화물과 차량 모두 문제가 생길 거예요...",
+      "UnitTalk_JPN": "このまま出発すれば、車も荷物も大変なことになってしまいます…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 또 적을 만났을 때 회피 기동도 어려워지고, 화물의 내구성에도 악영향을 끼치겠지.",
+      "UnitTalk_JPN": "敵に遭遇した際の回避機動も難しくなり、荷物にも悪影響を及ぼすだろうね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitTalk_KOR": " 위쪽 소포들이 쏟아져서 손망실되는 경우도 많고.",
+      "UnitTalk_JPN": "上の方の小包が崩れ落ちて、破損したり紛失するリスクもあるだろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": " 전부 아시면서 어째서...?",
+      "UnitTalk_JPN": "ぜんぶ分かっているのに、どうして…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 화물은 내 목숨이다, 험지 배달부의 철칙이잖아요.",
+      "UnitTalk_JPN": "荷物は自分の命。それが荒地の配達屋の鉄則でしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 뭐야, 순진해 보이는 아가씨인데 험지 배달부인가?",
+      "UnitTalk_JPN": "なんだい。あどけないお嬢さんかと思ったが、荒地の配達屋だったのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitTalk_KOR": " 나도 알지, 하지만 어쩌겠나. ",
+      "UnitTalk_JPN": "わしだって分かっておるが、仕方ないことなんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitTalk_KOR": " 이 정도 과적해서 운행하지 않으면 할부금을 못 갚는데.",
+      "UnitTalk_JPN": "こうやって過積載しないと、支払いができないんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": " 할부금요...?",
+      "UnitTalk_JPN": "支払い…ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 웰즈 딜리버리 서비스 사에서 제공하는 장비는... 말하자면 리스 같은 거야.",
+      "UnitTalk_JPN": "ウェルズ・デリバリーサービスから提供される機材は、いわばリースのようなものなんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitTalk_KOR": " 매달 수입에서 일정 비율을 공제해 가지.",
+      "UnitTalk_JPN": "毎月の収入から一定の金額が差し引かれてね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitTalk_KOR": " 그리고 10년 내에 퇴사할 경우 남은 가격과 위약금을 모두 내야하고.",
+      "UnitTalk_JPN": "そして10年以内に退社する場合は、残りの代金と違約金をすべて支払わなければならないんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitTalk_KOR": " 뭐, 그게 유일한 단점이지만 말이야.",
+      "UnitTalk_JPN": "まあ、欠点はそれだけだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitTalk_KOR": "지불만 끝나면 그 뒤부터는 전부 본인 수익이 되니까.",
+      "UnitTalk_JPN": "支払いさえ終われば、それ以降はすべて自分の利益になるからね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_COURIER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 개인 사업자로 뛰는 서러움에 비하면, 감당할 만하지.",
+      "UnitTalk_JPN": "個人事業主として働く辛さに比べれば、耐えられるものさ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " ...",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "생각이 많아 보이네, 베라",
+          "JumpAnchorStringId_JPN": "思うところがあるみたいだね。"
+        }
+      ]
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 네에... ",
+      "UnitTalk_JPN": "はい…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": " 에헤헤, 배달부로서는 편한 이야기들이네요. ",
+      "UnitTalk_JPN": "えへへ、配達屋にとってはいい話ばかりですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "여러가지 편의, 호화로운 장비들…",
+      "UnitTalk_JPN": "便利な点も多いですし、豪華な機材まで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 하지만, 하지만 뭔가가 마음에 걸려요.",
+      "UnitTalk_JPN": "でも、なにか引っかかるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " ...제가 너무 순진한 걸까요?",
+      "UnitTalk_JPN": "…私が世間知らずなだけなんでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 아까 그 분의 말씀처럼, 사소한 것들을 생각하느라 좋은 기회를 놓치는 걸까요?",
+      "UnitTalk_JPN": "あの方がおっしゃっていたように…些細なことを気にしすぎて、チャンスを逃してしまうんでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 끙...",
+      "UnitTalk_JPN": "うぅん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "확실히 어려운 문제다…",
+      "UnitTalk_JPN": "たしかに難しい問題だ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "베라와 함께 고민하던 중, 문득 궁금해졌다.",
+      "UnitTalk_JPN": "ベラと一緒に悩んでいるうちに、ふと疑問が浮かんできた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러고 보니 베라는 왜 도시 배달부가 되었어?",
+          "JumpAnchorStringId_JPN": "そういえば、ベラはなんで街の配達屋になったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "둘은 조금 다르잖아.",
+          "JumpAnchorStringId_JPN": "荒地の配達屋とはまた違った仕事なのに。"
+        }
+      ]
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": " 네? 그야, 제가 하던 일이 배달이었으니까...",
+      "UnitTalk_JPN": "えっ？だって、私は配達の仕事をしてましたから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " ...저라면 다른 일도 가능했을 거라고요?",
+      "UnitTalk_JPN": "…私なら他の仕事もできたはずだっておっしゃるんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 그, 그런가요? 한 번도 그렇게 생각해 본 적은 없는데...",
+      "UnitTalk_JPN": "そ、そうでしょうか？そんなこと、考えたこともなかったので…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": " 으음…",
+      "UnitTalk_JPN": "うーん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": " 잘 모르겠어요. 그냥, 제가 잘 아는 일이라서… 가 아닐까요?",
+      "UnitTalk_JPN": "どうしてでしょう。ただ、よく知っている仕事だったから…ですかね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그 뿐일까?",
+          "JumpAnchorStringId_JPN": "…本当にそれだけ？"
+        }
+      ]
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩌면 거기에 해답이 있을지도 모른다는 생각이 들었다.",
+      "UnitTalk_JPN": "もしかしたら、そこに答えがあるのかもしれない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "조금만 더 고민해 보자.",
+          "JumpAnchorStringId_JPN": "もう少し考えてみよう。"
+        }
+      ]
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 네에…",
+      "UnitTalk_JPN": "はい…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "베라와 함께 숙소에 돌아왔다.",
+      "UnitTalk_JPN": "そうして、ベラと一緒に宿へと戻った。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 126,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.2,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

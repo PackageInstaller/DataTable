@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_23B_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23B_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23B_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23B_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "경쟁 평가전은 <color=#F7BE45>모나스테르 기사단</color>의 샤를과 카르멘이 상대다.",
+      "UnitTalk_JPN": "対人試験は<color=#F7BE45>モナスティル騎士団</color>のシャルルとカルメンが相手だ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

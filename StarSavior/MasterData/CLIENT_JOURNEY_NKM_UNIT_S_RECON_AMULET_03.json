@@ -1,0 +1,2195 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_A"
+      ],
+      "UnitTalk_KOR": "히잉… 괜찮아? 나 대신 넘어져서… 히익?!",
+      "UnitTalk_JPN": "ヒック…大丈夫？あたしの代わりに転んじゃったけど…きゃあ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_B"
+      ],
+      "UnitTalk_KOR": "무릎에 나뭇가지가 박혀서 피가…!?",
+      "UnitTalk_JPN": "ひざに木の枝が刺さって、血が…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_AB"
+      ],
+      "UnitTalk_KOR": "흑, 흐아아아앙!",
+      "UnitTalk_JPN": "う、うわーーーん！！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_YOUNG_LUGH"
+      ],
+      "UnitTalk_KOR": "울지 마십시오.",
+      "UnitTalk_JPN": "泣かないでください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_A"
+      ],
+      "UnitTalk_KOR": "흑… 응?",
+      "UnitTalk_JPN": "ヒック…うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_YOUNG_LUGH"
+      ],
+      "UnitTalk_KOR": "괜찮습니다. 아프지 않습니다.",
+      "UnitTalk_JPN": "大丈夫です。痛くないので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_B"
+      ],
+      "UnitTalk_KOR": "하지만… 나뭇가지가 박혔는데…?",
+      "UnitTalk_JPN": "でも…木が刺さってるんだよ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHOOSH_SWORD_02.wav",
+      "UnitNameString": [
+        "SI_YOUNG_LUGH"
+      ],
+      "UnitTalk_KOR": "뽑으면 됩니다. 이렇게.",
+      "UnitTalk_JPN": "抜けばいいのです。こうやって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_A"
+      ],
+      "UnitTalk_KOR": "어…? 그걸… 맨손으로…?",
+      "UnitTalk_JPN": "えっ…？それを手で…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_B"
+      ],
+      "UnitTalk_KOR": "아프지 않다고 해도… 그건…",
+      "UnitTalk_JPN": "痛くないって言っても…それは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OFFICE_01.png",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "SURPRISE",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "핫!",
+      "UnitTalk_JPN": "ハッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "하아… 하아…!",
+      "UnitTalk_JPN": "ハァ…ハァ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "……꿈이군요.",
+      "UnitTalk_JPN": "……夢でしたか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_BELL.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잡화점에 들렀는데 익숙한 모습을 발견했다.",
+      "UnitTalk_JPN": "雑貨屋に立ち寄ると、ルーを見かけた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "안녕, 루그.",
+          "JumpAnchorStringId_JPN": "やっほー、ルグ。"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "안녕하십니까, 단장님. 어쩐 일이십니까?",
+      "UnitTalk_JPN": "お疲れ様です、団長。ここにはどういったご用件ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…그렇군요. 생활용품을 구매하러 오셨군요.",
+      "UnitTalk_JPN": "…なるほど。生活用品を買いに来られたのですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "예? 저 말씀이십니까?",
+      "UnitTalk_JPN": "はい？私ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "물건을 구매하러 왔습니다.",
+      "UnitTalk_JPN": "必要な物を買いに来ました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 178,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…침묵이 이어졌다.",
+      "UnitTalk_JPN": "…沈黙が流れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어떤 걸 사려는데?",
+          "JumpAnchorStringId_JPN": "必要な物って？"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "활력 포션과 초코바입니다.",
+      "UnitTalk_JPN": "活力ポーションとチョコバーです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "자양강장제와 당분. 야근에 필수죠.",
+      "UnitTalk_JPN": "滋養強壮剤と糖分…残業の必須アイテムでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "선반 위의 포대자루는 한눈에 봐도 루그의 몸통보다 커다랬다.",
+      "UnitTalk_JPN": "レジカウンターに置かれた麻袋は、ルーの身体よりも一回り大きかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "팀원들이 먹을 것도 산 거야?",
+          "JumpAnchorStringId_JPN": "チームメンバーの分も買ったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "개인 비품입니다만?",
+      "UnitTalk_JPN": "私個人のものですが？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그, 그렇구나! 한 달 치인가 보네?",
+          "JumpAnchorStringId_JPN": "そ、そっか！一か月分買ったんだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "한 달…?",
+      "UnitTalk_JPN": "一か月分…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "오늘 먹을 겁니다만…",
+      "UnitTalk_JPN": "一日分ですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 179,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…어색한 침묵이 흐른다.",
+      "UnitTalk_JPN": "…気まずい沈黙が流れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…민감한 주제일지도 모르지만.",
+          "JumpAnchorStringId_JPN": "…この話題はタブーかもしれないけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그만큼 먹으면… 살이…",
+          "JumpAnchorStringId_JPN": "そんなに食べたら…太るんじゃ…"
+        }
+      ]
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "단장님. 생물은 활동하는데 많은 에너지를 소모합니다.",
+      "UnitTalk_JPN": "団長。生き物は、活動するのに多くのエネルギーを消費します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "특히 포도당.",
+      "UnitTalk_JPN": "特にブドウ糖。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "당이 부족하면 머리가 돌아가지 않습니다. 업무에 집중할 수 없게 되죠.",
+      "UnitTalk_JPN": "糖分が不足すると、頭がうまく働きません。それでは、業務に支障が出てしまうでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "한정된 시간을 효율적으로 사용하려면 당 섭취는 필수입니다.",
+      "UnitTalk_JPN": "限られた時間を有効活用するためには、糖分補給が不可欠です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그리고 양이 많다 하셨습니까? 저는 다르게 생각합니다.",
+      "UnitTalk_JPN": "そして量が多すぎるとおっしゃいましたか？私はそうは思いません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "평소에 외근을 자주 나가는 데다가 서류 업무, 야근까지 잦기에.",
+      "UnitTalk_JPN": "普段から外回りが多い上に、書類作業や残業も頻繁にしていますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "이 정도는 섭취해 줘야 신체기능을 유지할 수 있죠.",
+      "UnitTalk_JPN": "この程度は摂取しておかないと、身体機能を維持できません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "또한 저는 항상 체중과 상관없이 건강한 몸 상태를.",
+      "UnitTalk_JPN": "また、私は体重とは関係なく、いつも健康な体の状態を…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "철저하게.",
+      "UnitTalk_JPN": "徹底的にー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "완벽히.",
+      "UnitTalk_JPN": "完璧にー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "유지하고 있습니다.",
+      "UnitTalk_JPN": "維持しています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…민감한 주제였구나.",
+          "JumpAnchorStringId_JPN": "…やっぱりタブーだったか。"
+        }
+      ]
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그리고 단장님이 모르는 사실이 있습니다.",
+      "UnitTalk_JPN": "それに、団長がご存じでない事実があります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "저는 아무리 많이 먹어도 영양이 한곳으로 가죠.",
+      "UnitTalk_JPN": "私は、いくら食べても栄養が一点に集中するのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "눈치채셨습니까?",
+      "UnitTalk_JPN": "お気づきでしたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "한곳이라면…?!",
+          "JumpAnchorStringId_JPN": "一点ってことは…！？"
+        }
+      ]
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "그렇습니다.",
+      "UnitTalk_JPN": "そうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "머리카락입니다.",
+      "UnitTalk_JPN": "髪の毛です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "거기였나!",
+          "JumpAnchorStringId_JPN": "そこだったのか！"
+        }
+      ]
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…? 그 외에 다른 곳이 있습니까?",
+      "UnitTalk_JPN": "…？予想が外れたのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "설마 복부나 허벅지, 팔뚝이라 생각하셨습니까?",
+      "UnitTalk_JPN": "まさか腹部や太もも、二の腕だとお考えでしたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장님. 대답해 주십시오.",
+      "UnitTalk_JPN": "団長、お答えください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "저는.",
+      "UnitTalk_JPN": "私はー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "상세한 대답이.",
+      "UnitTalk_JPN": "詳しくー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "듣고 싶습니다.",
+      "UnitTalk_JPN": "お聞きしたいのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "등줄기로 식은땀이 흘러내린다.",
+      "UnitTalk_JPN": "背筋に冷や汗が流れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "구매한 물건과 루그의 짐을 들고 거리로 나왔다.",
+      "UnitTalk_JPN": "買ったものと、ルグの荷物を抱えて店を出た。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "제 짐은 제가 들겠습니다. 주십시오, 단장님.",
+      "UnitTalk_JPN": "団長、私のものは私が持ちます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…저번에 마수에게 팔을 물리지 않았냐고요?",
+      "UnitTalk_JPN": "…この間、魔獣に腕を噛まれたからとおっしゃるのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "괜찮습니다, 다 나았습니다.",
+      "UnitTalk_JPN": "大丈夫です、もう治りました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 166,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "전에 말씀드린 저희 가문의 체질 말입니다만, 다친 곳의 회복 속도도 남들보다 빠릅니다.",
+      "UnitTalk_JPN": "以前お伝えした一族の体質の件ですが、損傷部位の回復も並外れて早いのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 167,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "그러니 제가…",
+      "UnitTalk_JPN": "ですから私が…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…예?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "보답… 말씀입니까?",
+      "UnitTalk_JPN": "お返し…ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "저번에 마수에게서 날 구해줬잖아?",
+          "JumpAnchorStringId_JPN": "この前、魔獣から守ってくれただろ？"
+        }
+      ]
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "제가 아니더라도 누구나 할 수 있는 일이었습니다.",
+      "UnitTalk_JPN": "私でなくとも、誰にでもできたことです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "보답을 바라고 한 일도 아닙니다만.",
+      "UnitTalk_JPN": "見返りを求めて行動した訳でもありませんし。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "도와줘서 고마워.",
+          "JumpAnchorStringId_JPN": "助けてくれてありがとう。"
+        }
+      ]
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그렇게 말씀하시면…",
+      "UnitTalk_JPN": "そうおっしゃるなら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "알겠습니다. 단장님의 보답, 받아들이겠습니다.",
+      "UnitTalk_JPN": "承知しました。団長のお返し、受け入れましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "바로 사무실에 가는 거야?",
+          "JumpAnchorStringId_JPN": "今から事務所に戻るの？"
+        }
+      ]
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "예. 처리해야 할 업무가 남아있거든요.",
+      "UnitTalk_JPN": "はい。処理すべき業務が残っていますので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "단장님과 처음 만난 날 있었던 사건 때문에 팀원들과 야근하고 있습니다.",
+      "UnitTalk_JPN": "団長と出会った日に起こった事件のため、チームメンバーと残業をしています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "설치되었던 폭탄의 규모 등을 봤을 때 분명 더 큰 세력이 뒤에 있을 거라고 판단해서 조사 중입니다.",
+      "UnitTalk_JPN": "設置されていた爆弾を見るに、間違いなく大きな組織が背後にいます。そのため、現在調査を進めているのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 168,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여러모로 고생이네.",
+          "JumpAnchorStringId_JPN": "色々と大変だね。"
+        }
+      ]
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_02.mp3",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitTalk_KOR": "거기, 피해! 도망쳐!",
+      "UnitTalk_JPN": "そこ、どいてくれ！避けろー！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CAR_ENGINE.wav",
+      "UnitTalk_KOR": "소리가 들린 곳을 바라보자, 자동차가 사람이 다니는 길로 질주하고 있었다.",
+      "UnitTalk_JPN": "声が聞こえた方を見ると、車が歩道を暴走していた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 169,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "UnitMotion": "SAD",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "으아아앙! 언니!",
+      "UnitTalk_JPN": "うわぁぁん！おねえちゃん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "꺄아아악!",
+      "UnitTalk_JPN": "キャーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_03.wav",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitQuickSet": true,
+      "UnitPos": "POS3",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…실례하겠습니다!",
+      "UnitTalk_JPN": "…失礼します！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EXPLOSION_04.wav",
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "자동차가 자매와 부딪치기 직전, 루그가 몸을 날렸다.",
+      "UnitTalk_JPN": "車が姉妹にぶつかる直前、ルーが身を挺した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_12.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_2",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_YOUNGMAN"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "겨, 겨우 멈췄네…",
+      "UnitTalk_JPN": "や、やっと止まった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitTalk_KOR": "누구야?! 자동차를 난폭하게 모는 녀석…",
+      "UnitTalk_JPN": "誰じゃ！？乱暴に運転しおって…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 170,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "응? 운전석에 아무도 없잖아? 이, 이럴 수가 있나…?",
+      "UnitTalk_JPN": "なんだ？運転席に誰もいないじゃと？ど、どういうことじゃ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "벽에 들이박고 부숴진 자동차의 빈 운전석에는 뭔가가 거칠게 쓰여진 종이가 붙어있었다.",
+      "UnitTalk_JPN": "壁に衝突して大破した車の運転席には、何かが乱暴に書かれた紙が貼り付けられていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>인류는 벌을 받아야 한다. 신성장벽을 걷어라!</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>人類は罰せられるべきだ。<r=ホーリーワード>神聖なる防壁</r>をぶっ壊せ！</color>",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 174,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_YOUNGMAN"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "이봐, 이거…",
+      "UnitTalk_JPN": "こ、これは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>NOA 광장파</color>라고 했던 놈들이 하는 소리랑 똑같은 내용이잖아?",
+      "UnitTalk_JPN": "<color=#F7BE45>NOA広場派</color>とかいう奴らが言っておったことと、同じじゃな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 176,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitTalk_KOR": "그 녀석들, 모두 붙잡힌 게 아니었나…?!",
+      "UnitTalk_JPN": "あやつら、全員捕まったんじゃなかったのかね…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "CameraOffset": "ONE_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "가, 감사합니다… 하마터면 큰일…",
+      "UnitTalk_JPN": "あ、ありがとうございます…大怪我をするところでし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "꺄악?!",
+      "UnitTalk_JPN": "キャッ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "UnitTalk_KOR": "다, 당신! 다리가…! 다리가 꺾여서…!",
+      "UnitTalk_JPN": "あ、あの！足が…！足が折れて…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "ONE_5",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "괜찮아, 관측사 언니…?! 히잉…!",
+      "UnitTalk_JPN": "観測士のおねえちゃん、大丈夫…！？ふぇーん…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "TRIPLE_3",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "괜찮습니다.",
+      "UnitTalk_JPN": "大丈夫です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "훌쩍… 응?",
+      "UnitTalk_JPN": "ぐすっ…うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BONE_BREAK.wav"
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이 정도는 문제없습니다.",
+      "UnitTalk_JPN": "この程度、問題ありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "CameraOffset": "ONE_4",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "꺄악?!",
+      "UnitTalk_JPN": "キャーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "타운가드에 지원 요청하겠습니다. 현장 보존 부탁드립니다.",
+      "UnitTalk_JPN": "タウンガードに支援要請しておきました。現場保存をお願いします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "피해자는 없습니까? 다들 무사하십니까?",
+      "UnitTalk_JPN": "被害者はいませんか？皆さん無事ですね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_YOUNGMAN"
+      ],
+      "UnitTalk_KOR": "방금 분명… 다리가 심하게 꺾였는데…",
+      "UnitTalk_JPN": "さっき…足がすごい方向に曲がってたのに…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…?",
+      "UnitTalk_JPN": "…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TRIPLE_1",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_SHARPLOOK_FEMALE"
+      ],
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_YOUNGMAN"
+      ],
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "표정 하나 안 변하고 저렇게 태연할 수 있나…?",
+      "UnitTalk_JPN": "顔色一つ変えず、よく平然としていられるのう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_SHARPLOOK_FEMALE"
+      ],
+      "UnitTalk_KOR": "스스로 뼈까지 끼워 맞추고…",
+      "UnitTalk_JPN": "自分で、骨まで元に戻して…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "조금…",
+      "UnitTalk_JPN": "ちょっと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기분 나빠.",
+      "UnitTalk_JPN": "きもちわるい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SERIOUS",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "……!",
+      "UnitTalk_JPN": "……！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "CameraOffset": "TRIPLE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "얘! 은인에게 그게 무슨…!",
+      "UnitTalk_JPN": "こら！恩人になんてことを…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "죄송합니다, 정말 죄송합니다!",
+      "UnitTalk_JPN": "本当に申し訳ありません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "다친 곳은 없습니까?",
+      "UnitTalk_JPN": "お怪我はありませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "CameraOffset": "ONE_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "네? 아, 네! 덕분에…",
+      "UnitTalk_JPN": "あっ、はい！おかげさまで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그렇다면 다행입니다.",
+      "UnitTalk_JPN": "でしたら、幸いです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 139,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_FEMALE",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 140,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 141,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "단장님. 짐은 이리 주시죠.",
+      "UnitTalk_JPN": "団長、荷物をいただけますか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "후속 조치가 필요해서 먼저 들어가 보겠습니다.",
+      "UnitTalk_JPN": "対応が必要ですので、お先に失礼します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하지만 루그…",
+          "JumpAnchorStringId_JPN": "でも…"
+        }
+      ]
+    },
+    {
+      "Uid": 144,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "단순한 탈골입니다. 무리하지 않으면 됩니다.",
+      "UnitTalk_JPN": "ただの脱臼です。無理しなければ問題ありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "그럼, 다음에.",
+      "UnitTalk_JPN": "それでは。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "루그는 고개 숙여 인사한 후, 다리를 절룩거리며 걸어갔다.",
+      "UnitTalk_JPN": "ルーは頭を下げて挨拶すると、足を引きずりながら歩いて行った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "주위에는 자동차 경적 소리만이 들려올 뿐.",
+      "UnitTalk_JPN": "周りには、車のクラクションだけが鳴り響きー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "광장은 침묵했다.",
+      "UnitTalk_JPN": "広場は沈黙に包まれていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 150,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 151,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 152,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_A"
+      ],
+      "UnitTalk_KOR": "…기분 나빠.",
+      "UnitTalk_JPN": "…きもちわるい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_YOUNG_LUGH"
+      ],
+      "UnitTalk_KOR": "…예?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_B"
+      ],
+      "UnitTalk_KOR": "기분 나빠…! 왜 아무렇지 않은 건데?",
+      "UnitTalk_JPN": "きもちわるい…！なんで痛くないの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_A"
+      ],
+      "UnitTalk_KOR": "다리에 피가 나잖아… 울어야 정상이잖아!",
+      "UnitTalk_JPN": "足から血が出てるのに…泣かないなんておかしいもん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 156,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_A"
+      ],
+      "UnitTalk_KOR": "왜 표정 하나 변하지 않는 거야? 왜?",
+      "UnitTalk_JPN": "なんで平気な顔してるの？ねぇ、なんで？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 157,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_YOUNG_LUGH"
+      ],
+      "UnitTalk_KOR": "말씀드렸다시피 저는 통증을 느끼지 못하기에…",
+      "UnitTalk_JPN": "ですから、私は痛みを感じませー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 158,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_B"
+      ],
+      "UnitTalk_KOR": "나, 나는 먼저 갈래… 속이 이상해…",
+      "UnitTalk_JPN": "ぼ、ぼく、もう帰る…おなかがムカムカするよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_FRIEND_A"
+      ],
+      "UnitTalk_KOR": "…나도 갈 거야.",
+      "UnitTalk_JPN": "…あたしも帰る。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_YOUNG_LUGH"
+      ],
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 161,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 162,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SAD",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 163,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 164,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "<color=#F7BE45>기분 나빠</color>…",
+      "UnitTalk_JPN": "<color=#F7BE45>気持ち悪い</color>…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 165,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "…인가요.",
+      "UnitTalk_JPN": "…のでしょうか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 177,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

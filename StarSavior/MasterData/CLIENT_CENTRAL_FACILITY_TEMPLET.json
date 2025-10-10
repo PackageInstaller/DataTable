@@ -1,0 +1,650 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: CENTRAL/CENTRAL_FACILITY_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_OFFICE",
+          "FacilityName" : "SI_FACILITY_OFFICE",
+          "FacilityDesc" : "SI_FACILITY_OFFICE_DESC",
+          "FacilityIcon" : "ICON_FACILITY_OFFICE.png",
+          "ContentsTargetType" : "CT_CENTRAL_FACILITY_OFFICE",
+          "FacilityLevel" : 1,
+          "LevelMax" : 1
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityName" : "SI_FACILITY_ACCRUE",
+          "FacilityDesc" : "SI_FACILITY_ACCRUE_DESC",
+          "FacilityIcon" : "ICON_FACILITY_ACCRUE.png",
+          "ContentsTargetType" : "CT_ACCRUE",
+          "FacilityLevel" : 1,
+          "LevelMax" : 10
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 2,
+          "LevelMax" : 10,
+          "BonusType" : "ACCRUE_BONUS_REWARD_01",
+          "BonusValue" : 1000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 50000
+            },
+
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 3,
+          "LevelMax" : 10,
+          "BonusType" : "ACCRUE_BONUS_REWARD_02",
+          "BonusValue" : 1000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 50000
+            },
+
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 4,
+          "LevelMax" : 10,
+          "BonusType" : "ACCRUE_BONUS_REWARD_03",
+          "BonusValue" : 1000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 50000
+            },
+
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 5,
+          "LevelMax" : 10,
+          "BonusType" : "ACCRUE_BONUS_REWARD_01",
+          "BonusValue" : 2000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 50000
+            },
+
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 6,
+          "LevelMax" : 10,
+          "BonusType" : "ACCRUE_BONUS_REWARD_02",
+          "BonusValue" : 1500,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 50000
+            },
+
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 7,
+          "LevelMax" : 10,
+          "BonusType" : "ACCRUE_BONUS_REWARD_03",
+          "BonusValue" : 1500,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 50000
+            },
+
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 8,
+          "LevelMax" : 10,
+          "BonusType" : "ACCRUE_BONUS_REWARD_01",
+          "BonusValue" : 3000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 50000
+            },
+
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 9,
+          "LevelMax" : 10,
+          "BonusType" : "ACCRUE_BONUS_REWARD_02",
+          "BonusValue" : 2000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 50000
+            },
+
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 10,
+          "LevelMax" : 10,
+          "BonusType" : "ACCRUE_BONUS_REWARD_03",
+          "BonusValue" : 2000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 50000
+            },
+
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 20
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_SYNCHRO",
+          "FacilityName" : "SI_FACILITY_SYNCHRO",
+          "FacilityDesc" : "SI_FACILITY_SYNCHRO_DESC",
+          "FacilityIcon" : "UI_SAVIOR_CENTRAL_ICON_STAR_LINK.png",
+          "ContentsTargetType" : "CT_SYNCHRO",
+          "FacilityLevel" : 1,
+          "LevelMax" : 4,
+          "BonusType" : "SYNCHRO_SLOT_PLUS",
+          "BonusValue" : 3
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_SYNCHRO",
+          "FacilityLevel" : 2,
+          "LevelMax" : 4,
+          "BonusType" : "SYNCHRO_SLOT_PLUS",
+          "BonusValue" : 3,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 50000
+            },
+
+            {
+              "FacilityReqItemId" : 522,
+              "FacilityReqItemValue" : 30
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_SYNCHRO",
+          "FacilityLevel" : 3,
+          "LevelMax" : 4,
+          "BonusType" : "SYNCHRO_SLOT_PLUS",
+          "BonusValue" : 3,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 100000
+            },
+
+            {
+              "FacilityReqItemId" : 522,
+              "FacilityReqItemValue" : 30
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_SYNCHRO",
+          "FacilityLevel" : 4,
+          "LevelMax" : 4,
+          "BonusType" : "SYNCHRO_SLOT_PLUS",
+          "BonusValue" : 3,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 522,
+              "FacilityReqItemValue" : 30
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_CRAFT",
+          "FacilityName" : "SI_FACILITY_CRAFT",
+          "FacilityDesc" : "SI_FACILITY_CRAFT_DESC",
+          "FacilityIcon" : "UI_SAVIOR_CENTRAL_ICON_FORGE.png",
+          "ContentsTargetType" : "CT_CRAFT",
+          "FacilityLevel" : 1,
+          "LevelMax" : 5
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_CRAFT",
+          "FacilityLevel" : 2,
+          "LevelMax" : 5,
+          "BonusType" : "CRAFT_LIST_LEVEL",
+          "BonusValue" : 2,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 50000
+            },
+
+            {
+              "FacilityReqItemId" : 524,
+              "FacilityReqItemValue" : 20
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_CRAFT",
+          "FacilityLevel" : 3,
+          "LevelMax" : 5,
+          "BonusType" : "CRAFT_LIST_LEVEL",
+          "BonusValue" : 3,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 100000
+            },
+
+            {
+              "FacilityReqItemId" : 524,
+              "FacilityReqItemValue" : 20
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_CRAFT",
+          "FacilityLevel" : 4,
+          "LevelMax" : 5,
+          "BonusType" : "CRAFT_LIST_LEVEL",
+          "BonusValue" : 4,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 524,
+              "FacilityReqItemValue" : 20
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_CRAFT",
+          "FacilityLevel" : 5,
+          "LevelMax" : 5,
+          "BonusType" : "CRAFT_LIST_LEVEL",
+          "BonusValue" : 5,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 524,
+              "FacilityReqItemValue" : 20
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_TACTICS",
+          "FacilityName" : "SI_FACILITY_TACTICS",
+          "FacilityDesc" : "SI_FACILITY_TACTICS_DESC",
+          "FacilityIcon" : "UI_SAVIOR_CENTRAL_ICON_TACTICAL_ANALYSIS.png",
+          "ContentsTargetType" : "CT_TACTICS",
+          "FacilityLevel" : 1,
+          "LevelMax" : 9
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_TACTICS",
+          "FacilityLevel" : 2,
+          "LevelMax" : 9,
+          "BonusType" : "TACTICS_COMMON_ATTACK",
+          "BonusValue" : 30,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 521,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_TACTICS",
+          "FacilityLevel" : 3,
+          "LevelMax" : 9,
+          "BonusType" : "TACTICS_COMMON_HP",
+          "BonusValue" : 200,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 521,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_TACTICS",
+          "FacilityLevel" : 4,
+          "LevelMax" : 9,
+          "BonusType" : "TACTICS_COMMON_DEFENSE",
+          "BonusValue" : 15,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 521,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_TACTICS",
+          "FacilityLevel" : 5,
+          "LevelMax" : 9,
+          "BonusType" : "TACTICS_COMMON_RATE_CRITICAL",
+          "BonusValue" : 1000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 521,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_TACTICS",
+          "FacilityLevel" : 6,
+          "LevelMax" : 9,
+          "BonusType" : "TACTICS_COMMON_RATE_CRITICAL_DAMAGE",
+          "BonusValue" : 1000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 521,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_TACTICS",
+          "FacilityLevel" : 7,
+          "LevelMax" : 9,
+          "BonusType" : "TACTICS_COMMON_RATE_EFFECT_HIT",
+          "BonusValue" : 1000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 521,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_TACTICS",
+          "FacilityLevel" : 8,
+          "LevelMax" : 9,
+          "BonusType" : "TACTICS_COMMON_RATE_EFFECT_EVADE",
+          "BonusValue" : 1000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 521,
+              "FacilityReqItemValue" : 20
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_TACTICS",
+          "FacilityLevel" : 9,
+          "LevelMax" : 9,
+          "BonusType" : "TACTICS_COMMON_RATE_TRINITY",
+          "BonusValue" : 1000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 521,
+              "FacilityReqItemValue" : 20
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityName" : "SI_FACILITY_DISPATCH",
+          "FacilityDesc" : "SI_FACILITY_DISPATCH_DESC",
+          "FacilityIcon" : "UI_SAVIOR_CENTRAL_ICON_DISPATCH.png",
+          "ContentsTargetType" : "CT_DISPATCH",
+          "FacilityLevel" : 1,
+          "LevelMax" : 5,
+          "BonusType" : "DISPATCH_LIST_LEVEL",
+          "BonusValue" : 1
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityLevel" : 2,
+          "LevelMax" : 5,
+          "BonusType" : "DISPATCH_LIST_LEVEL",
+          "BonusValue" : 2,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 523,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityLevel" : 3,
+          "LevelMax" : 5,
+          "BonusType" : "DISPATCH_TASK_LIMIT_ADD",
+          "BonusValue" : 1,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 523,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityLevel" : 4,
+          "LevelMax" : 5,
+          "BonusType" : "DISPATCH_LIST_LEVEL",
+          "BonusValue" : 4,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 523,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityLevel" : 5,
+          "LevelMax" : 5,
+          "BonusType" : "DISPATCH_LIST_LEVEL",
+          "BonusValue" : 5,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 101,
+              "FacilityReqItemValue" : 200000
+            },
+
+            {
+              "FacilityReqItemId" : 523,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_FORTUNE",
+          "FacilityName" : "SI_FACILITY_FORTUNE",
+          "FacilityDesc" : "SI_FACILITY_FORTUNE_DESC",
+          "FacilityIcon" : "UI_SAVIOR_CENTRAL_ICON_FORTUNE.png",
+          "ContentsTargetType" : "CT_FORTUNE",
+          "FacilityLevel" : 1,
+          "LevelMax" : 1
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_DICTIONARY",
+          "FacilityName" : "SI_FACILITY_DICTIONARY",
+          "FacilityDesc" : "SI_FACILITY_DICTIONARY_DESC",
+          "FacilityIcon" : "UI_SAVIOR_CENTRAL_ICON_DICT.png",
+          "FacilityLevel" : 1,
+          "LevelMax" : 1
+        }
+    ]
+}

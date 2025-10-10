@@ -1,0 +1,1335 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
+    "UiStates": [
+      {
+        "StateName": "USN_UI_SELECTOR_INFO1_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WALK.wav"
+            ]
+          }
+        ]
+      },
+    ],
+    "BattleStates": [
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_CLANG.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_85.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_LANCE.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START_FOCUS",
+        "StartOffsetZ": -2.5,
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_FOOT_STEP.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_12.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_LANCE_06.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_ATTACK_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_CLOTH.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_LANCE_04.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_TURN_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_TURN_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_TURN_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_TURN_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+              }
+            ],
+            "DataList_JPN": [
+              {
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 21,
+            "EventEndFrame": 26,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 65,
+            "EventEndFrame": 82,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 24,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 41,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE.wav"
+            ]
+          },
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 18,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_HIT.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_HIT_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 65,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_72.wav"
+            ]
+          },
+          {
+            "EventFrame": 80,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_BODYFALL.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL1_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL1_START_1.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL1_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL1_START_2.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_CROSS_ATTACK_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_CROSS_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_CROSS_ATTACK_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_CROSS_ATTACK_2.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_REVENGE_ATTACK_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_REVENGE_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_REVENGE_ATTACK_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_REVENGE_ATTACK_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL1_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL1_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL1_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL1_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_CROSS_ATTACK_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_CROSS_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_CROSS_ATTACK_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_CROSS_ATTACK_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_REVENGE_ATTACK_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_REVENGE_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_REVENGE_ATTACK_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_REVENGE_ATTACK_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_SPECIAL_READY",
+        "InternalCameraTrackingTime": 0,
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_SCIFI.wav"
+            ]
+          },
+          {
+            "EventFrame": 18,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_CLANG_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_03.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_READY_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_READY_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_READY_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_READY_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+              }
+            ],
+            "DataList_JPN": [
+              {
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": true,
+        "InternalCameraEndAnimFrame": 110,
+
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 0,
+            "EventEndFrame": 12,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 70,
+            "EventEndFrame": 80,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 15,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 41,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_SCIFI_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 7,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_HIT_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_SCIFI_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 30,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_HIT_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_SCIFI_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 80,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_04.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_START_1_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_START_2_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL2_START_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_HYPER_READY",
+        "InternalCameraTrackingTime": 0,
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_SCIFI_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_SCIFI_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 30,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "IsLoop": true,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_HYPER_READY_LOOP.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL3_READY_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL3_READY_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL3_READY_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_SKILL3_READY_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+              }
+            ],
+            "DataList_JPN": [
+              {
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "EndFadeOutWhite": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOffTarget": true,
+          "FormationMyTeam": "",
+          "FormationEnemy": "SFT_CENTER_TARGET_ONLY"
+        },
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 150,
+            "ShowOnTarget": true,
+            "ShowUnitHudOnTarget": true
+          }
+        ],
+        //레이드 보스 scale 조정
+        "ScaleEvents": [
+          {
+            "AnimTime" : true,
+            "EventFrame": 0,
+            "ScaleTargetRaid" : true, 
+            "ScaleFactor" : 0.4
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 160,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 180,
+            "ReActType": "NRT_DAMAGE_A",
+            "ReAttackCount": 5,
+            "ReAttackGap": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_RISE.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 70,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 75,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_10.wav"
+            ]
+          },
+          {
+            "EventFrame": 85,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_MACHINE_11.wav"
+            ]
+          },
+          {
+            "EventFrame": 100,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_LANCE_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 125,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_SPARKLE.wav"
+            ]
+          },
+          {
+            "EventFrame": 135,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_SCIFI_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 150,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_SCIFI_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 155,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_EXPLOSION.wav"
+            ]
+          },
+          {
+            "EventFrame": 180,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_EXPLOSION_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 73,
+                "VoiceName": "UNIT_1501_BT_SKILL3_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 2,
+                "VoiceName": "UNIT_1501_BT_SKILL3_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 73,
+                "VoiceName": "UNIT_1501_BT_SKILL3_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 2,
+                "VoiceName": "UNIT_1501_BT_SKILL3_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 72,
+                "VoiceName": "UNIT_1501_BT_SKILL3_START_1_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 3,
+                "VoiceName": "UNIT_1501_BT_SKILL3_START_1_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 72,
+                "VoiceName": "UNIT_1501_BT_SKILL3_START_2_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 4,
+                "VoiceName": "UNIT_1501_BT_SKILL3_START_2_1.wav"
+              }
+            ]
+          },
+        ]
+      },
+      {
+        "StateName": "USN_NOVA_BURST",
+        "VfxNovaBurstFrame": 46,
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_SCIFI.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_NOVA_BURST_ACTIVE.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_LANCE_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 50,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_NOVA_BURST_IMPACT.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_NOVA_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_NOVA_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_NOVA_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_NOVA_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_NOVA_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_NOVA_1_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_NOVA_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_NOVA_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_CLANG_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_CLANG_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DIE_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DIE_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DIE_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DIE_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DIE_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DIE_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DIE_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DIE_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_WIN",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_LANCE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_CLANG_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_WHOOSH_LANCE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_CLANG_03.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_VICTORY_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_VICTORY_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_LOSE",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_WEST_LANCER_CLANG_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 30,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_WHOOSH_06.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DEFEAT_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DEFEAT_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DAMAGE_A",
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_2.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_3.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_3.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_4.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_4.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_5.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_5.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_6.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_6.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DAMAGE_B",
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_2.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_3.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_3.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_4.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_4.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_5.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_5.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_6.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1501_BT_DAMAGE_6.wav"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

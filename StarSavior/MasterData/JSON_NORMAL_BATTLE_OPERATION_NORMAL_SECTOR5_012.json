@@ -1,0 +1,55 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_OPERATION_01",
+            "ChangeAdjustType": "NUAT_SUN",
+            "IsBoss": true,
+            "SpecialSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_01",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          }
+        ]
+      }
+    ]
+  }
+}

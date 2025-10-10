@@ -1,0 +1,1368 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
+    "UiStates": [
+      {
+        "StateName": "USN_UI_SELECTOR_INFO1_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 5,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BT_UNIT_S_KINGDOM_PRAY_WALK.wav"
+            ]
+          }
+        ]
+      },
+    ],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_130.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_16.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_FOOT_STEP_17.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SPEAR_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 27,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_FOOT_STEP_18.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START_FOCUS",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WIND_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_TWINKLE_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 26,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_TWINKLE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 55,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_43.wav"
+            ]
+          },
+          {
+            "EventFrame": 55,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_43.wav"
+            ]
+          },
+          {
+            "EventFrame": 66,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SPEAR_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 86,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SPEAR_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 102,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SPEAR_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 112,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SPEAR_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_ATTACK_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SPEAR_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 8,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SPEAR_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_KLANG_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 30,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_45.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1013_BT_TURN_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1013_BT_TURN_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1013_BT_TURN_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1013_BT_TURN_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+              }
+            ],
+            "DataList_JPN": [
+              {
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "NoRootMoveZ": false,
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 25,
+            "EventEndFrame": 35,
+            "EventMoveTarget": "NEMT_TARGET",
+            "OffsetFront": -1.55
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 124,
+            "EventEndFrame": 134,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 87,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 8,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_46.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_47.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_17.wav"
+            ]
+          },
+          {
+            "EventFrame": 53,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_FOOT_STEP_22.wav"
+            ]
+          },
+          {
+            "EventFrame": 67,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_FOOT_STEP_23.wav"
+            ]
+          },
+          {
+            "EventFrame": 85,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_43.wav"
+            ]
+          },
+          {
+            "EventFrame": 102,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_48.wav"
+            ]
+          },
+          {
+            "EventFrame": 120,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_114.wav"
+            ]
+          },
+          {
+            "EventFrame": 129,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_18.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "UseNovaBurst": true,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_NOVA_BURST_ACTIVE_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 3,
+                "VoiceName": "UNIT_1013_BT_SKILL1_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 3,
+                "VoiceName": "UNIT_1013_BT_SKILL1_START_1.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 3,
+                "VoiceName": "UNIT_1013_BT_SKILL1_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 3,
+                "VoiceName": "UNIT_1013_BT_SKILL1_START_2.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_CROSS_ATTACK_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_CROSS_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_CROSS_ATTACK_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_CROSS_ATTACK_2.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_REVENGE_ATTACK_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_REVENGE_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_REVENGE_ATTACK_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_REVENGE_ATTACK_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_SKILL1_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_SKILL1_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_SKILL1_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_SKILL1_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_CROSS_ATTACK_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_CROSS_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_CROSS_ATTACK_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_CROSS_ATTACK_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_REVENGE_ATTACK_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_REVENGE_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_REVENGE_ATTACK_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_REVENGE_ATTACK_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_SPECIAL_READY",
+        "StartUnitShow": {
+          "ShowOnAllUnit": true,
+          "ShowOffMyTeam": false,
+          "ShowOffEnemy": true,
+          "ShowUnitBossHudOff": true,
+          "FormationMyTeam": "SFT_FULL_MY_TEAM"
+        },
+        "UseInternalCamera": false,
+        "InternalCameraEndStateFrame": 5,
+        "SoundEvents": [
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_49.wav"
+            ]
+          },
+          {
+            "EventFrame": 24,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_GRAB_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 2,
+                "VoiceName": "UNIT_1013_BT_SKILL2_READY_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 2,
+                "VoiceName": "UNIT_1013_BT_SKILL2_READY_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 2,
+                "VoiceName": "UNIT_1013_BT_SKILL2_READY_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 2,
+                "VoiceName": "UNIT_1013_BT_SKILL2_READY_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+              }
+            ],
+            "DataList_JPN": [
+              {
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "SeeTarget": false,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "ShowOnTargetVfx": true,
+          "ShowOnSelf": true,
+          "FormationMyTeam": "SFT_ONE_MY_TEAM_CENTER"
+        },
+        "UseInternalCamera": true,
+        "HealEvent": {
+          "UseAnimTime": false,
+          "EventFrame": 110,
+          "HealTargetType": "NHTT_TARGET",
+          "EffectData": {
+            "EffectName": "VFX_BUFF_UNIT_S_PRAY_SPE.prefab",
+            "EffectHeight": "BVH_ZERO"
+          }
+        },
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_115.wav"
+            ]
+          },
+          {
+            "EventFrame": 14,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_116.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_118.wav"
+            ]
+          },
+          {
+            "EventFrame": 41,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_117.wav"
+            ]
+          },
+          {
+            "EventFrame": 65,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_44.wav"
+            ]
+          },
+          {
+            "EventFrame": 99,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_51.wav"
+            ]
+          },
+          {
+            "EventFrame": 112,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_KINGDOM_PRAY_HEAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 139,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_119.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 58,
+                "VoiceName": "UNIT_1013_BT_SKILL2_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 58,
+                "VoiceName": "UNIT_1013_BT_SKILL2_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 58,
+                "VoiceName": "UNIT_1013_BT_SKILL2_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 58,
+                "VoiceName": "UNIT_1013_BT_SKILL2_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 45,
+                "VoiceName": "UNIT_1013_BT_SKILL2_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 45,
+                "VoiceName": "UNIT_1013_BT_SKILL2_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 45,
+                "VoiceName": "UNIT_1013_BT_SKILL2_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 45,
+                "VoiceName": "UNIT_1013_BT_SKILL2_START_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_HYPER_READY",
+        "StartUnitShow": {
+          "ShowOnAllUnit": true,
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowUnitBossHudOff": true,
+          "FormationMyTeam": "SFT_FULL_MY_TEAM"
+        },
+        "UseInternalCamera": true,
+        "InternalCameraEndStateFrame": 60,
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 54,
+            "ShowOnMyTeam": true
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SPIN_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 26,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_GRAB_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 46,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SPIN_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_45.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "IsLoop": true,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BATTLE_KINGDOM_PRAY_HYPER_READY_LOOP.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1013_BT_SKILL3_READY_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1013_BT_SKILL3_READY_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1013_BT_SKILL3_READY_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1013_BT_SKILL3_READY_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+              }
+            ],
+            "DataList_JPN": [
+              {
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "ShowFullHudTime": 193,
+        "SeeTarget": false,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "ShowOnSelf": true
+        },
+        "BattleMapSceneName": "MAP_BATTLE_EMPTY_SCENE.unity",
+        "UseInternalCamera": true,
+        "HealEvent": {
+          "UseAnimTime": false,
+          "EventFrame": 265,
+          "HealTargetType": "NHTT_ALL_TEAM",
+          "EffectData": {
+            "EffectHeight": "BVH_BODY"
+          }
+        },
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 0,
+            "ShowOnMyTeam": true,
+            "FormationMyTeam": "SFT_PRAY_HYPER_01"
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 193,
+            "ShowOnMyTeam": true,
+            "FormationMyTeam": "SFT_PRAY_HYPER_02"
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 233,
+            "ShowOnMyTeam": true,
+            "FormationMyTeam": "SFT_PRAY_HYPER_03"
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_FOOT_STEP_24.wav"
+            ]
+          },
+          {
+            "EventFrame": 19,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_46.wav"
+            ]
+          },
+          {
+            "EventFrame": 24,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_FLAG_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 45,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_120.wav"
+            ]
+          },
+          {
+            "EventFrame": 62,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BELL_04.mp3"
+            ]
+          },
+          {
+            "EventFrame": 75,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_GATE_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 80,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_121.wav"
+            ]
+          },
+          {
+            "EventFrame": 92,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_122.wav"
+            ]
+          },
+          {
+            "EventFrame": 132,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_123.wav"
+            ]
+          },
+          {
+            "EventFrame": 173,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_TWINKLE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 184,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SHINE_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 214,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_124.wav"
+            ]
+          },
+          {
+            "EventFrame": 246,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_52.wav"
+            ]
+          },
+          {
+            "EventFrame": 265,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_HEAL_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 21,
+                "VoiceName": "UNIT_1013_BT_SKILL3_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 21,
+                "VoiceName": "UNIT_1013_BT_SKILL3_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 21,
+                "VoiceName": "UNIT_1013_BT_SKILL3_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 21,
+                "VoiceName": "UNIT_1013_BT_SKILL3_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 10,
+                "VoiceName": "UNIT_1013_BT_SKILL3_START_1_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 10,
+                "VoiceName": "UNIT_1013_BT_SKILL3_START_1_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 10,
+                "VoiceName": "UNIT_1013_BT_SKILL3_START_2_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 10,
+                "VoiceName": "UNIT_1013_BT_SKILL3_START_2_1.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_NOVA_BURST",
+        "VfxNovaBurstFrame": 60,
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_125.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_126.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_NOVA_BURST_ACTIVE.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_127.wav"
+            ]
+          },
+          {
+            "EventFrame": 33,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_128.wav"
+            ]
+          },
+          {
+            "EventFrame": 58,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_129.wav"
+            ]
+          },
+          {
+            "EventFrame": 64,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_NOVA_BURST_IMPACT.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_NOVA_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_NOVA_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_NOVA_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_NOVA_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_NOVA_1_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_NOVA_1_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_NOVA_2_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_NOVA_2_1.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "StateType": "NUST_DYING",
+        "AnimName": "BATTLE_DIE",
+        "AnimLoop": false,
+        "SeeTarget": false,
+        "DyingDissolveStartTime": 1,
+        "DyingStateTimeChangeStateTime": 4,
+        "DyingStateTimeChangeState": "USN_DIE",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_131.wav"
+            ]
+          },
+          {
+            "EventFrame": 14,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WEAPON_DROP_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_19.wav"
+            ]
+          },
+          {
+            "EventFrame": 42,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DIE_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DIE_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DIE_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DIE_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 18,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_5.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 18,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_5.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 18,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_6.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 18,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_6.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_WIN",
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_TWINKLE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 33,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_FLAG_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 71,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_FLAG_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_VICTORY_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_VICTORY_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_LOSE",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_44.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_113.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_FOOT_STEP_19.wav"
+            ]
+          },
+          {
+            "EventFrame": 43,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_FOOT_STEP_20.wav"
+            ]
+          },
+          {
+            "EventFrame": 52,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_FOOT_STEP_21.wav"
+            ]
+          },
+          {
+            "EventFrame": 54,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CARTOON_WHOOSH_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DEFEAT_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DEFEAT_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DAMAGE_A",
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_2.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_3.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_4.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DAMAGE_B",
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_2.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_3.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1013_BT_DAMAGE_4.wav"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

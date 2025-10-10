@@ -1,0 +1,870 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘은 어쩐지 프레이의 표정이 밝다. ",
+      "UnitTalk_JPN": "今日はなんだか、フレイの表情が明るい。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "최근 사탕을 파는 사업을 시작했다는 듯한데, 아마 그것 때문일 것이다.",
+      "UnitTalk_JPN": "最近、アメを売るビジネスを始めたみたいだし、そのせいかな。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TRIPLE_5",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "꽤나 성공적으로 진행되고 있다고 하니까. (놀랍다!)",
+      "UnitTalk_JPN": "驚くことに、すごく上手くいってるらしい。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TRIPLE_4",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "왠지 말을 꺼내 주길 기대하는 표정이니 응해주도록 하자.",
+      "UnitTalk_JPN": "何だか声をかけてほしそうにしてるし、反応してあげようかな。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>벌꿀사탕</color> 그거 잘 팔린다며?",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>ミツアメ</color>、よく売れてるんでしょ？"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "후후! 벌써 소식을 전해 들으신 건가요?",
+      "UnitTalk_JPN": "ふふ！もう噂を聞かれたのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "단장님의 조언대로 작은 사업체부터 꾸려 보기로 했거든요. ",
+      "UnitTalk_JPN": "団長のアドバイス通り、小さな事業から始めることにしたのですよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그래서 적당한 게 뭐가 있을까 고민하던 끝에…!",
+      "UnitTalk_JPN": "そこで、何かいいものはないかと悩んだ末に…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_JINGLE_09.wav",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "바로 이 <color=#F7BE45>벌꿀 사탕</color>을 만들어내고야 만 것입니다!",
+      "UnitTalk_JPN": "この<color=#F7BE45>ミツアメ</color>を作り出してしまったのですっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "모나스티르 공국의 특산품, <color=#F7BE45>벌꿀주</color>에서 착안했죠. ",
+      "UnitTalk_JPN": "モナスティル公国の特産品、<color=#F7BE45>ハチミツ酒</color>からインスピレーションを受け… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "<color=#F7BE45>벌꿀주</color>의 은은하고 독특한 풍미를 그대로 재현!",
+      "UnitTalk_JPN": "<color=#F7BE45>ハチミツ酒</color>の、ほのかで独特な風味をそのまま再現！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "멀쩡한 미각을 가진 사람이라면 절대로 싫어할 수가 없는 궁극의 사탕이라고 할 수 있죠. 후후.",
+      "UnitTalk_JPN": "普通の味覚を持った人なら、誰もが好むような公国のアメということです。ふふ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "특히나 요즘 NOA의 아이들 사이에서 대인기를 끌고 있다구요.",
+      "UnitTalk_JPN": "特に、最近NOAの子どもたちの間で大人気なのですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아이들은 미래의 잠재 고객! ",
+      "UnitTalk_JPN": "子どもたちは、未来の潜在顧客っ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "이대로 벌꿀 맛에 중독된 아이들이라면 미래에 <color=#F7BE45>벌꿀주</color>를 판매하는데에도 큰 도움이 될 겁니다. ",
+      "UnitTalk_JPN": "ハチミツ味に病みつきになった子どもたちなら、将来<color=#F7BE45>ハチミツ酒</color>の売れ行きアップにも貢献してくれるはずです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "마지막 디테일로 사탕에 기사단의 문장까지 새겨 넣었죠.",
+      "UnitTalk_JPN": "仕上げとして、アメに騎士団の紋章まで刻んでおきましたの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "전문용어로 <color=#F7BE45>브랜딩</color>이랄까요. 후후!",
+      "UnitTalk_JPN": "専門用語では<color=#F7BE45>ブランディング</color>とでも言いましょうか。ふふっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "어떤가요? 제 사업적인 통찰력이!",
+      "UnitTalk_JPN": "どうですか？わたくしのビジネスセンスは！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "꽤나 맛있나보네? 그 사탕.",
+          "JumpAnchorStringId_JPN": "すごく美味しいみたいだね？そのアメ。"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "당연히 맛있죠. 누가 기획한 건데.",
+      "UnitTalk_JPN": "当然、美味しいに決まってますわ。誰が企画したと思っているのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "물론! 그뿐만이 아닙니다!",
+      "UnitTalk_JPN": "加えて！それだけではありませんっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "단순히 맛있는 사탕으로는 소비자들을 사로잡을 수 없죠!",
+      "UnitTalk_JPN": "ただ美味しいだけのアメでは、消費者の心を掴むことはできないのですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼…?",
+          "JumpAnchorStringId_JPN": "どういうこと…？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후… 첫 번째는 <color=#F7BE45>스토리텔링</color>입니다!",
+      "UnitTalk_JPN": "ふふ…まずは<color=#F7BE45>ストーリーテリング</color>です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "자, 한번 들어보시죠. ",
+      "UnitTalk_JPN": "さぁ、聞いてくださいね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "옛날 옛적, 한 소녀가 있었습니다. ",
+      "UnitTalk_JPN": "昔々、一人の少女がいました。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "소녀는 어릴 적 어머니를 잃고 계모와 못된 언니들과 함께 살았죠. ",
+      "UnitTalk_JPN": "少女は幼いころに母親を亡くし、継母といじわるな義理の姉たちと共に暮らしていました。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "소녀는 맛있는 사탕과 과자가 너무나 먹고 싶었지만 못된 계모는 소녀에게 용돈을 주지 않았어요.",
+      "UnitTalk_JPN": "少女は美味しいアメやおやつを心から食べたかったものの、いじわるな継母はお小遣いを与えませんでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "착한 소녀는 슬펐지만 꾹 참고 계모와 언니들의 괴롭힘을 버텼답니다.",
+      "UnitTalk_JPN": "心優しい少女は悲しみをぐっと堪え、継母と姉たちからのいじわるに耐えました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "매일 고된 노동에 지쳐 있던 소녀의 앞에, 어느 날 다리를 다친 꿀벌이 한 마리 나타났어요.",
+      "UnitTalk_JPN": "毎日、召使いのような扱いをされ、少女は疲れ果ててしまいました。そんな彼女の前に、脚を怪我したミツバチが一匹現れました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "소녀는 정성껏 꿀벌의 다리를 치료해줬죠. 그리고 다음날… 꿀벌이 돌아와서 말했습니다!",
+      "UnitTalk_JPN": "少女は、心を込めてミツバチを治療してあげました。そして次の日…ミツバチが戻ってきて、こう言いました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "<color=#F7BE45>착한 아이에게 마법의 꿀벌 사탕을 줄게</color>라고!",
+      "UnitTalk_JPN": "<color=#F7BE45>心優しい子には、魔法のミツアメをあげるよ</color>と！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "소녀가 맛있는 마법의 꿀벌 사탕을 먹자, 연기가 펑하고 터지면서 꿀벌 요정이 등장-",
+      "UnitTalk_JPN": "少女が美味しい魔法のミツアメを食べると、煙がポンッと弾け、ミツバチの妖精が登場ー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…어디서 다 들어본 이야기네.",
+          "JumpAnchorStringId_JPN": "…全部、どこかで聞いたことあるような話だけど。"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "…원래 익숙한 이야기가 잘 팔린다구요. ",
+      "UnitTalk_JPN": "…馴染みのあるストーリーの方が、よく売れるんですから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼. ",
+      "UnitTalk_JPN": "とにかく。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "단순한 <color=#F7BE45>꿀벌 사탕</color>에 그럴싸한 스토리를 덧붙여 거리 연극을 했더니 사람들이 몰려들더군요.",
+      "UnitTalk_JPN": "普通の<color=#F7BE45>ミツアメ</color>でも、それっぽいストーリーを作って路上演劇したところ…人々が押し寄せて来たのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후후… 불쌍한 소녀에게 감정이입을 한 고객들에게 두 번째 판매 전략을 전개! ",
+      "UnitTalk_JPN": "ふふ…かわいそうな少女に感情移入した頃に、2つ目の販売戦略を展開っ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "<color=#F7BE45>수익금 중 일부는 아동 지원 사업에 쓰인다</color>고 홍보한 겁니다!",
+      "UnitTalk_JPN": "<color=#F7BE45>売上の一部は、子どもたちの支援事業に使われます</color>とアピールするのです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그랬더니 너도나도 박수를 치면서 사탕을 몇 봉지씩 집어 가더군요.",
+      "UnitTalk_JPN": "そうすると…皆が拍手をしながら、数袋ずつアメを買って行くわけです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "후후후. 제 <color=#F7BE45>악랄한 상술</color>에 속는 줄도 모르고!",
+      "UnitTalk_JPN": "ふっふっふ。わたくしの<color=#F7BE45>悪徳商法</color>に騙されたとも知らずに！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "악랄한 상술…?",
+          "JumpAnchorStringId_JPN": "悪徳商法…？"
+        }
+      ]
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…설마 기부는 거짓말이야?",
+          "JumpAnchorStringId_JPN": "…まさか、寄付って嘘だったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "에? 당연히 약속대로 기부합니다.",
+      "UnitTalk_JPN": "えっ？もちろん、約束通りに寄付していますよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "모나스티르 공국의 명예를 걸고 거짓말은 안 합니다만.",
+      "UnitTalk_JPN": "モナスティル公国の名を汚すような嘘はつきませんの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>벌꿀 사탕</color> 판매액의 10%는 제대로 기부하고 있습니다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>ミツアメ</color>売上金の10％は、ちゃんと寄付しておりますから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 <color=#F7BE45>악랄한 상술</color>은 어느 쪽인데?",
+          "JumpAnchorStringId_JPN": "じゃあ、<color=#F7BE45>悪徳商法</color>って何のこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후후… 제가 차근차근 설명해 드리죠. ",
+      "UnitTalk_JPN": "ふふ…わたくしが説明して差し上げましょう。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "기부하는 금액은 겨우 사탕 가격의 10%!",
+      "UnitTalk_JPN": "寄付する金額は、アメの価格のわずか10％！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "<color=#F7BE45>벌꿀 사탕</color>은 원료를 중간 유통을 거치지 않고 직접 모나스티르의 양봉 농가에서 받아오기 때문에…",
+      "UnitTalk_JPN": "<color=#F7BE45>ミツアメ</color>の原材料は仲介を通さず、モナスティルの養蜂農家から直接受け取っているため…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "원가는 겨우 판매가의 20%! ",
+      "UnitTalk_JPN": "原価は販売価格のたった20％！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "전부 떼도 70%는 제가 먹는 셈이죠. ",
+      "UnitTalk_JPN": "全部引いても、70％はわたくしに入って来るというわけなのです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후후! 다시 말해, 소비자는 기부하는 것보다 더 많은 돈을 제게 지불하는 셈이죠.",
+      "UnitTalk_JPN": "ふふ！つまり、消費者は寄付するよりも高い金額を、わたくしに支払うことになるのですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "아무것도 모르는 소비자들은 그것도 모르고 순진하게 사탕을 사 먹게 되는 겁니다. ",
+      "UnitTalk_JPN": "何も知らない消費者たちは、何の疑いもなくアメを買って行くのです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그러다 보면 서서히 사탕의 맛에 중독되고… ",
+      "UnitTalk_JPN": "そうして、だんだんアメの味に病みつきになって… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "결국 더 많은 사탕을 사 먹게 되는 무한 굴레에 빠지는 거죠!",
+      "UnitTalk_JPN": "さらにアメを買い足すことになり、無限ループに陥るのです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후후. 이래서 경제를 배워야 한다니까요.",
+      "UnitTalk_JPN": "ふっふっふ。これだから、経済は勉強しておかないと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "<color=#F7BE45>아는 게 힘!</color> 이라는 말이 괜히 있는 게 아닙니다!",
+      "UnitTalk_JPN": "<color=#F7BE45>知識こそ力！</color>という言葉も、ないがしろにはできませんよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "음…?",
+          "JumpAnchorStringId_JPN": "ん…？"
+        }
+      ]
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…그거 그냥 좋은 물건을 만들어서 잘 판 거 아닌가?",
+      "UnitTalk_JPN": "…それって、上手く商品を作って、上手く売ってるだけじゃないのかな？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후! 이걸로 차기 사업을 위한 기반을 다졌다고 볼 수 있죠. ",
+      "UnitTalk_JPN": "ふふ！これで次のビジネスの基盤が固まりましたね。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "자 이제 다음 사업 아이템은 뭘로 할까…",
+      "UnitTalk_JPN": "さぁ、次のビジネスは何にしようかな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "즐거워하는 프레이를 바라보며 나는 잠시 그녀가 말한 <color=#F7BE45>악랄한 상술</color>에 대해 생각해 보았다.",
+      "UnitTalk_JPN": "嬉しそうなフレイを見つめながら…私はしばらく、彼女の言う<color=#F7BE45>悪徳商法</color>について考えてみた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어딘가 이상한 것 같지만… 구태여 걸고넘어질 필요는 없겠지.",
+      "UnitTalk_JPN": "どこか引っかかるような気もするけど…深く追及するほどのことでもないかな。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀의 <color=#F7BE45>악랄한 상술</color>이 좋은 결과를 내기를 기대하며 나는 미소를 지었다.",
+      "UnitTalk_JPN": "フレイの<color=#F7BE45>悪徳商法</color>が良い結果を生むことを期待しながら、私は微笑んだ。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_KINGDOM_PRAY_06",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

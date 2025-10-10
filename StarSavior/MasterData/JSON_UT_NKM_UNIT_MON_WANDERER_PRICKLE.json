@@ -1,0 +1,189 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_65.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_21.wav"
+            ]
+          },
+          {
+            "EventFrame": 18,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SWORD_22.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 0,
+            "EventEndFrame": 10,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 54,
+            "EventEndFrame": 67,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 37,
+            "ReActType": "NRT_DAMAGE_A",
+            // "StopTimeAtk": 0.1,
+            // "StopTimeDef": 0.1,
+            // "CameraCrashGap": 0.1,
+            // "CameraCrashTime": 0.3,
+            // "EffectData": {
+            //   "EffectName": "",
+            //   "EffectHeight": "BVH_BODY"
+            // }
+          }
+        ], 
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 65,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_ATK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 106,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_ATK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 138,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_ATK_05.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 62,
+            "ReActType": "NRT_DAMAGE_A",
+            // "CameraCrashGap": 0.1,
+            // "CameraCrashTime": 0.3,
+            // "EffectData": {
+            //   "EffectName": "",
+            //   "EffectHeight": "BVH_BODY"
+            // }
+          }
+        ], 
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_SPECIAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 36,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_SPECIAL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 68,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_SPECIAL_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 103,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_SPECIAL_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 145,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_SPECIAL_05.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 8,
+                "VoiceName": "SFX_BT_UNIT_MON_VOID_MAID_SHIELD_BLACK_VOICE_07.wav"
+              }
+            ]
+          }
+        ], 
+        "SoundEvents": [
+          {
+            "EventFrame": 8,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_56.wav"
+            ]
+          },
+          {
+            "EventFrame": 9,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WEAPON_DROP_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_57.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

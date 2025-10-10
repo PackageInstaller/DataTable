@@ -1,0 +1,58 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_SWORD_BLUE_DAILY_02",
+            "ChangeAdjustType": "NUAT_MOON",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_SCAVENGER_DAGGER_BLACK_ELITE_DAILY_02",
+            "IsElite": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_SWORD_BLUE_DAILY_02",
+            "ChangeAdjustType": "NUAT_MOON",
+            "AllSkillAvailable": true
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_BLUE_DAILY_02",
+            "ChangeAdjustType": "NUAT_MOON",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_VETERAN_BARON_BLACK_BOSS_DAILY_GOLD_02",
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_MOON",
+            "IsBoss": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_BLUE_DAILY_02",
+            "ChangeAdjustType": "NUAT_MOON",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

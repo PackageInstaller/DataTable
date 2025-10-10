@@ -1,0 +1,64 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_NOA_OBSERVER_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "히힛! 대성공!",
+      "UnitTalk_JPN": "にししっ！大成功！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "보셨죠, 단장님? 천재가 진심을 내면 이 정도랍니다!",
+      "UnitTalk_JPN": "団長、どうですか？天才が本気を出せば、これぐらいヨユーですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "NOA 최고 권력자까지...!",
+      "UnitTalk_JPN": "NOAの最高権力者になる日まで…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "출세가도를 달리겠어요! 히힛!",
+      "UnitTalk_JPN": "出世街道を駆け上がります！にししっ！",
+      "TalkTime": 0.03
+    }
+  ]
+}

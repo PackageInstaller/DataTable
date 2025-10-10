@@ -1,0 +1,143 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_TRAINING",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "메이드에게 비밀리에 전해져 내려오는 <color=#F7BE45>비밀의 지옥 특훈</color>에 대해 듣게 되었다.",
+      "UnitTalk_JPN": "メイドたちに密かに伝承されている<color=#F7BE45>秘伝の地獄特訓</color>について聞くことができた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "지금 가장 필요한 것은...",
+      "UnitTalk_JPN": "今最も必要なのは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "펀치 기계 잘 치는 법",
+          "JumpAnchorStringId_JPN": "パンチングマシンを上手に打つ方法",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "지치지 않고 달리는 법",
+          "JumpAnchorStringId_JPN": "疲れずに走り続ける方法",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "지금은 괜찮다.",
+          "JumpAnchorStringId_JPN": "今は大丈夫だ。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "한동안 펀치 기계를 다 부술 것 같다!",
+      "UnitTalk_JPN": "しばらくはパンチングマシンを全部壊してしまいそうだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 1,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "당분간은 기차도 따라잡을 기세다!",
+      "UnitTalk_JPN": "当分は列車も追い抜く勢いだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 7,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "지금은 기본에 집중할 때다.",
+      "UnitTalk_JPN": "今は基本に集中する時だ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

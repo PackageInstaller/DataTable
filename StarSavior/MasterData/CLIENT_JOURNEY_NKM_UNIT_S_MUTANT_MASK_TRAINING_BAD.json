@@ -1,0 +1,452 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "읏…?!",
+      "UnitTalk_JPN": "うっ…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "콜록콜록…!",
+      "UnitTalk_JPN": "ゲホッ、ゲホッ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>언령</color>을 준비하던 키라가 기침을 토해내며 눈물을 글썽거렸다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>言霊</color>を準備していたキラが、咳をしながら涙目になっていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "미안… 단장. ",
+      "UnitTalk_JPN": "ごめん…団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "갑자기 목소리가 잘 안 나와서…",
+      "UnitTalk_JPN": "急に声が出なくなっちゃったの…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "아아, 단장은 걱정하지 마. ",
+      "UnitTalk_JPN": "団長は心配しなくて大丈夫なの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "아직 더 할 수 있어. ",
+      "UnitTalk_JPN": "キラ、もっとやれるの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무리하면 안 돼.",
+          "JumpAnchorStringId_JPN": "無理しちゃダメだ。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "정말 괜찮은거야?",
+          "JumpAnchorStringId_JPN": "本当に大丈夫なのか？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "활력 포션을 건네준다.",
+          "JumpAnchorStringId_JPN": "活力ポーションを渡した。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응. 키라는 괜찮아.",
+      "UnitTalk_JPN": "うん。キラは大丈夫なの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "크게 다친 것도 아닌걸.",
+      "UnitTalk_JPN": "大怪我したわけでもないの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "물만 한 모금 마시고 다시 해볼 테니까…",
+      "UnitTalk_JPN": "ちょっと水を飲んだら、もう一回やってみるの…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물을 충분히 마시고 목을 가다듬은 키라는 훈련을 완벽하게 끝마쳤다.",
+      "UnitTalk_JPN": "水をたっぷり飲んで喉を整えたキラは、完璧にトレーニングを終わらせた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "단장이 믿어준다면, 괜찮아.",
+      "UnitTalk_JPN": "団長が信じていてくれるなら、キラは大丈夫なの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "할 수 있- 읏…?!",
+      "UnitTalk_JPN": "だいじょう…ううっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "넘어진 더미들을 다시 세우던 키라가 휘청거렸다.",
+      "UnitTalk_JPN": "倒れたダミーをを立て直していたキラは、フラリとよろめいた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이대로 괜찮을까…?",
+      "UnitTalk_JPN": "本当に大丈夫なのだろうか…？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…단장, 키라를 걱정해 주는 거야?",
+      "UnitTalk_JPN": "…団長、キラを心配してくれてるの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "키라, 조금 기쁠지도.",
+      "UnitTalk_JPN": "キラ、ちょっと嬉しい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "응. 단장 말 대로 할게.",
+      "UnitTalk_JPN": "うん、団長の言うとおりにする。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "오늘은 여기까지 하자.",
+      "UnitTalk_JPN": "今日はもう帰ろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "키라는 휴식을 취하는 내내 나를 묘한 눈빛으로 바라보았다.",
+      "UnitTalk_JPN": "キラは休憩している間、ずっと私を妙な目つきで見つめていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "무리…  ",
+      "UnitTalk_JPN": "無理…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "그치만… ",
+      "UnitTalk_JPN": "だけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…응. 단장이 그렇다면 그런 거겠지. ",
+      "UnitTalk_JPN": "…うん。そうだね、団長がそう言うのならそうなのかも。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "알았어. 나머지는 내일 이어서 하자. ",
+      "UnitTalk_JPN": "わかった。この続きは明日にしよう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "키라는 조금 아쉬운 눈치로 고개를 끄덕였다. ",
+      "UnitTalk_JPN": "キラは少し残念そうな顔で頷いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…! ",
+      "UnitTalk_JPN": "…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "단장… ",
+      "UnitTalk_JPN": "団長…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "키라를 위해… 준비한 거야? ",
+      "UnitTalk_JPN": "キラのために…用意してくれたの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "…이런 거, 키라한테만 주는 거지? ",
+      "UnitTalk_JPN": "…これは、キラにだけくれるんだよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "다른 아무한테도 안 주는 특별한 선물이지…? ",
+      "UnitTalk_JPN": "他の誰にもあげない、特別なプレゼントなんだよね…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "으, 으응. 당연하지.",
+          "JumpAnchorStringId_JPN": "う、うん。もちろんだよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아하하. 고마워 단장.",
+      "UnitTalk_JPN": "あはは。ありがとう、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MUTANT_MASK_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitTalk_KOR": "이거 마시고 힘낼게…! ",
+      "UnitTalk_JPN": "これ飲んで頑張るの…！",
+      "TalkTime": 0.03
+    }
+  ]
+}

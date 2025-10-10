@@ -1,0 +1,137 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      { // 웨이브 1
+        "MapPosType": "NMPT_BATTLE_SLOT_4_B",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_02",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_02",
+            "ChangeAdjustType": "NUAT_CHAOS",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_02",
+            "ChangeAdjustType": "NUAT_CHAOS",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_02",
+            "AllSkillAvailable": true
+          }
+        ]
+      },
+      { // 웨이브 2
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitLevel": 140,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_02",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitLevel": 140,
+            "UnitStrId": "NKM_UNIT_MON_ARCHIVE_INFORMER_ELITE_CUBE_02",
+            "IsBoss": true,
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_HP": 2000
+            }
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitLevel": 140,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_02",
+            "AllSkillAvailable": true
+          }
+        ]
+      },
+      { // 웨이브 3
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitLevel": 170,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_02",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitLevel": 170,
+            "UnitStrId": "NKM_UNIT_MON_NOA_OBSERVER_BOSS_CUBE_02",
+            "IsBoss": true,
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitLevel": 170,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_02",
+            "AllSkillAvailable": true
+          }
+        ]
+      },
+      { // 웨이브 4
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitLevel": 190,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_03",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitLevel": 190,
+            "UnitStrId": "NKM_UNIT_MON_ARCHIVE_INFORMER_ELITE_CUBE_03",
+            "IsBoss": true,
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_HP": 2000
+            }
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitLevel": 190,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_03",
+            "AllSkillAvailable": true
+          }
+        ]
+      },
+      { // 웨이브 5
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitLevel": 220,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_03",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitLevel": 220,
+            "UnitStrId": "NKM_UNIT_MON_RECON_AMULET_BOSS_CUBE_02",
+            "IsBoss": true,
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitLevel": 220,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_03",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

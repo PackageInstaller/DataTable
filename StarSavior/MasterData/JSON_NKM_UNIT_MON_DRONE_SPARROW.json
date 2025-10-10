@@ -1,0 +1,185 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_EYE.txt",
+    "UnitHudHeight": 2.0,
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_SPARROW_BLACK_WHOOSH_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_SPARROW_BLACK_WHOOSH.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 28,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 30,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 33,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 35,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 38,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 44,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 50,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 18,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_SPARROW_BLACK_SHOT.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": false,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "ShowOnSelf": true,
+          "FormationMyTeam": "SFT_ONE_MY_TEAM_CENTER"
+        },
+        "NonAttackEvents": [
+          {
+            "AnimTime": false,
+            "EventFrame": 39,
+            "ReActType": "NRT_NO_ACTION",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            },
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_SPARROW_BLACK_WHOOSH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 27,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_SPARROW_BLACK_ENERGY.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_SPARROW_BLACK_IMPACT.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_FALL.wav"
+            ]
+          },
+          {
+            "EventFrame": 33,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DRONE_WOODPECKER_BLACK_EXPLOSION.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

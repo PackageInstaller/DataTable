@@ -1,0 +1,253 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_38_NOA_BT_READY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_ASTRO_SANCTUM.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "오셨군요 단장님.",
+      "UnitTalk_JPN": "おいでになりましたか、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여긴 어디지?",
+          "JumpAnchorStringId_JPN": "ここはどこだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이곳은 NOA 중심구역 지하공동.",
+      "UnitTalk_JPN": "ここはNOA中心区域地下共同体。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "통칭 <color=#F7BE45>[디랙의 우물]</color>이라 불리는 제단입니다.",
+      "UnitTalk_JPN": "通称<color=#F7BE45>「ディラックの井戸」</color>と呼ばれる祭壇です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "디랙의 우물?",
+          "JumpAnchorStringId_JPN": "ディラックの井戸？"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "네. ",
+      "UnitTalk_JPN": "はい。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "공허체는 이 세계 바깥의 존재.",
+      "UnitTalk_JPN": "空虚体は、この世界の外に存在する存在。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "일반적으로는 라비스타를 둘러싼 <color=#F7BE45>[신성장벽]</color>에 막혀 이 세계로 들어올 수 없습니다.",
+      "UnitTalk_JPN": "通常はラビスターを取り巻く<color=#F7BE45>「<r=ホーリーワード>神聖なる防壁</r>」</color>に阻まれ、この世界へ侵入することはできません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그래서 공허체와 싸우기 위해서는 특별한 장소가 필요하죠.",
+      "UnitTalk_JPN": "だから空虚体と戦うには特別な場所が必要なんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이곳 <color=#F7BE45>[디랙의 우물]</color>에서는 바깥 우주 저편의 공허체를 관측하여 그 정보를 기반으로 <color=#F7BE45>[투영체]</color>를 만들어 낼 수 있습니다.",
+      "UnitTalk_JPN": "この場所、<color=#F7BE45>「ディラックの井戸」</color>では、外宇宙の彼方にある空虚体を観測し、その情報に基づいて<color=#F7BE45>「投影体」</color>を作り出します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "일종의 홀로그램 시뮬레이션 같은 거죠.",
+      "UnitTalk_JPN": "一種のホログラムシミュレーションのようなものです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "홀로그램 시뮬레이션?",
+          "JumpAnchorStringId_JPN": "ホログラムシミュレーション？"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "네? 아아… 그러니까 먼 과거에 존재했던 기술인데…",
+      "UnitTalk_JPN": "え？ああ…つまり遠い過去に存在した技術で…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "뭐 지금 중요한 건 아니니까 넘어가죠.",
+      "UnitTalk_JPN": "まあ今は重要じゃないから置いておきましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>[투영체]</color>라고 해도 공허의 힘은 살아있는 존재에게 치명적입니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「投影体」</color>とはいえ、空虚の力は生きている存在にとって致命的です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "어쩌면 생명이 위험할 수도 있어요.",
+      "UnitTalk_JPN": "もしかすると命の危険もあるかもしれません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "물론 그 정도로 위험한 상황이 되면 투영을 종료할 겁니다.",
+      "UnitTalk_JPN": "もちろん、それほど危険な状況になれば投影は終了するでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그래도 방심하다간 어떤 일이 일어날지 몰라요.",
+      "UnitTalk_JPN": "それでも油断していると、何が起こるか分かりません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "부디 무사히 평가전을 통과하시기를 기원하겠습니다, 단장님.",
+      "UnitTalk_JPN": "どうか無事に試験を通過されますようお祈り申し上げます、団長。",
+      "TalkTime": 0.03
+    }
+  ]
+}

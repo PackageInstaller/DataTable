@@ -1,0 +1,80 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_WEATHER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00A_RANDOM_WEATHER",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WIND_BLOW.wav"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00A_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "훈련 중에 몸을 가누기도 어려울 정도로 거센 바람이 불기 시작했다.",
+      "UnitTalk_JPN": "トレーニング中、身体がよろめくほどの激しい風が吹き始めた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00A_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_86.wav"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00A_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_01_01]",
+      "UnitTalk_JPN": "「EVENT_RANDOM_WEATHER_01_01」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00A_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_01_02]",
+      "UnitTalk_JPN": "「EVENT_RANDOM_WEATHER_01_02」",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00A_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "훈련은 계속 이어갔지만 신경이 예민해지는 것은 어쩔 수 없었다.",
+      "UnitTalk_JPN": "トレーニングは続行したが、神経がささくれ立つのは仕方なかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

@@ -1,0 +1,380 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00G_RANDOM_FIND",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RESEARCHER_FEMALE_1",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아이다에게 <color=#F7BE45>[정체불명의 유물]</color>에 숨겨진 힘을 끌어낼 방법을 들었다.",
+      "UnitTalk_JPN": "アイーダから<color=#F7BE45>[正体不明の遺物]</color>に秘められた力を引き出す方法を聞いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 150,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 151,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 152,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 153,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NPC_MODULE_RESEARCHER_FEMALE_1",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…설명에 따르면, <color=#F7BE45>[정체불명의 유물]</color>은 충격에 반응하는 모양이다.",
+      "UnitTalk_JPN": "…説明によれば、<color=#F7BE45>「正体不明の遺物」</color>は衝撃に反応するらしい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어떻게 할까?",
+      "UnitTalk_JPN": "どうしよう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "적당한 힘으로 충격을 가한다.",
+          "JumpAnchorStringId_JPN": "適度な力で衝撃を与える。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "강력한 공격을 퍼붓는다.",
+          "JumpAnchorStringId_JPN": "強力な攻撃を浴びせる。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "유물은 소중히 간직해야 한다.",
+          "JumpAnchorStringId_JPN": "遺物は大切に保管すべきだ。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 164,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_SLASH_BIG_04.wav",
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "TWIN_1"
+    },
+    {
+      "Uid": 165,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 유물에 절묘한 공격을 가했다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が遺物に絶妙な攻撃を加えた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 168,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 178,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 179,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 유물의 힘을 흡수해 한층 강해졌다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は遺物の力を吸収し、さらに強くなった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 180,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitPos": "POS7",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 181,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_SLASH_BIG_04.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 182,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 183,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 유물에 절묘한 공격을 가했다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が遺物に絶妙な攻撃を加えた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 185,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_DARK_75.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 186,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 187,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "유물이 오히려 <color=#F7BE45>[CHARACTER_NAME]</color>의 힘을 흡수해 버린 모양이다…",
+      "UnitTalk_JPN": "遺物がむしろ<color=#F7BE45>[CHARACTER_NAME]</color>の力を吸収してしまったようだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 198,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 199,
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE_02.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 200,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 201,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 유물에 강력한 공격을 가했다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が遺物に強力な攻撃を加えた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 203,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 1.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 204,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 210,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "미량의 기운이 <color=#F7BE45>[CHARACTER_NAME]</color>의 몸으로 흘러들었다!",
+      "UnitTalk_JPN": "微量の気が<color=#F7BE45>[CHARACTER_NAME]</color>の体へと流れ込んだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 213,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitPos": "POS7",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 214,
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE_02.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 215,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 216,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 유물에 강력한 공격을 가했다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が遺物に強力な攻撃を加えた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 218,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DEBRIS_02.wav"
+    },
+    {
+      "Uid": 225,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 226,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…힘이 지나쳤는지, 유물은 흔적도 없이 사라져 버렸다.",
+      "UnitTalk_JPN": "…力が過ぎたのか、遺物は跡形もなく消え去ってしまった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 227,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_RESEARCHER_FEMALE_1",
+      "CameraOffset": "TWIN_2"
+    },
+    {
+      "Uid": 234,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 235,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "유물은 실험에 쓰지 않고 보관하기로 했다.",
+      "UnitTalk_JPN": "遺物は実験に使わず保管することにした。",
+      "TalkTime": 0.03
+    }
+  ]
+}

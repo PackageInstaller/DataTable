@@ -1,0 +1,133 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REST_NORMAL",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REST_NORMAL",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "못이 박히는 날.",
+      "UnitTalk_JPN": "今日は、釘打ちがうまく行く日。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "페트라, 마르실이 그랬어. 평소보다 못이 스윽~ 들어가면 좋은 날이래.",
+      "UnitTalk_JPN": "ペトラとマルシルが言ってた。いつもよりスッと釘を打ち込める日は、いい日だって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "보여줄까?",
+      "UnitTalk_JPN": "見てみる？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…응?",
+      "UnitTalk_JPN": "…うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "망치? 도구? 그게 왜 필요해?",
+      "UnitTalk_JPN": "ハンマー？道具？そんなの必要ない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_18.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이렇게 박으면 되는데.",
+      "UnitTalk_JPN": "こうやって叩けばいい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "주먹으로 박았어?!",
+          "JumpAnchorStringId_JPN": "素手で！？"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "타냐에게 앞으로는 공구를 사용해달라고 부탁했다.",
+      "UnitTalk_JPN": "これからは工具を使うように、しっかり頼んでおいた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_CONSTRUCT_GADGET_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쨌든 타냐에게 오늘은 좋은 날인 것 같다.",
+      "UnitTalk_JPN": "とにかく、今日はターニャにとって良い日のようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

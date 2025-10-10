@@ -1,0 +1,25 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_TEST_BALANCE_ELITE_01",
+            "IsElite": true,
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_TEST_BALANCE_ELITE_01",
+            "IsElite": true,
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

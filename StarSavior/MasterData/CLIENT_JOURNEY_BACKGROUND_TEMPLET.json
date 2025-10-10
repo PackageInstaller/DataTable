@@ -1,0 +1,127 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: JOURNEY_BACKGROUND_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBackgroundId" : 1,
+          "JourneyBackgroundImg" : "SPINE_JOURNEY_CANDLE_MAIN.prefab",
+          "JourneyBackgroundNpc" : [101],
+          "PositionData" : 
+          [
+            {
+              "PointType" : "PARTY",
+              "PointScale" : 0.18,
+              "PointPosition" : [0, 0, 40],
+              "PointPositionSpine" : "SPINE_JOURNEY_NPC_1",
+              "PointRotation" : [0, 200, 0]
+            },
+
+            {
+              "PointType" : "PARTY",
+              "PointScale" : 0.18,
+              "PointPosition" : [0, 0, 40],
+              "PointPositionSpine" : "SPINE_JOURNEY_NPC_2",
+              "PointRotation" : [0, 165, 0]
+            },
+
+            {
+              "PointType" : "NPC",
+              "PointScale" : 0.22,
+              "PointPosition" : [0, 0, 40],
+              "PointPositionSpine" : "SPINE_JOURNEY_NPC_3",
+              "PointRotation" : [0, 175, 0]
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBackgroundId" : 11,
+          "JourneyBackgroundImg" : "SPINE_JOURNEY_AGANON_MAIN.prefab",
+          "JourneyBackgroundNpc" : [101],
+          "PositionData" : 
+          [
+            {
+              "PointType" : "PARTY",
+              "PointScale" : 0.21,
+              "PointPosition" : [0, 0, 40],
+              "PointPositionSpine" : "SPINE_JOURNEY_NPC_1",
+              "PointRotation" : [0, 220, 0]
+            },
+
+            {
+              "PointType" : "NPC",
+              "PointScale" : 0.21,
+              "PointPosition" : [0, 0, 40],
+              "PointPositionSpine" : "SPINE_JOURNEY_NPC_2",
+              "PointRotation" : [0, 135, 0]
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBackgroundId" : 12,
+          "JourneyBackgroundImg" : "SPINE_JOURNEY_FLORA_MAIN.prefab",
+          "JourneyBackgroundNpc" : [116],
+          "PositionData" : 
+          [
+            {
+              "PointType" : "PARTY",
+              "PointScale" : 0.18,
+              "PointPosition" : [0, 0, 40],
+              "PointPositionSpine" : "SPINE_JOURNEY_NPC_1",
+              "PointRotation" : [0, 200, 0]
+            },
+
+            {
+              "PointType" : "PARTY",
+              "PointScale" : 0.18,
+              "PointPosition" : [0, 0, 40],
+              "PointPositionSpine" : "SPINE_JOURNEY_NPC_2",
+              "PointRotation" : [0, 160, 0]
+            },
+
+            {
+              "PointType" : "NPC",
+              "PointScale" : 0.175,
+              "PointPosition" : [0, 0, 40],
+              "PointPositionSpine" : "SPINE_JOURNEY_NPC_3",
+              "PointRotation" : [0, 175, 0]
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBackgroundId" : 13,
+          "JourneyBackgroundImg" : "SPINE_JOURNEY_KALAID_MAIN.prefab",
+          "JourneyBackgroundNpc" : [101],
+          "PositionData" : 
+          [
+            {
+              "PointType" : "PARTY",
+              "PointScale" : 0.18,
+              "PointPosition" : [0, 0, 40],
+              "PointPositionSpine" : "SPINE_JOURNEY_NPC_1",
+              "PointRotation" : [0, 200, 0]
+            },
+
+            {
+              "PointType" : "PARTY",
+              "PointScale" : 0.18,
+              "PointPosition" : [0, 0, 40],
+              "PointPositionSpine" : "SPINE_JOURNEY_NPC_2",
+              "PointRotation" : [0, 160, 0]
+            },
+
+            {
+              "PointType" : "NPC",
+              "PointScale" : 0.22,
+              "PointPosition" : [0, 0, 40],
+              "PointPositionSpine" : "SPINE_JOURNEY_NPC_3",
+              "PointRotation" : [0, 175, 0]
+            }
+          ]
+        }
+    ]
+}

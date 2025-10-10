@@ -1,0 +1,347 @@
+﻿{
+    "_Version": 1,
+    "Data": {
+        "JourneyHelperUnitId": 100000, // 단장 유닛 아이디
+        "JourneyTraining": {
+            "FailureExponent": 2,
+            "FailureConst": 225
+        },
+        "JourneyItem": {
+            "UseTypeCondition": "SI_CONDITION",
+            "UseTypeStamina": "SI_STAMINA",
+            "UseTypeExp": "SI_FAME_EXP",
+            "UseTypePower": "JST_POWER",
+            "UseTypeHealth": "JST_HEALTH",
+            "UseTypeEndurance": "JST_ENDURANCE",
+            "UseTypeFocus": "JST_FOCUS",
+            "UseTypeProtect": "JST_PROTECT",
+            "UseTypePP": "SI_POTEN_POINT",
+            "InventoryLimitCount": 20, // 여정 아이템 인벤토리 한계치 임시로 10
+            "CoinToPotenPointConvertRatio": 5000 // 코인에서 잠재력 포인트 변환율
+        },
+        "JourneyBattle": {
+            // 여정 스텟 패널티
+            "PenaltyPerPower": {
+                "StatType": "NST_RATE_DAMAGE_UP", // 패널티 적용 스텟
+                "Value": -100 // 패널티 적용 수치
+            },
+            "PenaltyPerHealth": {
+                "StatType": "NST_RATE_DAMAGE_REDUCE",
+                "Value": -50
+            },
+            "PenaltyPerEndurance": {
+                "StatType": "NST_RATE_DAMAGE_REDUCE",
+                "Value": -50
+            },
+            "PenaltyPerFocus": {
+                "StatType": "NST_RATE_EFFECT_HIT",
+                "Value": -50
+            },
+            "PenaltyPerProtect": {
+                "StatType": "NST_RATE_EFFECT_EVADE",
+                "Value": -50
+            },
+            "PenaltyPerJourneyStatInterval": 10, // 이 수치 이상 부족할 때 마다 패널티 적용
+            "PenaltyPerJourneyStatLimit": 20, // 여정 스텟 패널티 최대 적용 횟수
+            "SafeJourneyBattleLevelDistance": -7, // 스킵 권장
+            "RecommendJourneyBattleLevelDistance": 2 // 권장 레벨 차이
+        },
+        "JourneyStat": {
+            "MultiplyPower": {
+                "NST_ATK": 11000 // 이제 바꿀 일 X
+            },
+            "MultiplyHealth": {
+                "NST_HP": 50000 // 이제 바꿀 일 X
+            },
+            "MultiplyEndurance": {
+                "NST_DEF": 5000 // 이제 바꿀 일 X
+            },
+            "MultiplyFocus": {
+                "NST_RATE_EFFECT_HIT": 10, // 0.1% , 0.1점 NST_RATE_EFFECT_HIT // 25.02.07 속도 스탯에서 효과 적중 스탯으로 롤백
+                //"NST_RATE_DAMAGE_UP_SKILL_ATTACK": 2 // 0.02%  주는 일반기 피해량 증가 // 25.02.07 추가
+            },
+            "MultiplyProtect": {
+                "NST_RATE_EFFECT_EVADE": 10, // 0.1% , 0.1점 NST_RATE_EFFECT_EVADE // 25.02.07 반격 스탯에서 효과 저항 스탯으로 롤백
+                //"NST_RATE_DAMAGE_REDUCE_SKILL_ATTACK": 2 // 0.02%  받는 일반기 피해량 감소// 25.02.07 추가
+            },
+            "ParentStatBlessApplyRatio": 10000, // 부모 유닛의 스텟 블레스 계승시 스텟 적용율
+            "GrandParentStatBlessApplyRatio": 5000 // 조부모 유닛의 스텟 블레스 계승시 스텟 적용율
+        },
+        "AutoDeckSetting": {
+            //전투력 보정값을 받는 전열 유닛 클래스 설정
+            "PriorityFrontClass": [
+                "NURT_DEFENDER",
+                "NURT_STRIKER",
+                "NURT_SUPPORTER"
+            ],
+            //전투력 보정값을 받는 후열 유닛 클래스 설정
+            "PriorityBackClass": [
+                "NURT_RANGER",
+                "NURT_CASTER",
+                "NURT_ASSASSIN"
+            ],
+            //전열 유닛 클래스의 전투력 보정값 배율 설정
+            "FrontClassBattlePowerCorrection": 2000,
+            //후열 유닛 클래스의 전투력 보정값 배율 설정
+            "BackClassBattlePowerCorrection": 2000
+        },
+        "Battle": {
+            "BattlePowerScale":12, // 유닛 전투력 계산 시에 사용
+            "PotenPowerScale": 7000, // 잠재력 전투력 배율
+            "DamageScale": 18500, // 데미지 배율
+            "DefenceConst": 3000, // 데미지 계산식의 방어율 상수
+            "CounterSkill": {
+                "Enable": true, // 카운터 스킬 기능 on/off
+                "DamageUpRate": 1000, // 카운터 스킬 데미지 증가율 (만분율)
+                "SpeedDamageRate": 0 // 행동 게이지 데미지 (만분율) //24.05.27 - 보스 바보화 우려로 0으로 설정
+            },
+            "NovaBurst": {
+                "MaxNovaForceValue": 12, //노바 포스 최대 수치
+                "UseNovaForceValue": 4 //노바 버스트 발동 코스트(노바 포스)
+            },
+            "PotenCoreGetMaxCount": 6, // 잠재력 코어 최대 보유 개수            
+            "SuperArmor": {
+                "AdjustSuperArmorBreakScale": 20000, //상성 타격 시 강인도 피해 배율
+                "BreakImpossibleLevelDistance": 1000 // 공격자보다 피격자가 해당 레벨값 이상이면 강인도를 깎을 수 없다
+            },
+            "MissionBonusRewardGoldRate": 300, // 전투 미션 보너스 보상 골드 배율            
+            "OrbitalArray": { // 오비탈 어레이
+                "BossSuperArmorBreakGetPointValue": 3 //보스 유닛 강인도 격파 시 획득하는 포인트 수치
+            },
+            "LeaderEffectCharmItemId": [
+                9000001
+            ],
+            "DomainGlobalLifeTurn": 3, // 영역 전개 글로벌 턴 수 25.02.17 : 5 -> 3 으로 수정
+            "CombatPowerOverSpecRatio": 1.2, // 전투력 초과 알림 배율, 해당 전투력 이상일 시 초과 알림
+            "CombatPowerUnderSpecRatio": 0.999, // 전투력 부족 알림 배율, 해당 전투력 이하일 시 부족 알림
+            "CalculatedDataCap": {
+                "RATE_DAMAGE_REDUCE_TOTAL_LIMIT": 5000 // 피해량 감소에 대한 최대 캡
+            },
+            "StatDataCap": {
+                "NST_RATE_CRITICAL": 10000,
+                "NST_RATE_CRITICAL_DAMAGE": 30000,
+                "NST_RATE_CROSS_ATTACK": 3000
+            }
+        },
+        "StellarMemory": {
+            "SlotOpenReqItemId": 103, // 슬롯 오픈 아이템 아이디
+            "SlotOpenReqItemCount": 3000, // 슬롯 오픈 아이템 개수
+            "MinimumCount": 4 // 스텔라 메모리 최소 보유 수량
+        },
+        "Unit": {
+            "LevelResetItemCount": 10, // 구원자 레벨 리셋에 필요한 성휘석 수
+            "FavorLevelLimit": [ // 호감도 레벨 한계치
+                30,
+                40,
+                50,
+                60
+            ]
+        },
+        "Arcana": {
+            "GradeData": [
+                {
+                    "ArcanaGrade": "R",
+                    "StartLevel": 25, // 시작 레벨
+                    "MaxLevelPerGrade": 5 // 등급 업그레이드시 추가되는 레벨 상한
+                },
+                {
+                    "ArcanaGrade": "SR",
+                    "StartLevel": 30,
+                    "MaxLevelPerGrade": 5
+                },
+                {
+                    "ArcanaGrade": "SSR",
+                    "StartLevel": 35,
+                    "MaxLevelPerGrade": 5
+                }
+            ]
+        },
+        "Synchro": {
+            "SlotUnlockItemId": 103, // 슬롯 오픈 아이템 아이디
+            "SlotUnlockItemCount": 500, // 슬롯 오픈 아이템 개수
+            "SlotCooldownMinute": 240, // 슬롯 쿨타임 (분) // 원래 240분(4시간)
+            "SlotCooldownItemId": 103, // 쿨다운 아이템 아이디
+            "SlotCooldownItemCountPerMinute": 1, // 쿨다운 아이템 사용시 분당 소모되는 아이템 개수
+            "LevelLimitTable": [
+                {
+                    "LevelLimit": 40, // 최대 레벨업 가능한 레벨
+                    "ReqLevel": 20 // 요구 레벨
+                },
+                {
+                    "LevelLimit": 80,
+                    "ReqLevel": 60
+                },
+                {
+                    "LevelLimit": 120,
+                    "ReqLevel": 100
+                },
+                {
+                    "LevelLimit": 160,
+                    "ReqLevel": 140
+                }
+            ]
+        },
+        "MainLobby": {
+            // 0 : Basic, 1 : Arcpoint, 2 : Wallpaper
+            "MainLobbyDefaultBackgroundType": 2,
+            "MainLobbyDefaultBasicUnitId": 1001,
+            "MainLobbyDefaultBasicBackgroundId": 80000001,
+            "MainLobbyDefaultArcpointId": 90102101,
+            "MainLobbyDefaultWallpaperId": 100000001,
+            "OperationContentsId": 99,
+            "MainStoryContentsId": 100
+        },
+        "UserProfile": {
+            "NicknameChangeReqItemId": 103, // 닉네임 변경 아이템 아이디
+            "NicknameChangeReqItemCount": 1000 // 닉네임 변경 아이템 개수
+        },
+        "PvpBattle": {
+            "StatScale" : 1000, //Pvp 기본 적용 스케일링 (만분율)
+            "TacticsScale" : 500, // 전술 분석을 통한 성장 능력치에 적용 스케일링 값 (만분율)
+            "StarLinkScale" : 500, // 스타 링크를 통한 성장 능력치에 적용 스케일링 값 (만분율)
+        },
+        "Pvp": {
+            "PrivatePvpMinUnitCount": 16, // 친선전 진입 조건 유닛 수량
+            "TurnTimeOverSec": 20, // PVP 1턴 내 유닛 행동하기까지 제한 시간(초) 설정
+            "TurnTimeDelaySec": 5, // 연출 발생(노바버스트 발동 등)으로 추가되는 제한시간 지연 시간(초)
+        },
+        "AsyncPvp": {
+            "TicketItemId": 402, // 전략전 소모 티켓 아이템 아이디
+            "TicketMaxCount": 5, // 전략전 최대 티켓 보유 개수
+            "TicketChargeMinutes": 240, // 전략전 티켓 충전 시간 (분)
+            "RewardItemId": 107 // 전략전 보상 아이템 아이디
+        },
+        "PvpRankDelayTime": {
+            "BattleDelayTimeMax": 5 // 랭크전 (NPC) 전투 중 스킬 준비 연출 시간
+        },
+        "TitleCall": {
+            "TitleCallFileNames": [
+                "UNIT_1021_UI_TITLE_CALL-5.ogg",
+                "UNIT_1021_UI_TITLE_CALL-6.ogg",
+                "UNIT_1021_UI_TITLE_CALL-8.ogg"
+            ]
+        },
+        "Shop": {
+            "ShopNpcId": 117, // 상점 NPC
+            "PayShopTabId": 12, // 유료 상점 연결 (성광석 구매)
+            "ObserveShopId": 3, // 관측 상점 연결
+            "PvpShopTabId": 5, // 건틀렛 상점 연결
+            "CampaignShopTabId": 6, // 캠페인 상점 연결
+            "RandomShopRefreshCostItemId": 103, // 랜덤 상점 새로고침 아이템 아이디
+            "RandomShopRefreshCostItemCount": 100, // 랜덤 상점 새로고침 비용
+            "BuyPopupShortcuts": [
+                {
+                    "CheckItemId": 401,
+                    "ProductId": 100004
+                },
+                {
+                    "CheckItemId": 402,
+                    "ProductId": 100501 // 전략전에서 건틀렛 구매 숏컷 상품
+                }
+            ]
+        },
+        "Equip": {
+            "InventoryReqCountPerExpend": 50, // 장비 인벤토리 확장 횟수별 필요 성휘석 갯수
+            "FilterMaxTier": 2, // 현재 존재하는 티어 최대치이며 장비 필터에서 자동으로 확인하는데 사용하는 값
+            "FilterMainStatList": [
+                "NST_ATK", 
+                "NST_HP",
+                "NST_DEF",
+                "NST_TURN_SPEED",
+                "NST_NV_RATE_ATK",
+                "NST_NV_RATE_HP",
+                "NST_NV_RATE_DEF",
+                "NST_RATE_CRITICAL",
+                "NST_RATE_CRITICAL_DAMAGE",
+                "NST_RATE_EFFECT_HIT",
+                "NST_RATE_EFFECT_EVADE"
+                ], // 필터에 표시할 장비 주옵션 값
+            "FilterSubStatList": [
+                "NST_ATK", 
+                "NST_HP",
+                "NST_DEF",
+                "NST_TURN_SPEED",
+                "NST_NV_RATE_ATK",
+                "NST_NV_RATE_HP",
+                "NST_NV_RATE_DEF",
+                "NST_RATE_CRITICAL",
+                "NST_RATE_CRITICAL_DAMAGE",
+                "NST_RATE_EFFECT_HIT",
+                "NST_RATE_EFFECT_EVADE"
+                ], // 필터에 표시할 장비 보조옵션 값
+            "EnchantReqGoldPerExp": 1, // 장비 강화시 경험치1당 필요한 골드량
+            "EnchantExpRate": 80 // 장비 강화에 재료아이템의 경험치 추가 비율
+        },
+        "Facility": {
+            "TacticsMaxLevel": 500, // 전술분석 최대 레벨
+        },
+        "Guild": {
+            "CreateCostItemId": 103, // 길드 생성 비용 아이템 아이디
+            "CreateCostItemCount": 1000 // 길드 생성 비용 아이템 개수
+        },
+        "Friend": {
+            "FriendListMax": 50, // 보유 가능 친구 최대치
+            "FriendRequestSendMax": 30, // 보낸 친구 신청 최대치
+            "FriendRequestRecvMax": 30, // 받은 친구 신청 최대치
+            "RecommendLevelGapMin": 0, // 친구 추천목록 최소 레벨차이
+            "RecommendLevelGapMax": 30 // 친구 추천목록 최대 레벨차이
+        },
+        "JourneyTutorial": {
+            "ScenarioId": 99,
+            "UnlockPotenProgressId": 10071, // 다음 프로그래스를 클리어하면, 여정 메인의 잠재력 버튼이 언락됩니다.
+            "UnlockPartyProgressId": 10071, // 다음 프로그래스를 클리어하면, 여정 메인의 파티 버튼이 언락됩니다.
+            "UnlockInvenProgressId": 10071 // 다음 프로그래스를 클리어하면, 여정 메인의 가방 버튼이 언락됩니다.
+        },
+        "Tutorial": {
+            "DailyResetEnableProgressId": 10132, // 다음 프로그래스를 클리어이후부터 일일 리셋 처리가 적용됩니다. 작전 1-3 클리어 전투 결과 화면 튜토리얼 
+        },
+        "CubePalace": {
+            "SkillResetReqItemId": 101,
+            "SkillResetReqItemCount": 2000
+        },
+        "NormalItemCharge": {
+            "WillpowerChargeMax": 240,
+            "WillpowerChargeSpan": 6, // 몇 분마다 행동력 1이 증가하는 가에 대한 값
+        },
+        "SaviorCentralMenuSorting": {
+            "Sorting": [
+                "SAVIOR_CENTRAL_DISPATCH", // 파견의뢰 작전 2-10 클리어
+                "SAVIOR_CENTRAL_SYNCHRO", // 스타링크 작전 3-18 클리어
+                "SAVIOR_CENTRAL_TACTICS", // 전술분석 작전 3-18 클리어
+                "SAVIOR_CENTRAL_CRAFT", // 장비관리 작전 5-28 클리어
+                "SAVIOR_CENTRAL_FORTUNE", // 달의정원 아직 개발중 오픈 X
+                "SAVIOR_CENTRAL_DICTIANARY" // 데이터베이스 작전 2-15 클리어               
+                
+
+                // "SAVIOR_CENTRAL_TACTICS", // 변경 이전 순서들
+                // "SAVIOR_CENTRAL_CRAFT", 
+                // "SAVIOR_CENTRAL_SYNCHRO",
+                // "SAVIOR_CENTRAL_DISPATCH",
+                // "SAVIOR_CENTRAL_FORTUNE", 
+                // "SAVIOR_CENTRAL_DICTIANARY",
+            ]
+        },
+        "RankingRaid": {
+            "ScoreResetReqItemCount": 100
+        },
+        "InitialRedDot": {
+            "InitialProfileIcon": 60000001, // 프로필 아이콘 없음
+            "InitialProfileFrame": 70000001, // 기본 프레임
+            "InitialUnits": [
+                1001,
+                1502,
+                1507,
+                1508
+            ],
+            "InitialBackgrounds": [
+                80000001, // 기차역
+            ],
+            "InitialWallpapers": [
+                100000001, // 아스트로 생텀 웰페이퍼
+            ],
+        },
+        "EventPass": {
+            "ExpBuyReqItemCount": 200 // 이벤트 패스 1레벨당 필요한 성광석
+        }
+    }
+}

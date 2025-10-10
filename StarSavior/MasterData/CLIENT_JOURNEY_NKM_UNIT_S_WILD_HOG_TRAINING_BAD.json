@@ -1,0 +1,356 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WILD_HOG_TRAINING_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHOOSH_SWORD_02.wav"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "으윽... 또 빗나갔잖아.",
+      "UnitTalk_JPN": "うぅっ…また外しちまった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "던질 때 손맛이 영 이상한데... 뭐가 문제지?",
+      "UnitTalk_JPN": "投げた時の感覚もおかしいし…何が問題なんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "정말이지, 오늘따라 제대로 풀리는 게 하나도 없구만.",
+      "UnitTalk_JPN": "まったく、今日はツイてねぇな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "오는 길에 마차랑 부딪칠 뻔한 것도 그렇고. 컨디션 문제인가.",
+      "UnitTalk_JPN": "ここに来る時は馬車とぶつかりそうになったし。体調の問題か？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐 쉬면서 이유를 생각해 볼까?",
+          "JumpAnchorStringId_JPN": "ちょっと休憩しながら、理由を考えてみよっか。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "종목을 바꾸는 거야!",
+          "JumpAnchorStringId_JPN": "種目を変えてみよう！",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "이걸 마시고 기운 차려.",
+          "JumpAnchorStringId_JPN": "これでも飲んで、元気出して。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "아아, 그래. 잠깐이라면.",
+      "UnitTalk_JPN": "そうだな。ちとだけ休もう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…응? 뭐야, 이거?",
+      "UnitTalk_JPN": "…あぁん？何だこれ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "도끼에 금이 가 있었잖아. 이러니까 손맛이 이상하지.",
+      "UnitTalk_JPN": "斧にヒビが入ってるじゃねぇか。だから感覚がおかしかったんだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "말 잘했어, 단장. 덕분에 이유를 알게 됐네.",
+      "UnitTalk_JPN": "団長、よく言ってくれたぜぇ。おかげで原因が分かったぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다음 훈련 전까지는 무기를 정비하기로 했다.",
+      "UnitTalk_JPN": "次の訓練まで、武器の手入れをすることにした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 14,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그래. 안 풀리는 걸 억지로 잡고 있는 것보단 낫겠지.",
+      "UnitTalk_JPN": "そうだな。上手くいかねぇのに、斧を握り締めてるよりは良さそうだぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그나저나 이런 거에 발목 잡히다니... 퇴물이구만, 나도.",
+      "UnitTalk_JPN": "それにしても、こんなことでつまずくなんて…俺も衰えちまったな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "할리는 계속 심기가 불편해 보인다...",
+      "UnitTalk_JPN": "ハーレーは、気持ちが穏やかでないようだ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 19,
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "호오, 그래?",
+      "UnitTalk_JPN": "ほぉ、なるほど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼 말이 나온 김에 호그 라이딩으로 바꿔 볼까?",
+      "UnitTalk_JPN": "なら、ホッグ・ライディングに変えてみるかぁ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "훈련이 필요 없는 종목이잖아?!",
+          "JumpAnchorStringId_JPN": "訓練する必要ないでしょ！？"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "하하, 그럼 나 대신 단장이 힘을 내줘야지.",
+      "UnitTalk_JPN": "ははっ。だっだら、俺の代わりに団長が頑張らねぇと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "훈련이라고 봐 주진 않을 테니 각오하라고?",
+      "UnitTalk_JPN": "訓練だからって手加減はしないぞ。覚悟しろよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잔뜩 신이 난 할리와 데이브에게 라이딩의 기초를 배웠다...!",
+      "UnitTalk_JPN": "ご機嫌なハーレーとデイヴから、ライディングの基礎を教わった…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 26,
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "...",
+      "UnitTalk_JPN": "...",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아냐. 이대로는 미련이 남아서 안 되겠어.",
+      "UnitTalk_JPN": "いや。このままじゃ、未練が残っちまう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "미안하다. 너무 칭얼거려서.",
+      "UnitTalk_JPN": "すまねぇな、わがまま言って。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "조금만 더 해 볼게.",
+      "UnitTalk_JPN": "ちと続けてみるぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 할리의 분발에도 훈련은 만족스럽지 못했다...",
+      "UnitTalk_JPN": "ハーレーは奮発したものの、満足のいく結果は出なかった…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 32,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "오, 뭐야. 활력 포션이잖아. 장거리 라이딩 할 때나 마시던 건데.",
+      "UnitTalk_JPN": "おっ、活力ポーションじゃねぇか。長距離ライディングの時に飲んでたやつだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "데이브도 나도 기진맥진해서, 중간에 고꾸라지기도 했지.",
+      "UnitTalk_JPN": "デイヴも俺もへとへとになって、途中でくたばることもあったもんだぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "...",
+      "UnitTalk_JPN": "...",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…그래. 하긴 달리다 보면 가끔은 고꾸라질 때도 있는 거지.",
+      "UnitTalk_JPN": "…そうだよな。走ってれば、くたばることもあるよな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "포션 고맙다, 단장. 잘 마실게.",
+      "UnitTalk_JPN": "団長、ありがたくいただくぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "할리가 활력 포션을 통해 마음을 다잡았다!",
+      "UnitTalk_JPN": "ハーレーは活力ポーションのおかげで、心を立て直した！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

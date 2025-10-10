@@ -1,0 +1,58 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_DOLL_KNIFE_BLACK_DAILY_02",
+            "ChangeAdjustType": "NUAT_STAR",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_PUPPET_SWORD_BLACK_ELITE_DAILY_02",
+            "IsElite": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_STAR"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_DOLL_KNIFE_BLACK_DAILY_02",
+            "ChangeAdjustType": "NUAT_STAR",
+            "AllSkillAvailable": true
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_DOLL_KNIFE_BLACK_DAILY_02",
+            "ChangeAdjustType": "NUAT_STAR",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_VETERAN_GUN_SILVER_BOSS_DAILY_CRYSTAL_02",
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_STAR",
+            "IsBoss": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_DOLL_KNIFE_BLACK_DAILY_02",
+            "ChangeAdjustType": "NUAT_STAR",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

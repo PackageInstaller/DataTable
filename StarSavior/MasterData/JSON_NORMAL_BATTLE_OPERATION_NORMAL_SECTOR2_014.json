@@ -1,0 +1,68 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_00",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_OPERATION_00",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_00",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_00",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3000,
+              "NST_NV_RATE_HP": -3000
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_HALO_BLACK_ELITE_OPERATION_00",
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3000,
+              "NST_NV_RATE_HP": -3000
+            }
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_00",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3000,
+              "NST_NV_RATE_HP": -3000
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,300 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_38_NOA_BT_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_03.mp3",
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION_11.wav"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION_02.wav"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 1.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 1.5
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.4,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION_04.wav"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "상처로부터 차가운 한기가 스며든다.",
+      "UnitTalk_JPN": "傷口から冷たい寒気が染み込む。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마치 영혼을 갉아먹는 듯 차갑고 먹먹한… 어둠과 공허…",
+      "UnitTalk_JPN": "まるで魂を蝕むかのように冷たく、重苦しい…闇と空虚…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "0.8"
+      ],
+      "BgFadeInTime": 1.5
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "추위 속에서 의식이 사라져간다.",
+      "UnitTalk_JPN": "寒さの中で意識が消えゆく。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0.8"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_SOMEONE_UNKNOWN_MEMORY.prefab"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "관측 종료",
+      "UnitTalk_JPN": "観測終了",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "임계점 도달 실패",
+      "UnitTalk_JPN": "臨界点への到達に失敗",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스텔라 아카이브 기록 보존 절차 진행",
+      "UnitTalk_JPN": "ステラーアーカイブに記録を保存",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFlashBang": 0.5,
+      "EndBgmFileName": "MUSIC_CUTSCENE_03.mp3",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.5
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오랜만에 느껴본 <color=#F7BE45>[추위]</color>는 어땠지?",
+      "UnitTalk_JPN": "久しぶりに感じた<color=#F7BE45>「寒さ」</color>はどうだった？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그래, 알다시피 이 추위야말로 <color=#F7BE45>[공허]</color>의 근원.",
+      "UnitTalk_JPN": "そう、ご存じのように、この寒さこそが<color=#F7BE45>「空虚」</color>の根源なのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "네가 모든 것을 걸고 대적하기로 한 의무지.",
+      "UnitTalk_JPN": "お前が全てを賭けて対抗することを決めた義務だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만… 의무를 이행하기엔 아직 부족했던 것 같아.",
+      "UnitTalk_JPN": "しかし…義務を果たすにはまだ足りなかったようだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "너에게도, 네가 선택한 아이에게도.",
+      "UnitTalk_JPN": "君にも、君が選んだ子にも。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 다음에는 조금 더 나을 거야. ",
+      "UnitTalk_JPN": "でも次はもう少しうまくいくさ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그러니까 지금은 잠시나마 편히 쉬렴.",
+      "UnitTalk_JPN": "だから今は、しばらくの間、ゆっくり休んでくれ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나의 벗, 나의 계약자…",
+      "UnitTalk_JPN": "私の友、私の契約者…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_38_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 나의… 구원자님.",
+      "UnitTalk_JPN": "そして私の…救援者さま。",
+      "TalkTime": 0.03
+    }
+  ]
+}

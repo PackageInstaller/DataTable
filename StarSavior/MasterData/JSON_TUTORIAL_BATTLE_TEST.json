@@ -1,0 +1,31 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "SkipProgressWithHistory": true,
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_TUTORIAL",
+            "UnitLevel": 60
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_S_TUTORIAL_GILLE",
+            "UnitLevel": 60,
+            "IsBoss": true,
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_TUTORIAL",
+            "UnitLevel": 60
+          }
+        ]
+      }
+    ]
+  }
+}

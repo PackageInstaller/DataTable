@@ -1,0 +1,27 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_09",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마지막 시험을 앞두고, 에핀델은 단장과의 재승부를 기약했다.",
+      "UnitTalk_JPN": "最終試験を前に、エピンデルは団長との再戦を約束した。",
+      "TalkTime": 0.03
+    }
+  ]
+}

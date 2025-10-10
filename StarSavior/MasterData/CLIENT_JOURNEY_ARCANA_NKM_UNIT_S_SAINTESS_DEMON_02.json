@@ -1,0 +1,1758 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_2",
+      "UnitTalk_KOR": "광장 앞을 지나가는데, 뒷골목에 숨어 있는 뮤리엘과 엘리사가 눈에 띄었다.",
+      "UnitTalk_JPN": "広場の前を通っていると、路地裏にいるミュリエルとエリサが目に入った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "성실하게 포교하는 다른 교단 분들을 방해한다니….",
+      "UnitTalk_JPN": "真面目に布教している他教団の方たちを邪魔をするなんて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "정말 그래도 괜찮은 걸까요…?",
+      "UnitTalk_JPN": "本当に良いのでしょうか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "물론이지, 엘리사. 네가 가프님이라고 생각해 봐.",
+      "UnitTalk_JPN": "当たり前でしょ、エリサ。ガプ様の立場になって考えてみなさい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "자기가 아니라 다른 신을 믿는 사람들을 보면 무슨 생각이 들까?",
+      "UnitTalk_JPN": "自分じゃなく、他の神を信じる人を見たらどう思うかしら？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "행복하게 잘 살면 좋겠다…?",
+      "UnitTalk_JPN": "幸せに暮らしてほしい…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "쯧쯧쯧, 틀렸어.",
+      "UnitTalk_JPN": "ちっちっち、そうじゃないわよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그런 안일한 마음가짐이니까 네가 여태 두 자릿수 순위에도 못 드는 거라구.",
+      "UnitTalk_JPN": "そんな甘い考えだから、序列を二桁まであげられないのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "우으…. 그러면 뮤리엘님은요…?",
+      "UnitTalk_JPN": "うぅ…ミュリエル様ならどう思われるのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "당연히 무지막지하게 화나겠지!",
+      "UnitTalk_JPN": "ものすごくイライラするに決まってるでしょ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "<color=#F7BE45>내 사제들은 뭘 하는 거야? 한 명이라도 더 많은 신도를 끌고 오라고!</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>我の司祭や聖女たちは何をしているのだ？一人でも多くの信徒をつれて来い！</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "…라면서 말이야.",
+      "UnitTalk_JPN": "…って感じね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_2",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "뮤리엘님 머릿속의 가프님은 정말 흉포한 분이셨군요….",
+      "UnitTalk_JPN": "ミュリエル様の頭の中のガプ様は、本当に凶暴な方なのですね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하지만…. 그게 다른 교단을 방해하는 거랑 무슨 관련이 있는지는 잘 모르겠어요.",
+      "UnitTalk_JPN": "ですが…それが他教団を邪魔することと、なんの関係があるのか分かりません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "푸풉♪ 역시 바보라니까, 엘리사는. 이런 간단한 셈법도 못 깨닫다니.",
+      "UnitTalk_JPN": "ぷぷっ♪やっぱりバカね、エリサは。こんな簡単なことも理解できないなんて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "다른 교단에 신도를 빼앗기면 -1이 되는 걸 우리가 방해하면 0이 되잖아?",
+      "UnitTalk_JPN": "他の教団に信徒を奪われてマイナス1になるのを、うちらが邪魔すれば0になるでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "즉, +1! 한 명에게 포교하는 것과 다를 바 없다는 뜻이야!",
+      "UnitTalk_JPN": "つまり、プラス1よ！一人に布教したのと同じことだわ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그럴 수가…!",
+      "UnitTalk_JPN": "そんな…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어떻게 생각해도 엉터리잖아.",
+          "JumpAnchorStringId_JPN": "それはどう考えてもおかしいよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "단장?!",
+      "UnitTalk_JPN": "団長！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 안녕하세요. 이런 곳에서 뵙게 되네요, 단장님.",
+      "UnitTalk_JPN": "こ、こんにちは。こんなところでお会いするなんて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "흥. 보나마나 또 한가하게 잔소리나 하려고 온 거겠지.",
+      "UnitTalk_JPN": "ふん。どうせまた、暇つぶしに小言でも言いに来たんでしょ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "엘리사! 붙잡히기 전에 얼른 가자!",
+      "UnitTalk_JPN": "エリサ！捕まる前に行くわよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "네? 앗, 네!!",
+      "UnitTalk_JPN": "え？あっ、はい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뮤리엘과 엘리사가 광장으로 달려 나갔다.",
+      "UnitTalk_JPN": "ミュリエルとエリサは、広場の方へと走って行った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무슨 짓을 하나 우선 지켜보자….",
+      "UnitTalk_JPN": "何を企んでいるのか見守ってみよう…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "CameraOffset": "TWIN_2",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "좋아, 엘리사. 지금부터 수단 방법을 가리지 않고 다른 교단을 방해하는 거야.",
+      "UnitTalk_JPN": "よし、エリサ。今から手段を選ばずに、他教団を邪魔するわよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "오, 오오…!",
+      "UnitTalk_JPN": "お、おぉ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "마침 저기 사마스 교단이 포교 중이네. 네 첫 먹잇감으로 딱이겠어.",
+      "UnitTalk_JPN": "ちょうどあそこでサマス教団が布教中だわ。あんたの最初の獲物にピッタリね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "제, 제가 하는 건가요?",
+      "UnitTalk_JPN": "わ、私がするのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "당연하지. 안 그러면 뭐하러 데리고 나왔겠어.",
+      "UnitTalk_JPN": "当たり前でしょ。何のために連れてきたと思ってるのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "하지만 이렇게 많은 사람들 앞에서 어떻게….",
+      "UnitTalk_JPN": "でも、こんなにたくさんの人がいる前でどうすれば…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "바로 그런 소심함이 네 문제라니까!",
+      "UnitTalk_JPN": "そういう臆病なところが、あんたのダメなとこなのよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "성녀 주제에 사람들 시선을 의식해서 어디에 쓰게?",
+      "UnitTalk_JPN": "聖女のくせに人目を気にしてどうするの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "히, 히익…! 죄송합니다!",
+      "UnitTalk_JPN": "ヒ、ヒィッ…！すみません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "정말 죄송하면 말이 아니라 행동으로 보이라구.",
+      "UnitTalk_JPN": "本当に申し訳ないと思ってるなら、口じゃなく行動で示しなさい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아, 알겠습니다…. 한 번 해볼게요…!",
+      "UnitTalk_JPN": "わ、分かりました…一度やってみます…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FOOTSTEP_HIGHHEELS.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "푸후훗♪ 순진하긴♪",
+      "UnitTalk_JPN": "ぷふふっ♪純粋なんだから♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "역시 다루기 쉽다니까, 엘리사는.",
+      "UnitTalk_JPN": "やっぱり扱いやすいわね、エリサは。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "이거야말로 손 안 대고 코 풀기지.",
+      "UnitTalk_JPN": "うちは何もしなくていいし、楽ちんだわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "기합이 잔뜩 들어간 엘리사가 포교 중인 사람에게 다가가려다가…",
+      "UnitTalk_JPN": "気合たっぷりのエリサが布教中の人へと近づき…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "DEFAULT",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "저기, 잠시만요. 지나갈게요. 실례하겠습니다….",
+      "UnitTalk_JPN": "あの、すみません。通ります、失礼します…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "엣, 앗, 저기, 아앗…!",
+      "UnitTalk_JPN": "えっ、あっ、あの、ああっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "인파에 휩쓸려 순식간에 멀어진다.",
+      "UnitTalk_JPN": "人波に飲まれたエリサの姿はどんどん小さくなっていく。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "도, 도와 주세요, 뮤리엘니임!",
+      "UnitTalk_JPN": "た、助けてください、ミュリエル様ー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "뭐 하는 거야, 저 바보는!",
+      "UnitTalk_JPN": "何してるのよ、あのバカ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "뮤리엘이 뛰어가서 인파에 휩쓸려 가는 엘리사를 데려왔다.",
+      "UnitTalk_JPN": "ミュリエルが走り寄ると、人波に流されていくエリサを連れ戻した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "하여튼…. 덩치만 크지 쓸모가 없다니까.",
+      "UnitTalk_JPN": "まったく…身体が大きいだけで、役に経たないんだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "가, 감사합니다. 하마터면 미아가 될 뻔했어요….",
+      "UnitTalk_JPN": "あ、ありがとうございます。迷子になってしまうところでした…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "어쩔 수 없네. 내가 시범을 보여 줄 테니까 잘 보고 배우라구.",
+      "UnitTalk_JPN": "仕方ないわね。うちがお手本を見せてあげるから、ちゃんと見ておくのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "앗, 네! 감사합니다…!",
+      "UnitTalk_JPN": "あっ、はい！ありがとうございます…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후후, 그래. 평생 감사하도록 해.",
+      "UnitTalk_JPN": "ふふ、いいわ。この恩は一生忘れないことね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 맞다. 그리고 폭죽이 좀 필요하겠어.",
+      "UnitTalk_JPN": "あっ、そうだわ。爆竹が必要になりそうね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "폭죽이요…?",
+      "UnitTalk_JPN": "爆竹ですか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "푸후훗♪ 원래 사람들은 화려한 연출에 혹하는 법이거든.",
+      "UnitTalk_JPN": "ぷふふっ♪人はね、派手な演出に食いつくものなのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "알겠지? 내가 <color=#F7BE45>두 눈 똑바로 뜨고</color>라고 말하면 폭죽을 터뜨리는 거야.",
+      "UnitTalk_JPN": "分かった？うちが<color=#F7BE45>よく見て</color>って言ったら爆竹を鳴らすのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "잘은 모르겠지만….",
+      "UnitTalk_JPN": "よく分かりませんが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네! 이번에는 실수하지 않게 최선을 다할게요!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NUN_A"
+      ],
+      "UnitTalk_KOR": "사마스 교단에 들어오십시오, 여러분!",
+      "UnitTalk_JPN": "みなさん、サマス教団にどうぞおいでください！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.5
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHOOSH.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "저기저기, 알고 있었어? 사마스 교단은 돈을 엄청나게 밝힌대.",
+      "UnitTalk_JPN": "ねぇねぇ、知ってる？サマス教団ってお金に汚いらしいわよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NUN_A"
+      ],
+      "UnitTalk_KOR": "우리의 신은 여러분께 황금과 같은 재보의 은혜를 주실 것입니다!",
+      "UnitTalk_JPN": "我らの神は、あなた方に黄金のような財宝の恵みを授けてくださるでしょう！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHOOSH.wav",
+      "CameraOffset": "ONE_1"
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS4_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "내 친구의 친구도 사마스를 믿는데, 투자했다가 쫄딱 망했다는 거 있지?",
+      "UnitTalk_JPN": "うちの友達がサマスの信徒なんだけど、投資で大損したらしいのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NUN_A"
+      ],
+      "UnitTalk_KOR": "우리 교단에 오시면 경험 많은 상인들과 두루 교류하실 수 있습니다!",
+      "UnitTalk_JPN": "サマス教団にいらっしゃれば、ベテラン商人とも交流できますよ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "CameraOffset": "ONE_6",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS4_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "그치? 하긴 원래 신도가 많은데 왜 굳이 포교하러 다니겠어?",
+      "UnitTalk_JPN": "でしょ？元から信徒が多いのに、なんでわざわざ布教してるのって話なのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "괴, 굉장해요, 뮤리엘님…. 숨쉬듯이 거짓말을 하고 계세요.",
+      "UnitTalk_JPN": "す、すごいです、ミュリエル様…息を吐くように嘘をついています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "안 좋은 의미로 굉장하네.",
+          "JumpAnchorStringId_JPN": "悪い意味ですごいな。"
+        }
+      ]
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_7",
+      "UnitMotion": "SMILE_LOOP",
+      "UnitPos": "POS4",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NUN_A"
+      ],
+      "UnitTalk_KOR": "이봐요! 아까부터 무슨 유언비어를 퍼뜨리고 다니는 겁니까!",
+      "UnitTalk_JPN": "ちょっと！さっきからどうして根も葉もない噂を広めているのですか！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "유언비어라니? 난 그냥 들은 대로만 얘기했을 뿐인데?",
+      "UnitTalk_JPN": "寝も葉もないだなんて。うちはただ、聞いたことを話しただけだけど？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "그러고 보니 강한 부정은 강한 긍정이라던데~",
+      "UnitTalk_JPN": "そういえば、否定は肯定の裏返しだそうよ～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "어라? 과민 반응하는 이유가 혹시~?",
+      "UnitTalk_JPN": "あれ？過剰に反応する理由って、もしかして～？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NUN_A"
+      ],
+      "UnitTalk_KOR": "이, 이 무슨 파렴치한…!",
+      "UnitTalk_JPN": "な、なんて恥知らずな…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "푸후훗♪ 기왕 믿으려면 제대로 된 신을 믿어야지.",
+      "UnitTalk_JPN": "ぷふふっ♪どうせ信じるなら、ちゃんとした神を信じなきゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "자! 두 눈 똑바로─",
+      "UnitTalk_JPN": "さぁ！よく見──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뮤리엘 뒤로 누군가 다가온다….",
+      "UnitTalk_JPN": "ミュリエルの後ろに誰かが近づいてきた…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "뮤리엘 성녀님?",
+      "UnitTalk_JPN": "ミュリエル様？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "힉! NOA 지부 담당 사제님?!",
+      "UnitTalk_JPN": "ヒィッ！NOA支部担当の司祭様！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "다른 종교에 대한 비방은 성녀로서 부적절한 행동이라는 건 알고 계시겠죠.",
+      "UnitTalk_JPN": "他宗教に対する誹謗は、聖女として不適切な行為だとご存じでしょう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "마신 가프님은 다른 종교에도 언제나 관대한 마음으로 귀를 열라 말씀하셨거늘...!",
+      "UnitTalk_JPN": "魔神ガプ様は、いつでも他宗教に寛大な心で耳を傾けよとおっしゃられたというのに…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "당장 대교구에 알리도록 하겠습니다. 순위가 떨어지더라도 겸허히 받아들이세요.",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "자, 자자, 잠깐!!",
+      "UnitTalk_JPN": "あ、ああ、あの！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "사제님, 지금 뭔가 아주 사소한 오해를 하신 것 같은데요!",
+      "UnitTalk_JPN": "司祭様、ちょっとした誤解をされているようです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "<color=#F7BE45>두 눈 똑바로 뜨고</color> 잘 보시라고요! 전 그냥…!",
+      "UnitTalk_JPN": "<color=#F7BE45>よく見て</color>ください！私はただ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아, 앗! 여기서 폭발을 원하시다니…?!",
+      "UnitTalk_JPN": "あ、ああっ！このタイミングで爆発を望まれるだなんて…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "지켜봐 주세요, 가프님…! 이번에는 실수하지 않을게요!",
+      "UnitTalk_JPN": "お見守りください、ガプ様…！今度こそ失敗しません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 잠깐만!",
+          "JumpAnchorStringId_JPN": "待って、ストップ！"
+        }
+      ]
+    },
+    {
+      "Uid": 148,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SURPRISE_LOOP",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 150,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 149,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BOING_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "…엣?",
+      "UnitTalk_JPN": "…えっ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EXPLOSION.wav"
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뮤리엘의 뒤에서 화려한 폭발이 일어났다.",
+      "UnitTalk_JPN": "ミュリエルの後ろで、派手な爆発が起こった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_03.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "꺄아아악!",
+      "UnitTalk_JPN": "キャーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "불, 불 붙었다! 부울!",
+      "UnitTalk_JPN": "火、火が着いたわ！火がぁ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "뮤리엘 성녀님! 또 무슨 위험한 짓을 꾸민 겁니까?!",
+      "UnitTalk_JPN": "ミュリエル様！またなんと危険なことを企んでいるのですか！？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WATER_SPRAY_01.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "으앗, 차거! 어프픕 프프-!",
+      "UnitTalk_JPN": "うあっ、冷たっ！ウププ、ププーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "뮤, 뮤리엘님…! 괜찮으세요?",
+      "UnitTalk_JPN": "ミュ、ミュリエル様…！大丈夫ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "죄송해요, 죄송해요! 제가 폭죽을 너무 많이 준비했나 봐요…!",
+      "UnitTalk_JPN": "すみません、すみません！私が爆竹を多くセットしてしまったようです…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "히이…. 히이이….",
+      "UnitTalk_JPN": "ヒィ…ヒィィ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "CameraOffset": "TRIPLE_2",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "아아, 엘리사 성녀님, 마침 잘 와주셨군요.",
+      "UnitTalk_JPN": "あぁ、エリサ様でしたか。ちょうど良い時にいらっしゃいましたね。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "덕분에 더 큰 사고로 번지지 않아서 다행입니다.",
+      "UnitTalk_JPN": "おかげさまで、大きな事故に至らず良かったです。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아앗, 저- 이건 저기-",
+      "UnitTalk_JPN": "ああっ、私は…これは、あの──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "보십시오, 뮤리엘 성녀.",
+      "UnitTalk_JPN": "ご覧なさい、ミュリエル様。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "모노리스 교단은 이처럼 언제나 다른 이들을 돕는 모습으로 본을 보여야 합니다.",
+      "UnitTalk_JPN": "モノリス教団はこのように、いつでも他者を助ける姿で見本となるべきなのです。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "이번 일은 제가 분명히 교단에 보고하도록 하겠습니다!",
+      "UnitTalk_JPN": "今回のことは、しっかりと教団に報告させていただきますよ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 146,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF"
+    },
+    {
+      "Uid": 147,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "CameraOffset": "ONE_3"
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "얘…. 얘가 범인…. 얘가….",
+      "UnitTalk_JPN": "エ…エリサが犯人…エリサが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "자업자득이야.",
+          "JumpAnchorStringId_JPN": "自業自得だよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FALL_DOWN_04.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "…꼴까닥.",
+      "UnitTalk_JPN": "…バタリ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "홀라당 타 버린 뮤리엘은 결국 그날 치료소로 보내졌다.",
+      "UnitTalk_JPN": "丸焦げになってしまったミュリエルは、結局診療所に担ぎ込まれた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 139,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 140,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 141,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 142,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 143,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 144,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

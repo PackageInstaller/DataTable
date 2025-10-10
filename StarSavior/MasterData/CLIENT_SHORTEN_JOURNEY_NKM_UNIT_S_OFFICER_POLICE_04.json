@@ -1,0 +1,27 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_OFFICER_POLICE_04",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_04",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_OFFICER_POLICE_01.png",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "야근을 하던 중에 안나가 도넛을 들고 찾아와 한바탕 소동을 일으켰다.",
+      "UnitTalk_JPN": "残業中にアンナがドーナツを持って訪ねてきて、ちょっとした騒ぎを起こした。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_TUTO_VOYAGER_COMPANION_BRIEFING",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_COMPANION_BRIEFING",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_COMPANION_BRIEFING",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "후우… 나도 실적 관리에 신경 쓰지 않으면…",
+      "UnitTalk_JPN": "ふう…私も実績の管理に気を付けないと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_COMPANION_BRIEFING",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…관측사들은 실적 압박이 심한 편인가?",
+          "JumpAnchorStringId_JPN": "…観測士って実績が大事なの？"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_COMPANION_BRIEFING",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "말도 마세요.",
+      "UnitTalk_JPN": "もー言うまでもありませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_COMPANION_BRIEFING",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "현장에 나가는 일은 부지기수에, 절차 밟는 데 필요한 서류들은 얼마나 많은지…",
+      "UnitTalk_JPN": "現場の仕事は数知れず、手続きに必要な書類はなんと多いことやら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_COMPANION_BRIEFING",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래도 아세라 님과 호흡이 잘 맞을 것 같아서 다행이네요.",
+      "UnitTalk_JPN": "でもアセラ様とは息が合いそうで良かったですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_COMPANION_BRIEFING",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "새로운 동료도 합류했으니 앞으로는 구원단의 운영도 더 신경 쓰셔야 할 거예요.",
+      "UnitTalk_JPN": "新しい仲間も加わったので、今後は救援団の運営にも\nもっと気を配らなければなりません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_COMPANION_BRIEFING",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "어떻게 해야 하는지 간단히 설명드리도록 하겠습니다.",
+      "UnitTalk_JPN": "どうすれば良いか、簡単に説明しましょう。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+    {
+      "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+      "TeamBSpawnList": [
+        {
+          "SpawnPosIndex": 1,
+          "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_BLUE_MAINSTORY_02",
+          "AllSkillAvailable": true
+        },
+        {
+          "SpawnPosIndex": 2,
+          "UnitStrId": "NKM_UNIT_MON_CRUNNADUN_AXE_BLACK_BOSS_MAINSTORY_02",
+          "IsBoss": true,
+          "SpecialSkillAvailable": true,
+          "HyperSkillAvailable": false
+        },
+        {
+          "SpawnPosIndex": 3,
+          "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_GREEN_MAINSTORY_02",
+          "AllSkillAvailable": true
+        }
+      ]
+    }
+    ]
+  }
+}

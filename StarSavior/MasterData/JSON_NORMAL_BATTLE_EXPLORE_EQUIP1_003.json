@@ -1,0 +1,20 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_MOTIVATOR_HANDS_BOSS_EQUIP1_03",
+            "IsBoss": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false
+          }
+        ]
+      }
+    ]
+  }
+}

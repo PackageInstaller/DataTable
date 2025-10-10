@@ -1,0 +1,563 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WILD_HOG_10",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "후우… 후…",
+      "UnitTalk_JPN": "ふぅ…ふぅ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "조용해졌어. 끝난 건가…?",
+      "UnitTalk_JPN": "静かになったな。終わったのか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "맞아. 완주 성공이야.",
+          "JumpAnchorStringId_JPN": "うん、クリアできたね。"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "으으…!",
+      "UnitTalk_JPN": "うう…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "해냈다아아아! 아자!!",
+      "UnitTalk_JPN": "やったぜぇぇぇぇ！よっしゃあ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_1.wav",
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "킁킁!!",
+      "UnitTalk_JPN": "クンクン！！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "설마 정말로 대륙 최고의 레이스를 제패해 버리다니…",
+      "UnitTalk_JPN": "まさか、本当に大陸一のレースを制覇しちまうなんて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "고마워, 단장. 네 덕분에 달리는 내내 즐거웠어.",
+      "UnitTalk_JPN": "あんがとよ、団長。お前のおかげで、走ってる間ずっと楽しかったぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "데이브 때문에 침울했던 건?",
+          "JumpAnchorStringId_JPN": "デイヴのことで落ち込んでたのは？"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "크흠, 지나간 건 그냥 잊어 버려.",
+      "UnitTalk_JPN": "こほん、過ぎたことは忘れちまえよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "앞으로도 달리다가 마주칠 것들은 엄청 많을 테니까. 좋은 추억만 기억해도 모자란다고.",
+      "UnitTalk_JPN": "これからも走りながら出会う奴らは山ほどいるだろうから。良い思い出だけ覚えていれば十分だ。        ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_1.wav",
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "킁, 킁.",
+      "UnitTalk_JPN": "クンクン。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이 녀석, 누님이 잊자는데 웃기는.",
+      "UnitTalk_JPN": "忘れてやるって言ってるのに、笑わせるなよぉ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_3.wav",
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "킁킁!",
+      "UnitTalk_JPN": "クンクン！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 잠시 그녀의 환한 얼굴을 바라보았다.",
+      "UnitTalk_JPN": "私は、しばらく彼女の眩しい笑顔を見つめていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "수많은 시련과 상처를 딛고 마침내 <color=#F7BE45>[여정]</color>의 끝에 도달한 자.",
+      "UnitTalk_JPN": "幾多の試練と痛みを克服し、ついに<color=#F7BE45>「救援の旅」</color>の終わりに到達した者。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀의 앞에는 더욱 많은 고난과 어려움이 기다리고 있을 것이다.",
+      "UnitTalk_JPN": "彼女には、更なる苦悩と困難が待ち受けているはずだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 나는 믿는다.",
+      "UnitTalk_JPN": "しかし、私は信じよう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀는 분명 나를 뛰어넘을…",
+      "UnitTalk_JPN": "彼女ならきっと、私を超え…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "최고의 <color=#F7BE45>[구원자]</color>가 될 것이라는 걸.",
+      "UnitTalk_JPN": "最高の<color=#F7BE45>「救援者」</color>になれるということを。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 눈부신 모습에… 나는 잠시 눈을 감았다.",
+      "UnitTalk_JPN": "その眩しい姿に…私はそっと瞳を閉じた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.2
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "…축하드립니다. 구원자님.",
+      "UnitTalk_JPN": "…おめでとうございます。救援者様。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이걸로 구원자님은 <color=#F7BE45>[여정]</color> 최종 시련을 통과하셨습니다.",
+      "UnitTalk_JPN": "これにて救援者様は<color=#F7BE45>「救援の旅」</color>の最終試験をクリアしました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그럼 이제 돌아갈까요?",
+      "UnitTalk_JPN": "では、戻りましょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "구원자님의 <color=#F7BE45>[여정 완주]</color>를 축하하기 위한 큰 파티가 준비되어 있거든요.",
+      "UnitTalk_JPN": "救援者様の<color=#F7BE45>【旅の終わり】</color>を祝して、盛大なパーティーをご用意しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_08.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…엉? 뭐야? 어디 갔어?",
+      "UnitTalk_JPN": "…あぁん？なんだ？どこ行ったんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "네? 무슨 말씀이시죠?",
+      "UnitTalk_JPN": "はい？どういう意味ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "여정을 통과한 분은 구원자님과 바이크 호그가 전부…",
+      "UnitTalk_JPN": "旅をクリアしたのは、救援者様とバイクホッグだけですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "지금 나랑 농담하자는 거야?",
+      "UnitTalk_JPN": "冗談はやめてくれよなぁ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "조금 전까지 여기 분명 있었잖아. 단장 말이야.",
+      "UnitTalk_JPN": "さっきまでここには確かにいたんだぞ。団長のことだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "…네?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "잠깐 머릿속이 멍해지면서 단장에 대한 인식이 흐릿해졌거든.",
+      "UnitTalk_JPN": "頭がぼーっとするなと思ったら、団長に関する記憶がぼやけてったんだぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래도 다행히 근성으로 버텨냈어.",
+      "UnitTalk_JPN": "でも、なんとか根性で耐えてやった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "사나이라고 자부하면서 친구를 잊어 버리다니, 말도 안 되는 소리지.",
+      "UnitTalk_JPN": "漢を自負しながら、ダチのこと忘れちまうなんてありえねぇからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "보통은 근성으로 이겨낸다는 게 더 말이 안 된다고 생각하지 않나요…?",
+      "UnitTalk_JPN": "根性で打ち勝つ方が、余計にありえないことだとは思いませんか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "데이브, 아직 달릴 수 있지?",
+      "UnitTalk_JPN": "デイヴ、まだ走れるだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_1.wav",
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "킁! 킁!",
+      "UnitTalk_JPN": "クン！クン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이제야 알겠구만. 갑자기 왜 여정이 끝나고 나서를 물어봤는지.",
+      "UnitTalk_JPN": "今わかったぜ。突然、旅を終えた後のことを聞いてきた理由をな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 말이야, 단장. 이러면 내가 달릴 새로운 길은 이미 정해져 버린 거잖아?",
+      "UnitTalk_JPN": "でも、団長。こうなったら、俺が走る新たな道はもう決まってるじゃねぇか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "찾으러 가 주지, 친구! 어디에 있든지 말이야!",
+      "UnitTalk_JPN": "探しに行くぜ、ダチよ！どこにいたとしてもな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_SHOOTING_STAR_01.prefab"
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.2
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 순간 또 하나의 새로운 별빛이 점화되었다.",
+      "UnitTalk_JPN": "今この瞬間、新たな星の煌めきが加わった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 찬란한 불꽃은 아카이브에 기록되어 우주의 어둠을 비추리라.",
+      "UnitTalk_JPN": "その眩い輝きはアーカイブに記録され、宇宙の闇を照らすであろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "관측 종료.",
+      "UnitTalk_JPN": "観測終了。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_EYE.txt",
+    "UnitHudHeight": 3,
+    "UnitBuffEffectScale": 1.7,
+    "UiStates": [],
+    "BuffEffectPosition": {
+      "HEAD": 2.8,
+      "BODY": 1.4
+    },
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_47.wav"
+            ]
+          },
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_48.wav"
+            ]
+          },
+          {
+            "EventFrame": 33,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_49.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_50.wav"
+            ]
+          },
+          {
+            "EventFrame": 59,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_51.wav"
+            ]
+          },
+          {
+            "EventFrame": 76,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_52.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_142.wav"
+            ]
+          },
+          {
+            "EventFrame": 16,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_143.wav"
+            ]
+          },
+          {
+            "EventFrame": 16,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_37.wav"
+            ]
+          },
+          {
+            "EventFrame": 90,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_144.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 51,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 24,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 51,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_ATK_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": false,
+        "StartUnitShow": {
+          "ShowOnMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnSelf": true,
+          "FormationMyTeam": "SFT_NORMAL_LINE"
+        },
+        "NonAttackEvents": [
+          {
+            "AnimTime": false,
+            "EventFrame": 60,
+            "ReActType": "NRT_NO_ACTION",
+            "EffectData": {
+              "EffectName": "VFX_BUFF_UNIT_MON_EYE_SAWTOOTH_BLACK_SPECIAL.prefab",
+              "EffectHeight": "BVH_BODY"
+            },
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_SPECIAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_SPECIAL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 32,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_SPECIAL_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 52,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_SPECIAL_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 64,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_SPECIAL_05.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_145.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_38.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_120.wav"
+            ]
+          },
+          {
+            "EventFrame": 46,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

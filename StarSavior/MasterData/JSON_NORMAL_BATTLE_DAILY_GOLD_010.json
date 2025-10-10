@@ -1,0 +1,78 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_SWORD_YELLOW_DAILY_06",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_SERGEANT_GUARDIAN_BLUE_ELITE_DAILY_06",
+            "IsElite": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_ORDER",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000
+            }
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_SWORD_YELLOW_DAILY_06",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000
+            }
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_CROSSBOW_YELLOW_DAILY_06",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_ORDER",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_VETERAN_SHIELD_GOLD_BOSS_DAILY_MATERIAL_06",
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_CHAOS",
+            "IsBoss": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_CROSSBOW_YELLOW_DAILY_06",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_ORDER",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

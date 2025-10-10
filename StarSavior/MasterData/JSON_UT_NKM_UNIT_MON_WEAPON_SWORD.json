@@ -1,0 +1,179 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_WEAPON.txt",
+    "UiStates": [],
+    "UnitHudHeight": 2.5,
+    "BuffEffectPosition": {
+      "HEAD": 2.3
+    },
+    "UnitBuffEffectScale": 1.2,
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_49.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_45.wav"
+            ]
+          },
+          {
+            "EventFrame": 16,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_46.wav"
+            ]
+          },
+          {
+            "EventFrame": 16,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_23.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 49,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 52,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 55,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 3,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 50,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_ATK_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": false,
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 37,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 62,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.5,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_SPECIAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 37,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_SPECIAL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 64,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_SPECIAL_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_50.wav"
+            ]
+          },
+          {
+            "EventFrame": 18,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_22.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00B_RANDOM_TRAINING",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS7",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>비밀의 지옥 특훈</color> 코스의 목표를 달성했다. ",
+      "UnitTalk_JPN": "<color=#F7BE45>秘密の地獄特訓</color>コースの目標を達成した。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그동안 배운 건 잊지 않을 거야.",
+          "JumpAnchorStringId_JPN": "これまで学んだことは忘れない。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "아직 배움이 부족하다.",
+          "JumpAnchorStringId_JPN": "まだ学びが足りない。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "HEART"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "메이드가 손수 만든 수료패를 받고 특훈을 마쳤다!",
+      "UnitTalk_JPN": "メイドが手作りした修了証を受け取り、特訓を終えた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 6,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "특훈은 아직 끝나지 않았다! 배운다는 마음으로 좀 더 노력하자!",
+      "UnitTalk_JPN": "特訓はまだ終わっていない！学ぶという気持ちで、もっと努力しよう！",
+      "TalkTime": 0.03
+    }
+  ]
+}

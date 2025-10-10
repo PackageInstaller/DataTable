@@ -1,0 +1,2281 @@
+﻿[
+    {
+        "$schema": "../../../../../DataSchema/Exported.jsonc",
+        "$comment": "name: STAT/STAT_ADD_PER_LEVEL",
+        "_Version": 0,
+        "Data": [
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_SAVIOR",
+                "StatAddPerLevelData": {
+                    "NST_HP": 1000,
+                    "NST_ATK": 100,
+                    "NST_DEF": 30,
+                    "NST_RATE_CRITICAL": 3000,
+                    "NST_RATE_CRITICAL_DAMAGE": 5000
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 3000,
+                    "NST_ATK": 300,
+                    "NST_DEF": 30,
+                    "NST_RATE_CRITICAL": 3000,
+                    "NST_RATE_CRITICAL_DAMAGE": 5000
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_TUTORIAL_NIEL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 80,
+                    "NST_ATK": 8,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_TUTORIAL_ASHERAH",
+                "StatAddPerLevelData": {
+                    "NST_HP": 70,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_TUTORIAL_SMILE",
+                "StatAddPerLevelData": {
+                    "NST_HP": 65,
+                    "NST_ATK": 14,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_TUTORIAL_LUNA",
+                "StatAddPerLevelData": {
+                    "NST_HP": 65,
+                    "NST_ATK": 14,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_TUTORIAL_GILLE",
+                "StatAddPerLevelData": {
+                    "NST_HP": 70,
+                    "NST_ATK": 17,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_TUTORIAL_VOIDER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 20,
+                    "NST_ATK": 3,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_TUTORIAL_STALKER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 20,
+                    "NST_ATK": 3,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_BOSS_TUTORIAL_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 38,
+                    "NST_ATK": 2,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_ASSASSIN_BOSS_TUTORIAL_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 72,
+                    "NST_ATK": 9,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_CASTER_BOSS_TUTORIAL_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 63,
+                    "NST_ATK": 10,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_S_DEFENDER_STANDARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 66,
+                    "NST_ATK": 8,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_S_STRIKER_STANDARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_S_RANGER_STANDARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_S_CASTER_STANDARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 46,
+                    "NST_ATK": 14,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_S_ASSASSIN_STANDARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 46,
+                    "NST_ATK": 14,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_S_SUPPORTER_STANDARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 8,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_P_STRIKER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_DEFENDER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 66,
+                    "NST_ATK": 8,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_STRIKER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_RANGER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_CASTER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 46,
+                    "NST_ATK": 14,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_ASSASSIN_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 46,
+                    "NST_ATK": 14,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_SUPPORTER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 8,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_DEFENDER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 56,
+                    "NST_ATK": 7,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_STRIKER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 9,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_CASTER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 39,
+                    "NST_ATK": 12,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_ASSASSIN_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 39,
+                    "NST_ATK": 12,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_SUPPORTER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 7,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_DEFENDER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 56,
+                    "NST_ATK": 7,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_STRIKER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 9,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_RANGER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 9,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_SUPPORTER_EASY",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 7,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_DEFENDER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 56,
+                    "NST_ATK": 7,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_STRIKER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 9,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_RANGER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 9,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_CASTER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 39,
+                    "NST_ATK": 12,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_ASSASSIN_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 39,
+                    "NST_ATK": 12,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_SUPPORTER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 7,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_DEFENDER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 56,
+                    "NST_ATK": 7,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_STRIKER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 9,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_CASTER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 39,
+                    "NST_ATK": 12,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_ASSASSIN_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 39,
+                    "NST_ATK": 12,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_SUPPORTER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 7,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_DEFENDER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 56,
+                    "NST_ATK": 7,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_STRIKER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 9,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_RANGER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 9,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_SUPPORTER_NORMAL",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 7,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_DEFENDER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 66,
+                    "NST_ATK": 8,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_STRIKER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_RANGER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_CASTER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 46,
+                    "NST_ATK": 14,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_ASSASSIN_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 46,
+                    "NST_ATK": 14,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_SUPPORTER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 8,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_DEFENDER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 66,
+                    "NST_ATK": 8,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_STRIKER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_CASTER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 46,
+                    "NST_ATK": 14,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_ASSASSIN_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 46,
+                    "NST_ATK": 14,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_MAID_SUPPORTER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 8,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_DEFENDER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 66,
+                    "NST_ATK": 8,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_STRIKER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_RANGER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_R_KNIGHT_SUPPORTER_HARD",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 8,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_NORMAL_DEFENDER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 80,
+                    "NST_ATK": 20,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_NORMAL_STRIKER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 80,
+                    "NST_ATK": 20,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_NORMAL_RANGER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 80,
+                    "NST_ATK": 20,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_NORMAL_CASTER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 80,
+                    "NST_ATK": 20,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_NORMAL_ASSASSIN",
+                "StatAddPerLevelData": {
+                    "NST_HP": 80,
+                    "NST_ATK": 20,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_NORMAL_SUPPORTER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 80,
+                    "NST_ATK": 20,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_ELITE_DEFENDER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 140,
+                    "NST_ATK": 25,
+                    "NST_DEF": 7
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_ELITE_STRIKER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 140,
+                    "NST_ATK": 25,
+                    "NST_DEF": 7
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_ELITE_RANGER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 140,
+                    "NST_ATK": 25,
+                    "NST_DEF": 7
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_ELITE_CASTER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 140,
+                    "NST_ATK": 25,
+                    "NST_DEF": 7
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_ELITE_ASSASSIN",
+                "StatAddPerLevelData": {
+                    "NST_HP": 140,
+                    "NST_ATK": 25,
+                    "NST_DEF": 7
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_ELITE_SUPPORTER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 140,
+                    "NST_ATK": 25,
+                    "NST_DEF": 7
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_BOSS_DEFENDER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 220,
+                    "NST_ATK": 35,
+                    "NST_DEF": 10
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_BOSS_STRIKER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 220,
+                    "NST_ATK": 35,
+                    "NST_DEF": 10
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_BOSS_RANGER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 220,
+                    "NST_ATK": 35,
+                    "NST_DEF": 10
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_BOSS_CASTER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 220,
+                    "NST_ATK": 35,
+                    "NST_DEF": 10
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_BOSS_ASSASSIN",
+                "StatAddPerLevelData": {
+                    "NST_HP": 220,
+                    "NST_ATK": 35,
+                    "NST_DEF": 10
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_BOSS_SUPPORTER",
+                "StatAddPerLevelData": {
+                    "NST_HP": 220,
+                    "NST_ATK": 35,
+                    "NST_DEF": 10
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_UNIQUE_BOSS_KNIGHT",
+                "StatAddPerLevelData": {
+                    "NST_HP": 380,
+                    "NST_ATK": 55,
+                    "NST_DEF": 15
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MONSTER_UNIQUE_BOSS_SHADOW",
+                "StatAddPerLevelData": {
+                    "NST_HP": 380,
+                    "NST_ATK": 50,
+                    "NST_DEF": 15
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_MINION_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 29,
+                    "NST_ATK": 3,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_MINION_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 90,
+                    "NST_ATK": 6,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_MINION_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 90,
+                    "NST_ATK": 6,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_MINION_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 90,
+                    "NST_ATK": 6,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_MINION_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 90,
+                    "NST_ATK": 6,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_MINION_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 90,
+                    "NST_ATK": 6,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_MINION_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 90,
+                    "NST_ATK": 6,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_MINION_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 20,
+                    "NST_ATK": 7,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_MINION_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 20,
+                    "NST_ATK": 7,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_MINION_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 23,
+                    "NST_ATK": 6,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_MINION_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 27,
+                    "NST_ATK": 3,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_MINION_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 32,
+                    "NST_ATK": 4,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_MINION_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 22,
+                    "NST_ATK": 7,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_MINION_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 22,
+                    "NST_ATK": 7,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_MINION_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 25,
+                    "NST_ATK": 6,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_MINION_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 29,
+                    "NST_ATK": 3,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_MINION_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 35,
+                    "NST_ATK": 4,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_MINION_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 24,
+                    "NST_ATK": 8,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_MINION_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 24,
+                    "NST_ATK": 8,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_MINION_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 28,
+                    "NST_ATK": 7,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_MINION_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 32,
+                    "NST_ATK": 3,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_MINION_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 38,
+                    "NST_ATK": 4,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_MINION_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 26,
+                    "NST_ATK": 8,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_MINION_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 26,
+                    "NST_ATK": 8,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_MINION_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 30,
+                    "NST_ATK": 7,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_MINION_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 35,
+                    "NST_ATK": 3,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_MINION_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 41,
+                    "NST_ATK": 4,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_MINION_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 28,
+                    "NST_ATK": 8,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_MINION_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 28,
+                    "NST_ATK": 8,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_MINION_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 32,
+                    "NST_ATK": 7,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_MINION_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 38,
+                    "NST_ATK": 3,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_MINION_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 44,
+                    "NST_ATK": 4,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_MINION_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 30,
+                    "NST_ATK": 9,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_MINION_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 30,
+                    "NST_ATK": 9,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_MINION_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 35,
+                    "NST_ATK": 8,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_MINION_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 41,
+                    "NST_ATK": 3,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_STANDARD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 54,
+                    "NST_ATK": 8,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_STANDARD_00",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_STANDARD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_STANDARD_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_STANDARD_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_STANDARD_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_STANDARD_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_STANDARD_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_STANDARD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 38,
+                    "NST_ATK": 16,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_STANDARD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 38,
+                    "NST_ATK": 16,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_STANDARD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 43,
+                    "NST_ATK": 14,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_STANDARD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 50,
+                    "NST_ATK": 6,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_STANDARD_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 56,
+                    "NST_ATK": 9,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_STANDARD_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 39,
+                    "NST_ATK": 18,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_STANDARD_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 39,
+                    "NST_ATK": 18,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_STANDARD_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 44,
+                    "NST_ATK": 15,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_STANDARD_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 52,
+                    "NST_ATK": 7,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_STANDARD_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 57,
+                    "NST_ATK": 9,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_STANDARD_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 40,
+                    "NST_ATK": 19,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_STANDARD_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 40,
+                    "NST_ATK": 19,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_STANDARD_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 46,
+                    "NST_ATK": 16,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_STANDARD_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 53,
+                    "NST_ATK": 7,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_STANDARD_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 59,
+                    "NST_ATK": 10,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_STANDARD_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 41,
+                    "NST_ATK": 20,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_STANDARD_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 41,
+                    "NST_ATK": 20,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_STANDARD_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 47,
+                    "NST_ATK": 18,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_STANDARD_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 55,
+                    "NST_ATK": 8,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_STANDARD_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 10,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_STANDARD_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 42,
+                    "NST_ATK": 20,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_STANDARD_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 42,
+                    "NST_ATK": 20,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_STANDARD_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 48,
+                    "NST_ATK": 18,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_STANDARD_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 56,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_STANDARD_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 62,
+                    "NST_ATK": 10,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_STANDARD_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 43,
+                    "NST_ATK": 21,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_STANDARD_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 43,
+                    "NST_ATK": 21,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_STANDARD_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 49,
+                    "NST_ATK": 18,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_STANDARD_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 57,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_ELITE_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 105,
+                    "NST_ATK": 10,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_ELITE_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_ELITE_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_ELITE_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_ELITE_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_ELITE_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_ELITE_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_ELITE_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 74,
+                    "NST_ATK": 21,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_ELITE_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 74,
+                    "NST_ATK": 21,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_ELITE_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 84,
+                    "NST_ATK": 18,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_ELITE_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 98,
+                    "NST_ATK": 8,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_ELITE_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 108,
+                    "NST_ATK": 11,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_ELITE_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 76,
+                    "NST_ATK": 22,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_ELITE_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 76,
+                    "NST_ATK": 22,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_ELITE_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 86,
+                    "NST_ATK": 20,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_ELITE_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 101,
+                    "NST_ATK": 8,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_ELITE_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 111,
+                    "NST_ATK": 12,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_ELITE_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 78,
+                    "NST_ATK": 25,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_ELITE_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 78,
+                    "NST_ATK": 25,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_ELITE_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 89,
+                    "NST_ATK": 22,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_ELITE_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 104,
+                    "NST_ATK": 9,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_ELITE_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 114,
+                    "NST_ATK": 13,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_ELITE_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 80,
+                    "NST_ATK": 26,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_ELITE_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 80,
+                    "NST_ATK": 26,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_ELITE_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 91,
+                    "NST_ATK": 23,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_ELITE_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 106,
+                    "NST_ATK": 10,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_ELITE_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 117,
+                    "NST_ATK": 14,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_ELITE_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 82,
+                    "NST_ATK": 29,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_ELITE_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 82,
+                    "NST_ATK": 29,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_ELITE_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 94,
+                    "NST_ATK": 25,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_ELITE_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 109,
+                    "NST_ATK": 11,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEFENDER_ELITE_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RANGER_ELITE_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 84,
+                    "NST_ATK": 30,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CASTER_ELITE_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 84,
+                    "NST_ATK": 30,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_ASSASSIN_ELITE_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 96,
+                    "NST_ATK": 27,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SUPPORTER_ELITE_06",
+                "StatAddPerLevelData": {
+                    "NST_HP": 112,
+                    "NST_ATK": 11,
+                    "NST_DEF": 6
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SCISSORS_BOSS_EASY_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SHADOW_BOSS_EASY_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_SPEAR_BOSS_EASY_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_RAIDER_AXE_BLACK_BOSS_EASY_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_VOIDER_SHIELD_BLACK_BOSS_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_CERES_BOSS_EASY_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_WEST_ROD_BOSS_EASY_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_VOIDER_HORN_BLACK_BOSS_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_APOSTLE_GILLE_BOSS_EASY_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_ALDEBARAN_RULER_WHITE_BOSS_EASY_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_NORMAL_STANDARD_00",
+                "StatAddPerLevelData": {
+                    "NST_HP": 30,
+                    "NST_ATK": 4,
+                    "NST_DEF": 1
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_NORMAL_STANDARD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 50,
+                    "NST_ATK": 6,
+                    "NST_DEF": 2
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_NORMAL_STANDARD_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_NORMAL_STANDARD_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_GOLD_STANDARD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 45,
+                    "NST_ATK": 6,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_GOLD_STANDARD_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 45,
+                    "NST_ATK": 6,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_GOLD_STANDARD_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 45,
+                    "NST_ATK": 6,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_GOLD_STANDARD_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 45,
+                    "NST_ATK": 6,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_GOLD_STANDARD_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 45,
+                    "NST_ATK": 6,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_CRYSTAL_STANDARD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 45,
+                    "NST_ATK": 6,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_CRYSTAL_STANDARD_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 45,
+                    "NST_ATK": 6,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_CRYSTAL_STANDARD_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 45,
+                    "NST_ATK": 6,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_CRYSTAL_STANDARD_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 45,
+                    "NST_ATK": 6,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_CRYSTAL_STANDARD_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 45,
+                    "NST_ATK": 6,
+                    "NST_DEF": 3
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_OPERATION_STANDARD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_STRIKER_OPERATION_ELITE_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_EYE_SAWTOOTH_BLACK_BOSS_NORMAL_00",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_NORMAL_00",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_DEMORAIGIS_CORE_BLACK_BOSS_NORMAL_00",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_LANIAKEA_RULER_BLACK_BOSS_NORMAL_00",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_NORMAL_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_MON_APOSTLE_GILLE_BOSS_NORMAL_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_RAIDER_CROSSBOW_RED_BOSS_GOLD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_RAIDER_WAND_BLUE_BOSS_GOLD_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_RAIDER_DAGGER_GREEN_BOSS_GOLD_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_RAIDER_AXE_BLACK_BOSS_GOLD_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_RAIDER_AXE_BLACK_BOSS_GOLD_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_SLIME_SPHERE_YELLOW_BOSS_GOLD_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_SLIME_SPHERE_YELLOW_BOSS_GOLD_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_SLIME_SPHERE_BLACK_BOSS_GOLD_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_SLIME_SPHERE_BLACK_BOSS_GOLD_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_SLIME_SPHERE_BLACK_BOSS_GOLD_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_STALKER_SKELETON_BLACK_BOSS_CRYSTAL_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_STALKER_SKELETON_BLACK_BOSS_CRYSTAL_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_STALKER_SKELETON_BLACK_BOSS_CRYSTAL_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_CORROSIVE_CRYSTAL_BLACK_BOSS_CRYSTAL_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SAPL_UNIT_CORROSIVE_CRYSTAL_BLACK_BOSS_CRYSTAL_05",
+                "StatAddPerLevelData": {
+                    "NST_HP": 0,
+                    "NST_ATK": 0,
+                    "NST_DEF": 0
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_TEST_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_TEST_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_TEST_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_TEST_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 60,
+                    "NST_ATK": 8,
+                    "NST_DEF": 4
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_ELITE_TEST_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_ELITE_TEST_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_ELITE_TEST_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_ELITE_TEST_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_BOSS_TEST_01",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_BOSS_TEST_02",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_BOSS_TEST_03",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            },
+            {
+                "ContentsTag": "DEV_OPEN",
+                "StatAddPerLevelStrID": "SPAL_UNIT_MON_STRIKER_BOSS_TEST_04",
+                "StatAddPerLevelData": {
+                    "NST_HP": 120,
+                    "NST_ATK": 15,
+                    "NST_DEF": 5
+                }
+            }
+        ]
+    }
+]

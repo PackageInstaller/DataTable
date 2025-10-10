@@ -1,0 +1,348 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "으엣… 실패했어요…",
+      "UnitTalk_JPN": "ふえっ…失敗です…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "끄응…",
+      "UnitTalk_JPN": "うぅん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그, 긍정적으로 생각할 수 있지 않을까요?",
+      "UnitTalk_JPN": "ま、前向きに考えてみるのはどうですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "숨도 잘 쉬고 있고, 잃어버린 물건도 없고!",
+      "UnitTalk_JPN": "息もしてるし、荷物も無事です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "배달부로서는 승리한 거나 다름없을… 지도?",
+      "UnitTalk_JPN": "配達屋としては勝ったも同然…なのかも？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…아, 그렇죠. 저 이제 배달부기 전에 여정 단원이었죠…",
+      "UnitTalk_JPN": "…あっ、そうでした。今は旅の団員なんでしたね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "일단 돌아가자.",
+          "JumpAnchorStringId_JPN": "とりあえず戻ろう。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "이거 하나 마실래?",
+          "JumpAnchorStringId_JPN": "これでも飲む？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 넵!",
+      "UnitTalk_JPN": "あっ、はい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…저, 저어…",
+      "UnitTalk_JPN": "あ、あの…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "다음에는 더 진지하게… 열심히 하겠습니다!",
+      "UnitTalk_JPN": "次はもっと真面目に…一生懸命頑張ります！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "기특한 소리를 하는 베라를 데리고 돌아갔다.",
+      "UnitTalk_JPN": "そう言うベラを微笑ましく思いながら、一緒に宿へと戻った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SPECIAL",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "네, 넵! 알겠습니다!",
+      "UnitTalk_JPN": "は、はい！分かりました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "끄응, 배달부가 아니라 여정 단원... 배달부가 아니라 여정 단원…",
+      "UnitTalk_JPN": "ううっ、配達屋じゃなくて旅の団員…配達屋じゃなくて旅の団員…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "배달 단원이 아니라 여정부…",
+      "UnitTalk_JPN": "配達の団員じゃなくて旅屋…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "으엣!",
+      "UnitTalk_JPN": "ふえっ！",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "…혀가 꼬여서 낑낑대는 베라를 데리고 돌아갔다.",
+      "UnitTalk_JPN": "…舌が回らずカミカミのベラを連れて帰った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SPECIAL",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "에…",
+      "UnitTalk_JPN": "えっ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "으엣! 이, 이거 엄청 비싸지 않나요?!",
+      "UnitTalk_JPN": "ふえっ！こ、これってすごくお高いものですよね！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "안 그래도 실패해서 손해를 끼쳤는데, 포션까지 마셔도 괜찮을지…",
+      "UnitTalk_JPN": "失敗して迷惑をかけてしまったのに、ポーションまでもらっちゃってもいいんでしょうか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "숨도 쉬고 있고, 물건도 있으니까.",
+          "JumpAnchorStringId_JPN": "息もしてるし、荷物も無事だから。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "기념으로 한 병.",
+          "JumpAnchorStringId_JPN": "記念に一本。"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "…에헤헤, 단장님은 너무 친절하세요.",
+      "UnitTalk_JPN": "…えへへ、団長は本当にお優しいんですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "감사합니다! 잘 마실게요!",
+      "UnitTalk_JPN": "ありがたくいただきます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "상쾌해요!",
+      "UnitTalk_JPN": "さわやか～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_LPU_POST_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6",
+      "UnitTalk_KOR": "기분이 나아진 베라를 데리고 돌아갔다.",
+      "UnitTalk_JPN": "元気になったベラを連れて帰った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

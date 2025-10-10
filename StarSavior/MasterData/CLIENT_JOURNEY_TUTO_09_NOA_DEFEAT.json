@@ -1,0 +1,240 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_TUTO_09_NOA_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "CameraOffset": "TWIN_6",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS7",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitPos": "POS8",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "…여기까지로군요.",
+      "UnitTalk_JPN": "…ここまでですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 나쁘지는 않지만 이정도 실력으로 <color=#F7BE45>[여정]</color>을 진행하는 건 걱정스럽네요.",
+      "UnitTalk_JPN": "悪くはありませんが、この程度の実力で<color=#F7BE45>「救援の旅」</color>を進めるのはいささか心配ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "내가 말했지? 대부분은 전설에 취한 바보들뿐이라고.",
+      "UnitTalk_JPN": "言ったでしょ？大抵は伝説に酔った愚か者ばかりだって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "뭐, 그쪽도 크게 다르진 않았던 것 같네.",
+      "UnitTalk_JPN": "まあ、そっちも大して変わらなかったみたいだけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "이번에는 평가전이니 목숨을 부지했지만…",
+      "UnitTalk_JPN": "今回は試験だし命を失うことはなかったとしても…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이래서야 조만간 열릴 장례식을 미리 준비해 둬야 겠는걸?",
+      "UnitTalk_JPN": "この体たらくじゃ、近々行われる葬式の準備を先にしておいたほうがよさそうね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "저 비석 애호가 변태가 하는 말은 신경 쓰지 마시기 바랍니다.",
+      "UnitTalk_JPN": "あの墓石フェチの変態が言うことは気にしないでください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "여정 시험은 위험과 어려움이 비교도 할 수 없이 크니까 더 분발해야 한다는…",
+      "UnitTalk_JPN": "旅の試験は今とは比べものにならないくらい危険で難しいから、\nもっと頑張らないと駄目だって…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "…그런 뜻으로 하는 말이긴 하니까요.",
+      "UnitTalk_JPN": "…そういうつもりで言っているのですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…하아. 생각해보니 저라면 못 참을 것 같긴 하군요.",
+      "UnitTalk_JPN": "…いや、考えてみると私でも我慢できそうにありませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…기초 평가전은 끝인가?",
+          "JumpAnchorStringId_JPN": "…基礎試験は終わり？"
+        }
+      ]
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "NORMAL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네, 아슬아슬하게 합격입니다.",
+      "UnitTalk_JPN": "はい、ギリギリ合格です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": " 캔들 스퀘어는 이제부터 정식으로 보이저 구원단의 활동을 승인하겠습니다.",
+      "UnitTalk_JPN": "キャンドル・スクエアは今後、正式にボイジャー救援団の活動を承認いたします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_09_NOA_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "당신의 여정에 별의 축복이 함께하기를.",
+      "UnitTalk_JPN": "あなたの旅に、星の祝福があらんことを。",
+      "TalkTime": 0.03
+    }
+  ]
+}

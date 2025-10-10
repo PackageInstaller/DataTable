@@ -1,0 +1,1001 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "최근 거리에 구호소가 여러 개 생기고 있다는 소문을 들었다.",
+      "UnitTalk_JPN": "最近、街に救護所がいくつかできたという噂を聞いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잘은 모르지만 대륙 여기저기에서 재난이 많이 발생하고 있는 모양이다.",
+      "UnitTalk_JPN": "詳しいことは分からないが、大陸のあちこちで災いが起こっているようだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "혹시 내가 도울 건 없을까 해서 그곳을 찾아가 보았다.",
+      "UnitTalk_JPN": "私にも何かできることはないかと思い、救護所に向かってみた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "다들 조금만 기다려주세요! 구호품은 아직 많이 남았답니다.",
+      "UnitTalk_JPN": "皆さん、少々お待ちください！救護品はまだたくさんありますので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "카르멘?",
+          "JumpAnchorStringId_JPN": "カルメン？"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 단장님이셨군요. ",
+      "UnitTalk_JPN": "あら、団長さん？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "기사단 부단장이 직접 봉사활동 중인 거야?",
+          "JumpAnchorStringId_JPN": "騎士団の副団長が、直々にボランティアしてるのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "누군가를 돕는 일에는 직위나 이유가 필요 없는 법이죠.",
+      "UnitTalk_JPN": "誰かを助けることに、職位や理由など必要ありませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "힘든 사람을 보고만 있을 수는 없으니까요.",
+      "UnitTalk_JPN": "苦しんでいる人を放っておく訳にはいかないでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "자, 그럼… 거기 서 계시지만 말고…",
+      "UnitTalk_JPN": "さぁ、それでは…そこに立っていらっしゃらないで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여기 구호품들 좀 나눠 주시겠어요?",
+      "UnitTalk_JPN": "この救護品を配ってくださいますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아, 알았어. 이걸 나눠주면 되는 건가?",
+          "JumpAnchorStringId_JPN": "あっ、うん。これを配ればいいんだな？"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "네. 사람들이 생각보다 많으니까 수량 체크 확실히 하시고요.",
+      "UnitTalk_JPN": "はい。たくさんの方がいらっしゃいますから、数量の確認もしっかりお願いしますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "1인당 구호품 상자 하나에 수프 한 그릇씩이랍니다.",
+      "UnitTalk_JPN": "一人につき…救護品ボックスひとつに、スープ一杯ずつです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알겠어.",
+          "JumpAnchorStringId_JPN": "分かった。"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "한동안 정신없이 구호품과 음식을 나눠주며 시간을 보냈다.",
+      "UnitTalk_JPN": "しばらくの間、ひたすら救護品と食べ物を配った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "언니, 한 그릇 더 줘!",
+      "UnitTalk_JPN": "お姉ちゃん、もう一杯ちょーだい！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "나도, 나도!",
+      "UnitTalk_JPN": "ぼくも、ぼくも！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "후후, 재촉하지 않아도 돼요. 아직 충분하니까.",
+      "UnitTalk_JPN": "ふふっ。慌てなくても大丈夫ですよ。まだたくさんありますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "자, 쏟아지지 않게 조심하세요.",
+      "UnitTalk_JPN": "さぁ、こぼさないように気をつけるのですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "와~ 맛있다…! ",
+      "UnitTalk_JPN": "わぁ～、おいしい…！ ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "우리 엄마랑 해준 수프랑 똑같은데 전혀 달라!",
+      "UnitTalk_JPN": "お母さんが作ってくれるスープとは全然違う！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "맛의 비결이 뭐야?",
+      "UnitTalk_JPN": "この美味しさの秘密はなに？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "음… 글쎄요. 딱히 특별할 건 없다고 생각하는데.",
+      "UnitTalk_JPN": "んー…どうでしょう。特にないと思いますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "굳이 말하자면 <color=#F7BE45>민간인용</color> 수프라서 그런 걸까요?",
+      "UnitTalk_JPN": "しいて言えば、<color=#F7BE45>民間人用</color>のスープだからでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "…그게 뭐야?",
+      "UnitTalk_JPN": "…なにそれ？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "어려운 말은 몰라. 아무튼 맛있어!",
+      "UnitTalk_JPN": "むずかしい言葉は分からないよ。でも、とにかくおいしいの！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "민간인용이 아닌 수프도 따로 있는 거야?",
+          "JumpAnchorStringId_JPN": "民間人用じゃないスープもあるの？"
+        }
+      ]
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "물론이죠.",
+      "UnitTalk_JPN": "もちろんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "기사나 병사들을 위한 광기… 아니 <color=#F7BE45>전투 수프</color>도 있답니다.",
+      "UnitTalk_JPN": "騎士や兵士のための戦闘狂…いえ、<color=#F7BE45>戦闘スープ</color>もあるんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "맛은 조금 부족하지만 지친 병사들의 잠재된 힘을 끌어올리기엔 제격이죠.",
+      "UnitTalk_JPN": "味は少し劣りますが、疲弊した兵士たちの力を引き出すのに最適なのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "마침 저쪽에 한 솥 만들어둔 게 있는데 드셔 보시겠어요?",
+      "UnitTalk_JPN": "ちょうど作っておいたものがありますので、お召し上がりになりますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋아, 그럼 한 그릇 줄래?",
+          "JumpAnchorStringId_JPN": "うん、じゃあ一杯お願いしてもいいかな？",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "아니, 민간인용으로 충분한 것 같아…",
+          "JumpAnchorStringId_JPN": "いや、民間人用で十分だよ…",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "확실히 그런 수프가 있다면 여정 단원에게도 도움이 될 것 같다.",
+      "UnitTalk_JPN": "そんなスープがあるなら、旅の団員の役にも立ちそうだし。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후후. 좋은 생각이세요.",
+      "UnitTalk_JPN": "ふふっ、賢明な判断です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "잠시만 기다리세요 단장님.",
+      "UnitTalk_JPN": "少しだけお待ちくださいね、団長さん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "몸에 좋은 <color=#F7BE45>건더기</color>들을 듬뿍 넣은 <color=#F7BE45>전투 수프</color>를 한 그릇 준비해 드릴게요.",
+      "UnitTalk_JPN": "体に良い<color=#F7BE45>具</color>がたっぷりと入った、<color=#F7BE45>戦闘スープ</color>をご用意しますからね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 카르멘이 가져다준… 검붉은색의 수프를 한 스푼 떠먹었다.",
+      "UnitTalk_JPN": "私はカルメンが運んできてくれた…赤黒いスープを一口飲んだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "UnitTalk_KOR": "…….",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_07.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…응? 여기가 어디지…?",
+          "JumpAnchorStringId_JPN": "…あれ？ここはどこ…？"
+        }
+      ]
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 이제 정신을 차리셨나요?",
+      "UnitTalk_JPN": "あっ、気がつきましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "갑자기 혼절하셔서 구호소의 의무실로 제가 부축해 왔어요.",
+      "UnitTalk_JPN": "突然気絶されて、救護所の医務室まで私がお連れしたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어...? 뭐라고…?",
+          "JumpAnchorStringId_JPN": "えっ…？なんて…？"
+        }
+      ]
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무래도 원기가 많이 상해 있으셨던 것 같아요.",
+      "UnitTalk_JPN": "どうやら、かなり疲れていらっしゃったようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "<color=#F7BE45>전투 수프</color>는 각종 약재를 첨가해서 만든 거라 반동이 올 수도 있어요.",
+      "UnitTalk_JPN": "<color=#F7BE45>戦闘スープ</color>は、薬の材料を色々と加えて作ったものなので、反応が出ることもあるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "물론 그만큼 효과는 확실하지만요.",
+      "UnitTalk_JPN": "もちろん、その分効果も間違いありませんが。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니... 그렇게 내 몸이 약했던 것 같지는 않은데…",
+          "JumpAnchorStringId_JPN": "いや…私の体はそんなに弱くないはずだけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여기, 제가 수프를 조금 더 떠왔어요.",
+      "UnitTalk_JPN": "さぁ、もう少しスープを持ってきましたよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "이걸 드시면 몸이 훨씬 좋아질 거예요.",
+      "UnitTalk_JPN": "これを飲めば、体がかなり良くなるはずです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "물론 약간의 부작용은 있겠지만요.",
+      "UnitTalk_JPN": "もちろん、若干の副作用はありますが。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "자~ 입 벌리세요. 아~!",
+      "UnitTalk_JPN": "さぁ、お口をあけてくださいね～。アーン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그, 그건… 안돼…! 잠깐… 그만!",
+          "JumpAnchorStringId_JPN": "そ、それは…ダメだ…！や…やめてくれぇ！"
+        }
+      ]
+    },
+    {
+      "Uid": 72,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "쓰읍… 편식하시는 건가요, 단장님?",
+      "UnitTalk_JPN": "あら…好き嫌いなさるのですか、団長さん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "그러면 안 돼요. 골고루 드셔야죠. 몸에 좋은 건 입에 쓰다는 말도 있잖아요?",
+      "UnitTalk_JPN": "偏食はいけませんよ。良薬口に苦しという言葉もあるでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "절 믿고, 딱 참고 한 입만 드셔보세요.",
+      "UnitTalk_JPN": "私を信じて、我慢して一口食べてみてください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "자, 아 하세요. 아~",
+      "UnitTalk_JPN": "さぁ、アーンしてくださいね。アーン。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "카르멘이 가져온 그 검붉은 빛이 일렁거리는 수프를 보자마자 본능적인 생명의 위협을 느꼈다. ",
+      "UnitTalk_JPN": "カルメンが持ってきたスープには、赤黒い光が揺らめいていた。私はそれを見た瞬間、本能的に生命の危険を感じた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CameraOffset": "ONE_5"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "UnitTalk_KOR": "딱 봐도 위험해 보이는 <color=#F7BE45>전투 수프</color>를 피해 한참을 도망쳐야 했다. ",
+      "UnitTalk_JPN": "どう見ても危なそうな<color=#F7BE45>戦闘スープ</color>を回避するため、しばらく逃げ続けた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "후우… 이거 정말 효과 좋은 수프인데, 정말 그러시기에요?",
+      "UnitTalk_JPN": "ふぅ…本当に効果のあるスープなのに。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "어쩔 수 없네요. 그렇게까지 피하신다면 억지로 드시게 하진 않을게요.",
+      "UnitTalk_JPN": "仕方ありませんね。そこまで抵抗されるなら、無理強いはしないでおきます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…포기해줘서 고마워.",
+          "JumpAnchorStringId_JPN": "…諦めてくれてありがとう。"
+        }
+      ]
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "대신 다음에, 정말 피곤하실 때 찾아오시기로 약속해요.",
+      "UnitTalk_JPN": "その代わり、本当に疲れている時はここに来てくださいね？約束ですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "이거 한 그릇만 비우면 피로가 싹 날아가니까요.",
+      "UnitTalk_JPN": "これ一杯で、疲れが消え去るんですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇게 말하면서도 카르멘은 아직 미련이 남았는지 나와 수프를 번갈아 가며 바라보고 있었다…",
+      "UnitTalk_JPN": "そう言いながらも…カルメンはまだ未練があるのか、私とスープを交互に見つめていた…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 90,
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN"
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_SHIELDER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

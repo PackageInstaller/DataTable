@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_04", //경멸자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_04", //은둔자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_04", //경멸자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_04", //경멸자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_HALO_BLACK_ELITE_CLOISTER_INTERSTELLAR_04", //침묵의 은둔자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_SUN" //서브 속성 타입※※※※※※※※※※※※
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_04", //경멸자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          }
+        ]
+      }
+    ]
+  }
+}

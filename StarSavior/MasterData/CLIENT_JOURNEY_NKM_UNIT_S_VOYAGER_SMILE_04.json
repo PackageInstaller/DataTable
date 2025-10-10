@@ -1,0 +1,1063 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "웃음 촉매제 제작 연구 23회차.",
+      "UnitTalk_JPN": "笑いの誘発剤研究、23回目。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>스마일 껌 시작 1호</color> 실험 개시.",
+      "UnitTalk_JPN": "<color=#F7BE45>スマイルガム試作1号</color>、実験開始。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "어때?",
+      "UnitTalk_JPN": "どう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.4,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "매워!!!",
+          "JumpAnchorStringId_JPN": "からっ！！！"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "매운맛을 통한 웃음 유발 시도는 실패.",
+      "UnitTalk_JPN": "辛味で笑いを誘発する試み、失敗。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "<color=#F7BE45>스마일 껌</color>은 효과 부족. 기준치 미달.",
+      "UnitTalk_JPN": "<color=#F7BE45>スマイルガム</color>は効果が弱い。基準値未達。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "실험 종료.",
+      "UnitTalk_JPN": "実験終了。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…이건 뭔가 잘못된 것 같아.",
+          "JumpAnchorStringId_JPN": "…何かが間違ってる。"
+        }
+      ]
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장.",
+      "UnitTalk_JPN": "団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "단장의 실망감과 좌절은 충분히 공감.",
+      "UnitTalk_JPN": "団長の失望感や挫折には、共感できる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만 과학이란 수많은 좌절의 시체 위에 세워진 성배.",
+      "UnitTalk_JPN": "でも科学とは、数多くの挫折という屍の上に作られた聖杯のこと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "일시적인 절망감으로 쉽게 포기한다면 진보란 존재하지 않을 것…",
+      "UnitTalk_JPN": "一時的な絶望感ですぐに諦めてたら、進歩というものは存在し…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그게 아니야!",
+          "JumpAnchorStringId_JPN": "そうじゃなくて！"
+        }
+      ]
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "애초에 이런 기술적 접근으로 진실된 웃음을 만들 수 있을 리가 없다.",
+      "UnitTalk_JPN": "そもそも…こんな技術的なアプローチで、本当の笑いに辿りつくことはできない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무정란을 아무리 품고 있어 봐야 병아리가 나오지 않는 것과 같은 이치다.",
+      "UnitTalk_JPN": "無精卵を温めたところで、ヒヨコが生まれないのと同じ原理だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "겸사겸사 내 몸과 마음도 피폐해졌고 말이지…",
+      "UnitTalk_JPN": "それに、私の心と身体も疲れ果ててしまったことだし…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "방향성을 바꿔보면 어떨까?",
+          "JumpAnchorStringId_JPN": "方向性を変えるのはどうかな？"
+        }
+      ]
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…!!",
+      "UnitTalk_JPN": "…！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "과연.",
+      "UnitTalk_JPN": "なるほど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "단일 지향성의 실험이 연속적으로 실패할 경우 지향점 자체를 변경하는 방식은 효과적.",
+      "UnitTalk_JPN": "同じような実験で失敗が続く場合、方向性を変えることは効果的。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장은 평소 비과학적이고 미신적인 성향이 강함.",
+      "UnitTalk_JPN": "団長は普段、非科学的で迷信的な傾向が強い。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "하지만 가끔 매우 과학적이고 건설적인 의견을 제시.",
+      "UnitTalk_JPN": "でも、たまに科学的で建設的な意見を提示する。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장의 성격적 특징 3호로 근본 없는 천재성을 추가.",
+      "UnitTalk_JPN": "団長の性格的特徴3号に、根拠のない天才性を追加。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…칭찬 맞지?",
+          "JumpAnchorStringId_JPN": "…褒め言葉だよね？"
+        }
+      ]
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "맞음.",
+      "UnitTalk_JPN": "うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼 그래서 어떤 신규 방향성을 제시할 생각?",
+      "UnitTalk_JPN": "とにかく、新たな方向性の提示を要求。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "생각해 보면 그동안은 너무 기술적인 접근에 치중했던 것 같다.",
+      "UnitTalk_JPN": "考えてみれば…今まで、科学的なアプローチに偏りすぎてた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그러나 웃음이란 것은 분명 감정의 활동.",
+      "UnitTalk_JPN": "でも、笑いとは感情の表れのこと。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇다면 즐거운 경험을 하면 당연히 자연스럽게 나타나는 것 아닐까?",
+      "UnitTalk_JPN": "だったら…楽しい経験をすれば、自然と笑みがこぼれるんじゃないかな？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "광장으로 가자!",
+          "JumpAnchorStringId_JPN": "広場に行こう！"
+        }
+      ]
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "광장…?",
+      "UnitTalk_JPN": "広場…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래, 오늘은 광장으로 가서 신나게 노는 거야!",
+          "JumpAnchorStringId_JPN": "うん。今日は広場に行って、楽しく遊ぼう！"
+        }
+      ]
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "오오…??",
+      "UnitTalk_JPN": "おぉ…？？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "BgFileName": "ILLUST_BG_CAFE_01.png",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "처음으로 간 곳은 디저트 카페였다.",
+      "UnitTalk_JPN": "まずは、スイーツが美味しいカフェに行った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "우리는 아이스크림을 먹으며 감정의 변화를 관찰했다.",
+      "UnitTalk_JPN": "私たちはアイスクリームを食べながら、感情の変化を観察した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어때, 스마일?",
+          "JumpAnchorStringId_JPN": "どう、スマイル？"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "포도당, 과당, 유지방의 화학적 조합을 확인.",
+      "UnitTalk_JPN": "ブドウ糖、果糖、乳脂肪の化学的な調合を確認。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "당분 공급으로 인한 일시적 활동 에너지 과충전 상태.",
+      "UnitTalk_JPN": "糖分摂取により、一時的に活動エネルギーが過充電状態。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그런 거 말고.",
+          "JumpAnchorStringId_JPN": "…そういうことじゃなくて。"
+        }
+      ]
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "그럼…?",
+      "UnitTalk_JPN": "うん…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "맛있다든가…",
+          "JumpAnchorStringId_JPN": "美味しいとか…"
+        }
+      ]
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "<color=#F7BE45>맛있다</color>라는 말은 비과학적, 비정량적 표현.",
+      "UnitTalk_JPN": "<color=#F7BE45>美味しい</color>という言葉は、非科学的かつ非定量的な表現。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "측정을 원할 경우 우선적으로 정확한 기준 및 개념 정의가 필요.",
+      "UnitTalk_JPN": "測定を望む場合、まずは正確な基準および概念の定義が必要。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 139,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…다른 곳으로 가자.",
+          "JumpAnchorStringId_JPN": "…他のところに行こっか。"
+        }
+      ]
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_THEATER.png",
+      "UnitMotion": "ANGRY",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "두 번째로 간 곳은 극장이었다.",
+      "UnitTalk_JPN": "次に、劇場へと向かった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "우리는 <color=#F7BE45>구원자가 재능을 숨김</color>이라는 공연을 보았다.",
+      "UnitTalk_JPN": "私たちは<color=#F7BE45>救援者は真の実力を隠す</color>という公演を観た。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "별의 구원자가 자신의 재능을 숨긴 채 후배 구원자들을 육성해서 세상을 구한다는 이야기였다.",
+      "UnitTalk_JPN": "星の救援者が自身の才能を隠したまま、救援者たちを育成して世界を救うという内容だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "제목은 조금 이상했지만 꽤… 재미있었던 것 같다.",
+      "UnitTalk_JPN": "タイトルは少し変だったけど…意外と面白かった気がする。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "꽤 볼만하지 않았어, 스마일?",
+          "JumpAnchorStringId_JPN": "面白かったね、スマイル？"
+        }
+      ]
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "부정.",
+      "UnitTalk_JPN": "否定。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "내용을 보면 주인공이 전혀 재능을 숨기지 않음.",
+      "UnitTalk_JPN": "本編を見る限り、救援者が実力を隠す気なし。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "제목과 내용의 불합치. 납득 불가.",
+      "UnitTalk_JPN": "内容とタイトルが矛盾。納得しかねる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "다, 다음 장소로 가자.",
+          "JumpAnchorStringId_JPN": "ほ、他のところに行こう。"
+        }
+      ]
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "UnitTalk_KOR": "마지막으로 간 곳은 공원이었다.",
+      "UnitTalk_JPN": "最後に向かったのは、公園だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "시간이 꽤 흐른 터라 하늘은 붉은 노을로 뒤덮여 있었다.",
+      "UnitTalk_JPN": "ずいぶんと時間が経ち、空は赤い夕焼けに染まっていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "우리는 벤치에 앉아 하루 종일 걷느라 아픈 다리를 쉬었다.",
+      "UnitTalk_JPN": "私たちはベンチに座り、一日中歩き回って疲れた足を休ませた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 150,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_PUBLIC_SUNSET.png",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 149,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 152,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "노을이 예쁘네. 그렇지? 스마일.",
+          "JumpAnchorStringId_JPN": "夕焼けが綺麗だね。そう思わない？"
+        }
+      ]
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "노을은 태양광의 산란으로 발생하는 자연현상의 일종.",
+      "UnitTalk_JPN": "夕焼けは、太陽光の散乱により発生する自然現象の一種。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "<color=#F7BE45>예쁘다</color>라는 주관적 표현이 들어갈 필요는 없음…",
+      "UnitTalk_JPN": "<color=#F7BE45>綺麗</color>って主観的な表現を使う必要なし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그, 그렇지…",
+          "JumpAnchorStringId_JPN": "そ、そうだよね…"
+        }
+      ]
+    },
+    {
+      "Uid": 156,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…미안.",
+      "UnitTalk_JPN": "…ごめん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 157,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "단장은 오늘 최선을 다했음.",
+      "UnitTalk_JPN": "団長は今日、最善を尽くしてくれた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "다만 본인은 아직 특이한 감정활동을 느끼지 못함.",
+      "UnitTalk_JPN": "でも私は、まだ感情の変化を感じられてない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "나의 잘못.",
+      "UnitTalk_JPN": "私のせい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "지금이라도 노을의 아름다움을 느끼도록 노력해 보겠음.",
+      "UnitTalk_JPN": "今からでも、夕焼けが綺麗だって感じられるように努力してみる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "노을 예쁘다. 노을 예쁘다. 노을 예쁘다…",
+      "UnitTalk_JPN": "夕焼けが綺麗。夕焼けが綺麗。夕焼けが綺麗…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…괜찮으니까 그냥 쉬어, 스마일.",
+          "JumpAnchorStringId_JPN": "…スマイル。大丈夫だから、休もう。"
+        }
+      ]
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "응…",
+      "UnitTalk_JPN": "うん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "애초에 감정이란 건 <color=#F7BE45>열심히 노력해서</color> 느끼는 게 아니다. 그냥 느껴지는 거지.",
+      "UnitTalk_JPN": "そもそも、感情というものは<color=#F7BE45>一生懸命努力して</color>感じるものではない。ただ、自然と感じられるものだから。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 165,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오히려 부담을 느끼게 되면 역효과가 발생할 수도 있다.",
+      "UnitTalk_JPN": "むしろ負担に感じてしまうと、逆効果になってしまうかもしれないし。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘은 실패했지만 분명 스마일이 좋아하는 것이 있을 것이다. ",
+      "UnitTalk_JPN": "今日は失敗に終わったけど、きっとスマイルが喜ぶものがあるはず。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 돌아갈까?",
+          "JumpAnchorStringId_JPN": "そろそろ戻ろっか？"
+        }
+      ]
+    },
+    {
+      "Uid": 168,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "응… 잠깐?",
+      "UnitTalk_JPN": "あれ…？待って。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_04",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitQuickSet": true,
+      "UnitPos": "POS4",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 169,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "하핫, 간지러워 야옹아.",
+      "UnitTalk_JPN": "えへへっ。くすぐったいよ～、ねこちゃん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 170,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_STAINCAT"
+      ],
+      "UnitTalk_KOR": "냐옹~!",
+      "UnitTalk_JPN": "にゃ～ん！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응? 배가 고프다고? 알았어.",
+      "UnitTalk_JPN": "うん？お腹すいてるの？わかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "얼른 집으로 가자. 특별히 준비해 둔 참치 통조림이 있으니까!",
+      "UnitTalk_JPN": "おうちに帰ろう。特別に、ツナ缶を用意しておいたんだよー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_STAINCAT"
+      ],
+      "UnitTalk_KOR": "냐아옹! 냐옹!",
+      "UnitTalk_JPN": "にゃあ～ん！にゃん！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 174,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래! 나도 사랑해!",
+      "UnitTalk_JPN": "よしよし！わたしも大好き！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저건…?",
+      "UnitTalk_JPN": "あれは…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 180,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아, 애완고양이인가 보네?",
+          "JumpAnchorStringId_JPN": "ペットの猫かな？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "산책이라도 나온 모양이지.",
+          "JumpAnchorStringId_JPN": "散歩してたみたいだね。"
+        }
+      ]
+    },
+    {
+      "Uid": 178,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…애완동물.",
+      "UnitTalk_JPN": "…ペット。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 179,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "스마일은 노을이 질 때까지 공원 저편으로 사라지는 소녀와 고양이를 지켜보았다.",
+      "UnitTalk_JPN": "スマイルは夕日が沈むまで、公園の向こう側へと消えていく少女と猫を見つめていた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 181,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS6"
+    }
+  ]
+}

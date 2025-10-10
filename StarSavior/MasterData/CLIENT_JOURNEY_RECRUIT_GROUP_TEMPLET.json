@@ -1,0 +1,66 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: JOURNEY_RECRUIT_GROUP_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RecruitGroupId" : 1,
+          "IsUserReroll" : false,
+          "IsFreeReroll" : false,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_RECRUIT.png",
+          "MainMenuButtonTitle" : "SI_RECRUIT",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_RECRUIT_AREA_ENG",
+          "MainMenuButtonDesc" : "SI_MEETING_MAIN_BUTTON_DESC_TEST",
+          "RecruitBackGroundPrefab" : "ILLUST_BG_CANDLE_RECRUIT.png"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RecruitGroupId" : 1011,
+          "IsUserReroll" : true,
+          "IsFreeReroll" : false,
+          "ReqCoinCount" : 30,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_RECRUIT.png",
+          "MainMenuButtonTitle" : "SI_RECRUIT",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_RECRUIT_AREA_ENG",
+          "MainMenuButtonDesc" : "SI_MEETING_MAIN_BUTTON_DESC_TEST",
+          "RecruitBackGroundPrefab" : "ILLUST_BG_CANDLE_RECRUIT.png"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RecruitGroupId" : 1111,
+          "IsUserReroll" : true,
+          "IsFreeReroll" : false,
+          "ReqCoinCount" : 30,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_RECRUIT.png",
+          "MainMenuButtonTitle" : "SI_RECRUIT",
+          "MainMenuButtonSubTitle" : "SI_AGANON_CANDLE_RECRUIT_AREA_ENG",
+          "MainMenuButtonDesc" : "SI_MEETING_MAIN_BUTTON_DESC_TEST",
+          "RecruitBackGroundPrefab" : "ILLUST_BG_CANDLE_RECRUIT.png"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RecruitGroupId" : 1121,
+          "IsUserReroll" : true,
+          "IsFreeReroll" : false,
+          "ReqCoinCount" : 30,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_RECRUIT.png",
+          "MainMenuButtonTitle" : "SI_RECRUIT",
+          "MainMenuButtonSubTitle" : "SI_FLORA_CANDLE_RECRUIT_AREA_ENG",
+          "MainMenuButtonDesc" : "SI_MEETING_MAIN_BUTTON_DESC_TEST",
+          "RecruitBackGroundPrefab" : "ILLUST_BG_CANDLE_RECRUIT.png"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RecruitGroupId" : 1131,
+          "IsUserReroll" : true,
+          "IsFreeReroll" : false,
+          "ReqCoinCount" : 30,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_RECRUIT.png",
+          "MainMenuButtonTitle" : "SI_RECRUIT",
+          "MainMenuButtonSubTitle" : "SI_KALAID_CANDLE_RECRUIT_AREA_ENG",
+          "MainMenuButtonDesc" : "SI_MEETING_MAIN_BUTTON_DESC_TEST",
+          "RecruitBackGroundPrefab" : "ILLUST_BG_CANDLE_RECRUIT.png"
+        }
+    ]
+}

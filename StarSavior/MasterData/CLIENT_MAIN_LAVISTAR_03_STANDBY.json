@@ -1,0 +1,627 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_LAVISTAR_03_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 58,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN_DESTROYED.png",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFlashBang": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_14.wav"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav"
+    },
+    {
+      "Uid": 1,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_01.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…휴우. 이 근방의 적들은 대충 다 처리한 것 같아.",
+      "UnitTalk_JPN": "…ふぅ。この辺りの敵はぜんぶ倒したようね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…그보다 굉장한데?",
+      "UnitTalk_JPN": "…それにしても、すごいじゃない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "네 상황 판단이나 전투 지휘… 꽤나 효율적이었어.",
+      "UnitTalk_JPN": "あなたの状況判断や戦闘指示…すごく的確だった。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "덕분에 나도 훨씬 더 잘 싸울 수 있었던 것 같아.",
+      "UnitTalk_JPN": "おかげで、いつもよりも力を発揮できたみたい。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "어디선가 군사 교육 같은 걸 받았던 경험이 있는 걸까?",
+      "UnitTalk_JPN": "どこかで軍事教育でも受けてたの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…글쎄.",
+          "JumpAnchorStringId_JPN": "…どうだろうな。"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스스로도 조금은 놀랐다.",
+      "UnitTalk_JPN": "自分でも、少し驚いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "저런 괴물들을 보고도 공포에 질려 도망치지 않고, 침착하게 맞섰다.",
+      "UnitTalk_JPN": "恐ろしい怪物を見ても、怯えて逃げることなく、落ち着いて対処できた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "용기… 라고 하기에는 뭔가 다르다. ",
+      "UnitTalk_JPN": "勇気…とは何か違う。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그것보다는 좀 더… <color=#F7BE45>[익숙함]</color>에 가까웠던 것 같다.",
+      "UnitTalk_JPN": "それよりも、もう少し…<color=#F7BE45>「慣れ」</color>に近いものだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "모바일… 전략 게임을 많이 해서 그런가?",
+          "JumpAnchorStringId_JPN": "スマホで…ストラテジーゲームをたくさんプレイしたおかげかな？"
+        }
+      ]
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "전략 게임? 그게 뭔데?",
+      "UnitTalk_JPN": "ストラテジーゲーム？何それ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아무튼 있어. 그런 게.",
+          "JumpAnchorStringId_JPN": "あるんだ、そういうものが。"
+        }
+      ]
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흐음…",
+      "UnitTalk_JPN": "ふぅん…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그나저나 고립됐다던 관측사란 사람은 어디에 있는 거지?",
+      "UnitTalk_JPN": "それよりも、孤立している観測士はどこにいるのかしら？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "분명 캔들 스퀘어에서 알려준 위치는 이쪽일 텐데…",
+      "UnitTalk_JPN": "キャンドル・スクエアによれば、この辺りのはずなんだけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "저기요!",
+      "UnitTalk_JPN": "あの！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_001.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이쪽이에요 이쪽!",
+      "UnitTalk_JPN": "こちらです！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_002.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "저기, 저기서 손을 흔드는 사람 보여?",
+      "UnitTalk_JPN": "あそこで手を振っている人、見える？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "저 사람이 그 관측사 같은데?",
+      "UnitTalk_JPN": "あの人が観測士みたいね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "길 안쪽으로, 공허체라는 괴물에게 쫓겨 막다른 골목에 몰려 있는 검은 옷의 여성이 보였다.",
+      "UnitTalk_JPN": "<r=ヴォイドボーン>空虚体</r>という怪物に襲われ、行き止まりの路地に追いやられている黒服の女性が見えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EVIL_VOICE_01.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_VOIDER"
+      ],
+      "UnitTalk_KOR": "크워어어!!",
+      "UnitTalk_JPN": "クオオォ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "꺄아악!",
+      "UnitTalk_JPN": "キャーッ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_003.wav"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "사람 살려-! 세상에, NOA 시내 한복판에서 공허체가 떨어지는 게 말이 돼-?!",
+      "UnitTalk_JPN": "助けてー！NOAの街中に空虚体が落ちてくるなんてありえないでしょー！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_004.wav"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "관측사 면허 따고 취업한 지 얼마 되지도 않았는데!",
+      "UnitTalk_JPN": "観測士の免許を取って、就職したばかりなのに！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_005.wav"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "직장 상사 심부름이나 하다가 이런 곳에서 멍청하게 죽긴 싫어-!",
+      "UnitTalk_JPN": "上司のおつかい中に、こんなところで死ぬなんて嫌よーっ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_006.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아, 위험해! 얼른 가서 구출을…",
+      "UnitTalk_JPN": "危ない！はやく助けないと…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐!",
+          "JumpAnchorStringId_JPN": "待つんだ！"
+        }
+      ]
+    },
+    {
+      "Uid": 59,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "문득 기시감이 든 나는 달려가려는 아세라를 멈춰 세웠다.",
+      "UnitTalk_JPN": "どこか既視感のある光景に、私は走り出そうとするアセラを引き止めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.6,
+      "BgCrashTime": 0.5,
+      "UnitTalk_KOR": "간발의 차이로 아세라가 가려던 곳 위로 검은 덩어리가 떨어져 내렸다.",
+      "UnitTalk_JPN": "その瞬間、アセラが進もうとしていた場所に、黒い塊が落ちてきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "MOVIE_MAIN_LAVISTAR_03_STANDBY_RIFT_LORD.mp4",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 64,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN_DESTROYED.png"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.6,
+      "BgCrashTime": 0.4,
+      "EndBgmFileName": "MUSIC_BATTLE_BOSS_01.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EVIL_VOICE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MON_VOIDREAPER_SCYTHE",
+      "UnitNameString": [
+        "SI_VOIDER"
+      ],
+      "UnitTalk_KOR": "크오오오!!",
+      "UnitTalk_JPN": "グオオォ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "고, 고마워! 막아주지 않았으면 무방비로 당할 뻔했네…!",
+      "UnitTalk_JPN": "あ、ありがとう！引き止めてくれなかったら、不意打ちでやられちゃうところだったわ…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "잠복해 있는 걸 봤구나?",
+      "UnitTalk_JPN": "敵が隠れているの、見えていたのね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "눈으로 확인하지는 않았다.",
+      "UnitTalk_JPN": "目で確認したわけではなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다만, <color=#F7BE45>[녀석들이라면 이 타이밍에서 기습을 노릴 거다.]</color>라는 생각이 들었을 뿐.",
+      "UnitTalk_JPN": "ただ…<color=#F7BE45>「ヤツらなら、このタイミングで奇襲するはずだ」</color>と思っただけだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…녀석들이라면 이 타이밍에 노린다고?",
+      "UnitTalk_JPN": "…ヤツらなら、このタイミングで奇襲するはず、だと？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "왜 그런 생각을 자연스럽게 한 거지?",
+      "UnitTalk_JPN": "どうして当たり前のように、そんなことを思った？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "낯선 세계에서 눈을 뜬 지 반나절도 지나지 않았지만, 내 몸의 모든 감각은 이 세계를 자연스럽게 받아들이고, 느끼고 있었다.",
+      "UnitTalk_JPN": "見慣れない世界で目を覚ましてから、まだ半日も経っていない。しかし私のすべての感覚が、この世界を自然に受け入れ、自然に感じていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 이유를 생각하는 일은, 일단 나중으로 넘기자.",
+      "UnitTalk_JPN": "その理由を考えるのは、ひとまず後にしよう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "우선은 눈앞의 사람을 구하는 게 우선이다.",
+      "UnitTalk_JPN": "目の前の人を救うのが先だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "조, 조심하세요! 방금 떨어진 저건 <color=#F7BE45>[균열군주]</color>예요!",
+      "UnitTalk_JPN": "き、気をつけて！今落ちてきたのが<color=#F7BE45><r=リフトロード>亀裂の君主</r></color>…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_007.wav"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "일반 공허체들을 통솔하는 녀석이라고요!",
+      "UnitTalk_JPN": "つまり、空虚体を統率する者のことです！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_NPC_NOA_LISA_008.wav"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "관측사가 있으니까 편하네.",
+      "UnitTalk_JPN": "観測士がいるといいわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "적들의 정보도 술술 알려주고 말이야.",
+      "UnitTalk_JPN": "敵の情報もスラスラ教えてくれるし。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_016.wav"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "위험한 녀석 아니야…?",
+          "JumpAnchorStringId_JPN": "危険な敵じゃないのか…？"
+        }
+      ]
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "물론 위험한 녀석이지. 하지만-",
+      "UnitTalk_JPN": "もちろんよ。でも―",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_017.wav"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "내 실력이랑, 아까 네가 보여준 지휘를 생각하면 어렵지 않은 상대야.",
+      "UnitTalk_JPN": "わたしの実力と、あなたの指揮があれば、心配はいらないわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_018.wav"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "균열군주라고 해도 이번 공허균열의 출현 규모를 보면 그렇게 강한 녀석은 아닌 것 같아.",
+      "UnitTalk_JPN": "<r=リフトロード>亀裂の君主</r>っていっても、<r=ヴォイドリフト>空虚の亀裂</r>の出現規模を見ると、そこまで手強い相手じゃないはず。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_019.wav"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "동화책 첫 페이지에 나오는 졸개 같은 거지.",
+      "UnitTalk_JPN": "絵本の最初のページでやられちゃう、手下みたいなものよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_020.wav"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "저 정도에 겁먹으면 평생 <color=#F7BE45>[별의 구원자]</color>가 되진 못할걸.",
+      "UnitTalk_JPN": "この程度で怖がってたら、<color=#F7BE45>「星の救援者」</color>にはなれないわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_021.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "동화책…?",
+          "JumpAnchorStringId_JPN": "絵本…？"
+        }
+      ]
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "아무튼 갈게!",
+      "UnitTalk_JPN": "とにかく、行こう！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_022.wav"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "지원 잘 부탁해!",
+      "UnitTalk_JPN": "指揮、よろしくね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_03_UNIT_S_VOYAGER_STRANIS_023.wav"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_CRACK.txt",
+    "UiStates": [],
+    "BuffEffectPosition": {
+      "HEAD": 2,
+      "BODY": 1.2
+    },
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_58.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_51.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_52.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_26.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 29,
+            "EventEndFrame": 30,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 79,
+            "EventEndFrame": 80,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 49,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_53.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_54.wav"
+            ]
+          },
+          {
+            "EventFrame": 32,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_55.wav"
+            ]
+          },
+          {
+            "EventFrame": 47,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_41.wav"
+            ]
+          },
+          {
+            "EventFrame": 47,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_27.wav"
+            ]
+          },
+          {
+            "EventFrame": 67,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_56.wav"
+            ]
+          },
+          {
+            "EventFrame": 79,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_57.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "AnimName": "BATTLE_ATTACK",
+        "UseInternalCamera": false,
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 29,
+            "EventEndFrame": 30,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 79,
+            "EventEndFrame": 80,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 49,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_53.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_54.wav"
+            ]
+          },
+          {
+            "EventFrame": 32,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_55.wav"
+            ]
+          },
+          {
+            "EventFrame": 47,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_41.wav"
+            ]
+          },
+          {
+            "EventFrame": 47,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_27.wav"
+            ]
+          },
+          {
+            "EventFrame": 67,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_56.wav"
+            ]
+          },
+          {
+            "EventFrame": 79,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_57.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_59.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_28.wav"
+            ]
+          },
+          {
+            "EventFrame": 14,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_60.wav"
+            ]
+          },
+          {
+            "EventFrame": 44,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_61.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

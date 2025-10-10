@@ -1,0 +1,1831 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_PUBLIC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…잡혔다!",
+      "UnitTalk_JPN": "…捕まっちゃった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "어떻게 찾은 거야 언니? 분명 꽁꽁 숨었다고 생각했는데!",
+      "UnitTalk_JPN": "どうやって見つけたの？うまく隠れた自信あったのに！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "흐하하하! 용족은 최강! 당연히 이 몸도 최강!",
+      "UnitTalk_JPN": "フハハハ！竜族は最強！故にわがはいも最強！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "겨우 그 정도 실력으로는 이 몸에게 숨을 수는 없지. ",
+      "UnitTalk_JPN": "お主ら程度では、わがはいから逃れる事はできんのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "어떤 종목이든 덤벼라! 내가 전부 이겨줄 테니 말이야!",
+      "UnitTalk_JPN": "どんな遊びでもかかってくるがよい！返り討ちにしてやろうぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후… 겨우 인간 꼬마들이 나를 이길 수 있을 리 없지 않으냐?",
+      "UnitTalk_JPN": "ふふふ…人間の小童がわがはいに敵うはずなかろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "분해…! 스칼렛 누나랑 대결하면 전부 져버리니까 반박할 수 없어서 분해!",
+      "UnitTalk_JPN": "チクショー！いつも負けちゃって反論できないのがまた悔しい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "음… 그럼 언니!",
+      "UnitTalk_JPN": "うーん…じゃあ、おねえちゃん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "으응?",
+      "UnitTalk_JPN": "何なのだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "저기에서도 이길 수 있어? ",
+      "UnitTalk_JPN": "あれも勝てる？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>빨리 먹기 대회 정기전</color>…?",
+      "UnitTalk_JPN": "<color=#F7BE45>早食い王者決定戦</color>…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "TRIPLE_2",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "진짜 이길 수 있어 누나?",
+      "UnitTalk_JPN": "ほんとに勝てるの？ねえちゃん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "엄청 많이 먹을 것 같은 어른들도 많은 것 같은데…",
+      "UnitTalk_JPN": "すごい食べそうな大人たちも参加しそうだけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후! 나도 어른인걸…!",
+      "UnitTalk_JPN": "ふふん！わがはいも大人なのだ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "THINK2",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "THINK2",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOYGIRL"
+      ],
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "진짜라니까?!",
+      "UnitTalk_JPN": "ほんとだからな！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_MALE",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "누나 파이팅…! 이겨줘! ",
+      "UnitTalk_JPN": "おねえちゃん頑張れー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "언니! 우승하면 상점가에서 쓸 수 있는 상품권을 준대! ",
+      "UnitTalk_JPN": "おねえちゃん！優勝すると商店街で使える商品券をもらえるって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "호오… ",
+      "UnitTalk_JPN": "ほう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "여기에서 딱 기다려라 인간 꼬마들!",
+      "UnitTalk_JPN": "そこで待っておれ、人間の小童ども！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "용족의 진정한 <color=#F7BE45>위대함</color>을 보여주마!",
+      "UnitTalk_JPN": "竜族の真なる<color=#F7BE45>偉大さ</color>を見せつけてやるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAZA.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "자 지금부터!",
+      "UnitTalk_JPN": "さて、みなさん。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_1.wav",
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "NOA 중앙상인회배 빨리 먹기 대회 정기전을 시작하겠습니다!",
+      "UnitTalk_JPN": "今年もNOA中央商人会によって開催される、早食い王者決定戦！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "이번 종목은 팬케이크입니다!",
+      "UnitTalk_JPN": "今大会の種目は、おなじみ「カフェ・ストレガ」でも大人気のパンケーキとなります！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "과연 이번 빨리 먹기 대회의 우승자는 누가 될 것인가…!",
+      "UnitTalk_JPN": "限界を超え勝利をつかむのは誰か、それでは！早食い王者決定戦！レディーゴッ！！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 171,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_5"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 160,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 161,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 162,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "말씀드리는 순간! 스칼렛 참가자가 가장 먼저 치고 나갑니다!",
+      "UnitTalk_JPN": "スタートの合図と同時に、ものすごい勢いで食べ進めるスカーレット参加者！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 146,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 147,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "시작한지 얼마 지나지도 않았는데, 벌써 10판을 넘게 해치웠습니다!",
+      "UnitTalk_JPN": "開始して間もないですが、既に10皿以上を平らげております！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "어떻게 한 거죠? ",
+      "UnitTalk_JPN": "一体どうなっているんでしょう？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 141,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "아! 모조리 구겨서 입에 쑤셔 넣었군요! ",
+      "UnitTalk_JPN": "なんと！一気に口の中に放り込んだようです！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "빠른 스타트가 인상 깊습니다! ",
+      "UnitTalk_JPN": "そのスピード、まさに圧倒的！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "푸후후후! ",
+      "UnitTalk_JPN": "ぷふふふ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "내가 파호 위개한 용됵이다! ",
+      "UnitTalk_JPN": "ばがばいおぼ、い゛だいあう゛びゅう゛おう゛であう！（我輩こそ偉大なる竜族である）",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "먹는 거또 데일 빠흐디! 일등은 내 타히다!",
+      "UnitTalk_JPN": "はへふおをへかいいぢ！ひっどうはばがばいのヴぉのよ！（食べるのも世界一！一等は我輩のものよ！）",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "스칼렛 참가자, 방금 뭐라고 말한 것 같은데요?",
+      "UnitTalk_JPN": "スカーレット参加者、いま何か言いましたか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "입에 팬케이크가 가득 차 있어 무슨 말인지 하나도 모르겠군요!",
+      "UnitTalk_JPN": "口の中にパンケーキがいっぱいで、まったく意味がわかりません！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…! 그어니카…! 일등…! 할 거-",
+      "UnitTalk_JPN": "…！ヴぁから…！いっとう…！すうの—",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "케훅…!",
+      "UnitTalk_JPN": "けふっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "사, 사레! 사레 들혀써…!",
+      "UnitTalk_JPN": "の、のどにづまっで…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "스칼렛 참가자, 급히 물을 찾는 모습! ",
+      "UnitTalk_JPN": "スカーレット参加者、急いで水を探している様子！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 170,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "CameraOffset": "DEFAULT",
+      "UnitTalk_KOR": "그런 한편! 조용히 치고 올라오는 참가자가 보이네요?",
+      "UnitTalk_JPN": "一方、静かにペースを上げ始める参加者がいます！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 164,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 165,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 166,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "모나스티르 공국의 기사단 단장이라고 하는데요!",
+      "UnitTalk_JPN": "モナスティル公国の騎士団長とのことですが！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "오오… 과연 일국의 기사단을 통솔하는 단장인가요?",
+      "UnitTalk_JPN": "さすがは一国の騎士団をまとめる団長です！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "윽… 기사단장으로서의 체면이…!",
+      "UnitTalk_JPN": "くっ…騎士団長としての世間体が…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "으으… 프레이 보급관…!",
+      "UnitTalk_JPN": "うぅ…フレイ補給官…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "수상한 곳에 투자했다가 공금을 날린 건 보급관인데 왜 내가 복구하는 거냐고…!",
+      "UnitTalk_JPN": "あやしい所に公的資金を投資したのは補給官なのに、なんで私が埋め合わせをするのよ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래도… 음…!",
+      "UnitTalk_JPN": "けど…うん…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "맛있어!",
+      "UnitTalk_JPN": "おいしい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitTalk_KOR": "꼭 나쁘지만은 않을지도…?",
+      "UnitTalk_JPN": "悪いことばかりでは無いかも…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "여기 한 그릇 더 주세-",
+      "UnitTalk_JPN": "おかわ—",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아니지. 크흠!",
+      "UnitTalk_JPN": "いいえ、コホン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "한 그릇 더 내어오시오!",
+      "UnitTalk_JPN": "もう1皿、用意してくれたまえ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "정말 어마어마한 용량입니다!",
+      "UnitTalk_JPN": "目を疑ってしまうほどの量です！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "속도는 빠르지 않습니다만 말 그대로 한순간도 쉬지 않고 팬케이크를 밀어 넣고 있어요!",
+      "UnitTalk_JPN": "スピードこそ速くはありませんが、その手を休まずにパンケーキを口に押し込んでおります！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "대단하군… 인정한다 인간!",
+      "UnitTalk_JPN": "…認めよう、お前は強い！人間！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "음… 당신도 제법 <color=#F7BE45>먹을 줄 아는 사람</color>이군요. ",
+      "UnitTalk_JPN": "あなたも中々…<color=#F7BE45>食べれる側の人間</color>ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오랜만입니다. 이런 팽팽한 대결은. ",
+      "UnitTalk_JPN": "久しぶりです、このような互角の勝負は。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하지만 우쭐해하지는 마라. 대단하기는 하다만 넌 결국 인간!",
+      "UnitTalk_JPN": "だが勝った気になるでない。すごいのは認めるが、しょせんお主は人間！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "우승은 위대한 용족인 이 몸의 것이니까…!",
+      "UnitTalk_JPN": "優勝は、偉大な竜族のわがはいのものだからな…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "자, 남아있는 참가자는 단 둘인 상황…!",
+      "UnitTalk_JPN": "さて、残りの参加者は2人となりました…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "스칼렛을 응원한다.",
+          "JumpAnchorStringId_JPN": "スカーレットを応援する。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "샤를을 응원한다.",
+          "JumpAnchorStringId_JPN": "シャルルを応援する。 ",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 120,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "우훔…! 임감 담장! 나룰 웅원하눈 고냐!",
+      "UnitTalk_JPN": "ゔむ…！いんげんのだんちょう！ばがあいを応援すうをか！（うむ…！人間の団長！わがはいを応援するのか！）",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "조아…!",
+      "UnitTalk_JPN": "おし…！（よし…！）",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "용됵의 위대하믈 보여주마…!",
+      "UnitTalk_JPN": "でゅうどくのひはいさをびせてやほう…！(竜族の偉大さを見せてやろう！）",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛은 입 한가득 들어있는 팬케이크를 우물거리며 투지를 불태웠다. ",
+      "UnitTalk_JPN": "スカーレットは口いっぱいに頬張ったパンケーキをもぐもぐしながら、闘志を燃やした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 125,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "우, 우웃…?!",
+      "UnitTalk_JPN": "う、うむっ…？！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "내가 아니라…?!",
+      "UnitTalk_JPN": "わがはいじゃなく…？！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "우으으으…! 절대 질 후 업따…!",
+      "UnitTalk_JPN": "うううう…！絶対に負けなひぞ…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛은 눈에서 불꽃을 튀기며 팬케이크를 입에 쑤셔 넣기 시작했다.",
+      "UnitTalk_JPN": "スカーレットは目から火花を散らしながら、パンケーキを口に押し込み始めた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 152,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 153,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 154,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "CameraOffset": "POS7_2X",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "스칼렛 참가자, 남아있는 팬케이크를 마구 입에 넣습니다!",
+      "UnitTalk_JPN": "スカーレット参加者、残りのパンケーキを一気に詰め込みます！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 155,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 156,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 157,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav"
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "막판 스퍼트!",
+      "UnitTalk_JPN": "ラストスパート！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "크후후! 크후후후후후!",
+      "UnitTalk_JPN": "くぷぷ！くぷぷぷぷふ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "내가 이겼…!",
+      "UnitTalk_JPN": "わがはいの勝ち…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…켈룩! ",
+      "UnitTalk_JPN": "…ぶっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.7,
+      "BgCrashTime": 0.7,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "켈룩!",
+      "UnitTalk_JPN": "コホッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.9,
+      "BgCrashTime": 0.9,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "켈룩! 켈룩! ",
+      "UnitTalk_JPN": "ゴホッ！ゴホッ！",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_FIRE.wav"
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "불…?",
+      "UnitTalk_JPN": "火…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이, 이건 실수야! 기침하다가 잘못 나온 거라고!",
+      "UnitTalk_JPN": "わ、わざとじゃない！むせたたけなのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "…?!",
+      "UnitTalk_JPN": "…！？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIRE_03.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "스칼렛 참가자가 갑작스럽게 내뱉은 불에… ",
+      "UnitTalk_JPN": "スカーレット参加者がいきなり吹いた火に—",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIRE.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "타버렸습니다! ",
+      "UnitTalk_JPN": "燃えてしまいました！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIRE_03.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "남아있던 팬케이크가 전부 타버렸어요! ",
+      "UnitTalk_JPN": "残りのパンケーキ、全てが燃え尽きてしまいました！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "이건… 실격입니다!",
+      "UnitTalk_JPN": "これは失格です！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "스칼렛 참가자, 실격패! ",
+      "UnitTalk_JPN": "スカーレット参加者、反則負け！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 172,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_02.wav"
+    },
+    {
+      "Uid": 158,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_1.wav",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_CLAP.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "우승자는 샤를 참가자입니다!",
+      "UnitTalk_JPN": "優勝はシャルル参加者です！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그, 그런 게 어디있냐! ",
+      "UnitTalk_JPN": "そ、そんなのあるか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "무효! 무효다! ",
+      "UnitTalk_JPN": "無効！無効だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.8,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "무효라고오!",
+      "UnitTalk_JPN": "無効なのだ～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "스, 스칼렛 참가자! 날뛰지 마세요! ",
+      "UnitTalk_JPN": "す、スカーレット参加者！暴れないでください！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIRE_03.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "스테이지에 불이! 불이 옮겨붙지 않습니까!",
+      "UnitTalk_JPN": "ステージに火が！火が燃え移ってしまうではないですか！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "물 가져와!",
+      "UnitTalk_JPN": "おい、水を持ってこい！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WATER_SPRAY_01.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "설명 좀 해보시죠?",
+      "UnitTalk_JPN": "きちんと説明していただけますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "NOA 중앙상인회에서 날아온 배상금 청구서에 대해.",
+      "UnitTalk_JPN": "NOA中央商人会からの賠償金請求書について。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…하하! 미안하다!",
+      "UnitTalk_JPN": "…はは！すまないのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "미안할 짓을 왜 자꾸 만드는 거야…!!! 이 망할 도마뱀!",
+      "UnitTalk_JPN": "すまない事をするなああ…！！！このポンコツトカゲェ！！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN"
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

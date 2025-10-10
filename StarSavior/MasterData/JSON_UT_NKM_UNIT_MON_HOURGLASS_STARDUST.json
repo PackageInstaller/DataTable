@@ -1,0 +1,169 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_HOURGLASS.txt",
+    "UiStates": [],
+    "UnitHudHeight": 2.1,
+    "BuffEffectPosition": {
+      "HEAD": 1.9,
+      "BODY": 1.1
+    },
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_LIGHT_75.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_LIGHT_68.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_15.wav"
+            ]
+          },
+          {
+            "EventFrame": 12,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_LIGHT_69.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 86,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HOURGLASS_STARDUST_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HOURGLASS_STARDUST_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 61,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HOURGLASS_STARDUST_ATK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 88,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HOURGLASS_STARDUST_ATK_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "AnimName": "BATTLE_ATTACK",
+        "UseInternalCamera": false,
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 86,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HOURGLASS_STARDUST_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HOURGLASS_STARDUST_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 61,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HOURGLASS_STARDUST_ATK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 88,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HOURGLASS_STARDUST_ATK_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_LIGHT_76.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_17.wav"
+            ]
+          },
+          {
+            "EventFrame": 37,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_15.wav"
+            ]
+          },
+          {
+            "EventFrame": 41,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

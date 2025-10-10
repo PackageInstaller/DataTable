@@ -1,0 +1,417 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_CHEER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitQuickSet": true,
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다음 평가전을 위해 훈련을 진행하고 있었는데…",
+      "UnitTalk_JPN": "次の試験に向けてトレーニングを進めていたところ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "아… 안녕하세요, 단장님?",
+      "UnitTalk_JPN": "あ…こんにちは、団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitTalk_KOR": "여기, 시원한 물수건을 가져왔어요.",
+      "UnitTalk_JPN": "こちら、冷たいタオルをお持ちしました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "훈련하시는 데 지쳐 보이셔서요.",
+      "UnitTalk_JPN": "トレーニングで疲れていらっしゃるようでしたので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고마…워?",
+          "JumpAnchorStringId_JPN": "ありがとう…？"
+        }
+      ]
+    },
+    {
+      "Uid": 57,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "CameraOffset": "POS7_2X",
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "얼굴을 보니 사무가 주 업무라서 평소에 마주친 적이 드문 메이드였다.",
+      "UnitTalk_JPN": "顔を見ると、事務が主な仕事なので普段会うことの少ないメイドだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "자기 일도 바쁠 텐데, 어째서 훈련장까지 찾아왔을까?",
+      "UnitTalk_JPN": "自分の仕事も忙しいはずなのに、どうしてトレーニング場まで来たのだろう？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "직접 해 보지는 않았지만… <color=#F7BE45>[여정]</color>은 무척 어렵다고 들었거든요.",
+      "UnitTalk_JPN": "直接やったことはないけど…<color=#F7BE45>「救援の旅」</color>はとても難しいと聞いたので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "포, 포기하지 마시고 마지막까지 유종의 미를 거두시면 좋겠어요!",
+      "UnitTalk_JPN": "あ、あきらめずに最後までやり遂げてくださいね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "응원할게요!",
+      "UnitTalk_JPN": "応援しています！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "메이드의 격려를 듣고, 최근 <color=#F7BE45>[여정]</color>의 성과가 부족하다는 데에 생각이 미쳤다.",
+      "UnitTalk_JPN": "メイドの励ましを聞き、最近<color=#F7BE45>「救援の旅」</color>の成果が不足していることに思い至った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "혹시 모르는 사이에 주변 사람들에게 걱정을 끼친 것일까.",
+      "UnitTalk_JPN": "知らず知らずのうちに周囲の人たちに心配をかけてしまったのだろうか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여기서는…",
+      "UnitTalk_JPN": "どうしようか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하는 만큼 성과가 나올 것이라고 믿자!",
+          "JumpAnchorStringId_JPN": "努力した分だけ成果は出るはずだと信じよう！",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "조금만 더 해 보자.",
+          "JumpAnchorStringId_JPN": "もう少し頑張ってみよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "지금으로도 충분해.",
+          "JumpAnchorStringId_JPN": "今で十分だ。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 의욕을 불태웠다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>とともに意欲を燃やした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이대로 부진의 늪에 빠질 수는 없다!",
+      "UnitTalk_JPN": "このまま不振の泥沼に陥るわけにはいかない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "위기감을 가지고 훈련에 몰입한 결과, 눈에 띄는 성취가 있었다!",
+      "UnitTalk_JPN": "危機感を持ってトレーニングに没頭した結果、目に見える成果があった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 61,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 의욕을 불태웠다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>とともに意欲を燃やした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이대로 부진의 늪에 빠질 수는 없다!",
+      "UnitTalk_JPN": "このまま不振の泥沼に陥るわけにはいかない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "지나치게 무리하는 바람에 둘 다 기진맥진하고 말았다!",
+      "UnitTalk_JPN": "やりすぎて二人ともぐったりしてしまった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "당분간은 주의하도록 하자…",
+      "UnitTalk_JPN": "当分は注意しよう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 40,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "평소보다 훈련은 길어졌지만, 만족스러운 결과를 얻었다.",
+      "UnitTalk_JPN": "普段よりトレーニングは長引いたが、満足のいく結果を得た。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이제부터 <color=#F7BE45>[여정]</color>에 더욱 진지하게 임하자…!",
+      "UnitTalk_JPN": "これから<color=#F7BE45>「救援の旅」</color>に、より真剣に取り組もう…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 43,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "불안감 때문에 당장 페이스를 흐트러뜨리는 것은 위험하다.",
+      "UnitTalk_JPN": "不安感からすぐにペースを乱すのは危険だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "예정대로 훈련을 마치고 앞으로의 일정을 어떻게 할지 이야기했다…",
+      "UnitTalk_JPN": "予定通りトレーニングを終え、今後の日程をどうするか話し合った…",
+      "TalkTime": 0.03
+    }
+  ]
+}

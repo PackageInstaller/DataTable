@@ -1,0 +1,1792 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "람파디스의 보조 조사원으로서 현장 조사를 하러 간다는 릴리를 따라가기로 했다. ",
+      "UnitTalk_JPN": "ランパディスの見習い調査員として、調査に向かうリリーについて行くことにした。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "으음… 단장님까지 따라오실 필요는 없었는데… ",
+      "UnitTalk_JPN": "うーん…団長さんまで同行されるなんて… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "바쁘신 거 아니었나요? ",
+      "UnitTalk_JPN": "お忙しいのではなかったですか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "릴리가 어떤 일을 하고 있는지 보고 싶어.",
+          "JumpAnchorStringId_JPN": "リリーがどんな仕事をしてるのか気になって。"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아앗…!  ",
+      "UnitTalk_JPN": "ああっ…！  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "단장님도 수수께끼의 사건에 관심이 있으신 건가 했는데…",
+      "UnitTalk_JPN": "団長さんも、謎の事件に興味を持たれたのかと思ったのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그것도 맞아.",
+          "JumpAnchorStringId_JPN": "それもあるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "에헤헤~ 그럴 줄 알았어요!",
+      "UnitTalk_JPN": "えへへ～、やっぱりそうですよね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "베일에 감춰진 수수께끼를 들춰내는 건… 항상 두근두근하니까요! ",
+      "UnitTalk_JPN": "ベールに包まれた謎を解き明かすのは…いつでもドキドキします。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그럼 단장님, 잘 따라오셔야 해요!",
+      "UnitTalk_JPN": "それでは団長さん、しっかりついてきてくださいね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png"
+    },
+    {
+      "Uid": 196,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "NOA 시내의 한 뒷골목에 들어선 릴리가 발걸음을 멈춰 세웠다. ",
+      "UnitTalk_JPN": "リリーはNOAの街にある路地裏に入ると、足を止めた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "낡은 건물들 사이사이 좁은 길이 미로처럼 얽혀 있는 골목길은…  ",
+      "UnitTalk_JPN": "古い建物の間にある、狭くて迷路のように入り組んだ路地は…  ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩐지 제대로 관리되고 있지 않은 것처럼 보인다. ",
+      "UnitTalk_JPN": "普段から手入れされていないように思えた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런데 뭘 조사하려는 거야?",
+          "JumpAnchorStringId_JPN": "ところで、何の調査をするの？"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "이번 사건은 말이죠… 이 골목에…",
+      "UnitTalk_JPN": "今回の事件はですね…この路地で…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "정체를 알 수 없는 괴물이 자주 목격된다고 해요…!  ",
+      "UnitTalk_JPN": "正体不明の怪物が目撃されているんです…！  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괴물?",
+          "JumpAnchorStringId_JPN": "怪物？"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네. 의뢰인의 말에 따르면 그래요. ",
+      "UnitTalk_JPN": "はい。依頼人によると… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "이 골목 어귀에서 수상하게 큰 그림자가 휙휙! 지나다니는 게 목격된대요. ",
+      "UnitTalk_JPN": "この路地を、怪しい大きな影がシュシュッ！と通り過ぎていくそうです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "절대 사람의 형상은 아닌 그림자가, 엄청나게 빠른 속도로 지나간다던가…?",
+      "UnitTalk_JPN": "絶対に人ではない影が、とてつもないスピードで動くんだとか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "사람을 해치기도 한대?",
+          "JumpAnchorStringId_JPN": "人に危害を加えたりは？"
+        }
+      ]
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "흠… 아직 다친 사람은 없지만… ",
+      "UnitTalk_JPN": "ふむ…まだ怪我人は出ていませんが… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "그것 때문에 주변에 사는 분들이 무서워서 이 근처로 나오질 못하신다고 해요. ",
+      "UnitTalk_JPN": "近隣住民の方たちは、怖くてこの近くを通れないそうです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "관리도 안 되니까 점점 더러워지고, 여러 가지 문제가 발생하고 있다네요.",
+      "UnitTalk_JPN": "管理もされていませんから、ますます汚くなって…色んな問題が発生しています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "흐음… 과연 범인의 정체는 뭘까요? 목적은…?",
+      "UnitTalk_JPN": "ふむ…果たして犯人の正体は、一体誰なんでしょうね？それに、目的は？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "일단 골목길을 샅샅이 뒤져보면서 단서를 찾아보는 게 먼저겠죠!",
+      "UnitTalk_JPN": "まずは路地を隅々まで調査しながら、手掛かりを探してみましょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런데… 괴물이 나온다고 했잖아.",
+          "JumpAnchorStringId_JPN": "でも、怪物が出るっていうのに…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "릴리는 안 무서워?",
+          "JumpAnchorStringId_JPN": "リリーは怖くないのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "에헤헤. 토끼 씨도 제가 보기보다 겁이 없어서 볼 때마다 신기하다고 그랬어요. ",
+      "UnitTalk_JPN": "えへへ。ウサギさんも、わたしが思ったより怖がりじゃなくってビックリしたそうです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그치만… 무서울 이유가 없잖아요? 단장님도 있고, 토끼 씨도 있으니까…!",
+      "UnitTalk_JPN": "でも…怖がる理由もないでしょう？団長さんも、ウサギさんもいるんですから…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "혹시나 진짜 괴물이라고 해도 어떻게든 쓰러뜨릴 수 있지 않을까요…? ",
+      "UnitTalk_JPN": "それに、もし本当に怪物だとしても…どうにか倒せるんじゃないでしょうか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇긴 한데…",
+          "JumpAnchorStringId_JPN": "それはそうだけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그리고 무엇보다-",
+      "UnitTalk_JPN": "それに、何よりー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "전, <color=#F7BE45>람파디스</color>의 보조 조사원이니까요…! ",
+      "UnitTalk_JPN": "わたしは、<color=#F7BE45>ランパディス</color>の見習い調査員です…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "사건 현장을 꼼꼼하게 조사하고, 단서가 될만한 것들을 샅샅이 찾아내는 것! ",
+      "UnitTalk_JPN": "事件現場をしっかりと調査して、手掛かりになるものを一つ残さず探し出すこと！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "그게 바로 탐정… 아, 아니.",
+      "UnitTalk_JPN": "それこそが探偵…じ、じゃなくって…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "민간 조사원이 할 일이죠. ",
+      "UnitTalk_JPN": "民間調査員がすべきことですから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그렇지, 토끼 씨?",
+      "UnitTalk_JPN": "そうでしょ、ウサギさん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리는 <color=#F7BE45>토끼 씨</color>를 꼬옥 안으며 웃었다. ",
+      "UnitTalk_JPN": "リリーは<color=#F7BE45>ウサギさん</color>をぎゅっと抱きしめながら笑った。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그리고 단장님.",
+      "UnitTalk_JPN": "それに、団長さん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "사람들이 <color=#F7BE45>괴물의 소행</color>이다라고 생각하는 사건들 말인데요. ",
+      "UnitTalk_JPN": "人々が<color=#F7BE45>怪物の仕業</color>だと思っている事件はですね… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "<color=#F7BE45>괴물</color>같은 건 없는 경우가 많아요!",
+      "UnitTalk_JPN": "実は、<color=#F7BE45>怪物</color>なんて関係ない場合が多いんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응?",
+          "JumpAnchorStringId_JPN": "えっ？"
+        }
+      ]
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "물론, 진짜 공허체나 마수 같은 것들이 범인인 경우도 있었지만… ",
+      "UnitTalk_JPN": "もちろん、本当に<r=ヴォイドボーン>空虚体</r>や、魔獣が犯人の場合もありますが… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "그런 사건들은 보통 시내가 아니라 외딴곳에서 일어나죠. ",
+      "UnitTalk_JPN": "そんな事件は普通、街じゃなくって人里離れたところで起こるんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만 이번 사건은 NOA에서 일어난 사건! ",
+      "UnitTalk_JPN": "でも、今回の事件はNOAで起こっています！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "그러니까 이번에도 분명, 괴물은 없을 거예요. ",
+      "UnitTalk_JPN": "つまり、怪物なんていないはずです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "뭔가 오해가 있었던 거겠죠. ",
+      "UnitTalk_JPN": "何か誤解されているのでしょう。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그러니까 얼른 단서를 찾아봐요…! ",
+      "UnitTalk_JPN": "なので、早く手掛かりを見つけちゃいましょう…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 142,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_09.wav"
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흐으음… 여기 어딘가 분명 단서가…",
+      "UnitTalk_JPN": "ふぅぅむ…この辺りにきっと、手掛かりが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav"
+    },
+    {
+      "Uid": 145,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "남아있을 것 같은데에…",
+      "UnitTalk_JPN": "ありそうなんだけどなぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리는 한참 동안 좁고 더러운 골목길 구석구석을 뒤졌다. ",
+      "UnitTalk_JPN": "リリーはしばらくの間、狭くて汚い路地を隅々まで調べ続けた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 146,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgCrash": 0.7,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BOX_RATTLE.wav"
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "오오…! 찾았다! 단장님, 범인의 흔적을 발견한 것 같아요!",
+      "UnitTalk_JPN": "おおっ…！見つけました！団長さん、犯人の痕跡を発見しました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "여기, 보이시나요?",
+      "UnitTalk_JPN": "これ、見えますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리가 발견한 것은, 젖은 흙바닥에 찍혀 있는 발자국. ",
+      "UnitTalk_JPN": "リリーが見つけたのは、湿った土に残った足跡だった。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 150,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "얼마 전에 내린 비 때문에 흔적이 전부 씻겨져 내려갔을 줄 알았는데…!",
+      "UnitTalk_JPN": "少し前に雨が降ったせいで、痕跡がすべて流されてしまったかと思いましたが…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "다행히 망가진 잡동사니에 가려져서 남아 있었어요.",
+      "UnitTalk_JPN": "幸いにも、がらくたの下にあったものは残っていましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "흐음… 일단 신발 자국은 아닌 것 같지, 토끼 씨…?",
+      "UnitTalk_JPN": "ふぅむ…靴の跡じゃなさそうですよね、ウサギさん…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_METAL_CAN_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON"
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "쓰레기통이 망가진 이유는… 이 안에 있는 쓰레기를 뒤지려던 거 아닐까요?",
+      "UnitTalk_JPN": "ゴミ箱が壊れている理由は…この中にあったゴミを漁ったからじゃないでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아앗…! 이 사이에 수상한 붉은색 털도 떨어져 있잖아!",
+      "UnitTalk_JPN": "ああっ…！この隙間に、怪しげな赤い毛も落ちていますよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 156,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "토끼 씨, 이건 진짜 중요한 단서 같은데? 그렇지?",
+      "UnitTalk_JPN": "ウサギさん、これは重要な手掛かりになりそうですね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 157,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "결정적인 단서 포착이야…!",
+      "UnitTalk_JPN": "決定的な手掛かり、ゲットです…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "이제 이 단서들을 조합해 보면…!",
+      "UnitTalk_JPN": "あとは、手掛かりを組み合わせて考えてみれば…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "골목길을 돌아다니면서 쓰레기통을 뒤졌다는 건…",
+      "UnitTalk_JPN": "路地を歩き回って、ゴミ箱を漁っていたのは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "그러니까… 흐음…",
+      "UnitTalk_JPN": "つまり…えぇと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_07.wav",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "빨간 머리를 가진 사람이 잘못 버린 물건을 찾으려고 쓰레기통을 뒤졌다든가…?",
+      "UnitTalk_JPN": "赤毛の人が、間違って捨ててしまった物を探すために…ゴミ箱を漁っていたとか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그거 맞아?",
+          "JumpAnchorStringId_JPN": "…本気で言ってる？"
+        }
+      ]
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "우으… 역시 아닌가… 그, 그럼…! 다른 방식으로 생각해 보면…!",
+      "UnitTalk_JPN": "うぅ…やっぱり違いますよね…じ、じゃあ…！他の角度から考えてみると…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 165,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "사람들이 괴물이라고 생각했던 건 바로…",
+      "UnitTalk_JPN": "人々が怪物だと思っていたのは、まさに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 아직 생각 중이란 말이야 토끼 씨!",
+      "UnitTalk_JPN": "ま、まだ考え中ですよ、ウサギさん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "<color=#F7BE45>중요한 단서는 전부 발견해 놓고 뭘 하고 있느냐</color>고…?",
+      "UnitTalk_JPN": "<color=#F7BE45>重要な手掛かりをすべて見つけたのに、何をしているんだ</color>と言うのですか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 168,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "히잉… 잘 모르겠는 걸 어떻게 해…",
+      "UnitTalk_JPN": "ふええん…分からないのに、仕方ないじゃないですかぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 169,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "으응? 뭐라구 토끼 씨? 아, 아앗…?!",
+      "UnitTalk_JPN": "うぅん？どうしたの、ウサギさん？あっ、ああっ…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 170,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFlashBang": 0.7,
+      "BgCrash": 0.7,
+      "BgCrashTime": 0.5,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_64.wav",
+      "UnitTalk_KOR": "릴리가 화들짝 놀라더니 <color=#F7BE45>토끼 씨</color>를 바닥에 떨어뜨렸다. ",
+      "UnitTalk_JPN": "リリーはびくっと驚くと、<color=#F7BE45>ウサギさん</color>を地面に落とした。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 195,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리곤 바닥에 남겨져 있던 발자국과 쓰레기통을 차례대로 가리켰다. ",
+      "UnitTalk_JPN": "そして…地面に残された足跡とゴミ箱を、順番に指差した。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
+      "UnitTalk_KOR": "후우… 사람의 발이라기엔 너무 작은 발자국의 크기와 특이한 생김새.",
+      "UnitTalk_JPN": "ふぅ…人の足跡にしては小さすぎるし、形も違う。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 174,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "쓰레기통 속 버려진 사과에 남은 작은 이빨 자국.",
+      "UnitTalk_JPN": "ゴミ箱に捨てられたリンゴに、小さな歯形。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그리고 짧고 붉은 털.",
+      "UnitTalk_JPN": "そして、短く赤い毛。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 176,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "이정도 단서가 있으면 범인이 뭔지 금방 알아내야 하는거 아냐?",
+      "UnitTalk_JPN": "こんなにも手掛かりが揃ってるというのに。なんで犯人が分からないんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 177,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "저기 쯤에 있겠네.",
+      "UnitTalk_JPN": "あの辺りにいるな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 178,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리가 가리킨 방향을 보자, 잡동사니들이 미세하게 들썩거리며 움직이는 것이 보인다. ",
+      "UnitTalk_JPN": "リリーが指差す方向を見ると、がらくたがかすかに動いていた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 179,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "근데… 말투가 조금 바뀌지 않았어…?",
+          "JumpAnchorStringId_JPN": "それより…話し方、どうしたの…？"
+        }
+      ]
+    },
+    {
+      "Uid": 180,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 181,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "릴리…?",
+          "JumpAnchorStringId_JPN": "リリー…？"
+        }
+      ]
+    },
+    {
+      "Uid": 182,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…앗?!",
+      "UnitTalk_JPN": "…ハッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 183,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잠시 멍해져 있던 릴리가 깜짝 놀랐다. ",
+      "UnitTalk_JPN": "しばらくぼーっとしていたリリーが、びくっと驚いた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 184,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "주위를 살펴보다가 떨어트린 <color=#F7BE45>토끼 씨</color>를 발견한 릴리는 재빨리 안아들며 곤란하다는 듯 칭얼거렸다. ",
+      "UnitTalk_JPN": "リリーは辺りを見渡すと、先ほど落とした<color=#F7BE45>ウサギさん</color>を慌てて抱き上げた。そして、困ったという様子でぐずぐず言っている。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 185,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "토, 토끼 씨도 정말…!",
+      "UnitTalk_JPN": "ウ、ウサギさんってば、本当に…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 186,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "그렇게 마음대로 빌려가면 안된다고 말했는데에…!",
+      "UnitTalk_JPN": "勝手に借りちゃダメって言ったでしょ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 187,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "빌려가…?",
+          "JumpAnchorStringId_JPN": "借りる…？"
+        }
+      ]
+    },
+    {
+      "Uid": 188,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.7,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WEAPON_GROUND_FALL_DOWN.wav"
+    },
+    {
+      "Uid": 190,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "엇…?!",
+      "UnitTalk_JPN": "あっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 191,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "다, 단장님도 방금 보셨죠?",
+      "UnitTalk_JPN": "い、今、団長さんも見ましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 192,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "방금 저쪽 나무 판자가 들썩! 하고…!",
+      "UnitTalk_JPN": "あの木の板がバタン！って…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 193,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭔진 몰라도, 엄청 빠른데…!",
+          "JumpAnchorStringId_JPN": "何かは分からないけど、かなり速いぞ…！"
+        }
+      ]
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "토, 토끼 씨…! ",
+      "UnitTalk_JPN": "ウ、ウサギさん…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "여기서는 위험-",
+      "UnitTalk_JPN": "ここでは危険でー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIRE_ENERGY.wav"
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_METAL_04.wav",
+      "UnitTalk_KOR": "릴리가 뭐라고 할 새도 없이 <color=#F7BE45>토끼 씨</color>의 눈에서 쏘아져 나간 광선이 잡동사니에 명중했다. ",
+      "UnitTalk_JPN": "リリーが何か言う間もなく、<color=#F7BE45>ウサギさん</color>の目から出たビームががらくたに命中した。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐, 뭐야?!",
+          "JumpAnchorStringId_JPN": "な、なんだ！？"
+        }
+      ]
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "찍! 찌지이익!",
+      "UnitTalk_JPN": "キュ！キュキュッ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "부서진 판자 사이에서 천천히 기어나온 것은… ",
+      "UnitTalk_JPN": "割れた木の板の間から這い出てきたのは… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…쥐?",
+          "JumpAnchorStringId_JPN": "…ネズミ？"
+        }
+      ]
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "갈색의 거대한… 쥐 한 마리가 정신을 못 차리고 비틀거리고 있었다. ",
+      "UnitTalk_JPN": "茶色の巨大な…ネズミ一匹が、よろめきながら歩いている。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "네가 범인이었구나…?",
+      "UnitTalk_JPN": "あなたが犯人だったのね…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "에헤헤, 제가 말했죠 단장님? ",
+      "UnitTalk_JPN": "えへへ、団長さん。言ったでしょう？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "진실을 알고 나면 하나도 무섭지 않을 거라고. ",
+      "UnitTalk_JPN": "真実を知れば、ひとつも怖くないって。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "이렇게 귀여운 쥐가 범인이었을 줄 누가 알았겠어요?",
+      "UnitTalk_JPN": "こんなにかわいいネズミさんが犯人だったなんて、誰も想像していなかったでしょうね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리는 <color=#F7BE45>범인</color>의 꼬리를 잡고 들어 올리며 해맑게 웃었다. ",
+      "UnitTalk_JPN": "リリーは<color=#F7BE45>犯人</color>の尻尾をつまんで持ち上げると、明るく笑った。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>귀여운 쥐</color>…?",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>かわいいネズミ</color>…？"
+        }
+      ]
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "으응…? ",
+      "UnitTalk_JPN": "あれぇ…？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "아아! 그냥 쥐가 아니었네요!",
+      "UnitTalk_JPN": "あっ！かわいいネズミさんじゃありませんでしたね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래…!!!",
+          "JumpAnchorStringId_JPN": "うん、よく見て…！！！"
+        }
+      ]
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "다람쥐였어요! 여기 보세요. 꼬리가 복슬복슬하게 털이 많고 도르르 말려 있어요. ",
+      "UnitTalk_JPN": "かわいいリスさんだったとは！ほら、見てくださいね。ふわふわの尻尾を、くるっと巻いていますよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "등 뒤에 묻어 있는 이건… ",
+      "UnitTalk_JPN": "背中にくっついてるのは… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "도토리 조각이 확실해요! ",
+      "UnitTalk_JPN": "どんぐりの欠片で間違いありません！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "안녕 다람아~!",
+      "UnitTalk_JPN": "こんにちは、リスさ～ん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리의 이야기를 듣고 보니 확실히 다람쥐 같아 보였다.",
+      "UnitTalk_JPN": "リリーの話を聞いていると、確かにリスのように見えた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "하지만 보통 다람쥐의 5배는 더 커 보였고 붉은 동공은 무섭도록 희번뜩이고 있었다.",
+      "UnitTalk_JPN": "でも…普通のリスの5倍ほどにもなる大きさに、赤い瞳孔はぞっとするほどに鋭く光っていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기괴할 정도로 발달한 큰 이빨 사이로는 흰 거품이 부글부글 끓어대고 있다…",
+      "UnitTalk_JPN": "そして、不気味なほどに発達した大きな歯の隙間からは…白い泡がぶくぶくと溢れ出していた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아앗, 그런 거구나…! ",
+      "UnitTalk_JPN": "ああっ、そういうことだったんだ…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "혹시, 배고파서 쓰레기통을 뒤졌던 거야? ",
+      "UnitTalk_JPN": "お腹が減って、ゴミ箱を漁ってたんだよね？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "사람들이 무서워서 해가 지면 돌아다녔던 거고?",
+      "UnitTalk_JPN": "それに…人が怖くて、日が沈んでから行動してたんでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그림자는… 아! ",
+      "UnitTalk_JPN": "影は…あっ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 194,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "토끼 씨 말이 맞는 것 같아.",
+      "UnitTalk_JPN": "ウサギさんの言うとおりです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "석양이 지면 골목길로 길게 그림자가 비치니까 그렇게 보였던 거구나!  ",
+      "UnitTalk_JPN": "夕日が沈めば、路地裏に影が長く伸びますから…怪物のように見えていたのでしょう！  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "으응? 토끼 씨? ",
+      "UnitTalk_JPN": "うぅん？ウサギさん？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그게 중요한 게 아니라니, 그럼 뭐가 중요한 건데…? ",
+      "UnitTalk_JPN": "他にもっと大事なことがあるって、何のことですか…？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "더, 더러우니까 멀리 던져버리라고?",
+      "UnitTalk_JPN": "き、汚いから遠くに投げ捨てろって言うんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "너무해 토끼 씨…  ",
+      "UnitTalk_JPN": "ひどいですよ、ウサギさん…  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "아무리 우리 말을 못 알아듣는 동물이라고 해도 그렇게 심한 말은 하면 안 되는 거야. ",
+      "UnitTalk_JPN": "いくら言葉が通じない動物だからって、そんなひどいこと言っちゃダメです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아앗?! 이 녀석, 애교부리는 것 좀 보세요, 단장님! ",
+      "UnitTalk_JPN": "ええっ！？この子、愛嬌を振りまいてますよ！見てください、団長さん！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>애교</color>라고…?",
+          "JumpAnchorStringId_JPN": "あ、<color=#F7BE45>愛嬌</color>…？"
+        }
+      ]
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "이빨을 까득까득거리고 있는 것 같은데…?",
+      "UnitTalk_JPN": "歯をギリギリさせているようにしか見えない…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 손, 놓치면 당장이라도 달려들 것 같은데…!!!",
+      "UnitTalk_JPN": "手を離せば、今にでも飛び掛かってきそうだ…！！！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "으음… 붙잡긴 했는데.",
+      "UnitTalk_JPN": "うぅん…捕まえはしましたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "다람이가 딱히 범죄를 저지른 건 아니잖아요?",
+      "UnitTalk_JPN": "リスさんが犯罪を犯した訳ではないでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그래서 말인데…",
+      "UnitTalk_JPN": "そこでなんですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitTalk_KOR": "사무실에서 키워보는 건 어떨까요?",
+      "UnitTalk_JPN": "事務所で飼うのはどうでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…놓아주는 게 좋을 것 같아.",
+          "JumpAnchorStringId_JPN": "…逃がしてあげた方がいいよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "릴리는 <color=#F7BE45>다람이</color>를 키우고 싶어하는 눈치였지만… ",
+      "UnitTalk_JPN": "リリーは <color=#F7BE45>リスさん</color>を飼いたがっていたが… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 139,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그래서는 안 될 것 같은 기분이 들었기에 근처 공원에 풀어 주기로 했다. ",
+      "UnitTalk_JPN": "そうしてはいけないような気がして、近くの公園に逃がしてあげた。 ",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 141,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

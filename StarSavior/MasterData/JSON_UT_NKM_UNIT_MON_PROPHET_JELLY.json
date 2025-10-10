@@ -1,0 +1,133 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UiStates": [],
+    "UnitHudHeight": 3,
+    "BuffEffectPosition": {
+      "HEAD": 2.7,
+      "BODY": 1.7
+    },
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_INFO.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MUTATE.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 57,
+            "ReActType": "NRT_DAMAGE_A",
+            // "StopTimeDef": 0.15,
+            // "CameraCrashGap": 0.2,
+            // "CameraCrashTime": 0.4,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 14,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MAGIC.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MUTATE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 39,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_VOICE.wav"
+            ]
+          },
+          {
+            "EventFrame": 47,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MUTATE_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 47,
+            "ReActType": "NRT_DAMAGE_A",
+            // "CameraCrashGap": 0.1,
+            // "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MUTATE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 43,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MAGIC_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MUTATE_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 12,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_VOICE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 22,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

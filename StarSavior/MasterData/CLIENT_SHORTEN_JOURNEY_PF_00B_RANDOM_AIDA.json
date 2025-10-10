@@ -1,0 +1,155 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00B_RANDOM_AIDA",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 8,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NPC_MODULE_RESEARCHER_FEMALE_1",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아이다가 자신의 강화제를 더욱 완벽하게 만들었다며 권유하러 왔다.",
+      "UnitTalk_JPN": "アイーダは自分の強化剤をさらに完璧に作り上げたと言って勧めにきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어떤 걸 마시면 좋을까…?",
+      "UnitTalk_JPN": "何を飲もうかな…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이렇게 된 거 마셔 보자!",
+          "JumpAnchorStringId_JPN": "こうなったら飲んでみよう！",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "음료수가 좋겠어.",
+          "JumpAnchorStringId_JPN": "飲み物が良さそうだ。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_RESEARCHER_FEMALE_1",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물약을 마신 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 비교도 안 되는 힘이 느껴진다고 한다!",
+      "UnitTalk_JPN": "薬を飲んだ<color=#F7BE45>[CHARACTER_NAME]</color>は、比べ物にならない力が感じられるという！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 17,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "ANGRY",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_RESEARCHER_FEMALE_1",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물약을 마신 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 갑자기 몸상태가 급격히 나빠진 모양이다…",
+      "UnitTalk_JPN": "薬を飲んだ<color=#F7BE45>[CHARACTER_NAME]</color>は、突然体調が急激に悪くなったようだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 37,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RESEARCHER_FEMALE_1",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "음료수는 맛있었지만, 아이다의 연구는 계속될 모양이다.",
+      "UnitTalk_JPN": "飲み物は美味しかったが、アイーダの研究は続くようだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

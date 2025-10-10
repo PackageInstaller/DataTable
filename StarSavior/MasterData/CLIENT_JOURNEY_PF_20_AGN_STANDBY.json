@@ -1,0 +1,396 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_20_AGN_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "BgFileName": "ILLUST_BG_INFINITE_CORRIDOR_01.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_03.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE.wav"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "미궁에 출몰한 마수의 흔적을 찾고 있는데, 갑자기 땅이 크게 흔들렸다.",
+      "UnitTalk_JPN": "迷宮に出現した魔獣の痕跡を探していると、突然地面が大きく揺れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "다행이다! 사람이 있었어…!",
+      "UnitTalk_JPN": "よかった！人がいた…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitTalk_KOR": "부탁이야! 도와줘!",
+      "UnitTalk_JPN": "お願い！助けて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "일단 진정해.",
+          "JumpAnchorStringId_JPN": "落ち着いて。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "무슨 일이야?",
+          "JumpAnchorStringId_JPN": "何があったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "순찰 중에 지진으로 땅이 무너졌는데… 같이 왔던 동료들이 휩쓸렸어.",
+      "UnitTalk_JPN": "巡回中に地震で地面が崩れて…一緒にいた仲間たちが巻き込まれたんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitTalk_KOR": "끌어 올리려고 해도 너무 깊어서 나 혼자만으로는 역부족이야.",
+      "UnitTalk_JPN": "引き上げようとしても深すぎて、僕一人では力不足で。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE.wav"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "크, 큰일이다… 아까 지진 때문에 지반이 약해졌나 봐.",
+      "UnitTalk_JPN": "た、大変だ…さっきの地震で、地盤が弱くなってるみたいだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitTalk_KOR": "한 번 더 땅이 무너지면 동료들이 무사하지 못할 거야.",
+      "UnitTalk_JPN": "もう一度地震が来れば、仲間たちは助からないかも。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "부탁이야, 위험하다는 건 알지만…! 동료들을 구출하는 데 힘을 빌려줘!",
+      "UnitTalk_JPN": "お願いだ！危険なのは分かってるけど…！仲間を救出するのを手伝ってほしい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "동료들은 어디에 있어?",
+          "JumpAnchorStringId_JPN": "仲間はどこにいるんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitTalk_KOR": "이, 이쪽이야! 길은 내가 안내해 줄게!",
+      "UnitTalk_JPN": "こ、こっち！道は僕が案内する！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_INFINITE_CORRIDOR_01.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무너진 곳으로 내려가서 추락한 사람들을 업고 올라왔다.",
+      "UnitTalk_JPN": "崩れた場所へ降り、落ちてしまった人を背負って救出した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE.wav"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마지막 한 명을 데리고 돌아왔을 때, 밑에서 굉음이 들려왔다.",
+      "UnitTalk_JPN": "最後の一人を連れて戻ってくると、下から轟音が聞こえてきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하마터면 우리까지 저 밑에 깔릴 뻔했네. 아슬아슬했어.",
+      "UnitTalk_JPN": "危うく僕たちまで下敷きになるところだった。危なかった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitTalk_KOR": "너희들이 없었다면 지금쯤 다들…",
+      "UnitTalk_JPN": "あなたたちがいなかったら、今頃みんな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>너희</color>가 아니야.",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>あなたたち</color>じゃない。"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "우리가 <color=#F7BE45>함께</color> 구한 거지.",
+          "JumpAnchorStringId_JPN": "君も<color=#F7BE45>一緒に</color>助けただろう？"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "고, 고마워…",
+      "UnitTalk_JPN": "あ、ありがとう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이건 최근에 유물을 넘기고 상인들에게 받은 물건이야.",
+      "UnitTalk_JPN": "これ…遺物を商人に渡した時、もらったものなんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_MINER_A"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "답례라고 하기에는 부끄럽지만… 도움이 된다면 좋겠어.",
+      "UnitTalk_JPN": "お礼になるかは分からないけど…役に立つといいな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_20_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "채굴꾼이 꺼낸 물건에서 기묘한 인연이 느껴진다…!",
+      "UnitTalk_JPN": "採掘屋が懐から取り出した物から、不思議な縁が感じられた！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 30,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_STALKER.txt",
+    "UnitHudHeight": 3.6,
+    "BuffEffectPosition": {
+      "HEAD": 3.3,
+      "BODY": 1.7
+    },
+    "UnitBuffEffectScale": 1.5,
+    "UseRespawnFocus": false,
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MONSTER_ZOMIBE.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_34.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_62.wav"
+            ]
+          },
+          {
+            "EventFrame": 32,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_30.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "NoRootMoveZ": false,
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 26,
+            "EventEndFrame": 36,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 65,
+            "EventEndFrame": 75,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 38,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 46,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 39,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_ATK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 48,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_ATK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 74,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_ATK_05.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "NoRootMoveZ": false,
+        "UseInternalCamera": false,
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 63,
+            "ReActType": "NRT_DAMAGE_A",
+            //"StopTimeAtk": 0.1,
+            //"StopTimeDef": 0.1,
+            //"CameraCrashGap": 0.1,
+            //"CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 3,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_SPECIAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_SPECIAL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 63,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_SPECIAL_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_DARK_65.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_EVIL_VOICE_33.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

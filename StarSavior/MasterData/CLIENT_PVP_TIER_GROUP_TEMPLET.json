@@ -1,0 +1,1607 @@
+﻿[
+    {
+        "$schema": "../../../../../DataSchema/Exported.jsonc",
+        "$comment": "name: PVP_TIER_GROUP_TEMPLET",
+        "_Version": 0,
+        "Data": [
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 0,
+                "TierType": "TT_BRONZE",
+                "TierNumber": 6,
+                "PvpMatchingRule": "PMR_NPC_ONLY",
+                "AttackWinScorePlus": 5,
+                "AttackLoseScorePlus": 5,
+                "DefenceWinScorePlus": 5,
+                "DefenceLoseScorePlus": 5,
+                "PvpNpcGroupId": 101,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 10
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 20
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 25,
+                "TierType": "TT_BRONZE",
+                "TierNumber": 5,
+                "PvpMatchingRule": "PMR_PROTECT",
+                "TargetBattlePowerMax": 1000,
+                "AttackWinScorePlus": 3,
+                "AttackLoseScorePlus": 5,
+                "DefenceWinScorePlus": 3,
+                "DefenceLoseScorePlus": 5,
+                "PvpNpcGroupId": 102,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 10
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 20
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 50
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 200,
+                "TierType": "TT_BRONZE",
+                "TierNumber": 4,
+                "PvpMatchingRule": "PMR_PROTECT",
+                "TargetBattlePowerMax": 2000,
+                "AttackWinScorePlus": 3,
+                "AttackLoseScorePlus": 5,
+                "DefenceWinScorePlus": 3,
+                "DefenceLoseScorePlus": 5,
+                "PvpNpcGroupId": 103,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 20
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 40
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 50
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 400,
+                "TierType": "TT_BRONZE",
+                "TierNumber": 3,
+                "PvpMatchingRule": "PMR_PROTECT",
+                "TargetBattlePowerMax": 3000,
+                "AttackWinScorePlus": 3,
+                "AttackLoseScorePlus": 5,
+                "DefenceWinScorePlus": 3,
+                "DefenceLoseScorePlus": 5,
+                "PvpNpcGroupId": 104,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 30
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 60
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 50
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 600,
+                "TierType": "TT_BRONZE",
+                "TierNumber": 2,
+                "PvpMatchingRule": "PMR_PROTECT",
+                "TargetBattlePowerMax": 4000,
+                "AttackWinScorePlus": 3,
+                "AttackLoseScorePlus": 5,
+                "DefenceWinScorePlus": 3,
+                "DefenceLoseScorePlus": 5,
+                "PvpNpcGroupId": 105,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 40
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 80
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 50
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 800,
+                "TierType": "TT_BRONZE",
+                "TierNumber": 1,
+                "PvpMatchingRule": "PMR_PROTECT",
+                "TargetBattlePowerMax": 5000,
+                "AttackWinScorePlus": 3,
+                "AttackLoseScorePlus": 5,
+                "DefenceWinScorePlus": 3,
+                "DefenceLoseScorePlus": 5,
+                "PvpNpcGroupId": 106,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 50
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 100
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 50
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 1000,
+                "TierType": "TT_SILVER",
+                "TierNumber": 5,
+                "PvpMatchingRule": "PMR_PROTECT",
+                "TargetBattlePowerMax": 6000,
+                "AttackWinScorePlus": 2,
+                "AttackLoseScorePlus": 4,
+                "DefenceWinScorePlus": 2,
+                "DefenceLoseScorePlus": 4,
+                "PvpNpcGroupId": 201,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 60
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 120
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 100
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 1200,
+                "TierType": "TT_SILVER",
+                "TierNumber": 4,
+                "PvpMatchingRule": "PMR_PROTECT",
+                "TargetBattlePowerMax": 7000,
+                "AttackWinScorePlus": 2,
+                "AttackLoseScorePlus": 4,
+                "DefenceWinScorePlus": 2,
+                "DefenceLoseScorePlus": 4,
+                "PvpNpcGroupId": 202,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 70
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 140
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 100
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 1400,
+                "TierType": "TT_SILVER",
+                "TierNumber": 3,
+                "PvpMatchingRule": "PMR_PROTECT",
+                "TargetBattlePowerMax": 8000,
+                "AttackWinScorePlus": 2,
+                "AttackLoseScorePlus": 4,
+                "DefenceWinScorePlus": 2,
+                "DefenceLoseScorePlus": 4,
+                "PvpNpcGroupId": 203,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 80
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 160
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 100
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 1600,
+                "TierType": "TT_SILVER",
+                "TierNumber": 2,
+                "PvpMatchingRule": "PMR_PROTECT",
+                "TargetBattlePowerMax": 9000,
+                "AttackWinScorePlus": 2,
+                "AttackLoseScorePlus": 4,
+                "DefenceWinScorePlus": 2,
+                "DefenceLoseScorePlus": 4,
+                "PvpNpcGroupId": 204,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 90
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 180
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 100
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 1800,
+                "TierType": "TT_SILVER",
+                "TierNumber": 1,
+                "PvpMatchingRule": "PMR_PROTECT",
+                "TargetBattlePowerMax": 10000,
+                "AttackWinScorePlus": 2,
+                "AttackLoseScorePlus": 4,
+                "DefenceWinScorePlus": 2,
+                "DefenceLoseScorePlus": 4,
+                "PvpNpcGroupId": 205,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 100
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 200
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 100
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 2000,
+                "TierType": "TT_GOLD",
+                "TierNumber": 5,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "WeeklyResetTierType": "TT_GOLD",
+                "WeeklyResetTierNumber": 5,
+                "PvpNpcGroupId": 301,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 110
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 220
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 150
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 2200,
+                "TierType": "TT_GOLD",
+                "TierNumber": 4,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_GOLD",
+                "WeeklyResetTierNumber": 5,
+                "PvpNpcGroupId": 302,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 120
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 240
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 150
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 2400,
+                "TierType": "TT_GOLD",
+                "TierNumber": 3,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_GOLD",
+                "WeeklyResetTierNumber": 3,
+                "PvpNpcGroupId": 303,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 130
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 260
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 150
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 2600,
+                "TierType": "TT_GOLD",
+                "TierNumber": 2,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_GOLD",
+                "WeeklyResetTierNumber": 3,
+                "PvpNpcGroupId": 304,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 140
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 280
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 150
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 2800,
+                "TierType": "TT_GOLD",
+                "TierNumber": 1,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_GOLD",
+                "WeeklyResetTierNumber": 3,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 150
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 300
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 150
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 3000,
+                "TierType": "TT_PLATINUM",
+                "TierNumber": 5,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_PLATINUM",
+                "WeeklyResetTierNumber": 5,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 160
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 320
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 200
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 3200,
+                "TierType": "TT_PLATINUM",
+                "TierNumber": 4,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_PLATINUM",
+                "WeeklyResetTierNumber": 5,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 170
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 340
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 200
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 3400,
+                "TierType": "TT_PLATINUM",
+                "TierNumber": 3,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_PLATINUM",
+                "WeeklyResetTierNumber": 3,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 180
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 360
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 200
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 3600,
+                "TierType": "TT_PLATINUM",
+                "TierNumber": 2,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_PLATINUM",
+                "WeeklyResetTierNumber": 3,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 190
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 380
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 200
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 3800,
+                "TierType": "TT_PLATINUM",
+                "TierNumber": 1,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_PLATINUM",
+                "WeeklyResetTierNumber": 3,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 200
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 400
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 200
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 4000,
+                "TierType": "TT_DIAMOND",
+                "TierNumber": 5,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_DIAMOND",
+                "WeeklyResetTierNumber": 5,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 210
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 420
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 250
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 4100,
+                "TierType": "TT_DIAMOND",
+                "TierNumber": 4,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_DIAMOND",
+                "WeeklyResetTierNumber": 5,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 220
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 440
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 250
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 4200,
+                "TierType": "TT_DIAMOND",
+                "TierNumber": 3,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_DIAMOND",
+                "WeeklyResetTierNumber": 3,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 230
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 460
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 250
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 4300,
+                "TierType": "TT_DIAMOND",
+                "TierNumber": 2,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_DIAMOND",
+                "WeeklyResetTierNumber": 3,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 240
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 480
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 250
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 4400,
+                "TierType": "TT_DIAMOND",
+                "TierNumber": 1,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_DIAMOND",
+                "WeeklyResetTierNumber": 3,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 250
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 500
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 250
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 4500,
+                "TierType": "TT_MASTER",
+                "TierNumber": 5,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_MASTER",
+                "WeeklyResetTierNumber": 5,
+                "BlindUserInfo": true,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 260
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 520
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 300
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 4600,
+                "TierType": "TT_MASTER",
+                "TierNumber": 4,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_MASTER",
+                "WeeklyResetTierNumber": 5,
+                "BlindUserInfo": true,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 270
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 540
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 300
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 4700,
+                "TierType": "TT_MASTER",
+                "TierNumber": 3,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_MASTER",
+                "WeeklyResetTierNumber": 3,
+                "BlindUserInfo": true,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 280
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 560
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 300
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 4800,
+                "TierType": "TT_MASTER",
+                "TierNumber": 2,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_MASTER",
+                "WeeklyResetTierNumber": 3,
+                "BlindUserInfo": true,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 290
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 580
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 300
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 4900,
+                "TierType": "TT_MASTER",
+                "TierNumber": 1,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_MASTER",
+                "WeeklyResetTierNumber": 3,
+                "BlindUserInfo": true,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 300
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 600
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 300
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 5000,
+                "TierType": "TT_GRANDMASTER",
+                "TierNumber": 3,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_GRANDMASTER",
+                "WeeklyResetTierNumber": 3,
+                "BlindUserInfo": true,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 350
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 700
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 350
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 5100,
+                "TierType": "TT_GRANDMASTER",
+                "TierNumber": 2,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_GRANDMASTER",
+                "WeeklyResetTierNumber": 3,
+                "BlindUserInfo": true,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 400
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 800
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 400
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 5200,
+                "TierType": "TT_GRANDMASTER",
+                "TierNumber": 1,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_GRANDMASTER",
+                "WeeklyResetTierNumber": 3,
+                "BlindUserInfo": true,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 450
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 900
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 450
+                    }
+                ]
+            },
+            {
+                "ContentsTag": "MAIN_OPEN",
+                "PvpTierGroupId": 10100,
+                "TierScoreMin": 5300,
+                "TierType": "TT_ETERNIUM",
+                "TierNumber": 1,
+                "PvpMatchingRule": "PMR_NORMAL",
+                "TierDemote": true,
+                "WeeklyResetTierType": "TT_ETERNIUM",
+                "WeeklyResetTierNumber": 1,
+                "BlindUserInfo": true,
+                "PvpNpcGroupId": 305,
+                "WinBonusData": [
+                    {
+                        "WinBonusMinCount": 4,
+                        "WinBonusScore": 1,
+                        "WinBonusItemValue": 1
+                    },
+                    {
+                        "WinBonusMinCount": 7,
+                        "WinBonusScore": 2,
+                        "WinBonusItemValue": 2
+                    },
+                    {
+                        "WinBonusMinCount": 10,
+                        "WinBonusScore": 3,
+                        "WinBonusItemValue": 3
+                    }
+                ],
+                "WeeklyRewardData": [
+                    {
+                        "WeeklyRewardId": 103,
+                        "WeeklyRewardValue": 500
+                    },
+                    {
+                        "WeeklyRewardId": 107,
+                        "WeeklyRewardValue": 1000
+                    }
+                ],
+                "FirstArrivalRewardData": [
+                    {
+                        "FirstArrivalRewardId": 103,
+                        "FirstArrivalRewardValue": 500
+                    }
+                ]
+            }
+        ]
+    }
+]

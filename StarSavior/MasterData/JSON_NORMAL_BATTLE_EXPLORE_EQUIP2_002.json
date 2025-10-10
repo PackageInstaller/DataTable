@@ -1,0 +1,20 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_WENDIGO_SNOW_WHITE_BOSS_EQUIP2_02",
+            "IsBoss": true,            
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false
+          }
+        ]
+      }
+    ]
+  }
+}

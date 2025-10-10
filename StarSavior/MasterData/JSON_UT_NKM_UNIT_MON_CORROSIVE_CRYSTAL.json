@@ -1,0 +1,127 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_CORROSIVE.txt",
+    "UiStates": [],
+    "BuffEffectPosition": {
+      "HEAD": 2,
+      "BODY": 0.8
+    },
+    "UnitBuffEffectScale": 1.1,
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CORROSIVE_CRYSTAL_INFO.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CORROSIVE_CRYSTAL_START.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 90,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_CORROSIVE_CRYSTAL_BLACK_HIT.prefab",
+              "EffectHeight": "BVH_ZERO"
+            },            
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            }            
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CORROSIVE_CRYSTAL_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 78,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CORROSIVE_CRYSTAL_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 90,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CORROSIVE_CRYSTAL_ATK_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "AnimName": "BATTLE_ATTACK",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 90,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_CORROSIVE_CRYSTAL_BLACK_HIT.prefab",
+              "EffectHeight": "BVH_ZERO"
+            },
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            }  
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 11,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CORROSIVE_CRYSTAL_DYING.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

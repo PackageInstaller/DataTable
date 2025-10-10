@@ -1,0 +1,314 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_KNIGHT.txt",
+    "UiStates": [],
+    "UnitHudHeight": 2.35,
+    "BattleStates": [
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_74.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_ARMOR_21.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SWORD_40.wav"
+            ]
+          },
+          {
+            "EventFrame": 33,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SWORD_41.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 8,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SWORD_38.wav"
+            ]
+          },
+          {
+            "EventFrame": 18,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_SWORD_39.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 19,
+            "EventEndFrame": 34,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 64,
+            "EventEndFrame": 76,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 35,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 44,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_SABER_BLUE_ELITE_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_SABER_BLUE_ELITE_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_SABER_BLUE_ELITE_ATK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 91,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_SABER_BLUE_ELITE_ATK_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 16,
+            "EventEndFrame": 31,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 54,
+            "EventEndFrame": 66,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 33,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_SABER_BLUE_ELITE_SPECIAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_SABER_BLUE_ELITE_SPECIAL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 26,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_SABER_BLUE_ELITE_SPECIAL_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 54,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_SABER_BLUE_ELITE_SPECIAL_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "EndFadeOut": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 25,
+            "EventEndFrame": 35,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 69,
+            "EventEndFrame": 79,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 39,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 42,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 50,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_SABER_BLUE_ELITE_HYPER.wav"
+            ]
+          },
+          {
+            "EventFrame": 27,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_SABER_BLUE_ELITE_HYPER_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 67,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_SABER_BLUE_ELITE_HYPER_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_KNIGHT_09.wav"
+              },
+              {
+                "EventFrame": 37,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_KNIGHT_10.wav"
+              }
+            ]
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_ARMOR_20.wav"
+            ]
+          },
+          {
+            "EventFrame": 11,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WEAPON_DROP_10.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_72.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_72.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

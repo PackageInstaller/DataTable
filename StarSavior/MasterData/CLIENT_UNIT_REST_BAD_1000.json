@@ -1,0 +1,61 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: CUT",
+  "_Version": 4,
+  "Data": [
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_BAD_1000",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후우… 잠자리가 별로였나…",
+      "TalkTime": 0.03,
+      "Uid": 1
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_BAD_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "아니면 잘 때 누가 날 때렸던가. 온몸이 뻐근하네, 왜 이러지.",
+      "TalkTime": 0.03,
+      "Uid": 2
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_BAD_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "수업 시간에 책상에 엎드려 자던 것보다 피곤한데…",
+      "TalkTime": 0.03,
+      "Uid": 3
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_BAD_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "하아암~",
+      "TalkTime": 0.03,
+      "Uid": 4
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_BAD_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "…졸려 쓰러지겠네. 조금도 잔 것 같지 않아…",
+      "TalkTime": 0.03,
+      "Uid": 5
+    }
+  ]
+}

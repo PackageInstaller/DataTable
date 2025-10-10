@@ -1,0 +1,90 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "린과 함께 숙소에서 버려진 나무 상자를 발견했다. 여기서 나는…",
+      "UnitTalk_JPN": "リンと一緒に宿で捨てられた木箱を発見した。ここで私は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐, 내가 먼저 확인해 볼게.",
+          "JumpAnchorStringId_JPN": "ちょっと待って、私が先に確認してみる。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "...이상한 게 들어있지 않을까?",
+          "JumpAnchorStringId_JPN": "…変なものが入っていないだろうか？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뜻하지 않게 값진 물품을 얻게 됐다!",
+      "UnitTalk_JPN": "思いがけず貴重な品を手に入れた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "상자 속에 들어있는 빨간 책을 보고 도망가는 린을 쫓아가느라 지쳐 버렸다…",
+      "UnitTalk_JPN": "箱の中にあった赤い本を見て逃げ出すリンを追いかけるのに疲れ果ててしまった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

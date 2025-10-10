@@ -1,0 +1,265 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_RAIDER_ELITE.txt",
+    "UnitHudHeight": 2.2,
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MONSTER_VOICE_12.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_48.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_71.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MONSTER_VOICE_30.wav"
+            ]
+          },
+          {
+            "EventFrame": 51,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_72.wav"
+            ]
+          },
+          {
+            "EventFrame": 51,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MONSTER_VOICE_28.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 35,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.05,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.25,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_FIRE_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_FIRE_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MONSTER_VOICE_24.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_FIRE_01.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "NoRootMoveZ": false,
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 62,
+            "EventEndFrame": 82,
+            "EventMoveTarget": "NEMT_SELF"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 119,
+            "EventEndFrame": 130,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 90,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.2,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 100,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.2,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 110,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeDef": 0.2,
+            "CameraCrashGap": 0.05,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_FIRE_11.wav"
+            ]
+          },
+          {
+            "EventFrame": 27,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_FIRE_12.wav"
+            ]
+          },
+          {
+            "EventFrame": 50,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_171.wav"
+            ]
+          },
+          {
+            "EventFrame": 55,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_FIRE_13.wav"
+            ]
+          },
+          {
+            "EventFrame": 73,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_47.wav"
+            ]
+          },
+          {
+            "EventFrame": 80,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MONSTER_VOICE_24.wav"
+            ]
+          },
+          {
+            "EventFrame": 90,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_FIRE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 100,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_FIRE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 110,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_FIRE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 120,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_171.wav"
+            ]
+          },
+          {
+            "EventFrame": 128,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_47.wav"
+            ]
+          },
+          {
+            "EventFrame": 150,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_172.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_70.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MONSTER_VOICE_27.wav"
+            ]
+          },
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WEAPON_DROP_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_34.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

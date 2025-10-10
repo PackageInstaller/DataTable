@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_CLOISTER_03",
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
+          }
+        ]
+      }
+    ]
+  }
+}

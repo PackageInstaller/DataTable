@@ -1,0 +1,163 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: JOURNEY_MEETING_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MeetingId" : 1,
+          "MeetingFaceSmall" : "UFS_NKM_UNIT_S_NIEL.png",
+          "MeetingFace" : "UF_NKM_UNIT_S_NIEL.png",
+          "MeetingName" : "SI_MEET_NAME_NIEL",
+          "MeetingType" : "MCT_SPONSOR",
+          "MeetingAttractionCount" : 30,
+          "AttractionItemData" : 
+          [
+            {
+              "AttractionItem" : 101001
+            }
+          ],
+          "AttractionRewardData" : 
+          [
+            {
+              "AttractionRewardRequired" : 30,
+              "AttractionRewardType" : "RT_STACK",
+              "AttractionRewardId" : 202005,
+              "AttractionRewardCount" : 1
+            },
+
+            {
+              "AttractionRewardRequired" : 60,
+              "AttractionRewardType" : "RT_STACK",
+              "AttractionRewardId" : 203009,
+              "AttractionRewardCount" : 1
+            },
+
+            {
+              "AttractionRewardRequired" : 100,
+              "AttractionRewardType" : "RT_STACK",
+              "AttractionRewardId" : 204003,
+              "AttractionRewardCount" : 1
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MeetingId" : 2,
+          "MeetingFaceSmall" : "UFS_NKM_UNIT_S_SEIRA.png",
+          "MeetingFace" : "UF_NKM_UNIT_S_SEIRA.png",
+          "MeetingName" : "SI_MEET_NAME_SEIRA",
+          "MeetingType" : "MCT_SUPPORTER",
+          "MeetingAttractionCount" : 30,
+          "AttractionItemData" : 
+          [
+            {
+              "AttractionItem" : 101001
+            }
+          ],
+          "AttractionRewardData" : 
+          [
+            {
+              "AttractionRewardRequired" : 30,
+              "AttractionRewardType" : "RT_STACK",
+              "AttractionRewardId" : 202005,
+              "AttractionRewardCount" : 1
+            },
+
+            {
+              "AttractionRewardRequired" : 60,
+              "AttractionRewardType" : "RT_STACK",
+              "AttractionRewardId" : 203010,
+              "AttractionRewardCount" : 1
+            },
+
+            {
+              "AttractionRewardRequired" : 100,
+              "AttractionRewardType" : "RT_SUPPORTER",
+              "AttractionRewardId" : 1014,
+              "AttractionRewardCount" : 1
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MeetingId" : 3,
+          "MeetingFaceSmall" : "UFS_NKM_UNIT_S_KINGDOM_PRAY.png",
+          "MeetingFace" : "UF_NKM_UNIT_S_KINGDOM_PRAY.png",
+          "MeetingName" : "SI_MEET_NAME_PRAY",
+          "MeetingType" : "MCT_SUPPORTER",
+          "MeetingAttractionCount" : 30,
+          "AttractionItemData" : 
+          [
+            {
+              "AttractionItem" : 101002
+            },
+
+            {
+              "AttractionItem" : 101003
+            }
+          ],
+          "AttractionRewardData" : 
+          [
+            {
+              "AttractionRewardRequired" : 30,
+              "AttractionRewardType" : "RT_STACK",
+              "AttractionRewardId" : 202006,
+              "AttractionRewardCount" : 1
+            },
+
+            {
+              "AttractionRewardRequired" : 60,
+              "AttractionRewardType" : "RT_STACK",
+              "AttractionRewardId" : 203009,
+              "AttractionRewardCount" : 1
+            },
+
+            {
+              "AttractionRewardRequired" : 100,
+              "AttractionRewardType" : "RT_SUPPORTER",
+              "AttractionRewardId" : 1013,
+              "AttractionRewardCount" : 1
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MeetingId" : 4,
+          "MeetingFaceSmall" : "UFS_NKM_UNIT_S_KINGDOM_KNIGHT.png",
+          "MeetingFace" : "UF_NKM_UNIT_S_KINGDOM_KNIGHT.png",
+          "MeetingName" : "SI_MEET_NAME_KNIGHT",
+          "MeetingType" : "MCT_SPONSOR",
+          "MeetingAttractionCount" : 30,
+          "AttractionItemData" : 
+          [
+            {
+              "AttractionItem" : 104002
+            }
+          ],
+          "AttractionRewardData" : 
+          [
+            {
+              "AttractionRewardRequired" : 30,
+              "AttractionRewardType" : "RT_STACK",
+              "AttractionRewardId" : 202006,
+              "AttractionRewardCount" : 1
+            },
+
+            {
+              "AttractionRewardRequired" : 60,
+              "AttractionRewardType" : "RT_STACK",
+              "AttractionRewardId" : 203010,
+              "AttractionRewardCount" : 1
+            },
+
+            {
+              "AttractionRewardRequired" : 100,
+              "AttractionRewardType" : "RT_STACK",
+              "AttractionRewardId" : 204003,
+              "AttractionRewardCount" : 1
+            }
+          ]
+        }
+    ]
+}

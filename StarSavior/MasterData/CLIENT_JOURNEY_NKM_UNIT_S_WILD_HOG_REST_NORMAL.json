@@ -1,0 +1,136 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WILD_HOG_REST_NORMAL",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_NORMAL",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "UnitTalk_KOR": "이른 아침, 할리와 함께 데이브에게 연료를 주러 나왔다.",
+      "UnitTalk_JPN": "早朝のこと…デイヴの燃料をあげに、ハーレーと共に向かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 단장도 꽤나 부지런한데.",
+      "UnitTalk_JPN": "しかし団長も、かなり真面目だな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "혹시 꿈나라에 가 있어야 할 시간에 방해하는 건 아니겠지?",
+      "UnitTalk_JPN": "夢の国にいなきゃいけねぇ時間に、俺が邪魔してるわけじゃないよな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이 정도는 끄떡없어",
+          "JumpAnchorStringId_JPN": "これくらい平気だよ。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "할리야말로 잠은 잘 자는 거야?",
+          "JumpAnchorStringId_JPN": "ハーレーこそ、よく眠れてる？"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "하하, 물론이지.",
+      "UnitTalk_JPN": "ははっ、当然だぜぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "황야를 누비고 살다 보면 해가 질 때쯤엔 알아서 눈이 감기거든.",
+      "UnitTalk_JPN": "荒野を走り回って生きてれば、日が落ちる頃には眠くなんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "오히려 도시는 밤에도 시끄러워서 정신 사나울 정도야.",
+      "UnitTalk_JPN": "むしろ街は、夜もうるさすぎて落ち着かねぇぐらいだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "키 클 걱정은 안 해도 되겠네",
+          "JumpAnchorStringId_JPN": "よく眠れてるみたいだし、身長も伸びそうだね。"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "흥, 까불긴. 사나이에게 중요한 건 덩치가 아니라 배짱이야.",
+      "UnitTalk_JPN": "ふん、生意気なこと言うんじゃねぇぞ。漢にとって大事なのは、図体じゃなく度胸だからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "어서 가자. 데이브도 기다리고 있을 테니까.",
+      "UnitTalk_JPN": "よぉし、早く行こうぜ。デイヴが待ってるぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "시원스레 앞장서는 할리를 보니, 오늘도 평소 같은 하루가 될 것 같다.",
+      "UnitTalk_JPN": "颯爽と先頭を切るハーレーを見ていると、今日も普段通りの一日になりそうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_BEAMSWORD_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

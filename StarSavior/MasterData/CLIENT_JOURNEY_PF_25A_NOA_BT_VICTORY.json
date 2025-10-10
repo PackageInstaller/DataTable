@@ -1,0 +1,167 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_25A_NOA_BT_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAZA.png",
+      "StartBgmFileName": "MUSIC_MONASTIR.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CITIZEN"
+      ],
+      "UnitTalk_KOR": "저 녀석들이야? 공국에서 나쁜 짓을 저지르다가 도망쳤다던 놈들이?",
+      "UnitTalk_JPN": "あの連中か？公国で悪事を働いた末に逃げ出した奴らだと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitTalk_KOR": "속이 시원하네! 한동안 저것들이 통행세를 걷어대서 물건을 가져와도 손해만 봤는데!",
+      "UnitTalk_JPN": "すっきりした！しばらくの間、あいつらが通行料を徴収しまくって、物を持ってきても損ばかりしてたんだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "일망타진에 성공했네요, 단장님.",
+      "UnitTalk_JPN": "一網打尽に成功しましたね、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "앞으로 다른 사람들에게 피해를 줄 일은 없겠죠.",
+      "UnitTalk_JPN": "今後、他の人々に被害を与えることはないでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "공국의 체면이 깎일 위험도 사라졌고요.",
+      "UnitTalk_JPN": "公国の体面が傷つく危険も消えましたし。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "모처럼 이런 자리인데 시민분들께 호응해 주시는 건 어떠세요?",
+      "UnitTalk_JPN": "せっかくの機会ですから、市民の皆様にもご賛同いただけませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…후후, 역시 이런 자리는 조금 부끄러우신가 봐요.",
+      "UnitTalk_JPN": "…ふふ、やはりこういう場は少しお恥ずかしいようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "모두에게 도움을 주신 셈이니 조금은 자랑하셔도 좋을 텐데…",
+      "UnitTalk_JPN": "皆に助けになったのですから、少しは自慢されても良いのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐, 괜찮아요. 단장님의 그런 소탈한 면을 믿고 의뢰를 추천드린 거였으니까요.",
+      "UnitTalk_JPN": "いえ、大丈夫です。団長のそんな気さくな面を見て、依頼をお勧めしたのですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_25A_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitTalk_KOR": "고마워요, 단장님.",
+      "UnitTalk_JPN": "ありがとうございます、団長。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 13,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.3,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3"
+    }
+  ]
+}

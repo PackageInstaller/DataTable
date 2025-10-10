@@ -1,0 +1,1785 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: PVP_RANK_TIER_GROUP_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 0,
+          "TierType" : "TT_BRONZE",
+          "TierNumber" : 6,
+          "AttackWinScorePlus" : 22,
+          "AttackLoseScorePlus" : 38,
+          "PvpNpcGroupId" : 101,
+          "NpcMatchingProbability" : 10000,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030001,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 100
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 25,
+          "TierType" : "TT_BRONZE",
+          "TierNumber" : 5,
+          "AttackWinScorePlus" : 22,
+          "AttackLoseScorePlus" : 38,
+          "PvpNpcGroupId" : 102,
+          "NpcMatchingProbability" : 9000,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030002,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 120
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 60
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 50,
+          "TierType" : "TT_BRONZE",
+          "TierNumber" : 4,
+          "AttackWinScorePlus" : 22,
+          "AttackLoseScorePlus" : 38,
+          "PvpNpcGroupId" : 103,
+          "NpcMatchingProbability" : 8000,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030003,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 140
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 60
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 100,
+          "TierType" : "TT_BRONZE",
+          "TierNumber" : 3,
+          "AttackWinScorePlus" : 22,
+          "AttackLoseScorePlus" : 38,
+          "PvpNpcGroupId" : 104,
+          "NpcMatchingProbability" : 7000,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030004,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 160
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 60
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 150,
+          "TierType" : "TT_BRONZE",
+          "TierNumber" : 2,
+          "AttackWinScorePlus" : 22,
+          "AttackLoseScorePlus" : 38,
+          "PvpNpcGroupId" : 105,
+          "NpcMatchingProbability" : 6000,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030005,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 180
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 60
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 200,
+          "TierType" : "TT_BRONZE",
+          "TierNumber" : 1,
+          "AttackWinScorePlus" : 22,
+          "AttackLoseScorePlus" : 38,
+          "PvpNpcGroupId" : 106,
+          "NpcMatchingProbability" : 5000,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030006,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 200
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 60
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 250,
+          "TierType" : "TT_SILVER",
+          "TierNumber" : 5,
+          "DraftMod" : true,
+          "AttackWinScorePlus" : 2,
+          "AttackLoseScorePlus" : 23,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030007,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 220
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 120
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 300,
+          "TierType" : "TT_SILVER",
+          "TierNumber" : 4,
+          "DraftMod" : true,
+          "AttackWinScorePlus" : 2,
+          "AttackLoseScorePlus" : 23,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030008,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 240
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 120
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 350,
+          "TierType" : "TT_SILVER",
+          "TierNumber" : 3,
+          "DraftMod" : true,
+          "AttackWinScorePlus" : 2,
+          "AttackLoseScorePlus" : 23,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030009,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 260
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 120
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 400,
+          "TierType" : "TT_SILVER",
+          "TierNumber" : 2,
+          "DraftMod" : true,
+          "AttackWinScorePlus" : 2,
+          "AttackLoseScorePlus" : 23,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030010,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 280
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 120
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 450,
+          "TierType" : "TT_SILVER",
+          "TierNumber" : 1,
+          "DraftMod" : true,
+          "AttackWinScorePlus" : 2,
+          "AttackLoseScorePlus" : 23,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030011,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 300
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 120
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 500,
+          "TierType" : "TT_GOLD",
+          "TierNumber" : 5,
+          "DraftMod" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 15,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030012,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 400
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 180
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 600,
+          "TierType" : "TT_GOLD",
+          "TierNumber" : 4,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 15,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030013,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 420
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 180
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 700,
+          "TierType" : "TT_GOLD",
+          "TierNumber" : 3,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 12,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030014,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 440
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 180
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 800,
+          "TierType" : "TT_GOLD",
+          "TierNumber" : 2,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 12,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030015,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 460
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 180
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 900,
+          "TierType" : "TT_GOLD",
+          "TierNumber" : 1,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 9,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030016,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 480
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 180
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 1000,
+          "TierType" : "TT_PLATINUM",
+          "TierNumber" : 5,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 9,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030017,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 500
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 240
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 1100,
+          "TierType" : "TT_PLATINUM",
+          "TierNumber" : 4,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 6,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030018,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 520
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 240
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 1200,
+          "TierType" : "TT_PLATINUM",
+          "TierNumber" : 3,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 6,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030019,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 540
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 240
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 1300,
+          "TierType" : "TT_PLATINUM",
+          "TierNumber" : 2,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 3,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030020,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 560
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 240
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 1400,
+          "TierType" : "TT_PLATINUM",
+          "TierNumber" : 1,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 3,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030021,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 580
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 240
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 1500,
+          "TierType" : "TT_DIAMOND",
+          "TierNumber" : 5,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 3,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030022,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 800
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 300
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 1700,
+          "TierType" : "TT_DIAMOND",
+          "TierNumber" : 4,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 3,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030023,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 840
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 300
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 1900,
+          "TierType" : "TT_DIAMOND",
+          "TierNumber" : 3,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 3,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030024,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 880
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 300
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 2100,
+          "TierType" : "TT_DIAMOND",
+          "TierNumber" : 2,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 3,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030025,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 920
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 300
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 2300,
+          "TierType" : "TT_DIAMOND",
+          "TierNumber" : 1,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_GOLD",
+          "SeasonResetTierNumber" : 5,
+          "AttackLoseScorePlus" : 3,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030026,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 960
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 300
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 2500,
+          "TierType" : "TT_MASTER",
+          "TierNumber" : 5,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_PLATINUM",
+          "SeasonResetTierNumber" : 5,
+          "BlindUserInfo" : true,
+          "AttackLoseScorePlus" : 2,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030027,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 1000
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 2700,
+          "TierType" : "TT_MASTER",
+          "TierNumber" : 4,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_PLATINUM",
+          "SeasonResetTierNumber" : 5,
+          "BlindUserInfo" : true,
+          "AttackLoseScorePlus" : 2,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030028,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 1040
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 2900,
+          "TierType" : "TT_MASTER",
+          "TierNumber" : 3,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_PLATINUM",
+          "SeasonResetTierNumber" : 5,
+          "BlindUserInfo" : true,
+          "AttackLoseScorePlus" : 2,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030029,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 1080
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 3100,
+          "TierType" : "TT_MASTER",
+          "TierNumber" : 2,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_PLATINUM",
+          "SeasonResetTierNumber" : 5,
+          "BlindUserInfo" : true,
+          "AttackLoseScorePlus" : 2,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030030,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 1120
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 3300,
+          "TierType" : "TT_MASTER",
+          "TierNumber" : 1,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_PLATINUM",
+          "SeasonResetTierNumber" : 5,
+          "BlindUserInfo" : true,
+          "AttackLoseScorePlus" : 2,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030031,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 1160
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 3500,
+          "TierType" : "TT_GRANDMASTER",
+          "TierNumber" : 5,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_PLATINUM",
+          "SeasonResetTierNumber" : 5,
+          "BlindUserInfo" : true,
+          "AttackLoseScorePlus" : 1,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030032,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 1200
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 3700,
+          "TierType" : "TT_GRANDMASTER",
+          "TierNumber" : 4,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_PLATINUM",
+          "SeasonResetTierNumber" : 5,
+          "BlindUserInfo" : true,
+          "AttackLoseScorePlus" : 1,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030033,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 1240
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 3900,
+          "TierType" : "TT_GRANDMASTER",
+          "TierNumber" : 3,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_PLATINUM",
+          "SeasonResetTierNumber" : 5,
+          "BlindUserInfo" : true,
+          "AttackLoseScorePlus" : 1,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030034,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 1280
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 4100,
+          "TierType" : "TT_GRANDMASTER",
+          "TierNumber" : 2,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_PLATINUM",
+          "SeasonResetTierNumber" : 5,
+          "BlindUserInfo" : true,
+          "AttackLoseScorePlus" : 1,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030035,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 1320
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 600
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 4300,
+          "TierType" : "TT_GRANDMASTER",
+          "TierNumber" : 1,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_PLATINUM",
+          "SeasonResetTierNumber" : 5,
+          "BlindUserInfo" : true,
+          "AttackLoseScorePlus" : 1,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030036,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 1360
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpTierGroupId" : 20100,
+          "TierScoreMin" : 4500,
+          "TierType" : "TT_ETERNIUM",
+          "TierNumber" : 1,
+          "TierDemote" : true,
+          "DraftMod" : true,
+          "WeeklyScoreDown" : true,
+          "SeasonResetTierType" : "TT_DIAMOND",
+          "SeasonResetTierNumber" : 5,
+          "BlindUserInfo" : true,
+          "WinBonusData" : 
+          [
+            {
+              "WinBonusMinCount" : 4,
+              "WinBonusScore" : 1
+            },
+
+            {
+              "WinBonusMinCount" : 7,
+              "WinBonusScore" : 2
+            },
+
+            {
+              "WinBonusMinCount" : 10,
+              "WinBonusScore" : 3
+            }
+          ],
+          "SeasonRewardData" : 
+          [
+            {
+              "SeasonRewardId" : 70030037,
+              "SeasonRewardValue" : 1
+            },
+
+            {
+              "SeasonRewardId" : 103,
+              "SeasonRewardValue" : 1400
+            }
+          ],
+          "FirstArrivalRewardData" : 
+          [
+            {
+              "FirstArrivalRewardId" : 103,
+              "FirstArrivalRewardValue" : 1000
+            }
+          ]
+        }
+    ]
+}

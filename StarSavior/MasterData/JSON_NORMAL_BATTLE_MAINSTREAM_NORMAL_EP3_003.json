@@ -1,0 +1,19 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_S_STELLAR_THIEF", // 몬스터 트리쉬로 차후 교체 필요
+            "IsBoss": true,
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

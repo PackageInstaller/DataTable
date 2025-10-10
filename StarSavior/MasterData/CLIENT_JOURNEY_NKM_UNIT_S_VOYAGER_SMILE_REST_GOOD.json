@@ -1,0 +1,187 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "스마일.",
+      "UnitTalk_JPN": "スマイル。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아침부터 무척 즐거워 보이네.",
+          "JumpAnchorStringId_JPN": "朝から気分が良さそうだね。"
+        }
+      ]
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "정답. 완벽한 휴식을 취했거든.",
+      "UnitTalk_JPN": "正解。ぐっすり休んだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "인문학적으로 설명하면 좋은 꿈을 꿨어.",
+      "UnitTalk_JPN": "人文学的に説明すれば、いい夢を見た。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "손가락 같은 신체 기관의 보조 없이도 자연스럽게 웃고 있었지.",
+      "UnitTalk_JPN": "指とか身体器官の補助なく、自然に笑ってた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "예상되는 원인은 하나.",
+      "UnitTalk_JPN": "予想できる原因はひとつ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "꿈속 인물과의 유대 관계에서 오는 기쁨. 그리고 편안함.",
+      "UnitTalk_JPN": "夢の中で、人との強い繋がりに喜びと平穏を感じた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…잠깐.",
+      "UnitTalk_JPN": "…あれ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "꿈속의 인물이 단장과 닮았어.",
+      "UnitTalk_JPN": "夢の中の人物、団長に似てた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…새로운 논리 발견. 자연스러운 웃음을 위한 달성 조건에 추가 조건을 생성.",
+      "UnitTalk_JPN": "…新たな論理、発見。自然に笑うための達成条件に、追加条件を生成。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "실험. 단장, 내가 기뻐할 말을 해줘.",
+      "UnitTalk_JPN": "実験。団長、私が喜ぶことを言って。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "매운 음식 먹으러 갈까?",
+          "JumpAnchorStringId_JPN": "辛い物でも食べに行く？"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "증명, 종료!",
+      "UnitTalk_JPN": "証明、終了！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어느 때보다 기분이 좋아 보이는 스마일과 함께 음식점으로 향했다.",
+      "UnitTalk_JPN": "いつになくご機嫌なスマイルと一緒に、飲食店へと向かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "오늘도 즐거운 날이 될 것 같은 기분이다.",
+      "UnitTalk_JPN": "今日も楽しい一日になりそうだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,1132 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "캔들 스퀘어에서 의뢰를 받아 야산에서 약초를 채집하고 있었는데…",
+      "UnitTalk_JPN": "キャンドル・スクエアの依頼を受け、野山で薬草を採取していた時のことだった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여기가 어디지…?",
+          "JumpAnchorStringId_JPN": "ここ、どこだっけ…？"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "길을 잃어버렸다.",
+      "UnitTalk_JPN": "道に迷ってしまった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "거기 누구 있나요? 목소리가 들렸는데…",
+      "UnitTalk_JPN": "誰かいらっしゃいますか？声が聞こえたのですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장님? 단장님이 왜 여기 계세요?",
+      "UnitTalk_JPN": "団長？どうしてここにいらっしゃるのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "약초를 채집하다가 길을 잃으셨다고요?",
+      "UnitTalk_JPN": "薬草を採っていたら道に迷ってしまったのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장님…",
+      "UnitTalk_JPN": "団長…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "떽이에요!",
+      "UnitTalk_JPN": "めっ、ですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "아무리 숲이 자연의 은혜로 가득한 곳이라 해도 숲은 숲!",
+      "UnitTalk_JPN": "いくら豊かな自然に恵まれた場所だと言っても、森は森！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "준비 없이 들어왔다가 길을 잃어버리면 위험해요? 정말로요!",
+      "UnitTalk_JPN": "準備もせずに足を踏み入れて、迷ってしまったら危険でしょう？いけませんよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "죄송합니다…",
+          "JumpAnchorStringId_JPN": "すみません…"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…후후.",
+      "UnitTalk_JPN": "…ふふ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "훈육은 여기까지.",
+      "UnitTalk_JPN": "お説教はここまでです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "돌아가는 길을 찾고 계신 거죠? 제가 안내해 드릴게요.",
+      "UnitTalk_JPN": "帰り道を探していらっしゃるのでしょう？私が案内して差し上げます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "...제가 하던 일이 있지 않냐고요?",
+      "UnitTalk_JPN": "…何かしていたのではないか、ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "약초를 채집하던 중이었지만 단장님은 한시가 바쁜 분이시니까요.",
+      "UnitTalk_JPN": "薬草を採取していたところでしたが、団長はとてもお忙しい方ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "도움이 필요한 사람을 돕는 게 먼저죠.",
+      "UnitTalk_JPN": "困っている方を先に助けて差し上げないと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…네?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "단장님도 저처럼 약초를 채집하고 계셨다니 우연이네요.",
+      "UnitTalk_JPN": "団長もちょうど薬草を採取していらっしゃったなんて、奇遇ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "아니, 기연이라고 해야 할까요?",
+      "UnitTalk_JPN": "不思議な巡り合わせとでも言いましょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "혼자 외롭지 말라고 하늘이 제게 단장님을 보내주신 걸지도 모르겠네요. 후후.",
+      "UnitTalk_JPN": "一人で寂しくないようにと、天が団長と引き合わせてくださったのかもしれませんね。ふふ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…따로 채집 의뢰를 받았냐고요?",
+      "UnitTalk_JPN": "…採取の依頼を受けたのか、ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아니요. 순전히 개인 활동이에요.",
+      "UnitTalk_JPN": "いえ、ただ薬草を採っていただけです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "이 숲에는 귀중한 약초들이 잔뜩 있거든요.",
+      "UnitTalk_JPN": "この森には、貴重な薬草がたくさんあるんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "저기 보이세요?",
+      "UnitTalk_JPN": "あそこ、見えますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "린이 가리킨 곳에는 다양한 풀이 자라나 있었다.",
+      "UnitTalk_JPN": "リンが指差すところには、色んな草が育っていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "저 풀의 이름은 씀바귀예요. 소화불량에 좋답니다.",
+      "UnitTalk_JPN": "あれは<r=ニガナ>苦菜</r>です。消化不良によく効くんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "그 옆은 황기, 그 옆은 인삼.",
+      "UnitTalk_JPN": "その横はキバナオウギ、そして<r=オタネニンジン>御種人蔘</r>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "주변엔 쑥과 칡이 자랐네요.",
+      "UnitTalk_JPN": "周りにはヨモギと<r=クズ>葛</r>が育っていますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나한테는 다 똑같은 풀로 보여.",
+          "JumpAnchorStringId_JPN": "私には全部同じに見えるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "후후, 그럴 만도 하죠.",
+      "UnitTalk_JPN": "ふふ、無理もありませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "하지만 단장님. 자연 만물에는 저마다의 가치가 있답니다.",
+      "UnitTalk_JPN": "でも、団長。自然の万物には、それぞれの価値があるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "바닥에 아무렇지 않게 피어난 풀도, 주변을 소란스럽게 날아다니는 벌레도…",
+      "UnitTalk_JPN": "地面に生えている草も、辺りを騒がしく飛ぶ虫も…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "누군가에게는 꼭 필요해서 없어서는 안 될 존재들이죠.",
+      "UnitTalk_JPN": "誰かにとっては、なくてはならない存在なんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "우리도 누군가에게는 그런 존재이지 않을까요?",
+      "UnitTalk_JPN": "私たちも、誰かにとってそういう存在なのではないでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아! 가르치듯이 얘기했네요. 기분 나쁘셨다면 죄송합니다.",
+      "UnitTalk_JPN": "あっ！つい、教えてあげるような話し方になってしまいました。気分を害されてしまったらすみません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…네? 뜻 깊은 이야기였다고요?",
+      "UnitTalk_JPN": "…はい？深い話だったとおっしゃってくださるのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "제 생각을 있는 그대로 얘기한 것뿐인데…",
+      "UnitTalk_JPN": "私の考えをお話しただけですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후, 쑥스럽네요. 얼굴이 빨개질 것 같아요.",
+      "UnitTalk_JPN": "ふふ、恥ずかしいです。顔が赤くなってしまいましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "그런데… 응?",
+      "UnitTalk_JPN": "ところで…あれ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_5",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "린의 시선이 버려진 나무 상자를 향했다.",
+      "UnitTalk_JPN": "リンの視線が、捨てられた木箱へと移った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "상자라… 뭐가 들었을까요?",
+      "UnitTalk_JPN": "この木箱…何が入っているのでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그냥 두면 자연이 훼손될 수 있으니 확인해보고 가져가죠.",
+      "UnitTalk_JPN": "このまま放っておくと環境に悪いですし、中身を確認して持っていきましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐, 내가 먼저 확인해 볼게.",
+          "JumpAnchorStringId_JPN": "待って、私が確認してみるよ。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "...이상한 게 들어있지 않을까?",
+          "JumpAnchorStringId_JPN": "…変なものが入ってるんじゃない？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 83,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "후후, 단장님도 뭐가 들어있을지 기대되시나 보군요.",
+      "UnitTalk_JPN": "ふふ、団長も何が入っているのか気になるようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "CameraOffset": "ONE_5",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "상자를 열어 내용물을 확인한 순간, 몸이 굳었다.",
+      "UnitTalk_JPN": "箱を開けて中身を確認した瞬間、体が硬直した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…상자 안에는 누군가가 버린 얇고 빨간 책들이 가득 들어 있었다.",
+      "UnitTalk_JPN": "…箱の中には、誰かが捨てて行った大人向けの本がぎっしりと入っていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "단장님? 왜 그러세요?",
+      "UnitTalk_JPN": "団長？どうされましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "혹시 위험한 거라도 들었나요!? 이리 주세요! 제가 처리하겠습니다!",
+      "UnitTalk_JPN": "もしや、危険なものでも入っていましたか！？私が処理します！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…네?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "찾으셨다고요? 그게 대체…",
+      "UnitTalk_JPN": "見つけた、と？どういうことでしょうか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…내가 찾던 보물이 여기 있었어.",
+          "JumpAnchorStringId_JPN": "…探し求めてた宝物がここにあったんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…그런가요?",
+      "UnitTalk_JPN": "…そうですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "그렇다면 다행이네요!",
+      "UnitTalk_JPN": "それなら、良かったです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그런데 단장님이 찾던 보물이 뭔가요? 제가 봐도 될까요?",
+      "UnitTalk_JPN": "ところで、その宝物とは一体何のことでしょうか？私も見てもいいですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…미안하지만 알려줄 수 없다고요?",
+      "UnitTalk_JPN": "…申し訳ないけど教えられない、ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "괜찮아요. 누구에게나 비밀은 하나씩 있으니까요.",
+      "UnitTalk_JPN": "大丈夫ですよ。誰にでも、秘密の一つや二つはありますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "하지만… 후후. 궁금하네요.",
+      "UnitTalk_JPN": "でも…ふふ。気になりますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "단장님이 찾던 보물은 대체 무엇이었을까요?",
+      "UnitTalk_JPN": "団長が探し求めていた宝物は、一体どんな物だったのでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "린의 순수한 호기심이 담긴 눈빛을 견뎌가며 숙소까지 상자를 가지고 돌아왔다.",
+      "UnitTalk_JPN": "純粋な好奇心に満ちた視線に耐えながら、なんとか宿まで木箱を運んだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…뜻하지 않게 지쳤지만, 예상 밖의 전리품을 획득했다.",
+      "UnitTalk_JPN": "…思いがけぬ出来事で疲れてしまったが、予想外の戦利品を手に入れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 101,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후, 그럴 수도 있겠네요.",
+      "UnitTalk_JPN": "ふふ、そうかもしれませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "하지만 누군가에게는 이상할지 몰라도 또 다른 누군가에게는 가치 있는 물건일 수도 있죠.",
+      "UnitTalk_JPN": "でも…誰かにとっては変なものでも、他の誰かにとっては価値あるものかもしれませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "혹시 모르죠? 제가 찾던 보물일지. 후후.",
+      "UnitTalk_JPN": "もしかしたら、私が探し求めていた宝物だったりして。ふふ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "그럼 어디… 앗!",
+      "UnitTalk_JPN": "それでは…あっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitTalk_KOR": "상자를 연 린의 몸이 굳었다.",
+      "UnitTalk_JPN": "木箱を開けたリンの体が硬直した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_5",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "옆에서 내용물을 확인하자…",
+      "UnitTalk_JPN": "横から中身を確認すると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 이건…!",
+          "JumpAnchorStringId_JPN": "こ、これは…！"
+        }
+      ]
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitTalk_KOR": "상자 안에는 얇고 빨간 책이 가득 차 있었다.",
+      "UnitTalk_JPN": "木箱の中には、大人向けの本がぎっしりと入っていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "앗?! 윽! 아니, 이건…!",
+      "UnitTalk_JPN": "あっ！？うっ！これは…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitTalk_KOR": "서, 설마 이런 게 들었을 줄은…! 무, 물론 누군가에게는 유용하겠지만…",
+      "UnitTalk_JPN": "ま、まさかこんなものが入っているとは…！も、もちろん、誰かにとっては良いものだったのでしょうが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "저기, 오해예요! 제가 찾던 보물은 이게 아니라…!",
+      "UnitTalk_JPN": "あの、誤解です！私が探し求めていた宝物はこれじゃなくて…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "…아으으으!",
+      "UnitTalk_JPN": "…あううぅ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "머, 먼저 돌아갈게요!",
+      "UnitTalk_JPN": "お、お先に失礼します！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "린, 잠깐만?! 돌아가는 길 안내는?!",
+          "JumpAnchorStringId_JPN": "リン！？待ってよ、帰り道の案内は！？"
+        }
+      ]
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "린의 뒤를 쫓아서 숲은 빠져나왔지만 엄청 지쳤다…",
+      "UnitTalk_JPN": "リンの後を追って何とか森を抜けたものの、へとへとになってしまった…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN"
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}
