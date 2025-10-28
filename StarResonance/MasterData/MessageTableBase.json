@@ -6074,6 +6074,56 @@
         "VoiceControlEvent": "",
         "WaitVoiceFinish": false
     },
+    "2550": {
+        "Key": 2550,
+        "Id": 2550,
+        "Content": "家园币不足",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "2551": {
+        "Key": 2551,
+        "Id": 2551,
+        "Content": "请先离开家园再进行同住相关操作",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
     "2571": {
         "Key": 2571,
         "Id": 2571,
@@ -17352,14 +17402,19 @@
     "4672": {
         "Key": 4672,
         "Id": 4672,
-        "Content": "",
+        "Content": "获取标记失败",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17372,14 +17427,19 @@
     "4673": {
         "Key": 4673,
         "Id": 4673,
-        "Content": "",
+        "Content": "图片校验失败",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17392,14 +17452,19 @@
     "4674": {
         "Key": 4674,
         "Id": 4674,
-        "Content": "",
+        "Content": "图片类型非法",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17412,14 +17477,19 @@
     "4675": {
         "Key": 4675,
         "Id": 4675,
-        "Content": "",
+        "Content": "图片信息错误",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17432,14 +17502,19 @@
     "4676": {
         "Key": 4676,
         "Id": 4676,
-        "Content": "",
+        "Content": "图片尺寸错误",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17452,14 +17527,19 @@
     "4677": {
         "Key": 4677,
         "Id": 4677,
-        "Content": "",
+        "Content": "图片功能类型非法",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17472,14 +17552,19 @@
     "4678": {
         "Key": 4678,
         "Id": 4678,
-        "Content": "",
+        "Content": "图片回调判断非法",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17494,12 +17579,17 @@
         "Id": 4679,
         "Content": "图片审核未通过",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17512,14 +17602,19 @@
     "4680": {
         "Key": 4680,
         "Id": 4680,
-        "Content": "",
+        "Content": "图片验证返回参数非法",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17532,14 +17627,19 @@
     "4681": {
         "Key": 4681,
         "Id": 4681,
-        "Content": "",
+        "Content": "图片回调参数非法",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17552,14 +17652,19 @@
     "4682": {
         "Key": 4682,
         "Id": 4682,
-        "Content": "",
+        "Content": "图片编号非法",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17572,14 +17677,19 @@
     "4683": {
         "Key": 4683,
         "Id": 4683,
-        "Content": "",
+        "Content": "图片未正确设置参数",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17592,14 +17702,19 @@
     "4684": {
         "Key": 4684,
         "Id": 4684,
-        "Content": "",
+        "Content": "图片内部系统错误",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17612,14 +17727,19 @@
     "4685": {
         "Key": 4685,
         "Id": 4685,
-        "Content": "",
+        "Content": "图片未正确设置参数",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -17632,14 +17752,19 @@
     "4686": {
         "Key": 4686,
         "Id": 4686,
-        "Content": "",
+        "Content": "图片未正确设置参数",
         "Type": 10,
-        "DurationTime": 0,
+        "DurationTime": 2.5,
         "ChatName": "",
         "Delay": 0,
-        "RepeatPlay": [],
-        "ShowChannel": [],
-        "FilterRule": false,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
@@ -34782,7 +34907,7 @@
     "150012": {
         "Key": 150012,
         "Id": 150012,
-        "Content": "重铸所需的道具不足，无法重铸！",
+        "Content": "重铸所需的{*val*}不足，无法重铸！",
         "Type": 10,
         "DurationTime": 2,
         "ChatName": "",
@@ -35608,6 +35733,31 @@
         "Key": 150045,
         "Id": 150045,
         "Content": "您添加用于分解的道具已超过单次分解的最高数量限制，无法分解，请分批次进行分解！",
+        "Type": 10,
+        "DurationTime": 2,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "150046": {
+        "Key": 150046,
+        "Id": 150046,
+        "Content": "您还没添加打造所需的耗材呢，无法打造！",
         "Type": 10,
         "DurationTime": 2,
         "ChatName": "",
@@ -39833,6 +39983,31 @@
         "Key": 1000055,
         "Id": 1000055,
         "Content": "未检测到陀螺仪，镜头调整暂不可用",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "1000056": {
+        "Key": 1000056,
+        "Id": 1000056,
+        "Content": "当前无法使用牵手",
         "Type": 10,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -50559,7 +50734,7 @@
         "Id": 1005006,
         "Content": "恭喜通过战舞获得战力加成：{*buffname*}",
         "Type": 10,
-        "DurationTime": 2.5,
+        "DurationTime": 5,
         "ChatName": "",
         "Delay": 0,
         "RepeatPlay": [
@@ -54058,6 +54233,81 @@
         "Key": 1044025,
         "Id": 1044025,
         "Content": "预览包内暂无家具",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "1044026": {
+        "Key": 1044026,
+        "Id": 1044026,
+        "Content": "有花朵成熟可以收获了",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "1044027": {
+        "Key": 1044027,
+        "Id": 1044027,
+        "Content": "家具制作已完成，请回到家园收取",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "1044028": {
+        "Key": 1044028,
+        "Id": 1044028,
+        "Content": "没有可撤销的操作",
         "Type": 10,
         "DurationTime": 2.5,
         "ChatName": "",
@@ -75409,7 +75659,7 @@
         "Id": 5017019,
         "Content": "这里是……黯影军团关押犯人的地牢，丹佛说不定就把塔塔关在这里了，我们找找看吧。",
         "Type": 30,
-        "DurationTime": 2.5,
+        "DurationTime": 8,
         "ChatName": "{*npc.name(476)*}",
         "Delay": 0,
         "RepeatPlay": [
@@ -83123,6 +83373,1881 @@
         "IsShowInChat": false,
         "TypewriterEffect": false,
         "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601001": {
+        "Key": 7601001,
+        "Id": 7601001,
+        "Content": "变身成功！",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601002": {
+        "Key": 7601002,
+        "Id": 7601002,
+        "Content": "可变身为怪物，击败玩家获得<style=\"emph-gn\">梦心石</style>",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "幻兽之力",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601003": {
+        "Key": 7601003,
+        "Id": 7601003,
+        "Content": "获得<style=\"emph-gn\">黯淡的梦心石*100</style>！",
+        "Type": 60,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601004": {
+        "Key": 7601004,
+        "Id": 7601004,
+        "Content": "<style=\"emph-gn\">梦心石</style>数量不足",
+        "Type": 110,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601005": {
+        "Key": 7601005,
+        "Id": 7601005,
+        "Content": "获得<style=\"emph-gn\">黯淡的梦心石</style>*100！",
+        "Type": 60,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601006": {
+        "Key": 7601006,
+        "Id": 7601006,
+        "Content": "获得<style=\"emph-gn\">黯淡的梦心石</style>*200！",
+        "Type": 60,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601007": {
+        "Key": 7601007,
+        "Id": 7601007,
+        "Content": "获得<style=\"emph-gn\">黯淡的梦心石</style>*300！",
+        "Type": 60,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601008": {
+        "Key": 7601008,
+        "Id": 7601008,
+        "Content": "消耗<style=\"emph-gn\">黯淡的梦心石</style>*20",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601009": {
+        "Key": 7601009,
+        "Id": 7601009,
+        "Content": "消耗<style=\"emph-gn\">黯淡的梦心石</style>*50，获得<style=\"emph-gn\">史诗词条</style>！",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601010": {
+        "Key": 7601010,
+        "Id": 7601010,
+        "Content": "消耗<style=\"emph-gn\">黯淡的梦心石</style>*100，获得<style=\"emph-gn\">传说词条</style>！",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601011": {
+        "Key": 7601011,
+        "Id": 7601011,
+        "Content": "消耗<style=\"emph-gn\">黯淡的梦心石</style>*50，获得<style=\"emph-gn\">诅咒词条</style>！",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601020": {
+        "Key": 7601020,
+        "Id": 7601020,
+        "Content": "所有词条及黯淡的梦心石在切换地图、切换分线、下线后会<style=\"emph-gn\">清空</style>！",
+        "Type": 20,
+        "DurationTime": 5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601021": {
+        "Key": 7601021,
+        "Id": 7601021,
+        "Content": "[+2级]移速增加60%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "雾影疾走",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601022": {
+        "Key": 7601022,
+        "Id": 7601022,
+        "Content": "[+2级]对敌人造成伤害时，获得免死，持续1秒",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "浮光掠影",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601023": {
+        "Key": 7601023,
+        "Id": 7601023,
+        "Content": "[+4级]物理增效+40%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "破梦铁棘",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601024": {
+        "Key": 7601024,
+        "Id": 7601024,
+        "Content": "[+4级]魔法增效+40%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "迷心花粉",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601025": {
+        "Key": 7601025,
+        "Id": 7601025,
+        "Content": "[+4级]自身资源获取效率+100%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "心梦泉涌",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601026": {
+        "Key": 7601026,
+        "Id": 7601026,
+        "Content": "[+4级]对血量80%以上和20%以下的敌人，最终伤害提高100%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "盛衰花律",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601027": {
+        "Key": 7601027,
+        "Id": 7601027,
+        "Content": "[+2级]每3秒对5米内的敌人造成自身物理防御500%的伤害，并附加减速效果，持续3秒",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "蔓域毒瘴",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601028": {
+        "Key": 7601028,
+        "Id": 7601028,
+        "Content": "[+2级]反弹敌人对自己造成的100%伤害",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "镜花水月",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601029": {
+        "Key": 7601029,
+        "Id": 7601029,
+        "Content": "[+2级]对血量80%以上的敌人，暴击伤害提高300%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "绽蕾猛击",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601030": {
+        "Key": 7601030,
+        "Id": 7601030,
+        "Content": "[+2级]暴击时，暴击伤害提高10%，持续3秒，最多叠加5层",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "绯色追击",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601031": {
+        "Key": 7601031,
+        "Id": 7601031,
+        "Content": "[+2级]释放特殊攻击，减少专精技能0.5秒的冷却时间",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "空谷回响",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601032": {
+        "Key": 7601032,
+        "Id": 7601032,
+        "Content": "[+2级]基于急速值减少终极技能的冷却时间（上限25%）",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "刹那繁花",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601033": {
+        "Key": 7601033,
+        "Id": 7601033,
+        "Content": "[+2级]技能释放时有概率提升造成的幸运伤害30%，持续3秒",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "幻梦奇缘",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601034": {
+        "Key": 7601034,
+        "Id": 7601034,
+        "Content": "[+2级]对治疗目标附加攻击力提升10%，持续3秒",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "煦光勇毅",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601035": {
+        "Key": 7601035,
+        "Id": 7601035,
+        "Content": "[+2级]储存5秒内职业技能对自身造成的治疗值，下一次造成伤害时一次性迸发",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "绽放疗法",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601036": {
+        "Key": 7601036,
+        "Id": 7601036,
+        "Content": "[+2级]攻击+40%，生命上限降低70%",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "凋零狂花",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601037": {
+        "Key": 7601037,
+        "Id": 7601037,
+        "Content": "[+2级]梦心石不会再掉落，但是可拾取上限降低至800（会替换掉浮梦冒险家）",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "固梦琥珀",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601038": {
+        "Key": 7601038,
+        "Id": 7601038,
+        "Content": "[+2级]梦心石获取增加30%，但是死亡全部掉落（会替换掉固梦琥珀）",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "浮梦冒险家",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601039": {
+        "Key": 7601039,
+        "Id": 7601039,
+        "Content": "[+2级]攻击+20%，每次释放技能，消耗2.5%生命值",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "芳华一瞬",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601040": {
+        "Key": 7601040,
+        "Id": 7601040,
+        "Content": "进入了浮游之茧区域，幻境似乎变得更强了...",
+        "Type": 60,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601041": {
+        "Key": 7601041,
+        "Id": 7601041,
+        "Content": "随机事件！幻境中出现了<style=\"emph-gn\">梦心石宝箱</style>！",
+        "Type": 60,
+        "DurationTime": 6,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601042": {
+        "Key": 7601042,
+        "Id": 7601042,
+        "Content": "随机事件！幻境中出现了<style=\"emph-gn\">幻兽之力符文</style>！",
+        "Type": 60,
+        "DurationTime": 6,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601043": {
+        "Key": 7601043,
+        "Id": 7601043,
+        "Content": "浮游之茧已形成，溢散致幻能量中",
+        "Type": 60,
+        "DurationTime": 6,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601044": {
+        "Key": 7601044,
+        "Id": 7601044,
+        "Content": "浮游之茧能量已消耗完毕，等待能量再次充盈",
+        "Type": 120,
+        "DurationTime": 6,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601045": {
+        "Key": 7601045,
+        "Id": 7601045,
+        "Content": "消耗<style=\"emph-gn\">黯淡的梦心石</style>*200，获得<style=\"emph-gn\">浮梦之种</style>*10",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601046": {
+        "Key": 7601046,
+        "Id": 7601046,
+        "Content": "消耗<style=\"emph-gn\">黯淡的梦心石</style>*600，获得<style=\"emph-gn\">浮梦之种</style>*30",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601047": {
+        "Key": 7601047,
+        "Id": 7601047,
+        "Content": "消耗<style=\"emph-gn\">黯淡的梦心石</style>*900，获得<style=\"emph-gn\">浮梦之种</style>*90",
+        "Type": 10,
+        "DurationTime": 2.5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601048": {
+        "Key": 7601048,
+        "Id": 7601048,
+        "Content": "快来我这里，我有好多宝贝，<style=\"emph-gn\">900黯淡的梦心石可兑换90浮梦之种、200黯淡的梦心石可兑换10浮梦之种</style>，第二周起还会额外获得<style=\"emph-gn\">闪亮的浮梦之种</style>来兑换啦啦啦啦啦",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "幻象娜宝",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601049": {
+        "Key": 7601049,
+        "Id": 7601049,
+        "Content": "给我<style=\"emph-gn\">20块黯淡的梦心石</style>，我可以给你提升属性~呀~呀~每次兑换属性和怪物掉落的词条时还会给你提升不同的<style=\"emph-gn\">幻象等级</style>哦！<br>[幻象等级较低时受到高幻象等级怪物的伤害会大幅提升！]",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "小伊的属性商店",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601050": {
+        "Key": 7601050,
+        "Id": 7601050,
+        "Content": "给我<style=\"emph-gn\">20块黯淡的梦心石</style>，我可以给你提升属性~呀~呀~每次兑换属性和怪物掉落的词条时还会给你提升不同的<style=\"emph-gn\">幻象等级</style>哦！<br>[幻象等级较低时受到高幻象等级怪物的伤害会大幅提升！]",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "小伊的属性商店",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601051": {
+        "Key": 7601051,
+        "Id": 7601051,
+        "Content": "随机事件！幻境中出现了<style=\"emph-gn\">幻象之主</style>！",
+        "Type": 60,
+        "DurationTime": 6,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601052": {
+        "Key": 7601052,
+        "Id": 7601052,
+        "Content": "还剩2分钟<style=\"emph-gn\">溢散期</style>结束，将会清空所有词条效果",
+        "Type": 110,
+        "DurationTime": 5,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601053": {
+        "Key": 7601053,
+        "Id": 7601053,
+        "Content": "门已打开",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": true,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601100": {
+        "Key": 7601100,
+        "Id": 7601100,
+        "Content": "拾取1份货物，<style=\"emph-gn\">请在600秒内将货物运送到商队处吧！</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601101": {
+        "Key": 7601101,
+        "Id": 7601101,
+        "Content": "<style=\"emph-gn\">受到攻击，货物掉落。</style>",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601102": {
+        "Key": 7601102,
+        "Id": 7601102,
+        "Content": "<style=\"emph-gn\">发起攻击，货物掉落。</style>",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601104": {
+        "Key": 7601104,
+        "Id": 7601104,
+        "Content": "携带货物来此处提交以获得奖励。",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601105": {
+        "Key": 7601105,
+        "Id": 7601105,
+        "Content": "你已经背上了一份货物，无法背起更多货物了",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601106": {
+        "Key": 7601106,
+        "Id": 7601106,
+        "Content": "<style=\"emph-gn\">共鸣获得1号铭文</style>，集齐4种铭文可在铭文墙处获得铭文的馈赠",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601107": {
+        "Key": 7601107,
+        "Id": 7601107,
+        "Content": "<style=\"emph-gn\">共鸣获得2号铭文</style>，集齐4种铭文可在铭文墙处获得铭文的馈赠",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601108": {
+        "Key": 7601108,
+        "Id": 7601108,
+        "Content": "<style=\"emph-gn\">共鸣获得3号铭文</style>，集齐4种铭文可在铭文墙处获得铭文的馈赠",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601109": {
+        "Key": 7601109,
+        "Id": 7601109,
+        "Content": "<style=\"emph-gn\">共鸣获得4号铭文</style>，集齐4种铭文可在铭文墙处获得铭文的馈赠",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601110": {
+        "Key": 7601110,
+        "Id": 7601110,
+        "Content": "需要与4种不同铭文共鸣后才能获得馈赠",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601111": {
+        "Key": 7601111,
+        "Id": 7601111,
+        "Content": "你已携带了一种铭文，需要与其他冒险者共鸣剩余铭文",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601112": {
+        "Key": 7601112,
+        "Id": 7601112,
+        "Content": "获得铭文馈赠，<style=\"emph-gn\">增加60点凝形能量，获得200个梦心石</style>",
+        "Type": 60,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601113": {
+        "Key": 7601113,
+        "Id": 7601113,
+        "Content": "已与该铭文共鸣过了",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601114": {
+        "Key": 7601114,
+        "Id": 7601114,
+        "Content": "你已获得了铭文的馈赠，在一定时间内不能重复获得馈赠",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601115": {
+        "Key": 7601115,
+        "Id": 7601115,
+        "Content": "<style=\"emph-gn\">拾取获得1号铭文</style>，集齐4种铭文可在铭文墙处获得铭文的馈赠",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601116": {
+        "Key": 7601116,
+        "Id": 7601116,
+        "Content": "<style=\"emph-gn\">拾取获得2号铭文</style>，集齐4种铭文可在铭文墙处获得铭文的馈赠",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601117": {
+        "Key": 7601117,
+        "Id": 7601117,
+        "Content": "<style=\"emph-gn\">拾取获得3号铭文</style>，集齐4种铭文可在铭文墙处获得铭文的馈赠",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601118": {
+        "Key": 7601118,
+        "Id": 7601118,
+        "Content": "<style=\"emph-gn\">拾取获得4号铭文</style>，集齐4种铭文可在铭文墙处获得铭文的馈赠",
+        "Type": 10,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601119": {
+        "Key": 7601119,
+        "Id": 7601119,
+        "Content": "开始聚力，需要聚齐<style=\"emph-gn\">10</style>个人的力量方能打开屏障",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601120": {
+        "Key": 7601120,
+        "Id": 7601120,
+        "Content": "开始聚力，需要聚齐<style=\"emph-gn\">20</style>个人的力量方能打开屏障",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601121": {
+        "Key": 7601121,
+        "Id": 7601121,
+        "Content": "开始聚力，需要聚齐<style=\"emph-gn\">30</style>个人的力量方能打开屏障",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601122": {
+        "Key": 7601122,
+        "Id": 7601122,
+        "Content": "没有参加聚力，不能开启宝箱",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601123": {
+        "Key": 7601123,
+        "Id": 7601123,
+        "Content": "提交货物，<style=\"emph-gn\">增加50点凝形能量，获得50个梦心石</style>",
+        "Type": 60,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601124": {
+        "Key": 7601124,
+        "Id": 7601124,
+        "Content": "提交货物，<style=\"emph-gn\">增加200点凝形能量，获得200个梦心石</style>",
+        "Type": 60,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601125": {
+        "Key": 7601125,
+        "Id": 7601125,
+        "Content": "屏障消失，<style=\"emph-gn\">增加300点凝形能量</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601126": {
+        "Key": 7601126,
+        "Id": 7601126,
+        "Content": "屏障消失，<style=\"emph-gn\">增加800点凝形能量</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601127": {
+        "Key": 7601127,
+        "Id": 7601127,
+        "Content": "屏障消失，<style=\"emph-gn\">增加2000点凝形能量</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601128": {
+        "Key": 7601128,
+        "Id": 7601128,
+        "Content": "开启宝箱，<style=\"emph-gn\">获得100个梦心石</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601129": {
+        "Key": 7601129,
+        "Id": 7601129,
+        "Content": "开启宝箱，<style=\"emph-gn\">获得100个梦心石</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "7601130": {
+        "Key": 7601130,
+        "Id": 7601130,
+        "Content": "开启宝箱，<style=\"emph-gn\">获得100个梦心石</style>",
+        "Type": 20,
+        "DurationTime": 3,
+        "ChatName": "",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 1,
         "Audio": "",
         "CountTime": 0,
         "VoiceEventName": "",
@@ -91036,6 +93161,81 @@
         "Type": 30,
         "DurationTime": 3,
         "ChatName": "{*npc.name(651)*}",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "10050501": {
+        "Key": 10050501,
+        "Id": 10050501,
+        "Content": "<style=\"emph-gn\">少女们的纠葛传说 混沌系新作再夺榜首！</style><br>那位神秘的混沌系轻小说家“失眠雾色”，新作一经面世便直冲销量榜首。故事讲述五位少女在青春边缘的扭曲爱恨，读者读得揪心，却又欲罢不能。<br>编者小语：果然越是畸形的感情，越能叫人上瘾。<br><br><style=\"emph-gn\">拿个石头当块宝 炼金圈子迟早要完</style><br>炼金导师莫里斯在平原发现了一种新石头，为此声称自己即将发现突破性成果，或许能改变人们对潜意识的认知。<br>编者小语：大惊小怪的，终究不就是块石头嘛？<br><br><style=\"emph-gn\">高原遗产出土 工匠协会闻风而动！</style><br>巴哈马尔高原发掘遗产的消息一出，工匠协会立刻派了专家前往。欢乐街里已经有人在打赌，那东西究竟是稀世奇物，还是一堆生锈的零件。<br>编者小语：结果如何谁都不清楚，但光是这阵风声，怕是又能炒上一年。<br><br><style=\"emph-gn\">冒险者昏迷传言 平原交界处再起风波！</style><br>今天街头巷尾都在传，说有几位冒险者在平原和高原的交界处晕倒。有人坚持说是某种新型传染病；有人却信誓旦旦，认为这是某些冒险者的低级罢工行为。<br>编者小语：谁让开拓局最近给的报酬太低了，罢工也情有可原吧……",
+        "Type": 100,
+        "DurationTime": -1,
+        "ChatName": "街角快讯·今日号外",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "10050502": {
+        "Key": 10050502,
+        "Id": 10050502,
+        "Content": "<style=\"emph-gn\">{*me.name*}</style>，这里这里！",
+        "Type": 30,
+        "DurationTime": 3,
+        "ChatName": "{*npc.name(21051302)*}",
+        "Delay": 0,
+        "RepeatPlay": [
+            0,
+            0
+        ],
+        "ShowChannel": [
+            99
+        ],
+        "FilterRule": false,
+        "IsShowInChat": false,
+        "TypewriterEffect": false,
+        "Interrupt": 0,
+        "Audio": "",
+        "CountTime": 0,
+        "VoiceEventName": "",
+        "VoiceControlEvent": "",
+        "WaitVoiceFinish": false
+    },
+    "10050503": {
+        "Key": 10050503,
+        "Id": 10050503,
+        "Content": "<style=\"emph-gn\">{*me.name*}</style>，这里这里！",
+        "Type": 30,
+        "DurationTime": 5,
+        "ChatName": "{*npc.name(487)*}",
         "Delay": 0,
         "RepeatPlay": [
             0,
@@ -100257,7 +102457,7 @@
     "16001111": {
         "Key": 16001111,
         "Id": 16001111,
-        "Content": "选择了<style=\"emph-gn\">一选项</style>",
+        "Content": "---正确答案是<style=\"emph-gn\">选项A</style>---",
         "Type": 10,
         "DurationTime": 3,
         "ChatName": "",
@@ -100282,7 +102482,7 @@
     "16001112": {
         "Key": 16001112,
         "Id": 16001112,
-        "Content": "选择了<style=\"emph-gn\">二选项</style>",
+        "Content": "---正确答案是<style=\"emph-gn\">选项B</style>---",
         "Type": 10,
         "DurationTime": 3,
         "ChatName": "",
@@ -100307,7 +102507,7 @@
     "16001113": {
         "Key": 16001113,
         "Id": 16001113,
-        "Content": "选择了<style=\"emph-gn\">三选项</style>",
+        "Content": "---正确答案是<style=\"emph-gn\">选项C</style>---",
         "Type": 10,
         "DurationTime": 3,
         "ChatName": "",
@@ -100332,7 +102532,7 @@
     "16001114": {
         "Key": 16001114,
         "Id": 16001114,
-        "Content": "选择了<style=\"emph-gn\">四选项</style>",
+        "Content": "---正确答案是<style=\"emph-gn\">选项D</style>---",
         "Type": 10,
         "DurationTime": 3,
         "ChatName": "",
@@ -100532,7 +102732,7 @@
     "16001125": {
         "Key": 16001125,
         "Id": 16001125,
-        "Content": "---正确答案是<style=\"emph-gn\">一选项</style>---",
+        "Content": "---正确答案是<style=\"emph-gn\">选项A</style>---",
         "Type": 10,
         "DurationTime": 2,
         "ChatName": "",
@@ -100557,7 +102757,7 @@
     "16001126": {
         "Key": 16001126,
         "Id": 16001126,
-        "Content": "---正确答案是<style=\"emph-gn\">二选项</style>---",
+        "Content": "---正确答案是<style=\"emph-gn\">选项B</style>---",
         "Type": 10,
         "DurationTime": 2,
         "ChatName": "",
@@ -100582,7 +102782,7 @@
     "16001127": {
         "Key": 16001127,
         "Id": 16001127,
-        "Content": "---正确答案是<style=\"emph-gn\">三选项</style>---",
+        "Content": "---正确答案是<style=\"emph-gn\">选项C</style>---",
         "Type": 10,
         "DurationTime": 2,
         "ChatName": "",
@@ -100607,7 +102807,7 @@
     "16001128": {
         "Key": 16001128,
         "Id": 16001128,
-        "Content": "---正确答案是<style=\"emph-gn\">四选项</style>---",
+        "Content": "---正确答案是<style=\"emph-gn\">选项D</style>---",
         "Type": 10,
         "DurationTime": 2,
         "ChatName": "",
@@ -100857,7 +103057,7 @@
     "16001140": {
         "Key": 16001140,
         "Id": 16001140,
-        "Content": "【第2题】：有多少只与领舞哥布林跳<style=\"emph-gn\">相同舞蹈</style>的哥布林？(领舞不计入数量)<br>{一}.2只    {二}.3只    {三}.4只    {四}.5只",
+        "Content": "【第2题】：有多少只与领舞哥布林跳<style=\"emph-gn\">相同舞蹈</style>的哥布林？(领舞不计入数量)<br>A.2只    B.3只    C.4只    D.5只",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",
@@ -100882,7 +103082,7 @@
     "16001141": {
         "Key": 16001141,
         "Id": 16001141,
-        "Content": "【第2题】：有多少只与领舞哥布林跳<style=\"emph-gn\">相同舞蹈</style>的哥布林？(领舞不计入数量)<br>{一}.2只    {二}.3只    {三}.4只    {四}.5只",
+        "Content": "【第2题】：有多少只与领舞哥布林跳<style=\"emph-gn\">相同舞蹈</style>的哥布林？(领舞不计入数量)<br>A.2只    B.3只    C.4只    D.5只",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",
@@ -100907,7 +103107,7 @@
     "16001142": {
         "Key": 16001142,
         "Id": 16001142,
-        "Content": "【第2题】：有多少只与领舞哥布林跳<style=\"emph-gn\">相同舞蹈</style>的哥布林？(领舞不计入数量)<br>{一}.2只    {二}.3只    {三}.4只    {四}.5只",
+        "Content": "【第2题】：有多少只与领舞哥布林跳<style=\"emph-gn\">相同舞蹈</style>的哥布林？(领舞不计入数量)<br>A.2只    B.3只    C.4只    D.5只",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",
@@ -100932,7 +103132,7 @@
     "16001143": {
         "Key": 16001143,
         "Id": 16001143,
-        "Content": "【第2题】：有多少只与领舞哥布林跳<style=\"emph-gn\">相同舞蹈</style>的哥布林？(领舞不计入数量)<br>{一}.2只    {二}.3只    {三}.4只    {四}.5只",
+        "Content": "【第2题】：有多少只与领舞哥布林跳<style=\"emph-gn\">相同舞蹈</style>的哥布林？(领舞不计入数量)<br>A.2只    B.3只    C.4只    D.5只",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",
@@ -100982,7 +103182,7 @@
     "16001151": {
         "Key": 16001151,
         "Id": 16001151,
-        "Content": "【第1题】：<style=\"emph-gn\">有多少只红色哥布林</style>？<br>{一}.7只    {二}.8只    {三}.9只    {四}.10只",
+        "Content": "【第1题】：<style=\"emph-gn\">有多少只红色哥布林</style>？<br>A.7只    B.8只    C.9只    D.10只",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",
@@ -101007,7 +103207,7 @@
     "16001152": {
         "Key": 16001152,
         "Id": 16001152,
-        "Content": "【第1题】：<style=\"emph-gn\">有多少只黄色哥布林</style>？<br>{一}.5只    {二}.6只    {三}.7只    {四}.8只",
+        "Content": "【第1题】：<style=\"emph-gn\">有多少只黄色哥布林</style>？<br>A.5只    B.6只    C.7只    D.8只",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",
@@ -101032,7 +103232,7 @@
     "16001153": {
         "Key": 16001153,
         "Id": 16001153,
-        "Content": "【第1题】：<style=\"emph-gn\">有多少只灰色哥布林</style>？<br>{一}.6只    {二}.7只    {三}.8只    {四}.9只",
+        "Content": "【第1题】：<style=\"emph-gn\">有多少只灰色哥布林</style>？<br>A.6只    B.7只    C.8只    D.9只",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",
@@ -101057,7 +103257,7 @@
     "16001154": {
         "Key": 16001154,
         "Id": 16001154,
-        "Content": "【第1题】：<style=\"emph-gn\">有多少只哥布林</style>？<br>{一}.15只    {二}.17只    {三}.19只    {四}.21只",
+        "Content": "【第1题】：<style=\"emph-gn\">有多少只哥布林</style>？<br>A.15只    B.17只    C.19只    D.21只",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",
@@ -101082,7 +103282,7 @@
     "16001155": {
         "Key": 16001155,
         "Id": 16001155,
-        "Content": "【第2题】：<style=\"emph-gn\">经过了多少只红色哥布林</style>？<br>{一}.8只    {二}.9只    {三}.10只    {四}.11只",
+        "Content": "【第2题】：<style=\"emph-gn\">经过了多少只红色哥布林</style>？<br>A.8只    B.9只    C.10只    D.11只",
         "Type": 30,
         "DurationTime": 30,
         "ChatName": "",
@@ -101107,7 +103307,7 @@
     "16001156": {
         "Key": 16001156,
         "Id": 16001156,
-        "Content": "【第2题】：<style=\"emph-gn\">经过了多少只黄色哥布林</style>？<br>{一}.7只    {二}.8只    {三}.9只    {四}.10只",
+        "Content": "【第2题】：<style=\"emph-gn\">经过了多少只黄色哥布林</style>？<br>A.7只    B.8只    C.9只    D.10只",
         "Type": 30,
         "DurationTime": 30,
         "ChatName": "",
@@ -101132,7 +103332,7 @@
     "16001157": {
         "Key": 16001157,
         "Id": 16001157,
-        "Content": "【第2题】：<style=\"emph-gn\">经过了多少只灰色哥布林</style>？<br>{一}.10只    {二}.11只    {三}.12只    {四}.13只",
+        "Content": "【第2题】：<style=\"emph-gn\">经过了多少只灰色哥布林</style>？<br>A.10只    B.11只    C.12只    D.13只",
         "Type": 30,
         "DurationTime": 30,
         "ChatName": "",
@@ -101157,7 +103357,7 @@
     "16001158": {
         "Key": 16001158,
         "Id": 16001158,
-        "Content": "【第2题】：<style=\"emph-gn\">经过了多少只哥布林</style>？<br>{一}.25只    {二}.26只    {三}.27只    {四}.28只",
+        "Content": "【第2题】：<style=\"emph-gn\">经过了多少只哥布林</style>？<br>A.25只    B.26只    C.27只    D.28只",
         "Type": 30,
         "DurationTime": 30,
         "ChatName": "",
@@ -101457,7 +103657,7 @@
     "16001175": {
         "Key": 16001175,
         "Id": 16001175,
-        "Content": "【第2题】：有三只哥布林不会跳舞，<style=\"emph-gn\">请找到并正确指出它们的颜色</style>",
+        "Content": "【第2题】：有3只哥布林不会跳舞，<style=\"emph-gn\">请找到并正确指出它们的颜色</style>",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",
@@ -101482,7 +103682,7 @@
     "16001176": {
         "Key": 16001176,
         "Id": 16001176,
-        "Content": "【第2题】：有三只哥布林不会跳舞，<style=\"emph-gn\">请找到并正确指出它们的颜色</style>",
+        "Content": "【第2题】：有3只哥布林不会跳舞，<style=\"emph-gn\">请找到并正确指出它们的颜色</style>",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",
@@ -101507,7 +103707,7 @@
     "16001177": {
         "Key": 16001177,
         "Id": 16001177,
-        "Content": "【第2题】：有三只哥布林不会跳舞，<style=\"emph-gn\">请找到并正确指出它们的颜色</style>",
+        "Content": "【第2题】：有3只哥布林不会跳舞，<style=\"emph-gn\">请找到并正确指出它们的颜色</style>",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",
@@ -101532,7 +103732,7 @@
     "16001178": {
         "Key": 16001178,
         "Id": 16001178,
-        "Content": "【第2题】：有三只哥布林不会跳舞，<style=\"emph-gn\">请找到并正确指出它们的颜色</style>",
+        "Content": "【第2题】：有3只哥布林不会跳舞，<style=\"emph-gn\">请找到并正确指出它们的颜色</style>",
         "Type": 30,
         "DurationTime": 60,
         "ChatName": "",

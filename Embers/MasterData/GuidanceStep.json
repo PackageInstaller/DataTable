@@ -153,12 +153,12 @@
         "CheckChild": true,
         "DelayTime": 0.30000001192092896,
         "WindowSize": [
-            390.0,
-            236.0
+            332.0,
+            147.0
         ],
         "WindowShifting": [
-            1.0,
-            0.0
+            -2.0,
+            2.0
         ],
         "TipType": 1,
         "TipPosition": [
@@ -1010,7 +1010,43 @@
     {
         "Id": 12201,
         "GuidanceType": 1,
-        "IsCheck": false,
+        "IsCheck": true,
+        "WindowName": "MainWindow",
+        "UIKey": "BtnContinue",
+        "ChildIndex": 0,
+        "CheckChild": false,
+        "DelayTime": 0.6000000238418579,
+        "WindowSize": [
+            320.0,
+            110.0
+        ],
+        "WindowShifting": [
+            24.0,
+            3.0
+        ],
+        "TipType": 1,
+        "TipPosition": [
+            500.0,
+            100.0
+        ],
+        "FingerShifting": [
+            0.0,
+            100.0
+        ],
+        "FingerDirection": 0,
+        "TipCharacterName": "南星",
+        "TipCharacter": "1104Headimage",
+        "TipText": "现在马上返回青渊吧。",
+        "VideoClip": "",
+        "VideoName": "",
+        "WaitTime": 0.0,
+        "Alpha": false,
+        "ManualId": 0
+    },
+    {
+        "Id": 12302,
+        "GuidanceType": 1,
+        "IsCheck": true,
         "WindowName": "MapWindow",
         "UIKey": "TpActiveRoot",
         "ChildIndex": 0,
@@ -1044,7 +1080,7 @@
         "ManualId": 0
     },
     {
-        "Id": 12202,
+        "Id": 12303,
         "GuidanceType": 1,
         "IsCheck": true,
         "WindowName": "DropItemListView",
@@ -1080,7 +1116,7 @@
         "ManualId": 0
     },
     {
-        "Id": 12203,
+        "Id": 12304,
         "GuidanceType": 1,
         "IsCheck": true,
         "WindowName": "MapPointInfoView",
@@ -2409,8 +2445,8 @@
         "CheckChild": false,
         "DelayTime": 0.6000000238418579,
         "WindowSize": [
-            80.0,
-            80.0
+            100.0,
+            100.0
         ],
         "WindowShifting": [
             0.0,
@@ -2806,11 +2842,11 @@
         "DelayTime": 0.6000000238418579,
         "WindowSize": [
             1000.0,
-            380.0
+            260.0
         ],
         "WindowShifting": [
-            35.0,
-            0.0
+            78.0,
+            5.0
         ],
         "TipType": 1,
         "TipPosition": [

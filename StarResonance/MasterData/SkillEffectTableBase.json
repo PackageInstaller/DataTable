@@ -21029,6 +21029,35 @@
         "SkillLearnBuffs": [],
         "InstallSkillAddBuffs": []
     },
+    "404001": {
+        "Key": 404001,
+        "Id": 404001,
+        "Level": 1,
+        "Name": "退出变身-解除幻兽之力",
+        "SkillId": 4040,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
     "408001": {
         "Key": 408001,
         "Id": 408001,
@@ -24181,8 +24210,8 @@
         "STRange": [
             0
         ],
-        "IsInBattleState": true,
-        "TakeWeaponInSkill": true,
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
         "NeedScaleCamera": false,
         "SkillLearnBuffs": [],
         "InstallSkillAddBuffs": []
@@ -24268,8 +24297,8 @@
         "STRange": [
             0
         ],
-        "IsInBattleState": true,
-        "TakeWeaponInSkill": true,
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
         "NeedScaleCamera": false,
         "SkillLearnBuffs": [],
         "InstallSkillAddBuffs": []
@@ -24309,8 +24338,8 @@
         "STRange": [
             0
         ],
-        "IsInBattleState": true,
-        "TakeWeaponInSkill": true,
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
         "NeedScaleCamera": false,
         "SkillLearnBuffs": [],
         "InstallSkillAddBuffs": []
@@ -76658,6 +76687,1162 @@
             0,
             10,
             25,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109050101": {
+        "Key": 109050101,
+        "Id": 109050101,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1090501,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            8,
+            8,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109050201": {
+        "Key": 109050201,
+        "Id": 109050201,
+        "Level": 1,
+        "Name": "奥尔维拉可选SKILL_02",
+        "SkillId": 1090502,
+        "SkillDamageDistance": 2.86,
+        "EffectRange": [
+            0,
+            0,
+            0
+        ],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            -1
+        ],
+        "Tags": [
+            4,
+            66,
+            30,
+            9,
+            68,
+            93
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [
+            [
+                "总伤害",
+                "{*skillpara.damageMerge({117170101},{1},\"PVEDamageRadio\",\"up\")*}物理攻击力+{*skillpara.damageMerge({117170101},{1},\"PVEFixedParameter\",\"un\")*}"
+            ],
+            [
+                "冷却时间",
+                "{*skillpara.effectcd*}"
+            ]
+        ],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109060101": {
+        "Key": 109060101,
+        "Id": 109060101,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1090601,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            15,
+            15,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109060201": {
+        "Key": 109060201,
+        "Id": 109060201,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1090602,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            15,
+            15,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109060301": {
+        "Key": 109060301,
+        "Id": 109060301,
+        "Level": 1,
+        "Name": "水球爆裂",
+        "SkillId": 1090603,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            7,
+            7,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109060401": {
+        "Key": 109060401,
+        "Id": 109060401,
+        "Level": 1,
+        "Name": "超绝大招",
+        "SkillId": 1090604,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            15,
+            15,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109060501": {
+        "Key": 109060501,
+        "Id": 109060501,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1090605,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            15,
+            15,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109060601": {
+        "Key": 109060601,
+        "Id": 109060601,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1090606,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            20,
+            20,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109069701": {
+        "Key": 109069701,
+        "Id": 109069701,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1090697,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109069801": {
+        "Key": 109069801,
+        "Id": 109069801,
+        "Level": 1,
+        "Name": "冰爆虚拟体",
+        "SkillId": 1090698,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109069901": {
+        "Key": 109069901,
+        "Id": 109069901,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1090699,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109070101": {
+        "Key": 109070101,
+        "Id": 109070101,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1090701,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            7,
+            7,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109070201": {
+        "Key": 109070201,
+        "Id": 109070201,
+        "Level": 1,
+        "Name": "蒂娜ATK_11",
+        "SkillId": 1090702,
+        "SkillDamageDistance": 0,
+        "EffectRange": [
+            0,
+            0,
+            0
+        ],
+        "AiReleaseSkillRange": [
+            0,
+            3,
+            3,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109070301": {
+        "Key": 109070301,
+        "Id": 109070301,
+        "Level": 1,
+        "Name": "蒂娜可选SKILL_02",
+        "SkillId": 1090703,
+        "SkillDamageDistance": 0,
+        "EffectRange": [
+            0,
+            0,
+            0
+        ],
+        "AiReleaseSkillRange": [
+            0,
+            3,
+            3,
+            0
+        ],
+        "Tags": [
+            4,
+            66,
+            31,
+            9,
+            68,
+            93
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [
+            [
+                "总伤害",
+                "{*skillpara.damageMerge({114210102,114210103},{1,6},\"PVEDamageRadio\",\"up\")*}物理攻击力+{*skillpara.damageMerge({114210102,114210103},{1,6},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({114210102,114210103},{1,6},\"PVEStunnedDamage\",\"un\")*})"
+            ],
+            [
+                "冷却时间",
+                "{*skillpara.effectcd*}"
+            ]
+        ],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109079901": {
+        "Key": 109079901,
+        "Id": 109079901,
+        "Level": 1,
+        "Name": "蒂娜飞鸟投",
+        "SkillId": 1090799,
+        "SkillDamageDistance": 0,
+        "EffectRange": [
+            0,
+            0,
+            0
+        ],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109080101": {
+        "Key": 109080101,
+        "Id": 109080101,
+        "Level": 1,
+        "Name": "雄鹰飞翔",
+        "SkillId": 1090801,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            20,
+            20,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109080201": {
+        "Key": 109080201,
+        "Id": 109080201,
+        "Level": 1,
+        "Name": "兽群狂奔",
+        "SkillId": 1090802,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            20,
+            20,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109089901": {
+        "Key": 109089901,
+        "Id": 109089901,
+        "Level": 1,
+        "Name": "幻影魔狼",
+        "SkillId": 1090899,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109090101": {
+        "Key": 109090101,
+        "Id": 109090101,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1090901,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            10,
+            10,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109090201": {
+        "Key": 109090201,
+        "Id": 109090201,
+        "Level": 1,
+        "Name": "杰拉德复仇",
+        "SkillId": 1090902,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            2,
+            3,
+            0
+        ],
+        "Tags": [
+            4,
+            66,
+            32,
+            9,
+            68,
+            93
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [
+            [
+                "总伤害",
+                "{*skillpara.damageMerge({119370102},{1},\"PVEDamageRadio\",\"up\")*}物理攻击力+{*skillpara.damageMerge({119370102},{1},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({119370102},{1},\"PVEStunnedDamage\",\"un\")*})"
+            ]
+        ],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109090301": {
+        "Key": 109090301,
+        "Id": 109090301,
+        "Level": 1,
+        "Name": "怒气爆发",
+        "SkillId": 1090903,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            10,
+            10,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": false,
+        "TakeWeaponInSkill": false,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109100101": {
+        "Key": 109100101,
+        "Id": 109100101,
+        "Level": 1,
+        "Name": "剑盾裁决",
+        "SkillId": 1091001,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            5,
+            5,
+            0
+        ],
+        "Tags": [
+            4,
+            66,
+            34,
+            9,
+            11,
+            68,
+            93
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [
+            [
+                "总伤害",
+                "{*skillpara.damageMerge({124100101},{1},\"PVEDamageRadio\",\"up\")*}物理攻击力+{*skillpara.damageMerge({124100101},{1},\"PVEFixedParameter\",\"un\")*}<br>(破韧值:{*skillpara.damageMerge({124100101},{1},\"PVEStunnedDamage\",\"un\")*})"
+            ],
+            [
+                "总治疗",
+                "{*skillpara.effect(\"hpcostPer\",\"up\")*}已损失生命值"
+            ]
+        ],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109100201": {
+        "Key": 109100201,
+        "Id": 109100201,
+        "Level": 1,
+        "Name": "灼热裁决",
+        "SkillId": 1091002,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            5,
+            5,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109109801": {
+        "Key": 109109801,
+        "Id": 109109801,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1091098,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109109901": {
+        "Key": 109109901,
+        "Id": 109109901,
+        "Level": 1,
+        "Name": "灼热裁决圣剑",
+        "SkillId": 1091099,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109110101": {
+        "Key": 109110101,
+        "Id": 109110101,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1091101,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            10,
+            10,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109110201": {
+        "Key": 109110201,
+        "Id": 109110201,
+        "Level": 1,
+        "Name": "艾露娜恢复",
+        "SkillId": 1091102,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            15,
+            15,
+            0
+        ],
+        "Tags": [
+            4,
+            67,
+            33,
+            11,
+            69,
+            39
+        ],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [
+            [
+                "总治疗",
+                "{*skillpara.damageMerge({22140601},{4},\"PVEDamageRadio\",\"up\")*}魔法攻击力+{*skillpara.damageMerge({22140601},{4},\"PVEFixedParameter\",\"un\")*}"
+            ],
+            [
+                "冷却时间",
+                "{*skillpara.effectcd*}"
+            ]
+        ],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109119901": {
+        "Key": 109119901,
+        "Id": 109119901,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1091199,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109120101": {
+        "Key": 109120101,
+        "Id": 109120101,
+        "Level": 1,
+        "Name": "吉他磕头",
+        "SkillId": 1091201,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            4,
+            4,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "109120201": {
+        "Key": 109120201,
+        "Id": 109120201,
+        "Level": 1,
+        "Name": "吉他奶人",
+        "SkillId": 1091202,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            30,
+            30,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "110240101": {
+        "Key": 110240101,
+        "Id": 110240101,
+        "Level": 1,
+        "Name": "梦魇角羊-究极梦魇",
+        "SkillId": 1102401,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            100,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "110240201": {
+        "Key": 110240201,
+        "Id": 110240201,
+        "Level": 1,
+        "Name": "梦魇角羊-普攻1",
+        "SkillId": 1102402,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            8,
+            30
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "110240301": {
+        "Key": 110240301,
+        "Id": 110240301,
+        "Level": 1,
+        "Name": "梦魇角羊-普攻2",
+        "SkillId": 1102403,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            5,
+            30
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "110240401": {
+        "Key": 110240401,
+        "Id": 110240401,
+        "Level": 1,
+        "Name": "梦魇角羊-冲锋",
+        "SkillId": 1102404,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            20,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "110240501": {
+        "Key": 110240501,
+        "Id": 110240501,
+        "Level": 1,
+        "Name": "梦魇角羊-压团血",
+        "SkillId": 1102405,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            60,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "110240601": {
+        "Key": 110240601,
+        "Id": 110240601,
+        "Level": 1,
+        "Name": "",
+        "SkillId": 1102406,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            60,
+            0
+        ],
+        "Tags": [],
+        "BuffTags": [],
+        "HitTags": [],
+        "EntityTags": [],
+        "SkillAttrDes": [],
+        "MaxHorizontalMotionDis": 0,
+        "STRange": [
+            0
+        ],
+        "IsInBattleState": true,
+        "TakeWeaponInSkill": true,
+        "NeedScaleCamera": false,
+        "SkillLearnBuffs": [],
+        "InstallSkillAddBuffs": []
+    },
+    "110243001": {
+        "Key": 110243001,
+        "Id": 110243001,
+        "Level": 1,
+        "Name": "梦魇陨石",
+        "SkillId": 1102430,
+        "SkillDamageDistance": 0,
+        "EffectRange": [],
+        "AiReleaseSkillRange": [
+            0,
+            0,
+            0,
             0
         ],
         "Tags": [],

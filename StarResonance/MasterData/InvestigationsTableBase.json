@@ -209,5 +209,26 @@
         "ThemePic": "ui/textures/investigation/investigation_common_bg",
         "Guarantee": 3,
         "IsHidePlayerModel": false
+    },
+    "5001": {
+        "Key": 5001,
+        "Id": 5001,
+        "InvestigationTheme": "迷途交界的噩梦",
+        "UnlockCondition": [
+            [
+                2,
+                185592,
+                185592004
+            ]
+        ],
+        "InvestigationStep": [
+            50011
+        ],
+        "CompletionConditions": [],
+        "ThemeIntroduction": "从平原前往高原的人们都陷入了噩梦中。推断出可用的线索吧……",
+        "IockedTips": "推进任务<style=\"emph-quest\">绯色与迷梦的间章</style>解锁调查",
+        "ThemePic": "ui/textures/investigation/investigation_common_bg",
+        "Guarantee": 3,
+        "IsHidePlayerModel": false
     }
 }

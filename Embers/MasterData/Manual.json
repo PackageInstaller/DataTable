@@ -45,7 +45,7 @@
             "TeachingPictureWeakness"
         ],
         "Desc": [
-            "辉烬兽在使用强力技能后,会出现转瞬即逝的<color=#FF961D><破绽></color>,注意看破绽条两侧向内收缩的半圆指示器，当指示器变为<color=#FF961D>黄色</color>或<color=#FF961D>红色</color>时命中敌人，会削减大量<color=#FF961D>韧性</color>。"
+            "辉烬兽在使用强力技能后,会出现转瞬即逝的<color=#FF961D>破绽</color>,注意看破绽条两侧向内收缩的弧形指示器，当指示器变为<color=#FF961D>黄色</color>或<color=#FF961D>红色</color>时命中敌人，会削减大量<color=#FF961D>韧性</color>。"
         ],
         "Release": 0,
         "ReleaseConfig": 0
@@ -71,15 +71,15 @@
         "Id": 1005,
         "Index": 5,
         "Type": 1,
-        "Name": "同伴奥义技",
+        "Name": "队员奥义技",
         "PageName": [
-            "同伴奥义技"
+            "队员奥义技"
         ],
         "Img": [
             "TeachingPictureAiXpSkill"
         ],
         "Desc": [
-            "同伴的<color=#FF961D>奥义技</color>准备就绪时，可以点击<color=#FF961D>同伴头像</color>释放。"
+            "队员的<color=#FF961D>奥义技</color>准备就绪时，可以点击<color=#FF961D>队员头像</color>释放。"
         ],
         "Release": 4,
         "ReleaseConfig": 20001
@@ -113,7 +113,7 @@
             "TeachingPictureWeaknessPart"
         ],
         "Desc": [
-            "一般情况下，霸主辉烬兽的<color=#FF961D>头部为致命弱点</color>部位，<color=#FF961D>背部为普通弱点</color>部位，攻击弱点部位能造成大量<color=#FF961D>伤害</color>和<color=#FF961D>削韧</color>。"
+            "一般情况下霸主辉烬兽的正面为<color=#FF961D>致命弱点</color>，背面为<color=#FF961D>弱点</color>，击中致命弱点时显示<sprite=\"BattleDesc\" index=1>，击中弱点时显示<sprite=\"BattleDesc\" index=0>。"
         ],
         "Release": 4,
         "ReleaseConfig": 20003
@@ -121,6 +121,29 @@
     {
         "Id": 1008,
         "Index": 8,
+        "Type": 1,
+        "Name": "辉烬兽阶段",
+        "PageName": [
+            "常态",
+            "狂暴",
+            "虚弱"
+        ],
+        "Img": [
+            "TeachingPictureNormal",
+            "TeachingPictureOD",
+            "TeachingPictureBreak"
+        ],
+        "Desc": [
+            "<color=#FF961D>常态</color>：怒气值会自动增长，受到伤害越高增长速度越快，当怒气值积满时会进入狂暴状态。",
+            "<color=#FF961D>狂暴状态</color>：招式更加凶猛，怒气值会自动衰减，受到伤害越高衰减速度越快，当怒气值清空后受到攻击会进入虚弱状态。",
+            "<color=#FF961D>虚弱状态</color>：无法行动，受到的伤害显著增加，持续时间较短，灰色进度条结束后恢复到常态。"
+        ],
+        "Release": 4,
+        "ReleaseConfig": 20007
+    },
+    {
+        "Id": 1009,
+        "Index": 9,
         "Type": 1,
         "Name": "死核震荡",
         "PageName": [
@@ -140,7 +163,7 @@
     },
     {
         "Id": 2001,
-        "Index": 9,
+        "Index": 10,
         "Type": 2,
         "Name": "加速",
         "PageName": [
@@ -157,7 +180,7 @@
     },
     {
         "Id": 2002,
-        "Index": 10,
+        "Index": 11,
         "Type": 2,
         "Name": "至高的庇佑",
         "PageName": [
@@ -174,7 +197,7 @@
     },
     {
         "Id": 2003,
-        "Index": 11,
+        "Index": 12,
         "Type": 2,
         "Name": "神秘草丛",
         "PageName": [
@@ -191,7 +214,7 @@
     },
     {
         "Id": 2004,
-        "Index": 12,
+        "Index": 13,
         "Type": 2,
         "Name": "火纹回路",
         "PageName": [
@@ -208,7 +231,7 @@
     },
     {
         "Id": 2005,
-        "Index": 13,
+        "Index": 14,
         "Type": 2,
         "Name": "界梯",
         "PageName": [
@@ -225,7 +248,7 @@
     },
     {
         "Id": 2006,
-        "Index": 14,
+        "Index": 15,
         "Type": 2,
         "Name": "强制战斗",
         "PageName": [
@@ -242,7 +265,7 @@
     },
     {
         "Id": 2007,
-        "Index": 15,
+        "Index": 16,
         "Type": 2,
         "Name": "洞窟",
         "PageName": [
@@ -259,7 +282,7 @@
     },
     {
         "Id": 2008,
-        "Index": 16,
+        "Index": 17,
         "Type": 2,
         "Name": "余火商人",
         "PageName": [
@@ -276,7 +299,7 @@
     },
     {
         "Id": 2009,
-        "Index": 17,
+        "Index": 18,
         "Type": 2,
         "Name": "降落标记",
         "PageName": [
@@ -293,7 +316,7 @@
     },
     {
         "Id": 2010,
-        "Index": 18,
+        "Index": 19,
         "Type": 2,
         "Name": "基础移动平台",
         "PageName": [
@@ -313,7 +336,7 @@
     },
     {
         "Id": 2011,
-        "Index": 19,
+        "Index": 20,
         "Type": 2,
         "Name": "机械移动平台",
         "PageName": [
@@ -330,7 +353,7 @@
     },
     {
         "Id": 2012,
-        "Index": 20,
+        "Index": 21,
         "Type": 2,
         "Name": "陷落板",
         "PageName": [
@@ -347,7 +370,7 @@
     },
     {
         "Id": 2013,
-        "Index": 21,
+        "Index": 22,
         "Type": 2,
         "Name": "火龙图腾",
         "PageName": [
@@ -364,7 +387,7 @@
     },
     {
         "Id": 2014,
-        "Index": 22,
+        "Index": 23,
         "Type": 2,
         "Name": "青鸟图腾",
         "PageName": [
@@ -381,7 +404,7 @@
     },
     {
         "Id": 2015,
-        "Index": 23,
+        "Index": 24,
         "Type": 2,
         "Name": "地刺",
         "PageName": [
@@ -398,7 +421,7 @@
     },
     {
         "Id": 3001,
-        "Index": 24,
+        "Index": 25,
         "Type": 3,
         "Name": "明饰",
         "PageName": [
@@ -421,7 +444,7 @@
     },
     {
         "Id": 3002,
-        "Index": 25,
+        "Index": 26,
         "Type": 3,
         "Name": "明饰重构",
         "PageName": [
@@ -444,7 +467,7 @@
     },
     {
         "Id": 3003,
-        "Index": 26,
+        "Index": 27,
         "Type": 3,
         "Name": "手提箱改造",
         "PageName": [
@@ -464,7 +487,7 @@
     },
     {
         "Id": 3004,
-        "Index": 27,
+        "Index": 28,
         "Type": 3,
         "Name": "碎烬裂隙",
         "PageName": [
@@ -476,7 +499,7 @@
             "system30042"
         ],
         "Desc": [
-            "碎烬裂隙中可获取德拉塔、烬天使<color=#FF961D>突破</color>材料、<color=#FF961D>武魂突破</color>材料。",
+            "碎烬裂隙中可获取德拉塔、<color=#FF961D>烬天使突破</color>材料、<color=#FF961D>武魂突破</color>材料。",
             "通关前置难度副本后，<color=#FF961D>后续难度副本</color>才会开放。"
         ],
         "Release": 3,
@@ -484,7 +507,7 @@
     },
     {
         "Id": 3005,
-        "Index": 28,
+        "Index": 29,
         "Type": 3,
         "Name": "回廊裂隙",
         "PageName": [
@@ -513,7 +536,7 @@
     },
     {
         "Id": 3006,
-        "Index": 29,
+        "Index": 30,
         "Type": 3,
         "Name": "暗箱裂隙",
         "PageName": [
@@ -533,7 +556,7 @@
     },
     {
         "Id": 3007,
-        "Index": 30,
+        "Index": 31,
         "Type": 3,
         "Name": "极黯裂隙",
         "PageName": [
@@ -559,7 +582,7 @@
     },
     {
         "Id": 3008,
-        "Index": 31,
+        "Index": 32,
         "Type": 3,
         "Name": "肃清裂隙",
         "PageName": [
@@ -579,7 +602,7 @@
     },
     {
         "Id": 3009,
-        "Index": 32,
+        "Index": 33,
         "Type": 3,
         "Name": "训练模式",
         "PageName": [
@@ -602,7 +625,7 @@
     },
     {
         "Id": 3010,
-        "Index": 33,
+        "Index": 34,
         "Type": 3,
         "Name": "远航灯",
         "PageName": [
@@ -625,7 +648,7 @@
     },
     {
         "Id": 3011,
-        "Index": 34,
+        "Index": 35,
         "Type": 3,
         "Name": "余温熔炉",
         "PageName": [
@@ -648,7 +671,7 @@
     },
     {
         "Id": 3012,
-        "Index": 35,
+        "Index": 36,
         "Type": 3,
         "Name": "具现熔炉",
         "PageName": [
@@ -671,7 +694,7 @@
     },
     {
         "Id": 3013,
-        "Index": 36,
+        "Index": 37,
         "Type": 3,
         "Name": "余火商的灯码",
         "PageName": [
@@ -691,7 +714,7 @@
     },
     {
         "Id": 3014,
-        "Index": 37,
+        "Index": 38,
         "Type": 3,
         "Name": "公会",
         "PageName": [
@@ -708,7 +731,7 @@
     },
     {
         "Id": 3015,
-        "Index": 38,
+        "Index": 39,
         "Type": 3,
         "Name": "公会货币",
         "PageName": [
@@ -728,7 +751,7 @@
     },
     {
         "Id": 3016,
-        "Index": 39,
+        "Index": 40,
         "Type": 3,
         "Name": "悬赏任务",
         "PageName": [
@@ -745,7 +768,7 @@
     },
     {
         "Id": 3018,
-        "Index": 41,
+        "Index": 42,
         "Type": 3,
         "Name": "活跃任务",
         "PageName": [
@@ -762,7 +785,7 @@
     },
     {
         "Id": 3019,
-        "Index": 42,
+        "Index": 43,
         "Type": 3,
         "Name": "烬天使突破",
         "PageName": [
@@ -782,7 +805,7 @@
     },
     {
         "Id": 3020,
-        "Index": 43,
+        "Index": 44,
         "Type": 3,
         "Name": "武魂突破",
         "PageName": [

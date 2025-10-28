@@ -9880,6 +9880,22 @@
         "AnimFadeTemplate": "",
         "EmoPrefix": ""
     },
+    "7605": {
+        "Key": 7605,
+        "ModelPrefabID": 7605,
+        "ModelPrefabDesc": "开门特效第二周",
+        "Skeleton": "skm_stk_effectdoor001_a",
+        "Effect": [],
+        "AnimTemplate": "",
+        "RotateCurves": [],
+        "Weapon": [],
+        "UseHeadIK": false,
+        "LookAtAngle": 0,
+        "LookAtSpeed": 0,
+        "LookAtDistance": 0,
+        "AnimFadeTemplate": "",
+        "EmoPrefix": ""
+    },
     "9998": {
         "Key": 9998,
         "ModelPrefabID": 9998,
@@ -10446,6 +10462,22 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
+        "AnimFadeTemplate": "",
+        "EmoPrefix": ""
+    },
+    "11024": {
+        "Key": 11024,
+        "ModelPrefabID": 11024,
+        "ModelPrefabDesc": "梦魇角羊",
+        "Skeleton": "ch_mon_niuyang03_01",
+        "Effect": [],
+        "AnimTemplate": "animtpl/ch_mon_niuyang_01",
+        "RotateCurves": [],
+        "Weapon": [],
+        "UseHeadIK": false,
+        "LookAtAngle": 75,
+        "LookAtSpeed": 45,
+        "LookAtDistance": 15,
         "AnimFadeTemplate": "",
         "EmoPrefix": ""
     },
@@ -15972,7 +16004,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_pig_skill",
         "EmoPrefix": ""
     },
     "75002": {
@@ -15988,7 +16020,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_horse_skill",
         "EmoPrefix": ""
     },
     "75003": {
@@ -16020,7 +16052,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_horse_skill",
         "EmoPrefix": ""
     },
     "75005": {
@@ -16078,7 +16110,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_pig_skill",
         "EmoPrefix": ""
     },
     "75007": {
@@ -16094,7 +16126,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_pig_skill",
         "EmoPrefix": ""
     },
     "75008": {
@@ -16110,7 +16142,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_pig_skill",
         "EmoPrefix": ""
     },
     "75009": {
@@ -16126,7 +16158,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_dihu_skill",
         "EmoPrefix": ""
     },
     "75010": {
@@ -16158,7 +16190,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_rabbit_skill",
         "EmoPrefix": ""
     },
     "75012": {
@@ -16168,12 +16200,32 @@
         "Skeleton": "ch_vehicle_dancestage_01",
         "Effect": [
             [
+                "root_point",
+                "effect/common_new/p_fx_common_throne_loop"
+            ],
+            [
+                "root_point",
+                "effect/common_new/p_fx_common_throne_loop_word"
+            ],
+            [
+                "cfg_ep_sd_spine2_j_point",
+                "effect/common_new/p_fx_common_throne_glow_huixian"
+            ],
+            [
                 "cfg_ep_eff_Body01_point",
-                "effect/common_new/p_fx_common_throne_up_glow_left"
+                "effect/common_new/p_fx_common_throne_glow_left"
             ],
             [
                 "cfg_ep_eff_Body02_point",
-                "effect/common_new/p_fx_common_throne_up_glow_right"
+                "effect/common_new/p_fx_common_throne_glow_right"
+            ],
+            [
+                "cfg_ep_eff_Body05_point",
+                "effect/common_new/p_fx_common_throne_glow_left_d"
+            ],
+            [
+                "cfg_ep_eff_Body06_point",
+                "effect/common_new/p_fx_common_throne_glow_right_d"
             ]
         ],
         "AnimTemplate": "animtpl/ch_vehicle_dancestage_01",
@@ -16183,7 +16235,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_dancestage_skill",
         "EmoPrefix": ""
     },
     "75013": {
@@ -16231,7 +16283,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_horse_skill",
         "EmoPrefix": ""
     },
     "75016": {
@@ -16247,7 +16299,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_dihu_skill",
         "EmoPrefix": ""
     },
     "75017": {
@@ -16263,7 +16315,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_horse_skill",
         "EmoPrefix": ""
     },
     "75018": {
@@ -16284,7 +16336,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_yacht_skill",
         "EmoPrefix": ""
     },
     "75019": {
@@ -16316,7 +16368,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_robot_skill",
         "EmoPrefix": ""
     },
     "75021": {
@@ -16396,7 +16448,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_horse_skill",
         "EmoPrefix": ""
     },
     "75026": {
@@ -16417,7 +16469,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_horse_skill",
         "EmoPrefix": ""
     },
     "75027": {
@@ -16465,7 +16517,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_horse_skill",
         "EmoPrefix": ""
     },
     "75030": {
@@ -16481,7 +16533,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_horse_skill",
         "EmoPrefix": ""
     },
     "75031": {
@@ -16571,7 +16623,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_robot_skill",
         "EmoPrefix": ""
     },
     "75034": {
@@ -16603,7 +16655,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_rabbit_skill",
         "EmoPrefix": ""
     },
     "75036": {
@@ -16619,7 +16671,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_rabbit_skill",
         "EmoPrefix": ""
     },
     "75037": {
@@ -16656,7 +16708,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_horse_skill",
         "EmoPrefix": ""
     },
     "75038": {
@@ -16688,7 +16740,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_koi_skill",
         "EmoPrefix": ""
     },
     "75040": {
@@ -16704,7 +16756,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_koi_skill",
         "EmoPrefix": ""
     },
     "75041": {
@@ -16720,7 +16772,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_koi_skill",
         "EmoPrefix": ""
     },
     "75042": {
@@ -16746,12 +16798,24 @@
         "Skeleton": "ch_vehicle_dancestage02_01",
         "Effect": [
             [
+                "root_point",
+                "effect/common_new/p_fx_common_throne_up_loop_word"
+            ],
+            [
                 "cfg_ep_eff_Body01_point",
                 "effect/common_new/p_fx_common_throne_up_glow_left"
             ],
             [
                 "cfg_ep_eff_Body02_point",
                 "effect/common_new/p_fx_common_throne_up_glow_right"
+            ],
+            [
+                "cfg_ep_eff_Body05_point",
+                "effect/common_new/p_fx_common_throne_up_glow_left_d"
+            ],
+            [
+                "cfg_ep_eff_Body06_point",
+                "effect/common_new/p_fx_common_throne_up_glow_right_d"
             ],
             [
                 "cfg_ep_sd_spine2_j_point",
@@ -16765,7 +16829,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_dancestage_skill",
         "EmoPrefix": ""
     },
     "75044": {
@@ -16781,7 +16845,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_koi_skill",
         "EmoPrefix": ""
     },
     "75045": {
@@ -16797,7 +16861,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_koi_skill",
         "EmoPrefix": ""
     },
     "75046": {
@@ -16813,7 +16877,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_dihu_skill",
         "EmoPrefix": ""
     },
     "75047": {
@@ -16829,7 +16893,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_dihu_skill",
         "EmoPrefix": ""
     },
     "75048": {
@@ -16845,7 +16909,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_robot_skill",
         "EmoPrefix": ""
     },
     "75049": {
@@ -16853,7 +16917,36 @@
         "ModelPrefabID": 75049,
         "ModelPrefabDesc": "载具幻想-律动音浪·辉星",
         "Skeleton": "ch_vehicle_dancestage_02",
-        "Effect": [],
+        "Effect": [
+            [
+                "root_point",
+                "effect/common_new/p_fx_common_throne_loop"
+            ],
+            [
+                "root_point",
+                "effect/common_new/p_fx_common_throne_loop_word"
+            ],
+            [
+                "root_point",
+                "effect/common_new/p_fx_common_throne_glow_huixian"
+            ],
+            [
+                "cfg_ep_eff_Body01_point",
+                "effect/common_new/p_fx_common_throne_glow_left"
+            ],
+            [
+                "cfg_ep_eff_Body02_point",
+                "effect/common_new/p_fx_common_throne_glow_right"
+            ],
+            [
+                "cfg_ep_eff_Body05_point",
+                "effect/common_new/p_fx_common_throne_glow_left_d"
+            ],
+            [
+                "cfg_ep_eff_Body06_point",
+                "effect/common_new/p_fx_common_throne_glow_right_d"
+            ]
+        ],
         "AnimTemplate": "animtpl/ch_vehicle_dancestage_01",
         "RotateCurves": [],
         "Weapon": [],
@@ -16861,7 +16954,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_dancestage_skill",
         "EmoPrefix": ""
     },
     "75050": {
@@ -16869,7 +16962,36 @@
         "ModelPrefabID": 75050,
         "ModelPrefabDesc": "载具幻想-律动音浪·赫星",
         "Skeleton": "ch_vehicle_dancestage_03",
-        "Effect": [],
+        "Effect": [
+            [
+                "root_point",
+                "effect/common_new/p_fx_common_throne_loop"
+            ],
+            [
+                "root_point",
+                "effect/common_new/p_fx_common_throne_loop_word"
+            ],
+            [
+                "root_point",
+                "effect/common_new/p_fx_common_throne_glow_huixian"
+            ],
+            [
+                "cfg_ep_eff_Body01_point",
+                "effect/common_new/p_fx_common_throne_glow_left"
+            ],
+            [
+                "cfg_ep_eff_Body02_point",
+                "effect/common_new/p_fx_common_throne_glow_right"
+            ],
+            [
+                "cfg_ep_eff_Body05_point",
+                "effect/common_new/p_fx_common_throne_glow_left_d"
+            ],
+            [
+                "cfg_ep_eff_Body06_point",
+                "effect/common_new/p_fx_common_throne_glow_right_d"
+            ]
+        ],
         "AnimTemplate": "animtpl/ch_vehicle_dancestage_01",
         "RotateCurves": [],
         "Weapon": [],
@@ -16877,7 +16999,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_dancestage_skill",
         "EmoPrefix": ""
     },
     "75051": {
@@ -16893,7 +17015,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_dihu_skill",
         "EmoPrefix": ""
     },
     "75052": {
@@ -16909,7 +17031,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_dihu_skill",
         "EmoPrefix": ""
     },
     "75053": {
@@ -16950,7 +17072,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_dihu_skill",
         "EmoPrefix": ""
     },
     "75054": {
@@ -16971,7 +17093,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_yacht_skill",
         "EmoPrefix": ""
     },
     "75055": {
@@ -17000,7 +17122,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_monsterfish_skill",
         "EmoPrefix": "as_vehicle_emo_monsterfish_"
     },
     "75056": {
@@ -17037,7 +17159,7 @@
         "LookAtAngle": 0,
         "LookAtSpeed": 0,
         "LookAtDistance": 0,
-        "AnimFadeTemplate": "",
+        "AnimFadeTemplate": "ch_vehicle_monsterfish_skill",
         "EmoPrefix": "as_vehicle_emo_monsterfish_"
     },
     "75057": {
@@ -17052,6 +17174,22 @@
             ]
         ],
         "AnimTemplate": "animtpl/ch_vehicle_dog_01",
+        "RotateCurves": [],
+        "Weapon": [],
+        "UseHeadIK": false,
+        "LookAtAngle": 0,
+        "LookAtSpeed": 0,
+        "LookAtDistance": 0,
+        "AnimFadeTemplate": "ch_vehicle_dihu_skill",
+        "EmoPrefix": ""
+    },
+    "75058": {
+        "Key": 75058,
+        "ModelPrefabID": 75058,
+        "ModelPrefabDesc": "载具幻想-异世界快递箱（APJ）",
+        "Skeleton": "ch_vehicle_airdrop01_02",
+        "Effect": [],
+        "AnimTemplate": "animtpl/ch_vehicle_airdrop01_01",
         "RotateCurves": [],
         "Weapon": [],
         "UseHeadIK": false,
@@ -17681,6 +17819,22 @@
         "AnimFadeTemplate": "",
         "EmoPrefix": ""
     },
+    "80071": {
+        "Key": 80071,
+        "ModelPrefabID": 80071,
+        "ModelPrefabDesc": "幻花弥漫之地-幻梦宝箱",
+        "Skeleton": "skm_act_treasurebox001_b",
+        "Effect": [],
+        "AnimTemplate": "",
+        "RotateCurves": [],
+        "Weapon": [],
+        "UseHeadIK": false,
+        "LookAtAngle": 0,
+        "LookAtSpeed": 0,
+        "LookAtDistance": 0,
+        "AnimFadeTemplate": "",
+        "EmoPrefix": ""
+    },
     "80101": {
         "Key": 80101,
         "ModelPrefabID": 80101,
@@ -17774,6 +17928,54 @@
         "ModelPrefabID": 80231,
         "ModelPrefabDesc": "背包",
         "Skeleton": "skm_stk_backpack001_a",
+        "Effect": [],
+        "AnimTemplate": "",
+        "RotateCurves": [],
+        "Weapon": [],
+        "UseHeadIK": false,
+        "LookAtAngle": 0,
+        "LookAtSpeed": 0,
+        "LookAtDistance": 0,
+        "AnimFadeTemplate": "",
+        "EmoPrefix": ""
+    },
+    "80232": {
+        "Key": 80232,
+        "ModelPrefabID": 80232,
+        "ModelPrefabDesc": "幻梦背包",
+        "Skeleton": "skm_stk_backpack001_c",
+        "Effect": [],
+        "AnimTemplate": "",
+        "RotateCurves": [],
+        "Weapon": [],
+        "UseHeadIK": false,
+        "LookAtAngle": 0,
+        "LookAtSpeed": 0,
+        "LookAtDistance": 0,
+        "AnimFadeTemplate": "",
+        "EmoPrefix": ""
+    },
+    "80233": {
+        "Key": 80233,
+        "ModelPrefabID": 80233,
+        "ModelPrefabDesc": "幻梦金背包",
+        "Skeleton": "skm_stk_backpack001_b",
+        "Effect": [],
+        "AnimTemplate": "",
+        "RotateCurves": [],
+        "Weapon": [],
+        "UseHeadIK": false,
+        "LookAtAngle": 0,
+        "LookAtSpeed": 0,
+        "LookAtDistance": 0,
+        "AnimFadeTemplate": "",
+        "EmoPrefix": ""
+    },
+    "80234": {
+        "Key": 80234,
+        "ModelPrefabID": 80234,
+        "ModelPrefabDesc": "聚力保护罩",
+        "Skeleton": "effect/common_new/env/eff_colide/prefabs/skm_fx_cooperate_ball_collide01",
         "Effect": [],
         "AnimTemplate": "",
         "RotateCurves": [],

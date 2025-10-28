@@ -1165,7 +1165,7 @@
         "TimeoutIsSuccess": false,
         "ParamType": [],
         "ParamDesc": [],
-        "Desc": "",
+        "Desc": "杀死交互物自身",
         "ActionName": "killSelf"
     },
     "1021": {
@@ -1364,5 +1364,22 @@
         ],
         "Desc": "这是boss掉落的宝箱，但携带的是bossId的参数",
         "ActionName": "RaidOpenBox"
+    },
+    "1036": {
+        "Key": 1036,
+        "Id": 1036,
+        "ActionType": 1,
+        "MaxTime": 0,
+        "TimeoutIsSuccess": false,
+        "ParamType": [
+            "string",
+            "int"
+        ],
+        "ParamDesc": [
+            "事件名",
+            "自定义参数"
+        ],
+        "Desc": "交互触发buff自定义事件",
+        "ActionName": "EInteractionActionBuffCustomizeEvent"
     }
 }

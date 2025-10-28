@@ -144,7 +144,7 @@
         "Desc": "大招无敌免疫碰撞",
         "ImmuneState": false,
         "ImmuneAbnormalState": false,
-        "ImmuneAbnormalStateIncrease": false,
+        "ImmuneAbnormalStateIncrease": true,
         "ImmuneDamage": true,
         "ImmuneCollider": true,
         "ImmuneHostileHit": true,
@@ -179,7 +179,7 @@
         "ImmuneNonHostileHit": false,
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": true
     },
     {
         "Id": 14,
@@ -249,7 +249,7 @@
         "ImmuneNonHostileHit": false,
         "ImmuneLock": false,
         "LockHp": false,
-        "ImmuneHitSfx": false
+        "ImmuneHitSfx": true
     },
     {
         "Id": 19,

@@ -1,8 +1,8 @@
 [
     {
         "Id": 1,
-        "LittleImg": "",
-        "Sort": 9,
+        "LittleImg": "MonthCard",
+        "Sort": 2,
         "Img": "Banner/Banner3",
         "Weight": 1000,
         "StartTime": "",
@@ -36,8 +36,8 @@
     },
     {
         "Id": 2,
-        "LittleImg": "",
-        "Sort": 8,
+        "LittleImg": "PassportCard",
+        "Sort": 3,
         "Img": "Banner/Banner4",
         "Weight": 1000,
         "StartTime": "",
@@ -70,7 +70,7 @@
     {
         "Id": 3,
         "LittleImg": "Prayingforrainonacoldnight",
-        "Sort": 3,
+        "Sort": 4,
         "Img": "",
         "Weight": 0,
         "StartTime": "",
@@ -91,7 +91,7 @@
     {
         "Id": 4,
         "LittleImg": "Ajourneytosetsail",
-        "Sort": 5,
+        "Sort": 6,
         "Img": "",
         "Weight": 0,
         "StartTime": "",
@@ -112,7 +112,7 @@
     {
         "Id": 5,
         "LittleImg": "Starlight Echoes",
-        "Sort": 4,
+        "Sort": 7,
         "Img": "Banner/Banner5",
         "Weight": 1000,
         "StartTime": "",
@@ -133,7 +133,7 @@
     {
         "Id": 6,
         "LittleImg": "",
-        "Sort": 2,
+        "Sort": 5,
         "Img": "Banner/Banner6",
         "Weight": 1000,
         "StartTime": "",
@@ -154,12 +154,12 @@
     {
         "Id": 7,
         "LittleImg": "GiftPackageCenter",
-        "Sort": 7,
+        "Sort": 16,
         "Img": "Banner/Banner8",
         "Weight": 1000,
         "StartTime": "",
         "EndTime": "",
-        "OnCondition": 0,
+        "OnCondition": 8,
         "OnConfig": 0,
         "OffCondition": 0,
         "OffConfig": 0,
@@ -168,16 +168,17 @@
         "SpCd": 0,
         "JumpWindow": "ShopWindow",
         "JumpConfig": [
-            4
+            4,
+            7
         ],
         "JumpWeb": ""
     },
     {
         "Id": 8,
-        "LittleImg": "",
-        "Sort": 6,
+        "LittleImg": "FirstRecharge",
+        "Sort": 1,
         "Img": "Banner/Banner7",
-        "Weight": 1000,
+        "Weight": 2000,
         "StartTime": "",
         "EndTime": "",
         "OnCondition": 0,
@@ -208,13 +209,76 @@
         "JumpWeb": ""
     },
     {
-        "Id": 9,
-        "LittleImg": "RechargeRebate",
-        "Sort": 1,
-        "Img": "Banner/Banner2",
-        "Weight": 1000,
+        "Id": 10,
+        "LittleImg": "MainActivityTab_000",
+        "Sort": 4,
+        "Img": "",
+        "Weight": 0,
         "StartTime": "",
         "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 12,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OpActivityWindow",
+        "JumpConfig": [
+            12
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 11,
+        "LittleImg": "MainActivityTab_002",
+        "Sort": 9,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 9,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OpActivityWindow",
+        "JumpConfig": [
+            9
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 12,
+        "LittleImg": "MainActivityTab_001",
+        "Sort": 10,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 11,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OpActivityWindow",
+        "JumpConfig": [
+            11
+        ],
+        "JumpWeb": ""
+    },
+    {
+        "Id": 13,
+        "LittleImg": "MainActivityTab_003",
+        "Sort": 3,
+        "Img": "",
+        "Weight": 0,
+        "StartTime": "2025.10.15",
+        "EndTime": "2025.11.25",
         "OnCondition": 0,
         "OnConfig": 0,
         "OffCondition": 0,
@@ -222,9 +286,28 @@
         "SpCondition": [],
         "SpConfig": [],
         "SpCd": 0,
-        "JumpWindow": "AnnouncementWindow",
+        "JumpWindow": "",
+        "JumpConfig": [],
+        "JumpWeb": "https://test.activity.kiifstudio.com/game-recruit"
+    },
+    {
+        "Id": 14,
+        "LittleImg": "MainActivityTab_004",
+        "Sort": 4,
+        "Img": "Banner/Banner9",
+        "Weight": 1000,
+        "StartTime": "",
+        "EndTime": "",
+        "OnCondition": 3,
+        "OnConfig": 13,
+        "OffCondition": 0,
+        "OffConfig": 0,
+        "SpCondition": [],
+        "SpConfig": [],
+        "SpCd": 0,
+        "JumpWindow": "OpActivityWindow",
         "JumpConfig": [
-            2
+            13
         ],
         "JumpWeb": ""
     }

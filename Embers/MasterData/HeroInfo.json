@@ -1,30 +1,206 @@
 [
     {
-        "Id": 1001,
-        "Name": "克拉拉",
-        "Fgimage": "CharacterImagePrefabs/1001/1001Fgimage",
-        "Original": "CharacterImagePrefabs/1001/1001Original",
+        "Id": 1204,
+        "Name": "白雪",
+        "Fgimage": "CharacterImagePrefabs/1204/1204Fgimage",
+        "Original": "CharacterImagePrefabs/1204/1204Original",
         "Rarity": 4,
+        "WeaponEnum": "Gloves",
+        "InitialWeapon": 9231001,
+        "HeroAttributeEnum": "Dark",
+        "HeroLocationEnum": "Attack",
+        "Label": [
+            110,
+            109,
+            105
+        ],
+        "Faction": "拓荒",
+        "Area": 6,
+        "FactionIcon": "Faction_Wonderland",
+        "BaseHP": 1440.0,
+        "GrowHP": [
+            54.62,
+            54.62,
+            54.62,
+            54.62,
+            54.62,
+            54.62
+        ],
+        "BaseDefense": 30.600000381469727,
+        "GrowDefense": [
+            2.09,
+            2.09,
+            2.09,
+            2.09,
+            2.09,
+            2.09
+        ],
+        "BaseAttack": 61.20000076293945,
+        "GrowAttack": [
+            6.46,
+            6.46,
+            6.46,
+            6.46,
+            6.46,
+            6.46
+        ],
+        "AddAttack": [
+            0.0,
+            25.3,
+            25.3,
+            25.3,
+            25.3,
+            25.3
+        ],
+        "AddHp": [
+            0.0,
+            230.21,
+            230.21,
+            230.21,
+            230.21,
+            230.21
+        ],
+        "AddDefense": [
+            0.0,
+            7.83,
+            7.83,
+            7.83,
+            7.83,
+            7.83
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "6月6日",
+        "Story": "",
+        "HeroSeat": 9701204,
+        "Title": "白雪姬",
+        "Painter": "瓜皮",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使"
+        ],
+        "TagColor": [
+            "f2d772"
+        ],
+        "FavorGift": [],
+        "ExTrust": [],
+        "RawSeat": 2,
+        "IsOpening": false
+    },
+    {
+        "Id": 1012,
+        "Name": "薇普",
+        "Fgimage": "CharacterImagePrefabs/1012/1012Fgimage",
+        "Original": "CharacterImagePrefabs/1012/1012Original",
+        "Rarity": 3,
         "WeaponEnum": "Hammer",
-        "InitialWeapon": 9251001,
-        "HeroAttributeEnum": "Thunder",
+        "InitialWeapon": 9241001,
+        "HeroAttributeEnum": "Dark",
         "HeroLocationEnum": "Support",
         "Label": [
+            106,
             103,
-            108,
-            202
+            101
         ],
-        "Faction": "救赎",
+        "Faction": "核心",
         "Area": 2,
         "FactionIcon": "Faction_Core",
-        "BaseHP": 1290.0,
+        "BaseHP": 1311.0,
         "GrowHP": [
-            48.93,
-            48.93,
-            48.93,
-            48.93,
-            48.93,
-            48.93
+            49.73,
+            49.73,
+            49.73,
+            49.73,
+            49.73,
+            49.73
+        ],
+        "BaseDefense": 28.21500015258789,
+        "GrowDefense": [
+            1.93,
+            1.93,
+            1.93,
+            1.93,
+            1.93,
+            1.93
+        ],
+        "BaseAttack": 59.279998779296875,
+        "GrowAttack": [
+            6.25,
+            6.25,
+            6.25,
+            6.25,
+            6.25,
+            6.25
+        ],
+        "AddAttack": [
+            0.0,
+            24.5,
+            24.5,
+            24.5,
+            24.5,
+            24.5
+        ],
+        "AddHp": [
+            0.0,
+            209.59,
+            209.59,
+            209.59,
+            209.59,
+            209.59
+        ],
+        "AddDefense": [
+            0.0,
+            7.22,
+            7.22,
+            7.22,
+            7.22,
+            7.22
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "6月6日",
+        "Story": "",
+        "HeroSeat": 9701012,
+        "Title": "",
+        "Painter": "馒头猫MTCAT",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使"
+        ],
+        "TagColor": [
+            "f2d772"
+        ],
+        "FavorGift": [],
+        "ExTrust": [],
+        "RawSeat": 1,
+        "IsOpening": false
+    },
+    {
+        "Id": 1015,
+        "Name": "云昭",
+        "Fgimage": "CharacterImagePrefabs/1015/1015Fgimage",
+        "Original": "CharacterImagePrefabs/1015/1015Original",
+        "Rarity": 3,
+        "WeaponEnum": "Lance",
+        "InitialWeapon": 9211001,
+        "HeroAttributeEnum": "Ice",
+        "HeroLocationEnum": "Break",
+        "Label": [
+            102,
+            105,
+            203
+        ],
+        "Faction": "均衡",
+        "Area": 1,
+        "FactionIcon": "Faction_Balance",
+        "BaseHP": 1425.0,
+        "GrowHP": [
+            54.06,
+            54.06,
+            54.06,
+            54.06,
+            54.06,
+            54.06
         ],
         "BaseDefense": 28.5,
         "GrowDefense": [
@@ -35,30 +211,30 @@
             1.95,
             1.95
         ],
-        "BaseAttack": 64.19999694824219,
+        "BaseAttack": 57.0,
         "GrowAttack": [
-            4.07,
-            4.07,
-            4.07,
-            4.07,
-            4.07,
-            4.07
+            6.01,
+            6.01,
+            6.01,
+            6.01,
+            6.01,
+            6.01
         ],
         "AddAttack": [
             0.0,
-            15.41,
-            15.41,
-            15.41,
-            15.41,
-            15.41
+            23.56,
+            23.56,
+            23.56,
+            23.56,
+            23.56
         ],
         "AddHp": [
             0.0,
-            206.23,
-            206.23,
-            206.23,
-            206.23,
-            206.23
+            227.81,
+            227.81,
+            227.81,
+            227.81,
+            227.81
         ],
         "AddDefense": [
             0.0,
@@ -70,11 +246,107 @@
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "5月12日",
-        "Story": "身世成谜的银发少女，这具以机械和金属打造而成的躯体，本就是一个奇迹。",
-        "HeroSeat": 9701001,
-        "Title": "蜂巢核心",
+        "Birthday": "5月4日",
+        "Story": "回应召唤，从星空中坠落的少女，青渊星宫少主，行事谨慎，善使东方剑法。",
+        "HeroSeat": 9701015,
+        "Title": "流星之剑",
         "Painter": "夏波兔兔F",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使"
+        ],
+        "TagColor": [
+            "f2d772"
+        ],
+        "FavorGift": [
+            9430209,
+            9430309,
+            9430409
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
+        "RawSeat": 1,
+        "IsOpening": false
+    },
+    {
+        "Id": 1010,
+        "Name": "霜华格蕾丝",
+        "Fgimage": "CharacterImagePrefabs/1010/1010Fgimage",
+        "Original": "CharacterImagePrefabs/1010/1010Original",
+        "Rarity": 4,
+        "WeaponEnum": "Gloves",
+        "InitialWeapon": 9221001,
+        "HeroAttributeEnum": "Dark",
+        "HeroLocationEnum": "Break",
+        "Label": [
+            104,
+            201,
+            204
+        ],
+        "Faction": "均衡",
+        "Area": 1,
+        "FactionIcon": "Faction_Balance",
+        "BaseHP": 1500.0,
+        "GrowHP": [
+            56.9,
+            56.9,
+            56.9,
+            56.9,
+            56.9,
+            56.9
+        ],
+        "BaseDefense": 30.899999618530273,
+        "GrowDefense": [
+            2.11,
+            2.11,
+            2.11,
+            2.11,
+            2.11,
+            2.11
+        ],
+        "BaseAttack": 60.0,
+        "GrowAttack": [
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33
+        ],
+        "AddAttack": [
+            0.0,
+            24.8,
+            24.8,
+            24.8,
+            24.8,
+            24.8
+        ],
+        "AddHp": [
+            0.0,
+            239.8,
+            239.8,
+            239.8,
+            239.8,
+            239.8
+        ],
+        "AddDefense": [
+            0.0,
+            7.91,
+            7.91,
+            7.91,
+            7.91,
+            7.91
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "7月4日",
+        "Story": "自称青渊最强拳师的少女，欢乐活跃的外表下隐藏着不为人知的另一面。",
+        "HeroSeat": 9701010,
+        "Title": "崩天之拳",
+        "Painter": "Ryota-H",
         "SkillCount": 4,
         "Tag": [
             "烬天使",
@@ -85,9 +357,9 @@
             "e58080"
         ],
         "FavorGift": [
-            9430204,
-            9430304,
-            9430404
+            9430207,
+            9430307,
+            9430407
         ],
         "ExTrust": [
             10,
@@ -95,24 +367,24 @@
             40
         ],
         "RawSeat": 2,
-        "IsOpening": true
+        "IsOpening": false
     },
     {
-        "Id": 1007,
-        "Name": "知世",
-        "Fgimage": "CharacterImagePrefabs/1007/1007Fgimage",
-        "Original": "CharacterImagePrefabs/1007/1007Original",
+        "Id": 1004,
+        "Name": "杰西卡",
+        "Fgimage": "CharacterImagePrefabs/1004/1004Fgimage",
+        "Original": "CharacterImagePrefabs/1004/1004Original",
         "Rarity": 4,
         "WeaponEnum": "Bow",
         "InitialWeapon": 9231001,
-        "HeroAttributeEnum": "Water",
-        "HeroLocationEnum": "Support",
+        "HeroAttributeEnum": "Thunder",
+        "HeroLocationEnum": "Attack",
         "Label": [
             107,
             105,
             103
         ],
-        "Faction": "均衡",
+        "Faction": "拓荒",
         "Area": 1,
         "FactionIcon": "Faction_Balance",
         "BaseHP": 1590.0,
@@ -133,22 +405,22 @@
             1.99,
             1.99
         ],
-        "BaseAttack": 58.20000076293945,
+        "BaseAttack": 57.56999969482422,
         "GrowAttack": [
-            3.69,
-            3.69,
-            3.69,
-            3.69,
-            3.69,
-            3.69
+            6.14,
+            6.14,
+            6.14,
+            6.14,
+            6.14,
+            6.14
         ],
         "AddAttack": [
             0.0,
-            13.97,
-            13.97,
-            13.97,
-            13.97,
-            13.97
+            24.06,
+            24.06,
+            24.06,
+            24.06,
+            24.06
         ],
         "AddHp": [
             0.0,
@@ -169,8 +441,8 @@
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
         "Birthday": "5月4日",
-        "Story": "世代镇压着饕餮的神侍，掌握着从青渊始祖处获得的神秘力量。",
-        "HeroSeat": 9701007,
+        "Story": "",
+        "HeroSeat": 9701004,
         "Title": "青渊神侍",
         "Painter": "夏波兔兔F",
         "SkillCount": 4,
@@ -193,84 +465,280 @@
             40
         ],
         "RawSeat": 2,
-        "IsOpening": true
+        "IsOpening": false
     },
     {
-        "Id": 1006,
-        "Name": "巴巴托斯",
-        "Fgimage": "CharacterImagePrefabs/1206/1206Fgimage",
-        "Original": "CharacterImagePrefabs/1206/1206Original",
-        "Rarity": 3,
-        "WeaponEnum": "Bow",
-        "InitialWeapon": 9231001,
-        "HeroAttributeEnum": "Dark",
-        "HeroLocationEnum": "Attack",
+        "Id": 1009,
+        "Name": "龙舌兰",
+        "Fgimage": "CharacterImagePrefabs/1009/1009Fgimage",
+        "Original": "CharacterImagePrefabs/1009/1009Original",
+        "Rarity": 4,
+        "WeaponEnum": "Sword",
+        "InitialWeapon": 9221001,
+        "HeroAttributeEnum": "Fire",
+        "HeroLocationEnum": "Break",
         "Label": [
-            110,
-            109,
-            105
+            104,
+            201,
+            204
         ],
-        "Faction": "拓荒",
-        "Area": 0,
-        "FactionIcon": "Faction_Godmont",
-        "BaseHP": 1353.75,
+        "Faction": "均衡",
+        "Area": 1,
+        "FactionIcon": "Faction_Balance",
+        "BaseHP": 1500.0,
         "GrowHP": [
-            51.35,
-            51.35,
-            51.35,
-            51.35,
-            51.35,
-            51.35
+            56.9,
+            56.9,
+            56.9,
+            56.9,
+            56.9,
+            56.9
         ],
-        "BaseDefense": 25.079999923706055,
+        "BaseDefense": 30.899999618530273,
         "GrowDefense": [
-            1.71,
-            1.71,
-            1.71,
-            1.71,
-            1.71,
-            1.71
+            2.11,
+            2.11,
+            2.11,
+            2.11,
+            2.11,
+            2.11
         ],
-        "BaseAttack": 58.709999084472656,
+        "BaseAttack": 60.0,
         "GrowAttack": [
-            3.72,
-            3.72,
-            3.72,
-            3.72,
-            3.72,
-            3.72
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33
         ],
         "AddAttack": [
             0.0,
-            14.09,
-            14.09,
-            14.09,
-            14.09,
-            14.09
+            24.8,
+            24.8,
+            24.8,
+            24.8,
+            24.8
         ],
         "AddHp": [
             0.0,
-            216.42,
-            216.42,
-            216.42,
-            216.42,
-            216.42
+            239.8,
+            239.8,
+            239.8,
+            239.8,
+            239.8
         ],
         "AddDefense": [
             0.0,
-            6.42,
-            6.42,
-            6.42,
-            6.42,
-            6.42
+            7.91,
+            7.91,
+            7.91,
+            7.91,
+            7.91
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "7月4日",
+        "Story": "自称青渊最强拳师的少女，欢乐活跃的外表下隐藏着不为人知的另一面。",
+        "HeroSeat": 9701009,
+        "Title": "热血警官",
+        "Painter": "Ryota-H",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使",
+            "近战"
+        ],
+        "TagColor": [
+            "f2d772",
+            "e58080"
+        ],
+        "FavorGift": [
+            9430207,
+            9430307,
+            9430407
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
+        "RawSeat": 2,
+        "IsOpening": false
+    },
+    {
+        "Id": 1008,
+        "Name": "西尔维",
+        "Fgimage": "CharacterImagePrefabs/1008/1008Fgimage",
+        "Original": "CharacterImagePrefabs/1008/1008Original",
+        "Rarity": 4,
+        "WeaponEnum": "Gloves",
+        "InitialWeapon": 9221001,
+        "HeroAttributeEnum": "Dark",
+        "HeroLocationEnum": "Break",
+        "Label": [
+            104,
+            201,
+            204
+        ],
+        "Faction": "均衡",
+        "Area": 1,
+        "FactionIcon": "Faction_Balance",
+        "BaseHP": 1500.0,
+        "GrowHP": [
+            56.9,
+            56.9,
+            56.9,
+            56.9,
+            56.9,
+            56.9
+        ],
+        "BaseDefense": 30.899999618530273,
+        "GrowDefense": [
+            2.11,
+            2.11,
+            2.11,
+            2.11,
+            2.11,
+            2.11
+        ],
+        "BaseAttack": 60.0,
+        "GrowAttack": [
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33
+        ],
+        "AddAttack": [
+            0.0,
+            24.8,
+            24.8,
+            24.8,
+            24.8,
+            24.8
+        ],
+        "AddHp": [
+            0.0,
+            239.8,
+            239.8,
+            239.8,
+            239.8,
+            239.8
+        ],
+        "AddDefense": [
+            0.0,
+            7.91,
+            7.91,
+            7.91,
+            7.91,
+            7.91
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "7月4日",
+        "Story": "自称青渊最强拳师的少女，欢乐活跃的外表下隐藏着不为人知的另一面。",
+        "HeroSeat": 9701008,
+        "Title": "崩天之拳",
+        "Painter": "Ryota-H",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使",
+            "近战"
+        ],
+        "TagColor": [
+            "f2d772",
+            "e58080"
+        ],
+        "FavorGift": [
+            9430207,
+            9430307,
+            9430407
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
+        "RawSeat": 2,
+        "IsOpening": false
+    },
+    {
+        "Id": 1701,
+        "Name": "艾达",
+        "Fgimage": "CharacterImagePrefabs/1701/1701Fgimage",
+        "Original": "CharacterImagePrefabs/1701/1701Original",
+        "Rarity": 3,
+        "WeaponEnum": "Hammer",
+        "InitialWeapon": 9241001,
+        "HeroAttributeEnum": "Fire",
+        "HeroLocationEnum": "Support",
+        "Label": [
+            106,
+            103,
+            101
+        ],
+        "Faction": "核心",
+        "Area": 2,
+        "FactionIcon": "Faction_Core",
+        "BaseHP": 1311.0,
+        "GrowHP": [
+            49.73,
+            49.73,
+            49.73,
+            49.73,
+            49.73,
+            49.73
+        ],
+        "BaseDefense": 28.21500015258789,
+        "GrowDefense": [
+            1.93,
+            1.93,
+            1.93,
+            1.93,
+            1.93,
+            1.93
+        ],
+        "BaseAttack": 59.279998779296875,
+        "GrowAttack": [
+            6.25,
+            6.25,
+            6.25,
+            6.25,
+            6.25,
+            6.25
+        ],
+        "AddAttack": [
+            0.0,
+            24.5,
+            24.5,
+            24.5,
+            24.5,
+            24.5
+        ],
+        "AddHp": [
+            0.0,
+            209.59,
+            209.59,
+            209.59,
+            209.59,
+            209.59
+        ],
+        "AddDefense": [
+            0.0,
+            7.22,
+            7.22,
+            7.22,
+            7.22,
+            7.22
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
         "Birthday": "6月6日",
         "Story": "",
-        "HeroSeat": 9701006,
-        "Title": "深渊猎手",
-        "Painter": "",
+        "HeroSeat": 9701701,
+        "Title": "军械师",
+        "Painter": "馒头猫MTCAT",
         "SkillCount": 4,
         "Tag": [
             "烬天使"
@@ -284,94 +752,92 @@
         "IsOpening": false
     },
     {
-        "Id": 1608,
-        "Name": "赤荒",
-        "Fgimage": "CharacterImagePrefabs/1608/1608Fgimage",
-        "Original": "CharacterImagePrefabs/1608/1608Original",
+        "Id": 1704,
+        "Name": "瑶光",
+        "Fgimage": "CharacterImagePrefabs/1704/1704Fgimage",
+        "Original": "CharacterImagePrefabs/1704/1704Original",
         "Rarity": 4,
-        "WeaponEnum": "Bow",
-        "InitialWeapon": 9231001,
-        "HeroAttributeEnum": "Fire",
+        "WeaponEnum": "Sword",
+        "InitialWeapon": 9211001,
+        "HeroAttributeEnum": "Wind",
         "HeroLocationEnum": "Attack",
         "Label": [
-            110,
-            109,
-            105
+            105,
+            206,
+            207
         ],
-        "Faction": "拓荒",
-        "Area": 3,
-        "FactionIcon": "Faction_Wildness",
-        "BaseHP": 1350.0,
+        "Faction": "均衡",
+        "Area": 1,
+        "FactionIcon": "Faction_Balance",
+        "BaseHP": 1410.0,
         "GrowHP": [
-            51.21,
-            51.21,
-            51.21,
-            51.21,
-            51.21,
-            51.21
+            53.49,
+            53.49,
+            53.49,
+            53.49,
+            53.49,
+            53.49
         ],
-        "BaseDefense": 28.5,
+        "BaseDefense": 30.600000381469727,
         "GrowDefense": [
-            1.95,
-            1.95,
-            1.95,
-            1.95,
-            1.95,
-            1.95
+            2.09,
+            2.09,
+            2.09,
+            2.09,
+            2.09,
+            2.09
         ],
-        "BaseAttack": 63.0,
+        "BaseAttack": 61.79999923706055,
         "GrowAttack": [
-            3.99,
-            3.99,
-            3.99,
-            3.99,
-            3.99,
-            3.99
+            6.52,
+            6.52,
+            6.52,
+            6.52,
+            6.52,
+            6.52
         ],
         "AddAttack": [
             0.0,
-            15.12,
-            15.12,
-            15.12,
-            15.12,
-            15.12
+            25.54,
+            25.54,
+            25.54,
+            25.54,
+            25.54
         ],
         "AddHp": [
             0.0,
-            215.82,
-            215.82,
-            215.82,
-            215.82,
-            215.82
+            225.41,
+            225.41,
+            225.41,
+            225.41,
+            225.41
         ],
         "AddDefense": [
             0.0,
-            7.3,
-            7.3,
-            7.3,
-            7.3,
-            7.3
+            7.83,
+            7.83,
+            7.83,
+            7.83,
+            7.83
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "6月6日",
-        "Story": "独行于冰雪中的“反叛者”，以龙骨为弓，驭龙血为铠。",
-        "HeroSeat": 9701608,
-        "Title": "火龙后嗣",
-        "Painter": "阿凯路过了",
+        "Birthday": "1月8日",
+        "Story": "",
+        "HeroSeat": 9701704,
+        "Title": "玄霄剑仙",
+        "Painter": "光耀城文工团",
         "SkillCount": 4,
         "Tag": [
-            "烬天使",
-            "远程"
+            "烬天使"
         ],
         "TagColor": [
-            "f2d772",
-            "7392c1"
+            "f2d772"
         ],
         "FavorGift": [
-            9430208,
-            9430308,
-            9430408
+            9430207,
+            9430307,
+            9430407
         ],
         "ExTrust": [
             10,
@@ -382,81 +848,81 @@
         "IsOpening": true
     },
     {
-        "Id": 1606,
-        "Name": "格洛克",
-        "Fgimage": "CharacterImagePrefabs/1606/1606Fgimage",
-        "Original": "CharacterImagePrefabs/1606/1606Original",
+        "Id": 1202,
+        "Name": "寿寿狐",
+        "Fgimage": "CharacterImagePrefabs/1202/1202Fgimage",
+        "Original": "CharacterImagePrefabs/1202/1202Original",
         "Rarity": 3,
-        "WeaponEnum": "Bow",
-        "InitialWeapon": 9231001,
-        "HeroAttributeEnum": "Light",
-        "HeroLocationEnum": "Attack",
+        "WeaponEnum": "Hammer",
+        "InitialWeapon": 9251001,
+        "HeroAttributeEnum": "Wind",
+        "HeroLocationEnum": "Support",
         "Label": [
-            110,
-            109,
-            105
+            107,
+            105,
+            103
         ],
-        "Faction": "拓荒",
-        "Area": 7,
-        "FactionIcon": "Faction_Godmont",
-        "BaseHP": 1311.0,
+        "Faction": "均衡",
+        "Area": 0,
+        "FactionIcon": "Faction_Balance",
+        "BaseHP": 1470.0,
         "GrowHP": [
-            49.73,
-            49.73,
-            49.73,
-            49.73,
-            49.73,
-            49.73
+            55.76,
+            55.76,
+            55.76,
+            55.76,
+            55.76,
+            55.76
         ],
-        "BaseDefense": 28.5,
+        "BaseDefense": 29.700000762939453,
         "GrowDefense": [
-            1.95,
-            1.95,
-            1.95,
-            1.95,
-            1.95,
-            1.95
+            2.03,
+            2.03,
+            2.03,
+            2.03,
+            2.03,
+            2.03
         ],
-        "BaseAttack": 59.279998779296875,
+        "BaseAttack": 57.56999969482422,
         "GrowAttack": [
-            3.75,
-            3.75,
-            3.75,
-            3.75,
-            3.75,
-            3.75
+            6.39,
+            6.39,
+            6.39,
+            6.39,
+            6.39,
+            6.39
         ],
         "AddAttack": [
             0.0,
-            14.23,
-            14.23,
-            14.23,
-            14.23,
-            14.23
+            25.05,
+            25.05,
+            25.05,
+            25.05,
+            25.05
         ],
         "AddHp": [
             0.0,
-            209.59,
-            209.59,
-            209.59,
-            209.59,
-            209.59
+            235.0,
+            235.0,
+            235.0,
+            235.0,
+            235.0
         ],
         "AddDefense": [
             0.0,
-            7.3,
-            7.3,
-            7.3,
-            7.3,
-            7.3
+            7.6,
+            7.6,
+            7.6,
+            7.6,
+            7.6
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "6月6日",
-        "Story": "不管走到哪里都伴随着爆炸声的乐观勘探员——戈德蒙特的金色向阳花。",
-        "HeroSeat": 9701606,
-        "Title": "淘金娘",
-        "Painter": "馒头猫MTCat/阿凯路过了",
+        "Birthday": "5月4日",
+        "Story": "",
+        "HeroSeat": 9701202,
+        "Title": "铸刃灵狐",
+        "Painter": "光耀城文工团",
         "SkillCount": 4,
         "Tag": [
             "烬天使"
@@ -465,9 +931,9 @@
             "f2d772"
         ],
         "FavorGift": [
-            9430209,
-            9430309,
-            9430409
+            9430205,
+            9430305,
+            9430405
         ],
         "ExTrust": [
             10,
@@ -478,14 +944,110 @@
         "IsOpening": true
     },
     {
-        "Id": 1604,
-        "Name": "菲奥",
-        "Fgimage": "CharacterImagePrefabs/1604/1608Fgimage",
-        "Original": "CharacterImagePrefabs/1604/1604Original",
+        "Id": 1207,
+        "Name": "格蕾丝",
+        "Fgimage": "CharacterImagePrefabs/1207/1207Fgimage",
+        "Original": "CharacterImagePrefabs/1207/1207Original",
         "Rarity": 3,
-        "WeaponEnum": "Bow",
-        "InitialWeapon": 9231001,
-        "HeroAttributeEnum": "Dark",
+        "WeaponEnum": "Hammer",
+        "InitialWeapon": 9251001,
+        "HeroAttributeEnum": "Ice",
+        "HeroLocationEnum": "Attack",
+        "Label": [
+            104,
+            101,
+            202
+        ],
+        "Faction": "核心",
+        "Area": 2,
+        "FactionIcon": "Faction_Core",
+        "BaseHP": 1339.5,
+        "GrowHP": [
+            50.81,
+            50.81,
+            50.81,
+            50.81,
+            50.81,
+            50.81
+        ],
+        "BaseDefense": 27.645000457763672,
+        "GrowDefense": [
+            1.89,
+            1.89,
+            1.89,
+            1.89,
+            1.89,
+            1.89
+        ],
+        "BaseAttack": 58.709999084472656,
+        "GrowAttack": [
+            6.19,
+            6.19,
+            6.19,
+            6.19,
+            6.19,
+            6.19
+        ],
+        "AddAttack": [
+            0.0,
+            24.27,
+            24.27,
+            24.27,
+            24.27,
+            24.27
+        ],
+        "AddHp": [
+            0.0,
+            214.14,
+            214.14,
+            214.14,
+            214.14,
+            214.14
+        ],
+        "AddDefense": [
+            0.0,
+            7.08,
+            7.08,
+            7.08,
+            7.08,
+            7.08
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "4月21日",
+        "Story": "",
+        "HeroSeat": 9701207,
+        "Title": "霜冻女爵",
+        "Painter": "光耀城文工团",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使"
+        ],
+        "TagColor": [
+            "f2d772"
+        ],
+        "FavorGift": [
+            9430205,
+            9430305,
+            9430405
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
+        "RawSeat": 1,
+        "IsOpening": true
+    },
+    {
+        "Id": 1105,
+        "Name": "缇恩",
+        "Fgimage": "CharacterImagePrefabs/1105/1105Fgimage",
+        "Original": "CharacterImagePrefabs/1105/1105Original",
+        "Rarity": 3,
+        "WeaponEnum": "Sword",
+        "InitialWeapon": 9211001,
+        "HeroAttributeEnum": "Wind",
         "HeroLocationEnum": "Attack",
         "Label": [
             110,
@@ -493,8 +1055,8 @@
             105
         ],
         "Faction": "拓荒",
-        "Area": 2,
-        "FactionIcon": "Faction_Core",
+        "Area": 7,
+        "FactionIcon": "Faction_Godmont",
         "BaseHP": 1482.0,
         "GrowHP": [
             56.22,
@@ -504,31 +1066,31 @@
             56.22,
             56.22
         ],
-        "BaseDefense": 29.06999969482422,
+        "BaseDefense": 27.645000457763672,
         "GrowDefense": [
-            1.99,
-            1.99,
-            1.99,
-            1.99,
-            1.99,
-            1.99
+            1.89,
+            1.89,
+            1.89,
+            1.89,
+            1.89,
+            1.89
         ],
         "BaseAttack": 55.86000061035156,
         "GrowAttack": [
-            3.54,
-            3.54,
-            3.54,
-            3.54,
-            3.54,
-            3.54
+            5.89,
+            5.89,
+            5.89,
+            5.89,
+            5.89,
+            5.89
         ],
         "AddAttack": [
             0.0,
-            13.41,
-            13.41,
-            13.41,
-            13.41,
-            13.41
+            23.09,
+            23.09,
+            23.09,
+            23.09,
+            23.09
         ],
         "AddHp": [
             0.0,
@@ -540,19 +1102,19 @@
         ],
         "AddDefense": [
             0.0,
-            7.44,
-            7.44,
-            7.44,
-            7.44,
-            7.44
+            7.08,
+            7.08,
+            7.08,
+            7.08,
+            7.08
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
         "Birthday": "6月6日",
-        "Story": "那抹丽影划过长空，伴随着腐败者的哭嚎，贫民的赞歌！",
-        "HeroSeat": 9701604,
-        "Title": "掠空之翼",
-        "Painter": "阿凯路过了",
+        "Story": "",
+        "HeroSeat": 9701105,
+        "Title": "青蛙王子",
+        "Painter": "路一心心",
         "SkillCount": 4,
         "Tag": [
             "烬天使"
@@ -561,105 +1123,9 @@
             "f2d772"
         ],
         "FavorGift": [
-            9430203,
-            9430303,
-            9430403
-        ],
-        "ExTrust": [
-            10,
-            20,
-            40
-        ],
-        "RawSeat": 1,
-        "IsOpening": true
-    },
-    {
-        "Id": 1201,
-        "Name": "欧文",
-        "Fgimage": "CharacterImagePrefabs/1201/1201Fgimage",
-        "Original": "CharacterImagePrefabs/1201/1201Original",
-        "Rarity": 3,
-        "WeaponEnum": "Gloves",
-        "InitialWeapon": 9221001,
-        "HeroAttributeEnum": "Thunder",
-        "HeroLocationEnum": "Support",
-        "Label": [
-            106,
-            110,
-            203
-        ],
-        "Faction": "核心",
-        "Area": 2,
-        "FactionIcon": "Faction_Core",
-        "BaseHP": 1425.0,
-        "GrowHP": [
-            54.06,
-            54.06,
-            54.06,
-            54.06,
-            54.06,
-            54.06
-        ],
-        "BaseDefense": 29.924999237060547,
-        "GrowDefense": [
-            2.04,
-            2.04,
-            2.04,
-            2.04,
-            2.04,
-            2.04
-        ],
-        "BaseAttack": 57.0,
-        "GrowAttack": [
-            3.61,
-            3.61,
-            3.61,
-            3.61,
-            3.61,
-            3.61
-        ],
-        "AddAttack": [
-            0.0,
-            13.68,
-            13.68,
-            13.68,
-            13.68,
-            13.68
-        ],
-        "AddHp": [
-            0.0,
-            227.81,
-            227.81,
-            227.81,
-            227.81,
-            227.81
-        ],
-        "AddDefense": [
-            0.0,
-            7.66,
-            7.66,
-            7.66,
-            7.66,
-            7.66
-        ],
-        "BaseEnergy": 1200.0,
-        "BaseEnergyRecovery": 0.0,
-        "Birthday": "1月19日",
-        "Story": "性格轻浮的平民侦探，看起来很不靠谱的样子，却意外的有很多奇怪又实用的小发明？",
-        "HeroSeat": 9701201,
-        "Title": "武装侦探",
-        "Painter": "馒头猫MTCAT",
-        "SkillCount": 4,
-        "Tag": [
-            "烬天使"
-        ],
-        "TagColor": [
-            "f2d772"
-        ],
-        "FavorGift": [
-            9430302,
-            9430402,
-            9430404
+            9430201,
+            9430301,
+            9430401
         ],
         "ExTrust": [
             10,
@@ -707,20 +1173,20 @@
         ],
         "BaseAttack": 61.20000076293945,
         "GrowAttack": [
-            3.88,
-            3.88,
-            3.88,
-            3.88,
-            3.88,
-            3.88
+            6.46,
+            6.46,
+            6.46,
+            6.46,
+            6.46,
+            6.46
         ],
         "AddAttack": [
             0.0,
-            14.69,
-            14.69,
-            14.69,
-            14.69,
-            14.69
+            25.3,
+            25.3,
+            25.3,
+            25.3,
+            25.3
         ],
         "AddHp": [
             0.0,
@@ -768,182 +1234,94 @@
         "IsOpening": true
     },
     {
-        "Id": 1207,
-        "Name": "格蕾丝",
-        "Fgimage": "CharacterImagePrefabs/1207/1207Fgimage",
-        "Original": "CharacterImagePrefabs/1207/1207Original",
-        "Rarity": 3,
-        "WeaponEnum": "Hammer",
-        "InitialWeapon": 9221001,
-        "HeroAttributeEnum": "Ice",
-        "HeroLocationEnum": "Attack",
-        "Label": [
-            104,
-            101,
-            202
-        ],
-        "Faction": "核心",
-        "Area": 2,
-        "FactionIcon": "Faction_Core",
-        "BaseHP": 1339.5,
-        "GrowHP": [
-            50.81,
-            50.81,
-            50.81,
-            50.81,
-            50.81,
-            50.81
-        ],
-        "BaseDefense": 27.645000457763672,
-        "GrowDefense": [
-            1.89,
-            1.89,
-            1.89,
-            1.89,
-            1.89,
-            1.89
-        ],
-        "BaseAttack": 58.709999084472656,
-        "GrowAttack": [
-            3.72,
-            3.72,
-            3.72,
-            3.72,
-            3.72,
-            3.72
-        ],
-        "AddAttack": [
-            0.0,
-            14.09,
-            14.09,
-            14.09,
-            14.09,
-            14.09
-        ],
-        "AddHp": [
-            0.0,
-            214.14,
-            214.14,
-            214.14,
-            214.14,
-            214.14
-        ],
-        "AddDefense": [
-            0.0,
-            7.08,
-            7.08,
-            7.08,
-            7.08,
-            7.08
-        ],
-        "BaseEnergy": 1200.0,
-        "BaseEnergyRecovery": 0.0,
-        "Birthday": "4月21日",
-        "Story": "",
-        "HeroSeat": 9701207,
-        "Title": "铁腕淑女",
-        "Painter": "馒头猫MTCAT",
-        "SkillCount": 4,
-        "Tag": [
-            "烬天使"
-        ],
-        "TagColor": [
-            "f2d772"
-        ],
-        "FavorGift": [],
-        "ExTrust": [],
-        "RawSeat": 1,
-        "IsOpening": false
-    },
-    {
-        "Id": 1002,
-        "Name": "北洛",
-        "Fgimage": "CharacterImagePrefabs/1002/1002Fgimage",
-        "Original": "CharacterImagePrefabs/1002/1002Original",
+        "Id": 1007,
+        "Name": "知世",
+        "Fgimage": "CharacterImagePrefabs/1007/1007Fgimage",
+        "Original": "CharacterImagePrefabs/1007/1007Original",
         "Rarity": 4,
-        "WeaponEnum": "Gloves",
-        "InitialWeapon": 9221001,
+        "WeaponEnum": "Bow",
+        "InitialWeapon": 9231001,
         "HeroAttributeEnum": "Water",
-        "HeroLocationEnum": "Break",
+        "HeroLocationEnum": "Support",
         "Label": [
-            104,
-            201,
-            204
+            107,
+            105,
+            103
         ],
         "Faction": "均衡",
         "Area": 1,
         "FactionIcon": "Faction_Balance",
-        "BaseHP": 1500.0,
+        "BaseHP": 1590.0,
         "GrowHP": [
-            56.9,
-            56.9,
-            56.9,
-            56.9,
-            56.9,
-            56.9
+            60.31,
+            60.31,
+            60.31,
+            60.31,
+            60.31,
+            60.31
         ],
-        "BaseDefense": 30.899999618530273,
+        "BaseDefense": 29.100000381469727,
         "GrowDefense": [
-            2.11,
-            2.11,
-            2.11,
-            2.11,
-            2.11,
-            2.11
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99
         ],
-        "BaseAttack": 60.0,
+        "BaseAttack": 58.20000076293945,
         "GrowAttack": [
-            3.8,
-            3.8,
-            3.8,
-            3.8,
-            3.8,
-            3.8
+            6.14,
+            6.14,
+            6.14,
+            6.14,
+            6.14,
+            6.14
         ],
         "AddAttack": [
             0.0,
-            14.4,
-            14.4,
-            14.4,
-            14.4,
-            14.4
+            24.06,
+            24.06,
+            24.06,
+            24.06,
+            24.06
         ],
         "AddHp": [
             0.0,
-            239.8,
-            239.8,
-            239.8,
-            239.8,
-            239.8
+            254.19,
+            254.19,
+            254.19,
+            254.19,
+            254.19
         ],
         "AddDefense": [
             0.0,
-            7.91,
-            7.91,
-            7.91,
-            7.91,
-            7.91
+            7.45,
+            7.45,
+            7.45,
+            7.45,
+            7.45
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "7月4日",
-        "Story": "自称青渊最强拳师的少女，欢乐活跃的外表下隐藏着不为人知的另一面。",
-        "HeroSeat": 9701002,
-        "Title": "崩天之拳",
-        "Painter": "Ryota-H",
+        "Birthday": "5月4日",
+        "Story": "世代镇压着饕餮的神侍，掌握着从青渊始祖处获得的神秘力量。",
+        "HeroSeat": 9701007,
+        "Title": "青渊神侍",
+        "Painter": "光耀城文工团",
         "SkillCount": 4,
         "Tag": [
             "烬天使",
-            "近战"
+            "支援"
         ],
         "TagColor": [
             "f2d772",
-            "e58080"
+            "7cb37c"
         ],
         "FavorGift": [
-            9430207,
-            9430307,
-            9430407
+            9430205,
+            9430305,
+            9430405
         ],
         "ExTrust": [
             10,
@@ -952,94 +1330,6 @@
         ],
         "RawSeat": 2,
         "IsOpening": true
-    },
-    {
-        "Id": 1204,
-        "Name": "白雪姬",
-        "Fgimage": "CharacterImagePrefabs/1204/1204Fgimage",
-        "Original": "CharacterImagePrefabs/1204/1204Original",
-        "Rarity": 4,
-        "WeaponEnum": "Gloves",
-        "InitialWeapon": 9231001,
-        "HeroAttributeEnum": "Dark",
-        "HeroLocationEnum": "Attack",
-        "Label": [
-            110,
-            109,
-            105
-        ],
-        "Faction": "拓荒",
-        "Area": 6,
-        "FactionIcon": "Faction_Wonderland",
-        "BaseHP": 1440.0,
-        "GrowHP": [
-            54.62,
-            54.62,
-            54.62,
-            54.62,
-            54.62,
-            54.62
-        ],
-        "BaseDefense": 30.600000381469727,
-        "GrowDefense": [
-            2.09,
-            2.09,
-            2.09,
-            2.09,
-            2.09,
-            2.09
-        ],
-        "BaseAttack": 61.20000076293945,
-        "GrowAttack": [
-            3.88,
-            3.88,
-            3.88,
-            3.88,
-            3.88,
-            3.88
-        ],
-        "AddAttack": [
-            0.0,
-            14.69,
-            14.69,
-            14.69,
-            14.69,
-            14.69
-        ],
-        "AddHp": [
-            0.0,
-            230.21,
-            230.21,
-            230.21,
-            230.21,
-            230.21
-        ],
-        "AddDefense": [
-            0.0,
-            7.83,
-            7.83,
-            7.83,
-            7.83,
-            7.83
-        ],
-        "BaseEnergy": 1200.0,
-        "BaseEnergyRecovery": 0.0,
-        "Birthday": "6月6日",
-        "Story": "",
-        "HeroSeat": 9701204,
-        "Title": "白雪姬",
-        "Painter": "瓜皮",
-        "SkillCount": 4,
-        "Tag": [
-            "烬天使"
-        ],
-        "TagColor": [
-            "f2d772"
-        ],
-        "FavorGift": [],
-        "ExTrust": [],
-        "RawSeat": 2,
-        "IsOpening": false
     },
     {
         "Id": 1005,
@@ -1079,20 +1369,20 @@
         ],
         "BaseAttack": 57.56999969482422,
         "GrowAttack": [
-            3.65,
-            3.65,
-            3.65,
-            3.65,
-            3.65,
-            3.65
+            6.07,
+            6.07,
+            6.07,
+            6.07,
+            6.07,
+            6.07
         ],
         "AddAttack": [
             0.0,
-            13.82,
-            13.82,
-            13.82,
-            13.82,
-            13.82
+            23.8,
+            23.8,
+            23.8,
+            23.8,
+            23.8
         ],
         "AddHp": [
             0.0,
@@ -1116,7 +1406,7 @@
         "Story": "慈悲和善的医院骑士，用双枪为目光所及的每一个人带来“救赎”。",
         "HeroSeat": 9701005,
         "Title": "晨光羽翼",
-        "Painter": "石川/山云",
+        "Painter": "光耀城文工团",
         "SkillCount": 4,
         "Tag": [
             "烬天使"
@@ -1138,81 +1428,177 @@
         "IsOpening": true
     },
     {
-        "Id": 1605,
-        "Name": "玉衡",
-        "Fgimage": "CharacterImagePrefabs/1708/1708Fgimage",
-        "Original": "CharacterImagePrefabs/1708/1708Original",
-        "Rarity": 4,
-        "WeaponEnum": "Gun",
-        "InitialWeapon": 9241001,
-        "HeroAttributeEnum": "Wind",
-        "HeroLocationEnum": "Attack",
+        "Id": 1602,
+        "Name": "锡蒙利",
+        "Fgimage": "CharacterImagePrefabs/1602/1602Fgimage",
+        "Original": "CharacterImagePrefabs/1602/1602Original",
+        "Rarity": 3,
+        "WeaponEnum": "Sword",
+        "InitialWeapon": 9211001,
+        "HeroAttributeEnum": "Dark",
+        "HeroLocationEnum": "Support",
         "Label": [
-            110,
-            109,
-            105
+            104,
+            201,
+            205
+        ],
+        "Faction": "堕落",
+        "Area": 4,
+        "FactionIcon": "Faction_Demon",
+        "BaseHP": 1339.5,
+        "GrowHP": [
+            50.81,
+            50.81,
+            50.81,
+            50.81,
+            50.81,
+            50.81
+        ],
+        "BaseDefense": 29.639999389648438,
+        "GrowDefense": [
+            2.03,
+            2.03,
+            2.03,
+            2.03,
+            2.03,
+            2.03
+        ],
+        "BaseAttack": 58.709999084472656,
+        "GrowAttack": [
+            6.19,
+            6.19,
+            6.19,
+            6.19,
+            6.19,
+            6.19
+        ],
+        "AddAttack": [
+            0.0,
+            24.27,
+            24.27,
+            24.27,
+            24.27,
+            24.27
+        ],
+        "AddHp": [
+            0.0,
+            214.14,
+            214.14,
+            214.14,
+            214.14,
+            214.14
+        ],
+        "AddDefense": [
+            0.0,
+            7.59,
+            7.59,
+            7.59,
+            7.59,
+            7.59
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "5月4日",
+        "Story": "勇猛好斗，恣意随性的恶魔女将，统领着令敌人闻风丧胆的恐惧军团。",
+        "HeroSeat": 9701602,
+        "Title": "军团先锋",
+        "Painter": "光耀城文工团",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使"
+        ],
+        "TagColor": [
+            "f2d772"
+        ],
+        "FavorGift": [
+            9430201,
+            9430301,
+            9430401
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
+        "RawSeat": 1,
+        "IsOpening": true
+    },
+    {
+        "Id": 1104,
+        "Name": "南星",
+        "Fgimage": "CharacterImagePrefabs/1104/1104Fgimage",
+        "Original": "CharacterImagePrefabs/1104/1104Original",
+        "Rarity": 3,
+        "WeaponEnum": "Sword",
+        "InitialWeapon": 9211001,
+        "HeroAttributeEnum": "Water",
+        "HeroLocationEnum": "Break",
+        "Label": [
+            102,
+            105,
+            203
         ],
         "Faction": "均衡",
         "Area": 1,
         "FactionIcon": "Faction_Balance",
-        "BaseHP": 1620.0,
+        "BaseHP": 1425.0,
         "GrowHP": [
-            61.45,
-            61.45,
-            61.45,
-            61.45,
-            61.45,
-            61.45
+            54.06,
+            54.06,
+            54.06,
+            54.06,
+            54.06,
+            54.06
         ],
-        "BaseDefense": 29.100000381469727,
+        "BaseDefense": 28.5,
         "GrowDefense": [
-            1.99,
-            1.99,
-            1.99,
-            1.99,
-            1.99,
-            1.99
+            1.95,
+            1.95,
+            1.95,
+            1.95,
+            1.95,
+            1.95
         ],
-        "BaseAttack": 57.599998474121094,
+        "BaseAttack": 57.0,
         "GrowAttack": [
-            3.65,
-            3.65,
-            3.65,
-            3.65,
-            3.65,
-            3.65
+            6.01,
+            6.01,
+            6.01,
+            6.01,
+            6.01,
+            6.01
         ],
         "AddAttack": [
             0.0,
-            13.82,
-            13.82,
-            13.82,
-            13.82,
-            13.82
+            23.56,
+            23.56,
+            23.56,
+            23.56,
+            23.56
         ],
         "AddHp": [
             0.0,
-            258.98,
-            258.98,
-            258.98,
-            258.98,
-            258.98
+            227.81,
+            227.81,
+            227.81,
+            227.81,
+            227.81
         ],
         "AddDefense": [
             0.0,
-            7.45,
-            7.45,
-            7.45,
-            7.45,
-            7.45
+            7.3,
+            7.3,
+            7.3,
+            7.3,
+            7.3
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "6月6日",
-        "Story": "",
-        "HeroSeat": 9701605,
-        "Title": "玉衡",
-        "Painter": "路一心心",
+        "Birthday": "5月4日",
+        "Story": "回应召唤，从星空中坠落的少女，青渊星宫少主，行事谨慎，善使东方剑法。",
+        "HeroSeat": 9701104,
+        "Title": "流星之剑",
+        "Painter": "光耀城文工团",
         "SkillCount": 4,
         "Tag": [
             "烬天使"
@@ -1220,98 +1606,312 @@
         "TagColor": [
             "f2d772"
         ],
-        "FavorGift": [],
-        "ExTrust": [],
-        "RawSeat": 2,
-        "IsOpening": false
+        "FavorGift": [
+            9430209,
+            9430309,
+            9430409
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
+        "RawSeat": 1,
+        "IsOpening": true
     },
     {
-        "Id": 1701,
-        "Name": "艾达",
-        "Fgimage": "CharacterImagePrefabs/1701/1701Fgimage",
-        "Original": "CharacterImagePrefabs/1701/1701Original",
-        "Rarity": 3,
+        "Id": 1001,
+        "Name": "克拉拉",
+        "Fgimage": "CharacterImagePrefabs/1001/1001Fgimage",
+        "Original": "CharacterImagePrefabs/1001/1001Original",
+        "Rarity": 4,
         "WeaponEnum": "Hammer",
-        "InitialWeapon": 9241001,
-        "HeroAttributeEnum": "Fire",
+        "InitialWeapon": 9251001,
+        "HeroAttributeEnum": "Thunder",
         "HeroLocationEnum": "Support",
         "Label": [
-            106,
             103,
-            101
+            108,
+            202
         ],
-        "Faction": "核心",
+        "Faction": "救赎",
         "Area": 2,
         "FactionIcon": "Faction_Core",
-        "BaseHP": 1311.0,
+        "BaseHP": 1290.0,
         "GrowHP": [
-            49.73,
-            49.73,
-            49.73,
-            49.73,
-            49.73,
-            49.73
+            48.93,
+            48.93,
+            48.93,
+            48.93,
+            48.93,
+            48.93
         ],
-        "BaseDefense": 28.21500015258789,
+        "BaseDefense": 28.5,
         "GrowDefense": [
-            1.93,
-            1.93,
-            1.93,
-            1.93,
-            1.93,
-            1.93
+            1.95,
+            1.95,
+            1.95,
+            1.95,
+            1.95,
+            1.95
         ],
-        "BaseAttack": 59.279998779296875,
+        "BaseAttack": 64.19999694824219,
         "GrowAttack": [
-            3.75,
-            3.75,
-            3.75,
-            3.75,
-            3.75,
-            3.75
+            6.77,
+            6.77,
+            6.77,
+            6.77,
+            6.77,
+            6.77
         ],
         "AddAttack": [
             0.0,
-            14.23,
-            14.23,
-            14.23,
-            14.23,
-            14.23
+            26.54,
+            26.54,
+            26.54,
+            26.54,
+            26.54
         ],
         "AddHp": [
             0.0,
-            209.59,
-            209.59,
-            209.59,
-            209.59,
-            209.59
+            206.23,
+            206.23,
+            206.23,
+            206.23,
+            206.23
         ],
         "AddDefense": [
             0.0,
-            7.22,
-            7.22,
-            7.22,
-            7.22,
-            7.22
+            7.3,
+            7.3,
+            7.3,
+            7.3,
+            7.3
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "6月6日",
-        "Story": "",
-        "HeroSeat": 9701701,
-        "Title": "军械师",
-        "Painter": "馒头猫MTCAT",
+        "Birthday": "5月12日",
+        "Story": "身世成谜的银发少女，这具以机械和金属打造而成的躯体，本就是一个奇迹。",
+        "HeroSeat": 9701001,
+        "Title": "蜂巢核心",
+        "Painter": "光耀城文工团",
         "SkillCount": 4,
         "Tag": [
-            "烬天使"
+            "烬天使",
+            "近战"
         ],
         "TagColor": [
-            "f2d772"
+            "f2d772",
+            "e58080"
         ],
-        "FavorGift": [],
-        "ExTrust": [],
-        "RawSeat": 1,
-        "IsOpening": false
+        "FavorGift": [
+            9430204,
+            9430304,
+            9430404
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
+        "RawSeat": 2,
+        "IsOpening": true
+    },
+    {
+        "Id": 1103,
+        "Name": "莉莉安",
+        "Fgimage": "CharacterImagePrefabs/1103/1103Fgimage",
+        "Original": "CharacterImagePrefabs/1103/1103Original",
+        "Rarity": 4,
+        "WeaponEnum": "Sword",
+        "InitialWeapon": 9211001,
+        "HeroAttributeEnum": "Light",
+        "HeroLocationEnum": "Attack",
+        "Label": [
+            108,
+            206,
+            207
+        ],
+        "Faction": "救赎",
+        "Area": 5,
+        "FactionIcon": "Faction_Redemption",
+        "BaseHP": 1350.0,
+        "GrowHP": [
+            51.21,
+            51.21,
+            51.21,
+            51.21,
+            51.21,
+            51.21
+        ],
+        "BaseDefense": 28.5,
+        "GrowDefense": [
+            1.95,
+            1.95,
+            1.95,
+            1.95,
+            1.95,
+            1.95
+        ],
+        "BaseAttack": 63.0,
+        "GrowAttack": [
+            6.65,
+            6.65,
+            6.65,
+            6.65,
+            6.65,
+            6.65
+        ],
+        "AddAttack": [
+            0.0,
+            26.04,
+            26.04,
+            26.04,
+            26.04,
+            26.04
+        ],
+        "AddHp": [
+            0.0,
+            215.82,
+            215.82,
+            215.82,
+            215.82,
+            215.82
+        ],
+        "AddDefense": [
+            0.0,
+            7.3,
+            7.3,
+            7.3,
+            7.3,
+            7.3
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "5月4日",
+        "Story": "如百合般纯洁的骑士，手执濯光之剑追寻着那个熟悉的身影。",
+        "HeroSeat": 9701103,
+        "Title": "百合骑士",
+        "Painter": "光耀城文工团",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使",
+            "近战"
+        ],
+        "TagColor": [
+            "f2d772",
+            "e58080"
+        ],
+        "FavorGift": [
+            9430202,
+            9430302,
+            9430402
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
+        "RawSeat": 2,
+        "IsOpening": true
+    },
+    {
+        "Id": 1002,
+        "Name": "北洛",
+        "Fgimage": "CharacterImagePrefabs/1002/1002Fgimage",
+        "Original": "CharacterImagePrefabs/1002/1002Original",
+        "Rarity": 4,
+        "WeaponEnum": "Gloves",
+        "InitialWeapon": 9221001,
+        "HeroAttributeEnum": "Water",
+        "HeroLocationEnum": "Break",
+        "Label": [
+            104,
+            201,
+            204
+        ],
+        "Faction": "均衡",
+        "Area": 1,
+        "FactionIcon": "Faction_Balance",
+        "BaseHP": 1500.0,
+        "GrowHP": [
+            56.9,
+            56.9,
+            56.9,
+            56.9,
+            56.9,
+            56.9
+        ],
+        "BaseDefense": 30.899999618530273,
+        "GrowDefense": [
+            2.11,
+            2.11,
+            2.11,
+            2.11,
+            2.11,
+            2.11
+        ],
+        "BaseAttack": 60.0,
+        "GrowAttack": [
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33
+        ],
+        "AddAttack": [
+            0.0,
+            24.8,
+            24.8,
+            24.8,
+            24.8,
+            24.8
+        ],
+        "AddHp": [
+            0.0,
+            239.8,
+            239.8,
+            239.8,
+            239.8,
+            239.8
+        ],
+        "AddDefense": [
+            0.0,
+            7.91,
+            7.91,
+            7.91,
+            7.91,
+            7.91
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "7月4日",
+        "Story": "自称青渊最强拳师的少女，欢乐活跃的外表下隐藏着不为人知的另一面。",
+        "HeroSeat": 9701002,
+        "Title": "崩天之拳",
+        "Painter": "光耀城文工团",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使",
+            "近战"
+        ],
+        "TagColor": [
+            "f2d772",
+            "e58080"
+        ],
+        "FavorGift": [
+            9430207,
+            9430307,
+            9430407
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
+        "RawSeat": 2,
+        "IsOpening": true
     },
     {
         "Id": 1206,
@@ -1351,20 +1951,20 @@
         ],
         "BaseAttack": 58.709999084472656,
         "GrowAttack": [
-            3.72,
-            3.72,
-            3.72,
-            3.72,
-            3.72,
-            3.72
+            6.19,
+            6.19,
+            6.19,
+            6.19,
+            6.19,
+            6.19
         ],
         "AddAttack": [
             0.0,
-            14.09,
-            14.09,
-            14.09,
-            14.09,
-            14.09
+            24.27,
+            24.27,
+            24.27,
+            24.27,
+            24.27
         ],
         "AddHp": [
             0.0,
@@ -1410,23 +2010,23 @@
         "IsOpening": true
     },
     {
-        "Id": 1208,
-        "Name": "小熊猫",
-        "Fgimage": "CharacterImagePrefabs/1005/1005Fgimage",
-        "Original": "CharacterImagePrefabs/1005/1005Original",
+        "Id": 1604,
+        "Name": "菲奥",
+        "Fgimage": "CharacterImagePrefabs/1604/1604Fgimage",
+        "Original": "CharacterImagePrefabs/1604/1604Original",
         "Rarity": 3,
-        "WeaponEnum": "Gun",
-        "InitialWeapon": 9241001,
-        "HeroAttributeEnum": "Water",
-        "HeroLocationEnum": "Support",
+        "WeaponEnum": "Bow",
+        "InitialWeapon": 9231001,
+        "HeroAttributeEnum": "Dark",
+        "HeroLocationEnum": "Attack",
         "Label": [
-            103,
-            108,
-            202
+            110,
+            109,
+            105
         ],
-        "Faction": "救赎",
-        "Area": 0,
-        "FactionIcon": "Faction_Redemption",
+        "Faction": "拓荒",
+        "Area": 2,
+        "FactionIcon": "Faction_Core",
         "BaseHP": 1482.0,
         "GrowHP": [
             56.22,
@@ -1436,31 +2036,31 @@
             56.22,
             56.22
         ],
-        "BaseDefense": 28.78499984741211,
+        "BaseDefense": 29.06999969482422,
         "GrowDefense": [
-            1.97,
-            1.97,
-            1.97,
-            1.97,
-            1.97,
-            1.97
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99
         ],
         "BaseAttack": 55.86000061035156,
         "GrowAttack": [
-            3.54,
-            3.54,
-            3.54,
-            3.54,
-            3.54,
-            3.54
+            5.89,
+            5.89,
+            5.89,
+            5.89,
+            5.89,
+            5.89
         ],
         "AddAttack": [
             0.0,
-            13.41,
-            13.41,
-            13.41,
-            13.41,
-            13.41
+            23.09,
+            23.09,
+            23.09,
+            23.09,
+            23.09
         ],
         "AddHp": [
             0.0,
@@ -1472,19 +2072,19 @@
         ],
         "AddDefense": [
             0.0,
-            7.37,
-            7.37,
-            7.37,
-            7.37,
-            7.37
+            7.44,
+            7.44,
+            7.44,
+            7.44,
+            7.44
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "5月12日",
-        "Story": "",
-        "HeroSeat": 9701208,
-        "Title": "小熊猫",
-        "Painter": "夏波兔兔F",
+        "Birthday": "6月6日",
+        "Story": "那抹丽影划过长空，伴随着腐败者的哭嚎，贫民的赞歌！",
+        "HeroSeat": 9701604,
+        "Title": "掠空之翼",
+        "Painter": "阿凯路过了",
         "SkillCount": 4,
         "Tag": [
             "烬天使"
@@ -1492,10 +2092,116 @@
         "TagColor": [
             "f2d772"
         ],
-        "FavorGift": [],
-        "ExTrust": [],
+        "FavorGift": [
+            9430203,
+            9430303,
+            9430403
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
         "RawSeat": 1,
-        "IsOpening": false
+        "IsOpening": true
+    },
+    {
+        "Id": 1608,
+        "Name": "赤荒",
+        "Fgimage": "CharacterImagePrefabs/1608/1608Fgimage",
+        "Original": "CharacterImagePrefabs/1608/1608Original",
+        "Rarity": 4,
+        "WeaponEnum": "Bow",
+        "InitialWeapon": 9231001,
+        "HeroAttributeEnum": "Fire",
+        "HeroLocationEnum": "Attack",
+        "Label": [
+            110,
+            109,
+            105
+        ],
+        "Faction": "拓荒",
+        "Area": 3,
+        "FactionIcon": "Faction_Wildness",
+        "BaseHP": 1350.0,
+        "GrowHP": [
+            51.21,
+            51.21,
+            51.21,
+            51.21,
+            51.21,
+            51.21
+        ],
+        "BaseDefense": 28.5,
+        "GrowDefense": [
+            1.95,
+            1.95,
+            1.95,
+            1.95,
+            1.95,
+            1.95
+        ],
+        "BaseAttack": 63.0,
+        "GrowAttack": [
+            6.65,
+            6.65,
+            6.65,
+            6.65,
+            6.65,
+            6.65
+        ],
+        "AddAttack": [
+            0.0,
+            26.04,
+            26.04,
+            26.04,
+            26.04,
+            26.04
+        ],
+        "AddHp": [
+            0.0,
+            215.82,
+            215.82,
+            215.82,
+            215.82,
+            215.82
+        ],
+        "AddDefense": [
+            0.0,
+            7.3,
+            7.3,
+            7.3,
+            7.3,
+            7.3
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "6月6日",
+        "Story": "独行于冰雪中的“反叛者”，以龙骨为弓，驭龙血为铠。",
+        "HeroSeat": 9701608,
+        "Title": "火龙后嗣",
+        "Painter": "阿凯路过了",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使",
+            "远程"
+        ],
+        "TagColor": [
+            "f2d772",
+            "7392c1"
+        ],
+        "FavorGift": [
+            9430208,
+            9430308,
+            9430408
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
+        "RawSeat": 2,
+        "IsOpening": true
     },
     {
         "Id": 1205,
@@ -1535,20 +2241,20 @@
         ],
         "BaseAttack": 59.400001525878906,
         "GrowAttack": [
-            3.76,
-            3.76,
-            3.76,
-            3.76,
-            3.76,
-            3.76
+            6.27,
+            6.27,
+            6.27,
+            6.27,
+            6.27,
+            6.27
         ],
         "AddAttack": [
             0.0,
-            14.26,
-            14.26,
-            14.26,
-            14.26,
-            14.26
+            24.55,
+            24.55,
+            24.55,
+            24.55,
+            24.55
         ],
         "AddHp": [
             0.0,
@@ -1596,23 +2302,23 @@
         "IsOpening": true
     },
     {
-        "Id": 1104,
-        "Name": "南星",
-        "Fgimage": "CharacterImagePrefabs/1104/1104Fgimage",
-        "Original": "CharacterImagePrefabs/1104/1104Original",
+        "Id": 1201,
+        "Name": "欧文",
+        "Fgimage": "CharacterImagePrefabs/1201/1201Fgimage",
+        "Original": "CharacterImagePrefabs/1201/1201Original",
         "Rarity": 3,
-        "WeaponEnum": "Sword",
-        "InitialWeapon": 9211001,
-        "HeroAttributeEnum": "Water",
-        "HeroLocationEnum": "Break",
+        "WeaponEnum": "Gloves",
+        "InitialWeapon": 9221001,
+        "HeroAttributeEnum": "Thunder",
+        "HeroLocationEnum": "Support",
         "Label": [
-            102,
-            105,
+            106,
+            110,
             203
         ],
-        "Faction": "均衡",
-        "Area": 1,
-        "FactionIcon": "Faction_Balance",
+        "Faction": "核心",
+        "Area": 2,
+        "FactionIcon": "Faction_Core",
         "BaseHP": 1425.0,
         "GrowHP": [
             54.06,
@@ -1622,31 +2328,31 @@
             54.06,
             54.06
         ],
-        "BaseDefense": 28.5,
+        "BaseDefense": 29.924999237060547,
         "GrowDefense": [
-            1.95,
-            1.95,
-            1.95,
-            1.95,
-            1.95,
-            1.95
+            2.04,
+            2.04,
+            2.04,
+            2.04,
+            2.04,
+            2.04
         ],
         "BaseAttack": 57.0,
         "GrowAttack": [
-            3.61,
-            3.61,
-            3.61,
-            3.61,
-            3.61,
-            3.61
+            6.01,
+            6.01,
+            6.01,
+            6.01,
+            6.01,
+            6.01
         ],
         "AddAttack": [
             0.0,
-            13.68,
-            13.68,
-            13.68,
-            13.68,
-            13.68
+            23.56,
+            23.56,
+            23.56,
+            23.56,
+            23.56
         ],
         "AddHp": [
             0.0,
@@ -1658,6 +2364,102 @@
         ],
         "AddDefense": [
             0.0,
+            7.66,
+            7.66,
+            7.66,
+            7.66,
+            7.66
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "1月19日",
+        "Story": "性格轻浮的平民侦探，看起来很不靠谱的样子，却意外的有很多奇怪又实用的小发明？",
+        "HeroSeat": 9701201,
+        "Title": "武装侦探",
+        "Painter": "光耀城文工团",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使"
+        ],
+        "TagColor": [
+            "f2d772"
+        ],
+        "FavorGift": [
+            9430302,
+            9430402,
+            9430404
+        ],
+        "ExTrust": [
+            10,
+            20,
+            40
+        ],
+        "RawSeat": 1,
+        "IsOpening": true
+    },
+    {
+        "Id": 1606,
+        "Name": "格洛克",
+        "Fgimage": "CharacterImagePrefabs/1606/1606Fgimage",
+        "Original": "CharacterImagePrefabs/1606/1606Original",
+        "Rarity": 3,
+        "WeaponEnum": "Bow",
+        "InitialWeapon": 9231001,
+        "HeroAttributeEnum": "Light",
+        "HeroLocationEnum": "Attack",
+        "Label": [
+            110,
+            109,
+            105
+        ],
+        "Faction": "拓荒",
+        "Area": 7,
+        "FactionIcon": "Faction_Godmont",
+        "BaseHP": 1311.0,
+        "GrowHP": [
+            49.73,
+            49.73,
+            49.73,
+            49.73,
+            49.73,
+            49.73
+        ],
+        "BaseDefense": 28.5,
+        "GrowDefense": [
+            1.95,
+            1.95,
+            1.95,
+            1.95,
+            1.95,
+            1.95
+        ],
+        "BaseAttack": 59.279998779296875,
+        "GrowAttack": [
+            6.25,
+            6.25,
+            6.25,
+            6.25,
+            6.25,
+            6.25
+        ],
+        "AddAttack": [
+            0.0,
+            24.5,
+            24.5,
+            24.5,
+            24.5,
+            24.5
+        ],
+        "AddHp": [
+            0.0,
+            209.59,
+            209.59,
+            209.59,
+            209.59,
+            209.59
+        ],
+        "AddDefense": [
+            0.0,
             7.3,
             7.3,
             7.3,
@@ -1666,11 +2468,11 @@
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "5月4日",
-        "Story": "回应召唤，从星空中坠落的少女，青渊星宫少主，行事谨慎，善使东方剑法。",
-        "HeroSeat": 9701104,
-        "Title": "流星之剑",
-        "Painter": "夏波兔兔F",
+        "Birthday": "6月6日",
+        "Story": "不管走到哪里都伴随着爆炸声的乐观勘探员——戈德蒙特的金色向阳花。",
+        "HeroSeat": 9701606,
+        "Title": "淘金娘",
+        "Painter": "阿凯路过了",
         "SkillCount": 4,
         "Tag": [
             "烬天使"
@@ -1692,303 +2494,31 @@
         "IsOpening": true
     },
     {
-        "Id": 1101,
-        "Name": "西莉亚",
-        "Fgimage": "CharacterImagePrefabs/1101/1101Fgimage",
-        "Original": "CharacterImagePrefabs/1101/1101Original",
-        "Rarity": 3,
-        "WeaponEnum": "Sword",
-        "InitialWeapon": 9211001,
-        "HeroAttributeEnum": "Light",
-        "HeroLocationEnum": "Attack",
-        "Label": [
-            106,
-            206,
-            204
-        ],
-        "Faction": "核心",
-        "Area": 2,
-        "FactionIcon": "Faction_Core",
-        "BaseHP": 1396.5,
-        "GrowHP": [
-            52.97,
-            52.97,
-            52.97,
-            52.97,
-            52.97,
-            52.97
-        ],
-        "BaseDefense": 29.354999542236328,
-        "GrowDefense": [
-            2.01,
-            2.01,
-            2.01,
-            2.01,
-            2.01,
-            2.01
-        ],
-        "BaseAttack": 57.56999969482422,
-        "GrowAttack": [
-            3.65,
-            3.65,
-            3.65,
-            3.65,
-            3.65,
-            3.65
-        ],
-        "AddAttack": [
-            0.0,
-            13.82,
-            13.82,
-            13.82,
-            13.82,
-            13.82
-        ],
-        "AddHp": [
-            0.0,
-            223.25,
-            223.25,
-            223.25,
-            223.25,
-            223.25
-        ],
-        "AddDefense": [
-            0.0,
-            7.51,
-            7.51,
-            7.51,
-            7.51,
-            7.51
-        ],
-        "BaseEnergy": 1200.0,
-        "BaseEnergyRecovery": 0.0,
-        "Birthday": "12月26日",
-        "Story": "",
-        "HeroSeat": 9701101,
-        "Title": "皇家钥卫",
-        "Painter": "夏波兔兔F",
-        "SkillCount": 4,
-        "Tag": [
-            "烬天使"
-        ],
-        "TagColor": [
-            "f2d772"
-        ],
-        "FavorGift": [],
-        "ExTrust": [],
-        "RawSeat": 1,
-        "IsOpening": false
-    },
-    {
-        "Id": 1704,
-        "Name": "瑶光",
-        "Fgimage": "CharacterImagePrefabs/1104/1104Fgimage",
-        "Original": "CharacterImagePrefabs/1104/1704Original",
+        "Id": 1607,
+        "Name": "伊莱莎",
+        "Fgimage": "CharacterImagePrefabs/1607/1607Fgimage",
+        "Original": "CharacterImagePrefabs/1607/1607Original",
         "Rarity": 4,
-        "WeaponEnum": "Sword",
-        "InitialWeapon": 9211001,
-        "HeroAttributeEnum": "Wind",
+        "WeaponEnum": "Gun",
+        "InitialWeapon": 9241001,
+        "HeroAttributeEnum": "Ice",
         "HeroLocationEnum": "Attack",
         "Label": [
-            105,
-            206,
-            207
+            110,
+            109,
+            105
         ],
-        "Faction": "均衡",
-        "Area": 1,
-        "FactionIcon": "Faction_Balance",
-        "BaseHP": 1410.0,
+        "Faction": "拓荒",
+        "Area": 3,
+        "FactionIcon": "Faction_Wildness",
+        "BaseHP": 1425.0,
         "GrowHP": [
-            53.49,
-            53.49,
-            53.49,
-            53.49,
-            53.49,
-            53.49
-        ],
-        "BaseDefense": 30.600000381469727,
-        "GrowDefense": [
-            2.09,
-            2.09,
-            2.09,
-            2.09,
-            2.09,
-            2.09
-        ],
-        "BaseAttack": 61.79999923706055,
-        "GrowAttack": [
-            3.91,
-            3.91,
-            3.91,
-            3.91,
-            3.91,
-            3.91
-        ],
-        "AddAttack": [
-            0.0,
-            14.83,
-            14.83,
-            14.83,
-            14.83,
-            14.83
-        ],
-        "AddHp": [
-            0.0,
-            225.41,
-            225.41,
-            225.41,
-            225.41,
-            225.41
-        ],
-        "AddDefense": [
-            0.0,
-            7.83,
-            7.83,
-            7.83,
-            7.83,
-            7.83
-        ],
-        "BaseEnergy": 1200.0,
-        "BaseEnergyRecovery": 0.0,
-        "Birthday": "1月8日",
-        "Story": "",
-        "HeroSeat": 9701704,
-        "Title": "玄霄剑仙",
-        "Painter": "夏波兔兔F",
-        "SkillCount": 4,
-        "Tag": [
-            "烬天使"
-        ],
-        "TagColor": [
-            "f2d772"
-        ],
-        "FavorGift": [],
-        "ExTrust": [],
-        "RawSeat": 2,
-        "IsOpening": false
-    },
-    {
-        "Id": 1602,
-        "Name": "锡蒙利",
-        "Fgimage": "CharacterImagePrefabs/1602/1602Fgimage",
-        "Original": "CharacterImagePrefabs/1602/1602Original",
-        "Rarity": 3,
-        "WeaponEnum": "Sword",
-        "InitialWeapon": 9211001,
-        "HeroAttributeEnum": "Dark",
-        "HeroLocationEnum": "Support",
-        "Label": [
-            104,
-            201,
-            205
-        ],
-        "Faction": "堕落",
-        "Area": 4,
-        "FactionIcon": "Faction_Demon",
-        "BaseHP": 1339.5,
-        "GrowHP": [
-            50.81,
-            50.81,
-            50.81,
-            50.81,
-            50.81,
-            50.81
-        ],
-        "BaseDefense": 29.639999389648438,
-        "GrowDefense": [
-            2.03,
-            2.03,
-            2.03,
-            2.03,
-            2.03,
-            2.03
-        ],
-        "BaseAttack": 58.709999084472656,
-        "GrowAttack": [
-            3.72,
-            3.72,
-            3.72,
-            3.72,
-            3.72,
-            3.72
-        ],
-        "AddAttack": [
-            0.0,
-            14.09,
-            14.09,
-            14.09,
-            14.09,
-            14.09
-        ],
-        "AddHp": [
-            0.0,
-            214.14,
-            214.14,
-            214.14,
-            214.14,
-            214.14
-        ],
-        "AddDefense": [
-            0.0,
-            7.59,
-            7.59,
-            7.59,
-            7.59,
-            7.59
-        ],
-        "BaseEnergy": 1200.0,
-        "BaseEnergyRecovery": 0.0,
-        "Birthday": "5月4日",
-        "Story": "勇猛好斗，恣意随性的恶魔女将，统领着令敌人闻风丧胆的恐惧军团。",
-        "HeroSeat": 9701602,
-        "Title": "军团先锋",
-        "Painter": "夏波兔兔F",
-        "SkillCount": 4,
-        "Tag": [
-            "烬天使"
-        ],
-        "TagColor": [
-            "f2d772"
-        ],
-        "FavorGift": [
-            9430201,
-            9430301,
-            9430401
-        ],
-        "ExTrust": [
-            10,
-            20,
-            40
-        ],
-        "RawSeat": 1,
-        "IsOpening": true
-    },
-    {
-        "Id": 1103,
-        "Name": "莉莉安",
-        "Fgimage": "CharacterImagePrefabs/1103/1103Fgimage",
-        "Original": "CharacterImagePrefabs/1103/1103Original",
-        "Rarity": 4,
-        "WeaponEnum": "Sword",
-        "InitialWeapon": 9211001,
-        "HeroAttributeEnum": "Light",
-        "HeroLocationEnum": "Attack",
-        "Label": [
-            108,
-            206,
-            207
-        ],
-        "Faction": "救赎",
-        "Area": 5,
-        "FactionIcon": "Faction_Redemption",
-        "BaseHP": 1350.0,
-        "GrowHP": [
-            51.21,
-            51.21,
-            51.21,
-            51.21,
-            51.21,
-            51.21
+            54.06,
+            54.06,
+            54.06,
+            54.06,
+            54.06,
+            54.06
         ],
         "BaseDefense": 28.5,
         "GrowDefense": [
@@ -1999,30 +2529,30 @@
             1.95,
             1.95
         ],
-        "BaseAttack": 63.0,
+        "BaseAttack": 60.599998474121094,
         "GrowAttack": [
-            3.99,
-            3.99,
-            3.99,
-            3.99,
-            3.99,
-            3.99
+            6.01,
+            6.01,
+            6.01,
+            6.01,
+            6.01,
+            6.01
         ],
         "AddAttack": [
             0.0,
-            15.12,
-            15.12,
-            15.12,
-            15.12,
-            15.12
+            23.56,
+            23.56,
+            23.56,
+            23.56,
+            23.56
         ],
         "AddHp": [
             0.0,
-            215.82,
-            215.82,
-            215.82,
-            215.82,
-            215.82
+            227.81,
+            227.81,
+            227.81,
+            227.81,
+            227.81
         ],
         "AddDefense": [
             0.0,
@@ -2034,24 +2564,22 @@
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "5月4日",
-        "Story": "如百合般纯洁的骑士，手执濯光之剑追寻着那个熟悉的身影。",
-        "HeroSeat": 9701103,
-        "Title": "百合骑士",
-        "Painter": "石川/馒头猫MTCat",
+        "Birthday": "6月6日",
+        "Story": "",
+        "HeroSeat": 9701607,
+        "Title": "寒霜先知",
+        "Painter": "光耀城文工团",
         "SkillCount": 4,
         "Tag": [
-            "烬天使",
-            "近战"
+            "烬天使"
         ],
         "TagColor": [
-            "f2d772",
-            "e58080"
+            "f2d772"
         ],
         "FavorGift": [
-            9430202,
-            9430302,
-            9430402
+            9430204,
+            9430304,
+            9430404
         ],
         "ExTrust": [
             10,
@@ -2060,270 +2588,6 @@
         ],
         "RawSeat": 2,
         "IsOpening": true
-    },
-    {
-        "Id": 1105,
-        "Name": "奥林",
-        "Fgimage": "CharacterImagePrefabs/1608/1608Fgimage",
-        "Original": "CharacterImagePrefabs/1608/1608Original",
-        "Rarity": 3,
-        "WeaponEnum": "Sword",
-        "InitialWeapon": 9211001,
-        "HeroAttributeEnum": "Wind",
-        "HeroLocationEnum": "Attack",
-        "Label": [
-            110,
-            109,
-            105
-        ],
-        "Faction": "拓荒",
-        "Area": 7,
-        "FactionIcon": "Faction_Godmont",
-        "BaseHP": 1482.0,
-        "GrowHP": [
-            56.22,
-            56.22,
-            56.22,
-            56.22,
-            56.22,
-            56.22
-        ],
-        "BaseDefense": 27.645000457763672,
-        "GrowDefense": [
-            1.89,
-            1.89,
-            1.89,
-            1.89,
-            1.89,
-            1.89
-        ],
-        "BaseAttack": 55.86000061035156,
-        "GrowAttack": [
-            3.54,
-            3.54,
-            3.54,
-            3.54,
-            3.54,
-            3.54
-        ],
-        "AddAttack": [
-            0.0,
-            13.41,
-            13.41,
-            13.41,
-            13.41,
-            13.41
-        ],
-        "AddHp": [
-            0.0,
-            236.92,
-            236.92,
-            236.92,
-            236.92,
-            236.92
-        ],
-        "AddDefense": [
-            0.0,
-            7.08,
-            7.08,
-            7.08,
-            7.08,
-            7.08
-        ],
-        "BaseEnergy": 1200.0,
-        "BaseEnergyRecovery": 0.0,
-        "Birthday": "6月6日",
-        "Story": "",
-        "HeroSeat": 9701105,
-        "Title": "小王子",
-        "Painter": "路一心心",
-        "SkillCount": 4,
-        "Tag": [
-            "烬天使"
-        ],
-        "TagColor": [
-            "f2d772"
-        ],
-        "FavorGift": [],
-        "ExTrust": [],
-        "RawSeat": 1,
-        "IsOpening": false
-    },
-    {
-        "Id": 1703,
-        "Name": "光明审判",
-        "Fgimage": "CharacterImagePrefabs/1608/1608Fgimage",
-        "Original": "CharacterImagePrefabs/1608/1608Original",
-        "Rarity": 4,
-        "WeaponEnum": "Sword",
-        "InitialWeapon": 9211001,
-        "HeroAttributeEnum": "Light",
-        "HeroLocationEnum": "Attack",
-        "Label": [
-            108,
-            206,
-            207
-        ],
-        "Faction": "救赎",
-        "Area": 6,
-        "FactionIcon": "Faction_Redemption",
-        "BaseHP": 1590.0,
-        "GrowHP": [
-            60.31,
-            60.31,
-            60.31,
-            60.31,
-            60.31,
-            60.31
-        ],
-        "BaseDefense": 29.399999618530273,
-        "GrowDefense": [
-            2.01,
-            2.01,
-            2.01,
-            2.01,
-            2.01,
-            2.01
-        ],
-        "BaseAttack": 58.20000076293945,
-        "GrowAttack": [
-            3.69,
-            3.69,
-            3.69,
-            3.69,
-            3.69,
-            3.69
-        ],
-        "AddAttack": [
-            0.0,
-            13.97,
-            13.97,
-            13.97,
-            13.97,
-            13.97
-        ],
-        "AddHp": [
-            0.0,
-            254.19,
-            254.19,
-            254.19,
-            254.19,
-            254.19
-        ],
-        "AddDefense": [
-            0.0,
-            7.53,
-            7.53,
-            7.53,
-            7.53,
-            7.53
-        ],
-        "BaseEnergy": 1200.0,
-        "BaseEnergyRecovery": 0.0,
-        "Birthday": "45083",
-        "Story": "",
-        "HeroSeat": 9701703,
-        "Title": "止境的女王",
-        "Painter": "石川",
-        "SkillCount": 4,
-        "Tag": [
-            "烬天使"
-        ],
-        "TagColor": [
-            "f2d772"
-        ],
-        "FavorGift": [],
-        "ExTrust": [],
-        "RawSeat": 2,
-        "IsOpening": false
-    },
-    {
-        "Id": 12041,
-        "Name": "黑雪姬",
-        "Fgimage": "CharacterImagePrefabs/1205/1205Fgimage",
-        "Original": "CharacterImagePrefabs/1205/1205Original",
-        "Rarity": 4,
-        "WeaponEnum": "Gloves",
-        "InitialWeapon": 9241001,
-        "HeroAttributeEnum": "Dark",
-        "HeroLocationEnum": "Support",
-        "Label": [
-            103,
-            108,
-            202
-        ],
-        "Faction": "救赎",
-        "Area": 6,
-        "FactionIcon": "Faction_Redemption",
-        "BaseHP": 1500.0,
-        "GrowHP": [
-            56.9,
-            56.9,
-            56.9,
-            56.9,
-            56.9,
-            56.9
-        ],
-        "BaseDefense": 30.0,
-        "GrowDefense": [
-            2.05,
-            2.05,
-            2.05,
-            2.05,
-            2.05,
-            2.05
-        ],
-        "BaseAttack": 60.0,
-        "GrowAttack": [
-            3.8,
-            3.8,
-            3.8,
-            3.8,
-            3.8,
-            3.8
-        ],
-        "AddAttack": [
-            0.0,
-            14.4,
-            14.4,
-            14.4,
-            14.4,
-            14.4
-        ],
-        "AddHp": [
-            0.0,
-            239.8,
-            239.8,
-            239.8,
-            239.8,
-            239.8
-        ],
-        "AddDefense": [
-            0.0,
-            7.68,
-            7.68,
-            7.68,
-            7.68,
-            7.68
-        ],
-        "BaseEnergy": 1200.0,
-        "BaseEnergyRecovery": 0.0,
-        "Birthday": "5月12日",
-        "Story": "",
-        "HeroSeat": 97012041,
-        "Title": "白雪姬",
-        "Painter": "瓜皮",
-        "SkillCount": 4,
-        "Tag": [
-            "烬天使"
-        ],
-        "TagColor": [
-            "f2d772"
-        ],
-        "FavorGift": [],
-        "ExTrust": [],
-        "RawSeat": 2,
-        "IsOpening": false
     },
     {
         "Id": 6101,
@@ -2363,20 +2627,20 @@
         ],
         "BaseAttack": 60.0,
         "GrowAttack": [
-            3.8,
-            3.8,
-            3.8,
-            3.8,
-            3.8,
-            3.8
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33
         ],
         "AddAttack": [
             0.0,
-            14.4,
-            14.4,
-            14.4,
-            14.4,
-            14.4
+            24.8,
+            24.8,
+            24.8,
+            24.8,
+            24.8
         ],
         "AddHp": [
             0.0,
@@ -2396,7 +2660,7 @@
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "5月12日",
+        "Birthday": "",
         "Story": "",
         "HeroSeat": 0,
         "Title": "",
@@ -2451,20 +2715,20 @@
         ],
         "BaseAttack": 60.0,
         "GrowAttack": [
-            3.8,
-            3.8,
-            3.8,
-            3.8,
-            3.8,
-            3.8
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33,
+            6.33
         ],
         "AddAttack": [
             0.0,
-            14.4,
-            14.4,
-            14.4,
-            14.4,
-            14.4
+            24.8,
+            24.8,
+            24.8,
+            24.8,
+            24.8
         ],
         "AddHp": [
             0.0,
@@ -2484,7 +2748,7 @@
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "5月12日",
+        "Birthday": "",
         "Story": "",
         "HeroSeat": 0,
         "Title": "",
@@ -2539,20 +2803,20 @@
         ],
         "BaseAttack": 57.0,
         "GrowAttack": [
-            3.61,
-            3.61,
-            3.61,
-            3.61,
-            3.61,
-            3.61
+            6.01,
+            6.01,
+            6.01,
+            6.01,
+            6.01,
+            6.01
         ],
         "AddAttack": [
             0.0,
-            13.68,
-            13.68,
-            13.68,
-            13.68,
-            13.68
+            23.56,
+            23.56,
+            23.56,
+            23.56,
+            23.56
         ],
         "AddHp": [
             0.0,
@@ -2586,119 +2850,23 @@
         "IsOpening": false
     },
     {
-        "Id": 1607,
-        "Name": "伊莱莎",
-        "Fgimage": "CharacterImagePrefabs/1607/1607Fgimage",
-        "Original": "CharacterImagePrefabs/1607/1607Original",
-        "Rarity": 4,
-        "WeaponEnum": "Gun",
-        "InitialWeapon": 9241001,
-        "HeroAttributeEnum": "Ice",
+        "Id": 1101,
+        "Name": "西莉亚",
+        "Fgimage": "CharacterImagePrefabs/1101/1101Fgimage",
+        "Original": "CharacterImagePrefabs/1101/1101Original",
+        "Rarity": 3,
+        "WeaponEnum": "Sword",
+        "InitialWeapon": 9211001,
+        "HeroAttributeEnum": "Light",
         "HeroLocationEnum": "Attack",
         "Label": [
-            110,
-            109,
-            105
+            106,
+            206,
+            204
         ],
-        "Faction": "拓荒",
-        "Area": 3,
-        "FactionIcon": "Faction_Wildness",
-        "BaseHP": 1470.0,
-        "GrowHP": [
-            55.76,
-            55.76,
-            55.76,
-            55.76,
-            55.76,
-            55.76
-        ],
-        "BaseDefense": 29.700000762939453,
-        "GrowDefense": [
-            2.03,
-            2.03,
-            2.03,
-            2.03,
-            2.03,
-            2.03
-        ],
-        "BaseAttack": 60.599998474121094,
-        "GrowAttack": [
-            3.84,
-            3.84,
-            3.84,
-            3.84,
-            3.84,
-            3.84
-        ],
-        "AddAttack": [
-            0.0,
-            14.54,
-            14.54,
-            14.54,
-            14.54,
-            14.54
-        ],
-        "AddHp": [
-            0.0,
-            235.0,
-            235.0,
-            235.0,
-            235.0,
-            235.0
-        ],
-        "AddDefense": [
-            0.0,
-            7.6,
-            7.6,
-            7.6,
-            7.6,
-            7.6
-        ],
-        "BaseEnergy": 1200.0,
-        "BaseEnergyRecovery": 0.0,
-        "Birthday": "6月6日",
-        "Story": "",
-        "HeroSeat": 9701607,
-        "Title": "寒霜先知",
-        "Painter": "光耀城文工团",
-        "SkillCount": 4,
-        "Tag": [
-            "烬天使"
-        ],
-        "TagColor": [
-            "f2d772"
-        ],
-        "FavorGift": [
-            9430204,
-            9430304,
-            9430404
-        ],
-        "ExTrust": [
-            10,
-            20,
-            40
-        ],
-        "RawSeat": 2,
-        "IsOpening": true
-    },
-    {
-        "Id": 1202,
-        "Name": "寿寿狐",
-        "Fgimage": "CharacterImagePrefabs/1202/1202Fgimage",
-        "Original": "CharacterImagePrefabs/1202/1202Original",
-        "Rarity": 3,
-        "WeaponEnum": "Hammer",
-        "InitialWeapon": 9231001,
-        "HeroAttributeEnum": "Wind",
-        "HeroLocationEnum": "Support",
-        "Label": [
-            107,
-            105,
-            103
-        ],
-        "Faction": "均衡",
-        "Area": 0,
-        "FactionIcon": "Faction_Balance",
+        "Faction": "核心",
+        "Area": 2,
+        "FactionIcon": "Faction_Core",
         "BaseHP": 1396.5,
         "GrowHP": [
             52.97,
@@ -2708,31 +2876,31 @@
             52.97,
             52.97
         ],
-        "BaseDefense": 28.21500015258789,
+        "BaseDefense": 29.354999542236328,
         "GrowDefense": [
-            1.93,
-            1.93,
-            1.93,
-            1.93,
-            1.93,
-            1.93
+            2.01,
+            2.01,
+            2.01,
+            2.01,
+            2.01,
+            2.01
         ],
         "BaseAttack": 57.56999969482422,
         "GrowAttack": [
-            3.65,
-            3.65,
-            3.65,
-            3.65,
-            3.65,
-            3.65
+            6.07,
+            6.07,
+            6.07,
+            6.07,
+            6.07,
+            6.07
         ],
         "AddAttack": [
             0.0,
-            13.82,
-            13.82,
-            13.82,
-            13.82,
-            13.82
+            23.8,
+            23.8,
+            23.8,
+            23.8,
+            23.8
         ],
         "AddHp": [
             0.0,
@@ -2744,18 +2912,18 @@
         ],
         "AddDefense": [
             0.0,
-            7.22,
-            7.22,
-            7.22,
-            7.22,
-            7.22
+            7.51,
+            7.51,
+            7.51,
+            7.51,
+            7.51
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "5月4日",
+        "Birthday": "12月26日",
         "Story": "",
-        "HeroSeat": 9701202,
-        "Title": "铸刃童子",
+        "HeroSeat": 9701101,
+        "Title": "皇家钥卫",
         "Painter": "夏波兔兔F",
         "SkillCount": 4,
         "Tag": [
@@ -2770,100 +2938,178 @@
         "IsOpening": false
     },
     {
-        "Id": 1004,
-        "Name": "杰西卡",
-        "Fgimage": "CharacterImagePrefabs/1007/1007Fgimage",
-        "Original": "CharacterImagePrefabs/1007/1007Original",
+        "Id": 1605,
+        "Name": "玉衡",
+        "Fgimage": "CharacterImagePrefabs/1605/1605Fgimage",
+        "Original": "CharacterImagePrefabs/1605/1605Original",
         "Rarity": 4,
-        "WeaponEnum": "Bow",
-        "InitialWeapon": 9231001,
-        "HeroAttributeEnum": "Thunder",
+        "WeaponEnum": "Gun",
+        "InitialWeapon": 9241001,
+        "HeroAttributeEnum": "Wind",
         "HeroLocationEnum": "Attack",
         "Label": [
-            107,
-            105,
-            103
+            110,
+            109,
+            105
         ],
-        "Faction": "拓荒",
+        "Faction": "均衡",
         "Area": 1,
         "FactionIcon": "Faction_Balance",
-        "BaseHP": 1396.5,
+        "BaseHP": 1620.0,
         "GrowHP": [
-            52.97,
-            52.97,
-            52.97,
-            52.97,
-            52.97,
-            52.97
+            61.45,
+            61.45,
+            61.45,
+            61.45,
+            61.45,
+            61.45
         ],
-        "BaseDefense": 28.21500015258789,
+        "BaseDefense": 29.100000381469727,
         "GrowDefense": [
-            1.93,
-            1.93,
-            1.93,
-            1.93,
-            1.93,
-            1.93
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99
         ],
-        "BaseAttack": 57.56999969482422,
+        "BaseAttack": 57.599998474121094,
         "GrowAttack": [
-            3.65,
-            3.65,
-            3.65,
-            3.65,
-            3.65,
-            3.65
+            6.08,
+            6.08,
+            6.08,
+            6.08,
+            6.08,
+            6.08
         ],
         "AddAttack": [
             0.0,
-            13.82,
-            13.82,
-            13.82,
-            13.82,
-            13.82
+            23.81,
+            23.81,
+            23.81,
+            23.81,
+            23.81
         ],
         "AddHp": [
             0.0,
-            223.25,
-            223.25,
-            223.25,
-            223.25,
-            223.25
+            258.98,
+            258.98,
+            258.98,
+            258.98,
+            258.98
         ],
         "AddDefense": [
             0.0,
-            7.22,
-            7.22,
-            7.22,
-            7.22,
-            7.22
+            7.45,
+            7.45,
+            7.45,
+            7.45,
+            7.45
         ],
         "BaseEnergy": 1200.0,
         "BaseEnergyRecovery": 0.0,
-        "Birthday": "5月4日",
+        "Birthday": "6月6日",
         "Story": "",
-        "HeroSeat": 9701004,
-        "Title": "青渊神侍",
-        "Painter": "夏波兔兔F",
+        "HeroSeat": 9701605,
+        "Title": "玉衡",
+        "Painter": "路一心心",
         "SkillCount": 4,
         "Tag": [
-            "烬天使",
-            "支援"
+            "烬天使"
         ],
         "TagColor": [
-            "f2d772",
-            "7cb37c"
+            "f2d772"
         ],
-        "FavorGift": [
-            9430205,
-            9430305,
-            9430405
+        "FavorGift": [],
+        "ExTrust": [],
+        "RawSeat": 2,
+        "IsOpening": false
+    },
+    {
+        "Id": 9999,
+        "Name": "到底了别拉了",
+        "Fgimage": "CharacterImagePrefabs/9999/9999Fgimage",
+        "Original": "CharacterImagePrefabs/9999/9999Original",
+        "Rarity": 4,
+        "WeaponEnum": "Gun",
+        "InitialWeapon": 9241001,
+        "HeroAttributeEnum": "Wind",
+        "HeroLocationEnum": "Attack",
+        "Label": [
+            110,
+            109,
+            105
         ],
-        "ExTrust": [
-            10,
-            20,
-            40
+        "Faction": "均衡",
+        "Area": 1,
+        "FactionIcon": "Faction_Balance",
+        "BaseHP": 1620.0,
+        "GrowHP": [
+            61.45,
+            61.45,
+            61.45,
+            61.45,
+            61.45,
+            61.45
         ],
+        "BaseDefense": 29.100000381469727,
+        "GrowDefense": [
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99
+        ],
+        "BaseAttack": 57.599998474121094,
+        "GrowAttack": [
+            6.08,
+            6.08,
+            6.08,
+            6.08,
+            6.08,
+            6.08
+        ],
+        "AddAttack": [
+            0.0,
+            23.81,
+            23.81,
+            23.81,
+            23.81,
+            23.81
+        ],
+        "AddHp": [
+            0.0,
+            258.98,
+            258.98,
+            258.98,
+            258.98,
+            258.98
+        ],
+        "AddDefense": [
+            0.0,
+            7.45,
+            7.45,
+            7.45,
+            7.45,
+            7.45
+        ],
+        "BaseEnergy": 1200.0,
+        "BaseEnergyRecovery": 0.0,
+        "Birthday": "6月6日",
+        "Story": "",
+        "HeroSeat": 9709999,
+        "Title": "玉衡",
+        "Painter": "路一心心",
+        "SkillCount": 4,
+        "Tag": [
+            "烬天使"
+        ],
+        "TagColor": [
+            "f2d772"
+        ],
+        "FavorGift": [],
+        "ExTrust": [],
         "RawSeat": 2,
         "IsOpening": false
     }

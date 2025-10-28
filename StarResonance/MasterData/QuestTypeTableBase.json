@@ -72,7 +72,7 @@
     "6": {
         "Key": 6,
         "QuestTypeId": 6,
-        "QuestTypeName": "大世界探索解谜任务",
+        "QuestTypeName": "大世界探索解谜任务(前期-追踪优先级较低)",
         "QuestTypeGroupID": 3,
         "QuestTypeUI": "",
         "ShowQuestUI": true,
@@ -86,7 +86,7 @@
     "7": {
         "Key": 7,
         "QuestTypeId": 7,
-        "QuestTypeName": "大世界探索隐藏任务",
+        "QuestTypeName": "大世界探索隐藏任务(前期-追踪优先级较低)",
         "QuestTypeGroupID": 3,
         "QuestTypeUI": "",
         "ShowQuestUI": false,
@@ -100,7 +100,7 @@
     "8": {
         "Key": 8,
         "QuestTypeId": 8,
-        "QuestTypeName": "大世界探索宝箱任务",
+        "QuestTypeName": "大世界探索宝箱任务(前期-追踪优先级较低)",
         "QuestTypeGroupID": 3,
         "QuestTypeUI": "",
         "ShowQuestUI": true,
@@ -264,6 +264,20 @@
         "AutoTracking": 0,
         "QuestListHide": false,
         "Order": 144
+    },
+    "30": {
+        "Key": 30,
+        "QuestTypeId": 30,
+        "QuestTypeName": "大世界探索解谜任务(后期-高追踪优先级)",
+        "QuestTypeGroupID": 3,
+        "QuestTypeUI": "",
+        "ShowQuestUI": true,
+        "ResetType": 0,
+        "Counts": [],
+        "ForcedTracking": false,
+        "AutoTracking": 2,
+        "QuestListHide": false,
+        "Order": 10
     },
     "50": {
         "Key": 50,
@@ -808,6 +822,34 @@
         "AutoTracking": 2,
         "QuestListHide": false,
         "Order": 80
+    },
+    "89": {
+        "Key": 89,
+        "QuestTypeId": 89,
+        "QuestTypeName": "开门任务-限时活动任务类型",
+        "QuestTypeGroupID": 5,
+        "QuestTypeUI": "",
+        "ShowQuestUI": true,
+        "ResetType": 0,
+        "Counts": [],
+        "ForcedTracking": false,
+        "AutoTracking": 2,
+        "QuestListHide": false,
+        "Order": 8
+    },
+    "90": {
+        "Key": 90,
+        "QuestTypeId": 90,
+        "QuestTypeName": "活动任务-视野层级",
+        "QuestTypeGroupID": 5,
+        "QuestTypeUI": "",
+        "ShowQuestUI": true,
+        "ResetType": -1,
+        "Counts": [],
+        "ForcedTracking": true,
+        "AutoTracking": 0,
+        "QuestListHide": true,
+        "Order": 114
     },
     "100": {
         "Key": 100,

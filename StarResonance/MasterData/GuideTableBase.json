@@ -17,6 +17,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -26,7 +27,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 100,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -52,12 +53,13 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "拖动摇杆移动",
         "TextAround": "拖动摇杆移动",
         "TextShowDirection": [
             0,
             0
         ],
-        "TextMiddle": "按下{*keyboard.key2*}键移动",
+        "TextMiddle": "使用{*keyboard.key2*}键移动",
         "KeyboardId": [
             2
         ],
@@ -66,7 +68,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -92,6 +94,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击按钮跳跃",
         "TextAround": "点击按钮跳跃",
         "TextShowDirection": [
             2,
@@ -109,7 +112,7 @@
             "7",
             "7"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -135,6 +138,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "短时间内连续点击跳跃可以跳的更远",
         "TextAround": "短时间内连续点击跳跃可以跳的更远",
         "TextShowDirection": [
             2,
@@ -152,7 +156,7 @@
             "7",
             "7"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -176,6 +180,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -185,7 +190,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 14500,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -211,6 +216,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": false,
+        "MobileTextAround": "滑动屏幕以转动视角",
         "TextAround": "滑动屏幕以转动视角",
         "TextShowDirection": [],
         "TextMiddle": "移动鼠标以转动视角",
@@ -222,7 +228,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -248,6 +254,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": false,
+        "MobileTextAround": "两指缩放以调整远近",
         "TextAround": "两指缩放以调整远近",
         "TextShowDirection": [],
         "TextMiddle": "滚动鼠标滚轮调整视角远近",
@@ -259,7 +266,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -285,6 +292,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击释放普通攻击",
         "TextAround": "点击释放普通攻击",
         "TextShowDirection": [
             0,
@@ -302,7 +310,7 @@
             "7",
             "11"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -328,6 +336,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击释放特殊攻击",
         "TextAround": "点击释放特殊攻击",
         "TextShowDirection": [
             0,
@@ -345,7 +354,7 @@
             "7",
             "120"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -371,6 +380,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击释放技能",
         "TextAround": "点击释放技能",
         "TextShowDirection": [
             0,
@@ -388,7 +398,7 @@
             "7",
             "12"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -414,6 +424,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击释放技能",
         "TextAround": "点击释放技能",
         "TextShowDirection": [
             0,
@@ -431,7 +442,7 @@
             "7",
             "13"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -457,6 +468,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击释放技能",
         "TextAround": "点击释放技能",
         "TextShowDirection": [
             0,
@@ -474,7 +486,7 @@
             "7",
             "14"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -500,6 +512,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击释放终结技能",
         "TextAround": "点击释放终结技能",
         "TextShowDirection": [
             0,
@@ -517,7 +530,7 @@
             "7",
             "119"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -543,6 +556,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击按钮闪避，移动中点击按钮可以进入冲刺状态",
         "TextAround": "点击按钮闪避，移动中点击按钮可以进入冲刺状态",
         "TextShowDirection": [
             2,
@@ -560,7 +574,7 @@
             "7",
             "8"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -584,6 +598,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -593,7 +608,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 2005,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -619,6 +634,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
         "TextAround": "打开角色信息面板",
         "TextShowDirection": [
             1,
@@ -634,7 +650,9 @@
             "1",
             "200001"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -660,6 +678,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "刚刚获得了不错的装备，先点击这里换上新衣服吧",
         "TextAround": "刚刚获得了不错的装备，先点击这里换上新衣服吧",
         "TextShowDirection": [
             2,
@@ -672,7 +691,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -698,6 +719,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装备",
         "TextAround": "点击装备",
         "TextShowDirection": [
             0,
@@ -713,7 +735,9 @@
             "16",
             "4"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": true,
@@ -739,6 +763,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "护手也获得了新的装备<br>点击这里切换页签吧",
         "TextAround": "护手也获得了新的装备<br>点击这里切换页签吧",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -748,7 +773,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": true,
@@ -774,6 +801,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装备",
         "TextAround": "点击装备",
         "TextShowDirection": [
             0,
@@ -789,7 +817,9 @@
             "16",
             "4"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": true,
@@ -815,6 +845,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里切换页签<br>把鞋子也换上新装备吧",
         "TextAround": "点击这里切换页签<br>把鞋子也换上新装备吧",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -824,7 +855,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": true,
@@ -850,6 +883,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装备",
         "TextAround": "点击装备",
         "TextShowDirection": [
             0,
@@ -865,7 +899,9 @@
             "16",
             "4"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": true,
@@ -891,6 +927,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此处查阅信件",
         "TextAround": "点击此处查阅信件",
         "TextShowDirection": [
             0,
@@ -906,7 +943,7 @@
             "12",
             "3170"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -923,7 +960,7 @@
         "PriorityGlobal": 0,
         "ShowConditionValue": "mainui",
         "IfShowcheck": false,
-        "CheckCompletion": true,
+        "CheckCompletion": false,
         "TriggerConditionType": "505",
         "TriggerConditionValue": "185002028",
         "CompletionConditionType": "503",
@@ -932,6 +969,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "按下{*keyboard.key104*}键打开角色信息面板",
@@ -943,7 +981,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -969,6 +1009,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装备",
         "TextAround": "点击装备",
         "TextShowDirection": [
             1,
@@ -981,7 +1022,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1007,6 +1051,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击衣服",
         "TextAround": "点击衣服",
         "TextShowDirection": [
             2,
@@ -1019,7 +1064,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1045,6 +1093,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装备",
         "TextAround": "点击装备",
         "TextShowDirection": [
             0,
@@ -1060,7 +1109,10 @@
             "16",
             "4"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1086,6 +1138,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "护手也获得了新的装备<br>点击这里切换页签吧",
         "TextAround": "护手也获得了新的装备<br>点击这里切换页签吧",
         "TextShowDirection": [
             2,
@@ -1098,7 +1151,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1124,6 +1180,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装备",
         "TextAround": "点击装备",
         "TextShowDirection": [
             0,
@@ -1139,7 +1196,10 @@
             "16",
             "4"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1165,6 +1225,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里切换页签<br>把鞋子也换上新装备吧",
         "TextAround": "点击这里切换页签<br>把鞋子也换上新装备吧",
         "TextShowDirection": [
             2,
@@ -1177,7 +1238,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1203,6 +1267,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装备",
         "TextAround": "点击装备",
         "TextShowDirection": [
             0,
@@ -1218,7 +1283,97 @@
             "16",
             "4"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "518": {
+        "Key": 518,
+        "Id": 518,
+        "Priority": 509,
+        "GuideGroup": 7,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "185002028",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": false,
+        "MobileTextAround": "",
+        "TextAround": "",
+        "TextShowDirection": [],
+        "TextMiddle": "按下{*keyboard.key108*}键打开综合菜单",
+        "KeyboardId": [
+            108
+        ],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200000"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "519": {
+        "Key": 519,
+        "Id": 519,
+        "Priority": 510,
+        "GuideGroup": 7,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui_funcs_list",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "185002028",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
+        "TextAround": "打开角色信息面板",
+        "TextShowDirection": [
+            2,
+            0
+        ],
+        "TextMiddle": "",
+        "KeyboardId": [],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200001"
+        ],
+        "Pcchoice": [
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1244,6 +1399,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击使用任务道具",
         "TextAround": "点击使用任务道具",
         "TextShowDirection": [
             3,
@@ -1258,7 +1414,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1284,6 +1440,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击解谜",
         "TextAround": "点击解谜",
         "TextShowDirection": [
             0,
@@ -1296,7 +1453,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1322,6 +1479,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击线索中的关键词",
         "TextAround": "点击线索中的关键词",
         "TextShowDirection": [
             0,
@@ -1334,7 +1492,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1360,6 +1518,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此处关闭锚点手记<br>返回主界面",
         "TextAround": "点击此处关闭锚点手记<br>返回主界面",
         "TextShowDirection": [
             2,
@@ -1372,7 +1531,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1398,6 +1557,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开情感动作",
         "TextAround": "打开情感动作",
         "TextShowDirection": [
             0,
@@ -1415,7 +1575,9 @@
             "1",
             "100601"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1441,6 +1603,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里切换到持续动作",
         "TextAround": "点击这里切换到持续动作",
         "TextShowDirection": [
             2,
@@ -1456,7 +1619,9 @@
             "2",
             "2"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1482,6 +1647,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此动作跳舞",
         "TextAround": "点击此动作跳舞",
         "TextShowDirection": [
             2,
@@ -1497,7 +1663,9 @@
             "3",
             "9020"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1523,6 +1691,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击情感动作",
         "TextAround": "点击情感动作",
         "TextShowDirection": [
             2,
@@ -1538,7 +1707,9 @@
             "1",
             "100601"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1564,6 +1735,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开情感动作",
         "TextAround": "打开情感动作",
         "TextShowDirection": [
             0,
@@ -1581,7 +1753,9 @@
             "1",
             "100601"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1607,6 +1781,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里切换到持续动作",
         "TextAround": "点击这里切换到持续动作",
         "TextShowDirection": [
             2,
@@ -1622,7 +1797,9 @@
             "2",
             "2"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1648,6 +1825,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此动作拍手",
         "TextAround": "点击此动作拍手",
         "TextShowDirection": [
             2,
@@ -1663,7 +1841,9 @@
             "3",
             "9012"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1689,6 +1869,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击情感动作",
         "TextAround": "点击情感动作",
         "TextShowDirection": [
             2,
@@ -1704,7 +1885,9 @@
             "1",
             "100601"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1730,6 +1913,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开情感动作",
         "TextAround": "打开情感动作",
         "TextShowDirection": [
             0,
@@ -1747,7 +1931,9 @@
             "1",
             "100601"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1773,6 +1959,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里切换到通常动作",
         "TextAround": "点击这里切换到通常动作",
         "TextShowDirection": [
             2,
@@ -1788,7 +1975,9 @@
             "2",
             "1"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1814,6 +2003,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此动作挥手",
         "TextAround": "点击此动作挥手",
         "TextShowDirection": [
             2,
@@ -1829,7 +2019,9 @@
             "3",
             "9011"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1855,6 +2047,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击情感动作",
         "TextAround": "点击情感动作",
         "TextShowDirection": [
             2,
@@ -1870,7 +2063,9 @@
             "1",
             "100601"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1896,6 +2091,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开情感动作",
         "TextAround": "打开情感动作",
         "TextShowDirection": [
             0,
@@ -1910,7 +2106,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1936,6 +2135,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里切换到持续动作",
         "TextAround": "点击这里切换到持续动作",
         "TextShowDirection": [
             2,
@@ -1951,7 +2151,10 @@
             "22",
             "2"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -1977,6 +2180,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此动作跳舞",
         "TextAround": "点击此动作跳舞",
         "TextShowDirection": [
             2,
@@ -1992,7 +2196,10 @@
             "3",
             "9020"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2018,6 +2225,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开情感动作",
         "TextAround": "打开情感动作",
         "TextShowDirection": [
             0,
@@ -2032,7 +2240,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2058,6 +2269,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里切换到持续动作",
         "TextAround": "点击这里切换到持续动作",
         "TextShowDirection": [
             2,
@@ -2073,7 +2285,10 @@
             "22",
             "2"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2099,6 +2314,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此动作拍手",
         "TextAround": "点击此动作拍手",
         "TextShowDirection": [
             2,
@@ -2114,7 +2330,10 @@
             "3",
             "9012"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2140,6 +2359,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开情感动作",
         "TextAround": "打开情感动作",
         "TextShowDirection": [
             0,
@@ -2154,7 +2374,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2180,6 +2403,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里切换到通常动作",
         "TextAround": "点击这里切换到通常动作",
         "TextShowDirection": [
             2,
@@ -2195,7 +2419,10 @@
             "22",
             "1"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2221,6 +2448,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此动作挥手",
         "TextAround": "点击此动作挥手",
         "TextShowDirection": [
             2,
@@ -2236,7 +2464,10 @@
             "3",
             "9011"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2262,6 +2493,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击打开聊天设置",
         "TextAround": "点击打开聊天设置",
         "TextShowDirection": [
             3,
@@ -2274,7 +2506,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2300,6 +2532,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击打开综合菜单",
         "TextAround": "点击打开综合菜单",
         "TextShowDirection": [
             6,
@@ -2317,7 +2550,7 @@
             "1",
             "200000"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2343,6 +2576,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击衣橱",
         "TextAround": "点击衣橱",
         "TextShowDirection": [
             2,
@@ -2358,7 +2592,7 @@
             "1",
             "101101"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2384,6 +2618,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "切换到头饰",
         "TextAround": "切换到头饰",
         "TextShowDirection": [
             3,
@@ -2396,7 +2631,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2422,6 +2657,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "选择饰品后，点击这里保存更改",
         "TextAround": "选择饰品后，点击这里保存更改",
         "TextShowDirection": [
             2,
@@ -2434,7 +2670,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2460,6 +2696,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "选择这个饰品",
         "TextAround": "选择这个饰品",
         "TextShowDirection": [
             2,
@@ -2476,7 +2713,7 @@
             "713",
             "2"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2500,6 +2737,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击按钮切换次元",
         "TextAround": "点击按钮切换次元",
         "TextShowDirection": [
             0,
@@ -2517,7 +2755,7 @@
             "7",
             "123"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2541,6 +2779,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2550,7 +2789,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 2004,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2574,6 +2813,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2583,7 +2823,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 2004,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2607,6 +2847,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2616,7 +2857,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 6007,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2640,6 +2881,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2649,7 +2891,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4001,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2673,6 +2915,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2682,7 +2925,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 3008,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2706,6 +2949,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2715,7 +2959,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 1005,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2739,6 +2983,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2748,7 +2993,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 6003,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2772,6 +3017,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2781,7 +3027,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 6002,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2805,6 +3051,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2814,7 +3061,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 2008,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2838,6 +3085,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2847,7 +3095,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4004,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2871,6 +3119,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2880,7 +3129,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4005,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2904,6 +3153,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2913,7 +3163,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4002,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2937,6 +3187,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2946,7 +3197,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 3007,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -2970,6 +3221,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -2979,7 +3231,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4003,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3003,6 +3255,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3012,7 +3265,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4009,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3036,6 +3289,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3045,7 +3299,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4011,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3069,6 +3323,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3078,7 +3333,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4010,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3102,6 +3357,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3111,7 +3367,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4012,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3135,6 +3391,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3144,7 +3401,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4007,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3168,6 +3425,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3177,7 +3435,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4006,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3201,6 +3459,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3210,7 +3469,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4013,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3234,6 +3493,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3243,7 +3503,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4014,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3267,6 +3527,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3276,7 +3537,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4013,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3300,6 +3561,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3309,7 +3571,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4014,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3333,6 +3595,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3342,7 +3605,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4016,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3366,6 +3629,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3375,7 +3639,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4017,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3399,6 +3663,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击按钮切换次元",
         "TextAround": "点击按钮切换次元",
         "TextShowDirection": [
             0,
@@ -3416,7 +3681,7 @@
             "7",
             "123"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3440,6 +3705,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3449,7 +3715,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4200,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3473,6 +3739,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3482,7 +3749,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4201,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3506,6 +3773,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3515,7 +3783,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4202,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3539,6 +3807,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3548,7 +3817,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4203,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3572,6 +3841,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3581,7 +3851,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4204,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3605,6 +3875,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3614,7 +3885,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4205,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3638,6 +3909,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3647,7 +3919,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4206,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3671,6 +3943,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3680,7 +3953,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4207,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3704,6 +3977,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3713,7 +3987,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4208,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3737,6 +4011,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3746,7 +4021,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4209,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3770,6 +4045,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3779,7 +4055,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4501,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3803,6 +4079,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3812,7 +4089,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4502,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3836,6 +4113,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3845,7 +4123,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 4503,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3869,6 +4147,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3878,7 +4157,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 30015,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3902,6 +4181,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此处可以查看饮品配方",
         "TextAround": "点击此处可以查看饮品配方",
         "TextShowDirection": [
             5,
@@ -3914,7 +4194,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3938,6 +4218,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3947,7 +4228,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 6005,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -3971,6 +4252,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -3980,7 +4262,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 20010,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4004,6 +4286,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -4013,7 +4296,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 20011,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4039,6 +4322,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息",
         "TextAround": "打开角色信息",
         "TextShowDirection": [
             1,
@@ -4056,7 +4340,10 @@
             "1",
             "200001"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [
+            1,
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4082,6 +4369,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里选择技能",
         "TextAround": "点击这里选择技能",
         "TextShowDirection": [
             2,
@@ -4094,7 +4382,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4120,6 +4410,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里查看详情",
         "TextAround": "点击这里查看详情",
         "TextShowDirection": [
             2,
@@ -4134,7 +4425,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4160,6 +4451,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里查看",
         "TextAround": "点击这里查看",
         "TextShowDirection": [
             0,
@@ -4175,7 +4467,7 @@
             "17",
             "7"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4201,6 +4493,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里解锁",
         "TextAround": "点击这里解锁",
         "TextShowDirection": [
             0,
@@ -4213,7 +4506,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4239,6 +4532,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "按下{*keyboard.key10*}键查看详情",
@@ -4250,7 +4544,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4276,6 +4570,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里选择技能",
         "TextAround": "点击这里选择技能",
         "TextShowDirection": [
             1,
@@ -4288,7 +4583,97 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "1211": {
+        "Key": 1211,
+        "Id": 1211,
+        "Priority": 1200,
+        "GuideGroup": 8,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "533",
+        "TriggerConditionValue": "20",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": false,
+        "MobileTextAround": "",
+        "TextAround": "",
+        "TextShowDirection": [],
+        "TextMiddle": "按下{*keyboard.key108*}键打开综合菜单",
+        "KeyboardId": [
+            108
+        ],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200000"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "1212": {
+        "Key": 1212,
+        "Id": 1212,
+        "Priority": 1201,
+        "GuideGroup": 8,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui_funcs_list",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "533",
+        "TriggerConditionValue": "20",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
+        "TextAround": "打开角色信息面板",
+        "TextShowDirection": [
+            2,
+            0
+        ],
+        "TextMiddle": "",
+        "KeyboardId": [],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200001"
+        ],
+        "Pcchoice": [
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4314,6 +4699,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息",
         "TextAround": "打开角色信息",
         "TextShowDirection": [
             1,
@@ -4331,7 +4717,10 @@
             "1",
             "200001"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [
+            1,
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4357,6 +4746,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开生元体等级界面",
         "TextAround": "打开生元体等级界面",
         "TextShowDirection": [
             1,
@@ -4369,7 +4759,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4395,6 +4785,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开生元体等级界面",
         "TextAround": "打开生元体等级界面",
         "TextShowDirection": [
             1,
@@ -4407,7 +4798,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4433,6 +4824,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开潜能激发界面",
         "TextAround": "打开潜能激发界面",
         "TextShowDirection": [
             3,
@@ -4445,7 +4837,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4471,6 +4863,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "冒险者可在此处自定义潜能激发方案，提升行动能力",
@@ -4480,11 +4873,98 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
         "IfDynamic": false
+    },
+    "1306": {
+        "Key": 1306,
+        "Id": 1306,
+        "Priority": 1303,
+        "GuideGroup": 13,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "31001",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": false,
+        "MobileTextAround": "",
+        "TextAround": "",
+        "TextShowDirection": [],
+        "TextMiddle": "按下{*keyboard.key108*}键打开综合菜单",
+        "KeyboardId": [
+            108
+        ],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200000"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "1307": {
+        "Key": 1307,
+        "Id": 1307,
+        "Priority": 1304,
+        "GuideGroup": 13,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui_funcs_list",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "31001",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
+        "TextAround": "打开角色信息面板",
+        "TextShowDirection": [
+            2,
+            0
+        ],
+        "TextMiddle": "",
+        "KeyboardId": [],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200001"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
     },
     "1704": {
         "Key": 1704,
@@ -4506,6 +4986,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "长按拖动已共鸣的能力至下方槽位即可使用",
@@ -4515,7 +4996,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4541,6 +5022,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
         "TextAround": "打开角色信息面板",
         "TextShowDirection": [
             1,
@@ -4558,7 +5040,10 @@
             "1",
             "200001"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [
+            1,
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4584,6 +5069,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "刚刚获得了不错的武器，点击这里更换吧",
         "TextAround": "刚刚获得了不错的武器，点击这里更换吧",
         "TextShowDirection": [
             0,
@@ -4596,7 +5082,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4613,7 +5101,7 @@
         "PriorityGlobal": 0,
         "ShowConditionValue": "equip_change_window",
         "IfShowcheck": true,
-        "CheckCompletion": true,
+        "CheckCompletion": false,
         "TriggerConditionType": "516",
         "TriggerConditionValue": "3102",
         "CompletionConditionType": "518",
@@ -4622,6 +5110,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "查看装备",
         "TextAround": "查看装备",
         "TextShowDirection": [
             1,
@@ -4637,7 +5126,9 @@
             "10",
             "2"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4654,7 +5145,7 @@
         "PriorityGlobal": 0,
         "ShowConditionValue": "equip_change_window",
         "IfShowcheck": true,
-        "CheckCompletion": true,
+        "CheckCompletion": false,
         "TriggerConditionType": "516",
         "TriggerConditionValue": "3103",
         "CompletionConditionType": "518",
@@ -4663,6 +5154,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击替换",
         "TextAround": "点击替换",
         "TextShowDirection": [
             0,
@@ -4678,7 +5170,9 @@
             "16",
             "5"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4704,6 +5198,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装备",
         "TextAround": "点击装备",
         "TextShowDirection": [
             1,
@@ -4716,7 +5211,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4742,6 +5240,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "刚刚获得了不错的武器，点击这里更换吧",
         "TextAround": "刚刚获得了不错的武器，点击这里更换吧",
         "TextShowDirection": [
             0,
@@ -4754,7 +5253,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4780,12 +5282,13 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "查看装备",
         "TextAround": "查看装备",
         "TextShowDirection": [
             1,
             0
         ],
-        "TextMiddle": "",
+        "TextMiddle": " ",
         "KeyboardId": [],
         "OnlyKey": false,
         "UIView": "",
@@ -4795,7 +5298,10 @@
             "10",
             "2"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4821,6 +5327,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击替换",
         "TextAround": "点击替换",
         "TextShowDirection": [
             0,
@@ -4836,7 +5343,97 @@
             "16",
             "5"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3109": {
+        "Key": 3109,
+        "Id": 3109,
+        "Priority": 3100,
+        "GuideGroup": 22,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "10089003",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": false,
+        "MobileTextAround": "",
+        "TextAround": "",
+        "TextShowDirection": [],
+        "TextMiddle": "按下{*keyboard.key108*}键打开综合菜单",
+        "KeyboardId": [
+            108
+        ],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200000"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3110": {
+        "Key": 3110,
+        "Id": 3110,
+        "Priority": 3101,
+        "GuideGroup": 22,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui_funcs_list",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "10089003",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
+        "TextAround": "打开角色信息面板",
+        "TextShowDirection": [
+            2,
+            0
+        ],
+        "TextMiddle": "",
+        "KeyboardId": [],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200001"
+        ],
+        "Pcchoice": [
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4862,6 +5459,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击领取第一天签到奖励",
         "TextAround": "点击领取第一天签到奖励",
         "TextShowDirection": [
             0,
@@ -4874,11 +5472,98 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
         "IfDynamic": false
+    },
+    "3208": {
+        "Key": 3208,
+        "Id": 3208,
+        "Priority": 3210,
+        "GuideGroup": 27,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui_funcs_list",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "502",
+        "TriggerConditionValue": "3000001",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
+        "TextAround": "打开角色信息面板",
+        "TextShowDirection": [
+            2,
+            0
+        ],
+        "TextMiddle": "",
+        "KeyboardId": [],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200001"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3209": {
+        "Key": 3209,
+        "Id": 3209,
+        "Priority": 3209,
+        "GuideGroup": 27,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "502",
+        "TriggerConditionValue": "3000001",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": false,
+        "MobileTextAround": "",
+        "TextAround": "",
+        "TextShowDirection": [],
+        "TextMiddle": "按下{*keyboard.key108*}键打开综合菜单",
+        "KeyboardId": [
+            108
+        ],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200000"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
     },
     "3210": {
         "Key": 3210,
@@ -4900,6 +5585,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息",
         "TextAround": "打开角色信息",
         "TextShowDirection": [
             1,
@@ -4917,7 +5603,10 @@
             "1",
             "200001"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [
+            1,
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4943,6 +5632,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里选择技能",
         "TextAround": "点击这里选择技能",
         "TextShowDirection": [
             0,
@@ -4955,7 +5645,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -4981,6 +5671,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击查看详情",
         "TextAround": "点击查看详情",
         "TextShowDirection": [
             0,
@@ -4993,7 +5684,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5019,6 +5710,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击切换页签",
         "TextAround": "点击切换页签",
         "TextShowDirection": [
             3,
@@ -5031,7 +5723,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5057,6 +5749,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击查看",
         "TextAround": "点击查看",
         "TextShowDirection": [
             0,
@@ -5072,7 +5765,7 @@
             "11",
             "3910"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5098,6 +5791,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击激活",
         "TextAround": "点击激活",
         "TextShowDirection": [
             0,
@@ -5110,7 +5804,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5136,6 +5830,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装配",
         "TextAround": "点击装配",
         "TextShowDirection": [
             0,
@@ -5148,7 +5843,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5174,6 +5869,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "放进第一个槽位吧~",
         "TextAround": "放进第一个槽位吧~",
         "TextShowDirection": [
             0,
@@ -5186,7 +5882,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5212,6 +5908,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里选择技能",
         "TextAround": "点击这里选择技能",
         "TextShowDirection": [
             1,
@@ -5224,7 +5921,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5250,6 +5947,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "按下{*keyboard.key10*}键查看详情",
@@ -5261,7 +5959,137 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3220": {
+        "Key": 3220,
+        "Id": 3220,
+        "Priority": 3505,
+        "GuideGroup": 41,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "170110001",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": false,
+        "MobileTextAround": "",
+        "TextAround": "",
+        "TextShowDirection": [],
+        "TextMiddle": "按下{*keyboard.key108*}键打开综合菜单",
+        "KeyboardId": [
+            108
+        ],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200000"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3221": {
+        "Key": 3221,
+        "Id": 3221,
+        "Priority": 3506,
+        "GuideGroup": 41,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui_funcs_list",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "170110001",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
+        "TextAround": "打开角色信息面板",
+        "TextShowDirection": [
+            2,
+            0
+        ],
+        "TextMiddle": "",
+        "KeyboardId": [],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200001"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3300": {
+        "Key": 3300,
+        "Id": 3300,
+        "Priority": 3300,
+        "GuideGroup": 28,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "170018",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": false,
+        "MobileTextAround": "",
+        "TextAround": "",
+        "TextShowDirection": [],
+        "TextMiddle": "按下{*keyboard.key108*}键打开综合菜单",
+        "KeyboardId": [
+            108
+        ],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200000"
+        ],
+        "Pcchoice": [
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5287,6 +6115,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开赛季中心",
         "TextAround": "打开赛季中心",
         "TextShowDirection": [
             1,
@@ -5304,7 +6133,10 @@
             "1",
             "800500"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [
+            1,
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5330,6 +6162,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "获取活跃度，领取荣誉币和每日奖励",
         "TextAround": "获取活跃度，领取荣誉币和每日奖励",
         "TextShowDirection": [
             0,
@@ -5342,7 +6175,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5368,6 +6201,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击查看赛季头衔",
         "TextAround": "点击查看赛季头衔",
         "TextShowDirection": [
             3,
@@ -5383,7 +6217,7 @@
             "13",
             "800510"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5409,6 +6243,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "提升赛季通行证等级，完成各类成就，可以提升赛季头衔，获取丰厚奖励",
         "TextAround": "提升赛季通行证等级，完成各类成就，可以提升赛季头衔，获取丰厚奖励",
         "TextShowDirection": [
             0,
@@ -5421,7 +6256,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5447,6 +6282,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "荣誉币商店中可使用荣誉币兑换大量资源",
         "TextAround": "荣誉币商店中可使用荣誉币兑换大量资源",
         "TextShowDirection": [
             3,
@@ -5459,11 +6295,55 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
         "IfDynamic": false
+    },
+    "3308": {
+        "Key": 3308,
+        "Id": 3308,
+        "Priority": 3301,
+        "GuideGroup": 28,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui_funcs_list",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "170018",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
+        "TextAround": "打开角色信息面板",
+        "TextShowDirection": [
+            2,
+            0
+        ],
+        "TextMiddle": "",
+        "KeyboardId": [],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200001"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
     },
     "3309": {
         "Key": 3309,
@@ -5483,6 +6363,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "",
@@ -5492,7 +6373,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 6050,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5518,6 +6399,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击鱼竿",
         "TextAround": "点击鱼竿",
         "TextShowDirection": [
             0,
@@ -5530,7 +6412,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5556,6 +6440,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击使用",
         "TextAround": "点击使用",
         "TextShowDirection": [
             0,
@@ -5571,7 +6456,9 @@
             "14",
             "1"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5597,6 +6484,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击鱼饵",
         "TextAround": "点击鱼饵",
         "TextShowDirection": [
             0,
@@ -5609,7 +6497,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5635,6 +6525,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击使用",
         "TextAround": "点击使用",
         "TextShowDirection": [
             0,
@@ -5650,7 +6541,9 @@
             "14",
             "2"
         ],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5676,6 +6569,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击钓鱼",
         "TextAround": "点击钓鱼",
         "TextShowDirection": [
             0,
@@ -5688,7 +6582,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5714,6 +6610,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "点击{*keyboard.key11*}钓鱼",
@@ -5725,7 +6622,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5751,6 +6651,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "按下{*keyboard.key101*}键装配鱼竿",
@@ -5762,7 +6663,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5788,6 +6692,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击使用",
         "TextAround": "点击使用",
         "TextShowDirection": [
             0,
@@ -5803,7 +6708,10 @@
             "14",
             "1"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5829,6 +6737,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "按下{*keyboard.key33*}键装配鱼饵",
@@ -5840,7 +6749,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5866,6 +6778,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击使用",
         "TextAround": "点击使用",
         "TextShowDirection": [
             0,
@@ -5881,7 +6794,10 @@
             "14",
             "2"
         ],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5907,6 +6823,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息",
         "TextAround": "打开角色信息",
         "TextShowDirection": [
             1,
@@ -5924,7 +6841,10 @@
             "1",
             "200001"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [
+            1,
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5950,6 +6870,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里选择天赋",
         "TextAround": "点击这里选择天赋",
         "TextShowDirection": [
             2,
@@ -5962,7 +6883,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -5988,6 +6911,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里查看天赋节点",
         "TextAround": "点击这里查看天赋节点",
         "TextShowDirection": [
             2,
@@ -6000,7 +6924,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6026,6 +6950,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里激活",
         "TextAround": "点击这里激活",
         "TextShowDirection": [
             0,
@@ -6038,7 +6963,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6064,6 +6989,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里选择天赋",
         "TextAround": "点击这里选择天赋",
         "TextShowDirection": [
             1,
@@ -6076,7 +7002,97 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3325": {
+        "Key": 3325,
+        "Id": 3325,
+        "Priority": 3319,
+        "GuideGroup": 30,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "10092",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": false,
+        "MobileTextAround": "",
+        "TextAround": "",
+        "TextShowDirection": [],
+        "TextMiddle": "按下{*keyboard.key108*}键打开综合菜单",
+        "KeyboardId": [
+            108
+        ],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200000"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3326": {
+        "Key": 3326,
+        "Id": 3326,
+        "Priority": 3320,
+        "GuideGroup": 30,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui_funcs_list",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "505",
+        "TriggerConditionValue": "10092",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
+        "TextAround": "打开角色信息面板",
+        "TextShowDirection": [
+            2,
+            0
+        ],
+        "TextMiddle": "",
+        "KeyboardId": [],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200001"
+        ],
+        "Pcchoice": [
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6102,6 +7118,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里激活传送点",
         "TextAround": "点击这里激活传送点",
         "TextShowDirection": [
             0,
@@ -6117,7 +7134,7 @@
             "12",
             "1265"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6143,6 +7160,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里打开宝箱",
         "TextAround": "点击这里打开宝箱",
         "TextShowDirection": [
             0,
@@ -6158,7 +7176,7 @@
             "12",
             "14780"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6184,6 +7202,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里设置在线时间",
         "TextAround": "点击这里设置在线时间",
         "TextShowDirection": [
             1,
@@ -6196,7 +7215,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6222,6 +7241,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击回忆之幕设置照片",
         "TextAround": "点击回忆之幕设置照片",
         "TextShowDirection": [
             1,
@@ -6234,7 +7254,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6260,6 +7280,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击冒险者勋绶查看徽章",
         "TextAround": "点击冒险者勋绶查看徽章",
         "TextShowDirection": [
             1,
@@ -6272,7 +7293,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6298,6 +7319,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 5,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "重铸可以使装备获得新的属性并提高属性值",
@@ -6307,7 +7329,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6333,6 +7355,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开综合菜单",
         "TextAround": "打开综合菜单",
         "TextShowDirection": [
             1,
@@ -6348,7 +7371,7 @@
             "1",
             "200000"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6374,6 +7397,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击协会",
         "TextAround": "点击协会",
         "TextShowDirection": [
             2,
@@ -6389,7 +7413,7 @@
             "1",
             "500100"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6415,6 +7439,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击切换查看样式",
         "TextAround": "点击切换查看样式",
         "TextShowDirection": [
             1,
@@ -6427,7 +7452,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6453,6 +7478,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 5,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里可以创建协会",
         "TextAround": "点击这里可以创建协会",
         "TextShowDirection": [
             1,
@@ -6465,7 +7491,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6491,6 +7517,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里可以筛选协会",
         "TextAround": "点击这里可以筛选协会",
         "TextShowDirection": [
             1,
@@ -6503,7 +7530,94 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3398": {
+        "Key": 3398,
+        "Id": 3398,
+        "Priority": 3399,
+        "GuideGroup": 32,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "520",
+        "TriggerConditionValue": "104210",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": false,
+        "MobileTextAround": "",
+        "TextAround": "",
+        "TextShowDirection": [],
+        "TextMiddle": "按下{*keyboard.key108*}键打开综合菜单",
+        "KeyboardId": [
+            108
+        ],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200000"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3399": {
+        "Key": 3399,
+        "Id": 3399,
+        "Priority": 3400,
+        "GuideGroup": 32,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui_funcs_list",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "520",
+        "TriggerConditionValue": "104210",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
+        "TextAround": "打开角色信息面板",
+        "TextShowDirection": [
+            2,
+            0
+        ],
+        "TextMiddle": "",
+        "KeyboardId": [],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200001"
+        ],
+        "Pcchoice": [
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6529,6 +7643,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息",
         "TextAround": "打开角色信息",
         "TextShowDirection": [
             1,
@@ -6546,7 +7661,10 @@
             "1",
             "200001"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [
+            1,
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6572,6 +7690,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里选择模组",
         "TextAround": "点击这里选择模组",
         "TextShowDirection": [
             2,
@@ -6584,7 +7703,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6610,6 +7729,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里",
         "TextAround": "点击这里",
         "TextShowDirection": [
             2,
@@ -6624,7 +7744,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6650,6 +7770,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "可以查看词条效果",
         "TextAround": "可以查看词条效果",
         "TextShowDirection": [
             2,
@@ -6662,7 +7783,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6688,6 +7809,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装配",
         "TextAround": "点击装配",
         "TextShowDirection": [
             0,
@@ -6700,7 +7822,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6726,6 +7848,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "模组链接可以增强效果",
         "TextAround": "模组链接可以增强效果",
         "TextShowDirection": [
             2,
@@ -6738,7 +7861,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6764,6 +7887,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击前往培育",
         "TextAround": "点击前往培育",
         "TextShowDirection": [
             0,
@@ -6776,7 +7900,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6802,6 +7926,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里即可链接",
         "TextAround": "点击这里即可链接",
         "TextShowDirection": [
             2,
@@ -6814,7 +7939,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6840,6 +7965,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "按下{*keyboard.key10*}键查看详情",
@@ -6851,7 +7977,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6877,6 +8003,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开综合菜单",
         "TextAround": "打开综合菜单",
         "TextShowDirection": [
             1,
@@ -6892,7 +8019,7 @@
             "1",
             "200000"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6918,6 +8045,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击怪物讨伐",
         "TextAround": "点击怪物讨伐",
         "TextShowDirection": [
             2,
@@ -6933,7 +8061,7 @@
             "1",
             "100804"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6959,6 +8087,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "击败怪物，完成目标可以获得奖励",
         "TextAround": "击败怪物，完成目标可以获得奖励",
         "TextShowDirection": [
             0,
@@ -6971,7 +8100,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -6997,6 +8126,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里查看精英",
         "TextAround": "点击这里查看精英",
         "TextShowDirection": [
             3,
@@ -7009,7 +8139,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7035,6 +8165,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "首刀并击败精英后可以使用钥匙开启掉落的宝箱",
         "TextAround": "首刀并击败精英后可以使用钥匙开启掉落的宝箱",
         "TextShowDirection": [
             1,
@@ -7047,7 +8178,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7073,6 +8204,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里查看首领",
         "TextAround": "点击这里查看首领",
         "TextShowDirection": [
             3,
@@ -7085,7 +8217,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7111,6 +8243,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "讨伐野外出现的首领怪物，使用每日发放的首领钥匙，可以开启掉落的宝箱，同时击败首领还会获得额外掉落奖励，推荐组队参与",
         "TextAround": "讨伐野外出现的首领怪物，使用每日发放的首领钥匙，可以开启掉落的宝箱，同时击败首领还会获得额外掉落奖励，推荐组队参与",
         "TextShowDirection": [
             1,
@@ -7123,7 +8256,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7149,6 +8282,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "完成讨伐目标获得讨伐手册经验，提升手册等级获得奖励",
         "TextAround": "完成讨伐目标获得讨伐手册经验，提升手册等级获得奖励",
         "TextShowDirection": [
             1,
@@ -7161,7 +8295,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7187,6 +8321,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "这里为击败怪物后掉落的战利品宝箱可以开出的奖励",
         "TextAround": "这里为击败怪物后掉落的战利品宝箱可以开出的奖励",
         "TextShowDirection": [
             2,
@@ -7199,7 +8334,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7225,6 +8360,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里可以查看每次击败怪物后可能获得的奖励",
         "TextAround": "点击这里可以查看每次击败怪物后可能获得的奖励",
         "TextShowDirection": [
             0,
@@ -7237,7 +8373,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7263,6 +8399,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "这里有不同的路线，已经帮你选择好最合适你职业的路线啦~",
         "TextAround": "这里有不同的路线，已经帮你选择好最合适你职业的路线啦~",
         "TextShowDirection": [
             1,
@@ -7275,7 +8412,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7301,6 +8438,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "这里可以选择关卡，必须通关后才可解锁下一个关",
         "TextAround": "这里可以选择关卡，必须通关后才可解锁下一个关",
         "TextShowDirection": [
             3,
@@ -7313,7 +8451,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7339,6 +8477,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "这里可以查看本关的挑战",
         "TextAround": "这里可以查看本关的挑战",
         "TextShowDirection": [
             2,
@@ -7351,7 +8490,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7377,6 +8516,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "完成一些特定的关卡可以获得更好的奖励",
         "TextAround": "完成一些特定的关卡可以获得更好的奖励",
         "TextShowDirection": [
             3,
@@ -7389,7 +8529,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7415,6 +8555,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "快来试试吧！",
         "TextAround": "快来试试吧！",
         "TextShowDirection": [
             2,
@@ -7427,7 +8568,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7453,6 +8594,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击使用任务道具",
         "TextAround": "点击使用任务道具",
         "TextShowDirection": [
             3,
@@ -7467,7 +8609,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7493,6 +8635,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击解谜",
         "TextAround": "点击解谜",
         "TextShowDirection": [
             0,
@@ -7505,7 +8648,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7531,6 +8674,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击线索中的关键词",
         "TextAround": "点击线索中的关键词",
         "TextShowDirection": [
             0,
@@ -7543,7 +8687,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7569,6 +8713,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此处关闭锚点手记<br>返回主界面",
         "TextAround": "点击此处关闭锚点手记<br>返回主界面",
         "TextShowDirection": [
             2,
@@ -7581,7 +8726,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7607,6 +8752,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击关闭界面",
         "TextAround": "点击关闭界面",
         "TextShowDirection": [
             2,
@@ -7621,7 +8767,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7647,6 +8793,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击综合菜单",
         "TextAround": "点击综合菜单",
         "TextShowDirection": [
             1,
@@ -7664,7 +8811,7 @@
             "1",
             "200000"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7690,6 +8837,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击设置",
         "TextAround": "点击设置",
         "TextShowDirection": [
             1,
@@ -7705,7 +8853,7 @@
             "1",
             "100201"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7731,6 +8879,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "这里可以开关一键连招哦~",
         "TextAround": "这里可以开关一键连招哦~",
         "TextShowDirection": [
             1,
@@ -7743,7 +8892,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7769,6 +8918,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开赛季手册",
         "TextAround": "打开赛季手册",
         "TextShowDirection": [
             1,
@@ -7786,7 +8936,10 @@
             "1",
             "800500"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [
+            1,
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7812,6 +8965,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击查看赛季头衔",
         "TextAround": "点击查看赛季头衔",
         "TextShowDirection": [
             3,
@@ -7827,7 +8981,7 @@
             "13",
             "800510"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7853,6 +9007,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里查看臂章",
         "TextAround": "点击这里查看臂章",
         "TextShowDirection": [
             3,
@@ -7865,7 +9020,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7891,6 +9046,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "每个臂章的供能节点效果不同，选择适合自己的节点进行升级",
         "TextAround": "每个臂章的供能节点效果不同，选择适合自己的节点进行升级",
         "TextShowDirection": [
             3,
@@ -7903,7 +9059,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -7929,6 +9085,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "激活和升级臂章的供能核心，并选择1~3条臂章的核心词条装配使用",
         "TextAround": "激活和升级臂章的供能核心，并选择1~3条臂章的核心词条装配使用",
         "TextShowDirection": [
             3,
@@ -7941,11 +9098,98 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
         "IfDynamic": false
+    },
+    "3475": {
+        "Key": 3475,
+        "Id": 3475,
+        "Priority": 3469,
+        "GuideGroup": 39,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "520",
+        "TriggerConditionValue": "800506",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": false,
+        "MobileTextAround": "",
+        "TextAround": "",
+        "TextShowDirection": [],
+        "TextMiddle": "按下{*keyboard.key108*}键打开综合菜单",
+        "KeyboardId": [
+            108
+        ],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200000"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
+    },
+    "3476": {
+        "Key": 3476,
+        "Id": 3476,
+        "Priority": 3470,
+        "GuideGroup": 39,
+        "ShowConditionType": [
+            2
+        ],
+        "PriorityGlobal": 0,
+        "ShowConditionValue": "mainui_funcs_list",
+        "IfShowcheck": false,
+        "CheckCompletion": false,
+        "TriggerConditionType": "520",
+        "TriggerConditionValue": "800506",
+        "CompletionConditionType": "503",
+        "CompletionConditionValue": "weapon_role_main_pc",
+        "AutoCompleteConditionType": "",
+        "AutoCompleteConditionValue": "",
+        "AutoCompleteTime": 0,
+        "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息面板",
+        "TextAround": "打开角色信息面板",
+        "TextShowDirection": [
+            2,
+            0
+        ],
+        "TextMiddle": "",
+        "KeyboardId": [],
+        "OnlyKey": false,
+        "UIView": "",
+        "IsBlack": false,
+        "ShowHelplibraryId": 0,
+        "DynamicUI": [
+            "1",
+            "200001"
+        ],
+        "Pcchoice": [
+            3
+        ],
+        "DelayTime": 0,
+        "CameraID": 0,
+        "IfCheck": false,
+        "IfDynamic": true
     },
     "3480": {
         "Key": 3480,
@@ -7967,6 +9211,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "不稳定空间每日可获得两次奖励",
         "TextAround": "不稳定空间每日可获得两次奖励",
         "TextShowDirection": [
             0,
@@ -7979,7 +9224,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8005,6 +9250,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "基础模式可选择单/双人或组队进入，单/双人较为简单有AI陪同",
         "TextAround": "基础模式可选择单/双人或组队进入，单/双人较为简单有AI陪同",
         "TextShowDirection": [
             2,
@@ -8017,7 +9263,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8043,6 +9289,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开综合菜单",
         "TextAround": "打开综合菜单",
         "TextShowDirection": [
             1,
@@ -8060,7 +9307,7 @@
             "1",
             "200000"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8086,6 +9333,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开个人空间",
         "TextAround": "打开个人空间",
         "TextShowDirection": [
             2,
@@ -8101,7 +9349,7 @@
             "1",
             "100908"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8127,6 +9375,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击冒险者勋绶",
         "TextAround": "点击冒险者勋绶",
         "TextShowDirection": [
             0,
@@ -8139,7 +9388,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8165,6 +9414,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击编辑",
         "TextAround": "点击编辑",
         "TextShowDirection": [
             2,
@@ -8177,7 +9427,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8203,6 +9453,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击徽章",
         "TextAround": "点击徽章",
         "TextShowDirection": [
             2,
@@ -8218,7 +9469,7 @@
             "18",
             "1"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8244,6 +9495,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "徽章可自由在徽章墙上拖动",
@@ -8253,7 +9505,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8279,6 +9531,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "别忘了保存哦~",
         "TextAround": "别忘了保存哦~",
         "TextShowDirection": [
             0,
@@ -8291,7 +9544,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8317,6 +9570,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开角色信息",
         "TextAround": "打开角色信息",
         "TextShowDirection": [
             1,
@@ -8334,7 +9588,10 @@
             "1",
             "200001"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [
+            1,
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8360,6 +9617,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里选择职业",
         "TextAround": "点击这里选择职业",
         "TextShowDirection": [
             2,
@@ -8372,7 +9630,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8398,6 +9656,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "选择任意职业了解职业特性",
         "TextAround": "选择任意职业了解职业特性",
         "TextShowDirection": [
             3,
@@ -8410,7 +9669,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8436,6 +9695,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击前往解锁，激活新职业",
         "TextAround": "点击前往解锁，激活新职业",
         "TextShowDirection": [
             2,
@@ -8448,7 +9708,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8474,6 +9734,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里选择职业",
         "TextAround": "点击这里选择职业",
         "TextShowDirection": [
             2,
@@ -8486,7 +9747,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8512,6 +9773,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "前往众筹帮助协会吧~",
         "TextAround": "前往众筹帮助协会吧~",
         "TextShowDirection": [
             0,
@@ -8524,7 +9786,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8550,6 +9812,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击查看荣誉币商店",
         "TextAround": "点击查看荣誉币商店",
         "TextShowDirection": [
             0,
@@ -8562,7 +9825,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8588,6 +9851,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "每轮需完成3个指定委托",
         "TextAround": "每轮需完成3个指定委托",
         "TextShowDirection": [
             2,
@@ -8600,7 +9864,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8626,6 +9890,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "完成委托时，奖励自动发放",
         "TextAround": "完成委托时，奖励自动发放",
         "TextShowDirection": [
             0,
@@ -8638,7 +9903,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8664,6 +9929,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "每轮3个指定委托完成时，自动获得额外奖励",
         "TextAround": "每轮3个指定委托完成时，自动获得额外奖励",
         "TextShowDirection": [
             0,
@@ -8676,7 +9942,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8702,6 +9968,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击领取委托吧~",
         "TextAround": "点击领取委托吧~",
         "TextShowDirection": [
             0,
@@ -8714,7 +9981,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8740,6 +10007,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "打开综合菜单",
         "TextAround": "打开综合菜单",
         "TextShowDirection": [
             1,
@@ -8757,7 +10025,7 @@
             "1",
             "200000"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8783,6 +10051,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "前往载具界面",
         "TextAround": "前往载具界面",
         "TextShowDirection": [
             2,
@@ -8798,7 +10067,7 @@
             "1",
             "102800"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8824,6 +10093,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装配",
         "TextAround": "点击装配",
         "TextShowDirection": [
             2,
@@ -8836,7 +10106,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8862,6 +10132,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "返回主界面",
         "TextAround": "返回主界面",
         "TextShowDirection": [
             2,
@@ -8874,7 +10145,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8900,6 +10171,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击骑乘",
         "TextAround": "点击骑乘",
         "TextShowDirection": [
             0,
@@ -8917,7 +10189,7 @@
             "1",
             "102803"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8943,6 +10215,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "长按{*keyboard.key154*}键使用追踪导航",
@@ -8954,7 +10227,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -8980,6 +10256,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击快速寻路",
         "TextAround": "点击快速寻路",
         "TextShowDirection": [
             0,
@@ -8992,7 +10269,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9018,6 +10297,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "精炼可以增强属性，点击这里精炼吧~",
         "TextAround": "精炼可以增强属性，点击这里精炼吧~",
         "TextShowDirection": [
             2,
@@ -9030,7 +10310,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9056,6 +10336,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击打开宝石列表",
         "TextAround": "点击打开宝石列表",
         "TextShowDirection": [
             0,
@@ -9068,7 +10349,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9094,6 +10375,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "选择宝石",
         "TextAround": "选择宝石",
         "TextShowDirection": [
             3,
@@ -9109,7 +10391,7 @@
             "19",
             "1"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9135,6 +10417,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "选择中级或者高级的镶嵌方式可以直接获得更高等级的宝石效果哦",
         "TextAround": "选择中级或者高级的镶嵌方式可以直接获得更高等级的宝石效果哦",
         "TextShowDirection": [
             2,
@@ -9147,7 +10430,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9173,6 +10456,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击镶嵌",
         "TextAround": "点击镶嵌",
         "TextShowDirection": [
             0,
@@ -9185,7 +10469,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9211,6 +10495,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "拍照有多种拍摄模式可供选择",
         "TextAround": "拍照有多种拍摄模式可供选择",
         "TextShowDirection": [
             1,
@@ -9223,7 +10508,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9249,6 +10534,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "屏幕右下角查看常用快捷键",
@@ -9258,7 +10544,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9284,6 +10573,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击打开拍照队伍管理界面",
         "TextAround": "点击打开拍照队伍管理界面",
         "TextShowDirection": [
             1,
@@ -9296,7 +10586,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9322,6 +10612,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "在你附近的伙伴才会显示在这里，此时可将他们拉进你的拍照队伍",
@@ -9331,7 +10622,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9357,6 +10648,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击制作",
         "TextAround": "点击制作",
         "TextShowDirection": [
             0,
@@ -9369,7 +10661,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9395,6 +10687,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击可筛选当前职业所需幻想",
         "TextAround": "点击可筛选当前职业所需幻想",
         "TextShowDirection": [
             3,
@@ -9407,7 +10700,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9433,6 +10726,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击使用任务道具",
         "TextAround": "点击使用任务道具",
         "TextShowDirection": [
             3,
@@ -9447,7 +10741,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9473,6 +10767,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击解谜",
         "TextAround": "点击解谜",
         "TextShowDirection": [
             0,
@@ -9485,7 +10780,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9511,6 +10806,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此处关闭锚点手记<br>返回主界面",
         "TextAround": "点击此处关闭锚点手记<br>返回主界面",
         "TextShowDirection": [
             2,
@@ -9523,7 +10819,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9549,6 +10845,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击翻页",
         "TextAround": "点击翻页",
         "TextShowDirection": [
             0,
@@ -9561,7 +10858,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9587,6 +10884,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击线索中的关键词",
         "TextAround": "点击线索中的关键词",
         "TextShowDirection": [
             0,
@@ -9599,7 +10897,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9625,6 +10923,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "可以查看词条效果",
         "TextAround": "可以查看词条效果",
         "TextShowDirection": [
             2,
@@ -9637,7 +10936,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9663,6 +10962,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击装配",
         "TextAround": "点击装配",
         "TextShowDirection": [
             0,
@@ -9675,7 +10975,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9701,6 +11001,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "模组链接可以增强效果",
         "TextAround": "模组链接可以增强效果",
         "TextShowDirection": [
             2,
@@ -9713,7 +11014,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9739,6 +11040,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击前往培育",
         "TextAround": "点击前往培育",
         "TextShowDirection": [
             0,
@@ -9751,7 +11053,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9777,6 +11079,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里即可链接",
         "TextAround": "点击这里即可链接",
         "TextShowDirection": [
             2,
@@ -9789,7 +11092,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9815,6 +11118,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "前往模组工坊可以培养模组",
@@ -9824,7 +11128,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9850,6 +11154,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里选择模组",
         "TextAround": "点击这里选择模组",
         "TextShowDirection": [
             1,
@@ -9862,7 +11167,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9888,6 +11193,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "拖动摇杆移动",
         "TextAround": "拖动摇杆移动",
         "TextShowDirection": [
             0,
@@ -9900,7 +11206,9 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 2,
+        "Pcchoice": [
+            2
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9926,12 +11234,13 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [
             0,
             0
         ],
-        "TextMiddle": "按下{*keyboard.key2*}键移动",
+        "TextMiddle": "使用{*keyboard.key2*}键移动",
         "KeyboardId": [
             2
         ],
@@ -9940,7 +11249,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -9966,6 +11278,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击此处可关闭",
         "TextAround": "点击此处可关闭",
         "TextShowDirection": [
             2,
@@ -9978,7 +11291,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10004,6 +11317,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击任务可以查找目标点",
         "TextAround": "点击任务可以查找目标点",
         "TextShowDirection": [
             3,
@@ -10018,7 +11332,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10044,6 +11358,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击任务可以查找目标点",
         "TextAround": "点击任务可以查找目标点",
         "TextShowDirection": [
             3,
@@ -10058,7 +11373,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10084,6 +11399,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击和艾露娜交谈",
         "TextAround": "点击和艾露娜交谈",
         "TextShowDirection": [
             2,
@@ -10101,7 +11417,7 @@
             "12",
             "502291"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10127,6 +11443,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击任务可以查找目标点",
         "TextAround": "点击任务可以查找目标点",
         "TextShowDirection": [
             3,
@@ -10141,7 +11458,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10167,6 +11484,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击创建家园",
         "TextAround": "点击创建家园",
         "TextShowDirection": [
             0,
@@ -10179,7 +11497,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10205,6 +11523,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击进行签名",
         "TextAround": "点击进行签名",
         "TextShowDirection": [
             0,
@@ -10217,7 +11536,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10243,6 +11562,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击关闭界面",
         "TextAround": "点击关闭界面",
         "TextShowDirection": [
             1,
@@ -10255,7 +11575,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10281,6 +11601,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里进入家园",
         "TextAround": "点击这里进入家园",
         "TextShowDirection": [
             0,
@@ -10293,7 +11614,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10319,6 +11640,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击这里进入住宅布置",
         "TextAround": "点击这里进入住宅布置",
         "TextShowDirection": [
             1,
@@ -10331,7 +11653,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10357,6 +11679,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": true,
+        "MobileTextAround": "在家园商人德尔菲妮处可以购买种子",
         "TextAround": "在家园商人德尔菲妮处可以购买种子",
         "TextShowDirection": [
             0,
@@ -10369,7 +11692,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10395,6 +11718,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "按下{*keyboard.key150*}键打开家园界面",
@@ -10406,7 +11730,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10432,6 +11756,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击进入室内",
         "TextAround": "点击进入室内",
         "TextShowDirection": [
             0,
@@ -10447,7 +11772,7 @@
             "12",
             "17"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10473,6 +11798,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击可以切页查看家具",
         "TextAround": "点击可以切页查看家具",
         "TextShowDirection": [
             2,
@@ -10488,7 +11814,7 @@
             "23",
             "15"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10514,6 +11840,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击选择家具",
         "TextAround": "点击选择家具",
         "TextShowDirection": [
             2,
@@ -10529,7 +11856,7 @@
             "24",
             "1501"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10555,6 +11882,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 5,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "去获取家具装饰家园吧",
@@ -10564,7 +11892,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10590,6 +11918,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "委托订单很多，每天都会整理在这里供您阅览",
         "TextAround": "委托订单很多，每天都会整理在这里供您阅览",
         "TextShowDirection": [
             0,
@@ -10602,7 +11931,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10628,6 +11957,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "家园运力有限，每天只能完成有限数量的委托订单",
         "TextAround": "家园运力有限，每天只能完成有限数量的委托订单",
         "TextShowDirection": [
             3,
@@ -10640,7 +11970,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10666,6 +11996,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "仓库可以存储一些物品供同住成员取用",
         "TextAround": "仓库可以存储一些物品供同住成员取用",
         "TextShowDirection": [
             3,
@@ -10678,7 +12009,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10704,6 +12035,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "只有特定物品可以存入仓库",
         "TextAround": "只有特定物品可以存入仓库",
         "TextShowDirection": [
             2,
@@ -10716,7 +12048,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10742,6 +12074,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击查看存取数量",
         "TextAround": "点击查看存取数量",
         "TextShowDirection": [
             3,
@@ -10754,7 +12087,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10780,6 +12113,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "按下{*keyboard.key124*}键查看快捷键说明",
@@ -10791,7 +12125,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10817,6 +12154,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "再次按下{*keyboard.key124*}键关闭快捷键说明",
@@ -10828,7 +12166,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10854,6 +12195,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击骑乘",
         "TextAround": "点击骑乘",
         "TextShowDirection": [
             0,
@@ -10871,7 +12213,7 @@
             "1",
             "102803"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10897,6 +12239,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 10,
         "IsShowUIFrame": false,
+        "MobileTextAround": "",
         "TextAround": "",
         "TextShowDirection": [],
         "TextMiddle": "长按{*keyboard.key154*}键使用追踪导航",
@@ -10908,7 +12251,10 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 1,
+        "Pcchoice": [
+            1,
+            3
+        ],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10934,6 +12280,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击进入补偿商店",
         "TextAround": "点击进入补偿商店",
         "TextShowDirection": [
             3,
@@ -10946,7 +12293,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -10970,6 +12317,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "你错过的一些挑战和奖励，可以消耗补偿积分在补偿商店中领取",
         "TextAround": "你错过的一些挑战和奖励，可以消耗补偿积分在补偿商店中领取",
         "TextShowDirection": [
             1,
@@ -10985,7 +12333,7 @@
             "26",
             "10011"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11011,6 +12359,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击打开综合菜单",
         "TextAround": "点击打开综合菜单",
         "TextShowDirection": [
             6,
@@ -11028,7 +12377,7 @@
             "1",
             "200000"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11054,6 +12403,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击打开图鉴",
         "TextAround": "点击打开图鉴",
         "TextShowDirection": [
             0,
@@ -11069,7 +12419,7 @@
             "1",
             "600400"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11095,6 +12445,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击打开剧情手记",
         "TextAround": "点击打开剧情手记",
         "TextShowDirection": [
             1,
@@ -11107,7 +12458,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11133,6 +12484,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "完成主线后，剧情手记会记录剧情故事",
         "TextAround": "完成主线后，剧情手记会记录剧情故事",
         "TextShowDirection": [
             2,
@@ -11145,7 +12497,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11171,6 +12523,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击查看详细成就",
         "TextAround": "点击查看详细成就",
         "TextShowDirection": [
             1,
@@ -11186,7 +12539,7 @@
             "25",
             "1"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11212,6 +12565,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "完成成就可领取奖励",
         "TextAround": "完成成就可领取奖励",
         "TextShowDirection": [
             0,
@@ -11224,7 +12578,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11250,6 +12604,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击查看赛季成就",
         "TextAround": "点击查看赛季成就",
         "TextShowDirection": [
             0,
@@ -11265,7 +12620,7 @@
             "25",
             "10101"
         ],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11291,6 +12646,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "赛季成就奖杯可以提高头衔等级",
         "TextAround": "赛季成就奖杯可以提高头衔等级",
         "TextShowDirection": [
             0,
@@ -11303,7 +12659,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11329,6 +12685,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "大师模式已开启，点击查看",
         "TextAround": "大师模式已开启，点击查看",
         "TextShowDirection": [
             3,
@@ -11341,7 +12698,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11367,6 +12724,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "大师难度等级越高通关分数越高",
         "TextAround": "大师难度等级越高通关分数越高",
         "TextShowDirection": [
             0,
@@ -11379,7 +12737,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11405,6 +12763,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "大师难度仅1和6有首通奖励",
         "TextAround": "大师难度仅1和6有首通奖励",
         "TextShowDirection": [
             2,
@@ -11417,7 +12776,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11443,6 +12802,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击可查看副本通关信息",
         "TextAround": "点击可查看副本通关信息",
         "TextShowDirection": [
             0,
@@ -11455,7 +12815,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11481,6 +12841,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "达到一定赛季总分可以解锁奖励",
         "TextAround": "达到一定赛季总分可以解锁奖励",
         "TextShowDirection": [
             0,
@@ -11493,7 +12854,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11519,6 +12880,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击可以向频道分享大师之证",
         "TextAround": "点击可以向频道分享大师之证",
         "TextShowDirection": [
             2,
@@ -11531,7 +12893,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11557,6 +12919,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击进入编辑",
         "TextAround": "点击进入编辑",
         "TextShowDirection": [
             0,
@@ -11569,7 +12932,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11595,6 +12958,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "编辑个人标签",
         "TextAround": "编辑个人标签",
         "TextShowDirection": [
             3,
@@ -11607,7 +12971,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11633,6 +12997,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "切换个性背景",
         "TextAround": "切换个性背景",
         "TextShowDirection": [
             3,
@@ -11645,7 +13010,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11671,6 +13036,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击更换徽章",
         "TextAround": "点击更换徽章",
         "TextShowDirection": [
             3,
@@ -11683,7 +13049,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11709,6 +13075,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "更换照片墙",
         "TextAround": "更换照片墙",
         "TextShowDirection": [
             3,
@@ -11721,7 +13088,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11747,6 +13114,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "点击选择共鸣意志",
         "TextAround": "点击选择共鸣意志",
         "TextShowDirection": [
             0,
@@ -11759,7 +13127,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,
@@ -11785,6 +13153,7 @@
         "AutoCompleteConditionValue": "",
         "AutoCompleteTime": 0,
         "IsShowUIFrame": true,
+        "MobileTextAround": "查看功能预告",
         "TextAround": "查看功能预告",
         "TextShowDirection": [
             0,
@@ -11797,7 +13166,7 @@
         "IsBlack": false,
         "ShowHelplibraryId": 0,
         "DynamicUI": [],
-        "Pcchoice": 0,
+        "Pcchoice": [],
         "DelayTime": 0,
         "CameraID": 0,
         "IfCheck": false,

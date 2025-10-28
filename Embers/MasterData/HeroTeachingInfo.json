@@ -13,13 +13,19 @@
         "FrameText": "普攻命中可以获得2点<color=#FF961D>灵能</color>，冰龙处于<color=#FF961D>随行状态</color>时会协同攻击，获得8点灵能。",
         "Timing": 1,
         "NextTeachingGroup": 0,
-        "FinishAddBuff": [],
+        "FinishAddBuff": [
+            2160701
+        ],
         "CreateAddBuff": [],
         "FinishClearBuff": [],
         "DelayTime": 0.10000000149011612,
         "FinishLevel": false,
-        "SetPropertyName": [],
-        "SetPropertyValue": [],
+        "SetPropertyName": [
+            "HeroHeat"
+        ],
+        "SetPropertyValue": [
+            0.0
+        ],
         "MonsterState": 0,
         "MonsterPhaseEnum": ""
     },
@@ -39,7 +45,8 @@
         "NextTeachingGroup": 160703,
         "FinishAddBuff": [],
         "CreateAddBuff": [
-            2160716
+            2160716,
+            2160702
         ],
         "FinishClearBuff": [
             2160716
@@ -209,7 +216,9 @@
         "Timing": 0,
         "NextTeachingGroup": 160709,
         "FinishAddBuff": [],
-        "CreateAddBuff": [],
+        "CreateAddBuff": [
+            2160709
+        ],
         "FinishClearBuff": [],
         "DelayTime": 0.10000000149011612,
         "FinishLevel": false,
@@ -290,7 +299,7 @@
         "FrameName": "【任务】维持灵能不小于灵能阈值",
         "FrameText": "灵能不小于灵能阈值时，冰龙会得到强化，更容易叠加霜冻层数，请努力维持灵能在阈值线之上。",
         "Timing": 0,
-        "NextTeachingGroup": 0,
+        "NextTeachingGroup": 160715,
         "FinishAddBuff": [
             2160711
         ],
@@ -303,7 +312,7 @@
             2160706
         ],
         "DelayTime": 1.0,
-        "FinishLevel": true,
+        "FinishLevel": false,
         "SetPropertyName": [
             "Energy",
             "HeroHeat"
@@ -392,7 +401,8 @@
         "Timing": 0,
         "NextTeachingGroup": 0,
         "FinishAddBuff": [
-            2160704
+            2160704,
+            2160709
         ],
         "CreateAddBuff": [
             2160710
@@ -406,6 +416,58 @@
         "SetPropertyValue": [],
         "MonsterState": 0,
         "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 160715,
+        "TeachingGroupName": "杀死辉烬兽",
+        "TeachingGroupConfig": [
+            1160711
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【任务】击败辉烬兽",
+        "FrameText": "请击败辉烬兽。",
+        "Timing": 0,
+        "NextTeachingGroup": 160716,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2100099
+        ],
+        "FinishClearBuff": [],
+        "DelayTime": 0.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "XpEnergy"
+        ],
+        "SetPropertyValue": [
+            1000.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "Normal"
+    },
+    {
+        "Id": 160716,
+        "TeachingGroupName": "杀死辉烬兽",
+        "TeachingGroupConfig": [],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 0,
+        "BornPoint": [],
+        "FrameName": "【任务】击败辉烬兽",
+        "FrameText": "请击败辉烬兽。",
+        "Timing": 0,
+        "NextTeachingGroup": 0,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 0.0,
+        "FinishLevel": true,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "Normal"
     },
     {
         "Id": 100000,
@@ -480,7 +542,7 @@
         "TeachingGroupType": 4,
         "BornPoint": [],
         "FrameName": "请使用高削韧技击中破绽",
-        "FrameText": "南星的技能一和技能二高削韧技能，击中<color=#FF7B00>破绽</color>能极大削减其<color=#FF7B00>韧性</color>，辉烬兽韧性值清空时会立即<color=#FF7B00>倒地</color>",
+        "FrameText": "南星的技能一和技能二是高削韧技能，击中<color=#FF7B00>破绽</color>能极大削减其<color=#FF7B00>韧性</color>，辉烬兽韧性值清空时会立即<color=#FF7B00>倒地</color>。",
         "Timing": 0,
         "NextTeachingGroup": 100003,
         "FinishAddBuff": [
@@ -514,7 +576,7 @@
         "TeachingGroupType": 0,
         "BornPoint": [],
         "FrameName": "完成削韧教学",
-        "FrameText": "请击败辉烬兽",
+        "FrameText": "请击败辉烬兽。",
         "Timing": 0,
         "NextTeachingGroup": 0,
         "FinishAddBuff": [],
@@ -526,5 +588,451 @@
         "SetPropertyValue": [],
         "MonsterState": 0,
         "MonsterPhaseEnum": ""
+    },
+    {
+        "Id": 170400,
+        "TeachingGroupName": "普攻连招按键任务",
+        "TeachingGroupConfig": [
+            3170400
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 3,
+        "BornPoint": [],
+        "FrameName": "【普攻连段】",
+        "FrameText": "点击普攻，进行5段连续攻击。",
+        "Timing": 1,
+        "NextTeachingGroup": 170401,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 1.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 170401,
+        "TeachingGroupName": "释放普攻派生按键任务",
+        "TeachingGroupConfig": [
+            3170401
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 3,
+        "BornPoint": [],
+        "FrameName": "【普攻变招】",
+        "FrameText": "长按普攻可以释放变招<sprite=\"BattleHero_1704_1\" index=1>【普攻：逐影】，并且连续点击普攻可以进行普攻变招连段，依次释放<sprite=\"BattleHero_1704_1\" index=2>【普攻：斩魂】、<sprite=\"BattleHero_1704_1\" index=3>【普攻：化劫】。",
+        "Timing": 0,
+        "NextTeachingGroup": 170402,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 1.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 170402,
+        "TeachingGroupName": "释放技能一按键任务",
+        "TeachingGroupConfig": [
+            3170402
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 3,
+        "BornPoint": [],
+        "FrameName": "【技能一】",
+        "FrameText": "连续点击技能一可以进行技能一连段，依次释放<sprite=\"BattleHero_1704_1\" index=4>【技能一：剑鸣长歌】、<sprite=\"BattleHero_1704_1\" index=5>【技能一：净世莲华】、<sprite=\"BattleHero_1704_1\" index=6>【技能一：陨星坠霄】。",
+        "Timing": 0,
+        "NextTeachingGroup": 1704021,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2170406
+        ],
+        "FinishClearBuff": [],
+        "DelayTime": 1.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 1704021,
+        "TeachingGroupName": "被动",
+        "TeachingGroupConfig": [
+            1170411
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【被动：星落九天】",
+        "FrameText": "普攻最后一段、<sprite=\"BattleHero_1704_1\" index=6>【技能一：陨星坠霄】、<sprite=\"BattleHero_1704_1\" index=9>【技能二：断魂】命中时，或者每当瑶光触发<color=#cc5545><精确闪避></color>时，获得【被动：星落九天】。",
+        "Timing": 0,
+        "NextTeachingGroup": 1704022,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2170409
+        ],
+        "FinishClearBuff": [],
+        "DelayTime": 1.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 1704022,
+        "TeachingGroupName": "被动",
+        "TeachingGroupConfig": [],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 0,
+        "BornPoint": [],
+        "FrameName": "【被动：星落九天】",
+        "FrameText": "普攻最后一段、<sprite=\"BattleHero_1704_1\" index=6>【技能一：陨星坠霄】、<sprite=\"BattleHero_1704_1\" index=9>【技能二：断魂】命中时，或者每当瑶光触发<color=#cc5545><精确闪避></color>时，获得【被动：星落九天】。",
+        "Timing": 0,
+        "NextTeachingGroup": 170403,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2170408
+        ],
+        "FinishClearBuff": [],
+        "DelayTime": 1.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 170403,
+        "TeachingGroupName": "释放普攻派生按键任务",
+        "TeachingGroupConfig": [
+            3170403
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 3,
+        "BornPoint": [],
+        "FrameName": "【普攻变招和技能一相互循环】",
+        "FrameText": "瑶光在战斗中的核心目标之一是尽可能多的释放<sprite=\"BattleHero_1704_1\" index=6>【技能一：陨星坠霄】，以此维持【被动：星落九天】层数，快速积攒刃心值。<br>每一段技能一都可以派生到对应的普攻变招，反之亦然。通过在技能一和普攻变招之间交替派生连段，可以大大提升释放<sprite=\"BattleHero_1704_1\" index=6>【技能一：陨星坠霄】的频率。",
+        "Timing": 0,
+        "NextTeachingGroup": 0,
+        "FinishAddBuff": [
+            2170400,
+            2170401,
+            2170402
+        ],
+        "CreateAddBuff": [
+            2170406
+        ],
+        "FinishClearBuff": [],
+        "DelayTime": 1.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 170404,
+        "TeachingGroupName": "提示获取刃心",
+        "TeachingGroupConfig": [],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 0,
+        "BornPoint": [],
+        "FrameName": "【积攒刃心值】",
+        "FrameText": "通过在技能一和普攻变招之间交替派生连段，可以大大提升释放<sprite=\"BattleHero_1704_1\" index=6>【技能一：陨星坠霄】的频率，以此维持【被动：星落九天】层数，快速积攒刃心值。",
+        "Timing": 0,
+        "NextTeachingGroup": 0,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2170406,
+            2170401,
+            2170402
+        ],
+        "FinishClearBuff": [],
+        "DelayTime": 1.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 170405,
+        "TeachingGroupName": "框选技能三",
+        "TeachingGroupConfig": [
+            1170404
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【技能三】",
+        "FrameText": "【刃心等级】处于黄色时可以释放<sprite=\"BattleHero_1704_1\" index=10>【技能三：天命化尘】。<br>【刃心等级】处于红色时，升级为<sprite=\"BattleHero_1704_1\" index=11>【技能三：天命归墟】，大幅强化伤害和攻击段数。",
+        "Timing": 0,
+        "NextTeachingGroup": 170407,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2170400,
+            2170402
+        ],
+        "FinishClearBuff": [
+            2170400,
+            2170401,
+            2170402
+        ],
+        "DelayTime": 0.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 170406,
+        "TeachingGroupName": "框选技能三",
+        "TeachingGroupConfig": [
+            1170405
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【技能三】",
+        "FrameText": "【刃心等级】处于黄色时可以释放<sprite=\"BattleHero_1704_1\" index=10>【技能三：天命化尘】。<br>【刃心等级】处于红色时，升级为<sprite=\"BattleHero_1704_1\" index=11>【技能三：天命归墟】，大幅强化伤害和攻击段数。",
+        "Timing": 0,
+        "NextTeachingGroup": 170407,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2170400,
+            2170401
+        ],
+        "FinishClearBuff": [
+            2170400,
+            2170401,
+            2170402
+        ],
+        "DelayTime": 0.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 170407,
+        "TeachingGroupName": "框选技能二",
+        "TeachingGroupConfig": [
+            1170406
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【技能二】",
+        "FrameText": "进入短暂无敌状态，化为虚象。<br>若虚象被攻击，则触发<color=#cc5545><精确闪避></color>，立即向附近的敌人释放<sprite=\"BattleHero_1704_1\" index=9>【技能二：断魂】。",
+        "Timing": 0,
+        "NextTeachingGroup": 170408,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2170406
+        ],
+        "FinishClearBuff": [],
+        "DelayTime": 2.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 170408,
+        "TeachingGroupName": "框选技能二",
+        "TeachingGroupConfig": [
+            1170407
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【技能二】",
+        "FrameText": "进入短暂无敌状态，化为虚象。<br>若虚象被攻击，则触发<color=#cc5545><精确闪避></color>，立即向附近的敌人释放<sprite=\"BattleHero_1704_1\" index=9>【技能二：断魂】。",
+        "Timing": 0,
+        "NextTeachingGroup": 170409,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 0.5,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "None"
+    },
+    {
+        "Id": 170409,
+        "TeachingGroupName": "技能二教学",
+        "TeachingGroupConfig": [],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 0,
+        "BornPoint": [],
+        "FrameName": "",
+        "FrameText": "",
+        "Timing": 0,
+        "NextTeachingGroup": 170410,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2170407
+        ],
+        "FinishClearBuff": [
+            2170407
+        ],
+        "DelayTime": 2.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "Energy"
+        ],
+        "SetPropertyValue": [
+            1200.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "Normal"
+    },
+    {
+        "Id": 170410,
+        "TeachingGroupName": "技能二规避伤害任务",
+        "TeachingGroupConfig": [
+            4170401
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 4,
+        "BornPoint": [],
+        "FrameName": "<sprite=\"BattleHero_1704_1\" index=9>【技能二：断魂】",
+        "FrameText": "请尝试使用技能二触发<color=#cc5545><精确闪避></color>。<br>触发后瑶光会自动释放<sprite=\"BattleHero_1704_1\" index=9>【技能二：断魂】，打出一道剑气波攻击敌人。",
+        "Timing": 0,
+        "NextTeachingGroup": 170411,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2170403
+        ],
+        "FinishClearBuff": [
+            2170403
+        ],
+        "DelayTime": 2.0,
+        "FinishLevel": false,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "Normal"
+    },
+    {
+        "Id": 170411,
+        "TeachingGroupName": "击败辉烬兽",
+        "TeachingGroupConfig": [
+            1170409
+        ],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 1,
+        "BornPoint": [],
+        "FrameName": "【最终任务】",
+        "FrameText": "请击败辉烬兽。",
+        "Timing": 0,
+        "NextTeachingGroup": 170412,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [
+            2100099
+        ],
+        "FinishClearBuff": [],
+        "DelayTime": 0.0,
+        "FinishLevel": false,
+        "SetPropertyName": [
+            "XpEnergy"
+        ],
+        "SetPropertyValue": [
+            1000.0
+        ],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "Normal"
+    },
+    {
+        "Id": 170412,
+        "TeachingGroupName": "击败辉烬兽",
+        "TeachingGroupConfig": [],
+        "NextTeachDelayTime": [],
+        "NextTeachBanInputSkill": [],
+        "TeachingGroupType": 0,
+        "BornPoint": [],
+        "FrameName": "【最终任务】",
+        "FrameText": "请击败辉烬兽。",
+        "Timing": 0,
+        "NextTeachingGroup": 0,
+        "FinishAddBuff": [],
+        "CreateAddBuff": [],
+        "FinishClearBuff": [],
+        "DelayTime": 0.0,
+        "FinishLevel": true,
+        "SetPropertyName": [],
+        "SetPropertyValue": [],
+        "MonsterState": 0,
+        "MonsterPhaseEnum": "Normal"
     }
 ]

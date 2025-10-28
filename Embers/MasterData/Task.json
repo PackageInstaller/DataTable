@@ -316,8 +316,8 @@
         "LevelMapId": 100,
         "TaskPosition": [
             [
-                -136.54,
-                285.29
+                -152.81,
+                299.51
             ]
         ],
         "TaskRadius": [],
@@ -330,9 +330,9 @@
         "ClientTrigger": 0,
         "UIPosition": [
             [
-                -136.54,
-                6.52,
-                285.29
+                -152.81,
+                11.16,
+                299.51
             ]
         ],
         "UIRadius": []
@@ -2218,7 +2218,7 @@
         "TaskName": "材料收集",
         "CopyOpen": 2500,
         "TaskType": 1,
-        "TaskDesc": "收集修复断桥所需要的材料“陶泥”和“符木”",
+        "TaskDesc": "收集修复断桥所需要的材料“陶泥”和“木头”",
         "TaskTitle": "1-2隐林",
         "TaskTitleID": 1102,
         "TargetDesc": "收集修复断桥的材料",
@@ -2295,10 +2295,10 @@
         "TaskName": "材料收集",
         "CopyOpen": 2600,
         "TaskType": 1,
-        "TaskDesc": "收集修复断桥所需要的材料“陶泥”和“符木”",
+        "TaskDesc": "收集修复断桥所需要的材料“陶泥”和“木头”",
         "TaskTitle": "1-2隐林",
         "TaskTitleID": 1102,
-        "TargetDesc": "收集符木",
+        "TargetDesc": "收集木头",
         "TaskTargetType": 1,
         "TargetIdList": [],
         "TargetValue": 1,
@@ -2378,7 +2378,7 @@
         "TaskName": "材料收集",
         "CopyOpen": 2700,
         "TaskType": 1,
-        "TaskDesc": "收集修复断桥所需要的材料“陶泥”和“符木”",
+        "TaskDesc": "收集修复断桥所需要的材料“陶泥”和“木头”",
         "TaskTitle": "1-2隐林",
         "TaskTitleID": 1102,
         "TargetDesc": "收集陶泥",
@@ -4779,9 +4779,9 @@
             2
         ],
         "PreviousParams": [
-            6
+            7
         ],
-        "PreviousDesc": "传火等级达到6级后解锁",
+        "PreviousDesc": "传火等级达到7级后解锁",
         "Priority": 99,
         "TimeLock": 0,
         "DailyTaskLevel": 0,
@@ -5893,9 +5893,9 @@
             2
         ],
         "PreviousParams": [
-            7
+            8
         ],
-        "PreviousDesc": "传火等级达到7级后解锁",
+        "PreviousDesc": "传火等级达到8级后解锁",
         "Priority": 99,
         "TimeLock": 0,
         "DailyTaskLevel": 0,
@@ -6649,9 +6649,9 @@
             2
         ],
         "PreviousParams": [
-            10
+            9
         ],
-        "PreviousDesc": "传火等级达到10级后解锁",
+        "PreviousDesc": "传火等级达到9级后解锁",
         "Priority": 99,
         "TimeLock": 0,
         "DailyTaskLevel": 0,
@@ -9692,9 +9692,9 @@
             2
         ],
         "PreviousParams": [
-            13
+            11
         ],
-        "PreviousDesc": "传火等级达到13级后解锁",
+        "PreviousDesc": "传火等级达到11级后解锁",
         "Priority": 99,
         "TimeLock": 0,
         "DailyTaskLevel": 0,
@@ -9778,9 +9778,7 @@
             103002,
             2031003,
             2031004,
-            2031001,
-            20310051,
-            20310020
+            2031001
         ],
         "PreviousCondition": [],
         "PreviousParams": [],
@@ -11800,7 +11798,8 @@
         "MapDataUsedAreaIds": [],
         "MapDataLevel": 300,
         "NextTask": [
-            103009
+            103009,
+            20310052
         ],
         "PreviousCondition": [],
         "PreviousParams": [],
@@ -11893,9 +11892,9 @@
             2
         ],
         "PreviousParams": [
-            15
+            13
         ],
-        "PreviousDesc": "传火等级达到15级后解锁",
+        "PreviousDesc": "传火等级达到13级后解锁",
         "Priority": 99,
         "TimeLock": 0,
         "DailyTaskLevel": 0,
@@ -12146,7 +12145,8 @@
         "MapDataUsedAreaIds": [],
         "MapDataLevel": 300,
         "NextTask": [
-            103206
+            103206,
+            2031002
         ],
         "PreviousCondition": [],
         "PreviousParams": [],
@@ -13248,9 +13248,9 @@
             2
         ],
         "PreviousParams": [
-            18
+            16
         ],
-        "PreviousDesc": "传火等级达到18级后解锁",
+        "PreviousDesc": "传火等级达到16级后解锁",
         "Priority": 99,
         "TimeLock": 0,
         "DailyTaskLevel": 0,
@@ -14590,9 +14590,9 @@
             2
         ],
         "PreviousParams": [
-            21
+            18
         ],
-        "PreviousDesc": "传火等级达到21级后解锁",
+        "PreviousDesc": "传火等级达到18级后解锁",
         "Priority": 99,
         "TimeLock": 0,
         "DailyTaskLevel": 0,
@@ -15276,9 +15276,9 @@
             2
         ],
         "PreviousParams": [
-            23
+            20
         ],
-        "PreviousDesc": "传火等级达到23级后解锁",
+        "PreviousDesc": "传火等级达到20级后解锁",
         "Priority": 99,
         "TimeLock": 0,
         "DailyTaskLevel": 0,
@@ -16045,9 +16045,9 @@
             2
         ],
         "PreviousParams": [
-            25
+            22
         ],
-        "PreviousDesc": "传火等级达到25级后解锁",
+        "PreviousDesc": "传火等级达到22级后解锁",
         "Priority": 99,
         "TimeLock": 0,
         "DailyTaskLevel": 0,
@@ -16571,9 +16571,9 @@
             2
         ],
         "PreviousParams": [
-            27
+            23
         ],
-        "PreviousDesc": "传火等级达到27级后解锁",
+        "PreviousDesc": "传火等级达到23级后解锁",
         "Priority": 99,
         "TimeLock": 0,
         "DailyTaskLevel": 0,
@@ -17021,7 +17021,7 @@
         "Chapterstart": false,
         "Chapterend": false,
         "SpaceChapter": false,
-        "Timelineid": 104501,
+        "Timelineid": 104503,
         "RewardId": [
             9002,
             9004,
@@ -17051,8 +17051,8 @@
         "LevelMapId": 400,
         "TaskPosition": [
             [
-                83.54,
-                190.02
+                84.77,
+                188.29
             ]
         ],
         "TaskRadius": [],
@@ -17065,9 +17065,9 @@
         "ClientTrigger": 0,
         "UIPosition": [
             [
-                83.54,
-                25.1,
-                190.02
+                84.77,
+                26.11,
+                188.29
             ]
         ],
         "UIRadius": []
@@ -17093,7 +17093,527 @@
         "MapDataUsedAreaIds": [],
         "MapDataLevel": 400,
         "NextTask": [
-            1033000
+            1041013
+        ],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 104608,
+        "RewardId": [
+            9002,
+            9004,
+            9001,
+            9110300,
+            9111300,
+            9430307
+        ],
+        "RewardType": [
+            3,
+            7,
+            3,
+            1,
+            1,
+            1
+        ],
+        "RewardQuantity": [
+            50,
+            600,
+            50000,
+            2,
+            2,
+            1
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                48.95,
+                433.69
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                48.95,
+                2.26,
+                433.69
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 1041013,
+        "TaskName": "最后一战",
+        "CopyOpen": 20600,
+        "TaskType": 1,
+        "TaskDesc": "进入星宫，面对最后一战。",
+        "TaskTitle": "4-5逆光而行之人",
+        "TaskTitleID": 4101,
+        "TargetDesc": "击败北辰",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 0,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [
+            1041014
+        ],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9002,
+            9004,
+            9001,
+            9110300,
+            9111300,
+            9430307
+        ],
+        "RewardType": [
+            3,
+            7,
+            3,
+            1,
+            1,
+            1
+        ],
+        "RewardQuantity": [
+            50,
+            600,
+            50000,
+            2,
+            2,
+            1
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                599.81,
+                -245.8
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 4018,
+        "CavernPoint": [
+            40181
+        ],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                599.81,
+                0.0,
+                -245.8
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 1041014,
+        "TaskName": "最后一战",
+        "CopyOpen": 20700,
+        "TaskType": 1,
+        "TaskDesc": "对话南星",
+        "TaskTitle": "4-5逆光而行之人",
+        "TaskTitleID": 4101,
+        "TargetDesc": "对话南星",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 0,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [
+            1041015
+        ],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 104605,
+        "RewardId": [
+            9002,
+            9004,
+            9001,
+            9110300,
+            9111300,
+            9430307
+        ],
+        "RewardType": [
+            3,
+            7,
+            3,
+            1,
+            1,
+            1
+        ],
+        "RewardQuantity": [
+            50,
+            600,
+            50000,
+            2,
+            2,
+            1
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                599.69,
+                -240.45
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 4018,
+        "CavernPoint": [
+            40181
+        ],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                599.69,
+                2.03,
+                -240.45
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 1041015,
+        "TaskName": "最后一战",
+        "CopyOpen": 20800,
+        "TaskType": 1,
+        "TaskDesc": "对话艾达",
+        "TaskTitle": "4-5逆光而行之人",
+        "TaskTitleID": 4101,
+        "TargetDesc": "对话艾达",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 0,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [
+            1041016
+        ],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9002,
+            9004,
+            9001,
+            9110300,
+            9111300,
+            9430307
+        ],
+        "RewardType": [
+            3,
+            7,
+            3,
+            1,
+            1,
+            1
+        ],
+        "RewardQuantity": [
+            50,
+            600,
+            50000,
+            2,
+            2,
+            1
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                606.53,
+                -247.11
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 4018,
+        "CavernPoint": [
+            40181
+        ],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                606.53,
+                2.03,
+                -247.11
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 1041016,
+        "TaskName": "最后一战",
+        "CopyOpen": 20900,
+        "TaskType": 1,
+        "TaskDesc": "大战结束，对于那个浮在空中的莲座，众人都很感兴趣。",
+        "TaskTitle": "4-5逆光而行之人",
+        "TaskTitleID": 4101,
+        "TargetDesc": "交互莲花座",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 0,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [
+            1041017
+        ],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 104606,
+        "RewardId": [
+            9002,
+            9004,
+            9001,
+            9110300,
+            9111300,
+            9430307
+        ],
+        "RewardType": [
+            3,
+            7,
+            3,
+            1,
+            1,
+            1
+        ],
+        "RewardQuantity": [
+            50,
+            600,
+            50000,
+            2,
+            2,
+            1
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                610.35,
+                -234.99
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 4018,
+        "CavernPoint": [
+            40181
+        ],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                610.35,
+                0.0,
+                -234.99
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 1041017,
+        "TaskName": "最后一战",
+        "CopyOpen": 21000,
+        "TaskType": 1,
+        "TaskDesc": "北辰的痕迹已经完全消失，只留下破碎且杂乱的衣服。好像有什么东西在里面蠕动，我俯下身一阵翻找。",
+        "TaskTitle": "4-5逆光而行之人",
+        "TaskTitleID": 4101,
+        "TargetDesc": "查看北辰的衣物",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 0,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [
+            1041018
+        ],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 104607,
+        "RewardId": [
+            9002,
+            9004,
+            9001,
+            9110300,
+            9111300,
+            9430307
+        ],
+        "RewardType": [
+            3,
+            7,
+            3,
+            1,
+            1,
+            1
+        ],
+        "RewardQuantity": [
+            50,
+            600,
+            50000,
+            2,
+            2,
+            1
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                599.81,
+                -245.8
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 4018,
+        "CavernPoint": [
+            40181
+        ],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                599.81,
+                0.0,
+                -245.8
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 1041018,
+        "TaskName": "最后一战",
+        "CopyOpen": 21100,
+        "TaskType": 1,
+        "TaskDesc": "对话乌尔",
+        "TaskTitle": "4-5逆光而行之人",
+        "TaskTitleID": 4101,
+        "TargetDesc": "对话乌尔",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 0,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [
+            5040001
         ],
         "PreviousCondition": [],
         "PreviousParams": [],
@@ -17102,9 +17622,9 @@
         "TimeLock": 0,
         "DailyTaskLevel": 400,
         "Questaccept": false,
-        "Questfinish": true,
+        "Questfinish": false,
         "Chapterstart": false,
-        "Chapterend": false,
+        "Chapterend": true,
         "SpaceChapter": false,
         "Timelineid": 0,
         "RewardId": [
@@ -17136,8 +17656,74 @@
         "LevelMapId": 400,
         "TaskPosition": [
             [
-                50.09,
-                428.1
+                594.85,
+                -246.99
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 4018,
+        "CavernPoint": [
+            40181
+        ],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                594.85,
+                2.03,
+                -246.99
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 5040001,
+        "TaskName": "会议",
+        "CopyOpen": 21200,
+        "TaskType": 1,
+        "TaskDesc": "议会上，厄斯德拉命令拉贝尔调配军力，协同建筑师筹备星宫修缮工作，同时要求史库德院妥善安置剑仙瑶光的肉身，探寻让其苏醒的办法。",
+        "TaskTitle": "后日谈",
+        "TaskTitleID": 5001,
+        "TargetDesc": "前往议会厅",
+        "TaskTargetType": 4,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 0,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [
+            5040002
+        ],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": true,
+        "Timelineid": 104003,
+        "RewardId": [],
+        "RewardType": [],
+        "RewardQuantity": [],
+        "GetReward": 0,
+        "LevelMapProgress": 999,
+        "LevelMapId": 999,
+        "TaskPosition": [
+            [
+                24.0,
+                69.0
             ]
         ],
         "TaskRadius": [],
@@ -17148,25 +17734,19 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
-        "UIPosition": [
-            [
-                50.09,
-                0.0,
-                428.1
-            ]
-        ],
+        "UIPosition": [],
         "UIRadius": []
     },
     {
-        "Id": 1033000,
-        "TaskName": "测试已完结",
-        "CopyOpen": 20600,
+        "Id": 5040002,
+        "TaskName": "北辰涅槃",
+        "CopyOpen": 21300,
         "TaskType": 1,
-        "TaskDesc": "未完待续",
-        "TaskTitle": "被狩猎的幻境",
-        "TaskTitleID": 4101,
-        "TargetDesc": "未完待续",
-        "TaskTargetType": 1,
+        "TaskDesc": "瑶光尚未苏醒，传火者安慰着南星。恰在此时，凯西带着小北辰现身。凯西觉得这孩子承载着北辰善良的灵魂，提议传火者与南星常来，多留意孩子的成长。",
+        "TaskTitle": "后日谈",
+        "TaskTitleID": 5002,
+        "TargetDesc": "前往史库德院研究所",
+        "TaskTargetType": 4,
         "TargetIdList": [],
         "TargetValue": 1,
         "TargetLevelId": 0,
@@ -17174,13 +17754,73 @@
         "ChildTaskType": 0,
         "ParentTask": 0,
         "CheckTasks": [],
-        "MapDataAssetPath": "1033000",
+        "MapDataAssetPath": "",
         "MapDataUsedAreaIds": [],
         "MapDataLevel": 400,
-        "NextTask": [],
+        "NextTask": [
+            5040003
+        ],
         "PreviousCondition": [],
         "PreviousParams": [],
-        "PreviousDesc": "测试版本的任务已经完结,请等待下次更新",
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": true,
+        "Timelineid": 104004,
+        "RewardId": [],
+        "RewardType": [],
+        "RewardQuantity": [],
+        "GetReward": 0,
+        "LevelMapProgress": 999,
+        "LevelMapId": 999,
+        "TaskPosition": [
+            [
+                -9.0,
+                80.0
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 5040003,
+        "TaskName": "未完待续",
+        "CopyOpen": 21400,
+        "TaskType": 1,
+        "TaskDesc": "敬请期待后续更新",
+        "TaskTitle": "序章",
+        "TaskTitleID": 5003,
+        "TargetDesc": "未完待续",
+        "TaskTargetType": 4,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 0,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [
+            105101
+        ],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
         "Priority": 99,
         "TimeLock": 0,
         "DailyTaskLevel": 0,
@@ -17189,20 +17829,25 @@
         "Chapterstart": false,
         "Chapterend": false,
         "SpaceChapter": false,
-        "Timelineid": 0,
+        "Timelineid": 105001,
         "RewardId": [],
         "RewardType": [],
         "RewardQuantity": [],
         "GetReward": 0,
-        "LevelMapProgress": 400,
-        "LevelMapId": 400,
-        "TaskPosition": [],
+        "LevelMapProgress": 999,
+        "LevelMapId": 999,
+        "TaskPosition": [
+            [
+                24.0,
+                69.0
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
         "CavernPoint": [],
         "TaskExtra": 0,
-        "TaskExtraRes": "17800",
+        "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
         "UIPosition": [],
@@ -17270,7 +17915,12 @@
         "GetReward": 0,
         "LevelMapProgress": 100,
         "LevelMapId": 100,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                -148.83,
+                211.21
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -17279,7 +17929,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -148.83,
+                6.14,
+                211.21
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -17429,7 +18085,12 @@
         "GetReward": 0,
         "LevelMapProgress": 100,
         "LevelMapId": 100,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                -88.35,
+                266.05
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -17438,7 +18099,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -88.35,
+                4.22,
+                266.05
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -17450,14 +18117,18 @@
         "TaskTitle": "旗帜回收",
         "TaskTitleID": 1902,
         "TargetDesc": "回收勘探队的旗帜",
-        "TaskTargetType": 2,
-        "TargetIdList": [
-            750103
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 5,
+        "TargetLevelId": 0,
+        "ChildTaskList": [
+            201100211,
+            201100212,
+            201100213,
+            201100214,
+            201100215
         ],
-        "TargetValue": 4,
-        "TargetLevelId": 100,
-        "ChildTaskList": [],
-        "ChildTaskType": 0,
+        "ChildTaskType": 1,
         "ParentTask": 0,
         "CheckTasks": [],
         "MapDataAssetPath": "",
@@ -17505,15 +18176,8 @@
         "GetReward": 0,
         "LevelMapProgress": 100,
         "LevelMapId": 100,
-        "TaskPosition": [
-            [
-                -55.1,
-                296.2
-            ]
-        ],
-        "TaskRadius": [
-            45.0
-        ],
+        "TaskPosition": [],
+        "TaskRadius": [],
         "ParallelTaskType": 1,
         "CavernId": 0,
         "CavernPoint": [],
@@ -17521,16 +18185,393 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
-        "UIPosition": [
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201100211,
+        "TaskName": "勘探队旗帜",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到勘探队遗落在青渊各地的旗帜，对其进行回收",
+        "TaskTitle": "旗帜回收",
+        "TaskTitleID": 1902,
+        "TargetDesc": "回收勘探队的旗帜",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20110021,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430304,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
             [
-                -55.1,
-                6.39,
-                296.2
+                -84.9,
+                267.39
             ]
         ],
-        "UIRadius": [
-            45.0
-        ]
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201100212,
+        "TaskName": "勘探队旗帜",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到勘探队遗落在青渊各地的旗帜，对其进行回收",
+        "TaskTitle": "旗帜回收",
+        "TaskTitleID": 1902,
+        "TargetDesc": "回收勘探队的旗帜",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20110021,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430304,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
+            [
+                -28.7,
+                320.82
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201100213,
+        "TaskName": "勘探队旗帜",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到勘探队遗落在青渊各地的旗帜，对其进行回收",
+        "TaskTitle": "旗帜回收",
+        "TaskTitleID": 1902,
+        "TargetDesc": "回收勘探队的旗帜",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20110021,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430301,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
+            [
+                -93.88,
+                287.97
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201100214,
+        "TaskName": "勘探队旗帜",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到勘探队遗落在青渊各地的旗帜，对其进行回收",
+        "TaskTitle": "旗帜回收",
+        "TaskTitleID": 1902,
+        "TargetDesc": "回收勘探队的旗帜",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20110021,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430301,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
+            [
+                -28.75,
+                267.4
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201100215,
+        "TaskName": "勘探队旗帜",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到勘探队遗落在青渊各地的旗帜，对其进行回收",
+        "TaskTitle": "旗帜回收",
+        "TaskTitleID": 1902,
+        "TargetDesc": "回收勘探队的旗帜",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20110021,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430301,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
+            [
+                -74.54,
+                319.26
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
     },
     {
         "Id": 20110022,
@@ -17666,7 +18707,12 @@
         "GetReward": 0,
         "LevelMapProgress": 100,
         "LevelMapId": 100,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                -58.13,
+                257.77
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -17675,7 +18721,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -58.13,
+                3.3,
+                257.77
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -17823,7 +18875,12 @@
         "GetReward": 0,
         "LevelMapProgress": 100,
         "LevelMapId": 100,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                -47.96,
+                118.1
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -17832,7 +18889,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -47.96,
+                -17.87,
+                118.1
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -18065,7 +19128,12 @@
         "GetReward": 0,
         "LevelMapProgress": 100,
         "LevelMapId": 100,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                17.22,
+                106.32
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -18074,7 +19142,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                17.22,
+                -20.77,
+                106.32
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -18309,7 +19383,12 @@
         "GetReward": 0,
         "LevelMapProgress": 100,
         "LevelMapId": 100,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                31.9,
+                382.48
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -18318,7 +19397,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                31.9,
+                76.4,
+                382.48
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -18330,14 +19415,20 @@
         "TaskTitle": "行遍玉虚",
         "TaskTitleID": 1906,
         "TargetDesc": "寻找并激活御桩",
-        "TaskTargetType": 2,
-        "TargetIdList": [
-            750104
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 7,
+        "TargetLevelId": 0,
+        "ChildTaskList": [
+            201300111,
+            201300112,
+            201300113,
+            201300114,
+            201300115,
+            201300116,
+            201300117
         ],
-        "TargetValue": 5,
-        "TargetLevelId": 100,
-        "ChildTaskList": [],
-        "ChildTaskType": 0,
+        "ChildTaskType": 1,
         "ParentTask": 0,
         "CheckTasks": [],
         "MapDataAssetPath": "",
@@ -18385,15 +19476,8 @@
         "GetReward": 0,
         "LevelMapProgress": 100,
         "LevelMapId": 100,
-        "TaskPosition": [
-            [
-                -8.4,
-                384.2
-            ]
-        ],
-        "TaskRadius": [
-            90.0
-        ],
+        "TaskPosition": [],
+        "TaskRadius": [],
         "ParallelTaskType": 1,
         "CavernId": 0,
         "CavernPoint": [],
@@ -18401,16 +19485,547 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
-        "UIPosition": [
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201300111,
+        "TaskName": "行遍玉虚",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到并点亮玉虚峰内所有的御桩",
+        "TaskTitle": "行遍玉虚",
+        "TaskTitleID": 1906,
+        "TargetDesc": "寻找并激活御桩",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20130011,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430301,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
             [
-                -8.4,
-                76.9,
-                384.2
+                26.97,
+                351.73
             ]
         ],
-        "UIRadius": [
-            90.0
-        ]
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201300112,
+        "TaskName": "行遍玉虚",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到并点亮玉虚峰内所有的御桩",
+        "TaskTitle": "行遍玉虚",
+        "TaskTitleID": 1906,
+        "TargetDesc": "寻找并激活御桩",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20130011,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430301,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
+            [
+                39.27,
+                387.84
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201300113,
+        "TaskName": "行遍玉虚",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到并点亮玉虚峰内所有的御桩",
+        "TaskTitle": "行遍玉虚",
+        "TaskTitleID": 1906,
+        "TargetDesc": "寻找并激活御桩",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20130011,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430301,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
+            [
+                -10.63,
+                421.06
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201300114,
+        "TaskName": "行遍玉虚",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到并点亮玉虚峰内所有的御桩",
+        "TaskTitle": "行遍玉虚",
+        "TaskTitleID": 1906,
+        "TargetDesc": "寻找并激活御桩",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20130011,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430301,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
+            [
+                13.59,
+                411.98
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201300115,
+        "TaskName": "行遍玉虚",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到并点亮玉虚峰内所有的御桩",
+        "TaskTitle": "行遍玉虚",
+        "TaskTitleID": 1906,
+        "TargetDesc": "寻找并激活御桩",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20130011,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430304,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
+            [
+                -46.56,
+                462.79
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201300116,
+        "TaskName": "行遍玉虚",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到并点亮玉虚峰内所有的御桩",
+        "TaskTitle": "行遍玉虚",
+        "TaskTitleID": 1906,
+        "TargetDesc": "寻找并激活御桩",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20130011,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430304,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
+            [
+                9.58,
+                375.04
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 201300117,
+        "TaskName": "行遍玉虚",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "找到并点亮玉虚峰内所有的御桩",
+        "TaskTitle": "行遍玉虚",
+        "TaskTitleID": 1906,
+        "TargetDesc": "寻找并激活御桩",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20130011,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 100,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430304,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            60,
+            24000,
+            1,
+            50
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 100,
+        "LevelMapId": 100,
+        "TaskPosition": [
+            [
+                45.35,
+                316.82
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [],
+        "UIRadius": []
     },
     {
         "Id": 20130012,
@@ -18546,7 +20161,12 @@
         "GetReward": 0,
         "LevelMapProgress": 100,
         "LevelMapId": 100,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                84.24,
+                443.46
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -18555,7 +20175,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                84.24,
+                70.05,
+                443.46
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -18703,7 +20329,12 @@
         "GetReward": 0,
         "LevelMapProgress": 100,
         "LevelMapId": 100,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                94.97,
+                399.58
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -18712,7 +20343,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                94.97,
+                63.79,
+                399.58
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -18860,7 +20497,12 @@
         "GetReward": 0,
         "LevelMapProgress": 100,
         "LevelMapId": 100,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                146.83,
+                369.42
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -18869,7 +20511,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                146.83,
+                61.51,
+                369.42
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -19021,25 +20669,23 @@
         "LevelMapId": 100,
         "TaskPosition": [
             [
-                -18.34,
-                -181.78
+                146.83,
+                369.42
             ]
         ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
-        "CavernId": 1013,
-        "CavernPoint": [
-            10131
-        ],
+        "CavernId": 0,
+        "CavernPoint": [],
         "TaskExtra": 0,
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
         "UIPosition": [
             [
-                -18.34,
-                21.0,
-                -181.78
+                146.83,
+                61.51,
+                369.42
             ]
         ],
         "UIRadius": []
@@ -19106,7 +20752,12 @@
         "GetReward": 0,
         "LevelMapProgress": 200,
         "LevelMapId": 200,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                -50.93,
+                372.09
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -19115,7 +20766,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -50.93,
+                3.82,
+                372.09
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -19639,10 +21296,10 @@
         "TaskName": "是非曲直",
         "CopyOpen": 0,
         "TaskType": 2,
-        "TaskDesc": "任务激活",
+        "TaskDesc": "第二防线发现有人在争吵，去看看发生了什么。",
         "TaskTitle": "滴水之恩",
         "TaskTitleID": 2902,
-        "TargetDesc": "任务激活",
+        "TargetDesc": "返回第二防线",
         "TaskTargetType": 1,
         "TargetIdList": [],
         "TargetValue": 1,
@@ -19696,7 +21353,12 @@
         "GetReward": 0,
         "LevelMapProgress": 200,
         "LevelMapId": 200,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                23.083,
+                365.585
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -19705,7 +21367,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                27.29,
+                1.5,
+                364.79
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -20342,7 +22010,12 @@
         "GetReward": 0,
         "LevelMapProgress": 200,
         "LevelMapId": 200,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                62.37,
+                618.34
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -20351,7 +22024,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                62.37,
+                57.73,
+                618.34
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -20756,7 +22435,12 @@
         "GetReward": 0,
         "LevelMapProgress": 200,
         "LevelMapId": 200,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                123.31,
+                319.33
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -20765,7 +22449,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                123.31,
+                -7.59,
+                319.33
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -21093,10 +22783,10 @@
         "TaskName": "乐园幻梦",
         "CopyOpen": 0,
         "TaskType": 2,
-        "TaskDesc": "激活任务",
+        "TaskDesc": "探索贵族区时，传火者在名为“乐园净土”的避难所前发现了它的传单，上面天花乱坠的宣传着实让人心动。传火者决定深入其中，一探究竟。",
         "TaskTitle": "乐园净土",
         "TaskTitleID": 2905,
-        "TargetDesc": "激活任务",
+        "TargetDesc": "寻找传闻中的避难所",
         "TaskTargetType": 1,
         "TargetIdList": [],
         "TargetValue": 1,
@@ -21150,7 +22840,12 @@
         "GetReward": 0,
         "LevelMapProgress": 200,
         "LevelMapId": 200,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                -3.93,
+                632.29
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -21159,7 +22854,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -3.93,
+                56.48,
+                632.29
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -21810,7 +23511,12 @@
         "GetReward": 0,
         "LevelMapProgress": 200,
         "LevelMapId": 200,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                88.35,
+                139.1
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -21819,7 +23525,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                88.35,
+                -9.56,
+                139.1
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -22002,7 +23714,7 @@
         "TaskDesc": "与雪伦娜交谈",
         "TaskTitle": "狼子野心",
         "TaskTitleID": 3901,
-        "TargetDesc": "与雪伦娜交谈",
+        "TargetDesc": "奇怪的小女孩有事相求",
         "TaskTargetType": 1,
         "TargetIdList": [],
         "TargetValue": 1,
@@ -22056,7 +23768,12 @@
         "GetReward": 0,
         "LevelMapProgress": 300,
         "LevelMapId": 300,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                -279.35,
+                414.67
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -22065,7 +23782,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -279.35,
+                2.5,
+                414.67
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -22743,80 +24466,6 @@
         "UIRadius": []
     },
     {
-        "Id": 20310020,
-        "TaskName": "木雕与心愿",
-        "CopyOpen": 0,
-        "TaskType": 2,
-        "TaskDesc": "询问雪落村的尤基有关于木雕的故事",
-        "TaskTitle": "木雕与心愿",
-        "TaskTitleID": 3902,
-        "TargetDesc": "与尤基交谈",
-        "TaskTargetType": 1,
-        "TargetIdList": [],
-        "TargetValue": 1,
-        "TargetLevelId": 0,
-        "ChildTaskList": [],
-        "ChildTaskType": 0,
-        "ParentTask": 0,
-        "CheckTasks": [],
-        "MapDataAssetPath": "",
-        "MapDataUsedAreaIds": [],
-        "MapDataLevel": 300,
-        "NextTask": [
-            2031002
-        ],
-        "PreviousCondition": [],
-        "PreviousParams": [],
-        "PreviousDesc": "",
-        "Priority": 99,
-        "TimeLock": 0,
-        "DailyTaskLevel": 0,
-        "Questaccept": false,
-        "Questfinish": false,
-        "Chapterstart": false,
-        "Chapterend": false,
-        "SpaceChapter": false,
-        "Timelineid": 0,
-        "RewardId": [
-            9410400,
-            9130000,
-            9004,
-            9001,
-            9430308,
-            9008
-        ],
-        "RewardType": [
-            1,
-            1,
-            7,
-            3,
-            1,
-            3
-        ],
-        "RewardQuantity": [
-            1,
-            60,
-            200,
-            36000,
-            1,
-            200
-        ],
-        "GetReward": 0,
-        "LevelMapProgress": 300,
-        "LevelMapId": 300,
-        "TaskPosition": [],
-        "TaskRadius": [],
-        "ParallelTaskType": 0,
-        "CavernId": 0,
-        "CavernPoint": [],
-        "TaskExtra": 0,
-        "TaskExtraRes": "",
-        "ConflictTaskId": [],
-        "ClientTrigger": 1,
-        "UIPosition": [],
-        "UIRadius": []
-    },
-    {
         "Id": 2031002,
         "TaskName": "木雕与心愿",
         "CopyOpen": 0,
@@ -22824,7 +24473,7 @@
         "TaskDesc": "询问雪落村的尤基有关于木雕的故事",
         "TaskTitle": "木雕与心愿",
         "TaskTitleID": 3902,
-        "TargetDesc": "与尤基交谈",
+        "TargetDesc": "雪落村的孩子似乎有困惑",
         "TaskTargetType": 1,
         "TargetIdList": [],
         "TargetValue": 1,
@@ -23458,7 +25107,12 @@
         "GetReward": 0,
         "LevelMapProgress": 300,
         "LevelMapId": 300,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                148.32,
+                807.07
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -23467,7 +25121,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                148.32,
+                7.97,
+                807.07
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -23530,7 +25190,12 @@
         "GetReward": 1,
         "LevelMapProgress": 300,
         "LevelMapId": 300,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                330.22,
+                119.17
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -23539,7 +25204,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                330.22,
+                1.97,
+                119.17
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -23550,7 +25221,7 @@
         "TaskDesc": "与德拉塔·拉塔对话",
         "TaskTitle": "雪山的獠牙·上",
         "TaskTitleID": 3904,
-        "TargetDesc": "与德拉塔·拉塔对话",
+        "TargetDesc": "一名商人似乎有事相求",
         "TaskTargetType": 1,
         "TargetIdList": [],
         "TargetValue": 1,
@@ -23604,7 +25275,12 @@
         "GetReward": 0,
         "LevelMapProgress": 300,
         "LevelMapId": 300,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                230.58,
+                321.11
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -23613,7 +25289,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                230.58,
+                2.5,
+                321.11
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -24367,80 +26049,6 @@
         "UIRadius": []
     },
     {
-        "Id": 20310051,
-        "TaskName": "火龙鳞片熟练者",
-        "CopyOpen": 0,
-        "TaskType": 2,
-        "TaskDesc": "冰原狼于覆雪山脊各处竖立冰墙，阻断通行，使雪原变得封闭而危险。传火者决定用火龙鳞片之力，融化冰墙。",
-        "TaskTitle": "冰火交融",
-        "TaskTitleID": 3905,
-        "TargetDesc": "融化冰墙",
-        "TaskTargetType": 1,
-        "TargetIdList": [],
-        "TargetValue": 1,
-        "TargetLevelId": 0,
-        "ChildTaskList": [],
-        "ChildTaskType": 0,
-        "ParentTask": 0,
-        "CheckTasks": [],
-        "MapDataAssetPath": "",
-        "MapDataUsedAreaIds": [],
-        "MapDataLevel": 300,
-        "NextTask": [
-            20310052
-        ],
-        "PreviousCondition": [],
-        "PreviousParams": [],
-        "PreviousDesc": "",
-        "Priority": 0,
-        "TimeLock": 0,
-        "DailyTaskLevel": 0,
-        "Questaccept": false,
-        "Questfinish": false,
-        "Chapterstart": false,
-        "Chapterend": false,
-        "SpaceChapter": false,
-        "Timelineid": 0,
-        "RewardId": [
-            9410400,
-            9130000,
-            9004,
-            9001,
-            9430308,
-            9008
-        ],
-        "RewardType": [
-            1,
-            1,
-            7,
-            3,
-            1,
-            3
-        ],
-        "RewardQuantity": [
-            1,
-            60,
-            200,
-            36000,
-            1,
-            200
-        ],
-        "GetReward": 0,
-        "LevelMapProgress": 300,
-        "LevelMapId": 300,
-        "TaskPosition": [],
-        "TaskRadius": [],
-        "ParallelTaskType": 0,
-        "CavernId": 0,
-        "CavernPoint": [],
-        "TaskExtra": 0,
-        "TaskExtraRes": "",
-        "ConflictTaskId": [],
-        "ClientTrigger": 1,
-        "UIPosition": [],
-        "UIRadius": []
-    },
-    {
         "Id": 20310052,
         "TaskName": "火龙鳞片熟练者",
         "CopyOpen": 0,
@@ -24995,16 +26603,27 @@
         "GetReward": 0,
         "LevelMapProgress": 400,
         "LevelMapId": 400,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                34.83,
+                155.01
+            ]
+        ],
         "TaskRadius": [],
-        "ParallelTaskType": 0,
+        "ParallelTaskType": 2,
         "CavernId": 0,
         "CavernPoint": [],
         "TaskExtra": 0,
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                34.83,
+                9.8,
+                155.01
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -25018,10 +26637,14 @@
         "TargetDesc": "收集三朵花",
         "TaskTargetType": 1,
         "TargetIdList": [],
-        "TargetValue": 1,
+        "TargetValue": 3,
         "TargetLevelId": 0,
-        "ChildTaskList": [],
-        "ChildTaskType": 0,
+        "ChildTaskList": [
+            204100111,
+            204100112,
+            204100113
+        ],
+        "ChildTaskType": 1,
         "ParentTask": 0,
         "CheckTasks": [],
         "MapDataAssetPath": "",
@@ -25081,6 +26704,261 @@
         "ConflictTaskId": [],
         "ClientTrigger": 0,
         "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 204100111,
+        "TaskName": "棉花、绣球与金簪",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "探索青渊的途中，偶遇深邃神秘的幽花窟。漆黑洞窟中，蓝蕊的花朵肆意盛放。在洞穴旁看到的神秘老人，似乎正在寻觅着什么。为了探清幽花窟的奥秘与老者在此的原因，传火者决定深入洞窟，找到他口中那三朵与众不同的花。",
+        "TaskTitle": "为你献上一千朵花",
+        "TaskTitleID": 4901,
+        "TargetDesc": "收集棉花",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20410011,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430305,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            500,
+            36000,
+            1,
+            800
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                -457.18,
+                342.88
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 4011,
+        "CavernPoint": [
+            40111
+        ],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                -457.18,
+                0.0,
+                342.89
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 204100112,
+        "TaskName": "棉花、绣球与金簪",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "探索青渊的途中，偶遇深邃神秘的幽花窟。漆黑洞窟中，蓝蕊的花朵肆意盛放。在洞穴旁看到的神秘老人，似乎正在寻觅着什么。为了探清幽花窟的奥秘与老者在此的原因，传火者决定深入洞窟，找到他口中那三朵与众不同的花。",
+        "TaskTitle": "为你献上一千朵花",
+        "TaskTitleID": 4901,
+        "TargetDesc": "收集绣球花",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20410011,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430305,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            500,
+            36000,
+            1,
+            800
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                -422.92,
+                316.01
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 4011,
+        "CavernPoint": [
+            40111
+        ],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                -422.93,
+                0.0,
+                316.01
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 204100113,
+        "TaskName": "棉花、绣球与金簪",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "探索青渊的途中，偶遇深邃神秘的幽花窟。漆黑洞窟中，蓝蕊的花朵肆意盛放。在洞穴旁看到的神秘老人，似乎正在寻觅着什么。为了探清幽花窟的奥秘与老者在此的原因，传火者决定深入洞窟，找到他口中那三朵与众不同的花。",
+        "TaskTitle": "为你献上一千朵花",
+        "TaskTitleID": 4901,
+        "TargetDesc": "收集金簪花",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20410011,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            9410400,
+            9130000,
+            9004,
+            9001,
+            9430305,
+            9008
+        ],
+        "RewardType": [
+            1,
+            1,
+            7,
+            3,
+            1,
+            3
+        ],
+        "RewardQuantity": [
+            1,
+            60,
+            500,
+            36000,
+            1,
+            800
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                -471.08,
+                411.11
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 4011,
+        "CavernPoint": [
+            40111
+        ],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                -471.08,
+                0.0,
+                411.11
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -25161,7 +27039,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -467.84,
+                0.43,
+                197.93
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -25238,7 +27122,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                34.83,
+                9.8,
+                155.01
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -25303,7 +27193,12 @@
         "GetReward": 0,
         "LevelMapProgress": 400,
         "LevelMapId": 400,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                -98.47,
+                125.21
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -25312,7 +27207,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -98.47,
+                17.33,
+                125.21
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -25391,7 +27292,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -92.03,
+                0.65,
+                116.19
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -25468,7 +27375,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -98.47,
+                17.33,
+                125.21
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -25533,7 +27446,12 @@
         "GetReward": 0,
         "LevelMapProgress": 400,
         "LevelMapId": 400,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                -74.24,
+                180.0
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -25542,7 +27460,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 1,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -74.24,
+                5.66,
+                180.0
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -25610,7 +27534,7 @@
         "TaskPosition": [
             [
                 -74.24,
-                179.99
+                180.0
             ]
         ],
         "TaskRadius": [],
@@ -25621,7 +27545,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -74.24,
+                5.66,
+                180.0
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -25688,8 +27618,8 @@
         "LevelMapId": 400,
         "TaskPosition": [
             [
-                -494.45,
-                -299.86
+                -494.46,
+                -299.87
             ]
         ],
         "TaskRadius": [],
@@ -25702,7 +27632,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -494.46,
+                -0.89,
+                -299.87
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -25768,7 +27704,7 @@
         "TaskPosition": [
             [
                 -74.24,
-                179.99
+                180.0
             ]
         ],
         "TaskRadius": [],
@@ -25779,7 +27715,13 @@
         "TaskExtraRes": "",
         "ConflictTaskId": [],
         "ClientTrigger": 0,
-        "UIPosition": [],
+        "UIPosition": [
+            [
+                -74.24,
+                5.66,
+                180.0
+            ]
+        ],
         "UIRadius": []
     },
     {
@@ -25844,7 +27786,12 @@
         "GetReward": 0,
         "LevelMapProgress": 400,
         "LevelMapId": 400,
-        "TaskPosition": [],
+        "TaskPosition": [
+            [
+                -31.1,
+                191.61
+            ]
+        ],
         "TaskRadius": [],
         "ParallelTaskType": 0,
         "CavernId": 0,
@@ -25865,14 +27812,17 @@
         "TaskTitle": "躲藏的幼狐们",
         "TaskTitleID": 4906,
         "TargetDesc": "找到所有狐狸雕像",
-        "TaskTargetType": 2,
-        "TargetIdList": [
-            784521
-        ],
+        "TaskTargetType": 1,
+        "TargetIdList": [],
         "TargetValue": 4,
-        "TargetLevelId": 400,
-        "ChildTaskList": [],
-        "ChildTaskType": 0,
+        "TargetLevelId": 0,
+        "ChildTaskList": [
+            204200311,
+            204200312,
+            204200313,
+            204200314
+        ],
+        "ChildTaskType": 1,
         "ParentTask": 0,
         "CheckTasks": [],
         "MapDataAssetPath": "",
@@ -25920,7 +27870,7 @@
         "LevelMapId": 400,
         "TaskPosition": [],
         "TaskRadius": [],
-        "ParallelTaskType": 3,
+        "ParallelTaskType": 1,
         "CavernId": 0,
         "CavernPoint": [],
         "TaskExtra": 0,
@@ -25928,6 +27878,278 @@
         "ConflictTaskId": [],
         "ClientTrigger": 0,
         "UIPosition": [],
+        "UIRadius": []
+    },
+    {
+        "Id": 204200311,
+        "TaskName": "狐狸雕像",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "狐狸奶奶的子孙们变成雕像躲在了溪源各处。与可疑的狐狸雕像说话，寻找小狐狸。",
+        "TaskTitle": "躲藏的幼狐们",
+        "TaskTitleID": 4906,
+        "TargetDesc": "找到所有狐狸雕像",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20420031,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            0
+        ],
+        "RewardType": [
+            0
+        ],
+        "RewardQuantity": [
+            0
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                -96.41,
+                135.36
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                -96.41,
+                15.27,
+                135.36
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 204200312,
+        "TaskName": "狐狸雕像",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "狐狸奶奶的子孙们变成雕像躲在了溪源各处。与可疑的狐狸雕像说话，寻找小狐狸。",
+        "TaskTitle": "躲藏的幼狐们",
+        "TaskTitleID": 4906,
+        "TargetDesc": "找到所有狐狸雕像",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20420031,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            0
+        ],
+        "RewardType": [
+            0
+        ],
+        "RewardQuantity": [
+            0
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                -85.22,
+                198.26
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                -85.22,
+                6.16,
+                198.27
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 204200313,
+        "TaskName": "狐狸雕像",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "狐狸奶奶的子孙们变成雕像躲在了溪源各处。与可疑的狐狸雕像说话，寻找小狐狸。",
+        "TaskTitle": "躲藏的幼狐们",
+        "TaskTitleID": 4906,
+        "TargetDesc": "找到所有狐狸雕像",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20420031,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            0
+        ],
+        "RewardType": [
+            0
+        ],
+        "RewardQuantity": [
+            0
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                -64.23,
+                130.054
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                -64.24,
+                0.69,
+                130.05
+            ]
+        ],
+        "UIRadius": []
+    },
+    {
+        "Id": 204200314,
+        "TaskName": "狐狸雕像",
+        "CopyOpen": 0,
+        "TaskType": 2,
+        "TaskDesc": "狐狸奶奶的子孙们变成雕像躲在了溪源各处。与可疑的狐狸雕像说话，寻找小狐狸。",
+        "TaskTitle": "躲藏的幼狐们",
+        "TaskTitleID": 4906,
+        "TargetDesc": "找到所有狐狸雕像",
+        "TaskTargetType": 1,
+        "TargetIdList": [],
+        "TargetValue": 1,
+        "TargetLevelId": 0,
+        "ChildTaskList": [],
+        "ChildTaskType": 0,
+        "ParentTask": 20420031,
+        "CheckTasks": [],
+        "MapDataAssetPath": "",
+        "MapDataUsedAreaIds": [],
+        "MapDataLevel": 400,
+        "NextTask": [],
+        "PreviousCondition": [],
+        "PreviousParams": [],
+        "PreviousDesc": "",
+        "Priority": 99,
+        "TimeLock": 0,
+        "DailyTaskLevel": 0,
+        "Questaccept": false,
+        "Questfinish": false,
+        "Chapterstart": false,
+        "Chapterend": false,
+        "SpaceChapter": false,
+        "Timelineid": 0,
+        "RewardId": [
+            0
+        ],
+        "RewardType": [
+            0
+        ],
+        "RewardQuantity": [
+            0
+        ],
+        "GetReward": 0,
+        "LevelMapProgress": 400,
+        "LevelMapId": 400,
+        "TaskPosition": [
+            [
+                -79.07,
+                158.65
+            ]
+        ],
+        "TaskRadius": [],
+        "ParallelTaskType": 0,
+        "CavernId": 0,
+        "CavernPoint": [],
+        "TaskExtra": 0,
+        "TaskExtraRes": "",
+        "ConflictTaskId": [],
+        "ClientTrigger": 0,
+        "UIPosition": [
+            [
+                -79.07,
+                9.2,
+                158.65
+            ]
+        ],
         "UIRadius": []
     }
 ]

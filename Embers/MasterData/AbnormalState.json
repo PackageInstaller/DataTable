@@ -12,18 +12,15 @@
         "CanMove": true,
         "CanRotate": true,
         "CanIsReleaseSkill": true,
-        "AbnormalStateBuff": [
-            400001
-        ],
+        "AbnormalStateBuff": [],
         "IsCanFrozenFrame": true,
-        "AbnormalIcon": "battle_abnormal_fire_icon",
-        "IconOutColor": "#f2a66f",
-        "IconInnerColor": "#f87a4e",
-        "CanIsImmunization": false,
-        "ImmunizationTime": 1.0,
-        "CoolDownTime": 0.5,
-        "SfxPoint": "center",
-        "EffectId": 0
+        "AbnormalIcon": "",
+        "IconOutColor": "",
+        "IconInnerColor": "",
+        "CanIsImmunization": true,
+        "ImmunizationTime": 1.7747944809857192e+28,
+        "CoolDownTime": 1.0505641085726442e-38,
+        "SfxPoint": ""
     },
     {
         "Id": 1001,
@@ -38,18 +35,7 @@
         "CanMove": true,
         "CanRotate": true,
         "CanIsReleaseSkill": true,
-        "AbnormalStateBuff": [
-            400002
-        ],
-        "IsCanFrozenFrame": true,
-        "AbnormalIcon": "",
-        "IconOutColor": "",
-        "IconInnerColor": "",
-        "CanIsImmunization": false,
-        "ImmunizationTime": 1.0,
-        "CoolDownTime": 0.5,
-        "SfxPoint": "center",
-        "EffectId": 0
+        "AbnormalStateBuff": []
     },
     {
         "Id": 2000,
@@ -65,15 +51,14 @@
         "CanRotate": false,
         "CanIsReleaseSkill": false,
         "AbnormalStateBuff": [],
-        "IsCanFrozenFrame": true,
+        "IsCanFrozenFrame": false,
         "AbnormalIcon": "",
         "IconOutColor": "",
         "IconInnerColor": "",
         "CanIsImmunization": false,
-        "ImmunizationTime": 1.0,
-        "CoolDownTime": 0.5,
-        "SfxPoint": "center",
-        "EffectId": 0
+        "ImmunizationTime": 2.2779507836064226e-41,
+        "CoolDownTime": 2.4764033343014694e+21,
+        "SfxPoint": "nter\u0000DAttack,Skill1,Skill2,Skill3,Skill4,Roll,Interaction,PropSkill,Rescue"
     },
     {
         "Id": 2001,
@@ -81,23 +66,16 @@
         "Priority": 3,
         "AbnormalStateType": 2,
         "Progress": 300,
-        "Duration": 5.0,
+        "Duration": 2.0,
         "RecessionSpeed": 1.4299999475479126,
         "DelayRecessionTime": 1.0,
         "NotCoexistStateId": [],
         "CanMove": false,
         "CanRotate": false,
-        "CanIsReleaseSkill": false,
+        "CanIsReleaseSkill": true,
         "AbnormalStateBuff": [],
         "IsCanFrozenFrame": true,
-        "AbnormalIcon": "",
-        "IconOutColor": "",
-        "IconInnerColor": "",
-        "CanIsImmunization": false,
-        "ImmunizationTime": 1.0,
-        "CoolDownTime": 0.5,
-        "SfxPoint": "center",
-        "EffectId": 0
+        "AbnormalIcon": "l3,Skill4,Roll,Interaction,PropSkill,Rescue"
     },
     {
         "Id": 2002,
@@ -111,19 +89,10 @@
         "NotCoexistStateId": [],
         "CanMove": false,
         "CanRotate": false,
-        "CanIsReleaseSkill": false,
-        "AbnormalStateBuff": [
-            400003
-        ],
+        "CanIsReleaseSkill": true,
+        "AbnormalStateBuff": [],
         "IsCanFrozenFrame": true,
-        "AbnormalIcon": "battle_abnormal_ice_icon",
-        "IconOutColor": "#9acaff",
-        "IconInnerColor": "#6d9dff",
-        "CanIsImmunization": true,
-        "ImmunizationTime": 0.30000001192092896,
-        "CoolDownTime": 0.20000000298023224,
-        "SfxPoint": "center",
-        "EffectId": 400018
+        "AbnormalIcon": ">\u0006center\u0018DAttack,Skill1,Skill2,Skill3,Skill4,Roll,Interaction,PropSkill,Rescue"
     },
     {
         "Id": 3001,
@@ -144,9 +113,49 @@
         "IconOutColor": "",
         "IconInnerColor": "",
         "CanIsImmunization": false,
-        "ImmunizationTime": 1.0,
+        "ImmunizationTime": 5.831554006032442e-39,
         "CoolDownTime": 0.0,
         "SfxPoint": "",
-        "EffectId": 0
+        "EffectId": 68
+    },
+    {
+        "Id": 1003,
+        "Desc": "腹地",
+        "Priority": 1,
+        "AbnormalStateType": 1,
+        "Progress": 300,
+        "Duration": 20.0,
+        "RecessionSpeed": 1.4299999475479126,
+        "DelayRecessionTime": 1.0,
+        "NotCoexistStateId": [],
+        "CanMove": true,
+        "CanRotate": true,
+        "CanIsReleaseSkill": false,
+        "AbnormalStateBuff": [],
+        "IsCanFrozenFrame": false,
+        "AbnormalIcon": "",
+        "IconOutColor": "",
+        "IconInnerColor": "",
+        "CanIsImmunization": false,
+        "ImmunizationTime": 5.831554006032442e-39,
+        "CoolDownTime": 2.407412430484045e-35,
+        "SfxPoint": "enter\u0000\u0004Roll"
+    },
+    {
+        "Id": 1004,
+        "Desc": "死亡气息",
+        "Priority": 1,
+        "AbnormalStateType": 1,
+        "Progress": 300,
+        "Duration": 5.0,
+        "RecessionSpeed": 0.8999999761581421,
+        "DelayRecessionTime": 1.0,
+        "NotCoexistStateId": [],
+        "CanMove": true,
+        "CanRotate": true,
+        "CanIsReleaseSkill": true,
+        "AbnormalStateBuff": [],
+        "IsCanFrozenFrame": true,
+        "AbnormalIcon": "icon\u0007#f2a66f\u0007#f87a4e\u0000\u0000\u0000?\u0000\u0000\u0000\u0000\u0006center\u0000\u0000"
     }
 ]

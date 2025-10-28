@@ -31592,10 +31592,7 @@
                 10129
             ]
         ],
-        "LimitTimes": [
-            30,
-            32
-        ],
+        "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [
@@ -79588,12 +79585,15 @@
             [
                 43,
                 1
+            ],
+            [
+                5,
+                7310005,
+                1,
+                1
             ]
         ],
-        "LimitTimes": [
-            30,
-            1
-        ],
+        "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
@@ -79620,12 +79620,15 @@
             [
                 43,
                 2
+            ],
+            [
+                5,
+                7320005,
+                1,
+                1
             ]
         ],
-        "LimitTimes": [
-            30,
-            1
-        ],
+        "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
@@ -79652,12 +79655,15 @@
             [
                 43,
                 4
+            ],
+            [
+                5,
+                7340005,
+                1,
+                1
             ]
         ],
-        "LimitTimes": [
-            30,
-            1
-        ],
+        "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
@@ -79684,12 +79690,15 @@
             [
                 43,
                 5
+            ],
+            [
+                5,
+                7350005,
+                1,
+                1
             ]
         ],
-        "LimitTimes": [
-            30,
-            1
-        ],
+        "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
@@ -79716,12 +79725,15 @@
             [
                 43,
                 9
+            ],
+            [
+                5,
+                7370005,
+                1,
+                1
             ]
         ],
-        "LimitTimes": [
-            30,
-            1
-        ],
+        "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
@@ -79748,12 +79760,15 @@
             [
                 43,
                 11
+            ],
+            [
+                5,
+                7390005,
+                1,
+                1
             ]
         ],
-        "LimitTimes": [
-            30,
-            1
-        ],
+        "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
@@ -79780,12 +79795,15 @@
             [
                 43,
                 12
+            ],
+            [
+                5,
+                7400005,
+                1,
+                1
             ]
         ],
-        "LimitTimes": [
-            30,
-            1
-        ],
+        "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
@@ -79812,12 +79830,15 @@
             [
                 43,
                 13
+            ],
+            [
+                5,
+                7410005,
+                1,
+                1
             ]
         ],
-        "LimitTimes": [
-            30,
-            1
-        ],
+        "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
@@ -246136,7 +246157,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7015009,
                 1,
                 1
             ]
@@ -246146,12 +246167,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010291": {
+        "Key": 40010291,
+        "AwardID": 40010291,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7015010,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010300": {
@@ -246160,7 +246215,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7115009,
                 1,
                 1
             ]
@@ -246170,12 +246225,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010301": {
+        "Key": 40010301,
+        "AwardID": 40010301,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7115010,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010310": {
@@ -246184,7 +246273,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7125009,
                 1,
                 1
             ]
@@ -246194,12 +246283,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010311": {
+        "Key": 40010311,
+        "AwardID": 40010311,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7125010,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010320": {
@@ -246208,7 +246331,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7027005,
                 1,
                 1
             ]
@@ -246218,12 +246341,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010321": {
+        "Key": 40010321,
+        "AwardID": 40010321,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7027006,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010330": {
@@ -246232,7 +246389,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7037005,
                 1,
                 1
             ]
@@ -246242,12 +246399,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010331": {
+        "Key": 40010331,
+        "AwardID": 40010331,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7037006,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010340": {
@@ -246256,7 +246447,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7117005,
                 1,
                 1
             ]
@@ -246266,12 +246457,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010341": {
+        "Key": 40010341,
+        "AwardID": 40010341,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7117006,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010350": {
@@ -246280,7 +246505,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7127005,
                 1,
                 1
             ]
@@ -246290,12 +246515,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010351": {
+        "Key": 40010351,
+        "AwardID": 40010351,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7127006,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010360": {
@@ -246304,7 +246563,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7015039,
                 1,
                 1
             ]
@@ -246314,12 +246573,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010361": {
+        "Key": 40010361,
+        "AwardID": 40010361,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7015040,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010370": {
@@ -246328,7 +246621,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7115039,
                 1,
                 1
             ]
@@ -246338,12 +246631,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010371": {
+        "Key": 40010371,
+        "AwardID": 40010371,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7115040,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010380": {
@@ -246352,7 +246679,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7125039,
                 1,
                 1
             ]
@@ -246362,12 +246689,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010381": {
+        "Key": 40010381,
+        "AwardID": 40010381,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7125040,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010390": {
@@ -246376,7 +246737,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7027001,
                 1,
                 1
             ]
@@ -246386,12 +246747,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010391": {
+        "Key": 40010391,
+        "AwardID": 40010391,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7027002,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010400": {
@@ -246400,7 +246795,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7037001,
                 1,
                 1
             ]
@@ -246410,12 +246805,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010401": {
+        "Key": 40010401,
+        "AwardID": 40010401,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7037002,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010410": {
@@ -246424,7 +246853,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7127001,
                 1,
                 1
             ]
@@ -246434,12 +246863,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010411": {
+        "Key": 40010411,
+        "AwardID": 40010411,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7127002,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010420": {
@@ -246448,7 +246911,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7027003,
                 1,
                 1
             ]
@@ -246458,12 +246921,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010421": {
+        "Key": 40010421,
+        "AwardID": 40010421,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7027004,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010430": {
@@ -246472,7 +246969,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7037003,
                 1,
                 1
             ]
@@ -246482,12 +246979,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010431": {
+        "Key": 40010431,
+        "AwardID": 40010431,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7037004,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010440": {
@@ -246496,7 +247027,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7127003,
                 1,
                 1
             ]
@@ -246506,12 +247037,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010441": {
+        "Key": 40010441,
+        "AwardID": 40010441,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7127004,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010450": {
@@ -246520,7 +247085,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7015071,
                 1,
                 1
             ]
@@ -246530,12 +247095,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010451": {
+        "Key": 40010451,
+        "AwardID": 40010451,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7015072,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010460": {
@@ -246544,7 +247143,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7027043,
                 1,
                 1
             ]
@@ -246554,12 +247153,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010461": {
+        "Key": 40010461,
+        "AwardID": 40010461,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7027044,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010470": {
@@ -246568,7 +247201,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7037043,
                 1,
                 1
             ]
@@ -246578,12 +247211,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010471": {
+        "Key": 40010471,
+        "AwardID": 40010471,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7037044,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010480": {
@@ -246592,7 +247259,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7127043,
                 1,
                 1
             ]
@@ -246602,12 +247269,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010481": {
+        "Key": 40010481,
+        "AwardID": 40010481,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7127044,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010490": {
@@ -246616,7 +247317,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7027041,
                 1,
                 1
             ]
@@ -246626,12 +247327,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010491": {
+        "Key": 40010491,
+        "AwardID": 40010491,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7027042,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010500": {
@@ -246640,7 +247375,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7037041,
                 1,
                 1
             ]
@@ -246650,12 +247385,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010501": {
+        "Key": 40010501,
+        "AwardID": 40010501,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7037042,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010510": {
@@ -246664,7 +247433,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7127041,
                 1,
                 1
             ]
@@ -246674,12 +247443,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010511": {
+        "Key": 40010511,
+        "AwardID": 40010511,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7127042,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010520": {
@@ -246688,7 +247491,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7015073,
                 1,
                 1
             ]
@@ -246698,12 +247501,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010521": {
+        "Key": 40010521,
+        "AwardID": 40010521,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7015074,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010530": {
@@ -246712,7 +247549,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7125073,
                 1,
                 1
             ]
@@ -246722,12 +247559,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010531": {
+        "Key": 40010531,
+        "AwardID": 40010531,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7125074,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010540": {
@@ -246736,7 +247607,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7037045,
                 1,
                 1
             ]
@@ -246746,12 +247617,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010541": {
+        "Key": 40010541,
+        "AwardID": 40010541,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7037046,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010550": {
@@ -246760,7 +247665,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7140010,
                 1,
                 1
             ]
@@ -246784,7 +247689,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7140005,
                 1,
                 1
             ]
@@ -246808,7 +247713,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7130123,
                 1,
                 1
             ]
@@ -246832,7 +247737,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7130124,
                 1,
                 1
             ]
@@ -246856,7 +247761,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7130125,
                 1,
                 1
             ]
@@ -246880,7 +247785,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7130151,
                 1,
                 1
             ]
@@ -246904,7 +247809,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7130152,
                 1,
                 1
             ]
@@ -246928,7 +247833,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7130153,
                 1,
                 1
             ]
@@ -246952,7 +247857,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7140033,
                 1,
                 1
             ]
@@ -246976,7 +247881,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7140026,
                 1,
                 1
             ]
@@ -247000,7 +247905,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7140025,
                 1,
                 1
             ]
@@ -247024,7 +247929,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7140024,
                 1,
                 1
             ]
@@ -247048,7 +247953,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7010023,
                 1,
                 1
             ]
@@ -247058,12 +247963,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010671": {
+        "Key": 40010671,
+        "AwardID": 40010671,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7010024,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010680": {
@@ -247072,7 +248011,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7010025,
                 1,
                 1
             ]
@@ -247082,12 +248021,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010681": {
+        "Key": 40010681,
+        "AwardID": 40010681,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7010026,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010690": {
@@ -247096,7 +248069,7 @@
         "DropType": 1,
         "GroupContent": [
             [
-                10008,
+                7010029,
                 1,
                 1
             ]
@@ -247106,12 +248079,46 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
+        "Limit": [
+            [
+                42,
+                1
+            ]
+        ],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
-        "PreviewUseLimite": 0,
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "40010691": {
+        "Key": 40010691,
+        "AwardID": 40010691,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                7010030,
+                1,
+                1
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                42,
+                2
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
         "ChatHyperLinkId": 0
     },
     "40010700": {
@@ -255229,6 +256236,150 @@
         "PreviewUseLimite": 0,
         "ChatHyperLinkId": 0
     },
+    "50002080": {
+        "Key": 50002080,
+        "AwardID": 50002080,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                1070012,
+                20,
+                20
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 0,
+        "ChatHyperLinkId": 0
+    },
+    "50002081": {
+        "Key": 50002081,
+        "AwardID": 50002081,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                1070012,
+                30,
+                30
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 0,
+        "ChatHyperLinkId": 0
+    },
+    "50002082": {
+        "Key": 50002082,
+        "AwardID": 50002082,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                1070012,
+                38,
+                38
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 0,
+        "ChatHyperLinkId": 0
+    },
+    "50002083": {
+        "Key": 50002083,
+        "AwardID": 50002083,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                1070012,
+                60,
+                60
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 0,
+        "ChatHyperLinkId": 0
+    },
+    "50002084": {
+        "Key": 50002084,
+        "AwardID": 50002084,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                1070012,
+                76,
+                76
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 0,
+        "ChatHyperLinkId": 0
+    },
+    "50002085": {
+        "Key": 50002085,
+        "AwardID": 50002085,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                1070012,
+                116,
+                116
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 0,
+        "ChatHyperLinkId": 0
+    },
     "50002101": {
         "Key": 50002101,
         "AwardID": 50002101,
@@ -255687,11 +256838,21 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [],
-        "LimitTimes": [
-            30,
-            1
+        "Limit": [
+            [
+                5,
+                7130174,
+                1,
+                1
+            ],
+            [
+                79,
+                209,
+                0,
+                0
+            ]
         ],
+        "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
         "AttrFixRatio": [],
@@ -266721,8 +267882,13 @@
         "GroupContent": [
             [
                 10008,
-                13,
-                25
+                1,
+                1
+            ],
+            [
+                11003,
+                1,
+                1
             ]
         ],
         "RandomRule": 1,
@@ -266749,9 +267915,14 @@
         "DropType": 1,
         "GroupContent": [
             [
+                10008,
+                12,
+                24
+            ],
+            [
                 11003,
                 1,
-                3
+                4
             ]
         ],
         "RandomRule": 1,
@@ -266766,8 +267937,8 @@
             ]
         ],
         "LimitTimes": [
-            15,
-            100
+            17,
+            800
         ],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -267094,12 +268265,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -267188,12 +268354,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -267217,12 +268378,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -267246,12 +268402,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -267275,12 +268426,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [
             30,
             1
@@ -267307,12 +268453,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [
             30,
             1
@@ -267339,12 +268480,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [
             30,
             1
@@ -267381,12 +268517,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -267410,12 +268541,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -267439,12 +268565,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [
             30,
             10
@@ -267471,12 +268592,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -267500,12 +268616,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [
             30,
             1
@@ -267532,12 +268643,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [
             30,
             1
@@ -267564,12 +268670,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [
             30,
             1
@@ -267596,12 +268697,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [
             30,
             1
@@ -267628,12 +268724,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [
             30,
             1
@@ -267660,12 +268751,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [
             30,
             1
@@ -267692,12 +268778,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -267721,12 +268802,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -267750,12 +268826,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -267779,12 +268850,7 @@
         "BindInfo": [],
         "ProItem": [],
         "ProRule": [],
-        "Limit": [
-            [
-                9,
-                40017
-            ]
-        ],
+        "Limit": [],
         "LimitTimes": [],
         "ProfessionLimit": 0,
         "EquipLvLimit": [],
@@ -268519,7 +269585,7 @@
         "Limit": [
             [
                 9,
-                40021
+                40025
             ]
         ],
         "LimitTimes": [
@@ -268551,7 +269617,7 @@
         "Limit": [
             [
                 9,
-                40021
+                40025
             ]
         ],
         "LimitTimes": [
@@ -268562,6 +269628,205 @@
         "EquipLvLimit": [],
         "AttrFixRatio": [],
         "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "70040010": {
+        "Key": 70040010,
+        "AwardID": 70040010,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                10008,
+                20,
+                30
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                9,
+                40026
+            ]
+        ],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 0,
+        "ChatHyperLinkId": 0
+    },
+    "70040020": {
+        "Key": 70040020,
+        "AwardID": 70040020,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                11004,
+                10,
+                10
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                9,
+                40026
+            ]
+        ],
+        "LimitTimes": [
+            30,
+            180
+        ],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "70040030": {
+        "Key": 70040030,
+        "AwardID": 70040030,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                11005,
+                10,
+                10
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [
+            [
+                9,
+                40027
+            ]
+        ],
+        "LimitTimes": [
+            30,
+            180
+        ],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 1,
+        "ChatHyperLinkId": 0
+    },
+    "70040040": {
+        "Key": 70040040,
+        "AwardID": 70040040,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                1061118,
+                1,
+                1
+            ],
+            [
+                1070044,
+                20,
+                20
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 0,
+        "ChatHyperLinkId": 0
+    },
+    "70040050": {
+        "Key": 70040050,
+        "AwardID": 70040050,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                10008,
+                50,
+                50
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 0,
+        "ChatHyperLinkId": 0
+    },
+    "70040060": {
+        "Key": 70040060,
+        "AwardID": 70040060,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                10008,
+                50,
+                50
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 0,
+        "ChatHyperLinkId": 0
+    },
+    "70040070": {
+        "Key": 70040070,
+        "AwardID": 70040070,
+        "DropType": 1,
+        "GroupContent": [
+            [
+                11004,
+                150,
+                150
+            ],
+            [
+                1070020,
+                100,
+                100
+            ]
+        ],
+        "RandomRule": 1,
+        "GroupWeight": [],
+        "BindInfo": [],
+        "ProItem": [],
+        "ProRule": [],
+        "Limit": [],
+        "LimitTimes": [],
+        "ProfessionLimit": 0,
+        "EquipLvLimit": [],
+        "AttrFixRatio": [],
+        "PreviewUseLimite": 0,
         "ChatHyperLinkId": 0
     },
     "71000010": {

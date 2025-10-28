@@ -44,8 +44,8 @@
         "Type": 5,
         "Param": "是否持有某道具n个",
         "ImplStatus": 2,
-        "Example": "5=1001=2",
-        "RefreshNum": "玩家需要持有2个1001道具才能满足条件",
+        "Example": "5=1001=2，5=1001=1=1",
+        "RefreshNum": "玩家需要持有2个1001道具才能满足条件，玩家持有小于1个1001道具才能满足条件",
         "FailureMessage": 0,
         "ShowPurview": "拥有{*val*}可购买"
     },

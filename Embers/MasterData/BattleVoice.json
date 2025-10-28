@@ -425,7 +425,8 @@
         "ObjectId": 1608,
         "BattleObserverEventEnum": "InteractiveSuccess",
         "Conditions": [
-            "Self700302"
+            "Self",
+            "700302"
         ],
         "Priority": 8,
         "Volume": 100,
@@ -518,20 +519,6 @@
             "Self",
             "Any",
             "IdleVoiceStartPlay"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9160818,
-        "CoolingTime": 25.0
-    },
-    {
-        "Id": 1608039,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
         ],
         "Priority": 6,
         "Volume": 100,
@@ -1071,20 +1058,6 @@
         "CoolingTime": 20.0
     },
     {
-        "Id": 1104038,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9110418,
-        "CoolingTime": 20.0
-    },
-    {
         "Id": 1104039,
         "ObjectId": 1104,
         "BattleObserverEventEnum": "ReleaseSkill",
@@ -1601,20 +1574,6 @@
             "Self",
             "Any",
             "IdleVoiceStartPlay"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9160618,
-        "CoolingTime": 20.0
-    },
-    {
-        "Id": 1606038,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
         ],
         "Priority": 6,
         "Volume": 100,
@@ -2179,20 +2138,6 @@
         "CoolingTime": 25.0
     },
     {
-        "Id": 1708040,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9170820,
-        "CoolingTime": 25.0
-    },
-    {
         "Id": 1708041,
         "ObjectId": 1708,
         "BattleObserverEventEnum": "ReleaseSkill",
@@ -2309,13 +2254,12 @@
             "Self",
             "110321",
             "AttackEnd",
-            "Skill2",
             "PerfectDodge"
         ],
         "Priority": 11,
         "Volume": 100,
         "VoiceId": 9110325,
-        "CoolingTime": 3.0
+        "CoolingTime": 0.0
     },
     {
         "Id": 1103008,
@@ -2326,7 +2270,7 @@
             "110314",
             "SkillRelease"
         ],
-        "Priority": 12,
+        "Priority": 13,
         "Volume": 100,
         "VoiceId": 9110313,
         "CoolingTime": 0.0
@@ -2768,26 +2712,12 @@
         "CoolingTime": 20.0
     },
     {
-        "Id": 1103041,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9110319,
-        "CoolingTime": 20.0
-    },
-    {
         "Id": 1103042,
         "ObjectId": 1103,
         "BattleObserverEventEnum": "ReleaseSkill",
         "Conditions": [
             "Self",
-            "Any",
+            "110351",
             "PerfectDodge"
         ],
         "Priority": 12,
@@ -3324,20 +3254,6 @@
         "CoolingTime": 20.0
     },
     {
-        "Id": 1001039,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9100117,
-        "CoolingTime": 20.0
-    },
-    {
         "Id": 1001040,
         "ObjectId": 1001,
         "BattleObserverEventEnum": "ReleaseSkill",
@@ -3402,7 +3318,7 @@
         "Priority": 10,
         "Volume": 100,
         "VoiceId": 9100203,
-        "CoolingTime": 0.0
+        "CoolingTime": 3.0
     },
     {
         "Id": 1002004,
@@ -3413,7 +3329,7 @@
             "100211",
             "SkillRelease"
         ],
-        "Priority": 10,
+        "Priority": 11,
         "Volume": 100,
         "VoiceId": 9100208,
         "CoolingTime": 3.0
@@ -3427,7 +3343,7 @@
             "100221",
             "SkillRelease"
         ],
-        "Priority": 10,
+        "Priority": 11,
         "Volume": 100,
         "VoiceId": 9100209,
         "CoolingTime": 2.0
@@ -3441,7 +3357,7 @@
             "100222",
             "SkillRelease"
         ],
-        "Priority": 10,
+        "Priority": 11,
         "Volume": 100,
         "VoiceId": 9100210,
         "CoolingTime": 2.0
@@ -3862,20 +3778,6 @@
             "Self",
             "Any",
             "IdleVoiceStartPlay"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9100218,
-        "CoolingTime": 15.0
-    },
-    {
-        "Id": 1002038,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
         ],
         "Priority": 6,
         "Volume": 100,
@@ -4370,20 +4272,6 @@
             "Self",
             "Any",
             "IdleVoiceStartPlay"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9100517,
-        "CoolingTime": 20.0
-    },
-    {
-        "Id": 1005037,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
         ],
         "Priority": 6,
         "Volume": 100,
@@ -4923,20 +4811,6 @@
         "CoolingTime": 15.0
     },
     {
-        "Id": 1201038,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9120118,
-        "CoolingTime": 15.0
-    },
-    {
         "Id": 1201039,
         "ObjectId": 1201,
         "BattleObserverEventEnum": "ReleaseSkill",
@@ -5452,20 +5326,6 @@
             "Self",
             "Any",
             "IdleVoiceStartPlay"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9120617,
-        "CoolingTime": 20.0
-    },
-    {
-        "Id": 1206038,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
         ],
         "Priority": 6,
         "Volume": 100,
@@ -6002,20 +5862,6 @@
         "CoolingTime": 20.0
     },
     {
-        "Id": 1602038,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9160218,
-        "CoolingTime": 20.0
-    },
-    {
         "Id": 1602039,
         "ObjectId": 1602,
         "BattleObserverEventEnum": "ReleaseSkill",
@@ -6085,7 +5931,7 @@
             "100705",
             "SkillRelease"
         ],
-        "Priority": 10,
+        "Priority": 12,
         "Volume": 100,
         "VoiceId": 9100704,
         "CoolingTime": 3.0
@@ -6169,7 +6015,7 @@
             "100711",
             "SkillRelease"
         ],
-        "Priority": 10,
+        "Priority": 11,
         "Volume": 100,
         "VoiceId": 9100709,
         "CoolingTime": 3.0
@@ -6183,7 +6029,7 @@
             "100712",
             "SkillRelease"
         ],
-        "Priority": 10,
+        "Priority": 11,
         "Volume": 100,
         "VoiceId": 9100710,
         "CoolingTime": 3.0
@@ -6576,20 +6422,6 @@
             "Self",
             "Any",
             "IdleVoiceStartPlay"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9100720,
-        "CoolingTime": 20.0
-    },
-    {
-        "Id": 1007041,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
         ],
         "Priority": 6,
         "Volume": 100,
@@ -7115,20 +6947,6 @@
             "Self",
             "Any",
             "IdleVoiceStartPlay"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9160417,
-        "CoolingTime": 20.0
-    },
-    {
-        "Id": 1604038,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
         ],
         "Priority": 6,
         "Volume": 100,
@@ -7689,20 +7507,6 @@
         "CoolingTime": 25.0
     },
     {
-        "Id": 1205040,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9120520,
-        "CoolingTime": 25.0
-    },
-    {
         "Id": 1205041,
         "ObjectId": 1205,
         "BattleObserverEventEnum": "ReleaseSkill",
@@ -7741,7 +7545,7 @@
             "110501",
             "SkillRelease"
         ],
-        "Priority": 10,
+        "Priority": 9,
         "Volume": 100,
         "VoiceId": 9110501,
         "CoolingTime": 0.0
@@ -8274,20 +8078,6 @@
             "Self",
             "Any",
             "IdleVoiceStartPlay"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9110520,
-        "CoolingTime": 25.0
-    },
-    {
-        "Id": 1105042,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
         ],
         "Priority": 6,
         "Volume": 100,
@@ -8842,20 +8632,6 @@
             "Self",
             "Any",
             "IdleVoiceStartPlay"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9160720,
-        "CoolingTime": 25.0
-    },
-    {
-        "Id": 1607040,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
         ],
         "Priority": 6,
         "Volume": 100,
@@ -9433,20 +9209,6 @@
         "CoolingTime": 20.0
     },
     {
-        "Id": 1202041,
-        "ObjectId": 0,
-        "BattleObserverEventEnum": "AddBuff",
-        "Conditions": [
-            "Self",
-            "Unknown",
-            "SpeedUp"
-        ],
-        "Priority": 6,
-        "Volume": 100,
-        "VoiceId": 9120223,
-        "CoolingTime": 25.0
-    },
-    {
         "Id": 1202042,
         "ObjectId": 1202,
         "BattleObserverEventEnum": "ReleaseSkill",
@@ -9458,6 +9220,1124 @@
         "Priority": 12,
         "Volume": 100,
         "VoiceId": 9120206,
+        "CoolingTime": 10.0
+    },
+    {
+        "Id": 1207001,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "120701",
+            "SkillRelease|Self",
+            "120702",
+            "SkillRelease"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9120701,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207002,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "120703",
+            "SkillRelease"
+        ],
+        "Priority": 10,
+        "Volume": 100,
+        "VoiceId": 9120702,
+        "CoolingTime": 2.0
+    },
+    {
+        "Id": 1207003,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "120734",
+            "SkillRelease"
+        ],
+        "Priority": 10,
+        "Volume": 100,
+        "VoiceId": 9120707,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207004,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "120731",
+            "SkillRelease"
+        ],
+        "Priority": 10,
+        "Volume": 100,
+        "VoiceId": 9120708,
+        "CoolingTime": 2.0
+    },
+    {
+        "Id": 1207005,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "120721",
+            "SkillRelease"
+        ],
+        "Priority": 10,
+        "Volume": 100,
+        "VoiceId": 9120709,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207006,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "120711",
+            "SkillRelease"
+        ],
+        "Priority": 10,
+        "Volume": 100,
+        "VoiceId": 9120710,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207007,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "120712",
+            "SkillRelease"
+        ],
+        "Priority": 10,
+        "Volume": 100,
+        "VoiceId": 9120711,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207008,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "120741",
+            "SkillRelease"
+        ],
+        "Priority": 12,
+        "Volume": 100,
+        "VoiceId": 9120712,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207009,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "120742",
+            "SkillRelease"
+        ],
+        "Priority": 12,
+        "Volume": 100,
+        "VoiceId": 9120713,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207010,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "120751",
+            "SkillRelease",
+            "Roll"
+        ],
+        "Priority": 7,
+        "Volume": 100,
+        "VoiceId": 9120706,
+        "CoolingTime": 2.0
+    },
+    {
+        "Id": 1207011,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1011"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9120721,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207012,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1012"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9120722,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207013,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1013"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9120722,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207014,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1014"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9120722,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207015,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1015"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9120722,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207016,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1016"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9120722,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207017,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1017"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9120723,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207018,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1018"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9120723,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207019,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1019"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9120723,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207020,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1022"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9120723,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207021,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "AddBuff",
+        "Conditions": [
+            "Self",
+            "Unknown",
+            "Negative"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9120719,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1207022,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "AddBuff",
+        "Conditions": [
+            "Self",
+            "Friendly",
+            "Intensify"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9120718,
+        "CoolingTime": 5.0
+    },
+    {
+        "Id": 1207023,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "AddBuff",
+        "Conditions": [
+            "Self",
+            "Friendly",
+            "Recover"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9120717,
+        "CoolingTime": 5.0
+    },
+    {
+        "Id": 1207024,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "AddBuff",
+        "Conditions": [
+            "Self",
+            "Neutral",
+            "Recover",
+            "Hp",
+            "Greater",
+            "Percentage",
+            "0.4"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9120704,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207025,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "AddBuff",
+        "Conditions": [
+            "Self",
+            "Neutral",
+            "Recover",
+            "Hp",
+            "Less",
+            "Percentage",
+            "0.4"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9120703,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207026,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "EntityDead",
+        "Conditions": [
+            "Self",
+            "1207"
+        ],
+        "Priority": 12,
+        "Volume": 100,
+        "VoiceId": 9120715,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207027,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "EntityReborn",
+        "Conditions": [
+            "Self",
+            "1207"
+        ],
+        "Priority": 12,
+        "Volume": 100,
+        "VoiceId": 9120716,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207028,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "RescueSuccess",
+        "Conditions": [
+            "Self",
+            "1207"
+        ],
+        "Priority": 12,
+        "Volume": 100,
+        "VoiceId": 9120716,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207029,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700301"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9120714,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207030,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self700302"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9120714,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207031,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700303"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9120714,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207032,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700304"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9120714,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207033,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700401"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9120714,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207034,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700402"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9120714,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207035,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700403"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9120714,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207036,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700404"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9120714,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1207037,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "Any",
+            "IdleVoiceStartPlay"
+        ],
+        "Priority": 6,
+        "Volume": 100,
+        "VoiceId": 9120720,
+        "CoolingTime": 25.0
+    },
+    {
+        "Id": 1207039,
+        "ObjectId": 1207,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "Any",
+            "PerfectDodge"
+        ],
+        "Priority": 12,
+        "Volume": 100,
+        "VoiceId": 9120705,
+        "CoolingTime": 10.0
+    },
+    {
+        "Id": 1704001,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170401",
+            "SkillRelease|Self",
+            "170402",
+            "SkillRelease|Self",
+            "170403",
+            "SkillRelease|Self",
+            "170404",
+            "SkillRelease"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9170401,
+        "CoolingTime": 2.0
+    },
+    {
+        "Id": 1704002,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170405",
+            "SkillRelease"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9170402,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704003,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170461",
+            "SkillRelease"
+        ],
+        "Priority": 10,
+        "Volume": 100,
+        "VoiceId": 9170403,
+        "CoolingTime": 6.0
+    },
+    {
+        "Id": 1704004,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170462",
+            "SkillRelease"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9170404,
+        "CoolingTime": 7.0
+    },
+    {
+        "Id": 1704005,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170463",
+            "SkillRelease"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9170405,
+        "CoolingTime": 7.0
+    },
+    {
+        "Id": 1704006,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170431",
+            "SkillRelease"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170410,
+        "CoolingTime": 2.0
+    },
+    {
+        "Id": 1704007,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170432",
+            "SkillRelease"
+        ],
+        "Priority": 12,
+        "Volume": 100,
+        "VoiceId": 9170411,
+        "CoolingTime": 2.0
+    },
+    {
+        "Id": 1704008,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170421",
+            "SkillRelease"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170412,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704009,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170422",
+            "SkillRelease"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170413,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704011,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170423",
+            "AttackEnd",
+            "170422"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170415,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704012,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170411",
+            "SkillRelease"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170416,
+        "CoolingTime": 2.0
+    },
+    {
+        "Id": 1704013,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170412",
+            "SkillRelease"
+        ],
+        "Priority": 10,
+        "Volume": 100,
+        "VoiceId": 9170417,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704014,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170413",
+            "SkillRelease"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170418,
+        "CoolingTime": 2.0
+    },
+    {
+        "Id": 1704015,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170441",
+            "SkillRelease"
+        ],
+        "Priority": 12,
+        "Volume": 100,
+        "VoiceId": 9170419,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704016,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170451",
+            "SkillRelease",
+            "Roll"
+        ],
+        "Priority": 7,
+        "Volume": 100,
+        "VoiceId": 9170409,
+        "CoolingTime": 2.0
+    },
+    {
+        "Id": 1704017,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1011"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170427,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704018,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1012"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170428,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704019,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1013"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170428,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704020,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1014"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170428,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704021,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1015"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170428,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704022,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1016"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170428,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704023,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1017"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170429,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704024,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1018"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170429,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704025,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1019"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170429,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704026,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ChangeState",
+        "Conditions": [
+            "Self",
+            "1022"
+        ],
+        "Priority": 11,
+        "Volume": 100,
+        "VoiceId": 9170429,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704027,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "AddBuff",
+        "Conditions": [
+            "Self",
+            "Unknown",
+            "Negative"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9170425,
+        "CoolingTime": 3.0
+    },
+    {
+        "Id": 1704028,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "AddBuff",
+        "Conditions": [
+            "Self",
+            "Friendly",
+            "Intensify"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9170424,
+        "CoolingTime": 5.0
+    },
+    {
+        "Id": 1704029,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "AddBuff",
+        "Conditions": [
+            "Self",
+            "Friendly",
+            "Recover"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9170423,
+        "CoolingTime": 5.0
+    },
+    {
+        "Id": 1704030,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "AddBuff",
+        "Conditions": [
+            "Self",
+            "Neutral",
+            "Recover",
+            "Hp",
+            "Greater",
+            "Percentage",
+            "0.4"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9170407,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704031,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "AddBuff",
+        "Conditions": [
+            "Self",
+            "Neutral",
+            "Recover",
+            "Hp",
+            "Less",
+            "Percentage",
+            "0.4"
+        ],
+        "Priority": 9,
+        "Volume": 100,
+        "VoiceId": 9170406,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704032,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "EntityDead",
+        "Conditions": [
+            "Self",
+            "1704"
+        ],
+        "Priority": 13,
+        "Volume": 100,
+        "VoiceId": 9170421,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704033,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "EntityReborn",
+        "Conditions": [
+            "Self",
+            "1704"
+        ],
+        "Priority": 13,
+        "Volume": 100,
+        "VoiceId": 9170422,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704034,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "RescueSuccess",
+        "Conditions": [
+            "Self",
+            "1704"
+        ],
+        "Priority": 13,
+        "Volume": 100,
+        "VoiceId": 9170422,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704035,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700301"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9170420,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704036,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700302"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9170420,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704037,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700303"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9170420,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704038,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700304"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9170420,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704039,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700401"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9170420,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704040,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700402"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9170420,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704041,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700403"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9170420,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704042,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "InteractiveSuccess",
+        "Conditions": [
+            "Self",
+            "700404"
+        ],
+        "Priority": 8,
+        "Volume": 100,
+        "VoiceId": 9170420,
+        "CoolingTime": 0.0
+    },
+    {
+        "Id": 1704043,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "Any",
+            "IdleVoiceStartPlay"
+        ],
+        "Priority": 6,
+        "Volume": 100,
+        "VoiceId": 9170426,
+        "CoolingTime": 20.0
+    },
+    {
+        "Id": 1704045,
+        "ObjectId": 1704,
+        "BattleObserverEventEnum": "ReleaseSkill",
+        "Conditions": [
+            "Self",
+            "170451",
+            "PerfectDodge"
+        ],
+        "Priority": 12,
+        "Volume": 100,
+        "VoiceId": 9170408,
         "CoolingTime": 10.0
     }
 ]

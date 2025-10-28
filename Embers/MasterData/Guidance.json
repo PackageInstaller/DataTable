@@ -70,8 +70,7 @@
         "NextGuidance": [
             351,
             122,
-            371,
-            113
+            371
         ],
         "Priority": 1
     },
@@ -104,11 +103,23 @@
         "Id": 122,
         "Index": 8,
         "GuidanceSteps": [
-            12201,
-            12202,
-            12203
+            12201
         ],
         "IsSave": true,
+        "NextGuidance": [
+            123
+        ],
+        "Priority": 1
+    },
+    {
+        "Id": 123,
+        "Index": 35,
+        "GuidanceSteps": [
+            12301,
+            12302,
+            12403
+        ],
+        "IsSave": false,
         "NextGuidance": [],
         "Priority": 1
     },

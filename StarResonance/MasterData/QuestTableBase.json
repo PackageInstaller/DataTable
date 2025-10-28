@@ -2172,6 +2172,61 @@
         "Note": "",
         "AwardPreview": []
     },
+    "10514": {
+        "Key": 10514,
+        "QuestId": 10514,
+        "QuestName": "【限时活动】绯色与幻梦的序章",
+        "QuestDetail": "今天是与艾露娜约定前往高原的日子。你早早来到双面币亭等候，但不知为何，她的身影迟迟未出现……<br><style=\"emph-gn\">任务时限：绯色与幻梦的序章活动期间</style>",
+        "QuestType": 89,
+        "QuestStep": 10514001,
+        "AwardId": 70040070,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "30"
+            ],
+            [
+                "18",
+                "40026"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40126"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/chapter05_04/chapter05_04-14",
+        "NpcMarkedByQuest": [
+            [
+                21051102,
+                21050004,
+                21050003,
+                21050001,
+                21050002,
+                21051304,
+                21051301,
+                21051302,
+                21051303
+            ],
+            [
+                21051101,
+                21050007
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "10601": {
         "Key": 10601,
         "QuestId": 10601,
@@ -13647,6 +13702,127 @@
         "Note": "",
         "AwardPreview": []
     },
+    "160010": {
+        "Key": 160010,
+        "QuestId": 160010,
+        "QuestName": "",
+        "QuestDetail": "",
+        "QuestType": 53,
+        "QuestStep": 160010001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40017"
+            ],
+            [
+                "1",
+                "2"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40117"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/160001/160001-46",
+        "NpcMarkedByQuest": [
+            [
+                1008720,
+                16000002,
+                16000102,
+                16000001,
+                16000301,
+                16000401,
+                16000501,
+                16000601,
+                16000701,
+                16000801,
+                16000004
+            ],
+            [
+                16000302,
+                16000402,
+                16000403,
+                16000502,
+                16000602,
+                16000702,
+                16000802,
+                16000803
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "160011": {
+        "Key": 160011,
+        "QuestId": 160011,
+        "QuestName": "",
+        "QuestDetail": "",
+        "QuestType": 53,
+        "QuestStep": 160011001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40117"
+            ],
+            [
+                "1",
+                "30"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/160001/160001-50",
+        "NpcMarkedByQuest": [
+            [
+                1008720,
+                16000002,
+                16000102,
+                16000001,
+                16000301,
+                16000401,
+                16000501,
+                16000601,
+                16000701,
+                16000801,
+                16000004
+            ],
+            [
+                16000302,
+                16000402,
+                16000403,
+                16000502,
+                16000602,
+                16000702,
+                16000802,
+                16000803
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "170000": {
         "Key": 170000,
         "QuestId": 170000,
@@ -18491,6 +18667,219 @@
                 21051301,
                 21051302,
                 21051303
+            ],
+            [
+                21051101,
+                21050007
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "185591": {
+        "Key": 185591,
+        "QuestId": 185591,
+        "QuestName": "【限时活动】绯色与幻梦的序章",
+        "QuestDetail": "",
+        "QuestType": 90,
+        "QuestStep": 185591001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "5591"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "5591"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/chapter05_04/chapter05_04-15",
+        "NpcMarkedByQuest": [
+            [
+                21051102,
+                21050004,
+                21050003,
+                21050001,
+                21050002,
+                21051304,
+                21051301,
+                21051302,
+                21051303
+            ],
+            [
+                21051101,
+                21050007
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "185592": {
+        "Key": 185592,
+        "QuestId": 185592,
+        "QuestName": "【限时活动】绯色与幻梦的序章",
+        "QuestDetail": "",
+        "QuestType": 90,
+        "QuestStep": 185592003,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "5592"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "5592"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/chapter05_04/chapter05_04-18",
+        "NpcMarkedByQuest": [
+            [
+                21051102,
+                21050004,
+                21050003,
+                21050001,
+                21050002,
+                21051304,
+                21051301,
+                21051302,
+                21051303,
+                21050005,
+                21051401,
+                21051402
+            ],
+            [
+                21051101,
+                21050007
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "185593": {
+        "Key": 185593,
+        "QuestId": 185593,
+        "QuestName": "【限时活动】绯色与幻梦的序章",
+        "QuestDetail": "",
+        "QuestType": 90,
+        "QuestStep": 185593001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "5593"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "5593"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/chapter05_04/chapter05_04-19",
+        "NpcMarkedByQuest": [
+            [
+                21051102,
+                21050004,
+                21050003,
+                21050001,
+                21050002,
+                21051304,
+                21051301,
+                21051302,
+                21051303,
+                21050005,
+                21051401,
+                21051402
+            ],
+            [
+                21051101,
+                21050007
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "185594": {
+        "Key": 185594,
+        "QuestId": 185594,
+        "QuestName": "【限时活动】绯色与幻梦的序章",
+        "QuestDetail": "",
+        "QuestType": 90,
+        "QuestStep": 185594001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "5594"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "5594"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/chapter05_04/chapter05_04-20",
+        "NpcMarkedByQuest": [
+            [
+                21051102,
+                21050004,
+                21050003,
+                21050001,
+                21050002,
+                21051304,
+                21051301,
+                21051302,
+                21051303,
+                21050005,
+                21051401,
+                21051402
             ],
             [
                 21051101,
@@ -27562,6 +27951,188 @@
         ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/7103/7103-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "760001": {
+        "Key": 760001,
+        "QuestId": 760001,
+        "QuestName": "【商队货物寻回】",
+        "QuestDetail": "将货物送回商人处以获得奖励。",
+        "QuestType": 30,
+        "QuestStep": 760001002,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "13",
+                "76"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/760001/760001-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "760002": {
+        "Key": 760002,
+        "QuestId": 760002,
+        "QuestName": "【商队货物寻回】",
+        "QuestDetail": "将货物送回商人处以获得奖励。",
+        "QuestType": 30,
+        "QuestStep": 760002001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "13",
+                "76"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/760002/760002-4",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "760003": {
+        "Key": 760003,
+        "QuestId": 760003,
+        "QuestName": "【幻像铭文】",
+        "QuestDetail": "收集4种铭文并与铭文墙壁共鸣以获得奖励。",
+        "QuestType": 30,
+        "QuestStep": 760003002,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "13",
+                "76"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/760003/760003-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "760004": {
+        "Key": 760004,
+        "QuestId": 760004,
+        "QuestName": "【共破浮梦之障】",
+        "QuestDetail": "需要10个冒险者同时聚力方能破除屏障获得奖励。",
+        "QuestType": 30,
+        "QuestStep": 760004001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "13",
+                "76"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/760004/760004-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "760005": {
+        "Key": 760005,
+        "QuestId": 760005,
+        "QuestName": "【共破浮梦之障】",
+        "QuestDetail": "需要20个冒险者同时聚力方能破除屏障获得奖励。",
+        "QuestType": 30,
+        "QuestStep": 760005001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "20",
+                "76",
+                "0"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/760005/760005-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "760006": {
+        "Key": 760006,
+        "QuestId": 760006,
+        "QuestName": "【共破浮梦之障】",
+        "QuestDetail": "需要30个冒险者同时聚力方能破除屏障获得奖励。",
+        "QuestType": 30,
+        "QuestStep": 760006001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "20",
+                "76",
+                "0"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/760006/760006-3",
         "NpcMarkedByQuest": [],
         "Note": "",
         "AwardPreview": []

@@ -1278,6 +1278,76 @@
         "SpVariableName": [],
         "IsShowSpVariableProgress": []
     },
+    "7601": {
+        "Key": 7601,
+        "Id": 7601,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 76,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "浮游之茧凝形期",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "fuyou_state1_progress"
+        ],
+        "SpVariableLimit": [
+            "fuyou_state1_progressMax"
+        ],
+        "SpVariableName": [
+            "当前能量"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
+    "7602": {
+        "Key": 7602,
+        "Id": 7602,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 76,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "浮游之茧溢散期",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "fuyou_state2_progress"
+        ],
+        "SpVariableLimit": [
+            "fuyou_state2_progressMax"
+        ],
+        "SpVariableName": [
+            "剩余能量"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
+    "7603": {
+        "Key": 7603,
+        "Id": 7603,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 76,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "凋零等待期",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "fuyou_state3_progress"
+        ],
+        "SpVariableLimit": [
+            "fuyou_state3_progressMax"
+        ],
+        "SpVariableName": [
+            "等待时间"
+        ],
+        "IsShowSpVariableProgress": []
+    },
     "8901": {
         "Key": 8901,
         "Id": 8901,
@@ -10003,7 +10073,7 @@
         "Param": [],
         "TargetPos": "",
         "IsTeamShare": false,
-        "TargetDes": "腐化核心血量低于40%",
+        "TargetDes": "60秒内击破腐化核心",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -10019,7 +10089,7 @@
         "Param": [],
         "TargetPos": "",
         "IsTeamShare": false,
-        "TargetDes": "击破腐化核心",
+        "TargetDes": "40秒内击破腐化核心",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],

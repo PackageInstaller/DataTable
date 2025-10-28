@@ -589,7 +589,7 @@
         "Text": "你没事吧？",
         "Result": "打开对话链",
         "ParadoxArgs": "",
-        "Args": "",
+        "Args": "1051001",
         "OpenConfition": [],
         "IconType": ""
     },
@@ -598,7 +598,7 @@
         "Text": "询问他的具体身份。",
         "Result": "打开对话链",
         "ParadoxArgs": "",
-        "Args": "",
+        "Args": "1051002",
         "OpenConfition": [],
         "IconType": ""
     },
@@ -606,17 +606,566 @@
         "Id": 81051003,
         "Text": "是谁把你们吊在这里的？",
         "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "1051003",
+        "OpenConfition": [],
+        "IconType": "dialog_1"
+    },
+    {
+        "Id": 81051004,
+        "Text": "没事了。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051004",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051005,
+        "Text": "你是什么人？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051005",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051006,
+        "Text": "为什么会被吊在树上？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "1051006",
+        "OpenConfition": [],
+        "IconType": "dialog_1"
+    },
+    {
+        "Id": 81051007,
+        "Text": "没事了。",
+        "Result": "关闭界面",
         "ParadoxArgs": "",
         "Args": "",
         "OpenConfition": [],
         "IconType": ""
     },
     {
-        "Id": 81051004,
+        "Id": 81051008,
+        "Text": "你是什么人？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051007",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051009,
+        "Text": "为什么会被吊在树上？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "1051008",
+        "OpenConfition": [],
+        "IconType": "dialog_1"
+    },
+    {
+        "Id": 81051010,
         "Text": "没事了。",
         "Result": "关闭界面",
         "ParadoxArgs": "",
         "Args": "",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051011,
+        "Text": "想要了解金沙帮。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051009",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051012,
+        "Text": "想要了解赤潮镇。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051010",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051013,
+        "Text": "没事了。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051011",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051014,
+        "Text": "想要了解 “落日酒馆”。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051012",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051015,
+        "Text": "询问有关舞娘和老板的事。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051013",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051016,
+        "Text": "没事了。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051014",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051017,
+        "Text": "格洛克为什么会离开赤潮镇？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051015",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051018,
+        "Text": "关于金沙帮，你还知道些什么？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051016",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051019,
+        "Text": "你和龙舌兰认识？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051017",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051020,
+        "Text": "路上小心。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051018",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051021,
+        "Text": "为什么从没听你提过杰西卡？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051019",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051022,
+        "Text": "关于哞哞牧场。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051020",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051023,
+        "Text": "关于石肺病。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051021",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051024,
+        "Text": "再见。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051022",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051025,
+        "Text": "走吧，去“角斗大会”。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051023",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051026,
+        "Text": "等一下，我还没准备好。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051024",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051027,
+        "Text": "角斗大会举行多少届了？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051025",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051028,
+        "Text": "角斗大会的规则。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "1051026",
+        "OpenConfition": [],
+        "IconType": "dialog_1"
+    },
+    {
+        "Id": 81051029,
+        "Text": "获胜者的奖励是什么？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051027",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051030,
+        "Text": "没事了。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051028",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051031,
+        "Text": "你也是来参加角斗的吗？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051029",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051032,
+        "Text": "你们为什么戴着面具？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "1051030",
+        "OpenConfition": [],
+        "IconType": "dialog_1"
+    },
+    {
+        "Id": 81051033,
+        "Text": "关于那些锁链。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051031",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051034,
+        "Text": "没事了。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051032",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051035,
+        "Text": "在这里做生意，你不害怕吗？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051033",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051036,
+        "Text": "角斗是否合法？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051034",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81051037,
+        "Text": "这里有多少金沙帮成员？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "1051035",
+        "OpenConfition": [],
+        "IconType": "dialog_1"
+    },
+    {
+        "Id": 81051038,
+        "Text": "没事了。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1051036",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052001,
+        "Text": "蕾恩警长以前就这样吗？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052001",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052002,
+        "Text": "再见。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "1052002",
+        "OpenConfition": [],
+        "IconType": "dialog_1"
+    },
+    {
+        "Id": 81052003,
+        "Text": "询问有关赌场的事。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "1052003",
+        "OpenConfition": [],
+        "IconType": "dialog_1"
+    },
+    {
+        "Id": 81052004,
+        "Text": "离开。",
+        "Result": "关闭界面",
+        "ParadoxArgs": "",
+        "Args": "",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052005,
+        "Text": "我不能喝酒。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "1052004",
+        "OpenConfition": [],
+        "IconType": "dialog_1"
+    },
+    {
+        "Id": 81052006,
+        "Text": "离开。",
+        "Result": "关闭界面",
+        "ParadoxArgs": "",
+        "Args": "",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052007,
+        "Text": "继续搭话。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "1052005",
+        "OpenConfition": [],
+        "IconType": "dialog_1"
+    },
+    {
+        "Id": 81052008,
+        "Text": "离开。",
+        "Result": "关闭界面",
+        "ParadoxArgs": "",
+        "Args": "",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052009,
+        "Text": "你一个人经营“纸牌屋”？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052006",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052010,
+        "Text": "你对金沙帮了解多少？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052007",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052011,
+        "Text": "关于警署，你知道些什么？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052008",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052012,
+        "Text": "没事了。",
+        "Result": "关闭界面",
+        "ParadoxArgs": "",
+        "Args": "",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052013,
+        "Text": "你是怎么患上石肺病的？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052009",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052014,
+        "Text": "你为什么帮响尾蛇做事？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052010",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052015,
+        "Text": "为什么要使用戈德矿？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1052011",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81052016,
+        "Text": "没事了。",
+        "Result": "关闭界面",
+        "ParadoxArgs": "",
+        "Args": "",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053001,
+        "Text": "对霍克夫人表示担忧。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053001",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053002,
+        "Text": "对蕾恩的过去感到好奇。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053002",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053003,
+        "Text": "没事了。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053003",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053004,
+        "Text": "想要了解龙舌兰。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053004",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053005,
+        "Text": "你为什么会选择加入警署？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053005",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053006,
+        "Text": "没事了。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053006",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053007,
+        "Text": "你为什么要隐瞒自己的身份？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053007",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053008,
+        "Text": "“金沙帮”的调查进展如何？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053008",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053009,
+        "Text": "没事了。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053009",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053010,
+        "Text": "出发吧。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053010",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 81053011,
+        "Text": "稍等一下，我还没准备好。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "1053011",
         "OpenConfition": [],
         "IconType": ""
     },
@@ -723,7 +1272,7 @@
         "Id": 82022002,
         "Text": "你为什么觉得自己应该分到三瓶水？",
         "Result": "打开对话链",
-        "ParadoxArgs": "",
+        "ParadoxArgs": "taskFinish",
         "Args": "2022002",
         "OpenConfition": [],
         "IconType": "dialog_2"
@@ -732,7 +1281,7 @@
         "Id": 82022003,
         "Text": "你为什么需要这三瓶水？",
         "Result": "打开对话链",
-        "ParadoxArgs": "",
+        "ParadoxArgs": "taskFinish",
         "Args": "2022003",
         "OpenConfition": [],
         "IconType": "dialog_2"
@@ -741,7 +1290,7 @@
         "Id": 82022004,
         "Text": "你为什么需要这三瓶水呢？",
         "Result": "打开对话链",
-        "ParadoxArgs": "",
+        "ParadoxArgs": "taskFinish",
         "Args": "2022004",
         "OpenConfition": [],
         "IconType": "dialog_2"
@@ -1582,5 +2131,212 @@
         "Args": "2044009",
         "OpenConfition": [],
         "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051001,
+        "Text": "注入魂火，逆转封印！",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "2051001",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051002,
+        "Text": "尝试解除封印。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2051002",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82051003,
+        "Text": "解除封印。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "2051003",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051004,
+        "Text": "这里发生了什么事？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2051004",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82051005,
+        "Text": "有什么我能帮忙的吗？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "2051005",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051006,
+        "Text": "多多保重！",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2051006",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82051007,
+        "Text": "栏杆已经修复完毕。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick1",
+        "Args": "2051007",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051008,
+        "Text": "还没有。",
+        "Result": "关闭界面",
+        "ParadoxArgs": "",
+        "Args": "2051008",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82051009,
+        "Text": "你是肯尼吗？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "2051009",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051010,
+        "Text": "我只是路过。",
+        "Result": "关闭界面",
+        "ParadoxArgs": "",
+        "Args": "",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82051011,
+        "Text": "他已经被带到吊死树处决了。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "2051010",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051012,
+        "Text": "你没事吧？",
+        "Result": "关闭界面",
+        "ParadoxArgs": "",
+        "Args": "2051011",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82051013,
+        "Text": "我找到了这个",
+        "Result": "关闭界面",
+        "ParadoxArgs": "pick",
+        "Args": "",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051014,
+        "Text": "先回答我的问题，这里为什么还在举办斗兽？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2051012",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82051015,
+        "Text": "什么“大生意”？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "2051013",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051016,
+        "Text": "我还有事，先走了。",
+        "Result": "关闭界面",
+        "ParadoxArgs": "",
+        "Args": "",
+        "OpenConfition": [],
+        "IconType": ""
+    },
+    {
+        "Id": 82051017,
+        "Text": "我要参加邀请赛。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick1",
+        "Args": "2051014",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051018,
+        "Text": "附近的辉烬兽威胁已经清除。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick2",
+        "Args": "2051015",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051019,
+        "Text": "还没有。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2051016",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051020,
+        "Text": "柯尔特，你在做什么？",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick",
+        "Args": "2051017",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051021,
+        "Text": "汇报“清道夫”落网和朱莉·诺曼的遭遇。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "pick1",
+        "Args": "2051018",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051022,
+        "Text": "好的。",
+        "Result": "关闭界面",
+        "ParadoxArgs": "pick",
+        "Args": "",
+        "OpenConfition": [],
+        "IconType": "dialog_2"
+    },
+    {
+        "Id": 82051023,
+        "Text": "现在还不行。",
+        "Result": "打开对话链",
+        "ParadoxArgs": "",
+        "Args": "2051019",
+        "OpenConfition": [],
+        "IconType": ""
     }
 ]

@@ -38,7 +38,7 @@
     {
         "Id": 1003,
         "TaskType": 1,
-        "TargetType": 1003,
+        "TargetType": 1016,
         "Condition": [
             1000
         ],
@@ -47,11 +47,11 @@
                 0
             ]
         ],
-        "TargetValue": 1,
+        "TargetValue": 100,
         "EXP": 150,
-        "TargetDesc": "在地图内采集1次",
-        "TargetWindow": "LevelMapWindow",
-        "WindowParams": 100
+        "TargetDesc": "每日活跃达到100",
+        "TargetWindow": "GameActivityWindow",
+        "WindowParams": 1
     },
     {
         "Id": 1004,
@@ -267,24 +267,6 @@
         "EXP": 1800,
         "TargetDesc": "通关3次肃清裂隙",
         "TargetWindow": "CopySecondType5Window",
-        "WindowParams": 0
-    },
-    {
-        "Id": 3004,
-        "TaskType": 3,
-        "TargetType": 1001,
-        "Condition": [
-            1000
-        ],
-        "Target": [
-            [
-                0
-            ]
-        ],
-        "TargetValue": 7,
-        "EXP": 50000,
-        "TargetDesc": "【测试限定】累计登录7天",
-        "TargetWindow": "",
         "WindowParams": 0
     }
 ]

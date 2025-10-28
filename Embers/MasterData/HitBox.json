@@ -24,7 +24,7 @@
         "Name": "百合碰撞盒",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -73,7 +73,7 @@
         "Name": "角色通用",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -122,7 +122,7 @@
         "Name": "瑶光完美闪避判定",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -130,7 +130,7 @@
         "PrimitiveEnum": [],
         "PrimitiveParams": [
             [
-                1.15,
+                1.3,
                 2.0
             ]
         ],
@@ -171,10 +171,10 @@
         "Name": "史莱姆王通用",
         "Count": 4,
         "Keys": [
-            "hitbox_B",
-            "hitbox_HB",
-            "hitbox_bodyRight",
-            "hitbox_bodyLeft"
+            "B",
+            "HB",
+            "Body",
+            "Body2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -221,10 +221,10 @@
         "Name": "雅雯",
         "Count": 4,
         "Keys": [
-            "hitbox_B",
-            "hitbox_HB",
-            "hitbox_bodyRight",
-            "hitbox_bodyLeft"
+            "B",
+            "HB",
+            "Body",
+            "Body2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -271,7 +271,7 @@
         "Name": "雅雯水晶",
         "Count": 1,
         "Keys": [
-            "hit"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -320,11 +320,11 @@
         "Name": "饕餮",
         "Count": 5,
         "Keys": [
-            "hit_body",
-            "hit_leftHand_HB",
-            "hit_front_B",
-            "hit_rightHand",
-            "hit_behind"
+            "Body",
+            "HB",
+            "B",
+            "Body2",
+            "Body3"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -376,9 +376,9 @@
         "Name": "穷奇",
         "Count": 3,
         "Keys": [
-            "hit_body",
-            "hit_tail",
-            "hit_head"
+            "Body",
+            "B",
+            "HB"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -399,7 +399,7 @@
         ],
         "AffectTenacityRatio": [
             0.0,
-            0.0,
+            0.2,
             0.4
         ],
         "Weight": [
@@ -420,14 +420,15 @@
         "Name": "荒漠猎蜥",
         "Count": 3,
         "Keys": [
-            "hit_body",
-            "hit_tail",
-            "hit_head"
+            "Body",
+            "B",
+            "HB"
         ],
         "KeysGroups": [
             [
-                "hit_body",
-                "hit_tail|hit_head"
+                "Body",
+                "B",
+                "HB"
             ]
         ],
         "DamageInjury": [],
@@ -472,10 +473,10 @@
         "Name": "山魁",
         "Count": 4,
         "Keys": [
-            "hit_front_HB",
-            "hit_back",
-            "hit_B",
-            "hit_right_B"
+            "HB",
+            "Body",
+            "B",
+            "B2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -522,10 +523,10 @@
         "Name": "机械蜘蛛",
         "Count": 4,
         "Keys": [
-            "hit_HB",
-            "hit_body",
-            "hit_B",
-            "hit_body2"
+            "HB",
+            "Body",
+            "B",
+            "Body2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -572,10 +573,10 @@
         "Name": "废品王",
         "Count": 4,
         "Keys": [
-            "hitbox_HB",
-            "hitbox_B",
-            "hitbox_bodyRight",
-            "hitbox_bodyLeft"
+            "HB",
+            "B",
+            "Body",
+            "Body2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -622,7 +623,7 @@
         "Name": "废品王柱子",
         "Count": 1,
         "Keys": [
-            "hit"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -676,10 +677,10 @@
         "Name": "草木灵通用",
         "Count": 4,
         "Keys": [
-            "hitbox_B",
-            "hitbox_HB",
-            "hitbox_bodyRight",
-            "hitbox_bodyLeft"
+            "B",
+            "HB",
+            "Body",
+            "Body2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -726,10 +727,10 @@
         "Name": "封印怪通用",
         "Count": 4,
         "Keys": [
-            "hit_bodyLeft",
-            "hit_bodyRight",
-            "hit_B",
-            "hit_Hb"
+            "Body",
+            "Body2",
+            "B",
+            "HB"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -776,7 +777,7 @@
         "Name": "冰锥碰撞盒",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -825,7 +826,7 @@
         "Name": "史莱姆跳砸",
         "Count": 1,
         "Keys": [
-            "hit_slime"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -873,7 +874,7 @@
         "Name": "史莱姆吐息",
         "Count": 1,
         "Keys": [
-            "hit_slime1"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -921,7 +922,7 @@
         "Name": "史莱姆冰锥",
         "Count": 1,
         "Keys": [
-            "hit_slime5"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -969,10 +970,10 @@
         "Name": "巨人通用",
         "Count": 4,
         "Keys": [
-            "hitbox_B",
-            "hitbox_HB",
-            "hitbox_bodyRight",
-            "hitbox_bodyLeft"
+            "B",
+            "HB",
+            "Body",
+            "Body2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1019,10 +1020,10 @@
         "Name": "黑星",
         "Count": 4,
         "Keys": [
-            "hitbox_front_HB",
-            "hitbox_back_B",
-            "hitbox_leftbody",
-            "hitbox_rightbody"
+            "HB",
+            "B",
+            "Body",
+            "Body2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1069,10 +1070,10 @@
         "Name": "冰原狼",
         "Count": 4,
         "Keys": [
-            "hit_body",
-            "hit_tail",
-            "hit_head",
-            "hit_body2"
+            "Body",
+            "B",
+            "HB",
+            "Body2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1119,13 +1120,13 @@
         "Name": "冰龙",
         "Count": 7,
         "Keys": [
-            "hit_rightHand",
-            "hit_head",
-            "hit_leftHand",
-            "hit_leftFoot",
-            "hit_rightFoot",
-            "hit_tail",
-            "hit_tail2"
+            "Body",
+            "HB",
+            "Body2",
+            "Body3",
+            "Body4",
+            "B",
+            "B2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1187,7 +1188,7 @@
         "Name": "（冰龙）冰柱",
         "Count": 1,
         "Keys": [
-            "hit"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1291,7 +1292,7 @@
         "Name": "北辰莲花",
         "Count": 1,
         "Keys": [
-            "hit"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1345,10 +1346,10 @@
         "Name": "蜥蜴怪",
         "Count": 4,
         "Keys": [
-            "hit_head_HB",
-            "hit_tail_B",
-            "hit_body",
-            "hit_body2"
+            "HB",
+            "B",
+            "Body",
+            "Body2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1393,12 +1394,12 @@
     {
         "Id": 3000,
         "Name": "风沙",
-        "Count": 1,
+        "Count": 4,
         "Keys": [
-            "hitbox_B",
-            "hitbox_HB",
-            "hitbox_bodyRight",
-            "hitbox_bodyLeft"
+            "B",
+            "HB",
+            "Body",
+            "Body2"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1441,11 +1442,247 @@
         "HitAngle": []
     },
     {
+        "Id": 3001,
+        "Name": "枯魂吊树",
+        "Count": 5,
+        "Keys": [
+            "Body",
+            "B",
+            "HB",
+            "HB2",
+            "B2"
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [],
+        "PrimitiveParams": [],
+        "CenterOffset": [],
+        "RotateOffset": [],
+        "HitBoxLevel": [
+            1,
+            2,
+            3,
+            3,
+            2
+        ],
+        "DamageRatio": [
+            0.0,
+            0.15,
+            0.3,
+            0.3,
+            0.15
+        ],
+        "AffectTenacityRatio": [
+            0.0,
+            0.2,
+            0.4,
+            0.4,
+            0.2
+        ],
+        "Weight": [
+            1,
+            2,
+            3,
+            3,
+            2
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 3002,
+        "Name": "沙漠蛙",
+        "Count": 7,
+        "Keys": [
+            "HB",
+            "Body",
+            "B",
+            "B2",
+            "HB2",
+            "HB3",
+            "HB4"
+        ],
+        "KeysGroups": [
+            [
+                "HB",
+                "Body",
+                "B",
+                "B2",
+                "HB2|HB3",
+                "HB4"
+            ]
+        ],
+        "DamageInjury": [],
+        "Progressivecoefficient": [
+            0.0,
+            0.0
+        ],
+        "PrimitiveEnum": [],
+        "PrimitiveParams": [],
+        "CenterOffset": [],
+        "RotateOffset": [],
+        "HitBoxLevel": [
+            3,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3
+        ],
+        "DamageRatio": [
+            0.3,
+            0.0,
+            0.15,
+            0.15,
+            0.3,
+            0.3,
+            0.3
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.0,
+            0.2,
+            0.2,
+            0.4,
+            0.4,
+            0.4
+        ],
+        "Weight": [
+            3,
+            1,
+            2,
+            2,
+            4,
+            4,
+            4
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 3005,
+        "Name": "衰肉之主",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "Body",
+            "B",
+            "Body2"
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [],
+        "PrimitiveParams": [],
+        "CenterOffset": [],
+        "RotateOffset": [],
+        "HitBoxLevel": [
+            3,
+            1,
+            2,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.0,
+            0.15,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.5,
+            0.0,
+            0.3,
+            0.0
+        ],
+        "Weight": [
+            3,
+            1,
+            2,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.0,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
+        "Id": 3003,
+        "Name": "米娅",
+        "Count": 4,
+        "Keys": [
+            "HB",
+            "B",
+            "Body",
+            "Body2"
+        ],
+        "KeysGroups": [],
+        "DamageInjury": [],
+        "Progressivecoefficient": [],
+        "PrimitiveEnum": [],
+        "PrimitiveParams": [],
+        "CenterOffset": [],
+        "RotateOffset": [],
+        "HitBoxLevel": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "DamageRatio": [
+            0.3,
+            0.15,
+            0.0,
+            0.0
+        ],
+        "AffectTenacityRatio": [
+            0.4,
+            0.2,
+            0.0,
+            0.0
+        ],
+        "Weight": [
+            3,
+            2,
+            1,
+            1
+        ],
+        "NormalTough": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+        ],
+        "DamageCumulativeThreshold": [],
+        "HitAngle": []
+    },
+    {
         "Id": 31010,
         "Name": "小史莱姆系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1484,7 +1721,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -1499,7 +1736,7 @@
         "Name": "弹跳史莱姆系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1538,7 +1775,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -1553,7 +1790,7 @@
         "Name": "小树苗系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1592,7 +1829,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -1607,7 +1844,7 @@
         "Name": "尖头树苗系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1646,7 +1883,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -1661,7 +1898,7 @@
         "Name": "圆头树苗系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1700,7 +1937,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -1715,7 +1952,7 @@
         "Name": "遗迹史莱姆系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1753,7 +1990,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -1768,7 +2005,7 @@
         "Name": "森林狼系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1808,7 +2045,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -1823,7 +2060,7 @@
         "Name": "森林阴影狼系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1863,7 +2100,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -1878,7 +2115,7 @@
         "Name": "幼狼系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1918,7 +2155,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -1933,7 +2170,7 @@
         "Name": "巨型史莱姆系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -1972,7 +2209,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -1987,7 +2224,7 @@
         "Name": "镰刀黑灵系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -2026,7 +2263,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -2041,7 +2278,7 @@
         "Name": "巨盾黑灵系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -2080,7 +2317,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -2095,7 +2332,7 @@
         "Name": "长枪卫兵系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -2134,7 +2371,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -2149,7 +2386,7 @@
         "Name": "机械炮兵系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -2188,7 +2425,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -2203,7 +2440,7 @@
         "Name": "史莱姆骑士系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -2242,7 +2479,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -2257,7 +2494,7 @@
         "Name": "八爪坦克系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -2295,7 +2532,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -2310,7 +2547,7 @@
         "Name": "自爆小蜘蛛系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -2349,7 +2586,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -2364,7 +2601,7 @@
         "Name": "盾牌兵系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -2403,7 +2640,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -2418,7 +2655,7 @@
         "Name": "黑灵萨满系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -2457,7 +2694,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [
@@ -2472,7 +2709,7 @@
         "Name": "飞碟兵系列",
         "Count": 1,
         "Keys": [
-            "hit_body"
+            "Body"
         ],
         "KeysGroups": [],
         "DamageInjury": [],
@@ -2511,7 +2748,7 @@
             1
         ],
         "NormalTough": [
-            0.25
+            0.5
         ],
         "DamageCumulativeThreshold": [
             [

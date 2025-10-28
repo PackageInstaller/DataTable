@@ -2194,7 +2194,7 @@
         "RefreshIntervalType": 0,
         "WeightId": [],
         "TimerId": 40014,
-        "Sort": 10001,
+        "Sort": 10000,
         "ShowCountDown": 0,
         "MallManualRefresh": 0,
         "RefreshCostItem": [],
@@ -2218,13 +2218,37 @@
         "RefreshIntervalType": 0,
         "WeightId": [],
         "TimerId": 40018,
-        "Sort": 10002,
+        "Sort": 10001,
         "ShowCountDown": 0,
         "MallManualRefresh": 0,
         "RefreshCostItem": [],
         "Icon": "ui/atlas/item/c_tab_icon/com_icon_tab_123",
         "CurrencyDisplay": [
             11003
+        ]
+    },
+    "10002": {
+        "Key": 10002,
+        "Id": 10002,
+        "FunctionId": 819303,
+        "Name": "幻梦商店",
+        "ShowType": 6,
+        "ViewType": 1,
+        "SubViewType": [],
+        "HasFatherType": 0,
+        "MallPageId": 0,
+        "MallType": 0,
+        "RefreshIntervalType": 0,
+        "WeightId": [],
+        "TimerId": 40026,
+        "Sort": 10002,
+        "ShowCountDown": 0,
+        "MallManualRefresh": 0,
+        "RefreshCostItem": [],
+        "Icon": "ui/atlas/item/c_tab_icon/com_icon_tab_123",
+        "CurrencyDisplay": [
+            11004,
+            11005
         ]
     }
 }

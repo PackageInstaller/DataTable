@@ -10324,6 +10324,35 @@
         "CounterId": 0,
         "NotShowBtn": false
     },
+    "1040199": {
+        "Key": 1040199,
+        "Id": 1040199,
+        "Name": "奇异外观任选箱",
+        "Type": 2,
+        "Parameter": [
+            "70040040"
+        ],
+        "Button": "打开",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 0,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 100,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
     "1044200": {
         "Key": 1044200,
         "Id": 1044200,
@@ -21338,7 +21367,7 @@
     "1062029": {
         "Key": 1062029,
         "Id": 1062029,
-        "Name": "运营礼盒占位",
+        "Name": "早安套装礼盒",
         "Type": 2,
         "Parameter": [
             "40010290"
@@ -21357,7 +21386,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21367,7 +21411,7 @@
     "1062030": {
         "Key": 1062030,
         "Id": 1062030,
-        "Name": "运营礼盒占位",
+        "Name": "早安护手礼盒",
         "Type": 2,
         "Parameter": [
             "40010300"
@@ -21386,7 +21430,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21396,7 +21455,7 @@
     "1062031": {
         "Key": 1062031,
         "Id": 1062031,
-        "Name": "运营礼盒占位",
+        "Name": "早安鞋子礼盒",
         "Type": 2,
         "Parameter": [
             "40010310"
@@ -21415,7 +21474,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21425,7 +21499,7 @@
     "1062032": {
         "Key": 1062032,
         "Id": 1062032,
-        "Name": "运营礼盒占位",
+        "Name": "仕典上衣礼盒",
         "Type": 2,
         "Parameter": [
             "40010320"
@@ -21444,7 +21518,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21454,7 +21543,7 @@
     "1062033": {
         "Key": 1062033,
         "Id": 1062033,
-        "Name": "运营礼盒占位",
+        "Name": "仕典下装礼盒",
         "Type": 2,
         "Parameter": [
             "40010330"
@@ -21473,7 +21562,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21483,7 +21587,7 @@
     "1062034": {
         "Key": 1062034,
         "Id": 1062034,
-        "Name": "运营礼盒占位",
+        "Name": "仕典护手礼盒",
         "Type": 2,
         "Parameter": [
             "40010340"
@@ -21502,7 +21606,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21512,7 +21631,7 @@
     "1062035": {
         "Key": 1062035,
         "Id": 1062035,
-        "Name": "运营礼盒占位",
+        "Name": "仕典鞋子礼盒",
         "Type": 2,
         "Parameter": [
             "40010350"
@@ -21531,7 +21650,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21541,7 +21675,7 @@
     "1062036": {
         "Key": 1062036,
         "Id": 1062036,
-        "Name": "运营礼盒占位",
+        "Name": "相伴契约套装礼盒",
         "Type": 2,
         "Parameter": [
             "40010360"
@@ -21560,7 +21694,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21570,7 +21719,7 @@
     "1062037": {
         "Key": 1062037,
         "Id": 1062037,
-        "Name": "运营礼盒占位",
+        "Name": "相伴契约护手礼盒",
         "Type": 2,
         "Parameter": [
             "40010370"
@@ -21589,7 +21738,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21599,7 +21763,7 @@
     "1062038": {
         "Key": 1062038,
         "Id": 1062038,
-        "Name": "运营礼盒占位",
+        "Name": "相伴契约鞋子礼盒",
         "Type": 2,
         "Parameter": [
             "40010380"
@@ -21618,7 +21782,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21628,7 +21807,7 @@
     "1062039": {
         "Key": 1062039,
         "Id": 1062039,
-        "Name": "运营礼盒占位",
+        "Name": "青春纪念簿·上衣礼盒",
         "Type": 2,
         "Parameter": [
             "40010390"
@@ -21647,7 +21826,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21657,7 +21851,7 @@
     "1062040": {
         "Key": 1062040,
         "Id": 1062040,
-        "Name": "运营礼盒占位",
+        "Name": "青春纪念簿·下装礼盒",
         "Type": 2,
         "Parameter": [
             "40010400"
@@ -21676,7 +21870,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21686,7 +21895,7 @@
     "1062041": {
         "Key": 1062041,
         "Id": 1062041,
-        "Name": "运营礼盒占位",
+        "Name": "青春纪念簿·鞋子礼盒",
         "Type": 2,
         "Parameter": [
             "40010410"
@@ -21705,7 +21914,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21715,7 +21939,7 @@
     "1062042": {
         "Key": 1062042,
         "Id": 1062042,
-        "Name": "运营礼盒占位",
+        "Name": "同桌的你·上衣礼盒",
         "Type": 2,
         "Parameter": [
             "40010420"
@@ -21734,7 +21958,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21744,7 +21983,7 @@
     "1062043": {
         "Key": 1062043,
         "Id": 1062043,
-        "Name": "运营礼盒占位",
+        "Name": "同桌的你·下装礼盒",
         "Type": 2,
         "Parameter": [
             "40010430"
@@ -21763,7 +22002,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21773,7 +22027,7 @@
     "1062044": {
         "Key": 1062044,
         "Id": 1062044,
-        "Name": "运营礼盒占位",
+        "Name": "同桌的你·鞋子礼盒",
         "Type": 2,
         "Parameter": [
             "40010440"
@@ -21792,7 +22046,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21802,7 +22071,7 @@
     "1062045": {
         "Key": 1062045,
         "Id": 1062045,
-        "Name": "运营礼盒占位",
+        "Name": "海风小恋曲·套装礼盒",
         "Type": 2,
         "Parameter": [
             "40010450"
@@ -21821,7 +22090,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21831,7 +22115,7 @@
     "1062046": {
         "Key": 1062046,
         "Id": 1062046,
-        "Name": "运营礼盒占位",
+        "Name": "蓝莓派对·上衣礼盒",
         "Type": 2,
         "Parameter": [
             "40010460"
@@ -21850,7 +22134,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21860,7 +22159,7 @@
     "1062047": {
         "Key": 1062047,
         "Id": 1062047,
-        "Name": "运营礼盒占位",
+        "Name": "蓝莓派对·下装礼盒",
         "Type": 2,
         "Parameter": [
             "40010470"
@@ -21879,7 +22178,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21889,7 +22203,7 @@
     "1062048": {
         "Key": 1062048,
         "Id": 1062048,
-        "Name": "运营礼盒占位",
+        "Name": "蓝莓派对·鞋子礼盒",
         "Type": 2,
         "Parameter": [
             "40010480"
@@ -21908,7 +22222,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21918,7 +22247,7 @@
     "1062049": {
         "Key": 1062049,
         "Id": 1062049,
-        "Name": "运营礼盒占位",
+        "Name": "甜橙气泡水·上衣礼盒",
         "Type": 2,
         "Parameter": [
             "40010490"
@@ -21937,7 +22266,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21947,7 +22291,7 @@
     "1062050": {
         "Key": 1062050,
         "Id": 1062050,
-        "Name": "运营礼盒占位",
+        "Name": "甜橙气泡水·下装礼盒",
         "Type": 2,
         "Parameter": [
             "40010500"
@@ -21966,7 +22310,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -21976,7 +22335,7 @@
     "1062051": {
         "Key": 1062051,
         "Id": 1062051,
-        "Name": "运营礼盒占位",
+        "Name": "甜橙气泡水·鞋子礼盒",
         "Type": 2,
         "Parameter": [
             "40010510"
@@ -21995,7 +22354,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22005,7 +22379,7 @@
     "1062052": {
         "Key": 1062052,
         "Id": 1062052,
-        "Name": "运营礼盒占位",
+        "Name": "草莓泡泡星·套装礼盒",
         "Type": 2,
         "Parameter": [
             "40010520"
@@ -22024,7 +22398,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22034,7 +22423,7 @@
     "1062053": {
         "Key": 1062053,
         "Id": 1062053,
-        "Name": "运营礼盒占位",
+        "Name": "草莓泡泡星·鞋子礼盒",
         "Type": 2,
         "Parameter": [
             "40010530"
@@ -22053,7 +22442,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22063,7 +22467,7 @@
     "1062054": {
         "Key": 1062054,
         "Id": 1062054,
-        "Name": "运营礼盒占位",
+        "Name": "青春纪念簿·庆典·下装礼盒",
         "Type": 2,
         "Parameter": [
             "40010540"
@@ -22082,7 +22486,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22092,7 +22511,7 @@
     "1062055": {
         "Key": 1062055,
         "Id": 1062055,
-        "Name": "运营礼盒占位",
+        "Name": "眼罩·面饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010550"
@@ -22111,7 +22530,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22121,7 +22555,7 @@
     "1062056": {
         "Key": 1062056,
         "Id": 1062056,
-        "Name": "运营礼盒占位",
+        "Name": "粗框眼镜·面饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010560"
@@ -22140,7 +22574,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22150,7 +22599,7 @@
     "1062057": {
         "Key": 1062057,
         "Id": 1062057,
-        "Name": "运营礼盒占位",
+        "Name": "女仆发圈其一·头饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010570"
@@ -22169,7 +22618,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22179,7 +22643,7 @@
     "1062058": {
         "Key": 1062058,
         "Id": 1062058,
-        "Name": "运营礼盒占位",
+        "Name": "女仆发圈其二·头饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010580"
@@ -22198,7 +22662,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22208,7 +22687,7 @@
     "1062059": {
         "Key": 1062059,
         "Id": 1062059,
-        "Name": "运营礼盒占位",
+        "Name": "女仆发圈其三·头饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010590"
@@ -22227,7 +22706,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22237,7 +22731,7 @@
     "1062060": {
         "Key": 1062060,
         "Id": 1062060,
-        "Name": "运营礼盒占位",
+        "Name": "绽放之诗·头饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010600"
@@ -22256,7 +22750,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22266,7 +22775,7 @@
     "1062061": {
         "Key": 1062061,
         "Id": 1062061,
-        "Name": "运营礼盒占位",
+        "Name": "风铃花·头饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010610"
@@ -22285,7 +22794,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22295,7 +22819,7 @@
     "1062062": {
         "Key": 1062062,
         "Id": 1062062,
-        "Name": "运营礼盒占位",
+        "Name": "轻飘飘缎带·头饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010620"
@@ -22314,7 +22838,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22324,7 +22863,7 @@
     "1062063": {
         "Key": 1062063,
         "Id": 1062063,
-        "Name": "运营礼盒占位",
+        "Name": "潮酷墨镜·面饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010630"
@@ -22343,7 +22882,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22353,7 +22907,7 @@
     "1062064": {
         "Key": 1062064,
         "Id": 1062064,
-        "Name": "运营礼盒占位",
+        "Name": "星星眼镜·面饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010640"
@@ -22372,7 +22926,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22382,7 +22951,7 @@
     "1062065": {
         "Key": 1062065,
         "Id": 1062065,
-        "Name": "运营礼盒占位",
+        "Name": "爱心太阳镜·面饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010650"
@@ -22401,7 +22970,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22411,7 +22995,7 @@
     "1062066": {
         "Key": 1062066,
         "Id": 1062066,
-        "Name": "运营礼盒占位",
+        "Name": "摩登眼镜·面饰礼盒",
         "Type": 2,
         "Parameter": [
             "40010660"
@@ -22430,7 +23014,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22440,7 +23039,7 @@
     "1062067": {
         "Key": 1062067,
         "Id": 1062067,
-        "Name": "运营礼盒占位",
+        "Name": "樱吹雪·套装礼盒",
         "Type": 2,
         "Parameter": [
             "40010670"
@@ -22459,7 +23058,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22469,7 +23083,7 @@
     "1062068": {
         "Key": 1062068,
         "Id": 1062068,
-        "Name": "运营礼盒占位",
+        "Name": "胧月·套装礼盒",
         "Type": 2,
         "Parameter": [
             "40010680"
@@ -22488,7 +23102,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -22498,7 +23127,7 @@
     "1062069": {
         "Key": 1062069,
         "Id": 1062069,
-        "Name": "运营礼盒占位",
+        "Name": "雪月花·套装礼盒",
         "Type": 2,
         "Parameter": [
             "40010690"
@@ -22517,7 +23146,22 @@
         "SoundEffect": "",
         "CanQuick": 0,
         "ItemBatch": 0,
-        "RepeatLimit": [],
+        "RepeatLimit": [
+            701,
+            702,
+            703,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            721,
+            722,
+            723,
+            731
+        ],
         "TipText": "",
         "RecommendUse": 0,
         "AwardTipsType": 0,
@@ -23800,7 +24444,7 @@
         "RecommendUse": 0,
         "AwardTipsType": 1,
         "CounterId": 0,
-        "NotShowBtn": true
+        "NotShowBtn": false
     },
     "1070113": {
         "Key": 1070113,
@@ -23829,7 +24473,7 @@
         "RecommendUse": 0,
         "AwardTipsType": 1,
         "CounterId": 0,
-        "NotShowBtn": true
+        "NotShowBtn": false
     },
     "1070114": {
         "Key": 1070114,
@@ -23858,7 +24502,7 @@
         "RecommendUse": 0,
         "AwardTipsType": 1,
         "CounterId": 0,
-        "NotShowBtn": true
+        "NotShowBtn": false
     },
     "1070115": {
         "Key": 1070115,
@@ -23887,7 +24531,7 @@
         "RecommendUse": 0,
         "AwardTipsType": 1,
         "CounterId": 0,
-        "NotShowBtn": true
+        "NotShowBtn": false
     },
     "1073006": {
         "Key": 1073006,
@@ -26966,6 +27610,412 @@
         "Type": 10,
         "Parameter": [
             "202610"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070018": {
+        "Key": 9070018,
+        "Id": 9070018,
+        "Name": "2026年11月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202611"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070019": {
+        "Key": 9070019,
+        "Id": 9070019,
+        "Name": "2026年12月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202612"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070020": {
+        "Key": 9070020,
+        "Id": 9070020,
+        "Name": "2027年1月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202701"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070021": {
+        "Key": 9070021,
+        "Id": 9070021,
+        "Name": "2027年2月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202702"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070022": {
+        "Key": 9070022,
+        "Id": 9070022,
+        "Name": "2027年3月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202703"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070023": {
+        "Key": 9070023,
+        "Id": 9070023,
+        "Name": "2027年4月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202704"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070024": {
+        "Key": 9070024,
+        "Id": 9070024,
+        "Name": "2027年5月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202705"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070025": {
+        "Key": 9070025,
+        "Id": 9070025,
+        "Name": "2027年6月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202706"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070026": {
+        "Key": 9070026,
+        "Id": 9070026,
+        "Name": "2027年7月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202707"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070027": {
+        "Key": 9070027,
+        "Id": 9070027,
+        "Name": "2027年8月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202708"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070028": {
+        "Key": 9070028,
+        "Id": 9070028,
+        "Name": "2027年9月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202709"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070029": {
+        "Key": 9070029,
+        "Id": 9070029,
+        "Name": "2027年10月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202710"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070030": {
+        "Key": 9070030,
+        "Id": 9070030,
+        "Name": "2027年11月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202711"
+        ],
+        "Button": "领取",
+        "UseLimit": [],
+        "Reconfirm": 0,
+        "Target": 0,
+        "AutoApply": 1,
+        "AutoApplyClient": 0,
+        "UseCD": 0,
+        "PublicCD": [
+            0
+        ],
+        "Effect": "",
+        "SoundEffect": "",
+        "CanQuick": 0,
+        "ItemBatch": 0,
+        "RepeatLimit": [],
+        "TipText": "",
+        "RecommendUse": 0,
+        "AwardTipsType": 0,
+        "CounterId": 0,
+        "NotShowBtn": false
+    },
+    "9070031": {
+        "Key": 9070031,
+        "Id": 9070031,
+        "Name": "2027年12月典藏卡（占位）",
+        "Type": 10,
+        "Parameter": [
+            "202712"
         ],
         "Button": "领取",
         "UseLimit": [],
