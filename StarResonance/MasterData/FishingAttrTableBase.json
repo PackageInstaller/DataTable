@@ -880,5 +880,397 @@
             0.05,
             3
         ]
+    },
+    "90001": {
+        "Key": 90001,
+        "FishingAttrId": 90001,
+        "Name": "鱼属性模版-高原A级",
+        "SizeDefaultWeight": [
+            [
+                1,
+                500,
+                2000,
+                5000
+            ],
+            [
+                2,
+                2000,
+                6000,
+                3000
+            ],
+            [
+                3,
+                6000,
+                8200,
+                1000
+            ],
+            [
+                4,
+                8200,
+                9600,
+                500
+            ],
+            [
+                5,
+                9600,
+                12100,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            1.5,
+            0.3,
+            5
+        ],
+        "OffHookTime": [
+            1,
+            0.2,
+            10
+        ],
+        "OffTime": [
+            0.7,
+            0,
+            3
+        ],
+        "DrawSpeed": [
+            15,
+            2,
+            30
+        ],
+        "OffSpeed": [
+            10,
+            2,
+            10
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            12,
+            0,
+            20
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            12,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithDraw": [
+            8,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            1,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            0.3,
+            0,
+            1
+        ],
+        "FishSpeed": [
+            3.5,
+            0.05,
+            6
+        ]
+    },
+    "90002": {
+        "Key": 90002,
+        "FishingAttrId": 90002,
+        "Name": "鱼属性模版-高原A+级",
+        "SizeDefaultWeight": [
+            [
+                1,
+                2000,
+                2800,
+                5000
+            ],
+            [
+                2,
+                2800,
+                4500,
+                3000
+            ],
+            [
+                3,
+                4500,
+                6000,
+                1000
+            ],
+            [
+                4,
+                6000,
+                8000,
+                500
+            ],
+            [
+                5,
+                8000,
+                10800,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            1.5,
+            0.3,
+            5
+        ],
+        "OffHookTime": [
+            1,
+            0.2,
+            10
+        ],
+        "OffTime": [
+            0.6,
+            0,
+            3
+        ],
+        "DrawSpeed": [
+            15,
+            2,
+            30
+        ],
+        "OffSpeed": [
+            10,
+            2,
+            10
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            12,
+            0,
+            20
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            12,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithDraw": [
+            8,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            0.8,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            0.3,
+            0,
+            1
+        ],
+        "FishSpeed": [
+            3.5,
+            0.05,
+            6
+        ]
+    },
+    "90003": {
+        "Key": 90003,
+        "FishingAttrId": 90003,
+        "Name": "鱼属性模版-高原S级1",
+        "SizeDefaultWeight": [
+            [
+                1,
+                2000,
+                2800,
+                5000
+            ],
+            [
+                2,
+                2800,
+                3600,
+                3000
+            ],
+            [
+                3,
+                3600,
+                4400,
+                1000
+            ],
+            [
+                4,
+                4400,
+                5200,
+                500
+            ],
+            [
+                5,
+                5200,
+                7000,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            1,
+            0.3,
+            5
+        ],
+        "OffHookTime": [
+            0.5,
+            0.2,
+            10
+        ],
+        "OffTime": [
+            0.4,
+            0,
+            3
+        ],
+        "DrawSpeed": [
+            10,
+            2,
+            20
+        ],
+        "OffSpeed": [
+            15,
+            2,
+            30
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            15,
+            0,
+            40
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            15,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithDraw": [
+            15,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            0.7,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            0.3,
+            0,
+            1
+        ],
+        "FishSpeed": [
+            5.5,
+            0.05,
+            10
+        ]
+    },
+    "90004": {
+        "Key": 90004,
+        "FishingAttrId": 90004,
+        "Name": "鱼属性模版-高原S级2",
+        "SizeDefaultWeight": [
+            [
+                1,
+                1000,
+                2500,
+                5000
+            ],
+            [
+                2,
+                2500,
+                3500,
+                3000
+            ],
+            [
+                3,
+                3500,
+                5000,
+                1000
+            ],
+            [
+                4,
+                5000,
+                6800,
+                500
+            ],
+            [
+                5,
+                6800,
+                8100,
+                0
+            ]
+        ],
+        "Qte": 1,
+        "BiteTime": [
+            1,
+            0.3,
+            5
+        ],
+        "OffHookTime": [
+            0.5,
+            0.2,
+            10
+        ],
+        "OffTime": [
+            0.4,
+            0,
+            3
+        ],
+        "DrawSpeed": [
+            10,
+            2,
+            20
+        ],
+        "OffSpeed": [
+            15,
+            2,
+            30
+        ],
+        "DiffDirectionSpeedWithoutDraw": [
+            20,
+            0,
+            40
+        ],
+        "DiffDirectionSpeedWithDraw": [
+            25,
+            0,
+            40
+        ],
+        "SameDirectionSpeedWithDraw": [
+            15,
+            0,
+            20
+        ],
+        "SameDirectionSpeedWithoutDraw": [
+            -20,
+            -40,
+            -5
+        ],
+        "FishPathInterval": [
+            0.6,
+            0.2,
+            1
+        ],
+        "FishStayInterval": [
+            0.2,
+            0,
+            1
+        ],
+        "FishSpeed": [
+            5,
+            0.05,
+            10
+        ]
     }
 }

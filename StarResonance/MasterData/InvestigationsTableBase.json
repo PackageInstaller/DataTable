@@ -226,7 +226,70 @@
         ],
         "CompletionConditions": [],
         "ThemeIntroduction": "从平原前往高原的人们都陷入了噩梦中。推断出可用的线索吧……",
-        "IockedTips": "推进任务<style=\"emph-quest\">绯色与迷梦的间章</style>解锁调查",
+        "IockedTips": "推进任务<style=\"emph-quest\">绯色与幻梦的序章</style>解锁调查",
+        "ThemePic": "ui/textures/investigation/investigation_common_bg",
+        "Guarantee": 3,
+        "IsHidePlayerModel": false
+    },
+    "7001": {
+        "Key": 7001,
+        "Id": 7001,
+        "InvestigationTheme": "获得星魂瓶",
+        "UnlockCondition": [
+            [
+                2,
+                10702,
+                10702001
+            ]
+        ],
+        "InvestigationStep": [
+            70011
+        ],
+        "CompletionConditions": [],
+        "ThemeIntroduction": "为了前往采掘矿洞调查星元混乱的根源，必须获得达雅的帮助。然而达雅提出的条件是——为她弄到五百个星魂瓶，这可不太容易。必须从巡礼者们提供的信息中弄清该如何获取这么一大批物资。",
+        "IockedTips": "完成任务<style=\"emph-quest\">自有别的办法</style>解锁调查",
+        "ThemePic": "ui/textures/investigation/investigation_common_bg",
+        "Guarantee": 3,
+        "IsHidePlayerModel": false
+    },
+    "8001": {
+        "Key": 8001,
+        "Id": 8001,
+        "InvestigationTheme": "换防时间表的秘密",
+        "UnlockCondition": [
+            [
+                2,
+                10801,
+                10801021
+            ]
+        ],
+        "InvestigationStep": [
+            80011
+        ],
+        "CompletionConditions": [],
+        "ThemeIntroduction": "黑石军团内部的动乱比想象中更为严峻，克劳斯团长不知所踪。<br>为了获知团长的下落，博伊斯提议从换防时间表中寻找线索。",
+        "IockedTips": "推进任务<style=\"emph-quest\">每一步都必然所至</style>解锁调查",
+        "ThemePic": "ui/textures/investigation/investigation_common_bg",
+        "Guarantee": 3,
+        "IsHidePlayerModel": false
+    },
+    "9001": {
+        "Key": 9001,
+        "Id": 9001,
+        "InvestigationTheme": "内卫勒的秘密",
+        "UnlockCondition": [
+            [
+                2,
+                185703,
+                185703004
+            ]
+        ],
+        "InvestigationStep": [
+            90011
+        ],
+        "CompletionConditions": [],
+        "ThemeIntroduction": "身为商队的一员，内卫勒手中却有绯红矿髓；只是稍加逼问，他就落荒而逃。然而事情没这么简单，黑石军团的士兵竟然在暗中协助他。背后到底藏着怎样的阴谋呢……",
+        "IockedTips": "推进任务<style=\"emph-quest\">那时怀疑便是确定</style>解锁调查",
         "ThemePic": "ui/textures/investigation/investigation_common_bg",
         "Guarantee": 3,
         "IsHidePlayerModel": false

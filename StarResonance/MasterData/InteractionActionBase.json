@@ -164,7 +164,7 @@
         "ParamDesc": [
             "界面名字"
         ],
-        "Desc": "打开UI",
+        "Desc": "打开UI（废弃）",
         "ActionName": "openUI"
     },
     "13": {
@@ -333,13 +333,17 @@
         "TimeoutIsSuccess": false,
         "ParamType": [
             "int",
+            "int",
+            "int",
             "int"
         ],
         "ParamDesc": [
             "技能id",
-            "技能释放方式"
+            "技能释放方式",
+            "对象类型",
+            "对象实体id"
         ],
-        "Desc": "技能释放方式: 0(朝当前玩家朝向)  1(朝交互目标释放),  2(朝指定坐标释放,后续跟随完整的场景坐标)",
+        "Desc": "技能释放方式: 0(朝当前玩家朝向)  1(朝交互目标释放),  2(朝指定坐标释放,后续跟随完整的场景坐标)，3（朝指定实体释放，需填写后两个参数）",
         "ActionName": "useSkill"
     },
     "24": {
@@ -881,6 +885,34 @@
         "Desc": "种田",
         "ActionName": "HomeFarm"
     },
+    "58": {
+        "Key": 58,
+        "Id": 58,
+        "ActionType": 0,
+        "MaxTime": 0,
+        "TimeoutIsSuccess": false,
+        "ParamType": [
+            "int",
+            "int"
+        ],
+        "ParamDesc": [
+            "拍照任务id",
+            "相机模板id"
+        ],
+        "Desc": "景点拍照打卡",
+        "ActionName": "ScenicSpotPhoto"
+    },
+    "59": {
+        "Key": 59,
+        "Id": 59,
+        "ActionType": 0,
+        "MaxTime": 0,
+        "TimeoutIsSuccess": false,
+        "ParamType": [],
+        "ParamDesc": [],
+        "Desc": "巡游",
+        "ActionName": "JoinParade"
+    },
     "1000": {
         "Key": 1000,
         "Id": 1000,
@@ -1235,10 +1267,16 @@
         "MaxTime": 0,
         "TimeoutIsSuccess": false,
         "ParamType": [
+            "int",
+            "int",
+            "float",
             "int"
         ],
         "ParamDesc": [
-            "buffID"
+            "buffId",
+            "层数",
+            "持续时间",
+            "等级"
         ],
         "Desc": "给服务器交互物加后端buff",
         "ActionName": "AddBuffToTarget"
@@ -1250,10 +1288,12 @@
         "MaxTime": 0,
         "TimeoutIsSuccess": false,
         "ParamType": [
+            "int",
             "int"
         ],
         "ParamDesc": [
-            "buffID"
+            "buffId",
+            "层数"
         ],
         "Desc": "删除服务器交互物的后端buff",
         "ActionName": "RemoveTargetBuff"

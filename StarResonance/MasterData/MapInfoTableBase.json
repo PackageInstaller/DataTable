@@ -10,7 +10,6 @@
         "GroupId": 1,
         "GroupOrder": 2,
         "IsShowMask": true,
-        "LayerIdList": [],
         "IsExportGlobal": true,
         "LevelDataPath": "Assets/EditorData/leveldata/fld001_test1",
         "WorldMapCenterPos": [
@@ -21,7 +20,9 @@
         ],
         "AreaId": 2,
         "MapBgPath": "ui/textures/map/map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "8": {
         "Key": 8,
@@ -34,7 +35,6 @@
         "GroupId": 1,
         "GroupOrder": 1,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": true,
         "LevelDataPath": "Assets/EditorData/leveldata/cty001_new",
         "WorldMapCenterPos": [
@@ -45,7 +45,9 @@
         ],
         "AreaId": 1,
         "MapBgPath": "ui/textures/map/map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "9": {
         "Key": 9,
@@ -55,16 +57,28 @@
         "IsShowMainMap": true,
         "MiniMapSizeScale": 220,
         "MainMapRatio": 50,
-        "GroupId": 0,
-        "GroupOrder": 0,
+        "GroupId": 1,
+        "GroupOrder": 2,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": true,
         "LevelDataPath": "Assets/EditorData/leveldata/fld002",
-        "WorldMapCenterPos": [],
-        "AreaId": 0,
+        "WorldMapCenterPos": [
+            330.7,
+            -164.1,
+            210,
+            136.5
+        ],
+        "AreaId": 8,
         "MapBgPath": "ui/textures/map/map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [
+            0,
+            -1
+        ],
+        "MapHierarchyName": [
+            "旷地",
+            "深域"
+        ]
     },
     "71": {
         "Key": 71,
@@ -77,7 +91,6 @@
         "GroupId": 1,
         "GroupOrder": 6,
         "IsShowMask": true,
-        "LayerIdList": [],
         "IsExportGlobal": true,
         "LevelDataPath": "Assets/EditorData/leveldata/fld001_01_north",
         "WorldMapCenterPos": [
@@ -88,7 +101,9 @@
         ],
         "AreaId": 3,
         "MapBgPath": "ui/textures/map/map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "72": {
         "Key": 72,
@@ -101,7 +116,6 @@
         "GroupId": 1,
         "GroupOrder": 7,
         "IsShowMask": true,
-        "LayerIdList": [],
         "IsExportGlobal": true,
         "LevelDataPath": "Assets/EditorData/leveldata/fld001_02_east",
         "WorldMapCenterPos": [
@@ -112,7 +126,9 @@
         ],
         "AreaId": 4,
         "MapBgPath": "ui/textures/map/map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "73": {
         "Key": 73,
@@ -125,7 +141,6 @@
         "GroupId": 1,
         "GroupOrder": 4,
         "IsShowMask": true,
-        "LayerIdList": [],
         "IsExportGlobal": true,
         "LevelDataPath": "Assets/EditorData/leveldata/fld001_03_dragonscar",
         "WorldMapCenterPos": [
@@ -136,7 +151,9 @@
         ],
         "AreaId": 5,
         "MapBgPath": "ui/textures/map/map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "74": {
         "Key": 74,
@@ -149,7 +166,6 @@
         "GroupId": 1,
         "GroupOrder": 3,
         "IsShowMask": true,
-        "LayerIdList": [],
         "IsExportGlobal": true,
         "LevelDataPath": "Assets/EditorData/leveldata/fld001_04_underground",
         "WorldMapCenterPos": [
@@ -160,7 +176,9 @@
         ],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/map_bg",
-        "InnerIcon": "ui/atlas/map/map_icon_tg"
+        "InnerIcon": "ui/atlas/map/map_icon_tg",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "75": {
         "Key": 75,
@@ -173,7 +191,6 @@
         "GroupId": 1,
         "GroupOrder": 5,
         "IsShowMask": true,
-        "LayerIdList": [],
         "IsExportGlobal": true,
         "LevelDataPath": "Assets/EditorData/leveldata/fld001_05_underwater",
         "WorldMapCenterPos": [
@@ -184,7 +201,9 @@
         ],
         "AreaId": 6,
         "MapBgPath": "ui/textures/map/map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "76": {
         "Key": 76,
@@ -194,16 +213,107 @@
         "IsShowMainMap": true,
         "MiniMapSizeScale": 140,
         "MainMapRatio": 50,
-        "GroupId": 1,
-        "GroupOrder": 8,
-        "IsShowMask": true,
-        "LayerIdList": [],
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
         "IsExportGlobal": true,
         "LevelDataPath": "Assets/EditorData/leveldata/fld001_06_imaginedforest",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "91": {
+        "Key": 91,
+        "Id": 91,
+        "Name": "高原洞穴一（未上）",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 50,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": true,
+        "IsExportGlobal": true,
+        "LevelDataPath": "Assets/EditorData/leveldata/fld002_01_cave",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "92": {
+        "Key": 92,
+        "Id": 92,
+        "Name": "高原洞穴二（未上）",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 50,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": true,
+        "IsExportGlobal": true,
+        "LevelDataPath": "Assets/EditorData/leveldata/fld002_02_deepcave",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "93": {
+        "Key": 93,
+        "Id": 93,
+        "Name": "月影之野",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 50,
+        "GroupId": 1,
+        "GroupOrder": 8,
+        "IsShowMask": false,
+        "IsExportGlobal": true,
+        "LevelDataPath": "Assets/EditorData/leveldata/fld002_03_imaginedforest",
+        "WorldMapCenterPos": [
+            439.3,
+            -248.5,
+            128.57,
+            101.83
+        ],
+        "AreaId": 9,
+        "MapBgPath": "ui/textures/map/map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "94": {
+        "Key": 94,
+        "Id": 94,
+        "Name": "迷星之径",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 50,
+        "GroupId": 1,
+        "GroupOrder": 9,
+        "IsShowMask": false,
+        "IsExportGlobal": true,
+        "LevelDataPath": "Assets/EditorData/leveldata/fld001_06_mistyforest",
+        "WorldMapCenterPos": [
+            276.6,
+            -81.1,
+            104.52,
+            108.66
+        ],
+        "AreaId": 10,
+        "MapBgPath": "ui/textures/map/map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1001": {
         "Key": 1001,
@@ -216,13 +326,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1002": {
         "Key": 1002,
@@ -235,13 +346,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1011": {
         "Key": 1011,
@@ -254,13 +366,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1021": {
         "Key": 1021,
@@ -273,13 +386,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1022": {
         "Key": 1022,
@@ -292,13 +406,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1023": {
         "Key": 1023,
@@ -311,13 +426,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1031": {
         "Key": 1031,
@@ -330,13 +446,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1032": {
         "Key": 1032,
@@ -349,13 +466,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1033": {
         "Key": 1033,
@@ -368,13 +486,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1101": {
         "Key": 1101,
@@ -387,13 +506,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1102": {
         "Key": 1102,
@@ -406,13 +526,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1111": {
         "Key": 1111,
@@ -425,13 +546,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1112": {
         "Key": 1112,
@@ -444,13 +566,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1113": {
         "Key": 1113,
@@ -463,13 +586,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1114": {
         "Key": 1114,
@@ -482,13 +606,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1121": {
         "Key": 1121,
@@ -501,13 +626,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1122": {
         "Key": 1122,
@@ -520,13 +646,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1123": {
         "Key": 1123,
@@ -539,13 +666,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1201": {
         "Key": 1201,
@@ -558,13 +686,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1202": {
         "Key": 1202,
@@ -577,13 +706,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1211": {
         "Key": 1211,
@@ -596,13 +726,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1212": {
         "Key": 1212,
@@ -615,13 +746,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1213": {
         "Key": 1213,
@@ -634,13 +766,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1214": {
         "Key": 1214,
@@ -653,13 +786,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1221": {
         "Key": 1221,
@@ -672,13 +806,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1222": {
         "Key": 1222,
@@ -691,13 +826,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1223": {
         "Key": 1223,
@@ -710,13 +846,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1301": {
         "Key": 1301,
@@ -729,13 +866,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1302": {
         "Key": 1302,
@@ -748,13 +886,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1311": {
         "Key": 1311,
@@ -767,13 +906,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1321": {
         "Key": 1321,
@@ -786,13 +926,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1331": {
         "Key": 1331,
@@ -805,13 +946,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1332": {
         "Key": 1332,
@@ -824,13 +966,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "1333": {
         "Key": 1333,
@@ -843,13 +986,314 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1401": {
+        "Key": 1401,
+        "Id": 1401,
+        "Name": "幻华流月之野",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1402": {
+        "Key": 1402,
+        "Id": 1402,
+        "Name": "幻华流月之野",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1403": {
+        "Key": 1403,
+        "Id": 1403,
+        "Name": "幻华流月之野",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1411": {
+        "Key": 1411,
+        "Id": 1411,
+        "Name": "不稳定空间·幻华流月之野",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1412": {
+        "Key": 1412,
+        "Id": 1412,
+        "Name": "不稳定空间·幻华流月之野",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1421": {
+        "Key": 1421,
+        "Id": 1421,
+        "Name": "极限·幻华流月之野",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1422": {
+        "Key": 1422,
+        "Id": 1422,
+        "Name": "极限·幻华流月之野",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1423": {
+        "Key": 1423,
+        "Id": 1423,
+        "Name": "极限·幻华流月之野",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1501": {
+        "Key": 1501,
+        "Id": 1501,
+        "Name": "岩蛇巢穴·主线",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1502": {
+        "Key": 1502,
+        "Id": 1502,
+        "Name": "岩蛇巢穴·开拓",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1511": {
+        "Key": 1511,
+        "Id": 1511,
+        "Name": "岩蛇巢穴·普通",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1521": {
+        "Key": 1521,
+        "Id": 1521,
+        "Name": "岩蛇巢穴·普通",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1531": {
+        "Key": 1531,
+        "Id": 1531,
+        "Name": "岩蛇巢穴·极限空间",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1532": {
+        "Key": 1532,
+        "Id": 1532,
+        "Name": "岩蛇巢穴·极限空间",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "1533": {
+        "Key": 1533,
+        "Id": 1533,
+        "Name": "岩蛇巢穴·极限空间",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "6005": {
         "Key": 6005,
@@ -862,13 +1306,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "6006": {
         "Key": 6006,
@@ -881,13 +1326,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "6007": {
         "Key": 6007,
@@ -900,13 +1346,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "6008": {
         "Key": 6008,
@@ -919,13 +1366,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "6009": {
         "Key": 6009,
@@ -938,13 +1386,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "6011": {
         "Key": 6011,
@@ -957,13 +1406,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "6021": {
         "Key": 6021,
@@ -976,13 +1426,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "6022": {
         "Key": 6022,
@@ -995,13 +1446,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "6023": {
         "Key": 6023,
@@ -1014,13 +1466,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "6031": {
         "Key": 6031,
@@ -1033,13 +1486,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "6032": {
         "Key": 6032,
@@ -1052,13 +1506,334 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6040": {
+        "Key": 6040,
+        "Id": 6040,
+        "Name": "无音之都",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6111": {
+        "Key": 6111,
+        "Id": 6111,
+        "Name": "荒灵祭所·普通",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6112": {
+        "Key": 6112,
+        "Id": 6112,
+        "Name": "荒灵祭所·普通",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6121": {
+        "Key": 6121,
+        "Id": 6121,
+        "Name": "荒灵祭所·极限空间",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6122": {
+        "Key": 6122,
+        "Id": 6122,
+        "Name": "荒灵祭所·极限空间",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6123": {
+        "Key": 6123,
+        "Id": 6123,
+        "Name": "荒灵祭所·极限空间",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6211": {
+        "Key": 6211,
+        "Id": 6211,
+        "Name": "衰败深处·不稳定空间",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6212": {
+        "Key": 6212,
+        "Id": 6212,
+        "Name": "衰败深处·不稳定空间",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6221": {
+        "Key": 6221,
+        "Id": 6221,
+        "Name": "衰败深处·极限空间",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6222": {
+        "Key": 6222,
+        "Id": 6222,
+        "Name": "衰败深处·极限空间",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6223": {
+        "Key": 6223,
+        "Id": 6223,
+        "Name": "衰败深处·极限空间",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6411": {
+        "Key": 6411,
+        "Id": 6411,
+        "Name": "无音之都",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6412": {
+        "Key": 6412,
+        "Id": 6412,
+        "Name": "无音之都",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6421": {
+        "Key": 6421,
+        "Id": 6421,
+        "Name": "无音之都",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6422": {
+        "Key": 6422,
+        "Id": 6422,
+        "Name": "无音之都",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
+    },
+    "6423": {
+        "Key": 6423,
+        "Id": 6423,
+        "Name": "无音之都",
+        "IsShowMiniMap": true,
+        "IsShowMainMap": true,
+        "MiniMapSizeScale": 140,
+        "MainMapRatio": 0,
+        "GroupId": 0,
+        "GroupOrder": 0,
+        "IsShowMask": false,
+        "IsExportGlobal": false,
+        "LevelDataPath": "",
+        "WorldMapCenterPos": [],
+        "AreaId": 0,
+        "MapBgPath": "ui/textures/map/dungeon_map_bg",
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "12000": {
         "Key": 12000,
@@ -1071,13 +1846,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "12011": {
         "Key": 12011,
@@ -1090,13 +1866,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "12012": {
         "Key": 12012,
@@ -1109,13 +1886,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "12050": {
         "Key": 12050,
@@ -1128,13 +1906,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20001": {
         "Key": 20001,
@@ -1147,13 +1926,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20002": {
         "Key": 20002,
@@ -1166,13 +1946,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20003": {
         "Key": 20003,
@@ -1185,13 +1966,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20004": {
         "Key": 20004,
@@ -1204,13 +1986,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20005": {
         "Key": 20005,
@@ -1223,13 +2006,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20006": {
         "Key": 20006,
@@ -1242,13 +2026,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20007": {
         "Key": 20007,
@@ -1261,13 +2046,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20008": {
         "Key": 20008,
@@ -1280,13 +2066,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20009": {
         "Key": 20009,
@@ -1299,13 +2086,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20010": {
         "Key": 20010,
@@ -1318,13 +2106,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20032": {
         "Key": 20032,
@@ -1337,13 +2126,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20033": {
         "Key": 20033,
@@ -1356,13 +2146,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20034": {
         "Key": 20034,
@@ -1375,13 +2166,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20035": {
         "Key": 20035,
@@ -1394,13 +2186,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20041": {
         "Key": 20041,
@@ -1413,13 +2206,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20042": {
         "Key": 20042,
@@ -1432,13 +2226,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20043": {
         "Key": 20043,
@@ -1451,13 +2246,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20044": {
         "Key": 20044,
@@ -1470,13 +2266,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20045": {
         "Key": 20045,
@@ -1489,13 +2286,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20046": {
         "Key": 20046,
@@ -1508,13 +2306,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20047": {
         "Key": 20047,
@@ -1527,13 +2326,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20048": {
         "Key": 20048,
@@ -1546,13 +2346,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20049": {
         "Key": 20049,
@@ -1565,13 +2366,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20050": {
         "Key": 20050,
@@ -1584,13 +2386,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20051": {
         "Key": 20051,
@@ -1603,13 +2406,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20052": {
         "Key": 20052,
@@ -1622,13 +2426,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20053": {
         "Key": 20053,
@@ -1641,13 +2446,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20054": {
         "Key": 20054,
@@ -1660,13 +2466,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20055": {
         "Key": 20055,
@@ -1679,13 +2486,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20056": {
         "Key": 20056,
@@ -1698,13 +2506,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20057": {
         "Key": 20057,
@@ -1717,13 +2526,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20058": {
         "Key": 20058,
@@ -1736,13 +2546,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20059": {
         "Key": 20059,
@@ -1755,13 +2566,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20060": {
         "Key": 20060,
@@ -1774,13 +2586,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20101": {
         "Key": 20101,
@@ -1793,13 +2606,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20201": {
         "Key": 20201,
@@ -1812,13 +2626,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20202": {
         "Key": 20202,
@@ -1831,13 +2646,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20301": {
         "Key": 20301,
@@ -1850,13 +2666,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20302": {
         "Key": 20302,
@@ -1869,13 +2686,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20401": {
         "Key": 20401,
@@ -1888,13 +2706,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20402": {
         "Key": 20402,
@@ -1907,13 +2726,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20501": {
         "Key": 20501,
@@ -1926,13 +2746,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20502": {
         "Key": 20502,
@@ -1945,13 +2766,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20503": {
         "Key": 20503,
@@ -1964,13 +2786,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20601": {
         "Key": 20601,
@@ -1983,13 +2806,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20602": {
         "Key": 20602,
@@ -2002,13 +2826,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20701": {
         "Key": 20701,
@@ -2021,13 +2846,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20702": {
         "Key": 20702,
@@ -2040,13 +2866,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20703": {
         "Key": 20703,
@@ -2059,13 +2886,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20801": {
         "Key": 20801,
@@ -2078,13 +2906,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20802": {
         "Key": 20802,
@@ -2097,13 +2926,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20901": {
         "Key": 20901,
@@ -2116,13 +2946,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "20902": {
         "Key": 20902,
@@ -2135,13 +2966,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "21001": {
         "Key": 21001,
@@ -2154,13 +2986,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22101": {
         "Key": 22101,
@@ -2173,13 +3006,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22201": {
         "Key": 22201,
@@ -2192,13 +3026,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22301": {
         "Key": 22301,
@@ -2211,13 +3046,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22401": {
         "Key": 22401,
@@ -2230,13 +3066,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22402": {
         "Key": 22402,
@@ -2249,13 +3086,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22501": {
         "Key": 22501,
@@ -2268,13 +3106,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22502": {
         "Key": 22502,
@@ -2287,13 +3126,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22503": {
         "Key": 22503,
@@ -2306,13 +3146,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22601": {
         "Key": 22601,
@@ -2325,13 +3166,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22602": {
         "Key": 22602,
@@ -2344,13 +3186,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22701": {
         "Key": 22701,
@@ -2363,13 +3206,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22702": {
         "Key": 22702,
@@ -2382,13 +3226,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22801": {
         "Key": 22801,
@@ -2401,13 +3246,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22802": {
         "Key": 22802,
@@ -2420,13 +3266,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22901": {
         "Key": 22901,
@@ -2439,13 +3286,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "22902": {
         "Key": 22902,
@@ -2458,13 +3306,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "23001": {
         "Key": 23001,
@@ -2477,13 +3326,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "23101": {
         "Key": 23101,
@@ -2496,13 +3346,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "23102": {
         "Key": 23102,
@@ -2515,13 +3366,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "23103": {
         "Key": 23103,
@@ -2534,13 +3386,14 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     },
     "30001": {
         "Key": 30001,
@@ -2553,12 +3406,13 @@
         "GroupId": 0,
         "GroupOrder": 0,
         "IsShowMask": false,
-        "LayerIdList": [],
         "IsExportGlobal": false,
         "LevelDataPath": "",
         "WorldMapCenterPos": [],
         "AreaId": 0,
         "MapBgPath": "ui/textures/map/dungeon_map_bg",
-        "InnerIcon": ""
+        "InnerIcon": "",
+        "MapHierarchy": [],
+        "MapHierarchyName": []
     }
 }

@@ -204,18 +204,18 @@
         "Type": 26,
         "Param": "赛季开始时间后区间内",
         "ImplStatus": 2,
-        "Example": "26=1=1d10h10m5s=10d10h10m5s",
-        "RefreshNum": "26为类型，1为赛季表赛季ID，后面为时间配置。1开始时间是1月1号0点，表示：2号10:10:05-10号10:10:05（十点十分5秒）",
+        "Example": "26=1=24=0=0=48=0=0",
+        "RefreshNum": "26为赛季指定时间段类型，1为赛季表赛季ID，后面为时间配置24小时0分0秒。1赛季开始时间是1月1号0点，表示：2号00:00:00-3号00:00:00（第一赛季的第二天到第三天）",
         "FailureMessage": 0,
         "ShowPurview": ""
     },
     "27": {
         "Key": 27,
         "Type": 27,
-        "Param": "赛季开启时间+偏移时间",
+        "Param": "赛季开启时间持续到赛季结束",
         "ImplStatus": 2,
-        "Example": "27=1=1d10h10m5s",
-        "RefreshNum": "27为类型，1为赛季表赛季ID，后面为时间配置。1开始时间是1月1号0点，表示：2号10:20:30（十点二十分三十秒）",
+        "Example": "27=1=1=2=3",
+        "RefreshNum": "27为赛季指定时间到赛季结束，1为赛季表赛季ID，后面为时间配置1小时2分3秒。1开始时间是1月1号0点，表示：1号01:02:03（1号的一点两分三秒开始持续到赛季结束）",
         "FailureMessage": 0,
         "ShowPurview": ""
     },
@@ -799,13 +799,23 @@
         "FailureMessage": 1500016,
         "ShowPurview": ""
     },
+    "93": {
+        "Key": 93,
+        "Type": 93,
+        "Param": "指定赛季等级",
+        "ImplStatus": 2,
+        "Example": "93=10",
+        "RefreshNum": "大于等于该赛季等级：93=赛季ID=等级",
+        "FailureMessage": 124043,
+        "ShowPurview": "{*val1*}等级到达{*val2*}解锁"
+    },
     "100": {
         "Key": 100,
         "Type": 100,
         "Param": "是否有家园权限",
         "ImplStatus": 1,
         "Example": "100=1",
-        "RefreshNum": "100=家园权限表id",
+        "RefreshNum": "100=家园权限action",
         "FailureMessage": 0,
         "ShowPurview": ""
     },
@@ -849,6 +859,16 @@
         "FailureMessage": 0,
         "ShowPurview": ""
     },
+    "105": {
+        "Key": 105,
+        "Type": 105,
+        "Param": "校验是否当前赛季",
+        "ImplStatus": 3,
+        "Example": "105=2",
+        "RefreshNum": "校验是否当前赛季，2为第二赛季，读取赛季表",
+        "FailureMessage": 1500017,
+        "ShowPurview": ""
+    },
     "106": {
         "Key": 106,
         "Type": 106,
@@ -856,6 +876,56 @@
         "ImplStatus": 0,
         "Example": "106=5",
         "RefreshNum": "玩家当前爬塔最大层数是否大于等于5层，大于等于则返回正确",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "107": {
+        "Key": 107,
+        "Type": 107,
+        "Param": "地区的声望等级",
+        "ImplStatus": 2,
+        "Example": "7=5",
+        "RefreshNum": "场景7的声望等级是否大于等于5级，大于等于则返回正确",
+        "FailureMessage": 1500019,
+        "ShowPurview": "{*val1*}地区声望等级到达{*val2*}解锁"
+    },
+    "108": {
+        "Key": 108,
+        "Type": 108,
+        "Param": "是否在指定ID视野层级",
+        "ImplStatus": 1,
+        "Example": "108=1=1",
+        "RefreshNum": "108=视野层级ID=0（在视野层级）/1（取反）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "109": {
+        "Key": 109,
+        "Type": 109,
+        "Param": "完成指定成就解锁",
+        "ImplStatus": 0,
+        "Example": "109=100010103",
+        "RefreshNum": "完成指定成就解锁，后面参数为AchievementDateTable表的ID",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "110": {
+        "Key": 110,
+        "Type": 110,
+        "Param": "判断开启时间",
+        "ImplStatus": 2,
+        "Example": "110=24",
+        "RefreshNum": "（只判断开启时间，无视结束时间）当前时间到达24这个timerid的开始时间",
+        "FailureMessage": 1500021,
+        "ShowPurview": ""
+    },
+    "111": {
+        "Key": 111,
+        "Type": 111,
+        "Param": "是否有采集花粉次数",
+        "ImplStatus": 0,
+        "Example": "110",
+        "RefreshNum": "无需参数",
         "FailureMessage": 0,
         "ShowPurview": ""
     }

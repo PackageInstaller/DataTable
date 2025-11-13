@@ -1,4 +1,53 @@
 {
+    "24": {
+        "Key": 24,
+        "QuestId": 24,
+        "QuestName": "",
+        "QuestDetail": "",
+        "QuestType": 53,
+        "QuestStep": 0,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                23350601,
+                1009546,
+                23350801,
+                23350802,
+                23350901,
+                23350902,
+                1009547,
+                1009542
+            ],
+            [
+                23351101,
+                23351102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "10001": {
         "Key": 10001,
         "QuestId": 10001,
@@ -1939,7 +1988,7 @@
         "QuestName": "被嘱托之人",
         "QuestDetail": "为了得到更多丹佛的情报，现在需要寻求塔塔的帮助……",
         "QuestType": 1,
-        "QuestStep": 10504011,
+        "QuestStep": 10504020,
         "AwardId": 30000960,
         "FollowQuest": 0,
         "PreQuest": [],
@@ -1968,7 +2017,7 @@
         "QuestName": "交锋的剑刃",
         "QuestDetail": "前往工匠协会，将情报告诉艾露娜。但协会遭遇了新一轮袭击，先和伙伴们一起将怪物驱逐出去。",
         "QuestType": 1,
-        "QuestStep": 10505018,
+        "QuestStep": 10505021,
         "AwardId": 30000970,
         "FollowQuest": 0,
         "PreQuest": [],
@@ -1997,7 +2046,7 @@
         "QuestName": "踏上终途",
         "QuestDetail": "前往神殿，准备迎战丹佛。",
         "QuestType": 1,
-        "QuestStep": 10506021,
+        "QuestStep": 10506037,
         "AwardId": 30000980,
         "FollowQuest": 0,
         "PreQuest": [],
@@ -2143,7 +2192,7 @@
         "QuestType": 1,
         "QuestStep": 10513001,
         "AwardId": 30001020,
-        "FollowQuest": 320024,
+        "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10511",
         "MustPreQuest": [],
@@ -2233,18 +2282,23 @@
         "QuestName": "如春天解开她的第一朵玫瑰",
         "QuestDetail": "为了寻回被夺走的赫鲁加之角，新的冒险揭开序幕，但旅途永远不会缺少波折——这次也不例外。",
         "QuestType": 1,
-        "QuestStep": 10601001,
-        "AwardId": 0,
+        "QuestStep": 10601017,
+        "AwardId": 30001100,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "",
+        "PreQuestLogic": "(10513)",
         "MustPreQuest": [],
         "AccessLimit": [],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
-        "ContinueLimit": [],
+        "ContinueLimit": [
+            [
+                "18",
+                "30050"
+            ]
+        ],
         "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/bahamar_chapter06_01/bahamar_chapter06_01-6",
@@ -2263,8 +2317,8 @@
         "QuestName": "在那些梦后的瞬间",
         "QuestDetail": "艾露娜陷入昏睡，最好还是到当地人家里稍作休息、养足精神。",
         "QuestType": 1,
-        "QuestStep": 10602004,
-        "AwardId": 0,
+        "QuestStep": 10602007,
+        "AwardId": 30001110,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10601",
@@ -2279,9 +2333,7 @@
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/bahamar_chapter06_01/bahamar_chapter06_01-7",
         "NpcMarkedByQuest": [
-            [
-                21060103
-            ],
+            [],
             [
                 21060102
             ]
@@ -2296,7 +2348,7 @@
         "QuestDetail": "与热心肠的法法菈分别，回到寻找赫鲁加之角的旅途中去。这次艾露娜找到了新线索。",
         "QuestType": 1,
         "QuestStep": 10603001,
-        "AwardId": 0,
+        "AwardId": 30001120,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10602",
@@ -2312,7 +2364,6 @@
         "StepFlowPath": "bin/task/task_step/bahamar_chapter06_01/bahamar_chapter06_01-8",
         "NpcMarkedByQuest": [
             [
-                21060103,
                 21060102
             ]
         ],
@@ -2326,7 +2377,7 @@
         "QuestDetail": "所谓“出现星元异象”的地方似乎并不简单，很难凭借冒险者的身份贸然闯入。",
         "QuestType": 1,
         "QuestStep": 10604001,
-        "AwardId": 0,
+        "AwardId": 30001130,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "(10603)",
@@ -2343,10 +2394,8 @@
         "NpcMarkedByQuest": [
             [
                 21060208,
+                21060102,
                 21060202
-            ],
-            [
-                21060102
             ]
         ],
         "Note": "",
@@ -2358,8 +2407,8 @@
         "QuestName": "突然干得漂亮又恰到好处",
         "QuestDetail": "西斯莱萨矿场的守卫们过于忠实，看来这条路行不通，必须另想它法。",
         "QuestType": 1,
-        "QuestStep": 10605001,
-        "AwardId": 0,
+        "QuestStep": 10605013,
+        "AwardId": 30001140,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10604",
@@ -2376,14 +2425,18 @@
         "NpcMarkedByQuest": [
             [
                 21060208,
+                21060102,
                 21060202,
                 21060205,
                 21060204,
-                21060206,
-                21060207
+                21060214
             ],
             [
-                21060102
+                21060206,
+                21060209,
+                21060210,
+                21060211,
+                21060212
             ]
         ],
         "Note": "",
@@ -2396,7 +2449,7 @@
         "QuestDetail": "敢在神悬御柱附近公然行窃的扒手肯定有过人之处——至少心理素质远超常人。哪怕沦为阶下囚，她也没有停止“努力”。",
         "QuestType": 1,
         "QuestStep": 10606001,
-        "AwardId": 0,
+        "AwardId": 30001150,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10605",
@@ -2413,14 +2466,18 @@
         "NpcMarkedByQuest": [
             [
                 21060208,
+                21060102,
                 21060202,
                 21060205,
                 21060204,
-                21060206,
-                21060207
+                21060214
             ],
             [
-                21060102
+                21060206,
+                21060209,
+                21060210,
+                21060211,
+                21060212
             ]
         ],
         "Note": "",
@@ -2432,8 +2489,8 @@
         "QuestName": "夜迈进漫长的街道",
         "QuestDetail": "和达雅达成交易，终于有办法进入戒备森严的西斯莱萨矿场了。",
         "QuestType": 1,
-        "QuestStep": 10607001,
-        "AwardId": 0,
+        "QuestStep": 10607016,
+        "AwardId": 30001160,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "(10606)",
@@ -2443,7 +2500,12 @@
             0
         ],
         "TimeLimit": [],
-        "ContinueLimit": [],
+        "ContinueLimit": [
+            [
+                "18",
+                "30051"
+            ]
+        ],
         "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/bahamar_chapter06_03/bahamar_chapter06_03-5",
@@ -2462,8 +2524,8 @@
         "QuestName": "沉默无笑的眼睛",
         "QuestDetail": "沿途有些小插曲，但成功潜入了西斯莱萨矿场，这里果然有些不对劲。",
         "QuestType": 1,
-        "QuestStep": 10608001,
-        "AwardId": 0,
+        "QuestStep": 10608002,
+        "AwardId": 30001170,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10607",
@@ -2493,10 +2555,10 @@
         "Key": 10609,
         "QuestId": 10609,
         "QuestName": "星星一粒粒抖入尘埃",
-        "QuestDetail": "幻幻花的影响不容小觑，矿工们也深受其害。然而与朝圣者们不同，他们可拿不到星魂瓶。受迫于不公的待遇，他们关闭心扉，不会轻易信任外人。",
+        "QuestDetail": "幻幻花的影响不容小觑，矿工们也深受其害。然而与巡礼者们不同，他们可拿不到星魂瓶。受迫于不公的待遇，他们关闭心扉，不会轻易信任外人。",
         "QuestType": 1,
-        "QuestStep": 10609001,
-        "AwardId": 0,
+        "QuestStep": 10609018,
+        "AwardId": 30001180,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10608",
@@ -2529,7 +2591,7 @@
         "QuestDetail": "黑石军团的残暴之举让人深感愤怒，很难保持冷静、置身事外。",
         "QuestType": 1,
         "QuestStep": 10610001,
-        "AwardId": 0,
+        "AwardId": 30001190,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10609",
@@ -2562,7 +2624,7 @@
         "QuestDetail": "虽然救下了虚弱的矿工，但达雅似乎情绪不高。",
         "QuestType": 1,
         "QuestStep": 10611001,
-        "AwardId": 0,
+        "AwardId": 30001200,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "(10610)",
@@ -2578,6 +2640,9 @@
         "StepFlowPath": "bin/task/task_step/bahamar_chapter06_04/bahamar_chapter06_04-5",
         "NpcMarkedByQuest": [
             [
+                21060102
+            ],
+            [
                 21060207
             ]
         ],
@@ -2590,8 +2655,8 @@
         "QuestName": "她眼里藏有狮子",
         "QuestDetail": "顺利逃离矿场，避免被黑石军团封锁围堵。这固然很好，但调查尚未取得进展，还需要想想办法。",
         "QuestType": 1,
-        "QuestStep": 10612001,
-        "AwardId": 0,
+        "QuestStep": 10612002,
+        "AwardId": 30001210,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10611",
@@ -2607,8 +2672,8 @@
         "StepFlowPath": "bin/task/task_step/bahamar_chapter06_04/bahamar_chapter06_04-6",
         "NpcMarkedByQuest": [
             [
-                21060207,
-                21060102
+                21060102,
+                21060207
             ]
         ],
         "Note": "",
@@ -2617,8 +2682,8 @@
     "10701": {
         "Key": 10701,
         "QuestId": 10701,
-        "QuestName": "合乎情理的选择",
-        "QuestDetail": "达雅已经重返矿场，至于如何获得大批量的星魂瓶，就是接下来的问题了。",
+        "QuestName": "",
+        "QuestDetail": "",
         "QuestType": 1,
         "QuestStep": 10701001,
         "AwardId": 0,
@@ -2634,10 +2699,18 @@
         "ContinueLimit": [],
         "AbortLimit": [],
         "GiveUp": false,
-        "StepFlowPath": "bin/task/task_step/bahamar_chapter07_01/bahamar_chapter07_01-3",
+        "StepFlowPath": "bin/task/task_step/bahamar_chapter07_01/bahamar_chapter07_01-7",
         "NpcMarkedByQuest": [
             [
-                21070101
+                21070102,
+                21070103,
+                1090420,
+                21070105,
+                21070101,
+                21070106
+            ],
+            [
+                21070107
             ]
         ],
         "Note": "",
@@ -2646,31 +2719,39 @@
     "10702": {
         "Key": 10702,
         "QuestId": 10702,
-        "QuestName": "真实与巡礼的歌唱",
-        "QuestDetail": "朝圣者们正在举行热闹的集会，也许在这里能打听到如何获取大量星魂瓶相关的线索。",
+        "QuestName": "自有别的办法",
+        "QuestDetail": "达雅已经重返矿场，接下来就该考虑如何完成与她的约定了。但获取大批星魂瓶恐怕不会容易，要达成目的，最好找巡礼者多探听些消息。",
         "QuestType": 1,
-        "QuestStep": 10702002,
-        "AwardId": 0,
+        "QuestStep": 10702009,
+        "AwardId": 30001220,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "10701",
+        "PreQuestLogic": "(10612)",
         "MustPreQuest": [],
         "AccessLimit": [],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
-        "ContinueLimit": [],
+        "ContinueLimit": [
+            [
+                "18",
+                "30053"
+            ]
+        ],
         "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/bahamar_chapter07_01/bahamar_chapter07_01-4",
         "NpcMarkedByQuest": [
             [
-                21070101,
                 21070102,
                 21070103,
-                21070104,
-                21070105
+                1090420,
+                21070105,
+                21070101
+            ],
+            [
+                21070107
             ]
         ],
         "Note": "",
@@ -2679,11 +2760,11 @@
     "10703": {
         "Key": 10703,
         "QuestId": 10703,
-        "QuestName": "如慢雨渗入大地 ",
-        "QuestDetail": "与博伊斯一同前往寻找一等神官洛塔尔，沟通关于矿区的变化、获取星魂瓶支援相关的事情吧。",
+        "QuestName": "汹涌着落日的高贵荣光",
+        "QuestDetail": "去见一等神官洛塔尔，聊聊支援矿场的事吧。",
         "QuestType": 1,
         "QuestStep": 10703001,
-        "AwardId": 0,
+        "AwardId": 30001230,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10702",
@@ -2699,12 +2780,15 @@
         "StepFlowPath": "bin/task/task_step/bahamar_chapter07_01/bahamar_chapter07_01-5",
         "NpcMarkedByQuest": [
             [
-                21070101,
                 21070102,
                 21070103,
-                21070104,
+                1090420,
                 21070105,
+                21070101,
                 21070106
+            ],
+            [
+                21070107
             ]
         ],
         "Note": "",
@@ -2713,11 +2797,11 @@
     "10704": {
         "Key": 10704,
         "QuestId": 10704,
-        "QuestName": "探寻隐秘之路",
-        "QuestDetail": "",
+        "QuestName": "聪颖化入暮色的纹理",
+        "QuestDetail": "获得援助物资后，终于可以跟艾露娜会合；而达雅也来信说明了重返矿场的办法……",
         "QuestType": 1,
         "QuestStep": 10704001,
-        "AwardId": 0,
+        "AwardId": 30001240,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "(10703)",
@@ -2737,6 +2821,12 @@
                 21070401
             ],
             [
+                21070417,
+                21070416,
+                21070419,
+                21070415,
+                21070414,
+                21070418,
                 21070105,
                 21070402
             ]
@@ -2747,11 +2837,11 @@
     "10705": {
         "Key": 10705,
         "QuestId": 10705,
-        "QuestName": "欲言又止与喋喋不休",
-        "QuestDetail": "",
+        "QuestName": "在摇摆的世界里",
+        "QuestDetail": "接受麦蕾的委托，就必须找出到底是谁做了坏买卖。但“坏买卖”背后，究竟隐藏了何种意味呢？",
         "QuestType": 1,
         "QuestStep": 10705002,
-        "AwardId": 0,
+        "AwardId": 30001250,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10704",
@@ -2773,12 +2863,17 @@
                 21070404
             ],
             [
-                21070403,
+                21070705,
+                21070417,
+                21070416,
+                21070419,
+                21070415,
+                21070414,
+                21070418,
                 21070402,
-                21070410,
-                21070411,
+                21070704,
                 21070409,
-                21070708
+                21070420
             ]
         ],
         "Note": "",
@@ -2787,11 +2882,11 @@
     "10706": {
         "Key": 10706,
         "QuestId": 10706,
-        "QuestName": "饮尽潮涌的真假",
-        "QuestDetail": "",
+        "QuestName": "那时怀疑便是确定",
+        "QuestDetail": "商队之中的背叛者即将浮出水面。",
         "QuestType": 1,
         "QuestStep": 10706001,
-        "AwardId": 0,
+        "AwardId": 30001260,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10705",
@@ -2812,14 +2907,22 @@
                 21070105,
                 21070404,
                 21070402,
-                21070410,
-                21070411,
+                1009543,
+                1009546,
                 21070412,
-                21070403
+                1009542
             ],
             [
+                21070705,
+                21070417,
+                21070416,
+                21070419,
+                21070415,
+                21070414,
+                21070418,
+                21070704,
                 21070409,
-                21070708
+                21070420
             ]
         ],
         "Note": "",
@@ -2828,11 +2931,11 @@
     "10707": {
         "Key": 10707,
         "QuestId": 10707,
-        "QuestName": "山芥之下，如石之心",
-        "QuestDetail": "",
+        "QuestName": "生活是差中之差",
+        "QuestDetail": "亲眼见证黑石军团的诸多乱象后，博伊斯似乎深受打击。但他还是打起精神，提出新的调查方向。",
         "QuestType": 1,
-        "QuestStep": 10707001,
-        "AwardId": 0,
+        "QuestStep": 10707029,
+        "AwardId": 30001270,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "(10706)",
@@ -2842,24 +2945,29 @@
             0
         ],
         "TimeLimit": [],
-        "ContinueLimit": [],
+        "ContinueLimit": [
+            [
+                "18",
+                "30055"
+            ]
+        ],
         "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/bahamar_chapter07_03/bahamar_chapter07_03-3",
         "NpcMarkedByQuest": [
             [
                 21070105,
-                21070101,
+                21070701,
                 21070703,
-                21070711,
-                21070712,
-                21070713
+                21070101
             ],
             [
                 21070402,
-                21070701,
                 21070714,
-                21070715
+                21070715,
+                21070711,
+                21070712,
+                21070713
             ]
         ],
         "Note": "",
@@ -2868,11 +2976,11 @@
     "10708": {
         "Key": 10708,
         "QuestId": 10708,
-        "QuestName": "高原之上，归乡之梦",
-        "QuestDetail": "",
+        "QuestName": "即来的波浪最宏大",
+        "QuestDetail": "要潜入采掘矿洞，最好事先探听清楚军团的动向。但调查时必须牢记格里格的告诫——“风向已经变了。”",
         "QuestType": 1,
-        "QuestStep": 10708035,
-        "AwardId": 0,
+        "QuestStep": 10708033,
+        "AwardId": 30001280,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10707",
@@ -2889,19 +2997,26 @@
         "NpcMarkedByQuest": [
             [
                 21070105,
-                21070101,
+                21070701,
                 21070703,
+                21070101,
+                21070708,
+                21070709,
+                21070710,
+                21070706,
+                21070402
+            ],
+            [
+                21070718,
+                21070714,
+                21070715,
                 21070711,
                 21070712,
                 21070713,
+                21070719,
+                21070720,
+                21070721,
                 21070717
-            ],
-            [
-                21070402,
-                21070701,
-                21070714,
-                21070715,
-                21070706
             ]
         ],
         "Note": "",
@@ -2910,14 +3025,14 @@
     "10709": {
         "Key": 10709,
         "QuestId": 10709,
-        "QuestName": "高原之上，归乡之梦",
-        "QuestDetail": "",
+        "QuestName": "毫不气馁地站立于正直之柱",
+        "QuestDetail": "黑石军团正准备全员紧急集合，这或许是能抓住的最好的机会了。",
         "QuestType": 1,
         "QuestStep": 10709004,
         "AwardId": 0,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "10708",
+        "PreQuestLogic": "",
         "MustPreQuest": [],
         "AccessLimit": [],
         "AccpetType": [
@@ -2931,12 +3046,9 @@
         "NpcMarkedByQuest": [
             [
                 21070105,
-                21070101,
+                21070701,
                 21070703,
-                21070711,
-                21070712,
-                21070713,
-                21070717,
+                21070101,
                 21070708,
                 21070709,
                 21070710,
@@ -2944,9 +3056,16 @@
                 21070402
             ],
             [
-                21070701,
+                21070718,
                 21070714,
-                21070715
+                21070715,
+                21070711,
+                21070712,
+                21070713,
+                21070719,
+                21070720,
+                21070721,
+                21070717
             ]
         ],
         "Note": "",
@@ -2955,14 +3074,14 @@
     "10710": {
         "Key": 10710,
         "QuestId": 10710,
-        "QuestName": "合作有道",
-        "QuestDetail": "",
+        "QuestName": "毫不气馁地站立于正直之柱",
+        "QuestDetail": "黑石军团正准备全员紧急集合，这或许是能抓住的最好的机会了。",
         "QuestType": 1,
         "QuestStep": 10710017,
-        "AwardId": 0,
+        "AwardId": 30001290,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "(10709)",
+        "PreQuestLogic": "(10708)",
         "MustPreQuest": [],
         "AccessLimit": [],
         "AccpetType": [
@@ -2978,13 +3097,11 @@
                 21070701
             ],
             [
-                21071001,
-                21071002,
+                21071003,
+                21071004,
                 21070101,
                 21070105,
-                21070402,
-                21071003,
-                21071004
+                21070402
             ]
         ],
         "Note": "",
@@ -2993,11 +3110,11 @@
     "10711": {
         "Key": 10711,
         "QuestId": 10711,
-        "QuestName": "绯红色的错误",
-        "QuestDetail": "",
+        "QuestName": "躲避绯红色背叛的圈套",
+        "QuestDetail": "地下矿场中的混乱星元的源头，已经近在咫尺了。",
         "QuestType": 1,
         "QuestStep": 10711007,
-        "AwardId": 0,
+        "AwardId": 30001300,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10710",
@@ -3017,12 +3134,12 @@
                 21070101
             ],
             [
-                21071001,
-                21071002,
+                21071003,
+                21071004,
                 21070105,
                 21070402,
-                21071003,
-                21071004
+                21071001,
+                21071002
             ]
         ],
         "Note": "",
@@ -3034,25 +3151,29 @@
         "QuestName": "每一步都必然所至",
         "QuestDetail": "矿场的实际控制权悄然易主，必须尽快调查清楚来龙去脉。",
         "QuestType": 1,
-        "QuestStep": 10801001,
-        "AwardId": 0,
+        "QuestStep": 10801027,
+        "AwardId": 30001310,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "",
+        "PreQuestLogic": "(10711)",
         "MustPreQuest": [],
         "AccessLimit": [],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
-        "ContinueLimit": [],
+        "ContinueLimit": [
+            [
+                "18",
+                "30057"
+            ]
+        ],
         "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/bahamar_chapter08/bahamar_chapter08-3",
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107
             ],
@@ -3073,7 +3194,7 @@
         "QuestDetail": "黑石军团人心各异，昔日的忠诚者不再值得信任，而真相被隐藏在重重迷雾之中。",
         "QuestType": 1,
         "QuestStep": 10802001,
-        "AwardId": 0,
+        "AwardId": 30001320,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10801",
@@ -3090,7 +3211,6 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107
             ],
@@ -3113,7 +3233,7 @@
         "QuestDetail": "阴谋终于浮现冰山一角，在互相倾轧的权力场中，仍有人保持本心。去找到那些反抗者吧。",
         "QuestType": 1,
         "QuestStep": 10803001,
-        "AwardId": 0,
+        "AwardId": 30001330,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10802",
@@ -3130,9 +3250,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
-                21080107
+                21080107,
+                21080102
             ],
             [
                 21080104,
@@ -3151,10 +3271,10 @@
         "Key": 10804,
         "QuestId": 10804,
         "QuestName": "被寂静层层涂抹",
-        "QuestDetail": "针对绯红水晶的私采行为竟然早已有之。这桩见不得光的走私背后到底隐藏着什么，被带至高原的赫鲁加之角，又会引动怎样的波澜？",
+        "QuestDetail": "针对绯红矿髓的私采行为竟然早已有之。这桩见不得光的走私背后到底隐藏着什么，被带至高原的赫鲁加之角，又会引动怎样的波澜？",
         "QuestType": 1,
         "QuestStep": 10804002,
-        "AwardId": 0,
+        "AwardId": 30001340,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10803",
@@ -3171,9 +3291,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202
             ],
             [
@@ -3193,10 +3313,10 @@
         "Key": 10805,
         "QuestId": 10805,
         "QuestName": "光滴入我最深处的眼睛",
-        "QuestDetail": "理清绯红水晶的来源之余，杜绝这种危险品外流出矿场同样关键。",
+        "QuestDetail": "理清绯红矿髓的来源之余，杜绝这种危险品外流出矿场同样关键。",
         "QuestType": 1,
         "QuestStep": 10805003,
-        "AwardId": 0,
+        "AwardId": 30001350,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10804",
@@ -3213,9 +3333,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202
             ],
             [
@@ -3238,7 +3358,7 @@
         "QuestDetail": "沾染过赫鲁加气息的叛军首领让事态变得更加复杂，矿工们的处境也危险起来。越在逼仄的狭路上，越要万全地走过。",
         "QuestType": 1,
         "QuestStep": 10806001,
-        "AwardId": 0,
+        "AwardId": 30001360,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10805",
@@ -3255,9 +3375,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203
             ],
@@ -3278,10 +3398,10 @@
         "Key": 10807,
         "QuestId": 10807,
         "QuestName": "相信无声的许诺",
-        "QuestDetail": "找出绯红水晶的外流通道后，这条线索的最后一块拼图终于补齐。然而返回地下矿区时，等在眼前的却是空无一人的分拣区……",
+        "QuestDetail": "找出绯红矿髓的外流通道后，这条线索的最后一块拼图终于补齐。然而返回地下矿区时，等在眼前的却是空无一人的分拣区……",
         "QuestType": 1,
-        "QuestStep": 10807002,
-        "AwardId": 0,
+        "QuestStep": 10807020,
+        "AwardId": 30001370,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10806",
@@ -3291,16 +3411,21 @@
             0
         ],
         "TimeLimit": [],
-        "ContinueLimit": [],
+        "ContinueLimit": [
+            [
+                "18",
+                "30059"
+            ]
+        ],
         "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/bahamar_chapter08/bahamar_chapter08-9",
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104
@@ -3325,7 +3450,7 @@
         "QuestDetail": "在动荡的局势中，人与人的分歧也被放大，幸而有格里格将不同立场不同身份的矿工统一起来。但达成共识只是行动的最开端而非终结。",
         "QuestType": 1,
         "QuestStep": 10808001,
-        "AwardId": 0,
+        "AwardId": 30001380,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10807",
@@ -3342,9 +3467,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -3358,6 +3483,7 @@
                 21080108,
                 21080109,
                 21060105,
+                21080303,
                 21080302
             ]
         ],
@@ -3371,7 +3497,7 @@
         "QuestDetail": "迈出与黑石军团对抗的第一步，却出师不利，只能返回寻找格里格，询问是否还有备用方案。",
         "QuestType": 1,
         "QuestStep": 10809001,
-        "AwardId": 0,
+        "AwardId": 30001390,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10808",
@@ -3388,9 +3514,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -3404,6 +3530,7 @@
                 21080108,
                 21080109,
                 21060105,
+                21080303,
                 21080302
             ]
         ],
@@ -3417,7 +3544,7 @@
         "QuestDetail": "英雄的史诗背后不该是无辜者的牺牲。为了保护西斯莱萨矿场的矿工，需要返回阿斯特里斯，请求更多力量介入。",
         "QuestType": 1,
         "QuestStep": 10810002,
-        "AwardId": 0,
+        "AwardId": 30001400,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10809",
@@ -3434,9 +3561,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -3444,15 +3571,16 @@
                 21080305
             ],
             [
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
-                21080302
+                21080303,
+                21080302,
+                21080306
             ]
         ],
         "Note": "",
@@ -3465,7 +3593,7 @@
         "QuestDetail": "出于种种考量，拉蒙德不希望阿斯特里斯与班哈尔特公国公然对抗，然而事情仍有转机，或许换一种方式，也能得偿所愿。",
         "QuestType": 1,
         "QuestStep": 10811010,
-        "AwardId": 0,
+        "AwardId": 30001410,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10810",
@@ -3482,9 +3610,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -3492,17 +3620,17 @@
                 21080305
             ],
             [
-                21080308,
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
+                21080308,
+                21080303,
                 21080302,
-                21080309
+                21080306
             ]
         ],
         "Note": "",
@@ -3512,10 +3640,10 @@
         "Key": 10901,
         "QuestId": 10901,
         "QuestName": "神于此刻合上双眼",
-        "QuestDetail": "",
+        "QuestDetail": "杰拉德以冒险者的身份成为帮手、来到巴哈马尔高原；但拉尔帕尔村的静寂似乎有些不同寻常。",
         "QuestType": 1,
-        "QuestStep": 10901001,
-        "AwardId": 0,
+        "QuestStep": 10901011,
+        "AwardId": 30001420,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "(10811)",
@@ -3525,7 +3653,12 @@
             0
         ],
         "TimeLimit": [],
-        "ContinueLimit": [],
+        "ContinueLimit": [
+            [
+                "18",
+                "30060"
+            ]
+        ],
         "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/bahamar_chapter09/bahamar_chapter09-8",
@@ -3533,16 +3666,14 @@
             [
                 21090101,
                 487,
-                468
+                21090103
             ],
             [
-                21090117,
-                21090118,
-                21090119,
-                21090121,
-                21090122,
-                21090120,
-                21090102
+                21090202,
+                21090301,
+                21090305,
+                21090311,
+                21090310
             ]
         ],
         "Note": "",
@@ -3552,10 +3683,10 @@
         "Key": 10902,
         "QuestId": 10902,
         "QuestName": "云怎样破开露出日光",
-        "QuestDetail": "",
+        "QuestDetail": "艾露娜和杰拉德一道前往西斯莱萨矿场，为矿工提供援助。而据阿尔方斯村长所说，遭受幻祸的巡礼者们也已陷入困境。",
         "QuestType": 1,
         "QuestStep": 10902001,
-        "AwardId": 0,
+        "AwardId": 30001430,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10901",
@@ -3573,25 +3704,19 @@
             [
                 21090101,
                 487,
-                468,
-                21090204,
-                21090207,
-                21090208,
-                21090209,
+                21090103,
                 21090210
             ],
             [
-                21090201,
-                21090117,
-                21090118,
-                21090119,
-                21090121,
-                21090122,
-                21090120,
-                21090206,
-                21090102,
+                21090104,
                 21090202,
+                21090301,
+                21090305,
+                21090311,
+                21090310,
                 21090203,
+                21090201,
+                21090105,
                 21090205
             ]
         ],
@@ -3602,10 +3727,10 @@
         "Key": 10903,
         "QuestId": 10903,
         "QuestName": "乘以无限个假如",
-        "QuestDetail": "",
+        "QuestDetail": "杰拉德承诺的帮手终于赶到，妮妲小姐的左支右绌也得以改善；一切似乎都在慢慢步入正轨；这时，幻幻花再度爆发了。",
         "QuestType": 1,
         "QuestStep": 10903001,
-        "AwardId": 0,
+        "AwardId": 30001440,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "10902",
@@ -3623,34 +3748,25 @@
             [
                 21090101,
                 487,
-                468,
-                21090204,
-                21090207,
-                21090208,
-                21090209,
+                21090103,
                 21090210,
-                21090205,
-                21090206
+                1090413,
+                21090208,
+                1091208,
+                1090420
             ],
             [
-                21090201,
-                21090117,
-                21090118,
-                21090119,
-                21090121,
-                21090122,
-                21090120,
-                21090102,
-                21090311,
+                21090104,
                 21090202,
-                21090203,
-                21090310,
-                21090303,
-                21090302,
                 21090301,
-                21090307,
-                21090308,
-                21090305
+                21090305,
+                21090311,
+                21090310,
+                21090203,
+                21090201,
+                21090105,
+                21090205,
+                21090211
             ]
         ],
         "Note": "",
@@ -3660,11 +3776,11 @@
         "Key": 10904,
         "QuestId": 10904,
         "QuestName": "月光流淌成河的夜晚",
-        "QuestDetail": "",
+        "QuestDetail": "受伤的亨特带回一则可怕的消息：高原上似乎出现了巨大幻幻花，如果放任不理，幻祸很可能波及整个高原。",
         "QuestType": 1,
         "QuestStep": 10904001,
-        "AwardId": 0,
-        "FollowQuest": 0,
+        "AwardId": 30001450,
+        "FollowQuest": 320025,
         "PreQuest": [],
         "PreQuestLogic": "10903",
         "MustPreQuest": [],
@@ -3681,34 +3797,25 @@
             [
                 21090101,
                 487,
-                468,
-                21090204,
-                21090207,
-                21090208,
-                21090209,
+                21090103,
                 21090210,
-                21090205,
-                21090206
+                1090413,
+                21090208,
+                1091208,
+                1090420
             ],
             [
-                21090201,
-                21090117,
-                21090118,
-                21090119,
-                21090121,
-                21090122,
-                21090120,
-                21090102,
-                21090311,
+                21090104,
                 21090202,
-                21090203,
-                21090310,
-                21090303,
-                21090302,
                 21090301,
-                21090307,
-                21090308,
-                21090305
+                21090305,
+                21090311,
+                21090310,
+                21090203,
+                21090201,
+                21090105,
+                21090205,
+                21090211
             ]
         ],
         "Note": "",
@@ -4524,6 +4631,41 @@
         "Note": "",
         "AwardPreview": []
     },
+    "20021": {
+        "Key": 20021,
+        "QuestId": 20021,
+        "QuestName": "陷落河畔的失格者",
+        "QuestDetail": "神悬御柱下的神官艾德里安似乎在为卷心菜调查团的事情而苦恼……不妨问问看究竟怎么回事吧。",
+        "QuestType": 2,
+        "QuestStep": 20021001,
+        "AwardId": 31002920,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10806)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini10/sidequest_mini10-9",
+        "NpcMarkedByQuest": [
+            [
+                1090625,
+                23063601,
+                1090402,
+                22002102
+            ],
+            [
+                23063504
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "20040": {
         "Key": 20040,
         "QuestId": 20040,
@@ -4721,6 +4863,150 @@
                 23000001,
                 23000002,
                 1008720
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30002": {
+        "Key": 30002,
+        "QuestId": 30002,
+        "QuestName": "不熄的黯炎",
+        "QuestDetail": "暗影堡垒一战后，塔塔将黯影军团带回了班哈尔特。然而丹佛的亲卫队在那之后就消失于众人视野，虽然奥尔维拉派出许多守备兵进行搜寻，但始终未能得到与之有关的消息……",
+        "QuestType": 3,
+        "QuestStep": 30002002,
+        "AwardId": 31002790,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            9,
+            1090303,
+            0,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/sidequest_91yijidongku/sidequest_91yijidongku-5",
+        "NpcMarkedByQuest": [
+            [
+                1090303
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30003": {
+        "Key": 30003,
+        "QuestId": 30003,
+        "QuestName": "蜥以为常",
+        "QuestDetail": "作为地下世界的原住民，巴哈马尔巨蜥在矿场建成之前就已在这里生活了不知多少年代，它们早已是高原人习以为常的存在。然而对于布法利亚教团与冒险者来说，这种生理特征与巨龙相似的物种，始终需要警惕。",
+        "QuestType": 3,
+        "QuestStep": 30003001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-40",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215,
+                23340302,
+                23540102,
+                23540101,
+                1091210,
+                23450101,
+                23450202,
+                1091201,
+                23450203,
+                23340401,
+                23340403,
+                1090401
+            ],
+            [
+                23450102,
+                23340203,
+                23340303,
+                23450103,
+                23450201,
+                23340402,
+                23000301
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30004": {
+        "Key": 30004,
+        "QuestId": 30004,
+        "QuestName": "巴西利斯克的怒咆",
+        "QuestDetail": "巴西利斯克是高原人给巨蜥一族首领起的名字，其意为神话中的怪物，如果龙族与巨蜥的同源猜想成立，那么巴西利斯克毫无疑问是最接近龙族的存在。",
+        "QuestType": 3,
+        "QuestStep": 30004002,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "30003",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-41",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215,
+                23340302,
+                23540102,
+                23540101,
+                1091210,
+                23450101,
+                23450202,
+                1091201,
+                23450203,
+                23340401,
+                23340403,
+                1090401,
+                23000301
+            ],
+            [
+                23450102,
+                23340203,
+                23340303,
+                23450103,
+                23450201,
+                23340402
             ]
         ],
         "Note": "",
@@ -4931,7 +5217,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -5018,7 +5303,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -5092,7 +5376,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -5223,7 +5506,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010805,
                 23010815,
                 23010816,
@@ -5304,7 +5586,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -5397,7 +5678,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -5497,7 +5777,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -5602,7 +5881,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -5709,7 +5987,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -7540,15 +7817,25 @@
         "AwardId": 34000040,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "(500001)",
+        "PreQuestLogic": "",
         "MustPreQuest": [],
-        "AccessLimit": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "30050"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/sidequest_mini08/sidequest_mini08-19",
         "NpcMarkedByQuest": [
@@ -7577,15 +7864,25 @@
         "AwardId": 34000050,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "(170020)",
+        "PreQuestLogic": "",
         "MustPreQuest": [],
-        "AccessLimit": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "30050"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/sidequest_mini08/sidequest_mini08-20",
         "NpcMarkedByQuest": [
@@ -7614,15 +7911,25 @@
         "AwardId": 34000060,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "(170008)",
+        "PreQuestLogic": "",
         "MustPreQuest": [],
-        "AccessLimit": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "30050"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/sidequest_mini08/sidequest_mini08-21",
         "NpcMarkedByQuest": [
@@ -7651,15 +7958,25 @@
         "AwardId": 34000070,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "(170014)",
+        "PreQuestLogic": "",
         "MustPreQuest": [],
-        "AccessLimit": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "30050"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/sidequest_mini08/sidequest_mini08-42",
         "NpcMarkedByQuest": [
@@ -7688,15 +8005,25 @@
         "AwardId": 34000080,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "(170011)",
+        "PreQuestLogic": "",
         "MustPreQuest": [],
-        "AccessLimit": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "30050"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/sidequest_mini08/sidequest_mini08-43",
         "NpcMarkedByQuest": [
@@ -7725,15 +8052,25 @@
         "AwardId": 34000090,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "(170010)",
+        "PreQuestLogic": "",
         "MustPreQuest": [],
-        "AccessLimit": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "30050"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/sidequest_mini08/sidequest_mini08-44",
         "NpcMarkedByQuest": [
@@ -7762,15 +8099,25 @@
         "AwardId": 34000100,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "(170012)",
+        "PreQuestLogic": "",
         "MustPreQuest": [],
-        "AccessLimit": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "30050"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/sidequest_mini08/sidequest_mini08-45",
         "NpcMarkedByQuest": [
@@ -7799,15 +8146,25 @@
         "AwardId": 34000110,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "(170019)",
+        "PreQuestLogic": "",
         "MustPreQuest": [],
-        "AccessLimit": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "30050"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/sidequest_mini08/sidequest_mini08-46",
         "NpcMarkedByQuest": [
@@ -7836,15 +8193,25 @@
         "AwardId": 34000120,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "(170009)",
+        "PreQuestLogic": "",
         "MustPreQuest": [],
-        "AccessLimit": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
         "AccpetType": [
             0
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "30050"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/sidequest_mini08/sidequest_mini08-47",
         "NpcMarkedByQuest": [
@@ -11638,6 +12005,1283 @@
         "Note": "",
         "AwardPreview": []
     },
+    "30614": {
+        "Key": 30614,
+        "QuestId": 30614,
+        "QuestName": "你有没有见过莎莎",
+        "QuestDetail": "瓦涅莎整天炫耀自己的小狗莎莎，但是忽然有一天，莎莎不见了。",
+        "QuestType": 3,
+        "QuestStep": 30614001,
+        "AwardId": 31002540,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(33504)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-3",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405
+            ],
+            [
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30615": {
+        "Key": 30615,
+        "QuestId": 30615,
+        "QuestName": "提神红茶",
+        "QuestDetail": "管理员迫切需要提神醒脑的办法。",
+        "QuestType": 3,
+        "QuestStep": 30615002,
+        "AwardId": 31002510,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10711)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23061501,
+            30061501,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-7",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501
+            ],
+            [
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30616": {
+        "Key": 30616,
+        "QuestId": 30616,
+        "QuestName": "创作一本小说的二三技巧",
+        "QuestDetail": "如果这本手稿回到主人手边，说不定就能变成完整的故事吧。",
+        "QuestType": 3,
+        "QuestStep": 30616001,
+        "AwardId": 31002520,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-8",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601
+            ],
+            [
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30617": {
+        "Key": 30617,
+        "QuestId": 30617,
+        "QuestName": "疗愈",
+        "QuestDetail": "矿场的混乱渐渐止息，一些破裂的人际关系也该被修复吧——管理员真挚地如此希望着。",
+        "QuestType": 3,
+        "QuestStep": 30617001,
+        "AwardId": 31002690,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10904)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23061701,
+            30061701,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-9",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701
+            ],
+            [
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30618": {
+        "Key": 30618,
+        "QuestId": 30618,
+        "QuestName": "她曾整晚写信",
+        "QuestDetail": "古板的士兵手握一封信念念有词。",
+        "QuestType": 3,
+        "QuestStep": 30618001,
+        "AwardId": 31002530,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "30615",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23061801,
+            23061801,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-10",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801
+            ],
+            [
+                23061803,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30619": {
+        "Key": 30619,
+        "QuestId": 30619,
+        "QuestName": "喧哗禁止",
+        "QuestDetail": "头痛欲裂的瑟拉芬娜急需帮助。",
+        "QuestType": 3,
+        "QuestStep": 30619001,
+        "AwardId": 31002310,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23061901,
+            30061901,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-11",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901
+            ],
+            [
+                23061803,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30620": {
+        "Key": 30620,
+        "QuestId": 30620,
+        "QuestName": "静谧的夜晚",
+        "QuestDetail": "瑟拉芬娜饱受失眠之苦。",
+        "QuestType": 3,
+        "QuestStep": 30620002,
+        "AwardId": 31002340,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(30619 and 10612)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23061901,
+            30062001,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-12",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901
+            ],
+            [
+                23061803,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30621": {
+        "Key": 30621,
+        "QuestId": 30621,
+        "QuestName": "暖乎乎汤锅，九亿旅人的梦",
+        "QuestDetail": "那少女趴在路边，一动也不动。",
+        "QuestType": 3,
+        "QuestStep": 30621001,
+        "AwardId": 31002730,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-13",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101
+            ],
+            [
+                23061803,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30622": {
+        "Key": 30622,
+        "QuestId": 30622,
+        "QuestName": "你不必为谁盛装",
+        "QuestDetail": "格蕾西垂头丧气地坐在路边。",
+        "QuestType": 3,
+        "QuestStep": 30622001,
+        "AwardId": 31002740,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-14",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229
+            ],
+            [
+                23061803,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30623": {
+        "Key": 30623,
+        "QuestId": 30623,
+        "QuestName": "草药师的箴言",
+        "QuestDetail": "拉尔帕尔村中央的大树下，总是坐着一位和善的老婆婆。",
+        "QuestType": 3,
+        "QuestStep": 30623001,
+        "AwardId": 31002320,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "30619",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            1091201,
+            30062301,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-15",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201
+            ],
+            [
+                23061803,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30624": {
+        "Key": 30624,
+        "QuestId": 30624,
+        "QuestName": "寂静星石",
+        "QuestDetail": "每一座星石堆，都凝结着无法归乡之人的遗憾，承载着尚在人世者的深深思念……",
+        "QuestType": 3,
+        "QuestStep": 30624021,
+        "AwardId": 31002610,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(32501)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30058"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_side10/bahamar_side10-3",
+        "NpcMarkedByQuest": [
+            [
+                23062401,
+                21080104
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30625": {
+        "Key": 30625,
+        "QuestId": 30625,
+        "QuestName": "缤纷色彩",
+        "QuestDetail": "人们总是会将衣着颜色与一个人的性格联系在一起，穿红色的人热情外向、穿蓝色的人理智沉稳、穿绿色的人温柔友善、穿紫色的人神秘优雅……<br>某种程度上，这当然是对的，一个性格内向的人大概率不会穿鲜艳的颜色。<br>但另一方面，若是被贴上这种颜色标签，恐怕会造成极大的限制。<br>因为每个人都不只是单一的颜色，而是缤纷的色彩。",
+        "QuestType": 3,
+        "QuestStep": 30625003,
+        "AwardId": 31002570,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "30627",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30056"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            9,
+            1091207,
+            30062501,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-17",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601,
+                1091207
+            ],
+            [
+                23061803,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30626": {
+        "Key": 30626,
+        "QuestId": 30626,
+        "QuestName": "席德的委托",
+        "QuestDetail": "听闻你已前往巴哈马尔高原，植生学者席德委托你代他去见见游历大陆时结交的好友……",
+        "QuestType": 3,
+        "QuestStep": 30626002,
+        "AwardId": 31002380,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(30505)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-16",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601
+            ],
+            [
+                23061803,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30627": {
+        "Key": 30627,
+        "QuestId": 30627,
+        "QuestName": "骑士公主浪漫谭",
+        "QuestDetail": "捡到了一封绝交信。",
+        "QuestType": 3,
+        "QuestStep": 30627006,
+        "AwardId": 31002390,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "30628",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-18",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601,
+                1091207,
+                23062701,
+                1091245
+            ],
+            [
+                23061803,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30628": {
+        "Key": 30628,
+        "QuestId": 30628,
+        "QuestName": "紧闭的门扉",
+        "QuestDetail": "似乎有一段时间没有见到瑟拉芬娜了。",
+        "QuestType": 3,
+        "QuestStep": 30628001,
+        "AwardId": 31002400,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "30620",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30052"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-19",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601,
+                1091207,
+                23062701,
+                1091245
+            ],
+            [
+                23061803,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30629": {
+        "Key": 30629,
+        "QuestId": 30629,
+        "QuestName": "奥布里的宝贝",
+        "QuestDetail": "奥布里正为了他的角羊忧心忡忡。",
+        "QuestType": 3,
+        "QuestStep": 30629002,
+        "AwardId": 31002330,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "30623",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23061405,
+            30062901,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-20",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601,
+                1091207,
+                23062701,
+                1091245
+            ],
+            [
+                23061803,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30630": {
+        "Key": 30630,
+        "QuestId": 30630,
+        "QuestName": "",
+        "QuestDetail": "",
+        "QuestType": 3,
+        "QuestStep": 30630001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-21",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601,
+                1091207,
+                23062701,
+                1091245
+            ],
+            [
+                23061803,
+                23063001,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201,
+                23063002,
+                23063004
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30631": {
+        "Key": 30631,
+        "QuestId": 30631,
+        "QuestName": "当明月高悬山野",
+        "QuestDetail": "月影之野位于巴哈马尔高原北部，每当夜幕降临、明月高悬之时，月影之野的王者就会开始巡视它的领土……",
+        "QuestType": 3,
+        "QuestStep": 30631001,
+        "AwardId": 31002810,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-22",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601,
+                1091207,
+                23062701,
+                1091245
+            ],
+            [
+                23061803,
+                23063001,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201,
+                23063002,
+                23063004,
+                23063003
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30632": {
+        "Key": 30632,
+        "QuestId": 30632,
+        "QuestName": "学舌的斯派罗",
+        "QuestDetail": "“老师，帐篷外好像有什么东西。”<br>“有东西！有东西”<br>“老夫听到了，不需要重复这么多次菠。”<br>“不是我在说话啊。”",
+        "QuestType": 3,
+        "QuestStep": 30632001,
+        "AwardId": 31002800,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-24",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601,
+                1091207,
+                23062701,
+                1091245
+            ],
+            [
+                23061803,
+                23063001,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201,
+                23063002,
+                23063004,
+                23063003
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30633": {
+        "Key": 30633,
+        "QuestId": 30633,
+        "QuestName": "因为鱼就在那里",
+        "QuestDetail": "“年轻人，我们为什么要钓鱼呢？”<br>路亚面带微笑，平静地问你，丝毫看不出此前鱼脱钩后的气急败坏。<br>“因为鱼就在那里。”",
+        "QuestType": 3,
+        "QuestStep": 30633001,
+        "AwardId": 31002750,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            9,
+            1090205,
+            30063301,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-25",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601,
+                1091207,
+                23062701,
+                1091245,
+                1090205
+            ],
+            [
+                23061803,
+                23063001,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201,
+                23063002,
+                23063004,
+                23063003,
+                23063301
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30634": {
+        "Key": 30634,
+        "QuestId": 30634,
+        "QuestName": "角羊，角羊角",
+        "QuestDetail": "“这位客人，您可真是有眼光，这可是拉尔帕尔村产的最优质的角羊角，我们花了大价钱才收购到的。”<br>“您说这有东西有什么用？哎呦，这您就不知道了，您见过蜥蜴人王拿的法杖吗？”<br>“没错！没错！那就是用角羊角做的，只是品质更好、更大而已。”<br>“真不骗您，角羊角可是良好的能量导体，你用来磨成粉服用活着敷在脸上还能美白呢。”<br>“谢谢惠顾！客人您常来啊！”",
+        "QuestType": 3,
+        "QuestStep": 30634001,
+        "AwardId": 31002410,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(35401)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30052"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            9,
+            1091220,
+            30063401,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-26",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601,
+                1091207,
+                23062701,
+                1091245,
+                1090205,
+                1091210,
+                1091220
+            ],
+            [
+                23061803,
+                23063001,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201,
+                23063002,
+                23063004,
+                23063003,
+                23063301
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30635": {
+        "Key": 30635,
+        "QuestId": 30635,
+        "QuestName": "卷心菜的野望",
+        "QuestDetail": "学术工作就像剥卷心菜，努力剥到最后发现菜是空心的。那么布法利亚遗产是否也是一颗卷心菜呢？<br>“我已经受够了开拓局对遗产的管制，今日起，卷心菜调查团正式成立，目标是完全掌控布法利亚技术，主导世界秩序的变革！”",
+        "QuestType": 3,
+        "QuestStep": 30635001,
+        "AwardId": 31002860,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            9,
+            1090625,
+            30063501,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini10/sidequest_mini10-3",
+        "NpcMarkedByQuest": [
+            [
+                1090625
+            ],
+            [
+                23063504
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30636": {
+        "Key": 30636,
+        "QuestId": 30636,
+        "QuestName": "“灭虫”计划",
+        "QuestDetail": "“开拓局那边如何回应。”<br>“他们拒绝了我们的合作，说永远不会和我们这样的犯罪团伙同流合污。”<br>“是吗？开拓局何时变成了正义组织。”<br>“顾问，接下来我们怎么办？”<br>“麻烦把霍克斯先生请过来，跟他说，计划要开始了。”",
+        "QuestType": 3,
+        "QuestStep": 30636001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini10/sidequest_mini10-8",
+        "NpcMarkedByQuest": [
+            [
+                1090625,
+                23063601,
+                1090402
+            ],
+            [
+                23063504
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "30701": {
         "Key": 30701,
         "QuestId": 30701,
@@ -11947,6 +13591,41 @@
                 23070810,
                 23070807,
                 23070806
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30801": {
+        "Key": 30801,
+        "QuestId": 30801,
+        "QuestName": "纯净水源",
+        "QuestDetail": "陷落河的水近来受到热捧，让一些人起了贩卖河水的念头 。",
+        "QuestType": 3,
+        "QuestStep": 30801001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini07/bahamar_mini07-6",
+        "NpcMarkedByQuest": [
+            [
+                1090302,
+                1090304
             ]
         ],
         "Note": "",
@@ -12388,6 +14067,1323 @@
         "Note": "",
         "AwardPreview": []
     },
+    "32501": {
+        "Key": 32501,
+        "QuestId": 32501,
+        "QuestName": "吃点好的",
+        "QuestDetail": "德怀尔对运输站提供的员工餐颇有怨念。但这到底是既定事实还是他的一己之见呢……",
+        "QuestType": 3,
+        "QuestStep": 32501001,
+        "AwardId": 31002580,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10806)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "12",
+                "9"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            9,
+            1009555,
+            30250101,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_side05/bahamar_side05-3",
+        "NpcMarkedByQuest": [
+            [
+                1009555,
+                1009558
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "32514": {
+        "Key": 32514,
+        "QuestId": 32514,
+        "QuestName": "珍珠和云朵",
+        "QuestDetail": "",
+        "QuestType": 53,
+        "QuestStep": 32514001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10706)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30054"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-23",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546,
+                23350801,
+                23350802,
+                23350901,
+                23350902,
+                1009547,
+                1009542,
+                23251502,
+                23251501,
+                23251504,
+                23251503,
+                23251505
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "32515": {
+        "Key": 32515,
+        "QuestId": 32515,
+        "QuestName": "珍珠和云朵",
+        "QuestDetail": "两个自由的灵魂并不会因为爱而失去自由……",
+        "QuestType": 3,
+        "QuestStep": 32515001,
+        "AwardId": 31002460,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "32514",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-22",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546,
+                23350801,
+                23350802,
+                23350901,
+                23350902,
+                1009547,
+                1009542,
+                23251502,
+                23251501,
+                23251504,
+                23251503,
+                23251505
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "32701": {
+        "Key": 32701,
+        "QuestId": 32701,
+        "QuestName": "明晚到站",
+        "QuestDetail": "调度员正为运输车队的安全忧心忡忡。",
+        "QuestType": 3,
+        "QuestStep": 32701001,
+        "AwardId": 31002420,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10706)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar_side07/bahamar_side07-3",
+        "NpcMarkedByQuest": [
+            [
+                23270101
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "32702": {
+        "Key": 32702,
+        "QuestId": 32702,
+        "QuestName": "账目明细",
+        "QuestDetail": "办事员手头的账目和实际物资库存总是对不上，问题到底出在哪里呢？",
+        "QuestType": 3,
+        "QuestStep": 32702001,
+        "AwardId": 31002430,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "32701",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar_side07/bahamar_side07-4",
+        "NpcMarkedByQuest": [
+            [
+                23270101,
+                23270201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "32703": {
+        "Key": 32703,
+        "QuestId": 32703,
+        "QuestName": "出入平安",
+        "QuestDetail": "为了筹措维修道路的材料，办事员发起委托。",
+        "QuestType": 3,
+        "QuestStep": 32703001,
+        "AwardId": 31002440,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "32702",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar_side07/bahamar_side07-5",
+        "NpcMarkedByQuest": [
+            [
+                23270101,
+                23270201,
+                23270301
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "32704": {
+        "Key": 32704,
+        "QuestId": 32704,
+        "QuestName": "不委婉拒绝",
+        "QuestDetail": "喜欢喋喋不休的矿工正在到处打量，仿佛时刻准备抓着其他人的把柄为己所用。",
+        "QuestType": 3,
+        "QuestStep": 32704001,
+        "AwardId": 31002450,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "32703",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar_side07/bahamar_side07-6",
+        "NpcMarkedByQuest": [
+            [
+                23270101,
+                23270201,
+                23270301,
+                23270401,
+                23270402,
+                1008494,
+                23270403
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33401": {
+        "Key": 33401,
+        "QuestId": 33401,
+        "QuestName": "安妮莫奈的歉意",
+        "QuestDetail": "安妮莫奈曾经和拉尔帕尔村民艾拉发生过冲突。那之后，她深感后悔，却拉不下脸面道歉。",
+        "QuestType": 3,
+        "QuestStep": 33401001,
+        "AwardId": 31002350,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10612)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-3",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33402": {
+        "Key": 33402,
+        "QuestId": 33402,
+        "QuestName": "菲立兹的勇气大冒险",
+        "QuestDetail": "喜欢怪谈的菲立兹和其他巡礼者起了争执。对方嘲笑菲立兹只会纸上谈兵，实际上根本没有冒险的勇气。为了证明自己，菲立兹决定到拉尔帕尔墓地住上一晚。",
+        "QuestType": 3,
+        "QuestStep": 33402001,
+        "AwardId": 31002360,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "33401",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-4",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215
+            ],
+            [
+                23340203
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33403": {
+        "Key": 33403,
+        "QuestId": 33403,
+        "QuestName": "小妮妲的清单",
+        "QuestDetail": "小妮妲发现救济物资数目对不上，在主角的鼓励下，她还是决定找出真相。",
+        "QuestType": 3,
+        "QuestStep": 33403001,
+        "AwardId": 31002370,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10711 and 33402)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-5",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215
+            ],
+            [
+                23340203
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33404": {
+        "Key": 33404,
+        "QuestId": 33404,
+        "QuestName": "他的名字",
+        "QuestDetail": "洛塔尔盯着一只小狗，非常困惑……",
+        "QuestType": 3,
+        "QuestStep": 33404001,
+        "AwardId": 31002700,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10904)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-24",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215,
+                23340302,
+                23540102,
+                23540101,
+                1091210,
+                23450101,
+                23450202,
+                1091201,
+                23450203,
+                23340401,
+                23340403
+            ],
+            [
+                23450102,
+                23340203,
+                23340303,
+                23450103,
+                23450201,
+                23340402
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33501": {
+        "Key": 33501,
+        "QuestId": 33501,
+        "QuestName": "未见面记录员",
+        "QuestDetail": "提交报告的截止日期将近，吉泽拉终于无法继续拖延，必须找记录员索要报告所需的数据。但明日复明日的他还能赢回同事的信任、得偿所愿吗？",
+        "QuestType": 3,
+        "QuestStep": 33501003,
+        "AwardId": 31002470,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10706)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30054"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            9,
+            1009502,
+            33350101,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-3",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33502": {
+        "Key": 33502,
+        "QuestId": 33502,
+        "QuestName": "致明日",
+        "QuestDetail": "管理员对矿渣填埋区污染外溢问题的担忧与日俱增。",
+        "QuestType": 3,
+        "QuestStep": 33502002,
+        "AwardId": 31002480,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "33501",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            1009526,
+            33350201,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-4",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33503": {
+        "Key": 33503,
+        "QuestId": 33503,
+        "QuestName": "有没有空？可以来种花吗？",
+        "QuestDetail": "博林做了许多尝试，始终没能让花种发芽。",
+        "QuestType": 3,
+        "QuestStep": 33503002,
+        "AwardId": 31002490,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(33502)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            1009559,
+            33350301,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-5",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33504": {
+        "Key": 33504,
+        "QuestId": 33504,
+        "QuestName": "今天也能来种花吗？",
+        "QuestDetail": "博林精心照料饱满的种子，但结果并不如他预想。",
+        "QuestType": 3,
+        "QuestStep": 33504001,
+        "AwardId": 31002560,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "33503",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30056"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-8",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33505": {
+        "Key": 33505,
+        "QuestId": 33505,
+        "QuestName": "今天也要来种花喔",
+        "QuestDetail": "博林的种子终于发芽了，但距离顺利开花可能依然有漫长的路要走。",
+        "QuestType": 3,
+        "QuestStep": 33505001,
+        "AwardId": 31002590,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "33504",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30057"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-7",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33506": {
+        "Key": 33506,
+        "QuestId": 33506,
+        "QuestName": "正确的选择",
+        "QuestDetail": "戴德里克曾跟军团的人做过小买卖，但最近的风波显然加剧了他的悔意。",
+        "QuestType": 3,
+        "QuestStep": 33506002,
+        "AwardId": 31002620,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10811)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            1009546,
+            33350601,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-6",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33507": {
+        "Key": 33507,
+        "QuestId": 33507,
+        "QuestName": "冰消瓦解之日",
+        "QuestDetail": "可怜的戴德里克依然没能成功拿到军团拖欠的款项，但他坚持尝试追讨——去敲响那第一百扇很可能不会开启的门。",
+        "QuestType": 3,
+        "QuestStep": 33507002,
+        "AwardId": 31002720,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "33506",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            9,
+            1009546,
+            33350701,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-9",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33508": {
+        "Key": 33508,
+        "QuestId": 33508,
+        "QuestName": "摸摸菠！",
+        "QuestDetail": "运输站角落出现了一只奄奄一息的娜宝。",
+        "QuestType": 3,
+        "QuestStep": 33508001,
+        "AwardId": 31002550,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(33504)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-10",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546,
+                23350801,
+                23350802
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33509": {
+        "Key": 33509,
+        "QuestId": 33509,
+        "QuestName": "找到菠！",
+        "QuestDetail": "娜宝比菠忽然消失不见，办事员深感不安。",
+        "QuestType": 3,
+        "QuestStep": 33509001,
+        "AwardId": 31002600,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(33508 and 10806)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-11",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546,
+                23350801,
+                23350802,
+                23350901,
+                23350902
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33510": {
+        "Key": 33510,
+        "QuestId": 33510,
+        "QuestName": "明日未至",
+        "QuestDetail": "之前帮管理员埋下的星元收集器，已经可以回收了。",
+        "QuestType": 3,
+        "QuestStep": 33510001,
+        "AwardId": 31002500,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10711 and 33502)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-12",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546,
+                23350801,
+                23350802,
+                23350901,
+                23350902
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33511": {
+        "Key": 33511,
+        "QuestId": 33511,
+        "QuestName": "此路不通",
+        "QuestDetail": "特里芬至今没能拿到通行证，为此他绞尽脑汁，到处求人帮忙。",
+        "QuestType": 3,
+        "QuestStep": 33511002,
+        "AwardId": 31002630,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10704)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30058"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            9,
+            1009547,
+            33351101,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-13",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546,
+                23350801,
+                23350802,
+                23350901,
+                23350902,
+                1009547
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33512": {
+        "Key": 33512,
+        "QuestId": 33512,
+        "QuestName": "此路依然不通",
+        "QuestDetail": "自信满满的特里芬本想一气呵成拿下通行证，但事实证明，他高兴得太早了。",
+        "QuestType": 3,
+        "QuestStep": 33512002,
+        "AwardId": 31002640,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "33511",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30059"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            9,
+            1009547,
+            33351201,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-14",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546,
+                23350801,
+                23350802,
+                23350901,
+                23350902,
+                1009547,
+                1009542
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33600": {
+        "Key": 33600,
+        "QuestId": 33600,
+        "QuestName": "这一切",
+        "QuestDetail": "",
+        "QuestType": 53,
+        "QuestStep": 33600001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10811)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini06/bahamar_mini06-8",
+        "NpcMarkedByQuest": [
+            [
+                1090630,
+                23360201,
+                1090631,
+                23360301,
+                23360302,
+                23360401,
+                23360402,
+                1009552,
+                23360501
+            ],
+            [
+                23360101,
+                23360102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33601": {
+        "Key": 33601,
+        "QuestId": 33601,
+        "QuestName": "这一切",
+        "QuestDetail": "胆敢在山芥垆大吵大闹的客人不多，但绝不为零。是时候让他们为放纵和失态支付一点点代价了。",
+        "QuestType": 3,
+        "QuestStep": 33601009,
+        "AwardId": 31002650,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "33600",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini06/bahamar_mini06-3",
+        "NpcMarkedByQuest": [
+            [
+                1090630
+            ],
+            [
+                23360101,
+                23360102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33602": {
+        "Key": 33602,
+        "QuestId": 33602,
+        "QuestName": "送给孤独者的花",
+        "QuestDetail": "为劫后余生庆幸之余，马蒂斯并没有忘记，还有人始终不幸福。",
+        "QuestType": 3,
+        "QuestStep": 33602001,
+        "AwardId": 31002660,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "33601",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini06/bahamar_mini06-4",
+        "NpcMarkedByQuest": [
+            [
+                1090630,
+                23360201,
+                1090631
+            ],
+            [
+                23360101,
+                23360102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33603": {
+        "Key": 33603,
+        "QuestId": 33603,
+        "QuestName": "星光降落在你的眼底",
+        "QuestDetail": "虽然在瞭望塔上执勤，但比起履行职责，瓦内尔在乎的显然另有其事。",
+        "QuestType": 3,
+        "QuestStep": 33603001,
+        "AwardId": 31002760,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini06/bahamar_mini06-5",
+        "NpcMarkedByQuest": [
+            [
+                1090630,
+                23360201,
+                1090631,
+                23360301,
+                23360302
+            ],
+            [
+                23360101,
+                23360102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33604": {
+        "Key": 33604,
+        "QuestId": 33604,
+        "QuestName": "好事多磨",
+        "QuestDetail": "将退婚信归还给艾兰之后，他仍然打算再努力一次。",
+        "QuestType": 3,
+        "QuestStep": 33604016,
+        "AwardId": 31002680,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(34501)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini06/bahamar_mini06-6",
+        "NpcMarkedByQuest": [
+            [
+                1090630,
+                23360201,
+                1090631,
+                23360301,
+                23360302,
+                23360401,
+                23360402
+            ],
+            [
+                23360101,
+                23360102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "33605": {
+        "Key": 33605,
+        "QuestId": 33605,
+        "QuestName": "一步之遥",
+        "QuestDetail": "邮车遇袭，本该寄到贝克马尔运输站的包裹被掠夺一空，这可真是一场灾难……",
+        "QuestType": 3,
+        "QuestStep": 33605002,
+        "AwardId": 31002770,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "33604",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            9,
+            1009552,
+            33360501,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini06/bahamar_mini06-7",
+        "NpcMarkedByQuest": [
+            [
+                1090630,
+                23360201,
+                1090631,
+                23360301,
+                23360302,
+                23360401,
+                23360402,
+                1009552,
+                23360501
+            ],
+            [
+                23360101,
+                23360102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "34201": {
+        "Key": 34201,
+        "QuestId": 34201,
+        "QuestName": "捉迷藏·其二",
+        "QuestDetail": "拉尔帕尔村出现了一位来自明斯特霍恩的商人，他的身边还有三个熟悉的孩子……",
+        "QuestType": 3,
+        "QuestStep": 34201002,
+        "AwardId": 31002710,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(30114)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini12/bahamar_mini12-3",
+        "NpcMarkedByQuest": [
+            [
+                23011402,
+                23011401
+            ],
+            [
+                23420101,
+                21060302
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "34501": {
+        "Key": 34501,
+        "QuestId": 34501,
+        "QuestName": "龙与地下矿场",
+        "QuestDetail": "每个人或许都幻想过和伙伴们一起经历难忘的冒险，成为万众敬仰的大英雄——<br>谁说游戏中的经历不是真的呢？我们确实一起讨伐过巨龙、也曾因为一次失败而争吵；<br>我们在大陆的每个角落留下了足迹，探索前人未至之地。<br>来吧！和朋友们来上一局紧张刺激的《龙与地下矿场》吧！",
+        "QuestType": 3,
+        "QuestStep": 34501001,
+        "AwardId": 31002670,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(33602)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30060"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-19",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215,
+                23340302,
+                23540102,
+                23540101,
+                1091210,
+                23450101
+            ],
+            [
+                23450102,
+                23340203,
+                23340303,
+                23450103
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "34502": {
+        "Key": 34502,
+        "QuestId": 34502,
+        "QuestName": "石不言，请不语",
+        "QuestDetail": "“前辈，请不要再对着石头说话了，会影响我工作。”<br>“真无趣啊，瓦尔森，我们终日与这些石头在一起，难道不应该好好培养感情吗？”<br>“前辈，就算你一直说个不停，石头也不会回应你的，顺带一提，我也不想回应。”<br>“哇，这是何等失礼的后辈！无妨，你迟早会像这些石头一样被我打动。”<br>“唉。”",
+        "QuestType": 3,
+        "QuestStep": 34502001,
+        "AwardId": 31002780,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-20",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215,
+                23340302,
+                23540102,
+                23540101,
+                1091210,
+                23450101,
+                23450202,
+                1091201,
+                23450203
+            ],
+            [
+                23450102,
+                23340203,
+                23340303,
+                23450103,
+                23450201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "35401": {
+        "Key": 35401,
+        "QuestId": 35401,
+        "QuestName": "外出取材",
+        "QuestDetail": "“专业的小说家不会永远待在书桌前，外出取材是内容创作的重要一环！”<br>“所以？”<br>“所以请再宽限我几天吧！拜托了！几天就好，我什么都会做的！”",
+        "QuestType": 3,
+        "QuestStep": 35401020,
+        "AwardId": 31002300,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606 and 30211)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            1091210,
+            33540101,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-12",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215,
+                23340302,
+                23540102,
+                23540101,
+                1091210
+            ],
+            [
+                23340203,
+                23340303
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "39001": {
         "Key": 39001,
         "QuestId": 39001,
@@ -12566,7 +15562,12 @@
                 "30"
             ]
         ],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40107"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/huodong/50001/50001-6",
         "NpcMarkedByQuest": [
@@ -12593,7 +15594,7 @@
         "AccessLimit": [
             [
                 "18",
-                "273"
+                "40106"
             ],
             [
                 "1",
@@ -12605,7 +15606,12 @@
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40105"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/huodong/50001/50001-7",
         "NpcMarkedByQuest": [
@@ -12679,7 +15685,12 @@
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40105"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/huodong/50001/50001-19",
         "NpcMarkedByQuest": [
@@ -12718,7 +15729,12 @@
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40105"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/huodong/50001/50001-20",
         "NpcMarkedByQuest": [
@@ -12757,7 +15773,12 @@
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40105"
+            ]
+        ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/huodong/50001/50001-21",
         "NpcMarkedByQuest": [
@@ -12805,6 +15826,95 @@
                 1007808,
                 1007802,
                 21701001
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "50010": {
+        "Key": 50010,
+        "QuestId": 50010,
+        "QuestName": "【每日】捣蛋者的糖罐",
+        "QuestDetail": "快去领取今天的糖果吧！<br><style=\"emph-gn\">任务时限：捣蛋者的糖罐活动期间</style>",
+        "QuestType": 88,
+        "QuestStep": 50010001,
+        "AwardId": 70050010,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "30"
+            ],
+            [
+                "18",
+                "40029"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40129"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/huodong/50010/50010-3",
+        "NpcMarkedByQuest": [
+            [],
+            [
+                21010537
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "50011": {
+        "Key": 50011,
+        "QuestId": 50011,
+        "QuestName": "",
+        "QuestDetail": "",
+        "QuestType": 53,
+        "QuestStep": 50011001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "2"
+            ],
+            [
+                "18",
+                "40029"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40129"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/huodong/50010/50010-5",
+        "NpcMarkedByQuest": [
+            [],
+            [
+                21010537,
+                21010538
             ]
         ],
         "Note": "",
@@ -12987,6 +16097,116 @@
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/70000/70000-17",
         "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "105611": {
+        "Key": 105611,
+        "QuestId": 105611,
+        "QuestName": "深入矿场",
+        "QuestDetail": "在达雅的带领下，和艾露娜一起调查矿场的情况",
+        "QuestType": 18,
+        "QuestStep": 105611001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "5611"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "5611"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/dng_chapter06/dng_chapter06-35",
+        "NpcMarkedByQuest": [
+            [
+                21060101,
+                21060106,
+                21060215,
+                21060205,
+                21060204,
+                21060102,
+                21060302,
+                21060303,
+                21060304,
+                21060207
+            ],
+            [
+                21060206,
+                21060209,
+                21060210,
+                21060211,
+                21060212
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "105612": {
+        "Key": 105612,
+        "QuestId": 105612,
+        "QuestName": "深入矿场",
+        "QuestDetail": "在达雅的带领下，和艾露娜一起调查矿场的情况",
+        "QuestType": 18,
+        "QuestStep": 105612001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "5612"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "5612"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/dng_chapter06/dng_chapter06-36",
+        "NpcMarkedByQuest": [
+            [
+                21060101,
+                21060106,
+                21060215,
+                21060205,
+                21060204,
+                21060102,
+                21060302,
+                21060303,
+                21060304,
+                21060207
+            ],
+            [
+                21060206,
+                21060209,
+                21060210,
+                21060211,
+                21060212
+            ]
+        ],
         "Note": "",
         "AwardPreview": []
     },
@@ -14842,6 +18062,106 @@
         "Note": "",
         "AwardPreview": []
     },
+    "170200": {
+        "Key": 170200,
+        "QuestId": 170200,
+        "QuestName": "了解深眠心相仪",
+        "QuestDetail": "在神悬御柱下活跃着一个熟悉的身影——遗产工匠马埃尔。他的出现绝非偶然，或许意味着「深眠心相仪」的研究已有了新的进展。",
+        "QuestType": 79,
+        "QuestStep": 170200002,
+        "AwardId": 31002820,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "16"
+            ],
+            [
+                "18",
+                "30050"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/170000/170000-71",
+        "NpcMarkedByQuest": [
+            [
+                1008800,
+                1008918,
+                1008219,
+                103,
+                1008049,
+                21707001,
+                21707002,
+                21707003,
+                1008615,
+                1008646,
+                21707004,
+                21707005,
+                1008079,
+                21707006,
+                21707007
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "170201": {
+        "Key": 170201,
+        "QuestId": 170201,
+        "QuestName": "",
+        "QuestDetail": "",
+        "QuestType": 53,
+        "QuestStep": 170201001,
+        "AwardId": 31002910,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10003)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [
+            [
+                "18",
+                "30050"
+            ]
+        ],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/170000/170000-74",
+        "NpcMarkedByQuest": [
+            [
+                1008800,
+                1008918,
+                1008219,
+                103,
+                1008049,
+                21707001,
+                21707002,
+                21707003,
+                1008615,
+                1008646,
+                21707004,
+                21707005,
+                1008079,
+                21707006,
+                21707007
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "171000": {
         "Key": 171000,
         "QuestId": 171000,
@@ -15374,6 +18694,36 @@
                 3000101
             ]
         ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "179981": {
+        "Key": 179981,
+        "QuestId": 179981,
+        "QuestName": "流图wait测试用",
+        "QuestDetail": "",
+        "QuestType": 3,
+        "QuestStep": 179981001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/quest_test01/quest_test01-3",
+        "NpcMarkedByQuest": [],
         "Note": "",
         "AwardPreview": []
     },
@@ -16074,7 +19424,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -18895,7 +22244,7 @@
         "QuestName": "保护艾露娜",
         "QuestDetail": "消灭魔物，保护失去意识的艾露娜",
         "QuestType": 18,
-        "QuestStep": 185601001,
+        "QuestStep": 185601002,
         "AwardId": 0,
         "FollowQuest": 0,
         "PreQuest": [],
@@ -18970,9 +22319,9 @@
         "Key": 185603,
         "QuestId": 185603,
         "QuestName": "抓住小偷",
-        "QuestDetail": "",
+        "QuestDetail": "抓住小偷",
         "QuestType": 18,
-        "QuestStep": 0,
+        "QuestStep": 185603001,
         "AwardId": 0,
         "FollowQuest": 0,
         "PreQuest": [],
@@ -19011,10 +22360,10 @@
     "185604": {
         "Key": 185604,
         "QuestId": 185604,
-        "QuestName": "消灭所有魔物",
-        "QuestDetail": "消灭所有魔物",
+        "QuestName": "消灭所有怪物",
+        "QuestDetail": "消灭所有怪物",
         "QuestType": 18,
-        "QuestStep": 185604001,
+        "QuestStep": 185604004,
         "AwardId": 0,
         "FollowQuest": 0,
         "PreQuest": [],
@@ -19053,8 +22402,8 @@
     "185605": {
         "Key": 185605,
         "QuestId": 185605,
-        "QuestName": "消灭所有魔物",
-        "QuestDetail": "消灭所有魔物",
+        "QuestName": "消灭所有怪物",
+        "QuestDetail": "消灭所有怪物",
         "QuestType": 18,
         "QuestStep": 185605001,
         "AwardId": 0,
@@ -19097,8 +22446,8 @@
         "QuestId": 185606,
         "QuestName": "消灭矿道内的幻幻花",
         "QuestDetail": "消灭矿道内的幻幻花",
-        "QuestType": 1,
-        "QuestStep": 185606001,
+        "QuestType": 18,
+        "QuestStep": 185606002,
         "AwardId": 0,
         "FollowQuest": 0,
         "PreQuest": [],
@@ -19134,10 +22483,190 @@
         "Note": "",
         "AwardPreview": []
     },
+    "185607": {
+        "Key": 185607,
+        "QuestId": 185607,
+        "QuestName": "消灭黑石军团小队",
+        "QuestDetail": "消灭黑石军团小队",
+        "QuestType": 18,
+        "QuestStep": 185607001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "5607"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "5607"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/dng_chapter06/dng_chapter06-23",
+        "NpcMarkedByQuest": [
+            [
+                21060101
+            ],
+            [
+                21060102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "185608": {
+        "Key": 185608,
+        "QuestId": 185608,
+        "QuestName": "跟随博伊斯",
+        "QuestDetail": "到法法菈家稍事歇息",
+        "QuestType": 18,
+        "QuestStep": 185608001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "5608"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "5608"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/dng_chapter06/dng_chapter06-26",
+        "NpcMarkedByQuest": [
+            [
+                21060101,
+                21060106
+            ],
+            [
+                21060102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "185609": {
+        "Key": 185609,
+        "QuestId": 185609,
+        "QuestName": "押送小偷",
+        "QuestDetail": "将小偷押送至教团守卫处",
+        "QuestType": 18,
+        "QuestStep": 185609002,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "5609"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "5609"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/dng_chapter06/dng_chapter06-29",
+        "NpcMarkedByQuest": [
+            [
+                21060101,
+                21060106,
+                21060215
+            ],
+            [
+                21060102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "185610": {
+        "Key": 185610,
+        "QuestId": 185610,
+        "QuestName": "向巡礼者打听",
+        "QuestDetail": "前往神悬御柱附近探听消息",
+        "QuestType": 18,
+        "QuestStep": 185610001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "5610"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "5610"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/dng_chapter06/dng_chapter06-32",
+        "NpcMarkedByQuest": [
+            [
+                21060101,
+                21060106,
+                21060215,
+                21060205,
+                21060204
+            ],
+            [
+                21060102,
+                21060206,
+                21060209,
+                21060210,
+                21060211,
+                21060212
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "185701": {
         "Key": 185701,
         "QuestId": 185701,
-        "QuestName": "混入商队",
+        "QuestName": "混入商队（废弃）",
         "QuestDetail": "",
         "QuestType": 18,
         "QuestStep": 185701001,
@@ -19210,13 +22739,12 @@
         "StepFlowPath": "bin/task/task_step/dng_chapter07/dng_chapter07-5",
         "NpcMarkedByQuest": [
             [
-                21070101,
-                21070413
+                21070101
             ],
             [
                 21070401,
-                21070105,
-                21070402
+                21070402,
+                21070105
             ]
         ],
         "Note": "",
@@ -19225,7 +22753,7 @@
     "185704": {
         "Key": 185704,
         "QuestId": 185704,
-        "QuestName": "拯救遇难旷工",
+        "QuestName": "帮助格里格救出被围困的矿工",
         "QuestDetail": "",
         "QuestType": 18,
         "QuestStep": 185704001,
@@ -19255,13 +22783,12 @@
         "StepFlowPath": "bin/task/task_step/dng_chapter07/dng_chapter07-6",
         "NpcMarkedByQuest": [
             [
-                21070101,
-                21070413
+                21070101
             ],
             [
                 21070401,
-                21070105,
-                21070402
+                21070402,
+                21070105
             ]
         ],
         "Note": "",
@@ -19300,13 +22827,12 @@
         "StepFlowPath": "bin/task/task_step/dng_chapter07/dng_chapter07-13",
         "NpcMarkedByQuest": [
             [
-                21070101,
-                21070413,
-                21070401
+                21070101
             ],
             [
-                21070105,
-                21070402
+                21070401,
+                21070402,
+                21070105
             ]
         ],
         "Note": "",
@@ -19345,13 +22871,12 @@
         "StepFlowPath": "bin/task/task_step/dng_chapter07/dng_chapter07-16",
         "NpcMarkedByQuest": [
             [
-                21070101,
-                21070413,
-                21070401
+                21070101
             ],
             [
-                21070105,
-                21070402
+                21070401,
+                21070402,
+                21070105
             ]
         ],
         "Note": "",
@@ -19391,9 +22916,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -19401,17 +22926,17 @@
                 21080305
             ],
             [
-                21080308,
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
+                21080308,
+                21080303,
                 21080302,
-                21080309
+                21080306
             ]
         ],
         "Note": "",
@@ -19420,7 +22945,7 @@
     "185802": {
         "Key": 185802,
         "QuestId": 185802,
-        "QuestName": "魔物袭击",
+        "QuestName": "怪物袭击",
         "QuestDetail": "",
         "QuestType": 18,
         "QuestStep": 185802001,
@@ -19451,9 +22976,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -19461,17 +22986,17 @@
                 21080305
             ],
             [
-                21080308,
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
+                21080308,
+                21080303,
                 21080302,
-                21080309
+                21080306
             ]
         ],
         "Note": "",
@@ -19480,10 +23005,10 @@
     "185803": {
         "Key": 185803,
         "QuestId": 185803,
-        "QuestName": "调查魔物的咬痕",
+        "QuestName": "调查怪物的咬痕",
         "QuestDetail": "",
         "QuestType": 18,
-        "QuestStep": 185803003,
+        "QuestStep": 185803004,
         "AwardId": 0,
         "FollowQuest": 0,
         "PreQuest": [],
@@ -19511,9 +23036,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -19521,17 +23046,17 @@
                 21080305
             ],
             [
-                21080308,
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
+                21080308,
+                21080303,
                 21080302,
-                21080309
+                21080306
             ]
         ],
         "Note": "",
@@ -19540,7 +23065,7 @@
     "185804": {
         "Key": 185804,
         "QuestId": 185804,
-        "QuestName": "调查绯红水晶的流通途径",
+        "QuestName": "调查绯红矿髓的流通途径",
         "QuestDetail": "",
         "QuestType": 18,
         "QuestStep": 185804001,
@@ -19571,9 +23096,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -19581,17 +23106,17 @@
                 21080305
             ],
             [
-                21080308,
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
+                21080308,
+                21080303,
                 21080302,
-                21080309
+                21080306
             ]
         ],
         "Note": "",
@@ -19631,9 +23156,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -19641,17 +23166,17 @@
                 21080305
             ],
             [
-                21080308,
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
+                21080308,
+                21080303,
                 21080302,
-                21080309
+                21080306
             ]
         ],
         "Note": "",
@@ -19691,9 +23216,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -19701,17 +23226,17 @@
                 21080305
             ],
             [
-                21080308,
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
+                21080308,
+                21080303,
                 21080302,
-                21080309
+                21080306
             ]
         ],
         "Note": "",
@@ -19751,9 +23276,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -19761,17 +23286,17 @@
                 21080305
             ],
             [
-                21080308,
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
+                21080308,
+                21080303,
                 21080302,
-                21080309
+                21080306
             ]
         ],
         "Note": "",
@@ -19811,9 +23336,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -19821,17 +23346,17 @@
                 21080305
             ],
             [
-                21080308,
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
+                21080308,
+                21080303,
                 21080302,
-                21080309
+                21080306
             ]
         ],
         "Note": "",
@@ -19840,7 +23365,7 @@
     "185809": {
         "Key": 185809,
         "QuestId": 185809,
-        "QuestName": "击败这伙士兵",
+        "QuestName": "危机的交锋",
         "QuestDetail": "",
         "QuestType": 18,
         "QuestStep": 185809001,
@@ -19871,9 +23396,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -19881,17 +23406,17 @@
                 21080305
             ],
             [
-                21080308,
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
+                21080308,
+                21080303,
                 21080302,
-                21080309
+                21080306
             ]
         ],
         "Note": "",
@@ -19903,7 +23428,7 @@
         "QuestName": "一个都不能放过",
         "QuestDetail": "",
         "QuestType": 18,
-        "QuestStep": 185810001,
+        "QuestStep": 185810003,
         "AwardId": 0,
         "FollowQuest": 0,
         "PreQuest": [],
@@ -19931,9 +23456,9 @@
         "NpcMarkedByQuest": [
             [
                 21080101,
-                21080102,
                 21080103,
                 21080107,
+                21080102,
                 21080202,
                 21080203,
                 21080104,
@@ -19941,17 +23466,77 @@
                 21080305
             ],
             [
-                21080308,
+                21080307,
                 21080105,
                 21080106,
                 21060102,
                 21080108,
                 21080109,
                 21060105,
-                21080307,
-                21080306,
+                21080308,
+                21080303,
                 21080302,
-                21080309
+                21080306
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "185811": {
+        "Key": 185811,
+        "QuestId": 185811,
+        "QuestName": "娜宝快跑！",
+        "QuestDetail": "",
+        "QuestType": 18,
+        "QuestStep": 185811001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "12",
+                "5811"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "13",
+                "5811"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar_chapter08/bahamar_chapter08-44",
+        "NpcMarkedByQuest": [
+            [
+                21080101,
+                21080103,
+                21080107,
+                21080102,
+                21080202,
+                21080203,
+                21080104,
+                21080304,
+                21080305
+            ],
+            [
+                21080307,
+                21080105,
+                21080106,
+                21060102,
+                21080108,
+                21080109,
+                21060105,
+                21080308,
+                21080303,
+                21080302,
+                21080306
             ]
         ],
         "Note": "",
@@ -19960,7 +23545,7 @@
     "185901": {
         "Key": 185901,
         "QuestId": 185901,
-        "QuestName": "整理仓库",
+        "QuestName": "一堆是星魂瓶，另一堆也是",
         "QuestDetail": "",
         "QuestType": 18,
         "QuestStep": 185901001,
@@ -19992,34 +23577,25 @@
             [
                 21090101,
                 487,
-                468,
-                21090204,
-                21090207,
-                21090208,
-                21090209,
+                21090103,
                 21090210,
-                21090205,
-                21090206
+                1090413,
+                21090208,
+                1091208,
+                1090420
             ],
             [
-                21090201,
-                21090117,
-                21090118,
-                21090119,
-                21090121,
-                21090122,
-                21090120,
-                21090102,
-                21090311,
+                21090104,
                 21090202,
-                21090203,
-                21090310,
-                21090303,
-                21090302,
                 21090301,
-                21090307,
-                21090308,
-                21090305
+                21090305,
+                21090311,
+                21090310,
+                21090203,
+                21090201,
+                21090105,
+                21090205,
+                21090211
             ]
         ],
         "Note": "",
@@ -20028,10 +23604,10 @@
     "185902": {
         "Key": 185902,
         "QuestId": 185902,
-        "QuestName": "幻幻花战斗",
+        "QuestName": "突从天降的幻象",
         "QuestDetail": "",
         "QuestType": 18,
-        "QuestStep": 185902001,
+        "QuestStep": 185902002,
         "AwardId": 0,
         "FollowQuest": 0,
         "PreQuest": [],
@@ -20060,34 +23636,86 @@
             [
                 21090101,
                 487,
-                468,
-                21090204,
-                21090207,
-                21090208,
-                21090209,
+                21090103,
                 21090210,
+                1090413,
+                21090208,
+                1091208,
+                1090420,
                 21090205,
+                21090211,
                 21090206
             ],
             [
-                21090201,
-                21090117,
-                21090118,
-                21090119,
-                21090121,
-                21090122,
-                21090120,
-                21090102,
-                21090311,
+                21090104,
                 21090202,
-                21090203,
-                21090310,
-                21090303,
-                21090302,
                 21090301,
-                21090307,
-                21090308,
-                21090305
+                21090305,
+                21090311,
+                21090310,
+                21090203,
+                21090201,
+                21090105
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "185905": {
+        "Key": 185905,
+        "QuestId": 185905,
+        "QuestName": "篝火宴会",
+        "QuestDetail": "",
+        "QuestType": 18,
+        "QuestStep": 185905007,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "5905"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "5905"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar_chapter09/bahamar_chapter09-19",
+        "NpcMarkedByQuest": [
+            [
+                21090101,
+                487,
+                21090103,
+                21090210,
+                1090413,
+                21090208,
+                1091208,
+                1090420,
+                21090205,
+                21090211,
+                21090206
+            ],
+            [
+                21090104,
+                21090202,
+                21090301,
+                21090305,
+                21090311,
+                21090310,
+                21090203,
+                21090201,
+                21090105
             ]
         ],
         "Note": "",
@@ -20480,7 +24108,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010805,
                 23010815,
                 23010816,
@@ -20560,7 +24187,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -20643,7 +24269,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -20730,7 +24355,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -20818,7 +24442,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -20910,7 +24533,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -21057,7 +24679,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010805,
                 23010815,
                 23010816,
@@ -21134,7 +24755,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010805,
                 23010815,
                 23010816,
@@ -21225,7 +24845,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -21325,7 +24944,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -21414,7 +25032,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -21511,7 +25128,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -21615,7 +25231,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -21719,7 +25334,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -21823,7 +25437,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -21931,7 +25544,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -22208,7 +25820,6 @@
                 23010317,
                 23010316,
                 23010802,
-                23010811,
                 23010606,
                 23010805,
                 23010602,
@@ -24792,6 +28403,257 @@
         "Note": "",
         "AwardPreview": []
     },
+    "186201": {
+        "Key": 186201,
+        "QuestId": 186201,
+        "QuestName": "跟菲立兹会合",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186201001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6201"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6201"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-6",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215
+            ],
+            [
+                23340203
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186202": {
+        "Key": 186202,
+        "QuestId": 186202,
+        "QuestName": "观察救济帐篷的动向",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186202002,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6202"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6202"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-9",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215,
+                23340302
+            ],
+            [
+                23340203,
+                23340303
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186203": {
+        "Key": 186203,
+        "QuestId": 186203,
+        "QuestName": "夜色渐浓",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186203001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6203"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6203"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-24",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546,
+                23350801,
+                23350802,
+                23350901,
+                23350902,
+                1009547,
+                1009542,
+                23251502,
+                23251501,
+                23251504,
+                23251503,
+                23251505
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186204": {
+        "Key": 186204,
+        "QuestId": 186204,
+        "QuestName": "击败科克伦",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186204001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6204"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6204"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-13",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215,
+                23340302,
+                23540102,
+                23540101,
+                1091210
+            ],
+            [
+                23340203,
+                23340303
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186205": {
+        "Key": 186205,
+        "QuestId": 186205,
+        "QuestName": "击败幻祸怪物",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186205001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6205"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6205"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini04/bahamar_mini04-14",
+        "NpcMarkedByQuest": [
+            [
+                1090424,
+                1091208,
+                1090420,
+                23340201,
+                1091215,
+                23340302,
+                23540102,
+                23540101,
+                1091210
+            ],
+            [
+                23340203,
+                23340303
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "186401": {
         "Key": 186401,
         "QuestId": 186401,
@@ -26386,6 +30248,536 @@
         "Note": "",
         "AwardPreview": []
     },
+    "186425": {
+        "Key": 186425,
+        "QuestId": 186425,
+        "QuestName": "击败捣乱的迷途娜宝",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186425001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6425"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6425"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-4",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405
+            ],
+            [
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186426": {
+        "Key": 186426,
+        "QuestId": 186426,
+        "QuestName": "在山芥垆打探消息",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186426001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6426"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6426"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_side10/bahamar_side10-4",
+        "NpcMarkedByQuest": [
+            [
+                23062401,
+                21080104,
+                1090614
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186427": {
+        "Key": 186427,
+        "QuestId": 186427,
+        "QuestName": "和采掘区的人聊聊",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186427001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6427"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6427"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_side10/bahamar_side10-7",
+        "NpcMarkedByQuest": [
+            [
+                23062401,
+                21080104,
+                1090614,
+                1091105,
+                1091113,
+                1091117
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186428": {
+        "Key": 186428,
+        "QuestId": 186428,
+        "QuestName": "幻祸怪物来袭",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186428001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6428"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6428"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_side10/bahamar_side10-10",
+        "NpcMarkedByQuest": [
+            [
+                23062401,
+                21080104,
+                1090614,
+                1091105,
+                1091113,
+                1091117
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186429": {
+        "Key": 186429,
+        "QuestId": 186429,
+        "QuestName": "黯影残留",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186429001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6429"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6429"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/sidequest_91yijidongku/sidequest_91yijidongku-6",
+        "NpcMarkedByQuest": [
+            [
+                1090303
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186430": {
+        "Key": 186430,
+        "QuestId": 186430,
+        "QuestName": "突破怪物的包围",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186430001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-23",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601,
+                1091207,
+                23062701,
+                1091245
+            ],
+            [
+                23061803,
+                23063001,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201,
+                23063002,
+                23063004,
+                23063003
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186431": {
+        "Key": 186431,
+        "QuestId": 186431,
+        "QuestName": "狩猎角羊",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186431001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini09/sidequest_mini09-27",
+        "NpcMarkedByQuest": [
+            [
+                23061401,
+                23061402,
+                23061405,
+                23061501,
+                23061601,
+                23061702,
+                23061701,
+                1090631,
+                23061801,
+                23061902,
+                23061904,
+                23061901,
+                23062101,
+                1091229,
+                1091201,
+                1091233,
+                1091203,
+                23062601,
+                1091207,
+                23062701,
+                1091245,
+                1090205,
+                1091210,
+                1091220
+            ],
+            [
+                23061803,
+                23063001,
+                23061403,
+                23061404,
+                23061406,
+                23061407,
+                23061408,
+                23061903,
+                23061905,
+                23062201,
+                23063002,
+                23063004,
+                23063003,
+                23063301
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186432": {
+        "Key": 186432,
+        "QuestId": 186432,
+        "QuestName": "击败卷心菜调查团",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186432003,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6432"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6432"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini10/sidequest_mini10-4",
+        "NpcMarkedByQuest": [
+            [
+                1090625
+            ],
+            [
+                23063504
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186433": {
+        "Key": 186433,
+        "QuestId": 186433,
+        "QuestName": "狩猎角羊",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186433001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6433"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6433"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_side05/bahamar_side05-8",
+        "NpcMarkedByQuest": [
+            [
+                1009555,
+                1009558
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186434": {
+        "Key": 186434,
+        "QuestId": 186434,
+        "QuestName": "筹备角羊皮",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186434001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6434"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6434"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini05/bahamar_mini05-54",
+        "NpcMarkedByQuest": [
+            [
+                1009504,
+                1009502,
+                1009526,
+                1009559,
+                1090606,
+                1009546,
+                23350801,
+                23350802,
+                23350901,
+                23350902,
+                1009547,
+                1009542,
+                23251502,
+                23251501,
+                23251504,
+                23251503,
+                23251505
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186435": {
+        "Key": 186435,
+        "QuestId": 186435,
+        "QuestName": "解救埃舍尔",
+        "QuestDetail": "",
+        "QuestType": 20,
+        "QuestStep": 186435001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6435"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6435"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini10/sidequest_mini10-10",
+        "NpcMarkedByQuest": [
+            [
+                1090625,
+                23063601,
+                1090402,
+                22002102
+            ],
+            [
+                23063504
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "186501": {
         "Key": 186501,
         "QuestId": 186501,
@@ -26965,6 +31357,108 @@
         "Note": "",
         "AwardPreview": []
     },
+    "186901": {
+        "Key": 186901,
+        "QuestId": 186901,
+        "QuestName": "制止斗殴的士兵",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186901001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6901"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6901"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini06/bahamar_mini06-9",
+        "NpcMarkedByQuest": [
+            [
+                1090630,
+                23360201,
+                1090631,
+                23360301,
+                23360302,
+                23360401,
+                23360402,
+                1009552,
+                23360501
+            ],
+            [
+                23360101,
+                23360102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186902": {
+        "Key": 186902,
+        "QuestId": 186902,
+        "QuestName": "击败疾驱大鹫",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186902001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6902"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6902"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini06/bahamar_mini06-12",
+        "NpcMarkedByQuest": [
+            [
+                1090630,
+                23360201,
+                1090631,
+                23360301,
+                23360302,
+                23360401,
+                23360402,
+                1009552,
+                23360501
+            ],
+            [
+                23360101,
+                23360102
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "200001": {
         "Key": 200001,
         "QuestId": 200001,
@@ -27349,8 +31843,8 @@
     "320024": {
         "Key": 320024,
         "QuestId": 320024,
-        "QuestName": "敬请期待！",
-        "QuestDetail": "后续剧情暂未开放......",
+        "QuestName": "",
+        "QuestDetail": "",
         "QuestType": 19,
         "QuestStep": 320024001,
         "AwardId": 0,
@@ -27367,6 +31861,31 @@
         "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/310021/310021-18",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "320025": {
+        "Key": 320025,
+        "QuestId": 320025,
+        "QuestName": "敬请期待！",
+        "QuestDetail": "后续剧情暂未开放......",
+        "QuestType": 19,
+        "QuestStep": 320025001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10904)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/310021/310021-21",
         "NpcMarkedByQuest": [],
         "Note": "",
         "AwardPreview": []
@@ -27959,7 +32478,7 @@
         "Key": 760001,
         "QuestId": 760001,
         "QuestName": "【商队货物寻回】",
-        "QuestDetail": "将货物送回商人处以获得奖励。",
+        "QuestDetail": "将货物送回商人处以获得奖励",
         "QuestType": 30,
         "QuestStep": 760001002,
         "AwardId": 0,
@@ -27989,7 +32508,7 @@
         "Key": 760002,
         "QuestId": 760002,
         "QuestName": "【商队货物寻回】",
-        "QuestDetail": "将货物送回商人处以获得奖励。",
+        "QuestDetail": "将货物送回商人处以获得奖励",
         "QuestType": 30,
         "QuestStep": 760002001,
         "AwardId": 0,
@@ -28019,7 +32538,7 @@
         "Key": 760003,
         "QuestId": 760003,
         "QuestName": "【幻像铭文】",
-        "QuestDetail": "收集4种铭文并与铭文墙壁共鸣以获得奖励。",
+        "QuestDetail": "收集4种铭文并与铭文墙壁共鸣以获得奖励",
         "QuestType": 30,
         "QuestStep": 760003002,
         "AwardId": 0,
@@ -28049,7 +32568,7 @@
         "Key": 760004,
         "QuestId": 760004,
         "QuestName": "【共破浮梦之障】",
-        "QuestDetail": "需要10个冒险者同时聚力方能破除屏障获得奖励。",
+        "QuestDetail": "需要5个冒险者同时聚力方能破除屏障获得奖励",
         "QuestType": 30,
         "QuestStep": 760004001,
         "AwardId": 0,
@@ -28079,7 +32598,7 @@
         "Key": 760005,
         "QuestId": 760005,
         "QuestName": "【共破浮梦之障】",
-        "QuestDetail": "需要20个冒险者同时聚力方能破除屏障获得奖励。",
+        "QuestDetail": "需要10个冒险者同时聚力方能破除屏障获得奖励",
         "QuestType": 30,
         "QuestStep": 760005001,
         "AwardId": 0,
@@ -28110,7 +32629,7 @@
         "Key": 760006,
         "QuestId": 760006,
         "QuestName": "【共破浮梦之障】",
-        "QuestDetail": "需要30个冒险者同时聚力方能破除屏障获得奖励。",
+        "QuestDetail": "需要15个冒险者同时聚力方能破除屏障获得奖励",
         "QuestType": 30,
         "QuestStep": 760006001,
         "AwardId": 0,
@@ -29531,10 +34050,52 @@
         "Note": "",
         "AwardPreview": []
     },
+    "1006040": {
+        "Key": 1006040,
+        "QuestId": 1006040,
+        "QuestName": "无音之都",
+        "QuestDetail": "沉落无音的遗迹",
+        "QuestType": 100,
+        "QuestStep": 1006040001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "12",
+                "6040"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "13",
+                "6040"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/6040/6040-3",
+        "NpcMarkedByQuest": [
+            [
+                604001,
+                604002,
+                604003,
+                604007
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "1007055": {
         "Key": 1007055,
         "QuestId": 1007055,
-        "QuestName": "清剿虚蚀巫师",
+        "QuestName": "清剿哥布林巫师",
         "QuestDetail": "",
         "QuestType": 100,
         "QuestStep": 1007055001,

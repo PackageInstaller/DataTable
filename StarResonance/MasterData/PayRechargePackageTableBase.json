@@ -33,7 +33,8 @@
         "ShowIconRoute": "ui/textures/shop/shop_picture",
         "PackageVideo": "",
         "ShowAvatar": [],
-        "UnrealSceneBg": ""
+        "UnrealSceneBg": "",
+        "GoodsTips": ""
     },
     "1002": {
         "Key": 1002,
@@ -69,7 +70,8 @@
         "ShowIconRoute": "ui/textures/shop/shop_picture_1",
         "PackageVideo": "",
         "ShowAvatar": [],
-        "UnrealSceneBg": ""
+        "UnrealSceneBg": "",
+        "GoodsTips": ""
     },
     "1003": {
         "Key": 1003,
@@ -105,7 +107,8 @@
         "ShowIconRoute": "ui/textures/shop/rechargepackage_picture_gift_huaban",
         "PackageVideo": "",
         "ShowAvatar": [],
-        "UnrealSceneBg": ""
+        "UnrealSceneBg": "",
+        "GoodsTips": ""
     },
     "1004": {
         "Key": 1004,
@@ -114,17 +117,128 @@
             1,
             40004
         ],
-        "Name": "第二期测试包",
+        "Name": "捣蛋鬼的礼物",
         "UnlockConditions": [],
-        "ShowTimerId": 10101,
-        "TimerId": 10101,
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
         "RefreshType": [
             [
                 30,
                 1
             ]
         ],
-        "ShowOriginalPrice": 30,
+        "ShowOriginalPrice": 5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_2",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_8",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_8",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": ""
+    },
+    "1005": {
+        "Key": 1005,
+        "Id": 1005,
+        "ProductId": [
+            1,
+            40005
+        ],
+        "Name": "谜语二重唱·头饰",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_2",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_5",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_5",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": ""
+    },
+    "1006": {
+        "Key": 1006,
+        "Id": 1006,
+        "ProductId": [
+            1,
+            40006
+        ],
+        "Name": "魅影巡游灵·背饰",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_2",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_6",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_6",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": ""
+    },
+    "1007": {
+        "Key": 1007,
+        "Id": 1007,
+        "ProductId": [
+            1,
+            40007
+        ],
+        "Name": "夜的诡计武器外观自选箱（8选1）",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                8
+            ]
+        ],
+        "ShowOriginalPrice": 2.5,
         "Label": [
             [
                 "1"
@@ -134,13 +248,384 @@
             ]
         ],
         "BaseIcon": "ui/textures/shop/shop_gift_bg_1",
-        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_2",
-        "PackageIconBase": "ui/textures/shop/shop_picture",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_7",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
         "ShowType": 0,
-        "ShowEffect": "",
-        "ShowIconRoute": "",
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_7",
         "PackageVideo": "",
         "ShowAvatar": [],
-        "UnrealSceneBg": ""
+        "UnrealSceneBg": "",
+        "GoodsTips": ""
+    },
+    "1008": {
+        "Key": 1008,
+        "Id": 1008,
+        "ProductId": [
+            1,
+            40008
+        ],
+        "Name": "诡计回想套装礼盒",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 2.5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_1",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_3",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_3",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": ""
+    },
+    "1009": {
+        "Key": 1009,
+        "Id": 1009,
+        "ProductId": [
+            1,
+            40009
+        ],
+        "Name": "魅影戏法套装礼盒",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 2.5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_1",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_4",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_4",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": ""
+    },
+    "1010": {
+        "Key": 1010,
+        "Id": 1010,
+        "ProductId": [
+            1,
+            40010
+        ],
+        "Name": "夜的诡计之刀礼盒",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 2.5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_1",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_16",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_16",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": "限雷影剑士职业使用，如果购买了其他职业的武器，需切换至该职业后才能使用。"
+    },
+    "1011": {
+        "Key": 1011,
+        "Id": 1011,
+        "ProductId": [
+            1,
+            40011
+        ],
+        "Name": "夜的诡计之杖礼盒",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 2.5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_1",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_10",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_10",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": "限冰魔导师职业使用，如果购买了其他职业的武器，需切换至该职业后才能使用。"
+    },
+    "1012": {
+        "Key": 1012,
+        "Id": 1012,
+        "ProductId": [
+            1,
+            40012
+        ],
+        "Name": "夜的诡计之枪礼盒",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 2.5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_1",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_13",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_13",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": "限青岚骑士职业使用，如果购买了其他职业的武器，需切换至该职业后才能使用。"
+    },
+    "1013": {
+        "Key": 1013,
+        "Id": 1013,
+        "ProductId": [
+            1,
+            40013
+        ],
+        "Name": "夜的诡计之环礼盒",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 2.5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_1",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_11",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_11",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": "限森语者职业使用，如果购买了其他职业的武器，需切换至该职业后才能使用。"
+    },
+    "1014": {
+        "Key": 1014,
+        "Id": 1014,
+        "ProductId": [
+            1,
+            40014
+        ],
+        "Name": "夜的诡计之刃礼盒",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 2.5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_1",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_9",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_9",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": "限巨刃守护者职业使用，如果购买了其他职业的武器，需切换至该职业后才能使用。"
+    },
+    "1015": {
+        "Key": 1015,
+        "Id": 1015,
+        "ProductId": [
+            1,
+            40015
+        ],
+        "Name": "夜的诡计之弓礼盒",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 2.5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_1",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_12",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_12",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": "限神射手职业使用，如果购买了其他职业的武器，需切换至该职业后才能使用。"
+    },
+    "1016": {
+        "Key": 1016,
+        "Id": 1016,
+        "ProductId": [
+            1,
+            40016
+        ],
+        "Name": "夜的诡计之盾礼盒",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 2.5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_1",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_14",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_14",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": "限神盾骑士职业使用，如果购买了其他职业的武器，需切换至该职业后才能使用。"
+    },
+    "1017": {
+        "Key": 1017,
+        "Id": 1017,
+        "ProductId": [
+            1,
+            40017
+        ],
+        "Name": "夜的诡计之吉他礼盒",
+        "UnlockConditions": [],
+        "ShowTimerId": 40058,
+        "TimerId": 40058,
+        "RefreshType": [
+            [
+                30,
+                1
+            ]
+        ],
+        "ShowOriginalPrice": 2.5,
+        "Label": [
+            [
+                "1"
+            ],
+            [
+                "3"
+            ]
+        ],
+        "BaseIcon": "ui/textures/shop/shop_gift_bg_1",
+        "PackageIcon": "ui/textures/shop/rechargepackage_icon_gift_15",
+        "PackageIconBase": "ui/textures/shop/rechargepackage_bg_skin_halloween",
+        "ShowType": 0,
+        "ShowEffect": "ui/uieffect/prefab/ui_sfx_shop_01/ui_sfx_shop_gift_new_sub_hit",
+        "ShowIconRoute": "ui/textures/shop/shop_picture_15",
+        "PackageVideo": "",
+        "ShowAvatar": [],
+        "UnrealSceneBg": "",
+        "GoodsTips": "限灵魂乐手职业使用，如果购买了其他职业的武器，需切换至该职业后才能使用。"
     }
 }

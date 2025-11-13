@@ -338,5 +338,97 @@
             9047
         ],
         "QuickReasoning": true
+    },
+    "70011": {
+        "Key": 70011,
+        "Id": 70011,
+        "Clue": [
+            700111,
+            700112,
+            700113
+        ],
+        "InferenceStep": [
+            700111,
+            700112
+        ],
+        "Conclusion": "虽说洛塔尔制作了星魂瓶，但他事务繁忙，今天甚至不在神悬御柱；吉塞拉神官也不会同意给出五百之多的星魂瓶。不过如果找博伊斯好好说说难处，他或许会通融。只要到神悬御柱前的大道上，就能找到博伊斯。",
+        "ConclusionTips": "到神悬御柱前的大道上咨询星魂瓶的事。",
+        "ConclusionBubble": "找博伊斯问问吧！",
+        "ConclusionAction": 9033,
+        "IockedBubble": [
+            "不行，现在还没办法得出结论。"
+        ],
+        "IockedBubbleAction": [
+            9019
+        ],
+        "ReviewBubble": [
+            "绝对是这样没错。"
+        ],
+        "ReviewBubbleAction": [
+            9047
+        ],
+        "QuickReasoning": true
+    },
+    "80011": {
+        "Key": 80011,
+        "Id": 80011,
+        "Clue": [
+            800111,
+            800112,
+            800113
+        ],
+        "InferenceStep": [
+            800111,
+            800112,
+            800113
+        ],
+        "Conclusion": "军团哗变一定发生在空白时段。<br>那之后，人手似乎不再充裕，执勤时间变长不说，执勤区域也缩小了。<br>哗变之后不知所踪的士兵，很可能是克劳斯的人。",
+        "ConclusionTips": "跟艾露娜分析这张换防时间表",
+        "ConclusionBubble": "找出从名单上消失的人吧。",
+        "ConclusionAction": 9033,
+        "IockedBubble": [
+            "一定还有其他线索。"
+        ],
+        "IockedBubbleAction": [
+            9019
+        ],
+        "ReviewBubble": [
+            "教科书般的推理。"
+        ],
+        "ReviewBubbleAction": [
+            9047
+        ],
+        "QuickReasoning": true
+    },
+    "90011": {
+        "Key": 90011,
+        "Id": 90011,
+        "Clue": [
+            900111,
+            900112,
+            900113
+        ],
+        "InferenceStep": [
+            900111,
+            900112,
+            900113
+        ],
+        "Conclusion": "看来这个内卫勒已经勾结了黑石军团，打算干掉麦蕾、接管商队，从事绯红矿髓的走私勾当。而这一切的背后，很可能是黑衣人在煽风点火。恐怕就算内卫勒能如愿获得财富，也会支付看不见的代价吧。",
+        "ConclusionTips": "和艾露娜讨论。",
+        "ConclusionBubble": "将推论告诉艾露娜吧。",
+        "ConclusionAction": 9033,
+        "IockedBubble": [
+            "不行，现在还没办法得出结论。"
+        ],
+        "IockedBubbleAction": [
+            9019
+        ],
+        "ReviewBubble": [
+            "成功看穿一切。"
+        ],
+        "ReviewBubbleAction": [
+            9047
+        ],
+        "QuickReasoning": true
     }
 }

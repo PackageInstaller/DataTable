@@ -129,6 +129,16 @@
         "Id": 2033160,
         "Description": "效果：暗元素抗性<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style><br>（持续<style=\"accent-gn\">10</style>分钟，重复使用可叠加时间，上限<style=\"accent-gn\">720</style>分钟）"
     },
+    "2033170": {
+        "Key": 2033170,
+        "Id": 2033170,
+        "Description": "效果：物理增效强度<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style><br>（持续<style=\"accent-gn\">10</style>分钟，重复使用可叠加时间，上限<style=\"accent-gn\">720</style>分钟）"
+    },
+    "2033180": {
+        "Key": 2033180,
+        "Id": 2033180,
+        "Description": "效果：魔法增效强度<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style><br>（持续<style=\"accent-gn\">10</style>分钟，重复使用可叠加时间，上限<style=\"accent-gn\">720</style>分钟）"
+    },
     "2200010": {
         "Key": 2200010,
         "Id": 2200010,
@@ -237,7 +247,7 @@
     "2200220": {
         "Key": 2200220,
         "Id": 2200220,
-        "Description": "自身每造成<style=\"accent-gn\">10</style>次伤害，触发<style=\"accent-gn\">雷之力</style>。<br><style=\"accent-gn\">雷之力</style>：雷元素攻击+<style=\"accent-gn\">10</style>，持续<style=\"accent-gn\">10</style>秒，最多叠加<style=\"accent-gn\">10</style>层。"
+        "Description": "自身每造成<style=\"accent-gn\">10</style>次伤害，触发<style=\"accent-gn\">雷之力</style>。<br><style=\"accent-gn\">雷之力</style>：雷元素攻击+<style=\"accent-gn\">15</style>，持续<style=\"accent-gn\">10</style>秒，最多叠加<style=\"accent-gn\">10</style>层。"
     },
     "2200230": {
         "Key": 2200230,
@@ -822,7 +832,7 @@
     "2201720": {
         "Key": 2201720,
         "Id": 2201720,
-        "Description": "精通+<style=\"accent-gn\">600</style>。<br><linktext=1543><style=\"ItemQuality_5\">勇者壁垒</style></linktext>持续期间精通+<style=\"accent-gn\">8%</style>。"
+        "Description": "精通+<style=\"accent-gn\">1200</style>。<br><linktext=1543><style=\"ItemQuality_5\">勇者壁垒</style></linktext>持续期间精通+<style=\"accent-gn\">8%</style>。"
     },
     "2201730": {
         "Key": 2201730,
@@ -962,7 +972,7 @@
     "2202310": {
         "Key": 2202310,
         "Id": 2202310,
-        "Description": "<linktext=1107><style=\"ItemQuality_5\">鼓舞</style></linktext>额外给目标提供<style=\"accent-gn\">200</style>点物理防御。"
+        "Description": "<linktext=1107><style=\"ItemQuality_5\">鼓舞</style></linktext>额外给目标提供<style=\"accent-gn\">380</style>点物理防御。"
     },
     "2202320": {
         "Key": 2202320,
@@ -1162,7 +1172,7 @@
     "2202720": {
         "Key": 2202720,
         "Id": 2202720,
-        "Description": "<linktext=1107><style=\"ItemQuality_5\">鼓舞</style></linktext>效果额外提供<style=\"accent-gn\">50</style>点<style=\"accent-gn\">智力</style>、<style=\"accent-gn\">力量</style>、<style=\"accent-gn\">敏捷</style>、<style=\"accent-gn\">耐力</style>。"
+        "Description": "<linktext=1107><style=\"ItemQuality_5\">鼓舞</style></linktext>效果额外提供<style=\"accent-gn\">100</style>点<style=\"accent-gn\">智力</style>、<style=\"accent-gn\">力量</style>、<style=\"accent-gn\">敏捷</style>、<style=\"accent-gn\">耐力</style>。"
     },
     "2202730": {
         "Key": 2202730,
@@ -1587,7 +1597,7 @@
     "2204150": {
         "Key": 2204150,
         "Id": 2204150,
-        "Description": "<linktext=1512><style=\"ItemQuality_5\">冰霜之矛</style></linktext>同时触发暴击和幸运一击时，使得<linktext=1511><style=\"ItemQuality_5\">陨星风暴</style></linktext>立即冷却。"
+        "Description": "<linktext=1512><style=\"ItemQuality_5\">冰霜之矛</style></linktext>同时触发暴击和幸运一击时，使得<linktext=1511><style=\"ItemQuality_5\">陨星风暴</style></linktext>立即冷却，如果<linktext=1511><style=\"ItemQuality_5\">陨星风暴</style></linktext>已经冷却则自动发出<linktext=1511><style=\"ItemQuality_5\">陨星风暴</style></linktext>（但是该次<linktext=1511><style=\"ItemQuality_5\">陨星风暴</style></linktext>伤害减半）。"
     },
     "2204160": {
         "Key": 2204160,
@@ -1737,7 +1747,7 @@
     "2204450": {
         "Key": 2204450,
         "Id": 2204450,
-        "Description": "<linktext=1161><style=\"ItemQuality_5\">玄冰</style></linktext>上限+<style=\"accent-gn\">1</style>。<br><linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>持续期间，冰元素攻击+<style=\"accent-gn\">100</style>。<br><linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>结束后，你的<linktext=1161><style=\"ItemQuality_5\">玄冰</style></linktext>数量将重置为<linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>开启前。"
+        "Description": "<linktext=1161><style=\"ItemQuality_5\">玄冰</style></linktext>上限+<style=\"accent-gn\">1</style>。<br><linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>持续期间，冰元素攻击+<style=\"accent-gn\">150</style>。<br><linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>结束后，你的<linktext=1161><style=\"ItemQuality_5\">玄冰</style></linktext>数量将重置为<linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>开启前。"
     },
     "2204460": {
         "Key": 2204460,
@@ -1752,7 +1762,7 @@
     "2204480": {
         "Key": 2204480,
         "Id": 2204480,
-        "Description": "每<style=\"accent-gn\">100</style>点<style=\"accent-gn\">智力</style>提供<style=\"accent-gn\">0.5%</style>暴击伤害。"
+        "Description": "每<style=\"accent-gn\">150</style>点<style=\"accent-gn\">智力</style>提供<style=\"accent-gn\">0.5%</style>暴击伤害。"
     },
     "2204490": {
         "Key": 2204490,
@@ -1762,7 +1772,7 @@
     "2204500": {
         "Key": 2204500,
         "Id": 2204500,
-        "Description": "每消耗<style=\"accent-gn\">1</style>枚<linktext=1161><style=\"ItemQuality_5\">玄冰</style></linktext><style=\"accent-gn\">智力</style>+<style=\"accent-gn\">25</style>，持续<style=\"accent-gn\">10</style>秒，最多叠加<style=\"accent-gn\">5</style>层。"
+        "Description": "每消耗<style=\"accent-gn\">1</style>枚<linktext=1161><style=\"ItemQuality_5\">玄冰</style></linktext><style=\"accent-gn\">智力</style>+<style=\"accent-gn\">40</style>，持续<style=\"accent-gn\">10</style>秒，最多叠加<style=\"accent-gn\">5</style>层。"
     },
     "2204510": {
         "Key": 2204510,
@@ -1802,7 +1812,7 @@
     "2204580": {
         "Key": 2204580,
         "Id": 2204580,
-        "Description": "<linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>持续期间，<linktext=1509><style=\"ItemQuality_5\">寒冰射线</style></linktext>引发<style=\"accent-gn\">冰晶核心</style>触发的<style=\"accent-gn\">冰箭</style>数量+<style=\"accent-gn\">2</style>。<br>但<linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>持续期间，幸运一击最终伤害-<style=\"accent-gn\">50%</style>。。"
+        "Description": "<linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>持续期间，<linktext=1509><style=\"ItemQuality_5\">寒冰射线</style></linktext>引发<style=\"accent-gn\">冰晶核心</style>触发的<style=\"accent-gn\">冰箭</style>数量+<style=\"accent-gn\">2</style>。<br>但<linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>持续期间，幸运一击最终伤害-<style=\"accent-gn\">50%</style>。"
     },
     "2204590": {
         "Key": 2204590,
@@ -1832,7 +1842,7 @@
     "2204640": {
         "Key": 2204640,
         "Id": 2204640,
-        "Description": "急速+<style=\"accent-gn\">500</style>。<br><linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>期间，施法速度+<style=\"accent-gn\">15%</style>。"
+        "Description": "急速+<style=\"accent-gn\">1000</style>。<br><linktext=1515><style=\"ItemQuality_5\">冰之灌注</style></linktext>期间，施法速度+<style=\"accent-gn\">15%</style>。"
     },
     "2204650": {
         "Key": 2204650,
@@ -1962,7 +1972,7 @@
     "2205220": {
         "Key": 2205220,
         "Id": 2205220,
-        "Description": "随着战斗时间的拉长，获得不断增长的攻击力。每<style=\"accent-gn\">15</style>秒攻击力+<style=\"accent-gn\">2%</style>，最高提升<style=\"accent-gn\">8%</style>，战斗结束后清除。"
+        "Description": "随着战斗时间的拉长，获得不断增长的攻击力。每<style=\"accent-gn\">10</style>秒攻击力+<style=\"accent-gn\">2.5%</style>，最高提升<style=\"accent-gn\">10%</style>，战斗结束后清除。"
     },
     "2205230": {
         "Key": 2205230,
@@ -1972,7 +1982,7 @@
     "2205240": {
         "Key": 2205240,
         "Id": 2205240,
-        "Description": "战斗中，每参与（队伍内生效）击败<style=\"accent-gn\">1</style>个敌方目标，攻击力+<style=\"accent-gn\">30</style>，持续<style=\"accent-gn\">30</style>秒，最高上限<style=\"accent-gn\">300</style>。"
+        "Description": "战斗中，每参与（队伍内生效）击败<style=\"accent-gn\">1</style>个敌方目标，攻击力+<style=\"accent-gn\">50</style>，持续<style=\"accent-gn\">30</style>秒，最高上限<style=\"accent-gn\">500</style>。"
     },
     "2205250": {
         "Key": 2205250,
@@ -3544,6 +3554,1021 @@
         "Id": 3001290,
         "Description": "<style=\"ItemQuality_2\">[辅助]</style>免疫虚蚀污染的伤害，并且当你处于其中时会将能量转化为给自身和队友的虚蚀强化，提升<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>对虚蚀目标的伤害、降低<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>受到虚蚀目标的伤害。（同时仅可生效1个）"
     },
+    "3002010": {
+        "Key": 3002010,
+        "Id": 3002010,
+        "Description": "对主目标每触发<style=\"accent-gn\">30</style>次幸运一击，触发<linktext=1200><style=\"ItemQuality_5\">幻想冲击</style></linktext>，该效果每<style=\"accent-gn\">10</style>秒最多生效一次。"
+    },
+    "3002020": {
+        "Key": 3002020,
+        "Id": 3002020,
+        "Description": "周围<style=\"accent-gn\">10</style>米每有<style=\"accent-gn\">1</style>名队友，幸运几率+<style=\"accent-gn\">1%</style>，最多不超过<style=\"accent-gn\">3%</style>。"
+    },
+    "3002030": {
+        "Key": 3002030,
+        "Id": 3002030,
+        "Description": "幸运一击倍率+<style=\"accent-gn\">10%</style>。"
+    },
+    "3002040": {
+        "Key": 3002040,
+        "Id": 3002040,
+        "Description": "<linktext=1200><style=\"ItemQuality_5\">幻想冲击</style></linktext>内置冷却时间+<style=\"accent-gn\">5</style>秒，<linktext=1200><style=\"ItemQuality_5\">幻想冲击</style></linktext>梦境伤害+<style=\"accent-gn\">35%</style>。"
+    },
+    "3002050": {
+        "Key": 3002050,
+        "Id": 3002050,
+        "Description": "<linktext=1200><style=\"ItemQuality_5\">幻想冲击</style></linktext>需要的触发次数+<style=\"accent-gn\">15</style>，<linktext=1200><style=\"ItemQuality_5\">幻想冲击</style></linktext>梦境伤害+<style=\"accent-gn\">35%</style>。"
+    },
+    "3002060": {
+        "Key": 3002060,
+        "Id": 3002060,
+        "Description": "<linktext=1200><style=\"ItemQuality_5\">幻想冲击</style></linktext>每多命中<style=\"accent-gn\">1</style>个敌方目标梦境伤害+<style=\"accent-gn\">15%</style>，最多不超过<style=\"accent-gn\">60%</style>。"
+    },
+    "3002070": {
+        "Key": 3002070,
+        "Id": 3002070,
+        "Description": "<linktext=1200><style=\"ItemQuality_5\">幻想冲击</style></linktext>有<style=\"accent-gn\">50%</style>固定几率额外触发一次。"
+    },
+    "3002080": {
+        "Key": 3002080,
+        "Id": 3002080,
+        "Description": "料理、药剂的持续时间+<style=\"accent-gn\">30%</style>。"
+    },
+    "3002090": {
+        "Key": 3002090,
+        "Id": 3002090,
+        "Description": "移动速度+<style=\"accent-gn\">10%</style>，战斗状态每秒回复<style=\"accent-gn\">35</style>点体力值。"
+    },
+    "3002100": {
+        "Key": 3002100,
+        "Id": 3002100,
+        "Description": "每触发<style=\"accent-gn\">10</style>次幸运一击，主属性+<style=\"accent-gn\">12%</style>，持续<style=\"accent-gn\">15</style>秒，该效果每<style=\"accent-gn\">30</style>秒最多生效一次。"
+    },
+    "3002210": {
+        "Key": 3002210,
+        "Id": 3002210,
+        "Description": "在<style=\"accent-gn\">15</style>秒内每施放<style=\"accent-gn\">10</style>次非<style=\"accent-gn\">普通攻击</style>的职业技能，下次职业技能造成伤害触发<linktext=1201><style=\"ItemQuality_5\">幻梦处决</style></linktext>，该效果每<style=\"accent-gn\">15</style>秒最多生效一次。"
+    },
+    "3002220": {
+        "Key": 3002220,
+        "Id": 3002220,
+        "Description": "<linktext=1201><style=\"ItemQuality_5\">幻梦处决</style></linktext>以任何方式获取的暴击几率提升<style=\"accent-gn\">6%</style>。"
+    },
+    "3002230": {
+        "Key": 3002230,
+        "Id": 3002230,
+        "Description": "职业技能每暴击<style=\"accent-gn\">1</style>次，<linktext=1201><style=\"ItemQuality_5\">幻梦处决</style></linktext>梦境伤害+<style=\"accent-gn\">6%</style>，持续<style=\"accent-gn\">8</style>秒，最多叠加<style=\"accent-gn\">5</style>层。"
+    },
+    "3002240": {
+        "Key": 3002240,
+        "Id": 3002240,
+        "Description": "<linktext=1201><style=\"ItemQuality_5\">幻梦处决</style></linktext>内置冷却时间-<style=\"accent-gn\">5</style>秒。"
+    },
+    "3002250": {
+        "Key": 3002250,
+        "Id": 3002250,
+        "Description": "击败敌方目标<linktext=1201><style=\"ItemQuality_5\">幻梦处决</style></linktext>内置冷却时间立即刷新。"
+    },
+    "3002260": {
+        "Key": 3002260,
+        "Id": 3002260,
+        "Description": "<linktext=1201><style=\"ItemQuality_5\">幻梦处决</style></linktext>依次跳跃到周围<style=\"accent-gn\">2</style>个目标上，每次跳跃梦境伤害降低<style=\"accent-gn\">35%</style>。"
+    },
+    "3002270": {
+        "Key": 3002270,
+        "Id": 3002270,
+        "Description": "<linktext=1201><style=\"ItemQuality_5\">幻梦处决</style></linktext>额外爆发一次，但是该次爆发梦境伤害-<style=\"accent-gn\">50%</style>。"
+    },
+    "3002280": {
+        "Key": 3002280,
+        "Id": 3002280,
+        "Description": "非<style=\"accent-gn\">普通攻击</style>的直接伤害型职业技能造成暴击伤害时，<linktext=1201><style=\"ItemQuality_5\">幻梦处决</style></linktext>的触发计数+<style=\"accent-gn\">1</style>，同时内置冷却时间-<style=\"accent-gn\">0</style>.<style=\"accent-gn\">5</style>秒。"
+    },
+    "3002410": {
+        "Key": 3002410,
+        "Id": 3002410,
+        "Description": "施放伤害型<style=\"accent-gn\">专精技能</style>，召唤<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>，该效果每<style=\"accent-gn\">10</style>秒最多生效一次。战斗状态下，每召唤一次<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>使得下一次召唤的<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>数量+<style=\"accent-gn\">1</style>（最多不超过<style=\"accent-gn\">8</style>支）。每使用<style=\"accent-gn\">1</style>次<style=\"accent-gn\">特殊攻击</style>缩减<style=\"accent-gn\">0</style>.<style=\"accent-gn\">6</style>秒<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>内置冷却时间，<style=\"accent-gn\">30</style>秒内没有触发<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>，叠加数量重置，每<style=\"accent-gn\">1%</style>精通使其伤害+<style=\"accent-gn\">0.5%</style>。"
+    },
+    "3002420": {
+        "Key": 3002420,
+        "Id": 3002420,
+        "Description": "施放<style=\"accent-gn\">特殊攻击</style>缩减<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>内置冷却时间时，有<style=\"accent-gn\">30%</style>固定几率缩减时间翻倍。"
+    },
+    "3002430": {
+        "Key": 3002430,
+        "Id": 3002430,
+        "Description": "<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>梦境伤害+<style=\"accent-gn\">50%</style>，但是<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>无法再造成暴击伤害。"
+    },
+    "3002440": {
+        "Key": 3002440,
+        "Id": 3002440,
+        "Description": "<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>内置冷却时间+<style=\"accent-gn\">5</style>秒，<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>梦境伤害+<style=\"accent-gn\">30%</style>。"
+    },
+    "3002450": {
+        "Key": 3002450,
+        "Id": 3002450,
+        "Description": "<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>最多叠加数量+<style=\"accent-gn\">2</style>。"
+    },
+    "3002460": {
+        "Key": 3002460,
+        "Id": 3002460,
+        "Description": "精炼攻击、精炼防御+<style=\"accent-gn\">10%</style>。"
+    },
+    "3002470": {
+        "Key": 3002470,
+        "Id": 3002470,
+        "Description": "<linktext=1202><style=\"ItemQuality_5\">梦幻之箭</style></linktext>造成伤害时忽视防御（包括物理防御和魔法防御）。"
+    },
+    "3002480": {
+        "Key": 3002480,
+        "Id": 3002480,
+        "Description": "<style=\"accent-gn\">专精技能</style>冷却加速+<style=\"accent-gn\">12%</style>。"
+    },
+    "3002610": {
+        "Key": 3002610,
+        "Id": 3002610,
+        "Description": "<style=\"accent-gn\">普通攻击</style>、<style=\"accent-gn\">特殊攻击</style>对主目标每造成<style=\"accent-gn\">15</style>次伤害（近战技能计数额外+<style=\"accent-gn\">1</style>），触发持续<style=\"accent-gn\">8</style>秒的<linktext=1203><style=\"ItemQuality_5\">迷幻梦境</style></linktext>，最多叠加<style=\"accent-gn\">10</style>层。"
+    },
+    "3002620": {
+        "Key": 3002620,
+        "Id": 3002620,
+        "Description": "<linktext=1203><style=\"ItemQuality_5\">迷幻梦境</style></linktext>最多叠加层数+<style=\"accent-gn\">3</style>。"
+    },
+    "3002630": {
+        "Key": 3002630,
+        "Id": 3002630,
+        "Description": "进入战斗状态时，直接获得满层<linktext=1203><style=\"ItemQuality_5\">迷幻梦境</style></linktext>效果，但是最多叠加层数-<style=\"accent-gn\">2</style>。"
+    },
+    "3002640": {
+        "Key": 3002640,
+        "Id": 3002640,
+        "Description": "每层<linktext=1203><style=\"ItemQuality_5\">迷幻梦境</style></linktext>提供<style=\"accent-gn\">0.75%</style>忽视防御（包括物理防御和魔法防御）。"
+    },
+    "3002650": {
+        "Key": 3002650,
+        "Id": 3002650,
+        "Description": "每层<linktext=1203><style=\"ItemQuality_5\">迷幻梦境</style></linktext>提供<style=\"accent-gn\">0.5%</style>攻击速度。"
+    },
+    "3002660": {
+        "Key": 3002660,
+        "Id": 3002660,
+        "Description": "对当前生命值低于等于<style=\"accent-gn\">30%</style>的目标梦境伤害+<style=\"accent-gn\">30%</style>。"
+    },
+    "3002670": {
+        "Key": 3002670,
+        "Id": 3002670,
+        "Description": "<linktext=1203><style=\"ItemQuality_5\">迷幻梦境</style></linktext>达到最大层数时获得<style=\"accent-gn\">1%</style>伤害吸血和<linktext=1102><style=\"ItemQuality_5\">霸体</style></linktext>效果。"
+    },
+    "3002680": {
+        "Key": 3002680,
+        "Id": 3002680,
+        "Description": "<linktext=1203><style=\"ItemQuality_5\">迷幻梦境</style></linktext>达到最大层数时，暴击、急速、幸运、精通这<style=\"accent-gn\">4</style>项属性中值最高的一项其最终百分比值+<style=\"accent-gn\">5%</style>。"
+    },
+    "3002810": {
+        "Key": 3002810,
+        "Id": 3002810,
+        "Description": "战斗状态下每<style=\"accent-gn\">2</style>秒获得遗梦，<style=\"accent-gn\">5</style>层遗梦后立即激活持续<style=\"accent-gn\">10</style>秒的<linktext=1204><style=\"ItemQuality_5\">梦幻之力</style></linktext>。<linktext=1204><style=\"ItemQuality_5\">梦幻之力</style></linktext>期间无法获得遗梦效果。"
+    },
+    "3002820": {
+        "Key": 3002820,
+        "Id": 3002820,
+        "Description": "击败目标，遗梦+<style=\"accent-gn\">2</style>。"
+    },
+    "3002830": {
+        "Key": 3002830,
+        "Id": 3002830,
+        "Description": "站立不动时，遗梦间隔时间缩短<style=\"accent-gn\">1</style>秒。"
+    },
+    "3002840": {
+        "Key": 3002840,
+        "Id": 3002840,
+        "Description": "<linktext=1204><style=\"ItemQuality_5\">梦幻之力</style></linktext>生效期间，获得<linktext=1102><style=\"ItemQuality_5\">霸体</style></linktext>效果。"
+    },
+    "3002850": {
+        "Key": 3002850,
+        "Id": 3002850,
+        "Description": "<linktext=1204><style=\"ItemQuality_5\">梦幻之力</style></linktext>生效期间，生命上限+<style=\"accent-gn\">15%</style>。"
+    },
+    "3002860": {
+        "Key": 3002860,
+        "Id": 3002860,
+        "Description": "<linktext=1204><style=\"ItemQuality_5\">梦幻之力</style></linktext>持续时间+<style=\"accent-gn\">5</style>秒。"
+    },
+    "3002870": {
+        "Key": 3002870,
+        "Id": 3002870,
+        "Description": "<linktext=1204><style=\"ItemQuality_5\">梦幻之力</style></linktext>生效期间，暴击、急速、幸运、精通这<style=\"accent-gn\">4</style>项属性中值最高的一项其最终百分比值+<style=\"accent-gn\">3%</style>。"
+    },
+    "3003010": {
+        "Key": 3003010,
+        "Id": 3003010,
+        "Description": "施加<style=\"accent-gn\">寂灭之梦</style>，对自身周围<style=\"accent-gn\">5</style>米内敌方目标施加<linktext=1205><style=\"ItemQuality_5\">寂灭</style></linktext>。"
+    },
+    "3003020": {
+        "Key": 3003020,
+        "Id": 3003020,
+        "Description": "自身当前生命值低于<style=\"accent-gn\">50%</style>时，触发<linktext=1206><style=\"ItemQuality_5\">寂灭打击</style></linktext>，该效果每<style=\"accent-gn\">15</style>秒最多生效一次。"
+    },
+    "3003030": {
+        "Key": 3003030,
+        "Id": 3003030,
+        "Description": "自身受到致命伤害时，触发持续<style=\"accent-gn\">5</style>秒的<linktext=1207><style=\"ItemQuality_5\">濒死</style></linktext>效果，该效果每<style=\"accent-gn\">45</style>秒最多生效一次。"
+    },
+    "3003040": {
+        "Key": 3003040,
+        "Id": 3003040,
+        "Description": "<style=\"accent-gn\">寂灭之梦</style>范围扩大到<style=\"accent-gn\">10</style>米。"
+    },
+    "3003050": {
+        "Key": 3003050,
+        "Id": 3003050,
+        "Description": "进入战斗状态时<style=\"accent-gn\">寂灭之梦</style>爆发，为范围内友方提供持续<style=\"accent-gn\">8</style>秒的主属性+<style=\"accent-gn\">2%</style>效果。接下来每隔<style=\"accent-gn\">15</style>秒爆发一次。"
+    },
+    "3003060": {
+        "Key": 3003060,
+        "Id": 3003060,
+        "Description": "自身对处于<style=\"accent-gn\">寂灭之梦</style>内的敌方目标、友方目标获得<style=\"accent-gn\">6%</style>全元素加成。"
+    },
+    "3003070": {
+        "Key": 3003070,
+        "Id": 3003070,
+        "Description": "<style=\"accent-gn\">寂灭之梦</style>为范围内友方提供<style=\"accent-gn\">5%</style>梦境减伤；当范围内有<style=\"accent-gn\">3</style>个及以上敌方目标时梦境减伤额外+<style=\"accent-gn\">3%</style>。"
+    },
+    "3003080": {
+        "Key": 3003080,
+        "Id": 3003080,
+        "Description": "自身攻击受到<style=\"accent-gn\">寂灭之梦</style>影响的目标梦境伤害+<style=\"accent-gn\">10%</style>。"
+    },
+    "3003210": {
+        "Key": 3003210,
+        "Id": 3003210,
+        "Description": "每间隔<style=\"accent-gn\">5</style>秒你的下一次伤害将触发<linktext=1208><style=\"ItemQuality_5\">虚妄裁定</style></linktext>，每<style=\"accent-gn\">1%</style>精通使其获得<style=\"accent-gn\">0.65%</style>元素加成。"
+    },
+    "3003220": {
+        "Key": 3003220,
+        "Id": 3003220,
+        "Description": "受到攻击时有<style=\"accent-gn\">30%</style>固定几率触发<linktext=1208><style=\"ItemQuality_5\">虚妄裁定</style></linktext>，该效果每<style=\"accent-gn\">3</style>秒最多生效一次。"
+    },
+    "3003230": {
+        "Key": 3003230,
+        "Id": 3003230,
+        "Description": "<linktext=1208><style=\"ItemQuality_5\">虚妄裁定</style></linktext>必定暴击。"
+    },
+    "3003240": {
+        "Key": 3003240,
+        "Id": 3003240,
+        "Description": "<linktext=1208><style=\"ItemQuality_5\">虚妄裁定</style></linktext>每多命中<style=\"accent-gn\">1</style>个敌方目标梦境伤害+<style=\"accent-gn\">20%</style>，最多不超过<style=\"accent-gn\">80%</style>。"
+    },
+    "3003250": {
+        "Key": 3003250,
+        "Id": 3003250,
+        "Description": "每<style=\"accent-gn\">3</style>秒回复<style=\"accent-gn\">2%</style>最大生命值，站立不动时回复量翻倍。"
+    },
+    "3003260": {
+        "Key": 3003260,
+        "Id": 3003260,
+        "Description": "<linktext=1208><style=\"ItemQuality_5\">虚妄裁定</style></linktext>造成伤害时回复<style=\"accent-gn\">2%</style>最大生命值（命中多个目标时只触发一次）。"
+    },
+    "3003270": {
+        "Key": 3003270,
+        "Id": 3003270,
+        "Description": "受到攻击缩减<style=\"accent-gn\">0</style>.<style=\"accent-gn\">5</style>秒<linktext=1208><style=\"ItemQuality_5\">虚妄裁定</style></linktext>间隔时间，该效果每<style=\"accent-gn\">1</style>秒最多生效一次。"
+    },
+    "3003280": {
+        "Key": 3003280,
+        "Id": 3003280,
+        "Description": "物理防御+<style=\"accent-gn\">15%</style>。"
+    },
+    "3003290": {
+        "Key": 3003290,
+        "Id": 3003290,
+        "Description": "当前生命值大于等于<style=\"accent-gn\">80%</style>时，每触发或施放一次<linktext=1208><style=\"ItemQuality_5\">虚妄裁定</style></linktext>接下来<style=\"accent-gn\">10</style>秒内主属性+<style=\"accent-gn\">3%</style>，最多叠加<style=\"accent-gn\">5</style>层。当前生命值低于<style=\"accent-gn\">40%</style>时失去该效果。"
+    },
+    "3003410": {
+        "Key": 3003410,
+        "Id": 3003410,
+        "Description": "造成伤害或施加治疗时获得持续<style=\"accent-gn\">10</style>秒的<linktext=1209><style=\"ItemQuality_5\">无尽思维</style></linktext>（激活该效果后自身不再享受队友施加的<linktext=1209><style=\"ItemQuality_5\">无尽思维</style></linktext>加成）。"
+    },
+    "3003420": {
+        "Key": 3003420,
+        "Id": 3003420,
+        "Description": "每层<linktext=1209><style=\"ItemQuality_5\">无尽思维</style></linktext>提供<style=\"accent-gn\">1%</style>主属性。"
+    },
+    "3003430": {
+        "Key": 3003430,
+        "Id": 3003430,
+        "Description": "受到<linktext=1209><style=\"ItemQuality_5\">无尽思维</style></linktext>影响的目标受到攻击时获得<style=\"accent-gn\">10%</style>生命上限护盾，该效果每<style=\"accent-gn\">30</style>秒最多生效一次。"
+    },
+    "3003440": {
+        "Key": 3003440,
+        "Id": 3003440,
+        "Description": "每层<linktext=1209><style=\"ItemQuality_5\">无尽思维</style></linktext>使你自身的<style=\"accent-gn\">专精技能</style>冷却加速+<style=\"accent-gn\">2.5%</style>。"
+    },
+    "3003450": {
+        "Key": 3003450,
+        "Id": 3003450,
+        "Description": "自身<style=\"accent-gn\">终极技能</style>冷却加速+<style=\"accent-gn\">15%</style>。"
+    },
+    "3003460": {
+        "Key": 3003460,
+        "Id": 3003460,
+        "Description": "<linktext=1209><style=\"ItemQuality_5\">无尽思维</style></linktext>最多叠加层数+<style=\"accent-gn\">1</style>。站立不动时，<linktext=1209><style=\"ItemQuality_5\">无尽思维</style></linktext>持续时间不会减少。"
+    },
+    "3003470": {
+        "Key": 3003470,
+        "Id": 3003470,
+        "Description": "<linktext=1209><style=\"ItemQuality_5\">无尽思维</style></linktext>现在作用于最多<style=\"accent-gn\">5</style>名队友，但是最多叠加层数-<style=\"accent-gn\">1</style>。"
+    },
+    "3003480": {
+        "Key": 3003480,
+        "Id": 3003480,
+        "Description": "施放终极大招后立即获得<style=\"accent-gn\">1</style>层<linktext=1209><style=\"ItemQuality_5\">无尽思维</style></linktext>，并在接下来<style=\"accent-gn\">10</style>秒内，<linktext=1209><style=\"ItemQuality_5\">无尽思维</style></linktext>提供的属性效果翻倍。"
+    },
+    "3003610": {
+        "Key": 3003610,
+        "Id": 3003610,
+        "Description": "幻梦强度+<style=\"accent-gn\">100</style>；耐力+<style=\"accent-gn\">500</style>"
+    },
+    "3003620": {
+        "Key": 3003620,
+        "Id": 3003620,
+        "Description": "幻梦强度+<style=\"accent-gn\">100</style>；耐力+<style=\"accent-gn\">500</style>"
+    },
+    "3003630": {
+        "Key": 3003630,
+        "Id": 3003630,
+        "Description": "暴击、急速、幸运、精通、全能这5项属性中值最高的一项+<style=\"accent-gn\">300</style>；耐力+<style=\"accent-gn\">500</style>"
+    },
+    "3003640": {
+        "Key": 3003640,
+        "Id": 3003640,
+        "Description": "幻梦强度+<style=\"accent-gn\">100</style>；耐力+<style=\"accent-gn\">500</style>"
+    },
+    "3003650": {
+        "Key": 3003650,
+        "Id": 3003650,
+        "Description": "暴击、急速、幸运、精通、全能这5项属性中值最高的一项+<style=\"accent-gn\">500</style>；耐力+<style=\"accent-gn\">500</style>"
+    },
+    "3003660": {
+        "Key": 3003660,
+        "Id": 3003660,
+        "Description": "幸运+<style=\"accent-gn\">1%</style>"
+    },
+    "3003670": {
+        "Key": 3003670,
+        "Id": 3003670,
+        "Description": "暴击+<style=\"accent-gn\">1%</style>"
+    },
+    "3003680": {
+        "Key": 3003680,
+        "Id": 3003680,
+        "Description": "专精技能梦境伤害+<style=\"accent-gn\">6%</style>"
+    },
+    "3003690": {
+        "Key": 3003690,
+        "Id": 3003690,
+        "Description": "梦境伤害+<style=\"accent-gn\">4%</style>"
+    },
+    "3003700": {
+        "Key": 3003700,
+        "Id": 3003700,
+        "Description": "梦境伤害+<style=\"accent-gn\">2%</style>"
+    },
+    "3003710": {
+        "Key": 3003710,
+        "Id": 3003710,
+        "Description": "自身攻击受到寂灭之梦影响的目标暴击几率、幸运几率+<style=\"accent-gn\">2%</style>"
+    },
+    "3003720": {
+        "Key": 3003720,
+        "Id": 3003720,
+        "Description": "每<style=\"accent-gn\">50</style>点物理防御提供<style=\"accent-gn\">1</style>点攻击力"
+    },
+    "3003730": {
+        "Key": 3003730,
+        "Id": 3003730,
+        "Description": "当前主属性+<style=\"accent-gn\">100</style>"
+    },
+    "3050010": {
+        "Key": 3050010,
+        "Id": 3050010,
+        "Description": "居合斩梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3050020": {
+        "Key": 3050020,
+        "Id": 3050020,
+        "Description": "一闪、飞雷神梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3050030": {
+        "Key": 3050030,
+        "Id": 3050030,
+        "Description": "坠龙闪、神影斩梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3050040": {
+        "Key": 3050040,
+        "Id": 3050040,
+        "Description": "雷切梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>；雷切施放速度大幅增加"
+    },
+    "3050050": {
+        "Key": 3050050,
+        "Id": 3050050,
+        "Description": "无穷雷霆之力充能次数+<style=\"accent-gn\">1</style>，但是持续时间-<style=\"accent-gn\">4</style>秒；终极大招梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3050060": {
+        "Key": 3050060,
+        "Id": 3050060,
+        "Description": "霹雳连斩、霹雳升龙斩梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3050070": {
+        "Key": 3050070,
+        "Id": 3050070,
+        "Description": "雷霆之镰、神罚之镰梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3050080": {
+        "Key": 3050080,
+        "Id": 3050080,
+        "Description": "月刃梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3050090": {
+        "Key": 3050090,
+        "Id": 3050090,
+        "Description": "月影攻击次数+<style=\"accent-gn\">{*Decision.unmarknormal(1)*}</style>；月影梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>"
+    },
+    "3050100": {
+        "Key": 3050100,
+        "Id": 3050100,
+        "Description": "千雷闪影之力持续时间+<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>；月影、雷击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>"
+    },
+    "3050110": {
+        "Key": 3050110,
+        "Id": 3050110,
+        "Description": "无穷雷霆之力未激活时，每<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>获得<style=\"accent-gn\">1</style>枚雷之印且居合斩对当前目标造成伤害时有<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>固定几率触发看破斩"
+    },
+    "3051010": {
+        "Key": 3051010,
+        "Id": 3051010,
+        "Description": "勇气风环梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3051020": {
+        "Key": 3051020,
+        "Id": 3051020,
+        "Description": "螺旋击刺、破追梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3051030": {
+        "Key": 3051030,
+        "Id": 3051030,
+        "Description": "进入战斗状态派生神影螺旋；神影螺旋梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3051040": {
+        "Key": 3051040,
+        "Id": 3051040,
+        "Description": "龙击炮梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3051050": {
+        "Key": 3051050,
+        "Id": 3051050,
+        "Description": "勇气风环可触发幸运一击；勇气风环梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3051060": {
+        "Key": 3051060,
+        "Id": 3051060,
+        "Description": "风姿卓绝持续时间+<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>"
+    },
+    "3051070": {
+        "Key": 3051070,
+        "Id": 3051070,
+        "Description": "刹那梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>（不影响刹那连击）"
+    },
+    "3051080": {
+        "Key": 3051080,
+        "Id": 3051080,
+        "Description": "飞鸟投、刹那连击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3051090": {
+        "Key": 3051090,
+        "Id": 3051090,
+        "Description": "龙卷风可以触发幸运一击；龙卷风梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3051100": {
+        "Key": 3051100,
+        "Id": 3051100,
+        "Description": "极·岚切必定暴击；极·岚切梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3051110": {
+        "Key": 3051110,
+        "Id": 3051110,
+        "Description": "锐利冲击每<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>获得<style=\"accent-gn\">5%</style>充能（该时间受到冷却加速影响）；锐利冲击、风神·锐利冲击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>"
+    },
+    "3052010": {
+        "Key": 3052010,
+        "Id": 3052010,
+        "Description": "冰霜之矛梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3052020": {
+        "Key": 3052020,
+        "Id": 3052020,
+        "Description": "陨星风暴梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3052030": {
+        "Key": 3052030,
+        "Id": 3052030,
+        "Description": "冰箭（不影响霜爆天赋）梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3052040": {
+        "Key": 3052040,
+        "Id": 3052040,
+        "Description": "贯穿冰矛、冰霜彗星梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3052050": {
+        "Key": 3052050,
+        "Id": 3052050,
+        "Description": "寒冰风暴梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>；只命中一个目标时梦境伤害额外+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3052060": {
+        "Key": 3052060,
+        "Id": 3052060,
+        "Description": "寒冰射线梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3052070": {
+        "Key": 3052070,
+        "Id": 3052070,
+        "Description": "引导寒冰射线时，浪潮汇聚可通过重复点击技能使其生成在当前目标位置；浪潮汇聚梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3052080": {
+        "Key": 3052080,
+        "Id": 3052080,
+        "Description": "对处于寒冰风暴内的目标，天赋冰矛流触发冰箭的几率+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3052090": {
+        "Key": 3052090,
+        "Id": 3052090,
+        "Description": "冻结寒风梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>；过去<style=\"accent-gn\">15</style>秒内每消耗<style=\"accent-gn\">50</style>点寒冰能量额外+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3052100": {
+        "Key": 3052100,
+        "Id": 3052100,
+        "Description": "冰之灌注持续期间，幸运一击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3052110": {
+        "Key": 3052110,
+        "Id": 3052110,
+        "Description": "冰霜之矛对寒冰风暴内的目标，额外造成一次等范围伤害，该伤害=<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>寒冰风暴伤害"
+    },
+    "3053010": {
+        "Key": 3053010,
+        "Id": 3053010,
+        "Description": "暴风箭矢梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3053020": {
+        "Key": 3053020,
+        "Id": 3053020,
+        "Description": "野狼扫尾梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3053030": {
+        "Key": 3053030,
+        "Id": 3053030,
+        "Description": "野狼撕咬梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3053040": {
+        "Key": 3053040,
+        "Id": 3053040,
+        "Description": "光追箭矢梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>；光追箭矢暴击伤害始终以<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>进行结算"
+    },
+    "3053050": {
+        "Key": 3053050,
+        "Id": 3053050,
+        "Description": "二连矢、光意·四连矢梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3053060": {
+        "Key": 3053060,
+        "Id": 3053060,
+        "Description": "猎鹰出击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3053070": {
+        "Key": 3053070,
+        "Id": 3053070,
+        "Description": "闪电冲击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3053080": {
+        "Key": 3053080,
+        "Id": 3053080,
+        "Description": "怒涛射击施放期间精神凝聚持续时间停滞；怒涛射击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3053090": {
+        "Key": 3053090,
+        "Id": 3053090,
+        "Description": "每<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>急速使光能轰炸攻击次数+<style=\"accent-gn\">1</style>；光能轰炸梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>"
+    },
+    "3053100": {
+        "Key": 3053100,
+        "Id": 3053100,
+        "Description": "施放爆炸射击使得接下来<style=\"accent-gn\">10</style>秒内猎鹰（出击、闪电冲击、幻影猎鹰）梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3053110": {
+        "Key": 3053110,
+        "Id": 3053110,
+        "Description": "聚能射击伤害次数+<style=\"accent-gn\">{*Decision.unmarknormal(1)*}</style>（总伤害不变）；聚能射击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>"
+    },
+    "3054010": {
+        "Key": 3054010,
+        "Id": 3054010,
+        "Description": "英勇盾击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3054020": {
+        "Key": 3054020,
+        "Id": 3054020,
+        "Description": "清算梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3054030": {
+        "Key": 3054030,
+        "Id": 3054030,
+        "Description": "裁决、灼热裁决梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3054040": {
+        "Key": 3054040,
+        "Id": 3054040,
+        "Description": "处于圣环内时，全元素伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3054050": {
+        "Key": 3054050,
+        "Id": 3054050,
+        "Description": "圣光守卫持续时间+<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>；普通攻击、断罪梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>"
+    },
+    "3054060": {
+        "Key": 3054060,
+        "Id": 3054060,
+        "Description": "每<style=\"accent-gn\">1%</style>精通提供<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>攻击力"
+    },
+    "3054070": {
+        "Key": 3054070,
+        "Id": 3054070,
+        "Description": "先锋打击、先锋追击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3054080": {
+        "Key": 3054080,
+        "Id": 3054080,
+        "Description": "圣剑梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3054090": {
+        "Key": 3054090,
+        "Id": 3054090,
+        "Description": "冷酷征伐梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>（不影响冷酷爆裂）"
+    },
+    "3054100": {
+        "Key": 3054100,
+        "Id": 3054100,
+        "Description": "光明决心充能次数+<style=\"accent-gn\">1</style>；光明决心梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3054110": {
+        "Key": 3054110,
+        "Id": 3054110,
+        "Description": "处于圣环内时，攻击力+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3055010": {
+        "Key": 3055010,
+        "Id": 3055010,
+        "Description": "护盾猛击状态下， 全元素伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3055020": {
+        "Key": 3055020,
+        "Id": 3055020,
+        "Description": "护盾猛击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3055030": {
+        "Key": 3055030,
+        "Id": 3055030,
+        "Description": "怒爆、地崩山摧梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3055040": {
+        "Key": 3055040,
+        "Id": 3055040,
+        "Description": "砂岩之握充能次数+<style=\"accent-gn\">1</style>；普通攻击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3055050": {
+        "Key": 3055050,
+        "Id": 3055050,
+        "Description": "每<style=\"accent-gn\">1%</style>精通提供<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>攻击力"
+    },
+    "3055060": {
+        "Key": 3055060,
+        "Id": 3055060,
+        "Description": "格挡冲击状态下，全元素伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3055070": {
+        "Key": 3055070,
+        "Id": 3055070,
+        "Description": "岩怒之击、巨岩轰击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3055080": {
+        "Key": 3055080,
+        "Id": 3055080,
+        "Description": "每次格挡成功<style=\"accent-gn\">15</style>秒内自身攻击力+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>，最多叠加<style=\"accent-gn\">4</style>层"
+    },
+    "3055090": {
+        "Key": 3055090,
+        "Id": 3055090,
+        "Description": "每次格挡成功<style=\"accent-gn\">10</style>秒内自身生命上限+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>，最多叠加<style=\"accent-gn\">4</style>层"
+    },
+    "3055100": {
+        "Key": 3055100,
+        "Id": 3055100,
+        "Description": "格挡反击可触发幸运一击；格挡反击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3055110": {
+        "Key": 3055110,
+        "Id": 3055110,
+        "Description": "巨岩轰击只命中一个目标时伤害和回血效果翻倍；巨岩轰击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3056010": {
+        "Key": 3056010,
+        "Id": 3056010,
+        "Description": "狂野绽放、鹿之奔袭梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3056020": {
+        "Key": 3056020,
+        "Id": 3056020,
+        "Description": "施放灌注时获得霸体效果；灌注梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3056030": {
+        "Key": 3056030,
+        "Id": 3056030,
+        "Description": "再生脉冲变为瞬发；再生脉冲梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3056040": {
+        "Key": 3056040,
+        "Id": 3056040,
+        "Description": "自身受到共生印记影响时，魔法伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3056050": {
+        "Key": 3056050,
+        "Id": 3056050,
+        "Description": "不羁之种额外落下一个种子；不羁之种梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3056060": {
+        "Key": 3056060,
+        "Id": 3056060,
+        "Description": "自然庇护护盾量+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>，每<style=\"accent-gn\">1%</style>幸运或暴击使其额外+<style=\"accent-gn\">1%</style>；自然庇护附加<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>全元素减免，持续<style=\"accent-gn\">8</style>秒"
+    },
+    "3056070": {
+        "Key": 3056070,
+        "Id": 3056070,
+        "Description": "施放加速生长或自然庇护后的<style=\"accent-gn\">10</style>秒内自身魔法攻击力+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3056080": {
+        "Key": 3056080,
+        "Id": 3056080,
+        "Description": "施放盛放注能获得持续<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>霸体效果；盛放注能梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>，控制时间+<style=\"accent-gn\">1.5</style>秒"
+    },
+    "3056090": {
+        "Key": 3056090,
+        "Id": 3056090,
+        "Description": "狂野之种梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>；滋养之种治疗强度+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>"
+    },
+    "3056100": {
+        "Key": 3056100,
+        "Id": 3056100,
+        "Description": "森之祈愿可造成总计<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>攻击力魔法伤害"
+    },
+    "3056110": {
+        "Key": 3056110,
+        "Id": 3056110,
+        "Description": "幸运一击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>，但共生印记转换治疗量降低<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3057010": {
+        "Key": 3057010,
+        "Id": 3057010,
+        "Description": "增幅节拍梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3057020": {
+        "Key": 3057020,
+        "Id": 3057020,
+        "Description": "聚合乐章梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3057030": {
+        "Key": 3057030,
+        "Id": 3057030,
+        "Description": "烈焰狂想梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3057040": {
+        "Key": 3057040,
+        "Id": 3057040,
+        "Description": "魔法伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>；但安和曲转换治疗量降低<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3057050": {
+        "Key": 3057050,
+        "Id": 3057050,
+        "Description": "热情挥洒、激昂·热情挥洒梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3057060": {
+        "Key": 3057060,
+        "Id": 3057060,
+        "Description": "自身和队友触发的安可梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3057070": {
+        "Key": 3057070,
+        "Id": 3057070,
+        "Description": "烈焰音符梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3057080": {
+        "Key": 3057080,
+        "Id": 3057080,
+        "Description": "自身处于愈合乐章和烈焰狂想状态下全元素加成+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3057090": {
+        "Key": 3057090,
+        "Id": 3057090,
+        "Description": "愈合乐章治疗强度+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>，但其演奏能量消耗+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3057100": {
+        "Key": 3057100,
+        "Id": 3057100,
+        "Description": "当前生命高于<style=\"accent-gn\">80%</style>时，智力+<style=\"accent-gn\">{*Decision.unmarknormal(1)*}</style>，当前生命低于<style=\"accent-gn\">80%</style>时失效"
+    },
+    "3057110": {
+        "Key": 3057110,
+        "Id": 3057110,
+        "Description": "自身施放激涌五重奏溢出治疗量的<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>将会在<style=\"accent-gn\">10</style>秒内持续回复"
+    },
+    "3058010": {
+        "Key": 3058010,
+        "Id": 3058010,
+        "Description": "元素强度"
+    },
+    "3058020": {
+        "Key": 3058020,
+        "Id": 3058020,
+        "Description": "力量：固定值+百分比"
+    },
+    "3058030": {
+        "Key": 3058030,
+        "Id": 3058030,
+        "Description": "智力：固定值+百分比"
+    },
+    "3058040": {
+        "Key": 3058040,
+        "Id": 3058040,
+        "Description": "敏捷：固定值+百分比"
+    },
+    "3058050": {
+        "Key": 3058050,
+        "Id": 3058050,
+        "Description": "以任何方式获取的暴击值+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>，但是以任何方式获取的精通值-<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3058060": {
+        "Key": 3058060,
+        "Id": 3058060,
+        "Description": "以任何方式获取的幸运值+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>，但是以任何方式获取的急速值-<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3058070": {
+        "Key": 3058070,
+        "Id": 3058070,
+        "Description": "以任何方式获取的精通值+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>，但是以任何方式获取的幸运值-<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3058080": {
+        "Key": 3058080,
+        "Id": 3058080,
+        "Description": "以任何方式获取的急速值+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>，但是以任何方式获取的暴击值-<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3058090": {
+        "Key": 3058090,
+        "Id": 3058090,
+        "Description": "特殊攻击梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3058100": {
+        "Key": 3058100,
+        "Id": 3058100,
+        "Description": "专精技能梦境伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3058110": {
+        "Key": 3058110,
+        "Id": 3058110,
+        "Description": "施放专精技能后<style=\"accent-gn\">6</style>秒内，全能值+<style=\"accent-gn\">{*Decision.unmarknormal(1)*}</style>，最高叠加<style=\"accent-gn\">5</style>层"
+    },
+    "3059010": {
+        "Key": 3059010,
+        "Id": 3059010,
+        "Description": "元素抗性"
+    },
+    "3059020": {
+        "Key": 3059020,
+        "Id": 3059020,
+        "Description": "耐力：固定值+百分比"
+    },
+    "3059030": {
+        "Key": 3059030,
+        "Id": 3059030,
+        "Description": "物理防御：固定值+百分比"
+    },
+    "3059040": {
+        "Key": 3059040,
+        "Id": 3059040,
+        "Description": "生命值+X，生命值%+X"
+    },
+    "3059050": {
+        "Key": 3059050,
+        "Id": 3059050,
+        "Description": "生命上限+<style=\"accent-gn\">{*Decision.unmarknormal(1)*}</style>；受到伤害大于当前生命时，该次伤害减免<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>，该效果每<style=\"accent-gn\">30</style>秒最多生效一次"
+    },
+    "3059060": {
+        "Key": 3059060,
+        "Id": 3059060,
+        "Description": "如果<style=\"accent-gn\">8</style>秒内没有受到伤害，接下来<style=\"accent-gn\">10</style>秒生命上限+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>，最多叠加<style=\"accent-gn\">3</style>层"
+    },
+    "3059070": {
+        "Key": 3059070,
+        "Id": 3059070,
+        "Description": "施放终极技能后<style=\"accent-gn\">10</style>秒内梦境伤害减免+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3059080": {
+        "Key": 3059080,
+        "Id": 3059080,
+        "Description": "受到任何伤害时，回复<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>的最大生命，该效果每<style=\"accent-gn\">10</style>秒最多生效一次"
+    },
+    "3059090": {
+        "Key": 3059090,
+        "Id": 3059090,
+        "Description": "受治疗加成+X%，护盾强度+X%"
+    },
+    "3059100": {
+        "Key": 3059100,
+        "Id": 3059100,
+        "Description": "无穷雷霆之力、千雷闪影之意持续期间，每<style=\"accent-gn\">1</style>秒回复<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>最大生命值"
+    },
+    "3059110": {
+        "Key": 3059110,
+        "Id": 3059110,
+        "Description": "心眼充能次数+<style=\"accent-gn\">1</style>；冷却时间-<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>"
+    },
+    "3059120": {
+        "Key": 3059120,
+        "Id": 3059120,
+        "Description": "护佑之风充能次数+<style=\"accent-gn\">1</style>；冷却时间-<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>"
+    },
+    "3059130": {
+        "Key": 3059130,
+        "Id": 3059130,
+        "Description": "风姿卓绝持续期间，梦境伤害减免+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3059140": {
+        "Key": 3059140,
+        "Id": 3059140,
+        "Description": "全元素减伤+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>；冰之灌注持续期间，梦境伤害减免+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>"
+    },
+    "3059150": {
+        "Key": 3059150,
+        "Id": 3059150,
+        "Description": "寒冰庇护充能次数+<style=\"accent-gn\">1</style>；冷却时间-<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>"
+    },
+    "3059160": {
+        "Key": 3059160,
+        "Id": 3059160,
+        "Description": "精神凝聚持续期间，梦境伤害减免+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3059170": {
+        "Key": 3059170,
+        "Id": 3059170,
+        "Description": "威慑射击效果持续期间，受到魔法伤害减免+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>；威慑射击冷却时间-<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>"
+    },
+    "3059180": {
+        "Key": 3059180,
+        "Id": 3059180,
+        "Description": "圣光守卫、光明决心冷却时间-<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>；施放圣光守卫、光明决心后，下一次裁决不消耗神圣能量"
+    },
+    "3059190": {
+        "Key": 3059190,
+        "Id": 3059190,
+        "Description": "施放终极技能后，接下来<style=\"accent-gn\">5</style>次伤害每次回复<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>最大生命值"
+    },
+    "3059200": {
+        "Key": 3059200,
+        "Id": 3059200,
+        "Description": "受到魔法攻击时有<style=\"accent-gn\">10%</style>固定几率使其魔法伤害减免+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3059210": {
+        "Key": 3059210,
+        "Id": 3059210,
+        "Description": "生命上限+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>；每消耗<style=\"accent-gn\">50</style>点怒气回复<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>最大生命"
+    },
+    "3059220": {
+        "Key": 3059220,
+        "Id": 3059220,
+        "Description": "自身受到过量治疗转化为持续<style=\"accent-gn\">10</style>秒的护盾，该护盾最多不超过<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>最大生命值"
+    },
+    "3059230": {
+        "Key": 3059230,
+        "Id": 3059230,
+        "Description": "施放森之祈愿、灌注时，<style=\"accent-gn\">5</style>秒内梦境伤害减免+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3059240": {
+        "Key": 3059240,
+        "Id": 3059240,
+        "Description": "鸣奏·英勇乐章、鸣奏·愈合乐章演奏期间，梦境伤害减免+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3059250": {
+        "Key": 3059250,
+        "Id": 3059250,
+        "Description": "对自身造成治疗时，治疗强度+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
     "3200002": {
         "Key": 3200002,
         "Id": 3200002,
@@ -3583,6 +4608,61 @@
         "Key": 3200026,
         "Id": 3200026,
         "Description": "受到哥布林种族伤害减少<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>，对哥布林以外种族目标伤害增加<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3200032": {
+        "Key": 3200032,
+        "Id": 3200032,
+        "Description": "终极技能冷却速度<style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3200033": {
+        "Key": 3200033,
+        "Id": 3200033,
+        "Description": "专精技能伤害和治疗<style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>"
+    },
+    "3200034": {
+        "Key": 3200034,
+        "Id": 3200034,
+        "Description": "每隔<style=\"accent-gn\">5秒</style>，下次造成伤害时会额外附加一次<style=\"accent-gn\">{*Decision.unmarkpercent(3)*}</style>攻击力<style=\"magic\">魔法伤害</style>，每次造成治疗时会提高<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>下一次该伤害，最高不超过<style=\"accent-gn\">+{*Decision.unmarkpercent(2)*}</style>（此伤害无法暴击）"
+    },
+    "3200035": {
+        "Key": 3200035,
+        "Id": 3200035,
+        "Description": "每隔<style=\"accent-gn\">10秒</style>你的暴击伤害在<style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}~+{*Decision.unmarkpercent(2)*}</style>之间浮动"
+    },
+    "3200101": {
+        "Key": 3200101,
+        "Id": 3200101,
+        "Description": "格挡<style=\"accent-gn\">+{*Decision.unmarknormal(1)*}</style><br>[跟随赛季等级，每提升1级<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style>，基础值与等级值累加最终不超过<style=\"accent-gn\">{*Decision.unmarknormal(3)*}</style>]"
+    },
+    "3200102": {
+        "Key": 3200102,
+        "Id": 3200102,
+        "Description": "急速<style=\"accent-gn\">+{*Decision.unmarknormal(1)*}</style><br>[跟随赛季等级，每提升1级<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style>，基础值与等级值累加最终不超过<style=\"accent-gn\">{*Decision.unmarknormal(3)*}</style>]"
+    },
+    "3200103": {
+        "Key": 3200103,
+        "Id": 3200103,
+        "Description": "精通<style=\"accent-gn\">+{*Decision.unmarknormal(1)*}</style><br>[跟随赛季等级，每提升1级<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style>，基础值与等级值累加最终不超过<style=\"accent-gn\">{*Decision.unmarknormal(3)*}</style>]"
+    },
+    "3200104": {
+        "Key": 3200104,
+        "Id": 3200104,
+        "Description": "全能<style=\"accent-gn\">+{*Decision.unmarknormal(1)*}</style><br>[跟随赛季等级，每提升1级<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style>，基础值与等级值累加最终不超过<style=\"accent-gn\">{*Decision.unmarknormal(3)*}</style>]"
+    },
+    "3200105": {
+        "Key": 3200105,
+        "Id": 3200105,
+        "Description": "全能<style=\"accent-gn\">+{*Decision.unmarknormal(1)*}</style><br>[跟随赛季等级，每提升1级<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style>，基础值与等级值累加最终不超过<style=\"accent-gn\">{*Decision.unmarknormal(3)*}</style>]"
+    },
+    "3200106": {
+        "Key": 3200106,
+        "Id": 3200106,
+        "Description": "精通<style=\"accent-gn\">+{*Decision.unmarknormal(1)*}</style><br>[跟随赛季等级，每提升1级<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style>，基础值与等级值累加最终不超过<style=\"accent-gn\">{*Decision.unmarknormal(3)*}</style>]"
+    },
+    "3200107": {
+        "Key": 3200107,
+        "Id": 3200107,
+        "Description": "急速<style=\"accent-gn\">+{*Decision.unmarknormal(1)*}</style><br>[跟随赛季等级，每提升1级<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style>，基础值与等级值累加最终不超过<style=\"accent-gn\">{*Decision.unmarknormal(3)*}</style>]"
     },
     "3210010": {
         "Key": 3210010,
@@ -3638,6 +4718,36 @@
         "Key": 3210110,
         "Id": 3210110,
         "Description": "每次释放专精技能时获得1层重斩计数，上限<style=\"accent-gn\">{*Decision.unmarknormal(1)*}</style>层（释放主动技能时会消耗所有层数提升造成的伤害）"
+    },
+    "3210120": {
+        "Key": 3210120,
+        "Id": 3210120,
+        "Description": "每次施放特殊攻击后，宠物攻击力<style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>， 持续<style=\"accent-gn\">5秒</style>，最多可叠加<style=\"accent-gn\">5</style>层"
+    },
+    "3210130": {
+        "Key": 3210130,
+        "Id": 3210130,
+        "Description": "力量/智力/敏捷<style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style><br>进入战斗后每隔<style=\"accent-gn\">10秒</style>重新随机获得一个效果：<br>1、力量/智力/敏捷<style=\"accent-gn\">+{*Decision.unmarkpercent(2)*}</style><br>2、全能<style=\"accent-gn\">+{*Decision.unmarknormal(4)*}</style><br>3、精通<style=\"accent-gn\">+{*Decision.unmarknormal(4)*}</style><br>4、急速<style=\"accent-gn\">+{*Decision.unmarknormal(4)*}</style><br>5、全元素伤害<style=\"accent-gn\">+{*Decision.unmarkpercent(3)*}</style><br>[全能、精通和急速固定值跟随赛季等级，每提升1级<style=\"accent-gn\">+{*Decision.unmarknormal(5)*}</style>，基础值与等级值累加最终不超过<style=\"accent-gn\">{*Decision.unmarknormal(6)*}</style>]"
+    },
+    "3210140": {
+        "Key": 3210140,
+        "Id": 3210140,
+        "Description": "每隔<style=\"accent-gn\">15秒</style>，获得「绝对幸运」：幸运<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style>，幸运一击伤害和治疗<style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>。施放<style=\"accent-gn\">3</style>次伤害型专精技能后移除该效果<br>[幸运值跟随赛季等级，每提升1级<style=\"accent-gn\">+{*Decision.unmarknormal(3)*}</style>，基础值与等级值累加最终不超过<style=\"accent-gn\">{*Decision.unmarknormal(4)*}</style>]"
+    },
+    "3210150": {
+        "Key": 3210150,
+        "Id": 3210150,
+        "Description": "你造成的所有伤害最终<style=\"accent-gn\">-80%</style><br>每次施放非普攻职业技能，减少当前共鸣技能的主动效果冷却时间<style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>，并获得<style=\"accent-gn\">1</style>层剑意"
+    },
+    "3210160": {
+        "Key": 3210160,
+        "Id": 3210160,
+        "Description": "伤害触发幸运一击时可触发「幸运效果」：在目标处引发一次爆炸，造成<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>攻击力光元素<style=\"physical\">物理伤害</style>（冷却时间<style=\"accent-gn\">0.1秒</style>）"
+    },
+    "3210170": {
+        "Key": 3210170,
+        "Id": 3210170,
+        "Description": "伤害触发幸运一击时可触发「幸运效果」：在目标处引发一次爆炸，随机造成<style=\"accent-gn\">1~3</style>次<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>攻击力火元素<style=\"magic\">魔法伤害</style>（冷却时间<style=\"accent-gn\">0.1秒</style>）"
     },
     "3401095": {
         "Key": 3401095,
@@ -3702,7 +4812,7 @@
     "3401107": {
         "Key": 3401107,
         "Id": 3401107,
-        "Description": "为祝福目标附加<style=\"accent-gn\">50</style>点<style=\"accent-gn\">智力</style>、<style=\"accent-gn\">力量</style>、<style=\"accent-gn\">敏捷</style>、<style=\"accent-gn\">耐力</style>。"
+        "Description": "为祝福目标附加<style=\"accent-gn\">100</style>点<style=\"accent-gn\">智力</style>、<style=\"accent-gn\">力量</style>、<style=\"accent-gn\">敏捷</style>、<style=\"accent-gn\">耐力</style>。"
     },
     "3401108": {
         "Key": 3401108,
@@ -3897,7 +5007,7 @@
     "3401146": {
         "Key": 3401146,
         "Id": 3401146,
-        "Description": "原地振翅，接下来<style=\"accent-gn\">10</style>秒内急速+<style=\"accent-gn\">30%</style>。"
+        "Description": "原地振翅，接下来<style=\"accent-gn\">10</style>秒内光能获取效率+<style=\"accent-gn\">100%</style>。"
     },
     "3401147": {
         "Key": 3401147,
@@ -4163,6 +5273,56 @@
         "Key": 3401199,
         "Id": 3401199,
         "Description": "目标在接下来<style=\"accent-gn\">10</style>秒内每秒受到<style=\"accent-gn\">20%</style>攻击力伤害，同时该目标对你造成伤害时有<style=\"accent-gn\">10%</style>固定几率为你回复生命，回复值等于你生命上限的<style=\"accent-gn\">0.5%</style>。"
+    },
+    "3401200": {
+        "Key": 3401200,
+        "Id": 3401200,
+        "Description": "「幸运效果」：对<style=\"accent-gn\">3</style>米范围内敌方目标造成<style=\"accent-gn\">1250%</style>攻击力自适应伤害。"
+    },
+    "3401201": {
+        "Key": 3401201,
+        "Id": 3401201,
+        "Description": "对<style=\"accent-gn\">3</style>米范围内敌方目标造成<style=\"accent-gn\">432%</style>攻击力自适应伤害，且暴击伤害始终以<style=\"accent-gn\">450%</style>进行结算。"
+    },
+    "3401202": {
+        "Key": 3401202,
+        "Id": 3401202,
+        "Description": "对<style=\"accent-gn\">3</style>米范围内敌方目标造成<style=\"accent-gn\">100%</style>攻击力自适应伤害。"
+    },
+    "3401203": {
+        "Key": 3401203,
+        "Id": 3401203,
+        "Description": "每层攻击力+<style=\"accent-gn\">18</style>（随赛季等级提高最多+<style=\"accent-gn\">38</style>）。"
+    },
+    "3401204": {
+        "Key": 3401204,
+        "Id": 3401204,
+        "Description": "主属性+<style=\"accent-gn\">450</style>（随赛季等级提高最多+<style=\"accent-gn\">1050</style>），持续期间无法获得遗梦。"
+    },
+    "3401205": {
+        "Key": 3401205,
+        "Id": 3401205,
+        "Description": "攻击力-<style=\"accent-gn\">20%</style>，受到梦境伤害+<style=\"accent-gn\">10%</style>，移动速度-<style=\"accent-gn\">20%</style>（不可叠加）。"
+    },
+    "3401206": {
+        "Key": 3401206,
+        "Id": 3401206,
+        "Description": "对自身<style=\"accent-gn\">5</style>米内敌方目标造成<style=\"accent-gn\">200%</style>攻击力自适应伤害并<linktext=3005><style=\"ItemQuality_5\">眩晕</style></linktext>目标<style=\"accent-gn\">1</style>.<style=\"accent-gn\">5</style>秒。"
+    },
+    "3401207": {
+        "Key": 3401207,
+        "Id": 3401207,
+        "Description": "免疫死亡。"
+    },
+    "3401208": {
+        "Key": 3401208,
+        "Id": 3401208,
+        "Description": "对自身<style=\"accent-gn\">5</style>米内敌方目标造成<style=\"accent-gn\">225%</style>物理防御力自适应伤害。"
+    },
+    "3401209": {
+        "Key": 3401209,
+        "Id": 3401209,
+        "Description": "生命上限+<style=\"accent-gn\">3%</style>，精通+<style=\"accent-gn\">2%</style>，最多叠加<style=\"accent-gn\">3</style>层。"
     },
     "3403000": {
         "Key": 3403000,

@@ -294,7 +294,7 @@
         ],
         "Award": 10700010,
         "TreasureBoxId": 40001,
-        "Condition": "每个整点会在风啸的峡谷出现，统领飓风哥布林的首领，小心应付！",
+        "Condition": "刷新时间：每日整点刷新。<br>在风啸的峡谷出现，统领飓风哥布林的首领，小心应付！",
         "SceneTag": 733
     },
     "10008": {
@@ -335,7 +335,7 @@
         ],
         "Award": 10500010,
         "TreasureBoxId": 40015,
-        "Condition": "平原北部，花明的森林中出现，使用巨斧近战的哥布林小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>平原北部，花明的森林中出现，使用巨斧近战的哥布林小头目。",
         "SceneTag": 0
     },
     "10009": {
@@ -376,7 +376,7 @@
         ],
         "Award": 10700020,
         "TreasureBoxId": 40002,
-        "Condition": "每个整点30分会在阿斯特利亚平原，维尔古城出现，统领这块哥布林的冰系食人魔，小心应付！",
+        "Condition": ">刷新时间：每日整点30分刷新。<br>在阿斯特利亚平原，维尔古城出现，统领这块哥布林的冰系食人魔，小心应付！",
         "SceneTag": 733
     },
     "10010": {
@@ -417,7 +417,7 @@
         ],
         "Award": 10700030,
         "TreasureBoxId": 40003,
-        "Condition": "每个整点30分会在阿斯特利亚平原，黯影堡垒区域出现，浑身包围雷电的食人魔首领，小心应付！",
+        "Condition": "刷新时间：每日整点30分刷新。<br>在阿斯特利亚平原，黯影堡垒区域出现，浑身包围雷电的食人魔首领，小心应付！",
         "SceneTag": 733
     },
     "10011": {
@@ -503,7 +503,7 @@
         ],
         "Award": 10500020,
         "TreasureBoxId": 40016,
-        "Condition": "阿斯特利亚平原，登陆战遗址出现，火属性远程攻击的哥布林小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特利亚平原，登陆战遗址出现，火属性远程攻击的哥布林小头目。",
         "SceneTag": 0
     },
     "10014": {
@@ -551,6 +551,47 @@
         "Condition": "阿斯特里斯地下街区出现，普通的成年蟹蛛。",
         "SceneTag": 0
     },
+    "10015": {
+        "Key": 10015,
+        "MonsterId": 10015,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 80,
+        "Target": [
+            [
+                1,
+                1001501,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1001502,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1001503,
+                2,
+                20402300
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_fengchao_idle",
+        "ModelRetio": 0.4,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3340
+        ],
+        "Award": 10501010,
+        "TreasureBoxId": 0,
+        "Condition": "巴哈马尔高原西部遗迹附近内生存的蜂巢。",
+        "SceneTag": 0
+    },
     "10018": {
         "Key": 10018,
         "MonsterId": 10018,
@@ -589,7 +630,7 @@
         ],
         "Award": 10700040,
         "TreasureBoxId": 40004,
-        "Condition": "每个整点会在阿斯特利亚平原，登陆战遗址出现，浑身散发着火焰气息的巨大兽人，小心应付！",
+        "Condition": "刷新时间：每日整点刷新。<br>在阿斯特利亚平原，登陆战遗址出现，浑身散发着火焰气息的巨大兽人，小心应付！",
         "SceneTag": 733
     },
     "10019": {
@@ -630,7 +671,7 @@
         ],
         "Award": 10500030,
         "TreasureBoxId": 40017,
-        "Condition": "阿斯特利亚平原，维尔古城出现，远程攻击的哥布林小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特利亚平原，维尔古城出现，远程攻击的哥布林小头目。",
         "SceneTag": 0
     },
     "10021": {
@@ -1038,7 +1079,7 @@
         ],
         "Award": 10700050,
         "TreasureBoxId": 40005,
-        "Condition": "每个整点30分会在平原北部，溺光的森林中出现，统领姆克的首领，小心应付！",
+        "Condition": "刷新时间：每日整点30分刷新。<br>在平原北部，溺光的森林中出现，统领姆克的首领，小心应付！",
         "SceneTag": 733
     },
     "10030": {
@@ -1128,7 +1169,7 @@
         ],
         "Award": 10500040,
         "TreasureBoxId": 40018,
-        "Condition": "阿斯特利亚平原，侦察兵营地右侧废弃营地出现，野猪小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特利亚平原，侦察兵营地右侧废弃营地出现，野猪小头目。",
         "SceneTag": 0
     },
     "10032": {
@@ -1173,7 +1214,7 @@
         ],
         "Award": 10700060,
         "TreasureBoxId": 40006,
-        "Condition": "每个整点会在阿斯特利亚平原，侦察兵营地右侧废弃营地出现，野猪的首领，小心应付！",
+        "Condition": "刷新时间：每日整点刷新。<br>在阿斯特利亚平原，侦察兵营地右侧废弃营地出现，野猪的首领，小心应付！",
         "SceneTag": 733
     },
     "10034": {
@@ -1218,7 +1259,7 @@
         ],
         "Award": 10500050,
         "TreasureBoxId": 40019,
-        "Condition": "阿斯特里斯地下街区出现，受到地下街区环境污染的精英蟹蛛，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特里斯地下街区出现，受到地下街区环境污染的精英蟹蛛。",
         "SceneTag": 0
     },
     "10035": {
@@ -1259,7 +1300,7 @@
         ],
         "Award": 10500060,
         "TreasureBoxId": 40020,
-        "Condition": "阿斯特利亚平原，维尔古城出现，近战攻击的哥布林小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特利亚平原，维尔古城出现，近战攻击的哥布林小头目。",
         "SceneTag": 0
     },
     "10037": {
@@ -1349,7 +1390,7 @@
         ],
         "Award": 10500070,
         "TreasureBoxId": 40021,
-        "Condition": "阿斯特利亚平原，明斯特霍恩城区东部、北部出现，使用匕首近战的山贼小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特利亚平原，明斯特霍恩城区东部、北部出现，使用匕首近战的山贼小头目。",
         "SceneTag": 0
     },
     "10039": {
@@ -1397,6 +1438,47 @@
         "Condition": "阿斯特利亚平原，明斯特霍恩城区西部山贼营地出现，近战攻击的山贼。",
         "SceneTag": 0
     },
+    "10041": {
+        "Key": 10041,
+        "MonsterId": 10041,
+        "Scene": 93,
+        "Type": 3,
+        "Sort": 111,
+        "Target": [
+            [
+                1,
+                1004101,
+                0,
+                20402340
+            ],
+            [
+                2,
+                1004102,
+                1,
+                20402350
+            ],
+            [
+                3,
+                1004103,
+                2,
+                20402403
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_dihu_idle",
+        "ModelRetio": 1,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            93,
+            3,
+            56
+        ],
+        "Award": 10500940,
+        "TreasureBoxId": 40038,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:2320</b></style><br>刷新时间：每日整点刷新。<br>在月影之野出没的地狐首领，小心应付！",
+        "SceneTag": 733
+    },
     "10042": {
         "Key": 10042,
         "MonsterId": 10042,
@@ -1435,7 +1517,130 @@
         ],
         "Award": 10500080,
         "TreasureBoxId": 40022,
-        "Condition": "阿斯特利亚平原，登陆战遗址出现，近战攻击的山精小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特利亚平原，登陆战遗址出现，近战攻击的山精小头目。",
+        "SceneTag": 0
+    },
+    "10044": {
+        "Key": 10044,
+        "MonsterId": 10044,
+        "Scene": 93,
+        "Type": 2,
+        "Sort": 110,
+        "Target": [
+            [
+                1,
+                1004401,
+                0,
+                20402310
+            ],
+            [
+                2,
+                1004402,
+                1,
+                20402397
+            ],
+            [
+                3,
+                1004403,
+                2,
+                20402330
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_dihu_idle",
+        "ModelRetio": 1,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            93,
+            3,
+            57
+        ],
+        "Award": 10500930,
+        "TreasureBoxId": 40047,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:2300</b></style><br>刷新时间：被击败3分钟后复活。<br>在月影之野出没的黑焰地狐，实力强劲。",
+        "SceneTag": 0
+    },
+    "10045": {
+        "Key": 10045,
+        "MonsterId": 10045,
+        "Scene": 93,
+        "Type": 1,
+        "Sort": 108,
+        "Target": [
+            [
+                1,
+                1004501,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1004502,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1004503,
+                2,
+                20402386
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_dihu_idle",
+        "ModelRetio": 1,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            93,
+            3,
+            105
+        ],
+        "Award": 10500910,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:2270</b></style><br>在月影之野出没的地狐。",
+        "SceneTag": 0
+    },
+    "10046": {
+        "Key": 10046,
+        "MonsterId": 10046,
+        "Scene": 93,
+        "Type": 1,
+        "Sort": 109,
+        "Target": [
+            [
+                1,
+                1004601,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1004602,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1004603,
+                2,
+                20402387
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_dihu_idle",
+        "ModelRetio": 1,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            93,
+            3,
+            95
+        ],
+        "Award": 10500920,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:2280</b></style><br>在月影之野出没的地狐。",
         "SceneTag": 0
     },
     "10047": {
@@ -1606,7 +1811,7 @@
         ],
         "Award": 10500090,
         "TreasureBoxId": 40023,
-        "Condition": "平原北部，溺光的森林中出现，使用巨斧近战的姆克小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>平原北部，溺光的森林中出现，使用巨斧近战的姆克小头目。",
         "SceneTag": 0
     },
     "10053": {
@@ -1692,7 +1897,7 @@
         ],
         "Award": 10500100,
         "TreasureBoxId": 40024,
-        "Condition": "阿斯特利亚平原，明斯特霍恩城区西部山贼营地出现，近战攻击的山贼小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特利亚平原，明斯特霍恩城区西部山贼营地出现，近战攻击的山贼小头目。",
         "SceneTag": 0
     },
     "10056": {
@@ -1737,7 +1942,7 @@
         ],
         "Award": 10700070,
         "TreasureBoxId": 40007,
-        "Condition": "每个整点会在阿斯特利亚平原，明斯特霍恩城区西部山贼营地出现，统领山贼的首领，小心应付！",
+        "Condition": "刷新时间：每日整点刷新。<br>在阿斯特利亚平原，明斯特霍恩城区西部山贼营地出现，统领山贼的首领，小心应付！",
         "SceneTag": 733
     },
     "10057": {
@@ -1778,7 +1983,7 @@
         ],
         "Award": 10500110,
         "TreasureBoxId": 40025,
-        "Condition": "阿斯特利亚平原，卡尼曼部落南部怪物营地出现，使用巨锤近战的姆克小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特利亚平原，卡尼曼部落南部怪物营地出现，使用巨锤近战的姆克小头目。",
         "SceneTag": 0
     },
     "10058": {
@@ -1819,7 +2024,7 @@
         ],
         "Award": 10500120,
         "TreasureBoxId": 40026,
-        "Condition": "阿斯特利亚平原，卡尼曼部落南部怪物营地出现，使用双斧近战的姆克小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特利亚平原，卡尼曼部落南部怪物营地出现，使用双斧近战的姆克小头目。",
         "SceneTag": 0
     },
     "10059": {
@@ -1864,7 +2069,7 @@
         ],
         "Award": 10700080,
         "TreasureBoxId": 40008,
-        "Condition": "每个整点会在阿斯特利亚平原，卡尼曼部落南部怪物营地出现，统领姆克的首领，小心应付！",
+        "Condition": "刷新时间：每日整点刷新。<br>在阿斯特利亚平原，卡尼曼部落南部怪物营地出现，统领姆克的首领，小心应付！",
         "SceneTag": 733
     },
     "10060": {
@@ -2089,7 +2294,7 @@
         ],
         "Award": 10500130,
         "TreasureBoxId": 40027,
-        "Condition": "阿斯特利亚平原，黯影堡垒区域出现，远程攻击的暗影军团枪手小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特利亚平原，黯影堡垒区域出现，远程攻击的暗影军团枪手小头目。",
         "SceneTag": 0
     },
     "10065": {
@@ -2134,7 +2339,7 @@
         ],
         "Award": 10500140,
         "TreasureBoxId": 40028,
-        "Condition": "阿斯特利亚平原，黯影堡垒区域出现，近战攻击的暗影军团剑士小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特利亚平原，黯影堡垒区域出现，近战攻击的暗影军团剑士小头目。",
         "SceneTag": 0
     },
     "10066": {
@@ -2175,7 +2380,7 @@
         ],
         "Award": 10500150,
         "TreasureBoxId": 40029,
-        "Condition": "风啸的峡谷出现，使用巨斧近战的哥布林小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>风啸的峡谷出现，使用巨斧近战的哥布林小头目。",
         "SceneTag": 0
     },
     "10069": {
@@ -2220,7 +2425,7 @@
         ],
         "Award": 10700090,
         "TreasureBoxId": 40009,
-        "Condition": "每个整点30分会在阿斯特里斯地下街区出现，拥有强大实力的特殊蟹蛛，小心应付！",
+        "Condition": "刷新时间：每日整点30分刷新。<br>在阿斯特里斯地下街区出现，拥有强大实力的特殊蟹蛛，小心应付！",
         "SceneTag": 733
     },
     "10072": {
@@ -2437,7 +2642,7 @@
         ],
         "Award": 10500160,
         "TreasureBoxId": 40030,
-        "Condition": "阿斯特里斯地下街区出现，受到地下街区环境影响的变异黄蜂，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>阿斯特里斯地下街区出现，受到地下街区环境影响的变异黄蜂。",
         "SceneTag": 0
     },
     "10077": {
@@ -2482,7 +2687,7 @@
         ],
         "Award": 10700100,
         "TreasureBoxId": 40010,
-        "Condition": "每个整点30分会在阿斯特里斯地下街区出现，是所有黄蜂的巢穴，小心应付！",
+        "Condition": "刷新时间：每日整点30分刷新。<br>在阿斯特里斯地下街区出现，是所有黄蜂的巢穴，小心应付！",
         "SceneTag": 733
     },
     "10078": {
@@ -2613,7 +2818,7 @@
         ],
         "Award": 10500170,
         "TreasureBoxId": 40031,
-        "Condition": "风啸的峡谷出现，野猪小头目，被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>风啸的峡谷出现，野猪小头目。",
         "SceneTag": 0
     },
     "10081": {
@@ -2658,7 +2863,7 @@
         ],
         "Award": 10700110,
         "TreasureBoxId": 40011,
-        "Condition": "每个整点30分会在风啸的峡谷出现，野猪的首领，小心应付！",
+        "Condition": "刷新时间：每日整点30分刷新。<br>在风啸的峡谷出现，野猪的首领，小心应付！",
         "SceneTag": 733
     },
     "10082": {
@@ -2793,7 +2998,7 @@
         ],
         "Award": 10700120,
         "TreasureBoxId": 40012,
-        "Condition": "每个整点在黯蓝深窟中出现，飞鱼族群中的首领，攻击性极强的圣域飞鱼，小心应付！",
+        "Condition": "刷新时间：每日整点刷新。<br>在黯蓝深窟中出现，飞鱼族群中的首领，攻击性极强的圣域飞鱼，小心应付！",
         "SceneTag": 733
     },
     "10085": {
@@ -2834,7 +3039,7 @@
         ],
         "Award": 10700130,
         "TreasureBoxId": 40013,
-        "Condition": "每个整点30分在黯蓝深窟中出现，是统领海底蜥蜴人的首领，小心应付！",
+        "Condition": "刷新时间：每日整点30分刷新。<br>在黯蓝深窟中出现，是统领海底蜥蜴人的首领，小心应付！",
         "SceneTag": 733
     },
     "10086": {
@@ -2882,7 +3087,7 @@
         ],
         "Award": 10700140,
         "TreasureBoxId": 40014,
-        "Condition": "每个整点会在平原北部，花明的森林中出现，统领哥布林的首领，小心应付！",
+        "Condition": "刷新时间：每日整点刷新。<br>在平原北部，花明的森林中出现，统领哥布林的首领，小心应付！",
         "SceneTag": 733
     },
     "10087": {
@@ -3091,7 +3296,7 @@
         ],
         "Award": 10500180,
         "TreasureBoxId": 40032,
-        "Condition": "黯蓝深窟中出现，鱼人族的猎手与法师配合默契，小心应付！被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>黯蓝深窟中出现，鱼人族的猎手与法师配合默契，小心应付！",
         "SceneTag": 0
     },
     "10105": {
@@ -3132,8 +3337,582 @@
         ],
         "Award": 10500190,
         "TreasureBoxId": 40033,
-        "Condition": "黯蓝深窟中出现，鱼人族的猎手与法师配合默契，小心应付！被击败3分钟后会再次出现。",
+        "Condition": "刷新时间：被击败3分钟后复活。<br>黯蓝深窟中出现，鱼人族的猎手与法师配合默契，小心应付！",
         "SceneTag": 0
+    },
+    "10106": {
+        "Key": 10106,
+        "MonsterId": 10106,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 101,
+        "Target": [
+            [
+                1,
+                1010601,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1010602,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1010603,
+                2,
+                20402374
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-rifle_idle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3184
+        ],
+        "Award": 10500700,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1510</b></style><br>在巴哈马尔高原西斯莱萨矿场附近巡逻，是黑石军团中的远程射手。",
+        "SceneTag": 0
+    },
+    "10107": {
+        "Key": 10107,
+        "MonsterId": 10107,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 102,
+        "Target": [
+            [
+                1,
+                1010701,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1010702,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1010703,
+                2,
+                20402375
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-shield_idle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3159
+        ],
+        "Award": 10500710,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1520</b></style><br>在巴哈马尔高原西斯莱萨矿场附近巡逻，是黑石军团中的近战卫士。",
+        "SceneTag": 0
+    },
+    "10108": {
+        "Key": 10108,
+        "MonsterId": 10108,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 103,
+        "Target": [
+            [
+                1,
+                1010801,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1010802,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1010803,
+                2,
+                20402376
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-sssword_fidle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3137
+        ],
+        "Award": 10500720,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1630</b></style><br>在巴哈马尔高原西斯莱萨矿场附近巡逻，是黑石军团中的近战战士。",
+        "SceneTag": 0
+    },
+    "10109": {
+        "Key": 10109,
+        "MonsterId": 10109,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 104,
+        "Target": [
+            [
+                1,
+                1010901,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1010902,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1010903,
+                2,
+                20402377
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-sssword_fidle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3140
+        ],
+        "Award": 10500730,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1730</b></style><br>在巴哈马尔高原西斯莱萨矿场附近巡逻，是黑石军团中的近战长矛手。",
+        "SceneTag": 0
+    },
+    "10110": {
+        "Key": 10110,
+        "MonsterId": 10110,
+        "Scene": 9,
+        "Type": 2,
+        "Sort": 105,
+        "Target": [
+            [
+                1,
+                1011001,
+                0,
+                20402310
+            ],
+            [
+                2,
+                1011002,
+                1,
+                20402391
+            ],
+            [
+                3,
+                1011003,
+                2,
+                20402330
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-sword_idle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3040
+        ],
+        "Award": 10500740,
+        "TreasureBoxId": 40041,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1830</b></style><br>刷新时间：被击败3分钟后复活。<br>在巴哈马尔高原西斯莱萨矿场内，是实力强大的军官。",
+        "SceneTag": 0
+    },
+    "10111": {
+        "Key": 10111,
+        "MonsterId": 10111,
+        "Scene": 9,
+        "Type": 2,
+        "Sort": 106,
+        "Target": [
+            [
+                1,
+                1011101,
+                0,
+                20402310
+            ],
+            [
+                2,
+                1011102,
+                1,
+                20402392
+            ],
+            [
+                3,
+                1011103,
+                2,
+                20402330
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-sword_idle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3039
+        ],
+        "Award": 10500750,
+        "TreasureBoxId": 40042,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:2030</b></style><br>刷新时间：被击败3分钟后复活。<br>在巴哈马尔高原西斯莱萨矿场内，是实力强大的军官。",
+        "SceneTag": 0
+    },
+    "10112": {
+        "Key": 10112,
+        "MonsterId": 10112,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 94,
+        "Target": [
+            [
+                1,
+                1011201,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1011202,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1011203,
+                2,
+                20402382
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-dagger_idle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            355
+        ],
+        "Award": 10500840,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1340</b></style><br>在巴哈马尔高原西侧营地出现，是卷心菜调查团中的先遣。",
+        "SceneTag": 0
+    },
+    "10113": {
+        "Key": 10113,
+        "MonsterId": 10113,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 95,
+        "Target": [
+            [
+                1,
+                1011301,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1011302,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1011303,
+                2,
+                20402383
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-archer_idle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            363
+        ],
+        "Award": 10500850,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1360</b></style><br>在巴哈马尔高原西侧营地出现，是卷心菜调查团中的射手。",
+        "SceneTag": 0
+    },
+    "10114": {
+        "Key": 10114,
+        "MonsterId": 10114,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 96,
+        "Target": [
+            [
+                1,
+                1011401,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1011402,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1011403,
+                2,
+                20402384
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-sword_idle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            370
+        ],
+        "Award": 10500860,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1390</b></style><br>在巴哈马尔高原西侧营地出现，是卷心菜调查团中的战士。",
+        "SceneTag": 0
+    },
+    "10115": {
+        "Key": 10115,
+        "MonsterId": 10115,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 97,
+        "Target": [
+            [
+                1,
+                1011501,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1011502,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1011503,
+                2,
+                20402385
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-sword_idle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3036
+        ],
+        "Award": 10500870,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1410</b></style><br>在巴哈马尔高原西侧营地出现，是卷心菜调查团中的法师。",
+        "SceneTag": 0
+    },
+    "10116": {
+        "Key": 10116,
+        "MonsterId": 10116,
+        "Scene": 9,
+        "Type": 2,
+        "Sort": 98,
+        "Target": [
+            [
+                1,
+                1011601,
+                0,
+                20402310
+            ],
+            [
+                2,
+                1011602,
+                1,
+                20402395
+            ],
+            [
+                3,
+                1011603,
+                2,
+                20402330
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-sword_idle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            347
+        ],
+        "Award": 10500880,
+        "TreasureBoxId": 40045,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1440</b></style><br>刷新时间：被击败3分钟后复活。<br>在巴哈马尔高原西侧营地出现，是卷心菜调查团中的头目。",
+        "SceneTag": 0
+    },
+    "10117": {
+        "Key": 10117,
+        "MonsterId": 10117,
+        "Scene": 9,
+        "Type": 2,
+        "Sort": 99,
+        "Target": [
+            [
+                1,
+                1011701,
+                0,
+                20402310
+            ],
+            [
+                2,
+                1011702,
+                1,
+                20402396
+            ],
+            [
+                3,
+                1011703,
+                2,
+                20402330
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-sword_idle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            346
+        ],
+        "Award": 10500890,
+        "TreasureBoxId": 40046,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1490</b></style><br>刷新时间：被击败3分钟后复活。<br>在巴哈马尔高原西侧营地出现，是卷心菜调查团中的头目。",
+        "SceneTag": 0
+    },
+    "10118": {
+        "Key": 10118,
+        "MonsterId": 10118,
+        "Scene": 9,
+        "Type": 3,
+        "Sort": 100,
+        "Target": [
+            [
+                1,
+                1011801,
+                0,
+                20402340
+            ],
+            [
+                2,
+                1011802,
+                1,
+                20402350
+            ],
+            [
+                3,
+                1011803,
+                2,
+                20402402
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-sssword_fidle",
+        "ModelRetio": 1,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            345
+        ],
+        "Award": 10500900,
+        "TreasureBoxId": 40037,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1500</b></style><br>刷新时间：每日整点刷新。<br>在巴哈马尔高原西侧营地出现，是卷心菜调查团中最强的存在，自称天才大王，小心应付！",
+        "SceneTag": 733
+    },
+    "10119": {
+        "Key": 10119,
+        "MonsterId": 10119,
+        "Scene": 9,
+        "Type": 3,
+        "Sort": 107,
+        "Target": [
+            [
+                1,
+                1011901,
+                0,
+                20402340
+            ],
+            [
+                2,
+                1011902,
+                1,
+                20402350
+            ],
+            [
+                3,
+                1011903,
+                2,
+                20402400
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_solider-sword_idle",
+        "ModelRetio": 1,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3038
+        ],
+        "Award": 10500760,
+        "TreasureBoxId": 40035,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:2230</b></style><br>刷新时间：每日整点30分刷新。<br>在巴哈马尔高原屯兵所内，是实力强大的黑石军团卫队长，小心应付！",
+        "SceneTag": 733
     },
     "10900": {
         "Key": 10900,
@@ -3352,6 +4131,785 @@
         "Award": 10500610,
         "TreasureBoxId": 0,
         "Condition": "阿斯特利亚平原上的神奇生物，每天会在随机地点出现，据说小猪·闪闪更容易出现在怪物聚集的区域。",
+        "SceneTag": 0
+    },
+    "11001": {
+        "Key": 11001,
+        "MonsterId": 11001,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 81,
+        "Target": [
+            [
+                1,
+                1100101,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1100102,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1100103,
+                2,
+                20402370
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_xiyi_idle",
+        "ModelRetio": 0.8,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            2986
+        ],
+        "Award": 10500640,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:220</b></style><br>在巴哈马尔高原废弃矿洞中出现，冰暗属性的巨蜥。",
+        "SceneTag": 0
+    },
+    "11002": {
+        "Key": 11002,
+        "MonsterId": 11002,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 82,
+        "Target": [
+            [
+                1,
+                1100201,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1100202,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1100203,
+                2,
+                20402371
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_xiyi_idle",
+        "ModelRetio": 0.8,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3003
+        ],
+        "Award": 10500650,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:400</b></style><br>在巴哈马尔高原废弃矿洞中出现，岩火属性的巨蜥。",
+        "SceneTag": 0
+    },
+    "11003": {
+        "Key": 11003,
+        "MonsterId": 11003,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 83,
+        "Target": [
+            [
+                1,
+                1100301,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1100302,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1100303,
+                2,
+                20402372
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_xiyi_idle",
+        "ModelRetio": 0.8,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            2977
+        ],
+        "Award": 10500660,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:420</b></style><br>在巴哈马尔高原废弃矿洞中出现，森风属性的巨蜥。",
+        "SceneTag": 0
+    },
+    "11004": {
+        "Key": 11004,
+        "MonsterId": 11004,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 84,
+        "Target": [
+            [
+                1,
+                1100401,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1100402,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1100403,
+                2,
+                20402373
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_xiyi_idle",
+        "ModelRetio": 0.8,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            2989
+        ],
+        "Award": 10500670,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:680</b></style><br>在巴哈马尔高原废弃矿洞中出现，电光属性的巨蜥。",
+        "SceneTag": 0
+    },
+    "11005": {
+        "Key": 11005,
+        "MonsterId": 11005,
+        "Scene": 9,
+        "Type": 2,
+        "Sort": 85,
+        "Target": [
+            [
+                1,
+                1100501,
+                0,
+                20402310
+            ],
+            [
+                2,
+                1100502,
+                1,
+                20402390
+            ],
+            [
+                3,
+                1100503,
+                2,
+                20402330
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_xiyi_idle",
+        "ModelRetio": 0.8,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            350
+        ],
+        "Award": 10500680,
+        "TreasureBoxId": 40040,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:710</b></style><br>刷新时间：被击败3分钟后复活。<br>在巴哈马尔高原废弃矿洞中出现，实力强大的巨蜥。",
+        "SceneTag": 0
+    },
+    "11007": {
+        "Key": 11007,
+        "MonsterId": 11007,
+        "Scene": 9,
+        "Type": 3,
+        "Sort": 86,
+        "Target": [
+            [
+                1,
+                1100701,
+                0,
+                20402340
+            ],
+            [
+                2,
+                1100702,
+                1,
+                20402350
+            ],
+            [
+                3,
+                1100703,
+                2,
+                20402399
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_xiyi_idle",
+        "ModelRetio": 0.9,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            349
+        ],
+        "Award": 10500690,
+        "TreasureBoxId": 40034,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:720</b></style><br>刷新时间：每日整点刷新。<br>在巴哈马尔高原废弃矿洞中出现，是巨蜥的首领，小心应付！",
+        "SceneTag": 733
+    },
+    "11008": {
+        "Key": 11008,
+        "MonsterId": 11008,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 87,
+        "Target": [
+            [
+                1,
+                1100801,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1100802,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1100803,
+                2,
+                20402378
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_gebulin-ds_idle",
+        "ModelRetio": 0.7,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            407
+        ],
+        "Award": 10500770,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:880</b></style><br>在巴哈马尔高原西侧哥布林营地出现，战斗经验丰富的哥布林战士。",
+        "SceneTag": 0
+    },
+    "11009": {
+        "Key": 11009,
+        "MonsterId": 11009,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 88,
+        "Target": [
+            [
+                1,
+                1100901,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1100902,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1100903,
+                2,
+                20402379
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_gebulin-ds_fidle",
+        "ModelRetio": 0.7,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            423
+        ],
+        "Award": 10500780,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:930</b></style><br>在巴哈马尔高原西侧哥布林营地出现，战斗经验丰富的哥布林斧手。",
+        "SceneTag": 0
+    },
+    "11010": {
+        "Key": 11010,
+        "MonsterId": 11010,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 89,
+        "Target": [
+            [
+                1,
+                1101001,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1101002,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1101003,
+                2,
+                20402380
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_gebulin-ss_idle",
+        "ModelRetio": 0.7,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3012
+        ],
+        "Award": 10500790,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:960</b></style><br>在巴哈马尔高原西侧哥布林营地出现，战斗经验丰富的哥布林祭祀。",
+        "SceneTag": 0
+    },
+    "11011": {
+        "Key": 11011,
+        "MonsterId": 11011,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 90,
+        "Target": [
+            [
+                1,
+                1101101,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1101102,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1101103,
+                2,
+                20402381
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_gebulin-ssfc_idle",
+        "ModelRetio": 0.7,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            450
+        ],
+        "Award": 10500800,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1020</b></style><br>在巴哈马尔高原西侧哥布林营地出现，战斗经验丰富的哥布林护卫。",
+        "SceneTag": 0
+    },
+    "11012": {
+        "Key": 11012,
+        "MonsterId": 11012,
+        "Scene": 9,
+        "Type": 2,
+        "Sort": 91,
+        "Target": [
+            [
+                1,
+                1101201,
+                0,
+                20402310
+            ],
+            [
+                2,
+                1101202,
+                1,
+                20402393
+            ],
+            [
+                3,
+                1101203,
+                2,
+                20402330
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_gebulin-ds_idle",
+        "ModelRetio": 0.6,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            340
+        ],
+        "Award": 10500810,
+        "TreasureBoxId": 40043,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1040</b></style><br>刷新时间：被击败3分钟后复活。<br>在巴哈马尔高原西侧哥布林营地出现，异常精明的哥布林欺诈师。",
+        "SceneTag": 0
+    },
+    "11013": {
+        "Key": 11013,
+        "MonsterId": 11013,
+        "Scene": 9,
+        "Type": 2,
+        "Sort": 92,
+        "Target": [
+            [
+                1,
+                1101301,
+                0,
+                20402310
+            ],
+            [
+                2,
+                1101302,
+                1,
+                20402394
+            ],
+            [
+                3,
+                1101303,
+                2,
+                20402330
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_gebulin-ds_idle",
+        "ModelRetio": 0.6,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            341
+        ],
+        "Award": 10500820,
+        "TreasureBoxId": 40044,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1190</b></style><br>刷新时间：被击败3分钟后复活。<br>在巴哈马尔高原西侧哥布林营地出现，异常精明的哥布林巫医。",
+        "SceneTag": 0
+    },
+    "11014": {
+        "Key": 11014,
+        "MonsterId": 11014,
+        "Scene": 9,
+        "Type": 3,
+        "Sort": 93,
+        "Target": [
+            [
+                1,
+                1101401,
+                0,
+                20402340
+            ],
+            [
+                2,
+                1101402,
+                1,
+                20402350
+            ],
+            [
+                3,
+                1101403,
+                2,
+                20402401
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_gebulin-ssfc_idle",
+        "ModelRetio": 0.8,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            342
+        ],
+        "Award": 10500830,
+        "TreasureBoxId": 40036,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:1290</b></style><br>刷新时间：每日整点30分刷新。<br>在巴哈马尔高原西侧哥布林营地出现，是高原哥布林的首领，小心应付！",
+        "SceneTag": 733
+    },
+    "11015": {
+        "Key": 11015,
+        "MonsterId": 11015,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 78,
+        "Target": [
+            [
+                1,
+                1101501,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1101502,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1101503,
+                2,
+                20402300
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_niuyang_idle",
+        "ModelRetio": 0.5,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3312
+        ],
+        "Award": 10500990,
+        "TreasureBoxId": 0,
+        "Condition": "巴哈马尔高原上的小角羊。",
+        "SceneTag": 0
+    },
+    "11020": {
+        "Key": 11020,
+        "MonsterId": 11020,
+        "Scene": 94,
+        "Type": 1,
+        "Sort": 112,
+        "Target": [
+            [
+                1,
+                1102001,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1102002,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1102003,
+                2,
+                20402388
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_niuyang_idle",
+        "ModelRetio": 0.5,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            94,
+            3,
+            73
+        ],
+        "Award": 10500950,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:2410</b></style><br>在迷星之径出没的战斗角羊。",
+        "SceneTag": 0
+    },
+    "11021": {
+        "Key": 11021,
+        "MonsterId": 11021,
+        "Scene": 94,
+        "Type": 1,
+        "Sort": 113,
+        "Target": [
+            [
+                1,
+                1102101,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1102102,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1102103,
+                2,
+                20402389
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_niuyang_idle",
+        "ModelRetio": 0.5,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            94,
+            3,
+            81
+        ],
+        "Award": 10500960,
+        "TreasureBoxId": 0,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:2450</b></style><br>在迷星之径出没的战斗角羊。",
+        "SceneTag": 0
+    },
+    "11022": {
+        "Key": 11022,
+        "MonsterId": 11022,
+        "Scene": 94,
+        "Type": 2,
+        "Sort": 114,
+        "Target": [
+            [
+                1,
+                1102201,
+                0,
+                20402310
+            ],
+            [
+                2,
+                1102202,
+                1,
+                20402398
+            ],
+            [
+                3,
+                1102203,
+                2,
+                20402330
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_niuyang_idle",
+        "ModelRetio": 0.4,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            94,
+            3,
+            36
+        ],
+        "Award": 10500970,
+        "TreasureBoxId": 40048,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:2480</b></style><br>刷新时间：被击败3分钟后复活。<br>在迷星之径出没的翡翠角羊，实力强劲。",
+        "SceneTag": 0
+    },
+    "11023": {
+        "Key": 11023,
+        "MonsterId": 11023,
+        "Scene": 94,
+        "Type": 3,
+        "Sort": 115,
+        "Target": [
+            [
+                1,
+                1102301,
+                0,
+                20402340
+            ],
+            [
+                2,
+                1102302,
+                1,
+                20402350
+            ],
+            [
+                3,
+                1102303,
+                2,
+                20402404
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_niuyang_idle",
+        "ModelRetio": 0.4,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            94,
+            3,
+            35
+        ],
+        "Award": 10500980,
+        "TreasureBoxId": 40039,
+        "Condition": "<style=\"tipsYellow\"><b>「幻梦强度」:2500</b></style><br>刷新时间：每日整点30分刷新。<br>在迷星之径出没的角羊首领，小心应付！",
+        "SceneTag": 733
+    },
+    "11045": {
+        "Key": 11045,
+        "MonsterId": 11045,
+        "Scene": 9,
+        "Type": 1,
+        "Sort": 79,
+        "Target": [
+            [
+                1,
+                1104501,
+                0,
+                20402280
+            ],
+            [
+                2,
+                1104502,
+                1,
+                20402290
+            ],
+            [
+                3,
+                1104503,
+                2,
+                20402300
+            ]
+        ],
+        "SkillIds": [],
+        "ModelArray": [],
+        "DefaulAction": "as_mon_xiongying_idle",
+        "ModelRetio": 0.4,
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            3,
+            3320
+        ],
+        "Award": 10501000,
+        "TreasureBoxId": 0,
+        "Condition": "巴哈马尔高原西部陷落河谷附近生存的大鹫。",
         "SceneTag": 0
     }
 }

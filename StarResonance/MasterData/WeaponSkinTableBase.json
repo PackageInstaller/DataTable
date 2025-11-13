@@ -46,8 +46,8 @@
     "7310003": {
         "Key": 7310003,
         "Id": 7310003,
-        "Name": "太刀·红莲",
-        "Intro": "太刀·红莲",
+        "Name": "暮光祈愿之刀",
+        "Intro": "暮光祈愿之刀",
         "Model": [
             "ch_wp_olvera-03_01"
         ],
@@ -58,10 +58,10 @@
         "DefaultEffect": [],
         "ProfessionId": 1,
         "Original": 0,
-        "SortID": 4,
-        "Score": 0,
+        "SortID": 7,
+        "Score": 30,
         "LongIcon": "ch_wp_olvera_02_01_t",
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -80,7 +80,7 @@
         "DefaultEffect": [],
         "ProfessionId": 1,
         "Original": 0,
-        "SortID": 5,
+        "SortID": 8,
         "Score": 160,
         "LongIcon": "ch_wp_olvera_02_01_t",
         "IsOpen": true,
@@ -102,7 +102,7 @@
         "DefaultEffect": [],
         "ProfessionId": 1,
         "Original": 0,
-        "SortID": 6,
+        "SortID": 10,
         "Score": 30,
         "LongIcon": "ch_wp_olvera_02_01_t",
         "IsOpen": true,
@@ -140,7 +140,7 @@
         ],
         "ProfessionId": 1,
         "Original": 1,
-        "SortID": 7,
+        "SortID": 9,
         "Score": 320,
         "LongIcon": "ch_wp_olvera_06_01_t",
         "IsOpen": true,
@@ -151,12 +151,78 @@
         "Key": 7310007,
         "Id": 7310007,
         "Name": "熔辉之刀",
-        "Intro": "熔辉之刃",
+        "Intro": "熔辉之刀",
         "Model": [
             "ch_wp_olvera-07_01"
         ],
         "WeaponModelId": [
             1310070
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 1,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_olvera_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7310008": {
+        "Key": 7310008,
+        "Id": 7310008,
+        "Name": "鎏金之刀",
+        "Intro": "鎏金之刀",
+        "Model": [
+            "ch_wp_olvera-08_01"
+        ],
+        "WeaponModelId": [
+            1310080
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 1,
+        "Original": 0,
+        "SortID": 5,
+        "Score": 30,
+        "LongIcon": "ch_wp_olvera_02_01_t",
+        "IsOpen": false,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7310009": {
+        "Key": 7310009,
+        "Id": 7310009,
+        "Name": "虚无之供物·太刀",
+        "Intro": "虚无之供物·太刀",
+        "Model": [
+            "ch_wp_olvera-09_01"
+        ],
+        "WeaponModelId": [
+            1310090
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 1,
+        "Original": 0,
+        "SortID": 6,
+        "Score": 160,
+        "LongIcon": "ch_wp_olvera_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7310010": {
+        "Key": 7310010,
+        "Id": 7310010,
+        "Name": "夜的诡计之刀",
+        "Intro": "夜的诡计之刀",
+        "Model": [
+            "ch_wp_olvera-10_01"
+        ],
+        "WeaponModelId": [
+            1310100
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -216,8 +282,8 @@
     "7320003": {
         "Key": 7320003,
         "Id": 7320003,
-        "Name": "法杖·红莲",
-        "Intro": "法杖·红莲",
+        "Name": "暮光祈愿之杖",
+        "Intro": "暮光祈愿之杖",
         "Model": [
             "ch_wp_boyce-03_01"
         ],
@@ -228,10 +294,10 @@
         "DefaultEffect": [],
         "ProfessionId": 2,
         "Original": 0,
-        "SortID": 4,
-        "Score": 0,
+        "SortID": 7,
+        "Score": 30,
         "LongIcon": "ch_wp_boyce_02_01_t",
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -250,7 +316,7 @@
         "DefaultEffect": [],
         "ProfessionId": 2,
         "Original": 0,
-        "SortID": 5,
+        "SortID": 8,
         "Score": 160,
         "LongIcon": "ch_wp_boyce_02_01_t",
         "IsOpen": true,
@@ -272,7 +338,7 @@
         "DefaultEffect": [],
         "ProfessionId": 2,
         "Original": 0,
-        "SortID": 6,
+        "SortID": 10,
         "Score": 30,
         "LongIcon": "ch_wp_boyce_02_01_t",
         "IsOpen": true,
@@ -310,7 +376,7 @@
         ],
         "ProfessionId": 2,
         "Original": 1,
-        "SortID": 7,
+        "SortID": 9,
         "Score": 320,
         "LongIcon": "ch_wp_boyce_06_01_t",
         "IsOpen": true,
@@ -327,6 +393,72 @@
         ],
         "WeaponModelId": [
             1320070
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 2,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_boyce_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7320008": {
+        "Key": 7320008,
+        "Id": 7320008,
+        "Name": "鎏金之杖",
+        "Intro": "鎏金之杖",
+        "Model": [
+            "ch_wp_boyce-08_01"
+        ],
+        "WeaponModelId": [
+            1320080
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 2,
+        "Original": 0,
+        "SortID": 5,
+        "Score": 30,
+        "LongIcon": "ch_wp_boyce_02_01_t",
+        "IsOpen": false,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7320009": {
+        "Key": 7320009,
+        "Id": 7320009,
+        "Name": "虚无之供物·杖",
+        "Intro": "虚无之供物·杖",
+        "Model": [
+            "ch_wp_boyce-09_01"
+        ],
+        "WeaponModelId": [
+            1320090
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 2,
+        "Original": 0,
+        "SortID": 6,
+        "Score": 160,
+        "LongIcon": "ch_wp_boyce_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7320010": {
+        "Key": 7320010,
+        "Id": 7320010,
+        "Name": "夜的诡计之杖",
+        "Intro": "夜的诡计之杖",
+        "Model": [
+            "ch_wp_boyce-10_01"
+        ],
+        "WeaponModelId": [
+            1320100
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -410,8 +542,8 @@
     "7340003": {
         "Key": 7340003,
         "Id": 7340003,
-        "Name": "红莲之枪",
-        "Intro": "红莲之枪",
+        "Name": "暮光祈愿之枪",
+        "Intro": "暮光祈愿之枪",
         "Model": [
             "ch_wp_tina-03_01"
         ],
@@ -422,10 +554,10 @@
         "DefaultEffect": [],
         "ProfessionId": 4,
         "Original": 0,
-        "SortID": 4,
-        "Score": 0,
+        "SortID": 7,
+        "Score": 30,
         "LongIcon": "ch_wp_tina_02_01_t",
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -444,7 +576,7 @@
         "DefaultEffect": [],
         "ProfessionId": 4,
         "Original": 0,
-        "SortID": 5,
+        "SortID": 8,
         "Score": 160,
         "LongIcon": "ch_wp_tina_02_01_t",
         "IsOpen": true,
@@ -466,7 +598,7 @@
         "DefaultEffect": [],
         "ProfessionId": 4,
         "Original": 0,
-        "SortID": 6,
+        "SortID": 10,
         "Score": 30,
         "LongIcon": "ch_wp_tina_02_01_t",
         "IsOpen": true,
@@ -504,7 +636,7 @@
         ],
         "ProfessionId": 4,
         "Original": 1,
-        "SortID": 7,
+        "SortID": 9,
         "Score": 320,
         "LongIcon": "ch_wp_tina_06_01_t",
         "IsOpen": true,
@@ -521,6 +653,72 @@
         ],
         "WeaponModelId": [
             1340070
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 4,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_tina_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7340008": {
+        "Key": 7340008,
+        "Id": 7340008,
+        "Name": "鎏金之枪",
+        "Intro": "鎏金之枪",
+        "Model": [
+            "ch_wp_tina-08_01"
+        ],
+        "WeaponModelId": [
+            1340080
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 4,
+        "Original": 0,
+        "SortID": 5,
+        "Score": 30,
+        "LongIcon": "ch_wp_tina_02_01_t",
+        "IsOpen": false,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7340009": {
+        "Key": 7340009,
+        "Id": 7340009,
+        "Name": "虚无之供物·枪",
+        "Intro": "虚无之供物·枪",
+        "Model": [
+            "ch_wp_tina-09_01"
+        ],
+        "WeaponModelId": [
+            1340090
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 4,
+        "Original": 0,
+        "SortID": 6,
+        "Score": 160,
+        "LongIcon": "ch_wp_tina_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7340010": {
+        "Key": 7340010,
+        "Id": 7340010,
+        "Name": "夜的诡计之枪",
+        "Intro": "夜的诡计之枪",
+        "Model": [
+            "ch_wp_tina-10_01"
+        ],
+        "WeaponModelId": [
+            1340100
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -584,8 +782,8 @@
     "7350003": {
         "Key": 7350003,
         "Id": 7350003,
-        "Name": "红莲之环",
-        "Intro": "红莲之环",
+        "Name": "暮光祈愿之环",
+        "Intro": "暮光祈愿之环",
         "Model": [
             "ch_wp_iruna-03_01",
             "ch_wp_iruna-03_01"
@@ -598,10 +796,10 @@
         "DefaultEffect": [],
         "ProfessionId": 5,
         "Original": 0,
-        "SortID": 4,
-        "Score": 0,
+        "SortID": 7,
+        "Score": 30,
         "LongIcon": "ch_wp_iruna_02_01_t",
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -622,7 +820,7 @@
         "DefaultEffect": [],
         "ProfessionId": 5,
         "Original": 0,
-        "SortID": 5,
+        "SortID": 8,
         "Score": 160,
         "LongIcon": "ch_wp_iruna_02_01_t",
         "IsOpen": true,
@@ -646,7 +844,7 @@
         "DefaultEffect": [],
         "ProfessionId": 5,
         "Original": 0,
-        "SortID": 6,
+        "SortID": 10,
         "Score": 30,
         "LongIcon": "ch_wp_iruna_02_01_t",
         "IsOpen": true,
@@ -700,7 +898,7 @@
         ],
         "ProfessionId": 5,
         "Original": 1,
-        "SortID": 7,
+        "SortID": 9,
         "Score": 320,
         "LongIcon": "ch_wp_iruna_06_01_t",
         "IsOpen": true,
@@ -719,6 +917,78 @@
         "WeaponModelId": [
             1350070,
             1350070
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 5,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_iruna_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7350008": {
+        "Key": 7350008,
+        "Id": 7350008,
+        "Name": "鎏金之环",
+        "Intro": "鎏金之环",
+        "Model": [
+            "ch_wp_iruna-08_01",
+            "ch_wp_iruna-08_01"
+        ],
+        "WeaponModelId": [
+            1350080,
+            1350080
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 5,
+        "Original": 0,
+        "SortID": 5,
+        "Score": 30,
+        "LongIcon": "ch_wp_iruna_02_01_t",
+        "IsOpen": false,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7350009": {
+        "Key": 7350009,
+        "Id": 7350009,
+        "Name": "虚无之供物·环",
+        "Intro": "虚无之供物·环",
+        "Model": [
+            "ch_wp_iruna-09_01",
+            "ch_wp_iruna-09_01"
+        ],
+        "WeaponModelId": [
+            1350090,
+            1350090
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 5,
+        "Original": 0,
+        "SortID": 6,
+        "Score": 160,
+        "LongIcon": "ch_wp_iruna_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7350010": {
+        "Key": 7350010,
+        "Id": 7350010,
+        "Name": "夜的诡计之环",
+        "Intro": "夜的诡计之环",
+        "Model": [
+            "ch_wp_iruna-10_01",
+            "ch_wp_iruna-10_01"
+        ],
+        "WeaponModelId": [
+            1350100,
+            1350100
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -813,8 +1083,8 @@
     "7370003": {
         "Key": 7370003,
         "Id": 7370003,
-        "Name": "卫刃·红莲",
-        "Intro": "卫刃·红莲",
+        "Name": "暮光祈愿之刃",
+        "Intro": "暮光祈愿之刃",
         "Model": [
             "ch_wp_comeau-03_01"
         ],
@@ -825,10 +1095,10 @@
         "DefaultEffect": [],
         "ProfessionId": 9,
         "Original": 0,
-        "SortID": 4,
-        "Score": 0,
+        "SortID": 7,
+        "Score": 30,
         "LongIcon": "ch_wp_comeau_02_01_t",
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -847,7 +1117,7 @@
         "DefaultEffect": [],
         "ProfessionId": 9,
         "Original": 0,
-        "SortID": 5,
+        "SortID": 8,
         "Score": 160,
         "LongIcon": "ch_wp_comeau_02_01_t",
         "IsOpen": true,
@@ -869,7 +1139,7 @@
         "DefaultEffect": [],
         "ProfessionId": 9,
         "Original": 0,
-        "SortID": 6,
+        "SortID": 10,
         "Score": 30,
         "LongIcon": "ch_wp_comeau_02_01_t",
         "IsOpen": true,
@@ -907,7 +1177,7 @@
         ],
         "ProfessionId": 9,
         "Original": 1,
-        "SortID": 7,
+        "SortID": 9,
         "Score": 320,
         "LongIcon": "ch_wp_comeau_06_01_t",
         "IsOpen": true,
@@ -924,6 +1194,72 @@
         ],
         "WeaponModelId": [
             1370070
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 9,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_comeau_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7370008": {
+        "Key": 7370008,
+        "Id": 7370008,
+        "Name": "鎏金之刃",
+        "Intro": "鎏金之刃",
+        "Model": [
+            "ch_wp_comeau-08_01"
+        ],
+        "WeaponModelId": [
+            1370080
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 9,
+        "Original": 0,
+        "SortID": 5,
+        "Score": 30,
+        "LongIcon": "ch_wp_comeau_02_01_t",
+        "IsOpen": false,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7370009": {
+        "Key": 7370009,
+        "Id": 7370009,
+        "Name": "虚无之供物·刃",
+        "Intro": "虚无之供物·刃",
+        "Model": [
+            "ch_wp_comeau-09_01"
+        ],
+        "WeaponModelId": [
+            1370090
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 9,
+        "Original": 0,
+        "SortID": 6,
+        "Score": 160,
+        "LongIcon": "ch_wp_comeau_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7370010": {
+        "Key": 7370010,
+        "Id": 7370010,
+        "Name": "夜的诡计之刃",
+        "Intro": "夜的诡计之刃",
+        "Model": [
+            "ch_wp_comeau-10_01"
+        ],
+        "WeaponModelId": [
+            1370100
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -1041,8 +1377,8 @@
     "7390003": {
         "Key": 7390003,
         "Id": 7390003,
-        "Name": "红莲之弓",
-        "Intro": "红莲之弓",
+        "Name": "暮光祈愿之弓",
+        "Intro": "暮光祈愿之弓",
         "Model": [
             "empty_weapon",
             "ch_wp_rodri-03_01"
@@ -1067,10 +1403,10 @@
         ],
         "ProfessionId": 11,
         "Original": 0,
-        "SortID": 4,
-        "Score": 0,
+        "SortID": 7,
+        "Score": 30,
         "LongIcon": "ch_wp_rodri_02_01_t",
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -1103,7 +1439,7 @@
         ],
         "ProfessionId": 11,
         "Original": 0,
-        "SortID": 5,
+        "SortID": 8,
         "Score": 160,
         "LongIcon": "ch_wp_rodri_02_01_t",
         "IsOpen": true,
@@ -1146,7 +1482,7 @@
         ],
         "ProfessionId": 11,
         "Original": 0,
-        "SortID": 6,
+        "SortID": 10,
         "Score": 30,
         "LongIcon": "ch_wp_rodri_02_01_t",
         "IsOpen": true,
@@ -1200,7 +1536,7 @@
         ],
         "ProfessionId": 11,
         "Original": 1,
-        "SortID": 7,
+        "SortID": 9,
         "Score": 320,
         "LongIcon": "ch_wp_rodri_06_01_t",
         "IsOpen": true,
@@ -1226,6 +1562,135 @@
         "WeaponModelId": [
             0,
             1390070
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [
+            [
+                "1",
+                "ep_weapon_effect02_point",
+                "effect/skill/rodri/p_fx_skill_rodri-01_bowstring",
+                "0.071",
+                "0.015",
+                "0.018",
+                "90",
+                "0",
+                "0"
+            ]
+        ],
+        "ProfessionId": 11,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_rodri_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [
+            [
+                "ep_weapon_effect02_point",
+                "1",
+                "1.1",
+                "1"
+            ]
+        ],
+        "EquipToPlay": 0
+    },
+    "7390008": {
+        "Key": 7390008,
+        "Id": 7390008,
+        "Name": "鎏金之弓",
+        "Intro": "鎏金之弓",
+        "Model": [
+            "empty_weapon",
+            "ch_wp_rodri-08_01"
+        ],
+        "WeaponModelId": [
+            0,
+            1390080
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [
+            [
+                "1",
+                "ep_weapon_effect02_point",
+                "effect/skill/rodri/p_fx_skill_rodri-01_bowstring",
+                "0.071",
+                "0.015",
+                "0.018",
+                "90",
+                "0",
+                "0"
+            ]
+        ],
+        "ProfessionId": 11,
+        "Original": 0,
+        "SortID": 5,
+        "Score": 30,
+        "LongIcon": "ch_wp_rodri_02_01_t",
+        "IsOpen": false,
+        "EffectScale": [
+            [
+                "ep_weapon_effect02_point",
+                "1",
+                "1.1",
+                "1"
+            ]
+        ],
+        "EquipToPlay": 0
+    },
+    "7390009": {
+        "Key": 7390009,
+        "Id": 7390009,
+        "Name": "虚无之供物·弓",
+        "Intro": "虚无之供物·弓",
+        "Model": [
+            "empty_weapon",
+            "ch_wp_rodri-09_01"
+        ],
+        "WeaponModelId": [
+            0,
+            1390090
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [
+            [
+                "1",
+                "ep_weapon_effect02_point",
+                "effect/skill/rodri/p_fx_skill_rodri-01_bowstring",
+                "0.071",
+                "0.015",
+                "0.018",
+                "90",
+                "0",
+                "0"
+            ]
+        ],
+        "ProfessionId": 11,
+        "Original": 0,
+        "SortID": 6,
+        "Score": 160,
+        "LongIcon": "ch_wp_rodri_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [
+            [
+                "ep_weapon_effect02_point",
+                "1",
+                "1.1",
+                "1"
+            ]
+        ],
+        "EquipToPlay": 0
+    },
+    "7390010": {
+        "Key": 7390010,
+        "Id": 7390010,
+        "Name": "夜的诡计之弓",
+        "Intro": "夜的诡计之弓",
+        "Model": [
+            "empty_weapon",
+            "ch_wp_rodri-10_01"
+        ],
+        "WeaponModelId": [
+            0,
+            1390100
         ],
         "EffectSwitch": [],
         "DefaultEffect": [
@@ -1308,8 +1773,8 @@
     "7400003": {
         "Key": 7400003,
         "Id": 7400003,
-        "Name": "剑盾·红莲",
-        "Intro": "剑盾·红莲",
+        "Name": "暮光祈愿之剑盾",
+        "Intro": "暮光祈愿之剑盾",
         "Model": [
             "ch_wp_farfara01-03_01",
             "ch_wp_farfara02-03_01"
@@ -1322,10 +1787,10 @@
         "DefaultEffect": [],
         "ProfessionId": 12,
         "Original": 0,
-        "SortID": 4,
-        "Score": 0,
+        "SortID": 7,
+        "Score": 30,
         "LongIcon": "ch_wp_farfara_02_01_t",
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -1346,7 +1811,7 @@
         "DefaultEffect": [],
         "ProfessionId": 12,
         "Original": 0,
-        "SortID": 5,
+        "SortID": 8,
         "Score": 160,
         "LongIcon": "ch_wp_farfara_02_01_t",
         "IsOpen": true,
@@ -1370,7 +1835,7 @@
         "DefaultEffect": [],
         "ProfessionId": 12,
         "Original": 0,
-        "SortID": 6,
+        "SortID": 10,
         "Score": 30,
         "LongIcon": "ch_wp_farfara_02_01_t",
         "IsOpen": true,
@@ -1424,7 +1889,7 @@
         ],
         "ProfessionId": 12,
         "Original": 1,
-        "SortID": 7,
+        "SortID": 9,
         "Score": 320,
         "LongIcon": "ch_wp_farfara_06_01_t",
         "IsOpen": true,
@@ -1443,6 +1908,78 @@
         "WeaponModelId": [
             1400070,
             1400071
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 12,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_farfara_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7400008": {
+        "Key": 7400008,
+        "Id": 7400008,
+        "Name": "鎏金之盾",
+        "Intro": "鎏金之盾",
+        "Model": [
+            "ch_wp_farfara01-08_01",
+            "ch_wp_farfara02-08_01"
+        ],
+        "WeaponModelId": [
+            1400080,
+            1400081
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 12,
+        "Original": 0,
+        "SortID": 5,
+        "Score": 30,
+        "LongIcon": "ch_wp_farfara_02_01_t",
+        "IsOpen": false,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7400009": {
+        "Key": 7400009,
+        "Id": 7400009,
+        "Name": "虚无之供物·剑盾",
+        "Intro": "虚无之供物·剑盾",
+        "Model": [
+            "ch_wp_farfara01-09_01",
+            "ch_wp_farfara02-09_01"
+        ],
+        "WeaponModelId": [
+            1400090,
+            1400091
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 12,
+        "Original": 0,
+        "SortID": 6,
+        "Score": 160,
+        "LongIcon": "ch_wp_farfara_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7400010": {
+        "Key": 7400010,
+        "Id": 7400010,
+        "Name": "夜的诡计之盾",
+        "Intro": "夜的诡计之盾",
+        "Model": [
+            "ch_wp_farfara01-10_01",
+            "ch_wp_farfara02-10_01"
+        ],
+        "WeaponModelId": [
+            1400100,
+            1400101
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -1506,8 +2043,8 @@
     "7410003": {
         "Key": 7410003,
         "Id": 7410003,
-        "Name": "吉他·红莲",
-        "Intro": "吉他·红莲",
+        "Name": "暮光祈愿之吉他",
+        "Intro": "暮光祈愿之吉他",
         "Model": [
             "empty_weapon",
             "ch_wp_guitar-03_01"
@@ -1520,10 +2057,10 @@
         "DefaultEffect": [],
         "ProfessionId": 13,
         "Original": 0,
-        "SortID": 4,
-        "Score": 0,
+        "SortID": 7,
+        "Score": 30,
         "LongIcon": "ch_wp_guitar_02_01_t",
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -1544,7 +2081,7 @@
         "DefaultEffect": [],
         "ProfessionId": 13,
         "Original": 0,
-        "SortID": 5,
+        "SortID": 8,
         "Score": 160,
         "LongIcon": "ch_wp_guitar_02_01_t",
         "IsOpen": true,
@@ -1568,7 +2105,7 @@
         "DefaultEffect": [],
         "ProfessionId": 13,
         "Original": 0,
-        "SortID": 6,
+        "SortID": 10,
         "Score": 30,
         "LongIcon": "ch_wp_guitar_02_01_t",
         "IsOpen": true,
@@ -1611,7 +2148,7 @@
         ],
         "ProfessionId": 13,
         "Original": 1,
-        "SortID": 7,
+        "SortID": 9,
         "Score": 320,
         "LongIcon": "ch_wp_guitar_06_01_t",
         "IsOpen": true,
@@ -1630,6 +2167,78 @@
         "WeaponModelId": [
             0,
             1410070
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 13,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_guitar_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7410008": {
+        "Key": 7410008,
+        "Id": 7410008,
+        "Name": "鎏金之吉他",
+        "Intro": "鎏金之吉他",
+        "Model": [
+            "empty_weapon",
+            "ch_wp_guitar-08_01"
+        ],
+        "WeaponModelId": [
+            0,
+            1410080
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 13,
+        "Original": 0,
+        "SortID": 5,
+        "Score": 30,
+        "LongIcon": "ch_wp_guitar_02_01_t",
+        "IsOpen": false,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7410009": {
+        "Key": 7410009,
+        "Id": 7410009,
+        "Name": "虚无之供物·吉他",
+        "Intro": "虚无之供物·吉他",
+        "Model": [
+            "empty_weapon",
+            "ch_wp_guitar-09_01"
+        ],
+        "WeaponModelId": [
+            0,
+            1410090
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 13,
+        "Original": 0,
+        "SortID": 6,
+        "Score": 160,
+        "LongIcon": "ch_wp_guitar_02_01_t",
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7410010": {
+        "Key": 7410010,
+        "Id": 7410010,
+        "Name": "夜的诡计之吉他",
+        "Intro": "夜的诡计之吉他",
+        "Model": [
+            "empty_weapon",
+            "ch_wp_guitar-10_01"
+        ],
+        "WeaponModelId": [
+            0,
+            1410100
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],

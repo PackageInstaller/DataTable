@@ -959,7 +959,7 @@
         "Text": "鼓舞",
         "Type": 3,
         "Par": 3401107,
-        "Description": "为祝福目标附加<style=\"accent-gn\">50</style>点<style=\"accent-gn\">智力</style>、<style=\"accent-gn\">力量</style>、<style=\"accent-gn\">敏捷</style>、<style=\"accent-gn\">耐力</style>。",
+        "Description": "为祝福目标附加<style=\"accent-gn\">100</style>点<style=\"accent-gn\">智力</style>、<style=\"accent-gn\">力量</style>、<style=\"accent-gn\">敏捷</style>、<style=\"accent-gn\">耐力</style>。",
         "ShowRule": 1
     },
     "1108": {
@@ -1283,7 +1283,7 @@
         "Text": "闪电冲击",
         "Type": 3,
         "Par": 3401143,
-        "Description": "对敌方目标造成<style=\"accent-gn\">350%</style>攻击力<style=\"physical\">物理伤害</style>。",
+        "Description": "对敌方目标造成<style=\"accent-gn\">410%</style>攻击力<style=\"physical\">物理伤害</style>。",
         "ShowRule": 1
     },
     "1144": {
@@ -1310,7 +1310,7 @@
         "Text": "传奇雄鹰",
         "Type": 3,
         "Par": 3401146,
-        "Description": "原地振翅，接下来<style=\"accent-gn\">10</style>秒内急速+<style=\"accent-gn\">30%</style>。",
+        "Description": "原地振翅，接下来<style=\"accent-gn\">10</style>秒内光能获取效率+<style=\"accent-gn\">100%</style>。",
         "ShowRule": 1
     },
     "1147": {
@@ -1789,6 +1789,105 @@
         "Par": 3401199,
         "Description": "目标在接下来<style=\"accent-gn\">10</style>秒内每秒受到<style=\"accent-gn\">20%</style>攻击力伤害，同时该目标对你造成伤害时有<style=\"accent-gn\">10%</style>固定几率为你回复生命，回复值等于你生命上限的<style=\"accent-gn\">0.5%</style>。",
         "ShowRule": 1
+    },
+    "1200": {
+        "Key": 1200,
+        "Id": 1200,
+        "Text": "幻想冲击",
+        "Type": 3,
+        "Par": 3401200,
+        "Description": "「幸运效果」：对<style=\"accent-gn\">3</style>米范围内敌方目标造成<style=\"accent-gn\">1250%</style>攻击力自适应伤害。",
+        "ShowRule": 1
+    },
+    "1201": {
+        "Key": 1201,
+        "Id": 1201,
+        "Text": "幻梦处决",
+        "Type": 3,
+        "Par": 3401201,
+        "Description": "对<style=\"accent-gn\">3</style>米范围内敌方目标造成<style=\"accent-gn\">432%</style>攻击力自适应伤害，且暴击伤害始终以<style=\"accent-gn\">450%</style>进行结算。",
+        "ShowRule": 1
+    },
+    "1202": {
+        "Key": 1202,
+        "Id": 1202,
+        "Text": "梦幻之箭",
+        "Type": 3,
+        "Par": 3401202,
+        "Description": "对<style=\"accent-gn\">3</style>米范围内敌方目标造成<style=\"accent-gn\">100%</style>攻击力自适应伤害。",
+        "ShowRule": 1
+    },
+    "1203": {
+        "Key": 1203,
+        "Id": 1203,
+        "Text": "迷幻梦境",
+        "Type": 3,
+        "Par": 3401203,
+        "Description": "每层攻击力+<style=\"accent-gn\">18</style>（随赛季等级提高最多+<style=\"accent-gn\">38</style>）。",
+        "ShowRule": 1
+    },
+    "1204": {
+        "Key": 1204,
+        "Id": 1204,
+        "Text": "梦幻之力",
+        "Type": 3,
+        "Par": 3401204,
+        "Description": "主属性+<style=\"accent-gn\">450</style>（随赛季等级提高最多+<style=\"accent-gn\">1050</style>），持续期间无法获得遗梦。",
+        "ShowRule": 1
+    },
+    "1205": {
+        "Key": 1205,
+        "Id": 1205,
+        "Text": "寂灭",
+        "Type": 3,
+        "Par": 3401205,
+        "Description": "攻击力-<style=\"accent-gn\">20%</style>，受到梦境伤害+<style=\"accent-gn\">10%</style>，移动速度-<style=\"accent-gn\">20%</style>（不可叠加）。",
+        "ShowRule": 1
+    },
+    "1206": {
+        "Key": 1206,
+        "Id": 1206,
+        "Text": "寂灭打击",
+        "Type": 3,
+        "Par": 3401206,
+        "Description": "对自身<style=\"accent-gn\">5</style>米内敌方目标造成<style=\"accent-gn\">200%</style>攻击力自适应伤害并<linktext=3005><style=\"ItemQuality_5\">眩晕</style></linktext>目标<style=\"accent-gn\">1</style>.<style=\"accent-gn\">5</style>秒。",
+        "ShowRule": 1
+    },
+    "1207": {
+        "Key": 1207,
+        "Id": 1207,
+        "Text": "濒死",
+        "Type": 3,
+        "Par": 3401207,
+        "Description": "免疫死亡。",
+        "ShowRule": 1
+    },
+    "1208": {
+        "Key": 1208,
+        "Id": 1208,
+        "Text": "虚妄裁定",
+        "Type": 3,
+        "Par": 3401208,
+        "Description": "对自身<style=\"accent-gn\">5</style>米内敌方目标造成<style=\"accent-gn\">225%</style>物理防御力自适应伤害。",
+        "ShowRule": 1
+    },
+    "1209": {
+        "Key": 1209,
+        "Id": 1209,
+        "Text": "无尽思维",
+        "Type": 3,
+        "Par": 3401209,
+        "Description": "生命上限+<style=\"accent-gn\">3%</style>，精通+<style=\"accent-gn\">2%</style>，最多叠加<style=\"accent-gn\">3</style>层。",
+        "ShowRule": 1
+    },
+    "1210": {
+        "Key": 1210,
+        "Id": 1210,
+        "Text": "工匠之力",
+        "Type": 1,
+        "Par": 0,
+        "Description": "每<style=\"accent-gn\">2</style>点力量、智力、敏捷，转化为<style=\"accent-gn\">1</style>点攻击力<br>每<style=\"accent-gn\">1</style>点耐力转化为<style=\"accent-gn\">8</style>点生命上限<br>每<style=\"accent-gn\">1%</style>急速转化为<style=\"accent-gn\">0.6%</style>攻击速度和<style=\"accent-gn\">1%</style>施法速度<br>每<style=\"accent-gn\">1%</style>全能提高<style=\"accent-gn\">0.35%</style>造成伤害、治疗和施加护盾时的百分比加成，以及<style=\"accent-gn\">0.15%</style>受到伤害时的伤害减免<br>每<style=\"accent-gn\">1%</style>精通转化为<style=\"accent-gn\">0.5%</style>通用伤害提升",
+        "ShowRule": 2
     },
     "1500": {
         "Key": 1500,

@@ -4,6 +4,7 @@
         "Id": 1,
         "ProfessionId": 1,
         "Name": "雷影剑士",
+        "LineFeedName": "雷影剑士",
         "Icon": "ui/atlas/profession/profession_horizontal_03",
         "Intro": "擅长<color=#fcbe03>近距离</color>作战，以<color=#fcbe03>镰形长刀</color>为武器。可在镰刀与长刀之间随意切换，拥有出色的<color=#fcbe03>小范围攻击</color>能力。",
         "Element": 3,
@@ -74,11 +75,11 @@
         "MasteryDes": [
             [
                 "0",
-                "每1%精通，使消耗雷之印的技能伤害+2.5%"
+                "每1%精通，使消耗雷之印的技能伤害+2.5%<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ],
             [
                 "1",
-                "每1%精通提供1.5%霹雳连斩、雷霆之镰、神罚之镰伤害"
+                "每1%精通提供1.5%霹雳连斩、雷霆之镰、神罚之镰伤害<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ]
         ],
         "AttackShow": [
@@ -109,6 +110,7 @@
         "Id": 2,
         "ProfessionId": 2,
         "Name": "冰魔导师",
+        "LineFeedName": "冰魔导师",
         "Icon": "ui/atlas/profession/profession_horizontal_05",
         "Intro": "擅长<color=#fcbe03>远距离</color>作战，以<color=#fcbe03>冰魔杖</color>为武器。掌控寒冰的力量，拥有出色的<color=#fcbe03>大范围攻击</color>和<color=#fcbe03>控制</color>能力。",
         "Element": 2,
@@ -172,11 +174,11 @@
         "MasteryDes": [
             [
                 "0",
-                "每1%精通提供0.65%冰元素加成"
+                "每1%精通提供0.65%冰元素加成<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ],
             [
                 "1",
-                "每1%精通提供1%寒冰能量获取效率以及0.4%冰元素加成"
+                "每1%精通提供1%寒冰能量获取效率以及0.4%冰元素加成<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ]
         ],
         "AttackShow": [
@@ -207,6 +209,7 @@
         "Id": 3,
         "ProfessionId": 3,
         "Name": "涤罪恶火·战斧",
+        "LineFeedName": "涤罪恶火·战斧",
         "Icon": "ui/atlas/profession/profession_horizontal_01",
         "Intro": "近距离武器，拥有出色的攻击能力。<br>攻击可以施加<color=#fcbe03>点燃</color>效果，可以造成<color=#fcbe03>特性伤害</color>。<br>通过积攒能量释放<color=#fcbe03>终极技能</color>，进入强大的爆发阶段。追求<color=#fcbe03>攻击速度</color>可以增强在爆发阶段造成的伤害。",
         "Element": 1,
@@ -258,11 +261,11 @@
         "MasteryDes": [
             [
                 "0",
-                "附加火元素伤害"
+                "附加火元素伤害<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ],
             [
                 "1",
-                "附加火元素伤害"
+                "附加火元素伤害<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ]
         ],
         "AttackShow": [
@@ -293,6 +296,7 @@
         "Id": 4,
         "ProfessionId": 4,
         "Name": "青岚骑士",
+        "LineFeedName": "青岚骑士",
         "Icon": "ui/atlas/profession/profession_horizontal_02",
         "Intro": "擅长<color=#fcbe03>近距离</color>作战，以<color=#fcbe03>长枪</color>为武器。如风般形态变幻，拥有出色的<color=#fcbe03>小范围攻击</color>能力。",
         "Element": 5,
@@ -362,11 +366,11 @@
         "MasteryDes": [
             [
                 "0",
-                "每1%精通提供0.65%风元素加成"
+                "每1%精通提供0.65%风元素加成<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ],
             [
                 "1",
-                "每1%精通提供0.65%风元素加成"
+                "每1%精通提供0.65%风元素加成<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ]
         ],
         "AttackShow": [
@@ -397,6 +401,7 @@
         "Id": 5,
         "ProfessionId": 5,
         "Name": "森语者",
+        "LineFeedName": "森语者",
         "Icon": "ui/atlas/profession/profession_horizontal_04",
         "Intro": "擅长<color=#fcbe03>远距离治疗</color>，以<color=#fcbe03>法环</color>为武器。运转森之生命的力量，拥有出色的<color=#fcbe03>治疗</color>和<color=#fcbe03>辅助</color>能力。",
         "Element": 4,
@@ -464,11 +469,11 @@
         "MasteryDes": [
             [
                 "0",
-                "每1%精通提供0.7%森元素加成以及0.3%护盾强度"
+                "每1%精通提供0.7%森元素加成以及0.3%护盾强度<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ],
             [
                 "1",
-                "每1%精通提供1%治疗强度"
+                "每1%精通提供1%治疗强度<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ]
         ],
         "AttackShow": [
@@ -499,6 +504,7 @@
         "Id": 8,
         "ProfessionId": 8,
         "Name": "雷霆一闪·手炮",
+        "LineFeedName": "雷霆一闪·手炮",
         "Icon": "ui/atlas/profession/profession_horizontal_01",
         "Intro": "擅长<color=#fcbe03>远距离</color>作战，拥有出色的攻击能力。<br>可以在远处以高频攻击打击大范围的敌人。追求<color=#fcbe03>刻印几率加成</color>提高触发频率。<br>也可以在近处<color=#fcbe03>蓄力</color>，打出极高的爆发伤害。追求<color=#fcbe03>暴击几率</color>带来的强大收益。",
         "Element": 3,
@@ -550,11 +556,11 @@
         "MasteryDes": [
             [
                 "0",
-                "附加雷元素伤害"
+                "附加雷元素伤害<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ],
             [
                 "1",
-                "附加雷元素伤害"
+                "附加雷元素伤害<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ]
         ],
         "AttackShow": [
@@ -585,6 +591,7 @@
         "Id": 9,
         "ProfessionId": 9,
         "Name": "巨刃守护者",
+        "LineFeedName": "巨刃守护者",
         "Icon": "ui/atlas/profession/profession_horizontal_06",
         "Intro": "擅长<color=#fcbe03>近距离</color>作战，以<color=#fcbe03>卫刃</color>为武器。凝聚岩石护体，拥有出色的<color=#fcbe03>防御</color>和<color=#fcbe03>控场</color>能力。",
         "Element": 6,
@@ -655,11 +662,11 @@
         "MasteryDes": [
             [
                 "0",
-                "每1%精通提供2.5%护盾强度"
+                "每1%精通提供2.5%护盾强度<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ],
             [
                 "1",
-                "每1%精通提供0.2%格挡减伤、0.2%幸运格挡减伤"
+                "每1%精通提供0.2%格挡减伤、0.2%幸运格挡减伤<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ]
         ],
         "AttackShow": [
@@ -690,6 +697,7 @@
         "Id": 10,
         "ProfessionId": 10,
         "Name": "暗灵祈舞·仪刀/仪仗",
+        "LineFeedName": "暗灵祈舞·仪刀/仪仗",
         "Icon": "ui/atlas/profession/profession_horizontal_01",
         "Intro": "中近距离武器，拥有协同攻击能力。",
         "Element": 8,
@@ -741,11 +749,11 @@
         "MasteryDes": [
             [
                 "0",
-                "附加暗元素伤害"
+                "附加暗元素伤害<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ],
             [
                 "1",
-                "附加暗元素伤害"
+                "附加暗元素伤害<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ]
         ],
         "AttackShow": [
@@ -776,6 +784,7 @@
         "Id": 11,
         "ProfessionId": 11,
         "Name": "神射手",
+        "LineFeedName": "神射手",
         "Icon": "ui/atlas/profession/profession_horizontal_07",
         "Intro": "擅长<color=#fcbe03>远距离</color>作战，以<color=#fcbe03>弓箭</color>为武器。与动物伙伴搭档出击，拥有出色的<color=#fcbe03>大范围攻击</color>能力。",
         "Element": 7,
@@ -840,11 +849,11 @@
         "MasteryDes": [
             [
                 "0",
-                "每1%精通提供2.75%宠物伤害"
+                "每1%精通提供2.75%宠物伤害<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ],
             [
                 "1",
-                "每1%精通提供0.6%光元素加成"
+                "每1%精通提供0.6%光元素加成<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ]
         ],
         "AttackShow": [
@@ -875,6 +884,7 @@
         "Id": 12,
         "ProfessionId": 12,
         "Name": "神盾骑士",
+        "LineFeedName": "神盾骑士",
         "Icon": "ui/atlas/profession/profession_horizontal_01",
         "Intro": "擅长<color=#fcbe03>近距离</color>作战，以<color=#fcbe03>剑盾</color>为武器。运用光铸造铠甲，拥有出色的<color=#fcbe03>防御</color>和<color=#fcbe03>自愈</color>能力。",
         "Element": 7,
@@ -943,11 +953,11 @@
         "MasteryDes": [
             [
                 "0",
-                "每1%精通提供2.5%光明圣盾获取效率和0.2%全元素抵抗"
+                "每1%精通提供2.5%光明圣盾获取效率和0.2%全元素抵抗<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ],
             [
                 "1",
-                "每1%精通提供3%光铸屏障生命提升效果和0.2%全元素抵抗"
+                "每1%精通提供3%光铸屏障生命提升效果和0.2%全元素抵抗<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ]
         ],
         "AttackShow": [
@@ -978,6 +988,7 @@
         "Id": 13,
         "ProfessionId": 13,
         "Name": "灵魂乐手",
+        "LineFeedName": "灵魂乐手",
         "Icon": "ui/atlas/profession/profession_horizontal_08",
         "Intro": "擅长<color=#fcbe03>近远距离</color>作战，以<color=#fcbe03>吉他</color>为武器。攻击可以施加<color=#fcbe03>治疗</color>效果，擅长为队友施加<color=#fcbe03>增益</color>，拥有出色的<color=#fcbe03>辅助</color>能力。",
         "Element": 1,
@@ -1045,11 +1056,11 @@
         "MasteryDes": [
             [
                 "0",
-                "每1%精通提供1%安和曲转换加成效果"
+                "每1%精通提供1%安和曲转换加成效果<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ],
             [
                 "1",
-                "每1%精通使得鸣奏·愈合乐章衰退速度降低0.35%"
+                "每1%精通使得鸣奏·愈合乐章衰退速度降低0.35%<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>"
             ]
         ],
         "AttackShow": [

@@ -155,6 +155,14 @@
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_gold_bpcard_buy",
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_stare_bpcard_buy",
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_bpcard_buy"
+        ],
+        "FashionAction": [
+            [
+                50000032
+            ],
+            [
+                50000033
+            ]
         ]
     },
     "2": {
@@ -323,24 +331,32 @@
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_gold_bpcard_buy",
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_stare_bpcard_buy",
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_bpcard_buy"
+        ],
+        "FashionAction": [
+            [
+                50000032
+            ],
+            [
+                50000033
+            ]
         ]
     },
     "3": {
         "Key": 3,
         "Id": 3,
-        "WeeklyExpLimit": 6000,
-        "PassTitleName": "家园通行证·上",
-        "PassTag": "ui/textures/bpcard/bpcard1_1/bpcard_base_2",
-        "FreePassName": "又见通行证",
+        "WeeklyExpLimit": 8000,
+        "PassTitleName": "幻幻花通行证·上（废弃）",
+        "PassTag": "ui/textures/bpcard/bpcard2_1/bpcard_base_2",
+        "FreePassName": "幻幻花通行证",
         "NormalPassName": "典藏通行证",
         "PrimePassName": "高级典藏通行证",
         "PassPicture": [
-            "ui/textures/bpcard/bpcard1_1/bpcard_collection_base1",
-            "ui/textures/bpcard/bpcard1_1/bpcard_collection_base2",
-            "ui/atlas/bpcard1_1/bpcard_icon_generally2",
-            "ui/atlas/bpcard1_1/bpcard_icon_generally3",
-            "ui/textures/bpcard/bpcard1_1/bpcard_ornament_2",
-            "ui/textures/bpcard/bpcard1_1/bpcard_ornament_3"
+            "ui/textures/bpcard/bpcard2_1/bpcard_collection_base1",
+            "ui/textures/bpcard/bpcard2_1/bpcard_collection_base2",
+            "ui/atlas/bpcard2_1/bpcard_icon_generally2",
+            "ui/atlas/bpcard2_1/bpcard_icon_generally3",
+            "ui/textures/bpcard/bpcard2_1/bpcard_ornament_2",
+            "ui/textures/bpcard/bpcard2_1/bpcard_ornament_3"
         ],
         "PassRoi": [
             1000,
@@ -354,7 +370,7 @@
             4,
             5
         ],
-        "Timer": 11103,
+        "Timer": 19101,
         "Fashion": [
             [
                 7010021,
@@ -470,9 +486,9 @@
             10003,
             150
         ],
-        "NormalPassPaymentID": 20007,
-        "PrimePassPaymentID": 20008,
-        "PassPriceDiffPaymentID": 20009,
+        "NormalPassPaymentID": 0,
+        "PrimePassPaymentID": 0,
+        "PassPriceDiffPaymentID": 0,
         "EffectPath": [
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_001_bpcard_buy",
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_group_bpcard_saoguang_loop_02",
@@ -481,24 +497,375 @@
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_gold_bpcard_buy",
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_stare_bpcard_buy",
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_bpcard_buy"
+        ],
+        "FashionAction": [
+            [
+                50000032
+            ],
+            [
+                50000033
+            ]
         ]
     },
     "4": {
         "Key": 4,
         "Id": 4,
-        "WeeklyExpLimit": 6000,
-        "PassTitleName": "家园通行证·上",
-        "PassTag": "ui/textures/bpcard/bpcard1_2/bpcard_base_2",
-        "FreePassName": "回见通行证",
+        "WeeklyExpLimit": 8000,
+        "PassTitleName": "幻幻花通行证·上（废弃）",
+        "PassTag": "ui/textures/bpcard/bpcard2_1/bpcard_base_2",
+        "FreePassName": "幻幻花通行证",
         "NormalPassName": "典藏通行证",
         "PrimePassName": "高级典藏通行证",
         "PassPicture": [
-            "ui/textures/bpcard/bpcard1_2/bpcard_collection_base1",
-            "ui/textures/bpcard/bpcard1_2/bpcard_collection_base2",
-            "ui/atlas/bpcard1_2/bpcard_icon_generally2",
-            "ui/atlas/bpcard1_2/bpcard_icon_generally3",
-            "ui/textures/bpcard/bpcard1_2/bpcard_ornament_2",
-            "ui/textures/bpcard/bpcard1_2/bpcard_ornament_3"
+            "ui/textures/bpcard/bpcard2_1/bpcard_collection_base1",
+            "ui/textures/bpcard/bpcard2_1/bpcard_collection_base2",
+            "ui/atlas/bpcard2_1/bpcard_icon_generally2",
+            "ui/atlas/bpcard2_1/bpcard_icon_generally3",
+            "ui/textures/bpcard/bpcard2_1/bpcard_ornament_2",
+            "ui/textures/bpcard/bpcard2_1/bpcard_ornament_3"
+        ],
+        "PassRoi": [
+            1000,
+            1800
+        ],
+        "NormalPassPrivilege": [],
+        "PrimePassPrivilege": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "Timer": 19101,
+        "Fashion": [
+            [
+                7010021,
+                7130144
+            ],
+            [
+                7010022,
+                7130144
+            ]
+        ],
+        "FashionLevel": 30,
+        "AwardPreview": [
+            20121010,
+            20121020,
+            20121040,
+            20121050,
+            20121060,
+            20121070,
+            20121080,
+            20121090,
+            20121100,
+            20121110,
+            20121120,
+            20121140,
+            20121150,
+            20121160,
+            20121170,
+            20121180,
+            20121190,
+            20121200,
+            20121210,
+            20121220,
+            20121240,
+            20121250,
+            20121260,
+            20121270,
+            20121280,
+            20121290,
+            20121300,
+            20121310,
+            20121320,
+            20121340,
+            20121350,
+            20121360,
+            20121370,
+            20121380,
+            20121390,
+            20121400,
+            20121410,
+            20121420,
+            20121440,
+            20121450,
+            20121460,
+            20121470,
+            20121480,
+            20121490,
+            20121500,
+            20121510,
+            20121520,
+            20121540,
+            20121550,
+            20121560,
+            20121570,
+            20121580,
+            20121590,
+            20121600,
+            20121610,
+            20121620,
+            20121640,
+            20121650,
+            20121660,
+            20121670,
+            20121680,
+            20121690,
+            20121700,
+            20121710,
+            20121720,
+            20121740,
+            20121750,
+            20121760,
+            20121770,
+            20121780,
+            20121790,
+            20121800,
+            20121810,
+            20121820,
+            20121830,
+            20121840,
+            20121850,
+            20121860,
+            20121870,
+            20121880,
+            20121890,
+            20121900,
+            20121910,
+            20121920,
+            20121930,
+            20121940,
+            20121950,
+            20121960,
+            20121970,
+            20121980,
+            20121990,
+            20122000,
+            40000790,
+            40000780
+        ],
+        "PrimePassAddLevel": 10,
+        "PrimeExtraAward": [
+            20120000
+        ],
+        "LevelCost": [
+            10003,
+            150
+        ],
+        "NormalPassPaymentID": 0,
+        "PrimePassPaymentID": 0,
+        "PassPriceDiffPaymentID": 0,
+        "EffectPath": [
+            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_001_bpcard_buy",
+            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_group_bpcard_saoguang_loop_02",
+            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_group_bpcard_saoguang_loop_01",
+            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_glod_stare_bpcard_buy",
+            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_gold_bpcard_buy",
+            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_stare_bpcard_buy",
+            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_bpcard_buy"
+        ],
+        "FashionAction": [
+            [
+                50000032
+            ],
+            [
+                50000033
+            ]
+        ]
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "WeeklyExpLimit": 8000,
+        "PassTitleName": "幻梦通行证·Ⅰ",
+        "PassTag": "ui/textures/bpcard/bpcard2_1/bpcard_base_2",
+        "FreePassName": "幻梦通行证",
+        "NormalPassName": "典藏通行证",
+        "PrimePassName": "高级典藏通行证",
+        "PassPicture": [
+            "ui/textures/bpcard/bpcard2_1/bpcard_collection_base1",
+            "ui/textures/bpcard/bpcard2_1/bpcard_collection_base2",
+            "ui/atlas/bpcard2_1/bpcard_icon_generally2",
+            "ui/atlas/bpcard2_1/bpcard_icon_generally3",
+            "ui/textures/bpcard/bpcard2_1/bpcard_ornament_2",
+            "ui/textures/bpcard/bpcard2_1/bpcard_ornament_3"
+        ],
+        "PassRoi": [
+            1000,
+            1800
+        ],
+        "NormalPassPrivilege": [],
+        "PrimePassPrivilege": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "Timer": 11103,
+        "Fashion": [
+            [
+                7015099,
+                7115099,
+                7125099,
+                7130297
+            ],
+            [
+                7015100,
+                7115100,
+                7125100,
+                7130298
+            ]
+        ],
+        "FashionLevel": 30,
+        "AwardPreview": [
+            20122301,
+            20122302,
+            20122303,
+            20122304,
+            20122305,
+            20122306,
+            20122307,
+            20122308,
+            20122309,
+            20122310,
+            20122311,
+            20122312,
+            20122313,
+            20122314,
+            20122315,
+            20122316,
+            20122317,
+            20122318,
+            20122319,
+            20122320,
+            20122321,
+            20122322,
+            20122323,
+            20122324,
+            20122325,
+            20122326,
+            20122327,
+            20122328,
+            20122329,
+            20122330,
+            20122331,
+            20122332,
+            20122333,
+            20122334,
+            20122335,
+            20122336,
+            20122337,
+            20122338,
+            20122339,
+            20122340,
+            20122341,
+            20122342,
+            20122343,
+            20122344,
+            20122345,
+            20122346,
+            20122347,
+            20122348,
+            20122349,
+            20122350,
+            20122351,
+            20122352,
+            20122353,
+            20122354,
+            20122355,
+            20122356,
+            20122357,
+            20122358,
+            20122359,
+            20122360,
+            20122361,
+            20122362,
+            20122363,
+            20122364,
+            20122365,
+            20122366,
+            20122367,
+            20122368,
+            20122369,
+            20122370,
+            20122371,
+            20122372,
+            20122373,
+            20122374,
+            20122375,
+            20122376,
+            20122377,
+            20122378,
+            20122379,
+            20122380,
+            20122381,
+            20122382,
+            20122383,
+            20122384,
+            20122385,
+            20122386,
+            20122387,
+            20122388,
+            20122389,
+            20122390,
+            20122391,
+            20122392,
+            20122393,
+            20122394,
+            20122395,
+            20122396,
+            20122397,
+            20122398,
+            20122399,
+            20122400,
+            40002482
+        ],
+        "PrimePassAddLevel": 10,
+        "PrimeExtraAward": [
+            20120002
+        ],
+        "LevelCost": [
+            10003,
+            150
+        ],
+        "NormalPassPaymentID": 20007,
+        "PrimePassPaymentID": 20008,
+        "PassPriceDiffPaymentID": 20009,
+        "EffectPath": [
+            "ui/uieffect/prefab/ui_sfx_s2_season_001/ui_sfx_group_s2_purple_001_bpcard_buy",
+            "ui/uieffect/prefab/ui_sfx_s2_season_001/ui_sfx_group_s2_bpcard_guangxiao_loop_02",
+            "ui/uieffect/prefab/ui_sfx_s2_season_001/ui_sfx_group_s2_bpcard_guangxiao_loop_01",
+            "ui/uieffect/prefab/ui_sfx_s2_bpcard_001/ui_sfx_s2_pink_stare_bpcard_buy",
+            "ui/uieffect/prefab/ui_sfx_s2_bpcard_001/ui_sfx_s2_pink_bpcard_buy",
+            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_stare_bpcard_buy",
+            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_bpcard_buy"
+        ],
+        "FashionAction": [
+            [
+                50000032
+            ],
+            [
+                50000033
+            ]
+        ]
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "WeeklyExpLimit": 8000,
+        "PassTitleName": "幻梦通行证·Ⅱ",
+        "PassTag": "ui/textures/bpcard/bpcard2_1/bpcard_base_2",
+        "FreePassName": "幻梦通行证",
+        "NormalPassName": "典藏通行证",
+        "PrimePassName": "高级典藏通行证",
+        "PassPicture": [
+            "ui/textures/bpcard/bpcard2_1/bpcard_collection_base1",
+            "ui/textures/bpcard/bpcard2_1/bpcard_collection_base2",
+            "ui/atlas/bpcard2_1/bpcard_icon_generally2",
+            "ui/atlas/bpcard2_1/bpcard_icon_generally3",
+            "ui/textures/bpcard/bpcard2_1/bpcard_ornament_2",
+            "ui/textures/bpcard/bpcard2_1/bpcard_ornament_3"
         ],
         "PassRoi": [
             1000,
@@ -632,13 +999,21 @@
         "PrimePassPaymentID": 20011,
         "PassPriceDiffPaymentID": 20012,
         "EffectPath": [
-            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_001_bpcard_buy",
-            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_group_bpcard_saoguang_loop_02",
-            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_group_bpcard_saoguang_loop_01",
-            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_glod_stare_bpcard_buy",
-            "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_gold_bpcard_buy",
+            "ui/uieffect/prefab/ui_sfx_s2_season_001/ui_sfx_group_s2_purple_001_bpcard_buy",
+            "ui/uieffect/prefab/ui_sfx_s2_season_001/ui_sfx_group_s2_bpcard_guangxiao_loop_02",
+            "ui/uieffect/prefab/ui_sfx_s2_season_001/ui_sfx_group_s2_bpcard_guangxiao_loop_01",
+            "ui/uieffect/prefab/ui_sfx_s2_bpcard_001/ui_sfx_s2_pink_stare_bpcard_buy",
+            "ui/uieffect/prefab/ui_sfx_s2_bpcard_001/ui_sfx_s2_pink_bpcard_buy",
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_stare_bpcard_buy",
             "ui/uieffect/prefab/ui_sfx_bpcard_001/ui_sfx_purple_bpcard_buy"
+        ],
+        "FashionAction": [
+            [
+                50000032
+            ],
+            [
+                50000033
+            ]
         ]
     }
 }

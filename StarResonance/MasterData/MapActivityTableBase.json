@@ -8,7 +8,8 @@
         ],
         "Icon": "ui/atlas/explore_monster/explore_monster_btn_icon_1",
         "FunctionId": 801001,
-        "RedDotId": 40
+        "RedDotId": 40,
+        "Note": ""
     },
     "2": {
         "Key": 2,
@@ -20,11 +21,13 @@
             72,
             73,
             74,
-            75
+            75,
+            9
         ],
         "Icon": "ui/atlas/explore_monster/explore_monster_btn_icon_3",
         "FunctionId": 100804,
-        "RedDotId": 71
+        "RedDotId": 71,
+        "Note": ""
     },
     "3": {
         "Key": 3,
@@ -35,12 +38,13 @@
         ],
         "Icon": "ui/atlas/explore_monster/explore_monster_btn_icon_2",
         "FunctionId": 100802,
-        "RedDotId": 1201
+        "RedDotId": 1201,
+        "Note": ""
     },
     "4": {
         "Key": 4,
         "Id": 4,
-        "Name": "声望商店",
+        "Name": "地区声望",
         "Scene": [
             7,
             71,
@@ -51,6 +55,23 @@
         ],
         "Icon": "ui/atlas/explore_monster/explore_monster_btn_icon_5",
         "FunctionId": 800819,
-        "RedDotId": 0
+        "RedDotId": 5101,
+        "Note": "平原声望入口=商店"
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "Name": "地区声望",
+        "Scene": [
+            9,
+            91,
+            92,
+            93,
+            94
+        ],
+        "Icon": "ui/atlas/explore_monster/explore_monster_btn_icon_5",
+        "FunctionId": 800900,
+        "RedDotId": 5102,
+        "Note": "高原地区声望入口"
     }
 }

@@ -281,7 +281,7 @@
         "OperateType": 0,
         "DescribeKey": "",
         "Des": "生体元等级默认值，最小值和最大值程序取PlayLevelTable的",
-        "Value": "1",
+        "Value": "15",
         "DataStorage": 99,
         "Link": ""
     },
@@ -696,7 +696,7 @@
         "TypesId": 10022,
         "OperateType": 6,
         "DescribeKey": "DefaultSelfSpecialEffect",
-        "Des": "自身特效LOD等级（PC:流畅=清晰=高清=极致 | 移动:流畅=清晰=高清=极致）\r\n平台特效等级定义(PC:-1关闭，0极简，2普通，4精致)(移动：-1关闭，0极简，1普通，3精致)",
+        "Des": "自身特效LOD等级（PC:流畅=清晰=高清=极致 | 移动:流畅=清晰=高清=极致）\n平台特效等级定义(PC:-1关闭，0极简，2普通，4精致)(移动：-1关闭，0极简，1普通，3精致)",
         "Value": "2=2=4=4|0=1=3=3",
         "DataStorage": 0,
         "Link": ""
@@ -894,6 +894,19 @@
         "Des": "图像设置版本数据",
         "Value": "",
         "DataStorage": 0,
+        "Link": ""
+    },
+    "7001": {
+        "Key": 7001,
+        "Id": 7001,
+        "Name": "确认取消按钮",
+        "SystemId": 0,
+        "TypesId": 0,
+        "OperateType": 0,
+        "DescribeKey": "",
+        "Des": "",
+        "Value": "1",
+        "DataStorage": 3,
         "Link": ""
     }
 }

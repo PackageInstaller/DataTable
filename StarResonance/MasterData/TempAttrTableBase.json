@@ -2236,7 +2236,7 @@
         "AttrParams": [
             0
         ],
-        "LowerLimit": 0,
+        "LowerLimit": -99999,
         "UpperLimit": 99999,
         "IsSyncClient": true,
         "AttrDesc": ""
@@ -3151,7 +3151,7 @@
         "AttrParams": [
             0
         ],
-        "LowerLimit": 0,
+        "LowerLimit": -99999,
         "UpperLimit": 9999999,
         "IsSyncClient": true,
         "AttrDesc": ""
@@ -3306,6 +3306,217 @@
         "IsSyncClient": true,
         "AttrDesc": ""
     },
+    "90219": {
+        "Key": 90219,
+        "Id": 90219,
+        "Name": "风姿卓绝buff时间",
+        "Desc": "风姿卓绝buff时间",
+        "AttrType": 502,
+        "LogicType": 4,
+        "AttrParams": [
+            31201
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90220": {
+        "Key": 90220,
+        "Id": 90220,
+        "Name": "愈合乐章资源消耗管理",
+        "Desc": "愈合乐章资源消耗管理",
+        "AttrType": 302,
+        "LogicType": 4,
+        "AttrParams": [
+            55332
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90221": {
+        "Key": 90221,
+        "Id": 90221,
+        "Name": "月影临时属性管理",
+        "Desc": "月影临时属性管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 3,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90222": {
+        "Key": 90222,
+        "Id": 90222,
+        "Name": "因子心眼冷却",
+        "Desc": "因子心眼冷却",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            1744
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90223": {
+        "Key": 90223,
+        "Id": 90223,
+        "Name": "因子护佑之风冷却",
+        "Desc": "因子护佑之风冷却",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            1437
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90224": {
+        "Key": 90224,
+        "Id": 90224,
+        "Name": "大招冷却加速",
+        "Desc": "大招冷却加速",
+        "AttrType": 103,
+        "LogicType": 3,
+        "AttrParams": [
+            5
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90225": {
+        "Key": 90225,
+        "Id": 90225,
+        "Name": "食物、料理时间",
+        "Desc": "食物、料理时间",
+        "AttrType": 501,
+        "LogicType": 3,
+        "AttrParams": [
+            100
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90226": {
+        "Key": 90226,
+        "Id": 90226,
+        "Name": "【终极技能】冷却时间加速",
+        "Desc": "【终极技能】冷却时间加速",
+        "AttrType": 103,
+        "LogicType": 3,
+        "AttrParams": [
+            5
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90300": {
+        "Key": 90300,
+        "Id": 90300,
+        "Name": "【光明决心】充能上限变化",
+        "Desc": "【光明决心】充能上限变化",
+        "AttrType": 352,
+        "LogicType": 1,
+        "AttrParams": [
+            2420
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90301": {
+        "Key": 90301,
+        "Id": 90301,
+        "Name": "【砂岩之握】充能上限变化",
+        "Desc": "【砂岩之握】充能上限变化",
+        "AttrType": 352,
+        "LogicType": 1,
+        "AttrParams": [
+            1926
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90302": {
+        "Key": 90302,
+        "Id": 90302,
+        "Name": "法环专精技能秒唱",
+        "Desc": "法环专精技能秒唱",
+        "AttrType": 710,
+        "LogicType": 1,
+        "AttrParams": [
+            1523
+        ],
+        "LowerLimit": -9999,
+        "UpperLimit": 9999999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90303": {
+        "Key": 90303,
+        "Id": 90303,
+        "Name": "【剑盾】裁决消耗",
+        "Desc": "【剑盾】裁决消耗",
+        "AttrType": 302,
+        "LogicType": 1,
+        "AttrParams": [
+            2410
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90304": {
+        "Key": 90304,
+        "Id": 90304,
+        "Name": "幻梦之箭层数增加",
+        "Desc": "幻梦之箭层数增加",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            3002411
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90305": {
+        "Key": 90305,
+        "Id": 90305,
+        "Name": "圣光守卫、光明决心CD",
+        "Desc": "圣光守卫、光明决心CD",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            2415,
+            2420
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
     "92000": {
         "Key": 92000,
         "Id": 92000,
@@ -3395,7 +3606,8 @@
         "AttrType": 103,
         "LogicType": 1,
         "AttrParams": [
-            4529
+            4529,
+            4527
         ],
         "LowerLimit": -99999,
         "UpperLimit": 99999,
@@ -3433,6 +3645,52 @@
         "IsSyncClient": true,
         "AttrDesc": ""
     },
+    "92105": {
+        "Key": 92105,
+        "Id": 92105,
+        "Name": "【载具】绣球滞空时长",
+        "Desc": "【载具】绣球滞空时长",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 100,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "92106": {
+        "Key": 92106,
+        "Id": 92106,
+        "Name": "【载具】绣球加速冷却",
+        "Desc": "【载具】绣球加速冷却",
+        "AttrType": 103,
+        "LogicType": 1,
+        "AttrParams": [
+            4527
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "92107": {
+        "Key": 92107,
+        "Id": 92107,
+        "Name": "【载具】小丑加速冷却",
+        "Desc": "【载具】小丑加速冷却",
+        "AttrType": 103,
+        "LogicType": 1,
+        "AttrParams": [
+            4641,
+            4643
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
     "93000": {
         "Key": 93000,
         "Id": 93000,
@@ -3445,6 +3703,21 @@
         ],
         "LowerLimit": -99999,
         "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "94000": {
+        "Key": 94000,
+        "Id": 94000,
+        "Name": "【S2赛季】迷幻梦境层数",
+        "Desc": "【S2赛季】迷幻梦境层数",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            3002611
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
         "IsSyncClient": true,
         "AttrDesc": ""
     },
@@ -3683,7 +3956,8 @@
         "LogicType": 1,
         "AttrParams": [
             1805,
-            1852
+            1852,
+            2900441
         ],
         "LowerLimit": 0,
         "UpperLimit": 50000,
@@ -3699,7 +3973,8 @@
         "LogicType": 1,
         "AttrParams": [
             1805,
-            1852
+            1852,
+            2900441
         ],
         "LowerLimit": 0,
         "UpperLimit": 50000,
@@ -4318,6 +4593,81 @@
             206
         ],
         "LowerLimit": 0,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99040": {
+        "Key": 99040,
+        "Id": 99040,
+        "Name": "无尽思维BUFF层数",
+        "Desc": "无尽思维BUFF层数",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            3003411
+        ],
+        "LowerLimit": -2,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99041": {
+        "Key": 99041,
+        "Id": 99041,
+        "Name": "光能获取效率",
+        "Desc": "光能获取效率",
+        "AttrType": 301,
+        "LogicType": 2,
+        "AttrParams": [
+            22001
+        ],
+        "LowerLimit": -10000,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99042": {
+        "Key": 99042,
+        "Id": 99042,
+        "Name": "寒冰庇护层数",
+        "Desc": "寒冰庇护层数",
+        "AttrType": 352,
+        "LogicType": 1,
+        "AttrParams": [
+            1245
+        ],
+        "LowerLimit": -2,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99043": {
+        "Key": 99043,
+        "Id": 99043,
+        "Name": "寒冰庇护CD",
+        "Desc": "寒冰庇护CD",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            1245
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "99044": {
+        "Key": 99044,
+        "Id": 99044,
+        "Name": "威慑射击CD",
+        "Desc": "威慑射击CD",
+        "AttrType": 101,
+        "LogicType": 1,
+        "AttrParams": [
+            2235
+        ],
+        "LowerLimit": -99999,
         "UpperLimit": 99999,
         "IsSyncClient": true,
         "AttrDesc": ""

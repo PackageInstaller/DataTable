@@ -153,7 +153,7 @@
         "Key": 50011,
         "Id": 50011,
         "Name": "传送-陷落河谷",
-        "TransferType": 2,
+        "TransferType": 1,
         "MapId": 9,
         "PivotId": 0,
         "TransferDec": "这片区域星元能量汇聚之处，冒险者可以与其共鸣从而感知整片区域星元能量的流动，从而获得该区域的地图信息；<br>利用星元能力可在已激活的枢纽和传送点间快速移动；",
@@ -161,14 +161,14 @@
         "AwardId": [
             10002000
         ],
-        "IsOn": true,
+        "IsOn": false,
         "SceneTag": 501
     },
     "50012": {
         "Key": 50012,
         "Id": 50012,
         "Name": "传送-神悬御柱",
-        "TransferType": 2,
+        "TransferType": 1,
         "MapId": 9,
         "PivotId": 0,
         "TransferDec": "这片区域星元能量汇聚之处，冒险者可以与其共鸣从而感知整片区域星元能量的流动，从而获得该区域的地图信息；<br>利用星元能力可在已激活的枢纽和传送点间快速移动；",
@@ -176,14 +176,14 @@
         "AwardId": [
             10002000
         ],
-        "IsOn": true,
+        "IsOn": false,
         "SceneTag": 501
     },
     "50013": {
         "Key": 50013,
         "Id": 50013,
         "Name": "传送-拉尔帕尔村庄",
-        "TransferType": 2,
+        "TransferType": 1,
         "MapId": 9,
         "PivotId": 0,
         "TransferDec": "这片区域星元能量汇聚之处，冒险者可以与其共鸣从而感知整片区域星元能量的流动，从而获得该区域的地图信息；<br>利用星元能力可在已激活的枢纽和传送点间快速移动；",
@@ -198,7 +198,7 @@
         "Key": 50014,
         "Id": 50014,
         "Name": "传送-贝克马尔运输站",
-        "TransferType": 2,
+        "TransferType": 1,
         "MapId": 9,
         "PivotId": 0,
         "TransferDec": "这片区域星元能量汇聚之处，冒险者可以与其共鸣从而感知整片区域星元能量的流动，从而获得该区域的地图信息；<br>利用星元能力可在已激活的枢纽和传送点间快速移动；",
@@ -206,14 +206,14 @@
         "AwardId": [
             10002000
         ],
-        "IsOn": true,
+        "IsOn": false,
         "SceneTag": 501
     },
     "50015": {
         "Key": 50015,
         "Id": 50015,
-        "Name": "地下传送-西斯莱萨矿场",
-        "TransferType": 2,
+        "Name": "传送-西斯莱萨矿场",
+        "TransferType": 1,
         "MapId": 9,
         "PivotId": 0,
         "TransferDec": "这片区域星元能量汇聚之处，冒险者可以与其共鸣从而感知整片区域星元能量的流动，从而获得该区域的地图信息；<br>利用星元能力可在已激活的枢纽和传送点间快速移动；",
@@ -221,7 +221,37 @@
         "AwardId": [
             10002000
         ],
-        "IsOn": true,
+        "IsOn": false,
+        "SceneTag": 501
+    },
+    "50018": {
+        "Key": 50018,
+        "Id": 50018,
+        "Name": "传送-月影之野",
+        "TransferType": 1,
+        "MapId": 93,
+        "PivotId": 0,
+        "TransferDec": "这片区域星元能量汇聚之处，冒险者可以与其共鸣从而感知整片区域星元能量的流动，从而获得该区域的地图信息；<br>利用星元能力可在已激活的枢纽和传送点间快速移动；",
+        "ScenePoint": 7,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 501
+    },
+    "50019": {
+        "Key": 50019,
+        "Id": 50019,
+        "Name": "传送-迷星之径",
+        "TransferType": 1,
+        "MapId": 94,
+        "PivotId": 0,
+        "TransferDec": "这片区域星元能量汇聚之处，冒险者可以与其共鸣从而感知整片区域星元能量的流动，从而获得该区域的地图信息；<br>利用星元能力可在已激活的枢纽和传送点间快速移动；",
+        "ScenePoint": 7,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
         "SceneTag": 501
     },
     "50701": {
@@ -828,7 +858,7 @@
         "Name": "传送-奥古拉斯遗迹",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50011,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 650,
         "AwardId": [
@@ -840,10 +870,10 @@
     "50902": {
         "Key": 50902,
         "Id": 50902,
-        "Name": "传送-高原北部",
+        "Name": "传送-巴哈马尔之北",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50012,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 652,
         "AwardId": [
@@ -855,10 +885,10 @@
     "50903": {
         "Key": 50903,
         "Id": 50903,
-        "Name": "传送-朝圣者的休憩之所",
+        "Name": "传送-巡礼者的休憩之所",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50013,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 654,
         "AwardId": [
@@ -870,10 +900,10 @@
     "50904": {
         "Key": 50904,
         "Id": 50904,
-        "Name": "传送-陷落河南部",
+        "Name": "传送-陷落河",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50013,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 656,
         "AwardId": [
@@ -885,10 +915,10 @@
     "50905": {
         "Key": 50905,
         "Id": 50905,
-        "Name": "传送-陷落河北部下层",
+        "Name": "传送-陷落河谷",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50013,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 658,
         "AwardId": [
@@ -900,10 +930,10 @@
     "50906": {
         "Key": 50906,
         "Id": 50906,
-        "Name": "传送-山芥酒馆",
+        "Name": "传送-山芥垆",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50014,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 660,
         "AwardId": [
@@ -915,10 +945,10 @@
     "50907": {
         "Key": 50907,
         "Id": 50907,
-        "Name": "传送-贝克马尔运输站内部",
+        "Name": "传送-贝克马尔运输站",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50014,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 662,
         "AwardId": [
@@ -930,12 +960,192 @@
     "50908": {
         "Key": 50908,
         "Id": 50908,
-        "Name": "传送-地面矿场",
+        "Name": "传送-露天矿场",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50015,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 664,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50909": {
+        "Key": 50909,
+        "Id": 50909,
+        "Name": "传送-教团营地",
+        "TransferType": 1,
+        "MapId": 9,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 2206,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50910": {
+        "Key": 50910,
+        "Id": 50910,
+        "Name": "传送-洞穴传送点一",
+        "TransferType": 1,
+        "MapId": 91,
+        "PivotId": 50016,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 8,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50911": {
+        "Key": 50911,
+        "Id": 50911,
+        "Name": "传送-洞穴传送点二",
+        "TransferType": 1,
+        "MapId": 91,
+        "PivotId": 50016,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 12,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50912": {
+        "Key": 50912,
+        "Id": 50912,
+        "Name": "传送-洞穴传送点三",
+        "TransferType": 1,
+        "MapId": 91,
+        "PivotId": 50016,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 1,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50920": {
+        "Key": 50920,
+        "Id": 50920,
+        "Name": "传送-洞穴二传送点一",
+        "TransferType": 1,
+        "MapId": 92,
+        "PivotId": 50017,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 6,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50921": {
+        "Key": 50921,
+        "Id": 50921,
+        "Name": "传送-洞穴二传送点二",
+        "TransferType": 1,
+        "MapId": 92,
+        "PivotId": 50017,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 8,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50922": {
+        "Key": 50922,
+        "Id": 50922,
+        "Name": "传送-洞穴二传送点三",
+        "TransferType": 1,
+        "MapId": 92,
+        "PivotId": 50017,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 13,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50925": {
+        "Key": 50925,
+        "Id": 50925,
+        "Name": "传送-月影之野传送点一",
+        "TransferType": 1,
+        "MapId": 93,
+        "PivotId": 50018,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 6,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50926": {
+        "Key": 50926,
+        "Id": 50926,
+        "Name": "传送-月影之野传送点二",
+        "TransferType": 1,
+        "MapId": 93,
+        "PivotId": 50018,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 9,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50927": {
+        "Key": 50927,
+        "Id": 50927,
+        "Name": "传送-月影之野传送点三",
+        "TransferType": 1,
+        "MapId": 93,
+        "PivotId": 50018,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 11,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50928": {
+        "Key": 50928,
+        "Id": 50928,
+        "Name": "传送-月影之野传送点四",
+        "TransferType": 1,
+        "MapId": 93,
+        "PivotId": 50018,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 13,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50929": {
+        "Key": 50929,
+        "Id": 50929,
+        "Name": "传送-月影之野传送点五",
+        "TransferType": 1,
+        "MapId": 93,
+        "PivotId": 50018,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 35,
         "AwardId": [
             10002000
         ],
@@ -945,10 +1155,10 @@
     "50930": {
         "Key": 50930,
         "Id": 50930,
-        "Name": "地下传送-废弃矿道",
+        "Name": "西斯莱萨矿场-采掘矿道",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50015,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 666,
         "AwardId": [
@@ -960,10 +1170,10 @@
     "50931": {
         "Key": 50931,
         "Id": 50931,
-        "Name": "地下传送-一号矿洞",
+        "Name": "西斯莱萨矿场-一号矿洞",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50015,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 668,
         "AwardId": [
@@ -975,10 +1185,10 @@
     "50932": {
         "Key": 50932,
         "Id": 50932,
-        "Name": "地下传送-分拣转运区",
+        "Name": "西斯莱萨矿场-分拣转运区",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50015,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 670,
         "AwardId": [
@@ -990,10 +1200,10 @@
     "50933": {
         "Key": 50933,
         "Id": 50933,
-        "Name": "地下传送-矿道安全区",
+        "Name": "西斯莱萨矿场-安全区",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50015,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 672,
         "AwardId": [
@@ -1005,10 +1215,10 @@
     "50934": {
         "Key": 50934,
         "Id": 50934,
-        "Name": "地下传送-采掘矿洞",
+        "Name": "西斯莱萨矿场-采掘矿洞",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50015,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 674,
         "AwardId": [
@@ -1020,12 +1230,102 @@
     "50935": {
         "Key": 50935,
         "Id": 50935,
-        "Name": "地下传送-未开发矿洞",
+        "Name": "西斯莱萨矿场-废弃矿洞",
         "TransferType": 1,
         "MapId": 9,
-        "PivotId": 50015,
+        "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 676,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50941": {
+        "Key": 50941,
+        "Id": 50941,
+        "Name": "传送-迷星之径传送点1",
+        "TransferType": 1,
+        "MapId": 94,
+        "PivotId": 50019,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 8,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50942": {
+        "Key": 50942,
+        "Id": 50942,
+        "Name": "传送-迷星之径传送点2",
+        "TransferType": 1,
+        "MapId": 94,
+        "PivotId": 50019,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 10,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50943": {
+        "Key": 50943,
+        "Id": 50943,
+        "Name": "传送-迷星之径传送点3",
+        "TransferType": 1,
+        "MapId": 94,
+        "PivotId": 50019,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 12,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50944": {
+        "Key": 50944,
+        "Id": 50944,
+        "Name": "传送-迷星之径传送点4",
+        "TransferType": 1,
+        "MapId": 94,
+        "PivotId": 50019,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 14,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 105
+    },
+    "50945": {
+        "Key": 50945,
+        "Id": 50945,
+        "Name": "传送-迷星之径传送点5",
+        "TransferType": 0,
+        "MapId": 0,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 0,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 0
+    },
+    "50946": {
+        "Key": 50946,
+        "Id": 50946,
+        "Name": "传送-迷星之径传送点6",
+        "TransferType": 1,
+        "MapId": 94,
+        "PivotId": 50019,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 18,
         "AwardId": [
             10002000
         ],

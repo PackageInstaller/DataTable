@@ -1,32 +1,193 @@
 {
-    "500201": {
-        "Key": 500201,
-        "Id": 500201,
-        "Authority": "访问家园"
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "AuthorityType": 1,
+        "AuthorityEnum": 1,
+        "OperateType": 1,
+        "Options": [],
+        "Defautlt": 1,
+        "ShowOnBoard": 1,
+        "ShowText": "共享仓库使用权"
     },
-    "500202": {
-        "Key": 500202,
-        "Id": 500202,
-        "Authority": "家具交互"
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "AuthorityType": 2,
+        "AuthorityEnum": 1,
+        "OperateType": 1,
+        "Options": [],
+        "Defautlt": 0,
+        "ShowOnBoard": 1,
+        "ShowText": "家具编辑权"
     },
-    "500203": {
-        "Key": 500203,
-        "Id": 500203,
-        "Authority": "花朵出售"
+    "3": {
+        "Key": 3,
+        "Id": 3,
+        "AuthorityType": 2,
+        "AuthorityEnum": 2,
+        "OperateType": 1,
+        "Options": [],
+        "Defautlt": 0,
+        "ShowOnBoard": 1,
+        "ShowText": "制造台使用权"
     },
-    "500204": {
-        "Key": 500204,
-        "Id": 500204,
-        "Authority": "家具编辑"
+    "4": {
+        "Key": 4,
+        "Id": 4,
+        "AuthorityType": 1,
+        "AuthorityEnum": 3,
+        "OperateType": 2,
+        "Options": [
+            3
+        ],
+        "Defautlt": 0,
+        "ShowOnBoard": 0,
+        "ShowText": ""
     },
-    "500205": {
-        "Key": 500205,
-        "Id": 500205,
-        "Authority": "家具制造"
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "AuthorityType": 1,
+        "AuthorityEnum": 4,
+        "OperateType": 2,
+        "Options": [
+            1,
+            2,
+            9
+        ],
+        "Defautlt": 2,
+        "ShowOnBoard": 1,
+        "ShowText": "访问家园权限"
     },
-    "500206": {
-        "Key": 500206,
-        "Id": 500206,
-        "Authority": "共享仓库"
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "AuthorityType": 1,
+        "AuthorityEnum": 5,
+        "OperateType": 2,
+        "Options": [
+            3
+        ],
+        "Defautlt": 0,
+        "ShowOnBoard": 0,
+        "ShowText": ""
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "AuthorityType": 1,
+        "AuthorityEnum": 6,
+        "OperateType": 2,
+        "Options": [
+            7
+        ],
+        "Defautlt": 0,
+        "ShowOnBoard": 0,
+        "ShowText": ""
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "AuthorityType": 1,
+        "AuthorityEnum": 8,
+        "OperateType": 2,
+        "Options": [
+            7
+        ],
+        "Defautlt": 0,
+        "ShowOnBoard": 0,
+        "ShowText": ""
+    },
+    "9": {
+        "Key": 9,
+        "Id": 9,
+        "AuthorityType": 1,
+        "AuthorityEnum": 9,
+        "OperateType": 2,
+        "Options": [
+            3
+        ],
+        "Defautlt": 0,
+        "ShowOnBoard": 0,
+        "ShowText": ""
+    },
+    "10": {
+        "Key": 10,
+        "Id": 10,
+        "AuthorityType": 1,
+        "AuthorityEnum": 10,
+        "OperateType": 2,
+        "Options": [
+            8
+        ],
+        "Defautlt": 0,
+        "ShowOnBoard": 0,
+        "ShowText": ""
+    },
+    "11": {
+        "Key": 11,
+        "Id": 11,
+        "AuthorityType": 1,
+        "AuthorityEnum": 11,
+        "OperateType": 2,
+        "Options": [
+            2
+        ],
+        "Defautlt": 0,
+        "ShowOnBoard": 0,
+        "ShowText": ""
+    },
+    "12": {
+        "Key": 12,
+        "Id": 12,
+        "AuthorityType": 1,
+        "AuthorityEnum": 12,
+        "OperateType": 2,
+        "Options": [
+            2
+        ],
+        "Defautlt": 0,
+        "ShowOnBoard": 0,
+        "ShowText": ""
+    },
+    "13": {
+        "Key": 13,
+        "Id": 13,
+        "AuthorityType": 1,
+        "AuthorityEnum": 13,
+        "OperateType": 2,
+        "Options": [
+            5
+        ],
+        "Defautlt": 0,
+        "ShowOnBoard": 0,
+        "ShowText": ""
+    },
+    "14": {
+        "Key": 14,
+        "Id": 14,
+        "AuthorityType": 1,
+        "AuthorityEnum": 14,
+        "OperateType": 2,
+        "Options": [
+            8
+        ],
+        "Defautlt": 0,
+        "ShowOnBoard": 0,
+        "ShowText": ""
+    },
+    "15": {
+        "Key": 15,
+        "Id": 15,
+        "AuthorityType": 1,
+        "AuthorityEnum": 15,
+        "OperateType": 2,
+        "Options": [
+            8
+        ],
+        "Defautlt": 0,
+        "ShowOnBoard": 0,
+        "ShowText": ""
     }
 }
